@@ -30,27 +30,48 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Save/serialize
 
         /// <summary>
-        /// Saves an object to DynamoDB using passed-in configs.
+        /// Saves an object to DynamoDB.
         /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </summary>
         /// <typeparam name="T">Type to save as.</typeparam>
         /// <param name="value">Object to save.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        void Save<T>(T value);
+
+        /// <summary>
+        /// Saves an object to DynamoDB.
+        /// 
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </summary>
+        /// <typeparam name="T">Type to save as.</typeparam>
+        /// <param name="value">Object to save.</param>
+        /// <param name="operationConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        [Obsolete("Use the Save overload that takes SaveConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Save.")]
         void Save<T>(T value, DynamoDBOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Saves an object to DynamoDB.
+        /// 
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </summary>
+        /// <typeparam name="T">Type to save as.</typeparam>
+        /// <param name="value">Object to save.</param>
+        /// <param name="saveConfig">Config object that can be used to override properties on the table's context for this request</param>
+        void Save<T>(T value, SaveConfig saveConfig);
+
 
         #endregion
 
         #region Load/deserialize
 
         /// <summary>
-        /// Loads an object from DynamoDB for the given hash-and-range primary key and using the given config.
+        /// Loads an object from DynamoDB for the given hash key.
         /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
@@ -60,11 +81,10 @@ namespace Amazon.DynamoDBv2.DataModel
         T Load<T>(object hashKey);
 
         /// <summary>
-        /// Loads an object from DynamoDB for the given hash-and-range primary key and using the given config.
+        /// Loads an object from DynamoDB for the given hash key.
         /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
@@ -72,14 +92,28 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>
         /// Object of type T, populated with properties of item loaded from DynamoDB.
         /// </returns>
+        [Obsolete("Use the Load overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Load.")]
         T Load<T>(object hashKey, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
-        /// Loads an object from DynamoDB for the given hash-and-range primary key and using the given config.
+        /// Loads an object from DynamoDB for the given hash key.
         /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="hashKey">Hash key element of the target item.</param>
+        /// <param name="loadConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>
+        /// Object of type T, populated with properties of item loaded from DynamoDB.
+        /// </returns>
+        T Load<T>(object hashKey, LoadConfig loadConfig);
+
+        /// <summary>
+        /// Loads an object from DynamoDB for the given hash-and-range primary key.
+        /// 
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
@@ -90,11 +124,10 @@ namespace Amazon.DynamoDBv2.DataModel
         T Load<T>(object hashKey, object rangeKey);
 
         /// <summary>
-        /// Loads an object from DynamoDB for the given hash-and-range primary key and using the given config.
+        /// Loads an object from DynamoDB for the given hash-and-range primary key.
         /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="hashKey">Hash key element of the target item.</param>
@@ -103,17 +136,48 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>
         /// Object of type T, populated with properties of item loaded from DynamoDB.
         /// </returns>
+        [Obsolete("Use the Load overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Load.")]
         T Load<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
-        /// Loads an object from DynamoDB for the given key and using the given config.
+        /// Loads an object from DynamoDB for the given hash-and-range primary key.
+        /// 
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="hashKey">Hash key element of the target item.</param>
+        /// <param name="rangeKey">Range key element of the target item.</param>
+        /// <param name="loadConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>
+        /// Object of type T, populated with properties of item loaded from DynamoDB.
+        /// </returns>
+        T Load<T>(object hashKey, object rangeKey, LoadConfig loadConfig);
+
+        /// <summary>
+        /// Loads an object from DynamoDB for the given key.
         /// The keyObject is a partially-specified instance, where the
         /// hash/range properties are equal to the key of the item you
         /// want to load.
         /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="keyObject">Key object defining the the target item.</param>
+        /// <returns>
+        /// Object of type T, populated with properties of item loaded from DynamoDB.
+        /// </returns>
+        T Load<T>(T keyObject);
+
+        /// <summary>
+        /// Loads an object from DynamoDB for the given key.
+        /// The keyObject is a partially-specified instance, where the
+        /// hash/range properties are equal to the key of the item you
+        /// want to load.
+        /// 
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
         /// <param name="keyObject">Key object defining the the target item.</param>
@@ -121,7 +185,25 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>
         /// Object of type T, populated with properties of item loaded from DynamoDB.
         /// </returns>
+        [Obsolete("Use the Load overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Load.")]
         T Load<T>(T keyObject, DynamoDBOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Loads an object from DynamoDB for the given key.
+        /// The keyObject is a partially-specified instance, where the
+        /// hash/range properties are equal to the key of the item you
+        /// want to load.
+        /// 
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="keyObject">Key object defining the the target item.</param>
+        /// <param name="loadConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>
+        /// Object of type T, populated with properties of item loaded from DynamoDB.
+        /// </returns>
+        T Load<T>(T keyObject, LoadConfig loadConfig);
 
         #endregion
 
@@ -129,59 +211,90 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to given object.
-        /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// If SkipVersionCheck=false, will check version of object before deleting.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
         /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
         void Delete<T>(T value);
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to given object.
-        /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// If SkipVersionCheck=false, will check version of object before deleting.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
         /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="value">Object to delete.</param>
         /// <param name="operationConfig">Overriding configuration.</param>
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         void Delete<T>(T value, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
-        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
-        /// 
-        /// No version check is done prior to delete.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// Deletes an item in DynamoDB corresponding to given object.
         /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="value">Object to delete.</param>
+        /// <param name="deleteConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        void Delete<T>(T value, DeleteConfig deleteConfig);
+
+        /// <summary>
+        /// Deletes an item in DynamoDB corresponding to given hash key
+        /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         void Delete<T>(object hashKey);
 
         /// <summary>
-        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
-        /// 
-        /// No version check is done prior to delete.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// Deletes an item in DynamoDB corresponding to given hash key
         /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         void Delete<T>(object hashKey, DynamoDBOperationConfig operationConfig);
 
         /// <summary>
-        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
-        /// 
-        /// No version check is done prior to delete.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
+        /// Deletes an item in DynamoDB corresponding to given hash key.
         /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <param name="deleteConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        void Delete<T>(object hashKey, DeleteConfig deleteConfig);
+
+        /// <summary>
+        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
+        /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         /// <param name="rangeKey">Range key element of the object to delete.</param>
@@ -189,16 +302,32 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
-        /// 
-        /// No version check is done prior to delete.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
         /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
         /// <typeparam name="T">Type of object.</typeparam>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         /// <param name="rangeKey">Range key element of the object to delete.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         void Delete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig);
+
+        /// <summary>
+        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
+        /// </summary>
+        /// <remarks>
+        /// If SkipVersionCheck if false, it will check the version of object before deleting.
+        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
+        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
+        /// </remarks>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="hashKey">Hash key element of the object to delete.</param>
+        /// <param name="rangeKey">Range key element of the object to delete.</param>
+        /// <param name="deleteConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        void Delete<T>(object hashKey, object rangeKey, DeleteConfig deleteConfig);
 
         #endregion
 
@@ -442,7 +571,24 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <returns>Table object</returns>
+        Table GetTargetTable<T>();
+
+        /// <summary>
+        /// Retrieves the target table for the specified type
+        /// </summary>
+        /// <typeparam name="T">Type to retrieve table for</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Table object</returns>
+        [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
         Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Retrieves the target table for the specified type
+        /// </summary>
+        /// <typeparam name="T">Type to retrieve table for</typeparam>
+        /// <param name="getTargetTableConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Table object</returns>
+        Table GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig);
 
         #endregion
     }

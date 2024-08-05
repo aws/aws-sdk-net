@@ -121,10 +121,9 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Table methods
 
         // Retrieves the target table for the specified type
-        private Table GetTargetTableInternal<T>(DynamoDBOperationConfig operationConfig)
+        private Table GetTargetTableInternal<T>(DynamoDBFlatConfig flatConfig)
         {
             Type type = typeof(T);
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(type, flatConfig);
             Table table = GetTargetTable(storageConfig, flatConfig, Table.DynamoDBConsumer.DocumentModel);
             return table;
