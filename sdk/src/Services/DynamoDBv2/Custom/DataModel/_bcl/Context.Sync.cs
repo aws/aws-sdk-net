@@ -26,219 +26,146 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Save/serialize
 
-        /// <summary>
-        /// Saves an object to DynamoDB using passed-in configs.
-        /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
-        /// </summary>
-        /// <typeparam name="T">Type to save as.</typeparam>
-        /// <param name="value">Object to save.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <inheritdoc/>
+        public void Save<T>(T value)
+        {
+            SaveHelper<T>(value, new DynamoDBFlatConfig(null, Config));
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the Save overload that takes SaveConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Save.")]
         public void Save<T>(T value, DynamoDBOperationConfig operationConfig = null)
         {
-            SaveHelper<T>(value, operationConfig);
+            SaveHelper<T>(value, new DynamoDBFlatConfig(operationConfig, Config));
+        }
+
+        /// <inheritdoc/>
+        public void Save<T>(T value, SaveConfig saveConfig)
+        {
+            SaveHelper<T>(value, new DynamoDBFlatConfig(saveConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
         #endregion
 
         #region Load/deserialize
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given hash key.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <returns>
-        /// Object of type T, populated with the properties of the item loaded from DynamoDB.
-        /// </returns>
+        /// <inheritdoc/>
         public T Load<T>(object hashKey)
         {
-            return LoadHelper<T>(hashKey, null, null);
+            return LoadHelper<T>(hashKey, null, new DynamoDBFlatConfig(null, Config));
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given hash key and using the given config.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
-        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
-        /// the item's primary key for the table must be specified.
-        /// </param>
-        /// <returns>
-        /// Object of type T, populated with the properties of the item loaded from DynamoDB.
-        /// </returns>
+        /// <inheritdoc/>
+        [Obsolete("Use the Load overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Load.")]
         public T Load<T>(object hashKey, DynamoDBOperationConfig operationConfig)
         {
-            return LoadHelper<T>(hashKey, null, operationConfig);
+            return LoadHelper<T>(hashKey, null, new DynamoDBFlatConfig(operationConfig, Config));
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given hash-and-range primary key.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="rangeKey">Range key element of the target item.</param>
-        /// <returns>
-        /// Object of type T, populated with the properties of the item loaded from DynamoDB.
-        /// </returns>
+        /// <inheritdoc/>
+        public T Load<T>(object hashKey, LoadConfig loadConfig)
+        {
+            return LoadHelper<T>(hashKey, null, new DynamoDBFlatConfig(loadConfig?.ToDynamoDBOperationConfig(), Config));
+        }
+
+        /// <inheritdoc/>
         public T Load<T>(object hashKey, object rangeKey)
         {
-            return LoadHelper<T>(hashKey, rangeKey, null);
+            return LoadHelper<T>(hashKey, rangeKey, new DynamoDBFlatConfig(null, Config));
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given hash-and-range primary key and using the given config.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="rangeKey">Range key element of the target item.</param>
-        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
-        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
-        /// the item's primary key for the table must be specified.
-        /// </param>
-        /// <returns>
-        /// Object of type T, populated with the properties of the item loaded from DynamoDB.
-        /// </returns>
+        /// <inheritdoc/>
+        [Obsolete("Use the Load overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Load.")]
         public T Load<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
-            return LoadHelper<T>(hashKey, rangeKey, operationConfig);
+            return LoadHelper<T>(hashKey, rangeKey, new DynamoDBFlatConfig(operationConfig, Config));
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given key and using the given config.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="keyObject">A partially-specified instance, where the
-        /// hash/range properties are equal to the key of the item you
-        /// want to load.</param>
-        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
-        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
-        /// the item's primary key for the table must be specified.
-        /// </param>
-        /// <returns>
-        /// Object of type T, populated with the properties of the item loaded from DynamoDB.
-        /// </returns>
+        /// <inheritdoc/>
+        public T Load<T>(object hashKey, object rangeKey, LoadConfig loadConfig)
+        {
+            return LoadHelper<T>(hashKey, rangeKey, new DynamoDBFlatConfig(loadConfig?.ToDynamoDBOperationConfig(), Config));
+        }
+
+        /// <inheritdoc/>
+        public T Load<T>(T keyObject)
+        {
+            return LoadHelper<T>(keyObject, new DynamoDBFlatConfig(null, Config));
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the Load overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Load.")]
         public T Load<T>(T keyObject, DynamoDBOperationConfig operationConfig = null)
         {
-            return LoadHelper<T>(keyObject, operationConfig);
+            return LoadHelper<T>(keyObject, new DynamoDBFlatConfig(operationConfig, Config));
+        }
+
+        /// <inheritdoc/>
+        public T Load<T>(T keyObject, LoadConfig loadConfig)
+        {
+            return LoadHelper<T>(keyObject, new DynamoDBFlatConfig(loadConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
         #endregion
 
         #region Delete
 
-        /// <summary>
-        /// Deletes an item in DynamoDB corresponding to given object.
-        /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// If SkipVersionCheck=false, will check version of object before deleting.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="value">Object to delete.</param>
+        /// <inheritdoc/>
         public void Delete<T>(T value)
         {
-            DeleteHelper<T>(value, null);
+            DeleteHelper<T>(value, new DynamoDBFlatConfig(null, Config));
         }
 
-        /// <summary>
-        /// Deletes an item in DynamoDB corresponding to given object.
-        /// 
-        /// Passed-in config overrides DynamoDBContextConfig on the context.
-        /// If SkipVersionCheck=false, will check version of object before deleting.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="value">Object to delete.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <inheritdoc/>
+        [Obsolete("Use the Delete overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         public void Delete<T>(T value, DynamoDBOperationConfig operationConfig)
         {
-            DeleteHelper<T>(value, operationConfig);
+            DeleteHelper<T>(value, new DynamoDBFlatConfig(operationConfig, Config));
         }
 
-        /// <summary>
-        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
-        /// 
-        /// No version check is done prior to delete.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
+        /// <inheritdoc/>
+        public void Delete<T>(T value, DeleteConfig deleteConfig)
+        {
+            DeleteHelper<T>(value, new DynamoDBFlatConfig(deleteConfig?.ToDynamoDBOperationConfig(), Config));
+        }
+
+        /// <inheritdoc/>
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         public void Delete<T>(object hashKey)
         {
-            DeleteHelper<T>(hashKey, null, null);
+            DeleteHelper<T>(hashKey, null, new DynamoDBFlatConfig(null, Config));
         }
 
-        /// <summary>
-        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
-        /// 
-        /// No version check is done prior to delete.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <inheritdoc/>
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         public void Delete<T>(object hashKey, DynamoDBOperationConfig operationConfig)
         {
-            DeleteHelper<T>(hashKey, null, operationConfig);
+            DeleteHelper<T>(hashKey, null, new DynamoDBFlatConfig(operationConfig, Config));
         }
 
-        /// <summary>
-        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
-        /// 
-        /// No version check is done prior to delete.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
-        /// <param name="rangeKey">Range key element of the object to delete.</param>
+        /// <inheritdoc/>
+        public void Delete<T>(object hashKey, DeleteConfig deleteConfig)
+        {
+            DeleteHelper<T>(hashKey, null, new DynamoDBFlatConfig(deleteConfig?.ToDynamoDBOperationConfig(), Config));
+        }
+
+        /// <inheritdoc/>
         public void Delete<T>(object hashKey, object rangeKey)
         {
-            DeleteHelper<T>(hashKey, rangeKey, null);
+            DeleteHelper<T>(hashKey, rangeKey, new DynamoDBFlatConfig(null, Config));
         }
 
-        /// <summary>
-        /// Deletes an item in DynamoDB corresponding to a given hash-and-range primary key.
-        /// 
-        /// No version check is done prior to delete.
-        /// Type must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
-        /// <param name="rangeKey">Range key element of the object to delete.</param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <inheritdoc/>
+        [Obsolete("Use the Delete overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to Delete.")]
         public void Delete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
-            DeleteHelper<T>(hashKey, rangeKey, operationConfig);
+            DeleteHelper<T>(hashKey, rangeKey, new DynamoDBFlatConfig(operationConfig, Config));
+        }
+
+        /// <inheritdoc/>
+        public void Delete<T>(object hashKey, object rangeKey, DeleteConfig deleteConfig)
+        {
+            DeleteHelper<T>(hashKey, rangeKey, new DynamoDBFlatConfig(deleteConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
         #endregion
@@ -441,14 +368,23 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Table methods
 
-        /// <summary>
-        /// Retrieves the target table for the specified type
-        /// </summary>
-        /// <typeparam name="T">Type to retrieve table for</typeparam>
-        /// <returns>Table object</returns>
+        /// <inheritdoc/>
+        public Table GetTargetTable<T>()
+        {
+            return GetTargetTable<T>((GetTargetTableConfig)null);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
         public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
         {
-            return GetTargetTableInternal<T>(operationConfig);
+            return GetTargetTableInternal<T>(new DynamoDBFlatConfig(operationConfig, Config));
+        }
+
+        /// <inheritdoc/>
+        public Table GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
+        {
+            return GetTargetTableInternal<T>(new DynamoDBFlatConfig(getTargetTableConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
         #endregion

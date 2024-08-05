@@ -475,11 +475,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Save/serialize
 
-        private void SaveHelper<T>(T value, DynamoDBOperationConfig operationConfig)
+        private void SaveHelper<T>(T value, DynamoDBFlatConfig flatConfig)
         {
             if (value == null) return;
 
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorage storage = ObjectToItemStorage(value, false, flatConfig);
             if (storage == null) return;
 
@@ -503,16 +502,15 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 #if AWS_ASYNC_API 
-        private async Task SaveHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        private async Task SaveHelperAsync<T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
-            await SaveHelperAsync(typeof(T), value, operationConfig, cancellationToken).ConfigureAwait(false);
+            await SaveHelperAsync(typeof(T), value, flatConfig, cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task SaveHelperAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        private async Task SaveHelperAsync(Type valueType, object value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             if (value == null) return;
 
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorage storage = ObjectToItemStorage(value, valueType, false, flatConfig);
             if (storage == null) return;
 
@@ -537,24 +535,14 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 #endif
 
-        /// <summary>
-        /// Serializes an object to a Document.
-        /// </summary>
-        /// <typeparam name="T">Type to serialize as.</typeparam>
-        /// <param name="value">Object to serialize.</param>
-        /// <returns>Document with attributes populated from object.</returns>
+        /// <inheritdoc/>
         public Document ToDocument<T>(T value)
         {
-            return ToDocument<T>(value, null);
+            return ToDocument<T>(value, (ToDocumentConfig)null);
         }
 
-        /// <summary>
-        /// Serializes an object to a Document.
-        /// </summary>
-        /// <typeparam name="T">Type to serialize as.</typeparam>
-        /// <param name="value">Object to serialize.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>Document with attributes populated from object.</returns>
+        /// <inheritdoc/>
+        [Obsolete("Use the ToDocument overload that takes ToDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ToDocument.")]
         public Document ToDocument<T>(T value, DynamoDBOperationConfig operationConfig)
         {
             if (value == null) return null;
@@ -566,40 +554,48 @@ namespace Amazon.DynamoDBv2.DataModel
             return storage.Document;
         }
 
+        /// <inheritdoc/>
+        public Document ToDocument<T>(T value, ToDocumentConfig toDocumentConfig)
+        {
+            if (value == null) return null;
+
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(toDocumentConfig?.ToDynamoDBOperationConfig(), Config);
+            ItemStorage storage = ObjectToItemStorage<T>(value, false, flatConfig);
+            if (storage == null) return null;
+
+            return storage.Document;
+        }
+
         #endregion
 
         #region Load/deserialize
 
-        private T LoadHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
+        private T LoadHelper<T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig)
         {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
 #if AWS_ASYNC_API 
-        private Task<T> LoadHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        private Task<T> LoadHelperAsync<T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
             return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
 #endif
 
-        private T LoadHelper<T>(T keyObject, DynamoDBOperationConfig operationConfig)
+        private T LoadHelper<T>(T keyObject, DynamoDBFlatConfig flatConfig)
         {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
 #if AWS_ASYNC_API 
-        private Task<T> LoadHelperAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        private Task<T> LoadHelperAsync<T>(T keyObject, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
             return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
@@ -640,31 +636,24 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 #endif
 
-        /// <summary>
-        /// Deserializes a document to an instance of type T.
-        /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="document">Document with properties to use.</param>
-        /// <returns>
-        /// Object of type T, populated with properties from the document.
-        /// </returns>
+        /// <inheritdoc/>
         public T FromDocument<T>(Document document)
         {
-            return FromDocument<T>(document, null);
+            return FromDocument<T>(document, (FromDocumentConfig)null);
         }
 
-        /// <summary>
-        /// Deserializes a document to an instance of type T.
-        /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="document">Document with properties to use.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>
-        /// Object of type T, populated with properties from the document.
-        /// </returns>
+        /// <inheritdoc/>
+        [Obsolete("Use the FromDocument overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocument.")]
         public T FromDocument<T>(Document document, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
+            return FromDocumentHelper<T>(document, flatConfig);
+        }
+
+        /// <inheritdoc/>
+        public T FromDocument<T>(Document document, FromDocumentConfig fromDocumentConfig)
+        {
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(fromDocumentConfig?.ToDynamoDBOperationConfig(), Config);
             return FromDocumentHelper<T>(document, flatConfig);
         }
 
@@ -677,33 +666,29 @@ namespace Amazon.DynamoDBv2.DataModel
             return instance;
         }
 
-        /// <summary>
-        /// Deserializes a collections of documents to a collection of instances of type T.
-        /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="documents">Documents to deserialize.</param>
-        /// <returns>
-        /// Collection of items of type T, each populated with properties from a corresponding document.
-        /// </returns>
+        /// <inheritdoc/>
         public IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents)
         {
-            return FromDocuments<T>(documents, null);
+            return FromDocuments<T>(documents, (FromDocumentConfig)null);
         }
 
-        /// <summary>
-        /// Deserializes a collections of documents to a collection of instances of type T.
-        /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="documents">Documents to deserialize.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>
-        /// Collection of items of type T, each populated with properties from a corresponding document.
-        /// </returns>
+        /// <inheritdoc/>
+        [Obsolete("Use the FromDocuments overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocuments.")]
         public IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig)
         {
             foreach (var document in documents)
             {
                 T item = FromDocument<T>(document, operationConfig);
+                yield return item;
+            }
+        }
+
+        /// <inheritdoc/>
+        public IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, FromDocumentConfig fromDocumentConfig)
+        {
+            foreach (var document in documents)
+            {
+                T item = FromDocument<T>(document, fromDocumentConfig);
                 yield return item;
             }
         }
@@ -721,33 +706,30 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Delete
 
-        private void DeleteHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
+        private void DeleteHelper<T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig)
         {
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(config);
-            Key key = MakeKey(hashKey, rangeKey, storageConfig, config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
 
-            Table table = GetTargetTable(storageConfig, config);
+            Table table = GetTargetTable(storageConfig, flatConfig);
             table.DeleteHelper(key, null);
         }
 
 #if AWS_ASYNC_API 
-        private Task DeleteHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        private Task DeleteHelperAsync<T>(object hashKey, object rangeKey, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
-            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(config);
-            Key key = MakeKey(hashKey, rangeKey, storageConfig, config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
 
-            Table table = GetTargetTable(storageConfig, config);
+            Table table = GetTargetTable(storageConfig, flatConfig);
             return table.DeleteHelperAsync(key, null, cancellationToken);
         }
 #endif
 
-        private void DeleteHelper<T>(T value, DynamoDBOperationConfig operationConfig)
+        private void DeleteHelper<T>(T value, DynamoDBFlatConfig flatConfig)
         {
             if (value == null) throw new ArgumentNullException("value");
 
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             flatConfig.IgnoreNullValues = true;
             ItemStorage storage = ObjectToItemStorage<T>(value, true, flatConfig);
             if (storage == null) return;
@@ -770,11 +752,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static readonly Task CompletedTask = Task.FromResult<object>(null);
 
-        private Task DeleteHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+        private Task DeleteHelperAsync<T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
             if (value == null) throw new ArgumentNullException("value");
 
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             flatConfig.IgnoreNullValues = true;
             ItemStorage storage = ObjectToItemStorage(value, true, flatConfig);
             if (storage == null) return CompletedTask;

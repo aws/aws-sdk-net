@@ -359,7 +359,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
 
             // Load 
-            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name, operationConfig);
+            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name, new LoadConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc});
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -606,8 +606,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             {
-                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
-                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                var docV1 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 });
                 VerifyConversions(docV1, docV2);
             }
 
@@ -625,7 +625,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
                 {
                     contextV1.Save(product);
-                    contextV1.Save(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                    contextV1.Save(product, new SaveConfig { Conversion = conversionV2 });
                 }
             }
 
@@ -639,8 +639,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     MostPopularProduct = product
                 };
                 AssertExtensions.ExpectException(() => Context.ToDocument(product), typeof(InvalidOperationException));
-                AssertExtensions.ExpectException(() => Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 }), typeof(InvalidOperationException));
-                AssertExtensions.ExpectException(() => Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 }), typeof(InvalidOperationException));
+                AssertExtensions.ExpectException(() => Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 }), typeof(InvalidOperationException));
+                AssertExtensions.ExpectException(() => Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 }), typeof(InvalidOperationException));
 
                 // Remove circular dependence
                 product.CompanyInfo.MostPopularProduct = new Product
@@ -652,29 +652,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     TagSet = new HashSet<string> { "Test" },
                 };
 
-                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
-                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                var docV1 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 });
                 VerifyConversions(docV1, docV2);
             }
 
             // Introduce circular reference in a Document and try to deserialize
             {
                 // Normal serialization
-                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
-                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                var docV1 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 });
                 VerifyConversions(docV1, docV2);
 
                 // Add circular references
                 docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;
                 docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV2;
-                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV1, new DynamoDBOperationConfig { Conversion = conversionV1 }));
-                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV2, new DynamoDBOperationConfig { Conversion = conversionV2 }));
+                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV1, new FromDocumentConfig { Conversion = conversionV1 }));
+                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV2, new FromDocumentConfig { Conversion = conversionV2 }));
 
                 // Remove circular references
                 docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = null;
                 docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;
-                var prod1 = Context.FromDocument<Product>(docV1, new DynamoDBOperationConfig { Conversion = conversionV1 });
-                var prod2 = Context.FromDocument<Product>(docV2, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                var prod1 = Context.FromDocument<Product>(docV1, new FromDocumentConfig { Conversion = conversionV1 });
+                var prod2 = Context.FromDocument<Product>(docV2, new FromDocumentConfig { Conversion = conversionV2 });
             }
         }
 
@@ -1099,7 +1099,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(retrieved.Name, "Alan");
             retrieved = Context.Load(employee);
             Assert.AreEqual(retrieved.Name, "Chuck");
-            retrieved = Context.Load(employee2, new DynamoDBOperationConfig { ConsistentRead = true });
+            retrieved = Context.Load(employee2, new LoadConfig { ConsistentRead = true });
             Assert.AreEqual(retrieved.Name, "Diane");
             Assert.AreEqual(retrieved.Age, 24);
 

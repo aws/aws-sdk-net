@@ -47,53 +47,75 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Save/serialize
 
         /// <summary>
-        /// Serializes an object to a Document.
+        /// Serializes an object to a <see cref="Document"/>.
         /// </summary>
         /// <typeparam name="T">Type to serialize as.</typeparam>
         /// <param name="value">Object to serialize.</param>
-        /// <returns>Document with attributes populated from object.</returns>
+        /// <returns><see cref="Document"/> with attributes populated from object.</returns>
         Document ToDocument<T>(T value);
 
         /// <summary>
-        /// Serializes an object to a Document.
+        /// Serializes an object to a <see cref="Document"/>.
         /// </summary>
         /// <typeparam name="T">Type to serialize as.</typeparam>
         /// <param name="value">Object to serialize.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>Document with attributes populated from object.</returns>
+        /// <returns><see cref="Document"/> with attributes populated from object.</returns>
+        [Obsolete("Use the ToDocument overload that takes ToDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ToDocument.")]
         Document ToDocument<T>(T value, DynamoDBOperationConfig operationConfig);
+
+        /// <summary>
+        /// Serializes an object to a <see cref="Document"/>.
+        /// </summary>
+        /// <typeparam name="T">Type to serialize as.</typeparam>
+        /// <param name="value">Object to serialize.</param>
+        /// <param name="toDocumentConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns><see cref="Document"/> with attributes populated from object.</returns>
+        Document ToDocument<T>(T value, ToDocumentConfig toDocumentConfig);
 
         #endregion
 
         #region Load/deserialize
 
         /// <summary>
-        /// Deserializes a document to an instance of type T.
+        /// Deserializes a <see cref="Document"/> to an instance of type T.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="document">Document with properties to use.</param>
+        /// <param name="document"><see cref="Document"/> with properties to use.</param>
         /// <returns>
         /// Object of type T, populated with properties from the document.
         /// </returns>
         T FromDocument<T>(Document document);
 
         /// <summary>
-        /// Deserializes a document to an instance of type T.
+        /// Deserializes a <see cref="Document"/> to an instance of type T.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="document">Document with properties to use.</param>
+        /// <param name="document"><see cref="Document"/> with properties to use.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>
         /// Object of type T, populated with properties from the document.
         /// </returns>
+        [Obsolete("Use the FromDocument overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocument.")]
+
         T FromDocument<T>(Document document, DynamoDBOperationConfig operationConfig);
 
+        /// <summary>
+        /// Deserializes a <see cref="Document"/> to an instance of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="document"><see cref="Document"/> with properties to use.</param>
+        /// <param name="fromDocumentConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>
+        /// Object of type T, populated with properties from the document.
+        /// </returns>
+        T FromDocument<T>(Document document, FromDocumentConfig fromDocumentConfig);
 
         /// <summary>
         /// Deserializes a collections of documents to a collection of instances of type T.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="documents">Documents to deserialize.</param>
+        /// <param name="documents">Collection of <see cref="Document"/> objects to deserialize.</param>
         /// <returns>
         /// Collection of items of type T, each populated with properties from a corresponding document.
         /// </returns>
@@ -103,12 +125,24 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Deserializes a collections of documents to a collection of instances of type T.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="documents">Documents to deserialize.</param>
+        /// <param name="documents">Collection of <see cref="Document"/> objects to deserialize.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>
         /// Collection of items of type T, each populated with properties from a corresponding document.
         /// </returns>
+        [Obsolete("Use the FromDocuments overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocuments.")]
         IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig);
+
+        /// <summary>
+        /// Deserializes a collections of documents to a collection of instances of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="documents">Collection of <see cref="Document"/> objects to deserialize.</param>
+        /// <param name="fromDocumentConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>
+        /// Collection of items of type T, each populated with properties from a corresponding document.
+        /// </returns>
+        IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, FromDocumentConfig fromDocumentConfig);
 
         #endregion
 
