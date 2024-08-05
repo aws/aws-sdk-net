@@ -215,41 +215,20 @@ namespace Amazon.DynamoDBv2.DataModel
             return CreateBatchGet<T>((BatchGetConfig)null);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed BatchGet object, allowing
-        /// a batch-get operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to get</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Empty strongly-typed BatchGet object</returns>
-        [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
-        public BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig)
         /// <inheritdoc/>
+        [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
         public IBatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchGet<T>(this, config);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed BatchGet object, allowing
-        /// a batch-get operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to get</typeparam>
-        /// <param name="batchGetConfig">Config object that can be used to override properties on the table's context for this request</param>
-        /// <returns>Empty strongly-typed BatchGet object</returns>
-        public BatchGet<T> CreateBatchGet<T>(BatchGetConfig batchGetConfig)
+        /// <inheritdoc/>
+        public IBatchGet<T> CreateBatchGet<T>(BatchGetConfig batchGetConfig)
         {
             return new BatchGet<T>(this, new DynamoDBFlatConfig(batchGetConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
-        /// <summary>
-        /// Creates a MultiTableBatchGet object, composed of multiple
-        /// individual BatchGet objects.
-        /// </summary>
-        /// <param name="batches">Individual BatchGet objects</param>
-        /// <returns>Composite MultiTableBatchGet object</returns>
-        public MultiTableBatchGet CreateMultiTableBatchGet(params BatchGet[] batches)
         /// <inheritdoc/>
         public IMultiTableBatchGet CreateMultiTableBatchGet(params IBatchGet[] batches)
         {

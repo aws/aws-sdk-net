@@ -47,7 +47,7 @@ namespace Amazon.DynamoDBv2.DataModel
         void Execute();
     }
 
-    public partial class MultiTableBatchGet
+    public partial class MultiTableBatchGet : IMultiTableBatchGet
     {
         /// <inheritdoc/>/>
         public void Execute()

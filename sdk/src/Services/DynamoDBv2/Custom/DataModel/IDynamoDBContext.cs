@@ -153,7 +153,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to get</typeparam>
         /// <returns>Empty strongly-typed BatchGet object</returns>
-        BatchGet<T> CreateBatchGet<T>();
+        IBatchGet<T> CreateBatchGet<T>();
 
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
@@ -161,11 +161,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to get</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Empty strongly-typed BatchGet object</returns>
-        [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
-        BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
-        /// <returns>An interface with the ability to perform BatchGet operations</returns>
         /// <returns>A BatchGet object using this context's configuration, which can be used to prepare and execute a BatchGet request</returns>
+        [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
         IBatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
@@ -174,8 +171,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to get</typeparam>
         /// <param name="batchGetConfig">Config object that can be used to override properties on the table's context for this request</param>
-        /// <returns>Empty strongly-typed BatchGet object</returns>
-        public BatchGet<T> CreateBatchGet<T>(BatchGetConfig batchGetConfig);
+        /// <returns>A BatchGet object based on the provided <see cref="BatchGetConfig"/>, which can be used to prepare and execute a BatchGet request</returns>
+        IBatchGet<T> CreateBatchGet<T>(BatchGetConfig batchGetConfig);
 
         /// <summary>
         /// Creates a MultiTableBatchGet object, composed of multiple
