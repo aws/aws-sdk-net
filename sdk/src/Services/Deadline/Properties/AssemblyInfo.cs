@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Deadline")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWSDeadlineCloud. AWS Deadline Cloud is a new fully managed service that helps customers set up, deploy, and scale rendering projects in minutes, so they can improve the efficiency of their rendering pipelines and take on more projects.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWSDeadlineCloud. AWS Deadline Cloud is a new fully managed service that helps customers set up, deploy, and scale rendering projects in minutes, so they can improve the efficiency of their rendering pipelines and take on more projects.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWSDeadlineCloud. AWS Deadline Cloud is a new fully managed service that helps customers set up, deploy, and scale rendering projects in minutes, so they can improve the efficiency of their rendering pipelines and take on more projects.")]
 #elif NETCOREAPP3_1

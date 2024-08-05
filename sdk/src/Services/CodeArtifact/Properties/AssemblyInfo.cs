@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodeArtifact")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - CodeArtifact. Added support for AWS CodeArtifact.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - CodeArtifact. Added support for AWS CodeArtifact.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - CodeArtifact. Added support for AWS CodeArtifact.")]
 #elif NETCOREAPP3_1

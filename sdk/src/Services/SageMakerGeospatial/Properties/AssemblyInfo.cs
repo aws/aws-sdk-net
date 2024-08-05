@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SageMakerGeospatial")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon SageMaker geospatial capabilities. This release provides Amazon SageMaker geospatial APIs to build, train, deploy and visualize geospatial models.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon SageMaker geospatial capabilities. This release provides Amazon SageMaker geospatial APIs to build, train, deploy and visualize geospatial models.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon SageMaker geospatial capabilities. This release provides Amazon SageMaker geospatial APIs to build, train, deploy and visualize geospatial models.")]
 #elif NETCOREAPP3_1

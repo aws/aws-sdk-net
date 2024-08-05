@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Route53Domains")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
 #elif NETCOREAPP3_1

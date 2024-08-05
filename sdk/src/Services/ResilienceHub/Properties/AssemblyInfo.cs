@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ResilienceHub")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
 #elif NETCOREAPP3_1

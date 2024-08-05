@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.StepFunctions")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
 #elif NETCOREAPP3_1

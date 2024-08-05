@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.LexModelsV2")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Lex Model Building V2. This release adds support for Amazon Lex V2 APIs for model building.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Lex Model Building V2. This release adds support for Amazon Lex V2 APIs for model building.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Lex Model Building V2. This release adds support for Amazon Lex V2 APIs for model building.")]
 #elif NETCOREAPP3_1

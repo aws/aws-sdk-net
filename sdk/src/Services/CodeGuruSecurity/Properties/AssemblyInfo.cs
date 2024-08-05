@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodeGuruSecurity")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon CodeGuru Security. Initial release of Amazon CodeGuru Security APIs")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon CodeGuru Security. Initial release of Amazon CodeGuru Security APIs")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon CodeGuru Security. Initial release of Amazon CodeGuru Security APIs")]
 #elif NETCOREAPP3_1

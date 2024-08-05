@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ConnectCampaignService")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AmazonConnectCampaignService. Added Amazon Connect high volume outbound communications SDK.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AmazonConnectCampaignService. Added Amazon Connect high volume outbound communications SDK.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AmazonConnectCampaignService. Added Amazon Connect high volume outbound communications SDK.")]
 #elif NETCOREAPP3_1

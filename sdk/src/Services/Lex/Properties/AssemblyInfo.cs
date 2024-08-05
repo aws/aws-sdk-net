@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Lex")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
 #elif NETCOREAPP3_1

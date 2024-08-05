@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.LicenseManagerUserSubscriptions")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
 #elif NETCOREAPP3_1

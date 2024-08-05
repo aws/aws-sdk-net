@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("<#=this.Config.AssemblyTitle#>")]
 #if BCL
-[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "4.6.2") #>")]
+[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "4.7.2") #>")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "NetStandard 2.0") #>")]
 #elif NETCOREAPP3_1

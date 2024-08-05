@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudWatchRUM")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - CloudWatch RUM. This is the first public release of CloudWatch RUM")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - CloudWatch RUM. This is the first public release of CloudWatch RUM")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - CloudWatch RUM. This is the first public release of CloudWatch RUM")]
 #elif NETCOREAPP3_1

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.MigrationHubOrchestrator")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Migration Hub Orchestrator. Introducing AWS MigrationHubOrchestrator. This is the first public release of AWS MigrationHubOrchestrator.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Migration Hub Orchestrator. Introducing AWS MigrationHubOrchestrator. This is the first public release of AWS MigrationHubOrchestrator.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Migration Hub Orchestrator. Introducing AWS MigrationHubOrchestrator. This is the first public release of AWS MigrationHubOrchestrator.")]
 #elif NETCOREAPP3_1

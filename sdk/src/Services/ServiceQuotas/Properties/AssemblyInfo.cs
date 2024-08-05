@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ServiceQuotas")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
 #elif NETCOREAPP3_1

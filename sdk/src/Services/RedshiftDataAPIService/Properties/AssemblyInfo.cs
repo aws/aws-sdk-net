@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.RedshiftDataAPIService")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
 #elif NETCOREAPP3_1

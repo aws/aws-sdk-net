@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.IVSRealTime")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Interactive Video Service RealTime. Initial release of the Amazon Interactive Video Service RealTime API.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Interactive Video Service RealTime. Initial release of the Amazon Interactive Video Service RealTime API.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Interactive Video Service RealTime. Initial release of the Amazon Interactive Video Service RealTime API.")]
 #elif NETCOREAPP3_1

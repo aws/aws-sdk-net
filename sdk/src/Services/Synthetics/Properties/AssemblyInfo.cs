@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Synthetics")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Synthetics. Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Synthetics. Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Synthetics. Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.")]
 #elif NETCOREAPP3_1

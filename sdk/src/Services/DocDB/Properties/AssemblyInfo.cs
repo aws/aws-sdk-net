@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DocDB")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon DocumentDB with MongoDB compatibility. Amazon DocumentDB is a fast, reliable, and fully managed MongoDB compatible database service.")]
 #elif NETCOREAPP3_1

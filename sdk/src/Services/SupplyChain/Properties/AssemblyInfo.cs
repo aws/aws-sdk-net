@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SupplyChain")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Supply Chain. This release includes APIs CreateBillOfMaterialsImportJob and GetBillOfMaterialsImportJob.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Supply Chain. This release includes APIs CreateBillOfMaterialsImportJob and GetBillOfMaterialsImportJob.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Supply Chain. This release includes APIs CreateBillOfMaterialsImportJob and GetBillOfMaterialsImportJob.")]
 #elif NETCOREAPP3_1

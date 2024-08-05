@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DocumentTypesTest")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Document Types Test. documet types test service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Document Types Test. documet types test service")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Document Types Test. documet types test service")]
 #elif NETCOREAPP3_1

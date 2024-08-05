@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AppIntegrationsService")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
 #elif NETCOREAPP3_1

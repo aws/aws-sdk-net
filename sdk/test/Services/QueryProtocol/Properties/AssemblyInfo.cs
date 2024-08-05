@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.QueryProtocol")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Sample Query Protocol Service. Query test service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Sample Query Protocol Service. Query test service")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Sample Query Protocol Service. Query test service")]
 #elif NETCOREAPP3_1

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Ivschat")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Interactive Video Service Chat. Adds new APIs for IVS Chat, a feature for building interactive chat experiences alongside an IVS broadcast.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Interactive Video Service Chat. Adds new APIs for IVS Chat, a feature for building interactive chat experiences alongside an IVS broadcast.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Interactive Video Service Chat. Adds new APIs for IVS Chat, a feature for building interactive chat experiences alongside an IVS broadcast.")]
 #elif NETCOREAPP3_1

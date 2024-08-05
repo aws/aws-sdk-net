@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.WorkMailMessageFlow")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
 #elif NETCOREAPP3_1

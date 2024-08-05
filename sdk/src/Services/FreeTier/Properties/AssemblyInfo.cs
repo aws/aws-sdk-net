@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.FreeTier")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Free Tier. This is the initial SDK release for the AWS Free Tier GetFreeTierUsage API")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Free Tier. This is the initial SDK release for the AWS Free Tier GetFreeTierUsage API")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Free Tier. This is the initial SDK release for the AWS Free Tier GetFreeTierUsage API")]
 #elif NETCOREAPP3_1

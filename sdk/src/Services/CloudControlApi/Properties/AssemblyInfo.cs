@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudControlApi")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Cloud Control API. Initial release of the SDK for AWS Cloud Control API")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Cloud Control API. Initial release of the SDK for AWS Cloud Control API")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Cloud Control API. Initial release of the SDK for AWS Cloud Control API")]
 #elif NETCOREAPP3_1

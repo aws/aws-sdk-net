@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.WorkSpacesThinClient")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon WorkSpaces Thin Client. Initial release of Amazon WorkSpaces Thin Client")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon WorkSpaces Thin Client. Initial release of Amazon WorkSpaces Thin Client")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon WorkSpaces Thin Client. Initial release of Amazon WorkSpaces Thin Client")]
 #elif NETCOREAPP3_1

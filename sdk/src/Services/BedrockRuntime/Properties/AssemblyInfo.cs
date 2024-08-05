@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.BedrockRuntime")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Bedrock Runtime. Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Bedrock Runtime. Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Bedrock Runtime. Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.")]
 #elif NETCOREAPP3_1

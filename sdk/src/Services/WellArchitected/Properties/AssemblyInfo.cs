@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.WellArchitected")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
 #elif NETCOREAPP3_1

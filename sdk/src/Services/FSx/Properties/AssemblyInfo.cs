@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.FSx")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
 #elif NETCOREAPP3_1

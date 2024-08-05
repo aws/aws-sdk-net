@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.TaxSettings")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Tax Settings. Initial release of AWS Tax Settings API")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Tax Settings. Initial release of AWS Tax Settings API")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Tax Settings. Initial release of AWS Tax Settings API")]
 #elif NETCOREAPP3_1
