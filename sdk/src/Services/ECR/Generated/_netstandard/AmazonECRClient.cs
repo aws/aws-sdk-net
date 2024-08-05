@@ -1396,6 +1396,49 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  GetAccountSetting
+
+        internal virtual GetAccountSettingResponse GetAccountSetting(GetAccountSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSettingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the basic scan type version name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountSetting service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAccountSetting">REST API Reference for GetAccountSetting Operation</seealso>
+        public virtual Task<GetAccountSettingResponse> GetAccountSettingAsync(GetAccountSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAccountSettingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAuthorizationToken
 
         internal virtual GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request)
@@ -1907,6 +1950,55 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAccountSetting
+
+        internal virtual PutAccountSettingResponse PutAccountSetting(PutAccountSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountSettingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows you to change the basic scan type version by setting the <c>name</c> parameter
+        /// to either <c>CLAIR</c> to <c>AWS_NATIVE</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountSetting service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
+        public virtual Task<PutAccountSettingResponse> PutAccountSettingAsync(PutAccountSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAccountSettingResponse>(request, options, cancellationToken);
         }
 
         #endregion

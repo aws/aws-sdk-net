@@ -1812,6 +1812,69 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  GetAccountSetting
+
+        /// <summary>
+        /// Retrieves the basic scan type version name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSetting service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountSetting service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAccountSetting">REST API Reference for GetAccountSetting Operation</seealso>
+        public virtual GetAccountSettingResponse GetAccountSetting(GetAccountSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSettingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSetting operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSetting
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAccountSetting">REST API Reference for GetAccountSetting Operation</seealso>
+        public virtual IAsyncResult BeginGetAccountSetting(GetAccountSettingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccountSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountSettingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountSetting.</param>
+        /// 
+        /// <returns>Returns a  GetAccountSettingResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAccountSetting">REST API Reference for GetAccountSetting Operation</seealso>
+        public virtual GetAccountSettingResponse EndGetAccountSetting(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountSettingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAuthorizationToken
 
         /// <summary>
@@ -2523,6 +2586,75 @@ namespace Amazon.ECR
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutAccountSetting
+
+        /// <summary>
+        /// Allows you to change the basic scan type version by setting the <c>name</c> parameter
+        /// to either <c>CLAIR</c> to <c>AWS_NATIVE</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountSetting service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
+        public virtual PutAccountSettingResponse PutAccountSetting(PutAccountSettingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountSettingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccountSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAccountSetting
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
+        public virtual IAsyncResult BeginPutAccountSetting(PutAccountSettingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAccountSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAccountSetting.</param>
+        /// 
+        /// <returns>Returns a  PutAccountSettingResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
+        public virtual PutAccountSettingResponse EndPutAccountSetting(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAccountSettingResponse>(asyncResult);
         }
 
         #endregion

@@ -88,7 +88,9 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property CustomRoleArn. 
         /// <para>
-        /// The ARN of the role to be assumed by Amazon ECR.
+        /// The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied
+        /// role when the customRoleArn is specified. When this field isn't specified, Amazon
+        /// ECR will use the service-linked role for the repository creation template.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
