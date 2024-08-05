@@ -48,8 +48,8 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
-    /// Configuration object for setting options on the DynamoDBContext.
-    /// and individual operations.
+    /// Configuration object for setting options on the <see cref="DynamoDBContext"/> that
+    /// will apply to all operations that use the context object.
     /// </summary>
 #if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
@@ -80,6 +80,16 @@ namespace Amazon.DynamoDBv2.DataModel
         /// If property is not set, version checks are performed.
         /// </summary>
         public bool? SkipVersionCheck { get; set; }
+
+        /// <summary>
+        /// Indicates which DynamoDB table to use. This overrides the table specified 
+        /// by the <see cref="DynamoDBTableAttribute"/> on the .NET objects that you're saving or loading.
+        /// </summary>
+        /// <remarks>
+        /// If you specify this on <see cref="DynamoDBContextConfig"/>, then it will apply to all 
+        /// objects/tables used with that <see cref="DynamoDBContext"/> object unless overriden by an operation-specific config.
+        /// </remarks>
+        public string OverrideTableName { get; set; }
 
         /// <summary>
         /// Property that directs DynamoDBContext to prefix all table names
@@ -152,12 +162,6 @@ namespace Amazon.DynamoDBv2.DataModel
 #endif
     public class DynamoDBOperationConfig : DynamoDBContextConfig
     {
-        /// <summary>
-        /// Property that indicates the table to save an object to overriding the DynamoDBTable attribute 
-        /// declared for the type.
-        /// </summary>
-        public string OverrideTableName { get; set; }
-
         /// <summary>
         /// Property that indicates a query should traverse the index backward.
         /// If the property is false (or not set), traversal shall be forward.
@@ -346,25 +350,29 @@ namespace Amazon.DynamoDBv2.DataModel
             if (contextConfig == null)
                 contextConfig = _emptyContextConfig;
 
+            // These properties can be set at either the operation or context levels
             bool consistentRead = operationConfig.ConsistentRead ?? contextConfig.ConsistentRead ?? false;
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
-            bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
+            bool disableFetchingTableMetadata = operationConfig.DisableFetchingTableMetadata ?? contextConfig.DisableFetchingTableMetadata ?? false;
             bool retrieveDateTimeInUtc = operationConfig.RetrieveDateTimeInUtc ?? contextConfig.RetrieveDateTimeInUtc ?? false;
-
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
+            DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
+            MetadataCachingMode metadataCachingMode = operationConfig.MetadataCachingMode ?? contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
+
             string overrideTableName =
-                !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : string.Empty;
+                !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : 
+                !string.IsNullOrEmpty(contextConfig.OverrideTableName) ? contextConfig.OverrideTableName : string.Empty;
             string tableNamePrefix =
                 !string.IsNullOrEmpty(operationConfig.TableNamePrefix) ? operationConfig.TableNamePrefix :
                 !string.IsNullOrEmpty(contextConfig.TableNamePrefix) ? contextConfig.TableNamePrefix : string.Empty;
+
+            // These properties can only be set at the operation level, and are related to querying or scanning
             bool backwardQuery = operationConfig.BackwardQuery ?? false;
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
-            DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
-            MetadataCachingMode metadataCachingMode = operationConfig.MetadataCachingMode ?? contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
