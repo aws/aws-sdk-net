@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public IpAddresses Unmarshall(JsonUnmarshallerContext context)
         {
             IpAddresses unmarshalledObject = new IpAddresses();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

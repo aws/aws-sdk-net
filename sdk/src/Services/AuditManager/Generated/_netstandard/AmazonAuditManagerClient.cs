@@ -681,6 +681,9 @@ namespace Amazon.AuditManager
         /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
         /// and restrictions for Audit Manager</a>.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
@@ -2165,10 +2168,24 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Gets a list of all of the Amazon Web Services that you can choose to include in your
-        /// assessment. When you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create
-        /// an assessment</a>, specify which of these services you want to include to narrow the
-        /// assessment's <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.
+        /// Gets a list of the Amazon Web Services from which Audit Manager can collect evidence.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Audit Manager defines which Amazon Web Services are in scope for an assessment. Audit
+        /// Manager infers this scope by examining the assessment’s controls and their data sources,
+        /// and then mapping this information to one or more of the corresponding Amazon Web Services
+        /// that are in this list.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For information about why it's no longer possible to specify services in scope manually,
+        /// see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-collection-issues.html#unable-to-edit-services">I
+        /// can't edit the services in scope for my assessment</a> in the <i>Troubleshooting</i>
+        /// section of the Audit Manager user guide.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServicesInScope service method.</param>
         /// <param name="cancellationToken">
@@ -2498,6 +2515,13 @@ namespace Amazon.AuditManager
         /// Lists the latest analytics data for control domains across all of your active assessments.
         /// 
         /// 
+        ///  
+        /// <para>
+        /// Audit Manager supports the control domains that are provided by Amazon Web Services
+        /// Control Catalog. For information about how to find a list of available control domains,
+        /// see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+        /// <c>ListDomains</c> </a> in the Amazon Web Services Control Catalog API Reference.
+        /// </para>
         ///  <note> 
         /// <para>
         /// A control domain is listed only if at least one of the controls within that domain
@@ -2554,6 +2578,13 @@ namespace Amazon.AuditManager
         /// <summary>
         /// Lists analytics data for control domains within a specified active assessment.
         /// 
+        ///  
+        /// <para>
+        /// Audit Manager supports the control domains that are provided by Amazon Web Services
+        /// Control Catalog. For information about how to find a list of available control domains,
+        /// see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+        /// <c>ListDomains</c> </a> in the Amazon Web Services Control Catalog API Reference.
+        /// </para>
         ///  <note> 
         /// <para>
         /// A control domain is listed only if at least one of the controls within that domain
@@ -3156,6 +3187,9 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.

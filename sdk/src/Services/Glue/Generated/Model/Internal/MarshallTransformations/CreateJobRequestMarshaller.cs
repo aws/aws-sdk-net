@@ -159,10 +159,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GlueVersion);
                 }
 
+                if(publicRequest.IsSetJobMode())
+                {
+                    context.Writer.WritePropertyName("JobMode");
+                    context.Writer.Write(publicRequest.JobMode);
+                }
+
                 if(publicRequest.IsSetLogUri())
                 {
                     context.Writer.WritePropertyName("LogUri");
                     context.Writer.Write(publicRequest.LogUri);
+                }
+
+                if(publicRequest.IsSetMaintenanceWindow())
+                {
+                    context.Writer.WritePropertyName("MaintenanceWindow");
+                    context.Writer.Write(publicRequest.MaintenanceWindow);
                 }
 
                 if(publicRequest.IsSetMaxCapacity())

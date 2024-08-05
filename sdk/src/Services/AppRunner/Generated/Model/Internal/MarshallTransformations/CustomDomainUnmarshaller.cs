@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public CustomDomain Unmarshall(JsonUnmarshallerContext context)
         {
             CustomDomain unmarshalledObject = new CustomDomain();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -73,6 +73,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FilterByPublished.Value);
                 }
 
+                if(publicRequest.IsSetFilterByRecordingState())
+                {
+                    context.Writer.WritePropertyName("filterByRecordingState");
+                    context.Writer.Write(publicRequest.FilterByRecordingState);
+                }
+
                 if(publicRequest.IsSetFilterByState())
                 {
                     context.Writer.WritePropertyName("filterByState");

@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public ReplicationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationConfig unmarshalledObject = new ReplicationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

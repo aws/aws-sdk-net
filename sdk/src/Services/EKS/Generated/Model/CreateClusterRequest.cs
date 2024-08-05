@@ -81,14 +81,15 @@ namespace Amazon.EKS.Model
     /// <para>
     /// In most cases, it takes several minutes to create a cluster. After you create an Amazon
     /// EKS cluster, you must configure your Kubernetes tooling to communicate with the API
-    /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
-    /// Cluster Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
+    /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-auth.html">Allowing
+    /// users to access your cluster</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
     /// Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateClusterRequest : AmazonEKSRequest
     {
         private CreateAccessConfigRequest _accessConfig;
+        private bool? _bootstrapSelfManagedAddons;
         private string _clientRequestToken;
         private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
         private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
@@ -98,6 +99,7 @@ namespace Amazon.EKS.Model
         private VpcConfigRequest _resourcesVpcConfig;
         private string _roleArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private UpgradePolicyRequest _upgradePolicy;
         private string _version;
 
         /// <summary>
@@ -116,6 +118,34 @@ namespace Amazon.EKS.Model
         internal bool IsSetAccessConfig()
         {
             return this._accessConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapSelfManagedAddons. 
+        /// <para>
+        /// If you set this value to <c>False</c> when creating a cluster, the default networking
+        /// add-ons will not be installed.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default networking addons include vpc-cni, coredns, and kube-proxy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this option when you plan to install third-party alternative add-ons or self-manage
+        /// the default networking add-ons.
+        /// </para>
+        /// </summary>
+        public bool? BootstrapSelfManagedAddons
+        {
+            get { return this._bootstrapSelfManagedAddons; }
+            set { this._bootstrapSelfManagedAddons = value; }
+        }
+
+        // Check to see if BootstrapSelfManagedAddons property is set
+        internal bool IsSetBootstrapSelfManagedAddons()
+        {
+            return this._bootstrapSelfManagedAddons.HasValue; 
         }
 
         /// <summary>
@@ -309,6 +339,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradePolicy. 
+        /// <para>
+        /// New clusters, by default, have extended support enabled. You can disable extended
+        /// support when creating a cluster by setting this value to <c>STANDARD</c>.
+        /// </para>
+        /// </summary>
+        public UpgradePolicyRequest UpgradePolicy
+        {
+            get { return this._upgradePolicy; }
+            set { this._upgradePolicy = value; }
+        }
+
+        // Check to see if UpgradePolicy property is set
+        internal bool IsSetUpgradePolicy()
+        {
+            return this._upgradePolicy != null;
         }
 
         /// <summary>

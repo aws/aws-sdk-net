@@ -109,7 +109,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CustomDomainName. 
         /// <para>
-        /// The custom domain name of the service. 
+        /// The custom domain name of the service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]

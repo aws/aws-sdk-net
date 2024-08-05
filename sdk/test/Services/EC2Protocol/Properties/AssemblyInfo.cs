@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.EC2Protocol")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Sample Ec2 Protocol Service. EC2 protocol test service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Sample Ec2 Protocol Service. EC2 protocol test service")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Sample Ec2 Protocol Service. EC2 protocol test service")]
 #elif NETCOREAPP3_1

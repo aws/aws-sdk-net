@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public DetectedCsvFormatDescriptor Unmarshall(JsonUnmarshallerContext context)
         {
             DetectedCsvFormatDescriptor unmarshalledObject = new DetectedCsvFormatDescriptor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public CoverageResourceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CoverageResourceDetails unmarshalledObject = new CoverageResourceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         public Version Unmarshall(JsonUnmarshallerContext context)
         {
             Version unmarshalledObject = new Version();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

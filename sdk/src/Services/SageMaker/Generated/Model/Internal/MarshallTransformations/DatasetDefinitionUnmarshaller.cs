@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DatasetDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetDefinition unmarshalledObject = new DatasetDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

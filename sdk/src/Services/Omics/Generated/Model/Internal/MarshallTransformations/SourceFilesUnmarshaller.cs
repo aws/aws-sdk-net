@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public SourceFiles Unmarshall(JsonUnmarshallerContext context)
         {
             SourceFiles unmarshalledObject = new SourceFiles();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

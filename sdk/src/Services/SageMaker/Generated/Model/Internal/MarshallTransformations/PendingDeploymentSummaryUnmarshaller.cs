@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public PendingDeploymentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PendingDeploymentSummary unmarshalledObject = new PendingDeploymentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

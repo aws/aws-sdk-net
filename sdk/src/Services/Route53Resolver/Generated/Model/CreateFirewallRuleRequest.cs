@@ -238,19 +238,19 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property FirewallDomainRedirectionAction. 
         /// <para>
         ///  How you want the the rule to evaluate DNS redirection in the DNS redirection chain,
-        /// such as CNAME, DNAME, ot ALIAS. 
+        /// such as CNAME or DNAME. 
         /// </para>
         ///  
         /// <para>
         ///  <c>Inspect_Redirection_Domain </c>(Default) inspects all domains in the redirection
-        /// chain. The individual domains in the redirection chain must be added to the allow
-        /// domain list.
+        /// chain. The individual domains in the redirection chain must be added to the domain
+        /// list.
         /// </para>
         ///  
         /// <para>
         ///  <c>Trust_Redirection_Domain </c> inspects only the first domain in the redirection
-        /// chain. You don't need to add the subsequent domains in the redirection list to the
-        /// domain alloww list.
+        /// chain. You don't need to add the subsequent domains in the domain in the redirection
+        /// list to the domain list.
         /// </para>
         /// </summary>
         public FirewallDomainRedirectionAction FirewallDomainRedirectionAction

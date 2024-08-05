@@ -51,7 +51,7 @@ namespace Amazon.Util.Internal
 
                 try
                 {
-                    var regExPattern = string.Concat("^", Regex.Escape(filter.Trim()).Replace("\\*", ".*"), "$");
+                    var regExPattern = string.Concat(Regex.Escape(filter.Trim()).Replace("\\*", ".*"), "$");
                     var regEx = new Regex(regExPattern, RegexOptions.Compiled);
                     _proxyFilterRegex.Add(regEx);
                 }

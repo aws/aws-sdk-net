@@ -57,6 +57,8 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         public RotationRulesType Unmarshall(JsonUnmarshallerContext context)
         {
             RotationRulesType unmarshalledObject = new RotationRulesType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

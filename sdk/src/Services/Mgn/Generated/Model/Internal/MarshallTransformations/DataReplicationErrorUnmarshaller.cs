@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public DataReplicationError Unmarshall(JsonUnmarshallerContext context)
         {
             DataReplicationError unmarshalledObject = new DataReplicationError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

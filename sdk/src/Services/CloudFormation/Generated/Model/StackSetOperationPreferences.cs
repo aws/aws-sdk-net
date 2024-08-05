@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         ///  <c>STRICT_FAILURE_TOLERANCE</c>: This option dynamically lowers the concurrency level
         /// to ensure the number of failed accounts never exceeds the value of <c>FailureToleranceCount</c>
         /// +1. The initial actual concurrency is set to the lower of either the value of the
-        /// <c>MaxConcurrentCount</c>, or the value of <c>MaxConcurrentCount</c> +1. The actual
+        /// <c>MaxConcurrentCount</c>, or the value of <c>FailureToleranceCount</c> +1. The actual
         /// concurrency is then reduced proportionally by the number of failures. This is the
         /// default behavior.
         /// </para>

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ConditionalFormattingGradientColor Unmarshall(JsonUnmarshallerContext context)
         {
             ConditionalFormattingGradientColor unmarshalledObject = new ConditionalFormattingGradientColor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

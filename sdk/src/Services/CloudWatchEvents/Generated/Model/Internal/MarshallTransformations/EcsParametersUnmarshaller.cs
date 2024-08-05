@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public EcsParameters Unmarshall(JsonUnmarshallerContext context)
         {
             EcsParameters unmarshalledObject = new EcsParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public LabelsS3InputConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LabelsS3InputConfiguration unmarshalledObject = new LabelsS3InputConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

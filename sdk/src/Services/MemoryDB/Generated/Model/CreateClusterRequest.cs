@@ -159,7 +159,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the Redis engine to be used for the cluster.
+        /// The version number of the Redis OSS engine to be used for the cluster.
         /// </para>
         /// </summary>
         public string EngineVersion

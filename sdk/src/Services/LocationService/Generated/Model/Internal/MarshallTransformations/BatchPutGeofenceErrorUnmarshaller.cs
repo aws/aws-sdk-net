@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public BatchPutGeofenceError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchPutGeofenceError unmarshalledObject = new BatchPutGeofenceError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

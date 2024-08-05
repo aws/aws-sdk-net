@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public WebExperience Unmarshall(JsonUnmarshallerContext context)
         {
             WebExperience unmarshalledObject = new WebExperience();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

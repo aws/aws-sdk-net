@@ -42,7 +42,7 @@ namespace Amazon.DataZone.Model
         /// Indicates the smithy model of the API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1, Max=100000)]
         public string Smithy
         {
             get { return this._smithy; }

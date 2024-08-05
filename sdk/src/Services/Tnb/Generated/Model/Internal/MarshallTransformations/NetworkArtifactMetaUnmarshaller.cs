@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public NetworkArtifactMeta Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkArtifactMeta unmarshalledObject = new NetworkArtifactMeta();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

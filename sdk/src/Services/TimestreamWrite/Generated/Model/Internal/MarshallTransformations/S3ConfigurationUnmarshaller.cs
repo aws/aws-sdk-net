@@ -57,6 +57,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         public S3Configuration Unmarshall(JsonUnmarshallerContext context)
         {
             S3Configuration unmarshalledObject = new S3Configuration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

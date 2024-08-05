@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AudioChannelMapping Unmarshall(JsonUnmarshallerContext context)
         {
             AudioChannelMapping unmarshalledObject = new AudioChannelMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public GlacierJobDescription Unmarshall(JsonUnmarshallerContext context)
         {
             GlacierJobDescription unmarshalledObject = new GlacierJobDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

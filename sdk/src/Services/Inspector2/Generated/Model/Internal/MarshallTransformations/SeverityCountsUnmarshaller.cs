@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public SeverityCounts Unmarshall(JsonUnmarshallerContext context)
         {
             SeverityCounts unmarshalledObject = new SeverityCounts();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

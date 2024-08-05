@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public TestSetStorageLocation Unmarshall(JsonUnmarshallerContext context)
         {
             TestSetStorageLocation unmarshalledObject = new TestSetStorageLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

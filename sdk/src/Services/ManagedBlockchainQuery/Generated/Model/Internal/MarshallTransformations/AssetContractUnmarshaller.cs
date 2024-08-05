@@ -57,6 +57,8 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         public AssetContract Unmarshall(JsonUnmarshallerContext context)
         {
             AssetContract unmarshalledObject = new AssetContract();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

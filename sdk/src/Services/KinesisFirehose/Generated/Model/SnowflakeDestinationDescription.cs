@@ -35,6 +35,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class SnowflakeDestinationDescription
     {
         private string _accountUrl;
+        private SnowflakeBufferingHints _bufferingHints;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private string _contentColumnName;
         private string _database;
@@ -46,6 +47,7 @@ namespace Amazon.KinesisFirehose.Model
         private SnowflakeS3BackupMode _s3BackupMode;
         private S3DestinationDescription _s3DestinationDescription;
         private string _schema;
+        private SecretsManagerConfiguration _secretsManagerConfiguration;
         private SnowflakeRoleConfiguration _snowflakeRoleConfiguration;
         private SnowflakeVpcConfiguration _snowflakeVpcConfiguration;
         private string _table;
@@ -69,6 +71,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetAccountUrl()
         {
             return this._accountUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BufferingHints. 
+        /// <para>
+        ///  Describes the buffering to perform before delivering data to the Snowflake destination.
+        /// If you do not specify any value, Firehose uses the default values. 
+        /// </para>
+        /// </summary>
+        public SnowflakeBufferingHints BufferingHints
+        {
+            get { return this._bufferingHints; }
+            set { this._bufferingHints = value; }
+        }
+
+        // Check to see if BufferingHints property is set
+        internal bool IsSetBufferingHints()
+        {
+            return this._bufferingHints != null;
         }
 
         /// <summary>
@@ -266,6 +287,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetSchema()
         {
             return this._schema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerConfiguration. 
+        /// <para>
+        ///  The configuration that defines how you access secrets for Snowflake. 
+        /// </para>
+        /// </summary>
+        public SecretsManagerConfiguration SecretsManagerConfiguration
+        {
+            get { return this._secretsManagerConfiguration; }
+            set { this._secretsManagerConfiguration = value; }
+        }
+
+        // Check to see if SecretsManagerConfiguration property is set
+        internal bool IsSetSecretsManagerConfiguration()
+        {
+            return this._secretsManagerConfiguration != null;
         }
 
         /// <summary>

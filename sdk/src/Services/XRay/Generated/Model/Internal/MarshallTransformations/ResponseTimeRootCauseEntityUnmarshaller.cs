@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public ResponseTimeRootCauseEntity Unmarshall(JsonUnmarshallerContext context)
         {
             ResponseTimeRootCauseEntity unmarshalledObject = new ResponseTimeRootCauseEntity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

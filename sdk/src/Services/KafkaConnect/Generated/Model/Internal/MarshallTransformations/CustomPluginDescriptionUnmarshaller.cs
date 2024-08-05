@@ -57,6 +57,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public CustomPluginDescription Unmarshall(JsonUnmarshallerContext context)
         {
             CustomPluginDescription unmarshalledObject = new CustomPluginDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

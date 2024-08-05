@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ItemsLimitConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ItemsLimitConfiguration unmarshalledObject = new ItemsLimitConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DataQualityMetricValues Unmarshall(JsonUnmarshallerContext context)
         {
             DataQualityMetricValues unmarshalledObject = new DataQualityMetricValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

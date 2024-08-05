@@ -57,6 +57,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         public SigningJobRevocationRecord Unmarshall(JsonUnmarshallerContext context)
         {
             SigningJobRevocationRecord unmarshalledObject = new SigningJobRevocationRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

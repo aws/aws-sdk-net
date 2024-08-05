@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public VisualCustomActionOperation Unmarshall(JsonUnmarshallerContext context)
         {
             VisualCustomActionOperation unmarshalledObject = new VisualCustomActionOperation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

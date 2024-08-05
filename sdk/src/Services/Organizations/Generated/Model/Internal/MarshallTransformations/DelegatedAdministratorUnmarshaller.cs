@@ -57,6 +57,8 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         public DelegatedAdministrator Unmarshall(JsonUnmarshallerContext context)
         {
             DelegatedAdministrator unmarshalledObject = new DelegatedAdministrator();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

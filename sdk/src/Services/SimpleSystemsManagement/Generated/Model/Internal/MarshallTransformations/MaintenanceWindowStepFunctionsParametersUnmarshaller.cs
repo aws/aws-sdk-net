@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public MaintenanceWindowStepFunctionsParameters Unmarshall(JsonUnmarshallerContext context)
         {
             MaintenanceWindowStepFunctionsParameters unmarshalledObject = new MaintenanceWindowStepFunctionsParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

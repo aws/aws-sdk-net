@@ -57,6 +57,8 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
         public BatchUpdateDetectorErrorEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BatchUpdateDetectorErrorEntry unmarshalledObject = new BatchUpdateDetectorErrorEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

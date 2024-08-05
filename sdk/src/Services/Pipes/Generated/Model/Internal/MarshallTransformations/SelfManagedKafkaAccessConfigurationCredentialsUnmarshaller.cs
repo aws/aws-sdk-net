@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public SelfManagedKafkaAccessConfigurationCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             SelfManagedKafkaAccessConfigurationCredentials unmarshalledObject = new SelfManagedKafkaAccessConfigurationCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <c>on</c> 
+        /// Default: <c>off</c> 
         /// </para>
         /// </summary>
         public AutoPlacement AutoPlacement

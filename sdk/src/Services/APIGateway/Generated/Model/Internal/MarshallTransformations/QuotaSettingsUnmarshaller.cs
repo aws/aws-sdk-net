@@ -57,6 +57,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         public QuotaSettings Unmarshall(JsonUnmarshallerContext context)
         {
             QuotaSettings unmarshalledObject = new QuotaSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

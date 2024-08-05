@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public TagRef Unmarshall(JsonUnmarshallerContext context)
         {
             TagRef unmarshalledObject = new TagRef();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

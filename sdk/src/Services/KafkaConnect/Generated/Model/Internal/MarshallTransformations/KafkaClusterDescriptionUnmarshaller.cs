@@ -57,6 +57,8 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         public KafkaClusterDescription Unmarshall(JsonUnmarshallerContext context)
         {
             KafkaClusterDescription unmarshalledObject = new KafkaClusterDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

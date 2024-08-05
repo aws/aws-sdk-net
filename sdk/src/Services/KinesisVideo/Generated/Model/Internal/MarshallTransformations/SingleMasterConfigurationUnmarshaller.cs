@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public SingleMasterConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SingleMasterConfiguration unmarshalledObject = new SingleMasterConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

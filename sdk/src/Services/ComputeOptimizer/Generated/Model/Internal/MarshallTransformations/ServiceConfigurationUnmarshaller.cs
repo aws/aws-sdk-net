@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public ServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceConfiguration unmarshalledObject = new ServiceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

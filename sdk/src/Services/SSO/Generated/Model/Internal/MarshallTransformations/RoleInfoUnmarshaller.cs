@@ -57,6 +57,8 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         public RoleInfo Unmarshall(JsonUnmarshallerContext context)
         {
             RoleInfo unmarshalledObject = new RoleInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

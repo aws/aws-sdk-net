@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public INDTaxDocuments Unmarshall(JsonUnmarshallerContext context)
         {
             INDTaxDocuments unmarshalledObject = new INDTaxDocuments();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

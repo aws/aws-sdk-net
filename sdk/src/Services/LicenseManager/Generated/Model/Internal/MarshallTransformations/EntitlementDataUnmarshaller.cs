@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public EntitlementData Unmarshall(JsonUnmarshallerContext context)
         {
             EntitlementData unmarshalledObject = new EntitlementData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

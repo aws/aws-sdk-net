@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public SubscribedPrincipal Unmarshall(JsonUnmarshallerContext context)
         {
             SubscribedPrincipal unmarshalledObject = new SubscribedPrincipal();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

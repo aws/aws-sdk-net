@@ -57,6 +57,8 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         public SimulationJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SimulationJobSummary unmarshalledObject = new SimulationJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

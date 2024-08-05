@@ -31,12 +31,12 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSource operation.
-    /// Updates configurations for a data source.
+    /// Updates the configurations for a data source connector.
     /// 
     ///  <important> 
     /// <para>
-    /// You can't change the <c>chunkingConfiguration</c> after you create the data source.
-    /// Specify the existing <c>chunkingConfiguration</c>.
+    /// You can't change the <c>chunkingConfiguration</c> after you create the data source
+    /// connector. Specify the existing <c>chunkingConfiguration</c>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -54,7 +54,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataDeletionPolicy. 
         /// <para>
-        /// The data deletion policy of the updated data source.
+        /// The data deletion policy for the data source that you want to update.
         /// </para>
         /// </summary>
         public DataDeletionPolicy DataDeletionPolicy
@@ -72,7 +72,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataSourceConfiguration. 
         /// <para>
-        /// Contains details about the storage configuration of the data source.
+        /// The connection configuration for the data source that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,7 +129,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The unique identifier of the knowledge base to which the data source belongs.
+        /// The unique identifier of the knowledge base for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

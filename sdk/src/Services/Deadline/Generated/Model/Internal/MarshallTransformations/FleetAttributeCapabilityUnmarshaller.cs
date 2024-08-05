@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public FleetAttributeCapability Unmarshall(JsonUnmarshallerContext context)
         {
             FleetAttributeCapability unmarshalledObject = new FleetAttributeCapability();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

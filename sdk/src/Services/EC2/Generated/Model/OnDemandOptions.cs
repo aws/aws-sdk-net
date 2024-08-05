@@ -108,7 +108,7 @@ namespace Amazon.EC2.Model
         /// for surplus credits. The <c>maxTotalPrice</c> does not account for surplus credits,
         /// and, if you use surplus credits, your final cost might be higher than what you specified
         /// for <c>maxTotalPrice</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-        /// credits can incur charges</a> in the <i>EC2 User Guide</i>.
+        /// credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -127,12 +127,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MinTargetCapacity. 
         /// <para>
-        /// The minimum target capacity for On-Demand Instances in the fleet. If the minimum target
-        /// capacity is not reached, the fleet launches no instances.
+        /// The minimum target capacity for On-Demand Instances in the fleet. If this minimum
+        /// capacity isn't reached, no instances are launched.
         /// </para>
         ///  
         /// <para>
-        /// Supported only for fleets of type <c>instant</c>.
+        /// Constraints: Maximum value of <c>1000</c>. Supported only for fleets of type <c>instant</c>.
         /// </para>
         ///  
         /// <para>

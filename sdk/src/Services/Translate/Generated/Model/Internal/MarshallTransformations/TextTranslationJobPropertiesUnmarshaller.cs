@@ -57,6 +57,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         public TextTranslationJobProperties Unmarshall(JsonUnmarshallerContext context)
         {
             TextTranslationJobProperties unmarshalledObject = new TextTranslationJobProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

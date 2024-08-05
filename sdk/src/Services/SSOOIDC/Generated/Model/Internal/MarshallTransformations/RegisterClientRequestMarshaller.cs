@@ -79,6 +79,40 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientType);
                 }
 
+                if(publicRequest.IsSetEntitledApplicationArn())
+                {
+                    context.Writer.WritePropertyName("entitledApplicationArn");
+                    context.Writer.Write(publicRequest.EntitledApplicationArn);
+                }
+
+                if(publicRequest.IsSetGrantTypes())
+                {
+                    context.Writer.WritePropertyName("grantTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGrantTypesListValue in publicRequest.GrantTypes)
+                    {
+                            context.Writer.Write(publicRequestGrantTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetIssuerUrl())
+                {
+                    context.Writer.WritePropertyName("issuerUrl");
+                    context.Writer.Write(publicRequest.IssuerUrl);
+                }
+
+                if(publicRequest.IsSetRedirectUris())
+                {
+                    context.Writer.WritePropertyName("redirectUris");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRedirectUrisListValue in publicRequest.RedirectUris)
+                    {
+                            context.Writer.Write(publicRequestRedirectUrisListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetScopes())
                 {
                     context.Writer.WritePropertyName("scopes");

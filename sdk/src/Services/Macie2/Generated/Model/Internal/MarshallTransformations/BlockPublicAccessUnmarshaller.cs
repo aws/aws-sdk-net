@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public BlockPublicAccess Unmarshall(JsonUnmarshallerContext context)
         {
             BlockPublicAccess unmarshalledObject = new BlockPublicAccess();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

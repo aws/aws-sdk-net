@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public SSOIdentity Unmarshall(JsonUnmarshallerContext context)
         {
             SSOIdentity unmarshalledObject = new SSOIdentity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public ExportDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             ExportDataSource unmarshalledObject = new ExportDataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

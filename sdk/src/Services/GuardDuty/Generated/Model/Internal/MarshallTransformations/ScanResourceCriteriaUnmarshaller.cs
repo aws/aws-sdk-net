@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public ScanResourceCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             ScanResourceCriteria unmarshalledObject = new ScanResourceCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

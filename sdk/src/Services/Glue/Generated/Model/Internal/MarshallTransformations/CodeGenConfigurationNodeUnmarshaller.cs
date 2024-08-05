@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public CodeGenConfigurationNode Unmarshall(JsonUnmarshallerContext context)
         {
             CodeGenConfigurationNode unmarshalledObject = new CodeGenConfigurationNode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

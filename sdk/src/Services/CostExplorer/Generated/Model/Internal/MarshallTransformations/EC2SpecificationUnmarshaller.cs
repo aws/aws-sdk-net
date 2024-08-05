@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public EC2Specification Unmarshall(JsonUnmarshallerContext context)
         {
             EC2Specification unmarshalledObject = new EC2Specification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

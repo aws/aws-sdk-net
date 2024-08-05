@@ -98,9 +98,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share.
-        /// Before accepting the RAM resource share invitation, you can view details related to
-        /// the RAM resource share.
+        /// The Amazon Resource Name (ARN) which uniquely defines the Amazon Web Services RAM
+        /// resource share. Before accepting the RAM resource share invitation, you can view details
+        /// related to the RAM resource share.
         /// </para>
         ///  
         /// <para>
@@ -273,7 +273,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriberIdentity. 
         /// <para>
-        /// The AWS identity used to access your data.
+        /// The Amazon Web Services identity used to access your data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

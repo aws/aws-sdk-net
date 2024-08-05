@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public TestSetExportSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             TestSetExportSpecification unmarshalledObject = new TestSetExportSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         public PathMatchType Unmarshall(JsonUnmarshallerContext context)
         {
             PathMatchType unmarshalledObject = new PathMatchType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

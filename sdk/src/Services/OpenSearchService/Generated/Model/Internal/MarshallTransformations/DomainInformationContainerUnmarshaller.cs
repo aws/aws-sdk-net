@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public DomainInformationContainer Unmarshall(JsonUnmarshallerContext context)
         {
             DomainInformationContainer unmarshalledObject = new DomainInformationContainer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

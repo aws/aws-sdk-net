@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public QueryResultItem Unmarshall(JsonUnmarshallerContext context)
         {
             QueryResultItem unmarshalledObject = new QueryResultItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

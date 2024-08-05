@@ -57,6 +57,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         public HeaderMatchType Unmarshall(JsonUnmarshallerContext context)
         {
             HeaderMatchType unmarshalledObject = new HeaderMatchType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

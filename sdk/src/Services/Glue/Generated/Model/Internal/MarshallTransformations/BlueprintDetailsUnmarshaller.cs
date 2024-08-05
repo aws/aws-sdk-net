@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public BlueprintDetails Unmarshall(JsonUnmarshallerContext context)
         {
             BlueprintDetails unmarshalledObject = new BlueprintDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public BatchEnvironmentVariable Unmarshall(JsonUnmarshallerContext context)
         {
             BatchEnvironmentVariable unmarshalledObject = new BatchEnvironmentVariable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

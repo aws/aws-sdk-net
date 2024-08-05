@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public EntityRecognizerEntityList Unmarshall(JsonUnmarshallerContext context)
         {
             EntityRecognizerEntityList unmarshalledObject = new EntityRecognizerEntityList();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

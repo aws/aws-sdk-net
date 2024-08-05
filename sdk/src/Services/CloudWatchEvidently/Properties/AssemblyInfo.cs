@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudWatchEvidently")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
 #elif NETCOREAPP3_1

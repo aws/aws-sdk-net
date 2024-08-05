@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public GlueTableReference Unmarshall(JsonUnmarshallerContext context)
         {
             GlueTableReference unmarshalledObject = new GlueTableReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

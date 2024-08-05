@@ -2,9 +2,10 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2023-07-19",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"medical-imaging",
-    "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceFullName":"AWS Health Imaging",
     "serviceId":"Medical Imaging",
     "signatureVersion":"v4",
@@ -365,6 +366,16 @@
       "type":"string",
       "pattern":"arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:medical-imaging:[a-z0-9-]+:[0-9]{12}:datastore/[0-9a-z]{32}(/imageset/[0-9a-z]{32})?"
     },
+    "AwsAccountId":{
+      "type":"string",
+      "max":12,
+      "min":12,
+      "pattern":"\\d+"
+    },
+    "Boolean":{
+      "type":"boolean",
+      "box":true
+    },
     "ClientToken":{
       "type":"string",
       "max":64,
@@ -382,6 +393,12 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "CopiableAttributes":{
+      "type":"string",
+      "max":260000,
+      "min":1,
+      "sensitive":true
     },
     "CopyDestinationImageSet":{
       "type":"structure",
@@ -436,7 +453,12 @@
           "location":"uri",
           "locationName":"sourceImageSetId"
         },
-        "copyImageSetInformation":{"shape":"CopyImageSetInformation"}
+        "copyImageSetInformation":{"shape":"CopyImageSetInformation"},
+        "force":{
+          "shape":"Boolean",
+          "location":"querystring",
+          "locationName":"force"
+        }
       },
       "payload":"copyImageSetInformation"
     },
@@ -457,7 +479,8 @@
       "type":"structure",
       "required":["latestVersionId"],
       "members":{
-        "latestVersionId":{"shape":"ImageSetExternalVersionId"}
+        "latestVersionId":{"shape":"ImageSetExternalVersionId"},
+        "DICOMCopies":{"shape":"MetadataCopies"}
       }
     },
     "CopySourceImageSetProperties":{
@@ -502,7 +525,7 @@
     },
     "DICOMAccessionNumber":{
       "type":"string",
-      "max":16,
+      "max":256,
       "min":0,
       "sensitive":true
     },
@@ -566,7 +589,7 @@
     },
     "DICOMNumberOfStudyRelatedSeries":{
       "type":"integer",
-      "max":10000,
+      "max":1000000,
       "min":0
     },
     "DICOMPatientBirthDate":{
@@ -577,7 +600,7 @@
     },
     "DICOMPatientId":{
       "type":"string",
-      "max":64,
+      "max":256,
       "min":0,
       "sensitive":true
     },
@@ -601,9 +624,9 @@
     },
     "DICOMSeriesInstanceUID":{
       "type":"string",
-      "max":64,
+      "max":256,
       "min":0,
-      "pattern":"(?:[1-9][0-9]*|0)(\\.(?:[1-9][0-9]*|0))*",
+      "pattern":"(?:[0-9][0-9]*|0)(\\.(?:[1-9][0-9]*|0))*",
       "sensitive":true
     },
     "DICOMSeriesModality":{
@@ -647,9 +670,9 @@
     },
     "DICOMStudyInstanceUID":{
       "type":"string",
-      "max":64,
+      "max":256,
       "min":0,
-      "pattern":"(?:[1-9][0-9]*|0)(\\.(?:[1-9][0-9]*|0))*",
+      "pattern":"(?:[0-9][0-9]*|0)(\\.(?:[1-9][0-9]*|0))*",
       "sensitive":true
     },
     "DICOMStudyTime":{
@@ -963,7 +986,8 @@
         "updatedAt":{"shape":"Date"},
         "deletedAt":{"shape":"Date"},
         "message":{"shape":"Message"},
-        "imageSetArn":{"shape":"Arn"}
+        "imageSetArn":{"shape":"Arn"},
+        "overrides":{"shape":"Overrides"}
       }
     },
     "ImageFrameId":{
@@ -1004,7 +1028,8 @@
         "createdAt":{"shape":"Date"},
         "updatedAt":{"shape":"Date"},
         "deletedAt":{"shape":"Date"},
-        "message":{"shape":"Message"}
+        "message":{"shape":"Message"},
+        "overrides":{"shape":"Overrides"}
       }
     },
     "ImageSetPropertiesList":{
@@ -1230,10 +1255,18 @@
       "min":1,
       "pattern":"[\\w -:]+"
     },
+    "MetadataCopies":{
+      "type":"structure",
+      "required":["copiableAttributes"],
+      "members":{
+        "copiableAttributes":{"shape":"CopiableAttributes"}
+      }
+    },
     "MetadataUpdates":{
       "type":"structure",
       "members":{
-        "DICOMUpdates":{"shape":"DICOMUpdates"}
+        "DICOMUpdates":{"shape":"DICOMUpdates"},
+        "revertToVersionId":{"shape":"ImageSetExternalVersionId"}
       },
       "union":true
     },
@@ -1249,6 +1282,12 @@
         "EQUAL",
         "BETWEEN"
       ]
+    },
+    "Overrides":{
+      "type":"structure",
+      "members":{
+        "forced":{"shape":"Boolean"}
+      }
     },
     "PayloadBlob":{
       "type":"blob",
@@ -1421,7 +1460,8 @@
           "locationName":"datastoreId"
         },
         "inputS3Uri":{"shape":"S3Uri"},
-        "outputS3Uri":{"shape":"S3Uri"}
+        "outputS3Uri":{"shape":"S3Uri"},
+        "inputOwnerAccountId":{"shape":"AwsAccountId"}
       }
     },
     "StartDICOMImportJobResponse":{
@@ -1541,6 +1581,11 @@
           "shape":"ImageSetExternalVersionId",
           "location":"querystring",
           "locationName":"latestVersion"
+        },
+        "force":{
+          "shape":"Boolean",
+          "location":"querystring",
+          "locationName":"force"
         },
         "updateImageSetMetadataUpdates":{"shape":"MetadataUpdates"}
       },

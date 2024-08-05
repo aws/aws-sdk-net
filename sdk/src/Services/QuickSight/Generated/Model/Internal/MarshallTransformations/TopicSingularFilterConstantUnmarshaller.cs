@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TopicSingularFilterConstant Unmarshall(JsonUnmarshallerContext context)
         {
             TopicSingularFilterConstant unmarshalledObject = new TopicSingularFilterConstant();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

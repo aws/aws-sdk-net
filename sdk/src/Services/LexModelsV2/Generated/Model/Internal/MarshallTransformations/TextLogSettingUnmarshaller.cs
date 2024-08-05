@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public TextLogSetting Unmarshall(JsonUnmarshallerContext context)
         {
             TextLogSetting unmarshalledObject = new TextLogSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

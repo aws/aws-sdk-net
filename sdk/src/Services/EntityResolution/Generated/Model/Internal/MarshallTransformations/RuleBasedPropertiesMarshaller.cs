@@ -54,6 +54,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AttributeMatchingModel);
             }
 
+            if(requestObject.IsSetMatchPurpose())
+            {
+                context.Writer.WritePropertyName("matchPurpose");
+                context.Writer.Write(requestObject.MatchPurpose);
+            }
+
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("rules");

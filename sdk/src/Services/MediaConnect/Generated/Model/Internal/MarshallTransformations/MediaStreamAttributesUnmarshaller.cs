@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public MediaStreamAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             MediaStreamAttributes unmarshalledObject = new MediaStreamAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

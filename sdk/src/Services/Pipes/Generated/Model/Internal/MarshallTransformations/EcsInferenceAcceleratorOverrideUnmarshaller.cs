@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public EcsInferenceAcceleratorOverride Unmarshall(JsonUnmarshallerContext context)
         {
             EcsInferenceAcceleratorOverride unmarshalledObject = new EcsInferenceAcceleratorOverride();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

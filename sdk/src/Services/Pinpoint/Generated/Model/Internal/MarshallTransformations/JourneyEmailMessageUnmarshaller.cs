@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public JourneyEmailMessage Unmarshall(JsonUnmarshallerContext context)
         {
             JourneyEmailMessage unmarshalledObject = new JourneyEmailMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

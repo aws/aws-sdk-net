@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails unmarshalledObject = new AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

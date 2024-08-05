@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private BodySectionContent _content;
         private SectionPageBreakConfiguration _pageBreakConfiguration;
+        private BodySectionRepeatConfiguration _repeatConfiguration;
         private string _sectionId;
         private SectionStyle _style;
 
@@ -74,6 +75,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPageBreakConfiguration()
         {
             return this._pageBreakConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepeatConfiguration. 
+        /// <para>
+        /// Describes the configurations that are required to declare a section as repeating.
+        /// </para>
+        /// </summary>
+        public BodySectionRepeatConfiguration RepeatConfiguration
+        {
+            get { return this._repeatConfiguration; }
+            set { this._repeatConfiguration = value; }
+        }
+
+        // Check to see if RepeatConfiguration property is set
+        internal bool IsSetRepeatConfiguration()
+        {
+            return this._repeatConfiguration != null;
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEcrRepositoryLifecyclePolicyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEcrRepositoryLifecyclePolicyDetails unmarshalledObject = new AwsEcrRepositoryLifecyclePolicyDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

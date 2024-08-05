@@ -57,6 +57,8 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public DatasetImageStats Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetImageStats unmarshalledObject = new DatasetImageStats();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

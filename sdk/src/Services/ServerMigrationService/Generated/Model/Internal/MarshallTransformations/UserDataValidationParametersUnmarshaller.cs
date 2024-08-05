@@ -57,6 +57,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         public UserDataValidationParameters Unmarshall(JsonUnmarshallerContext context)
         {
             UserDataValidationParameters unmarshalledObject = new UserDataValidationParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public QuipConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             QuipConfiguration unmarshalledObject = new QuipConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

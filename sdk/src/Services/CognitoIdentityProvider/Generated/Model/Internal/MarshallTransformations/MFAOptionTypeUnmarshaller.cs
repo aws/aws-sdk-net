@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public MFAOptionType Unmarshall(JsonUnmarshallerContext context)
         {
             MFAOptionType unmarshalledObject = new MFAOptionType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

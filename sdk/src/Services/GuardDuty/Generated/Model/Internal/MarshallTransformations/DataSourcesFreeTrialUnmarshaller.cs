@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public DataSourcesFreeTrial Unmarshall(JsonUnmarshallerContext context)
         {
             DataSourcesFreeTrial unmarshalledObject = new DataSourcesFreeTrial();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

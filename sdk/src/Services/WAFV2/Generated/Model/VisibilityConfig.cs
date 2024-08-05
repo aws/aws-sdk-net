@@ -95,6 +95,14 @@ namespace Amazon.WAFV2.Model
         /// Indicates whether WAF should store a sampling of the web requests that match the rules.
         /// You can view the sampled requests through the WAF console. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Request sampling doesn't provide a field redaction option, and any field redaction
+        /// that you specify in your logging configuration doesn't affect sampling. The only way
+        /// to exclude fields from request sampling is by disabling sampling in the web ACL visibility
+        /// configuration. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool? SampledRequestsEnabled

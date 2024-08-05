@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public RuleGroupResponse Unmarshall(JsonUnmarshallerContext context)
         {
             RuleGroupResponse unmarshalledObject = new RuleGroupResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

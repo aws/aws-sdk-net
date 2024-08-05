@@ -315,9 +315,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Deprecated. Use <a>AllocateHostedConnection</a> instead.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Creates a hosted connection on an interconnect.
         /// </para>
@@ -354,9 +356,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Deprecated. Use <a>AllocateHostedConnection</a> instead.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Creates a hosted connection on an interconnect.
         /// </para>
@@ -1962,14 +1966,14 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and
-        /// must terminate at the same Direct Connect endpoint.
+        /// All connections in a LAG must use the same bandwidth (either 1Gbps, 10Gbps, 100Gbps,
+        /// or 400Gbps) and must terminate at the same Direct Connect endpoint.
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 10 dedicated connections per LAG. Regardless of this limit, if
-        /// you request more connections for the LAG than Direct Connect can allocate on a single
-        /// endpoint, no LAG is created.
+        /// You can have up to 10 dedicated connections per location. Regardless of this limit,
+        /// if you request more connections for the LAG than Direct Connect can allocate on a
+        /// single endpoint, no LAG is created..
         /// </para>
         ///  
         /// <para>
@@ -2022,14 +2026,14 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and
-        /// must terminate at the same Direct Connect endpoint.
+        /// All connections in a LAG must use the same bandwidth (either 1Gbps, 10Gbps, 100Gbps,
+        /// or 400Gbps) and must terminate at the same Direct Connect endpoint.
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 10 dedicated connections per LAG. Regardless of this limit, if
-        /// you request more connections for the LAG than Direct Connect can allocate on a single
-        /// endpoint, no LAG is created.
+        /// You can have up to 10 dedicated connections per location. Regardless of this limit,
+        /// if you request more connections for the LAG than Direct Connect can allocate on a
+        /// single endpoint, no LAG is created..
         /// </para>
         ///  
         /// <para>
@@ -2091,7 +2095,7 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
+        /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
         /// to the underlying physical connection if it wasn't updated to support jumbo frames.
         /// Updating the connection disrupts network connectivity for all virtual interfaces associated
         /// with the connection for up to 30 seconds. To check whether your connection supports
@@ -2135,7 +2139,7 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
+        /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
         /// to the underlying physical connection if it wasn't updated to support jumbo frames.
         /// Updating the connection disrupts network connectivity for all virtual interfaces associated
         /// with the connection for up to 30 seconds. To check whether your connection supports
@@ -2855,9 +2859,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Deprecated. Use <a>DescribeLoa</a> instead.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Gets the LOA-CFA for a connection.
         /// </para>
@@ -2891,9 +2897,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Deprecated. Use <a>DescribeLoa</a> instead.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Gets the LOA-CFA for a connection.
         /// </para>
@@ -3025,9 +3033,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Deprecated. Use <a>DescribeHostedConnections</a> instead.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Lists the connections that have been provisioned on the specified interconnect.
         /// </para>
@@ -3059,9 +3069,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Deprecated. Use <a>DescribeHostedConnections</a> instead.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Lists the connections that have been provisioned on the specified interconnect.
         /// </para>
@@ -3542,9 +3554,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Deprecated. Use <a>DescribeLoa</a> instead.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Gets the LOA-CFA for the specified interconnect.
         /// </para>
@@ -3578,9 +3592,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
         /// Deprecated. Use <a>DescribeLoa</a> instead.
-        /// 
-        ///  
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Gets the LOA-CFA for the specified interconnect.
         /// </para>
@@ -4039,8 +4055,15 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Deprecated. Use <c>DescribeVpnGateways</c> instead. See <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html">DescribeVPNGateways</a>
+        /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the virtual private gateways owned by the Amazon Web Services account.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can create one or more Direct Connect private virtual interfaces linked to a virtual
@@ -4063,8 +4086,15 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Deprecated. Use <c>DescribeVpnGateways</c> instead. See <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html">DescribeVPNGateways</a>
+        /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the virtual private gateways owned by the Amazon Web Services account.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can create one or more Direct Connect private virtual interfaces linked to a virtual
@@ -4092,8 +4122,15 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Deprecated. Use <c>DescribeVpnGateways</c> instead. See <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html">DescribeVPNGateways</a>
+        /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the virtual private gateways owned by the Amazon Web Services account.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can create one or more Direct Connect private virtual interfaces linked to a virtual
@@ -4118,8 +4155,15 @@ namespace Amazon.DirectConnect
         }
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Deprecated. Use <c>DescribeVpnGateways</c> instead. See <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html">DescribeVPNGateways</a>
+        /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the virtual private gateways owned by the Amazon Web Services account.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You can create one or more Direct Connect private virtual interfaces linked to a virtual
@@ -5062,7 +5106,7 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
+        /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
         /// to the underlying physical connection if it wasn't updated to support jumbo frames.
         /// Updating the connection disrupts network connectivity for all virtual interfaces associated
         /// with the connection for up to 30 seconds. To check whether your connection supports
@@ -5095,7 +5139,7 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
+        /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
         /// to the underlying physical connection if it wasn't updated to support jumbo frames.
         /// Updating the connection disrupts network connectivity for all virtual interfaces associated
         /// with the connection for up to 30 seconds. To check whether your connection supports

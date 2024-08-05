@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public DocumentTypeListItem Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentTypeListItem unmarshalledObject = new DocumentTypeListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

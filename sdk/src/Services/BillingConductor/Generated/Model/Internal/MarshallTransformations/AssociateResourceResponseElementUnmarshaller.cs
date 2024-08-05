@@ -57,6 +57,8 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         public AssociateResourceResponseElement Unmarshall(JsonUnmarshallerContext context)
         {
             AssociateResourceResponseElement unmarshalledObject = new AssociateResourceResponseElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

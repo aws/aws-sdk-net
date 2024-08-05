@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public SessionKeysAbpV1_0_x Unmarshall(JsonUnmarshallerContext context)
         {
             SessionKeysAbpV1_0_x unmarshalledObject = new SessionKeysAbpV1_0_x();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

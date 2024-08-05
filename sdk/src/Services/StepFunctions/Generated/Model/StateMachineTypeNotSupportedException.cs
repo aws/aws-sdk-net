@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// State machine type is not supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

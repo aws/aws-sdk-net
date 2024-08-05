@@ -939,7 +939,7 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeGatewayCapabilityConfigurationResponse.CapabilityConfiguration</property>
     <min>1</min>
-    <max>104857600</max>
+    <max>10000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeGatewayCapabilityConfigurationResponse.CapabilityNamespace</property>
@@ -1943,7 +1943,7 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.UpdateGatewayCapabilityConfigurationRequest.CapabilityConfiguration</property>
     <min>1</min>
-    <max>104857600</max>
+    <max>10000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.UpdateGatewayCapabilityConfigurationRequest.CapabilityNamespace</property>
@@ -2889,6 +2889,7 @@
     <property>Amazon.IoTSiteWise.Model.GreengrassV2.CoreDeviceThingName</property>
     <min>1</min>
     <max>128</max>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GroupIdentity.Id</property>
@@ -3064,6 +3065,12 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.RetentionPeriod.NumberOfDays</property>
     <min>30</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.SiemensIE.IotCoreThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.TargetResource.AssetId</property>

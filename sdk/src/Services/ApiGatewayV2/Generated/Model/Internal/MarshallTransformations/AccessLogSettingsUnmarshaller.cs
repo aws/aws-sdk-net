@@ -57,6 +57,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         public AccessLogSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AccessLogSettings unmarshalledObject = new AccessLogSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

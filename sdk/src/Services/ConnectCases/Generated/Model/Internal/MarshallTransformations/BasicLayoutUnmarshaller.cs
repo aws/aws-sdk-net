@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public BasicLayout Unmarshall(JsonUnmarshallerContext context)
         {
             BasicLayout unmarshalledObject = new BasicLayout();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

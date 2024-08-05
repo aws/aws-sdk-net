@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMongoDbAtlasConfiguration())
+            {
+                context.Writer.WritePropertyName("mongoDbAtlasConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MongoDbAtlasConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MongoDbAtlasConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOpensearchServerlessConfiguration())
             {
                 context.Writer.WritePropertyName("opensearchServerlessConfiguration");

@@ -57,6 +57,8 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         public IssueDetected Unmarshall(JsonUnmarshallerContext context)
         {
             IssueDetected unmarshalledObject = new IssueDetected();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

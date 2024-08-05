@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public ROS2PrimitiveMessageDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ROS2PrimitiveMessageDefinition unmarshalledObject = new ROS2PrimitiveMessageDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

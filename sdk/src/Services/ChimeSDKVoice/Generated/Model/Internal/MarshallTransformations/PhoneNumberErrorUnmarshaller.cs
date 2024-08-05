@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public PhoneNumberError Unmarshall(JsonUnmarshallerContext context)
         {
             PhoneNumberError unmarshalledObject = new PhoneNumberError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

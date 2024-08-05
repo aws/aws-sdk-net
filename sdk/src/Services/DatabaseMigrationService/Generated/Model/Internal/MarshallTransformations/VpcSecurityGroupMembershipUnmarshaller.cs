@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public VpcSecurityGroupMembership Unmarshall(JsonUnmarshallerContext context)
         {
             VpcSecurityGroupMembership unmarshalledObject = new VpcSecurityGroupMembership();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

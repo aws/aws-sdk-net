@@ -67,6 +67,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetReportFormat())
+                {
+                    context.Writer.WritePropertyName("reportFormat");
+                    context.Writer.Write(publicRequest.ReportFormat);
+                }
+
                 if(publicRequest.IsSetScanArn())
                 {
                     context.Writer.WritePropertyName("scanArn");

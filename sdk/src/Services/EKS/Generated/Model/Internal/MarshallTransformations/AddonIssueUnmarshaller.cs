@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public AddonIssue Unmarshall(JsonUnmarshallerContext context)
         {
             AddonIssue unmarshalledObject = new AddonIssue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

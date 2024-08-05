@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public InstanceMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceMetadata unmarshalledObject = new InstanceMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

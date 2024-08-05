@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public ScheduledAuditMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduledAuditMetadata unmarshalledObject = new ScheduledAuditMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

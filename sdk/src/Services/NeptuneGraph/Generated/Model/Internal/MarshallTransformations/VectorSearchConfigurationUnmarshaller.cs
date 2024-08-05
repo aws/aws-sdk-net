@@ -57,6 +57,8 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         public VectorSearchConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             VectorSearchConfiguration unmarshalledObject = new VectorSearchConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

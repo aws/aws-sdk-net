@@ -859,6 +859,16 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.JWTOptionsInput.RolesKey</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.JWTOptionsInput.SubjectKey</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.LogPublishingOption.CloudWatchLogsLogGroupArn</property>
     <min>20</min>
     <max>2048</max>

@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public ReplayDestination Unmarshall(JsonUnmarshallerContext context)
         {
             ReplayDestination unmarshalledObject = new ReplayDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

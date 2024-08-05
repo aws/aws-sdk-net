@@ -57,6 +57,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         public StepAdjustment Unmarshall(JsonUnmarshallerContext context)
         {
             StepAdjustment unmarshalledObject = new StepAdjustment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

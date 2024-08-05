@@ -57,6 +57,8 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         public ApplicationTagResult Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationTagResult unmarshalledObject = new ApplicationTagResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

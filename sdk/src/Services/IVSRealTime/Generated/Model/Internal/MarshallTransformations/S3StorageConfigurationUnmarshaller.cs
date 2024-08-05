@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public S3StorageConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             S3StorageConfiguration unmarshalledObject = new S3StorageConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

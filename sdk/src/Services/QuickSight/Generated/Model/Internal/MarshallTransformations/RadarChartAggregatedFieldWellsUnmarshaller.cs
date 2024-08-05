@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RadarChartAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             RadarChartAggregatedFieldWells unmarshalledObject = new RadarChartAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public ContainerProvider Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerProvider unmarshalledObject = new ContainerProvider();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

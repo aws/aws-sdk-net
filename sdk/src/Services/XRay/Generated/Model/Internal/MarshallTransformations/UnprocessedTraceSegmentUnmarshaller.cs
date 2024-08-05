@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public UnprocessedTraceSegment Unmarshall(JsonUnmarshallerContext context)
         {
             UnprocessedTraceSegment unmarshalledObject = new UnprocessedTraceSegment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

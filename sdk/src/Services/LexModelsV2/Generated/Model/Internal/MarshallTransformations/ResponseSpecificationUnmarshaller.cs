@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public ResponseSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             ResponseSpecification unmarshalledObject = new ResponseSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public RealTimeContactAnalysisTranscriptItemWithCharacterOffsets Unmarshall(JsonUnmarshallerContext context)
         {
             RealTimeContactAnalysisTranscriptItemWithCharacterOffsets unmarshalledObject = new RealTimeContactAnalysisTranscriptItemWithCharacterOffsets();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

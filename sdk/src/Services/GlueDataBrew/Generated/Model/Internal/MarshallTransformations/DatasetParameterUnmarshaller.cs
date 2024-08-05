@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public DatasetParameter Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetParameter unmarshalledObject = new DatasetParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

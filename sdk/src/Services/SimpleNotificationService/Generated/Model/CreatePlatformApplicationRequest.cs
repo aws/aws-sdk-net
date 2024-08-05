@@ -43,23 +43,23 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For <c>ADM</c>, <c>PlatformPrincipal</c> is <c>client id</c> and <c>PlatformCredential</c>
+    /// For ADM, <c>PlatformPrincipal</c> is <c>client id</c> and <c>PlatformCredential</c>
     /// is <c>client secret</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For <c>Baidu</c>, <c>PlatformPrincipal</c> is <c>API key</c> and <c>PlatformCredential</c>
-    /// is <c>secret key</c>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// For <c>APNS</c> and <c>APNS_SANDBOX</c> using certificate credentials, <c>PlatformPrincipal</c>
+    /// For APNS and <c>APNS_SANDBOX</c> using certificate credentials, <c>PlatformPrincipal</c>
     /// is <c>SSL certificate</c> and <c>PlatformCredential</c> is <c>private key</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For <c>APNS</c> and <c>APNS_SANDBOX</c> using token credentials, <c>PlatformPrincipal</c>
+    /// For APNS and <c>APNS_SANDBOX</c> using token credentials, <c>PlatformPrincipal</c>
     /// is <c>signing key ID</c> and <c>PlatformCredential</c> is <c>signing key</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For Baidu, <c>PlatformPrincipal</c> is <c>API key</c> and <c>PlatformCredential</c>
+    /// is <c>secret key</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -76,13 +76,13 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For <c>MPNS</c>, <c>PlatformPrincipal</c> is <c>TLS certificate</c> and <c>PlatformCredential</c>
+    /// For MPNS, <c>PlatformPrincipal</c> is <c>TLS certificate</c> and <c>PlatformCredential</c>
     /// is <c>private key</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For <c>WNS</c>, <c>PlatformPrincipal</c> is <c>Package Security Identifier</c> and
-    /// <c>PlatformCredential</c> is <c>secret key</c>.
+    /// For WNS, <c>PlatformPrincipal</c> is <c>Package Security Identifier</c> and <c>PlatformCredential</c>
+    /// is <c>secret key</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>

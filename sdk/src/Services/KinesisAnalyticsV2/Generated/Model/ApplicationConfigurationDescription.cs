@@ -37,6 +37,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private ApplicationCodeConfigurationDescription _applicationCodeConfigurationDescription;
         private ApplicationSnapshotConfigurationDescription _applicationSnapshotConfigurationDescription;
+        private ApplicationSystemRollbackConfigurationDescription _applicationSystemRollbackConfigurationDescription;
         private EnvironmentPropertyDescriptions _environmentPropertyDescriptions;
         private FlinkApplicationConfigurationDescription _flinkApplicationConfigurationDescription;
         private RunConfigurationDescription _runConfigurationDescription;
@@ -78,6 +79,21 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationSnapshotConfigurationDescription()
         {
             return this._applicationSnapshotConfigurationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationSystemRollbackConfigurationDescription.
+        /// </summary>
+        public ApplicationSystemRollbackConfigurationDescription ApplicationSystemRollbackConfigurationDescription
+        {
+            get { return this._applicationSystemRollbackConfigurationDescription; }
+            set { this._applicationSystemRollbackConfigurationDescription = value; }
+        }
+
+        // Check to see if ApplicationSystemRollbackConfigurationDescription property is set
+        internal bool IsSetApplicationSystemRollbackConfigurationDescription()
+        {
+            return this._applicationSystemRollbackConfigurationDescription != null;
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public ReservedInstancesPricing Unmarshall(JsonUnmarshallerContext context)
         {
             ReservedInstancesPricing unmarshalledObject = new ReservedInstancesPricing();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

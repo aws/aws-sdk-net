@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public IntentClosingSetting Unmarshall(JsonUnmarshallerContext context)
         {
             IntentClosingSetting unmarshalledObject = new IntentClosingSetting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

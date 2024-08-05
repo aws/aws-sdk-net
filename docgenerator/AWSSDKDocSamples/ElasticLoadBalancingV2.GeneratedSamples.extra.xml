@@ -192,6 +192,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.DeleteSharedTrustStoreAssociation(Amazon.ElasticLoadBalancingV2.Model.DeleteSharedTrustStoreAssociationRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.DeleteSharedTrustStoreAssociation(Amazon.ElasticLoadBalancingV2.Model.DeleteSharedTrustStoreAssociationRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.DeleteSharedTrustStoreAssociationRequest" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.DeleteSharedTrustStoreAssociationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the association between the specified trust store and the specified load balancer.
+                </para>
+                <code
+                    title="Delete a shared trust store association"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
+                    region="delete-a-shared-trust-store-association-1721684063527" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.DeleteTargetGroup(Amazon.ElasticLoadBalancingV2.Model.DeleteTargetGroupRequest)" />
             <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.DeleteTargetGroup(Amazon.ElasticLoadBalancingV2.Model.DeleteTargetGroupRequest)" />
             <member name="T:Amazon.ElasticLoadBalancingV2.Model.DeleteTargetGroupRequest" />
@@ -415,6 +434,25 @@
                     title="To describe the health of a target"
                     source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
                     region="elbv2-describe-target-health-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.GetResourcePolicy(Amazon.ElasticLoadBalancingV2.Model.GetResourcePolicyRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.GetResourcePolicy(Amazon.ElasticLoadBalancingV2.Model.GetResourcePolicyRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.GetResourcePolicyRequest" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.GetResourcePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example retrieves the resource policy for the specified trust store.
+                </para>
+                <code
+                    title="Retrieve a resource policy"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
+                    region="retrieve-a-resource-policy-1721684356628" />
             </example>
         </value>
     </doc>

@@ -31,9 +31,15 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCluster operation.
-    /// Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster, you must
+    /// Deletes the specified CloudHSM cluster. Before you can delete a cluster, you must
     /// delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <a>DescribeClusters</a>.
     /// To delete an HSM, use <a>DeleteHsm</a>.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster
+    /// in a different Amazon Web Services account.
+    /// </para>
     /// </summary>
     public partial class DeleteClusterRequest : AmazonCloudHSMV2Request
     {

@@ -48,7 +48,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The unique identifier of the Cases domain. 
+        /// The unique identifier of the Cases domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

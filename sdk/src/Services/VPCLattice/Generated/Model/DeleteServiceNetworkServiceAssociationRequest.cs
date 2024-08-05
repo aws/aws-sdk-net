@@ -32,7 +32,7 @@ namespace Amazon.VPCLattice.Model
     /// <summary>
     /// Container for the parameters to the DeleteServiceNetworkServiceAssociation operation.
     /// Deletes the association between a specified service and the specific service network.
-    /// This request will fail if an association is still in progress.
+    /// This operation fails if an association is still in progress.
     /// </summary>
     public partial class DeleteServiceNetworkServiceAssociationRequest : AmazonVPCLatticeRequest
     {

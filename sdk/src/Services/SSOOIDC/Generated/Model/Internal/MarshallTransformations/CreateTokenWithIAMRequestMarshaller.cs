@@ -86,6 +86,12 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Code);
                 }
 
+                if(publicRequest.IsSetCodeVerifier())
+                {
+                    context.Writer.WritePropertyName("codeVerifier");
+                    context.Writer.Write(publicRequest.CodeVerifier);
+                }
+
                 if(publicRequest.IsSetGrantType())
                 {
                     context.Writer.WritePropertyName("grantType");

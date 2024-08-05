@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public TagOptionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TagOptionSummary unmarshalledObject = new TagOptionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public S3FileLocation Unmarshall(JsonUnmarshallerContext context)
         {
             S3FileLocation unmarshalledObject = new S3FileLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

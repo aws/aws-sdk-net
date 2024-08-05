@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public S3Tag Unmarshall(JsonUnmarshallerContext context)
         {
             S3Tag unmarshalledObject = new S3Tag();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

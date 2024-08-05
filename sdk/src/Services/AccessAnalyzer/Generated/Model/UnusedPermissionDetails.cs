@@ -62,7 +62,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property LastAccessed. 
         /// <para>
-        /// The time at which the permission last accessed.
+        /// The time at which the permission was last accessed.
         /// </para>
         /// </summary>
         public DateTime? LastAccessed

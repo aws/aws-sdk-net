@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public EnhancedImageScanFinding Unmarshall(JsonUnmarshallerContext context)
         {
             EnhancedImageScanFinding unmarshalledObject = new EnhancedImageScanFinding();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

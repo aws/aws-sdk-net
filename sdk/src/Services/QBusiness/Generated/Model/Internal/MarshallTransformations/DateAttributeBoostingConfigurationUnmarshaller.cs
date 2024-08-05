@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public DateAttributeBoostingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DateAttributeBoostingConfiguration unmarshalledObject = new DateAttributeBoostingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

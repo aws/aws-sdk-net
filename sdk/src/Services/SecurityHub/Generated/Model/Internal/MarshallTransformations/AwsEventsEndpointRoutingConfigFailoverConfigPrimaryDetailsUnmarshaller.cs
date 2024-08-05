@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails unmarshalledObject = new AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

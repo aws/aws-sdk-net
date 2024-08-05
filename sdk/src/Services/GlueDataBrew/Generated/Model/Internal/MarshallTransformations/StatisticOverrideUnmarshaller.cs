@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public StatisticOverride Unmarshall(JsonUnmarshallerContext context)
         {
             StatisticOverride unmarshalledObject = new StatisticOverride();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

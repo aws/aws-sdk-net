@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public MonitoringAlertHistorySummary Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoringAlertHistorySummary unmarshalledObject = new MonitoringAlertHistorySummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

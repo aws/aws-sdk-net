@@ -30,9 +30,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// In a <c>BatchImportFindings</c> request, finding providers use <c>FindingProviderFields</c>
-    /// to provide and update values for confidence, criticality, related findings, severity,
-    /// and types.
+    /// In a <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
+    /// <c>BatchImportFindings</c> </a> request, finding providers use <c>FindingProviderFields</c>
+    /// to provide and update values for the following fields:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Confidence</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Criticality</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>RelatedFindings</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Severity</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Types</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The preceding fields are nested under the <c>FindingProviderFields</c> object, but
+    /// also have analogues of the same name as top-level ASFF fields. When a new finding
+    /// is sent to Security Hub by a finding provider, Security Hub populates the <c>FindingProviderFields</c>
+    /// object automatically, if it is empty, based on the corresponding top-level fields.
+    /// </para>
+    ///  
+    /// <para>
+    /// Finding providers can update <c>FindingProviderFields</c> only by using the <c>BatchImportFindings</c>
+    /// operation. Finding providers can't update this object with the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
+    /// <c>BatchUpdateFindings</c> </a> operation. Customers can update the top-level fields
+    /// by using the <c>BatchUpdateFindings</c> operation. Customers can't update <c>FindingProviderFields</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about how Security Hub handles updates from <c>BatchImportFindings</c>
+    /// to <c>FindingProviderFields</c> and to the corresponding top-level attributes, see
+    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchimportfindings.html#batchimportfindings-findingproviderfields">Using
+    /// <c>FindingProviderFields</c> </a> in the <i>Security Hub User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class FindingProviderFields
     {

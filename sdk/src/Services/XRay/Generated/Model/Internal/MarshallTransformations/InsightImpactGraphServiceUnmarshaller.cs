@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public InsightImpactGraphService Unmarshall(JsonUnmarshallerContext context)
         {
             InsightImpactGraphService unmarshalledObject = new InsightImpactGraphService();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

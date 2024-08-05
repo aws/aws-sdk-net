@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ResourceDataSyncItem Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceDataSyncItem unmarshalledObject = new ResourceDataSyncItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

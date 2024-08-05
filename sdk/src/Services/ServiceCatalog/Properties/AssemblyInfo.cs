@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ServiceCatalog")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Service Catalog. AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Service Catalog. AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Service Catalog. AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.")]
 #elif NETCOREAPP3_1

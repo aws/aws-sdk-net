@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public TracingConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
             TracingConfigResponse unmarshalledObject = new TracingConfigResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

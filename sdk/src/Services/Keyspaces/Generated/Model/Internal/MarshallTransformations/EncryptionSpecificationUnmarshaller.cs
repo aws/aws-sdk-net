@@ -57,6 +57,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         public EncryptionSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionSpecification unmarshalledObject = new EncryptionSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

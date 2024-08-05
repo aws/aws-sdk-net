@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public DirectoryRegistration Unmarshall(JsonUnmarshallerContext context)
         {
             DirectoryRegistration unmarshalledObject = new DirectoryRegistration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

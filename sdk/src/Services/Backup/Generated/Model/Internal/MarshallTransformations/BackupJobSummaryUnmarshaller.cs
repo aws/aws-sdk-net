@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public BackupJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             BackupJobSummary unmarshalledObject = new BackupJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CategoricalParameterRange Unmarshall(JsonUnmarshallerContext context)
         {
             CategoricalParameterRange unmarshalledObject = new CategoricalParameterRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

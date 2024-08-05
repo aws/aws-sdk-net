@@ -101,6 +101,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetForceEndpointErrorConfiguration())
+                {
+                    context.Writer.WritePropertyName("ForceEndpointErrorConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ForceEndpointErrorConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ForceEndpointErrorConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetHlsManifests())
                 {
                     context.Writer.WritePropertyName("HlsManifests");

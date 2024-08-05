@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.RestXmlProtocol")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Sample Rest Xml Protocol Service. rest-xml test service")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Sample Rest Xml Protocol Service. rest-xml test service")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Sample Rest Xml Protocol Service. rest-xml test service")]
 #elif NETCOREAPP3_1

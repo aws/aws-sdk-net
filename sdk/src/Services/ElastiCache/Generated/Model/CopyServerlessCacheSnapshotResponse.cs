@@ -40,7 +40,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCacheSnapshot. 
         /// <para>
         /// The response for the attempt to copy the serverless cache snapshot. Available for
-        /// Redis only.
+        /// Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public ServerlessCacheSnapshot ServerlessCacheSnapshot

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public KPIVisualStandardLayout Unmarshall(JsonUnmarshallerContext context)
         {
             KPIVisualStandardLayout unmarshalledObject = new KPIVisualStandardLayout();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

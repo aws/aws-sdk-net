@@ -57,6 +57,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public ComponentVersionListItem Unmarshall(JsonUnmarshallerContext context)
         {
             ComponentVersionListItem unmarshalledObject = new ComponentVersionListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

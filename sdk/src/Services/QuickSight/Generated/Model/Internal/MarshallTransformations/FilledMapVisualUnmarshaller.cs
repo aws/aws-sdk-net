@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FilledMapVisual Unmarshall(JsonUnmarshallerContext context)
         {
             FilledMapVisual unmarshalledObject = new FilledMapVisual();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

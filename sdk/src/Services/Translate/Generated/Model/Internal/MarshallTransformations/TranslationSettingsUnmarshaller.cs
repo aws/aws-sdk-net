@@ -57,6 +57,8 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         public TranslationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             TranslationSettings unmarshalledObject = new TranslationSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

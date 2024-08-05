@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public StringListAttributeBoostingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             StringListAttributeBoostingConfiguration unmarshalledObject = new StringListAttributeBoostingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

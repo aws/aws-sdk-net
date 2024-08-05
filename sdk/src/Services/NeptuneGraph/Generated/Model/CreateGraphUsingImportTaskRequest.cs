@@ -195,7 +195,7 @@ namespace Amazon.NeptuneGraph.Model
         /// specified 128 m-NCUs are used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=24576)]
+        [AWSProperty(Min=32, Max=24576)]
         public int? MaxProvisionedMemory
         {
             get { return this._maxProvisionedMemory; }
@@ -215,7 +215,7 @@ namespace Amazon.NeptuneGraph.Model
         /// the graph. Default: 128
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=24576)]
+        [AWSProperty(Min=32, Max=24576)]
         public int? MinProvisionedMemory
         {
             get { return this._minProvisionedMemory; }

@@ -64,10 +64,6 @@
       <Project>{1073C7DB-B519-4074-AF6D-3A881198BB67}</Project>
       <Name>AWSSDK.ACMPCA.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/AlexaForBusiness/AWSSDK.AlexaForBusiness.CodeAnalysis.csproj">
-      <Project>{19BEAEA3-E3CE-4346-B51E-D22E7A319DE5}</Project>
-      <Name>AWSSDK.AlexaForBusiness.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Amplify/AWSSDK.Amplify.CodeAnalysis.csproj">
       <Project>{FE28FA91-1F9C-417B-844C-AF73189EFA3A}</Project>
       <Name>AWSSDK.Amplify.CodeAnalysis</Name>
@@ -195,10 +191,6 @@
     <ProjectReference Include="../ServiceAnalysis/BackupGateway/AWSSDK.BackupGateway.CodeAnalysis.csproj">
       <Project>{5FFE394A-30FB-4A47-BFC8-F3667019CF92}</Project>
       <Name>AWSSDK.BackupGateway.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/BackupStorage/AWSSDK.BackupStorage.CodeAnalysis.csproj">
-      <Project>{0E97E7B2-2525-4A58-81C0-610D8DC2EDC9}</Project>
-      <Name>AWSSDK.BackupStorage.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Batch/AWSSDK.Batch.CodeAnalysis.csproj">
       <Project>{8672DE1E-8F7B-480C-9A87-C75AA468FFEB}</Project>
@@ -636,10 +628,6 @@
       <Project>{B08CE3C3-4F9A-46C5-B7BB-371C9752CAFA}</Project>
       <Name>AWSSDK.HealthLake.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/Honeycode/AWSSDK.Honeycode.CodeAnalysis.csproj">
-      <Project>{7514CF83-2AF7-4EAC-9006-24E159F9D62A}</Project>
-      <Name>AWSSDK.Honeycode.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IAMRolesAnywhere/AWSSDK.IAMRolesAnywhere.CodeAnalysis.csproj">
       <Project>{213EDD5C-6DB2-491B-B26C-A946922F8007}</Project>
       <Name>AWSSDK.IAMRolesAnywhere.CodeAnalysis</Name>
@@ -955,10 +943,6 @@
     <ProjectReference Include="../ServiceAnalysis/MigrationHubStrategyRecommendations/AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis.csproj">
       <Project>{27A60892-7646-4606-91DC-17E930FB0F13}</Project>
       <Name>AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/Mobile/AWSSDK.Mobile.CodeAnalysis.csproj">
-      <Project>{C3190A64-6C58-4A8C-A0D5-49E539A5627C}</Project>
-      <Name>AWSSDK.Mobile.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MobileAnalytics/AWSSDK.MobileAnalytics.CodeAnalysis.csproj">
       <Project>{1DEBD742-421A-4D5B-A03D-9CAD38CAEFAB}</Project>

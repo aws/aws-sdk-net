@@ -75,6 +75,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxACU", StringUtils.FromDouble(publicRequest.MaxACU));
                 }
+                if(publicRequest.IsSetMinACU())
+                {
+                    request.Parameters.Add("MinACU", StringUtils.FromDouble(publicRequest.MinACU));
+                }
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));

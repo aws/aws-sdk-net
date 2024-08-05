@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAmazonMqBrokerLdapServerMetadataDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAmazonMqBrokerLdapServerMetadataDetails unmarshalledObject = new AwsAmazonMqBrokerLdapServerMetadataDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

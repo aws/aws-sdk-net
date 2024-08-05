@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public PortalOptions Unmarshall(JsonUnmarshallerContext context)
         {
             PortalOptions unmarshalledObject = new PortalOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

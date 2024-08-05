@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TableFieldCustomIconContent Unmarshall(JsonUnmarshallerContext context)
         {
             TableFieldCustomIconContent unmarshalledObject = new TableFieldCustomIconContent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SageMakerMetrics")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon SageMaker Metrics Service. This release introduces support SageMaker Metrics APIs.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon SageMaker Metrics Service. This release introduces support SageMaker Metrics APIs.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon SageMaker Metrics Service. This release introduces support SageMaker Metrics APIs.")]
 #elif NETCOREAPP3_1

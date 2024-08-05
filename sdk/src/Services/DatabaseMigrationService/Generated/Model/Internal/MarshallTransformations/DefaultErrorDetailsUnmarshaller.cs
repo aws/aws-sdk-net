@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public DefaultErrorDetails Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultErrorDetails unmarshalledObject = new DefaultErrorDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

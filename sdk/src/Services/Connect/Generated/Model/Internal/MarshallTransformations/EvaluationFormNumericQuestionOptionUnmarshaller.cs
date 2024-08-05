@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public EvaluationFormNumericQuestionOption Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationFormNumericQuestionOption unmarshalledObject = new EvaluationFormNumericQuestionOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

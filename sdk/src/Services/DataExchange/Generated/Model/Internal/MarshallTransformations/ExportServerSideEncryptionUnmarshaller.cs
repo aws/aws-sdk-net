@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public ExportServerSideEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             ExportServerSideEncryption unmarshalledObject = new ExportServerSideEncryption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

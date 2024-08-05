@@ -33,8 +33,8 @@ namespace Amazon.DynamoDBv2.Model
     /// The capacity units consumed by an operation. The data returned includes the total
     /// provisioned throughput consumed, along with statistics for the table and any indexes
     /// involved in the operation. <c>ConsumedCapacity</c> is only returned if the request
-    /// asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-    /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+    /// asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+    /// capacity mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </summary>
     public partial class ConsumedCapacity
     {

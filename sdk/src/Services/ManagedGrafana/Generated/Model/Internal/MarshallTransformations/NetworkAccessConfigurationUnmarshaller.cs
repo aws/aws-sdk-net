@@ -57,6 +57,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public NetworkAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkAccessConfiguration unmarshalledObject = new NetworkAccessConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

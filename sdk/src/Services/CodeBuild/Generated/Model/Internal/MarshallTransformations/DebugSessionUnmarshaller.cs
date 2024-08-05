@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public DebugSession Unmarshall(JsonUnmarshallerContext context)
         {
             DebugSession unmarshalledObject = new DebugSession();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

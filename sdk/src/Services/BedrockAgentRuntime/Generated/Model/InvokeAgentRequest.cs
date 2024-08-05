@@ -31,14 +31,16 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAgent operation.
-    /// Sends a prompt for the agent to process and respond to. Use return control event type
-    /// for function calling.
-    /// 
-    ///  <note> 
+    /// <note> 
     /// <para>
-    /// The CLI doesn't support <c>InvokeAgent</c>.
+    /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeAgent</c>.
     /// </para>
-    ///  </note> <ul> <li> 
+    ///  </note> 
+    /// <para>
+    /// Sends a prompt for the agent to process and respond to. Note the following fields
+    /// for the request:
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
     /// To continue the same conversation with an agent, use the same <c>sessionId</c> value
     /// in the request.
@@ -58,11 +60,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     ///  </li> <li> 
     /// <para>
     /// In the <c>sessionState</c> object, you can include attributes for the session or prompt
-    /// or parameters returned from the action group.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Use return control event type for function calling.
+    /// or, if you configured an action group to return control, results from invocation of
+    /// the action group.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -79,6 +78,11 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// If the action predicted was configured to return control, the response returns parameters
+    /// for the action, elicited from the user, in the <c>returnControl</c> field.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Errors are also surfaced in the response.
     /// </para>
     ///  </li> </ul>
@@ -90,6 +94,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private bool? _enableTrace;
         private bool? _endSession;
         private string _inputText;
+        private string _memoryId;
         private string _sessionId;
         private SessionState _sessionState;
 
@@ -174,6 +179,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <para>
         /// The prompt text to send the agent.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you include <c>returnControlInvocationResults</c> in the <c>sessionState</c> field,
+        /// the <c>inputText</c> field will be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=25000000)]
         public string InputText
@@ -186,6 +197,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetInputText()
         {
             return this._inputText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryId. 
+        /// <para>
+        /// The unique identifier of the agent memory.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string MemoryId
+        {
+            get { return this._memoryId; }
+            set { this._memoryId = value; }
+        }
+
+        // Check to see if MemoryId property is set
+        internal bool IsSetMemoryId()
+        {
+            return this._memoryId != null;
         }
 
         /// <summary>
@@ -215,6 +245,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
         /// session context</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you include <c>returnControlInvocationResults</c> in the <c>sessionState</c> field,
+        /// the <c>inputText</c> field will be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         public SessionState SessionState
         {

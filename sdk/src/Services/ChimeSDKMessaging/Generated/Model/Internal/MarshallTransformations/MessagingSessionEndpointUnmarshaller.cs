@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public MessagingSessionEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             MessagingSessionEndpoint unmarshalledObject = new MessagingSessionEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

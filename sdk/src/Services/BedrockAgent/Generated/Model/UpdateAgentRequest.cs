@@ -41,8 +41,10 @@ namespace Amazon.BedrockAgent.Model
         private string _customerEncryptionKeyArn;
         private string _description;
         private string _foundationModel;
+        private GuardrailConfiguration _guardrailConfiguration;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
+        private MemoryConfiguration _memoryConfiguration;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
 
         /// <summary>
@@ -161,6 +163,24 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GuardrailConfiguration. 
+        /// <para>
+        /// The unique Guardrail configuration assigned to the agent when it is updated.
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfiguration
+        {
+            get { return this._guardrailConfiguration; }
+            set { this._guardrailConfiguration = value; }
+        }
+
+        // Check to see if GuardrailConfiguration property is set
+        internal bool IsSetGuardrailConfiguration()
+        {
+            return this._guardrailConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdleSessionTTLInSeconds. 
         /// <para>
         /// The number of seconds for which Amazon Bedrock keeps information about a user's conversation
@@ -193,7 +213,7 @@ namespace Amazon.BedrockAgent.Model
         /// interact with users.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=40, Max=1200)]
+        [AWSProperty(Sensitive=true, Min=40, Max=4000)]
         public string Instruction
         {
             get { return this._instruction; }
@@ -204,6 +224,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetInstruction()
         {
             return this._instruction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryConfiguration. 
+        /// <para>
+        /// Specifies the new memory configuration for the agent. 
+        /// </para>
+        /// </summary>
+        public MemoryConfiguration MemoryConfiguration
+        {
+            get { return this._memoryConfiguration; }
+            set { this._memoryConfiguration = value; }
+        }
+
+        // Check to see if MemoryConfiguration property is set
+        internal bool IsSetMemoryConfiguration()
+        {
+            return this._memoryConfiguration != null;
         }
 
         /// <summary>

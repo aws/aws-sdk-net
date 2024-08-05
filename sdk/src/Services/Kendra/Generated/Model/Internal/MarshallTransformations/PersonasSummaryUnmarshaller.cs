@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public PersonasSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PersonasSummary unmarshalledObject = new PersonasSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

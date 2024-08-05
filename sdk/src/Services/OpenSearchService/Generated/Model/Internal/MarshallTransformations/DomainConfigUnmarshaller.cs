@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public DomainConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DomainConfig unmarshalledObject = new DomainConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AdvancedSecurityOptionsStatusUnmarshaller.Instance;
                     unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AIMLOptions", targetDepth))
+                {
+                    var unmarshaller = AIMLOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.AIMLOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AutoTuneOptions", targetDepth))

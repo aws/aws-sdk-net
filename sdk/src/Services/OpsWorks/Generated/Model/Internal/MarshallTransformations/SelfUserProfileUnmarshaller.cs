@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public SelfUserProfile Unmarshall(JsonUnmarshallerContext context)
         {
             SelfUserProfile unmarshalledObject = new SelfUserProfile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

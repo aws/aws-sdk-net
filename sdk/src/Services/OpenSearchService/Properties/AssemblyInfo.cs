@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.OpenSearchService")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon OpenSearch Service. Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon OpenSearch Service. Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon OpenSearch Service. Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)")]
 #elif NETCOREAPP3_1

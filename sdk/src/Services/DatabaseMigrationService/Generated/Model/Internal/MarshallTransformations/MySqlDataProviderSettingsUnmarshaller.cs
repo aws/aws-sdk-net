@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public MySqlDataProviderSettings Unmarshall(JsonUnmarshallerContext context)
         {
             MySqlDataProviderSettings unmarshalledObject = new MySqlDataProviderSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

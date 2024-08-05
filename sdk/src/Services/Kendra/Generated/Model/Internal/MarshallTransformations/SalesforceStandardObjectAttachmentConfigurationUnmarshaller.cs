@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public SalesforceStandardObjectAttachmentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SalesforceStandardObjectAttachmentConfiguration unmarshalledObject = new SalesforceStandardObjectAttachmentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

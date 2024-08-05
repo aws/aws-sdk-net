@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public DiscoveryServerConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DiscoveryServerConfiguration unmarshalledObject = new DiscoveryServerConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

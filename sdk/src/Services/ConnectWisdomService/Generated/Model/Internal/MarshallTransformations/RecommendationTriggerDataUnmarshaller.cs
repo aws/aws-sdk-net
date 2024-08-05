@@ -57,6 +57,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         public RecommendationTriggerData Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationTriggerData unmarshalledObject = new RecommendationTriggerData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

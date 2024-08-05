@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public RevisionInfo Unmarshall(JsonUnmarshallerContext context)
         {
             RevisionInfo unmarshalledObject = new RevisionInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

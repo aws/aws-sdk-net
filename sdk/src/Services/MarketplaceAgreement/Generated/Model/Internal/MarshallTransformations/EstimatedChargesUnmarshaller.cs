@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public EstimatedCharges Unmarshall(JsonUnmarshallerContext context)
         {
             EstimatedCharges unmarshalledObject = new EstimatedCharges();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

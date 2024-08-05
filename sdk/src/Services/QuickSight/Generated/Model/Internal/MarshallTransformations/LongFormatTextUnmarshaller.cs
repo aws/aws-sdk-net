@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LongFormatText Unmarshall(JsonUnmarshallerContext context)
         {
             LongFormatText unmarshalledObject = new LongFormatText();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

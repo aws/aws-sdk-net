@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public BatchGetCustomDataIdentifierSummary Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetCustomDataIdentifierSummary unmarshalledObject = new BatchGetCustomDataIdentifierSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

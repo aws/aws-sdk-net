@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public ReactStartCodegenJobData Unmarshall(JsonUnmarshallerContext context)
         {
             ReactStartCodegenJobData unmarshalledObject = new ReactStartCodegenJobData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

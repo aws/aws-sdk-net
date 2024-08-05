@@ -44,6 +44,8 @@ namespace Amazon.CostOptimizationHub.Model
         private ElastiCacheReservedInstances _elastiCacheReservedInstances;
         private LambdaFunction _lambdaFunction;
         private OpenSearchReservedInstances _openSearchReservedInstances;
+        private RdsDbInstance _rdsDbInstance;
+        private RdsDbInstanceStorage _rdsDbInstanceStorage;
         private RdsReservedInstances _rdsReservedInstances;
         private RedshiftReservedInstances _redshiftReservedInstances;
         private SageMakerSavingsPlans _sageMakerSavingsPlans;
@@ -226,6 +228,42 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetOpenSearchReservedInstances()
         {
             return this._openSearchReservedInstances != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsDbInstance. 
+        /// <para>
+        /// The DB instance recommendation details.
+        /// </para>
+        /// </summary>
+        public RdsDbInstance RdsDbInstance
+        {
+            get { return this._rdsDbInstance; }
+            set { this._rdsDbInstance = value; }
+        }
+
+        // Check to see if RdsDbInstance property is set
+        internal bool IsSetRdsDbInstance()
+        {
+            return this._rdsDbInstance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsDbInstanceStorage. 
+        /// <para>
+        /// The DB instance storage recommendation details.
+        /// </para>
+        /// </summary>
+        public RdsDbInstanceStorage RdsDbInstanceStorage
+        {
+            get { return this._rdsDbInstanceStorage; }
+            set { this._rdsDbInstanceStorage = value; }
+        }
+
+        // Check to see if RdsDbInstanceStorage property is set
+        internal bool IsSetRdsDbInstanceStorage()
+        {
+            return this._rdsDbInstanceStorage != null;
         }
 
         /// <summary>

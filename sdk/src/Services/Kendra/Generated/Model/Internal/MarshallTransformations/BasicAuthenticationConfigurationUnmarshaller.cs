@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public BasicAuthenticationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BasicAuthenticationConfiguration unmarshalledObject = new BasicAuthenticationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

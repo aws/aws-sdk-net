@@ -166,7 +166,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveSize property is set
         internal bool IsSetArchiveSize()
         {
-            return this._archiveSize != null;
+            return !string.IsNullOrEmpty(this._archiveSize);
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this._checksum != null;
+            return !string.IsNullOrEmpty(this._checksum);
         }
 
         /// <summary>

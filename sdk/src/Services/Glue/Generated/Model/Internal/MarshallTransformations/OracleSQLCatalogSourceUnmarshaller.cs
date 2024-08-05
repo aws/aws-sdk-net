@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public OracleSQLCatalogSource Unmarshall(JsonUnmarshallerContext context)
         {
             OracleSQLCatalogSource unmarshalledObject = new OracleSQLCatalogSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

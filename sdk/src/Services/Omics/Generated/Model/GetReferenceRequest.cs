@@ -113,7 +113,7 @@ namespace Amazon.Omics.Model
         // Check to see if Range property is set
         internal bool IsSetRange()
         {
-            return this._range != null;
+            return !string.IsNullOrEmpty(this._range);
         }
 
         /// <summary>

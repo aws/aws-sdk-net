@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public DataRetrievalRule Unmarshall(JsonUnmarshallerContext context)
         {
             DataRetrievalRule unmarshalledObject = new DataRetrievalRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

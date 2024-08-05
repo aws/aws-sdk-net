@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public GlobalTable Unmarshall(JsonUnmarshallerContext context)
         {
             GlobalTable unmarshalledObject = new GlobalTable();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

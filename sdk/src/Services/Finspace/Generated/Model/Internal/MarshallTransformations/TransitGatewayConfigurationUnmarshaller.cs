@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public TransitGatewayConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TransitGatewayConfiguration unmarshalledObject = new TransitGatewayConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

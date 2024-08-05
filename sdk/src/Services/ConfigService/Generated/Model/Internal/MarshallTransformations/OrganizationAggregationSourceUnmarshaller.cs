@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public OrganizationAggregationSource Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationAggregationSource unmarshalledObject = new OrganizationAggregationSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

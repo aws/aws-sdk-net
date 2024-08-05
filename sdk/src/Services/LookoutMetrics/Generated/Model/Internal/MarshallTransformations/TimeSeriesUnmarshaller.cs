@@ -57,6 +57,8 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         public TimeSeries Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeries unmarshalledObject = new TimeSeries();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

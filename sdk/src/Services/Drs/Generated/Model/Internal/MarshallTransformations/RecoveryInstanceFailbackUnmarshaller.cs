@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public RecoveryInstanceFailback Unmarshall(JsonUnmarshallerContext context)
         {
             RecoveryInstanceFailback unmarshalledObject = new RecoveryInstanceFailback();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

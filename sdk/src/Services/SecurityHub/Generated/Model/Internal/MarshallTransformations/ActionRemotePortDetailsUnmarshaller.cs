@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public ActionRemotePortDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ActionRemotePortDetails unmarshalledObject = new ActionRemotePortDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

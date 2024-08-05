@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public ProtectConfigurationInformation Unmarshall(JsonUnmarshallerContext context)
         {
             ProtectConfigurationInformation unmarshalledObject = new ProtectConfigurationInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

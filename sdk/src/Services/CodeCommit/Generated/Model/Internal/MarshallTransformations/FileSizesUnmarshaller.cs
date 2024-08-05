@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public FileSizes Unmarshall(JsonUnmarshallerContext context)
         {
             FileSizes unmarshalledObject = new FileSizes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

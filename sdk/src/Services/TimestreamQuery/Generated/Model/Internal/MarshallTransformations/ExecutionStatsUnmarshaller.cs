@@ -57,6 +57,8 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         public ExecutionStats Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionStats unmarshalledObject = new ExecutionStats();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

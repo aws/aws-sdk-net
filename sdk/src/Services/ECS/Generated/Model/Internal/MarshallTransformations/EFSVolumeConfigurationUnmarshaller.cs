@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public EFSVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EFSVolumeConfiguration unmarshalledObject = new EFSVolumeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CustomerProfiles")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Connect Customer Profiles. This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Connect Customer Profiles. This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Connect Customer Profiles. This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.")]
 #elif NETCOREAPP3_1

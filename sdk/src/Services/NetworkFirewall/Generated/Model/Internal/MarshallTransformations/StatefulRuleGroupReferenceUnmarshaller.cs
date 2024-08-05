@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public StatefulRuleGroupReference Unmarshall(JsonUnmarshallerContext context)
         {
             StatefulRuleGroupReference unmarshalledObject = new StatefulRuleGroupReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

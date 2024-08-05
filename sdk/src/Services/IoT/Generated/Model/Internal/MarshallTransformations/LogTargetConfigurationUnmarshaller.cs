@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public LogTargetConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LogTargetConfiguration unmarshalledObject = new LogTargetConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

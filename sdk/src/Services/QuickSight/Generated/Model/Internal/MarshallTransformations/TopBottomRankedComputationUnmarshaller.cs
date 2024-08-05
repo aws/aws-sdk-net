@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TopBottomRankedComputation Unmarshall(JsonUnmarshallerContext context)
         {
             TopBottomRankedComputation unmarshalledObject = new TopBottomRankedComputation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

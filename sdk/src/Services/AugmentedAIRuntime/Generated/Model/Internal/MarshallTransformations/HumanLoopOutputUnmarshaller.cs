@@ -57,6 +57,8 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
         public HumanLoopOutput Unmarshall(JsonUnmarshallerContext context)
         {
             HumanLoopOutput unmarshalledObject = new HumanLoopOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

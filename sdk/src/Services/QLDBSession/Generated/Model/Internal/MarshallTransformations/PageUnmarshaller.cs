@@ -57,6 +57,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         public Page Unmarshall(JsonUnmarshallerContext context)
         {
             Page unmarshalledObject = new Page();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

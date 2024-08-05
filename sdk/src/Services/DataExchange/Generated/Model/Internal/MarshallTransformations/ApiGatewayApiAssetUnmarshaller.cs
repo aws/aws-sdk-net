@@ -57,6 +57,8 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         public ApiGatewayApiAsset Unmarshall(JsonUnmarshallerContext context)
         {
             ApiGatewayApiAsset unmarshalledObject = new ApiGatewayApiAsset();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

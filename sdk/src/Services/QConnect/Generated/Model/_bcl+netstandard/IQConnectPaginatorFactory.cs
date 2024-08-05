@@ -37,6 +37,11 @@ namespace Amazon.QConnect.Model
         IListAssistantsPaginator ListAssistants(ListAssistantsRequest request);
 
         /// <summary>
+        /// Paginator for ListContentAssociations operation
+        ///</summary>
+        IListContentAssociationsPaginator ListContentAssociations(ListContentAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListContents operation
         ///</summary>
         IListContentsPaginator ListContents(ListContentsRequest request);

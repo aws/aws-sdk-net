@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Route53Profiles")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Route 53 Profiles. Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Route 53 Profiles. Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Route 53 Profiles. Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.")]
 #elif NETCOREAPP3_1

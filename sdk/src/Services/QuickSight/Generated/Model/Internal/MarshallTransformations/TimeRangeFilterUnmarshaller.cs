@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TimeRangeFilter Unmarshall(JsonUnmarshallerContext context)
         {
             TimeRangeFilter unmarshalledObject = new TimeRangeFilter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

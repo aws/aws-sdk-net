@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public InstanceStorageConfig Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceStorageConfig unmarshalledObject = new InstanceStorageConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

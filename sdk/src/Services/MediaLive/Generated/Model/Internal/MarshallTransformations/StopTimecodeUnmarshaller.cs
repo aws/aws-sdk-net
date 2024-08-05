@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public StopTimecode Unmarshall(JsonUnmarshallerContext context)
         {
             StopTimecode unmarshalledObject = new StopTimecode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

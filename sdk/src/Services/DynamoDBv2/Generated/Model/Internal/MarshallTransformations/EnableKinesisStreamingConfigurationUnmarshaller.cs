@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public EnableKinesisStreamingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EnableKinesisStreamingConfiguration unmarshalledObject = new EnableKinesisStreamingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

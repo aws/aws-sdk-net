@@ -40,6 +40,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private DataCompressionType _dataCompressionType;
         private LustreLogCreateConfiguration _logConfiguration;
+        private UpdateFileSystemLustreMetadataConfiguration _metadataConfiguration;
         private int? _perUnitStorageThroughput;
         private LustreRootSquashConfiguration _rootSquashConfiguration;
         private string _weeklyMaintenanceStartTime;
@@ -186,6 +187,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetLogConfiguration()
         {
             return this._logConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataConfiguration. 
+        /// <para>
+        /// The Lustre metadata performance configuration for an Amazon FSx for Lustre file system
+        /// using a <c>PERSISTENT_2</c> deployment type. When this configuration is enabled, the
+        /// file system supports increasing metadata performance.
+        /// </para>
+        /// </summary>
+        public UpdateFileSystemLustreMetadataConfiguration MetadataConfiguration
+        {
+            get { return this._metadataConfiguration; }
+            set { this._metadataConfiguration = value; }
+        }
+
+        // Check to see if MetadataConfiguration property is set
+        internal bool IsSetMetadataConfiguration()
+        {
+            return this._metadataConfiguration != null;
         }
 
         /// <summary>

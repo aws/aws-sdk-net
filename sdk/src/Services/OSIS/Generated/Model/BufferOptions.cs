@@ -31,7 +31,9 @@ namespace Amazon.OSIS.Model
 {
     /// <summary>
     /// Options that specify the configuration of a persistent buffer. To configure how OpenSearch
-    /// Ingestion encrypts this data, set the EncryptionAtRestOptions.
+    /// Ingestion encrypts this data, set the <c>EncryptionAtRestOptions</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/osis-features-overview.html#persistent-buffering">Persistent
+    /// buffering</a>.
     /// </summary>
     public partial class BufferOptions
     {

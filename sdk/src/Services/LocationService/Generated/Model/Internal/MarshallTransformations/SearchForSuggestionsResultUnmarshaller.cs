@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public SearchForSuggestionsResult Unmarshall(JsonUnmarshallerContext context)
         {
             SearchForSuggestionsResult unmarshalledObject = new SearchForSuggestionsResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

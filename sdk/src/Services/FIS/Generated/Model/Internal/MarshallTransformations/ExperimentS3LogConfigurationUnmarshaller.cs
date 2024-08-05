@@ -57,6 +57,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         public ExperimentS3LogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ExperimentS3LogConfiguration unmarshalledObject = new ExperimentS3LogConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

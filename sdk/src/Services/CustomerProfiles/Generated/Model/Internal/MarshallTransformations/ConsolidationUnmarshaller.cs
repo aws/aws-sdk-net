@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public Consolidation Unmarshall(JsonUnmarshallerContext context)
         {
             Consolidation unmarshalledObject = new Consolidation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -93,6 +93,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetContextualGroundingPolicyConfig())
+                {
+                    context.Writer.WritePropertyName("contextualGroundingPolicyConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GuardrailContextualGroundingPolicyConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ContextualGroundingPolicyConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

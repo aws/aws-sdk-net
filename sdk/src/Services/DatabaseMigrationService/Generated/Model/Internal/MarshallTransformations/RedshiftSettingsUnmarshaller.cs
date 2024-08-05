@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public RedshiftSettings Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftSettings unmarshalledObject = new RedshiftSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

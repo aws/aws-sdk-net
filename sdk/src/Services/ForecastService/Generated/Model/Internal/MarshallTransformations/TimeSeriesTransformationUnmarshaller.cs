@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public TimeSeriesTransformation Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeriesTransformation unmarshalledObject = new TimeSeriesTransformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

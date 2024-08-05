@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public ComplianceViolator Unmarshall(JsonUnmarshallerContext context)
         {
             ComplianceViolator unmarshalledObject = new ComplianceViolator();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public OpsCenterIntegration Unmarshall(JsonUnmarshallerContext context)
         {
             OpsCenterIntegration unmarshalledObject = new OpsCenterIntegration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DirectKinesisSource Unmarshall(JsonUnmarshallerContext context)
         {
             DirectKinesisSource unmarshalledObject = new DirectKinesisSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

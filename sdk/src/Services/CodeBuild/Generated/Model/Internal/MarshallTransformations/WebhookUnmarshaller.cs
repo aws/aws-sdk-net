@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public Webhook Unmarshall(JsonUnmarshallerContext context)
         {
             Webhook unmarshalledObject = new Webhook();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -88,10 +90,22 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("manualCreation", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.ManualCreation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("payloadUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PayloadUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scopeConfiguration", targetDepth))
+                {
+                    var unmarshaller = ScopeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ScopeConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("secret", targetDepth))

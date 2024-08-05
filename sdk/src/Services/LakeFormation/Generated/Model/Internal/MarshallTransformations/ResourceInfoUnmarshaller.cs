@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public ResourceInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceInfo unmarshalledObject = new ResourceInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

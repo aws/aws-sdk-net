@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public CrossChannelBehavior Unmarshall(JsonUnmarshallerContext context)
         {
             CrossChannelBehavior unmarshalledObject = new CrossChannelBehavior();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

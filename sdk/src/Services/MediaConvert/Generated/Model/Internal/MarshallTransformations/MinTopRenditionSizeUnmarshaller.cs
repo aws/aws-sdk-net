@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public MinTopRenditionSize Unmarshall(JsonUnmarshallerContext context)
         {
             MinTopRenditionSize unmarshalledObject = new MinTopRenditionSize();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         public CreationInfo Unmarshall(JsonUnmarshallerContext context)
         {
             CreationInfo unmarshalledObject = new CreationInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

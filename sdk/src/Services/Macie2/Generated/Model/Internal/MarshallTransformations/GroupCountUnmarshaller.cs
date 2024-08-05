@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public GroupCount Unmarshall(JsonUnmarshallerContext context)
         {
             GroupCount unmarshalledObject = new GroupCount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

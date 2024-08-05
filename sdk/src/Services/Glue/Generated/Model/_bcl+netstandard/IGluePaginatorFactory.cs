@@ -222,6 +222,11 @@ namespace Amazon.Glue.Model
         IListTriggersPaginator ListTriggers(ListTriggersRequest request);
 
         /// <summary>
+        /// Paginator for ListUsageProfiles operation
+        ///</summary>
+        IListUsageProfilesPaginator ListUsageProfiles(ListUsageProfilesRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkflows operation
         ///</summary>
         IListWorkflowsPaginator ListWorkflows(ListWorkflowsRequest request);

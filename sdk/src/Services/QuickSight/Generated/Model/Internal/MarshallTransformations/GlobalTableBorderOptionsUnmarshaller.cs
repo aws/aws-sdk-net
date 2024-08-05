@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GlobalTableBorderOptions Unmarshall(JsonUnmarshallerContext context)
         {
             GlobalTableBorderOptions unmarshalledObject = new GlobalTableBorderOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

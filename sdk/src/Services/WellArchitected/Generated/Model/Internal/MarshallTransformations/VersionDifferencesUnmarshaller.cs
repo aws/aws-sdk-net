@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public VersionDifferences Unmarshall(JsonUnmarshallerContext context)
         {
             VersionDifferences unmarshalledObject = new VersionDifferences();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

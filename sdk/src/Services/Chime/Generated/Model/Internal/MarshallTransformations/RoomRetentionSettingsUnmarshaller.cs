@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public RoomRetentionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             RoomRetentionSettings unmarshalledObject = new RoomRetentionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

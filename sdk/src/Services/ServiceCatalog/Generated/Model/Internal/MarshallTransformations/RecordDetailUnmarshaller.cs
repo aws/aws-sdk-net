@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public RecordDetail Unmarshall(JsonUnmarshallerContext context)
         {
             RecordDetail unmarshalledObject = new RecordDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

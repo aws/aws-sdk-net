@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public GrpcRouteMetadataMatchMethod Unmarshall(JsonUnmarshallerContext context)
         {
             GrpcRouteMetadataMatchMethod unmarshalledObject = new GrpcRouteMetadataMatchMethod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

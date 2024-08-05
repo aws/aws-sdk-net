@@ -36,6 +36,7 @@ namespace Amazon.StepFunctions.Model
     {
         private string _activityArn;
         private DateTime? _creationDate;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _name;
 
         /// <summary>
@@ -74,6 +75,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Settings for configured server-side encryption.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

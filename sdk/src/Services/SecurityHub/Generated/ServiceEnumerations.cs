@@ -1762,6 +1762,10 @@ namespace Amazon.SecurityHub
         /// Constant ORGANIZATIONAL_UNIT for TargetType
         /// </summary>
         public static readonly TargetType ORGANIZATIONAL_UNIT = new TargetType("ORGANIZATIONAL_UNIT");
+        /// <summary>
+        /// Constant ROOT for TargetType
+        /// </summary>
+        public static readonly TargetType ROOT = new TargetType("ROOT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

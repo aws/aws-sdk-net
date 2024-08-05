@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public AgentVersion Unmarshall(JsonUnmarshallerContext context)
         {
             AgentVersion unmarshalledObject = new AgentVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         public HandshakeResource Unmarshall(JsonUnmarshallerContext context)
         {
             HandshakeResource unmarshalledObject = new HandshakeResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

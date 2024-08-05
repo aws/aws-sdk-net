@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public JsonTokenTypeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             JsonTokenTypeConfiguration unmarshalledObject = new JsonTokenTypeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

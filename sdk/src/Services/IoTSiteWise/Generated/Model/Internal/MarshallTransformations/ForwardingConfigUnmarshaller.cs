@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public ForwardingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ForwardingConfig unmarshalledObject = new ForwardingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public FeaturedDocumentMissing Unmarshall(JsonUnmarshallerContext context)
         {
             FeaturedDocumentMissing unmarshalledObject = new FeaturedDocumentMissing();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

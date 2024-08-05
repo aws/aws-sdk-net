@@ -27,6 +27,11 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
 
         /// <summary>
+        /// Paginator for GetAgentMemory operation
+        ///</summary>
+        IGetAgentMemoryPaginator GetAgentMemory(GetAgentMemoryRequest request);
+
+        /// <summary>
         /// Paginator for Retrieve operation
         ///</summary>
         IRetrievePaginator Retrieve(RetrieveRequest request);

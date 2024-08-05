@@ -135,6 +135,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRetainPermissionsOnRevokeFailure())
+                {
+                    context.Writer.WritePropertyName("retainPermissionsOnRevokeFailure");
+                    context.Writer.Write(publicRequest.RetainPermissionsOnRevokeFailure.Value);
+                }
+
                 if(publicRequest.IsSetSchedule())
                 {
                     context.Writer.WritePropertyName("schedule");

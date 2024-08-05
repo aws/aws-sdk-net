@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public AwsCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCredentials unmarshalledObject = new AwsCredentials();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

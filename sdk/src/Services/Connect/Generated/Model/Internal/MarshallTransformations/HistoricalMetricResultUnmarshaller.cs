@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public HistoricalMetricResult Unmarshall(JsonUnmarshallerContext context)
         {
             HistoricalMetricResult unmarshalledObject = new HistoricalMetricResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

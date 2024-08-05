@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public CommandPlugin Unmarshall(JsonUnmarshallerContext context)
         {
             CommandPlugin unmarshalledObject = new CommandPlugin();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

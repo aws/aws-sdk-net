@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// In the <c>returnControlInvocationResults</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// In the <c>returnControlInvocationResults</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_RequestSyntax">InvokeAgent
     /// request</a> 
     /// </para>
     ///  </li> </ul>

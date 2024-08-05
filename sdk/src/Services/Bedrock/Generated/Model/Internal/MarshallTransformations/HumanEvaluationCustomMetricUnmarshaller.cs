@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public HumanEvaluationCustomMetric Unmarshall(JsonUnmarshallerContext context)
         {
             HumanEvaluationCustomMetric unmarshalledObject = new HumanEvaluationCustomMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

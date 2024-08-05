@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public SharedFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SharedFileSystemConfiguration unmarshalledObject = new SharedFileSystemConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

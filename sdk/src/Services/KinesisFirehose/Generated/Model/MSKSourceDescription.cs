@@ -37,6 +37,7 @@ namespace Amazon.KinesisFirehose.Model
         private AuthenticationConfiguration _authenticationConfiguration;
         private DateTime? _deliveryStartTimestamp;
         private string _mskClusterARN;
+        private DateTime? _readFromTimestamp;
         private string _topicName;
 
         /// <summary>
@@ -93,6 +94,32 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetMSKClusterARN()
         {
             return this._mskClusterARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadFromTimestamp. 
+        /// <para>
+        /// The start date and time in UTC for the offset position within your MSK topic from
+        /// where Firehose begins to read. By default, this is set to timestamp when Firehose
+        /// becomes Active. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to create a Firehose stream with Earliest start position from SDK or CLI,
+        /// you need to set the <c>ReadFromTimestampUTC</c> parameter to Epoch (1970-01-01T00:00:00Z).
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime? ReadFromTimestamp
+        {
+            get { return this._readFromTimestamp; }
+            set { this._readFromTimestamp = value; }
+        }
+
+        // Check to see if ReadFromTimestamp property is set
+        internal bool IsSetReadFromTimestamp()
+        {
+            return this._readFromTimestamp.HasValue; 
         }
 
         /// <summary>

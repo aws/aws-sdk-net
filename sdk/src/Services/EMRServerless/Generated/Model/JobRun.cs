@@ -37,6 +37,9 @@ namespace Amazon.EMRServerless.Model
     {
         private string _applicationId;
         private string _arn;
+        private int? _attempt;
+        private DateTime? _attemptCreatedAt;
+        private DateTime? _attemptUpdatedAt;
         private ResourceUtilization _billedResourceUtilization;
         private ConfigurationOverrides _configurationOverrides;
         private DateTime? _createdAt;
@@ -45,9 +48,11 @@ namespace Amazon.EMRServerless.Model
         private long? _executionTimeoutMinutes;
         private JobDriver _jobDriver;
         private string _jobRunId;
+        private JobRunMode _mode;
         private string _name;
         private NetworkConfiguration _networkConfiguration;
         private string _releaseLabel;
+        private RetryPolicy _retryPolicy;
         private JobRunState _state;
         private string _stateDetails;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -91,6 +96,61 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attempt. 
+        /// <para>
+        /// The attempt of the job run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? Attempt
+        {
+            get { return this._attempt; }
+            set { this._attempt = value; }
+        }
+
+        // Check to see if Attempt property is set
+        internal bool IsSetAttempt()
+        {
+            return this._attempt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttemptCreatedAt. 
+        /// <para>
+        /// The date and time of when the job run attempt was created.
+        /// </para>
+        /// </summary>
+        public DateTime? AttemptCreatedAt
+        {
+            get { return this._attemptCreatedAt; }
+            set { this._attemptCreatedAt = value; }
+        }
+
+        // Check to see if AttemptCreatedAt property is set
+        internal bool IsSetAttemptCreatedAt()
+        {
+            return this._attemptCreatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttemptUpdatedAt. 
+        /// <para>
+        /// The date and time of when the job run attempt was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime? AttemptUpdatedAt
+        {
+            get { return this._attemptUpdatedAt; }
+            set { this._attemptUpdatedAt = value; }
+        }
+
+        // Check to see if AttemptUpdatedAt property is set
+        internal bool IsSetAttemptUpdatedAt()
+        {
+            return this._attemptUpdatedAt.HasValue; 
         }
 
         /// <summary>
@@ -248,6 +308,24 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode of the job run.
+        /// </para>
+        /// </summary>
+        public JobRunMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The optional job run name. This doesn't have to be unique.
@@ -298,6 +376,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryPolicy. 
+        /// <para>
+        /// The retry policy of the job run.
+        /// </para>
+        /// </summary>
+        public RetryPolicy RetryPolicy
+        {
+            get { return this._retryPolicy; }
+            set { this._retryPolicy = value; }
+        }
+
+        // Check to see if RetryPolicy property is set
+        internal bool IsSetRetryPolicy()
+        {
+            return this._retryPolicy != null;
         }
 
         /// <summary>

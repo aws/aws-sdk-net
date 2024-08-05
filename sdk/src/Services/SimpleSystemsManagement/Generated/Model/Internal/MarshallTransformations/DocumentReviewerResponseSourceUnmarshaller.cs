@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public DocumentReviewerResponseSource Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentReviewerResponseSource unmarshalledObject = new DocumentReviewerResponseSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

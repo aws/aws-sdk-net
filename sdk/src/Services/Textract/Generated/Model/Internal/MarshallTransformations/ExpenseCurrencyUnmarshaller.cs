@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public ExpenseCurrency Unmarshall(JsonUnmarshallerContext context)
         {
             ExpenseCurrency unmarshalledObject = new ExpenseCurrency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public VectorIngestionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             VectorIngestionConfiguration unmarshalledObject = new VectorIngestionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ChunkingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ChunkingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customTransformationConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomTransformationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CustomTransformationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("parsingConfiguration", targetDepth))
+                {
+                    var unmarshaller = ParsingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ParsingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

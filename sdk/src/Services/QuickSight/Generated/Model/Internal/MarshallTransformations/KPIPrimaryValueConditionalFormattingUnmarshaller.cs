@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public KPIPrimaryValueConditionalFormatting Unmarshall(JsonUnmarshallerContext context)
         {
             KPIPrimaryValueConditionalFormatting unmarshalledObject = new KPIPrimaryValueConditionalFormatting();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

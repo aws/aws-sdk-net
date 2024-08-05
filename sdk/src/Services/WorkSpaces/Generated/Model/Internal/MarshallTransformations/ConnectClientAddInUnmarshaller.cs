@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public ConnectClientAddIn Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectClientAddIn unmarshalledObject = new ConnectClientAddIn();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

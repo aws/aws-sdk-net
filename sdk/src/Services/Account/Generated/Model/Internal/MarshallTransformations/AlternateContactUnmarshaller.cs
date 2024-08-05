@@ -57,6 +57,8 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
         public AlternateContact Unmarshall(JsonUnmarshallerContext context)
         {
             AlternateContact unmarshalledObject = new AlternateContact();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

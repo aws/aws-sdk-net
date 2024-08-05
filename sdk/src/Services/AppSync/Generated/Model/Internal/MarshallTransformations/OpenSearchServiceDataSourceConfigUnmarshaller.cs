@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public OpenSearchServiceDataSourceConfig Unmarshall(JsonUnmarshallerContext context)
         {
             OpenSearchServiceDataSourceConfig unmarshalledObject = new OpenSearchServiceDataSourceConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

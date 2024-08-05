@@ -59,7 +59,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if CacheControl property is set
         internal bool IsSetCacheControl()
         {
-            return this._cacheControl != null;
+            return !string.IsNullOrEmpty(this._cacheControl);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.MediaStoreData.Model
         // Check to see if ETag property is set
         internal bool IsSetETag()
         {
-            return this._eTag != null;
+            return !string.IsNullOrEmpty(this._eTag);
         }
 
         /// <summary>

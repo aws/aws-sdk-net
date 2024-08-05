@@ -57,6 +57,8 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public CatalogItem Unmarshall(JsonUnmarshallerContext context)
         {
             CatalogItem unmarshalledObject = new CatalogItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

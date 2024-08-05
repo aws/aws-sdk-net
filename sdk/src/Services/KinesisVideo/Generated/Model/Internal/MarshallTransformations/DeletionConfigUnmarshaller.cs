@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public DeletionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DeletionConfig unmarshalledObject = new DeletionConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

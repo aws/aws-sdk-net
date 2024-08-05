@@ -31,7 +31,7 @@ namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetFindings operation.
-    /// Returns a list of all requested findings.
+    /// Returns a list of requested findings from standard scans.
     /// </summary>
     public partial class BatchGetFindingsRequest : AmazonCodeGuruSecurityRequest
     {

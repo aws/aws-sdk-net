@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public CustomDNSServer Unmarshall(JsonUnmarshallerContext context)
         {
             CustomDNSServer unmarshalledObject = new CustomDNSServer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public WorkspaceDirectory Unmarshall(JsonUnmarshallerContext context)
         {
             WorkspaceDirectory unmarshalledObject = new WorkspaceDirectory();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActiveDirectoryConfig", targetDepth))
+                {
+                    var unmarshaller = ActiveDirectoryConfigUnmarshaller.Instance;
+                    unmarshalledObject.ActiveDirectoryConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Alias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,6 +114,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsIpAddresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ErrorMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IamRoleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -142,6 +156,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StreamingProperties", targetDepth))
+                {
+                    var unmarshaller = StreamingPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.StreamingProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SubnetIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -152,6 +172,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserIdentityType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserIdentityType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkspaceAccessProperties", targetDepth))
@@ -166,10 +192,28 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.WorkspaceCreationProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkspaceDirectoryDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceDirectoryDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WorkspaceDirectoryName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceDirectoryName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkspaceSecurityGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceSecurityGroupId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WorkspaceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

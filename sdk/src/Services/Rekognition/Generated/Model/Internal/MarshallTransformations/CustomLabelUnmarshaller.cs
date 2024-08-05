@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public CustomLabel Unmarshall(JsonUnmarshallerContext context)
         {
             CustomLabel unmarshalledObject = new CustomLabel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

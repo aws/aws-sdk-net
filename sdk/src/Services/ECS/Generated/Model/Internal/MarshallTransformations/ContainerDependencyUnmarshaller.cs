@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ContainerDependency Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerDependency unmarshalledObject = new ContainerDependency();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

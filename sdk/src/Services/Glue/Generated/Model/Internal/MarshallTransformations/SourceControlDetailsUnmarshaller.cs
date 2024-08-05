@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public SourceControlDetails Unmarshall(JsonUnmarshallerContext context)
         {
             SourceControlDetails unmarshalledObject = new SourceControlDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

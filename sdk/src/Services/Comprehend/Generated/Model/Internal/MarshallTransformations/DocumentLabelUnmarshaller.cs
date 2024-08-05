@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public DocumentLabel Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentLabel unmarshalledObject = new DocumentLabel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

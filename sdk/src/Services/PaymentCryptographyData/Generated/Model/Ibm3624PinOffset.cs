@@ -46,7 +46,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// the algorithm intermediate result from hexadecimal characters to decimal.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=16)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=16)]
         public string DecimalizationTable
         {
             get { return this._decimalizationTable; }
@@ -67,7 +67,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Personal Identification Number (PIN).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=32)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=32)]
         public string EncryptedPinBlock
         {
             get { return this._encryptedPinBlock; }
@@ -86,7 +86,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The unique data for cardholder identification.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=16)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=16)]
         public string PinValidationData
         {
             get { return this._pinValidationData; }

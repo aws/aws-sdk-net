@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains information about the S3 object containing the resource.
+    /// The identifier information for an Amazon S3 bucket.
     /// </summary>
     public partial class S3Identifier
     {
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property S3ObjectKey. 
         /// <para>
-        /// The S3 object key containing the resource.
+        /// The S3 object key for the S3 resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

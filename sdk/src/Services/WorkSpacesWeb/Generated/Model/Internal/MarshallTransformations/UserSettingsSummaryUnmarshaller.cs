@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public UserSettingsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             UserSettingsSummary unmarshalledObject = new UserSettingsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CopyAllowed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deepLinkAllowed", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeepLinkAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("disconnectTimeoutInMinutes", targetDepth))

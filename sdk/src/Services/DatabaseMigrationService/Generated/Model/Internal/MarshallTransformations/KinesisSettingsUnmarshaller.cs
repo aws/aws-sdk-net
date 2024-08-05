@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public KinesisSettings Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisSettings unmarshalledObject = new KinesisSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

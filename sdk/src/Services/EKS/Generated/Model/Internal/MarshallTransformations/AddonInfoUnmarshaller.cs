@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public AddonInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AddonInfo unmarshalledObject = new AddonInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

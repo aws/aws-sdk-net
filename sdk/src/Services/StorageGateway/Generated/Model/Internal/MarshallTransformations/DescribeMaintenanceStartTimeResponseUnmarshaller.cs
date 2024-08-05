@@ -82,6 +82,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.MinuteOfHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SoftwareUpdatePreferences", targetDepth))
+                {
+                    var unmarshaller = SoftwareUpdatePreferencesUnmarshaller.Instance;
+                    response.SoftwareUpdatePreferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Timezone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

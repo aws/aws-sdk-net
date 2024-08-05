@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public ActionThreshold Unmarshall(JsonUnmarshallerContext context)
         {
             ActionThreshold unmarshalledObject = new ActionThreshold();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

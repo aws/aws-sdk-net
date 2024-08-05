@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public StatelessRulesAndCustomActions Unmarshall(JsonUnmarshallerContext context)
         {
             StatelessRulesAndCustomActions unmarshalledObject = new StatelessRulesAndCustomActions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

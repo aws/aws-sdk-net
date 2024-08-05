@@ -838,8 +838,9 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Send an request with an empty body to the regional API endpoint to get your account
-        /// API endpoint.
+        /// Send a request with an empty body to the regional API endpoint to get your account
+        /// API endpoint. Note that DescribeEndpoints is no longer required. We recommend that
+        /// you send your requests directly to the regional endpoint instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -1548,6 +1549,64 @@ namespace Amazon.MediaConvert
             options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchJobs
+
+        internal virtual SearchJobsResponse SearchJobs(SearchJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchJobsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve a JSON array that includes job details for up to twenty of your most recent
+        /// jobs. Optionally filter results further according to input file, queue, or status.
+        /// To retrieve the twenty next most recent jobs, use the nextToken string returned with
+        /// the array.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchJobs service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SearchJobs">REST API Reference for SearchJobs Operation</seealso>
+        public virtual Task<SearchJobsResponse> SearchJobsAsync(SearchJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion

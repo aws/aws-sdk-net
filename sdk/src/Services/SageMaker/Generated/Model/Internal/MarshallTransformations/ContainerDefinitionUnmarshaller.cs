@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ContainerDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerDefinition unmarshalledObject = new ContainerDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdditionalModelDataSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AdditionalModelDataSource, AdditionalModelDataSourceUnmarshaller>(AdditionalModelDataSourceUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalModelDataSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ContainerHostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public AnomalyTimeRange Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalyTimeRange unmarshalledObject = new AnomalyTimeRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

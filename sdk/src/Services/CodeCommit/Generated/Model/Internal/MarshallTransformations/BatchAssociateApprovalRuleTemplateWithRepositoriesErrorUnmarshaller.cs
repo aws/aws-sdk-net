@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public BatchAssociateApprovalRuleTemplateWithRepositoriesError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchAssociateApprovalRuleTemplateWithRepositoriesError unmarshalledObject = new BatchAssociateApprovalRuleTemplateWithRepositoriesError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

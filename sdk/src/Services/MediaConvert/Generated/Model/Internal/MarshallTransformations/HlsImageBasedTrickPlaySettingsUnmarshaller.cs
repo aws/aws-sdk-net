@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public HlsImageBasedTrickPlaySettings Unmarshall(JsonUnmarshallerContext context)
         {
             HlsImageBasedTrickPlaySettings unmarshalledObject = new HlsImageBasedTrickPlaySettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public ClusterPendingUpdates Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterPendingUpdates unmarshalledObject = new ClusterPendingUpdates();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

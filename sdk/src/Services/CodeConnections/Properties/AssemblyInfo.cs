@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodeConnections")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS CodeConnections. Duplicating the CodeStar Connections service into the new, rebranded AWS CodeConnections service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS CodeConnections. Duplicating the CodeStar Connections service into the new, rebranded AWS CodeConnections service.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS CodeConnections. Duplicating the CodeStar Connections service into the new, rebranded AWS CodeConnections service.")]
 #elif NETCOREAPP3_1

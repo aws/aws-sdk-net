@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public ExportErrorData Unmarshall(JsonUnmarshallerContext context)
         {
             ExportErrorData unmarshalledObject = new ExportErrorData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

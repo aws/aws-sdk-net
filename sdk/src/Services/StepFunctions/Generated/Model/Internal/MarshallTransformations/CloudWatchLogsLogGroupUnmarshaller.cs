@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public CloudWatchLogsLogGroup Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchLogsLogGroup unmarshalledObject = new CloudWatchLogsLogGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

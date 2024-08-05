@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public DmsTransferSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DmsTransferSettings unmarshalledObject = new DmsTransferSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

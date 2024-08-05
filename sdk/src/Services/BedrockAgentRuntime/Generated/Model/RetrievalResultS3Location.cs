@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains the S3 location of the data source.
+    /// The S3 data source location.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_ResponseSyntax">InvokeAgent
     /// response</a> – in the <c>s3Location</c> field
     /// </para>
     ///  </li> </ul>
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// The S3 URI of the data source.
+        /// The S3 URI for the data source location.
         /// </para>
         /// </summary>
         public string Uri

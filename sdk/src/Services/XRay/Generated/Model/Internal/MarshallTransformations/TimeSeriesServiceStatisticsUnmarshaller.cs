@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public TimeSeriesServiceStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeriesServiceStatistics unmarshalledObject = new TimeSeriesServiceStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

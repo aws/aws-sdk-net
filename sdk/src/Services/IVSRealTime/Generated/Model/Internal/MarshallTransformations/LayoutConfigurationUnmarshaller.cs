@@ -57,6 +57,8 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         public LayoutConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LayoutConfiguration unmarshalledObject = new LayoutConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

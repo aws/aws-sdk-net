@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public CustomerManagedPolicyReference Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerManagedPolicyReference unmarshalledObject = new CustomerManagedPolicyReference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public SSMLMessage Unmarshall(JsonUnmarshallerContext context)
         {
             SSMLMessage unmarshalledObject = new SSMLMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

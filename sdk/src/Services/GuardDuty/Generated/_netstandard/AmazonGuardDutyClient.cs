@@ -582,6 +582,59 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  CreateMalwareProtectionPlan
+
+        internal virtual CreateMalwareProtectionPlanResponse CreateMalwareProtectionPlan(CreateMalwareProtectionPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMalwareProtectionPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMalwareProtectionPlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMalwareProtectionPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Malware Protection plan for the protected resource.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a Malware Protection plan, the Amazon Web Services service terms for
+        /// GuardDuty Malware Protection apply. For more information, see <a href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon
+        /// Web Services service terms for GuardDuty Malware Protection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMalwareProtectionPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMalwareProtectionPlan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMalwareProtectionPlan">REST API Reference for CreateMalwareProtectionPlan Operation</seealso>
+        public virtual Task<CreateMalwareProtectionPlanResponse> CreateMalwareProtectionPlanAsync(CreateMalwareProtectionPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMalwareProtectionPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMalwareProtectionPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMalwareProtectionPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMembers
 
         internal virtual CreateMembersResponse CreateMembers(CreateMembersRequest request)
@@ -979,6 +1032,54 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteIPSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMalwareProtectionPlan
+
+        internal virtual DeleteMalwareProtectionPlanResponse DeleteMalwareProtectionPlan(DeleteMalwareProtectionPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMalwareProtectionPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMalwareProtectionPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMalwareProtectionPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the Malware Protection plan ID associated with the Malware Protection plan
+        /// resource. Use this API only when you no longer want to protect the resource associated
+        /// with this Malware Protection plan ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMalwareProtectionPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMalwareProtectionPlan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMalwareProtectionPlan">REST API Reference for DeleteMalwareProtectionPlan Operation</seealso>
+        public virtual Task<DeleteMalwareProtectionPlanResponse> DeleteMalwareProtectionPlanAsync(DeleteMalwareProtectionPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMalwareProtectionPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMalwareProtectionPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMalwareProtectionPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1864,6 +1965,53 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetMalwareProtectionPlan
+
+        internal virtual GetMalwareProtectionPlanResponse GetMalwareProtectionPlan(GetMalwareProtectionPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMalwareProtectionPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMalwareProtectionPlanResponseUnmarshaller.Instance;
+
+            return Invoke<GetMalwareProtectionPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the Malware Protection plan details associated with a Malware Protection
+        /// plan ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMalwareProtectionPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMalwareProtectionPlan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareProtectionPlan">REST API Reference for GetMalwareProtectionPlan Operation</seealso>
+        public virtual Task<GetMalwareProtectionPlanResponse> GetMalwareProtectionPlanAsync(GetMalwareProtectionPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMalwareProtectionPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMalwareProtectionPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMalwareProtectionPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMalwareScanSettings
 
         internal virtual GetMalwareScanSettingsResponse GetMalwareScanSettings(GetMalwareScanSettingsRequest request)
@@ -2556,6 +2704,50 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  ListMalwareProtectionPlans
+
+        internal virtual ListMalwareProtectionPlansResponse ListMalwareProtectionPlans(ListMalwareProtectionPlansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMalwareProtectionPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMalwareProtectionPlansResponseUnmarshaller.Instance;
+
+            return Invoke<ListMalwareProtectionPlansResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the Malware Protection plan IDs associated with the protected resources in your
+        /// Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMalwareProtectionPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMalwareProtectionPlans service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMalwareProtectionPlans">REST API Reference for ListMalwareProtectionPlans Operation</seealso>
+        public virtual Task<ListMalwareProtectionPlansResponse> ListMalwareProtectionPlansAsync(ListMalwareProtectionPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMalwareProtectionPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMalwareProtectionPlansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMalwareProtectionPlansResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMembers
 
         internal virtual ListMembersResponse ListMembers(ListMembersRequest request)
@@ -3202,6 +3394,52 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIPSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMalwareProtectionPlan
+
+        internal virtual UpdateMalwareProtectionPlanResponse UpdateMalwareProtectionPlan(UpdateMalwareProtectionPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMalwareProtectionPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMalwareProtectionPlanResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMalwareProtectionPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing Malware Protection plan resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMalwareProtectionPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMalwareProtectionPlan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareProtectionPlan">REST API Reference for UpdateMalwareProtectionPlan Operation</seealso>
+        public virtual Task<UpdateMalwareProtectionPlanResponse> UpdateMalwareProtectionPlanAsync(UpdateMalwareProtectionPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMalwareProtectionPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMalwareProtectionPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMalwareProtectionPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public HttpPackageConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             HttpPackageConfiguration unmarshalledObject = new HttpPackageConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

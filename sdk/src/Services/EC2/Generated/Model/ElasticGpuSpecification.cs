@@ -33,8 +33,8 @@ namespace Amazon.EC2.Model
     /// <note> 
     /// <para>
     /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
-    /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
-    /// G5 instances.
+    /// require graphics acceleration, we recommend that you use Amazon EC2 G4, G5, or G6
+    /// instances.
     /// </para>
     ///  </note> 
     /// <para>
@@ -48,10 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of Elastic Graphics accelerator. For more information about the values to
-        /// specify for <c>Type</c>, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics">Elastic
-        /// Graphics Basics</a>, specifically the Elastic Graphics accelerator column, in the
-        /// <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.
+        /// The type of Elastic Graphics accelerator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

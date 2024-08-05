@@ -57,6 +57,8 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
         public ResourceAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceAttribute unmarshalledObject = new ResourceAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         public PredictiveDialerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             PredictiveDialerConfig unmarshalledObject = new PredictiveDialerConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

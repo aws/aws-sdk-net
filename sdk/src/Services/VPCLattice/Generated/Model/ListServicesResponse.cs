@@ -40,7 +40,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The services.
+        /// Information about the services.
         /// </para>
         /// </summary>
         public List<ServiceSummary> Items

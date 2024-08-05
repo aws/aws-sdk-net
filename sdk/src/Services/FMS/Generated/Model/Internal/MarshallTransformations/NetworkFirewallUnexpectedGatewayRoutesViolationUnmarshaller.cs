@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public NetworkFirewallUnexpectedGatewayRoutesViolation Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkFirewallUnexpectedGatewayRoutesViolation unmarshalledObject = new NetworkFirewallUnexpectedGatewayRoutesViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

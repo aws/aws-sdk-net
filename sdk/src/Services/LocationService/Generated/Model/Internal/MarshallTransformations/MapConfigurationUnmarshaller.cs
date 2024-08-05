@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public MapConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MapConfiguration unmarshalledObject = new MapConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

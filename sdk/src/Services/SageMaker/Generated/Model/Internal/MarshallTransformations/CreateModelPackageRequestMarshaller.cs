@@ -161,6 +161,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelApprovalStatus);
                 }
 
+                if(publicRequest.IsSetModelCard())
+                {
+                    context.Writer.WritePropertyName("ModelCard");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelPackageModelCardMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelCard, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetModelMetrics())
                 {
                     context.Writer.WritePropertyName("ModelMetrics");
@@ -194,6 +205,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SamplePayloadUrl");
                     context.Writer.Write(publicRequest.SamplePayloadUrl);
+                }
+
+                if(publicRequest.IsSetSecurityConfig())
+                {
+                    context.Writer.WritePropertyName("SecurityConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelPackageSecurityConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SecurityConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSkipModelValidation())

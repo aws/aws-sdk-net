@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public RealTimeContactAnalysisPointOfInterest Unmarshall(JsonUnmarshallerContext context)
         {
             RealTimeContactAnalysisPointOfInterest unmarshalledObject = new RealTimeContactAnalysisPointOfInterest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsCloudTrailTrailDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCloudTrailTrailDetails unmarshalledObject = new AwsCloudTrailTrailDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

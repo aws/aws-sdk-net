@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public JobMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             JobMetadata unmarshalledObject = new JobMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

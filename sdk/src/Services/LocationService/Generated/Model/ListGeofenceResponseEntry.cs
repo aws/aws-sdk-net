@@ -31,6 +31,13 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Contains a list of geofences stored in a given geofence collection.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The returned geometry will always match the geometry format used when the geofence
+    /// was created.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListGeofenceResponseEntry
     {

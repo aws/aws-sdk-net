@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public LocalNavigationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LocalNavigationConfiguration unmarshalledObject = new LocalNavigationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

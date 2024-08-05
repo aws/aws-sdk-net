@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public ExportSnapshotRecordSourceInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ExportSnapshotRecordSourceInfo unmarshalledObject = new ExportSnapshotRecordSourceInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

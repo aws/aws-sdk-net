@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public MetricV2 Unmarshall(JsonUnmarshallerContext context)
         {
             MetricV2 unmarshalledObject = new MetricV2();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

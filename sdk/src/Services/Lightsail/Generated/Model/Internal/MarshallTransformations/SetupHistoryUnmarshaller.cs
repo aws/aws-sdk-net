@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public SetupHistory Unmarshall(JsonUnmarshallerContext context)
         {
             SetupHistory unmarshalledObject = new SetupHistory();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

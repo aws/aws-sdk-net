@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public RuleGroupSourceStatelessRulesAndCustomActionsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RuleGroupSourceStatelessRulesAndCustomActionsDetails unmarshalledObject = new RuleGroupSourceStatelessRulesAndCustomActionsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

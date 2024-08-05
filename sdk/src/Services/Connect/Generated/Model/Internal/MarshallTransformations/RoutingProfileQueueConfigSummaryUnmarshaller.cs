@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public RoutingProfileQueueConfigSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RoutingProfileQueueConfigSummary unmarshalledObject = new RoutingProfileQueueConfigSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

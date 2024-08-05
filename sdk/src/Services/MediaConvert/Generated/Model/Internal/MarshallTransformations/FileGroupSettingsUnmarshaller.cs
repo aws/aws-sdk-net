@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public FileGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             FileGroupSettings unmarshalledObject = new FileGroupSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

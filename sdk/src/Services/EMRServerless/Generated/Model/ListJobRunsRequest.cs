@@ -39,6 +39,7 @@ namespace Amazon.EMRServerless.Model
         private DateTime? _createdAtAfter;
         private DateTime? _createdAtBefore;
         private int? _maxResults;
+        private JobRunMode _mode;
         private string _nextToken;
         private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -114,6 +115,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode of the job runs to list.
+        /// </para>
+        /// </summary>
+        public JobRunMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

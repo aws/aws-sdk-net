@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public WindowsAuditLogConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WindowsAuditLogConfiguration unmarshalledObject = new WindowsAuditLogConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

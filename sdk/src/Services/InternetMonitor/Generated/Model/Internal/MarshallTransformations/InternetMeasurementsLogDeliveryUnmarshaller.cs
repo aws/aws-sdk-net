@@ -57,6 +57,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         public InternetMeasurementsLogDelivery Unmarshall(JsonUnmarshallerContext context)
         {
             InternetMeasurementsLogDelivery unmarshalledObject = new InternetMeasurementsLogDelivery();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

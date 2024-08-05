@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public Ec2Configuration Unmarshall(JsonUnmarshallerContext context)
         {
             Ec2Configuration unmarshalledObject = new Ec2Configuration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

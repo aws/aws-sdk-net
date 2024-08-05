@@ -57,6 +57,8 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
         public TelemetryMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             TelemetryMetadata unmarshalledObject = new TelemetryMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

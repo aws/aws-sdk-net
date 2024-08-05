@@ -57,6 +57,8 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public UserUnion Unmarshall(JsonUnmarshallerContext context)
         {
             UserUnion unmarshalledObject = new UserUnion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

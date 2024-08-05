@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public ColorCorrectionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ColorCorrectionSettings unmarshalledObject = new ColorCorrectionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

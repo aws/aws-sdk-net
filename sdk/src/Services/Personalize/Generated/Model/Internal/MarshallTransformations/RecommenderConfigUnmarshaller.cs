@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public RecommenderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             RecommenderConfig unmarshalledObject = new RecommenderConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

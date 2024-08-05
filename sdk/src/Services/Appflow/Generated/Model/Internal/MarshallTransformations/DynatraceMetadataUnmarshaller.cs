@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public DynatraceMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             DynatraceMetadata unmarshalledObject = new DynatraceMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

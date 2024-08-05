@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public UpdateVehicleError Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateVehicleError unmarshalledObject = new UpdateVehicleError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

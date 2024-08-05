@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public SpectrumConfig Unmarshall(JsonUnmarshallerContext context)
         {
             SpectrumConfig unmarshalledObject = new SpectrumConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

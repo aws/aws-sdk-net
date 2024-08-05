@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public FailedServiceActionAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             FailedServiceActionAssociation unmarshalledObject = new FailedServiceActionAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

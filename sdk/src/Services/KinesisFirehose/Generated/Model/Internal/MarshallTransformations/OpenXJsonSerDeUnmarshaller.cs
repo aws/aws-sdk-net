@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public OpenXJsonSerDe Unmarshall(JsonUnmarshallerContext context)
         {
             OpenXJsonSerDe unmarshalledObject = new OpenXJsonSerDe();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public TumblingWindow Unmarshall(JsonUnmarshallerContext context)
         {
             TumblingWindow unmarshalledObject = new TumblingWindow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

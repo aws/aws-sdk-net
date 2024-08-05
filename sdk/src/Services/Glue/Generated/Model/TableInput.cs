@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         private StorageDescriptor _storageDescriptor;
         private string _tableType;
         private TableIdentifier _targetTable;
+        private ViewDefinitionInput _viewDefinition;
         private string _viewExpandedText;
         private string _viewOriginalText;
 
@@ -274,6 +275,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetTargetTable()
         {
             return this._targetTable != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewDefinition. 
+        /// <para>
+        /// A structure that contains all the information that defines the view, including the
+        /// dialect or dialects for the view, and the query.
+        /// </para>
+        /// </summary>
+        public ViewDefinitionInput ViewDefinition
+        {
+            get { return this._viewDefinition; }
+            set { this._viewDefinition = value; }
+        }
+
+        // Check to see if ViewDefinition property is set
+        internal bool IsSetViewDefinition()
+        {
+            return this._viewDefinition != null;
         }
 
         /// <summary>

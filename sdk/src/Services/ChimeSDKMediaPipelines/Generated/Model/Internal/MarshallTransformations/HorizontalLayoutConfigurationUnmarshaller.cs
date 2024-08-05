@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public HorizontalLayoutConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             HorizontalLayoutConfiguration unmarshalledObject = new HorizontalLayoutConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

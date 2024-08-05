@@ -57,6 +57,8 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         public SecurityGroupIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             SecurityGroupIdentifier unmarshalledObject = new SecurityGroupIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

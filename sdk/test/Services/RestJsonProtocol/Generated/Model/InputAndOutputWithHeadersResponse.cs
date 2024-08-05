@@ -110,7 +110,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if HeaderEnum property is set
         internal bool IsSetHeaderEnum()
         {
-            return this._headerEnum != null;
+            return !string.IsNullOrEmpty(this._headerEnum);
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if HeaderString property is set
         internal bool IsSetHeaderString()
         {
-            return this._headerString != null;
+            return !string.IsNullOrEmpty(this._headerString);
         }
 
         /// <summary>

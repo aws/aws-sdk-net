@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public TransactionDescription Unmarshall(JsonUnmarshallerContext context)
         {
             TransactionDescription unmarshalledObject = new TransactionDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

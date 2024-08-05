@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public CmafIngestOutputSettings Unmarshall(JsonUnmarshallerContext context)
         {
             CmafIngestOutputSettings unmarshalledObject = new CmafIngestOutputSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

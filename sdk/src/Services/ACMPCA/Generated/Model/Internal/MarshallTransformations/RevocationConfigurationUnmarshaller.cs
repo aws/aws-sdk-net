@@ -57,6 +57,8 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         public RevocationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RevocationConfiguration unmarshalledObject = new RevocationConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

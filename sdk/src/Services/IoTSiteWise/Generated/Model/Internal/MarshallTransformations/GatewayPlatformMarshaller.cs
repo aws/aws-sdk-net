@@ -70,6 +70,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSiemensIE())
+            {
+                context.Writer.WritePropertyName("siemensIE");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SiemensIEMarshaller.Instance;
+                marshaller.Marshall(requestObject.SiemensIE, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

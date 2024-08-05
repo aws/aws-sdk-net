@@ -41,6 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
     {
         private CloudWatchDestination _cloudWatchDestination;
         private bool? _enabled;
+        private EventBridgeDestination _eventBridgeDestination;
         private KinesisFirehoseDestination _kinesisFirehoseDestination;
         private List<string> _matchingEventTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
@@ -88,6 +89,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventBridgeDestination. 
+        /// <para>
+        /// An object that defines an Amazon EventBridge destination for email events. You can
+        /// use Amazon EventBridge to send notifications when certain email events occur.
+        /// </para>
+        /// </summary>
+        public EventBridgeDestination EventBridgeDestination
+        {
+            get { return this._eventBridgeDestination; }
+            set { this._eventBridgeDestination = value; }
+        }
+
+        // Check to see if EventBridgeDestination property is set
+        internal bool IsSetEventBridgeDestination()
+        {
+            return this._eventBridgeDestination != null;
         }
 
         /// <summary>
@@ -232,7 +252,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property SnsDestination. 
         /// <para>
         /// An object that defines an Amazon SNS destination for email events. You can use Amazon
-        /// SNS to send notification when certain email events occur.
+        /// SNS to send notifications when certain email events occur.
         /// </para>
         /// </summary>
         public SnsDestination SnsDestination

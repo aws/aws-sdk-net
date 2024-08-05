@@ -57,6 +57,8 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
         public LinkConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             LinkConfiguration unmarshalledObject = new LinkConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

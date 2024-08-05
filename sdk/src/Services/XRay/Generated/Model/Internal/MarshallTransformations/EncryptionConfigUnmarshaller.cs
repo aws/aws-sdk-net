@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public EncryptionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EncryptionConfig unmarshalledObject = new EncryptionConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

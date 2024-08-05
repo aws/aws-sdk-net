@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public PolicyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             PolicyDetails unmarshalledObject = new PolicyDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

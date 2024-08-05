@@ -45,6 +45,14 @@ namespace Amazon.ControlTower.Model
         }
 
         /// <summary>
+        /// Paginator for ListControlOperations operation
+        ///</summary>
+        public IListControlOperationsPaginator ListControlOperations(ListControlOperationsRequest request) 
+        {
+            return new ListControlOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnabledBaselines operation
         ///</summary>
         public IListEnabledBaselinesPaginator ListEnabledBaselines(ListEnabledBaselinesRequest request) 
@@ -58,6 +66,14 @@ namespace Amazon.ControlTower.Model
         public IListEnabledControlsPaginator ListEnabledControls(ListEnabledControlsRequest request) 
         {
             return new ListEnabledControlsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLandingZoneOperations operation
+        ///</summary>
+        public IListLandingZoneOperationsPaginator ListLandingZoneOperations(ListLandingZoneOperationsRequest request) 
+        {
+            return new ListLandingZoneOperationsPaginator(this.client, request);
         }
 
         /// <summary>

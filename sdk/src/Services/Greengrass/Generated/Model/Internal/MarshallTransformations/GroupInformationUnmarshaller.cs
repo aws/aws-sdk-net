@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public GroupInformation Unmarshall(JsonUnmarshallerContext context)
         {
             GroupInformation unmarshalledObject = new GroupInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

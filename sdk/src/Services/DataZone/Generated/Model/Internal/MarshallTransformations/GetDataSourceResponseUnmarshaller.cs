@@ -160,6 +160,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Schedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("selfGrantStatus", targetDepth))
+                {
+                    var unmarshaller = SelfGrantStatusOutputUnmarshaller.Instance;
+                    response.SelfGrantStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

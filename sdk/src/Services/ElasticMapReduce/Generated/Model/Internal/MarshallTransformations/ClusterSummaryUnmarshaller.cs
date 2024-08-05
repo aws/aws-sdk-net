@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public ClusterSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterSummary unmarshalledObject = new ClusterSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

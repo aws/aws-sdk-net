@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public DescribedWorkflow Unmarshall(JsonUnmarshallerContext context)
         {
             DescribedWorkflow unmarshalledObject = new DescribedWorkflow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

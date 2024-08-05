@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AudioPidSelection Unmarshall(JsonUnmarshallerContext context)
         {
             AudioPidSelection unmarshalledObject = new AudioPidSelection();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

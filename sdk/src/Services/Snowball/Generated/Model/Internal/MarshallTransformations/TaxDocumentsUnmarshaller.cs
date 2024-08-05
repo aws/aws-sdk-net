@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public TaxDocuments Unmarshall(JsonUnmarshallerContext context)
         {
             TaxDocuments unmarshalledObject = new TaxDocuments();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

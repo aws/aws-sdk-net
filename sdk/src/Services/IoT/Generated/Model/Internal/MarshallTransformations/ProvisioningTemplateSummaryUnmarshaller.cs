@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public ProvisioningTemplateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisioningTemplateSummary unmarshalledObject = new ProvisioningTemplateSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

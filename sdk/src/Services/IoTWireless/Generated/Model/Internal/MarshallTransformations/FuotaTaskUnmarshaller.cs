@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public FuotaTask Unmarshall(JsonUnmarshallerContext context)
         {
             FuotaTask unmarshalledObject = new FuotaTask();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

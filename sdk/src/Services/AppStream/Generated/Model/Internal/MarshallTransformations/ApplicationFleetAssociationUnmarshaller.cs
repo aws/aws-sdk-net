@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public ApplicationFleetAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationFleetAssociation unmarshalledObject = new ApplicationFleetAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

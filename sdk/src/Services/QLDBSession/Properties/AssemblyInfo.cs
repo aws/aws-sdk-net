@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.QLDBSession")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon QLDB Session. Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon QLDB Session. Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon QLDB Session. Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.")]
 #elif NETCOREAPP3_1

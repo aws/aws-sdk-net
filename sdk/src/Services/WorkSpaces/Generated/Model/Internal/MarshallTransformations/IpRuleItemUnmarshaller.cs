@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public IpRuleItem Unmarshall(JsonUnmarshallerContext context)
         {
             IpRuleItem unmarshalledObject = new IpRuleItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

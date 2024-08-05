@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public DataSourceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DataSourceSummary unmarshalledObject = new DataSourceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

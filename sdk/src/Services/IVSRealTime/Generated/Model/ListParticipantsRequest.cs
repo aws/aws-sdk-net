@@ -36,6 +36,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class ListParticipantsRequest : AmazonIVSRealTimeRequest
     {
         private bool? _filterByPublished;
+        private ParticipantRecordingFilterByRecordingState _filterByRecordingState;
         private ParticipantState _filterByState;
         private string _filterByUserId;
         private int? _maxResults;
@@ -47,8 +48,8 @@ namespace Amazon.IVSRealTime.Model
         /// Gets and sets the property FilterByPublished. 
         /// <para>
         /// Filters the response list to only show participants who published during the stage
-        /// session. Only one of <c>filterByUserId</c>, <c>filterByPublished</c>, or <c>filterByState</c>
-        /// can be provided per request.
+        /// session. Only one of <c>filterByUserId</c>, <c>filterByPublished</c>, <c>filterByState</c>,
+        /// or <c>filterByRecordingState</c> can be provided per request.
         /// </para>
         /// </summary>
         public bool? FilterByPublished
@@ -64,11 +65,31 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilterByRecordingState. 
+        /// <para>
+        /// Filters the response list to only show participants with the specified recording state.
+        /// Only one of <c>filterByUserId</c>, <c>filterByPublished</c>, <c>filterByState</c>,
+        /// or <c>filterByRecordingState</c> can be provided per request.
+        /// </para>
+        /// </summary>
+        public ParticipantRecordingFilterByRecordingState FilterByRecordingState
+        {
+            get { return this._filterByRecordingState; }
+            set { this._filterByRecordingState = value; }
+        }
+
+        // Check to see if FilterByRecordingState property is set
+        internal bool IsSetFilterByRecordingState()
+        {
+            return this._filterByRecordingState != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FilterByState. 
         /// <para>
         /// Filters the response list to only show participants in the specified state. Only one
-        /// of <c>filterByUserId</c>, <c>filterByPublished</c>, or <c>filterByState</c> can be
-        /// provided per request.
+        /// of <c>filterByUserId</c>, <c>filterByPublished</c>, <c>filterByState</c>, or <c>filterByRecordingState</c>
+        /// can be provided per request.
         /// </para>
         /// </summary>
         public ParticipantState FilterByState
@@ -87,9 +108,10 @@ namespace Amazon.IVSRealTime.Model
         /// Gets and sets the property FilterByUserId. 
         /// <para>
         /// Filters the response list to match the specified user ID. Only one of <c>filterByUserId</c>,
-        /// <c>filterByPublished</c>, or <c>filterByState</c> can be provided per request. A <c>userId</c>
-        /// is a customer-assigned name to help identify the token; this can be used to link a
-        /// participant to a user in the customer’s own systems.
+        /// <c>filterByPublished</c>, <c>filterByState</c>, or <c>filterByRecordingState</c> can
+        /// be provided per request. A <c>userId</c> is a customer-assigned name to help identify
+        /// the token; this can be used to link a participant to a user in the customer’s own
+        /// systems.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

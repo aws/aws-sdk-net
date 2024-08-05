@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public RtmpOutputSettings Unmarshall(JsonUnmarshallerContext context)
         {
             RtmpOutputSettings unmarshalledObject = new RtmpOutputSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

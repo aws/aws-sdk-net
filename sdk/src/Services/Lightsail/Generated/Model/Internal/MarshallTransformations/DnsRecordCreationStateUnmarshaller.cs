@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public DnsRecordCreationState Unmarshall(JsonUnmarshallerContext context)
         {
             DnsRecordCreationState unmarshalledObject = new DnsRecordCreationState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

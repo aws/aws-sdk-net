@@ -57,6 +57,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         public FirewallDomainListMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             FirewallDomainListMetadata unmarshalledObject = new FirewallDomainListMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

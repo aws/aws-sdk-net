@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ScalingPolicyObjective Unmarshall(JsonUnmarshallerContext context)
         {
             ScalingPolicyObjective unmarshalledObject = new ScalingPolicyObjective();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

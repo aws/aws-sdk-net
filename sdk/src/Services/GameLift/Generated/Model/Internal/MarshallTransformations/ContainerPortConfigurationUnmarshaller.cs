@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public ContainerPortConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerPortConfiguration unmarshalledObject = new ContainerPortConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

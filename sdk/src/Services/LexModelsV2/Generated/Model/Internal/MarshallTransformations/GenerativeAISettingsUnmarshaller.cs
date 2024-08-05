@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public GenerativeAISettings Unmarshall(JsonUnmarshallerContext context)
         {
             GenerativeAISettings unmarshalledObject = new GenerativeAISettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

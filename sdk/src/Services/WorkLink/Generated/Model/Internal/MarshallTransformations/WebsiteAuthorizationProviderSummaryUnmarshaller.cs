@@ -57,6 +57,8 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         public WebsiteAuthorizationProviderSummary Unmarshall(JsonUnmarshallerContext context)
         {
             WebsiteAuthorizationProviderSummary unmarshalledObject = new WebsiteAuthorizationProviderSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

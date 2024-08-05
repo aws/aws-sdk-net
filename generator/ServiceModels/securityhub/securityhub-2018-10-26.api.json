@@ -5,11 +5,13 @@
     "endpointPrefix":"securityhub",
     "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceFullName":"AWS SecurityHub",
     "serviceId":"SecurityHub",
     "signatureVersion":"v4",
     "signingName":"securityhub",
-    "uid":"securityhub-2018-10-26"
+    "uid":"securityhub-2018-10-26",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AcceptAdministratorInvitation":{
@@ -1330,7 +1332,9 @@
     },
     "AccountDetailsList":{
       "type":"list",
-      "member":{"shape":"AccountDetails"}
+      "member":{"shape":"AccountDetails"},
+      "max":50,
+      "min":1
     },
     "AccountId":{"type":"string"},
     "AccountIdList":{
@@ -10413,7 +10417,8 @@
       "type":"string",
       "enum":[
         "ACCOUNT",
-        "ORGANIZATIONAL_UNIT"
+        "ORGANIZATIONAL_UNIT",
+        "ROOT"
       ]
     },
     "Threat":{

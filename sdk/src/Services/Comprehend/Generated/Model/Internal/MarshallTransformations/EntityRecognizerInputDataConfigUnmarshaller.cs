@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public EntityRecognizerInputDataConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EntityRecognizerInputDataConfig unmarshalledObject = new EntityRecognizerInputDataConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         public ResourceGroup Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceGroup unmarshalledObject = new ResourceGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

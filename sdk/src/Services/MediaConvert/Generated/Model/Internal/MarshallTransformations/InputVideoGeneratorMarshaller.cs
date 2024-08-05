@@ -48,10 +48,34 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetChannels())
+            {
+                context.Writer.WritePropertyName("channels");
+                context.Writer.Write(requestObject.Channels.Value);
+            }
+
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("duration");
                 context.Writer.Write(requestObject.Duration.Value);
+            }
+
+            if(requestObject.IsSetFramerateDenominator())
+            {
+                context.Writer.WritePropertyName("framerateDenominator");
+                context.Writer.Write(requestObject.FramerateDenominator.Value);
+            }
+
+            if(requestObject.IsSetFramerateNumerator())
+            {
+                context.Writer.WritePropertyName("framerateNumerator");
+                context.Writer.Write(requestObject.FramerateNumerator.Value);
+            }
+
+            if(requestObject.IsSetSampleRate())
+            {
+                context.Writer.WritePropertyName("sampleRate");
+                context.Writer.Write(requestObject.SampleRate.Value);
             }
 
         }

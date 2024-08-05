@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public FindingDetails Unmarshall(JsonUnmarshallerContext context)
         {
             FindingDetails unmarshalledObject = new FindingDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

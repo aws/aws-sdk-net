@@ -36,6 +36,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class UpdateGlobalSecondaryIndexAction
     {
         private string _indexName;
+        private OnDemandThroughput _onDemandThroughput;
         private ProvisionedThroughput _provisionedThroughput;
 
         /// <summary>
@@ -58,6 +59,26 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnDemandThroughput. 
+        /// <para>
+        /// Updates the maximum number of read and write units for the specified global secondary
+        /// index. If you use this parameter, you must specify <c>MaxReadRequestUnits</c>, <c>MaxWriteRequestUnits</c>,
+        /// or both.
+        /// </para>
+        /// </summary>
+        public OnDemandThroughput OnDemandThroughput
+        {
+            get { return this._onDemandThroughput; }
+            set { this._onDemandThroughput = value; }
+        }
+
+        // Check to see if OnDemandThroughput property is set
+        internal bool IsSetOnDemandThroughput()
+        {
+            return this._onDemandThroughput != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisionedThroughput. 
         /// <para>
         /// Represents the provisioned throughput settings for the specified global secondary
@@ -69,7 +90,6 @@ namespace Amazon.DynamoDBv2.Model
         /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProvisionedThroughput ProvisionedThroughput
         {
             get { return this._provisionedThroughput; }

@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public StorageGatewayError Unmarshall(JsonUnmarshallerContext context)
         {
             StorageGatewayError unmarshalledObject = new StorageGatewayError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

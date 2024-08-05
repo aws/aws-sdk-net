@@ -31,7 +31,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRouteTables operation.
-    /// Describes one or more of your route tables.
+    /// Describes your route tables. The default is to describe all your route tables. Alternatively,
+    /// you can specify specific route table IDs or filter the results to include only the
+    /// route tables that match specific criteria.
     /// 
     ///  
     /// <para>
@@ -218,10 +220,6 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property RouteTableIds. 
         /// <para>
         /// The IDs of the route tables.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: Describes all your route tables.
         /// </para>
         /// </summary>
         public List<string> RouteTableIds

@@ -57,6 +57,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public CoreDevice Unmarshall(JsonUnmarshallerContext context)
         {
             CoreDevice unmarshalledObject = new CoreDevice();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public RemoteSourceCodeAnalysisServerInfo Unmarshall(JsonUnmarshallerContext context)
         {
             RemoteSourceCodeAnalysisServerInfo unmarshalledObject = new RemoteSourceCodeAnalysisServerInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

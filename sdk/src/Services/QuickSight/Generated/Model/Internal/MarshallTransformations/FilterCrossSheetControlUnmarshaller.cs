@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FilterCrossSheetControl Unmarshall(JsonUnmarshallerContext context)
         {
             FilterCrossSheetControl unmarshalledObject = new FilterCrossSheetControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

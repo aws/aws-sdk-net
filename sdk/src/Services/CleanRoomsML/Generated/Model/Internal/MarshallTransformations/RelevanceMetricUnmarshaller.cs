@@ -57,6 +57,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         public RelevanceMetric Unmarshall(JsonUnmarshallerContext context)
         {
             RelevanceMetric unmarshalledObject = new RelevanceMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

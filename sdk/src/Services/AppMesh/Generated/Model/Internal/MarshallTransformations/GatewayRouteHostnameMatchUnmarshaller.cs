@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public GatewayRouteHostnameMatch Unmarshall(JsonUnmarshallerContext context)
         {
             GatewayRouteHostnameMatch unmarshalledObject = new GatewayRouteHostnameMatch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         public CategoryWithFindingNum Unmarshall(JsonUnmarshallerContext context)
         {
             CategoryWithFindingNum unmarshalledObject = new CategoryWithFindingNum();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

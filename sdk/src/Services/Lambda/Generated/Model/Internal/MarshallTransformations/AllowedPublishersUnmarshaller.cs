@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public AllowedPublishers Unmarshall(JsonUnmarshallerContext context)
         {
             AllowedPublishers unmarshalledObject = new AllowedPublishers();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public BlacklistEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BlacklistEntry unmarshalledObject = new BlacklistEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

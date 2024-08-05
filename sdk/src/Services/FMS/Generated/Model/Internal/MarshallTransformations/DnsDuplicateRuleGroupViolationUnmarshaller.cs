@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public DnsDuplicateRuleGroupViolation Unmarshall(JsonUnmarshallerContext context)
         {
             DnsDuplicateRuleGroupViolation unmarshalledObject = new DnsDuplicateRuleGroupViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

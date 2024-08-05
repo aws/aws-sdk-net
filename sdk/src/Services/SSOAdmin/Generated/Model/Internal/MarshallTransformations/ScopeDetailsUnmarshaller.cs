@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public ScopeDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ScopeDetails unmarshalledObject = new ScopeDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

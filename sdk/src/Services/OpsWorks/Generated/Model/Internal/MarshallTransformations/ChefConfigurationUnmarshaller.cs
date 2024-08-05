@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public ChefConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ChefConfiguration unmarshalledObject = new ChefConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

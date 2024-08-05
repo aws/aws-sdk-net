@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public StreamProcessorSettings Unmarshall(JsonUnmarshallerContext context)
         {
             StreamProcessorSettings unmarshalledObject = new StreamProcessorSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

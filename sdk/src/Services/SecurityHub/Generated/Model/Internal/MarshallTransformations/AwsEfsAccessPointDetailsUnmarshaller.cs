@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEfsAccessPointDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEfsAccessPointDetails unmarshalledObject = new AwsEfsAccessPointDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

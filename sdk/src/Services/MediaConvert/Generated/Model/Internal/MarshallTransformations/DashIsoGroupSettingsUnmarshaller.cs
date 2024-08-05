@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public DashIsoGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DashIsoGroupSettings unmarshalledObject = new DashIsoGroupSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BaseUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dashIFrameTrickPlayNameModifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DashIFrameTrickPlayNameModifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dashManifestStyle", targetDepth))

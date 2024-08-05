@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public RelativeTimeRange Unmarshall(JsonUnmarshallerContext context)
         {
             RelativeTimeRange unmarshalledObject = new RelativeTimeRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

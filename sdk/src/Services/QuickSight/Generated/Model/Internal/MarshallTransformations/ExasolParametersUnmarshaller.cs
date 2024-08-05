@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ExasolParameters Unmarshall(JsonUnmarshallerContext context)
         {
             ExasolParameters unmarshalledObject = new ExasolParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

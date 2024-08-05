@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public VirtualGatewayListenerTlsSdsCertificate Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualGatewayListenerTlsSdsCertificate unmarshalledObject = new VirtualGatewayListenerTlsSdsCertificate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

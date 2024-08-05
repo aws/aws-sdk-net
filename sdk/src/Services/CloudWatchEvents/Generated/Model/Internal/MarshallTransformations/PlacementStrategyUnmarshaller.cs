@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public PlacementStrategy Unmarshall(JsonUnmarshallerContext context)
         {
             PlacementStrategy unmarshalledObject = new PlacementStrategy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

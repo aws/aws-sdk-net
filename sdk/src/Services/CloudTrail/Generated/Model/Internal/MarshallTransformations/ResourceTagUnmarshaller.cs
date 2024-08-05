@@ -57,6 +57,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public ResourceTag Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceTag unmarshalledObject = new ResourceTag();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

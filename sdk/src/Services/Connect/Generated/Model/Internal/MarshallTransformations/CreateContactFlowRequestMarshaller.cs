@@ -88,6 +88,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

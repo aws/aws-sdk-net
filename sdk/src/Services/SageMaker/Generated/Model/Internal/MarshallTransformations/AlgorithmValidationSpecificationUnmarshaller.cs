@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AlgorithmValidationSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             AlgorithmValidationSpecification unmarshalledObject = new AlgorithmValidationSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

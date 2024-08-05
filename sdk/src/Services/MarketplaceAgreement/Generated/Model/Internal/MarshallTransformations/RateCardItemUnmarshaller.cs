@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public RateCardItem Unmarshall(JsonUnmarshallerContext context)
         {
             RateCardItem unmarshalledObject = new RateCardItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

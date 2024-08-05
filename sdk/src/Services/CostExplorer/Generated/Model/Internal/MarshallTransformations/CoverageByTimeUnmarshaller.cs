@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public CoverageByTime Unmarshall(JsonUnmarshallerContext context)
         {
             CoverageByTime unmarshalledObject = new CoverageByTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

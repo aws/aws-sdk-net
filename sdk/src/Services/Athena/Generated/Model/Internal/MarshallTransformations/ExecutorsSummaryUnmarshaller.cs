@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public ExecutorsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutorsSummary unmarshalledObject = new ExecutorsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

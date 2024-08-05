@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public CloudWatchAlarmTemplateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CloudWatchAlarmTemplateSummary unmarshalledObject = new CloudWatchAlarmTemplateSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public EvaluationOutputDataConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationOutputDataConfig unmarshalledObject = new EvaluationOutputDataConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

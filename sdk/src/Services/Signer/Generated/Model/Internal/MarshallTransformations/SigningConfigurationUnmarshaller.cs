@@ -57,6 +57,8 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
         public SigningConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SigningConfiguration unmarshalledObject = new SigningConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

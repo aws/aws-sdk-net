@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public UsernameField Unmarshall(JsonUnmarshallerContext context)
         {
             UsernameField unmarshalledObject = new UsernameField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

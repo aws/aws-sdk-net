@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public AnalysisParameter Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisParameter unmarshalledObject = new AnalysisParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public EvaluationDatasetMetricConfig Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationDatasetMetricConfig unmarshalledObject = new EvaluationDatasetMetricConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

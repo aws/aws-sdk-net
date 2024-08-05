@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public ScalingConstraints Unmarshall(JsonUnmarshallerContext context)
         {
             ScalingConstraints unmarshalledObject = new ScalingConstraints();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

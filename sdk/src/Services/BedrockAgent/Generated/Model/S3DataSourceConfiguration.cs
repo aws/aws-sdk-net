@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains information about the S3 configuration of the data source.
+    /// The configuration information to connect to Amazon S3 as your data source.
     /// </summary>
     public partial class S3DataSourceConfiguration
     {
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property BucketArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the bucket that contains the data source.
+        /// The Amazon Resource Name (ARN) of the S3 bucket that contains your data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -79,8 +79,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property InclusionPrefixes. 
         /// <para>
-        /// A list of S3 prefixes that define the object containing the data sources. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+        /// A list of S3 prefixes to include certain files or content. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
         /// objects using prefixes</a>.
         /// </para>
         /// </summary>

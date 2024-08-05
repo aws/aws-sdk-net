@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public OrganizationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationStatus unmarshalledObject = new OrganizationStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

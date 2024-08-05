@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public RegistrationDeniedReasonInformation Unmarshall(JsonUnmarshallerContext context)
         {
             RegistrationDeniedReasonInformation unmarshalledObject = new RegistrationDeniedReasonInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

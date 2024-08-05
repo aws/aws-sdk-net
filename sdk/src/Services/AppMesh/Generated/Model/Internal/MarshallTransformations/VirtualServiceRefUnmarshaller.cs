@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public VirtualServiceRef Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualServiceRef unmarshalledObject = new VirtualServiceRef();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

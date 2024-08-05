@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public TableExcerpt Unmarshall(JsonUnmarshallerContext context)
         {
             TableExcerpt unmarshalledObject = new TableExcerpt();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

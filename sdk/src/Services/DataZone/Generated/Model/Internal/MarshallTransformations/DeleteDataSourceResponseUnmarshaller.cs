@@ -142,10 +142,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.PublishOnImport = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retainPermissionsOnRevokeFailure", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.RetainPermissionsOnRevokeFailure = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schedule", targetDepth))
                 {
                     var unmarshaller = ScheduleConfigurationUnmarshaller.Instance;
                     response.Schedule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("selfGrantStatus", targetDepth))
+                {
+                    var unmarshaller = SelfGrantStatusOutputUnmarshaller.Instance;
+                    response.SelfGrantStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

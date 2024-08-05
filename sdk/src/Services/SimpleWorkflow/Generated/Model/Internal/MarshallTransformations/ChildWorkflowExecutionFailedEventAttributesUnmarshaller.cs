@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public ChildWorkflowExecutionFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             ChildWorkflowExecutionFailedEventAttributes unmarshalledObject = new ChildWorkflowExecutionFailedEventAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

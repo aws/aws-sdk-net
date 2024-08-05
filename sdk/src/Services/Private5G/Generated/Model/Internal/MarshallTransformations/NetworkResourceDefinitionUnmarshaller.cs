@@ -57,6 +57,8 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
         public NetworkResourceDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkResourceDefinition unmarshalledObject = new NetworkResourceDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

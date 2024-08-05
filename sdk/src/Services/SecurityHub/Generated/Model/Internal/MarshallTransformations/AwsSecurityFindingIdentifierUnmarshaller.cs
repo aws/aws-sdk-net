@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsSecurityFindingIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             AwsSecurityFindingIdentifier unmarshalledObject = new AwsSecurityFindingIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

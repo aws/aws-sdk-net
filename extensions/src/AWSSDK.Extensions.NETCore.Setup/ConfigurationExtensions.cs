@@ -355,6 +355,11 @@ namespace Microsoft.Extensions.Configuration
                 }
             }
 
+            if (!string.IsNullOrEmpty(section["ExternalId"]))
+            {
+                options.ExternalId = section["ExternalId"];
+            }
+
             var loggingSection = section.GetSection(LoggingKey);
             if(loggingSection != null)
             {

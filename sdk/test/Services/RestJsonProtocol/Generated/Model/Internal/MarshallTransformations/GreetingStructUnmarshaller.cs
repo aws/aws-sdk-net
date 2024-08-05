@@ -57,6 +57,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public GreetingStruct Unmarshall(JsonUnmarshallerContext context)
         {
             GreetingStruct unmarshalledObject = new GreetingStruct();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

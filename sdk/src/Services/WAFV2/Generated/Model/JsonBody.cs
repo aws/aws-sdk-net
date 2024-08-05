@@ -49,6 +49,11 @@ namespace Amazon.WAFV2.Model
     /// Example JSON: <c>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL"
     /// }</c> 
     /// </para>
+    ///  
+    /// <para>
+    /// For additional information about this request component option, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON
+    /// body</a> in the <i>WAF Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class JsonBody
     {
@@ -83,29 +88,14 @@ namespace Amazon.WAFV2.Model
         /// If you don't provide this setting, WAF parses and evaluates the content only up to
         /// the first parsing failure that it encounters. 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// WAF does its best to parse the entire JSON body, but might be forced to stop for reasons
-        /// such as invalid characters, duplicate keys, truncation, and any content whose root
-        /// node isn't an object or an array. 
+        /// WAF parsing doesn't fully validate the input JSON string, so parsing can succeed even
+        /// for invalid JSON. When parsing succeeds, WAF doesn't apply the fallback behavior.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields-list.html#waf-rule-statement-request-component-json-body">JSON
+        /// body</a> in the <i>WAF Developer Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// WAF parses the JSON in the following examples as two valid key, value pairs: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Missing comma: <c>{"key1":"value1""key2":"value2"}</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Missing colon: <c>{"key1":"value1","key2""value2"}</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Extra colons: <c>{"key1"::"value1","key2""value2"}</c> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         public BodyParsingFallbackBehavior InvalidFallbackBehavior
         {

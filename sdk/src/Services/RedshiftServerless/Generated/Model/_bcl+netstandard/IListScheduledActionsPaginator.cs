@@ -34,6 +34,6 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Enumerable containing all of the ScheduledActions
         /// </summary>
-        IPaginatedEnumerable<string> ScheduledActions { get; }
+        IPaginatedEnumerable<ScheduledActionAssociation> ScheduledActions { get; }
     }
 }

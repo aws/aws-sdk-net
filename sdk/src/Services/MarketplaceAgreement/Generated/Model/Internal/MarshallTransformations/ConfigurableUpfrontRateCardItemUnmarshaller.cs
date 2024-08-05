@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         public ConfigurableUpfrontRateCardItem Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurableUpfrontRateCardItem unmarshalledObject = new ConfigurableUpfrontRateCardItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public AccessRules Unmarshall(JsonUnmarshallerContext context)
         {
             AccessRules unmarshalledObject = new AccessRules();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -35,16 +35,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// If a volume has never been modified, some information in the output will be null.
-    /// If a volume has been modified more than once, the output includes only the most recent
-    /// modification request.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can also use CloudWatch Events to check the status of a modification to an EBS
-    /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
-    /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
-    /// the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">
+    /// Monitor the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeVolumesModificationsRequest : AmazonEC2Request
@@ -144,7 +136,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token returned by a previous paginated request. Pagination continues from the
+        /// The token returned from a previous paginated request. Pagination continues from the
         /// end of the items returned by the previous request.
         /// </para>
         /// </summary>

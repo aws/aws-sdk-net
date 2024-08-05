@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public DecoderManifestSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DecoderManifestSummary unmarshalledObject = new DecoderManifestSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

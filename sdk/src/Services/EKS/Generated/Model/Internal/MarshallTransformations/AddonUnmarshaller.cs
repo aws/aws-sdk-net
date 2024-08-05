@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public Addon Unmarshall(JsonUnmarshallerContext context)
         {
             Addon unmarshalledObject = new Addon();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -122,6 +124,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("podIdentityAssociations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PodIdentityAssociations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("publisher", targetDepth))

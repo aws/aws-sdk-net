@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsBackupBackupPlanRuleDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsBackupBackupPlanRuleDetails unmarshalledObject = new AwsBackupBackupPlanRuleDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

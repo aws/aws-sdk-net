@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public CustomSMSLambdaVersionConfigType Unmarshall(JsonUnmarshallerContext context)
         {
             CustomSMSLambdaVersionConfigType unmarshalledObject = new CustomSMSLambdaVersionConfigType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

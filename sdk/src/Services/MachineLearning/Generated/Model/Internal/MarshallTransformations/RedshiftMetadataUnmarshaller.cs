@@ -57,6 +57,8 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
         public RedshiftMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftMetadata unmarshalledObject = new RedshiftMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

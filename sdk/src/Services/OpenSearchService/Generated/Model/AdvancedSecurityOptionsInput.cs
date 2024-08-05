@@ -39,6 +39,7 @@ namespace Amazon.OpenSearchService.Model
         private bool? _anonymousAuthEnabled;
         private bool? _enabled;
         private bool? _internalUserDatabaseEnabled;
+        private JWTOptionsInput _jwtOptions;
         private MasterUserOptions _masterUserOptions;
         private SAMLOptionsInput _samlOptions;
 
@@ -96,6 +97,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetInternalUserDatabaseEnabled()
         {
             return this._internalUserDatabaseEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JWTOptions. 
+        /// <para>
+        /// Container for information about the JWT configuration of the Amazon OpenSearch Service.
+        /// 
+        /// </para>
+        /// </summary>
+        public JWTOptionsInput JWTOptions
+        {
+            get { return this._jwtOptions; }
+            set { this._jwtOptions = value; }
+        }
+
+        // Check to see if JWTOptions property is set
+        internal bool IsSetJWTOptions()
+        {
+            return this._jwtOptions != null;
         }
 
         /// <summary>

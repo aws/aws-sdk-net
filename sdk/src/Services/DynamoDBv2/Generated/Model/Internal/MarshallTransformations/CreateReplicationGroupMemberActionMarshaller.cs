@@ -70,6 +70,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.KMSMasterKeyId);
             }
 
+            if(requestObject.IsSetOnDemandThroughputOverride())
+            {
+                context.Writer.WritePropertyName("OnDemandThroughputOverride");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OnDemandThroughputOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnDemandThroughputOverride, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProvisionedThroughputOverride())
             {
                 context.Writer.WritePropertyName("ProvisionedThroughputOverride");

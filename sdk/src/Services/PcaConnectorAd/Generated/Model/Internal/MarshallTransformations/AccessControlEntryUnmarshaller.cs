@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public AccessControlEntry Unmarshall(JsonUnmarshallerContext context)
         {
             AccessControlEntry unmarshalledObject = new AccessControlEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -118,7 +118,6 @@ public final class ProtocolTestCustomizations {
             "QueryQueryXmlMapsXmlName",
             "QueryQueryFlattenedXmlMapWithXmlName",
             "QueryQueryFlattenedXmlMapWithXmlNamespace",
-            "Ec2XmlLists",
             "QueryEmptyInputAndEmptyOutput",
             "QueryNoInputAndNoOutput",
             "QueryNoInputAndOutput",

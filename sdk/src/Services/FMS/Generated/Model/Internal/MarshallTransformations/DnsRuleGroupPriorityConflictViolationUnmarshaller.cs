@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public DnsRuleGroupPriorityConflictViolation Unmarshall(JsonUnmarshallerContext context)
         {
             DnsRuleGroupPriorityConflictViolation unmarshalledObject = new DnsRuleGroupPriorityConflictViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

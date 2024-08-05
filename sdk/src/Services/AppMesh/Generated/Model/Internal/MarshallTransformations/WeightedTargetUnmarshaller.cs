@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public WeightedTarget Unmarshall(JsonUnmarshallerContext context)
         {
             WeightedTarget unmarshalledObject = new WeightedTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

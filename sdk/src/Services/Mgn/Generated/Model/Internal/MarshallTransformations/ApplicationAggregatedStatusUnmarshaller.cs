@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public ApplicationAggregatedStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationAggregatedStatus unmarshalledObject = new ApplicationAggregatedStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

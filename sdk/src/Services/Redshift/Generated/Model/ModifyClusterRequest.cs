@@ -731,9 +731,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>ds2.xlarge</c> | <c>ds2.8xlarge</c> | <c>dc1.large</c> | <c>dc1.8xlarge</c>
-        /// | <c>dc2.large</c> | <c>dc2.8xlarge</c> | <c>ra3.xlplus</c> | <c>ra3.4xlarge</c> |
-        /// <c>ra3.16xlarge</c> 
+        /// Valid Values: <c>dc2.large</c> | <c>dc2.8xlarge</c> | <c>ra3.xlplus</c> | <c>ra3.4xlarge</c>
+        /// | <c>ra3.16xlarge</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -794,7 +793,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For clusters with ds2 or dc2 nodes - Select a port within the range <c>1150-65535</c>.
+        /// For clusters with dc2 nodes - Select a port within the range <c>1150-65535</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

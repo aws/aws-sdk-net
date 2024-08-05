@@ -57,6 +57,8 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         public ServerSideEncryptionUpdateDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ServerSideEncryptionUpdateDetails unmarshalledObject = new ServerSideEncryptionUpdateDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

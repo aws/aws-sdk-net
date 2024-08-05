@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public ArchiveS3Settings Unmarshall(JsonUnmarshallerContext context)
         {
             ArchiveS3Settings unmarshalledObject = new ArchiveS3Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

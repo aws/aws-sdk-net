@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public TraceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TraceConfiguration unmarshalledObject = new TraceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

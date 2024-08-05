@@ -459,6 +459,91 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  CreateContentAssociation
+
+        internal virtual CreateContentAssociationResponse CreateContentAssociation(CreateContentAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContentAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContentAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContentAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an association between a content resource in a knowledge base and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/step-by-step-guided-experiences.html">step-by-step
+        /// guides</a>. Step-by-step guides offer instructions to agents for resolving common
+        /// customer issues. You create a content association to integrate Amazon Q in Connect
+        /// and step-by-step guides. 
+        /// 
+        ///  
+        /// <para>
+        /// After you integrate Amazon Q and step-by-step guides, when Amazon Q provides a recommendation
+        /// to an agent based on the intent that it's detected, it also provides them with the
+        /// option to start the step-by-step guide that you have associated with the content.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following limitations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can create only one content association for each content resource in a knowledge
+        /// base.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can associate a step-by-step guide with multiple content resources.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContentAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateContentAssociation">REST API Reference for CreateContentAssociation Operation</seealso>
+        public virtual Task<CreateContentAssociationResponse> CreateContentAssociationAsync(CreateContentAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContentAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContentAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContentAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateKnowledgeBase
 
         internal virtual CreateKnowledgeBaseResponse CreateKnowledgeBase(CreateKnowledgeBaseRequest request)
@@ -773,6 +858,57 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  DeleteContentAssociation
+
+        internal virtual DeleteContentAssociationResponse DeleteContentAssociation(DeleteContentAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContentAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContentAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContentAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the content association. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContentAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteContentAssociation">REST API Reference for DeleteContentAssociation Operation</seealso>
+        public virtual Task<DeleteContentAssociationResponse> DeleteContentAssociationAsync(DeleteContentAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContentAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContentAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContentAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteImportJob
 
         internal virtual DeleteImportJobResponse DeleteImportJob(DeleteImportJobRequest request)
@@ -1051,6 +1187,57 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = GetContentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetContentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetContentAssociation
+
+        internal virtual GetContentAssociationResponse GetContentAssociation(GetContentAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContentAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContentAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetContentAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the content association.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContentAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContentAssociation service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetContentAssociation">REST API Reference for GetContentAssociation Operation</seealso>
+        public virtual Task<GetContentAssociationResponse> GetContentAssociationAsync(GetContentAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContentAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContentAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContentAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1408,6 +1595,57 @@ namespace Amazon.QConnect
             options.ResponseUnmarshaller = ListAssistantsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAssistantsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListContentAssociations
+
+        internal virtual ListContentAssociationsResponse ListContentAssociations(ListContentAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContentAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContentAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContentAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the content associations.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about content associations--what they are and when they are used--see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContentAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContentAssociations service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListContentAssociations">REST API Reference for ListContentAssociations Operation</seealso>
+        public virtual Task<ListContentAssociationsResponse> ListContentAssociationsAsync(ListContentAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContentAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContentAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContentAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

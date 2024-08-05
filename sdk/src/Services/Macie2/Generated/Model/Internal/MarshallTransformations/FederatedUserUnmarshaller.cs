@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public FederatedUser Unmarshall(JsonUnmarshallerContext context)
         {
             FederatedUser unmarshalledObject = new FederatedUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

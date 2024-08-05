@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public ActionReviewPayloadField Unmarshall(JsonUnmarshallerContext context)
         {
             ActionReviewPayloadField unmarshalledObject = new ActionReviewPayloadField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

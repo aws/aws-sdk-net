@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public HttpRouteAction Unmarshall(JsonUnmarshallerContext context)
         {
             HttpRouteAction unmarshalledObject = new HttpRouteAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

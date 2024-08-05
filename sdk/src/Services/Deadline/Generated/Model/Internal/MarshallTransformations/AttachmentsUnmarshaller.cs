@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public Attachments Unmarshall(JsonUnmarshallerContext context)
         {
             Attachments unmarshalledObject = new Attachments();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

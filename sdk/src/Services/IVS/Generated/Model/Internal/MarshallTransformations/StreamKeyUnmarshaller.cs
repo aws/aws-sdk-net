@@ -57,6 +57,8 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         public StreamKey Unmarshall(JsonUnmarshallerContext context)
         {
             StreamKey unmarshalledObject = new StreamKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

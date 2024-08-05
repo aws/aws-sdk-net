@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public AppSyncRuntime Unmarshall(JsonUnmarshallerContext context)
         {
             AppSyncRuntime unmarshalledObject = new AppSyncRuntime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

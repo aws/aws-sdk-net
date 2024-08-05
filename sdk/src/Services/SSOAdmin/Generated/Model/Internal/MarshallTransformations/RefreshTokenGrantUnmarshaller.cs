@@ -57,6 +57,8 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
         public RefreshTokenGrant Unmarshall(JsonUnmarshallerContext context)
         {
             RefreshTokenGrant unmarshalledObject = new RefreshTokenGrant();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

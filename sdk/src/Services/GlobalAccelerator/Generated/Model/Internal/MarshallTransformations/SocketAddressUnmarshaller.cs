@@ -57,6 +57,8 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         public SocketAddress Unmarshall(JsonUnmarshallerContext context)
         {
             SocketAddress unmarshalledObject = new SocketAddress();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

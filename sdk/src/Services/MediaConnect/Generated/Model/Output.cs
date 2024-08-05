@@ -46,6 +46,7 @@ namespace Amazon.MediaConnect.Model
         private List<MediaStreamOutputConfiguration> _mediaStreamOutputConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamOutputConfiguration>() : null;
         private string _name;
         private string _outputArn;
+        private OutputStatus _outputStatus;
         private int? _port;
         private Transport _transport;
         private VpcInterfaceAttachment _vpcInterfaceAttachment;
@@ -241,6 +242,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetOutputArn()
         {
             return this._outputArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputStatus. An indication of whether the output is transmitting
+        /// data or not.
+        /// </summary>
+        public OutputStatus OutputStatus
+        {
+            get { return this._outputStatus; }
+            set { this._outputStatus = value; }
+        }
+
+        // Check to see if OutputStatus property is set
+        internal bool IsSetOutputStatus()
+        {
+            return this._outputStatus != null;
         }
 
         /// <summary>

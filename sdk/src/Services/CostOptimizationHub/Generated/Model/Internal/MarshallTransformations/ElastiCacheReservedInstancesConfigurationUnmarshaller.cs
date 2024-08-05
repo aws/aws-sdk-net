@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public ElastiCacheReservedInstancesConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ElastiCacheReservedInstancesConfiguration unmarshalledObject = new ElastiCacheReservedInstancesConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

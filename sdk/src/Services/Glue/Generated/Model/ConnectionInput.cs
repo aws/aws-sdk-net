@@ -34,12 +34,32 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ConnectionInput
     {
+        private AuthenticationConfigurationInput _authenticationConfiguration;
         private Dictionary<string, string> _connectionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ConnectionType _connectionType;
         private string _description;
         private List<string> _matchCriteria = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private PhysicalConnectionRequirements _physicalConnectionRequirements;
+        private bool? _validateCredentials;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationConfiguration. 
+        /// <para>
+        /// The authentication properties of the connection. Used for a Salesforce connection.
+        /// </para>
+        /// </summary>
+        public AuthenticationConfigurationInput AuthenticationConfiguration
+        {
+            get { return this._authenticationConfiguration; }
+            set { this._authenticationConfiguration = value; }
+        }
+
+        // Check to see if AuthenticationConfiguration property is set
+        internal bool IsSetAuthenticationConfiguration()
+        {
+            return this._authenticationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectionProperties. 
@@ -142,6 +162,14 @@ namespace Amazon.Glue.Model
         ///  </li> <li> 
         /// <para>
         /// Required: All of (<c>USERNAME</c>, <c>PASSWORD</c>) or <c>SECRET_ID</c>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>SALESFORCE</c> - Designates a connection to Salesforce using OAuth authencation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Requires the <c>AuthenticationConfiguration</c> member to be configured.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -249,7 +277,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the connection. Connection will not function as expected without a name.
+        /// The name of the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -268,8 +296,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PhysicalConnectionRequirements. 
         /// <para>
-        /// A map of physical connection requirements, such as virtual private cloud (VPC) and
-        /// <c>SecurityGroup</c>, that are needed to successfully make this connection.
+        /// The physical connection requirements, such as virtual private cloud (VPC) and <c>SecurityGroup</c>,
+        /// that are needed to successfully make this connection.
         /// </para>
         /// </summary>
         public PhysicalConnectionRequirements PhysicalConnectionRequirements
@@ -282,6 +310,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetPhysicalConnectionRequirements()
         {
             return this._physicalConnectionRequirements != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidateCredentials. 
+        /// <para>
+        /// A flag to validate the credentials during create connection. Used for a Salesforce
+        /// connection. Default is true. 
+        /// </para>
+        /// </summary>
+        public bool? ValidateCredentials
+        {
+            get { return this._validateCredentials; }
+            set { this._validateCredentials = value; }
+        }
+
+        // Check to see if ValidateCredentials property is set
+        internal bool IsSetValidateCredentials()
+        {
+            return this._validateCredentials.HasValue; 
         }
 
     }

@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public BridgeFlowSource Unmarshall(JsonUnmarshallerContext context)
         {
             BridgeFlowSource unmarshalledObject = new BridgeFlowSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

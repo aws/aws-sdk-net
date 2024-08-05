@@ -39,7 +39,9 @@ namespace Amazon.CodeBuild.Model
         private WebhookBuildType _buildType;
         private List<List<WebhookFilter>> _filterGroups = AWSConfigs.InitializeCollections ? new List<List<WebhookFilter>>() : null;
         private DateTime? _lastModifiedSecret;
+        private bool? _manualCreation;
         private string _payloadUrl;
+        private ScopeConfiguration _scopeConfiguration;
         private string _secret;
         private string _url;
 
@@ -132,6 +134,32 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManualCreation. 
+        /// <para>
+        /// If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead
+        /// returns <c>payloadUrl</c> and <c>secret</c> values for the webhook. The <c>payloadUrl</c>
+        /// and <c>secret</c> values in the output can be used to manually create a webhook within
+        /// GitHub.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// manualCreation is only available for GitHub webhooks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? ManualCreation
+        {
+            get { return this._manualCreation; }
+            set { this._manualCreation = value; }
+        }
+
+        // Check to see if ManualCreation property is set
+        internal bool IsSetManualCreation()
+        {
+            return this._manualCreation.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PayloadUrl. 
         /// <para>
         /// The CodeBuild endpoint where webhook events are sent.
@@ -148,6 +176,30 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetPayloadUrl()
         {
             return this._payloadUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScopeConfiguration. 
+        /// <para>
+        /// The scope configuration for global or organization webhooks.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Global or organization webhooks are only available for GitHub and Github Enterprise
+        /// webhooks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ScopeConfiguration ScopeConfiguration
+        {
+            get { return this._scopeConfiguration; }
+            set { this._scopeConfiguration = value; }
+        }
+
+        // Check to see if ScopeConfiguration property is set
+        internal bool IsSetScopeConfiguration()
+        {
+            return this._scopeConfiguration != null;
         }
 
         /// <summary>

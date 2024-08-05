@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public VirtualGatewayFileAccessLog Unmarshall(JsonUnmarshallerContext context)
         {
             VirtualGatewayFileAccessLog unmarshalledObject = new VirtualGatewayFileAccessLog();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

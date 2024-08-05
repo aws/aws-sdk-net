@@ -57,6 +57,8 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
         public ReservedNodesOffering Unmarshall(JsonUnmarshallerContext context)
         {
             ReservedNodesOffering unmarshalledObject = new ReservedNodesOffering();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

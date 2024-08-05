@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public BarChartConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BarChartConfiguration unmarshalledObject = new BarChartConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

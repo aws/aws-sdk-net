@@ -93,6 +93,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnvironmentType);
                 }
 
+                if(publicRequest.IsSetFleetServiceRole())
+                {
+                    context.Writer.WritePropertyName("fleetServiceRole");
+                    context.Writer.Write(publicRequest.FleetServiceRole);
+                }
+
                 if(publicRequest.IsSetOverflowBehavior())
                 {
                     context.Writer.WritePropertyName("overflowBehavior");
@@ -124,6 +130,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("vpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

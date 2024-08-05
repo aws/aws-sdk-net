@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public TcpRouteMatch Unmarshall(JsonUnmarshallerContext context)
         {
             TcpRouteMatch unmarshalledObject = new TcpRouteMatch();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

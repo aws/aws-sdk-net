@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public TieringPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             TieringPolicy unmarshalledObject = new TieringPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

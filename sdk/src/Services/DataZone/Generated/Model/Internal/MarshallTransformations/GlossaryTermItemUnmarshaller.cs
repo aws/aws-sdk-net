@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public GlossaryTermItem Unmarshall(JsonUnmarshallerContext context)
         {
             GlossaryTermItem unmarshalledObject = new GlossaryTermItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public SchedulingPolicyListingDetail Unmarshall(JsonUnmarshallerContext context)
         {
             SchedulingPolicyListingDetail unmarshalledObject = new SchedulingPolicyListingDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

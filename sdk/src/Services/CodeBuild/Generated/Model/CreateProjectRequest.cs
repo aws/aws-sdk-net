@@ -269,7 +269,7 @@ namespace Amazon.CodeBuild.Model
         /// The name of the build project.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=255)]
+        [AWSProperty(Required=true, Min=2, Max=150)]
         public string Name
         {
             get { return this._name; }
@@ -419,6 +419,10 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For GitLab: the commit ID, branch, or Git tag to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version
         /// of the source code you want to build. If a branch name is specified, the branch's
         /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
@@ -478,11 +482,11 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times
+        /// How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times
         /// out any build that has not been marked as completed. The default is 60 minutes.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=480)]
+        [AWSProperty(Min=5, Max=2160)]
         public int? TimeoutInMinutes
         {
             get { return this._timeoutInMinutes; }
@@ -500,6 +504,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// VpcConfig enables CodeBuild to access resources in an Amazon VPC.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're using compute fleets during project creation, do not provide vpcConfig.
+        /// </para>
+        ///  </note>
         /// </summary>
         public VpcConfig VpcConfig
         {

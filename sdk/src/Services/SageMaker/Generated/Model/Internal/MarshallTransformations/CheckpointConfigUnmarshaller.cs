@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CheckpointConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CheckpointConfig unmarshalledObject = new CheckpointConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

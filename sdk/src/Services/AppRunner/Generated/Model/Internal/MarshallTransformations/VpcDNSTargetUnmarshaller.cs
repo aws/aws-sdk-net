@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public VpcDNSTarget Unmarshall(JsonUnmarshallerContext context)
         {
             VpcDNSTarget unmarshalledObject = new VpcDNSTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

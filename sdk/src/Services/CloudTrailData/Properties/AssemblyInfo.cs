@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudTrailData")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
 #elif NETCOREAPP3_1

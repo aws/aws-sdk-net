@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public ExportErrorDetailsOutput Unmarshall(JsonUnmarshallerContext context)
         {
             ExportErrorDetailsOutput unmarshalledObject = new ExportErrorDetailsOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

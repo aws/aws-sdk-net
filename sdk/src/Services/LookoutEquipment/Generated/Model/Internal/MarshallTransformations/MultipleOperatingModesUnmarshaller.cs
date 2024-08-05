@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public MultipleOperatingModes Unmarshall(JsonUnmarshallerContext context)
         {
             MultipleOperatingModes unmarshalledObject = new MultipleOperatingModes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

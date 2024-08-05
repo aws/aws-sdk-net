@@ -57,6 +57,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         public XssMatchTuple Unmarshall(JsonUnmarshallerContext context)
         {
             XssMatchTuple unmarshalledObject = new XssMatchTuple();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

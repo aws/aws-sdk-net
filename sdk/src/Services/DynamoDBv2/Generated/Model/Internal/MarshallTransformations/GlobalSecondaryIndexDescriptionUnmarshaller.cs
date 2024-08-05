@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public GlobalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
         {
             GlobalSecondaryIndexDescription unmarshalledObject = new GlobalSecondaryIndexDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -104,6 +106,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
                     unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OnDemandThroughput", targetDepth))
+                {
+                    var unmarshaller = OnDemandThroughputUnmarshaller.Instance;
+                    unmarshalledObject.OnDemandThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Projection", targetDepth))

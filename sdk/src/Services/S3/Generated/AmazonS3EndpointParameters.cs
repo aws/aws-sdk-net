@@ -143,6 +143,15 @@ namespace Amazon.S3.Endpoints
         }
 
         /// <summary>
+        /// CopySource parameter
+        /// </summary>
+        public string CopySource 
+        { 
+            get { return (string)this["CopySource"]; }
+            set { this["CopySource"] = value; } 
+        }
+
+        /// <summary>
         /// DisableAccessPoints parameter
         /// </summary>
         public bool? DisableAccessPoints 

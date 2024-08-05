@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public PillarDifference Unmarshall(JsonUnmarshallerContext context)
         {
             PillarDifference unmarshalledObject = new PillarDifference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

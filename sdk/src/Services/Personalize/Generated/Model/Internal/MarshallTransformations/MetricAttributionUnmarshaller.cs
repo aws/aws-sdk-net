@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public MetricAttribution Unmarshall(JsonUnmarshallerContext context)
         {
             MetricAttribution unmarshalledObject = new MetricAttribution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

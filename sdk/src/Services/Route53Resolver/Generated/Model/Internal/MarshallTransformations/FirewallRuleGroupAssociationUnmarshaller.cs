@@ -57,6 +57,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
         public FirewallRuleGroupAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             FirewallRuleGroupAssociation unmarshalledObject = new FirewallRuleGroupAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

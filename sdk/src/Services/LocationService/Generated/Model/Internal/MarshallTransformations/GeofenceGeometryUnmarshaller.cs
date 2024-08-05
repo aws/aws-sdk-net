@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public GeofenceGeometry Unmarshall(JsonUnmarshallerContext context)
         {
             GeofenceGeometry unmarshalledObject = new GeofenceGeometry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CircleUnmarshaller.Instance;
                     unmarshalledObject.Circle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Geobuf", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    unmarshalledObject.Geobuf = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Polygon", targetDepth))

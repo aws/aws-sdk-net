@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2SecurityGroupUserIdGroupPair Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2SecurityGroupUserIdGroupPair unmarshalledObject = new AwsEc2SecurityGroupUserIdGroupPair();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

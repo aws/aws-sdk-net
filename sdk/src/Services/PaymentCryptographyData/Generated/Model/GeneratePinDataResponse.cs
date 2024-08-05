@@ -49,7 +49,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Identification Number), generated in accordance with ISO 9564 standard.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=32)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=32)]
         public string EncryptedPinBlock
         {
             get { return this._encryptedPinBlock; }

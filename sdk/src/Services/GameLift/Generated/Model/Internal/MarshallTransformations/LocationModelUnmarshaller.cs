@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public LocationModel Unmarshall(JsonUnmarshallerContext context)
         {
             LocationModel unmarshalledObject = new LocationModel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

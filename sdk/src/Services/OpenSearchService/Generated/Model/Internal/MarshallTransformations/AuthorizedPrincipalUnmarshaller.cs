@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public AuthorizedPrincipal Unmarshall(JsonUnmarshallerContext context)
         {
             AuthorizedPrincipal unmarshalledObject = new AuthorizedPrincipal();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

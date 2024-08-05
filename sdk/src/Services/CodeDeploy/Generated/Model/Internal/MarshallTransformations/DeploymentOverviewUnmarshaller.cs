@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public DeploymentOverview Unmarshall(JsonUnmarshallerContext context)
         {
             DeploymentOverview unmarshalledObject = new DeploymentOverview();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AnalysisDefaults Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisDefaults unmarshalledObject = new AnalysisDefaults();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

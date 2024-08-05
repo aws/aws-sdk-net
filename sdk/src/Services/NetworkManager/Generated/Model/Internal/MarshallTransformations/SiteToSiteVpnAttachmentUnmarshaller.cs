@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public SiteToSiteVpnAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             SiteToSiteVpnAttachment unmarshalledObject = new SiteToSiteVpnAttachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

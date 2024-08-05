@@ -32,6 +32,11 @@ namespace Amazon.EMRServerless.Model
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
+        /// Paginator for ListJobRunAttempts operation
+        ///</summary>
+        IListJobRunAttemptsPaginator ListJobRunAttempts(ListJobRunAttemptsRequest request);
+
+        /// <summary>
         /// Paginator for ListJobRuns operation
         ///</summary>
         IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);

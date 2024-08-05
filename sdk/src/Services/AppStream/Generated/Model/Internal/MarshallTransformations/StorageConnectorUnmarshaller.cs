@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public StorageConnector Unmarshall(JsonUnmarshallerContext context)
         {
             StorageConnector unmarshalledObject = new StorageConnector();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

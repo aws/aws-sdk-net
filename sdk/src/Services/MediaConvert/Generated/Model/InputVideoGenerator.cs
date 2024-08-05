@@ -37,12 +37,33 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class InputVideoGenerator
     {
+        private int? _channels;
         private int? _duration;
+        private int? _framerateDenominator;
+        private int? _framerateNumerator;
+        private int? _sampleRate;
 
         /// <summary>
-        /// Gets and sets the property Duration. Specify an integer value for Black video duration
-        /// from 50 to 86400000 to generate a black video input for that many milliseconds. Required
-        /// when you include Video generator.
+        /// Gets and sets the property Channels. Specify the number of audio channels to include
+        /// in your video generator input. MediaConvert creates these audio channels as silent
+        /// audio within a single audio track. Enter an integer from 1 to 32.
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public int? Channels
+        {
+            get { return this._channels; }
+            set { this._channels = value; }
+        }
+
+        // Check to see if Channels property is set
+        internal bool IsSetChannels()
+        {
+            return this._channels.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Duration. Specify the duration, in milliseconds, for your
+        /// video generator input.Enter an integer from 50 to 86400000.
         /// </summary>
         [AWSProperty(Min=50, Max=86400000)]
         public int? Duration
@@ -55,6 +76,61 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDuration()
         {
             return this._duration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FramerateDenominator. Specify the denominator of the fraction
+        /// that represents the frame rate for your video generator input. When you do, you must
+        /// also specify a value for Frame rate numerator. MediaConvert uses a default frame rate
+        /// of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1001)]
+        public int? FramerateDenominator
+        {
+            get { return this._framerateDenominator; }
+            set { this._framerateDenominator = value; }
+        }
+
+        // Check to see if FramerateDenominator property is set
+        internal bool IsSetFramerateDenominator()
+        {
+            return this._framerateDenominator.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FramerateNumerator. Specify the numerator of the fraction
+        /// that represents the frame rate for your video generator input. When you do, you must
+        /// also specify a value for Frame rate denominator. MediaConvert uses a default frame
+        /// rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
+        /// </summary>
+        [AWSProperty(Min=1, Max=60000)]
+        public int? FramerateNumerator
+        {
+            get { return this._framerateNumerator; }
+            set { this._framerateNumerator = value; }
+        }
+
+        // Check to see if FramerateNumerator property is set
+        internal bool IsSetFramerateNumerator()
+        {
+            return this._framerateNumerator.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleRate. Specify the audio sample rate, in Hz, for the
+        /// silent audio in your video generator input.Enter an integer from 32000 to 48000.
+        /// </summary>
+        [AWSProperty(Min=32000, Max=48000)]
+        public int? SampleRate
+        {
+            get { return this._sampleRate; }
+            set { this._sampleRate = value; }
+        }
+
+        // Check to see if SampleRate property is set
+        internal bool IsSetSampleRate()
+        {
+            return this._sampleRate.HasValue; 
         }
 
     }

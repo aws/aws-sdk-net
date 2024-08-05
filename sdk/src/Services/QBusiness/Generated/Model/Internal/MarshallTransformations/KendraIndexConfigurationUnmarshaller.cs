@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public KendraIndexConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             KendraIndexConfiguration unmarshalledObject = new KendraIndexConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public UserAttributeUpdateSettingsType Unmarshall(JsonUnmarshallerContext context)
         {
             UserAttributeUpdateSettingsType unmarshalledObject = new UserAttributeUpdateSettingsType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

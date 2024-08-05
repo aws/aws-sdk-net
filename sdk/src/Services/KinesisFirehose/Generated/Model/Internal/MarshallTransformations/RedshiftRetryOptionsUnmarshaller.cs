@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public RedshiftRetryOptions Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftRetryOptions unmarshalledObject = new RedshiftRetryOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

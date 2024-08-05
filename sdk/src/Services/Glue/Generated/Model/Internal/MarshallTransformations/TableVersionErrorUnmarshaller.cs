@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public TableVersionError Unmarshall(JsonUnmarshallerContext context)
         {
             TableVersionError unmarshalledObject = new TableVersionError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

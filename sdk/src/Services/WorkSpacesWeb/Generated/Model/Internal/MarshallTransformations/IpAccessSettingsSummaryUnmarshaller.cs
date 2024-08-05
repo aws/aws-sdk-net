@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public IpAccessSettingsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             IpAccessSettingsSummary unmarshalledObject = new IpAccessSettingsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

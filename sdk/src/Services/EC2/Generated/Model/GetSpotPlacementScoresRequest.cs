@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
-    /// placement score</a> in the Amazon EC2 User Guide.
+    /// placement score</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetSpotPlacementScoresRequest : AmazonEC2Request

@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public RuleBasedProperties Unmarshall(JsonUnmarshallerContext context)
         {
             RuleBasedProperties unmarshalledObject = new RuleBasedProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttributeMatchingModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("matchPurpose", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MatchPurpose = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rules", targetDepth))

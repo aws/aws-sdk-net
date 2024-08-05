@@ -66,6 +66,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InternalUserDatabaseEnabled.Value);
             }
 
+            if(requestObject.IsSetJWTOptions())
+            {
+                context.Writer.WritePropertyName("JWTOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JWTOptionsInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.JWTOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMasterUserOptions())
             {
                 context.Writer.WritePropertyName("MasterUserOptions");

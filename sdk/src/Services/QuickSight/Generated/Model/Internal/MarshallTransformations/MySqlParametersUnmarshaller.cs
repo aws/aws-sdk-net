@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public MySqlParameters Unmarshall(JsonUnmarshallerContext context)
         {
             MySqlParameters unmarshalledObject = new MySqlParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

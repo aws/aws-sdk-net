@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public DomainNameConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DomainNameConfig unmarshalledObject = new DomainNameConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

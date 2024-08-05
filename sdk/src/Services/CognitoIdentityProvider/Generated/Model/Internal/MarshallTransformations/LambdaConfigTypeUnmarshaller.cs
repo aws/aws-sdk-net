@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public LambdaConfigType Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaConfigType unmarshalledObject = new LambdaConfigType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

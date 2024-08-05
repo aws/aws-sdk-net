@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EksPodProperties Unmarshall(JsonUnmarshallerContext context)
         {
             EksPodProperties unmarshalledObject = new EksPodProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

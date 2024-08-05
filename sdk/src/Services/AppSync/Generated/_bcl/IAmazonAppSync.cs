@@ -38,6 +38,10 @@ namespace Amazon.AppSync
     public partial interface IAmazonAppSync : IAmazonService, IDisposable
     {
 
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IAppSyncPaginatorFactory Paginators { get; }
 
         
         #region  AssociateApi

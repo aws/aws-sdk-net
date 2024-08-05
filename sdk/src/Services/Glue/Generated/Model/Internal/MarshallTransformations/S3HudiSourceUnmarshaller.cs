@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public S3HudiSource Unmarshall(JsonUnmarshallerContext context)
         {
             S3HudiSource unmarshalledObject = new S3HudiSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

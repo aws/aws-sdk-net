@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ParallelismConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ParallelismConfiguration unmarshalledObject = new ParallelismConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

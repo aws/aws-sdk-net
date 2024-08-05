@@ -57,6 +57,8 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
         public RotationsListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             RotationsListEntry unmarshalledObject = new RotationsListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

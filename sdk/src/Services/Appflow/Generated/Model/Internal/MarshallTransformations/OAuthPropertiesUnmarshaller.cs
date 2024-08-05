@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public OAuthProperties Unmarshall(JsonUnmarshallerContext context)
         {
             OAuthProperties unmarshalledObject = new OAuthProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

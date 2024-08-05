@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Budgets")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 #elif NETCOREAPP3_1

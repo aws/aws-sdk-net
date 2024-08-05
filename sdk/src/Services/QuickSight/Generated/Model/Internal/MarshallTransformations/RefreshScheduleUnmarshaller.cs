@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RefreshSchedule Unmarshall(JsonUnmarshallerContext context)
         {
             RefreshSchedule unmarshalledObject = new RefreshSchedule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

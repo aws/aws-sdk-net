@@ -95,6 +95,56 @@ namespace Amazon.StorageGateway
 
 
     /// <summary>
+    /// Constants used for properties of type AutomaticUpdatePolicy.
+    /// </summary>
+    public class AutomaticUpdatePolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_VERSIONS for AutomaticUpdatePolicy
+        /// </summary>
+        public static readonly AutomaticUpdatePolicy ALL_VERSIONS = new AutomaticUpdatePolicy("ALL_VERSIONS");
+        /// <summary>
+        /// Constant EMERGENCY_VERSIONS_ONLY for AutomaticUpdatePolicy
+        /// </summary>
+        public static readonly AutomaticUpdatePolicy EMERGENCY_VERSIONS_ONLY = new AutomaticUpdatePolicy("EMERGENCY_VERSIONS_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomaticUpdatePolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomaticUpdatePolicy FindValue(string value)
+        {
+            return FindValue<AutomaticUpdatePolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomaticUpdatePolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AvailabilityMonitorTestStatus.
     /// </summary>
     public class AvailabilityMonitorTestStatus : ConstantClass
@@ -846,6 +896,10 @@ namespace Amazon.StorageGateway
         /// Constant MandatoryEncryption for SMBSecurityStrategy
         /// </summary>
         public static readonly SMBSecurityStrategy MandatoryEncryption = new SMBSecurityStrategy("MandatoryEncryption");
+        /// <summary>
+        /// Constant MandatoryEncryptionNoAes128 for SMBSecurityStrategy
+        /// </summary>
+        public static readonly SMBSecurityStrategy MandatoryEncryptionNoAes128 = new SMBSecurityStrategy("MandatoryEncryptionNoAes128");
         /// <summary>
         /// Constant MandatorySigning for SMBSecurityStrategy
         /// </summary>

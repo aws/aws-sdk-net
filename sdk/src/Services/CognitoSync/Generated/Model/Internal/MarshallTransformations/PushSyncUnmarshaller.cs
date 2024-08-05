@@ -57,6 +57,8 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         public PushSync Unmarshall(JsonUnmarshallerContext context)
         {
             PushSync unmarshalledObject = new PushSync();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

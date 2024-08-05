@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public FrameCaptureSettings Unmarshall(JsonUnmarshallerContext context)
         {
             FrameCaptureSettings unmarshalledObject = new FrameCaptureSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

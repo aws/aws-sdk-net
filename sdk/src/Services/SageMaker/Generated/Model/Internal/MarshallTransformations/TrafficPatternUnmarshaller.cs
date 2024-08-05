@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TrafficPattern Unmarshall(JsonUnmarshallerContext context)
         {
             TrafficPattern unmarshalledObject = new TrafficPattern();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

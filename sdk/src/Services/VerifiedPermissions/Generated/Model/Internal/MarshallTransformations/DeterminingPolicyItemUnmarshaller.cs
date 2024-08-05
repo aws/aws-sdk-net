@@ -57,6 +57,8 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         public DeterminingPolicyItem Unmarshall(JsonUnmarshallerContext context)
         {
             DeterminingPolicyItem unmarshalledObject = new DeterminingPolicyItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

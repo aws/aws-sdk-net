@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ControlCatalog.Model.GetControlRequest.ControlArn</property>
+    <min>34</min>
+    <max>2048</max>
+    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlCatalog.Model.GetControlResponse.Arn</property>
+    <min>34</min>
+    <max>2048</max>
+    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListCommonControlsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -12,6 +24,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListCommonControlsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlCatalog.Model.ListControlsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlCatalog.Model.ListControlsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlCatalog.Model.ListControlsResponse.NextToken</property>
     <min>0</min>
     <max>1024</max>
   </property-value-rule>
@@ -49,42 +76,48 @@
     <property>Amazon.ControlCatalog.Model.AssociatedDomainSummary.Arn</property>
     <min>33</min>
     <max>2048</max>
-    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+$</pattern>
+    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.AssociatedObjectiveSummary.Arn</property>
     <min>36</min>
     <max>2048</max>
-    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+$</pattern>
+    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.CommonControlSummary.Arn</property>
     <min>41</min>
     <max>2048</max>
-    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::common-control/[0-9a-z]+$</pattern>
+    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::common-control/[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ControlCatalog.Model.ControlSummary.Arn</property>
+    <min>34</min>
+    <max>2048</max>
+    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.DomainResourceFilter.Arn</property>
     <min>33</min>
     <max>2048</max>
-    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+$</pattern>
+    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.DomainSummary.Arn</property>
     <min>33</min>
     <max>2048</max>
-    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+$</pattern>
+    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ObjectiveResourceFilter.Arn</property>
     <min>36</min>
     <max>2048</max>
-    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+$</pattern>
+    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ObjectiveSummary.Arn</property>
     <min>36</min>
     <max>2048</max>
-    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+$</pattern>
+    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+</pattern>
   </property-value-rule>
 </property-value-rules>

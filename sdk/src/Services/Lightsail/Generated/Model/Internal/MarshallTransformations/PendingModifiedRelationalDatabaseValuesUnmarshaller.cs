@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public PendingModifiedRelationalDatabaseValues Unmarshall(JsonUnmarshallerContext context)
         {
             PendingModifiedRelationalDatabaseValues unmarshalledObject = new PendingModifiedRelationalDatabaseValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

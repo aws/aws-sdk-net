@@ -57,6 +57,8 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         public ChildShard Unmarshall(JsonUnmarshallerContext context)
         {
             ChildShard unmarshalledObject = new ChildShard();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

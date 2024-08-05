@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
         public AgentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AgentConfiguration unmarshalledObject = new AgentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

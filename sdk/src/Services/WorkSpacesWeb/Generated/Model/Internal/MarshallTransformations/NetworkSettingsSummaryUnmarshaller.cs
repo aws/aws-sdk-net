@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         public NetworkSettingsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkSettingsSummary unmarshalledObject = new NetworkSettingsSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

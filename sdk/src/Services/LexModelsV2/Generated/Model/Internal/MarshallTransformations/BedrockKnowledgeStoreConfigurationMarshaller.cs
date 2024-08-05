@@ -54,6 +54,23 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BedrockKnowledgeBaseArn);
             }
 
+            if(requestObject.IsSetExactResponse())
+            {
+                context.Writer.WritePropertyName("exactResponse");
+                context.Writer.Write(requestObject.ExactResponse.Value);
+            }
+
+            if(requestObject.IsSetExactResponseFields())
+            {
+                context.Writer.WritePropertyName("exactResponseFields");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BedrockKnowledgeStoreExactResponseFieldsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExactResponseFields, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

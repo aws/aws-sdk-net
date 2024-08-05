@@ -1113,6 +1113,14 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Gets a summary of the most recent executions for a pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When applying the filter for pipeline executions that have succeeded in the stage,
+        /// the operation returns all executions in the current pipeline version beginning on
+        /// February 1, 2024.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPipelineExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -1178,6 +1186,64 @@ namespace Amazon.CodePipeline
 
         #endregion
                 
+        #region  ListRuleExecutions
+
+
+
+        /// <summary>
+        /// Lists the rule executions that have occurred in a pipeline configured for conditions
+        /// with rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRuleExecutions service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provide is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
+        /// The pipeline execution was specified in an invalid format or cannot be found, or an
+        /// execution ID does not belong to the specified pipeline.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleExecutions">REST API Reference for ListRuleExecutions Operation</seealso>
+        Task<ListRuleExecutionsResponse> ListRuleExecutionsAsync(ListRuleExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRuleTypes
+
+
+
+        /// <summary>
+        /// Lists the rules for the condition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRuleTypes service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provide is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleTypes">REST API Reference for ListRuleTypes Operation</seealso>
+        Task<ListRuleTypesResponse> ListRuleTypesAsync(ListRuleTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 
@@ -1233,6 +1299,47 @@ namespace Amazon.CodePipeline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
         Task<ListWebhooksResponse> ListWebhooksAsync(ListWebhooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  OverrideStageCondition
+
+
+
+        /// <summary>
+        /// Used to override a stage condition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OverrideStageCondition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the OverrideStageCondition service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConditionNotOverridableException">
+        /// Unable to override because the condition does not allow overrides.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
+        /// The stage has failed in a later run of the pipeline and the <c>pipelineExecutionId</c>
+        /// associated with the request is out of date.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
+        /// The stage was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/OverrideStageCondition">REST API Reference for OverrideStageCondition Operation</seealso>
+        Task<OverrideStageConditionResponse> OverrideStageConditionAsync(OverrideStageConditionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1320,6 +1427,9 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the PutActionRevision service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.ActionNotFoundException">
         /// The specified action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
@@ -1637,6 +1747,9 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the RetryStageExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
         /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
         /// Try again later.

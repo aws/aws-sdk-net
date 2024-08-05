@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AudioWatermarkSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AudioWatermarkSettings unmarshalledObject = new AudioWatermarkSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodeStarconnections")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS CodeStar connections. Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS CodeStar connections. Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS CodeStar connections. Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.")]
 #elif NETCOREAPP3_1

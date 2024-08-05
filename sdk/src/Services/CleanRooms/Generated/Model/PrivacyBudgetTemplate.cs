@@ -210,7 +210,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Specifies the epislon and noise parameters for the privacy budget template.
+        /// Specifies the epsilon and noise parameters for the privacy budget template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

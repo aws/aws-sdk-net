@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public EnvironmentEnterSessionActionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentEnterSessionActionDefinition unmarshalledObject = new EnvironmentEnterSessionActionDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

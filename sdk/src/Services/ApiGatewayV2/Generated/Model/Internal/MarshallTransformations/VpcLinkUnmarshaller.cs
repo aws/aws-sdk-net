@@ -57,6 +57,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         public VpcLink Unmarshall(JsonUnmarshallerContext context)
         {
             VpcLink unmarshalledObject = new VpcLink();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

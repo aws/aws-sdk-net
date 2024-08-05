@@ -57,6 +57,8 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
         public EngineAttribute Unmarshall(JsonUnmarshallerContext context)
         {
             EngineAttribute unmarshalledObject = new EngineAttribute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

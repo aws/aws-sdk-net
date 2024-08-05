@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public JourneySchedule Unmarshall(JsonUnmarshallerContext context)
         {
             JourneySchedule unmarshalledObject = new JourneySchedule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

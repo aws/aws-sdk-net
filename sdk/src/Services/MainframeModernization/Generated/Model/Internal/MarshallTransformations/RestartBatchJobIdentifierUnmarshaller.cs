@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public RestartBatchJobIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             RestartBatchJobIdentifier unmarshalledObject = new RestartBatchJobIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -58,6 +58,7 @@ namespace Amazon.SageMaker.Model
         private SharingSettings _sharingSettings;
         private DefaultSpaceStorageSettings _spaceStorageSettings;
         private StudioWebPortal _studioWebPortal;
+        private StudioWebPortalSettings _studioWebPortalSettings;
         private TensorBoardAppSettings _tensorBoardAppSettings;
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// can access this file system in Amazon SageMaker Studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=10)]
         public List<CustomFileSystemConfig> CustomFileSystemConfigs
         {
             get { return this._customFileSystemConfigs; }
@@ -362,6 +363,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStudioWebPortal()
         {
             return this._studioWebPortal != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StudioWebPortalSettings. 
+        /// <para>
+        /// Studio settings. If these settings are applied on a user level, they take priority
+        /// over the settings applied on a domain level.
+        /// </para>
+        /// </summary>
+        public StudioWebPortalSettings StudioWebPortalSettings
+        {
+            get { return this._studioWebPortalSettings; }
+            set { this._studioWebPortalSettings = value; }
+        }
+
+        // Check to see if StudioWebPortalSettings property is set
+        internal bool IsSetStudioWebPortalSettings()
+        {
+            return this._studioWebPortalSettings != null;
         }
 
         /// <summary>

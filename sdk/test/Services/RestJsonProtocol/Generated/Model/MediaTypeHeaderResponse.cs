@@ -48,7 +48,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if Json property is set
         internal bool IsSetJson()
         {
-            return this._json != null;
+            return !string.IsNullOrEmpty(this._json);
         }
 
     }

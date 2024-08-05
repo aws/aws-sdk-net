@@ -68,6 +68,7 @@ namespace Amazon.FSx.Model
         private int? _importedFileChunkSize;
         private string _importPath;
         private LustreLogCreateConfiguration _logConfiguration;
+        private CreateFileSystemLustreMetadataConfiguration _metadataConfiguration;
         private int? _perUnitStorageThroughput;
         private LustreRootSquashConfiguration _rootSquashConfiguration;
         private string _weeklyMaintenanceStartTime;
@@ -250,9 +251,10 @@ namespace Amazon.FSx.Model
         /// Choose <c>PERSISTENT_2</c> for longer-term storage and for latency-sensitive workloads
         /// that require the highest levels of IOPS/throughput. <c>PERSISTENT_2</c> supports SSD
         /// storage, and offers higher <c>PerUnitStorageThroughput</c> (up to 1000 MB/s/TiB).
-        /// <c>PERSISTENT_2</c> is available in a limited number of Amazon Web Services Regions.
-        /// For more information, and an up-to-date list of Amazon Web Services Regions in which
-        /// <c>PERSISTENT_2</c> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File
+        /// You can optionally specify a metadata configuration mode for <c>PERSISTENT_2</c> which
+        /// supports increasing metadata performance. <c>PERSISTENT_2</c> is available in a limited
+        /// number of Amazon Web Services Regions. For more information, and an up-to-date list
+        /// of Amazon Web Services Regions in which <c>PERSISTENT_2</c> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File
         /// system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User
         /// Guide</i>.
         /// </para>
@@ -264,11 +266,11 @@ namespace Amazon.FSx.Model
         ///  </note> 
         /// <para>
         /// Encryption of data in transit is automatically turned on when you access <c>SCRATCH_2</c>,
-        /// <c>PERSISTENT_1</c> and <c>PERSISTENT_2</c> file systems from Amazon EC2 instances
+        /// <c>PERSISTENT_1</c>, and <c>PERSISTENT_2</c> file systems from Amazon EC2 instances
         /// that support automatic encryption in the Amazon Web Services Regions where they are
         /// available. For more information about encryption in transit for FSx for Lustre file
         /// systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
-        /// data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>. 
+        /// data in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -429,6 +431,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetLogConfiguration()
         {
             return this._logConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataConfiguration. 
+        /// <para>
+        /// The Lustre metadata performance configuration for the creation of an FSx for Lustre
+        /// file system using a <c>PERSISTENT_2</c> deployment type.
+        /// </para>
+        /// </summary>
+        public CreateFileSystemLustreMetadataConfiguration MetadataConfiguration
+        {
+            get { return this._metadataConfiguration; }
+            set { this._metadataConfiguration = value; }
+        }
+
+        // Check to see if MetadataConfiguration property is set
+        internal bool IsSetMetadataConfiguration()
+        {
+            return this._metadataConfiguration != null;
         }
 
         /// <summary>

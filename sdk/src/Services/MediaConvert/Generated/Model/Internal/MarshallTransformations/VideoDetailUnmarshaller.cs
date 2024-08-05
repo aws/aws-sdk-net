@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public VideoDetail Unmarshall(JsonUnmarshallerContext context)
         {
             VideoDetail unmarshalledObject = new VideoDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

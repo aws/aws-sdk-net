@@ -57,6 +57,8 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public DescribeVaultOutput Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeVaultOutput unmarshalledObject = new DescribeVaultOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

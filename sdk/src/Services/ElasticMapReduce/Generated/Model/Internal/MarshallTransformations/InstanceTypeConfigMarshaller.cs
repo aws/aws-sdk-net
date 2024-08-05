@@ -106,6 +106,19 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("Priority");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Priority.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Priority.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Priority.Value);
+                }
+            }
+
             if(requestObject.IsSetWeightedCapacity())
             {
                 context.Writer.WritePropertyName("WeightedCapacity");

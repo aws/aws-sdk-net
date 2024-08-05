@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public ReservationPlan Unmarshall(JsonUnmarshallerContext context)
         {
             ReservationPlan unmarshalledObject = new ReservationPlan();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

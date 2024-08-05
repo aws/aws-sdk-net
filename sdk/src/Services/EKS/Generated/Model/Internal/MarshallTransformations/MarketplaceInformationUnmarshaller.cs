@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public MarketplaceInformation Unmarshall(JsonUnmarshallerContext context)
         {
             MarketplaceInformation unmarshalledObject = new MarketplaceInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

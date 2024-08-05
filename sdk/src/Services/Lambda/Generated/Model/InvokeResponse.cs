@@ -57,7 +57,7 @@ namespace Amazon.Lambda.Model
         // Check to see if ExecutedVersion property is set
         internal bool IsSetExecutedVersion()
         {
-            return this._executedVersion != null;
+            return !string.IsNullOrEmpty(this._executedVersion);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Amazon.Lambda.Model
         // Check to see if FunctionError property is set
         internal bool IsSetFunctionError()
         {
-            return this._functionError != null;
+            return !string.IsNullOrEmpty(this._functionError);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Amazon.Lambda.Model
         // Check to see if LogResult property is set
         internal bool IsSetLogResult()
         {
-            return this._logResult != null;
+            return !string.IsNullOrEmpty(this._logResult);
         }
 
         /// <summary>

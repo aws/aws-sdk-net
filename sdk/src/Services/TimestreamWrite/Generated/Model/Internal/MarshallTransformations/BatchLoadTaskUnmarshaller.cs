@@ -57,6 +57,8 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         public BatchLoadTask Unmarshall(JsonUnmarshallerContext context)
         {
             BatchLoadTask unmarshalledObject = new BatchLoadTask();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

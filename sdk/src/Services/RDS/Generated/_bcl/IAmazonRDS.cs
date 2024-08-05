@@ -292,8 +292,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging Amazon RDS resources, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a>.
+        /// For an overview on tagging your relational database resources, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
@@ -340,8 +341,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging Amazon RDS resources, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a>.
+        /// For an overview on tagging your relational database resources, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
@@ -6749,6 +6751,14 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of resources (for example, DB instances) that have at least one pending
         /// maintenance action.
+        /// 
+        ///  
+        /// <para>
+        /// This API follows an eventual consistency model. This means that the result of the
+        /// <c>DescribePendingMaintenanceActions</c> command might not be immediately visible
+        /// to all subsequent RDS commands. Keep this in mind when you use <c>DescribePendingMaintenanceActions</c>
+        /// immediately after using a previous API command such as <c>ApplyPendingMaintenanceActions</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
         /// 
@@ -6764,6 +6774,14 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of resources (for example, DB instances) that have at least one pending
         /// maintenance action.
+        /// 
+        ///  
+        /// <para>
+        /// This API follows an eventual consistency model. This means that the result of the
+        /// <c>DescribePendingMaintenanceActions</c> command might not be immediately visible
+        /// to all subsequent RDS commands. Keep this in mind when you use <c>DescribePendingMaintenanceActions</c>
+        /// immediately after using a previous API command such as <c>ApplyPendingMaintenanceActions</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
         /// <param name="cancellationToken">
@@ -12150,10 +12168,6 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// You can't export cluster data from Multi-AZ DB clusters.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information on exporting DB snapshot data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
         /// DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting
         /// DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.
@@ -12211,10 +12225,6 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can't export snapshot data from Db2 or RDS Custom DB instances.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can't export cluster data from Multi-AZ DB clusters.
         /// </para>
         ///  
         /// <para>

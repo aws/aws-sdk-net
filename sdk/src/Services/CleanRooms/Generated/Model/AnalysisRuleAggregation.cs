@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AnalysisRuleAggregation
     {
+        private AdditionalAnalyses _additionalAnalyses;
         private List<AggregateColumn> _aggregateColumns = AWSConfigs.InitializeCollections ? new List<AggregateColumn>() : null;
         private List<string> _allowedJoinOperators = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _dimensionColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -42,6 +43,30 @@ namespace Amazon.CleanRooms.Model
         private JoinRequiredOption _joinRequired;
         private List<AggregationConstraint> _outputConstraints = AWSConfigs.InitializeCollections ? new List<AggregationConstraint>() : null;
         private List<string> _scalarFunctions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAnalyses. 
+        /// <para>
+        ///  An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied
+        /// to the output of the direct query. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>additionalAnalyses</c> parameter is currently supported for the list analysis
+        /// rule (<c>AnalysisRuleList</c>) and the custom analysis rule (<c>AnalysisRuleCustom</c>).
+        /// </para>
+        /// </summary>
+        public AdditionalAnalyses AdditionalAnalyses
+        {
+            get { return this._additionalAnalyses; }
+            set { this._additionalAnalyses = value; }
+        }
+
+        // Check to see if AdditionalAnalyses property is set
+        internal bool IsSetAdditionalAnalyses()
+        {
+            return this._additionalAnalyses != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AggregateColumns. 

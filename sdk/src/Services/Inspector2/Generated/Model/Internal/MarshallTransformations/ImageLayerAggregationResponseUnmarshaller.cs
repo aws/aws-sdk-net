@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public ImageLayerAggregationResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ImageLayerAggregationResponse unmarshalledObject = new ImageLayerAggregationResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         public GroupCertificateAuthorityProperties Unmarshall(JsonUnmarshallerContext context)
         {
             GroupCertificateAuthorityProperties unmarshalledObject = new GroupCertificateAuthorityProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

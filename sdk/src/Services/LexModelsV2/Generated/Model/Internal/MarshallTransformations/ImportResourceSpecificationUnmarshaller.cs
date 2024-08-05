@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public ImportResourceSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             ImportResourceSpecification unmarshalledObject = new ImportResourceSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

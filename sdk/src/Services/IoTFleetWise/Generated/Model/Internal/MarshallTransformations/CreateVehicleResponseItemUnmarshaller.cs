@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public CreateVehicleResponseItem Unmarshall(JsonUnmarshallerContext context)
         {
             CreateVehicleResponseItem unmarshalledObject = new CreateVehicleResponseItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

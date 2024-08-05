@@ -48,6 +48,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             CreateConnectionResponse response = new CreateConnectionResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("CreateConnectionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CreateConnectionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

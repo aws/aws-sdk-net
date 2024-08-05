@@ -402,20 +402,5 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var endpoint = new AmazonLaunchWizardEndpointProvider().ResolveEndpoint(parameters);
         }
 
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("LaunchWizard")]
-        [Description("Partition doesn't support DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void Partition_doesnt_support_DualStack_Test()
-        {
-            var parameters = new LaunchWizardEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonLaunchWizardEndpointProvider().ResolveEndpoint(parameters);
-        }
-
     }
 }

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public IndexConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             IndexConfigurationSummary unmarshalledObject = new IndexConfigurationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

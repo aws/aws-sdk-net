@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.PersonalizeRuntime")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Personalize Runtime. Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #elif NETCOREAPP3_1

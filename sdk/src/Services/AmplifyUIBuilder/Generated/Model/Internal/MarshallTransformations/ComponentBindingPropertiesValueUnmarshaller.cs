@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public ComponentBindingPropertiesValue Unmarshall(JsonUnmarshallerContext context)
         {
             ComponentBindingPropertiesValue unmarshalledObject = new ComponentBindingPropertiesValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

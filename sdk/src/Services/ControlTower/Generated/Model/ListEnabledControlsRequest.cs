@@ -32,14 +32,34 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the ListEnabledControls operation.
     /// Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational
-    /// unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-    /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+    /// unit and the accounts it contains. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+    /// <i>Controls Reference Guide</i> </a>.
     /// </summary>
     public partial class ListEnabledControlsRequest : AmazonControlTowerRequest
     {
+        private EnabledControlFilter _filter;
         private int? _maxResults;
         private string _nextToken;
         private string _targetIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// An input filter for the <c>ListEnabledControls</c> API that lets you select the types
+        /// of control operations to view.
+        /// </para>
+        /// </summary>
+        public EnabledControlFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -86,7 +106,7 @@ namespace Amazon.ControlTower.Model
         /// overview page</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Min=20, Max=2048)]
         public string TargetIdentifier
         {
             get { return this._targetIdentifier; }

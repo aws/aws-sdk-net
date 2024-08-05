@@ -42,7 +42,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Include. 
         /// <para>
-        /// Used to inclue anomaly detection information.
+        /// Used to include anomaly detection information.
         /// </para>
         /// </summary>
         public List<string> Include

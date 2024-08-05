@@ -39,12 +39,35 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class RegisterWorkspaceDirectoryRequest : AmazonWorkSpacesRequest
     {
+        private ActiveDirectoryConfig _activeDirectoryConfig;
         private string _directoryId;
         private bool? _enableSelfService;
         private bool? _enableWorkDocs;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private Tenancy _tenancy;
+        private UserIdentityType _userIdentityType;
+        private string _workspaceDirectoryDescription;
+        private string _workspaceDirectoryName;
+        private WorkspaceType _workspaceType;
+
+        /// <summary>
+        /// Gets and sets the property ActiveDirectoryConfig. 
+        /// <para>
+        /// The active directory config of the directory.
+        /// </para>
+        /// </summary>
+        public ActiveDirectoryConfig ActiveDirectoryConfig
+        {
+            get { return this._activeDirectoryConfig; }
+            set { this._activeDirectoryConfig = value; }
+        }
+
+        // Check to see if ActiveDirectoryConfig property is set
+        internal bool IsSetActiveDirectoryConfig()
+        {
+            return this._activeDirectoryConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
@@ -57,7 +80,7 @@ namespace Amazon.WorkSpaces.Model
         /// for WorkSpaces, and try again.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=65)]
+        [AWSProperty(Min=10, Max=65)]
         public string DirectoryId
         {
             get { return this._directoryId; }
@@ -96,7 +119,6 @@ namespace Amazon.WorkSpaces.Model
         /// error. Set <c>EnableWorkDocs</c> to disabled, and try again.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public bool? EnableWorkDocs
         {
             get { return this._enableWorkDocs; }
@@ -170,6 +192,78 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetTenancy()
         {
             return this._tenancy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserIdentityType. 
+        /// <para>
+        /// The type of identity management the user is using.
+        /// </para>
+        /// </summary>
+        public UserIdentityType UserIdentityType
+        {
+            get { return this._userIdentityType; }
+            set { this._userIdentityType = value; }
+        }
+
+        // Check to see if UserIdentityType property is set
+        internal bool IsSetUserIdentityType()
+        {
+            return this._userIdentityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceDirectoryDescription. 
+        /// <para>
+        /// Description of the directory to register.
+        /// </para>
+        /// </summary>
+        public string WorkspaceDirectoryDescription
+        {
+            get { return this._workspaceDirectoryDescription; }
+            set { this._workspaceDirectoryDescription = value; }
+        }
+
+        // Check to see if WorkspaceDirectoryDescription property is set
+        internal bool IsSetWorkspaceDirectoryDescription()
+        {
+            return this._workspaceDirectoryDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceDirectoryName. 
+        /// <para>
+        /// The name of the directory to register.
+        /// </para>
+        /// </summary>
+        public string WorkspaceDirectoryName
+        {
+            get { return this._workspaceDirectoryName; }
+            set { this._workspaceDirectoryName = value; }
+        }
+
+        // Check to see if WorkspaceDirectoryName property is set
+        internal bool IsSetWorkspaceDirectoryName()
+        {
+            return this._workspaceDirectoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceType. 
+        /// <para>
+        /// Indicates whether the directory's WorkSpace type is personal or pools.
+        /// </para>
+        /// </summary>
+        public WorkspaceType WorkspaceType
+        {
+            get { return this._workspaceType; }
+            set { this._workspaceType = value; }
+        }
+
+        // Check to see if WorkspaceType property is set
+        internal bool IsSetWorkspaceType()
+        {
+            return this._workspaceType != null;
         }
 
     }

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ParameterTextAreaControl Unmarshall(JsonUnmarshallerContext context)
         {
             ParameterTextAreaControl unmarshalledObject = new ParameterTextAreaControl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

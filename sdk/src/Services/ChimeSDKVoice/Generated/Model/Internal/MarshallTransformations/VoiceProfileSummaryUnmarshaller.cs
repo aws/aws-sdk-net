@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public VoiceProfileSummary Unmarshall(JsonUnmarshallerContext context)
         {
             VoiceProfileSummary unmarshalledObject = new VoiceProfileSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public GetSolVnfcResourceInfo Unmarshall(JsonUnmarshallerContext context)
         {
             GetSolVnfcResourceInfo unmarshalledObject = new GetSolVnfcResourceInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

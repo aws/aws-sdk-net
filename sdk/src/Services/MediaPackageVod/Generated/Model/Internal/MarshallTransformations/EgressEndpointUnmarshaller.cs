@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         public EgressEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             EgressEndpoint unmarshalledObject = new EgressEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

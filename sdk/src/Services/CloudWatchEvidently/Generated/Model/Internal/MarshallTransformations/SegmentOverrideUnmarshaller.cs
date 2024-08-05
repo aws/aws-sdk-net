@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         public SegmentOverride Unmarshall(JsonUnmarshallerContext context)
         {
             SegmentOverride unmarshalledObject = new SegmentOverride();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

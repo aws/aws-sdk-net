@@ -57,6 +57,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         public ServiceNetworkVpcAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceNetworkVpcAssociationSummary unmarshalledObject = new ServiceNetworkVpcAssociationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
         public AudienceSize Unmarshall(JsonUnmarshallerContext context)
         {
             AudienceSize unmarshalledObject = new AudienceSize();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private int? _ruleNumber;
         private string _sourceCidrBlock;
         private TrafficMirrorPortRange _sourcePortRange;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TrafficDirection _trafficDirection;
         private string _trafficMirrorFilterId;
         private string _trafficMirrorFilterRuleId;
@@ -188,6 +189,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSourcePortRange()
         {
             return this._sourcePortRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags on Traffic Mirroring filter rules.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

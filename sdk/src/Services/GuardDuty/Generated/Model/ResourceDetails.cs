@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// InstanceArn that was scanned in the scan entry.
+        /// Instance ARN that was scanned in the scan entry.
         /// </para>
         /// </summary>
         public string InstanceArn

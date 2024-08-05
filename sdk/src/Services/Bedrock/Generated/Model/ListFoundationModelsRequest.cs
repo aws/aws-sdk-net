@@ -33,7 +33,8 @@ namespace Amazon.Bedrock.Model
     /// Container for the parameters to the ListFoundationModels operation.
     /// Lists Amazon Bedrock foundation models that you can use. You can filter the results
     /// with the request parameters. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation
-    /// models</a> in the Amazon Bedrock User Guide.
+    /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Bedrock User Guide</a>.
     /// </summary>
     public partial class ListFoundationModelsRequest : AmazonBedrockRequest
     {
@@ -47,7 +48,8 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Return models that support the customization type that you specify. For more information,
         /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-        /// models</a> in the Amazon Bedrock User Guide.
+        /// models</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         public ModelCustomization ByCustomizationType
@@ -67,7 +69,8 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Return models that support the inference type that you specify. For more information,
         /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-        /// Throughput</a> in the Amazon Bedrock User Guide.
+        /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         public InferenceType ByInferenceType

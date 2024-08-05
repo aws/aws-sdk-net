@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public AutoScalingGroupEstimatedMonthlySavings Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingGroupEstimatedMonthlySavings unmarshalledObject = new AutoScalingGroupEstimatedMonthlySavings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

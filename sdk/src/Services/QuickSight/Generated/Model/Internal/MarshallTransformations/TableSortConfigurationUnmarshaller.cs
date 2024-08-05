@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TableSortConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TableSortConfiguration unmarshalledObject = new TableSortConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

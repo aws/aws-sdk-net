@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public AgentAliasRoutingConfigurationListItem Unmarshall(JsonUnmarshallerContext context)
         {
             AgentAliasRoutingConfigurationListItem unmarshalledObject = new AgentAliasRoutingConfigurationListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("provisionedThroughput", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

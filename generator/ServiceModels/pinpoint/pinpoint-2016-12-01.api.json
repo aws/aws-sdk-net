@@ -8,7 +8,10 @@
     "protocol": "rest-json",
     "jsonVersion": "1.1",
     "uid": "pinpoint-2016-12-01",
-    "signatureVersion": "v4"
+    "signatureVersion": "v4",
+    "auth": [
+      "aws.auth#sigv4"
+    ]
   },
   "operations": {
     "CreateApp": {
@@ -3139,7 +3142,9 @@
       "output": {
         "shape": "ListTagsForResourceResponse"
       },
-      "errors": []
+      "errors": [
+
+      ]
     },
     "ListTemplateVersions": {
       "name": "ListTemplateVersions",
@@ -3478,7 +3483,9 @@
       "input": {
         "shape": "TagResourceRequest"
       },
-      "errors": []
+      "errors": [
+
+      ]
     },
     "UntagResource": {
       "name": "UntagResource",
@@ -3490,7 +3497,9 @@
       "input": {
         "shape": "UntagResourceRequest"
       },
-      "errors": []
+      "errors": [
+
+      ]
     },
     "UpdateAdmChannel": {
       "name": "UpdateAdmChannel",
@@ -5426,6 +5435,9 @@
         "FromAddress": {
           "shape": "__string"
         },
+        "Headers": {
+          "shape": "ListOfMessageHeader"
+        },
         "HtmlBody": {
           "shape": "__string"
         },
@@ -7124,6 +7136,9 @@
         "Subject": {
           "shape": "__string"
         },
+        "Headers": {
+          "shape": "ListOfMessageHeader"
+        },
         "tags": {
           "shape": "MapOf__string",
           "locationName": "tags"
@@ -7159,6 +7174,9 @@
         },
         "Subject": {
           "shape": "__string"
+        },
+        "Headers": {
+          "shape": "ListOfMessageHeader"
         },
         "tags": {
           "shape": "MapOf__string",
@@ -11934,6 +11952,26 @@
         },
         "TextPart": {
           "shape": "SimpleEmailPart"
+        },
+        "Headers": {
+          "shape": "ListOfMessageHeader"
+        }
+      }
+    },
+    "ListOfMessageHeader": {
+      "type": "list",
+      "member": {
+        "shape": "MessageHeader"
+      }
+    },
+    "MessageHeader": {
+      "type": "structure",
+      "members": {
+        "Name": {
+          "shape": "__string"
+        },
+        "Value": {
+          "shape": "__string"
         }
       }
     },

@@ -57,6 +57,8 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         public IngestEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             IngestEndpoint unmarshalledObject = new IngestEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

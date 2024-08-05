@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SubtotalOptions Unmarshall(JsonUnmarshallerContext context)
         {
             SubtotalOptions unmarshalledObject = new SubtotalOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

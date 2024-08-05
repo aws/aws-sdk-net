@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public TimeRange Unmarshall(JsonUnmarshallerContext context)
         {
             TimeRange unmarshalledObject = new TimeRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

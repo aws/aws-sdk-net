@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public PipelineRollbackMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             PipelineRollbackMetadata unmarshalledObject = new PipelineRollbackMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

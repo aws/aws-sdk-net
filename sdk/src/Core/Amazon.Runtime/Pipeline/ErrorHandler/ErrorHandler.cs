@@ -111,7 +111,7 @@ namespace Amazon.Runtime.Internal
             // E.g. S3 GetLifecycleConfiguration, GetBucket policy and few other operations
             // return a 404 which is not returned back as an exception but as a empty response with 
             // error code.
-            if(executionContext.ResponseContext != null && executionContext.ResponseContext.Response != null)
+            if (executionContext.ResponseContext != null && executionContext.ResponseContext.Response != null)
             {
                 return executionContext.ResponseContext.Response as T;
             }
@@ -164,9 +164,9 @@ namespace Amazon.Runtime.Internal
                 {
                     return exceptionHandler.Handle(executionContext, exception);
                 }
-                exceptionType = exceptionType.BaseType;
 
-            } while (exceptionType != typeof(Exception));
+                exceptionType = exceptionType.BaseType;
+            } while (exceptionType != typeof(Exception) && exceptionType != typeof(object));
 
             // No match found, rethrow the original exception.
             return true;
@@ -204,9 +204,9 @@ namespace Amazon.Runtime.Internal
                 {
                     return await exceptionHandler.HandleAsync(executionContext, exception).ConfigureAwait(false);
                 }
-                exceptionType = exceptionType.BaseType;
 
-            } while (exceptionType != typeof(Exception));
+                exceptionType = exceptionType.BaseType;
+            } while (exceptionType != typeof(Exception) && exceptionType != typeof(object));
 
             // No match found, rethrow the original exception.
             return true;

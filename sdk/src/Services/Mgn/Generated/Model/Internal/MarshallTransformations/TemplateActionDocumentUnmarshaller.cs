@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public TemplateActionDocument Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateActionDocument unmarshalledObject = new TemplateActionDocument();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ErrorInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorInfo unmarshalledObject = new ErrorInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

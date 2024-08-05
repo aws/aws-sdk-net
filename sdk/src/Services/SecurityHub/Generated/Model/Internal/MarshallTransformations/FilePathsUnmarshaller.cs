@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public FilePaths Unmarshall(JsonUnmarshallerContext context)
         {
             FilePaths unmarshalledObject = new FilePaths();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

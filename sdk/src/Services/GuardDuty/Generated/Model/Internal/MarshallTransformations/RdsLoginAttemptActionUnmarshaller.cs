@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public RdsLoginAttemptAction Unmarshall(JsonUnmarshallerContext context)
         {
             RdsLoginAttemptAction unmarshalledObject = new RdsLoginAttemptAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

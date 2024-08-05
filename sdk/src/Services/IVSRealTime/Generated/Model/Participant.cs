@@ -43,6 +43,9 @@ namespace Amazon.IVSRealTime.Model
         private string _osVersion;
         private string _participantId;
         private bool? _published;
+        private string _recordings3BucketName;
+        private string _recordings3Prefix;
+        private ParticipantRecordingState _recordingState;
         private string _sdkVersion;
         private ParticipantState _state;
         private string _userId;
@@ -217,6 +220,65 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetPublished()
         {
             return this._published.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingS3BucketName. 
+        /// <para>
+        /// Name of the S3 bucket to where the participant is being recorded, if individual participant
+        /// recording is enabled, or <c>""</c> (empty string), if recording is not enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=63)]
+        public string RecordingS3BucketName
+        {
+            get { return this._recordings3BucketName; }
+            set { this._recordings3BucketName = value; }
+        }
+
+        // Check to see if RecordingS3BucketName property is set
+        internal bool IsSetRecordingS3BucketName()
+        {
+            return this._recordings3BucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingS3Prefix. 
+        /// <para>
+        /// S3 prefix of the S3 bucket where the participant is being recorded, if individual
+        /// participant recording is enabled, or <c>""</c> (empty string), if recording is not
+        /// enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string RecordingS3Prefix
+        {
+            get { return this._recordings3Prefix; }
+            set { this._recordings3Prefix = value; }
+        }
+
+        // Check to see if RecordingS3Prefix property is set
+        internal bool IsSetRecordingS3Prefix()
+        {
+            return this._recordings3Prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingState. 
+        /// <para>
+        /// The participant’s recording state.
+        /// </para>
+        /// </summary>
+        public ParticipantRecordingState RecordingState
+        {
+            get { return this._recordingState; }
+            set { this._recordingState = value; }
+        }
+
+        // Check to see if RecordingState property is set
+        internal bool IsSetRecordingState()
+        {
+            return this._recordingState != null;
         }
 
         /// <summary>

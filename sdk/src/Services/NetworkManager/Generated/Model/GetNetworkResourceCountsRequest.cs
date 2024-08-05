@@ -124,7 +124,19 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>attachment</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>connect-peer</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>connection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>core-network</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -133,6 +145,10 @@ namespace Amazon.NetworkManager.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>link</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>peering</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

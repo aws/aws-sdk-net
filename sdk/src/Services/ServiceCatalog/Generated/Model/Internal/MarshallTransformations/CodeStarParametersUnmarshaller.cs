@@ -57,6 +57,8 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         public CodeStarParameters Unmarshall(JsonUnmarshallerContext context)
         {
             CodeStarParameters unmarshalledObject = new CodeStarParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

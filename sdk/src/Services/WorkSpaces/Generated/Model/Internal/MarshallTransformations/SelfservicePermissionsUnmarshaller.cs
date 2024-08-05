@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public SelfservicePermissions Unmarshall(JsonUnmarshallerContext context)
         {
             SelfservicePermissions unmarshalledObject = new SelfservicePermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

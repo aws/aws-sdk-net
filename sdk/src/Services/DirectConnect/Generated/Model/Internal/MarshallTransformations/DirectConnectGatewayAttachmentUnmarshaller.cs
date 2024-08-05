@@ -57,6 +57,8 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public DirectConnectGatewayAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             DirectConnectGatewayAttachment unmarshalledObject = new DirectConnectGatewayAttachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

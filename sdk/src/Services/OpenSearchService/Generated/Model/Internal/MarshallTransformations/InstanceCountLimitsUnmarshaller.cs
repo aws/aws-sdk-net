@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public InstanceCountLimits Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceCountLimits unmarshalledObject = new InstanceCountLimits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

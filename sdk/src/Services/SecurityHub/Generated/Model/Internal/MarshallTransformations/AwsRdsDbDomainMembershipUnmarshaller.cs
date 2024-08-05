@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRdsDbDomainMembership Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRdsDbDomainMembership unmarshalledObject = new AwsRdsDbDomainMembership();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

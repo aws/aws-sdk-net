@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public FastLaunchLaunchTemplateSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             FastLaunchLaunchTemplateSpecification unmarshalledObject = new FastLaunchLaunchTemplateSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

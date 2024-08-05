@@ -57,6 +57,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public CloudComponentStatus Unmarshall(JsonUnmarshallerContext context)
         {
             CloudComponentStatus unmarshalledObject = new CloudComponentStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

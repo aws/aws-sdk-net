@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class InvocationInput
     {
         private ActionGroupInvocationInput _actionGroupInvocationInput;
+        private CodeInterpreterInvocationInput _codeInterpreterInvocationInput;
         private InvocationType _invocationType;
         private KnowledgeBaseLookupInput _knowledgeBaseLookupInput;
         private string _traceId;
@@ -56,6 +57,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroupInvocationInput()
         {
             return this._actionGroupInvocationInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeInterpreterInvocationInput. 
+        /// <para>
+        /// Contains information about the code interpreter to be invoked.
+        /// </para>
+        /// </summary>
+        public CodeInterpreterInvocationInput CodeInterpreterInvocationInput
+        {
+            get { return this._codeInterpreterInvocationInput; }
+            set { this._codeInterpreterInvocationInput = value; }
+        }
+
+        // Check to see if CodeInterpreterInvocationInput property is set
+        internal bool IsSetCodeInterpreterInvocationInput()
+        {
+            return this._codeInterpreterInvocationInput != null;
         }
 
         /// <summary>

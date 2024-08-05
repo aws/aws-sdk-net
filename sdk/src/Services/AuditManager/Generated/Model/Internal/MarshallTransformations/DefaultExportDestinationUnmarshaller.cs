@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public DefaultExportDestination Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultExportDestination unmarshalledObject = new DefaultExportDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

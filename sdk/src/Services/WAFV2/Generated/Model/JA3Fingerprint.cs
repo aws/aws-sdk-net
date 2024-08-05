@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
+    /// Available for use with Amazon CloudFront distributions and Application Load Balancers.
     /// Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
     /// hash derived from the TLS Client Hello of an incoming request. This fingerprint serves
     /// as a unique identifier for the client's TLS configuration. WAF calculates and logs

@@ -110,6 +110,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The source of the threat intelligence indicator.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 64 length.
+        /// </para>
         /// </summary>
         public string Source
         {
@@ -164,6 +168,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of a threat intelligence indicator.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum of 1 length. Maximum of 512 length.
         /// </para>
         /// </summary>
         public string Value

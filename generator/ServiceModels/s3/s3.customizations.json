@@ -49,7 +49,8 @@
             "inject": [
                 {
                     "PartETags": {
-                        "shape": "CompletedPartList"
+                        "shape": "CompletedPartList",
+                        "originalMember": "MultipartUpload"
                     }
                 }
             ]
@@ -72,7 +73,8 @@
                 },
                 {
                     "SourceKey": {
-                        "shape": "ObjectKey"
+                        "shape": "ObjectKey",
+                        "originalMember": "CopySource"
                     }
                 },
                 {
@@ -82,12 +84,13 @@
                 },
                 {
                     "DestinationBucket": {
-                        "shape": "BucketName"
+                        "shape": "BucketName"                    
                     }
                 },
                 {
                     "DestinationKey": {
-                        "shape": "ObjectKey"
+                        "shape": "ObjectKey",
+                        "originalMember":"Key"
                     }
                 }
             ]
@@ -99,7 +102,8 @@
             "inject": [
                 {
                     "Objects": {
-                        "shape": "ObjectIdentifierList"
+                        "shape": "ObjectIdentifierList",
+                        "originalMember" : "Delete"
                     }
                 },
                 {
@@ -121,7 +125,8 @@
             "inject": [
                 {
                     "TagSet": {
-                        "shape": "TagSet"
+                        "shape": "TagSet",
+                        "originalMember": "Tagging"
                     }
                 }
             ]
@@ -147,7 +152,8 @@
             "inject": [
                 {
                     "Configuration": {
-                        "shape": "LifecycleConfiguration"
+                        "shape": "LifecycleConfiguration",
+                        "originalMember": "LifecycleConfiguration"
                     }
                 }
             ]
@@ -164,7 +170,8 @@
             "inject": [
                 {
                     "Days": {
-                        "shape": "Days"
+                        "shape": "Days",
+                        "originalMember": "RestoreRequest"
                     }
                 }
             ]
@@ -194,7 +201,8 @@
                 },
                 {
                     "SourceKey": {
-                        "shape": "ObjectKey"
+                        "shape": "ObjectKey",
+                        "originalMember":"CopySource"
                     }
                 },
                 {
@@ -209,7 +217,8 @@
                 },
                 {
                     "DestinationKey": {
-                        "shape": "ObjectKey"
+                        "shape": "ObjectKey",
+                        "originalMember": "Key"
                     }
                 }
             ]

@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public HadoopJarStepConfig Unmarshall(JsonUnmarshallerContext context)
         {
             HadoopJarStepConfig unmarshalledObject = new HadoopJarStepConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public HealthCheckConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             HealthCheckConfiguration unmarshalledObject = new HealthCheckConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

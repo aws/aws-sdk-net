@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public AuditImage Unmarshall(JsonUnmarshallerContext context)
         {
             AuditImage unmarshalledObject = new AuditImage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

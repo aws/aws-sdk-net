@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public CopyStepDetails Unmarshall(JsonUnmarshallerContext context)
         {
             CopyStepDetails unmarshalledObject = new CopyStepDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

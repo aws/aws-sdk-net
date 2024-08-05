@@ -57,6 +57,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public ImpossibleTravelDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ImpossibleTravelDetail unmarshalledObject = new ImpossibleTravelDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

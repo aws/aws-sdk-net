@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgent.Model
         private string _clientToken;
         private DateTime? _createdAt;
         private string _description;
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<AgentAliasRoutingConfigurationListItem>() : null;
         private DateTime? _updatedAt;
 
@@ -241,6 +242,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReasons. 
+        /// <para>
+        /// Information on the failure of Provisioned Throughput assigned to an agent alias.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public List<string> FailureReasons
+        {
+            get { return this._failureReasons; }
+            set { this._failureReasons = value; }
+        }
+
+        // Check to see if FailureReasons property is set
+        internal bool IsSetFailureReasons()
+        {
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public VpcDestinationProperties Unmarshall(JsonUnmarshallerContext context)
         {
             VpcDestinationProperties unmarshalledObject = new VpcDestinationProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

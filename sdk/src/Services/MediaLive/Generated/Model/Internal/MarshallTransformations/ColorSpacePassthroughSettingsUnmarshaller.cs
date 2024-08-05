@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public ColorSpacePassthroughSettings Unmarshall(JsonUnmarshallerContext context)
         {
             ColorSpacePassthroughSettings unmarshalledObject = new ColorSpacePassthroughSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

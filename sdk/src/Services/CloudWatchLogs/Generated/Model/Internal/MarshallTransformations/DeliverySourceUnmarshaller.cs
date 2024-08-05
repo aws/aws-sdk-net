@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public DeliverySource Unmarshall(JsonUnmarshallerContext context)
         {
             DeliverySource unmarshalledObject = new DeliverySource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

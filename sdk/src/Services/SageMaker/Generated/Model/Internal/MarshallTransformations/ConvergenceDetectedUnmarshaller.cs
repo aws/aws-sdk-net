@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ConvergenceDetected Unmarshall(JsonUnmarshallerContext context)
         {
             ConvergenceDetected unmarshalledObject = new ConvergenceDetected();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

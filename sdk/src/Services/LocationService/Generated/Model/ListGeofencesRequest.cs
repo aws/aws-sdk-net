@@ -92,7 +92,7 @@ namespace Amazon.LocationService.Model
         /// Default value: <c>null</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
+        [AWSProperty(Min=1, Max=60000)]
         public string NextToken
         {
             get { return this._nextToken; }

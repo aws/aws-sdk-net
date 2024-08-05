@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public ControlSet Unmarshall(JsonUnmarshallerContext context)
         {
             ControlSet unmarshalledObject = new ControlSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -99,6 +99,17 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MinuteOfHour.Value);
                 }
 
+                if(publicRequest.IsSetSoftwareUpdatePreferences())
+                {
+                    context.Writer.WritePropertyName("SoftwareUpdatePreferences");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SoftwareUpdatePreferencesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SoftwareUpdatePreferences, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public Firehose Unmarshall(JsonUnmarshallerContext context)
         {
             Firehose unmarshalledObject = new Firehose();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

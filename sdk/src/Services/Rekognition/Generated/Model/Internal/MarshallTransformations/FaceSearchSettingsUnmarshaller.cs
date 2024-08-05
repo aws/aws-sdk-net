@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public FaceSearchSettings Unmarshall(JsonUnmarshallerContext context)
         {
             FaceSearchSettings unmarshalledObject = new FaceSearchSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

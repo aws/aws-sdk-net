@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public CommentsForComparedCommit Unmarshall(JsonUnmarshallerContext context)
         {
             CommentsForComparedCommit unmarshalledObject = new CommentsForComparedCommit();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

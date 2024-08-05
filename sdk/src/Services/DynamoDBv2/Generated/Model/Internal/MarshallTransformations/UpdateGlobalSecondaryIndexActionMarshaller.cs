@@ -54,6 +54,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IndexName);
             }
 
+            if(requestObject.IsSetOnDemandThroughput())
+            {
+                context.Writer.WritePropertyName("OnDemandThroughput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OnDemandThroughputMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnDemandThroughput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProvisionedThroughput())
             {
                 context.Writer.WritePropertyName("ProvisionedThroughput");

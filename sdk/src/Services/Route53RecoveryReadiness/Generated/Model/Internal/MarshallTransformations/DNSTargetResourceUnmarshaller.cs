@@ -57,6 +57,8 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
         public DNSTargetResource Unmarshall(JsonUnmarshallerContext context)
         {
             DNSTargetResource unmarshalledObject = new DNSTargetResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

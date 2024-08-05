@@ -140,6 +140,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMaxProfileObjectCount())
+                {
+                    context.Writer.WritePropertyName("MaxProfileObjectCount");
+                    context.Writer.Write(publicRequest.MaxProfileObjectCount.Value);
+                }
+
                 if(publicRequest.IsSetSourceLastUpdatedTimestampFormat())
                 {
                     context.Writer.WritePropertyName("SourceLastUpdatedTimestampFormat");

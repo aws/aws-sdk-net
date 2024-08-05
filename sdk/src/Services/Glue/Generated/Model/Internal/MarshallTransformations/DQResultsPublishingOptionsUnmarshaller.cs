@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DQResultsPublishingOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DQResultsPublishingOptions unmarshalledObject = new DQResultsPublishingOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

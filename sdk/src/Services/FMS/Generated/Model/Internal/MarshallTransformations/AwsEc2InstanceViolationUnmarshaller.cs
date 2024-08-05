@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public AwsEc2InstanceViolation Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2InstanceViolation unmarshalledObject = new AwsEc2InstanceViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

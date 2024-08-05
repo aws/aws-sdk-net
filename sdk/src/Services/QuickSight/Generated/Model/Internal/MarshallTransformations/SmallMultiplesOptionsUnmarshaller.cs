@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SmallMultiplesOptions Unmarshall(JsonUnmarshallerContext context)
         {
             SmallMultiplesOptions unmarshalledObject = new SmallMultiplesOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

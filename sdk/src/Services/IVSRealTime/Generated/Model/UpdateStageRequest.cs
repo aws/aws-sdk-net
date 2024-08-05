@@ -36,6 +36,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class UpdateStageRequest : AmazonIVSRealTimeRequest
     {
         private string _arn;
+        private AutoParticipantRecordingConfiguration _autoParticipantRecordingConfiguration;
         private string _name;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoParticipantRecordingConfiguration. 
+        /// <para>
+        /// Configuration object for individual participant recording, to attach to the stage.
+        /// Note that this cannot be updated while recording is active.
+        /// </para>
+        /// </summary>
+        public AutoParticipantRecordingConfiguration AutoParticipantRecordingConfiguration
+        {
+            get { return this._autoParticipantRecordingConfiguration; }
+            set { this._autoParticipantRecordingConfiguration = value; }
+        }
+
+        // Check to see if AutoParticipantRecordingConfiguration property is set
+        internal bool IsSetAutoParticipantRecordingConfiguration()
+        {
+            return this._autoParticipantRecordingConfiguration != null;
         }
 
         /// <summary>

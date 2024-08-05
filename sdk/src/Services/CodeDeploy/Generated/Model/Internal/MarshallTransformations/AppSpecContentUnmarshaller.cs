@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public AppSpecContent Unmarshall(JsonUnmarshallerContext context)
         {
             AppSpecContent unmarshalledObject = new AppSpecContent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

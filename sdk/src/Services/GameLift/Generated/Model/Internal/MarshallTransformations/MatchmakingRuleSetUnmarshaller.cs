@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public MatchmakingRuleSet Unmarshall(JsonUnmarshallerContext context)
         {
             MatchmakingRuleSet unmarshalledObject = new MatchmakingRuleSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

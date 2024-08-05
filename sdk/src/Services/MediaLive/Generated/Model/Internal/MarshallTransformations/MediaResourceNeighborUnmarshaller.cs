@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public MediaResourceNeighbor Unmarshall(JsonUnmarshallerContext context)
         {
             MediaResourceNeighbor unmarshalledObject = new MediaResourceNeighbor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

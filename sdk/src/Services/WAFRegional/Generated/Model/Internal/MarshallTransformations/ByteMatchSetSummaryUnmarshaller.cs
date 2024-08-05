@@ -57,6 +57,8 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         public ByteMatchSetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ByteMatchSetSummary unmarshalledObject = new ByteMatchSetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

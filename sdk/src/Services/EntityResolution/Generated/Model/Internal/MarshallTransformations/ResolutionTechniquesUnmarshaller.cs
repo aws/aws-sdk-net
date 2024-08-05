@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public ResolutionTechniques Unmarshall(JsonUnmarshallerContext context)
         {
             ResolutionTechniques unmarshalledObject = new ResolutionTechniques();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         public DirectoryVpcSettings Unmarshall(JsonUnmarshallerContext context)
         {
             DirectoryVpcSettings unmarshalledObject = new DirectoryVpcSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

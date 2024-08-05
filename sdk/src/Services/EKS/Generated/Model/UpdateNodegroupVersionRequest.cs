@@ -188,8 +188,8 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If you specify <c>launchTemplate</c>, and your launch template uses a custom AMI,
         /// then don't specify <c>releaseVersion</c>, or the node group update will fail. For
-        /// more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-        /// template support</a> in the <i>Amazon EKS User Guide</i>.
+        /// more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+        /// managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         public string ReleaseVersion
@@ -212,8 +212,8 @@ namespace Amazon.EKS.Model
         /// of the cluster to update the node group to the latest AMI version of the cluster's
         /// Kubernetes version. If you specify <c>launchTemplate</c>, and your launch template
         /// uses a custom AMI, then don't specify <c>version</c>, or the node group update will
-        /// fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
-        /// template support</a> in the <i>Amazon EKS User Guide</i>.
+        /// fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing
+        /// managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         public string Version

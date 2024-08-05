@@ -57,6 +57,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public ResourcePolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ResourcePolicy unmarshalledObject = new ResourcePolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

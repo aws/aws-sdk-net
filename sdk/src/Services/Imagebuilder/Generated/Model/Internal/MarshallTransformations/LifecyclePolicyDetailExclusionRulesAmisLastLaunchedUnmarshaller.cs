@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public LifecyclePolicyDetailExclusionRulesAmisLastLaunched Unmarshall(JsonUnmarshallerContext context)
         {
             LifecyclePolicyDetailExclusionRulesAmisLastLaunched unmarshalledObject = new LifecyclePolicyDetailExclusionRulesAmisLastLaunched();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

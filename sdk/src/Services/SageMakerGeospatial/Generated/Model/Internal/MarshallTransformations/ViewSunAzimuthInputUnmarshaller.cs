@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public ViewSunAzimuthInput Unmarshall(JsonUnmarshallerContext context)
         {
             ViewSunAzimuthInput unmarshalledObject = new ViewSunAzimuthInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

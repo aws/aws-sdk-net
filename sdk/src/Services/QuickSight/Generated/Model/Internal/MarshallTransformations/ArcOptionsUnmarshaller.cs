@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ArcOptions Unmarshall(JsonUnmarshallerContext context)
         {
             ArcOptions unmarshalledObject = new ArcOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

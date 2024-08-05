@@ -57,6 +57,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         public ChangesetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ChangesetSummary unmarshalledObject = new ChangesetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

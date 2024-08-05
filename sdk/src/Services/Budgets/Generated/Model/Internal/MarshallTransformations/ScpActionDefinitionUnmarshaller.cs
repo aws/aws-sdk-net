@@ -57,6 +57,8 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         public ScpActionDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ScpActionDefinition unmarshalledObject = new ScpActionDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

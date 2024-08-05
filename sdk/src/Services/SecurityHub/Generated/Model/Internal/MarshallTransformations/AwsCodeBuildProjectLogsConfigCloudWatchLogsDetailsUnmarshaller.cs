@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails unmarshalledObject = new AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

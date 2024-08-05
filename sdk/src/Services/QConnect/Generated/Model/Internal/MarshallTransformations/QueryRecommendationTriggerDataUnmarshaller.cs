@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public QueryRecommendationTriggerData Unmarshall(JsonUnmarshallerContext context)
         {
             QueryRecommendationTriggerData unmarshalledObject = new QueryRecommendationTriggerData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

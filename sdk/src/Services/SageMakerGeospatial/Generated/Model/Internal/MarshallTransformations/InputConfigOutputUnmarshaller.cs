@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public InputConfigOutput Unmarshall(JsonUnmarshallerContext context)
         {
             InputConfigOutput unmarshalledObject = new InputConfigOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

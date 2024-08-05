@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public SourceAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SourceAccessConfiguration unmarshalledObject = new SourceAccessConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public ComputeLimits Unmarshall(JsonUnmarshallerContext context)
         {
             ComputeLimits unmarshalledObject = new ComputeLimits();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

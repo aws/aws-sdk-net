@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public CachingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CachingConfig unmarshalledObject = new CachingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

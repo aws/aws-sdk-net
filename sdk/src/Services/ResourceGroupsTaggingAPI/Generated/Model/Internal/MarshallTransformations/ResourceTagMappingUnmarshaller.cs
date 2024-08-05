@@ -57,6 +57,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
         public ResourceTagMapping Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceTagMapping unmarshalledObject = new ResourceTagMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public NoApiRenderConfig Unmarshall(JsonUnmarshallerContext context)
         {
             NoApiRenderConfig unmarshalledObject = new NoApiRenderConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

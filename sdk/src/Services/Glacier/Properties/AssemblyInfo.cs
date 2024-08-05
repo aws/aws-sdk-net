@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Glacier")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Glacier. Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Glacier. Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Glacier. Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.")]
 #elif NETCOREAPP3_1

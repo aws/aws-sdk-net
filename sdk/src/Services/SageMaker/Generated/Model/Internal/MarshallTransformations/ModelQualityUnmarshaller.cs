@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ModelQuality Unmarshall(JsonUnmarshallerContext context)
         {
             ModelQuality unmarshalledObject = new ModelQuality();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

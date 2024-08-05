@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private AssetTypeItem _assetTypeItem;
         private FormTypeData _formTypeItem;
+        private LineageNodeTypeItem _lineageNodeTypeItem;
 
         /// <summary>
         /// Gets and sets the property AssetTypeItem. 
@@ -71,6 +72,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetFormTypeItem()
         {
             return this._formTypeItem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LineageNodeTypeItem. 
+        /// <para>
+        /// The details of a data lineage node type.
+        /// </para>
+        /// </summary>
+        public LineageNodeTypeItem LineageNodeTypeItem
+        {
+            get { return this._lineageNodeTypeItem; }
+            set { this._lineageNodeTypeItem = value; }
+        }
+
+        // Check to see if LineageNodeTypeItem property is set
+        internal bool IsSetLineageNodeTypeItem()
+        {
+            return this._lineageNodeTypeItem != null;
         }
 
     }

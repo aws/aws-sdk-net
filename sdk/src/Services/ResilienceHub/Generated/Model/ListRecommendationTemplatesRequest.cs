@@ -52,7 +52,6 @@ namespace Amazon.ResilienceHub.Model
         /// guide.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AssessmentArn
         {
             get { return this._assessmentArn; }

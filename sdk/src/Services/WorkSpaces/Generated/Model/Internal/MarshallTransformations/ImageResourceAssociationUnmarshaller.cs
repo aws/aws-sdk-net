@@ -57,6 +57,8 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         public ImageResourceAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             ImageResourceAssociation unmarshalledObject = new ImageResourceAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

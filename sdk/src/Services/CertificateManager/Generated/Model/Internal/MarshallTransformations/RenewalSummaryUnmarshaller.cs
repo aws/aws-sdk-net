@@ -57,6 +57,8 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         public RenewalSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RenewalSummary unmarshalledObject = new RenewalSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

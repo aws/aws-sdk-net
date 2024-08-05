@@ -33,8 +33,8 @@ namespace Amazon.EC2.Model
     /// <note> 
     /// <para>
     /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
-    /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
-    /// G5 instances.
+    /// require graphics acceleration, we recommend that you use Amazon EC2 G4, G5, or G6
+    /// instances.
     /// </para>
     ///  </note> 
     /// <para>

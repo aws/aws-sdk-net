@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public AutomationExecutionMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             AutomationExecutionMetadata unmarshalledObject = new AutomationExecutionMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

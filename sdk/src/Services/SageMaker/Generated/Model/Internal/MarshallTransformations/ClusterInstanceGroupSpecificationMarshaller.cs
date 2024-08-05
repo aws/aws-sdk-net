@@ -66,6 +66,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceGroupName);
             }
 
+            if(requestObject.IsSetInstanceStorageConfigs())
+            {
+                context.Writer.WritePropertyName("InstanceStorageConfigs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceStorageConfigsListValue in requestObject.InstanceStorageConfigs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClusterInstanceStorageConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInstanceStorageConfigsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");

@@ -57,6 +57,8 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
         public ProjectStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ProjectStatus unmarshalledObject = new ProjectStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

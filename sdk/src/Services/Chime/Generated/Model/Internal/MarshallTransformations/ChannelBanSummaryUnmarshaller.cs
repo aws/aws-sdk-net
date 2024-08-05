@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public ChannelBanSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelBanSummary unmarshalledObject = new ChannelBanSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -31,7 +31,13 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tag or tags from the specified AWS CloudHSM cluster.
+    /// Removes the specified tag or tags from the specified CloudHSM cluster.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM resource
+    /// in a different Amazon Web Services account.
+    /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonCloudHSMV2Request
     {

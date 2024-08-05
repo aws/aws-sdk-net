@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ExportToCSVOption Unmarshall(JsonUnmarshallerContext context)
         {
             ExportToCSVOption unmarshalledObject = new ExportToCSVOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

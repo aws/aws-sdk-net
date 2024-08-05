@@ -49,6 +49,7 @@ namespace Amazon.ECS.Model
         private bool? _enableExecuteCommand;
         private EphemeralStorage _ephemeralStorage;
         private DateTime? _executionStoppedAt;
+        private TaskEphemeralStorage _fargateEphemeralStorage;
         private string _group;
         private HealthStatus _healthStatus;
         private List<InferenceAccelerator> _inferenceAccelerators = AWSConfigs.InitializeCollections ? new List<InferenceAccelerator>() : null;
@@ -404,6 +405,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetExecutionStoppedAt()
         {
             return this._executionStoppedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FargateEphemeralStorage. 
+        /// <para>
+        /// The Fargate ephemeral storage settings for the task.
+        /// </para>
+        /// </summary>
+        public TaskEphemeralStorage FargateEphemeralStorage
+        {
+            get { return this._fargateEphemeralStorage; }
+            set { this._fargateEphemeralStorage = value; }
+        }
+
+        // Check to see if FargateEphemeralStorage property is set
+        internal bool IsSetFargateEphemeralStorage()
+        {
+            return this._fargateEphemeralStorage != null;
         }
 
         /// <summary>

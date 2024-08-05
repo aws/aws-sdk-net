@@ -33,6 +33,13 @@ namespace Amazon.AuditManager.Model
     /// Container for the parameters to the ListControlDomainInsightsByAssessment operation.
     /// Lists analytics data for control domains within a specified active assessment.
     /// 
+    ///  
+    /// <para>
+    /// Audit Manager supports the control domains that are provided by Amazon Web Services
+    /// Control Catalog. For information about how to find a list of available control domains,
+    /// see <a href="https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html">
+    /// <c>ListDomains</c> </a> in the Amazon Web Services Control Catalog API Reference.
+    /// </para>
     ///  <note> 
     /// <para>
     /// A control domain is listed only if at least one of the controls within that domain

@@ -38,18 +38,25 @@ namespace Amazon.IoTSiteWise.Model
     /// 
     ///  <important> 
     /// <para>
-    /// This operation overwrites the existing model with the provided model. To avoid deleting
-    /// your asset model's properties or hierarchies, you must include their IDs and definitions
-    /// in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.
+    /// If you remove a property from an asset model, IoT SiteWise deletes all previous data
+    /// for that property. You can’t change the type or data type of an existing property.
     /// </para>
     ///  
     /// <para>
-    /// If you remove a property from an asset model, IoT SiteWise deletes all previous data
-    /// for that property. If you remove a hierarchy definition from an asset model, IoT SiteWise
-    /// disassociates every asset associated with that hierarchy. You can't change the type
-    /// or data type of an existing property.
+    /// To replace an existing asset model property with a new one with the same <c>name</c>,
+    /// do the following:
     /// </para>
-    ///  </important>
+    ///  <ol> <li> 
+    /// <para>
+    /// Submit an <c>UpdateAssetModel</c> request with the entire existing property removed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit a second <c>UpdateAssetModel</c> request that includes the new property. The
+    /// new asset property will have the same <c>name</c> as the previous one and IoT SiteWise
+    /// will generate a new unique <c>id</c>.
+    /// </para>
+    ///  </li> </ol> </important>
     /// </summary>
     public partial class UpdateAssetModelRequest : AmazonIoTSiteWiseRequest
     {
@@ -74,7 +81,8 @@ namespace Amazon.IoTSiteWise.Model
         ///  <note> 
         /// <para>
         /// When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
-        /// For more information, see &lt;LINK&gt;.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-custom-composite-models.html">Creating
+        /// custom composite models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -183,7 +191,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelName. 
         /// <para>
-        /// A unique, friendly name for the asset model.
+        /// A unique name for the asset model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

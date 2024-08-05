@@ -69,7 +69,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataDeletionPolicy. 
         /// <para>
-        /// The deletion policy for the data source.
+        /// The data deletion policy for the data source.
         /// </para>
         /// </summary>
         public DataDeletionPolicy DataDeletionPolicy
@@ -87,7 +87,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataSourceConfiguration. 
         /// <para>
-        /// Contains details about how the data source is stored.
+        /// The connection configuration for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,7 +144,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
-        /// The details of the failure reasons related to the data source.
+        /// The detailed reasons on the failure to delete a data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -57,6 +57,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public CreateRule Unmarshall(JsonUnmarshallerContext context)
         {
             CreateRule unmarshalledObject = new CreateRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

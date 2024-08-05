@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public DataRepositoryTaskStatus Unmarshall(JsonUnmarshallerContext context)
         {
             DataRepositoryTaskStatus unmarshalledObject = new DataRepositoryTaskStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

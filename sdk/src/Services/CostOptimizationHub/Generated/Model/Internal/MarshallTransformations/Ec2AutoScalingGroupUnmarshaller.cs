@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public Ec2AutoScalingGroup Unmarshall(JsonUnmarshallerContext context)
         {
             Ec2AutoScalingGroup unmarshalledObject = new Ec2AutoScalingGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

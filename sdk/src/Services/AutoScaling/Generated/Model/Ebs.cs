@@ -67,9 +67,9 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be
         /// attached to instances that support Amazon EBS encryption. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-        /// instance types</a>. If your AMI uses encrypted volumes, you can also only launch it
-        /// on supported instance types.
+        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html">Requirements
+        /// for Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>. If your AMI uses
+        /// encrypted volumes, you can also only launch it on supported instance types.
         /// </para>
         ///  <note> 
         /// <para>
@@ -126,9 +126,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For <c>io1</c> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-        /// built on the Nitro System</a>. Other instance families guarantee performance up to
-        /// 32,000 IOPS. 
+        /// For <c>io1</c> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Instances
+        /// built on the Amazon Web Services Nitro System</a>. Other instance families guarantee
+        /// performance up to 32,000 IOPS. 
         /// </para>
         ///  
         /// <para>
@@ -237,8 +237,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// The volume type. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+        /// EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>

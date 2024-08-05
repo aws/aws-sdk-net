@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public FirewallStatus Unmarshall(JsonUnmarshallerContext context)
         {
             FirewallStatus unmarshalledObject = new FirewallStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

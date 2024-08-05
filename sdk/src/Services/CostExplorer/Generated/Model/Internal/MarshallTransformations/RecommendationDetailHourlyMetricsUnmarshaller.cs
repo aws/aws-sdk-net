@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public RecommendationDetailHourlyMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             RecommendationDetailHourlyMetrics unmarshalledObject = new RecommendationDetailHourlyMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

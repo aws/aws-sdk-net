@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public FileSystemFailureDetails Unmarshall(JsonUnmarshallerContext context)
         {
             FileSystemFailureDetails unmarshalledObject = new FileSystemFailureDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

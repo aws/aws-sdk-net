@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
         public IceServer Unmarshall(JsonUnmarshallerContext context)
         {
             IceServer unmarshalledObject = new IceServer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

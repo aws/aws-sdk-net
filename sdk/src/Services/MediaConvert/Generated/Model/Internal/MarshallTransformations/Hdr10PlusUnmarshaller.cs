@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public Hdr10Plus Unmarshall(JsonUnmarshallerContext context)
         {
             Hdr10Plus unmarshalledObject = new Hdr10Plus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

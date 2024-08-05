@@ -57,6 +57,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         public Interpretation Unmarshall(JsonUnmarshallerContext context)
         {
             Interpretation unmarshalledObject = new Interpretation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

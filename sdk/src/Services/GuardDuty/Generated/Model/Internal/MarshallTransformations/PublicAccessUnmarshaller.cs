@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public PublicAccess Unmarshall(JsonUnmarshallerContext context)
         {
             PublicAccess unmarshalledObject = new PublicAccess();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public CodegenGenericDataField Unmarshall(JsonUnmarshallerContext context)
         {
             CodegenGenericDataField unmarshalledObject = new CodegenGenericDataField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

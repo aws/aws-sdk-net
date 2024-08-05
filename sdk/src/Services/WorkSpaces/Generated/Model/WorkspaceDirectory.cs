@@ -34,6 +34,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class WorkspaceDirectory
     {
+        private ActiveDirectoryConfig _activeDirectoryConfig;
         private string _alias;
         private CertificateBasedAuthProperties _certificateBasedAuthProperties;
         private string _customerUserName;
@@ -41,17 +42,41 @@ namespace Amazon.WorkSpaces.Model
         private string _directoryName;
         private WorkspaceDirectoryType _directoryType;
         private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _errorMessage;
         private string _iamRoleId;
         private List<string> _ipGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _registrationCode;
         private SamlProperties _samlProperties;
         private SelfservicePermissions _selfservicePermissions;
         private WorkspaceDirectoryState _state;
+        private StreamingProperties _streamingProperties;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Tenancy _tenancy;
+        private UserIdentityType _userIdentityType;
         private WorkspaceAccessProperties _workspaceAccessProperties;
         private DefaultWorkspaceCreationProperties _workspaceCreationProperties;
+        private string _workspaceDirectoryDescription;
+        private string _workspaceDirectoryName;
         private string _workspaceSecurityGroupId;
+        private WorkspaceType _workspaceType;
+
+        /// <summary>
+        /// Gets and sets the property ActiveDirectoryConfig. 
+        /// <para>
+        /// Information about the Active Directory config.
+        /// </para>
+        /// </summary>
+        public ActiveDirectoryConfig ActiveDirectoryConfig
+        {
+            get { return this._activeDirectoryConfig; }
+            set { this._activeDirectoryConfig = value; }
+        }
+
+        // Check to see if ActiveDirectoryConfig property is set
+        internal bool IsSetActiveDirectoryConfig()
+        {
+            return this._activeDirectoryConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Alias. 
@@ -183,6 +208,24 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// The error message returned.
+        /// </para>
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IamRoleId. 
         /// <para>
         /// The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to
@@ -300,6 +343,24 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamingProperties. 
+        /// <para>
+        /// The streaming properties to configure.
+        /// </para>
+        /// </summary>
+        public StreamingProperties StreamingProperties
+        {
+            get { return this._streamingProperties; }
+            set { this._streamingProperties = value; }
+        }
+
+        // Check to see if StreamingProperties property is set
+        internal bool IsSetStreamingProperties()
+        {
+            return this._streamingProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// The identifiers of the subnets used with the directory.
@@ -339,6 +400,24 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserIdentityType. 
+        /// <para>
+        /// Indicates the identity type of the specifired user.
+        /// </para>
+        /// </summary>
+        public UserIdentityType UserIdentityType
+        {
+            get { return this._userIdentityType; }
+            set { this._userIdentityType = value; }
+        }
+
+        // Check to see if UserIdentityType property is set
+        internal bool IsSetUserIdentityType()
+        {
+            return this._userIdentityType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property WorkspaceAccessProperties. 
         /// <para>
         /// The devices and operating systems that users can use to access WorkSpaces.
@@ -375,6 +454,42 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property WorkspaceDirectoryDescription. 
+        /// <para>
+        /// The description of the WorkSpace directory
+        /// </para>
+        /// </summary>
+        public string WorkspaceDirectoryDescription
+        {
+            get { return this._workspaceDirectoryDescription; }
+            set { this._workspaceDirectoryDescription = value; }
+        }
+
+        // Check to see if WorkspaceDirectoryDescription property is set
+        internal bool IsSetWorkspaceDirectoryDescription()
+        {
+            return this._workspaceDirectoryDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceDirectoryName. 
+        /// <para>
+        /// The name fo the WorkSpace directory.
+        /// </para>
+        /// </summary>
+        public string WorkspaceDirectoryName
+        {
+            get { return this._workspaceDirectoryName; }
+            set { this._workspaceDirectoryName = value; }
+        }
+
+        // Check to see if WorkspaceDirectoryName property is set
+        internal bool IsSetWorkspaceDirectoryName()
+        {
+            return this._workspaceDirectoryName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property WorkspaceSecurityGroupId. 
         /// <para>
         /// The identifier of the security group that is assigned to new WorkSpaces.
@@ -391,6 +506,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetWorkspaceSecurityGroupId()
         {
             return this._workspaceSecurityGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceType. 
+        /// <para>
+        /// Indicates whether the directory's WorkSpace type is personal or pools.
+        /// </para>
+        /// </summary>
+        public WorkspaceType WorkspaceType
+        {
+            get { return this._workspaceType; }
+            set { this._workspaceType = value; }
+        }
+
+        // Check to see if WorkspaceType property is set
+        internal bool IsSetWorkspaceType()
+        {
+            return this._workspaceType != null;
         }
 
     }

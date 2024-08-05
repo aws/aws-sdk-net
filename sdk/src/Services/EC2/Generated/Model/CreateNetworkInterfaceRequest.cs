@@ -36,14 +36,12 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// The number of IP addresses you can assign to a network interface varies by instance
-    /// type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
-    /// Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User
-    /// Guide</i>.
+    /// type.
     /// </para>
     ///  
     /// <para>
     /// For more information about network interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-    /// network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateNetworkInterfaceRequest : AmazonEC2Request
@@ -70,8 +68,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// Idempotency</a>.
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
+        /// idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken

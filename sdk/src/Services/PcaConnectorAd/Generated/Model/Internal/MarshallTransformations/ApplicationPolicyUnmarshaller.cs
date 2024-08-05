@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public ApplicationPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationPolicy unmarshalledObject = new ApplicationPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
         public Software Unmarshall(JsonUnmarshallerContext context)
         {
             Software unmarshalledObject = new Software();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

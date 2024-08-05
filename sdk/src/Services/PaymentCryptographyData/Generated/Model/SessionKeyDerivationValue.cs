@@ -43,7 +43,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The cryptogram provided by the terminal during transaction processing.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=16, Max=16)]
+        [AWSProperty(Sensitive=true, Min=16, Max=16)]
         public string ApplicationCryptogram
         {
             get { return this._applicationCryptogram; }

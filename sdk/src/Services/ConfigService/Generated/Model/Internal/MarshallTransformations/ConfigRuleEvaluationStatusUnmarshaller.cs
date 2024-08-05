@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public ConfigRuleEvaluationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigRuleEvaluationStatus unmarshalledObject = new ConfigRuleEvaluationStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

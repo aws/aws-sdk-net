@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public WorkflowAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowAttributes unmarshalledObject = new WorkflowAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

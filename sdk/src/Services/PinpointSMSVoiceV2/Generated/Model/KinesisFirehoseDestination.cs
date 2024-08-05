@@ -31,12 +31,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Contains the delivery stream Amazon Resource Name (ARN), and the ARN of the Identity
-    /// and Access Management (IAM) role associated with a Kinesis Data Firehose event destination.
+    /// and Access Management (IAM) role associated with a Firehose event destination.
     /// 
     ///  
     /// <para>
-    /// Event destinations, such as Kinesis Data Firehose, are associated with configuration
-    /// sets, which enable you to publish message sending events.
+    /// Event destinations, such as Firehose, are associated with configuration sets, which
+    /// enable you to publish message sending events.
     /// </para>
     /// </summary>
     public partial class KinesisFirehoseDestination
@@ -67,7 +67,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The ARN of an Identity and Access Management role that is able to write event data
-        /// to an Amazon Kinesis Data Firehose destination.
+        /// to an Amazon Data Firehose destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

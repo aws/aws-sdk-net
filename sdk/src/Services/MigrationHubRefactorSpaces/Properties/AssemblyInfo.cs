@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.MigrationHubRefactorSpaces")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Migration Hub Refactor Spaces. This is the initial SDK release for AWS Migration Hub Refactor Spaces")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Migration Hub Refactor Spaces. This is the initial SDK release for AWS Migration Hub Refactor Spaces")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Migration Hub Refactor Spaces. This is the initial SDK release for AWS Migration Hub Refactor Spaces")]
 #elif NETCOREAPP3_1

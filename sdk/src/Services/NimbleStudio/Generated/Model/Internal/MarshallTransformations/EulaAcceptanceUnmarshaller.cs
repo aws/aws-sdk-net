@@ -57,6 +57,8 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public EulaAcceptance Unmarshall(JsonUnmarshallerContext context)
         {
             EulaAcceptance unmarshalledObject = new EulaAcceptance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

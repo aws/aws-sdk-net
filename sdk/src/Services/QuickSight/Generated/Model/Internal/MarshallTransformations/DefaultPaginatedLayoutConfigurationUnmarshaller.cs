@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DefaultPaginatedLayoutConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DefaultPaginatedLayoutConfiguration unmarshalledObject = new DefaultPaginatedLayoutConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

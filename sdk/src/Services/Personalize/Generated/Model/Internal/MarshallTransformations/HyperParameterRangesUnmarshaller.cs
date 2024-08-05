@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public HyperParameterRanges Unmarshall(JsonUnmarshallerContext context)
         {
             HyperParameterRanges unmarshalledObject = new HyperParameterRanges();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -52,7 +52,9 @@ namespace Amazon.CodeBuild.Model
         private string _branchFilter;
         private WebhookBuildType _buildType;
         private List<List<WebhookFilter>> _filterGroups = AWSConfigs.InitializeCollections ? new List<List<WebhookFilter>>() : null;
+        private bool? _manualCreation;
         private string _projectName;
+        private ScopeConfiguration _scopeConfiguration;
 
         /// <summary>
         /// Gets and sets the property BranchFilter. 
@@ -124,12 +126,38 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManualCreation. 
+        /// <para>
+        /// If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead
+        /// returns <c>payloadUrl</c> and <c>secret</c> values for the webhook. The <c>payloadUrl</c>
+        /// and <c>secret</c> values in the output can be used to manually create a webhook within
+        /// GitHub.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>manualCreation</c> is only available for GitHub webhooks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? ManualCreation
+        {
+            get { return this._manualCreation; }
+            set { this._manualCreation = value; }
+        }
+
+        // Check to see if ManualCreation property is set
+        internal bool IsSetManualCreation()
+        {
+            return this._manualCreation.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
         /// The name of the CodeBuild project.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=255)]
+        [AWSProperty(Required=true, Min=2, Max=150)]
         public string ProjectName
         {
             get { return this._projectName; }
@@ -140,6 +168,30 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScopeConfiguration. 
+        /// <para>
+        /// The scope configuration for global or organization webhooks.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Global or organization webhooks are only available for GitHub and Github Enterprise
+        /// webhooks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ScopeConfiguration ScopeConfiguration
+        {
+            get { return this._scopeConfiguration; }
+            set { this._scopeConfiguration = value; }
+        }
+
+        // Check to see if ScopeConfiguration property is set
+        internal bool IsSetScopeConfiguration()
+        {
+            return this._scopeConfiguration != null;
         }
 
     }

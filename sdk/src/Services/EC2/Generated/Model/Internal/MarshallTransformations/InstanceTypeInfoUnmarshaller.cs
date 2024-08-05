@@ -187,6 +187,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NitroTpmSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("phcSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PhcSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("placementGroupInfo", targetDepth))
                     {
                         var unmarshaller = PlacementGroupInfoUnmarshaller.Instance;

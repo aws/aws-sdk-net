@@ -57,6 +57,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         public ImpersonationRule Unmarshall(JsonUnmarshallerContext context)
         {
             ImpersonationRule unmarshalledObject = new ImpersonationRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

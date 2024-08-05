@@ -5,11 +5,13 @@
     "endpointPrefix":"lightsail",
     "jsonVersion":"1.1",
     "protocol":"json",
+    "protocols":["json"],
     "serviceFullName":"Amazon Lightsail",
     "serviceId":"Lightsail",
     "signatureVersion":"v4",
     "targetPrefix":"Lightsail_20161128",
-    "uid":"lightsail-2016-11-28"
+    "uid":"lightsail-2016-11-28",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AllocateStaticIp":{
@@ -6335,7 +6337,8 @@
       "type":"string",
       "enum":[
         "dualstack",
-        "ipv4"
+        "ipv4",
+        "ipv6"
       ]
     },
     "Ipv6Address":{
@@ -6786,7 +6789,8 @@
         "tcp",
         "all",
         "udp",
-        "icmp"
+        "icmp",
+        "icmpv6"
       ]
     },
     "NonEmptyString":{
@@ -7596,7 +7600,8 @@
       "members":{
         "resourceType":{"shape":"ResourceType"},
         "resourceName":{"shape":"ResourceName"},
-        "ipAddressType":{"shape":"IpAddressType"}
+        "ipAddressType":{"shape":"IpAddressType"},
+        "acceptBundleUpdate":{"shape":"boolean"}
       }
     },
     "SetIpAddressTypeResult":{

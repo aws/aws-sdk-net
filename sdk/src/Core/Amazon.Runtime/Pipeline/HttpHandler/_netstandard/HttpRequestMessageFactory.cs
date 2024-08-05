@@ -657,8 +657,11 @@ namespace Amazon.Runtime
 
         private void WriteContentHeaders(IDictionary<string, string> contentHeaders)
         {
-            _request.Content.Headers.ContentType =
-                MediaTypeHeaderValue.Parse(contentHeaders[HeaderKeys.ContentTypeHeader]);
+            if (contentHeaders.ContainsKey(HeaderKeys.ContentTypeHeader))
+            {
+                _request.Content.Headers.ContentType =
+                    MediaTypeHeaderValue.Parse(contentHeaders[HeaderKeys.ContentTypeHeader]);
+            }
 
             if (contentHeaders.TryGetValue(HeaderKeys.ContentRangeHeader, out var contentRangeHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentRangeHeader,

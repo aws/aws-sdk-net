@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public ImportJobData Unmarshall(JsonUnmarshallerContext context)
         {
             ImportJobData unmarshalledObject = new ImportJobData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

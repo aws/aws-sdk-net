@@ -57,6 +57,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public FlaggedIpAddressDetail Unmarshall(JsonUnmarshallerContext context)
         {
             FlaggedIpAddressDetail unmarshalledObject = new FlaggedIpAddressDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

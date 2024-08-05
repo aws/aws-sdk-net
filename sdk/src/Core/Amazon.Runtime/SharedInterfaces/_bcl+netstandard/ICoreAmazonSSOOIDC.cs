@@ -110,6 +110,57 @@ namespace Amazon.Runtime.SharedInterfaces
 #endif
     }
 
+    /// <summary>
+    /// Options applicable for the Authorization Code Flow with PKCE. 
+    /// </summary>
+    public class PkceFlowOptions
+    {
+        /// <summary>
+        /// Redirect URI defined by the client. 
+        /// At completion of authorization, it is used to restrict what location the user agent can be redirected back to.
+        /// </summary>
+        public string RedirectUri { get; set; }
+
+        /// <summary>
+        /// List of OAuth grant types that are defined by the client (it's used to restrict the token granting flows available to the client).
+        /// In addition to <c>authorization_code</c>, <c>refresh_token</c> must be included in order for the SSO Token Manager
+        /// to be able to refresh the access token before it expires.
+        /// </summary>
+        /// <remarks>Defaults to <c>["authorization_code", "refresh_token"]</c></remarks>
+        public IList<string> GrantTypes { get; set; } = new List<string>
+        {
+            "authorization_code",
+            "refresh_token"
+        };
+
+        /// <summary>
+        /// Used by Identity Center to issue tokens to registered applications and clients.
+        /// </summary>
+        public string IssuerUrl { get; set; }
+
+#if BCL
+        /// <summary>
+        /// The SDK will construct an authorization URL which the client must send an HTTP GET to retrieve the authorization code (as described in RFC 7636). 
+        /// The return value of this delegate will then be used when invoking the <c>CreateToken</c> operation (in addition to the generated <c>code_verifier</c>).
+        /// </summary>
+        /// <remarks>
+        /// This callback will only be invoked in the synchronous code path of the SSO token manager.
+        /// </remarks>
+        public Func<Uri, string> RetrieveAuthorizationCodeCallback { get; set; }
+#endif
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// The SDK will construct an authorization URL which the client must send an HTTP GET to retrieve the authorization code (as described in RFC 7636). 
+        /// The return value of this delegate will then be used when invoking the <c>CreateToken</c> operation (in addition to the generated <c>code_verifier</c>).
+        /// </summary>
+        /// <remarks>
+        /// This callback will only be invoked in the asynchronous code path of the SSO token manager.
+        /// </remarks>
+        public Func<Uri, CancellationToken, Task<string>> RetrieveAuthorizationCodeCallbackAsync { get; set; }
+#endif
+    }
+
     public class GetSsoTokenRequest
     {
         /// <summary>
@@ -118,7 +169,7 @@ namespace Amazon.Runtime.SharedInterfaces
         public string ClientName { get; set; }
 
         /// <summary>
-        /// OAuth client type
+        /// OAuth client type (e.g. <c>public</c>).
         /// </summary>
         public string ClientType { get; set; }
 
@@ -142,6 +193,12 @@ namespace Amazon.Runtime.SharedInterfaces
         /// The SSO scopes that are provided for authorization when using AWS SSO.
         /// </summary>
         public IList<string> Scopes { get; set; }
+
+        /// <summary>
+        /// This property MUST be specified if the client wishes to use the Authorization Code Flow 
+        /// with PKCE (if null, the SSO Token Manager will default to the Device Authorization Flow).
+        /// </summary>
+        public PkceFlowOptions PkceFlowOptions { get; set; }
     }
 
     public class GetSsoTokenResponse
@@ -168,7 +225,7 @@ namespace Amazon.Runtime.SharedInterfaces
         public string ClientId { get; set; }
 
         /// <summary>
-        /// he client secret generated when performing the registration portion of the OIDC authorization flow.
+        /// The client secret generated when performing the registration portion of the OIDC authorization flow.
         /// The <see cref="ClientSecret"/> is used alongside the <see cref="RefreshToken"/> to refresh the <see cref="AccessToken"/>.
         /// </summary>
         public string ClientSecret { get; set; }
@@ -195,5 +252,12 @@ namespace Amazon.Runtime.SharedInterfaces
         /// use the SSO start URL in the cached token.
         /// </summary>
         public string StartUrl { get; set; }
+
+        /// <summary>
+        /// When using the Authorization Code Flow with PKCE, the SDK will generate a verifier that's used to
+        /// validate the client as the originator of the request (as defined in RFC 7636).
+        /// This field is set as a convenience and is not directly used by the token provider but is useful in other contexts.
+        /// </summary>
+        public string CodeVerifier { get; set; }
     }
 }

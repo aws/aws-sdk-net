@@ -31,9 +31,10 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// This exception is thrown when trusted access has not been enabled between CloudTrail
-    /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
-    /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
-    /// For Creating a Trail For Your Organization</a>.
+    /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_how-to-enable-disable-trusted-access">How
+    /// to enable or disable trusted access</a> in the <i>Organizations User Guide</i> and
+    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+    /// For Creating a Trail For Your Organization</a> in the <i>CloudTrail User Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

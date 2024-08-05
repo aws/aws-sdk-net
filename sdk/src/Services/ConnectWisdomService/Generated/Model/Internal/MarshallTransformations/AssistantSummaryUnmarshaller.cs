@@ -57,6 +57,8 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
         public AssistantSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AssistantSummary unmarshalledObject = new AssistantSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

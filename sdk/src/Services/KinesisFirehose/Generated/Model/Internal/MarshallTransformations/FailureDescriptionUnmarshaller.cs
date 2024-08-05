@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public FailureDescription Unmarshall(JsonUnmarshallerContext context)
         {
             FailureDescription unmarshalledObject = new FailureDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

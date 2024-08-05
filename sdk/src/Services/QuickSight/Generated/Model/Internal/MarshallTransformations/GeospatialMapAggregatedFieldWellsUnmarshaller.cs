@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GeospatialMapAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             GeospatialMapAggregatedFieldWells unmarshalledObject = new GeospatialMapAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

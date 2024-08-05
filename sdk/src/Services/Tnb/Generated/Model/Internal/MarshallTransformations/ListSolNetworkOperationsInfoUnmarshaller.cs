@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public ListSolNetworkOperationsInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ListSolNetworkOperationsInfo unmarshalledObject = new ListSolNetworkOperationsInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -104,6 +106,12 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updateType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdateType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

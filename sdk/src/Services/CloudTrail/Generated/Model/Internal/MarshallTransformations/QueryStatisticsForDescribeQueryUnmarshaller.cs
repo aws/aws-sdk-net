@@ -57,6 +57,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public QueryStatisticsForDescribeQuery Unmarshall(JsonUnmarshallerContext context)
         {
             QueryStatisticsForDescribeQuery unmarshalledObject = new QueryStatisticsForDescribeQuery();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

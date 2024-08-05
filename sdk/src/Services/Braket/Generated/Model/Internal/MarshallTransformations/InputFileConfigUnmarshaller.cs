@@ -57,6 +57,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         public InputFileConfig Unmarshall(JsonUnmarshallerContext context)
         {
             InputFileConfig unmarshalledObject = new InputFileConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

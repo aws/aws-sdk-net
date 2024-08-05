@@ -57,6 +57,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public BatchGetAssetPropertyAggregatesSkippedEntry Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetAssetPropertyAggregatesSkippedEntry unmarshalledObject = new BatchGetAssetPropertyAggregatesSkippedEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

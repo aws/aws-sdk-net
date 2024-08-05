@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
         public ScanSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ScanSummary unmarshalledObject = new ScanSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

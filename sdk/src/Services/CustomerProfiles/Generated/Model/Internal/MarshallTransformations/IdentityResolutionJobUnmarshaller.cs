@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public IdentityResolutionJob Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityResolutionJob unmarshalledObject = new IdentityResolutionJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

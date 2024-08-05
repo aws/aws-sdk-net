@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public JobRunAsUser Unmarshall(JsonUnmarshallerContext context)
         {
             JobRunAsUser unmarshalledObject = new JobRunAsUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

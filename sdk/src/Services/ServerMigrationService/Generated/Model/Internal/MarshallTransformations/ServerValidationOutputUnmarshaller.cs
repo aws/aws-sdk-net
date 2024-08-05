@@ -57,6 +57,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         public ServerValidationOutput Unmarshall(JsonUnmarshallerContext context)
         {
             ServerValidationOutput unmarshalledObject = new ServerValidationOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

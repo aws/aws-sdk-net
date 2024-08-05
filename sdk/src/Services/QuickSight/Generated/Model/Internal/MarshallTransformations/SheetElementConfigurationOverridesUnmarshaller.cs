@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SheetElementConfigurationOverrides Unmarshall(JsonUnmarshallerContext context)
         {
             SheetElementConfigurationOverrides unmarshalledObject = new SheetElementConfigurationOverrides();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

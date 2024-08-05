@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Ep2substring")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Endpoints 2.0 substring. Endpoints 2.0 substring tests")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Endpoints 2.0 substring. Endpoints 2.0 substring tests")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Endpoints 2.0 substring. Endpoints 2.0 substring tests")]
 #elif NETCOREAPP3_1

@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public ConnectionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionConfiguration unmarshalledObject = new ConnectionConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

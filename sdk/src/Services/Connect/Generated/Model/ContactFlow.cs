@@ -40,6 +40,7 @@ namespace Amazon.Connect.Model
         private string _id;
         private string _name;
         private ContactFlowState _state;
+        private ContactFlowStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ContactFlowType _type;
 
@@ -156,6 +157,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the contact flow.
+        /// </para>
+        /// </summary>
+        public ContactFlowStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

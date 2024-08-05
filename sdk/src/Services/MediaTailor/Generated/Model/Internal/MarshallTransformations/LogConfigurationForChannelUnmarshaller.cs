@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public LogConfigurationForChannel Unmarshall(JsonUnmarshallerContext context)
         {
             LogConfigurationForChannel unmarshalledObject = new LogConfigurationForChannel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

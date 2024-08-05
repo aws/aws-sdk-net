@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public DeviceFleetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceFleetSummary unmarshalledObject = new DeviceFleetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

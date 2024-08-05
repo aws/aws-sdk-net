@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public StatisticalThreshold Unmarshall(JsonUnmarshallerContext context)
         {
             StatisticalThreshold unmarshalledObject = new StatisticalThreshold();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

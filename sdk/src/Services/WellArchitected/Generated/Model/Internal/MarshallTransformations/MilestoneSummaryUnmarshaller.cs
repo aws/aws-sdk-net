@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public MilestoneSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MilestoneSummary unmarshalledObject = new MilestoneSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

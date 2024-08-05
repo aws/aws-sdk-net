@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public AWSAccount Unmarshall(JsonUnmarshallerContext context)
         {
             AWSAccount unmarshalledObject = new AWSAccount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

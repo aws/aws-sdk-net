@@ -48,8 +48,8 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if the <c>Excluded count</c> for Resilience Hub recommended Amazon CloudWatch
-        /// alarms is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
+        /// For example, if the <c>excludedCount</c> for Alarms coverage scoring component is
+        /// 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
         /// </para>
         /// </summary>
         public long? ExcludedCount
@@ -67,16 +67,16 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property OutstandingCount. 
         /// <para>
-        /// Number of issues that must be resolved to obtain the maximum possible score for the
-        /// scoring component. For SOPs, alarms, and FIS experiments, these are the number of
-        /// recommendations that must be implemented. For compliance, it is the number of Application
-        /// Components that has breached the resiliency policy.
+        /// Number of recommendations that must be implemented to obtain the maximum possible
+        /// score for the scoring component. For SOPs, alarms, and tests, these are the number
+        /// of recommendations that must be implemented. For compliance, these are the number
+        /// of Application Components that have breached the resiliency policy.
         /// </para>
         ///  
         /// <para>
-        /// For example, if the <c>Outstanding count</c> for Resilience Hub recommended Amazon
-        /// CloudWatch alarms is 5, it indicates that 5 Amazon CloudWatch alarms must be fixed
-        /// to achieve the maximum possible score.
+        /// For example, if the <c>outstandingCount</c> for Alarms coverage scoring component
+        /// is 5, it indicates that 5 Amazon CloudWatch alarms need to be implemented to achieve
+        /// the maximum possible score.
         /// </para>
         /// </summary>
         public long? OutstandingCount
@@ -94,10 +94,13 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PossibleScore. 
         /// <para>
-        /// Maximum possible score that can be obtained for the scoring component. If the <c>Possible
-        /// score</c> is 20 points, it indicates the maximum possible score you can achieve for
-        /// your application when you run a new assessment after implementing all the Resilience
-        /// Hub recommendations.
+        /// Maximum possible score that can be obtained for the scoring component. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the <c>possibleScore</c> is 20 points, it indicates the maximum possible
+        /// score you can achieve for the scoring component when you run a new assessment after
+        /// implementing all the Resilience Hub recommendations.
         /// </para>
         /// </summary>
         public double? PossibleScore
@@ -115,7 +118,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// Resiliency score of your application.
+        /// Resiliency score points given for the scoring component. The score is always less
+        /// than or equal to the <c>possibleScore</c>.
         /// </para>
         /// </summary>
         public double? Score

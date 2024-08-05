@@ -1740,12 +1740,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Create a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHub service method.</param>
         /// <param name="cancellationToken">
@@ -1768,6 +1762,51 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateHubResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateHubResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateHubContentReference
+
+        internal virtual CreateHubContentReferenceResponse CreateHubContentReference(CreateHubContentReferenceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHubContentReferenceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHubContentReferenceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a hub content reference in order to add a model in the JumpStart public hub
+        /// to a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHubContentReference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHubContentReference">REST API Reference for CreateHubContentReference Operation</seealso>
+        public virtual Task<CreateHubContentReferenceResponse> CreateHubContentReferenceAsync(CreateHubContentReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHubContentReferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateHubContentReferenceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2205,6 +2244,46 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateLabelingJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLabelingJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMlflowTrackingServer
+
+        internal virtual CreateMlflowTrackingServerResponse CreateMlflowTrackingServer(CreateMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMlflowTrackingServerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as the
+        /// artifact store. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-create-tracking-server.html">Create
+        /// an MLflow Tracking Server</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowTrackingServer">REST API Reference for CreateMlflowTrackingServer Operation</seealso>
+        public virtual Task<CreateMlflowTrackingServerResponse> CreateMlflowTrackingServerAsync(CreateMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2798,6 +2877,57 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateOptimizationJob
+
+        internal virtual CreateOptimizationJobResponse CreateOptimizationJob(CreateOptimizationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOptimizationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a job that optimizes a model for inference performance. To create the job,
+        /// you provide the location of a source model, and you provide the settings for the optimization
+        /// techniques that you want the job to apply. When the job completes successfully, SageMaker
+        /// uploads the new optimized model to the output destination that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how to use this action, and about the supported optimization
+        /// techniques, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-optimize.html">Optimize
+        /// model inference with Amazon SageMaker</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateOptimizationJob">REST API Reference for CreateOptimizationJob Operation</seealso>
+        public virtual Task<CreateOptimizationJobResponse> CreateOptimizationJobAsync(CreateOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOptimizationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateOptimizationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePipeline
 
         internal virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
@@ -2902,6 +3032,45 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreatePresignedDomainUrlResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePresignedDomainUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePresignedMlflowTrackingServerUrl
+
+        internal virtual CreatePresignedMlflowTrackingServerUrlResponse CreatePresignedMlflowTrackingServerUrl(CreatePresignedMlflowTrackingServerUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedMlflowTrackingServerUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedMlflowTrackingServerUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePresignedMlflowTrackingServerUrlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a presigned URL that you can use to connect to the MLflow UI attached to your
+        /// tracking server. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+        /// the MLflow UI using a presigned URL</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowTrackingServerUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePresignedMlflowTrackingServerUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowTrackingServerUrl">REST API Reference for CreatePresignedMlflowTrackingServerUrl Operation</seealso>
+        public virtual Task<CreatePresignedMlflowTrackingServerUrlResponse> CreatePresignedMlflowTrackingServerUrlAsync(CreatePresignedMlflowTrackingServerUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedMlflowTrackingServerUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedMlflowTrackingServerUrlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePresignedMlflowTrackingServerUrlResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3064,7 +3233,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a space used for real time collaboration in a domain.
+        /// Creates a private space or a space used for real time collaboration in a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
         /// <param name="cancellationToken">
@@ -4430,12 +4599,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHub service method.</param>
         /// <param name="cancellationToken">
@@ -4476,12 +4639,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Delete the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -4503,6 +4660,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteHubContentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHubContentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteHubContentReference
+
+        internal virtual DeleteHubContentReferenceResponse DeleteHubContentReference(DeleteHubContentReferenceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHubContentReferenceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHubContentReferenceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a hub content reference in order to remove a model from a private hub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHubContentReference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHubContentReference service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContentReference">REST API Reference for DeleteHubContentReference Operation</seealso>
+        public virtual Task<DeleteHubContentReferenceResponse> DeleteHubContentReferenceAsync(DeleteHubContentReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHubContentReferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHubContentReferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteHubContentReferenceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4748,6 +4942,44 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteInferenceExperimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInferenceExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMlflowTrackingServer
+
+        internal virtual DeleteMlflowTrackingServerResponse DeleteMlflowTrackingServer(DeleteMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMlflowTrackingServerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an MLflow Tracking Server. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-cleanup.html.html">Clean
+        /// up MLflow resources</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowTrackingServer">REST API Reference for DeleteMlflowTrackingServer Operation</seealso>
+        public virtual Task<DeleteMlflowTrackingServerResponse> DeleteMlflowTrackingServerAsync(DeleteMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5173,6 +5405,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteOptimizationJob
+
+        internal virtual DeleteOptimizationJobResponse DeleteOptimizationJob(DeleteOptimizationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOptimizationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteOptimizationJob">REST API Reference for DeleteOptimizationJob Operation</seealso>
+        public virtual Task<DeleteOptimizationJobResponse> DeleteOptimizationJobAsync(DeleteOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOptimizationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOptimizationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePipeline
 
         internal virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
@@ -5536,7 +5805,7 @@ namespace Amazon.SageMaker
         /// <para>
         /// If a private workforce contains one or more work teams, you must use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
         /// operation to delete all work teams before you delete the workforce. If you try to
-        /// delete a workforce that contains one or more work teams, you will recieve a <c>ResourceInUse</c>
+        /// delete a workforce that contains one or more work teams, you will receive a <c>ResourceInUse</c>
         /// error.
         /// </para>
         ///  </important>
@@ -5947,7 +6216,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Retrieves information of an instance (also called a <i>node</i> interchangeably) of
+        /// Retrieves information of a node (also called a <i>instance</i> interchangeably) of
         /// a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterNode service method.</param>
@@ -6540,13 +6809,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Describe a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
+        /// Describes a hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
         /// <param name="cancellationToken">
@@ -6584,12 +6847,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Describe the content of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -6947,6 +7204,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeMlflowTrackingServer
+
+        internal virtual DescribeMlflowTrackingServerResponse DescribeMlflowTrackingServer(DescribeMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMlflowTrackingServerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowTrackingServer">REST API Reference for DescribeMlflowTrackingServer Operation</seealso>
+        public virtual Task<DescribeMlflowTrackingServerResponse> DescribeMlflowTrackingServerAsync(DescribeMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMlflowTrackingServerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeModel
 
         internal virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
@@ -7147,7 +7441,13 @@ namespace Amazon.SageMaker
         /// Returns a description of the specified model package, which is used to create SageMaker
         /// models or list them on Amazon Web Services Marketplace.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// If you provided a KMS Key ID when you created your model package, you will see the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
+        /// Decrypt</a> API call in your CloudTrail logs when you use this API.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// To create models in SageMaker, buyers can subscribe to model packages listed on Amazon
         /// Web Services Marketplace.
@@ -7349,6 +7649,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeOptimizationJob
+
+        internal virtual DescribeOptimizationJobResponse DescribeOptimizationJob(DescribeOptimizationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOptimizationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides the properties of the specified optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeOptimizationJob">REST API Reference for DescribeOptimizationJob Operation</seealso>
+        public virtual Task<DescribeOptimizationJobResponse> DescribeOptimizationJobAsync(DescribeOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOptimizationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeOptimizationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7899,7 +8236,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Gets information about a specific work team. You can see information such as the create
+        /// Gets information about a specific work team. You can see information such as the creation
         /// date, the last updated date, membership information, and the work team's Amazon Resource
         /// Name (ARN).
         /// </summary>
@@ -8271,12 +8608,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Import hub content.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportHubContent service method.</param>
         /// <param name="cancellationToken">
@@ -9204,12 +9535,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List the contents of a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContents service method.</param>
         /// <param name="cancellationToken">
@@ -9247,12 +9572,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List hub content versions.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubContentVersions service method.</param>
         /// <param name="cancellationToken">
@@ -9290,12 +9609,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// List all existing hubs.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHubs service method.</param>
         /// <param name="cancellationToken">
@@ -9705,6 +10018,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListLineageGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListLineageGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMlflowTrackingServers
+
+        internal virtual ListMlflowTrackingServersResponse ListMlflowTrackingServers(ListMlflowTrackingServersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMlflowTrackingServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMlflowTrackingServersResponseUnmarshaller.Instance;
+
+            return Invoke<ListMlflowTrackingServersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all MLflow Tracking Servers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowTrackingServers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMlflowTrackingServers service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowTrackingServers">REST API Reference for ListMlflowTrackingServers Operation</seealso>
+        public virtual Task<ListMlflowTrackingServersResponse> ListMlflowTrackingServersAsync(ListMlflowTrackingServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMlflowTrackingServersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMlflowTrackingServersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMlflowTrackingServersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10261,6 +10608,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListNotebookInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListNotebookInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListOptimizationJobs
+
+        internal virtual ListOptimizationJobsResponse ListOptimizationJobs(ListOptimizationJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOptimizationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOptimizationJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOptimizationJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the optimization jobs in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOptimizationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOptimizationJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListOptimizationJobs">REST API Reference for ListOptimizationJobs Operation</seealso>
+        public virtual Task<ListOptimizationJobsResponse> ListOptimizationJobsAsync(ListOptimizationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOptimizationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOptimizationJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOptimizationJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11446,6 +11827,47 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartMlflowTrackingServer
+
+        internal virtual StartMlflowTrackingServerResponse StartMlflowTrackingServer(StartMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<StartMlflowTrackingServerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Programmatically start an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMlflowTrackingServer">REST API Reference for StartMlflowTrackingServer Operation</seealso>
+        public virtual Task<StartMlflowTrackingServerResponse> StartMlflowTrackingServerAsync(StartMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartMlflowTrackingServerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
         internal virtual StartMonitoringScheduleResponse StartMonitoringSchedule(StartMonitoringScheduleRequest request)
@@ -11892,6 +12314,47 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StopMlflowTrackingServer
+
+        internal virtual StopMlflowTrackingServerResponse StopMlflowTrackingServer(StopMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<StopMlflowTrackingServerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Programmatically stop an MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMlflowTrackingServer">REST API Reference for StopMlflowTrackingServer Operation</seealso>
+        public virtual Task<StopMlflowTrackingServerResponse> StopMlflowTrackingServerAsync(StopMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopMlflowTrackingServerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopMonitoringSchedule
 
         internal virtual StopMonitoringScheduleResponse StopMonitoringSchedule(StopMonitoringScheduleRequest request)
@@ -11969,6 +12432,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StopNotebookInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopNotebookInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopOptimizationJob
+
+        internal virtual StopOptimizationJobResponse StopOptimizationJob(StopOptimizationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopOptimizationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Ends a running inference optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopOptimizationJob">REST API Reference for StopOptimizationJob Operation</seealso>
+        public virtual Task<StopOptimizationJobResponse> StopOptimizationJobAsync(StopOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOptimizationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopOptimizationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12838,12 +13338,6 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Update a hub.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Hub APIs are only callable through SageMaker Studio.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHub service method.</param>
         /// <param name="cancellationToken">
@@ -13064,6 +13558,51 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateInferenceExperimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateInferenceExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMlflowTrackingServer
+
+        internal virtual UpdateMlflowTrackingServerResponse UpdateMlflowTrackingServer(UpdateMlflowTrackingServerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMlflowTrackingServerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates properties of an existing MLflow Tracking Server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowTrackingServer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMlflowTrackingServer service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowTrackingServer">REST API Reference for UpdateMlflowTrackingServer Operation</seealso>
+        public virtual Task<UpdateMlflowTrackingServerResponse> UpdateMlflowTrackingServerAsync(UpdateMlflowTrackingServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMlflowTrackingServerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMlflowTrackingServerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMlflowTrackingServerResponse>(request, options, cancellationToken);
         }
 
         #endregion

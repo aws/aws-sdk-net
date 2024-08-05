@@ -45,7 +45,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// A bearer token to access AWS accounts and applications assigned to a user.
+        /// A bearer token to access Amazon Web Services accounts and applications assigned to
+        /// a user.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

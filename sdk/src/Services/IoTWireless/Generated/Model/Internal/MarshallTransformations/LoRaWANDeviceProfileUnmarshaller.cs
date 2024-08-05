@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public LoRaWANDeviceProfile Unmarshall(JsonUnmarshallerContext context)
         {
             LoRaWANDeviceProfile unmarshalledObject = new LoRaWANDeviceProfile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

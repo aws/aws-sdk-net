@@ -57,6 +57,8 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public BatchJobDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             BatchJobDefinition unmarshalledObject = new BatchJobDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

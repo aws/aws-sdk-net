@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public SipMediaApplicationLoggingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SipMediaApplicationLoggingConfiguration unmarshalledObject = new SipMediaApplicationLoggingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

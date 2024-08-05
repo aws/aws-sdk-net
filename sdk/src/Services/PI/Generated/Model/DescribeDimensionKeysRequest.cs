@@ -118,7 +118,11 @@ namespace Amazon.PI.Model
         /// <para>
         /// A single filter for any other dimension in this dimension group.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <c>db.sql.db_id</c> filter isn't available for RDS for SQL Server DB instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, string> Filter
         {

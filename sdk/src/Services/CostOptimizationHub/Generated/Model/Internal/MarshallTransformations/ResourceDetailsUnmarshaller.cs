@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public ResourceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceDetails unmarshalledObject = new ResourceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -122,6 +124,18 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = OpenSearchReservedInstancesUnmarshaller.Instance;
                     unmarshalledObject.OpenSearchReservedInstances = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rdsDbInstance", targetDepth))
+                {
+                    var unmarshaller = RdsDbInstanceUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbInstance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rdsDbInstanceStorage", targetDepth))
+                {
+                    var unmarshaller = RdsDbInstanceStorageUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbInstanceStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rdsReservedInstances", targetDepth))

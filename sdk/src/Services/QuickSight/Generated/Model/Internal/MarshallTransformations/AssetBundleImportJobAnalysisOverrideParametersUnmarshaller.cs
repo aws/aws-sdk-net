@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AssetBundleImportJobAnalysisOverrideParameters Unmarshall(JsonUnmarshallerContext context)
         {
             AssetBundleImportJobAnalysisOverrideParameters unmarshalledObject = new AssetBundleImportJobAnalysisOverrideParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

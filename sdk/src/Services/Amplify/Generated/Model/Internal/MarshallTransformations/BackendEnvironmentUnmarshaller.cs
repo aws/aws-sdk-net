@@ -57,6 +57,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public BackendEnvironment Unmarshall(JsonUnmarshallerContext context)
         {
             BackendEnvironment unmarshalledObject = new BackendEnvironment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

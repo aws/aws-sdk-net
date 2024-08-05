@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.KafkaConnect")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
 #elif NETCOREAPP3_1

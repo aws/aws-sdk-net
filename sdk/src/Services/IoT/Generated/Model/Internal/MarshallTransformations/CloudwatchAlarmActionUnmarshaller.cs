@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public CloudwatchAlarmAction Unmarshall(JsonUnmarshallerContext context)
         {
             CloudwatchAlarmAction unmarshalledObject = new CloudwatchAlarmAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

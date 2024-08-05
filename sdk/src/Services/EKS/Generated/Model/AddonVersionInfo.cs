@@ -38,6 +38,7 @@ namespace Amazon.EKS.Model
         private List<string> _architecture = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Compatibility> _compatibilities = AWSConfigs.InitializeCollections ? new List<Compatibility>() : null;
         private bool? _requiresConfiguration;
+        private bool? _requiresIamPermissions;
 
         /// <summary>
         /// Gets and sets the property AddonVersion. 
@@ -109,6 +110,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetRequiresConfiguration()
         {
             return this._requiresConfiguration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequiresIamPermissions. 
+        /// <para>
+        /// Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.
+        /// </para>
+        /// </summary>
+        public bool? RequiresIamPermissions
+        {
+            get { return this._requiresIamPermissions; }
+            set { this._requiresIamPermissions = value; }
+        }
+
+        // Check to see if RequiresIamPermissions property is set
+        internal bool IsSetRequiresIamPermissions()
+        {
+            return this._requiresIamPermissions.HasValue; 
         }
 
     }

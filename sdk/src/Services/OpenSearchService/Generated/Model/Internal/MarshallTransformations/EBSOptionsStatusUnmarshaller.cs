@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public EBSOptionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             EBSOptionsStatus unmarshalledObject = new EBSOptionsStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

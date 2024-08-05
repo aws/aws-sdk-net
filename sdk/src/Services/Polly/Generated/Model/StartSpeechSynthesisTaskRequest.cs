@@ -58,9 +58,9 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the engine (<c>standard</c>, <c>neural</c> or <c>long-form</c>) for Amazon
-        /// Polly to use when processing input text for speech synthesis. Using a voice that is
-        /// not supported for the engine selected will result in an error.
+        /// Specifies the engine (<c>standard</c>, <c>neural</c>, <c>long-form</c> or <c>generative</c>)
+        /// for Amazon Polly to use when processing input text for speech synthesis. Using a voice
+        /// that is not supported for the engine selected will result in an error.
         /// </para>
         /// </summary>
         public Engine Engine
@@ -190,7 +190,8 @@ namespace Amazon.Polly.Model
         /// <para>
         /// The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000".
         /// The default value for standard voices is "22050". The default value for neural voices
-        /// is "24000". The default value for long-form voices is "24000".
+        /// is "24000". The default value for long-form voices is "24000". The default value for
+        /// generative voices is "24000".
         /// </para>
         ///  
         /// <para>

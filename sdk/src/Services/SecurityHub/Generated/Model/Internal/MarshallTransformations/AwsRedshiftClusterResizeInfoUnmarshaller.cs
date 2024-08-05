@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRedshiftClusterResizeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRedshiftClusterResizeInfo unmarshalledObject = new AwsRedshiftClusterResizeInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

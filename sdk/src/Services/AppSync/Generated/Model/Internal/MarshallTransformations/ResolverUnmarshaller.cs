@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public Resolver Unmarshall(JsonUnmarshallerContext context)
         {
             Resolver unmarshalledObject = new Resolver();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

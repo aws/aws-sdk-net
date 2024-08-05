@@ -31,9 +31,11 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConnectionsOnInterconnect operation.
+    /// <note> 
+    /// <para>
     /// Deprecated. Use <a>DescribeHostedConnections</a> instead.
-    /// 
-    ///  
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Lists the connections that have been provisioned on the specified interconnect.
     /// </para>

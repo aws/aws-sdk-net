@@ -128,7 +128,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if AssetSHA256 property is set
         internal bool IsSetAssetSHA256()
         {
-            return this._assetsha256 != null;
+            return !string.IsNullOrEmpty(this._assetsha256);
         }
 
         /// <summary>

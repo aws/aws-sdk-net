@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public DurationSinceLastAccess Unmarshall(JsonUnmarshallerContext context)
         {
             DurationSinceLastAccess unmarshalledObject = new DurationSinceLastAccess();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

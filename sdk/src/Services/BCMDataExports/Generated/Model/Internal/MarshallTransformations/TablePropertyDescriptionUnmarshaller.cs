@@ -57,6 +57,8 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
         public TablePropertyDescription Unmarshall(JsonUnmarshallerContext context)
         {
             TablePropertyDescription unmarshalledObject = new TablePropertyDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

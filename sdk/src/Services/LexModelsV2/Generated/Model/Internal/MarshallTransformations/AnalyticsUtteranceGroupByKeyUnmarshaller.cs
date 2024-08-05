@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public AnalyticsUtteranceGroupByKey Unmarshall(JsonUnmarshallerContext context)
         {
             AnalyticsUtteranceGroupByKey unmarshalledObject = new AnalyticsUtteranceGroupByKey();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

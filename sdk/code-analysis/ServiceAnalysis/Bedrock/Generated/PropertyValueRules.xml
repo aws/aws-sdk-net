@@ -115,6 +115,36 @@
     <pattern>[1-9][0-9]{0,7}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateModelCopyJobRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateModelCopyJobRequest.ModelKmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:((key/[a-zA-Z0-9-]{36})|(alias/[a-zA-Z0-9-_/]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateModelCopyJobRequest.SourceModelArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateModelCopyJobRequest.TargetModelName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CreateModelCopyJobResponse.JobArn</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:model-copy-job/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.CreateModelCustomizationJobRequest.BaseModelIdentifier</property>
     <min>1</min>
     <max>2048</max>
@@ -136,7 +166,7 @@
     <property>Amazon.Bedrock.Model.CreateModelCustomizationJobRequest.CustomModelName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>([0-9a-zA-Z][_-]?)+</pattern>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.CreateModelCustomizationJobRequest.JobName</property>
@@ -242,7 +272,7 @@
     <property>Amazon.Bedrock.Model.GetCustomModelResponse.ModelName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>([0-9a-zA-Z][_-]?)+</pattern>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.GetEvaluationJobRequest.JobIdentifier</property>
@@ -340,6 +370,57 @@
     <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobRequest.JobArn</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:model-copy-job/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobResponse.FailureMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobResponse.JobArn</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:model-copy-job/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobResponse.SourceAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobResponse.SourceModelArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobResponse.SourceModelName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobResponse.TargetModelArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobResponse.TargetModelKmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetModelCopyJobResponse.TargetModelName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.GetModelCustomizationJobRequest.JobIdentifier</property>
     <min>0</min>
     <max>1011</max>
@@ -388,7 +469,7 @@
     <property>Amazon.Bedrock.Model.GetModelCustomizationJobResponse.OutputModelName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>([0-9a-zA-Z][_-]?)+</pattern>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.GetModelCustomizationJobResponse.RoleArn</property>
@@ -458,7 +539,7 @@
     <property>Amazon.Bedrock.Model.ListCustomModelsRequest.NameContains</property>
     <min>1</min>
     <max>63</max>
-    <pattern>([0-9a-zA-Z][_-]?)+</pattern>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ListCustomModelsRequest.NextToken</property>
@@ -518,6 +599,39 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ListGuardrailsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListModelCopyJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListModelCopyJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListModelCopyJobsRequest.SourceAccountEquals</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListModelCopyJobsRequest.SourceModelArnEquals</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListModelCopyJobsRequest.TargetModelNameContains</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ListModelCopyJobsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
     <pattern>\S*</pattern>
@@ -704,7 +818,11 @@
     <property>Amazon.Bedrock.Model.CustomModelSummary.ModelName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>([0-9a-zA-Z][_-]?)+</pattern>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.CustomModelSummary.OwnerAccountId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.EvaluationBedrockModel.InferenceParams</property>
@@ -796,6 +914,14 @@
     <min>1</min>
     <max>20</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailContextualGroundingFilter.Threshold</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.GuardrailContextualGroundingFilterConfig.Threshold</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.GuardrailRegex.Description</property>
@@ -917,6 +1043,51 @@
     <pattern>[\S\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelCopyJobSummary.FailureMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelCopyJobSummary.JobArn</property>
+    <min>0</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:model-copy-job/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelCopyJobSummary.SourceAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelCopyJobSummary.SourceModelArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelCopyJobSummary.SourceModelName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelCopyJobSummary.TargetModelArn</property>
+    <min>20</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelCopyJobSummary.TargetModelKmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelCopyJobSummary.TargetModelName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.ModelCustomizationJobSummary.BaseModelArn</property>
     <min>20</min>
     <max>1011</max>
@@ -932,7 +1103,7 @@
     <property>Amazon.Bedrock.Model.ModelCustomizationJobSummary.CustomModelName</property>
     <min>1</min>
     <max>63</max>
-    <pattern>([0-9a-zA-Z][_-]?)+</pattern>
+    <pattern>([0-9a-zA-Z][_-]?){1,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ModelCustomizationJobSummary.JobArn</property>

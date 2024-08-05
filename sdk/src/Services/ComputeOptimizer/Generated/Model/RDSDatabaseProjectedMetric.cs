@@ -1,0 +1,103 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the compute-optimizer-2019-11-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.ComputeOptimizer.Model
+{
+    /// <summary>
+    /// Describes the projected metrics of an Amazon RDS recommendation option. 
+    /// 
+    ///  
+    /// <para>
+    ///  To determine the performance difference between your current Amazon RDS and the recommended
+    /// option, compare the metric data of your service against its projected metric data.
+    /// 
+    /// </para>
+    /// </summary>
+    public partial class RDSDatabaseProjectedMetric
+    {
+        private RDSDBMetricName _name;
+        private List<DateTime> _timestamps = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private List<double> _values = AWSConfigs.InitializeCollections ? new List<double>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the projected metric. 
+        /// </para>
+        /// </summary>
+        public RDSDBMetricName Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timestamps. 
+        /// <para>
+        ///  The timestamps of the projected metric. 
+        /// </para>
+        /// </summary>
+        public List<DateTime> Timestamps
+        {
+            get { return this._timestamps; }
+            set { this._timestamps = value; }
+        }
+
+        // Check to see if Timestamps property is set
+        internal bool IsSetTimestamps()
+        {
+            return this._timestamps != null && (this._timestamps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        ///  The values for the projected metric. 
+        /// </para>
+        /// </summary>
+        public List<double> Values
+        {
+            get { return this._values; }
+            set { this._values = value; }
+        }
+
+        // Check to see if Values property is set
+        internal bool IsSetValues()
+        {
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+    }
+}

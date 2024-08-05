@@ -93,7 +93,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Spot Fleet requests instances from all of the Spot Instance pools that you specify.
         /// </para>
-        ///  </dd> <dt>lowestPrice</dt> <dd> 
+        ///  </dd> <dt>lowestPrice (not recommended)</dt> <dd> <important> 
+        /// <para>
+        /// We don't recommend the <c>lowestPrice</c> allocation strategy because it has the highest
+        /// risk of interruption for your Spot Instances.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Spot Fleet requests instances from the lowest priced Spot Instance pool that has available
         /// capacity. If the lowest priced pool doesn't have available capacity, the Spot Instances
@@ -407,7 +412,7 @@ namespace Amazon.EC2.Model
         /// for surplus credits. The <c>onDemandMaxTotalPrice</c> does not account for surplus
         /// credits, and, if you use surplus credits, your final cost might be higher than what
         /// you specified for <c>onDemandMaxTotalPrice</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-        /// credits can incur charges</a> in the <i>EC2 User Guide</i>.
+        /// credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -499,7 +504,7 @@ namespace Amazon.EC2.Model
         /// for surplus credits. The <c>spotMaxTotalPrice</c> does not account for surplus credits,
         /// and, if you use surplus credits, your final cost might be higher than what you specified
         /// for <c>spotMaxTotalPrice</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-        /// credits can incur charges</a> in the <i>EC2 User Guide</i>.
+        /// credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

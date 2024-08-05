@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public RuleTriggerEventSource Unmarshall(JsonUnmarshallerContext context)
         {
             RuleTriggerEventSource unmarshalledObject = new RuleTriggerEventSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -52,6 +52,7 @@ namespace Amazon.DataZone.Model
         private bool? _publishOnImport;
         private RecommendationConfiguration _recommendation;
         private ScheduleConfiguration _schedule;
+        private SelfGrantStatusOutput _selfGrantStatus;
         private DataSourceStatus _status;
         private string _type;
         private DateTime? _updatedAt;
@@ -389,6 +390,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfGrantStatus. 
+        /// <para>
+        /// Specifies the status of the self-granting functionality.
+        /// </para>
+        /// </summary>
+        public SelfGrantStatusOutput SelfGrantStatus
+        {
+            get { return this._selfGrantStatus; }
+            set { this._selfGrantStatus = value; }
+        }
+
+        // Check to see if SelfGrantStatus property is set
+        internal bool IsSetSelfGrantStatus()
+        {
+            return this._selfGrantStatus != null;
         }
 
         /// <summary>

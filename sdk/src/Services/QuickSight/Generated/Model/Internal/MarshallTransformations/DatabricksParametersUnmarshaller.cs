@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DatabricksParameters Unmarshall(JsonUnmarshallerContext context)
         {
             DatabricksParameters unmarshalledObject = new DatabricksParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

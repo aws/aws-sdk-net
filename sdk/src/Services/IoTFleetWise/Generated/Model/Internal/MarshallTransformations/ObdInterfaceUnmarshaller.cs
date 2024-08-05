@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public ObdInterface Unmarshall(JsonUnmarshallerContext context)
         {
             ObdInterface unmarshalledObject = new ObdInterface();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

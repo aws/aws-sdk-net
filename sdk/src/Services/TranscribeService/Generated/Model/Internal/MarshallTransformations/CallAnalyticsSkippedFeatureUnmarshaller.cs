@@ -57,6 +57,8 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         public CallAnalyticsSkippedFeature Unmarshall(JsonUnmarshallerContext context)
         {
             CallAnalyticsSkippedFeature unmarshalledObject = new CallAnalyticsSkippedFeature();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

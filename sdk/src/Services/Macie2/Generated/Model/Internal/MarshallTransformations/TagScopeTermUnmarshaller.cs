@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public TagScopeTerm Unmarshall(JsonUnmarshallerContext context)
         {
             TagScopeTerm unmarshalledObject = new TagScopeTerm();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

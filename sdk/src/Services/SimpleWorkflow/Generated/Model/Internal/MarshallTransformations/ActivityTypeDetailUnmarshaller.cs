@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public ActivityTypeDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ActivityTypeDetail unmarshalledObject = new ActivityTypeDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

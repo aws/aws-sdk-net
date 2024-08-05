@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public NewDeviceMetadataType Unmarshall(JsonUnmarshallerContext context)
         {
             NewDeviceMetadataType unmarshalledObject = new NewDeviceMetadataType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

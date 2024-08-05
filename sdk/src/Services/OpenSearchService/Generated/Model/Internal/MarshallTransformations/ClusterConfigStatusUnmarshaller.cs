@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public ClusterConfigStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterConfigStatus unmarshalledObject = new ClusterConfigStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

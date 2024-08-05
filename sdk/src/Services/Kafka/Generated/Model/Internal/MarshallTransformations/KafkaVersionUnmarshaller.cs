@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public KafkaVersion Unmarshall(JsonUnmarshallerContext context)
         {
             KafkaVersion unmarshalledObject = new KafkaVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

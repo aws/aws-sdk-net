@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public GeoMatchParams Unmarshall(JsonUnmarshallerContext context)
         {
             GeoMatchParams unmarshalledObject = new GeoMatchParams();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

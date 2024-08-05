@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public PendingTaskCount Unmarshall(JsonUnmarshallerContext context)
         {
             PendingTaskCount unmarshalledObject = new PendingTaskCount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

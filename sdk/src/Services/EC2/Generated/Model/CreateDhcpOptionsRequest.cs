@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// The following are the individual DHCP options you can specify. For more information,
     /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-    /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+    /// option sets</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
     /// <para>
     ///  <c>netbios-node-type</c> - The NetBIOS node type (1, 2, 4, or 8). We recommend that
     /// you specify 2. Broadcast and multicast are not supported. For more information about
-    /// NetBIOS node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+    /// NetBIOS node types, see <a href="https://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>

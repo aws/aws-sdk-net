@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public CustomerGatewayAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             CustomerGatewayAssociation unmarshalledObject = new CustomerGatewayAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

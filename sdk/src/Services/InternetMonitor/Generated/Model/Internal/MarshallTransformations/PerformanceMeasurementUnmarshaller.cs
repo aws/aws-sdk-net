@@ -57,6 +57,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         public PerformanceMeasurement Unmarshall(JsonUnmarshallerContext context)
         {
             PerformanceMeasurement unmarshalledObject = new PerformanceMeasurement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

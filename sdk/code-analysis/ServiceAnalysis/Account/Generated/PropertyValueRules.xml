@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Account.Model.AcceptPrimaryEmailUpdateRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.AcceptPrimaryEmailUpdateRequest.Otp</property>
+    <pattern>^[a-zA-Z0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.AcceptPrimaryEmailUpdateRequest.PrimaryEmail</property>
+    <min>5</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Account.Model.DeleteAlternateContactRequest.AccountId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -29,6 +42,15 @@
   <property-value-rule>
     <property>Amazon.Account.Model.GetContactInformationRequest.AccountId</property>
     <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.GetPrimaryEmailRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.GetPrimaryEmailResponse.PrimaryEmail</property>
+    <min>5</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetRegionOptStatusRequest.AccountId</property>
@@ -87,6 +109,15 @@
   <property-value-rule>
     <property>Amazon.Account.Model.PutContactInformationRequest.AccountId</property>
     <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.StartPrimaryEmailUpdateRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.StartPrimaryEmailUpdateRequest.PrimaryEmail</property>
+    <min>5</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.AlternateContact.EmailAddress</property>

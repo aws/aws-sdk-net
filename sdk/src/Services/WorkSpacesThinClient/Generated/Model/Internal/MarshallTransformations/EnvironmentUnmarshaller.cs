@@ -57,6 +57,8 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
         public Environment Unmarshall(JsonUnmarshallerContext context)
         {
             Environment unmarshalledObject = new Environment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -104,6 +106,12 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DesktopType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deviceCreationTags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DeviceCreationTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))

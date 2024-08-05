@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public WaterfallChartGroupColorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WaterfallChartGroupColorConfiguration unmarshalledObject = new WaterfallChartGroupColorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

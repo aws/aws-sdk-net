@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public SparkSubmitJobDriver Unmarshall(JsonUnmarshallerContext context)
         {
             SparkSubmitJobDriver unmarshalledObject = new SparkSubmitJobDriver();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

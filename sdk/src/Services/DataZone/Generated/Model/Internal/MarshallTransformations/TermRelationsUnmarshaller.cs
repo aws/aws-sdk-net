@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public TermRelations Unmarshall(JsonUnmarshallerContext context)
         {
             TermRelations unmarshalledObject = new TermRelations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

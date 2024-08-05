@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsElasticsearchDomainLogPublishingOptionsLogConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AwsElasticsearchDomainLogPublishingOptionsLogConfig unmarshalledObject = new AwsElasticsearchDomainLogPublishingOptionsLogConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

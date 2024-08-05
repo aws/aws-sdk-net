@@ -35,6 +35,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class SnowflakeDestinationConfiguration
     {
         private string _accountUrl;
+        private SnowflakeBufferingHints _bufferingHints;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private string _contentColumnName;
         private string _database;
@@ -48,6 +49,7 @@ namespace Amazon.KinesisFirehose.Model
         private SnowflakeS3BackupMode _s3BackupMode;
         private S3DestinationConfiguration _s3Configuration;
         private string _schema;
+        private SecretsManagerConfiguration _secretsManagerConfiguration;
         private SnowflakeRoleConfiguration _snowflakeRoleConfiguration;
         private SnowflakeVpcConfiguration _snowflakeVpcConfiguration;
         private string _table;
@@ -71,6 +73,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetAccountUrl()
         {
             return this._accountUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BufferingHints. 
+        /// <para>
+        ///  Describes the buffering to perform before delivering data to the Snowflake destination.
+        /// If you do not specify any value, Firehose uses the default values. 
+        /// </para>
+        /// </summary>
+        public SnowflakeBufferingHints BufferingHints
+        {
+            get { return this._bufferingHints; }
+            set { this._bufferingHints = value; }
+        }
+
+        // Check to see if BufferingHints property is set
+        internal bool IsSetBufferingHints()
+        {
+            return this._bufferingHints != null;
         }
 
         /// <summary>
@@ -193,7 +214,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Key Pair Authentication &amp; Key Rotation</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=256, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=256, Max=4096)]
         public string PrivateKey
         {
             get { return this._privateKey; }
@@ -313,6 +334,24 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecretsManagerConfiguration. 
+        /// <para>
+        ///  The configuration that defines how you access secrets for Snowflake. 
+        /// </para>
+        /// </summary>
+        public SecretsManagerConfiguration SecretsManagerConfiguration
+        {
+            get { return this._secretsManagerConfiguration; }
+            set { this._secretsManagerConfiguration = value; }
+        }
+
+        // Check to see if SecretsManagerConfiguration property is set
+        internal bool IsSetSecretsManagerConfiguration()
+        {
+            return this._secretsManagerConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnowflakeRoleConfiguration. 
         /// <para>
         /// Optionally configure a Snowflake role. Otherwise the default user role will be used.
@@ -376,7 +415,7 @@ namespace Amazon.KinesisFirehose.Model
         /// User login name for the Snowflake account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string User
         {
             get { return this._user; }

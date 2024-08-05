@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public SearchTypesResultItem Unmarshall(JsonUnmarshallerContext context)
         {
             SearchTypesResultItem unmarshalledObject = new SearchTypesResultItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = FormTypeDataUnmarshaller.Instance;
                     unmarshalledObject.FormTypeItem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lineageNodeTypeItem", targetDepth))
+                {
+                    var unmarshaller = LineageNodeTypeItemUnmarshaller.Instance;
+                    unmarshalledObject.LineageNodeTypeItem = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

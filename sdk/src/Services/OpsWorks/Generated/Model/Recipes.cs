@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
-    /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks
-    /// Stacks runs a set of standard recipes for each event. In addition, you can provide
-    /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event
-    /// recipes after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom
-    /// recipes for a particular layer to be run in response to each of the five events. 
+    /// OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>,
+    /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks
+    /// runs a set of standard recipes for each event. In addition, you can provide custom
+    /// recipes for any or all layers and events. OpsWorks Stacks runs custom event recipes
+    /// after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom recipes
+    /// for a particular layer to be run in response to each of the five events. 
     /// 
     ///  
     /// <para>

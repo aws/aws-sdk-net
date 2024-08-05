@@ -147,7 +147,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// as per EMV version 4.3 book 2.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=16)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=16)]
         public string SessionDerivationData
         {
             get { return this._sessionDerivationData; }

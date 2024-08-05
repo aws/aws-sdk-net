@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public SavingsPlansCoverage Unmarshall(JsonUnmarshallerContext context)
         {
             SavingsPlansCoverage unmarshalledObject = new SavingsPlansCoverage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

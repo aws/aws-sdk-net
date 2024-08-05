@@ -57,6 +57,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         public JobOutputDataConfig Unmarshall(JsonUnmarshallerContext context)
         {
             JobOutputDataConfig unmarshalledObject = new JobOutputDataConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

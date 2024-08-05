@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public RoutingProfile Unmarshall(JsonUnmarshallerContext context)
         {
             RoutingProfile unmarshalledObject = new RoutingProfile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgentAvailabilityTimer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AssociatedQueueIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AssociatedQueueIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DefaultOutboundQueueId", targetDepth))

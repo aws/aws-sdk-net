@@ -57,6 +57,8 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
         public MessageReviewHandler Unmarshall(JsonUnmarshallerContext context)
         {
             MessageReviewHandler unmarshalledObject = new MessageReviewHandler();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

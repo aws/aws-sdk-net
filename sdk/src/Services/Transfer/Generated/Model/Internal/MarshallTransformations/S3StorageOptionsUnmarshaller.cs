@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public S3StorageOptions Unmarshall(JsonUnmarshallerContext context)
         {
             S3StorageOptions unmarshalledObject = new S3StorageOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

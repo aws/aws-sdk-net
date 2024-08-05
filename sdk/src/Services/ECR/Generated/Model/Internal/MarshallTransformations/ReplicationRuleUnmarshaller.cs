@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public ReplicationRule Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationRule unmarshalledObject = new ReplicationRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

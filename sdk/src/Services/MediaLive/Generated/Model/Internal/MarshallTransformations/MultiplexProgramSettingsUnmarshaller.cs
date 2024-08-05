@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public MultiplexProgramSettings Unmarshall(JsonUnmarshallerContext context)
         {
             MultiplexProgramSettings unmarshalledObject = new MultiplexProgramSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

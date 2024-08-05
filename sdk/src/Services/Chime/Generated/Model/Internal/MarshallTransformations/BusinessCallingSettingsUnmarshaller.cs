@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public BusinessCallingSettings Unmarshall(JsonUnmarshallerContext context)
         {
             BusinessCallingSettings unmarshalledObject = new BusinessCallingSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

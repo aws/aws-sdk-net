@@ -34,6 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class GetAutomatedDiscoveryConfigurationResponse : AmazonWebServiceResponse
     {
+        private AutoEnableMode _autoEnableOrganizationMembers;
         private string _classificationScopeId;
         private DateTime? _disabledAt;
         private DateTime? _firstEnabledAt;
@@ -42,11 +43,32 @@ namespace Amazon.Macie2.Model
         private AutomatedDiscoveryStatus _status;
 
         /// <summary>
+        /// Gets and sets the property AutoEnableOrganizationMembers. 
+        /// <para>
+        /// Specifies whether automated sensitive data discovery is enabled automatically for
+        /// accounts in the organization. Possible values are: ALL, enable it for all existing
+        /// accounts and new member accounts; NEW, enable it only for new member accounts; and,
+        /// NONE, don't enable it for any accounts.
+        /// </para>
+        /// </summary>
+        public AutoEnableMode AutoEnableOrganizationMembers
+        {
+            get { return this._autoEnableOrganizationMembers; }
+            set { this._autoEnableOrganizationMembers = value; }
+        }
+
+        // Check to see if AutoEnableOrganizationMembers property is set
+        internal bool IsSetAutoEnableOrganizationMembers()
+        {
+            return this._autoEnableOrganizationMembers != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClassificationScopeId. 
         /// <para>
         /// The unique identifier for the classification scope that's used when performing automated
-        /// sensitive data discovery for the account. The classification scope specifies S3 buckets
-        /// to exclude from automated sensitive data discovery.
+        /// sensitive data discovery. The classification scope specifies S3 buckets to exclude
+        /// from analyses.
         /// </para>
         /// </summary>
         public string ClassificationScopeId
@@ -65,8 +87,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property DisabledAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when automated sensitive data
-        /// discovery was most recently disabled for the account. This value is null if automated
-        /// sensitive data discovery wasn't enabled and subsequently disabled for the account.
+        /// discovery was most recently disabled. This value is null if automated sensitive data
+        /// discovery is currently enabled.
         /// </para>
         /// </summary>
         public DateTime? DisabledAt
@@ -85,8 +107,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property FirstEnabledAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when automated sensitive data
-        /// discovery was initially enabled for the account. This value is null if automated sensitive
-        /// data discovery has never been enabled for the account.
+        /// discovery was initially enabled. This value is null if automated sensitive data discovery
+        /// has never been enabled.
         /// </para>
         /// </summary>
         public DateTime? FirstEnabledAt
@@ -104,8 +126,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when automated sensitive data
-        /// discovery was most recently enabled or disabled for the account.
+        /// The date and time, in UTC and extended ISO 8601 format, when the configuration settings
+        /// or status of automated sensitive data discovery was most recently changed.
         /// </para>
         /// </summary>
         public DateTime? LastUpdatedAt
@@ -124,9 +146,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property SensitivityInspectionTemplateId. 
         /// <para>
         /// The unique identifier for the sensitivity inspection template that's used when performing
-        /// automated sensitive data discovery for the account. The template specifies which allow
-        /// lists, custom data identifiers, and managed data identifiers to use when analyzing
-        /// data.
+        /// automated sensitive data discovery. The template specifies which allow lists, custom
+        /// data identifiers, and managed data identifiers to use when analyzing data.
         /// </para>
         /// </summary>
         public string SensitivityInspectionTemplateId
@@ -144,10 +165,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the automated sensitive data discovery configuration for the
-        /// account. Possible values are: ENABLED, use the specified settings to perform automated
-        /// sensitive data discovery activities for the account; and, DISABLED, don't perform
-        /// automated sensitive data discovery activities for the account.
+        /// The current status of automated sensitive data discovery for the organization or account.
+        /// Possible values are: ENABLED, use the specified settings to perform automated sensitive
+        /// data discovery activities; and, DISABLED, don't perform automated sensitive data discovery
+        /// activities.
         /// </para>
         /// </summary>
         public AutomatedDiscoveryStatus Status

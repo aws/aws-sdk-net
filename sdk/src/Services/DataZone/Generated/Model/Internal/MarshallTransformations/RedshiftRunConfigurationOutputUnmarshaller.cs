@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public RedshiftRunConfigurationOutput Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftRunConfigurationOutput unmarshalledObject = new RedshiftRunConfigurationOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

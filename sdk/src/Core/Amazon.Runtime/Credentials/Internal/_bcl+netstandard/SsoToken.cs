@@ -52,7 +52,7 @@ namespace Amazon.Runtime.Credentials.Internal
         public string ClientId { get; set; }
 
         /// <summary>
-        /// he client secret generated when performing the registration portion of the OIDC authorization flow.
+        /// The client secret generated when performing the registration portion of the OIDC authorization flow.
         /// The <see cref="ClientSecret"/> is used alongside the <see cref="RefreshToken"/> to refresh the <see cref="AccessToken"/>.
         /// </summary>
         public string ClientSecret { get; set; }

@@ -57,6 +57,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         public BaseScreenshot Unmarshall(JsonUnmarshallerContext context)
         {
             BaseScreenshot unmarshalledObject = new BaseScreenshot();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

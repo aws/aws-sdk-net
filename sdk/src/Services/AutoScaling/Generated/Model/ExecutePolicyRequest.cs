@@ -92,7 +92,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// Valid only if the policy type is <c>SimpleScaling</c>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scaling-cooldowns.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

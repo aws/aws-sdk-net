@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public EnvironmentAccountConnectionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentAccountConnectionSummary unmarshalledObject = new EnvironmentAccountConnectionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

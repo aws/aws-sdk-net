@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public InstanceFleetTimeline Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceFleetTimeline unmarshalledObject = new InstanceFleetTimeline();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

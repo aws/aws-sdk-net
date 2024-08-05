@@ -71,7 +71,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ContentDisposition property is set
         internal bool IsSetContentDisposition()
         {
-            return this._contentDisposition != null;
+            return !string.IsNullOrEmpty(this._contentDisposition);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this._contentType != null;
+            return !string.IsNullOrEmpty(this._contentType);
         }
 
     }

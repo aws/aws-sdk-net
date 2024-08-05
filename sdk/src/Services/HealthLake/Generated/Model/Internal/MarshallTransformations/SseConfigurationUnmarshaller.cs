@@ -57,6 +57,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         public SseConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             SseConfiguration unmarshalledObject = new SseConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

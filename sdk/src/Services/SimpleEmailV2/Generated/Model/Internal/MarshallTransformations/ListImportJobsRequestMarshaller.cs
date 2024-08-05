@@ -56,16 +56,11 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListImportJobsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetPageSize())
-                request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
-            request.ResourcePath = "/v2/email/import-jobs";
+            request.ResourcePath = "/v2/email/import-jobs/list";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -78,12 +73,23 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ImportDestinationType);
                 }
 
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetPageSize())
+                {
+                    context.Writer.WritePropertyName("PageSize");
+                    context.Writer.Write(publicRequest.PageSize.Value);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
-            request.UseQueryString = true;
 
             return request;
         }

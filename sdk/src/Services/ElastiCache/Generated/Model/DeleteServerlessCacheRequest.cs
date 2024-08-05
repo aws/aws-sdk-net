@@ -32,6 +32,13 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the DeleteServerlessCache operation.
     /// Deletes a specified existing serverless cache.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <c>CreateServerlessCacheSnapshot</c> permission is required to create a final snapshot.
+    /// Without this permission, the API call will fail with an <c>Access Denied</c> exception.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteServerlessCacheRequest : AmazonElastiCacheRequest
     {
@@ -42,7 +49,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property FinalSnapshotName. 
         /// <para>
         /// Name of the final snapshot to be taken before the serverless cache is deleted. Available
-        /// for Redis only. Default: NULL, i.e. a final snapshot is not taken.
+        /// for Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot
+        /// is not taken.
         /// </para>
         /// </summary>
         public string FinalSnapshotName

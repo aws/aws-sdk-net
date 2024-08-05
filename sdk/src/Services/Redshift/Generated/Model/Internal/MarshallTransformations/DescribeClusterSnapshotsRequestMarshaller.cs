@@ -102,11 +102,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         if(publicRequestlistValue.IsSetAttribute())
                         {
-                            request.Parameters.Add("SortingEntities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Attribute", StringUtils.FromString(publicRequestlistValue.Attribute));
+                            request.Parameters.Add("SortingEntities" + "." + "SnapshotSortingEntity" + "." + publicRequestlistValueIndex + "." + "Attribute", StringUtils.FromString(publicRequestlistValue.Attribute));
                         }
                         if(publicRequestlistValue.IsSetSortOrder())
                         {
-                            request.Parameters.Add("SortingEntities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SortOrder", StringUtils.FromString(publicRequestlistValue.SortOrder));
+                            request.Parameters.Add("SortingEntities" + "." + "SnapshotSortingEntity" + "." + publicRequestlistValueIndex + "." + "SortOrder", StringUtils.FromString(publicRequestlistValue.SortOrder));
                         }
                         publicRequestlistValueIndex++;
                     }
@@ -120,7 +120,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.TagKeys)
                     {
-                        request.Parameters.Add("TagKeys" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("TagKeys" + "." + "TagKey" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
@@ -129,7 +129,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.TagValues)
                     {
-                        request.Parameters.Add("TagValues" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        request.Parameters.Add("TagValues" + "." + "TagValue" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }

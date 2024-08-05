@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public Agent Unmarshall(JsonUnmarshallerContext context)
         {
             Agent unmarshalledObject = new Agent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -136,6 +138,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.FoundationModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("guardrailConfiguration", targetDepth))
+                {
+                    var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -146,6 +154,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Instruction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("memoryConfiguration", targetDepth))
+                {
+                    var unmarshaller = MemoryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MemoryConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("preparedAt", targetDepth))

@@ -213,7 +213,7 @@ namespace Amazon.EC2.Model
         /// | <c>closed</c> | <c>cancelled</c> | <c>failed</c>). Spot request status information
         /// can help you track your Amazon EC2 Spot Instance requests. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
-        /// request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// request status</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

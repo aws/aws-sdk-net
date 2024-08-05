@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public FargateProfileSelector Unmarshall(JsonUnmarshallerContext context)
         {
             FargateProfileSelector unmarshalledObject = new FargateProfileSelector();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

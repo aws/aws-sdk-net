@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public TemplateSyncConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TemplateSyncConfig unmarshalledObject = new TemplateSyncConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

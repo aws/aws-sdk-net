@@ -57,6 +57,8 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
         public DriftStatusSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DriftStatusSummary unmarshalledObject = new DriftStatusSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

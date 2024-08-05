@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public RemotePortDetails Unmarshall(JsonUnmarshallerContext context)
         {
             RemotePortDetails unmarshalledObject = new RemotePortDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GradientStop Unmarshall(JsonUnmarshallerContext context)
         {
             GradientStop unmarshalledObject = new GradientStop();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

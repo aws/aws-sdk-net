@@ -57,6 +57,8 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         public FileConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             FileConfiguration unmarshalledObject = new FileConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

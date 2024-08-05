@@ -57,6 +57,8 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         public CharacterOffsets Unmarshall(JsonUnmarshallerContext context)
         {
             CharacterOffsets unmarshalledObject = new CharacterOffsets();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
         public KeyUsagePropertyFlags Unmarshall(JsonUnmarshallerContext context)
         {
             KeyUsagePropertyFlags unmarshalledObject = new KeyUsagePropertyFlags();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

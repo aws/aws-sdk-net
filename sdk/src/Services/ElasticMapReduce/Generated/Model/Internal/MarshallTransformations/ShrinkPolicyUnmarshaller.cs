@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public ShrinkPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ShrinkPolicy unmarshalledObject = new ShrinkPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

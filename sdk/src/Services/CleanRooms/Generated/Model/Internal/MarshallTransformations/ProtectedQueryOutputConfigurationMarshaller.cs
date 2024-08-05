@@ -48,6 +48,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMember())
+            {
+                context.Writer.WritePropertyName("member");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProtectedQueryMemberOutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Member, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("s3");

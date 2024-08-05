@@ -71,6 +71,60 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type AdditionalAnalyses.
+    /// </summary>
+    public class AdditionalAnalyses : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOWED for AdditionalAnalyses
+        /// </summary>
+        public static readonly AdditionalAnalyses ALLOWED = new AdditionalAnalyses("ALLOWED");
+        /// <summary>
+        /// Constant NOT_ALLOWED for AdditionalAnalyses
+        /// </summary>
+        public static readonly AdditionalAnalyses NOT_ALLOWED = new AdditionalAnalyses("NOT_ALLOWED");
+        /// <summary>
+        /// Constant REQUIRED for AdditionalAnalyses
+        /// </summary>
+        public static readonly AdditionalAnalyses REQUIRED = new AdditionalAnalyses("REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdditionalAnalyses(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdditionalAnalyses FindValue(string value)
+        {
+            return FindValue<AdditionalAnalyses>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdditionalAnalyses(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AggregateFunctionName.
     /// </summary>
     public class AggregateFunctionName : ConstantClass
@@ -285,6 +339,10 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly AnalysisRuleType CUSTOM = new AnalysisRuleType("CUSTOM");
         /// <summary>
+        /// Constant ID_MAPPING_TABLE for AnalysisRuleType
+        /// </summary>
+        public static readonly AnalysisRuleType ID_MAPPING_TABLE = new AnalysisRuleType("ID_MAPPING_TABLE");
+        /// <summary>
         /// Constant LIST for AnalysisRuleType
         /// </summary>
         public static readonly AnalysisRuleType LIST = new AnalysisRuleType("LIST");
@@ -425,6 +483,56 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type AnalysisType.
+    /// </summary>
+    public class AnalysisType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITIONAL_ANALYSIS for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType ADDITIONAL_ANALYSIS = new AnalysisType("ADDITIONAL_ANALYSIS");
+        /// <summary>
+        /// Constant DIRECT_ANALYSIS for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType DIRECT_ANALYSIS = new AnalysisType("DIRECT_ANALYSIS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisType FindValue(string value)
+        {
+            return FindValue<AnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CollaborationQueryLogStatus.
     /// </summary>
     public class CollaborationQueryLogStatus : ConstantClass
@@ -522,6 +630,60 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfiguredTableAnalysisRuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfiguredTableAssociationAnalysisRuleType.
+    /// </summary>
+    public class ConfiguredTableAssociationAnalysisRuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGGREGATION for ConfiguredTableAssociationAnalysisRuleType
+        /// </summary>
+        public static readonly ConfiguredTableAssociationAnalysisRuleType AGGREGATION = new ConfiguredTableAssociationAnalysisRuleType("AGGREGATION");
+        /// <summary>
+        /// Constant CUSTOM for ConfiguredTableAssociationAnalysisRuleType
+        /// </summary>
+        public static readonly ConfiguredTableAssociationAnalysisRuleType CUSTOM = new ConfiguredTableAssociationAnalysisRuleType("CUSTOM");
+        /// <summary>
+        /// Constant LIST for ConfiguredTableAssociationAnalysisRuleType
+        /// </summary>
+        public static readonly ConfiguredTableAssociationAnalysisRuleType LIST = new ConfiguredTableAssociationAnalysisRuleType("LIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfiguredTableAssociationAnalysisRuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfiguredTableAssociationAnalysisRuleType FindValue(string value)
+        {
+            return FindValue<ConfiguredTableAssociationAnalysisRuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfiguredTableAssociationAnalysisRuleType(string value)
         {
             return FindValue(value);
         }
@@ -688,6 +850,56 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterableMemberStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdNamespaceType.
+    /// </summary>
+    public class IdNamespaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SOURCE for IdNamespaceType
+        /// </summary>
+        public static readonly IdNamespaceType SOURCE = new IdNamespaceType("SOURCE");
+        /// <summary>
+        /// Constant TARGET for IdNamespaceType
+        /// </summary>
+        public static readonly IdNamespaceType TARGET = new IdNamespaceType("TARGET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdNamespaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdNamespaceType FindValue(string value)
+        {
+            return FindValue<IdNamespaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdNamespaceType(string value)
         {
             return FindValue(value);
         }
@@ -1665,6 +1877,14 @@ namespace Amazon.CleanRooms
     {
 
         /// <summary>
+        /// Constant ADDITIONAL_ANALYSES_NOT_ALLOWED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode ADDITIONAL_ANALYSES_NOT_ALLOWED = new SchemaStatusReasonCode("ADDITIONAL_ANALYSES_NOT_ALLOWED");
+        /// <summary>
+        /// Constant ADDITIONAL_ANALYSES_NOT_CONFIGURED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode ADDITIONAL_ANALYSES_NOT_CONFIGURED = new SchemaStatusReasonCode("ADDITIONAL_ANALYSES_NOT_CONFIGURED");
+        /// <summary>
         /// Constant ANALYSIS_PROVIDERS_NOT_CONFIGURED for SchemaStatusReasonCode
         /// </summary>
         public static readonly SchemaStatusReasonCode ANALYSIS_PROVIDERS_NOT_CONFIGURED = new SchemaStatusReasonCode("ANALYSIS_PROVIDERS_NOT_CONFIGURED");
@@ -1673,13 +1893,33 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly SchemaStatusReasonCode ANALYSIS_RULE_MISSING = new SchemaStatusReasonCode("ANALYSIS_RULE_MISSING");
         /// <summary>
+        /// Constant ANALYSIS_RULE_TYPES_NOT_COMPATIBLE for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode ANALYSIS_RULE_TYPES_NOT_COMPATIBLE = new SchemaStatusReasonCode("ANALYSIS_RULE_TYPES_NOT_COMPATIBLE");
+        /// <summary>
         /// Constant ANALYSIS_TEMPLATES_NOT_CONFIGURED for SchemaStatusReasonCode
         /// </summary>
         public static readonly SchemaStatusReasonCode ANALYSIS_TEMPLATES_NOT_CONFIGURED = new SchemaStatusReasonCode("ANALYSIS_TEMPLATES_NOT_CONFIGURED");
         /// <summary>
+        /// Constant COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED = new SchemaStatusReasonCode("COLLABORATION_ANALYSIS_RULE_NOT_CONFIGURED");
+        /// <summary>
         /// Constant DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED for SchemaStatusReasonCode
         /// </summary>
         public static readonly SchemaStatusReasonCode DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED = new SchemaStatusReasonCode("DIFFERENTIAL_PRIVACY_POLICY_NOT_CONFIGURED");
+        /// <summary>
+        /// Constant ID_MAPPING_TABLE_NOT_POPULATED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode ID_MAPPING_TABLE_NOT_POPULATED = new SchemaStatusReasonCode("ID_MAPPING_TABLE_NOT_POPULATED");
+        /// <summary>
+        /// Constant RESULT_RECEIVERS_NOT_ALLOWED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode RESULT_RECEIVERS_NOT_ALLOWED = new SchemaStatusReasonCode("RESULT_RECEIVERS_NOT_ALLOWED");
+        /// <summary>
+        /// Constant RESULT_RECEIVERS_NOT_CONFIGURED for SchemaStatusReasonCode
+        /// </summary>
+        public static readonly SchemaStatusReasonCode RESULT_RECEIVERS_NOT_CONFIGURED = new SchemaStatusReasonCode("RESULT_RECEIVERS_NOT_CONFIGURED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1722,6 +1962,10 @@ namespace Amazon.CleanRooms
     public class SchemaType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ID_MAPPING_TABLE for SchemaType
+        /// </summary>
+        public static readonly SchemaType ID_MAPPING_TABLE = new SchemaType("ID_MAPPING_TABLE");
         /// <summary>
         /// Constant TABLE for SchemaType
         /// </summary>

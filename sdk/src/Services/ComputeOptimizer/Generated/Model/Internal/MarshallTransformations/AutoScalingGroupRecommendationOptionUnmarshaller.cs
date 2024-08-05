@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public AutoScalingGroupRecommendationOption Unmarshall(JsonUnmarshallerContext context)
         {
             AutoScalingGroupRecommendationOption unmarshalledObject = new AutoScalingGroupRecommendationOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

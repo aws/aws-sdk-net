@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public DiscoveryJobListEntry Unmarshall(JsonUnmarshallerContext context)
         {
             DiscoveryJobListEntry unmarshalledObject = new DiscoveryJobListEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

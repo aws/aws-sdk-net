@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public HtmlMotionGraphicsSettings Unmarshall(JsonUnmarshallerContext context)
         {
             HtmlMotionGraphicsSettings unmarshalledObject = new HtmlMotionGraphicsSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

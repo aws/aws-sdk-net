@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public FeatureTransformation Unmarshall(JsonUnmarshallerContext context)
         {
             FeatureTransformation unmarshalledObject = new FeatureTransformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TrialComponentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             TrialComponentSummary unmarshalledObject = new TrialComponentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

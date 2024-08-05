@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public ProtectedQueryOutputConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ProtectedQueryOutputConfiguration unmarshalledObject = new ProtectedQueryOutputConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("member", targetDepth))
+                {
+                    var unmarshaller = ProtectedQueryMemberOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Member = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3", targetDepth))
                 {
                     var unmarshaller = ProtectedQueryS3OutputConfigurationUnmarshaller.Instance;

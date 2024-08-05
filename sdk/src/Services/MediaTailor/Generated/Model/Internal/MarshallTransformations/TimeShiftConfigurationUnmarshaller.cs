@@ -57,6 +57,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public TimeShiftConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TimeShiftConfiguration unmarshalledObject = new TimeShiftConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

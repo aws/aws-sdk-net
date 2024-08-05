@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public PropertyValidationExceptionProperty Unmarshall(JsonUnmarshallerContext context)
         {
             PropertyValidationExceptionProperty unmarshalledObject = new PropertyValidationExceptionProperty();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

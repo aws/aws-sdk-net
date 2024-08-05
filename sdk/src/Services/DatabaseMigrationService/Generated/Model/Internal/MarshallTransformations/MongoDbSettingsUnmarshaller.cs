@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public MongoDbSettings Unmarshall(JsonUnmarshallerContext context)
         {
             MongoDbSettings unmarshalledObject = new MongoDbSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

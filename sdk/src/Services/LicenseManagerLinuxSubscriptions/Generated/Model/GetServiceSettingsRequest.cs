@@ -31,7 +31,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceSettings operation.
-    /// Lists the Linux subscriptions service settings.
+    /// Lists the Linux subscriptions service settings for your account.
     /// </summary>
     public partial class GetServiceSettingsRequest : AmazonLicenseManagerLinuxSubscriptionsRequest
     {

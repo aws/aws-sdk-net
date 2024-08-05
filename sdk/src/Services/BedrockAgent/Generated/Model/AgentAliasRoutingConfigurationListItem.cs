@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class AgentAliasRoutingConfigurationListItem
     {
         private string _agentVersion;
+        private string _provisionedThroughput;
 
         /// <summary>
         /// Gets and sets the property AgentVersion. 
@@ -42,7 +43,7 @@ namespace Amazon.BedrockAgent.Model
         /// The version of the agent with which the alias is associated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=5)]
         public string AgentVersion
         {
             get { return this._agentVersion; }
@@ -53,6 +54,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetAgentVersion()
         {
             return this._agentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedThroughput. 
+        /// <para>
+        /// Information on the Provisioned Throughput assigned to an agent alias.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ProvisionedThroughput
+        {
+            get { return this._provisionedThroughput; }
+            set { this._provisionedThroughput = value; }
+        }
+
+        // Check to see if ProvisionedThroughput property is set
+        internal bool IsSetProvisionedThroughput()
+        {
+            return this._provisionedThroughput != null;
         }
 
     }

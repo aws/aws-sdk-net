@@ -57,6 +57,8 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         public OperatingSystemConfigurationManager Unmarshall(JsonUnmarshallerContext context)
         {
             OperatingSystemConfigurationManager unmarshalledObject = new OperatingSystemConfigurationManager();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -108,6 +108,7 @@ namespace Amazon.PaymentCryptographyData.Model
         private EncryptionDecryptionAttributes _encryptionAttributes;
         private string _keyIdentifier;
         private string _plainText;
+        private WrappedKey _wrappedKey;
 
         /// <summary>
         /// Gets and sets the property EncryptionAttributes. 
@@ -133,6 +134,11 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <para>
         /// The <c>keyARN</c> of the encryption key that Amazon Web Services Payment Cryptography
         /// uses for plaintext encryption.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping
+        /// key. Otherwise, it is the key identifier used to perform the operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]
@@ -173,6 +179,24 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetPlainText()
         {
             return this._plainText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WrappedKey. 
+        /// <para>
+        /// The WrappedKeyBlock containing the encryption key for plaintext encryption.
+        /// </para>
+        /// </summary>
+        public WrappedKey WrappedKey
+        {
+            get { return this._wrappedKey; }
+            set { this._wrappedKey = value; }
+        }
+
+        // Check to see if WrappedKey property is set
+        internal bool IsSetWrappedKey()
+        {
+            return this._wrappedKey != null;
         }
 
     }

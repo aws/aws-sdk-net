@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public MonitoringScheduleConfig Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoringScheduleConfig unmarshalledObject = new MonitoringScheduleConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

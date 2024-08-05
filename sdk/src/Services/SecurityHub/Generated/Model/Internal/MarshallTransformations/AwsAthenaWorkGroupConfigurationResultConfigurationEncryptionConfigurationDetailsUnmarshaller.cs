@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails unmarshalledObject = new AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

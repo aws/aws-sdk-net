@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public DnsRequestAction Unmarshall(JsonUnmarshallerContext context)
         {
             DnsRequestAction unmarshalledObject = new DnsRequestAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         public RetryPolicyConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             RetryPolicyConfiguration unmarshalledObject = new RetryPolicyConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

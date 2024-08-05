@@ -57,6 +57,8 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         public TargetAccountConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TargetAccountConfiguration unmarshalledObject = new TargetAccountConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

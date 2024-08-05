@@ -57,6 +57,8 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
         public DnsEntry Unmarshall(JsonUnmarshallerContext context)
         {
             DnsEntry unmarshalledObject = new DnsEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

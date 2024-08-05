@@ -101,6 +101,10 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The protocol used to make the network connection request.
         /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 64.
+        /// </para>
         /// </summary>
         public string Protocol
         {

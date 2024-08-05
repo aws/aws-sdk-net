@@ -57,6 +57,8 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public PipeTargetParameters Unmarshall(JsonUnmarshallerContext context)
         {
             PipeTargetParameters unmarshalledObject = new PipeTargetParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -134,6 +136,12 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PipeTargetStateMachineParametersUnmarshaller.Instance;
                     unmarshalledObject.StepFunctionStateMachineParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimestreamParameters", targetDepth))
+                {
+                    var unmarshaller = PipeTargetTimestreamParametersUnmarshaller.Instance;
+                    unmarshalledObject.TimestreamParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

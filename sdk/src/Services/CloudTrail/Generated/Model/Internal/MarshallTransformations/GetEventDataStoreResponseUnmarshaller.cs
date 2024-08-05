@@ -112,6 +112,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.OrganizationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PartitionKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PartitionKey, PartitionKeyUnmarshaller>(PartitionKeyUnmarshaller.Instance);
+                    response.PartitionKeys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RetentionPeriod", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

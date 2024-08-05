@@ -57,6 +57,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         public PinData Unmarshall(JsonUnmarshallerContext context)
         {
             PinData unmarshalledObject = new PinData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

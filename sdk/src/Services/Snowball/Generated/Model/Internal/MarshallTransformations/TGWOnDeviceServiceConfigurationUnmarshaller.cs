@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public TGWOnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TGWOnDeviceServiceConfiguration unmarshalledObject = new TGWOnDeviceServiceConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public DeviceProfile Unmarshall(JsonUnmarshallerContext context)
         {
             DeviceProfile unmarshalledObject = new DeviceProfile();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

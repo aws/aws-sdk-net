@@ -40,7 +40,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property HasMoreErrors. 
         /// <para>
-        ///  This indicates if there are more errors not listed in the resourceErrors list. 
+        ///  This indicates if there are more errors not listed in the <c>resourceErrors</c> list.
+        /// 
         /// </para>
         /// </summary>
         public bool? HasMoreErrors

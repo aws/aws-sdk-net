@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public HubContentInfo Unmarshall(JsonUnmarshallerContext context)
         {
             HubContentInfo unmarshalledObject = new HubContentInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -122,6 +124,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HubContentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OriginalCreationTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.OriginalCreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SageMakerPublicHubContentArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerPublicHubContentArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupportStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SupportStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

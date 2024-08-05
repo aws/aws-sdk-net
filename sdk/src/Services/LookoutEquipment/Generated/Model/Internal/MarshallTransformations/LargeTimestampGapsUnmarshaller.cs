@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public LargeTimestampGaps Unmarshall(JsonUnmarshallerContext context)
         {
             LargeTimestampGaps unmarshalledObject = new LargeTimestampGaps();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

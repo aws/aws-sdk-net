@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public AlarmRule Unmarshall(JsonUnmarshallerContext context)
         {
             AlarmRule unmarshalledObject = new AlarmRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

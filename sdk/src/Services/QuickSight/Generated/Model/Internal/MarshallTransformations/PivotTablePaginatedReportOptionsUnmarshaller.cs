@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public PivotTablePaginatedReportOptions Unmarshall(JsonUnmarshallerContext context)
         {
             PivotTablePaginatedReportOptions unmarshalledObject = new PivotTablePaginatedReportOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

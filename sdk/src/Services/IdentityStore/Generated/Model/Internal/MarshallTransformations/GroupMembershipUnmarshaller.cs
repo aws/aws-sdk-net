@@ -57,6 +57,8 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
         public GroupMembership Unmarshall(JsonUnmarshallerContext context)
         {
             GroupMembership unmarshalledObject = new GroupMembership();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

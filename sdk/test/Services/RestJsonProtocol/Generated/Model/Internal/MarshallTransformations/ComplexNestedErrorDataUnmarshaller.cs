@@ -57,6 +57,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public ComplexNestedErrorData Unmarshall(JsonUnmarshallerContext context)
         {
             ComplexNestedErrorData unmarshalledObject = new ComplexNestedErrorData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

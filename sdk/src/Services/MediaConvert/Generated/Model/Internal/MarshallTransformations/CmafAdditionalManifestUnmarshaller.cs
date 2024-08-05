@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public CmafAdditionalManifest Unmarshall(JsonUnmarshallerContext context)
         {
             CmafAdditionalManifest unmarshalledObject = new CmafAdditionalManifest();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

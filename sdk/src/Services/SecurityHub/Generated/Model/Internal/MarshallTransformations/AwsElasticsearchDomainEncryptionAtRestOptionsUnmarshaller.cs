@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsElasticsearchDomainEncryptionAtRestOptions Unmarshall(JsonUnmarshallerContext context)
         {
             AwsElasticsearchDomainEncryptionAtRestOptions unmarshalledObject = new AwsElasticsearchDomainEncryptionAtRestOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

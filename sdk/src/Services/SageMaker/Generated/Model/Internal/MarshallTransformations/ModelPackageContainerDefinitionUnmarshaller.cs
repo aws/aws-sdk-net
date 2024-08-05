@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ModelPackageContainerDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             ModelPackageContainerDefinition unmarshalledObject = new ModelPackageContainerDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

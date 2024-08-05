@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ResourceDataSyncAwsOrganizationsSource Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceDataSyncAwsOrganizationsSource unmarshalledObject = new ResourceDataSyncAwsOrganizationsSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

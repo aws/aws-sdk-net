@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public MpdSettings Unmarshall(JsonUnmarshallerContext context)
         {
             MpdSettings unmarshalledObject = new MpdSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

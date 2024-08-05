@@ -148,6 +148,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.HubName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReferenceMinVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReferenceMinVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SageMakerPublicHubContentArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SageMakerPublicHubContentArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupportStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SupportStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

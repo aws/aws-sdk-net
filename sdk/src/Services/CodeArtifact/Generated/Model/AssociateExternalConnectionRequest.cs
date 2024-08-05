@@ -124,6 +124,14 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <c>public:maven-clojars</c> - for the Clojars repository. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>public:ruby-gems-org</c> - for RubyGems.org. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>public:crates-io</c> - for Crates.io. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]

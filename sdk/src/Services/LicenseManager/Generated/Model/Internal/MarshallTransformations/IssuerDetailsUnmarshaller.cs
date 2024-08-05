@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public IssuerDetails Unmarshall(JsonUnmarshallerContext context)
         {
             IssuerDetails unmarshalledObject = new IssuerDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

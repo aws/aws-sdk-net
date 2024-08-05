@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public CompatibleEnvironmentTemplate Unmarshall(JsonUnmarshallerContext context)
         {
             CompatibleEnvironmentTemplate unmarshalledObject = new CompatibleEnvironmentTemplate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public DeleteFileSystemOpenZFSResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteFileSystemOpenZFSResponse unmarshalledObject = new DeleteFileSystemOpenZFSResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

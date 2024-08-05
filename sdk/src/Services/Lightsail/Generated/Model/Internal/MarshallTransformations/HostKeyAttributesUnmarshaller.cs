@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public HostKeyAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             HostKeyAttributes unmarshalledObject = new HostKeyAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

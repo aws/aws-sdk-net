@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public ConfigurationPolicyAssociationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ConfigurationPolicyAssociationSummary unmarshalledObject = new ConfigurationPolicyAssociationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

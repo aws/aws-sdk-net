@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public S3ContentBaseLocationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             S3ContentBaseLocationDescription unmarshalledObject = new S3ContentBaseLocationDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

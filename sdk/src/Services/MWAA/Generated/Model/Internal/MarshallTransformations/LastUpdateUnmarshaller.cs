@@ -57,6 +57,8 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         public LastUpdate Unmarshall(JsonUnmarshallerContext context)
         {
             LastUpdate unmarshalledObject = new LastUpdate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

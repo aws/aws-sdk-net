@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SheetLayoutElementMaximizationOption Unmarshall(JsonUnmarshallerContext context)
         {
             SheetLayoutElementMaximizationOption unmarshalledObject = new SheetLayoutElementMaximizationOption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

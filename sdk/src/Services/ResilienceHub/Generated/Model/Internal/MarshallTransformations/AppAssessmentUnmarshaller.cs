@@ -57,6 +57,8 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
         public AppAssessment Unmarshall(JsonUnmarshallerContext context)
         {
             AppAssessment unmarshalledObject = new AppAssessment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -158,6 +160,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("summary", targetDepth))
+                {
+                    var unmarshaller = AssessmentSummaryUnmarshaller.Instance;
+                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

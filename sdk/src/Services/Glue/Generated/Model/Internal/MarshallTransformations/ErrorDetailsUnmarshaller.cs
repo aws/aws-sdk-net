@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public ErrorDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorDetails unmarshalledObject = new ErrorDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

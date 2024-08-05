@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public ToxicLabels Unmarshall(JsonUnmarshallerContext context)
         {
             ToxicLabels unmarshalledObject = new ToxicLabels();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

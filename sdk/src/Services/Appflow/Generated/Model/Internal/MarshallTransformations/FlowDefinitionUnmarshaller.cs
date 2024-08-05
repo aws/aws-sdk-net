@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public FlowDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             FlowDefinition unmarshalledObject = new FlowDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

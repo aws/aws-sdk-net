@@ -57,6 +57,8 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         public Nameserver Unmarshall(JsonUnmarshallerContext context)
         {
             Nameserver unmarshalledObject = new Nameserver();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

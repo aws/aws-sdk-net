@@ -41,6 +41,7 @@ namespace Amazon.Tnb.Model
         private ListSolNetworkOperationsMetadata _metadata;
         private string _nsInstanceId;
         private NsLcmOperationState _operationState;
+        private UpdateSolNetworkType _updateType;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -171,6 +172,24 @@ namespace Amazon.Tnb.Model
         internal bool IsSetOperationState()
         {
             return this._operationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateType. 
+        /// <para>
+        /// Type of the update. Only present if the network operation lcmOperationType is <c>UPDATE</c>.
+        /// </para>
+        /// </summary>
+        public UpdateSolNetworkType UpdateType
+        {
+            get { return this._updateType; }
+            set { this._updateType = value; }
+        }
+
+        // Check to see if UpdateType property is set
+        internal bool IsSetUpdateType()
+        {
+            return this._updateType != null;
         }
 
     }

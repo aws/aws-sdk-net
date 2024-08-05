@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public WorkflowRunStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowRunStatistics unmarshalledObject = new WorkflowRunStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -31,27 +31,54 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAutomatedDiscoveryConfiguration operation.
-    /// Enables or disables automated sensitive data discovery for an account.
+    /// Changes the configuration settings and status of automated sensitive data discovery
+    /// for an organization or standalone account.
     /// </summary>
     public partial class UpdateAutomatedDiscoveryConfigurationRequest : AmazonMacie2Request
     {
+        private AutoEnableMode _autoEnableOrganizationMembers;
         private AutomatedDiscoveryStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AutoEnableOrganizationMembers. 
+        /// <para>
+        /// Specifies whether to automatically enable automated sensitive data discovery for accounts
+        /// in the organization. Valid values are: ALL (default), enable it for all existing accounts
+        /// and new member accounts; NEW, enable it only for new member accounts; and, NONE, don't
+        /// enable it for any accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify NEW or NONE, automated sensitive data discovery continues to be enabled
+        /// for any existing accounts that it's currently enabled for. To enable or disable it
+        /// for individual member accounts, specify NEW or NONE, and then enable or disable it
+        /// for each account by using the BatchUpdateAutomatedDiscoveryAccounts operation.
+        /// </para>
+        /// </summary>
+        public AutoEnableMode AutoEnableOrganizationMembers
+        {
+            get { return this._autoEnableOrganizationMembers; }
+            set { this._autoEnableOrganizationMembers = value; }
+        }
+
+        // Check to see if AutoEnableOrganizationMembers property is set
+        internal bool IsSetAutoEnableOrganizationMembers()
+        {
+            return this._autoEnableOrganizationMembers != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The new status of automated sensitive data discovery for the account. Valid values
-        /// are: ENABLED, start or resume automated sensitive data discovery activities for the
-        /// account; and, DISABLED, stop performing automated sensitive data discovery activities
-        /// for the account.
+        /// The new status of automated sensitive data discovery for the organization or account.
+        /// Valid values are: ENABLED, start or resume all automated sensitive data discovery
+        /// activities; and, DISABLED, stop performing all automated sensitive data discovery
+        /// activities.
         /// </para>
         ///  
         /// <para>
-        /// When you enable automated sensitive data discovery for the first time, Amazon Macie
-        /// uses default configuration settings to determine which data sources to analyze and
-        /// which managed data identifiers to use. To change these settings, use the UpdateClassificationScope
-        /// and UpdateSensitivityInspectionTemplate operations, respectively. If you change the
-        /// settings and subsequently disable the configuration, Amazon Macie retains your changes.
+        /// If you specify DISABLED for an administrator account, you also disable automated sensitive
+        /// data discovery for all member accounts in the organization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

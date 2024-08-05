@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public AutoTrainingConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AutoTrainingConfig unmarshalledObject = new AutoTrainingConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

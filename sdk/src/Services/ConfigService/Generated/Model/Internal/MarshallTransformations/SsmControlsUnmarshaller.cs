@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public SsmControls Unmarshall(JsonUnmarshallerContext context)
         {
             SsmControls unmarshalledObject = new SsmControls();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

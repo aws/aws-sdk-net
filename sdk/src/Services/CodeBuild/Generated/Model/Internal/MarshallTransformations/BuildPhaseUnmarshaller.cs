@@ -57,6 +57,8 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         public BuildPhase Unmarshall(JsonUnmarshallerContext context)
         {
             BuildPhase unmarshalledObject = new BuildPhase();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

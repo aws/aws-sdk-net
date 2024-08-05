@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public DataSourceSyncJobMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             DataSourceSyncJobMetrics unmarshalledObject = new DataSourceSyncJobMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

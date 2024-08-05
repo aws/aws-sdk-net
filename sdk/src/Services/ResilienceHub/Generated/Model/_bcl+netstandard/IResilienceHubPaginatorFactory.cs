@@ -37,6 +37,11 @@ namespace Amazon.ResilienceHub.Model
         IListAppAssessmentComplianceDriftsPaginator ListAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request);
 
         /// <summary>
+        /// Paginator for ListAppAssessmentResourceDrifts operation
+        ///</summary>
+        IListAppAssessmentResourceDriftsPaginator ListAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request);
+
+        /// <summary>
         /// Paginator for ListAppAssessments operation
         ///</summary>
         IListAppAssessmentsPaginator ListAppAssessments(ListAppAssessmentsRequest request);
@@ -90,6 +95,11 @@ namespace Amazon.ResilienceHub.Model
         /// Paginator for ListResiliencyPolicies operation
         ///</summary>
         IListResiliencyPoliciesPaginator ListResiliencyPolicies(ListResiliencyPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourceGroupingRecommendations operation
+        ///</summary>
+        IListResourceGroupingRecommendationsPaginator ListResourceGroupingRecommendations(ListResourceGroupingRecommendationsRequest request);
 
         /// <summary>
         /// Paginator for ListSopRecommendations operation

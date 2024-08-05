@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public ContainerOverride Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerOverride unmarshalledObject = new ContainerOverride();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

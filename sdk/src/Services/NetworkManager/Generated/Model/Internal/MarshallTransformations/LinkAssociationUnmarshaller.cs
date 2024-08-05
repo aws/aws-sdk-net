@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public LinkAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             LinkAssociation unmarshalledObject = new LinkAssociation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

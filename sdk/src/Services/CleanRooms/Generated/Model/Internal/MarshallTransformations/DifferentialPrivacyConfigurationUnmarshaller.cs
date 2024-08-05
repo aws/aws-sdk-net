@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public DifferentialPrivacyConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DifferentialPrivacyConfiguration unmarshalledObject = new DifferentialPrivacyConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

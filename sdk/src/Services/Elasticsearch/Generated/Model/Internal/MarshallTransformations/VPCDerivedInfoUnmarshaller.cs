@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public VPCDerivedInfo Unmarshall(JsonUnmarshallerContext context)
         {
             VPCDerivedInfo unmarshalledObject = new VPCDerivedInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

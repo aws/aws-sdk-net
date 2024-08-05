@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public AdditionalResources Unmarshall(JsonUnmarshallerContext context)
         {
             AdditionalResources unmarshalledObject = new AdditionalResources();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

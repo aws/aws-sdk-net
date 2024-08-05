@@ -57,6 +57,8 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         public IncompatibilityMessage Unmarshall(JsonUnmarshallerContext context)
         {
             IncompatibilityMessage unmarshalledObject = new IncompatibilityMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

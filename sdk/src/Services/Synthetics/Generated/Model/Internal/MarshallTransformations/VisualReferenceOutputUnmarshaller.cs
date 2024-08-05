@@ -57,6 +57,8 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         public VisualReferenceOutput Unmarshall(JsonUnmarshallerContext context)
         {
             VisualReferenceOutput unmarshalledObject = new VisualReferenceOutput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

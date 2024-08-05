@@ -65,6 +65,17 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RoleArn);
             }
 
+            if(requestObject.IsSetSqlParameters())
+            {
+                context.Writer.WritePropertyName("sqlParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProtectedQuerySQLParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.SqlParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

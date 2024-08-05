@@ -66,7 +66,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// The following lists the names, descriptions, and values of the special request parameters
+        /// The following lists names, descriptions, and values of the special request parameters
         /// that the <c>CreateTopic</c> action uses:
         /// </para>
         ///  <ul> <li> 

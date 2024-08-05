@@ -57,6 +57,8 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
         public SynthesisTask Unmarshall(JsonUnmarshallerContext context)
         {
             SynthesisTask unmarshalledObject = new SynthesisTask();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

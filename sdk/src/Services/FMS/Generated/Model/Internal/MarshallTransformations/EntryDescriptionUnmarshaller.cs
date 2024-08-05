@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public EntryDescription Unmarshall(JsonUnmarshallerContext context)
         {
             EntryDescription unmarshalledObject = new EntryDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

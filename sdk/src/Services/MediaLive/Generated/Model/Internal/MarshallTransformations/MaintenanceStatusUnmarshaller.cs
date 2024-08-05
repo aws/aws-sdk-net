@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public MaintenanceStatus Unmarshall(JsonUnmarshallerContext context)
         {
             MaintenanceStatus unmarshalledObject = new MaintenanceStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

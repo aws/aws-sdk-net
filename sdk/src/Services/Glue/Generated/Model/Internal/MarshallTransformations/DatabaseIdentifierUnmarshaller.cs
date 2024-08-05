@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public DatabaseIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             DatabaseIdentifier unmarshalledObject = new DatabaseIdentifier();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

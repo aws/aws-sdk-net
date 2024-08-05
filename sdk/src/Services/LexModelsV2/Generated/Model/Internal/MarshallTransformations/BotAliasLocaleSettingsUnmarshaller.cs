@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BotAliasLocaleSettings Unmarshall(JsonUnmarshallerContext context)
         {
             BotAliasLocaleSettings unmarshalledObject = new BotAliasLocaleSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

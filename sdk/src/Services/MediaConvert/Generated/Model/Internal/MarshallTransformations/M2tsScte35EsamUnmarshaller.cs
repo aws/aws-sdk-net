@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public M2tsScte35Esam Unmarshall(JsonUnmarshallerContext context)
         {
             M2tsScte35Esam unmarshalledObject = new M2tsScte35Esam();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

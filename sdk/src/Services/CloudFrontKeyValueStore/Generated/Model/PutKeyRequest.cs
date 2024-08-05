@@ -57,7 +57,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         // Check to see if IfMatch property is set
         internal bool IsSetIfMatch()
         {
-            return this._ifMatch != null;
+            return !string.IsNullOrEmpty(this._ifMatch);
         }
 
         /// <summary>

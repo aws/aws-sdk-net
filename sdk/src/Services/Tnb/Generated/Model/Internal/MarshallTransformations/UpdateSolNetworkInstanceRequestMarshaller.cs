@@ -95,6 +95,17 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetUpdateNs())
+                {
+                    context.Writer.WritePropertyName("updateNs");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateSolNetworkServiceDataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdateNs, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUpdateType())
                 {
                     context.Writer.WritePropertyName("updateType");

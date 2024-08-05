@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CustomPosixUserConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CustomPosixUserConfig unmarshalledObject = new CustomPosixUserConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

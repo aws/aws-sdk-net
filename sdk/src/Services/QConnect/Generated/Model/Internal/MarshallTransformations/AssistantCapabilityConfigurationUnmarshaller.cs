@@ -57,6 +57,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         public AssistantCapabilityConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AssistantCapabilityConfiguration unmarshalledObject = new AssistantCapabilityConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

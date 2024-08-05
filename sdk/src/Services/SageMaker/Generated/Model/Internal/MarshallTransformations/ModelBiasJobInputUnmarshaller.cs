@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ModelBiasJobInput Unmarshall(JsonUnmarshallerContext context)
         {
             ModelBiasJobInput unmarshalledObject = new ModelBiasJobInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

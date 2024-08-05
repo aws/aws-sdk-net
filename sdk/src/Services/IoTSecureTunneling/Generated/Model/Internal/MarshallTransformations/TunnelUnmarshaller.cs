@@ -57,6 +57,8 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
         public Tunnel Unmarshall(JsonUnmarshallerContext context)
         {
             Tunnel unmarshalledObject = new Tunnel();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public IncrementalExportSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             IncrementalExportSpecification unmarshalledObject = new IncrementalExportSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

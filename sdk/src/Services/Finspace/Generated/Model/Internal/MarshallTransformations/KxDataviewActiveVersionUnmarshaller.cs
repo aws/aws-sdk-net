@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public KxDataviewActiveVersion Unmarshall(JsonUnmarshallerContext context)
         {
             KxDataviewActiveVersion unmarshalledObject = new KxDataviewActiveVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

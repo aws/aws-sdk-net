@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public AnomalySourceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AnomalySourceDetails unmarshalledObject = new AnomalySourceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

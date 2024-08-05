@@ -34,11 +34,12 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Creating a snapshot of a Redis cluster running on a <c>cache.t1.micro</c> cache node.
+    /// Creating a snapshot of a Redis OSS cluster running on a <c>cache.t1.micro</c> cache
+    /// node.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Creating a snapshot of a cluster that is running Memcached rather than Redis.
+    /// Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.
     /// </para>
     ///  </li> </ul> 
     /// <para>

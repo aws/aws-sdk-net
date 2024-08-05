@@ -57,6 +57,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         public KeywordInformation Unmarshall(JsonUnmarshallerContext context)
         {
             KeywordInformation unmarshalledObject = new KeywordInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

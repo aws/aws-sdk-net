@@ -57,6 +57,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         public PackageVersionError Unmarshall(JsonUnmarshallerContext context)
         {
             PackageVersionError unmarshalledObject = new PackageVersionError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

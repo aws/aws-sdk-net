@@ -57,6 +57,8 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
         public ServiceInfo Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceInfo unmarshalledObject = new ServiceInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

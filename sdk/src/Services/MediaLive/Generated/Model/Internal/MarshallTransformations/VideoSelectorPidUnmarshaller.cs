@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public VideoSelectorPid Unmarshall(JsonUnmarshallerContext context)
         {
             VideoSelectorPid unmarshalledObject = new VideoSelectorPid();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -1,0 +1,85 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the bedrock-runtime-2023-09-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.BedrockRuntime.Model
+{
+    /// <summary>
+    /// A system content block.
+    /// </summary>
+    public partial class SystemContentBlock
+    {
+        private GuardrailConverseContentBlock _guardContent;
+        private string _text;
+
+        /// <summary>
+        /// Gets and sets the property GuardContent. 
+        /// <para>
+        /// A content block to assess with the guardrail. Use with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+        /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+        /// API operations. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon
+        /// Bedrock User Guide</i>.
+        /// </para>
+        /// </summary>
+        public GuardrailConverseContentBlock GuardContent
+        {
+            get { return this._guardContent; }
+            set { this._guardContent = value; }
+        }
+
+        // Check to see if GuardContent property is set
+        internal bool IsSetGuardContent()
+        {
+            return this._guardContent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// A system prompt for the model. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string Text
+        {
+            get { return this._text; }
+            set { this._text = value; }
+        }
+
+        // Check to see if Text property is set
+        internal bool IsSetText()
+        {
+            return this._text != null;
+        }
+
+    }
+}

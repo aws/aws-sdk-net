@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public SessionManagerOutputUrl Unmarshall(JsonUnmarshallerContext context)
         {
             SessionManagerOutputUrl unmarshalledObject = new SessionManagerOutputUrl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

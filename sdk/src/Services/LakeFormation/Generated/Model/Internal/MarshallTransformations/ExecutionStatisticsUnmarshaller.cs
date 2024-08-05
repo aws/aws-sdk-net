@@ -57,6 +57,8 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public ExecutionStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             ExecutionStatistics unmarshalledObject = new ExecutionStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

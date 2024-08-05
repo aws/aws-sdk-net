@@ -57,6 +57,8 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         public TracingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             TracingConfiguration unmarshalledObject = new TracingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

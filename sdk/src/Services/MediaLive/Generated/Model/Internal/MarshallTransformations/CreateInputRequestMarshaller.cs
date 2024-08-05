@@ -165,6 +165,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSrtSettings())
+                {
+                    context.Writer.WritePropertyName("srtSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SrtSettingsRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SrtSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

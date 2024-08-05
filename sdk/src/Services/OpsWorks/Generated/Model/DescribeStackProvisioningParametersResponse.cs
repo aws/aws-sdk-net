@@ -40,7 +40,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AgentInstallerUrl. 
         /// <para>
-        /// The AWS OpsWorks Stacks agent installer's URL.
+        /// The OpsWorks Stacks agent installer's URL.
         /// </para>
         /// </summary>
         public string AgentInstallerUrl

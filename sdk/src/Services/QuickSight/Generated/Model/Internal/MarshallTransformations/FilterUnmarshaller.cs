@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public Filter Unmarshall(JsonUnmarshallerContext context)
         {
             Filter unmarshalledObject = new Filter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CategoryFilterUnmarshaller.Instance;
                     unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NestedFilter", targetDepth))
+                {
+                    var unmarshaller = NestedFilterUnmarshaller.Instance;
+                    unmarshalledObject.NestedFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumericEqualityFilter", targetDepth))

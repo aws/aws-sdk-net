@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public CostEstimationTimeRange Unmarshall(JsonUnmarshallerContext context)
         {
             CostEstimationTimeRange unmarshalledObject = new CostEstimationTimeRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

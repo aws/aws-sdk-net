@@ -45,6 +45,14 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Paginator for ListJobRunAttempts operation
+        ///</summary>
+        public IListJobRunAttemptsPaginator ListJobRunAttempts(ListJobRunAttemptsRequest request) 
+        {
+            return new ListJobRunAttemptsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobRuns operation
         ///</summary>
         public IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request) 

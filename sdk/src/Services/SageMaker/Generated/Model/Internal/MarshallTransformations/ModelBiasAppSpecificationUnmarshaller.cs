@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ModelBiasAppSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             ModelBiasAppSpecification unmarshalledObject = new ModelBiasAppSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

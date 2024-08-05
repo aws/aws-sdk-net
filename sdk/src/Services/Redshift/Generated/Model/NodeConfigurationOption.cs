@@ -78,7 +78,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        /// The node type, such as, "ds2.8xlarge".
+        /// The node type, such as, "ra3.4xlarge".
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

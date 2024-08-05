@@ -57,6 +57,8 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public MembershipDatasources Unmarshall(JsonUnmarshallerContext context)
         {
             MembershipDatasources unmarshalledObject = new MembershipDatasources();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

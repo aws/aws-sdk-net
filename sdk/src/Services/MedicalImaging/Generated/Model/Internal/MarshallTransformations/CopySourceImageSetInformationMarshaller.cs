@@ -48,6 +48,17 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDICOMCopies())
+            {
+                context.Writer.WritePropertyName("DICOMCopies");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MetadataCopiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.DICOMCopies, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLatestVersionId())
             {
                 context.Writer.WritePropertyName("latestVersionId");

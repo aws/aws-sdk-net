@@ -57,6 +57,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         public ValueHolder Unmarshall(JsonUnmarshallerContext context)
         {
             ValueHolder unmarshalledObject = new ValueHolder();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

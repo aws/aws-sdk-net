@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public RetryStrategy Unmarshall(JsonUnmarshallerContext context)
         {
             RetryStrategy unmarshalledObject = new RetryStrategy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

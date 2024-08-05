@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public MatchedUser Unmarshall(JsonUnmarshallerContext context)
         {
             MatchedUser unmarshalledObject = new MatchedUser();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

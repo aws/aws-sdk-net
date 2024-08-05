@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public InstanceMetadataOptions Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceMetadataOptions unmarshalledObject = new InstanceMetadataOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -265,6 +265,97 @@ namespace Amazon.Account
         #endregion
 
 
+        #region  AcceptPrimaryEmailUpdate
+
+
+        /// <summary>
+        /// Accepts the request that originated from <a>StartPrimaryEmailUpdate</a> to update
+        /// the primary email address (also known as the root user email address) for the specified
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptPrimaryEmailUpdate service method.</param>
+        /// 
+        /// <returns>The response from the AcceptPrimaryEmailUpdate service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AcceptPrimaryEmailUpdate">REST API Reference for AcceptPrimaryEmailUpdate Operation</seealso>
+        public virtual AcceptPrimaryEmailUpdateResponse AcceptPrimaryEmailUpdate(AcceptPrimaryEmailUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptPrimaryEmailUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptPrimaryEmailUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptPrimaryEmailUpdateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Accepts the request that originated from <a>StartPrimaryEmailUpdate</a> to update
+        /// the primary email address (also known as the root user email address) for the specified
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptPrimaryEmailUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptPrimaryEmailUpdate service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AcceptPrimaryEmailUpdate">REST API Reference for AcceptPrimaryEmailUpdate Operation</seealso>
+        public virtual Task<AcceptPrimaryEmailUpdateResponse> AcceptPrimaryEmailUpdateAsync(AcceptPrimaryEmailUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptPrimaryEmailUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptPrimaryEmailUpdateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptPrimaryEmailUpdateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAlternateContact
 
 
@@ -377,6 +468,13 @@ namespace Amazon.Account
 
         /// <summary>
         /// Disables (opts-out) a particular Region for an account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The act of disabling a Region will remove all IAM access to any resources that reside
+        /// in that Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableRegion service method.</param>
         /// 
@@ -414,6 +512,13 @@ namespace Amazon.Account
 
         /// <summary>
         /// Disables (opts-out) a particular Region for an account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The act of disabling a Region will remove all IAM access to any resources that reside
+        /// in that Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableRegion service method.</param>
         /// <param name="cancellationToken">
@@ -726,6 +831,83 @@ namespace Amazon.Account
             options.ResponseUnmarshaller = GetContactInformationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetContactInformationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPrimaryEmail
+
+
+        /// <summary>
+        /// Retrieves the primary email address for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrimaryEmail service method.</param>
+        /// 
+        /// <returns>The response from the GetPrimaryEmail service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmail">REST API Reference for GetPrimaryEmail Operation</seealso>
+        public virtual GetPrimaryEmailResponse GetPrimaryEmail(GetPrimaryEmailRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPrimaryEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPrimaryEmailResponseUnmarshaller.Instance;
+
+            return Invoke<GetPrimaryEmailResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the primary email address for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrimaryEmail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPrimaryEmail service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmail">REST API Reference for GetPrimaryEmail Operation</seealso>
+        public virtual Task<GetPrimaryEmailResponse> GetPrimaryEmailAsync(GetPrimaryEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPrimaryEmailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPrimaryEmailResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPrimaryEmailResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1054,6 +1236,93 @@ namespace Amazon.Account
             options.ResponseUnmarshaller = PutContactInformationResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutContactInformationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartPrimaryEmailUpdate
+
+
+        /// <summary>
+        /// Starts the process to update the primary email address for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPrimaryEmailUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartPrimaryEmailUpdate service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">REST API Reference for StartPrimaryEmailUpdate Operation</seealso>
+        public virtual StartPrimaryEmailUpdateResponse StartPrimaryEmailUpdate(StartPrimaryEmailUpdateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPrimaryEmailUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPrimaryEmailUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<StartPrimaryEmailUpdateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts the process to update the primary email address for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPrimaryEmailUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartPrimaryEmailUpdate service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">REST API Reference for StartPrimaryEmailUpdate Operation</seealso>
+        public virtual Task<StartPrimaryEmailUpdateResponse> StartPrimaryEmailUpdateAsync(StartPrimaryEmailUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPrimaryEmailUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPrimaryEmailUpdateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartPrimaryEmailUpdateResponse>(request, options, cancellationToken);
         }
 
         #endregion

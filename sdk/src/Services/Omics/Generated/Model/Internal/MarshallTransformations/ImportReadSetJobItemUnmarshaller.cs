@@ -57,6 +57,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public ImportReadSetJobItem Unmarshall(JsonUnmarshallerContext context)
         {
             ImportReadSetJobItem unmarshalledObject = new ImportReadSetJobItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

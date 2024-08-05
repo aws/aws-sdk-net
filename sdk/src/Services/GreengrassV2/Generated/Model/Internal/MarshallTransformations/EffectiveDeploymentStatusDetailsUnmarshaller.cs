@@ -57,6 +57,8 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         public EffectiveDeploymentStatusDetails Unmarshall(JsonUnmarshallerContext context)
         {
             EffectiveDeploymentStatusDetails unmarshalledObject = new EffectiveDeploymentStatusDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

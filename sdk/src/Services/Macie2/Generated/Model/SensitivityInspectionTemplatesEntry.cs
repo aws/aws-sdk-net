@@ -31,8 +31,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the sensitivity inspection template for an Amazon Macie
-    /// account. Macie uses the template's settings when it performs automated sensitive data
-    /// discovery for the account.
+    /// account.
     /// </summary>
     public partial class SensitivityInspectionTemplatesEntry
     {

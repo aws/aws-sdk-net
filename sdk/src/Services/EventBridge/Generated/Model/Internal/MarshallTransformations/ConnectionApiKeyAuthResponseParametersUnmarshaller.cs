@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public ConnectionApiKeyAuthResponseParameters Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectionApiKeyAuthResponseParameters unmarshalledObject = new ConnectionApiKeyAuthResponseParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

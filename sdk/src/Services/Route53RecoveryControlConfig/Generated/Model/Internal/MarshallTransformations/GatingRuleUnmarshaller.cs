@@ -57,6 +57,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
         public GatingRule Unmarshall(JsonUnmarshallerContext context)
         {
             GatingRule unmarshalledObject = new GatingRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

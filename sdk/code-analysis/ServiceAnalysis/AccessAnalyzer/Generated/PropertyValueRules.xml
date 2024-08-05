@@ -59,6 +59,15 @@
     <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest.AnalyzerArn</property>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest.Id</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetAccessPreviewRequest.AccessPreviewId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
@@ -95,6 +104,24 @@
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetFindingRequest.AnalyzerArn</property>
     <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest.AnalyzerArn</property>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest.Id</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GetFindingRecommendationRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.GetFindingRecommendationResponse.ResourceArn</property>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetFindingV2Request.AnalyzerArn</property>

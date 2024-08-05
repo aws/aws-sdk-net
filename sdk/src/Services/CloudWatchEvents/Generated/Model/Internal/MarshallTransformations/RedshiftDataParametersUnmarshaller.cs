@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         public RedshiftDataParameters Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftDataParameters unmarshalledObject = new RedshiftDataParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

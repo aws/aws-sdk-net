@@ -57,6 +57,8 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
         public RuleMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             RuleMetadata unmarshalledObject = new RuleMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

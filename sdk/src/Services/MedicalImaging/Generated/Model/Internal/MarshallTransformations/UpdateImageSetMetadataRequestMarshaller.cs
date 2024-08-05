@@ -67,6 +67,9 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 throw new AmazonMedicalImagingException("Request object does not have required field ImageSetId set");
             request.AddPathResource("{imageSetId}", StringUtils.FromString(publicRequest.ImageSetId));
             
+            if (publicRequest.IsSetForce())
+                request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
+            
             if (publicRequest.IsSetLatestVersionId())
                 request.Parameters.Add("latestVersion", StringUtils.FromString(publicRequest.LatestVersionId));
             request.ResourcePath = "/datastore/{datastoreId}/imageSet/{imageSetId}/updateImageSetMetadata";

@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public OutputChannelMapping Unmarshall(JsonUnmarshallerContext context)
         {
             OutputChannelMapping unmarshalledObject = new OutputChannelMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public DomainNodesStatus Unmarshall(JsonUnmarshallerContext context)
         {
             DomainNodesStatus unmarshalledObject = new DomainNodesStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

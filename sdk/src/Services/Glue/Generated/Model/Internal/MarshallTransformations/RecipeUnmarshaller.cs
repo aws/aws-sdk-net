@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public Recipe Unmarshall(JsonUnmarshallerContext context)
         {
             Recipe unmarshalledObject = new Recipe();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RecipeReferenceUnmarshaller.Instance;
                     unmarshalledObject.RecipeReference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RecipeSteps", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RecipeStep, RecipeStepUnmarshaller>(RecipeStepUnmarshaller.Instance);
+                    unmarshalledObject.RecipeSteps = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

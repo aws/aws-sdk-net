@@ -57,6 +57,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         public PutRecordBatchResponseEntry Unmarshall(JsonUnmarshallerContext context)
         {
             PutRecordBatchResponseEntry unmarshalledObject = new PutRecordBatchResponseEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

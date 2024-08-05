@@ -2550,6 +2550,10 @@ namespace Amazon.Lightsail
         /// Constant Ipv4 for IpAddressType
         /// </summary>
         public static readonly IpAddressType Ipv4 = new IpAddressType("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType Ipv6 = new IpAddressType("ipv6");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3660,6 +3664,10 @@ namespace Amazon.Lightsail
         /// Constant Icmp for NetworkProtocol
         /// </summary>
         public static readonly NetworkProtocol Icmp = new NetworkProtocol("icmp");
+        /// <summary>
+        /// Constant Icmpv6 for NetworkProtocol
+        /// </summary>
+        public static readonly NetworkProtocol Icmpv6 = new NetworkProtocol("icmpv6");
         /// <summary>
         /// Constant Tcp for NetworkProtocol
         /// </summary>

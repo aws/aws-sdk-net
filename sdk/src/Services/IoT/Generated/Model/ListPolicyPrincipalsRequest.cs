@@ -124,7 +124,7 @@ namespace Amazon.IoT.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this._policyName != null;
+            return !string.IsNullOrEmpty(this._policyName);
         }
 
     }

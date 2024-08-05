@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public FormDataTypeConfig Unmarshall(JsonUnmarshallerContext context)
         {
             FormDataTypeConfig unmarshalledObject = new FormDataTypeConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

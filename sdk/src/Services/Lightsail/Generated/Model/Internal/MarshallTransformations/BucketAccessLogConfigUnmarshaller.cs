@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public BucketAccessLogConfig Unmarshall(JsonUnmarshallerContext context)
         {
             BucketAccessLogConfig unmarshalledObject = new BucketAccessLogConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

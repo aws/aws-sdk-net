@@ -55,8 +55,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you don't specify a security group ID, we use the default security group. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+    /// If you don't specify a security group ID, we use the default security group for the
+    /// VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
     /// groups</a>.
     /// </para>
     ///  </li> <li> 
@@ -76,6 +76,12 @@ namespace Amazon.EC2.Model
     /// To ensure faster instance launches, break up large requests into smaller batches.
     /// For example, create five separate launch requests for 100 instances each instead of
     /// one launch request for 500 instances.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>RunInstances</c> is subject to both request rate limiting and resource rate limiting.
+    /// For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-throttling.html">Request
+    /// throttling</a>.
     /// </para>
     ///  
     /// <para>
@@ -151,8 +157,8 @@ namespace Amazon.EC2.Model
         /// Instantiates RunInstancesRequest with the parameterized properties
         /// </summary>
         /// <param name="imageId">The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.</param>
-        /// <param name="minCount">The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</param>
-        /// <param name="maxCount">The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <c>MinCount</c>. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</param>
+        /// <param name="minCount">The minimum number of instances to launch. If you specify a value that is more capacity than Amazon EC2 can provide in the target Availability Zone, Amazon EC2 does not launch any instances. Constraints: Between 1 and the quota for the specified instance type for your account for this Region. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon EC2 instance type quotas</a>.</param>
+        /// <param name="maxCount">The maximum number of instances to launch. If you specify a value that is more capacity than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above the specified minimum count. Constraints: Between 1 and the quota for the specified instance type for your account for this Region. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon EC2 instance type quotas</a>.</param>
         public RunInstancesRequest(string imageId, int? minCount, int? maxCount)
         {
             _imageId = imageId;
@@ -476,7 +482,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether an instance is enabled for hibernation. This parameter is valid
         /// only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
         /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -581,8 +587,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
+        /// EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -755,16 +761,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxCount. 
         /// <para>
-        /// The maximum number of instances to launch. If you specify more instances than Amazon
-        /// EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible
-        /// number of instances above <c>MinCount</c>.
+        /// The maximum number of instances to launch. If you specify a value that is more capacity
+        /// than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
+        /// largest possible number of instances above the specified minimum count.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Between 1 and the maximum number you're allowed for the specified instance
-        /// type. For more information about the default limits, and how to request an increase,
-        /// see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-        /// many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.
+        /// Constraints: Between 1 and the quota for the specified instance type for your account
+        /// for this Region. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon
+        /// EC2 instance type quotas</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -802,16 +807,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MinCount. 
         /// <para>
-        /// The minimum number of instances to launch. If you specify a minimum that is more instances
-        /// than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no
-        /// instances.
+        /// The minimum number of instances to launch. If you specify a value that is more capacity
+        /// than Amazon EC2 can provide in the target Availability Zone, Amazon EC2 does not launch
+        /// any instances.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Between 1 and the maximum number you're allowed for the specified instance
-        /// type. For more information about the default limits, and how to request an increase,
-        /// see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
-        /// many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.
+        /// Constraints: Between 1 and the quota for the specified instance type for your account
+        /// for this Region. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon
+        /// EC2 instance type quotas</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -1076,12 +1080,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The user data script to make available to the instance. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands
-        /// on your Linux instance at launch</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
-        /// commands on your Windows instance at launch</a>. If you are using a command line tool,
-        /// base64-encoding is performed for you, and you can load the text from a file. Otherwise,
-        /// you must provide base64-encoded text. User data is limited to 16 KB.
+        /// The user data to make available to the instance. User data must be base64-encoded.
+        /// Depending on the tool or SDK that you're using, the base64-encoding might be performed
+        /// for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work
+        /// with instance user data</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

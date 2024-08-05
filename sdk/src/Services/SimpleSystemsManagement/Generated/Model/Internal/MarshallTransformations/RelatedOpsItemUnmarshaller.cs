@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public RelatedOpsItem Unmarshall(JsonUnmarshallerContext context)
         {
             RelatedOpsItem unmarshalledObject = new RelatedOpsItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

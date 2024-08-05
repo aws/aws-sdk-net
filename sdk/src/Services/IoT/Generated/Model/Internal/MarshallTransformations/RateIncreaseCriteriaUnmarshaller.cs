@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public RateIncreaseCriteria Unmarshall(JsonUnmarshallerContext context)
         {
             RateIncreaseCriteria unmarshalledObject = new RateIncreaseCriteria();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

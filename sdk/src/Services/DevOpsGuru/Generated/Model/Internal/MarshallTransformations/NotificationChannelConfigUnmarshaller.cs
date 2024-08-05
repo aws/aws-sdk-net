@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public NotificationChannelConfig Unmarshall(JsonUnmarshallerContext context)
         {
             NotificationChannelConfig unmarshalledObject = new NotificationChannelConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

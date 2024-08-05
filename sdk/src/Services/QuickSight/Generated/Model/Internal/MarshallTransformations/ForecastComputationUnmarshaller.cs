@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public ForecastComputation Unmarshall(JsonUnmarshallerContext context)
         {
             ForecastComputation unmarshalledObject = new ForecastComputation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

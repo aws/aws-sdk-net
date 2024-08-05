@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public ECSServiceRecommendation Unmarshall(JsonUnmarshallerContext context)
         {
             ECSServiceRecommendation unmarshalledObject = new ECSServiceRecommendation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

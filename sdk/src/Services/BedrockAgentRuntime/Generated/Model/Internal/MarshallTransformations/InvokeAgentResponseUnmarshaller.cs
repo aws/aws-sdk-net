@@ -51,6 +51,8 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             response.Completion = new ResponseStream(context.Stream);
             if (context.ResponseData.IsHeaderPresent("x-amzn-bedrock-agent-content-type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("x-amzn-bedrock-agent-content-type");
+            if (context.ResponseData.IsHeaderPresent("x-amz-bedrock-agent-memory-id"))
+                response.MemoryId = context.ResponseData.GetHeaderValue("x-amz-bedrock-agent-memory-id");
             if (context.ResponseData.IsHeaderPresent("x-amz-bedrock-agent-session-id"))
                 response.SessionId = context.ResponseData.GetHeaderValue("x-amz-bedrock-agent-session-id");
 

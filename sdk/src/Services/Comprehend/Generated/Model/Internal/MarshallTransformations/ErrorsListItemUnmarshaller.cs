@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public ErrorsListItem Unmarshall(JsonUnmarshallerContext context)
         {
             ErrorsListItem unmarshalledObject = new ErrorsListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

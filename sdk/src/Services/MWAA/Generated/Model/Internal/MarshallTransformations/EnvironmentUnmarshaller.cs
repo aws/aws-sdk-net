@@ -57,6 +57,8 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         public Environment Unmarshall(JsonUnmarshallerContext context)
         {
             Environment unmarshalledObject = new Environment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -142,10 +144,22 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoggingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxWebservers", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxWebservers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxWorkers", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxWorkers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MinWebservers", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MinWebservers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinWorkers", targetDepth))

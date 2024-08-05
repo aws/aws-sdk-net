@@ -297,7 +297,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The layer name, which is used by the console.
+        /// The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
         /// </para>
         /// </summary>
         public string Name
@@ -334,15 +334,15 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Shortname. 
         /// <para>
         /// For custom layers only, use this parameter to specify the layer's short name, which
-        /// is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used
-        /// as the name for the directory where your app files are installed. It can have a maximum
-        /// of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+        /// is used internally by OpsWorks Stacks and by Chef. The short name is also used as
+        /// the name for the directory where your app files are installed. It can have a maximum
+        /// of 32 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
         /// </para>
         ///  
         /// <para>
-        /// The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information,
-        /// see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-        /// Reference</a> 
+        /// Built-in layer short names are defined by OpsWorks Stacks. For more information, see
+        /// the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+        /// reference</a> in the OpsWorks User Guide. 
         /// </para>
         /// </summary>
         public string Shortname

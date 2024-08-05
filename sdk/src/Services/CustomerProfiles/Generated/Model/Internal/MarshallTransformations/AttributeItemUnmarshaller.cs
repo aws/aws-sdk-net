@@ -57,6 +57,8 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         public AttributeItem Unmarshall(JsonUnmarshallerContext context)
         {
             AttributeItem unmarshalledObject = new AttributeItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

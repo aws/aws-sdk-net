@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public HierarchicalPrincipal Unmarshall(JsonUnmarshallerContext context)
         {
             HierarchicalPrincipal unmarshalledObject = new HierarchicalPrincipal();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

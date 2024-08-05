@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GridLayoutElement Unmarshall(JsonUnmarshallerContext context)
         {
             GridLayoutElement unmarshalledObject = new GridLayoutElement();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

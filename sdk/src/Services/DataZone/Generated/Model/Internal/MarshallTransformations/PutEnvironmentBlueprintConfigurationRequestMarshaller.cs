@@ -90,6 +90,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ManageAccessRoleArn);
                 }
 
+                if(publicRequest.IsSetProvisioningConfigurations())
+                {
+                    context.Writer.WritePropertyName("provisioningConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProvisioningConfigurationsListValue in publicRequest.ProvisioningConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProvisioningConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestProvisioningConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetProvisioningRoleArn())
                 {
                     context.Writer.WritePropertyName("provisioningRoleArn");

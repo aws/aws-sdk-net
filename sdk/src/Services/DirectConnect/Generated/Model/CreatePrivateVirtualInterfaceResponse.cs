@@ -552,7 +552,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualInterfaceType. 
         /// <para>
-        /// The type of virtual interface. The possible values are <c>private</c> and <c>public</c>.
+        /// The type of virtual interface. The possible values are <c>private</c>, <c>public</c>
+        /// and <c>transit</c>.
         /// </para>
         /// </summary>
         public string VirtualInterfaceType

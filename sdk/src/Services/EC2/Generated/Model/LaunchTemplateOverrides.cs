@@ -187,11 +187,19 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property WeightedCapacity. 
         /// <para>
-        /// The number of units provided by the specified instance type.
+        /// The number of units provided by the specified instance type. These are the same units
+        /// that you chose to set the target capacity in terms of instances, or a performance
+        /// characteristic such as vCPUs, memory, or I/O.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the target capacity divided by this value is not a whole number, Amazon EC2 rounds
+        /// the number of instances to the next whole number. If this value is not specified,
+        /// the default is 1.
         /// </para>
         ///  <note> 
         /// <para>
-        /// When specifying weights, the price used in the <c>lowest-price</c> and <c>price-capacity-optimized</c>
+        /// When specifying weights, the price used in the <c>lowestPrice</c> and <c>priceCapacityOptimized</c>
         /// allocation strategies is per <i>unit</i> hour (where the instance price is divided
         /// by the specified weight). However, if all the specified weights are above the requested
         /// <c>TargetCapacity</c>, resulting in only 1 instance being launched, the price used

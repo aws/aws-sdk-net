@@ -31,9 +31,20 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlacementGroups operation.
-    /// Describes the specified placement groups or all of your placement groups. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+    /// Describes the specified placement groups or all of your placement groups.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To describe a specific placement group that is <i>shared</i> with your account, you
+    /// must specify the ID of the placement group using the <c>GroupId</c> parameter. Specifying
+    /// the name of a <i>shared</i> placement group using the <c>GroupNames</c> parameter
+    /// will result in an error.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
     /// groups</a> in the <i>Amazon EC2 User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribePlacementGroupsRequest : AmazonEC2Request
     {
@@ -120,8 +131,18 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: Describes all your placement groups, or only those otherwise specified.
+        /// Constraints:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can specify a name only if the placement group is owned by your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If a placement group is <i>shared</i> with your account, specifying the name results
+        /// in an error. You must use the <c>GroupId</c> parameter instead.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> GroupNames
         {

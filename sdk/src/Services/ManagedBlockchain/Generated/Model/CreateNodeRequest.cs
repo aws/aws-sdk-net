@@ -104,10 +104,6 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         ///  <c>n-ethereum-mainnet</c> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>n-ethereum-goerli</c> 
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

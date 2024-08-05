@@ -57,6 +57,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         public AuditLogProcessingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AuditLogProcessingConfiguration unmarshalledObject = new AuditLogProcessingConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
         public IdentityUsage Unmarshall(JsonUnmarshallerContext context)
         {
             IdentityUsage unmarshalledObject = new IdentityUsage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

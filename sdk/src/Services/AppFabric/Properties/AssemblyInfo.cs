@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AppFabric")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AppFabric. Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AppFabric. Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AppFabric. Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.")]
 #elif NETCOREAPP3_1

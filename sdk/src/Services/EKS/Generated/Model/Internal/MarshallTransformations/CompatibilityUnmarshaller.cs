@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public Compatibility Unmarshall(JsonUnmarshallerContext context)
         {
             Compatibility unmarshalledObject = new Compatibility();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

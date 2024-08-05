@@ -104,8 +104,9 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property LastInstallationSource. 
         /// <para>
         /// The most recent deployment source that brought the component to the Greengrass core
-        /// device. For a thing group deployment or thing deployment, the source will be the The
-        /// ID of the deployment. and for local deployments it will be <c>LOCAL</c>.
+        /// device. For a thing group deployment or thing deployment, the source will be the ID
+        /// of the last deployment that contained the component. For local deployments it will
+        /// be <c>LOCAL</c>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public ParticipatingResource Unmarshall(JsonUnmarshallerContext context)
         {
             ParticipatingResource unmarshalledObject = new ParticipatingResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

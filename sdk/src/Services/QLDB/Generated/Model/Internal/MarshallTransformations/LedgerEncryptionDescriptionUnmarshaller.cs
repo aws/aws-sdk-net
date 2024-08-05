@@ -57,6 +57,8 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         public LedgerEncryptionDescription Unmarshall(JsonUnmarshallerContext context)
         {
             LedgerEncryptionDescription unmarshalledObject = new LedgerEncryptionDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

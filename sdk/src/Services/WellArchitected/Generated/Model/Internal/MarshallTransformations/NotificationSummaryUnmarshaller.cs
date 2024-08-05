@@ -57,6 +57,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         public NotificationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             NotificationSummary unmarshalledObject = new NotificationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

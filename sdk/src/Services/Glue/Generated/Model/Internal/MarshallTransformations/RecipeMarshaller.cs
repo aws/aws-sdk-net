@@ -76,6 +76,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRecipeSteps())
+            {
+                context.Writer.WritePropertyName("RecipeSteps");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRecipeStepsListValue in requestObject.RecipeSteps)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecipeStepMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRecipeStepsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

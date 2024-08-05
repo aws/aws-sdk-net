@@ -75,6 +75,120 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type AccessCheckResourceType.
+    /// </summary>
+    public class AccessCheckResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSDynamoDBStream for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSDynamoDBStream = new AccessCheckResourceType("AWS::DynamoDB::Stream");
+        /// <summary>
+        /// Constant AWSDynamoDBTable for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSDynamoDBTable = new AccessCheckResourceType("AWS::DynamoDB::Table");
+        /// <summary>
+        /// Constant AWSEFSFileSystem for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSEFSFileSystem = new AccessCheckResourceType("AWS::EFS::FileSystem");
+        /// <summary>
+        /// Constant AWSIAMAssumeRolePolicyDocument for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSIAMAssumeRolePolicyDocument = new AccessCheckResourceType("AWS::IAM::AssumeRolePolicyDocument");
+        /// <summary>
+        /// Constant AWSKinesisStream for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSKinesisStream = new AccessCheckResourceType("AWS::Kinesis::Stream");
+        /// <summary>
+        /// Constant AWSKinesisStreamConsumer for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSKinesisStreamConsumer = new AccessCheckResourceType("AWS::Kinesis::StreamConsumer");
+        /// <summary>
+        /// Constant AWSKMSKey for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSKMSKey = new AccessCheckResourceType("AWS::KMS::Key");
+        /// <summary>
+        /// Constant AWSLambdaFunction for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSLambdaFunction = new AccessCheckResourceType("AWS::Lambda::Function");
+        /// <summary>
+        /// Constant AWSOpenSearchServiceDomain for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSOpenSearchServiceDomain = new AccessCheckResourceType("AWS::OpenSearchService::Domain");
+        /// <summary>
+        /// Constant AWSS3AccessPoint for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3AccessPoint = new AccessCheckResourceType("AWS::S3::AccessPoint");
+        /// <summary>
+        /// Constant AWSS3Bucket for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3Bucket = new AccessCheckResourceType("AWS::S3::Bucket");
+        /// <summary>
+        /// Constant AWSS3ExpressDirectoryBucket for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3ExpressDirectoryBucket = new AccessCheckResourceType("AWS::S3Express::DirectoryBucket");
+        /// <summary>
+        /// Constant AWSS3Glacier for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3Glacier = new AccessCheckResourceType("AWS::S3::Glacier");
+        /// <summary>
+        /// Constant AWSS3OutpostsAccessPoint for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3OutpostsAccessPoint = new AccessCheckResourceType("AWS::S3Outposts::AccessPoint");
+        /// <summary>
+        /// Constant AWSS3OutpostsBucket for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSS3OutpostsBucket = new AccessCheckResourceType("AWS::S3Outposts::Bucket");
+        /// <summary>
+        /// Constant AWSSecretsManagerSecret for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSSecretsManagerSecret = new AccessCheckResourceType("AWS::SecretsManager::Secret");
+        /// <summary>
+        /// Constant AWSSNSTopic for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSSNSTopic = new AccessCheckResourceType("AWS::SNS::Topic");
+        /// <summary>
+        /// Constant AWSSQSQueue for AccessCheckResourceType
+        /// </summary>
+        public static readonly AccessCheckResourceType AWSSQSQueue = new AccessCheckResourceType("AWS::SQS::Queue");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessCheckResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessCheckResourceType FindValue(string value)
+        {
+            return FindValue<AccessCheckResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessCheckResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AccessPreviewStatus.
     /// </summary>
     public class AccessPreviewStatus : ConstantClass
@@ -392,6 +506,56 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CheckNoNewAccessResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CheckNoPublicAccessResult.
+    /// </summary>
+    public class CheckNoPublicAccessResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL for CheckNoPublicAccessResult
+        /// </summary>
+        public static readonly CheckNoPublicAccessResult FAIL = new CheckNoPublicAccessResult("FAIL");
+        /// <summary>
+        /// Constant PASS for CheckNoPublicAccessResult
+        /// </summary>
+        public static readonly CheckNoPublicAccessResult PASS = new CheckNoPublicAccessResult("PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CheckNoPublicAccessResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckNoPublicAccessResult FindValue(string value)
+        {
+            return FindValue<CheckNoPublicAccessResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckNoPublicAccessResult(string value)
         {
             return FindValue(value);
         }
@@ -1135,6 +1299,102 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type RecommendationType.
+    /// </summary>
+    public class RecommendationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UnusedPermissionRecommendation for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType UnusedPermissionRecommendation = new RecommendationType("UnusedPermissionRecommendation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationType FindValue(string value)
+        {
+            return FindValue<RecommendationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendedRemediationAction.
+    /// </summary>
+    public class RecommendedRemediationAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_POLICY for RecommendedRemediationAction
+        /// </summary>
+        public static readonly RecommendedRemediationAction CREATE_POLICY = new RecommendedRemediationAction("CREATE_POLICY");
+        /// <summary>
+        /// Constant DETACH_POLICY for RecommendedRemediationAction
+        /// </summary>
+        public static readonly RecommendedRemediationAction DETACH_POLICY = new RecommendedRemediationAction("DETACH_POLICY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendedRemediationAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendedRemediationAction FindValue(string value)
+        {
+            return FindValue<RecommendedRemediationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendedRemediationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -1234,6 +1494,60 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for Status
+        /// </summary>
+        public static readonly Status FAILED = new Status("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for Status
+        /// </summary>
+        public static readonly Status IN_PROGRESS = new Status("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for Status
+        /// </summary>
+        public static readonly Status SUCCEEDED = new Status("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }
@@ -1436,6 +1750,10 @@ namespace Amazon.AccessAnalyzer
         /// Constant FieldValidationFailed for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason FieldValidationFailed = new ValidationExceptionReason("fieldValidationFailed");
+        /// <summary>
+        /// Constant NotSupported for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason NotSupported = new ValidationExceptionReason("notSupported");
         /// <summary>
         /// Constant Other for ValidationExceptionReason
         /// </summary>

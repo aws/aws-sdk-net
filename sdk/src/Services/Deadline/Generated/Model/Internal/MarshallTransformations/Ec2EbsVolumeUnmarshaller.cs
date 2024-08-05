@@ -57,6 +57,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         public Ec2EbsVolume Unmarshall(JsonUnmarshallerContext context)
         {
             Ec2EbsVolume unmarshalledObject = new Ec2EbsVolume();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

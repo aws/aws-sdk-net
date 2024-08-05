@@ -59,11 +59,12 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property AwayFrom. 
         /// <para>
-        /// The Availability Zone that traffic is shifted away from for a resource when Amazon
-        /// Web Services starts an autoshift. Until the autoshift ends, traffic for the resource
-        /// is instead directed to other Availability Zones in the Amazon Web Services Region.
-        /// An autoshift can end for a resource, for example, when Amazon Web Services ends the
-        /// autoshift for the Availability Zone or when you disable zonal autoshift for the resource.
+        /// The Availability Zone (for example, <c>use1-az1</c>) that traffic is shifted away
+        /// from for a resource when Amazon Web Services starts an autoshift. Until the autoshift
+        /// ends, traffic for the resource is instead directed to other Availability Zones in
+        /// the Amazon Web Services Region. An autoshift can end for a resource, for example,
+        /// when Amazon Web Services ends the autoshift for the Availability Zone or when you
+        /// disable zonal autoshift for the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]

@@ -37,6 +37,9 @@ namespace Amazon.DataZone.Model
     {
         private string _description;
         private string _domainIdentifier;
+        private string _environmentAccountIdentifier;
+        private string _environmentAccountRegion;
+        private string _environmentBlueprintIdentifier;
         private string _environmentProfileIdentifier;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
@@ -78,6 +81,60 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainIdentifier()
         {
             return this._domainIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentAccountIdentifier. 
+        /// <para>
+        /// The ID of the account in which the environment is being created.
+        /// </para>
+        /// </summary>
+        public string EnvironmentAccountIdentifier
+        {
+            get { return this._environmentAccountIdentifier; }
+            set { this._environmentAccountIdentifier = value; }
+        }
+
+        // Check to see if EnvironmentAccountIdentifier property is set
+        internal bool IsSetEnvironmentAccountIdentifier()
+        {
+            return this._environmentAccountIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentAccountRegion. 
+        /// <para>
+        /// The region of the account in which the environment is being created.
+        /// </para>
+        /// </summary>
+        public string EnvironmentAccountRegion
+        {
+            get { return this._environmentAccountRegion; }
+            set { this._environmentAccountRegion = value; }
+        }
+
+        // Check to see if EnvironmentAccountRegion property is set
+        internal bool IsSetEnvironmentAccountRegion()
+        {
+            return this._environmentAccountRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentBlueprintIdentifier. 
+        /// <para>
+        /// The ID of the blueprint with which the environment is being created.
+        /// </para>
+        /// </summary>
+        public string EnvironmentBlueprintIdentifier
+        {
+            get { return this._environmentBlueprintIdentifier; }
+            set { this._environmentBlueprintIdentifier = value; }
+        }
+
+        // Check to see if EnvironmentBlueprintIdentifier property is set
+        internal bool IsSetEnvironmentBlueprintIdentifier()
+        {
+            return this._environmentBlueprintIdentifier != null;
         }
 
         /// <summary>

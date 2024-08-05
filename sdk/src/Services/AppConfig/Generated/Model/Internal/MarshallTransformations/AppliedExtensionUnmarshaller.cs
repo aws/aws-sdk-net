@@ -57,6 +57,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         public AppliedExtension Unmarshall(JsonUnmarshallerContext context)
         {
             AppliedExtension unmarshalledObject = new AppliedExtension();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

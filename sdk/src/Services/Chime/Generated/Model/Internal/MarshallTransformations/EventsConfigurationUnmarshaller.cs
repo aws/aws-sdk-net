@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public EventsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             EventsConfiguration unmarshalledObject = new EventsConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

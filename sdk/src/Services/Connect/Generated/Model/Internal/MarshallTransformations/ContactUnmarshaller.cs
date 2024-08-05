@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public Contact Unmarshall(JsonUnmarshallerContext context)
         {
             Contact unmarshalledObject = new Contact();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -70,10 +72,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AnsweringMachineDetectionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AnsweringMachineDetectionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Campaign", targetDepth))
+                {
+                    var unmarshaller = CampaignUnmarshaller.Instance;
+                    unmarshalledObject.Campaign = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Channel", targetDepth))
@@ -82,10 +96,34 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConnectedToSystemTimestamp", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ConnectedToSystemTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Customer", targetDepth))
+                {
+                    var unmarshaller = CustomerUnmarshaller.Instance;
+                    unmarshalledObject.Customer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomerVoiceActivity", targetDepth))
+                {
+                    var unmarshaller = CustomerVoiceActivityUnmarshaller.Instance;
+                    unmarshalledObject.CustomerVoiceActivity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DisconnectDetails", targetDepth))
+                {
+                    var unmarshaller = DisconnectDetailsUnmarshaller.Instance;
+                    unmarshalledObject.DisconnectDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DisconnectTimestamp", targetDepth))
@@ -148,6 +186,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreviousContactId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QualityMetrics", targetDepth))
+                {
+                    var unmarshaller = QualityMetricsUnmarshaller.Instance;
+                    unmarshalledObject.QualityMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QueueInfo", targetDepth))
                 {
                     var unmarshaller = QueueInfoUnmarshaller.Instance;
@@ -172,10 +216,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.RelatedContactId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RoutingCriteria", targetDepth))
+                {
+                    var unmarshaller = RoutingCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.RoutingCriteria = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScheduledTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScheduledTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SegmentAttributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, SegmentAttributeValue, StringUnmarshaller, SegmentAttributeValueUnmarshaller>(StringUnmarshaller.Instance, SegmentAttributeValueUnmarshaller.Instance);
+                    unmarshalledObject.SegmentAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public S3BucketDefinitionForJob Unmarshall(JsonUnmarshallerContext context)
         {
             S3BucketDefinitionForJob unmarshalledObject = new S3BucketDefinitionForJob();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

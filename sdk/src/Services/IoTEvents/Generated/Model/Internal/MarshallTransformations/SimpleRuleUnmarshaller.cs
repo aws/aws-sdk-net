@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public SimpleRule Unmarshall(JsonUnmarshallerContext context)
         {
             SimpleRule unmarshalledObject = new SimpleRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

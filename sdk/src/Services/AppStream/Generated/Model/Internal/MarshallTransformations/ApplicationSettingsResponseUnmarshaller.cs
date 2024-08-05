@@ -57,6 +57,8 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public ApplicationSettingsResponse Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationSettingsResponse unmarshalledObject = new ApplicationSettingsResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

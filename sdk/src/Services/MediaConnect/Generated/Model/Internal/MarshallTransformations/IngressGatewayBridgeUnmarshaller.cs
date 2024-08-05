@@ -57,6 +57,8 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         public IngressGatewayBridge Unmarshall(JsonUnmarshallerContext context)
         {
             IngressGatewayBridge unmarshalledObject = new IngressGatewayBridge();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

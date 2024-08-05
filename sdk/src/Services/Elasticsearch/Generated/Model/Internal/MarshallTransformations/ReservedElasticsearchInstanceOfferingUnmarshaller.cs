@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public ReservedElasticsearchInstanceOffering Unmarshall(JsonUnmarshallerContext context)
         {
             ReservedElasticsearchInstanceOffering unmarshalledObject = new ReservedElasticsearchInstanceOffering();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

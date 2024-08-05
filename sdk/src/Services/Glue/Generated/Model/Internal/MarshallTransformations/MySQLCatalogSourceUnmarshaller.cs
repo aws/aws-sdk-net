@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public MySQLCatalogSource Unmarshall(JsonUnmarshallerContext context)
         {
             MySQLCatalogSource unmarshalledObject = new MySQLCatalogSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

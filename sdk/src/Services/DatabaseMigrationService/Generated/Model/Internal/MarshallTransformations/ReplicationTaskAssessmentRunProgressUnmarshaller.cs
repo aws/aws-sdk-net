@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public ReplicationTaskAssessmentRunProgress Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationTaskAssessmentRunProgress unmarshalledObject = new ReplicationTaskAssessmentRunProgress();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

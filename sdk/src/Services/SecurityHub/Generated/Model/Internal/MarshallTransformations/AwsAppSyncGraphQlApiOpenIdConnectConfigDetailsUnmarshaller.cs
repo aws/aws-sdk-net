@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsAppSyncGraphQlApiOpenIdConnectConfigDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsAppSyncGraphQlApiOpenIdConnectConfigDetails unmarshalledObject = new AwsAppSyncGraphQlApiOpenIdConnectConfigDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

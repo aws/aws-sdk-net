@@ -57,6 +57,8 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
         public ProvisionalConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisionalConfiguration unmarshalledObject = new ProvisionalConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

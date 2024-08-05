@@ -57,6 +57,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         public ResourceShareInvitation Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceShareInvitation unmarshalledObject = new ResourceShareInvitation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

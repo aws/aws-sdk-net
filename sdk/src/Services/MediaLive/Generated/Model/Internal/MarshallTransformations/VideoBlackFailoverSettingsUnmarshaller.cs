@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public VideoBlackFailoverSettings Unmarshall(JsonUnmarshallerContext context)
         {
             VideoBlackFailoverSettings unmarshalledObject = new VideoBlackFailoverSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

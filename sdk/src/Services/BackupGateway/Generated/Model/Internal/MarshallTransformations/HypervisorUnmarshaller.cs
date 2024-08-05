@@ -57,6 +57,8 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         public Hypervisor Unmarshall(JsonUnmarshallerContext context)
         {
             Hypervisor unmarshalledObject = new Hypervisor();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public OtherMetadataValueListItem Unmarshall(JsonUnmarshallerContext context)
         {
             OtherMetadataValueListItem unmarshalledObject = new OtherMetadataValueListItem();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

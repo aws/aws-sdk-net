@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public VehicleStatus Unmarshall(JsonUnmarshallerContext context)
         {
             VehicleStatus unmarshalledObject = new VehicleStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         public KeyspaceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             KeyspaceSummary unmarshalledObject = new KeyspaceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

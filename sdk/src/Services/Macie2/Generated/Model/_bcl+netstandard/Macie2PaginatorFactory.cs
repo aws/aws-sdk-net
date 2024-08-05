@@ -61,6 +61,14 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Paginator for ListAutomatedDiscoveryAccounts operation
+        ///</summary>
+        public IListAutomatedDiscoveryAccountsPaginator ListAutomatedDiscoveryAccounts(ListAutomatedDiscoveryAccountsRequest request) 
+        {
+            return new ListAutomatedDiscoveryAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClassificationJobs operation
         ///</summary>
         public IListClassificationJobsPaginator ListClassificationJobs(ListClassificationJobsRequest request) 

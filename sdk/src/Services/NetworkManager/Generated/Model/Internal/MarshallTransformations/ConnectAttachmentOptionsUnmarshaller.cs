@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public ConnectAttachmentOptions Unmarshall(JsonUnmarshallerContext context)
         {
             ConnectAttachmentOptions unmarshalledObject = new ConnectAttachmentOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

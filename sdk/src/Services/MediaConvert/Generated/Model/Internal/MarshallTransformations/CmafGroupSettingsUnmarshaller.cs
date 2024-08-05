@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public CmafGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             CmafGroupSettings unmarshalledObject = new CmafGroupSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -86,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CodecSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dashIFrameTrickPlayNameModifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DashIFrameTrickPlayNameModifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dashManifestStyle", targetDepth))

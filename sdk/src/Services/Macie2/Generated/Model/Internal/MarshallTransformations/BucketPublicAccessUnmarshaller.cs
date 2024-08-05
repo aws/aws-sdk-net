@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public BucketPublicAccess Unmarshall(JsonUnmarshallerContext context)
         {
             BucketPublicAccess unmarshalledObject = new BucketPublicAccess();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public EmergencyContact Unmarshall(JsonUnmarshallerContext context)
         {
             EmergencyContact unmarshalledObject = new EmergencyContact();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

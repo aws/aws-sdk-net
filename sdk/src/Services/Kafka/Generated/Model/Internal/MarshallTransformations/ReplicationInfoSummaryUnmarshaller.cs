@@ -57,6 +57,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         public ReplicationInfoSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationInfoSummary unmarshalledObject = new ReplicationInfoSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

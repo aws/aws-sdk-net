@@ -57,6 +57,8 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         public AwsGroundStationAgentEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             AwsGroundStationAgentEndpoint unmarshalledObject = new AwsGroundStationAgentEndpoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

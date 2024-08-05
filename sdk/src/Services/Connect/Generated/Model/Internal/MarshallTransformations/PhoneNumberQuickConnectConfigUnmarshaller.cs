@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public PhoneNumberQuickConnectConfig Unmarshall(JsonUnmarshallerContext context)
         {
             PhoneNumberQuickConnectConfig unmarshalledObject = new PhoneNumberQuickConnectConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

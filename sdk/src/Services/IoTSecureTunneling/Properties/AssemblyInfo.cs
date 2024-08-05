@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.IoTSecureTunneling")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS IoT Secure Tunneling. This release adds support for IoT Secure Tunneling to remote access devices behind restricted firewalls.")]
 #elif NETCOREAPP3_1

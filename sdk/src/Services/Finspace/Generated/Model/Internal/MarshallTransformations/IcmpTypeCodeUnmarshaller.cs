@@ -57,6 +57,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
         public IcmpTypeCode Unmarshall(JsonUnmarshallerContext context)
         {
             IcmpTypeCode unmarshalledObject = new IcmpTypeCode();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -316,6 +316,12 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.CatalogConfiguration.CatalogARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.CloudWatchLoggingOptions.LogGroupName</property>
     <min>0</min>
     <max>512</max>
@@ -380,6 +386,24 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.DestinationTableConfiguration.DestinationDatabaseName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.DestinationTableConfiguration.DestinationTableName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.DestinationTableConfiguration.S3ErrorOutputPrefix</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ElasticsearchBufferingHints.IntervalInSeconds</property>
@@ -673,6 +697,24 @@
     <max>7200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.IcebergDestinationConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.IcebergDestinationDescription.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.IcebergDestinationUpdate.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.KinesisStreamSourceConfiguration.KinesisStreamARN</property>
     <min>1</min>
     <max>512</max>
@@ -963,6 +1005,28 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SecretsManagerConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SecretsManagerConfiguration.SecretARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SnowflakeBufferingHints.IntervalInSeconds</property>
+    <min>0</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SnowflakeBufferingHints.SizeInMBs</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SnowflakeDestinationConfiguration.AccountUrl</property>

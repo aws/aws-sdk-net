@@ -41,14 +41,13 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CustomLayers. 
         /// <para>
         /// Specifies the custom layers for the style. Leave unset to not enable any custom layer,
-        /// or, for styles that support custom layers, you can enable layer(s), such as <c>POI</c>
-        /// layer for the VectorEsriNavigation style. Default is <c>unset</c>.
+        /// or, for styles that support custom layers, you can enable layer(s), such as POI layer
+        /// for the VectorEsriNavigation style. Default is <c>unset</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currenlty only <c>VectorEsriNavigation</c> supports CustomLayers. For more information,
-        /// see <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom
-        /// Layers</a>.
+        /// Not all map resources or styles support custom layers. See Custom Layers for more
+        /// information.
         /// </para>
         ///  </note>
         /// </summary>

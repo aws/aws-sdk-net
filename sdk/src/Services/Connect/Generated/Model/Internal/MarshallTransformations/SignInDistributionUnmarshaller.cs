@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public SignInDistribution Unmarshall(JsonUnmarshallerContext context)
         {
             SignInDistribution unmarshalledObject = new SignInDistribution();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

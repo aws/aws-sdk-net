@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public StepTimeline Unmarshall(JsonUnmarshallerContext context)
         {
             StepTimeline unmarshalledObject = new StepTimeline();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

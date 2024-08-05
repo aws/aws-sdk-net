@@ -57,6 +57,8 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
         public PlacementTemplate Unmarshall(JsonUnmarshallerContext context)
         {
             PlacementTemplate unmarshalledObject = new PlacementTemplate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

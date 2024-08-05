@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public FilterSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FilterSummary unmarshalledObject = new FilterSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

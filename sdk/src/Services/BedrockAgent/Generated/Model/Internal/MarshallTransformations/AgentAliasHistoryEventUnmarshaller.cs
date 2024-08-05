@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public AgentAliasHistoryEvent Unmarshall(JsonUnmarshallerContext context)
         {
             AgentAliasHistoryEvent unmarshalledObject = new AgentAliasHistoryEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public CodeEditorAppImageConfig Unmarshall(JsonUnmarshallerContext context)
         {
             CodeEditorAppImageConfig unmarshalledObject = new CodeEditorAppImageConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

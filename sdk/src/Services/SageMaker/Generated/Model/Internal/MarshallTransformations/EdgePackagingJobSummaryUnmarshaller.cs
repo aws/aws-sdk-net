@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public EdgePackagingJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EdgePackagingJobSummary unmarshalledObject = new EdgePackagingJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

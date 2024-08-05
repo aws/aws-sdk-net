@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
         public Fragment Unmarshall(JsonUnmarshallerContext context)
         {
             Fragment unmarshalledObject = new Fragment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

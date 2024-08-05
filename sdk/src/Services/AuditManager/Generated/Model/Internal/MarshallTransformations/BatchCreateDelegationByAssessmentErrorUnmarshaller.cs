@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public BatchCreateDelegationByAssessmentError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchCreateDelegationByAssessmentError unmarshalledObject = new BatchCreateDelegationByAssessmentError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -31,9 +31,11 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateConnectionOnInterconnect operation.
+    /// <note> 
+    /// <para>
     /// Deprecated. Use <a>AllocateHostedConnection</a> instead.
-    /// 
-    ///  
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Creates a hosted connection on an interconnect.
     /// </para>

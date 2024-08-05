@@ -57,6 +57,8 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         public VolumeMount Unmarshall(JsonUnmarshallerContext context)
         {
             VolumeMount unmarshalledObject = new VolumeMount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

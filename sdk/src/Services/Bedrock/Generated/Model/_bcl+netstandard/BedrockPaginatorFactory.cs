@@ -61,6 +61,14 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListModelCopyJobs operation
+        ///</summary>
+        public IListModelCopyJobsPaginator ListModelCopyJobs(ListModelCopyJobsRequest request) 
+        {
+            return new ListModelCopyJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelCustomizationJobs operation
         ///</summary>
         public IListModelCustomizationJobsPaginator ListModelCustomizationJobs(ListModelCustomizationJobsRequest request) 

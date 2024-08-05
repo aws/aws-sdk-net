@@ -57,6 +57,8 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         public DeprecationDetail Unmarshall(JsonUnmarshallerContext context)
         {
             DeprecationDetail unmarshalledObject = new DeprecationDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

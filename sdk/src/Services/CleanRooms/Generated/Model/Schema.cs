@@ -45,6 +45,7 @@ namespace Amazon.CleanRooms.Model
         private string _name;
         private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private List<SchemaStatusDetail> _schemaStatusDetails = AWSConfigs.InitializeCollections ? new List<SchemaStatusDetail>() : null;
+        private SchemaTypeProperties _schemaTypeProperties;
         private SchemaType _type;
         private DateTime? _updateTime;
 
@@ -255,6 +256,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetSchemaStatusDetails()
         {
             return this._schemaStatusDetails != null && (this._schemaStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaTypeProperties. 
+        /// <para>
+        /// The schema type properties.
+        /// </para>
+        /// </summary>
+        public SchemaTypeProperties SchemaTypeProperties
+        {
+            get { return this._schemaTypeProperties; }
+            set { this._schemaTypeProperties = value; }
+        }
+
+        // Check to see if SchemaTypeProperties property is set
+        internal bool IsSetSchemaTypeProperties()
+        {
+            return this._schemaTypeProperties != null;
         }
 
         /// <summary>

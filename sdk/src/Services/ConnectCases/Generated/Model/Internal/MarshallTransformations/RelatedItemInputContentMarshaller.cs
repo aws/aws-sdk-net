@@ -70,6 +70,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFile())
+            {
+                context.Writer.WritePropertyName("file");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FileContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.File, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

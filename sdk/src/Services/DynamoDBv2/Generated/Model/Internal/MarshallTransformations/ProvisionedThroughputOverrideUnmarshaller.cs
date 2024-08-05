@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public ProvisionedThroughputOverride Unmarshall(JsonUnmarshallerContext context)
         {
             ProvisionedThroughputOverride unmarshalledObject = new ProvisionedThroughputOverride();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

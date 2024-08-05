@@ -57,6 +57,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public VideoCodecSettings Unmarshall(JsonUnmarshallerContext context)
         {
             VideoCodecSettings unmarshalledObject = new VideoCodecSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

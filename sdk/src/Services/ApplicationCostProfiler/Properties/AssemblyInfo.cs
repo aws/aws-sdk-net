@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ApplicationCostProfiler")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Application Cost Profiler. APIs for AWS Application Cost Profiler.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Application Cost Profiler. APIs for AWS Application Cost Profiler.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Application Cost Profiler. APIs for AWS Application Cost Profiler.")]
 #elif NETCOREAPP3_1

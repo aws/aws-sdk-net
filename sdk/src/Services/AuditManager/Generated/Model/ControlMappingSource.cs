@@ -121,7 +121,7 @@ namespace Amazon.AuditManager.Model
         ///  The name of the source. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=300)]
         public string SourceName
         {
             get { return this._sourceName; }
@@ -137,8 +137,10 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceSetUpOption. 
         /// <para>
-        ///  The setup option for the data source. This option reflects if the evidence collection
-        /// is automated or manual. 
+        /// The setup option for the data source. This option reflects if the evidence collection
+        /// method is automated or manual. If you don’t provide a value for <c>sourceSetUpOption</c>,
+        /// Audit Manager automatically infers and populates the correct value based on the <c>sourceType</c>
+        /// that you specify.
         /// </para>
         /// </summary>
         public SourceSetUpOption SourceSetUpOption
@@ -156,8 +158,19 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  Specifies one of the five data source types for evidence collection. 
+        ///  Specifies which type of data source is used to collect evidence. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The source can be an individual data source type, such as <c>AWS_Cloudtrail</c>, <c>AWS_Config</c>,
+        /// <c>AWS_Security_Hub</c>, <c>AWS_API_Call</c>, or <c>MANUAL</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The source can also be a managed grouping of data sources, such as a <c>Core_Control</c>
+        /// or a <c>Common_Control</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SourceType SourceType
         {

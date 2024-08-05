@@ -48,6 +48,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAuthenticationConfiguration())
+            {
+                context.Writer.WritePropertyName("AuthenticationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AuthenticationConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetConnectionProperties())
             {
                 context.Writer.WritePropertyName("ConnectionProperties");
@@ -100,6 +111,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.PhysicalConnectionRequirements, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetValidateCredentials())
+            {
+                context.Writer.WritePropertyName("ValidateCredentials");
+                context.Writer.Write(requestObject.ValidateCredentials.Value);
             }
 
         }

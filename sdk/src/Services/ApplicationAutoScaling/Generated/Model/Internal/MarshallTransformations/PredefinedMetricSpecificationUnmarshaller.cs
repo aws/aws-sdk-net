@@ -57,6 +57,8 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         public PredefinedMetricSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             PredefinedMetricSpecification unmarshalledObject = new PredefinedMetricSpecification();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

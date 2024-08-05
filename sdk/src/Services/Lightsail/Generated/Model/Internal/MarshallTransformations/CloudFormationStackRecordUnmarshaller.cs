@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public CloudFormationStackRecord Unmarshall(JsonUnmarshallerContext context)
         {
             CloudFormationStackRecord unmarshalledObject = new CloudFormationStackRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

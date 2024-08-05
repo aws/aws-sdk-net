@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Rec601Settings Unmarshall(JsonUnmarshallerContext context)
         {
             Rec601Settings unmarshalledObject = new Rec601Settings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

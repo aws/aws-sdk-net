@@ -57,6 +57,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public ChannelModeratedByAppInstanceUserSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelModeratedByAppInstanceUserSummary unmarshalledObject = new ChannelModeratedByAppInstanceUserSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

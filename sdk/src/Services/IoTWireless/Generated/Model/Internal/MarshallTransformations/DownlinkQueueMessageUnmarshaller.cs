@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public DownlinkQueueMessage Unmarshall(JsonUnmarshallerContext context)
         {
             DownlinkQueueMessage unmarshalledObject = new DownlinkQueueMessage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

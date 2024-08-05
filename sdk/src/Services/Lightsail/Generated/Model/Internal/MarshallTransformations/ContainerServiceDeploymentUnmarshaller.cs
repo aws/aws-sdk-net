@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public ContainerServiceDeployment Unmarshall(JsonUnmarshallerContext context)
         {
             ContainerServiceDeployment unmarshalledObject = new ContainerServiceDeployment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

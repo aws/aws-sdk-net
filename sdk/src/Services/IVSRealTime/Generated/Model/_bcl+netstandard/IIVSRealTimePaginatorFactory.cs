@@ -47,6 +47,11 @@ namespace Amazon.IVSRealTime.Model
         IListParticipantsPaginator ListParticipants(ListParticipantsRequest request);
 
         /// <summary>
+        /// Paginator for ListPublicKeys operation
+        ///</summary>
+        IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request);
+
+        /// <summary>
         /// Paginator for ListStages operation
         ///</summary>
         IListStagesPaginator ListStages(ListStagesRequest request);

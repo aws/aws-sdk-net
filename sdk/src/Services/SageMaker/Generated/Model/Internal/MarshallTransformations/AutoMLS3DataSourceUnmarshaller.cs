@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AutoMLS3DataSource Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMLS3DataSource unmarshalledObject = new AutoMLS3DataSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

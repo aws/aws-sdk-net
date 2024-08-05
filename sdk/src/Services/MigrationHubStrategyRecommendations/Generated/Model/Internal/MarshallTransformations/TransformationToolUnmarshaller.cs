@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public TransformationTool Unmarshall(JsonUnmarshallerContext context)
         {
             TransformationTool unmarshalledObject = new TransformationTool();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

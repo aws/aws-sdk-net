@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AppSync")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 #elif NETCOREAPP3_1

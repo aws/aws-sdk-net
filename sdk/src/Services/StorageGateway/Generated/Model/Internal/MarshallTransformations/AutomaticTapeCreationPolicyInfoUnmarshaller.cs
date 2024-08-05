@@ -57,6 +57,8 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public AutomaticTapeCreationPolicyInfo Unmarshall(JsonUnmarshallerContext context)
         {
             AutomaticTapeCreationPolicyInfo unmarshalledObject = new AutomaticTapeCreationPolicyInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

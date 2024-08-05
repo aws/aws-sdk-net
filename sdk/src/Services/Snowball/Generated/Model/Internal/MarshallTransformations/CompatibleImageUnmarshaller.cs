@@ -57,6 +57,8 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public CompatibleImage Unmarshall(JsonUnmarshallerContext context)
         {
             CompatibleImage unmarshalledObject = new CompatibleImage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

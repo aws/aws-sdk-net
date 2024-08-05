@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public MatchmakingTicket Unmarshall(JsonUnmarshallerContext context)
         {
             MatchmakingTicket unmarshalledObject = new MatchmakingTicket();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

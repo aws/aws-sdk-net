@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
+        private CrossAccountFilterOption _crossAccountFilterOption;
         private int? _maxResults;
         private string _nameContains;
         private string _nextToken;
@@ -77,6 +78,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTimeBefore()
         {
             return this._creationTimeBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossAccountFilterOption. 
+        /// <para>
+        /// A filter that returns either model groups shared with you or model groups in your
+        /// own account. When the value is <c>CrossAccount</c>, the results show the resources
+        /// made discoverable to you from other accounts. When the value is <c>SameAccount</c>
+        /// or <c>null</c>, the results show resources from your account. The default is <c>SameAccount</c>.
+        /// </para>
+        /// </summary>
+        public CrossAccountFilterOption CrossAccountFilterOption
+        {
+            get { return this._crossAccountFilterOption; }
+            set { this._crossAccountFilterOption = value; }
+        }
+
+        // Check to see if CrossAccountFilterOption property is set
+        internal bool IsSetCrossAccountFilterOption()
+        {
+            return this._crossAccountFilterOption != null;
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         public AssessmentReportEvidenceError Unmarshall(JsonUnmarshallerContext context)
         {
             AssessmentReportEvidenceError unmarshalledObject = new AssessmentReportEvidenceError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

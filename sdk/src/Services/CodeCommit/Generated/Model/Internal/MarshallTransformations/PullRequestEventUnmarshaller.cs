@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public PullRequestEvent Unmarshall(JsonUnmarshallerContext context)
         {
             PullRequestEvent unmarshalledObject = new PullRequestEvent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

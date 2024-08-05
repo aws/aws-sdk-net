@@ -57,6 +57,8 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
         public RoomSummary Unmarshall(JsonUnmarshallerContext context)
         {
             RoomSummary unmarshalledObject = new RoomSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

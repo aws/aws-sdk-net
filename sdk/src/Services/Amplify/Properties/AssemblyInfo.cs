@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Amplify")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #elif NETCOREAPP3_1

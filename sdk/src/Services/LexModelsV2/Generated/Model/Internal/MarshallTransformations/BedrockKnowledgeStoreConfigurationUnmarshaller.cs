@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BedrockKnowledgeStoreConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             BedrockKnowledgeStoreConfiguration unmarshalledObject = new BedrockKnowledgeStoreConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,18 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BedrockKnowledgeBaseArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("exactResponse", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.ExactResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("exactResponseFields", targetDepth))
+                {
+                    var unmarshaller = BedrockKnowledgeStoreExactResponseFieldsUnmarshaller.Instance;
+                    unmarshalledObject.ExactResponseFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

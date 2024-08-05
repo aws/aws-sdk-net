@@ -57,6 +57,8 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         public QuantumTaskQueueInfo Unmarshall(JsonUnmarshallerContext context)
         {
             QuantumTaskQueueInfo unmarshalledObject = new QuantumTaskQueueInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

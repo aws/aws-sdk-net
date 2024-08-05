@@ -31,13 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyAvailabilityZoneGroup operation.
-    /// Changes the opt-in status of the Local Zone and Wavelength Zone group for your account.
-    /// 
-    ///  
-    /// <para>
-    /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
-    /// DescribeAvailabilityZones</a> to view the value for <c>GroupName</c>.
-    /// </para>
+    /// Changes the opt-in status of the specified zone group for your account.
     /// </summary>
     public partial class ModifyAvailabilityZoneGroupRequest : AmazonEC2Request
     {
@@ -66,9 +60,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OptInStatus. 
         /// <para>
-        /// Indicates whether you are opted in to the Local Zone group or Wavelength Zone group.
-        /// The only valid value is <c>opted-in</c>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon
-        /// Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.
+        /// Indicates whether to opt in to the zone group. The only valid value is <c>opted-in</c>.
+        /// You must contact Amazon Web Services Support to opt out of a Local Zone or Wavelength
+        /// Zone group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

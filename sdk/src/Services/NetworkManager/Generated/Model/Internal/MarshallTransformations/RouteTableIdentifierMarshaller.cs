@@ -48,6 +48,17 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCoreNetworkNetworkFunctionGroup())
+            {
+                context.Writer.WritePropertyName("CoreNetworkNetworkFunctionGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CoreNetworkNetworkFunctionGroupIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.CoreNetworkNetworkFunctionGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCoreNetworkSegmentEdge())
             {
                 context.Writer.WritePropertyName("CoreNetworkSegmentEdge");

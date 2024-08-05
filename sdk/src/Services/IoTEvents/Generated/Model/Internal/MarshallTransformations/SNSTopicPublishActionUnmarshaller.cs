@@ -57,6 +57,8 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
         public SNSTopicPublishAction Unmarshall(JsonUnmarshallerContext context)
         {
             SNSTopicPublishAction unmarshalledObject = new SNSTopicPublishAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

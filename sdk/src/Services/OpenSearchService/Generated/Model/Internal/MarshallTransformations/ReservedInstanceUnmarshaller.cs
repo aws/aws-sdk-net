@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public ReservedInstance Unmarshall(JsonUnmarshallerContext context)
         {
             ReservedInstance unmarshalledObject = new ReservedInstance();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

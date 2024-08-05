@@ -57,6 +57,8 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         public PolicyAttachment Unmarshall(JsonUnmarshallerContext context)
         {
             PolicyAttachment unmarshalledObject = new PolicyAttachment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

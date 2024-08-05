@@ -57,6 +57,8 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         public PredictionTimeRange Unmarshall(JsonUnmarshallerContext context)
         {
             PredictionTimeRange unmarshalledObject = new PredictionTimeRange();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

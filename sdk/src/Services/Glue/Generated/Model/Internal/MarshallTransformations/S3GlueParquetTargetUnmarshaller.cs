@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public S3GlueParquetTarget Unmarshall(JsonUnmarshallerContext context)
         {
             S3GlueParquetTarget unmarshalledObject = new S3GlueParquetTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

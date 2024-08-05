@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public AbpV1_0_x Unmarshall(JsonUnmarshallerContext context)
         {
             AbpV1_0_x unmarshalledObject = new AbpV1_0_x();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public AssetBundleImportJobWarning Unmarshall(JsonUnmarshallerContext context)
         {
             AssetBundleImportJobWarning unmarshalledObject = new AssetBundleImportJobWarning();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

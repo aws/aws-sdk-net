@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ClarifyExplainerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             ClarifyExplainerConfig unmarshalledObject = new ClarifyExplainerConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

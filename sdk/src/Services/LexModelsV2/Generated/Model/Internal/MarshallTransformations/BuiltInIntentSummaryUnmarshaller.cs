@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BuiltInIntentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             BuiltInIntentSummary unmarshalledObject = new BuiltInIntentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

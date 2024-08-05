@@ -31,7 +31,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyTrustStore operation.
-    /// Update the ca certificate bundle for a given trust store.
+    /// Update the ca certificate bundle for the specified trust store.
     /// </summary>
     public partial class ModifyTrustStoreRequest : AmazonElasticLoadBalancingV2Request
     {

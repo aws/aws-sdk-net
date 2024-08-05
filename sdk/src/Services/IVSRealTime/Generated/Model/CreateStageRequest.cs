@@ -35,9 +35,28 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class CreateStageRequest : AmazonIVSRealTimeRequest
     {
+        private AutoParticipantRecordingConfiguration _autoParticipantRecordingConfiguration;
         private string _name;
         private List<ParticipantTokenConfiguration> _participantTokenConfigurations = AWSConfigs.InitializeCollections ? new List<ParticipantTokenConfiguration>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AutoParticipantRecordingConfiguration. 
+        /// <para>
+        /// Configuration object for individual participant recording, to attach to the new stage.
+        /// </para>
+        /// </summary>
+        public AutoParticipantRecordingConfiguration AutoParticipantRecordingConfiguration
+        {
+            get { return this._autoParticipantRecordingConfiguration; }
+            set { this._autoParticipantRecordingConfiguration = value; }
+        }
+
+        // Check to see if AutoParticipantRecordingConfiguration property is set
+        internal bool IsSetAutoParticipantRecordingConfiguration()
+        {
+            return this._autoParticipantRecordingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

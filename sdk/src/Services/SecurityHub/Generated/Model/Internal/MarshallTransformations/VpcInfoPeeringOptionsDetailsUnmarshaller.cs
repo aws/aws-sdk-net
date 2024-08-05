@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public VpcInfoPeeringOptionsDetails Unmarshall(JsonUnmarshallerContext context)
         {
             VpcInfoPeeringOptionsDetails unmarshalledObject = new VpcInfoPeeringOptionsDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

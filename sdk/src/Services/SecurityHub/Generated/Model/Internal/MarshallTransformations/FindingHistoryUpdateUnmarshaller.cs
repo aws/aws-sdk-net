@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public FindingHistoryUpdate Unmarshall(JsonUnmarshallerContext context)
         {
             FindingHistoryUpdate unmarshalledObject = new FindingHistoryUpdate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

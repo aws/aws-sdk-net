@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public WafExcludedRule Unmarshall(JsonUnmarshallerContext context)
         {
             WafExcludedRule unmarshalledObject = new WafExcludedRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         public AclConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AclConfiguration unmarshalledObject = new AclConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

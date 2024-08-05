@@ -314,26 +314,24 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the AddPolicyStatement service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/AddPolicyStatement">REST API Reference for AddPolicyStatement Operation</seealso>
         public virtual Task<AddPolicyStatementResponse> AddPolicyStatementAsync(AddPolicyStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -371,14 +369,12 @@ namespace Amazon.EntityResolution
         /// <returns>The response from the BatchDeleteUniqueId service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
         public virtual Task<BatchDeleteUniqueIdResponse> BatchDeleteUniqueIdAsync(BatchDeleteUniqueIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -417,28 +413,25 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the CreateIdMappingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Entity Resolution account limits. The error message describes the limit exceeded.
-        /// <c>HTTP Status Code: 402</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">REST API Reference for CreateIdMappingWorkflow Operation</seealso>
         public virtual Task<CreateIdMappingWorkflowResponse> CreateIdMappingWorkflowAsync(CreateIdMappingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -477,28 +470,25 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the CreateIdNamespace service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Entity Resolution account limits. The error message describes the limit exceeded.
-        /// <c>HTTP Status Code: 402</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">REST API Reference for CreateIdNamespace Operation</seealso>
         public virtual Task<CreateIdNamespaceResponse> CreateIdNamespaceAsync(CreateIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -538,28 +528,25 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the CreateMatchingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Entity Resolution account limits. The error message describes the limit exceeded.
-        /// <c>HTTP Status Code: 402</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">REST API Reference for CreateMatchingWorkflow Operation</seealso>
         public virtual Task<CreateMatchingWorkflowResponse> CreateMatchingWorkflowAsync(CreateMatchingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -598,28 +585,25 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the CreateSchemaMapping service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Entity Resolution account limits. The error message describes the limit exceeded.
-        /// <c>HTTP Status Code: 402</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateSchemaMapping">REST API Reference for CreateSchemaMapping Operation</seealso>
         public virtual Task<CreateSchemaMappingResponse> CreateSchemaMappingAsync(CreateSchemaMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -657,23 +641,21 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the DeleteIdMappingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">REST API Reference for DeleteIdMappingWorkflow Operation</seealso>
         public virtual Task<DeleteIdMappingWorkflowResponse> DeleteIdMappingWorkflowAsync(DeleteIdMappingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -710,18 +692,16 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the DeleteIdNamespace service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">REST API Reference for DeleteIdNamespace Operation</seealso>
         public virtual Task<DeleteIdNamespaceResponse> DeleteIdNamespaceAsync(DeleteIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -759,23 +739,21 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the DeleteMatchingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow">REST API Reference for DeleteMatchingWorkflow Operation</seealso>
         public virtual Task<DeleteMatchingWorkflowResponse> DeleteMatchingWorkflowAsync(DeleteMatchingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -812,26 +790,24 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the DeletePolicyStatement service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeletePolicyStatement">REST API Reference for DeletePolicyStatement Operation</seealso>
         public virtual Task<DeletePolicyStatementResponse> DeletePolicyStatementAsync(DeletePolicyStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -871,23 +847,21 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the DeleteSchemaMapping service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping">REST API Reference for DeleteSchemaMapping Operation</seealso>
         public virtual Task<DeleteSchemaMappingResponse> DeleteSchemaMappingAsync(DeleteSchemaMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -925,21 +899,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetIdMappingJob service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">REST API Reference for GetIdMappingJob Operation</seealso>
         public virtual Task<GetIdMappingJobResponse> GetIdMappingJobAsync(GetIdMappingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -976,21 +948,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetIdMappingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingWorkflow">REST API Reference for GetIdMappingWorkflow Operation</seealso>
         public virtual Task<GetIdMappingWorkflowResponse> GetIdMappingWorkflowAsync(GetIdMappingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1027,21 +997,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetIdNamespace service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdNamespace">REST API Reference for GetIdNamespace Operation</seealso>
         public virtual Task<GetIdNamespaceResponse> GetIdNamespaceAsync(GetIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1078,21 +1046,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetMatchId service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId">REST API Reference for GetMatchId Operation</seealso>
         public virtual Task<GetMatchIdResponse> GetMatchIdAsync(GetMatchIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1130,21 +1096,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetMatchingJob service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingJob">REST API Reference for GetMatchingJob Operation</seealso>
         public virtual Task<GetMatchingJobResponse> GetMatchingJobAsync(GetMatchingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1181,21 +1145,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetMatchingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingWorkflow">REST API Reference for GetMatchingWorkflow Operation</seealso>
         public virtual Task<GetMatchingWorkflowResponse> GetMatchingWorkflowAsync(GetMatchingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1232,21 +1194,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetPolicy service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1283,21 +1243,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetProviderService service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetProviderService">REST API Reference for GetProviderService Operation</seealso>
         public virtual Task<GetProviderServiceResponse> GetProviderServiceAsync(GetProviderServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1334,21 +1292,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the GetSchemaMapping service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetSchemaMapping">REST API Reference for GetSchemaMapping Operation</seealso>
         public virtual Task<GetSchemaMappingResponse> GetSchemaMappingAsync(GetSchemaMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1385,21 +1341,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the ListIdMappingJobs service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingJobs">REST API Reference for ListIdMappingJobs Operation</seealso>
         public virtual Task<ListIdMappingJobsResponse> ListIdMappingJobsAsync(ListIdMappingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1437,18 +1391,16 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the ListIdMappingWorkflows service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">REST API Reference for ListIdMappingWorkflows Operation</seealso>
         public virtual Task<ListIdMappingWorkflowsResponse> ListIdMappingWorkflowsAsync(ListIdMappingWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1485,18 +1437,16 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the ListIdNamespaces service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">REST API Reference for ListIdNamespaces Operation</seealso>
         public virtual Task<ListIdNamespacesResponse> ListIdNamespacesAsync(ListIdNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1533,21 +1483,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the ListMatchingJobs service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingJobs">REST API Reference for ListMatchingJobs Operation</seealso>
         public virtual Task<ListMatchingJobsResponse> ListMatchingJobsAsync(ListMatchingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1585,18 +1533,16 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the ListMatchingWorkflows service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingWorkflows">REST API Reference for ListMatchingWorkflows Operation</seealso>
         public virtual Task<ListMatchingWorkflowsResponse> ListMatchingWorkflowsAsync(ListMatchingWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1634,18 +1580,16 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the ListProviderServices service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">REST API Reference for ListProviderServices Operation</seealso>
         public virtual Task<ListProviderServicesResponse> ListProviderServicesAsync(ListProviderServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1683,18 +1627,16 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the ListSchemaMappings service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings">REST API Reference for ListSchemaMappings Operation</seealso>
         public virtual Task<ListSchemaMappingsResponse> ListSchemaMappingsAsync(ListSchemaMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1733,14 +1675,12 @@ namespace Amazon.EntityResolution
         /// <returns>The response from the ListTagsForResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1777,26 +1717,24 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the PutPolicy service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual Task<PutPolicyResponse> PutPolicyAsync(PutPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1834,31 +1772,28 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the StartIdMappingJob service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Entity Resolution account limits. The error message describes the limit exceeded.
-        /// <c>HTTP Status Code: 402</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartIdMappingJob">REST API Reference for StartIdMappingJob Operation</seealso>
         public virtual Task<StartIdMappingJobResponse> StartIdMappingJobAsync(StartIdMappingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1896,31 +1831,28 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the StartMatchingJob service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ExceedsLimitException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Entity Resolution account limits. The error message describes the limit exceeded.
-        /// <c>HTTP Status Code: 402</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartMatchingJob">REST API Reference for StartMatchingJob Operation</seealso>
         public virtual Task<StartMatchingJobResponse> StartMatchingJobAsync(StartMatchingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1967,14 +1899,12 @@ namespace Amazon.EntityResolution
         /// <returns>The response from the TagResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2013,10 +1943,9 @@ namespace Amazon.EntityResolution
         /// <returns>The response from the UntagResource service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2055,21 +1984,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the UpdateIdMappingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">REST API Reference for UpdateIdMappingWorkflow Operation</seealso>
         public virtual Task<UpdateIdMappingWorkflowResponse> UpdateIdMappingWorkflowAsync(UpdateIdMappingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2106,21 +2033,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the UpdateIdNamespace service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdNamespace">REST API Reference for UpdateIdNamespace Operation</seealso>
         public virtual Task<UpdateIdNamespaceResponse> UpdateIdNamespaceAsync(UpdateIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2159,21 +2084,19 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the UpdateMatchingWorkflow service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">REST API Reference for UpdateMatchingWorkflow Operation</seealso>
         public virtual Task<UpdateMatchingWorkflowResponse> UpdateMatchingWorkflowAsync(UpdateMatchingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2217,26 +2140,24 @@ namespace Amazon.EntityResolution
         /// 
         /// <returns>The response from the UpdateSchemaMapping service method, as returned by EntityResolution.</returns>
         /// <exception cref="Amazon.EntityResolution.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
-        /// running, etc. <c>HTTP Status Code: 400</c>
+        /// running, etc.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
-        /// <c>HTTP Status Code: 500</c>
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found. <c>HTTP Status Code: 404</c>
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
-        /// The request was denied due to request throttling. <c>HTTP Status Code: 429</c>
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by Entity Resolution. <c>HTTP
-        /// Status Code: 400</c>
+        /// The input fails to satisfy the constraints specified by Entity Resolution.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateSchemaMapping">REST API Reference for UpdateSchemaMapping Operation</seealso>
         public virtual Task<UpdateSchemaMappingResponse> UpdateSchemaMappingAsync(UpdateSchemaMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

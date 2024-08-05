@@ -57,6 +57,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
         public ReplacePermissionAssociationsWork Unmarshall(JsonUnmarshallerContext context)
         {
             ReplacePermissionAssociationsWork unmarshalledObject = new ReplacePermissionAssociationsWork();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

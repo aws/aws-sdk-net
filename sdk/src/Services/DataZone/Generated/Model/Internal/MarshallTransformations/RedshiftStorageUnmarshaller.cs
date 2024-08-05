@@ -57,6 +57,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public RedshiftStorage Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftStorage unmarshalledObject = new RedshiftStorage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

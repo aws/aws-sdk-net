@@ -124,6 +124,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
+        /// The value of <c>Normalized</c> can be an integer between <c>0</c> and <c>100</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// If you provide <c>Label</c> and do not provide <c>Normalized</c>, then <c>Normalized</c>
         /// is set automatically as follows.
         /// </para>
@@ -165,6 +169,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Original. 
         /// <para>
         /// The native severity from the finding product that generated the finding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 64.
         /// </para>
         /// </summary>
         public string Original

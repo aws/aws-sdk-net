@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public RejectedLogEventsInfo Unmarshall(JsonUnmarshallerContext context)
         {
             RejectedLogEventsInfo unmarshalledObject = new RejectedLogEventsInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

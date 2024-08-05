@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
-    /// The codes to use when checking for a successful response from a target for health
-    /// checks.
+    /// Describes the codes to use when checking for a successful response from a target for
+    /// health checks.
     /// </summary>
     public partial class Matcher
     {

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public WorkflowUpdate Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowUpdate unmarshalledObject = new WorkflowUpdate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

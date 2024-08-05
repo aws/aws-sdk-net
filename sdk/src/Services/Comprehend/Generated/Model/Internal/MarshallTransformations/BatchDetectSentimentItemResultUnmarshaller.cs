@@ -57,6 +57,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         public BatchDetectSentimentItemResult Unmarshall(JsonUnmarshallerContext context)
         {
             BatchDetectSentimentItemResult unmarshalledObject = new BatchDetectSentimentItemResult();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

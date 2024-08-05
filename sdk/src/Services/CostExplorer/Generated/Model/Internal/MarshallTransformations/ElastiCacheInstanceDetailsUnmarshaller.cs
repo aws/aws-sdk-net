@@ -57,6 +57,8 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public ElastiCacheInstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ElastiCacheInstanceDetails unmarshalledObject = new ElastiCacheInstanceDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

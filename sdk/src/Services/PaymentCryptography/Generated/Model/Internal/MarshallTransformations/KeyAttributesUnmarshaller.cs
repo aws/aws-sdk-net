@@ -57,6 +57,8 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         public KeyAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             KeyAttributes unmarshalledObject = new KeyAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

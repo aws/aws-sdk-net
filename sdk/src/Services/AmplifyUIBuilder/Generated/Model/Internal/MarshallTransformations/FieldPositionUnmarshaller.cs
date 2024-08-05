@@ -57,6 +57,8 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         public FieldPosition Unmarshall(JsonUnmarshallerContext context)
         {
             FieldPosition unmarshalledObject = new FieldPosition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

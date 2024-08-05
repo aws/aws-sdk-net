@@ -76,11 +76,6 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not
-        /// supported on Elastic fleets.
-        /// </para>
-        ///  
-        /// <para>
         /// The value can be between 1 and 20,971,520 (20 MB).
         /// </para>
         /// </summary>

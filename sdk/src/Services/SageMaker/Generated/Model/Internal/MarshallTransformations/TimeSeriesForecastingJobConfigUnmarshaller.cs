@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TimeSeriesForecastingJobConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TimeSeriesForecastingJobConfig unmarshalledObject = new TimeSeriesForecastingJobConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CandidateGenerationConfig", targetDepth))
+                {
+                    var unmarshaller = CandidateGenerationConfigUnmarshaller.Instance;
+                    unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompletionCriteria", targetDepth))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;

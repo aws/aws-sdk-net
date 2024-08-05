@@ -67,6 +67,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoEnableOrganizationMembers())
+                {
+                    context.Writer.WritePropertyName("autoEnableOrganizationMembers");
+                    context.Writer.Write(publicRequest.AutoEnableOrganizationMembers);
+                }
+
                 if(publicRequest.IsSetStatus())
                 {
                     context.Writer.WritePropertyName("status");

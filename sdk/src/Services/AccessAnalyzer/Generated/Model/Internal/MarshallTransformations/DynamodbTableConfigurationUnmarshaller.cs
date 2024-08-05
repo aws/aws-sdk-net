@@ -57,6 +57,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         public DynamodbTableConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             DynamodbTableConfiguration unmarshalledObject = new DynamodbTableConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

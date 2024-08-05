@@ -362,6 +362,10 @@ namespace Amazon.ConnectCases
         /// Constant Contact for RelatedItemType
         /// </summary>
         public static readonly RelatedItemType Contact = new RelatedItemType("Contact");
+        /// <summary>
+        /// Constant File for RelatedItemType
+        /// </summary>
+        public static readonly RelatedItemType File = new RelatedItemType("File");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

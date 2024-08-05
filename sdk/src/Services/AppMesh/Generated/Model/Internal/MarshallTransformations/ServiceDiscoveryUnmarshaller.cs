@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public ServiceDiscovery Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceDiscovery unmarshalledObject = new ServiceDiscovery();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

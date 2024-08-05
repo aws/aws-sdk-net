@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public AncillarySourceSettings Unmarshall(JsonUnmarshallerContext context)
         {
             AncillarySourceSettings unmarshalledObject = new AncillarySourceSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

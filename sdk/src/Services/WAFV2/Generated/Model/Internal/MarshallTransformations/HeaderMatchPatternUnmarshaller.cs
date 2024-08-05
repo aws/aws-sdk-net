@@ -57,6 +57,8 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         public HeaderMatchPattern Unmarshall(JsonUnmarshallerContext context)
         {
             HeaderMatchPattern unmarshalledObject = new HeaderMatchPattern();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

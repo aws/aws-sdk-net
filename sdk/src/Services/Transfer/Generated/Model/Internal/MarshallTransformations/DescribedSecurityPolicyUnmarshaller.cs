@@ -57,6 +57,8 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         public DescribedSecurityPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             DescribedSecurityPolicy unmarshalledObject = new DescribedSecurityPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

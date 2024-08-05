@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.NeptuneGraph")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Neptune Graph. This is the initial SDK release for Amazon Neptune Analytics")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Neptune Graph. This is the initial SDK release for Amazon Neptune Analytics")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Neptune Graph. This is the initial SDK release for Amazon Neptune Analytics")]
 #elif NETCOREAPP3_1

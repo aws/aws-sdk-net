@@ -39,7 +39,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// An <c>EncryptionConfig</c> object that contains the KMS key ARN to use for encryption.
+        /// An <c>EncryptionConfig</c> object that contains the KMS key ARN that is used for encryption.
+        /// If you did not specify a customer-managed KMS key in the request, returns empty. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

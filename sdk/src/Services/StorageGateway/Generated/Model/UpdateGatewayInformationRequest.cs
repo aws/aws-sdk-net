@@ -31,9 +31,9 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGatewayInformation operation.
-    /// Updates a gateway's metadata, which includes the gateway's name and time zone. To
-    /// specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway
-    /// in your request.
+    /// Updates a gateway's metadata, which includes the gateway's name, time zone, and metadata
+    /// cache size. To specify which gateway to update, use the Amazon Resource Name (ARN)
+    /// of the gateway in your request.
     /// 
     ///  <note> 
     /// <para>
@@ -95,7 +95,10 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayCapacity. 
         /// <para>
-        /// Specifies the size of the gateway's metadata cache.
+        /// Specifies the size of the gateway's metadata cache. This setting impacts gateway performance
+        /// and hardware recommendations. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/performance-multiple-file-shares.html">Performance
+        /// guidance for gateways with multiple file shares</a> in the <i>Amazon S3 File Gateway
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public GatewayCapacity GatewayCapacity

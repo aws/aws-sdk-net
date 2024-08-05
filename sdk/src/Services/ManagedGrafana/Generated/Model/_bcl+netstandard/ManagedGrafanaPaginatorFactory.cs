@@ -59,5 +59,21 @@ namespace Amazon.ManagedGrafana.Model
         {
             return new ListWorkspacesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListWorkspaceServiceAccounts operation
+        ///</summary>
+        public IListWorkspaceServiceAccountsPaginator ListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request) 
+        {
+            return new ListWorkspaceServiceAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkspaceServiceAccountTokens operation
+        ///</summary>
+        public IListWorkspaceServiceAccountTokensPaginator ListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request) 
+        {
+            return new ListWorkspaceServiceAccountTokensPaginator(this.client, request);
+        }
     }
 }

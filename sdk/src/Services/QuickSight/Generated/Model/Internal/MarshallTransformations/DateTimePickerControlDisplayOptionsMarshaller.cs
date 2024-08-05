@@ -48,10 +48,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDateIconVisibility())
+            {
+                context.Writer.WritePropertyName("DateIconVisibility");
+                context.Writer.Write(requestObject.DateIconVisibility);
+            }
+
             if(requestObject.IsSetDateTimeFormat())
             {
                 context.Writer.WritePropertyName("DateTimeFormat");
                 context.Writer.Write(requestObject.DateTimeFormat);
+            }
+
+            if(requestObject.IsSetHelperTextVisibility())
+            {
+                context.Writer.WritePropertyName("HelperTextVisibility");
+                context.Writer.Write(requestObject.HelperTextVisibility);
             }
 
             if(requestObject.IsSetInfoIconLabelOptions())

@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public RedshiftConnectorProfileProperties Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftConnectorProfileProperties unmarshalledObject = new RedshiftConnectorProfileProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

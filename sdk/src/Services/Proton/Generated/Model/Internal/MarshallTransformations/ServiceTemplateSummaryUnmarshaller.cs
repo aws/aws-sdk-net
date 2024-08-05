@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public ServiceTemplateSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceTemplateSummary unmarshalledObject = new ServiceTemplateSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

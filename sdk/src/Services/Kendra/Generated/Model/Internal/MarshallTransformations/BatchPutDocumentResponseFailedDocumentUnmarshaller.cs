@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public BatchPutDocumentResponseFailedDocument Unmarshall(JsonUnmarshallerContext context)
         {
             BatchPutDocumentResponseFailedDocument unmarshalledObject = new BatchPutDocumentResponseFailedDocument();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

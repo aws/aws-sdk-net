@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public FeatureActivations Unmarshall(JsonUnmarshallerContext context)
         {
             FeatureActivations unmarshalledObject = new FeatureActivations();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

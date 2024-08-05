@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public TopicCalculatedField Unmarshall(JsonUnmarshallerContext context)
         {
             TopicCalculatedField unmarshalledObject = new TopicCalculatedField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

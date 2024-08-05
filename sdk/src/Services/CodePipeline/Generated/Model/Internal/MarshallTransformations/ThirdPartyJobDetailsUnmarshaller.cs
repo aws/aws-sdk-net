@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public ThirdPartyJobDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ThirdPartyJobDetails unmarshalledObject = new ThirdPartyJobDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

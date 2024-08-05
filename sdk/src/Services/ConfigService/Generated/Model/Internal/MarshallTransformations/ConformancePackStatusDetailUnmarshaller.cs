@@ -57,6 +57,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         public ConformancePackStatusDetail Unmarshall(JsonUnmarshallerContext context)
         {
             ConformancePackStatusDetail unmarshalledObject = new ConformancePackStatusDetail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public EffectivePreferredResource Unmarshall(JsonUnmarshallerContext context)
         {
             EffectivePreferredResource unmarshalledObject = new EffectivePreferredResource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

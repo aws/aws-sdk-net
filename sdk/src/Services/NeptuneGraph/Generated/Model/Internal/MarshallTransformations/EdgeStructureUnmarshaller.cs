@@ -57,6 +57,8 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         public EdgeStructure Unmarshall(JsonUnmarshallerContext context)
         {
             EdgeStructure unmarshalledObject = new EdgeStructure();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

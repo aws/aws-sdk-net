@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public JupyterLabAppSettings Unmarshall(JsonUnmarshallerContext context)
         {
             JupyterLabAppSettings unmarshalledObject = new JupyterLabAppSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ResourceSpecUnmarshaller.Instance;
                     unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EmrSettings", targetDepth))
+                {
+                    var unmarshaller = EmrSettingsUnmarshaller.Instance;
+                    unmarshalledObject.EmrSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LifecycleConfigArns", targetDepth))

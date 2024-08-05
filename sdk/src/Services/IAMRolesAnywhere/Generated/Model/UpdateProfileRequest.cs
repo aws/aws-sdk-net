@@ -41,12 +41,32 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class UpdateProfileRequest : AmazonIAMRolesAnywhereRequest
     {
+        private bool? _acceptRoleSessionName;
         private int? _durationSeconds;
         private List<string> _managedPolicyArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _profileId;
         private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionPolicy;
+
+        /// <summary>
+        /// Gets and sets the property AcceptRoleSessionName. 
+        /// <para>
+        /// Used to determine if a custom role session name will be accepted in a temporary credential
+        /// request.
+        /// </para>
+        /// </summary>
+        public bool? AcceptRoleSessionName
+        {
+            get { return this._acceptRoleSessionName; }
+            set { this._acceptRoleSessionName = value; }
+        }
+
+        // Check to see if AcceptRoleSessionName property is set
+        internal bool IsSetAcceptRoleSessionName()
+        {
+            return this._acceptRoleSessionName.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DurationSeconds. 

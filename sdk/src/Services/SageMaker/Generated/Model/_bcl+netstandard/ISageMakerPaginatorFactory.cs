@@ -207,6 +207,11 @@ namespace Amazon.SageMaker.Model
         IListLineageGroupsPaginator ListLineageGroups(ListLineageGroupsRequest request);
 
         /// <summary>
+        /// Paginator for ListMlflowTrackingServers operation
+        ///</summary>
+        IListMlflowTrackingServersPaginator ListMlflowTrackingServers(ListMlflowTrackingServersRequest request);
+
+        /// <summary>
         /// Paginator for ListModelBiasJobDefinitions operation
         ///</summary>
         IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request);
@@ -285,6 +290,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListNotebookInstances operation
         ///</summary>
         IListNotebookInstancesPaginator ListNotebookInstances(ListNotebookInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for ListOptimizationJobs operation
+        ///</summary>
+        IListOptimizationJobsPaginator ListOptimizationJobs(ListOptimizationJobsRequest request);
 
         /// <summary>
         /// Paginator for ListPipelineExecutions operation

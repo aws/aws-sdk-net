@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public EmailAddress Unmarshall(JsonUnmarshallerContext context)
         {
             EmailAddress unmarshalledObject = new EmailAddress();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

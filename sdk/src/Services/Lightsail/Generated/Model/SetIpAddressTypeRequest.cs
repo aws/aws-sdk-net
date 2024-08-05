@@ -42,9 +42,42 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class SetIpAddressTypeRequest : AmazonLightsailRequest
     {
+        private bool? _acceptBundleUpdate;
         private IpAddressType _ipAddressType;
         private string _resourceName;
         private ResourceType _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property AcceptBundleUpdate. 
+        /// <para>
+        /// Required parameter to accept the instance bundle update when changing to, and from,
+        /// IPv6-only.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// An instance bundle will change when switching from <c>dual-stack</c> or <c>ipv4</c>,
+        /// to <c>ipv6</c>. It also changes when switching from <c>ipv6</c>, to <c>dual-stack</c>
+        /// or <c>ipv4</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must include this parameter in the command to update the bundle. For example,
+        /// if you switch from <c>dual-stack</c> to <c>ipv6</c>, the bundle will be updated, and
+        /// billing for the IPv6-only instance bundle begins immediately.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? AcceptBundleUpdate
+        {
+            get { return this._acceptBundleUpdate; }
+            set { this._acceptBundleUpdate = value; }
+        }
+
+        // Check to see if AcceptBundleUpdate property is set
+        internal bool IsSetAcceptBundleUpdate()
+        {
+            return this._acceptBundleUpdate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IpAddressType. 
@@ -53,8 +86,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <c>ipv4</c> for IPv4 only, and <c>dualstack</c> for IPv4 and
-        /// IPv6.
+        /// The possible values are <c>ipv4</c> for IPv4 only, <c>ipv6</c> for IPv6 only, and
+        /// <c>dualstack</c> for IPv4 and IPv6.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

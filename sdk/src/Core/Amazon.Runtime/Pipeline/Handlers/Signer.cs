@@ -15,6 +15,8 @@
 
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using System;
 using System.IO;
@@ -107,6 +109,7 @@ namespace Amazon.Runtime.Internal
                 return;
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
+            using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
                 if (immutableCredentials?.UseToken == true && 
                     !(requestContext.Signer is NullSigner) && 
@@ -143,6 +146,7 @@ namespace Amazon.Runtime.Internal
                 return;
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
+            using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
                 if (immutableCredentials?.UseToken == true &&
                     !(requestContext.Signer is NullSigner) &&

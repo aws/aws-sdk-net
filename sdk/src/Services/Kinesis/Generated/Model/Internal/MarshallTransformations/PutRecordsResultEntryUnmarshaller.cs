@@ -57,6 +57,8 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         public PutRecordsResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             PutRecordsResultEntry unmarshalledObject = new PutRecordsResultEntry();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

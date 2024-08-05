@@ -57,6 +57,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         public InstanceUserSummary Unmarshall(JsonUnmarshallerContext context)
         {
             InstanceUserSummary unmarshalledObject = new InstanceUserSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -144,7 +144,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelCompositeModelName. 
         /// <para>
-        /// A unique, friendly name for the composite model.
+        /// A unique name for the composite model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -163,7 +163,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelCompositeModelProperties. 
         /// <para>
-        /// The property definitions of the composite model. For more information, see &lt;LINK&gt;.
+        /// The property definitions of the composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html#inline-composite-models">
+        /// Inline custom composite models</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -246,7 +247,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property ComposedAssetModelId. 
         /// <para>
-        /// The ID of a composite model on this asset.
+        /// The ID of a component model which is reused to create this composite model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=13, Max=139)]

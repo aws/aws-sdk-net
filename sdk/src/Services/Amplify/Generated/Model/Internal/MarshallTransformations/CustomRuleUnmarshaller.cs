@@ -57,6 +57,8 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
         public CustomRule Unmarshall(JsonUnmarshallerContext context)
         {
             CustomRule unmarshalledObject = new CustomRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

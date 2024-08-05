@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public MqttHeaders Unmarshall(JsonUnmarshallerContext context)
         {
             MqttHeaders unmarshalledObject = new MqttHeaders();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

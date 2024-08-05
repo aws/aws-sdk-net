@@ -57,6 +57,8 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         public WatchlistDetails Unmarshall(JsonUnmarshallerContext context)
         {
             WatchlistDetails unmarshalledObject = new WatchlistDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

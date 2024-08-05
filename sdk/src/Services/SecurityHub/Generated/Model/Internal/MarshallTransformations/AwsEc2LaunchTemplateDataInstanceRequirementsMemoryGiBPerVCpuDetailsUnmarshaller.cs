@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails unmarshalledObject = new AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

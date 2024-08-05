@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public IAMPolicyAssignmentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             IAMPolicyAssignmentSummary unmarshalledObject = new IAMPolicyAssignmentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

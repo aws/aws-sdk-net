@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public DatasetContentVersionValue Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetContentVersionValue unmarshalledObject = new DatasetContentVersionValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

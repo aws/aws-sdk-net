@@ -57,6 +57,8 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         public FastRestoreRule Unmarshall(JsonUnmarshallerContext context)
         {
             FastRestoreRule unmarshalledObject = new FastRestoreRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

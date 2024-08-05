@@ -239,8 +239,8 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ExportTr34KeyBlock.RandomNonce</property>
     <min>16</min>
-    <max>16</max>
-    <pattern>[0-9A-F]+</pattern>
+    <max>32</max>
+    <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ExportTr34KeyBlock.WrappingKeyCertificate</property>
@@ -283,8 +283,8 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ImportTr34KeyBlock.RandomNonce</property>
     <min>16</min>
-    <max>16</max>
-    <pattern>[0-9A-F]+</pattern>
+    <max>32</max>
+    <pattern>(?:[0-9a-fA-F][0-9a-fA-F])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ImportTr34KeyBlock.SigningKeyCertificate</property>

@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsEc2VpcDetails Unmarshall(JsonUnmarshallerContext context)
         {
             AwsEc2VpcDetails unmarshalledObject = new AwsEc2VpcDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

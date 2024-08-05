@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TextClassificationJobConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TextClassificationJobConfig unmarshalledObject = new TextClassificationJobConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

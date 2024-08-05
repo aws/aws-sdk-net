@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public SolutionVersionSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SolutionVersionSummary unmarshalledObject = new SolutionVersionSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

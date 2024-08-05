@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The collection of algorithms run on a dataset for training the model candidates of
-    /// an Autopilot job.
+    /// The selection of algorithms trained on your dataset to generate the model candidates
+    /// for an Autopilot job.
     /// </summary>
     public partial class AutoMLAlgorithmConfig
     {
@@ -40,15 +40,18 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLAlgorithms. 
         /// <para>
-        /// The selection of algorithms run on a dataset to train the model candidates of an Autopilot
-        /// job. 
+        /// The selection of algorithms trained on your dataset to generate the model candidates
+        /// for an Autopilot job.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>For the tabular problem type <c>TabularJobConfig</c>:</b> 
         /// </para>
         ///  <note> 
         /// <para>
         /// Selected algorithms must belong to the list corresponding to the training mode set
         /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
         /// (<c>ENSEMBLING</c> or <c>HYPERPARAMETER_TUNING</c>). Choose a minimum of 1 algorithm.
-        /// 
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
@@ -102,7 +105,40 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// "xgboost"
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b>For the time-series forecasting problem type <c>TimeSeriesForecastingJobConfig</c>:</b>
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Choose your algorithms from this list.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// "cnn-qr"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "deepar"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "prophet"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "arima"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "npts"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// "ets"
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Max=11)]
         public List<string> AutoMLAlgorithms

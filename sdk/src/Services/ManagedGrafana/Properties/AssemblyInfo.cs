@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ManagedGrafana")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Managed Grafana. Initial release of the SDK for Amazon Managed Grafana API.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Managed Grafana. Initial release of the SDK for Amazon Managed Grafana API.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Managed Grafana. Initial release of the SDK for Amazon Managed Grafana API.")]
 #elif NETCOREAPP3_1

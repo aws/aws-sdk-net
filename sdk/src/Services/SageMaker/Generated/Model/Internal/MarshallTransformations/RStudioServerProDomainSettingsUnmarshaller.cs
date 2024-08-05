@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public RStudioServerProDomainSettings Unmarshall(JsonUnmarshallerContext context)
         {
             RStudioServerProDomainSettings unmarshalledObject = new RStudioServerProDomainSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

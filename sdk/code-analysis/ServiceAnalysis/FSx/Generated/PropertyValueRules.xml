@@ -971,6 +971,11 @@
     <pattern>^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateFileSystemLustreMetadataConfiguration.Iops</property>
+    <min>1500</min>
+    <max>192000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemOntapConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
     <max>90</max>
@@ -1476,6 +1481,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.FileSystemLustreMetadataConfiguration.Iops</property>
+    <min>1500</min>
+    <max>192000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.IncompatibleParameterErrorException.Parameter</property>
     <min>1</min>
   </property-value-rule>
@@ -1971,6 +1981,11 @@
     <pattern>^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateFileSystemLustreMetadataConfiguration.Iops</property>
+    <min>1500</min>
+    <max>192000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemOntapConfiguration.AutomaticBackupRetentionDays</property>
     <min>0</min>
     <max>90</max>
@@ -1986,6 +2001,11 @@
     <min>8</min>
     <max>50</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{8,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.UpdateFileSystemOntapConfiguration.HAPairs</property>
+    <min>1</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemOntapConfiguration.ThroughputCapacity</property>

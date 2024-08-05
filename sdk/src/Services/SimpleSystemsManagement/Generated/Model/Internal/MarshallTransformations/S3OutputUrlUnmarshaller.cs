@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public S3OutputUrl Unmarshall(JsonUnmarshallerContext context)
         {
             S3OutputUrl unmarshalledObject = new S3OutputUrl();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

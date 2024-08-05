@@ -31,12 +31,13 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// An object containing <c>FieldName</c>, <c>Type</c>, <c>GroupName</c>, <c>MatchKey</c>,
-    /// and <c>SubType</c>.
+    /// <c>Hashing</c>, and <c>SubType</c>.
     /// </summary>
     public partial class SchemaInputAttribute
     {
         private string _fieldName;
         private string _groupName;
+        private bool? _hashed;
         private string _matchKey;
         private string _subType;
         private SchemaAttributeType _type;
@@ -87,15 +88,42 @@ namespace Amazon.EntityResolution.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Hashed. 
+        /// <para>
+        ///  Indicates if the column values are hashed in the schema input. If the value is set
+        /// to <c>TRUE</c>, the column values are hashed. If the value is set to <c>FALSE</c>,
+        /// the column values are cleartext.
+        /// </para>
+        /// </summary>
+        public bool? Hashed
+        {
+            get { return this._hashed; }
+            set { this._hashed = value; }
+        }
+
+        // Check to see if Hashed property is set
+        internal bool IsSetHashed()
+        {
+            return this._hashed.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MatchKey. 
         /// <para>
         /// A key that allows grouping of multiple input attributes into a unified matching group.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         /// For example, consider a scenario where the source table contains various addresses,
         /// such as <c>business_address</c> and <c>shipping_address</c>. By assigning a <c>matchKey</c>
         /// called <c>address</c> to both attributes, Entity Resolution will match records across
-        /// these fields to create a consolidated matching group. If no <c>matchKey</c> is specified
-        /// for a column, it won't be utilized for matching purposes but will still be included
-        /// in the output table.
+        /// these fields to create a consolidated matching group.
+        /// </para>
+        ///  
+        /// <para>
+        /// If no <c>matchKey</c> is specified for a column, it won't be utilized for matching
+        /// purposes but will still be included in the output table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]

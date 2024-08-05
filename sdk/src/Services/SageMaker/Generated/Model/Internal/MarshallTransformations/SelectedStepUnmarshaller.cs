@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public SelectedStep Unmarshall(JsonUnmarshallerContext context)
         {
             SelectedStep unmarshalledObject = new SelectedStep();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

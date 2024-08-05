@@ -57,6 +57,8 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public Pipeline Unmarshall(JsonUnmarshallerContext context)
         {
             Pipeline unmarshalledObject = new Pipeline();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Destinations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PipelineDestination, PipelineDestinationUnmarshaller>(PipelineDestinationUnmarshaller.Instance);
+                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EncryptionAtRestOptions", targetDepth))
@@ -158,6 +166,12 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<VpcEndpoint, VpcEndpointUnmarshaller>(VpcEndpointUnmarshaller.Instance);
                     unmarshalledObject.VpcEndpoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcEndpointService", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcEndpointService = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

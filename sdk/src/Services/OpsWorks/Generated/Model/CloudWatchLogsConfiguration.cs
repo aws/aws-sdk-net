@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Describes the Amazon CloudWatch logs configuration for a layer.
+    /// Describes the Amazon CloudWatch Logs configuration for a layer.
     /// </summary>
     public partial class CloudWatchLogsConfiguration
     {

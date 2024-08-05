@@ -57,6 +57,8 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         public UnlockDelay Unmarshall(JsonUnmarshallerContext context)
         {
             UnlockDelay unmarshalledObject = new UnlockDelay();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

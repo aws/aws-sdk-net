@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public ClientPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             ClientPolicy unmarshalledObject = new ClientPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class RetrieveAndGenerateResponse : AmazonWebServiceResponse
     {
         private List<Citation> _citations = AWSConfigs.InitializeCollections ? new List<Citation>() : null;
+        private GuadrailAction _guardrailAction;
         private RetrieveAndGenerateOutput _output;
         private string _sessionId;
 
@@ -55,6 +56,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetCitations()
         {
             return this._citations != null && (this._citations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailAction. 
+        /// <para>
+        /// Specifies if there is a guardrail intervention in the response.
+        /// </para>
+        /// </summary>
+        public GuadrailAction GuardrailAction
+        {
+            get { return this._guardrailAction; }
+            set { this._guardrailAction = value; }
+        }
+
+        // Check to see if GuardrailAction property is set
+        internal bool IsSetGuardrailAction()
+        {
+            return this._guardrailAction != null;
         }
 
         /// <summary>
@@ -79,8 +98,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The unique identifier of the session. Reuse the same value to continue the same session
-        /// with the knowledge base.
+        /// The unique identifier of the session. When you first make a <c>RetrieveAndGenerate</c>
+        /// request, Amazon Bedrock automatically generates this value. You must reuse this value
+        /// for all subsequent requests in the same conversational session. This value allows
+        /// Amazon Bedrock to maintain context and knowledge from previous interactions. You can't
+        /// explicitly set the <c>sessionId</c> yourself.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]

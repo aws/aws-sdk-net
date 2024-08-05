@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public IntegerConfigurationOptions Unmarshall(JsonUnmarshallerContext context)
         {
             IntegerConfigurationOptions unmarshalledObject = new IntegerConfigurationOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

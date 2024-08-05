@@ -57,6 +57,8 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
         public FleetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             FleetSummary unmarshalledObject = new FleetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

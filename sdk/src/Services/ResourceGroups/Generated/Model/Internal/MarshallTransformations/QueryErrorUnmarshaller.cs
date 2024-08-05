@@ -57,6 +57,8 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         public QueryError Unmarshall(JsonUnmarshallerContext context)
         {
             QueryError unmarshalledObject = new QueryError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

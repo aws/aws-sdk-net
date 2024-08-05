@@ -57,6 +57,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         public Deployment Unmarshall(JsonUnmarshallerContext context)
         {
             Deployment unmarshalledObject = new Deployment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -86,6 +88,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedTasks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fargateEphemeralStorage", targetDepth))
+                {
+                    var unmarshaller = DeploymentEphemeralStorageUnmarshaller.Instance;
+                    unmarshalledObject.FargateEphemeralStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))

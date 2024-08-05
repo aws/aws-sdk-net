@@ -57,6 +57,8 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
         public MediaStorageConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MediaStorageConfiguration unmarshalledObject = new MediaStorageConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

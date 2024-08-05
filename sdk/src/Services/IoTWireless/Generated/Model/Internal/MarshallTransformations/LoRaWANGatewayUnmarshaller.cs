@@ -57,6 +57,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public LoRaWANGateway Unmarshall(JsonUnmarshallerContext context)
         {
             LoRaWANGateway unmarshalledObject = new LoRaWANGateway();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -220,8 +220,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// Idempotency</a>.
+        /// the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
+        /// idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -276,17 +276,28 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// In IPAM, the locale is the Amazon Web Services Region where you want to make an IPAM
-        /// pool available for allocations. Only resources in the same Region as the locale of
-        /// the pool can get IP address allocations from the pool. You can only allocate a CIDR
-        /// for a VPC, for example, from an IPAM pool that shares a locale with the VPC’s Region.
-        /// Note that once you choose a Locale for a pool, you cannot modify it. If you do not
-        /// choose a locale, resources in Regions others than the IPAM's home region cannot use
-        /// CIDRs from this pool.
+        /// The locale for the pool should be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services Region where you want this IPAM pool to be available for allocations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The network border group for an Amazon Web Services Local Zone where you want this
+        /// IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported
+        /// Local Zones</a>). This option is only available for IPAM IPv4 pools in the public
+        /// scope.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you do not choose a locale, resources in Regions others than the IPAM's home region
+        /// cannot use CIDRs from this pool.
         /// </para>
         ///  
         /// <para>
-        /// Possible values: Any Amazon Web Services Region, such as us-east-1.
+        /// Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local
+        /// Zone.
         /// </para>
         /// </summary>
         public string Locale

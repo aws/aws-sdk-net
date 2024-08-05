@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public MediaCapturePipelineSummary Unmarshall(JsonUnmarshallerContext context)
         {
             MediaCapturePipelineSummary unmarshalledObject = new MediaCapturePipelineSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

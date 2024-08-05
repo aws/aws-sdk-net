@@ -57,6 +57,8 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         public KmsEncryptionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             KmsEncryptionConfig unmarshalledObject = new KmsEncryptionConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

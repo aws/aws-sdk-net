@@ -354,6 +354,10 @@ namespace Amazon.LaunchWizard
         /// An internal error has occurred. Retry your request, but if the problem persists, contact
         /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
         /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceLimitException">
+        /// You have exceeded an Launch Wizard resource limit. For example, you might have too
+        /// many deployments in progress.
+        /// </exception>
         /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
         /// The specified workload or deployment resource can't be found.
         /// </exception>
@@ -383,6 +387,10 @@ namespace Amazon.LaunchWizard
         /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
         /// An internal error has occurred. Retry your request, but if the problem persists, contact
         /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceLimitException">
+        /// You have exceeded an Launch Wizard resource limit. For example, you might have too
+        /// many deployments in progress.
         /// </exception>
         /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
         /// The specified workload or deployment resource can't be found.
@@ -524,6 +532,73 @@ namespace Amazon.LaunchWizard
 
         #endregion
         
+        #region  GetWorkloadDeploymentPattern
+
+
+        /// <summary>
+        /// Returns details for a given workload and deployment pattern, including the available
+        /// specifications. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a>
+        /// operation to discover the available workload names and the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
+        /// operation to discover the available deployment pattern names of a given workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkloadDeploymentPattern service method.</param>
+        /// 
+        /// <returns>The response from the GetWorkloadDeploymentPattern service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkloadDeploymentPattern">REST API Reference for GetWorkloadDeploymentPattern Operation</seealso>
+        public virtual GetWorkloadDeploymentPatternResponse GetWorkloadDeploymentPattern(GetWorkloadDeploymentPatternRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkloadDeploymentPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkloadDeploymentPatternResponseUnmarshaller.Instance;
+
+            return Invoke<GetWorkloadDeploymentPatternResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns details for a given workload and deployment pattern, including the available
+        /// specifications. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a>
+        /// operation to discover the available workload names and the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
+        /// operation to discover the available deployment pattern names of a given workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkloadDeploymentPattern service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWorkloadDeploymentPattern service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/GetWorkloadDeploymentPattern">REST API Reference for GetWorkloadDeploymentPattern Operation</seealso>
+        public virtual Task<GetWorkloadDeploymentPatternResponse> GetWorkloadDeploymentPatternAsync(GetWorkloadDeploymentPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWorkloadDeploymentPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWorkloadDeploymentPatternResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetWorkloadDeploymentPatternResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDeploymentEvents
 
 
@@ -640,11 +715,74 @@ namespace Amazon.LaunchWizard
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists the tags associated with a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the tags associated with a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListWorkloadDeploymentPatterns
 
 
         /// <summary>
-        /// Lists the workload deployment patterns.
+        /// Lists the workload deployment patterns for a given workload name. You can use the
+        /// <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a>
+        /// operation to discover the available workload names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkloadDeploymentPatterns service method.</param>
         /// 
@@ -671,7 +809,9 @@ namespace Amazon.LaunchWizard
 
 
         /// <summary>
-        /// Lists the workload deployment patterns.
+        /// Lists the workload deployment patterns for a given workload name. You can use the
+        /// <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloads.html">ListWorkloads</a>
+        /// operation to discover the available workload names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkloadDeploymentPatterns service method.</param>
         /// <param name="cancellationToken">
@@ -705,7 +845,8 @@ namespace Amazon.LaunchWizard
 
 
         /// <summary>
-        /// Lists the workloads.
+        /// Lists the available workload names. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
+        /// operation to discover the available deployment patterns for a given workload.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkloads service method.</param>
         /// 
@@ -729,7 +870,8 @@ namespace Amazon.LaunchWizard
 
 
         /// <summary>
-        /// Lists the workloads.
+        /// Lists the available workload names. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">ListWorkloadDeploymentPatterns</a>
+        /// operation to discover the available deployment patterns for a given workload.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkloads service method.</param>
         /// <param name="cancellationToken">
@@ -752,6 +894,128 @@ namespace Amazon.LaunchWizard
             options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListWorkloadsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds the specified tags to the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds the specified tags to the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes the specified tags from the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the specified tags from the given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LaunchWizard.</returns>
+        /// <exception cref="Amazon.LaunchWizard.Model.InternalServerException">
+        /// An internal error has occurred. Retry your request, but if the problem persists, contact
+        /// us with details by posting a question on <a href="https://repost.aws/">re:Post</a>.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ResourceNotFoundException">
+        /// The specified workload or deployment resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LaunchWizard.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/launch-wizard-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

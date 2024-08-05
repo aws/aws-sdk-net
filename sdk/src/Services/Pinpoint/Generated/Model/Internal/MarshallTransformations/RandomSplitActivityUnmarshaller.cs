@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public RandomSplitActivity Unmarshall(JsonUnmarshallerContext context)
         {
             RandomSplitActivity unmarshalledObject = new RandomSplitActivity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

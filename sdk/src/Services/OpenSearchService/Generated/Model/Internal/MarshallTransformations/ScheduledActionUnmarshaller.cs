@@ -57,6 +57,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public ScheduledAction Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduledAction unmarshalledObject = new ScheduledAction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

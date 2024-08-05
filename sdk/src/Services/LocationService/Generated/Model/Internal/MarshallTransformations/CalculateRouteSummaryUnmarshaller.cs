@@ -57,6 +57,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         public CalculateRouteSummary Unmarshall(JsonUnmarshallerContext context)
         {
             CalculateRouteSummary unmarshalledObject = new CalculateRouteSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

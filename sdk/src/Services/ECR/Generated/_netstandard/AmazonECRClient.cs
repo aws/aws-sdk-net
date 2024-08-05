@@ -711,6 +711,61 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  CreateRepositoryCreationTemplate
+
+        internal virtual CreateRepositoryCreationTemplateResponse CreateRepositoryCreationTemplate(CreateRepositoryCreationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRepositoryCreationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRepositoryCreationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRepositoryCreationTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a repository creation template. This template is used to define the settings
+        /// for repositories created by Amazon ECR on your behalf. For example, repositories created
+        /// through pull through cache actions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-creation-templates.html">Private
+        /// repository creation templates</a> in the <i>Amazon Elastic Container Registry User
+        /// Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRepositoryCreationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRepositoryCreationTemplate service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.TemplateAlreadyExistsException">
+        /// The repository creation template already exists. Specify a unique prefix and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepositoryCreationTemplate">REST API Reference for CreateRepositoryCreationTemplate Operation</seealso>
+        public virtual Task<CreateRepositoryCreationTemplateResponse> CreateRepositoryCreationTemplateAsync(CreateRepositoryCreationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRepositoryCreationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRepositoryCreationTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRepositoryCreationTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteLifecyclePolicy
 
         internal virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
@@ -903,6 +958,53 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRepositoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRepositoryCreationTemplate
+
+        internal virtual DeleteRepositoryCreationTemplateResponse DeleteRepositoryCreationTemplate(DeleteRepositoryCreationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRepositoryCreationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRepositoryCreationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRepositoryCreationTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a repository creation template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRepositoryCreationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRepositoryCreationTemplate service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.TemplateNotFoundException">
+        /// The specified repository creation template can't be found. Verify the registry ID
+        /// and prefix and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryCreationTemplate">REST API Reference for DeleteRepositoryCreationTemplate Operation</seealso>
+        public virtual Task<DeleteRepositoryCreationTemplateResponse> DeleteRepositoryCreationTemplateAsync(DeleteRepositoryCreationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRepositoryCreationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRepositoryCreationTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRepositoryCreationTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1246,6 +1348,51 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeRepositoriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeRepositoryCreationTemplates
+
+        internal virtual DescribeRepositoryCreationTemplatesResponse DescribeRepositoryCreationTemplates(DescribeRepositoryCreationTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRepositoryCreationTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRepositoryCreationTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRepositoryCreationTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns details about the repository creation templates in a registry. The <c>prefixes</c>
+        /// request parameter can be used to return the details for a specific repository creation
+        /// template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRepositoryCreationTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRepositoryCreationTemplates service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositoryCreationTemplates">REST API Reference for DescribeRepositoryCreationTemplates Operation</seealso>
+        public virtual Task<DescribeRepositoryCreationTemplatesResponse> DescribeRepositoryCreationTemplatesAsync(DescribeRepositoryCreationTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRepositoryCreationTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRepositoryCreationTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeRepositoryCreationTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2115,7 +2262,8 @@ namespace Amazon.ECR
         /// IAM role is created in your account for the replication process. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry
-        /// User Guide</i>.
+        /// User Guide</i>. For more information on the custom role for replication, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/replication-creation-templates.html#roles-creatingrole-user-console">Creating
+        /// an IAM role for replication</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -2473,6 +2621,53 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = UpdatePullThroughCacheRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePullThroughCacheRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRepositoryCreationTemplate
+
+        internal virtual UpdateRepositoryCreationTemplateResponse UpdateRepositoryCreationTemplate(UpdateRepositoryCreationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRepositoryCreationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRepositoryCreationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRepositoryCreationTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing repository creation template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRepositoryCreationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRepositoryCreationTemplate service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.TemplateNotFoundException">
+        /// The specified repository creation template can't be found. Verify the registry ID
+        /// and prefix and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateRepositoryCreationTemplate">REST API Reference for UpdateRepositoryCreationTemplate Operation</seealso>
+        public virtual Task<UpdateRepositoryCreationTemplateResponse> UpdateRepositoryCreationTemplateAsync(UpdateRepositoryCreationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRepositoryCreationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRepositoryCreationTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRepositoryCreationTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

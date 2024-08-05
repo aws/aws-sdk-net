@@ -57,6 +57,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
         public AmazonTranscribeProcessorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AmazonTranscribeProcessorConfiguration unmarshalledObject = new AmazonTranscribeProcessorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -92,6 +94,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdentifyMultipleLanguages", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LanguageCode", targetDepth))

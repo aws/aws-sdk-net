@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public ParentStepDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ParentStepDetails unmarshalledObject = new ParentStepDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public PostgreSqlDataProviderSettings Unmarshall(JsonUnmarshallerContext context)
         {
             PostgreSqlDataProviderSettings unmarshalledObject = new PostgreSqlDataProviderSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

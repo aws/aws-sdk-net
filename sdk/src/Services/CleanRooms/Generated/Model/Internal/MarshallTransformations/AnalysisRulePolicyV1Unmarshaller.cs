@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public AnalysisRulePolicyV1 Unmarshall(JsonUnmarshallerContext context)
         {
             AnalysisRulePolicyV1 unmarshalledObject = new AnalysisRulePolicyV1();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AnalysisRuleCustomUnmarshaller.Instance;
                     unmarshalledObject.Custom = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("idMappingTable", targetDepth))
+                {
+                    var unmarshaller = AnalysisRuleIdMappingTableUnmarshaller.Instance;
+                    unmarshalledObject.IdMappingTable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("list", targetDepth))

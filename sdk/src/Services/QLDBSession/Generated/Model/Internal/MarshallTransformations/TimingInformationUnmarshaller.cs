@@ -57,6 +57,8 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         public TimingInformation Unmarshall(JsonUnmarshallerContext context)
         {
             TimingInformation unmarshalledObject = new TimingInformation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

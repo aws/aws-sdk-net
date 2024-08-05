@@ -119,7 +119,7 @@ namespace Amazon.Runtime
         {
             ValidateCredentialsInputs();
 
-            var ssoClient = 
+            var ssoClient =
                 SSOServiceClientHelpers.BuildSSOClient(
                     RegionEndpoint.GetBySystemName(Region),
                     Options.ProxySettings);
@@ -145,7 +145,7 @@ namespace Amazon.Runtime
         {
             ValidateCredentialsInputs();
 
-            var ssoClient = 
+            var ssoClient =
                 SSOServiceClientHelpers.BuildSSOClient(
                     RegionEndpoint.GetBySystemName(Region),
                     Options.ProxySettings);
@@ -197,7 +197,8 @@ namespace Amazon.Runtime
                 StartUrl = StartUrl,
                 Session = Options.SessionName,
                 Scopes = Options.Scopes,
-                SupportsGettingNewToken = Options.SupportsGettingNewToken
+                SupportsGettingNewToken = Options.SupportsGettingNewToken,
+                PkceFlowOptions = Options.PkceFlowOptions,
             };
 
             var token = _ssoTokenManager.GetToken(ssoTokenManagerGetTokenOptions);
@@ -222,7 +223,8 @@ namespace Amazon.Runtime
                 StartUrl = StartUrl,
                 Session = Options.SessionName,
                 Scopes = Options.Scopes,
-                SupportsGettingNewToken = Options.SupportsGettingNewToken
+                SupportsGettingNewToken = Options.SupportsGettingNewToken,
+                PkceFlowOptions = Options.PkceFlowOptions,
             };
 
             var token = await _ssoTokenManager.GetTokenAsync(ssoTokenManagerGetTokenOptions).ConfigureAwait(false);

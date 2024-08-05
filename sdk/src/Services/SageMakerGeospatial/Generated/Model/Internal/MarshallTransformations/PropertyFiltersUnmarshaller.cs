@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public PropertyFilters Unmarshall(JsonUnmarshallerContext context)
         {
             PropertyFilters unmarshalledObject = new PropertyFilters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

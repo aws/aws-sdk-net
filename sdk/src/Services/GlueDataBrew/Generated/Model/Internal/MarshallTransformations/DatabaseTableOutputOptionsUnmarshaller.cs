@@ -57,6 +57,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public DatabaseTableOutputOptions Unmarshall(JsonUnmarshallerContext context)
         {
             DatabaseTableOutputOptions unmarshalledObject = new DatabaseTableOutputOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

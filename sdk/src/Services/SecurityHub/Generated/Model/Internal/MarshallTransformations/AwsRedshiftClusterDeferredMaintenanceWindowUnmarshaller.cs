@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRedshiftClusterDeferredMaintenanceWindow Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRedshiftClusterDeferredMaintenanceWindow unmarshalledObject = new AwsRedshiftClusterDeferredMaintenanceWindow();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

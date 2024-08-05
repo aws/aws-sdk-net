@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public RedshiftParameters Unmarshall(JsonUnmarshallerContext context)
         {
             RedshiftParameters unmarshalledObject = new RedshiftParameters();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

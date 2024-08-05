@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public CollaborationAnalysisTemplate Unmarshall(JsonUnmarshallerContext context)
         {
             CollaborationAnalysisTemplate unmarshalledObject = new CollaborationAnalysisTemplate();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

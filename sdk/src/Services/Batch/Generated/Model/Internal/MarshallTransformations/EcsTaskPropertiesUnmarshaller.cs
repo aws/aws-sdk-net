@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public EcsTaskProperties Unmarshall(JsonUnmarshallerContext context)
         {
             EcsTaskProperties unmarshalledObject = new EcsTaskProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

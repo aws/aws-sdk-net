@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ChimeSDKMessaging")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Chime SDK Messaging. The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Chime SDK Messaging. The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Chime SDK Messaging. The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.")]
 #elif NETCOREAPP3_1

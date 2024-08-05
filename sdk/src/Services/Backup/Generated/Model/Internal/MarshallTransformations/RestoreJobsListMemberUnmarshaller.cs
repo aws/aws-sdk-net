@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public RestoreJobsListMember Unmarshall(JsonUnmarshallerContext context)
         {
             RestoreJobsListMember unmarshalledObject = new RestoreJobsListMember();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

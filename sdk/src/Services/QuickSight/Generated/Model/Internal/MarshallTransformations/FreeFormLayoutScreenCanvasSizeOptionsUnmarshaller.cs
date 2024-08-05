@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FreeFormLayoutScreenCanvasSizeOptions Unmarshall(JsonUnmarshallerContext context)
         {
             FreeFormLayoutScreenCanvasSizeOptions unmarshalledObject = new FreeFormLayoutScreenCanvasSizeOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

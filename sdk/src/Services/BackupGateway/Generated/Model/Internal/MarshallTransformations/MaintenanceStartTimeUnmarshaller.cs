@@ -57,6 +57,8 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         public MaintenanceStartTime Unmarshall(JsonUnmarshallerContext context)
         {
             MaintenanceStartTime unmarshalledObject = new MaintenanceStartTime();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

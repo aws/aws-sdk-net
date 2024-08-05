@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private ApplicationMode _applicationMode;
         private string _applicationName;
         private ApplicationStatus _applicationStatus;
+        private DateTime? _applicationVersionCreateTimestamp;
         private long? _applicationVersionId;
         private long? _applicationVersionRolledBackFrom;
         private long? _applicationVersionRolledBackTo;
@@ -184,6 +185,22 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationStatus()
         {
             return this._applicationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationVersionCreateTimestamp. The current timestamp
+        /// when the application version was created.
+        /// </summary>
+        public DateTime? ApplicationVersionCreateTimestamp
+        {
+            get { return this._applicationVersionCreateTimestamp; }
+            set { this._applicationVersionCreateTimestamp = value; }
+        }
+
+        // Check to see if ApplicationVersionCreateTimestamp property is set
+        internal bool IsSetApplicationVersionCreateTimestamp()
+        {
+            return this._applicationVersionCreateTimestamp.HasValue; 
         }
 
         /// <summary>

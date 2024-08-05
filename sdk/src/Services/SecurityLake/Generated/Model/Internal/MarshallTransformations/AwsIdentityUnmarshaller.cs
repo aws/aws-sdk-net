@@ -57,6 +57,8 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         public AwsIdentity Unmarshall(JsonUnmarshallerContext context)
         {
             AwsIdentity unmarshalledObject = new AwsIdentity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

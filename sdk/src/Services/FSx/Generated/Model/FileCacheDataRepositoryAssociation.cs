@@ -61,7 +61,7 @@ namespace Amazon.FSx.Model
         ///  <ul> <li> 
         /// <para>
         /// If you are not using the <c>DataRepositorySubdirectories</c> parameter, the path is
-        /// to an NFS Export directory (or one of its subdirectories) in the format <c>nsf://nfs-domain-name/exportpath</c>.
+        /// to an NFS Export directory (or one of its subdirectories) in the format <c>nfs://nfs-domain-name/exportpath</c>.
         /// You can therefore link a single NFS Export to a single data repository association.
         /// </para>
         ///  </li> <li> 

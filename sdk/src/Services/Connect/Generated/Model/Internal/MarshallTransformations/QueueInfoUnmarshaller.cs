@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public QueueInfo Unmarshall(JsonUnmarshallerContext context)
         {
             QueueInfo unmarshalledObject = new QueueInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

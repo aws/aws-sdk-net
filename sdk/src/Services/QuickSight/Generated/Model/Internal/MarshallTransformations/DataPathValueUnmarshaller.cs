@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DataPathValue Unmarshall(JsonUnmarshallerContext context)
         {
             DataPathValue unmarshalledObject = new DataPathValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

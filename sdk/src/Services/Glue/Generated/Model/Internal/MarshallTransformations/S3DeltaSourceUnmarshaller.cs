@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public S3DeltaSource Unmarshall(JsonUnmarshallerContext context)
         {
             S3DeltaSource unmarshalledObject = new S3DeltaSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

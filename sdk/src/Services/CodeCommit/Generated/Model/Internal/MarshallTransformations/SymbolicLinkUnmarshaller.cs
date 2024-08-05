@@ -57,6 +57,8 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public SymbolicLink Unmarshall(JsonUnmarshallerContext context)
         {
             SymbolicLink unmarshalledObject = new SymbolicLink();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

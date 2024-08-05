@@ -57,6 +57,8 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public StagingSourceServer Unmarshall(JsonUnmarshallerContext context)
         {
             StagingSourceServer unmarshalledObject = new StagingSourceServer();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

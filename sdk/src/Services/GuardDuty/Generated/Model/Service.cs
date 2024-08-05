@@ -45,6 +45,7 @@ namespace Amazon.GuardDuty.Model
         private string _eventLastSeen;
         private Evidence _evidence;
         private string _featureName;
+        private MalwareScanDetails _malwareScanDetails;
         private string _resourceRole;
         private RuntimeDetails _runtimeDetails;
         private string _serviceName;
@@ -248,6 +249,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetFeatureName()
         {
             return this._featureName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MalwareScanDetails. 
+        /// <para>
+        /// Returns details from the malware scan that generated a GuardDuty finding.
+        /// </para>
+        /// </summary>
+        public MalwareScanDetails MalwareScanDetails
+        {
+            get { return this._malwareScanDetails; }
+            set { this._malwareScanDetails = value; }
+        }
+
+        // Check to see if MalwareScanDetails property is set
+        internal bool IsSetMalwareScanDetails()
+        {
+            return this._malwareScanDetails != null;
         }
 
         /// <summary>

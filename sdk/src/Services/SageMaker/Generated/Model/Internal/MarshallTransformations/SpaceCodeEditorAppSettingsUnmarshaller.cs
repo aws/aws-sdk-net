@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public SpaceCodeEditorAppSettings Unmarshall(JsonUnmarshallerContext context)
         {
             SpaceCodeEditorAppSettings unmarshalledObject = new SpaceCodeEditorAppSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

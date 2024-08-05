@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public VisualTitleLabelOptions Unmarshall(JsonUnmarshallerContext context)
         {
             VisualTitleLabelOptions unmarshalledObject = new VisualTitleLabelOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

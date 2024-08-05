@@ -81,7 +81,6 @@ namespace Amazon.ResilienceHub.Model
         /// Identifier of the Application Component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
         public string Id
         {
             get { return this._id; }
@@ -100,7 +99,7 @@ namespace Amazon.ResilienceHub.Model
         /// Name of the Application Component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

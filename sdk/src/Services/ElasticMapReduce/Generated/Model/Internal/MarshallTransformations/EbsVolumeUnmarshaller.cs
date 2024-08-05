@@ -57,6 +57,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         public EbsVolume Unmarshall(JsonUnmarshallerContext context)
         {
             EbsVolume unmarshalledObject = new EbsVolume();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

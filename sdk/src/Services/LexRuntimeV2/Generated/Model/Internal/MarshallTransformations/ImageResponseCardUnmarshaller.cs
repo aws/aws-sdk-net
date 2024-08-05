@@ -57,6 +57,8 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         public ImageResponseCard Unmarshall(JsonUnmarshallerContext context)
         {
             ImageResponseCard unmarshalledObject = new ImageResponseCard();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

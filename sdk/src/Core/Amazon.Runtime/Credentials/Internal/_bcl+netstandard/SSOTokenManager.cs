@@ -354,9 +354,19 @@ namespace Amazon.Runtime.Credentials.Internal
                 throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.ClientName)}");
             }
 
-            if (options.SsoVerificationCallback == null)
+            if (options.PkceFlowOptions == null)
             {
-                throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.SsoVerificationCallback)}");
+                if (options.SsoVerificationCallback == null)
+                {
+                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.SsoVerificationCallback)}");
+                }
+            }
+            else
+            {
+                if (options.PkceFlowOptions.RetrieveAuthorizationCodeCallback == null)
+                {
+                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.PkceFlowOptions.RetrieveAuthorizationCodeCallback)}");
+                }
             }
 
             var request = new GetSsoTokenRequest
@@ -365,11 +375,11 @@ namespace Amazon.Runtime.Credentials.Internal
                 ClientType = options.ClientType,
                 StartUrl = options.StartUrl,
                 SsoVerificationCallback = options.SsoVerificationCallback,
-                Scopes = options.Scopes
+                Scopes = options.Scopes,
+                PkceFlowOptions = options.PkceFlowOptions,
             };
 
             var response = _ssooidcClient.GetSsoToken(request);
-
             var token = MapGetSsoTokenResponseToSsoToken(response, options.Session);
 
             _ssoTokenFileCache.SaveSsoToken(token, options.CacheFolderLocation);
@@ -613,9 +623,19 @@ namespace Amazon.Runtime.Credentials.Internal
                 throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.ClientName)}");
             }
 
-            if (options.SsoVerificationCallback == null)
+            if (options.PkceFlowOptions == null)
             {
-                throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.SsoVerificationCallback)}");
+                if (options.SsoVerificationCallback == null)
+                {
+                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.SsoVerificationCallback)}");
+                }
+            }
+            else
+            {
+                if (options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync == null)
+                {
+                    throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.PkceFlowOptions.RetrieveAuthorizationCodeCallbackAsync)}");
+                }
             }
 
             var request = new GetSsoTokenRequest
@@ -624,7 +644,8 @@ namespace Amazon.Runtime.Credentials.Internal
                 ClientType = options.ClientType,
                 StartUrl = options.StartUrl,
                 SsoVerificationCallback = options.SsoVerificationCallback,
-                Scopes = options.Scopes
+                Scopes = options.Scopes,
+                PkceFlowOptions = options.PkceFlowOptions,
             };
 
             // The SSO OIDC client used throughout this class does not propagate the cancellation token to the service operations.
@@ -650,6 +671,7 @@ namespace Amazon.Runtime.Credentials.Internal
             return token;
         }
 #endif
+
         private static SsoToken MapGetSsoTokenResponseToSsoToken(GetSsoTokenResponse response, string session)
         {
             return new SsoToken
@@ -695,6 +717,5 @@ namespace Amazon.Runtime.Credentials.Internal
 #pragma warning restore CS0618 // Type or member is obsolete
             return $"{clientName}-{dateStamp}";
         }
-
     }
 }

@@ -57,6 +57,8 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         public PolicyTargetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PolicyTargetSummary unmarshalledObject = new PolicyTargetSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

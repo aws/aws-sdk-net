@@ -57,6 +57,8 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         public NetworkFirewallInternetTrafficNotInspectedViolation Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkFirewallInternetTrafficNotInspectedViolation unmarshalledObject = new NetworkFirewallInternetTrafficNotInspectedViolation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         public PackageGroupOriginRestriction Unmarshall(JsonUnmarshallerContext context)
         {
             PackageGroupOriginRestriction unmarshalledObject = new PackageGroupOriginRestriction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

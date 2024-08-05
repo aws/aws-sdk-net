@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class Observation
     {
         private ActionGroupInvocationOutput _actionGroupInvocationOutput;
+        private CodeInterpreterInvocationOutput _codeInterpreterInvocationOutput;
         private FinalResponse _finalResponse;
         private KnowledgeBaseLookupOutput _knowledgeBaseLookupOutput;
         private RepromptResponse _repromptResponse;
@@ -58,6 +59,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroupInvocationOutput()
         {
             return this._actionGroupInvocationOutput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeInterpreterInvocationOutput. 
+        /// <para>
+        /// Contains the JSON-formatted string returned by the API invoked by the code interpreter.
+        /// </para>
+        /// </summary>
+        public CodeInterpreterInvocationOutput CodeInterpreterInvocationOutput
+        {
+            get { return this._codeInterpreterInvocationOutput; }
+            set { this._codeInterpreterInvocationOutput = value; }
+        }
+
+        // Check to see if CodeInterpreterInvocationOutput property is set
+        internal bool IsSetCodeInterpreterInvocationOutput()
+        {
+            return this._codeInterpreterInvocationOutput != null;
         }
 
         /// <summary>

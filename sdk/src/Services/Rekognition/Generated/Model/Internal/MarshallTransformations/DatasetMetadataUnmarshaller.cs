@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public DatasetMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetMetadata unmarshalledObject = new DatasetMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

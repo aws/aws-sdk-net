@@ -57,6 +57,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public ElasticsearchVersionStatus Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticsearchVersionStatus unmarshalledObject = new ElasticsearchVersionStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

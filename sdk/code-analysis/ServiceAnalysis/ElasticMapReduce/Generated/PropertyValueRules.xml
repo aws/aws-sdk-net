@@ -607,6 +607,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeConfig.Priority</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.InstanceTypeConfig.WeightedCapacity</property>
     <min>0</min>
   </property-value-rule>
@@ -628,6 +632,10 @@
     <property>Amazon.ElasticMapReduce.Model.InstanceTypeSpecification.InstanceType</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeSpecification.Priority</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.InstanceTypeSpecification.WeightedCapacity</property>

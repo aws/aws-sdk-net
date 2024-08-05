@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public IndexCapacityConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             IndexCapacityConfiguration unmarshalledObject = new IndexCapacityConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

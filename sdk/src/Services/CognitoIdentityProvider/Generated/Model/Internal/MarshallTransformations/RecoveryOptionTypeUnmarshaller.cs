@@ -57,6 +57,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public RecoveryOptionType Unmarshall(JsonUnmarshallerContext context)
         {
             RecoveryOptionType unmarshalledObject = new RecoveryOptionType();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

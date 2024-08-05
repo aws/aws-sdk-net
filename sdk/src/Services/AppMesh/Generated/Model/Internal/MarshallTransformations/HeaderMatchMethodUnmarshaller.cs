@@ -57,6 +57,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         public HeaderMatchMethod Unmarshall(JsonUnmarshallerContext context)
         {
             HeaderMatchMethod unmarshalledObject = new HeaderMatchMethod();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -30,9 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the health of your local Amazon EKS cluster on an Amazon Web
-    /// Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon
-    /// Web Services cloud.
+    /// An object representing the health of your Amazon EKS cluster.
     /// </summary>
     public partial class ClusterHealth
     {
@@ -41,8 +39,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Issues. 
         /// <para>
-        /// An object representing the health issues of your local Amazon EKS cluster on an Amazon
-        /// Web Services Outpost.
+        /// An object representing the health issues of your Amazon EKS cluster.
         /// </para>
         /// </summary>
         public List<ClusterIssue> Issues

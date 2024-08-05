@@ -57,6 +57,8 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
         public AppBundleSummary Unmarshall(JsonUnmarshallerContext context)
         {
             AppBundleSummary unmarshalledObject = new AppBundleSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

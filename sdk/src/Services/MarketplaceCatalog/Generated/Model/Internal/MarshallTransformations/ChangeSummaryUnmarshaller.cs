@@ -57,6 +57,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         public ChangeSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ChangeSummary unmarshalledObject = new ChangeSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

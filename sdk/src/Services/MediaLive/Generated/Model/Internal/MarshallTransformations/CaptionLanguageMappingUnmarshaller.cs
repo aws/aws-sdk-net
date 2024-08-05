@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public CaptionLanguageMapping Unmarshall(JsonUnmarshallerContext context)
         {
             CaptionLanguageMapping unmarshalledObject = new CaptionLanguageMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

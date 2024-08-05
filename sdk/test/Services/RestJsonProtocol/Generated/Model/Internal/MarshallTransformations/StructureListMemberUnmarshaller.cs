@@ -57,6 +57,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public StructureListMember Unmarshall(JsonUnmarshallerContext context)
         {
             StructureListMember unmarshalledObject = new StructureListMember();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

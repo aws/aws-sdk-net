@@ -83,6 +83,7 @@ namespace Amazon.RDS.Model
         private List<string> _enabledCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Endpoint _endpoint;
         private string _engine;
+        private string _engineLifecycleSupport;
         private string _engineVersion;
         private string _enhancedMonitoringResourceArn;
         private bool? _iamDatabaseAuthenticationEnabled;
@@ -938,6 +939,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineLifecycleSupport. 
+        /// <para>
+        /// The life cycle type for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see CreateDBInstance.
+        /// </para>
+        /// </summary>
+        public string EngineLifecycleSupport
+        {
+            get { return this._engineLifecycleSupport; }
+            set { this._engineLifecycleSupport = value; }
+        }
+
+        // Check to see if EngineLifecycleSupport property is set
+        internal bool IsSetEngineLifecycleSupport()
+        {
+            return this._engineLifecycleSupport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version of the database engine.
@@ -1104,7 +1127,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property LicenseModel. 
         /// <para>
         /// The license model information for this DB instance. This setting doesn't apply to
-        /// RDS Custom DB instances.
+        /// Amazon Aurora or RDS Custom DB instances.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -1550,12 +1573,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
-        /// resolves to the private IP address from within the DB cluster's virtual private cloud
-        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
-        /// Access to the DB cluster is ultimately controlled by the security group it uses. That
-        /// public access isn't permitted if the security group assigned to the DB cluster doesn't
-        /// permit it.
+        /// When the DB instance is publicly accessible and you connect from outside of the DB
+        /// instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves
+        /// to the public IP address. When you connect from within the same VPC as the DB instance,
+        /// the endpoint resolves to the private IP address. Access to the DB cluster is ultimately
+        /// controlled by the security group it uses. That public access isn't permitted if the
+        /// security group assigned to the DB cluster doesn't permit it.
         /// </para>
         ///  
         /// <para>

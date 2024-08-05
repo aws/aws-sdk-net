@@ -57,6 +57,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         public DocumentVersionMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             DocumentVersionMetadata unmarshalledObject = new DocumentVersionMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

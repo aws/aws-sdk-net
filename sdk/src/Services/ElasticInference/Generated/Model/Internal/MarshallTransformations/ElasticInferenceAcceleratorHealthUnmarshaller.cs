@@ -57,6 +57,8 @@ namespace Amazon.ElasticInference.Model.Internal.MarshallTransformations
         public ElasticInferenceAcceleratorHealth Unmarshall(JsonUnmarshallerContext context)
         {
             ElasticInferenceAcceleratorHealth unmarshalledObject = new ElasticInferenceAcceleratorHealth();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

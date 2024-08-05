@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public SheetElementRenderingRule Unmarshall(JsonUnmarshallerContext context)
         {
             SheetElementRenderingRule unmarshalledObject = new SheetElementRenderingRule();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

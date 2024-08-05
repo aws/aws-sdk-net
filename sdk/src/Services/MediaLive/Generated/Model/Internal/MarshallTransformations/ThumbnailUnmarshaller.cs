@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public Thumbnail Unmarshall(JsonUnmarshallerContext context)
         {
             Thumbnail unmarshalledObject = new Thumbnail();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

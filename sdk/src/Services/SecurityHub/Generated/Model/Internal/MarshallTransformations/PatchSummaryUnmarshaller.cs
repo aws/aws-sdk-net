@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public PatchSummary Unmarshall(JsonUnmarshallerContext context)
         {
             PatchSummary unmarshalledObject = new PatchSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

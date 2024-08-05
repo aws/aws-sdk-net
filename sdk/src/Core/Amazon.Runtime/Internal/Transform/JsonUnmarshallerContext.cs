@@ -110,8 +110,12 @@ namespace Amazon.Runtime.Internal.Transform
             if(responseData != null)
             {
                 long contentLength;
-                
                 bool parsedContentLengthHeader = long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength);
+
+                if (parsedContentLengthHeader && contentLength == 0)
+                {
+                    IsEmptyResponse = true;
+                }
 
                 // Temporary work around checking Content-Encoding for an issue with NetStandard on Linux returning Content-Length for a gzipped response.
                 // Causing the SDK to attempt a CRC check over the gzipped response data with a CRC value for the uncompressed value. 
@@ -377,7 +381,10 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                 }
             }
-            else if (currentToken.Value == JsonToken.PropertyName)
+            // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
+            // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
+            // so we should just push the value so that it can be retrieved later.
+            else if (currentToken.Value == JsonToken.PropertyName || (stack.Count == 0 && currentToken == JsonToken.String))
             {
                 string t = ReadText();
 

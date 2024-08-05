@@ -57,6 +57,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public EvaluationFormSummary Unmarshall(JsonUnmarshallerContext context)
         {
             EvaluationFormSummary unmarshalledObject = new EvaluationFormSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

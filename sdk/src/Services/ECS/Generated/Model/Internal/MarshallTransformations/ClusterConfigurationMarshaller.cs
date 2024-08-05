@@ -59,6 +59,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetManagedStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("managedStorageConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ManagedStorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedStorageConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

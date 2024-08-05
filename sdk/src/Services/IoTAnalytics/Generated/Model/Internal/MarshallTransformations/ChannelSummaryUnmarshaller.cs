@@ -57,6 +57,8 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         public ChannelSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ChannelSummary unmarshalledObject = new ChannelSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

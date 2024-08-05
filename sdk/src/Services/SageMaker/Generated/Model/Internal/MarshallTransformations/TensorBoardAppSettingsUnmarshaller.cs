@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public TensorBoardAppSettings Unmarshall(JsonUnmarshallerContext context)
         {
             TensorBoardAppSettings unmarshalledObject = new TensorBoardAppSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

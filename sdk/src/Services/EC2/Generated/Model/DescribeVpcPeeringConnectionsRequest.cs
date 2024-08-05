@@ -31,7 +31,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcPeeringConnections operation.
-    /// Describes one or more of your VPC peering connections.
+    /// Describes your VPC peering connections. The default is to describe all your VPC peering
+    /// connections. Alternatively, you can specify specific VPC peering connection IDs or
+    /// filter the results to include only the VPC peering connections that match specific
+    /// criteria.
     /// </summary>
     public partial class DescribeVpcPeeringConnectionsRequest : AmazonEC2Request
     {

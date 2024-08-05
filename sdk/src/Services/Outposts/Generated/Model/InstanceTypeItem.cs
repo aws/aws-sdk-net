@@ -35,6 +35,7 @@ namespace Amazon.Outposts.Model
     public partial class InstanceTypeItem
     {
         private string _instanceType;
+        private int? _vcpUs;
 
         /// <summary>
         /// Gets and sets the property InstanceType.
@@ -49,6 +50,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VCPUs. 
+        /// <para>
+        /// The number of default VCPUs in an instance type.
+        /// </para>
+        /// </summary>
+        public int? VCPUs
+        {
+            get { return this._vcpUs; }
+            set { this._vcpUs = value; }
+        }
+
+        // Check to see if VCPUs property is set
+        internal bool IsSetVCPUs()
+        {
+            return this._vcpUs.HasValue; 
         }
 
     }

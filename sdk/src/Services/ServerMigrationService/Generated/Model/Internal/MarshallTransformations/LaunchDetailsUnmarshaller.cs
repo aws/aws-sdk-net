@@ -57,6 +57,8 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
         public LaunchDetails Unmarshall(JsonUnmarshallerContext context)
         {
             LaunchDetails unmarshalledObject = new LaunchDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

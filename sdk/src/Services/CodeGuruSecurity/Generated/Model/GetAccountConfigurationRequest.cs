@@ -31,7 +31,7 @@ namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountConfiguration operation.
-    /// Use to get account level configuration.
+    /// Use to get the encryption configuration for an account.
     /// </summary>
     public partial class GetAccountConfigurationRequest : AmazonCodeGuruSecurityRequest
     {

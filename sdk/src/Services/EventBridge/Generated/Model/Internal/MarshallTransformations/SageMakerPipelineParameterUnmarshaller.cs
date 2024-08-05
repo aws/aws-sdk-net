@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public SageMakerPipelineParameter Unmarshall(JsonUnmarshallerContext context)
         {
             SageMakerPipelineParameter unmarshalledObject = new SageMakerPipelineParameter();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

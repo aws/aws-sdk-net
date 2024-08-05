@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.VPCLattice")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon VPC Lattice. General Availability (GA) release of Amazon VPC Lattice")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon VPC Lattice. General Availability (GA) release of Amazon VPC Lattice")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon VPC Lattice. General Availability (GA) release of Amazon VPC Lattice")]
 #elif NETCOREAPP3_1

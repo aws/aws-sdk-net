@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public BatchStopJobRunError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchStopJobRunError unmarshalledObject = new BatchStopJobRunError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

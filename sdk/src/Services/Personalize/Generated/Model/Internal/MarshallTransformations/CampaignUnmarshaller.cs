@@ -57,6 +57,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         public Campaign Unmarshall(JsonUnmarshallerContext context)
         {
             Campaign unmarshalledObject = new Campaign();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

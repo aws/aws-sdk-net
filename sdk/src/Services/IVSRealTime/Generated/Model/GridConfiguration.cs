@@ -47,7 +47,7 @@ namespace Amazon.IVSRealTime.Model
         /// <para>
         /// This attribute name identifies the featured slot. A participant with this attribute
         /// set to <c>"true"</c> (as a string value) in <a>ParticipantTokenConfiguration</a> is
-        /// placed in the featured slot.
+        /// placed in the featured slot. Default: <c>""</c> (no featured participant).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -104,7 +104,9 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property VideoAspectRatio. 
         /// <para>
-        /// Sets the non-featured participant display mode. Default: <c>VIDEO</c>.
+        /// Sets the non-featured participant display mode, to control the aspect ratio of video
+        /// tiles. <c>VIDEO</c> is 16:9, <c>SQUARE</c> is 1:1, and <c>PORTRAIT</c> is 3:4. Default:
+        /// <c>VIDEO</c>.
         /// </para>
         /// </summary>
         public VideoAspectRatio VideoAspectRatio
@@ -122,7 +124,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property VideoFillMode. 
         /// <para>
-        /// Defines how video fits within the participant tile. When not set, <c>videoFillMode</c>
+        /// Defines how video content fits within the participant tile: <c>FILL</c> (stretched),
+        /// <c>COVER</c> (cropped), or <c>CONTAIN</c> (letterboxed). When not set, <c>videoFillMode</c>
         /// defaults to <c>COVER</c> fill mode for participants in the grid and to <c>CONTAIN</c>
         /// fill mode for featured participants.
         /// </para>

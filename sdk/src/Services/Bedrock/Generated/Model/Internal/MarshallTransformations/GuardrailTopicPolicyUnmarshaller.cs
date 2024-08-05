@@ -57,6 +57,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public GuardrailTopicPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             GuardrailTopicPolicy unmarshalledObject = new GuardrailTopicPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

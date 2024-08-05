@@ -57,6 +57,8 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         public EnumerationValue Unmarshall(JsonUnmarshallerContext context)
         {
             EnumerationValue unmarshalledObject = new EnumerationValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

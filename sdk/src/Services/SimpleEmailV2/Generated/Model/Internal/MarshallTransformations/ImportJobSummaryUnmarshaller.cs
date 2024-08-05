@@ -57,6 +57,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public ImportJobSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ImportJobSummary unmarshalledObject = new ImportJobSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

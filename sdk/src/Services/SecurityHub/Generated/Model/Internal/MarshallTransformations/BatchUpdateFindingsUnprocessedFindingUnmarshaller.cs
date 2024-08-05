@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public BatchUpdateFindingsUnprocessedFinding Unmarshall(JsonUnmarshallerContext context)
         {
             BatchUpdateFindingsUnprocessedFinding unmarshalledObject = new BatchUpdateFindingsUnprocessedFinding();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

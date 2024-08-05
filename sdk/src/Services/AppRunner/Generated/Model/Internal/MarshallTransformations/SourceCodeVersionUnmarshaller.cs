@@ -57,6 +57,8 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
         public SourceCodeVersion Unmarshall(JsonUnmarshallerContext context)
         {
             SourceCodeVersion unmarshalledObject = new SourceCodeVersion();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

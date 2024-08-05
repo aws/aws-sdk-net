@@ -57,6 +57,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         public BackendStoragePermissions Unmarshall(JsonUnmarshallerContext context)
         {
             BackendStoragePermissions unmarshalledObject = new BackendStoragePermissions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

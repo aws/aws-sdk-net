@@ -109,10 +109,9 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property SshUsername. 
         /// <para>
         /// The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and
-        /// '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes
+        /// '_'. If the specified name includes other punctuation marks, OpsWorks Stacks removes
         /// them. For example, <c>my.name</c> will be changed to <c>myname</c>. If you do not
-        /// specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name.
-        /// 
+        /// specify an SSH user name, OpsWorks Stacks generates one from the IAM user name. 
         /// </para>
         /// </summary>
         public string SshUsername

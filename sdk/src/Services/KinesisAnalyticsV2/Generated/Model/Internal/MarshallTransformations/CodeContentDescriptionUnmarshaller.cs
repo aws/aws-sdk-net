@@ -57,6 +57,8 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
         public CodeContentDescription Unmarshall(JsonUnmarshallerContext context)
         {
             CodeContentDescription unmarshalledObject = new CodeContentDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

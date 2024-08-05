@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public BatchGetSchemaAnalysisRuleError Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetSchemaAnalysisRuleError unmarshalledObject = new BatchGetSchemaAnalysisRuleError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

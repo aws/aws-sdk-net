@@ -36,10 +36,14 @@ namespace Amazon.EMRServerless.Model
     {
         private string _applicationId;
         private string _arn;
+        private int? _attempt;
+        private DateTime? _attemptCreatedAt;
+        private DateTime? _attemptUpdatedAt;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _executionRole;
         private string _id;
+        private JobRunMode _mode;
         private string _name;
         private string _releaseLabel;
         private JobRunState _state;
@@ -83,6 +87,61 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attempt. 
+        /// <para>
+        /// The attempt number of the job run execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? Attempt
+        {
+            get { return this._attempt; }
+            set { this._attempt = value; }
+        }
+
+        // Check to see if Attempt property is set
+        internal bool IsSetAttempt()
+        {
+            return this._attempt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttemptCreatedAt. 
+        /// <para>
+        /// The date and time of when the job run attempt was created.
+        /// </para>
+        /// </summary>
+        public DateTime? AttemptCreatedAt
+        {
+            get { return this._attemptCreatedAt; }
+            set { this._attemptCreatedAt = value; }
+        }
+
+        // Check to see if AttemptCreatedAt property is set
+        internal bool IsSetAttemptCreatedAt()
+        {
+            return this._attemptCreatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttemptUpdatedAt. 
+        /// <para>
+        /// The date and time of when the job run attempt was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime? AttemptUpdatedAt
+        {
+            get { return this._attemptUpdatedAt; }
+            set { this._attemptUpdatedAt = value; }
+        }
+
+        // Check to see if AttemptUpdatedAt property is set
+        internal bool IsSetAttemptUpdatedAt()
+        {
+            return this._attemptUpdatedAt.HasValue; 
         }
 
         /// <summary>
@@ -159,6 +218,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode of the job run.
+        /// </para>
+        /// </summary>
+        public JobRunMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>

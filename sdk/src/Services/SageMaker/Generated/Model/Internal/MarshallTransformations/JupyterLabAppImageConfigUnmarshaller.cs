@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public JupyterLabAppImageConfig Unmarshall(JsonUnmarshallerContext context)
         {
             JupyterLabAppImageConfig unmarshalledObject = new JupyterLabAppImageConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

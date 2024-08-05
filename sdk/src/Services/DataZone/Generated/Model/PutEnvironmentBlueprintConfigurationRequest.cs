@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private List<string> _enabledRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _environmentBlueprintIdentifier;
         private string _manageAccessRoleArn;
+        private List<ProvisioningConfiguration> _provisioningConfigurations = AWSConfigs.InitializeCollections ? new List<ProvisioningConfiguration>() : null;
         private string _provisioningRoleArn;
         private Dictionary<string, Dictionary<string, string>> _regionalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
 
@@ -115,6 +116,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetManageAccessRoleArn()
         {
             return this._manageAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningConfigurations. 
+        /// <para>
+        /// The provisioning configuration of a blueprint.
+        /// </para>
+        /// </summary>
+        public List<ProvisioningConfiguration> ProvisioningConfigurations
+        {
+            get { return this._provisioningConfigurations; }
+            set { this._provisioningConfigurations = value; }
+        }
+
+        // Check to see if ProvisioningConfigurations property is set
+        internal bool IsSetProvisioningConfigurations()
+        {
+            return this._provisioningConfigurations != null && (this._provisioningConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

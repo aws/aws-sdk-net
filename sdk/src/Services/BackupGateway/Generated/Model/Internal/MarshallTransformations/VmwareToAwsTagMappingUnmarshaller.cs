@@ -57,6 +57,8 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         public VmwareToAwsTagMapping Unmarshall(JsonUnmarshallerContext context)
         {
             VmwareToAwsTagMapping unmarshalledObject = new VmwareToAwsTagMapping();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

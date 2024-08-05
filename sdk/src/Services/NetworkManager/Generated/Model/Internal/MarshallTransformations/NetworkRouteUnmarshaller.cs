@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public NetworkRoute Unmarshall(JsonUnmarshallerContext context)
         {
             NetworkRoute unmarshalledObject = new NetworkRoute();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

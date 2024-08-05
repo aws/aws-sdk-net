@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public DatasetGroupSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DatasetGroupSummary unmarshalledObject = new DatasetGroupSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

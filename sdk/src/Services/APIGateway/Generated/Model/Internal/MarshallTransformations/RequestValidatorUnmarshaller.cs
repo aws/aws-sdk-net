@@ -57,6 +57,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         public RequestValidator Unmarshall(JsonUnmarshallerContext context)
         {
             RequestValidator unmarshalledObject = new RequestValidator();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

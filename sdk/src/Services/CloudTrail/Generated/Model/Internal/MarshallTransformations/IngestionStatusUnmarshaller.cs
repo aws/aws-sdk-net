@@ -57,6 +57,8 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public IngestionStatus Unmarshall(JsonUnmarshallerContext context)
         {
             IngestionStatus unmarshalledObject = new IngestionStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

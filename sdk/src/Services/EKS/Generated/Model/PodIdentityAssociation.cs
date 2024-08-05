@@ -42,6 +42,7 @@ namespace Amazon.EKS.Model
         private DateTime? _createdAt;
         private DateTime? _modifiedAt;
         private string _awsNamespace;
+        private string _ownerArn;
         private string _roleArn;
         private string _serviceAccount;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -154,6 +155,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerArn. 
+        /// <para>
+        /// If defined, the Pod Identity Association is owned by an Amazon EKS Addon.
+        /// </para>
+        /// </summary>
+        public string OwnerArn
+        {
+            get { return this._ownerArn; }
+            set { this._ownerArn = value; }
+        }
+
+        // Check to see if OwnerArn property is set
+        internal bool IsSetOwnerArn()
+        {
+            return this._ownerArn != null;
         }
 
         /// <summary>

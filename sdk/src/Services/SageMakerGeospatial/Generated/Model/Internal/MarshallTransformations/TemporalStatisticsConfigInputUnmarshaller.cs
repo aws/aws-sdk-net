@@ -57,6 +57,8 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         public TemporalStatisticsConfigInput Unmarshall(JsonUnmarshallerContext context)
         {
             TemporalStatisticsConfigInput unmarshalledObject = new TemporalStatisticsConfigInput();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

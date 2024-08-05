@@ -57,6 +57,8 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         public SmbMountOptions Unmarshall(JsonUnmarshallerContext context)
         {
             SmbMountOptions unmarshalledObject = new SmbMountOptions();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

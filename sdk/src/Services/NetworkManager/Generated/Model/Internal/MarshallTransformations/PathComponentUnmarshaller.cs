@@ -57,6 +57,8 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public PathComponent Unmarshall(JsonUnmarshallerContext context)
         {
             PathComponent unmarshalledObject = new PathComponent();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

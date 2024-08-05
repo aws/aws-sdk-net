@@ -57,6 +57,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         public ReplicationDestination Unmarshall(JsonUnmarshallerContext context)
         {
             ReplicationDestination unmarshalledObject = new ReplicationDestination();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

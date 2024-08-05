@@ -57,6 +57,8 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
         public ResourceCostCalculation Unmarshall(JsonUnmarshallerContext context)
         {
             ResourceCostCalculation unmarshalledObject = new ResourceCostCalculation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

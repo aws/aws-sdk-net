@@ -102,10 +102,27 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetManualCreation())
+                {
+                    context.Writer.WritePropertyName("manualCreation");
+                    context.Writer.Write(publicRequest.ManualCreation.Value);
+                }
+
                 if(publicRequest.IsSetProjectName())
                 {
                     context.Writer.WritePropertyName("projectName");
                     context.Writer.Write(publicRequest.ProjectName);
+                }
+
+                if(publicRequest.IsSetScopeConfiguration())
+                {
+                    context.Writer.WritePropertyName("scopeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScopeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ScopeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

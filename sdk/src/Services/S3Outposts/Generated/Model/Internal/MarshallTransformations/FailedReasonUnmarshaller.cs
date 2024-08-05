@@ -57,6 +57,8 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
         public FailedReason Unmarshall(JsonUnmarshallerContext context)
         {
             FailedReason unmarshalledObject = new FailedReason();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
         public DatabaseMigrationPreference Unmarshall(JsonUnmarshallerContext context)
         {
             DatabaseMigrationPreference unmarshalledObject = new DatabaseMigrationPreference();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

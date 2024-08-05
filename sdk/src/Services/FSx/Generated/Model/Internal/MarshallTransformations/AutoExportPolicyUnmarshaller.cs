@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public AutoExportPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             AutoExportPolicy unmarshalledObject = new AutoExportPolicy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

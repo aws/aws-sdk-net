@@ -35,7 +35,9 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
-    /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> 
+    /// Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+    /// Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.
+    /// 
     /// </para>
     /// </summary>
     public partial class Tag

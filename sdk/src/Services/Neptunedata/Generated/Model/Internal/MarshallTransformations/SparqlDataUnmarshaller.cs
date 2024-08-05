@@ -57,6 +57,8 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
         public SparqlData Unmarshall(JsonUnmarshallerContext context)
         {
             SparqlData unmarshalledObject = new SparqlData();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

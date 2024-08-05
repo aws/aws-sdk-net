@@ -57,6 +57,8 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public RoutingStrategy Unmarshall(JsonUnmarshallerContext context)
         {
             RoutingStrategy unmarshalledObject = new RoutingStrategy();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

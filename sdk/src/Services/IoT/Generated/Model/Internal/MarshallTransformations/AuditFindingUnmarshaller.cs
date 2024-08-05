@@ -57,6 +57,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         public AuditFinding Unmarshall(JsonUnmarshallerContext context)
         {
             AuditFinding unmarshalledObject = new AuditFinding();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

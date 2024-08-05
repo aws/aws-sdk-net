@@ -57,6 +57,8 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
         public ServiceSyncBlockerSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ServiceSyncBlockerSummary unmarshalledObject = new ServiceSyncBlockerSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -108,6 +108,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FoundationModel);
                 }
 
+                if(publicRequest.IsSetGuardrailConfiguration())
+                {
+                    context.Writer.WritePropertyName("guardrailConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GuardrailConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIdleSessionTTLInSeconds())
                 {
                     context.Writer.WritePropertyName("idleSessionTTLInSeconds");
@@ -118,6 +129,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("instruction");
                     context.Writer.Write(publicRequest.Instruction);
+                }
+
+                if(publicRequest.IsSetMemoryConfiguration())
+                {
+                    context.Writer.WritePropertyName("memoryConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MemoryConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MemoryConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetPromptOverrideConfiguration())

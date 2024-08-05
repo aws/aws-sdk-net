@@ -57,6 +57,8 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         public SpellCorrectedQuery Unmarshall(JsonUnmarshallerContext context)
         {
             SpellCorrectedQuery unmarshalledObject = new SpellCorrectedQuery();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

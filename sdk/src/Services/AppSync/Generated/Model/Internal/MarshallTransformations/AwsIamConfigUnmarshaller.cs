@@ -57,6 +57,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public AwsIamConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AwsIamConfig unmarshalledObject = new AwsIamConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

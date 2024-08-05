@@ -57,6 +57,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public RestoreTestingPlanForGet Unmarshall(JsonUnmarshallerContext context)
         {
             RestoreTestingPlanForGet unmarshalledObject = new RestoreTestingPlanForGet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

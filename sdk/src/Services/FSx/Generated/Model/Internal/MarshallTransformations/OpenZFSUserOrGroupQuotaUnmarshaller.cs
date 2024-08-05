@@ -57,6 +57,8 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
         public OpenZFSUserOrGroupQuota Unmarshall(JsonUnmarshallerContext context)
         {
             OpenZFSUserOrGroupQuota unmarshalledObject = new OpenZFSUserOrGroupQuota();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

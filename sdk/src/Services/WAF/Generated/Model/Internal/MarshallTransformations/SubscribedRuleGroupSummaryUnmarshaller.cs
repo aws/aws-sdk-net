@@ -57,6 +57,8 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         public SubscribedRuleGroupSummary Unmarshall(JsonUnmarshallerContext context)
         {
             SubscribedRuleGroupSummary unmarshalledObject = new SubscribedRuleGroupSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public ScheduledTriggerProperties Unmarshall(JsonUnmarshallerContext context)
         {
             ScheduledTriggerProperties unmarshalledObject = new ScheduledTriggerProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

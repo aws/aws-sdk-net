@@ -59,6 +59,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetNestedFilter())
+            {
+                context.Writer.WritePropertyName("NestedFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NestedFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.NestedFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNumericEqualityFilter())
             {
                 context.Writer.WritePropertyName("NumericEqualityFilter");

@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public SupplementaryFeature Unmarshall(JsonUnmarshallerContext context)
         {
             SupplementaryFeature unmarshalledObject = new SupplementaryFeature();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

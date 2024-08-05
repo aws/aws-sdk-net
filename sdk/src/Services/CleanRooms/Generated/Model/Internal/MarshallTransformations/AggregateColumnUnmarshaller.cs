@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public AggregateColumn Unmarshall(JsonUnmarshallerContext context)
         {
             AggregateColumn unmarshalledObject = new AggregateColumn();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

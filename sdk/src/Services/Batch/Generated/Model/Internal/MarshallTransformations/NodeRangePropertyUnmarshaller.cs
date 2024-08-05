@@ -57,6 +57,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         public NodeRangeProperty Unmarshall(JsonUnmarshallerContext context)
         {
             NodeRangeProperty unmarshalledObject = new NodeRangeProperty();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EcsPropertiesUnmarshaller.Instance;
                     unmarshalledObject.EcsProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eksProperties", targetDepth))
+                {
+                    var unmarshaller = EksPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.EksProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("instanceTypes", targetDepth))

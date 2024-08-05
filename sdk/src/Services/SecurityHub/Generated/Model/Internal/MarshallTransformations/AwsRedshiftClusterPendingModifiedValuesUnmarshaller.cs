@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsRedshiftClusterPendingModifiedValues Unmarshall(JsonUnmarshallerContext context)
         {
             AwsRedshiftClusterPendingModifiedValues unmarshalledObject = new AwsRedshiftClusterPendingModifiedValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

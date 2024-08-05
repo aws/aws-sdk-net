@@ -57,6 +57,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public ToscaOverride Unmarshall(JsonUnmarshallerContext context)
         {
             ToscaOverride unmarshalledObject = new ToscaOverride();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

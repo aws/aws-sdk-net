@@ -42,10 +42,6 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Currently, only standard queues are supported.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Only one active message movement task is supported per queue at any given time.
     /// </para>
     ///  </li> </ul> </note>

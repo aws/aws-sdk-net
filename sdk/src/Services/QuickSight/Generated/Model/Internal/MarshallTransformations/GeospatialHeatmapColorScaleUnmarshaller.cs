@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public GeospatialHeatmapColorScale Unmarshall(JsonUnmarshallerContext context)
         {
             GeospatialHeatmapColorScale unmarshalledObject = new GeospatialHeatmapColorScale();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

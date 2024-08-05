@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudFrontKeyValueStore")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
 #elif NETCOREAPP3_1

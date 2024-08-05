@@ -57,6 +57,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         public MembershipPaymentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             MembershipPaymentConfiguration unmarshalledObject = new MembershipPaymentConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

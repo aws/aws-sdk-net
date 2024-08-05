@@ -57,6 +57,8 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
         public BonusPayment Unmarshall(JsonUnmarshallerContext context)
         {
             BonusPayment unmarshalledObject = new BonusPayment();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

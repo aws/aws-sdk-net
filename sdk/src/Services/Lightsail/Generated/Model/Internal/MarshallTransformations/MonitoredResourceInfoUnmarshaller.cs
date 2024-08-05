@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public MonitoredResourceInfo Unmarshall(JsonUnmarshallerContext context)
         {
             MonitoredResourceInfo unmarshalledObject = new MonitoredResourceInfo();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

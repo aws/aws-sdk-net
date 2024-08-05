@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public CategoricalMeasureField Unmarshall(JsonUnmarshallerContext context)
         {
             CategoricalMeasureField unmarshalledObject = new CategoricalMeasureField();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

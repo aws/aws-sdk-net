@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public HlsId3SegmentTaggingScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             HlsId3SegmentTaggingScheduleActionSettings unmarshalledObject = new HlsId3SegmentTaggingScheduleActionSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

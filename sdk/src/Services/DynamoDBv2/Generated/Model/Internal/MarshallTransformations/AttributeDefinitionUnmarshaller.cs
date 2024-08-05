@@ -57,6 +57,8 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         public AttributeDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             AttributeDefinition unmarshalledObject = new AttributeDefinition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

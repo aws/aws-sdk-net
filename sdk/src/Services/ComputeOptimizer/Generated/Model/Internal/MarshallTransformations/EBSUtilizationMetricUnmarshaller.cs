@@ -57,6 +57,8 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public EBSUtilizationMetric Unmarshall(JsonUnmarshallerContext context)
         {
             EBSUtilizationMetric unmarshalledObject = new EBSUtilizationMetric();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

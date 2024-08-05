@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public FunnelChartVisual Unmarshall(JsonUnmarshallerContext context)
         {
             FunnelChartVisual unmarshalledObject = new FunnelChartVisual();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

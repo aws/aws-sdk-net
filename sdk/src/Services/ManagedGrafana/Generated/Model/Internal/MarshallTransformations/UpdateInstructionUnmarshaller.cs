@@ -57,6 +57,8 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public UpdateInstruction Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateInstruction unmarshalledObject = new UpdateInstruction();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

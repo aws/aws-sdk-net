@@ -11,7 +11,6 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 
-
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
@@ -22,7 +21,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             // It is a known bug that this test currently fails due to an AOT-compilation
             // issue, on iOS using mono2x.
-            foreach (var conversion in new DynamoDBEntryConversion [] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
             {
                 TableCache.Clear();
 
@@ -156,6 +155,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, storedEmployee.NonEpochDate2);
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
+        }
+
+        /// <summary>
+        /// Tests that disabling fetching table metadata works with a key that has a property converter.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContext_DisableFetchingTableMetadata_KeyWithPropertyConverter()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+
+            var employee = new PropertyConverterEmployee
+            {
+                Name = Status.Active,
+                CreationTime = EpochDate,
+            };
+
+            Context.Save(employee);
+            var storedEmployee = Context.Load<PropertyConverterEmployee>(employee.CreationTime, employee.Name);
+            Assert.IsNotNull(storedEmployee);
+            ApproximatelyEqual(EpochDate, storedEmployee.CreationTime);
+            Assert.AreEqual(employee.Name, storedEmployee.Name);
         }
 
         /// <summary>
@@ -642,7 +667,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Remove circular references
                 docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = null;
-                docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;                
+                docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;
                 var prod1 = Context.FromDocument<Product>(docV1, new DynamoDBOperationConfig { Conversion = conversionV1 });
                 var prod2 = Context.FromDocument<Product>(docV2, new DynamoDBOperationConfig { Conversion = conversionV2 });
             }
@@ -798,7 +823,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                             new Product { Id = 14, Name = "CloudDebugger" },
                             new Product { Id = 15, Name = "CloudDebuggerTester" }
                         },
-                        FeaturedBrands = new string[]{ "Cloud", "Debugger" },
+                        FeaturedBrands = new string[] { "Cloud", "Debugger" },
                         CompetitorProducts = new Dictionary<string, List<Product>>
                         {
                             {
@@ -872,7 +897,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(product.CompanyInfo.FeaturedBrands[1], retrieved.CompanyInfo.FeaturedBrands[1]);
                 Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
                 Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
-                
+
                 var productCloudsAreOkay = product.CompanyInfo.CompetitorProducts["CloudsAreOK"];
                 var retrievedCloudsAreOkay = retrieved.CompanyInfo.CompetitorProducts["CloudsAreOK"];
                 Assert.IsNotNull(productCloudsAreOkay);
@@ -886,8 +911,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(productCloudsAreBetter.Count, retrievedCloudsAreBetter.Count);
 
                 Assert.IsNotNull(retrieved.FullProductDescription);
-                using(var stream = retrieved.FullProductDescription.OpenStream())
-                using(var reader = new StreamReader(stream))
+                using (var stream = retrieved.FullProductDescription.OpenStream())
+                using (var reader = new StreamReader(stream))
                 {
                     Assert.AreEqual("Lots of data", reader.ReadToEnd());
                 }
@@ -921,11 +946,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(product.AlwaysN, retrieved.AlwaysN);
                 Assert.AreEqual(product.Rating, retrieved.Rating);
                 Assert.IsNull(retrieved.KeySizes);
-            
+
                 // Enumerate all products and save their Ids
                 List<int> productIds = new List<int>();
                 IEnumerable<Product> products = Context.Scan<Product>();
-                foreach(var p in products)
+                foreach (var p in products)
                 {
                     productIds.Add(p.Id);
                 }
@@ -956,7 +981,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     new DynamoDBOperationConfig     // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
-                        QueryFilter = new List<ScanCondition> 
+                        QueryFilter = new List<ScanCondition>
                         {
                             new ScanCondition("TagSet", ScanOperator.Contains, "1.0")
                         }
@@ -1085,7 +1110,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             employees = Context.Query<T>("Diane", QueryOperator.GreaterThan, 30).ToList();
             Assert.AreEqual(1, employees.Count);
 
-            
+
             // Index Query
 
             // Query local index for items with Hash-Key = "Diane"
@@ -1128,7 +1153,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     new ScanCondition("Name", ScanOperator.Equal, "Diane"),
                     new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
-                },                
+                },
                 new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
@@ -1185,7 +1210,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 });
             }
             batchWrite1.AddPutItems(allEmployees);
-            
+
             // Write both batches at once
             var multiTableWrite = Context.CreateMultiTableBatchWrite(batchWrite1, batchWrite2);
             multiTableWrite.Execute();
@@ -1193,7 +1218,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Create BatchGets
             var batchGet1 = Context.CreateBatchGet<Product>();
             var batchGet2 = Context.CreateBatchGet<Employee>();
-            for (int i = 0; i < itemCount;i++ )
+            for (int i = 0; i < itemCount; i++)
                 batchGet1.AddKey(productIdStart + i, productPrefix + i);
             foreach (var employee in allEmployees)
                 batchGet2.AddKey(employee);
@@ -1390,6 +1415,101 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
                 Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
                 Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+            }
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItem(employee1.Name, employee1.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 1 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee1.Version }
+                    });
+                transactWrite.AddDeleteKey(employee2.Name, employee2.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee2.Version - 1 }
+                    });
+
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(2, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[1].Code);
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+            }
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItem(employee1.Name, employee1.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 1 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee1.Version }
+                    });
+                transactWrite.AddSaveItem(employee2.Name, employee2.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 2 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee2.Version }
+                    });
+
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Score + 1, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Score + 2, transactGet.Results[1].Score);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+
+                employee1.Score++;
+                employee2.Score += 2;
             }
 
             {
@@ -1905,6 +2025,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public override string Name { get; set; }
         }
 
+        /// <summary>
+        /// Table with a property converter on range key.
+        /// </summary>
+        [DynamoDBTable("NumericHashRangeTable")]
+        public class PropertyConverterEmployee
+        {
+            [DynamoDBHashKey(StoreAsEpoch = true)]
+            public DateTime CreationTime { get; set; }
+
+            [DynamoDBRangeKey]
+            [DynamoDBProperty(Converter = typeof(EnumAsStringConverter<Status>))]
+            public Status Name { get; set; }
+        }
+
         public class DateTimeUtcConverter : IPropertyConverter
         {
             public DynamoDBEntry ToEntry(object value) => (DateTime)value;
@@ -1913,6 +2047,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 var dateTime = entry.AsDateTime();
                 return dateTime.ToUniversalTime();
+            }
+        }
+
+        public class EnumAsStringConverter<T> : IPropertyConverter where T : struct
+        {
+            public DynamoDBEntry ToEntry(object value)
+            {
+                return new Primitive(value.ToString());
+            }
+
+            public object FromEntry(DynamoDBEntry entry)
+            {
+                return Enum.Parse(typeof(T), entry.AsString());
             }
         }
 

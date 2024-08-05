@@ -57,6 +57,8 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         public CategoricalValues Unmarshall(JsonUnmarshallerContext context)
         {
             CategoricalValues unmarshalledObject = new CategoricalValues();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

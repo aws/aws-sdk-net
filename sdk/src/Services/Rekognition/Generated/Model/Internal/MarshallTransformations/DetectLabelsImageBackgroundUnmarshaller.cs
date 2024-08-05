@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public DetectLabelsImageBackground Unmarshall(JsonUnmarshallerContext context)
         {
             DetectLabelsImageBackground unmarshalledObject = new DetectLabelsImageBackground();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -5,12 +5,14 @@
     "endpointPrefix":"fsx",
     "jsonVersion":"1.1",
     "protocol":"json",
+    "protocols":["json"],
     "serviceFullName":"Amazon FSx",
     "serviceId":"FSx",
     "signatureVersion":"v4",
     "signingName":"fsx",
     "targetPrefix":"AWSSimbaAPIService_v20180301",
-    "uid":"fsx-2018-03-01"
+    "uid":"fsx-2018-03-01",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AssociateFileSystemAliases":{
@@ -845,7 +847,8 @@
         "STORAGE_TYPE_OPTIMIZATION",
         "MISCONFIGURED_STATE_RECOVERY",
         "VOLUME_UPDATE_WITH_SNAPSHOT",
-        "VOLUME_INITIALIZE_WITH_SNAPSHOT"
+        "VOLUME_INITIALIZE_WITH_SNAPSHOT",
+        "DOWNLOAD_DATA_FROM_BACKUP"
       ]
     },
     "AdministrativeActions":{
@@ -1355,7 +1358,16 @@
         "DriveCacheType":{"shape":"DriveCacheType"},
         "DataCompressionType":{"shape":"DataCompressionType"},
         "LogConfiguration":{"shape":"LustreLogCreateConfiguration"},
-        "RootSquashConfiguration":{"shape":"LustreRootSquashConfiguration"}
+        "RootSquashConfiguration":{"shape":"LustreRootSquashConfiguration"},
+        "MetadataConfiguration":{"shape":"CreateFileSystemLustreMetadataConfiguration"}
+      }
+    },
+    "CreateFileSystemLustreMetadataConfiguration":{
+      "type":"structure",
+      "required":["Mode"],
+      "members":{
+        "Iops":{"shape":"MetadataIops"},
+        "Mode":{"shape":"MetadataConfigurationMode"}
       }
     },
     "CreateFileSystemOntapConfiguration":{
@@ -2512,6 +2524,14 @@
         "MISCONFIGURED_UNAVAILABLE"
       ]
     },
+    "FileSystemLustreMetadataConfiguration":{
+      "type":"structure",
+      "required":["Mode"],
+      "members":{
+        "Iops":{"shape":"MetadataIops"},
+        "Mode":{"shape":"MetadataConfigurationMode"}
+      }
+    },
     "FileSystemMaintenanceOperation":{
       "type":"string",
       "enum":[
@@ -2801,7 +2821,8 @@
         "DriveCacheType":{"shape":"DriveCacheType"},
         "DataCompressionType":{"shape":"DataCompressionType"},
         "LogConfiguration":{"shape":"LustreLogConfiguration"},
-        "RootSquashConfiguration":{"shape":"LustreRootSquashConfiguration"}
+        "RootSquashConfiguration":{"shape":"LustreRootSquashConfiguration"},
+        "MetadataConfiguration":{"shape":"FileSystemLustreMetadataConfiguration"}
       }
     },
     "LustreFileSystemMountName":{
@@ -2864,6 +2885,18 @@
       "type":"integer",
       "max":100000,
       "min":8
+    },
+    "MetadataConfigurationMode":{
+      "type":"string",
+      "enum":[
+        "AUTOMATIC",
+        "USER_PROVISIONED"
+      ]
+    },
+    "MetadataIops":{
+      "type":"integer",
+      "max":192000,
+      "min":1500
     },
     "MetadataStorageCapacity":{
       "type":"integer",
@@ -2947,7 +2980,8 @@
       "enum":[
         "MULTI_AZ_1",
         "SINGLE_AZ_1",
-        "SINGLE_AZ_2"
+        "SINGLE_AZ_2",
+        "MULTI_AZ_2"
       ]
     },
     "OntapEndpointIpAddresses":{
@@ -3057,6 +3091,8 @@
       "enum":[
         "SINGLE_AZ_1",
         "SINGLE_AZ_2",
+        "SINGLE_AZ_HA_1",
+        "SINGLE_AZ_HA_2",
         "MULTI_AZ_1"
       ]
     },
@@ -3583,7 +3619,8 @@
         "IN_PROGRESS",
         "PENDING",
         "COMPLETED",
-        "UPDATED_OPTIMIZING"
+        "UPDATED_OPTIMIZING",
+        "OPTIMIZING"
       ]
     },
     "StorageCapacity":{
@@ -3918,7 +3955,15 @@
         "DataCompressionType":{"shape":"DataCompressionType"},
         "LogConfiguration":{"shape":"LustreLogCreateConfiguration"},
         "RootSquashConfiguration":{"shape":"LustreRootSquashConfiguration"},
-        "PerUnitStorageThroughput":{"shape":"PerUnitStorageThroughput"}
+        "PerUnitStorageThroughput":{"shape":"PerUnitStorageThroughput"},
+        "MetadataConfiguration":{"shape":"UpdateFileSystemLustreMetadataConfiguration"}
+      }
+    },
+    "UpdateFileSystemLustreMetadataConfiguration":{
+      "type":"structure",
+      "members":{
+        "Iops":{"shape":"MetadataIops"},
+        "Mode":{"shape":"MetadataConfigurationMode"}
       }
     },
     "UpdateFileSystemOntapConfiguration":{
@@ -3932,7 +3977,8 @@
         "ThroughputCapacity":{"shape":"MegabytesPerSecond"},
         "AddRouteTableIds":{"shape":"RouteTableIds"},
         "RemoveRouteTableIds":{"shape":"RouteTableIds"},
-        "ThroughputCapacityPerHAPair":{"shape":"ThroughputCapacityPerHAPair"}
+        "ThroughputCapacityPerHAPair":{"shape":"ThroughputCapacityPerHAPair"},
+        "HAPairs":{"shape":"HAPairs"}
       }
     },
     "UpdateFileSystemOpenZFSConfiguration":{

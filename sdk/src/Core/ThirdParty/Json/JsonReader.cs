@@ -350,10 +350,16 @@ namespace ThirdParty.Json.LitJson
                         this.token == JsonToken.Null
                         ))
                     {
-                        // If we found a value but we are not in an array or object then the document is an invalid json document.
+                        // If we found a value but we are not in an array or object
                         if (depth.Count == 0)
                         {
-                            if (this.token != JsonToken.ArrayEnd && this.token != JsonToken.ObjectEnd)
+                            if (this.token == JsonToken.String)
+                            {
+                                // raw string is valid per smithy spec. Only return an exception if the value is not a raw string and not enclosed in an object / array.
+                                depth.Push(this.token);
+                                return true;
+                            }
+                            else if (this.token != JsonToken.ArrayEnd && this.token != JsonToken.ObjectEnd)
                             {
                                 throw new JsonException("Value without enclosing object or array");
                             }

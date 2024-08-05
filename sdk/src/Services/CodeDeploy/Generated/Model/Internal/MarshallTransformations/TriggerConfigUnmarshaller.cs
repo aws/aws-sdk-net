@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public TriggerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             TriggerConfig unmarshalledObject = new TriggerConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

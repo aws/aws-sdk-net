@@ -57,6 +57,8 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
         public QueryEvalStats Unmarshall(JsonUnmarshallerContext context)
         {
             QueryEvalStats unmarshalledObject = new QueryEvalStats();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

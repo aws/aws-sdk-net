@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public VulnerablePackage Unmarshall(JsonUnmarshallerContext context)
         {
             VulnerablePackage unmarshalledObject = new VulnerablePackage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

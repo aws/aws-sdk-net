@@ -351,9 +351,8 @@ namespace Amazon.Amplify
         /// <para>
         /// This API is available only to Amplify Gen 1 applications where the backend is created
         /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-        /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-        /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-        /// Typescript code.
+        /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+        /// you provision the app's backend infrastructure using Typescript code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackendEnvironment service method.</param>
@@ -392,9 +391,8 @@ namespace Amazon.Amplify
         /// <para>
         /// This API is available only to Amplify Gen 1 applications where the backend is created
         /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-        /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-        /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-        /// Typescript code.
+        /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+        /// you provision the app's backend infrastructure using Typescript code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackendEnvironment service method.</param>
@@ -823,11 +821,10 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// This API is available only to Amplify Gen 1 applications where the backend was created
+        /// This API is available only to Amplify Gen 1 applications where the backend is created
         /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-        /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-        /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-        /// Typescript code.
+        /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+        /// you provision the app's backend infrastructure using Typescript code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackendEnvironment service method.</param>
@@ -864,11 +861,10 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// This API is available only to Amplify Gen 1 applications where the backend was created
+        /// This API is available only to Amplify Gen 1 applications where the backend is created
         /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-        /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-        /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-        /// Typescript code.
+        /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+        /// you provision the app's backend infrastructure using Typescript code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackendEnvironment service method.</param>
@@ -1397,11 +1393,10 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// This API is available only to Amplify Gen 1 applications where the backend was created
+        /// This API is available only to Amplify Gen 1 applications where the backend is created
         /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-        /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-        /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-        /// Typescript code.
+        /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+        /// you provision the app's backend infrastructure using Typescript code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackendEnvironment service method.</param>
@@ -1435,11 +1430,10 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// This API is available only to Amplify Gen 1 applications where the backend was created
+        /// This API is available only to Amplify Gen 1 applications where the backend is created
         /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-        /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-        /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-        /// Typescript code.
+        /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+        /// you provision the app's backend infrastructure using Typescript code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackendEnvironment service method.</param>
@@ -1876,11 +1870,10 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// This API is available only to Amplify Gen 1 applications where the backend was created
+        /// This API is available only to Amplify Gen 1 applications where the backend is created
         /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-        /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-        /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-        /// Typescript code.
+        /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+        /// you provision the app's backend infrastructure using Typescript code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackendEnvironments service method.</param>
@@ -1911,11 +1904,10 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// This API is available only to Amplify Gen 1 applications where the backend was created
+        /// This API is available only to Amplify Gen 1 applications where the backend is created
         /// using Amplify Studio or the Amplify command line interface (CLI). This API isn’t available
-        /// to applications created using the Amplify Gen 2 public preview. When you deploy an
-        /// application with Amplify Gen 2, you provision the app's backend infrastructure using
-        /// Typescript code.
+        /// to Amplify Gen 2 applications. When you deploy an application with Amplify Gen 2,
+        /// you provision the app's backend infrastructure using Typescript code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackendEnvironments service method.</param>

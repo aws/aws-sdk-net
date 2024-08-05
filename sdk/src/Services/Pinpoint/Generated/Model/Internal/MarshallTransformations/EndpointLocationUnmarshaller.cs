@@ -57,6 +57,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         public EndpointLocation Unmarshall(JsonUnmarshallerContext context)
         {
             EndpointLocation unmarshalledObject = new EndpointLocation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

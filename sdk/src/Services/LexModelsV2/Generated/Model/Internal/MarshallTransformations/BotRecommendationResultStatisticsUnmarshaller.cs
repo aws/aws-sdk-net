@@ -57,6 +57,8 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public BotRecommendationResultStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             BotRecommendationResultStatistics unmarshalledObject = new BotRecommendationResultStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

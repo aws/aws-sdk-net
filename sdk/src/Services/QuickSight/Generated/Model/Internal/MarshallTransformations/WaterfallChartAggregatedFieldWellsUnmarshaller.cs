@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public WaterfallChartAggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
         {
             WaterfallChartAggregatedFieldWells unmarshalledObject = new WaterfallChartAggregatedFieldWells();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

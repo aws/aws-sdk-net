@@ -57,6 +57,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         public EdgeStatistics Unmarshall(JsonUnmarshallerContext context)
         {
             EdgeStatistics unmarshalledObject = new EdgeStatistics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

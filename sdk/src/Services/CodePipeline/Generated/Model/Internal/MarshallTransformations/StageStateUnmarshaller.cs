@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public StageState Unmarshall(JsonUnmarshallerContext context)
         {
             StageState unmarshalledObject = new StageState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -68,6 +70,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<ActionState, ActionStateUnmarshaller>(ActionStateUnmarshaller.Instance);
                     unmarshalledObject.ActionStates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("beforeEntryConditionState", targetDepth))
+                {
+                    var unmarshaller = StageConditionStateUnmarshaller.Instance;
+                    unmarshalledObject.BeforeEntryConditionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inboundExecution", targetDepth))
@@ -92,6 +100,18 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StageExecutionUnmarshaller.Instance;
                     unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("onFailureConditionState", targetDepth))
+                {
+                    var unmarshaller = StageConditionStateUnmarshaller.Instance;
+                    unmarshalledObject.OnFailureConditionState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("onSuccessConditionState", targetDepth))
+                {
+                    var unmarshaller = StageConditionStateUnmarshaller.Instance;
+                    unmarshalledObject.OnSuccessConditionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stageName", targetDepth))

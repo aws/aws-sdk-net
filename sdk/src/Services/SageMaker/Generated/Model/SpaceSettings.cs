@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         /// Domain. Permitted users can access this file system in Amazon SageMaker Studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Max=5)]
         public List<CustomFileSystem> CustomFileSystems
         {
             get { return this._customFileSystems; }

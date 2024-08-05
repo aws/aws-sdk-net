@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Mgn")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Application Migration Service. Add new service - Application Migration Service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Application Migration Service. Add new service - Application Migration Service.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Application Migration Service. Add new service - Application Migration Service.")]
 #elif NETCOREAPP3_1

@@ -307,8 +307,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property SignalCatalogArn. 
         /// <para>
-        /// (Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with
-        /// the campaign. 
+        /// The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

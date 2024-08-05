@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AutoMLSecurityConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMLSecurityConfig unmarshalledObject = new AutoMLSecurityConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

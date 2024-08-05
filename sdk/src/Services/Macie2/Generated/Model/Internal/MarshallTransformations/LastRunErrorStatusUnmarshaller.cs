@@ -57,6 +57,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public LastRunErrorStatus Unmarshall(JsonUnmarshallerContext context)
         {
             LastRunErrorStatus unmarshalledObject = new LastRunErrorStatus();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

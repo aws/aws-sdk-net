@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public ApplicationLayerAutomaticResponseConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             ApplicationLayerAutomaticResponseConfiguration unmarshalledObject = new ApplicationLayerAutomaticResponseConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

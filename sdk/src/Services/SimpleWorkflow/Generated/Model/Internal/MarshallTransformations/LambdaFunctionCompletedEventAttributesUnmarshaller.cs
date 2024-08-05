@@ -57,6 +57,8 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
         public LambdaFunctionCompletedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             LambdaFunctionCompletedEventAttributes unmarshalledObject = new LambdaFunctionCompletedEventAttributes();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

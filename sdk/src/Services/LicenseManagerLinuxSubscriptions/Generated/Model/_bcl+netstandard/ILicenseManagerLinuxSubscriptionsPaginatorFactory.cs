@@ -35,5 +35,10 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         /// Paginator for ListLinuxSubscriptions operation
         ///</summary>
         IListLinuxSubscriptionsPaginator ListLinuxSubscriptions(ListLinuxSubscriptionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRegisteredSubscriptionProviders operation
+        ///</summary>
+        IListRegisteredSubscriptionProvidersPaginator ListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request);
     }
 }

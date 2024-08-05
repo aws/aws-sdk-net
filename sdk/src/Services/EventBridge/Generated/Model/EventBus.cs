@@ -40,6 +40,9 @@ namespace Amazon.EventBridge.Model
     public partial class EventBus
     {
         private string _arn;
+        private DateTime? _creationTime;
+        private string _description;
+        private DateTime? _lastModifiedTime;
         private string _name;
         private string _policy;
 
@@ -59,6 +62,61 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The time the event bus was created.
+        /// </para>
+        /// </summary>
+        public DateTime? CreationTime
+        {
+            get { return this._creationTime; }
+            set { this._creationTime = value; }
+        }
+
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
+        {
+            return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The event bus description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The time the event bus was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastModifiedTime
+        {
+            get { return this._lastModifiedTime; }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public KinesisVideoStream Unmarshall(JsonUnmarshallerContext context)
         {
             KinesisVideoStream unmarshalledObject = new KinesisVideoStream();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

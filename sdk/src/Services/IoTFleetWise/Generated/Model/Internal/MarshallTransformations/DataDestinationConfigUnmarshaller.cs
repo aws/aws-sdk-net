@@ -57,6 +57,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         public DataDestinationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             DataDestinationConfig unmarshalledObject = new DataDestinationConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -44,7 +44,7 @@ namespace Amazon.ECR.Model
         /// An array of objects representing the destination for a replication rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=25)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<ReplicationDestination> Destinations
         {
             get { return this._destinations; }

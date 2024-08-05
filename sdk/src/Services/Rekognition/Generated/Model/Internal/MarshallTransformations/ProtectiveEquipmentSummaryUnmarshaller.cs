@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public ProtectiveEquipmentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             ProtectiveEquipmentSummary unmarshalledObject = new ProtectiveEquipmentSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

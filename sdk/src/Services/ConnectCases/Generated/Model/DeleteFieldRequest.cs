@@ -102,7 +102,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The unique identifier of the Cases domain. 
+        /// The unique identifier of the Cases domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -121,7 +121,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property FieldId. 
         /// <para>
-        /// The unique identifier of a field.
+        /// Unique identifier of the field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

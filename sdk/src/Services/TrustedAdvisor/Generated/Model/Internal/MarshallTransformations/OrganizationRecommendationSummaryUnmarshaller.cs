@@ -57,6 +57,8 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
         public OrganizationRecommendationSummary Unmarshall(JsonUnmarshallerContext context)
         {
             OrganizationRecommendationSummary unmarshalledObject = new OrganizationRecommendationSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public NotebookInstanceLifecycleConfigSummary Unmarshall(JsonUnmarshallerContext context)
         {
             NotebookInstanceLifecycleConfigSummary unmarshalledObject = new NotebookInstanceLifecycleConfigSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

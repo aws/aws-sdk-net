@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public AutoMLProblemTypeConfig Unmarshall(JsonUnmarshallerContext context)
         {
             AutoMLProblemTypeConfig unmarshalledObject = new AutoMLProblemTypeConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

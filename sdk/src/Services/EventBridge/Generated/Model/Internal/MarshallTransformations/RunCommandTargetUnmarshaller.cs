@@ -57,6 +57,8 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         public RunCommandTarget Unmarshall(JsonUnmarshallerContext context)
         {
             RunCommandTarget unmarshalledObject = new RunCommandTarget();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

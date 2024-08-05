@@ -57,6 +57,8 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public IdeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             IdeConfiguration unmarshalledObject = new IdeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

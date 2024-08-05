@@ -57,6 +57,8 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         public ManagedAccount Unmarshall(JsonUnmarshallerContext context)
         {
             ManagedAccount unmarshalledObject = new ManagedAccount();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

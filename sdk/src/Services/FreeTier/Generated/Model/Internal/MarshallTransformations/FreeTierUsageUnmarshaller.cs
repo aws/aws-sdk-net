@@ -57,6 +57,8 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
         public FreeTierUsage Unmarshall(JsonUnmarshallerContext context)
         {
             FreeTierUsage unmarshalledObject = new FreeTierUsage();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

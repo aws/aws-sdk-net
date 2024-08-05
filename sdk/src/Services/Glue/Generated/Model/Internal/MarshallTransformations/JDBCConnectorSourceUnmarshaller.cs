@@ -57,6 +57,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public JDBCConnectorSource Unmarshall(JsonUnmarshallerContext context)
         {
             JDBCConnectorSource unmarshalledObject = new JDBCConnectorSource();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -57,6 +57,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         public EnvironmentResponse Unmarshall(JsonUnmarshallerContext context)
         {
             EnvironmentResponse unmarshalledObject = new EnvironmentResponse();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

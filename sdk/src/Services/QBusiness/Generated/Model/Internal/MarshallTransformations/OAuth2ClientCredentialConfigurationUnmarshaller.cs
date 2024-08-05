@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public OAuth2ClientCredentialConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OAuth2ClientCredentialConfiguration unmarshalledObject = new OAuth2ClientCredentialConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

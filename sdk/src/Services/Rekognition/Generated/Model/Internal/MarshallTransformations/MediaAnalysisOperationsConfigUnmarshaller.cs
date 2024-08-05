@@ -57,6 +57,8 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         public MediaAnalysisOperationsConfig Unmarshall(JsonUnmarshallerContext context)
         {
             MediaAnalysisOperationsConfig unmarshalledObject = new MediaAnalysisOperationsConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

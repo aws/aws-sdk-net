@@ -57,6 +57,8 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public InputDataConfig Unmarshall(JsonUnmarshallerContext context)
         {
             InputDataConfig unmarshalledObject = new InputDataConfig();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

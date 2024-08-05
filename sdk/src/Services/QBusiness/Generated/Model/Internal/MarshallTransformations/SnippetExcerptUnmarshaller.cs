@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public SnippetExcerpt Unmarshall(JsonUnmarshallerContext context)
         {
             SnippetExcerpt unmarshalledObject = new SnippetExcerpt();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -59,6 +59,17 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOpenIdConnectConfiguration())
+            {
+                context.Writer.WritePropertyName("openIdConnectConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OpenIdConnectConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OpenIdConnectConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

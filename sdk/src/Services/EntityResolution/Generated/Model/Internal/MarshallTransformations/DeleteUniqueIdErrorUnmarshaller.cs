@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public DeleteUniqueIdError Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteUniqueIdError unmarshalledObject = new DeleteUniqueIdError();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

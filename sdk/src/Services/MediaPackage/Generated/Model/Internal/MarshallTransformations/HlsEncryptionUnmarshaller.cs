@@ -57,6 +57,8 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         public HlsEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             HlsEncryption unmarshalledObject = new HlsEncryption();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

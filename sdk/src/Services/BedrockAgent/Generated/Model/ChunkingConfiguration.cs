@@ -38,6 +38,8 @@ namespace Amazon.BedrockAgent.Model
     {
         private ChunkingStrategy _chunkingStrategy;
         private FixedSizeChunkingConfiguration _fixedSizeChunkingConfiguration;
+        private HierarchicalChunkingConfiguration _hierarchicalChunkingConfiguration;
+        private SemanticChunkingConfiguration _semanticChunkingConfiguration;
 
         /// <summary>
         /// Gets and sets the property ChunkingStrategy. 
@@ -52,6 +54,17 @@ namespace Amazon.BedrockAgent.Model
         /// <para>
         ///  <c>FIXED_SIZE</c> – Amazon Bedrock splits your source data into chunks of the approximate
         /// size that you set in the <c>fixedSizeChunkingConfiguration</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HIERARCHICAL</c> – Split documents into layers of chunks where the first layer
+        /// contains large chunks, and the second layer contains smaller chunks derived from the
+        /// first layer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SEMANTIC</c> – Split documents into chunks based on groups of similar content
+        /// derived with natural language processing.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -90,6 +103,46 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetFixedSizeChunkingConfiguration()
         {
             return this._fixedSizeChunkingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HierarchicalChunkingConfiguration. 
+        /// <para>
+        /// Settings for hierarchical document chunking for a data source. Hierarchical chunking
+        /// splits documents into layers of chunks where the first layer contains large chunks,
+        /// and the second layer contains smaller chunks derived from the first layer.
+        /// </para>
+        /// </summary>
+        public HierarchicalChunkingConfiguration HierarchicalChunkingConfiguration
+        {
+            get { return this._hierarchicalChunkingConfiguration; }
+            set { this._hierarchicalChunkingConfiguration = value; }
+        }
+
+        // Check to see if HierarchicalChunkingConfiguration property is set
+        internal bool IsSetHierarchicalChunkingConfiguration()
+        {
+            return this._hierarchicalChunkingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SemanticChunkingConfiguration. 
+        /// <para>
+        /// Settings for semantic document chunking for a data source. Semantic chunking splits
+        /// a document into into smaller documents based on groups of similar content derived
+        /// from the text with natural language processing.
+        /// </para>
+        /// </summary>
+        public SemanticChunkingConfiguration SemanticChunkingConfiguration
+        {
+            get { return this._semanticChunkingConfiguration; }
+            set { this._semanticChunkingConfiguration = value; }
+        }
+
+        // Check to see if SemanticChunkingConfiguration property is set
+        internal bool IsSetSemanticChunkingConfiguration()
+        {
+            return this._semanticChunkingConfiguration != null;
         }
 
     }

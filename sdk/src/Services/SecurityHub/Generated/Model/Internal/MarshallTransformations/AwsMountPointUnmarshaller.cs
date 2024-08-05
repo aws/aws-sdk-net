@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public AwsMountPoint Unmarshall(JsonUnmarshallerContext context)
         {
             AwsMountPoint unmarshalledObject = new AwsMountPoint();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

@@ -58,9 +58,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        /// Specifies one of the following strategies to launch Spot Instance fleets: <c>price-capacity-optimized</c>,
-        /// <c>capacity-optimized</c>, <c>lowest-price</c>, or <c>diversified</c>. For more information
-        /// on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+        /// Specifies one of the following strategies to launch Spot Instance fleets: <c>capacity-optimized</c>,
+        /// <c>price-capacity-optimized</c>, <c>lowest-price</c>, or <c>diversified</c>, and <c>capacity-optimized-prioritized</c>.
+        /// For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
         /// strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  <note> 

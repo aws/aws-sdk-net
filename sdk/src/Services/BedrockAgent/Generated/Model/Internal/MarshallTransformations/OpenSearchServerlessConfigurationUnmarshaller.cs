@@ -57,6 +57,8 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         public OpenSearchServerlessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             OpenSearchServerlessConfiguration unmarshalledObject = new OpenSearchServerlessConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

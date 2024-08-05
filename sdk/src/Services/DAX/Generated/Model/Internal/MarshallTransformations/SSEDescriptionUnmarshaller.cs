@@ -57,6 +57,8 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
         public SSEDescription Unmarshall(JsonUnmarshallerContext context)
         {
             SSEDescription unmarshalledObject = new SSEDescription();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

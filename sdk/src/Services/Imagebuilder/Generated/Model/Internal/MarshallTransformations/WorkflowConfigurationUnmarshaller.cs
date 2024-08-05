@@ -57,6 +57,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         public WorkflowConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             WorkflowConfiguration unmarshalledObject = new WorkflowConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

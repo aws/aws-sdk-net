@@ -57,6 +57,8 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public FilterByEntity Unmarshall(JsonUnmarshallerContext context)
         {
             FilterByEntity unmarshalledObject = new FilterByEntity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

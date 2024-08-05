@@ -57,6 +57,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public SAPODataSourceProperties Unmarshall(JsonUnmarshallerContext context)
         {
             SAPODataSourceProperties unmarshalledObject = new SAPODataSourceProperties();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

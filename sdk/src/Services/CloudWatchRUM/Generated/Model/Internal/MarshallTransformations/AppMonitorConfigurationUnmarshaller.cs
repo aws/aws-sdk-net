@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         public AppMonitorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AppMonitorConfiguration unmarshalledObject = new AppMonitorConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

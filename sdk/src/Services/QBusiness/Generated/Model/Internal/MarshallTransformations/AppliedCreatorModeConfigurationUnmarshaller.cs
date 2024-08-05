@@ -57,6 +57,8 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public AppliedCreatorModeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             AppliedCreatorModeConfiguration unmarshalledObject = new AppliedCreatorModeConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

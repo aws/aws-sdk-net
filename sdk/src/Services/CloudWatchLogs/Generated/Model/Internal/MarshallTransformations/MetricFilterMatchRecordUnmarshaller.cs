@@ -57,6 +57,8 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         public MetricFilterMatchRecord Unmarshall(JsonUnmarshallerContext context)
         {
             MetricFilterMatchRecord unmarshalledObject = new MetricFilterMatchRecord();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

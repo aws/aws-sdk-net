@@ -57,6 +57,8 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public EcrConfigurationState Unmarshall(JsonUnmarshallerContext context)
         {
             EcrConfigurationState unmarshalledObject = new EcrConfigurationState();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

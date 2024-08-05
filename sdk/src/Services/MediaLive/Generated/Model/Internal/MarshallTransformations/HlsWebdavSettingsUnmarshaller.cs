@@ -57,6 +57,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         public HlsWebdavSettings Unmarshall(JsonUnmarshallerContext context)
         {
             HlsWebdavSettings unmarshalledObject = new HlsWebdavSettings();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

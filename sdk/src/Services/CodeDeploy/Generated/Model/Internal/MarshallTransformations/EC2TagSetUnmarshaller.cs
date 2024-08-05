@@ -57,6 +57,8 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public EC2TagSet Unmarshall(JsonUnmarshallerContext context)
         {
             EC2TagSet unmarshalledObject = new EC2TagSet();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

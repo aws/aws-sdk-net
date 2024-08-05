@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public ClusterInstanceGroupDetails Unmarshall(JsonUnmarshallerContext context)
         {
             ClusterInstanceGroupDetails unmarshalledObject = new ClusterInstanceGroupDetails();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -80,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceStorageConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ClusterInstanceStorageConfig, ClusterInstanceStorageConfigUnmarshaller>(ClusterInstanceStorageConfigUnmarshaller.Instance);
+                    unmarshalledObject.InstanceStorageConfigs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstanceType", targetDepth))

@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// PUBLIC permissions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string DatabaseUser
         {
             get { return this._databaseUser; }

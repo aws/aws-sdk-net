@@ -57,6 +57,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         public PatchBaselineIdentity Unmarshall(JsonUnmarshallerContext context)
         {
             PatchBaselineIdentity unmarshalledObject = new PatchBaselineIdentity();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

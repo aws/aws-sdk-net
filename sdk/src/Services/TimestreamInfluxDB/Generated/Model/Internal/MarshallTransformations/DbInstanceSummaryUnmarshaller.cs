@@ -57,6 +57,8 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         public DbInstanceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             DbInstanceSummary unmarshalledObject = new DbInstanceSummary();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

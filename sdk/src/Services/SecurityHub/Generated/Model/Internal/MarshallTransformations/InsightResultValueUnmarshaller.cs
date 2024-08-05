@@ -57,6 +57,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         public InsightResultValue Unmarshall(JsonUnmarshallerContext context)
         {
             InsightResultValue unmarshalledObject = new InsightResultValue();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

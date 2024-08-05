@@ -57,6 +57,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         public DateTimeParameterDeclaration Unmarshall(JsonUnmarshallerContext context)
         {
             DateTimeParameterDeclaration unmarshalledObject = new DateTimeParameterDeclaration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

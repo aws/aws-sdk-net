@@ -57,6 +57,8 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         public SourceMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             SourceMetadata unmarshalledObject = new SourceMetadata();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

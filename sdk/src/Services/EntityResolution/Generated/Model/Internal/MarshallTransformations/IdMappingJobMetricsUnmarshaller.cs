@@ -57,6 +57,8 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         public IdMappingJobMetrics Unmarshall(JsonUnmarshallerContext context)
         {
             IdMappingJobMetrics unmarshalledObject = new IdMappingJobMetrics();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -74,6 +76,24 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordsNotProcessed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalMappedRecords", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalMappedSourceRecords", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedSourceRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalMappedTargetRecords", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedTargetRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalRecordsProcessed", targetDepth))

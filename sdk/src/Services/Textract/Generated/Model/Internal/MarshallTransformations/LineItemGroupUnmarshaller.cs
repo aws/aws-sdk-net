@@ -57,6 +57,8 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         public LineItemGroup Unmarshall(JsonUnmarshallerContext context)
         {
             LineItemGroup unmarshalledObject = new LineItemGroup();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

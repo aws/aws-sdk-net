@@ -57,6 +57,8 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         public StaticIp Unmarshall(JsonUnmarshallerContext context)
         {
             StaticIp unmarshalledObject = new StaticIp();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

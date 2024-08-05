@@ -57,6 +57,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         public SecondaryStatusTransition Unmarshall(JsonUnmarshallerContext context)
         {
             SecondaryStatusTransition unmarshalledObject = new SecondaryStatusTransition();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

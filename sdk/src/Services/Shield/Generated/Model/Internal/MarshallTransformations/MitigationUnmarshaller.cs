@@ -57,6 +57,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public Mitigation Unmarshall(JsonUnmarshallerContext context)
         {
             Mitigation unmarshalledObject = new Mitigation();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;

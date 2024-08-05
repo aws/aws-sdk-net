@@ -39,11 +39,21 @@ namespace Amazon.BedrockAgent.Model
     /// <para>
     /// To allow your agent to request the user for additional information when trying to
     /// complete a task, add an action group with the <c>parentActionGroupSignature</c> field
-    /// set to <c>AMAZON.UserInput</c>. You must leave the <c>description</c>, <c>apiSchema</c>,
-    /// and <c>actionGroupExecutor</c> fields blank for this action group. During orchestration,
-    /// if your agent determines that it needs to invoke an API in an action group, but doesn't
-    /// have enough information to complete the API request, it will invoke this action group
-    /// instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
+    /// set to <c>AMAZON.UserInput</c>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To allow your agent to generate, run, and troubleshoot code when trying to complete
+    /// a task, add an action group with the <c>parentActionGroupSignature</c> field set to
+    /// <c>AMAZON.CodeInterpreter</c>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You must leave the <c>description</c>, <c>apiSchema</c>, and <c>actionGroupExecutor</c>
+    /// fields blank for this action group. During orchestration, if your agent determines
+    /// that it needs to invoke an API in an action group, but doesn't have enough information
+    /// to complete the API request, it will invoke this action group instead and return an
+    /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
     /// reprompting the user for more information.
     /// </para>
     /// </summary>
@@ -64,7 +74,8 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property ActionGroupExecutor. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Lambda function containing the business logic
-        /// that is carried out upon invoking the action.
+        /// that is carried out upon invoking the action or the custom control method for handling
+        /// the information elicited from the user.
         /// </para>
         /// </summary>
         public ActionGroupExecutor ActionGroupExecutor
@@ -242,6 +253,12 @@ namespace Amazon.BedrockAgent.Model
         /// <para>
         /// To allow your agent to request the user for additional information when trying to
         /// complete a task, set this field to <c>AMAZON.UserInput</c>. You must leave the <c>description</c>,
+        /// <c>apiSchema</c>, and <c>actionGroupExecutor</c> fields blank for this action group.
+        /// </para>
+        ///  
+        /// <para>
+        /// To allow your agent to generate, run, and troubleshoot code when trying to complete
+        /// a task, set this field to <c>AMAZON.CodeInterpreter</c>. You must leave the <c>description</c>,
         /// <c>apiSchema</c>, and <c>actionGroupExecutor</c> fields blank for this action group.
         /// </para>
         ///  

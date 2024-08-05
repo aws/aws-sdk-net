@@ -57,6 +57,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public GitConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             GitConfiguration unmarshalledObject = new GitConfiguration();
+            if (context.IsEmptyResponse)
+                return null;
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
