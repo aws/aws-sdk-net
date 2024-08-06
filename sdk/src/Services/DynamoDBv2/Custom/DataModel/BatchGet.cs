@@ -14,11 +14,9 @@
  */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -27,128 +25,66 @@ using System.Threading;
 namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
-    /// Represents a non-generic object for retrieving a batch of items
+    /// Represents a non-generic interface for retrieving a batch of items
     /// from a single DynamoDB table
     /// </summary>
-    public abstract partial class BatchGet
+    public partial interface IBatchGet
     {
-        #region Internal/protected properties
+        /// <summary>
+        /// Returns the total number of keys associated with this Batch request.
+        /// </summary>
+        public int TotalKeys { get; }
 
         /// <summary>
-        /// Gets and sets the UntypedResults property.
+        /// List of non-generic results retrieved from DynamoDB.
         /// </summary>
-        protected List<object> UntypedResults { get; set; }
-        internal DynamoDBContext Context { get; set; }
-        internal DynamoDBFlatConfig Config { get; set; }
-        internal List<Key> Keys { get; set; }
-        internal DocumentBatchGet DocumentBatch { get; set; }
-        internal ItemStorageConfig ItemStorageConfig { get; set; }
-
-        #endregion
-
-
-        #region Constructor
-
-        internal BatchGet(DynamoDBContext context, DynamoDBFlatConfig config)
-        {
-            Context = context;
-            Config = config;
-            Keys = new List<Key>();
-        }
-
-        #endregion
-
-
-        #region Public properties
-
-        /// <summary>
-        /// List of results retrieved from DynamoDB.
-        /// Populated after Execute is called.
-        /// </summary>
-        public List<object> Results { get { return UntypedResults; } }
+        /// <remarks>
+        /// This is only populated after a call to Execute.
+        /// </remarks>
+        List<object> UntypedResults { get; }
 
         /// <summary>
         /// If set to true, a consistent read is issued. Otherwise eventually-consistent is used.
         /// </summary>
-        public bool ConsistentRead { get; set; }
-
-        #endregion
-
-
-        #region Protected methods
-
-        /// <summary>
-        /// Executes a server call to batch-get the items requested.
-        /// Populates Results with the retrieved items.
-        /// </summary>
-        internal protected abstract void ExecuteHelper();
-
-#if AWS_ASYNC_API
-        /// <summary>
-        /// Executes an asynchronous server call to batch-get the items requested.
-        /// Populates Results with the retrieved items.
-        /// </summary>
-        internal protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
-#endif
-        #endregion
-
-
-        #region Internal methods
-
-        internal abstract void CreateDocumentBatch();
-        internal abstract void PopulateResults(List<Document> items);
-
-        #endregion
+        /// <remarks>
+        /// Refer to the <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// Read Consistency</see> topic in the DynamoDB Developer Guide for more information.
+        /// </remarks>
+        bool ConsistentRead { get; set; }
     }
 
     /// <summary>
-    /// Represents a strongly-typed object for retrieving a batch of items
+    /// Represents a generic interface for retrieving a batch of items
     /// from a single DynamoDB table
     /// </summary>
-    public class BatchGet<T> : BatchGet
+    public interface IBatchGet<T> : IBatchGet
     {
-        #region Public properties
-
         /// <summary>
-        /// List of results retrieved from DynamoDB.
-        /// Populated after Execute is called.
+        /// List of generic results retrieved from DynamoDB.
         /// </summary>
-        new public List<T> Results { get { return TypedResults; } }
-
-        #endregion
-
-
-        #region Public methods
+        /// <remarks>
+        /// This is only populated after a call to Execute.
+        /// </remarks>
+        List<T> Results { get; }
 
         /// <summary>
         /// Add a single item to get, identified by its hash primary key.
         /// </summary>
         /// <param name="hashKey">Hash key of the item to get</param>
-        public void AddKey(object hashKey)
-        {
-            AddKey(hashKey, null);
-        }
+        void AddKey(object hashKey);
 
         /// <summary>
         /// Add a single item to get, identified by its hash-and-range primary key.
         /// </summary>
         /// <param name="hashKey">Hash key of the item to get</param>
         /// <param name="rangeKey">Range key of the item to get</param>
-        public void AddKey(object hashKey, object rangeKey)
-        {
-            Key key = Context.MakeKey(hashKey, rangeKey, ItemStorageConfig, Config);
-            Keys.Add(key);
-        }
+        void AddKey(object hashKey, object rangeKey);
 
         /// <summary>
         /// Add a single item to get.
         /// </summary>
         /// <param name="keyObject">Object key of the item to get</param>
-        public void AddKey(T keyObject)
-        {
-            Key key = Context.MakeKey(keyObject, ItemStorageConfig, Config);
-            Keys.Add(key);
-        }
+        void AddKey(T keyObject);
 
         /// <summary>
         /// Creates a MultiTableBatchGet object that is a combination
@@ -156,34 +92,84 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="otherBatches">Other BatchGet objects</param>
         /// <returns>
-        /// MultiTableBatchGet consisting of the multiple BatchGet objects:
-        /// the current batch and the passed-in batches.
+        /// An interface with the ability to perform MultiTableBatchGet operations.
         /// </returns>
-        public MultiTableBatchGet Combine(params BatchGet[] otherBatches)
+        IMultiTableBatchGet Combine(params IBatchGet[] otherBatches);
+    }
+
+    /// <summary>
+    /// Represents a non-generic object for retrieving a batch of items
+    /// from a single DynamoDB table
+    /// </summary>
+    public abstract partial class BatchGet : IBatchGet
+    {
+        internal DocumentBatchGet DocumentBatch { get; set; }
+
+        internal abstract void CreateDocumentBatch();
+
+        internal abstract void PopulateResults(List<Document> items);
+
+        /// <inheritdoc/>
+        public abstract int TotalKeys { get; }
+
+        /// <inheritdoc/>
+        public List<object> UntypedResults { get; } = new();
+
+        /// <inheritdoc/>
+        public bool ConsistentRead { get; set; }
+    }
+
+    /// <summary>
+    /// Represents a strongly-typed object for retrieving a batch of items
+    /// from a single DynamoDB table
+    /// </summary>
+    public partial class BatchGet<T> : BatchGet, IBatchGet<T>
+    {
+        private readonly DynamoDBContext _context;
+        private readonly DynamoDBFlatConfig _config;
+        private readonly ItemStorageConfig _itemStorageConfig;
+        private readonly List<Key> _keys = new();
+
+        /// <inheritdoc/>
+        public override int TotalKeys => _keys.Count;
+
+        /// <inheritdoc/>
+        public List<T> Results { get; } = new();
+
+        /// <inheritdoc/>
+        public void AddKey(object hashKey)
+        {
+            AddKey(hashKey, null);
+        }
+
+        /// <inheritdoc/>
+        public void AddKey(object hashKey, object rangeKey)
+        {
+            Key key = _context.MakeKey(hashKey, rangeKey, _itemStorageConfig, _config);
+            _keys.Add(key);
+        }
+
+        /// <inheritdoc/>
+        public void AddKey(T keyObject)
+        {
+            Key key = _context.MakeKey(keyObject, _itemStorageConfig, _config);
+            _keys.Add(key);
+        }
+
+        /// <inheritdoc/>
+        public IMultiTableBatchGet Combine(params IBatchGet[] otherBatches)
         {
             return new MultiTableBatchGet(this, otherBatches);
         }
 
-        #endregion
-
-
-        #region Constructor
-
         internal BatchGet(DynamoDBContext context, DynamoDBFlatConfig config)
-            : base(context, config)
         {
-            ItemStorageConfig = context.StorageConfigCache.GetConfig<T>(config);
+            _context = context;
+            _config = config;
+            _itemStorageConfig = context.StorageConfigCache.GetConfig<T>(config);
         }
 
-        #endregion
-
-
-        #region Internal/protected/private members
-
-        /// <summary>
-        /// Executes the batch get
-        /// </summary>
-        internal protected override void ExecuteHelper()
+        private void ExecuteHelper()
         {
             CreateDocumentBatch();
             DocumentBatch.ExecuteHelper();
@@ -191,10 +177,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 #if AWS_ASYNC_API
-        /// <summary>
-        /// Executes the batch get asynchronously
-        /// </summary>
-        internal protected override async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             CreateDocumentBatch();
             await DocumentBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
@@ -202,80 +185,78 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 #endif
 
-        /// <summary>
-        /// Gets and sets the TypedResults property.
-        /// </summary>
-        protected List<T> TypedResults { get; set; }
         internal override void CreateDocumentBatch()
         {
-            var storageConfig = Context.StorageConfigCache.GetConfig<T>(Config);
-            var table = Context.GetTargetTable(storageConfig, Config);
+            var table = _context.GetTargetTable(_itemStorageConfig, _config);
 
             DocumentBatchGet docBatch = new DocumentBatchGet(table)
             {
-                AttributesToGet = storageConfig.AttributesToGet,
-                ConsistentRead = this.ConsistentRead
+                AttributesToGet = _itemStorageConfig.AttributesToGet,
+                ConsistentRead = ConsistentRead
             };
-            docBatch.Keys.AddRange(Keys);
+            docBatch.Keys.AddRange(_keys);
 
             DocumentBatch = docBatch;
         }
+
         internal override void PopulateResults(List<Document> items)
         {
-            UntypedResults = new List<object>();
-            TypedResults = new List<T>();
+            UntypedResults.Clear();
+            Results.Clear();
             foreach (var doc in items)
             {
-                var item = Context.FromDocumentHelper<T>(doc, Config);
-                TypedResults.Add(item);
+                var item = _context.FromDocumentHelper<T>(doc, _config);
+                Results.Add(item);
                 UntypedResults.Add(item);
             }
         }
+    }
 
-        #endregion
+    /// <summary>
+    /// Interface for retrieving a batch of items from multiple DynamoDB tables,
+    /// using multiple strongly-typed BatchGet objects
+    /// </summary>
+    public partial interface IMultiTableBatchGet
+    {
+        /// <summary>
+        /// Gets the total number of primary keys to be loaded from DynamoDB,
+        /// across all batches
+        /// </summary>
+        int TotalKeys { get; }
+
+        /// <summary>
+        /// Add a BatchGet object to the multi-table batch request
+        /// </summary>
+        /// <param name="batch">BatchGet to add</param>
+        void AddBatch(IBatchGet batch);
     }
 
     /// <summary>
     /// Class for retrieving a batch of items from multiple DynamoDB tables,
     /// using multiple strongly-typed BatchGet objects
     /// </summary>
-    public partial class MultiTableBatchGet
+    public partial class MultiTableBatchGet : IMultiTableBatchGet
     {
-        #region Private members
-
-        private List<BatchGet> allBatches = new List<BatchGet>();
-
-        #endregion
-
-
-        #region Constructor
+        private List<IBatchGet> allBatches = new List<IBatchGet>();
 
         /// <summary>
         /// Constructs a MultiTableBatchGet object from a number of
         /// BatchGet objects
         /// </summary>
         /// <param name="batches">Collection of BatchGet objects</param>
-        public MultiTableBatchGet(params BatchGet[] batches)
+        public MultiTableBatchGet(params IBatchGet[] batches)
         {
-            allBatches = new List<BatchGet>(batches);
+            allBatches = new List<IBatchGet>(batches);
         }
 
-        internal MultiTableBatchGet(BatchGet first, params BatchGet[] rest)
+        internal MultiTableBatchGet(IBatchGet first, params IBatchGet[] rest)
         {
-            allBatches = new List<BatchGet>();
+            allBatches = new List<IBatchGet>();
             allBatches.Add(first);
             allBatches.AddRange(rest);
         }
 
-        #endregion
-
-
-        #region Public properties
-
-        /// <summary>
-        /// Gets the total number of primary keys to be loaded from DynamoDB,
-        /// across all batches
-        /// </summary>
+        /// <inheritdoc/>
         public int TotalKeys
         {
             get
@@ -283,62 +264,58 @@ namespace Amazon.DynamoDBv2.DataModel
                 int count = 0;
                 foreach (var batch in allBatches)
                 {
-                    count += batch.Keys.Count;
+                    count += batch.TotalKeys;
                 }
                 return count;
             }
         }
 
-        #endregion
-
-
-        #region Public methods
-
-        /// <summary>
-        /// Add a BatchGet object to the multi-table batch request
-        /// </summary>
-        /// <param name="batch">BatchGet to add</param>
-        public void AddBatch(BatchGet batch)
+        /// <inheritdoc/>
+        public void AddBatch(IBatchGet batch)
         {
             allBatches.Add(batch);
         }
 
-        internal void ExecuteHelper()
+        private void ExecuteHelper()
         {
             MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
+            var errorMsg = $"All batches must be of type {nameof(BatchGet)}";
             foreach (var batch in allBatches)
             {
-                batch.CreateDocumentBatch();
-                superBatch.AddBatch(batch.DocumentBatch);
+                var abstractBatch = batch as BatchGet ?? throw new InvalidOperationException(errorMsg);
+                abstractBatch.CreateDocumentBatch();
+                superBatch.AddBatch(abstractBatch.DocumentBatch);
             }
 
             superBatch.ExecuteHelper();
 
             foreach (var batch in allBatches)
             {
-                batch.PopulateResults(batch.DocumentBatch.Results);
+                var abstractBatch = batch as BatchGet ?? throw new InvalidOperationException(errorMsg);
+                abstractBatch.PopulateResults(abstractBatch.DocumentBatch.Results);
             }
         }
 
 #if AWS_ASYNC_API
-        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
+            var errorMsg = $"All batches must be of type {nameof(BatchGet)}";
             foreach (var batch in allBatches)
             {
-                batch.CreateDocumentBatch();
-                superBatch.AddBatch(batch.DocumentBatch);
+                var abstractBatch = batch as BatchGet ?? throw new InvalidOperationException(errorMsg);
+                abstractBatch.CreateDocumentBatch();
+                superBatch.AddBatch(abstractBatch.DocumentBatch);
             }
 
             await superBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
 
             foreach (var batch in allBatches)
             {
-                batch.PopulateResults(batch.DocumentBatch.Results);
+                var abstractBatch = batch as BatchGet ?? throw new InvalidOperationException(errorMsg);
+                abstractBatch.PopulateResults(abstractBatch.DocumentBatch.Results);
             }
         }
 #endif
-
-        #endregion
     }
 }
