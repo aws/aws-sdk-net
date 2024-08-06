@@ -14,26 +14,13 @@
  */
 #pragma warning disable 1574
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using Amazon.DynamoDBv2.Model;
-using Amazon.DynamoDBv2.DocumentModel;
 using System.Threading.Tasks;
-using Amazon.Runtime.Internal;
 using System.Threading;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Represents a non-generic object for writing/deleting a batch of items
-    /// in a single DynamoDB table
-    /// </summary>
-    public abstract partial class BatchWrite
+    public partial interface IBatchWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to batch-write/delete the items requested.
         ///
@@ -43,22 +30,26 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// 
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public abstract partial class BatchWrite : IBatchWrite
+    {
+        /// <inheritdoc/>
+        public abstract Task ExecuteAsync(CancellationToken cancellationToken);
+    }
+
+    public partial class  BatchWrite<T> : BatchWrite, IBatchWrite<T>
+    {
+        /// <inheritdoc/>
+        public override Task ExecuteAsync(CancellationToken cancellationToken)
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for writing/deleting a batch of items in multiple DynamoDB tables,
-    /// using multiple strongly-typed BatchWrite objects
-    /// </summary>
-    public partial class MultiTableBatchWrite
+    public partial interface IMultiTableBatchWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table batch request against all configured batches.
         ///
@@ -68,11 +59,15 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// 
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class MultiTableBatchWrite : IMultiTableBatchWrite
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 }
