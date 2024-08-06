@@ -2977,6 +2977,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICS_G4DN_BYOP = new WorkspaceImageIngestionProcess("BYOL_GRAPHICS_G4DN_BYOP");
         /// <summary>
+        /// Constant BYOL_GRAPHICS_G4DN_WSP for WorkspaceImageIngestionProcess
+        /// </summary>
+        public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICS_G4DN_WSP = new WorkspaceImageIngestionProcess("BYOL_GRAPHICS_G4DN_WSP");
+        /// <summary>
         /// Constant BYOL_GRAPHICSPRO for WorkspaceImageIngestionProcess
         /// </summary>
         public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICSPRO = new WorkspaceImageIngestionProcess("BYOL_GRAPHICSPRO");
