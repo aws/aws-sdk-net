@@ -470,7 +470,7 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1 -PackageList &quot;$(ServiceList)&quot;"/>
     </Target>
 
-    <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions;package-crt-extensions"/>
+    <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions"/>
 
     <Target Name="build-extensions" >
         <!-- depends: restore-nuget;run-generator -->
@@ -483,6 +483,18 @@
 
         <Message Text="Build and Test Crt Integration Extension"/>
         <Exec Command="dotnet test -c $(Configuration) --no-build CrtIntegrationTests.csproj" WorkingDirectory="../extensions/test/CrtIntegrationTests"/>
+
+        <Message Text="Build and Test Cloudfront Extension"/>
+        <Exec Command="dotnet test -c $(Configuration) --no-build CloudFront.Signers.Tests.NetStandard.csproj" WorkingDirectory="../extensions/test/CrtIntegrationTests"/>
+
+        <Message Text="Build and Test EC2 Extension"/>
+        <Exec Command="dotnet test -c $(Configuration) --no-build EC2.DecryptPassword.NetStandard.csproj" WorkingDirectory="../extensions/test/CrtIntegrationTests"/>
+        <!-- We build the netframework projects when testing because they are not included in the solution -->
+        <Message Text="Build and Test EC2 Extension NetFramework"/>
+        <Exec Command="dotnet test -c $(Configuration) EC2.DecryptPassword.NetFramework.csproj" WorkingDirectory="../extensions/test/CloudFront.SignersTests"/>
+
+        <Message Text="Build and Test EC2 Extension Framework"/>
+        <Exec Command="dotnet test -c $(Configuration) EC2.DecryptPassword.NetFramework.csproj" WorkingDirectory="../extensions/test/EC2.DecryptPasswordTests"/>
     </Target>
 
     <Target Name="package-netcore-extensions" DependsOnTargets="$(package-netcore-extensions-DependsOnTargets)">
@@ -493,6 +505,16 @@
     <Target Name="package-crt-extensions" DependsOnTargets="$(package-crt-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CrtIntegration.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
+    </Target>
+
+    <Target Name="package-cloudfront-extensions" DependsOnTargets="$(package-cloudfront-extensions-DependsOnTargets)">
+        <MakeDir Directories="../Deployment/nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extenions.CloudFront.Signers.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
+    </Target>
+
+    <Target Name="package-ec2-extensions" DependsOnTargets="$(package-ec2-extensions-DependsOnTargets)">
+        <MakeDir Directories="../Deployment/nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.EC2.DecryptPassword.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
     </Target>
 
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;build-extensions">
