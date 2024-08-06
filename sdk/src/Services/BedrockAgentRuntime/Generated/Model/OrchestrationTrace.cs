@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private InvocationInput _invocationInput;
         private ModelInvocationInput _modelInvocationInput;
+        private OrchestrationModelInvocationOutput _modelInvocationOutput;
         private Observation _observation;
         private Rationale _rationale;
 
@@ -92,6 +93,26 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetModelInvocationInput()
         {
             return this._modelInvocationInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelInvocationOutput. 
+        /// <para>
+        /// Contains information pertaining to the output from the foundation model that is being
+        /// invoked.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public OrchestrationModelInvocationOutput ModelInvocationOutput
+        {
+            get { return this._modelInvocationOutput; }
+            set { this._modelInvocationOutput = value; }
+        }
+
+        // Check to see if ModelInvocationOutput property is set
+        internal bool IsSetModelInvocationOutput()
+        {
+            return this._modelInvocationOutput != null;
         }
 
         /// <summary>

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OrchestrationTrace Object
+    /// Response Unmarshaller for Usage Object
     /// </summary>  
-    public class OrchestrationTraceUnmarshaller : IUnmarshaller<OrchestrationTrace, XmlUnmarshallerContext>, IUnmarshaller<OrchestrationTrace, JsonUnmarshallerContext>
+    public class UsageUnmarshaller : IUnmarshaller<Usage, XmlUnmarshallerContext>, IUnmarshaller<Usage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OrchestrationTrace IUnmarshaller<OrchestrationTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Usage IUnmarshaller<Usage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OrchestrationTrace Unmarshall(JsonUnmarshallerContext context)
+        public Usage Unmarshall(JsonUnmarshallerContext context)
         {
-            OrchestrationTrace unmarshalledObject = new OrchestrationTrace();
+            Usage unmarshalledObject = new Usage();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("invocationInput", targetDepth))
+                if (context.TestExpression("inputTokens", targetDepth))
                 {
-                    var unmarshaller = InvocationInputUnmarshaller.Instance;
-                    unmarshalledObject.InvocationInput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.InputTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("modelInvocationInput", targetDepth))
+                if (context.TestExpression("outputTokens", targetDepth))
                 {
-                    var unmarshaller = ModelInvocationInputUnmarshaller.Instance;
-                    unmarshalledObject.ModelInvocationInput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelInvocationOutput", targetDepth))
-                {
-                    var unmarshaller = OrchestrationModelInvocationOutputUnmarshaller.Instance;
-                    unmarshalledObject.ModelInvocationOutput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("observation", targetDepth))
-                {
-                    var unmarshaller = ObservationUnmarshaller.Instance;
-                    unmarshalledObject.Observation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rationale", targetDepth))
-                {
-                    var unmarshaller = RationaleUnmarshaller.Instance;
-                    unmarshalledObject.Rationale = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OutputTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static OrchestrationTraceUnmarshaller _instance = new OrchestrationTraceUnmarshaller();        
+        private static UsageUnmarshaller _instance = new UsageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OrchestrationTraceUnmarshaller Instance
+        public static UsageUnmarshaller Instance
         {
             get
             {

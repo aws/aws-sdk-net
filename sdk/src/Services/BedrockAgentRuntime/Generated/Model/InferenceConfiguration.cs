@@ -134,7 +134,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// While generating a response, the model determines the probability of the following
         /// token at each point of generation. The value that you set for <c>Top P</c> determines
         /// the number of most-likely candidates from which the model chooses the next token in
-        /// the sequence. For example, if you set <c>topP</c> to 80, the model only selects the
+        /// the sequence. For example, if you set <c>topP</c> to 0.8, the model only selects the
         /// next token from the top 80% of the probability distribution of next tokens.
         /// </para>
         /// </summary>

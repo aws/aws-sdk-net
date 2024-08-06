@@ -320,6 +320,12 @@ namespace Amazon.BedrockAgentRuntime
         /// of each node as a stream. If there's an error, the error is returned. For more information,
         /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
         /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeFlow</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeFlow service method.</param>
         /// 

@@ -30,39 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about the content in an output from prompt flow invocation.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used in the following API operations:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html#API_agent_InvokeFlow_RequestSyntax">InvokeFlow
-    /// request</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// Provides details of the foundation model.
     /// </summary>
-    public partial class FlowOutputContent
+    public partial class Metadata
     {
-        private Amazon.Runtime.Documents.Document _document;
+        private Usage _usage;
 
         /// <summary>
-        /// Gets and sets the property Document. 
+        /// Gets and sets the property Usage. 
         /// <para>
-        /// The content in the output.
+        /// Contains details of the foundation model usage.
         /// </para>
         /// </summary>
-        public Amazon.Runtime.Documents.Document Document
+        [AWSProperty(Sensitive=true)]
+        public Usage Usage
         {
-            get { return this._document; }
-            set { this._document = value; }
+            get { return this._usage; }
+            set { this._usage = value; }
         }
 
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
+        // Check to see if Usage property is set
+        internal bool IsSetUsage()
         {
-            return !this._document.IsNull();
+            return this._usage != null;
         }
 
     }

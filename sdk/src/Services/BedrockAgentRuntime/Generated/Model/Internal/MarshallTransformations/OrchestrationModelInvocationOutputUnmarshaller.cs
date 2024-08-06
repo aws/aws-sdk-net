@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OrchestrationTrace Object
+    /// Response Unmarshaller for OrchestrationModelInvocationOutput Object
     /// </summary>  
-    public class OrchestrationTraceUnmarshaller : IUnmarshaller<OrchestrationTrace, XmlUnmarshallerContext>, IUnmarshaller<OrchestrationTrace, JsonUnmarshallerContext>
+    public class OrchestrationModelInvocationOutputUnmarshaller : IUnmarshaller<OrchestrationModelInvocationOutput, XmlUnmarshallerContext>, IUnmarshaller<OrchestrationModelInvocationOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OrchestrationTrace IUnmarshaller<OrchestrationTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OrchestrationModelInvocationOutput IUnmarshaller<OrchestrationModelInvocationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OrchestrationTrace Unmarshall(JsonUnmarshallerContext context)
+        public OrchestrationModelInvocationOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            OrchestrationTrace unmarshalledObject = new OrchestrationTrace();
+            OrchestrationModelInvocationOutput unmarshalledObject = new OrchestrationModelInvocationOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("invocationInput", targetDepth))
+                if (context.TestExpression("metadata", targetDepth))
                 {
-                    var unmarshaller = InvocationInputUnmarshaller.Instance;
-                    unmarshalledObject.InvocationInput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MetadataUnmarshaller.Instance;
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("modelInvocationInput", targetDepth))
+                if (context.TestExpression("rawResponse", targetDepth))
                 {
-                    var unmarshaller = ModelInvocationInputUnmarshaller.Instance;
-                    unmarshalledObject.ModelInvocationInput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RawResponseUnmarshaller.Instance;
+                    unmarshalledObject.RawResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("modelInvocationOutput", targetDepth))
+                if (context.TestExpression("traceId", targetDepth))
                 {
-                    var unmarshaller = OrchestrationModelInvocationOutputUnmarshaller.Instance;
-                    unmarshalledObject.ModelInvocationOutput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("observation", targetDepth))
-                {
-                    var unmarshaller = ObservationUnmarshaller.Instance;
-                    unmarshalledObject.Observation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("rationale", targetDepth))
-                {
-                    var unmarshaller = RationaleUnmarshaller.Instance;
-                    unmarshalledObject.Rationale = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TraceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static OrchestrationTraceUnmarshaller _instance = new OrchestrationTraceUnmarshaller();        
+        private static OrchestrationModelInvocationOutputUnmarshaller _instance = new OrchestrationModelInvocationOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OrchestrationTraceUnmarshaller Instance
+        public static OrchestrationModelInvocationOutputUnmarshaller Instance
         {
             get
             {

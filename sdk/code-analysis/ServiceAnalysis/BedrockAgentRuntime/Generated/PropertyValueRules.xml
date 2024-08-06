@@ -289,6 +289,11 @@
     <max>16</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.OrchestrationModelInvocationOutput.TraceId</property>
+    <min>2</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.OutputFile.Bytes</property>
     <min>0</min>
     <max>1000000</max>
