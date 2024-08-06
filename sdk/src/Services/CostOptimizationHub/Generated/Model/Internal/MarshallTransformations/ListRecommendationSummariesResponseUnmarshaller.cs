@@ -76,6 +76,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     response.Items = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metrics", targetDepth))
+                {
+                    var unmarshaller = SummaryMetricsResultUnmarshaller.Instance;
+                    response.Metrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -46,6 +46,7 @@ namespace Amazon.CostOptimizationHub.Model
         private Filter _filter;
         private string _groupBy;
         private int? _maxResults;
+        private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of recommendations that are returned for the request.
+        /// The maximum number of recommendations to be returned for the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -99,6 +100,25 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// Additional metrics to be returned for the request. The only valid value is <c>savingsPercentage</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

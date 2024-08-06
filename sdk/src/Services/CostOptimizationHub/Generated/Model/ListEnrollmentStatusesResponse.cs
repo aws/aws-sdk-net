@@ -42,7 +42,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// Gets and sets the property IncludeMemberAccounts. 
         /// <para>
         /// The enrollment status of all member accounts in the organization if the account is
-        /// the management account.
+        /// the management account or delegated administrator.
         /// </para>
         /// </summary>
         public bool IncludeMemberAccounts
