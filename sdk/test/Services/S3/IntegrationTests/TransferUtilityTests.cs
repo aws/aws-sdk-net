@@ -129,7 +129,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TestDownloadedFile(downloadPath);
 
                 // empty out file, except for 1 byte
-                File.WriteAllText(downloadPath, testContent.Substring(0,1));
+                File.WriteAllText(downloadPath, testContent.Substring(0, 1));
                 Assert.IsTrue(File.Exists(downloadPath));
                 tu.Download(downloadRequest);
                 TestDownloadedFile(downloadPath);
@@ -146,7 +146,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var fileSize = 20 * MEG_SIZE;
             UtilityMethods.GenerateFile(path, fileSize);
             //take the generated file and turn it into an unseekable stream
-            
+
             var stream = GenerateUnseekableStreamFromFile(path);
             using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
             {
@@ -475,7 +475,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void SimpleUploadWithSSE_C_LargeFile()
         {
-            UploadWithSSE_C(16 * MEG_SIZE, @"SimpleUploadTest\LargeFile");            
+            UploadWithSSE_C(16 * MEG_SIZE, @"SimpleUploadTest\LargeFile");
         }
 
         [TestMethod]
@@ -528,7 +528,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var downloadedFiles = Directory.EnumerateFiles(downloadPath, "*", SearchOption.AllDirectories).ToList();
 
             Assert.AreEqual(sourceFiles.Count, downloadedFiles.Count);
-            
+
             sourceFiles.Sort();
             downloadedFiles.Sort();
             for (var i = 0; i < sourceFiles.Count(); i++)
@@ -609,7 +609,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        void Upload(string fileName, long size, 
+        void Upload(string fileName, long size,
             TransferProgressValidator<UploadProgressArgs> progressValidator, AmazonS3Client client = null)
         {
             var key = fileName;
@@ -712,20 +712,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return directory;
         }
 
-         [TestMethod]
-         [TestCategory("S3")]
-         public void DownloadDirectoryProgressTest()
-         {
-             // disable clock skew testing, this is a multithreaded test
-             using (RetryUtilities.DisableClockSkewCorrection())
-             {
-                 var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
-                 ConfigureProgressValidator(progressValidator);
+        [TestMethod]
+        [TestCategory("S3")]
+        public void DownloadNonExistentS3Directory()
+        {
+            var client = Client;
+            var downloadPath = GenerateDirectoryPath();
 
-                 DownloadDirectory(progressValidator);
-                 progressValidator.AssertOnCompletion();
-             }
-         }
+            var transferUtility = new TransferUtility(Client);
+
+            transferUtility.DownloadDirectory(new TransferUtilityDownloadDirectoryRequest
+            {
+                BucketName = bucketName,
+                S3Directory = "NonExistentS3Directory",
+                LocalDirectory = downloadPath,
+            });
+
+            var downloadedFiles = Directory.EnumerateFiles(downloadPath, "*", SearchOption.AllDirectories).ToList();
+            Assert.AreEqual(0, downloadedFiles.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void DownloadDirectoryProgressTest()
+        {
+            // disable clock skew testing, this is a multithreaded test
+            using (RetryUtilities.DisableClockSkewCorrection())
+            {
+                var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
+                ConfigureProgressValidator(progressValidator);
+
+                DownloadDirectory(progressValidator);
+                progressValidator.AssertOnCompletion();
+            }
+        }
 
         void DownloadDirectory(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator, bool concurrent = true)
         {
@@ -1278,11 +1298,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             private readonly bool _setZeroLengthStream;
 
             public UnseekableStream(byte[] buffer) : base(buffer) { }
-            public UnseekableStream(bool setZeroLengthStream): base()
+            public UnseekableStream(bool setZeroLengthStream) : base()
             {
                 _setZeroLengthStream = setZeroLengthStream;
             }
-            public UnseekableStream(): base() { }
+            public UnseekableStream() : base() { }
 
             public override bool CanSeek
             {
