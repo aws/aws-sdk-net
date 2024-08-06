@@ -121,19 +121,9 @@ public final class ProtocolTestCustomizations {
             "QueryEmptyInputAndEmptyOutput",
             "QueryNoInputAndNoOutput",
             "QueryNoInputAndOutput",
-            "QueryListArgWithXmlNameMember",
-            "QueryXmlLists",
-            "DocumentTypeAsPayloadOutputString",
-            "RestJsonHttpPayloadWithUnsetUnion",
-            "RestJsonInputAndOutputWithQuotedStringHeaders",
-            "RestJsonInputAndOutputWithTimestampHeaders",
-            "RestJsonInputAndOutputWithTimestampHeaders",
+            "RestXmlXmlMapWithXmlNamespace",
+            // something in v4 broke the the test below. we should investigate and fix it.
             "RestJsonNullAndEmptyHeaders",
-            "IgnoreQueryParamsInResponse",
-            "InputAndOutputWithTimestampHeaders",
-            "NullAndEmptyHeaders",
-            "XmlLists",
-            "NullAndEmptyHeaders",
-            "RestXmlXmlMapWithXmlNamespace"
+            "NullAndEmptyHeaders"
     );
 }
