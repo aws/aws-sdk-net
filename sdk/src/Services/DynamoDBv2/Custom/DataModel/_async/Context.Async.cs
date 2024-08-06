@@ -16,12 +16,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -197,31 +194,14 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region BatchGet async
 
-        /// <summary>
-        /// Issues a batch-get request with multiple batches.
-        /// 
-        /// Results are stored in the individual batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchGet objects
-        /// </param>
-        public Task ExecuteBatchGetAsync(params BatchGet[] batches)
+        /// <inheritdoc/>
+        public Task ExecuteBatchGetAsync(params IBatchGet[] batches)
         {
             return ExecuteBatchGetAsync(batches, default(CancellationToken));
         }
 
-        /// <summary>
-        /// Issues a batch-get request with multiple batches.
-        /// 
-        /// Results are stored in the individual batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchGet objects
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        public Task ExecuteBatchGetAsync(BatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task ExecuteBatchGetAsync(IBatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
             return superBatch.ExecuteAsync(cancellationToken);
