@@ -13,11 +13,9 @@
  * permissions and limitations under the License.
  */
 
-using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -364,7 +362,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="batches">
         /// Configured BatchGet objects
         /// </param>
-        void ExecuteBatchGet(params BatchGet[] batches);
+        void ExecuteBatchGet(params IBatchGet[] batches);
 
         #endregion
 

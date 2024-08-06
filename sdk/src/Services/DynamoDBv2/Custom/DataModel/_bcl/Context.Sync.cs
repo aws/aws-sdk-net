@@ -15,10 +15,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -171,15 +169,8 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region BatchGet
-        /// <summary>
-        /// Issues a batch-get request with multiple batches.
-        /// 
-        /// Results are stored in the individual batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchGet objects
-        /// </param>
-        public void ExecuteBatchGet(params BatchGet[] batches)
+        /// <inheritdoc/>
+        public void ExecuteBatchGet(params IBatchGet[] batches)
         {
             MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
             superBatch.Execute();

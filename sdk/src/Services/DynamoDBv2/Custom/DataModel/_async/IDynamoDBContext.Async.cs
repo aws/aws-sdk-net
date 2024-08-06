@@ -415,9 +415,20 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="batches">
         /// Configured BatchGet objects
         /// </param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteBatchGetAsync(params IBatchGet[] batches);
+
+        /// <summary>
+        /// Issues a batch-get request with multiple batches.
+        /// 
+        /// Results are stored in the individual batches.
+        /// </summary>
+        /// <param name="batches">
+        /// Configured BatchGet objects
+        /// </param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        Task ExecuteBatchGetAsync(BatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken));
+        Task ExecuteBatchGetAsync(IBatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
 

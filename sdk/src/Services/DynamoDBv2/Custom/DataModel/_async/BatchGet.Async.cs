@@ -14,48 +14,39 @@
  */
 #pragma warning disable 1574
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using Amazon.DynamoDBv2.Model;
-using Amazon.DynamoDBv2.DocumentModel;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Represents a non-generic object for retrieving a batch of items
-    /// from a single DynamoDB table
-    /// </summary>
-    public abstract partial class BatchGet
+    public partial interface IBatchGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to batch-get the items requested.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// 
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public abstract partial class BatchGet
+    {
+        /// <inheritdoc/>
+        public abstract Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class BatchGet<T> : BatchGet, IBatchGet<T>
+    {
+        /// <inheritdoc/>
+        public override Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for retrieving a batch of items from multiple DynamoDB tables,
-    /// using multiple strongly-typed BatchGet objects
-    /// </summary>
-    public partial class MultiTableBatchGet
+    public partial interface IMultiTableBatchGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table batch request against all configured batches.
         /// Results are stored in the respective BatchGet objects.
@@ -63,11 +54,15 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// 
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class MultiTableBatchGet : IMultiTableBatchGet
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 }
