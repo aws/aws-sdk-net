@@ -30,28 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This is the response object from the GetLogDeliveryConfiguration operation.
+    /// Configuration for the Amazon Data Firehose stream destination of user activity log
+    /// export with advanced security features.
     /// </summary>
-    public partial class GetLogDeliveryConfigurationResponse : AmazonWebServiceResponse
+    public partial class FirehoseConfigurationType
     {
-        private LogDeliveryConfigurationType _logDeliveryConfiguration;
+        private string _streamArn;
 
         /// <summary>
-        /// Gets and sets the property LogDeliveryConfiguration. 
+        /// Gets and sets the property StreamArn. 
         /// <para>
-        /// The logging configuration of the requested user pool.
+        /// The ARN of an Amazon Data Firehose stream that's the destination for advanced security
+        /// features log export.
         /// </para>
         /// </summary>
-        public LogDeliveryConfigurationType LogDeliveryConfiguration
+        [AWSProperty(Min=20, Max=2048)]
+        public string StreamArn
         {
-            get { return this._logDeliveryConfiguration; }
-            set { this._logDeliveryConfiguration = value; }
+            get { return this._streamArn; }
+            set { this._streamArn = value; }
         }
 
-        // Check to see if LogDeliveryConfiguration property is set
-        internal bool IsSetLogDeliveryConfiguration()
+        // Check to see if StreamArn property is set
+        internal bool IsSetStreamArn()
         {
-            return this._logDeliveryConfiguration != null;
+            return this._streamArn != null;
         }
 
     }

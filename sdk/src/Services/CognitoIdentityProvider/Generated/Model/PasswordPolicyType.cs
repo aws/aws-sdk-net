@@ -35,6 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class PasswordPolicyType
     {
         private int? _minimumLength;
+        private int? _passwordHistorySize;
         private bool? _requireLowercase;
         private bool? _requireNumbers;
         private bool? _requireSymbols;
@@ -59,6 +60,34 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetMinimumLength()
         {
             return this._minimumLength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PasswordHistorySize. 
+        /// <para>
+        /// The number of previous passwords that you want Amazon Cognito to restrict each user
+        /// from reusing. Users can't set a password that matches any of <c>n</c> previous passwords,
+        /// where <c>n</c> is the value of <c>PasswordHistorySize</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Password history isn't enforced and isn't displayed in <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>
+        /// responses when you set this value to <c>0</c> or don't provide it. To activate this
+        /// setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// advanced security features</a> must be active in your user pool.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=24)]
+        public int PasswordHistorySize
+        {
+            get { return this._passwordHistorySize.GetValueOrDefault(); }
+            set { this._passwordHistorySize = value; }
+        }
+
+        // Check to see if PasswordHistorySize property is set
+        internal bool IsSetPasswordHistorySize()
+        {
+            return this._passwordHistorySize.HasValue; 
         }
 
         /// <summary>

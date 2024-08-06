@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogConfigurationType Object
+    /// Response Unmarshaller for S3ConfigurationType Object
     /// </summary>  
-    public class LogConfigurationTypeUnmarshaller : IUnmarshaller<LogConfigurationType, XmlUnmarshallerContext>, IUnmarshaller<LogConfigurationType, JsonUnmarshallerContext>
+    public class S3ConfigurationTypeUnmarshaller : IUnmarshaller<S3ConfigurationType, XmlUnmarshallerContext>, IUnmarshaller<S3ConfigurationType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogConfigurationType IUnmarshaller<LogConfigurationType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3ConfigurationType IUnmarshaller<S3ConfigurationType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogConfigurationType Unmarshall(JsonUnmarshallerContext context)
+        public S3ConfigurationType Unmarshall(JsonUnmarshallerContext context)
         {
-            LogConfigurationType unmarshalledObject = new LogConfigurationType();
+            S3ConfigurationType unmarshalledObject = new S3ConfigurationType();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CloudWatchLogsConfiguration", targetDepth))
-                {
-                    var unmarshaller = CloudWatchLogsConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogsConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventSource", targetDepth))
+                if (context.TestExpression("BucketArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FirehoseConfiguration", targetDepth))
-                {
-                    var unmarshaller = FirehoseConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.FirehoseConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LogLevel", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3Configuration", targetDepth))
-                {
-                    var unmarshaller = S3ConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogConfigurationTypeUnmarshaller _instance = new LogConfigurationTypeUnmarshaller();        
+        private static S3ConfigurationTypeUnmarshaller _instance = new S3ConfigurationTypeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogConfigurationTypeUnmarshaller Instance
+        public static S3ConfigurationTypeUnmarshaller Instance
         {
             get
             {

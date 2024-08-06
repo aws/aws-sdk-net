@@ -1069,6 +1069,10 @@ namespace Amazon.CognitoIdentityProvider
     {
 
         /// <summary>
+        /// Constant UserAuthEvents for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName UserAuthEvents = new EventSourceName("userAuthEvents");
+        /// <summary>
         /// Constant UserNotification for EventSourceName
         /// </summary>
         public static readonly EventSourceName UserNotification = new EventSourceName("userNotification");
@@ -1370,6 +1374,10 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant ERROR for LogLevel
         /// </summary>
         public static readonly LogLevel ERROR = new LogLevel("ERROR");
+        /// <summary>
+        /// Constant INFO for LogLevel
+        /// </summary>
+        public static readonly LogLevel INFO = new LogLevel("INFO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

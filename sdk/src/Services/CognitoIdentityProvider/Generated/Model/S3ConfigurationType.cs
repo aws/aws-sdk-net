@@ -30,28 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This is the response object from the GetLogDeliveryConfiguration operation.
+    /// Configuration for the Amazon S3 bucket destination of user activity log export with
+    /// advanced security features.
     /// </summary>
-    public partial class GetLogDeliveryConfigurationResponse : AmazonWebServiceResponse
+    public partial class S3ConfigurationType
     {
-        private LogDeliveryConfigurationType _logDeliveryConfiguration;
+        private string _bucketArn;
 
         /// <summary>
-        /// Gets and sets the property LogDeliveryConfiguration. 
+        /// Gets and sets the property BucketArn. 
         /// <para>
-        /// The logging configuration of the requested user pool.
+        /// The ARN of an Amazon S3 bucket that's the destination for advanced security features
+        /// log export.
         /// </para>
         /// </summary>
-        public LogDeliveryConfigurationType LogDeliveryConfiguration
+        [AWSProperty(Min=3, Max=1024)]
+        public string BucketArn
         {
-            get { return this._logDeliveryConfiguration; }
-            set { this._logDeliveryConfiguration = value; }
+            get { return this._bucketArn; }
+            set { this._bucketArn = value; }
         }
 
-        // Check to see if LogDeliveryConfiguration property is set
-        internal bool IsSetLogDeliveryConfiguration()
+        // Check to see if BucketArn property is set
+        internal bool IsSetBucketArn()
         {
-            return this._logDeliveryConfiguration != null;
+            return this._bucketArn != null;
         }
 
     }

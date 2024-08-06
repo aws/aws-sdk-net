@@ -72,6 +72,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinimumLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PasswordHistorySize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PasswordHistorySize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RequireLowercase", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

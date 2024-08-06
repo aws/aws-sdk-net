@@ -65,10 +65,32 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EventSource);
             }
 
+            if(requestObject.IsSetFirehoseConfiguration())
+            {
+                context.Writer.WritePropertyName("FirehoseConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FirehoseConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.FirehoseConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLogLevel())
             {
                 context.Writer.WritePropertyName("LogLevel");
                 context.Writer.Write(requestObject.LogLevel);
+            }
+
+            if(requestObject.IsSetS3Configuration())
+            {
+                context.Writer.WritePropertyName("S3Configuration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3ConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Configuration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

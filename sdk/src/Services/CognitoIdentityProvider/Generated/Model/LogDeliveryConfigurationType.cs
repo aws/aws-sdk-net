@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The logging parameters of a user pool.
+    /// The logging parameters of a user pool returned in response to <c>GetLogDeliveryConfiguration</c>.
     /// </summary>
     public partial class LogDeliveryConfigurationType
     {
@@ -40,10 +40,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LogConfigurations. 
         /// <para>
-        /// The detailed activity logging destination of a user pool.
+        /// A logging destination of a user pool. User pools can have multiple logging destinations
+        /// for message-delivery and user-activity logs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=2)]
         public List<LogConfigurationType> LogConfigurations
         {
             get { return this._logConfigurations; }
@@ -59,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool where you configured detailed activity logging.
+        /// The ID of the user pool where you configured logging.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

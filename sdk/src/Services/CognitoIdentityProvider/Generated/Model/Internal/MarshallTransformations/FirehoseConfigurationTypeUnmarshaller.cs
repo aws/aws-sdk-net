@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogConfigurationType Object
+    /// Response Unmarshaller for FirehoseConfigurationType Object
     /// </summary>  
-    public class LogConfigurationTypeUnmarshaller : IUnmarshaller<LogConfigurationType, XmlUnmarshallerContext>, IUnmarshaller<LogConfigurationType, JsonUnmarshallerContext>
+    public class FirehoseConfigurationTypeUnmarshaller : IUnmarshaller<FirehoseConfigurationType, XmlUnmarshallerContext>, IUnmarshaller<FirehoseConfigurationType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogConfigurationType IUnmarshaller<LogConfigurationType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FirehoseConfigurationType IUnmarshaller<FirehoseConfigurationType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogConfigurationType Unmarshall(JsonUnmarshallerContext context)
+        public FirehoseConfigurationType Unmarshall(JsonUnmarshallerContext context)
         {
-            LogConfigurationType unmarshalledObject = new LogConfigurationType();
+            FirehoseConfigurationType unmarshalledObject = new FirehoseConfigurationType();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CloudWatchLogsConfiguration", targetDepth))
-                {
-                    var unmarshaller = CloudWatchLogsConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogsConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventSource", targetDepth))
+                if (context.TestExpression("StreamArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FirehoseConfiguration", targetDepth))
-                {
-                    var unmarshaller = FirehoseConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.FirehoseConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LogLevel", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3Configuration", targetDepth))
-                {
-                    var unmarshaller = S3ConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogConfigurationTypeUnmarshaller _instance = new LogConfigurationTypeUnmarshaller();        
+        private static FirehoseConfigurationTypeUnmarshaller _instance = new FirehoseConfigurationTypeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogConfigurationTypeUnmarshaller Instance
+        public static FirehoseConfigurationTypeUnmarshaller Instance
         {
             get
             {

@@ -36,12 +36,15 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private CloudWatchLogsConfigurationType _cloudWatchLogsConfiguration;
         private EventSourceName _eventSource;
+        private FirehoseConfigurationType _firehoseConfiguration;
         private LogLevel _logLevel;
+        private S3ConfigurationType _s3Configuration;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogsConfiguration. 
         /// <para>
-        /// The CloudWatch logging destination of a user pool.
+        /// The CloudWatch log group destination of user pool detailed activity logs, or of user
+        /// activity log export with advanced security features.
         /// </para>
         /// </summary>
         public CloudWatchLogsConfigurationType CloudWatchLogsConfiguration
@@ -59,7 +62,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        /// The source of events that your user pool sends for detailed activity logging.
+        /// The source of events that your user pool sends for logging. To send error-level logs
+        /// about user notification activity, set to <c>userNotification</c>. To send info-level
+        /// logs about advanced security features user activity, set to <c>userAuthEvents</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,10 +81,34 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FirehoseConfiguration. 
+        /// <para>
+        /// The Amazon Data Firehose stream destination of user activity log export with advanced
+        /// security features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// advanced security features</a> must be active in your user pool.
+        /// </para>
+        /// </summary>
+        public FirehoseConfigurationType FirehoseConfiguration
+        {
+            get { return this._firehoseConfiguration; }
+            set { this._firehoseConfiguration = value; }
+        }
+
+        // Check to see if FirehoseConfiguration property is set
+        internal bool IsSetFirehoseConfiguration()
+        {
+            return this._firehoseConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
         /// The <c>errorlevel</c> selection of logs that a user pool sends for detailed activity
-        /// logging.
+        /// logging. To send <c>userNotification</c> activity with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/tracking-quotas-and-usage-in-cloud-watch-logs.html">information
+        /// about message delivery</a>, choose <c>ERROR</c> with <c>CloudWatchLogsConfiguration</c>.
+        /// To send <c>userAuthEvents</c> activity with user logs from advanced security features,
+        /// choose <c>INFO</c> with one of <c>CloudWatchLogsConfiguration</c>, <c>FirehoseConfiguration</c>,
+        /// or <c>S3Configuration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,6 +122,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetLogLevel()
         {
             return this._logLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Configuration. 
+        /// <para>
+        /// The Amazon S3 bucket destination of user activity log export with advanced security
+        /// features. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// advanced security features</a> must be active in your user pool.
+        /// </para>
+        /// </summary>
+        public S3ConfigurationType S3Configuration
+        {
+            get { return this._s3Configuration; }
+            set { this._s3Configuration = value; }
+        }
+
+        // Check to see if S3Configuration property is set
+        internal bool IsSetS3Configuration()
+        {
+            return this._s3Configuration != null;
         }
 
     }

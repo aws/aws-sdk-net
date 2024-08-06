@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLogDeliveryConfiguration operation.
-    /// Gets the detailed activity logging configuration for a user pool.
+    /// Gets the logging configuration of a user pool.
     /// </summary>
     public partial class GetLogDeliveryConfigurationRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the user pool where you want to view detailed activity logging configuration.
+        /// The ID of the user pool that has the logging configuration that you want to view.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]
