@@ -1,27 +1,29 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using Amazon.CloudFront;
 using ThirdParty.Json.LitJson;
 using System.Collections.Generic;
-
+using Xunit;
 namespace AWSSDK_DotNet.UnitTests
 {
-    [TestClass]
     public class URLSignerTest
     {
         private static StreamReader privateRSAKeyStreamReader = null;
+        public URLSignerTest()
+        {
 
-        [TestInitialize]
-        public void Initialize()
+           Initialize();
+        }
+
+        private void Initialize()
         {
             var resourceDirectory = Path.Combine(Environment.CurrentDirectory, "EmbeddedResource");
             var privateKeyTxtPath = Path.Combine(resourceDirectory, "sample.rsa.private.key.txt");
             privateRSAKeyStreamReader = new StreamReader(privateKeyTxtPath);
         }
 
-        [TestMethod]
-        [TestCategory("CloudFront")]
+        [Fact]
+        [Trait("Category","CloudFront")]
         public void SignURLValidation()
         {
             string expectedSignedURL = @"http://awesome.dot.com/amazing/uri/?Policy=U2VjcmV0UG9saWN5"
@@ -29,11 +31,11 @@ namespace AWSSDK_DotNet.UnitTests
                                     + @"&Key-Pair-Id=amazingKeyPairId";
             string signedURL = AmazonCloudFrontUrlSigner.SignUrl("http://awesome.dot.com/amazing/uri/", "amazingKeyPairId", privateRSAKeyStreamReader, "SecretPolicy");
 
-            Assert.AreEqual(expectedSignedURL, signedURL);
+            Assert.Equal(expectedSignedURL, signedURL);
         }
 
-        [TestMethod]
-        [TestCategory("CloudFront")]
+        [Fact]
+        [Trait("Category", "CloudFront")]
         public void SignURLCannedValidation()
         {
             string expectedSignedURL = @"http://awesome.dot.com/amazing/uri/?Expires=1492153200" +
@@ -43,11 +45,11 @@ namespace AWSSDK_DotNet.UnitTests
             string signedURL = AmazonCloudFrontUrlSigner.SignUrlCanned("http://awesome.dot.com/amazing/uri/",
                 "amazingKeyPairId", privateRSAKeyStreamReader, new DateTime(2017, 4, 14, 7, 0, 0, DateTimeKind.Utc));
 
-            Assert.AreEqual(expectedSignedURL, signedURL);
+            Assert.Equal(expectedSignedURL, signedURL);
         }
 
-        [TestMethod]
-        [TestCategory("CloudFront")]
+        [Fact]
+        [Trait("Category", "CloudFront")]
         public void PolicyStatementWithNoAddress()
         {
             var resourcePath = "http://d111111abcdef8.cloudfront.net/game_download.zip";
@@ -62,35 +64,35 @@ namespace AWSSDK_DotNet.UnitTests
                                     dateTime,
                                     null);
 
-            Assert.AreEqual(policyWithEmptyString, policyWithNull);
+            Assert.Equal(policyWithEmptyString, policyWithNull);
 
             foreach(var policy in new List<string> { policyWithEmptyString, policyWithNull })
             {
                 var jsonObject = JsonMapper.ToObject(policy);
 
                 var statementList = jsonObject["Statement"];
-                Assert.IsTrue(statementList.IsArray);
+                Assert.True(statementList.IsArray);
 
                 var statement = statementList[0];
-                Assert.IsNotNull(statement);
+                Assert.NotNull(statement);
 
                 var resource = statement["Resource"];
-                Assert.AreEqual(resource.ToString(), resourcePath);
+                Assert.Equal(resource.ToString(), resourcePath);
 
                 var condition = statement["Condition"];
-                Assert.IsNotNull(condition);
-                Assert.IsTrue(condition.IsObject);
+                Assert.NotNull(condition);
+                Assert.True(condition.IsObject);
 
                 var IpAddress = condition["IpAddress"];
-                Assert.IsNull(IpAddress);
+                Assert.Null(IpAddress);
 
                 var epochTime = condition["DateLessThan"]["AWS:EpochTime"];
-                Assert.AreEqual(1357034400, long.Parse(epochTime.ToString()));
+                Assert.Equal(1357034400, long.Parse(epochTime.ToString()));
             }
         }
 
-        [TestMethod]
-        [TestCategory("CloudFront")]
+        [Fact]
+        [Trait("Category", "CloudFront")]
         public void PolicyStatementWithAddress()
         {
             var resourcePath = "http://*";
@@ -104,23 +106,23 @@ namespace AWSSDK_DotNet.UnitTests
             var jsonObject = JsonMapper.ToObject(policyDocument);
 
             var statementList = jsonObject["Statement"];
-            Assert.IsTrue(statementList.IsArray);
+            Assert.True(statementList.IsArray);
 
             var statement = statementList[0];
-            Assert.IsNotNull(statement);
+            Assert.NotNull(statement);
 
             var resource = statement["Resource"];
-            Assert.AreEqual(resource.ToString(), resourcePath);
+            Assert.Equal(resource.ToString(), resourcePath);
 
             var condition = statement["Condition"];
-            Assert.IsNotNull(condition);
-            Assert.IsTrue(condition.IsObject);
+            Assert.NotNull(condition);
+            Assert.True(condition.IsObject);
 
             var sourceIp = condition["IpAddress"]["AWS:SourceIp"];
-            Assert.AreEqual(ipRange, sourceIp.ToString());
+            Assert.Equal(ipRange, sourceIp.ToString());
 
             var epochTime = condition["DateLessThan"]["AWS:EpochTime"];
-            Assert.AreEqual(1357034400, long.Parse(epochTime.ToString()));
+            Assert.Equal(1357034400, long.Parse(epochTime.ToString()));
         }
     }
 }

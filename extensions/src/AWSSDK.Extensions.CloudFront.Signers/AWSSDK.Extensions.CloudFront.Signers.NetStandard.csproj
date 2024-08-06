@@ -1,28 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-	  <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
-	  <AssemblyName>AWSSDK.Extensions.CloudFront.Signers</AssemblyName>
-	  <PackageId>AWSSDK.Extensions.CloudFront.Signers</PackageId>
-	  <Version>4.0.0.0-preview</Version>
-	  <Title>AWSSDK.Extensions.Cloudfront.Signers</Title>
-	  <Description>
-		  This package contains extension methods for creating signed URLs for Amazon CloudFront distributions and
-		  for creating signed cookies for Amazon CloudFront distributions using canned or custom policies.
-	  </Description>
-	  <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
-	  <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-	  <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-	  <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-	  <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-	  <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-	  <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-	  <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-	  <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-	  <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-	  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-	  <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+		<AssemblyName>AWSSDK.Extensions.CloudFront.Signers</AssemblyName>
+		<PackageId>AWSSDK.Extensions.CloudFront.Signers</PackageId>
+		<Version>4.0.0.0-preview</Version>
+		<Title>AWSSDK.Extensions.Cloudfront.Signers</Title>
+		<Description>
+			This package contains extension methods for creating signed URLs for Amazon CloudFront distributions and
+			for creating signed cookies for Amazon CloudFront distributions using canned or custom policies.
+		</Description>
+		<DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
+		<DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+		<DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+		<DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+		<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+		<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+		<GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="**/obj/**" />
+	</ItemGroup>
 	<Choose>
 		<When Condition=" '$(AWSKeyFile)' == '' ">
 			<PropertyGroup>
@@ -36,11 +39,11 @@
 		</Otherwise>
 	</Choose>
 	<ItemGroup>
-	  <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
+		<PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
 	</ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="../../../sdk/src/Core/AWSSDK.Core.NetStandard.csproj" />
-    <ProjectReference Include="../../../sdk/src/Services/CloudFront\AWSSDK.CloudFront.NetStandard.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\sdk\src\Core\AWSSDK.Core.NetStandard.csproj" />
+	  <ProjectReference Include="..\..\..\sdk\src\Services\CloudFront\AWSSDK.CloudFront.NetStandard.csproj" />
+	</ItemGroup>
 
 </Project>

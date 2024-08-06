@@ -27,7 +27,6 @@ using Org.BouncyCastle.Crypto.Parameters;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using Org.BouncyCastle.Security;
-using ThirdParty.BouncyCastle.OpenSsl;
 namespace Amazon.EC2.Model
 {
     public static class GetPasswordDataResponseExtensions

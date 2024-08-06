@@ -1,18 +1,16 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 using Amazon.EC2.Model;
 
 namespace AWSSDK_DotNet.UnitTests.EC2
 {
-    [TestClass]
     public class PasswordTest
     {
 
         // Test an issue with certain combination of private key and encrypted passwords that were causing a encoding issue while decrypting the password.
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("EC2")]
+        [Fact]
+        [Trait("UnitTest", "EC2")]
         public void TestMissingLeadingZeroIssue()
         {
             string encryptedPassword = "Oxaop1Qz5TWS3U4J82qZSVX9WHrA7zaheUugP/Fsa2iq/9XjEPzAWRcnYCZ4icBeS/az/adyOb3b5nLYVMcr2yFANnEYNPWTtypISbuXfrBdqalG6+E45T/yu+Ti3iJo3zaMXvtcR3qQwQ2bFdt8Xo7W9wXwwTjisQbUKe7dHMfjYa/c6knEz+nVj4qyOG5QaLGhkbH7XBnekd/xpatuH4wtgfdvcOlYWeBnxWCmFigaKdhkEXmZavIU05sV5CIvsgiW79LorLpeat3i+pyrJ/x7349f6SyFSS2uOnbDei1nr1JiO4erkJjN6py6RxSsKmNzBCUo8q0+EXTVg5g6SA==";
@@ -20,7 +18,7 @@ namespace AWSSDK_DotNet.UnitTests.EC2
 
             GetPasswordDataResponse response = new GetPasswordDataResponse { PasswordData = encryptedPassword };
             string decryptedPassword = response.GetDecryptedPassword(privateKey);
-            Assert.IsNotNull(decryptedPassword);
+            Assert.NotNull(decryptedPassword);
         }
     }
 }

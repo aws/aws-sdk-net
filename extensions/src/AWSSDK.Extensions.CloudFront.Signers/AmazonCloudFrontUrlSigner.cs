@@ -24,6 +24,7 @@ using Org.BouncyCastle.OpenSsl;
 using System.Globalization;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Security;
 
 #pragma warning disable 1591
 
