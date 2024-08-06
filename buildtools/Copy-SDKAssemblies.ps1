@@ -242,3 +242,5 @@ foreach ($s in $services)
 Write-Verbose "Copying $BuildType AWSSDK.Extensions assemblies to deployment folders"
 Copy-SDKAssemblies -SourceRoot ..\extensions\src\AWSSDK.Extensions.CrtIntegration -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
 Copy-SDKAssemblies -SourceRoot ..\extensions\src\AWSSDK.Extensions.NETCore.Setup -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
+Copy-SDKAssemblies -SourceRoot ..\extensions\src\AWSSDK.Extensions.CloudFront.Signers -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType
+Copy-SDKAssemblies -SourceRoot ..\extensions\src\AWSSDK.Extensions.EC2.DecryptPassword -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -BuildType $BuildType

@@ -51,7 +51,8 @@ Function Copy-Dependencies
         [Parameter()]
         [string[]]
         $ProjectFiles =  @("AWSSDK.Core.Net35.csproj", "AWSSDK.Core.Net45.csproj", "AWSSDK.Core.NetStandard.csproj", "AWSSDK.Extensions.CrtIntegration.Net35.csproj",
-                           "AWSSDK.Extensions.CrtIntegration.Net45.csproj", "AWSSDK.Extensions.CrtIntegration.NetStandard.csproj")
+                           "AWSSDK.Extensions.CrtIntegration.Net45.csproj", "AWSSDK.Extensions.CrtIntegration.NetStandard.csproj", "AWSSDK.Extensions.CloudFront.Signers.NetStandard.csproj",
+                           "AWSSDK.Extensions.CloudFront.Signers.NetFramework.csproj", "AWSSDK.Extensions.EC2.DecryptPassword.NetStandard.csproj", "AWSSDK.Extensions.EC2.DecryptPassword.NetFramework.csproj")
 
     )
 
@@ -73,7 +74,11 @@ Function Copy-Dependencies
             }
             elseif (Test-Path ../extensions/src/AWSSDK.Extensions.CrtIntegration/$project) 
             {
-                dotnet restore -f --packages $TempRestoreFolder ../extensions/src/AWSSDK.Extensions.CrtIntegration/$project
+                dotnet restore -f --packages $TempRestoreFolder ../extensions/src/AWSSDK.Extensions.CloudFront.Signers/$project
+            }
+            elseif (Test-Path ../extensions/src/AWSSDK.Extensions.EC2.DecryptPassword/$project) 
+            {
+                dotnet restore -f --packages $TempRestoreFolder ../extensions/src/AWSSDK.Extensions.EC2.DecryptPassword/$project
             }
         }
 
