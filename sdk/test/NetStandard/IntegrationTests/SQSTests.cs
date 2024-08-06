@@ -18,7 +18,11 @@ namespace Amazon.DNXCore.IntegrationTests
             var request = new ListQueuesRequest();
             var response = await Client.ListQueuesAsync(request);
             Assert.NotNull(response.ResponseMetadata.Metadata);
-            Assert.NotNull(response.QueueUrls);
+
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.NotNull(response.QueueUrls);
+            }
         }
 
         [Fact]
