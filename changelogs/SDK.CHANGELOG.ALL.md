@@ -1,3 +1,13 @@
+### 3.7.859.0 (2024-08-06 18:16 UTC)
+* BedrockAgentRuntime (3.7.401.0)
+	* Introduce model invocation output traces for orchestration traces, which contain the model's raw response and usage.
+* CognitoIdentityProvider (3.7.401.0)
+	* Advanced security feature updates to include password history and log export for Cognito user pools.
+* CostOptimizationHub (3.7.401.0)
+	* This release adds savings percentage support to the ListRecommendationSummaries API.
+* WorkSpaces (3.7.401.0)
+	* Added support for BYOL_GRAPHICS_G4DN_WSP IngestionProcess
+
 ### 3.7.858.0 (2024-08-05 18:19 UTC)
 * DataZone (3.7.402.0)
 	* This releases Data Product feature. Data Products allow grouping data assets into cohesive, self-contained units for ease of publishing for data producers, and ease of finding and accessing for data consumers.
