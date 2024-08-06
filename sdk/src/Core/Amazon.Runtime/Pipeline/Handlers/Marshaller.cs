@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using Amazon.Runtime.Telemetry;
@@ -114,11 +115,13 @@ namespace Amazon.Runtime.Internal
             if (!string.IsNullOrEmpty(clientAppId))
                 sb.Append(" app/").Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(clientAppId));
 
-            sb.Append(" cfg/retry-mode#}").Append(ToUserAgentHeaderString(requestContext.ClientConfig.RetryMode));
+            var retryMode = ToUserAgentHeaderString(requestContext.ClientConfig.RetryMode);
+            Debug.Assert(retryMode != requestContext.ClientConfig.RetryMode.ToString().ToLower(), "Invalid RetryMode string.");
+            sb.Append(" cfg/retry-mode#}").Append(retryMode);
 
-            sb.Append(" md/").Append(IsAsync ? "ClientAsync" : "ClientSync");
+            sb.Append(" md/").Append(requestContext.IsAsync ? "ClientAsync" : "ClientSync");
 
-            sb.Append(" cfg/init-coll#").Append(InitializeCollections ? '1' : '0');
+            sb.Append(" cfg/init-coll#").Append(AWSConfigs.InitializeCollections ? '1' : '0');
 
             var userAgentAddition = requestContext.OriginalRequest.UserAgentAddition;
             if (!string.IsNullOrEmpty(userAgentAddition))
