@@ -30,51 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListApplications operation.
-    /// Lists applications in the account.
+    /// This is the response object from the CreateDataIntegrationAssociation operation.
     /// </summary>
-    public partial class ListApplicationsRequest : AmazonAppIntegrationsServiceRequest
+    public partial class CreateDataIntegrationAssociationResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
-        private string _nextToken;
+        private string _dataIntegrationArn;
+        private string _dataIntegrationAssociationId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property DataIntegrationArn. 
         /// <para>
-        /// The maximum number of results to return per page.
+        /// The Amazon Resource Name (ARN) for the DataIntegration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        [AWSProperty(Min=1, Max=2048)]
+        public string DataIntegrationArn
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._dataIntegrationArn; }
+            set { this._dataIntegrationArn = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if DataIntegrationArn property is set
+        internal bool IsSetDataIntegrationArn()
         {
-            return this._maxResults.HasValue; 
+            return this._dataIntegrationArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property DataIntegrationAssociationId. 
         /// <para>
-        /// The token for the next set of results. Use the value returned in the previous response
-        /// in the next request to retrieve the next set of results.
+        /// A unique identifier. for the DataIntegrationAssociation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string NextToken
+        public string DataIntegrationAssociationId
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._dataIntegrationAssociationId; }
+            set { this._dataIntegrationAssociationId = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if DataIntegrationAssociationId property is set
+        internal bool IsSetDataIntegrationAssociationId()
         {
-            return this._nextToken != null;
+            return this._dataIntegrationAssociationId != null;
         }
 
     }

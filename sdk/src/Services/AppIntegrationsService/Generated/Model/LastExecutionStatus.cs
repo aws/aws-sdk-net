@@ -30,51 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListApplications operation.
-    /// Lists applications in the account.
+    /// The execution status of the last job.
     /// </summary>
-    public partial class ListApplicationsRequest : AmazonAppIntegrationsServiceRequest
+    public partial class LastExecutionStatus
     {
-        private int? _maxResults;
-        private string _nextToken;
+        private ExecutionStatus _executionStatus;
+        private string _statusMessage;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ExecutionStatus. 
         /// <para>
-        /// The maximum number of results to return per page.
+        /// The job status enum string.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public ExecutionStatus ExecutionStatus
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._executionStatus; }
+            set { this._executionStatus = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ExecutionStatus property is set
+        internal bool IsSetExecutionStatus()
         {
-            return this._maxResults.HasValue; 
+            return this._executionStatus != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The token for the next set of results. Use the value returned in the previous response
-        /// in the next request to retrieve the next set of results.
+        /// The status message of a job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string NextToken
+        [AWSProperty(Min=1, Max=255)]
+        public string StatusMessage
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
         {
-            return this._nextToken != null;
+            return this._statusMessage != null;
         }
 
     }

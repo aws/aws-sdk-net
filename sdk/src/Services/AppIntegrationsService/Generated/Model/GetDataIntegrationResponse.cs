@@ -67,7 +67,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The KMS key for the DataIntegration.
+        /// The KMS key ARN for the DataIntegration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -122,7 +122,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        /// The KMS key for the DataIntegration.
+        /// The KMS key ARN for the DataIntegration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -30,31 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetApplication operation.
-    /// Get an Application resource.
+    /// This is the response object from the UpdateDataIntegrationAssociation operation.
     /// </summary>
-    public partial class GetApplicationRequest : AmazonAppIntegrationsServiceRequest
+    public partial class UpdateDataIntegrationAssociationResponse : AmazonWebServiceResponse
     {
-        private string _arn;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the Application.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
 
     }
 }

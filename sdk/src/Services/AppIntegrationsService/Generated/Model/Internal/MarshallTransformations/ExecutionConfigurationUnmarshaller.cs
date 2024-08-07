@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataIntegrationAssociationSummary Object
+    /// Response Unmarshaller for ExecutionConfiguration Object
     /// </summary>  
-    public class DataIntegrationAssociationSummaryUnmarshaller : IUnmarshaller<DataIntegrationAssociationSummary, XmlUnmarshallerContext>, IUnmarshaller<DataIntegrationAssociationSummary, JsonUnmarshallerContext>
+    public class ExecutionConfigurationUnmarshaller : IUnmarshaller<ExecutionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ExecutionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataIntegrationAssociationSummary IUnmarshaller<DataIntegrationAssociationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExecutionConfiguration IUnmarshaller<ExecutionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataIntegrationAssociationSummary Unmarshall(JsonUnmarshallerContext context)
+        public ExecutionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            DataIntegrationAssociationSummary unmarshalledObject = new DataIntegrationAssociationSummary();
+            ExecutionConfiguration unmarshalledObject = new ExecutionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,22 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ClientId", targetDepth))
+                if (context.TestExpression("ExecutionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DataIntegrationArn", targetDepth))
+                if (context.TestExpression("OnDemandConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataIntegrationArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = OnDemandConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OnDemandConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DataIntegrationAssociationArn", targetDepth))
+                if (context.TestExpression("ScheduleConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataIntegrationAssociationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DestinationURI", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationURI = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExecutionConfiguration", targetDepth))
-                {
-                    var unmarshaller = ExecutionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastExecutionStatus", targetDepth))
-                {
-                    var unmarshaller = LastExecutionStatusUnmarshaller.Instance;
-                    unmarshalledObject.LastExecutionStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ScheduleConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +89,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataIntegrationAssociationSummaryUnmarshaller _instance = new DataIntegrationAssociationSummaryUnmarshaller();        
+        private static ExecutionConfigurationUnmarshaller _instance = new ExecutionConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataIntegrationAssociationSummaryUnmarshaller Instance
+        public static ExecutionConfigurationUnmarshaller Instance
         {
             get
             {

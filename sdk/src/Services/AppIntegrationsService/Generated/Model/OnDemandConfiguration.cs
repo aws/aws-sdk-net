@@ -30,51 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListApplications operation.
-    /// Lists applications in the account.
+    /// The start and end time for data pull from the source.
     /// </summary>
-    public partial class ListApplicationsRequest : AmazonAppIntegrationsServiceRequest
+    public partial class OnDemandConfiguration
     {
-        private int? _maxResults;
-        private string _nextToken;
+        private string _endTime;
+        private string _startTime;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// The maximum number of results to return per page.
+        /// The end time for data pull from the source as an Unix/epoch string in milliseconds
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        [AWSProperty(Min=1, Max=255)]
+        public string EndTime
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._endTime; }
+            set { this._endTime = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._maxResults.HasValue; 
+            return this._endTime != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property StartTime. 
         /// <para>
-        /// The token for the next set of results. Use the value returned in the previous response
-        /// in the next request to retrieve the next set of results.
+        /// The start time for data pull from the source as an Unix/epoch string in milliseconds
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string NextToken
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string StartTime
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._nextToken != null;
+            return this._startTime != null;
         }
 
     }
