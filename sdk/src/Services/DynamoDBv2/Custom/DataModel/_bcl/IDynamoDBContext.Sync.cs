@@ -187,12 +187,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="keyObject">A partially-specified instance, where the
         /// hash/range properties are equal to the key of the item you
         /// want to load.
-        /// 
-        /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
-        /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
-        /// </summary>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="keyObject">Key object defining the the target item.</param>
+        /// </param>
         /// <returns>
         /// Object of type T, populated with properties of item loaded from DynamoDB.
         /// </returns>

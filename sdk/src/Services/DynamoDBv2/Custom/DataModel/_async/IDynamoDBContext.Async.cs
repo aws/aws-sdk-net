@@ -192,8 +192,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Loads an object from DynamoDB for the given hash-and-range primary key.
         /// </summary>
         /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-
         /// The type must be marked up with <see cref="DynamoDBTableAttribute" /> and at least
         /// one public field/property with <see cref="DynamoDBHashKeyAttribute" />.
         /// </remarks>
