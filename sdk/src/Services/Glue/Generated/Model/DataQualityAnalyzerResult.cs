@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model
         /// A description of the data quality analyzer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string Description
         {
             get { return this._description; }
@@ -64,6 +64,7 @@ namespace Amazon.Glue.Model
         /// A map of metrics associated with the evaluation of the analyzer.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, double> EvaluatedMetrics
         {
             get { return this._evaluatedMetrics; }
@@ -82,7 +83,7 @@ namespace Amazon.Glue.Model
         /// An evaluation message.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string EvaluationMessage
         {
             get { return this._evaluationMessage; }

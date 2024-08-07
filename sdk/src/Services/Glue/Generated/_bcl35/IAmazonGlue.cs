@@ -845,6 +845,58 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchPutDataQualityStatisticAnnotation
+
+
+        /// <summary>
+        /// Annotate datapoints over time for a specific data quality statistic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutDataQualityStatisticAnnotation service method.</param>
+        /// 
+        /// <returns>The response from the BatchPutDataQualityStatisticAnnotation service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchPutDataQualityStatisticAnnotation">REST API Reference for BatchPutDataQualityStatisticAnnotation Operation</seealso>
+        BatchPutDataQualityStatisticAnnotationResponse BatchPutDataQualityStatisticAnnotation(BatchPutDataQualityStatisticAnnotationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchPutDataQualityStatisticAnnotation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutDataQualityStatisticAnnotation operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchPutDataQualityStatisticAnnotation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchPutDataQualityStatisticAnnotation">REST API Reference for BatchPutDataQualityStatisticAnnotation Operation</seealso>
+        IAsyncResult BeginBatchPutDataQualityStatisticAnnotation(BatchPutDataQualityStatisticAnnotationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchPutDataQualityStatisticAnnotation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchPutDataQualityStatisticAnnotation.</param>
+        /// 
+        /// <returns>Returns a  BatchPutDataQualityStatisticAnnotationResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchPutDataQualityStatisticAnnotation">REST API Reference for BatchPutDataQualityStatisticAnnotation Operation</seealso>
+        BatchPutDataQualityStatisticAnnotationResponse EndBatchPutDataQualityStatisticAnnotation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchStopJobRun
 
 
@@ -5125,6 +5177,111 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetDataQualityModel
+
+
+        /// <summary>
+        /// Retrieve the training status of the model along with more information (CompletedOn,
+        /// StartedOn, FailureReason).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityModel service method.</param>
+        /// 
+        /// <returns>The response from the GetDataQualityModel service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModel">REST API Reference for GetDataQualityModel Operation</seealso>
+        GetDataQualityModelResponse GetDataQualityModel(GetDataQualityModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataQualityModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityModel operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataQualityModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModel">REST API Reference for GetDataQualityModel Operation</seealso>
+        IAsyncResult BeginGetDataQualityModel(GetDataQualityModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataQualityModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataQualityModel.</param>
+        /// 
+        /// <returns>Returns a  GetDataQualityModelResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModel">REST API Reference for GetDataQualityModel Operation</seealso>
+        GetDataQualityModelResponse EndGetDataQualityModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDataQualityModelResult
+
+
+        /// <summary>
+        /// Retrieve a statistic's predictions for a given Profile ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityModelResult service method.</param>
+        /// 
+        /// <returns>The response from the GetDataQualityModelResult service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModelResult">REST API Reference for GetDataQualityModelResult Operation</seealso>
+        GetDataQualityModelResultResponse GetDataQualityModelResult(GetDataQualityModelResultRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataQualityModelResult operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityModelResult operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataQualityModelResult
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModelResult">REST API Reference for GetDataQualityModelResult Operation</seealso>
+        IAsyncResult BeginGetDataQualityModelResult(GetDataQualityModelResultRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataQualityModelResult operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataQualityModelResult.</param>
+        /// 
+        /// <returns>Returns a  GetDataQualityModelResultResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModelResult">REST API Reference for GetDataQualityModelResult Operation</seealso>
+        GetDataQualityModelResultResponse EndGetDataQualityModelResult(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDataQualityResult
 
 
@@ -8389,6 +8546,101 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListDataQualityStatisticAnnotations
+
+
+        /// <summary>
+        /// Retrieve annotations for a data quality statistic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityStatisticAnnotations service method.</param>
+        /// 
+        /// <returns>The response from the ListDataQualityStatisticAnnotations service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatisticAnnotations">REST API Reference for ListDataQualityStatisticAnnotations Operation</seealso>
+        ListDataQualityStatisticAnnotationsResponse ListDataQualityStatisticAnnotations(ListDataQualityStatisticAnnotationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataQualityStatisticAnnotations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityStatisticAnnotations operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataQualityStatisticAnnotations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatisticAnnotations">REST API Reference for ListDataQualityStatisticAnnotations Operation</seealso>
+        IAsyncResult BeginListDataQualityStatisticAnnotations(ListDataQualityStatisticAnnotationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataQualityStatisticAnnotations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataQualityStatisticAnnotations.</param>
+        /// 
+        /// <returns>Returns a  ListDataQualityStatisticAnnotationsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatisticAnnotations">REST API Reference for ListDataQualityStatisticAnnotations Operation</seealso>
+        ListDataQualityStatisticAnnotationsResponse EndListDataQualityStatisticAnnotations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDataQualityStatistics
+
+
+        /// <summary>
+        /// Retrieves a list of data quality statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityStatistics service method.</param>
+        /// 
+        /// <returns>The response from the ListDataQualityStatistics service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatistics">REST API Reference for ListDataQualityStatistics Operation</seealso>
+        ListDataQualityStatisticsResponse ListDataQualityStatistics(ListDataQualityStatisticsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataQualityStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityStatistics operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataQualityStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatistics">REST API Reference for ListDataQualityStatistics Operation</seealso>
+        IAsyncResult BeginListDataQualityStatistics(ListDataQualityStatisticsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataQualityStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataQualityStatistics.</param>
+        /// 
+        /// <returns>Returns a  ListDataQualityStatisticsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatistics">REST API Reference for ListDataQualityStatistics Operation</seealso>
+        ListDataQualityStatisticsResponse EndListDataQualityStatistics(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDevEndpoints
 
 
@@ -9103,6 +9355,55 @@ namespace Amazon.Glue
         /// <returns>Returns a  PutDataCatalogEncryptionSettingsResult from Glue.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings">REST API Reference for PutDataCatalogEncryptionSettings Operation</seealso>
         PutDataCatalogEncryptionSettingsResponse EndPutDataCatalogEncryptionSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutDataQualityProfileAnnotation
+
+
+        /// <summary>
+        /// Annotate all datapoints for a Profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataQualityProfileAnnotation service method.</param>
+        /// 
+        /// <returns>The response from the PutDataQualityProfileAnnotation service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataQualityProfileAnnotation">REST API Reference for PutDataQualityProfileAnnotation Operation</seealso>
+        PutDataQualityProfileAnnotationResponse PutDataQualityProfileAnnotation(PutDataQualityProfileAnnotationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDataQualityProfileAnnotation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDataQualityProfileAnnotation operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDataQualityProfileAnnotation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataQualityProfileAnnotation">REST API Reference for PutDataQualityProfileAnnotation Operation</seealso>
+        IAsyncResult BeginPutDataQualityProfileAnnotation(PutDataQualityProfileAnnotationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutDataQualityProfileAnnotation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDataQualityProfileAnnotation.</param>
+        /// 
+        /// <returns>Returns a  PutDataQualityProfileAnnotationResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataQualityProfileAnnotation">REST API Reference for PutDataQualityProfileAnnotation Operation</seealso>
+        PutDataQualityProfileAnnotationResponse EndPutDataQualityProfileAnnotation(IAsyncResult asyncResult);
 
         #endregion
         

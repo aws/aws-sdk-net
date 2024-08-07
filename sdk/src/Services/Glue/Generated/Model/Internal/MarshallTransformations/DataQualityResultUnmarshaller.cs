@@ -108,6 +108,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Observations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProfileId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResultId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -78,6 +78,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.EvaluatedMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EvaluatedRule", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluatedRule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EvaluationMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

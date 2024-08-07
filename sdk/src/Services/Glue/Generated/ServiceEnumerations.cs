@@ -1609,6 +1609,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type DataQualityModelStatus.
+    /// </summary>
+    public class DataQualityModelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for DataQualityModelStatus
+        /// </summary>
+        public static readonly DataQualityModelStatus FAILED = new DataQualityModelStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for DataQualityModelStatus
+        /// </summary>
+        public static readonly DataQualityModelStatus RUNNING = new DataQualityModelStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for DataQualityModelStatus
+        /// </summary>
+        public static readonly DataQualityModelStatus SUCCEEDED = new DataQualityModelStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataQualityModelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityModelStatus FindValue(string value)
+        {
+            return FindValue<DataQualityModelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataQualityRuleResultStatus.
     /// </summary>
     public class DataQualityRuleResultStatus : ConstantClass
@@ -2584,6 +2638,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HudiTargetCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InclusionAnnotationValue.
+    /// </summary>
+    public class InclusionAnnotationValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for InclusionAnnotationValue
+        /// </summary>
+        public static readonly InclusionAnnotationValue EXCLUDE = new InclusionAnnotationValue("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for InclusionAnnotationValue
+        /// </summary>
+        public static readonly InclusionAnnotationValue INCLUDE = new InclusionAnnotationValue("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InclusionAnnotationValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InclusionAnnotationValue FindValue(string value)
+        {
+            return FindValue<InclusionAnnotationValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InclusionAnnotationValue(string value)
         {
             return FindValue(value);
         }
@@ -4984,6 +5088,60 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatementState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatisticEvaluationLevel.
+    /// </summary>
+    public class StatisticEvaluationLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Column for StatisticEvaluationLevel
+        /// </summary>
+        public static readonly StatisticEvaluationLevel Column = new StatisticEvaluationLevel("Column");
+        /// <summary>
+        /// Constant Dataset for StatisticEvaluationLevel
+        /// </summary>
+        public static readonly StatisticEvaluationLevel Dataset = new StatisticEvaluationLevel("Dataset");
+        /// <summary>
+        /// Constant Multicolumn for StatisticEvaluationLevel
+        /// </summary>
+        public static readonly StatisticEvaluationLevel Multicolumn = new StatisticEvaluationLevel("Multicolumn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatisticEvaluationLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatisticEvaluationLevel FindValue(string value)
+        {
+            return FindValue<StatisticEvaluationLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatisticEvaluationLevel(string value)
         {
             return FindValue(value);
         }
