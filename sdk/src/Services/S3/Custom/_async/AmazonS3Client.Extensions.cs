@@ -45,7 +45,9 @@ namespace Amazon.S3
                 InternalSDKUtils.ApplyValues(request, additionalProperties);
 
                 var listResponse = await this.ListObjectsAsync(request).ConfigureAwait(false);
-                keys.AddRange(listResponse.S3Objects?.Select(o => o.Key));
+                if (listResponse.S3Objects != null)
+                    keys.AddRange(listResponse.S3Objects.Select(o => o.Key));
+
                 marker = listResponse.NextMarker;
             } while (!string.IsNullOrEmpty(marker));
 
