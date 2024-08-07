@@ -147,6 +147,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return table;
         }
 
+// This is the call we want to avoid with disableFetchingTableMetadata = true, but as long as we still support false, we still need to call the discouraged sync-over-async 'Table.LoadTable(Client, emptyConfig)'
+#pragma warning disable CS0618
+
         // Retrieves Config-less Table from cache or constructs it on cache-miss
         // This Table should not be used for data operations.
         // To use for data operations, Copy with a TableConfig first.
@@ -202,6 +205,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
             }
         }
+
+#pragma warning restore CS0618
 
         /// <summary>
         /// Stores a table in the cache if there is not an existing entry for the given key
