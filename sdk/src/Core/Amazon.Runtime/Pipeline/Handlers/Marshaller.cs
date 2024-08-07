@@ -115,9 +115,7 @@ namespace Amazon.Runtime.Internal
             if (!string.IsNullOrEmpty(clientAppId))
                 sb.Append(" app/").Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(clientAppId));
 
-            var retryMode = ToUserAgentHeaderString(requestContext.ClientConfig.RetryMode);
-            Debug.Assert(retryMode != requestContext.ClientConfig.RetryMode.ToString().ToLower(), "Invalid RetryMode string.");
-            sb.Append(" cfg/retry-mode#}").Append(retryMode);
+            sb.Append(" cfg/retry-mode#}").Append(ToUserAgentHeaderString(requestContext.ClientConfig.RetryMode));
 
             sb.Append(" md/").Append(requestContext.IsAsync ? "ClientAsync" : "ClientSync");
 
@@ -143,10 +141,15 @@ namespace Amazon.Runtime.Internal
 
         private static string ToUserAgentHeaderString(RequestRetryMode requestRetryMode)
         {
-            if (requestRetryMode == RequestRetryMode.Adaptive)
-                return "adaptive";
-            else
-                return "standard";
+            switch (requestRetryMode)
+            {
+                case RequestRetryMode.Standard:
+                    return "standard";
+                case RequestRetryMode.Adaptive:
+                    return "adaptive";
+                default:
+                    return requestRetryMode.ToString().ToLowerInvariant();
+            }
         }
     }
 }
