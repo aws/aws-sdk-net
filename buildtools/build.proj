@@ -32,6 +32,8 @@
         <run-tests-xunit-DependsOnTargets Condition="'$(run-tests-xunit-DependsOnTargets)'==''">build-test-wrapper;build-test-project</run-tests-xunit-DependsOnTargets>
         <package-netcore-extensions-DependsOnTargets Condition="'$(package-netcore-extensions-DependsOnTargets)'==''">build-extensions</package-netcore-extensions-DependsOnTargets>
         <package-crt-extensions-DependsOnTargets Condition="'$(package-crt-extensions-DependsOnTargets)'==''">build-extensions</package-crt-extensions-DependsOnTargets>
+        <package-cloudfront-extensions-DependsOnTargets Condition="'$(package-cloudfront-extensions-DependsOnTargets)'==''">build-extensions</package-cloudfront-extensions-DependsOnTargets>
+        <package-ec2-extensions-DependsOnTargets Condition="'$(package-ec2-extensions-DependsOnTargets)'==''">build-extensions</package-ec2-extensions-DependsOnTargets>
         <keyscan-DependsOnTargets Condition="'$(keyscan-DependsOnTargets)'==''">build-tools</keyscan-DependsOnTargets>
         <copy-license-and-notice-DependsOnTargets Condition="'$(copy-license-and-notice-DependsOnTargets)'==''">copy-dependencies</copy-license-and-notice-DependsOnTargets>
         <copy-service-models-DependsOnTargets Condition="'$(copy-service-models-DependsOnTargets)'==''">copy-license-and-notice</copy-service-models-DependsOnTargets>
