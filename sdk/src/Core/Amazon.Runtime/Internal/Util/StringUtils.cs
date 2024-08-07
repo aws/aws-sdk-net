@@ -21,6 +21,7 @@ using System.IO;
 using Amazon.Util;
 using System.Linq;
 using System.Diagnostics.CodeAnalysis;
+using System.Buffers;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -32,7 +33,7 @@ namespace Amazon.Runtime.Internal.Util
         private static readonly Encoding UTF_8 = Encoding.UTF8;
         private static readonly char[] rfc7230HeaderFieldValueDelimeters = "\"(),/:;<=>?@[\\]{}".ToCharArray();
 
-        public static string FromString(String value) 
+        public static string FromString(String value)
         {
             return value;
         }
@@ -49,14 +50,30 @@ namespace Amazon.Runtime.Internal.Util
 
         public static string FromMemoryStream(MemoryStream value)
         {
-            return Convert.ToBase64String(value.ToArray());
+            if (value.TryGetBuffer(out var buffer))
+            {
+                return Convert.ToBase64String(buffer.Array, buffer.Offset, buffer.Count);
+            }
+            else
+            {
+                var array = ArrayPool<byte>.Shared.Rent((int)value.Length);
+                try
+                {
+                    value.Read(array, 0, (int)value.Length);
+                    return Convert.ToBase64String(array, 0, (int)value.Length);
+                }
+                finally
+                {
+                    ArrayPool<byte>.Shared.Return(array);
+                }
+            }
         }
 
         public static string FromInt(int value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
         }
-        
+
         public static string FromInt(int? value)
         {
             if (!value.HasValue)
@@ -348,7 +365,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="values">List of T</param>
         /// <returns>Header value representing the list of T</returns>
         [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
-        public static string FromValueTypeList<T>(List<T> values)  where T : struct
+        public static string FromValueTypeList<T>(List<T> values) where T : struct
         {
             // ToString() on boolean types automatically Pascal Cases. Xml-based protocols
             // are case sensitive and accept "true" and "false" as the valid set of booleans.
@@ -404,7 +421,7 @@ namespace Amazon.Runtime.Internal.Util
             if (headerListEntry.IndexOfAny(rfc7230HeaderFieldValueDelimeters) != -1)
             {
                 return $"\"{headerListEntry.Replace("\"", "\\\"")}\"";
-            }            
+            }
 
             return headerListEntry;
         }
