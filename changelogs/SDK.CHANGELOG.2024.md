@@ -1,3 +1,9 @@
+### 3.7.860.0 (2024-08-07 18:14 UTC)
+* AppIntegrationsService (3.7.401.0)
+	* Updated CreateDataIntegration and CreateDataIntegrationAssociation API to support bulk data export from Amazon Connect Customer Profiles to the customer S3 bucket.
+* Glue (3.7.402.0)
+	* Introducing AWS Glue Data Quality anomaly detection, a new functionality that uses ML-based solutions to detect data anomalies users have not explicitly defined rules for.
+
 ### 3.7.859.0 (2024-08-06 18:16 UTC)
 * BedrockAgentRuntime (3.7.401.0)
 	* Introduce model invocation output traces for orchestration traces, which contain the model's raw response and usage.
