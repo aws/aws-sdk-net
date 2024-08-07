@@ -103,11 +103,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Table table;
             using (var nc = new AmazonDynamoDBClient())
             {
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 table = Table.LoadTable(nc, tableName);
+#pragma warning restore CS0618 // Re-enable the warning
             }
 
             Table.ClearTableCache();
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             table = Table.LoadTable(client, tableName);
+#pragma warning restore CS0618 // Re-enable the warning
         }
 
         [TestMethod]
@@ -123,7 +127,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var tableCache = SdkCache.GetCache<string, TableDescription>(client, DynamoDBTests.TableCacheIdentifier, StringComparer.Ordinal);
 
             CreateTable(TABLENAME, defaultKeys: true);
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             var table = Table.LoadTable(client, TABLENAME);
+#pragma warning restore CS0618 // Re-enable the warning
             table.PutItem(item);
 
             using (var counter = new ServiceResponseCounter(client))
@@ -144,7 +150,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 counter.Reset();
                 Table.ClearTableCache();
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 table = Table.LoadTable(client, TABLENAME);
+#pragma warning restore CS0618 // Re-enable the warning
                 doc = table.GetItem(42, "Yes");
                 Assert.IsNotNull(doc);
                 Assert.AreNotEqual(0, doc.Count);
@@ -153,11 +161,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 counter.Reset();
                 Table.ClearTableCache();
                 PutItem(tableCache, TABLENAME, oldTableDescription);
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 table = Table.LoadTable(client, TABLENAME);
                 doc = tableCache.UseCache(TABLENAME,
                     () => table.GetItem(42, "Yes"),
                     () => table = Table.LoadTable(client, TABLENAME),
                     shouldRetryForException: null);
+#pragma warning restore CS0618 // Re-enable the warning
 
                 Assert.IsNotNull(doc);
                 Assert.AreNotEqual(0, doc.Count);
