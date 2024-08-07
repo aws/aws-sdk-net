@@ -509,12 +509,12 @@
 
     <Target Name="package-cloudfront-extensions" DependsOnTargets="$(package-cloudfront-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extenions.CloudFront.Signers.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extenions.CloudFront.Signers.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CloudFront.Signers" />
     </Target>
 
     <Target Name="package-ec2-extensions" DependsOnTargets="$(package-ec2-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.EC2.DecryptPassword.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.EC2.DecryptPassword.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.EC2.DecryptPassword" />
     </Target>
 
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;build-extensions">
