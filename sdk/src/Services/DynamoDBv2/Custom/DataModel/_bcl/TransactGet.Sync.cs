@@ -15,42 +15,44 @@
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Represents a non-generic object for retrieving multiple items
-    /// from a single DynamoDB table in a transaction.
-    /// </summary>
-    public partial class TransactGet
+    public partial interface ITransactGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to get the items requested in a transaction.
         /// </summary>
-        public void Execute()
+        void Execute();
+    }
+
+    public partial class TransactGet : ITransactGet
+    {
+        /// <inheritdoc/>
+        public abstract void Execute();
+    }
+
+    public partial class TransactGet<T> : TransactGet, ITransactGet<T>
+    {
+        /// <inheritdoc/>
+        public override void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for retrieving multiple items from multiple DynamoDB tables,
-    /// using multiple strongly-typed TransactGet objects.
-    /// </summary>
-    public partial class MultiTableTransactGet
+    public partial interface IMultiTableTransactGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table transaction request against all configured TransactGet objects.
         /// Results are stored in the respective TransactGet objects.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class MultiTableTransactGet
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 }
