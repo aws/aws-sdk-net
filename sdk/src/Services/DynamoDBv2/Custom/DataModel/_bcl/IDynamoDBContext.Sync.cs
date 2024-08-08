@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.DocumentModel;
@@ -362,7 +363,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Results are stored in the individual TransactGet objects.
         /// </summary>
         /// <param name="transactionParts">Configured TransactGet objects.</param>
-        void ExecuteTransactGet(params TransactGet[] transactionParts);
+        void ExecuteTransactGet(params ITransactGet[] transactionParts);
 
         #endregion
 
