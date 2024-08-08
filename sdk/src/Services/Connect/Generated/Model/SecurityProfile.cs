@@ -73,7 +73,7 @@ namespace Amazon.Connect.Model
         /// Connect.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=4)]
         public Dictionary<string, string> AllowedAccessControlTags
         {
             get { return this._allowedAccessControlTags; }
