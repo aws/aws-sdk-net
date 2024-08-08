@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
     {
         private string _availabilityZoneId;
         private string _ipamResourceDiscoveryId;
+        private IpamResourceCidrIpSource _ipSource;
         private double? _ipUsage;
         private IpamNetworkInterfaceAttachmentStatus _networkInterfaceAttachmentStatus;
         private string _resourceCidr;
@@ -84,6 +85,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpamResourceDiscoveryId()
         {
             return this._ipamResourceDiscoveryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpSource. 
+        /// <para>
+        /// The source that allocated the IP address space. <c>byoip</c> or <c>amazon</c> indicates
+        /// public IP address space allocated by Amazon or space that you have allocated with
+        /// Bring your own IP (BYOIP). <c>none</c> indicates private space.
+        /// </para>
+        /// </summary>
+        public IpamResourceCidrIpSource IpSource
+        {
+            get { return this._ipSource; }
+            set { this._ipSource = value; }
+        }
+
+        // Check to see if IpSource property is set
+        internal bool IsSetIpSource()
+        {
+            return this._ipSource != null;
         }
 
         /// <summary>

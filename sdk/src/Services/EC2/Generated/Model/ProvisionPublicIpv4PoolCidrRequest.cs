@@ -69,6 +69,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NetmaskLength. 
         /// <para>
         /// The netmask length of the CIDR you would like to allocate to the public IPv4 pool.
+        /// The least specific netmask length you can define is 24.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
