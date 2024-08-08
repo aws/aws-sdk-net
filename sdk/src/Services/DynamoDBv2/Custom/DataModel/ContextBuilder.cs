@@ -19,6 +19,19 @@ namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
     /// Builder that constructs a <see cref="DynamoDBContext"/>
+    /// Using <see cref="DynamoDBContextBuilder"/> to construct a <see cref="DynamoDBContext"/> will implicitly set 
+    /// <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/> to true which avoids the DescribeTable call 
+    /// and relies entirely on the DynamoDB attributes set on the .NET classes.
+    /// If needed, you can revert back to the previous behavior by setting <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
+    /// to false using <see cref="DynamoDBContextBuilder.ConfigureContext(Action{DynamoDBContextConfig})"/> as such:
+    /// <code>
+    /// var context = new DynamoDBContextBuilder()
+    ///   .ConfigureContext(x =>
+    ///   {
+    ///       x.DisableFetchingTableMetadata = false;
+    ///   })
+    ///   .Build();
+    /// </code>
     /// </summary>
 #if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
@@ -26,29 +39,14 @@ namespace Amazon.DynamoDBv2.DataModel
     public class DynamoDBContextBuilder : IDynamoDBContextBuilder
     {
         /// <summary>
-        /// The <see cref="DynamoDBContext"/> object that is built and then returned from <see cref="Build"/>
-        /// </summary>
-        private DynamoDBContext _context;
-
-        /// <summary>
         /// The <see cref="DynamoDBContextConfig"/> object that is built and then supplied to the returned <see cref="DynamoDBContext"/>
         /// </summary>
         private DynamoDBContextConfig _config;
 
         /// <summary>
-        /// Amazon client to use to access DynamoDB
+        /// A factory method for creating a <see cref="IAmazonDynamoDB"/> client
         /// </summary>
-        private IAmazonDynamoDB _client;
-
-        /// <summary>
-        /// Specifies if an <see cref="IAmazonDynamoDB"/> client is constructed or supplied externally
-        /// </summary>
-        private bool _ownClient = true;
-
-        /// <summary>
-        /// Specifies if the object was disposed to avoid redundant dispose calls
-        /// </summary>
-        private bool _disposed = false;
+        private Func<IAmazonDynamoDB> _clientFactory;
 
         /// <summary>
         /// Creates a builder object to construct a <see cref="DynamoDBContext"/>
@@ -60,38 +58,6 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public IDynamoDBContextBuilder SetDynamoDBClient(IAmazonDynamoDB client)
-        {
-            if (_client is null)
-            {
-                _client = client;
-                _ownClient = false;
-            }
-            else
-            {
-                throw new AmazonDynamoDBException($"Cannot use both '{nameof(SetDynamoDBClient)}' and '{nameof(SetAWSRegion)}'. If you are supplying the DynamoDB client, set the AWS Region directly on the client.");
-            }
-
-            return this;
-        }
-
-        /// <inheritdoc/>
-        public IDynamoDBContextBuilder SetAWSRegion(RegionEndpoint region)
-        {
-            if (_client is null)
-            {
-                _client = new AmazonDynamoDBClient(region);
-                _ownClient = true;
-            }
-            else
-            {
-                throw new AmazonDynamoDBException($"Cannot use both '{nameof(SetDynamoDBClient)}' and '{nameof(SetAWSRegion)}'. If you are supplying the DynamoDB client, set the AWS Region directly on the client.");
-            }
-
-            return this;
-        }
-
-        /// <inheritdoc/>
         public IDynamoDBContextBuilder ConfigureContext(Action<DynamoDBContextConfig> configure)
         {
             configure(_config);
@@ -100,54 +66,31 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+        public IDynamoDBContextBuilder WithDynamoDBClient(Func<IAmazonDynamoDB> factory)
+        {
+            _clientFactory = factory;
+
+            return this;
+        }
+
+        /// <inheritdoc/>
         public DynamoDBContext Build()
         {
-            if (_client is null)
+            IAmazonDynamoDB client;
+            bool ownClient;
+
+            if (_clientFactory is null)
             {
-                _client = new AmazonDynamoDBClient();
-                _ownClient = true;
+                client = new AmazonDynamoDBClient();
+                ownClient = true;
+            }
+            else
+            {
+                client = _clientFactory.Invoke();
+                ownClient = false;
             }
 
-            _context = new DynamoDBContext(_client, _ownClient, _config);
-
-            return _context;
-        }
-
-        /// <summary>
-        /// Disposes of all managed and unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        /// Implements the Dispose pattern
-        /// </summary>
-        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
-        /// or garbage collected.</param>
-        protected virtual void Dispose(bool disposing)
-        {
-            if (_disposed) return;
-
-            if (disposing && _context != null)
-            {
-                // Dispose managed resources
-                _context?.Dispose();
-                _context = null;
-            }
-
-            // Dispose unmanaged resources if any
-            _disposed = true;
-        }
-
-        /// <summary>
-        /// The destructor for the class.
-        /// </summary>
-        ~DynamoDBContextBuilder()
-        {
-            Dispose(false);
+            return new DynamoDBContext(client, ownClient, _config);
         }
     }
 }

@@ -2495,9 +2495,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Hash key
             [DynamoDBHashKey(StoreAsEpoch = true)]
-            //[DynamoDBProperty(StoreAsEpoch = true)]
             public virtual DateTime CreationTime { get; set; }
 
+            [DynamoDBProperty(StoreAsEpoch = true)]
             public DateTime EpochDate2 { get; set; }
 
             [DynamoDBProperty(StoreAsEpoch = false)]

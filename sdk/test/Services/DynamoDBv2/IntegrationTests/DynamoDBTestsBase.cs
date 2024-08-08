@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public static void CreateContext(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, bool disableFetchingTableMetadata = false)
         {
             Context = new DynamoDBContextBuilder()
-                .SetDynamoDBClient(Client)
+                .WithDynamoDBClient(() => Client)
                 .ConfigureContext(x =>
                 {
                     //x.IgnoreNullValues = true;
