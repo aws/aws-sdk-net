@@ -1,45 +1,61 @@
-using Xunit;
-using Amazon.DynamoDBv2.Model;
-using System.Threading.Tasks;
-using Moq;
-using Amazon.DynamoDBv2;
+﻿using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using System.Threading;
+using Amazon.DynamoDBv2.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace AWSSDK_NetStandard.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
-    public class DynamoDBTests
+    /// <summary>
+    /// Tests related to the mockabilty of the doucment and object mapper programming models
+    /// </summary>
+    [TestClass]
+    public class MockingTests
     {
-        [Fact]
-        [Trait("Category", "DynamoDBv2.Model.AttributeValue")]
-        public void AttributeValueIsBOOLSetTest()
+
+#if ASYNC_AWAIT
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestMockingAsyncSeach()
         {
-            var boolAV = new AttributeValue();
-            Assert.False(boolAV.IsBOOLSet);
-            Assert.False(boolAV.BOOL.HasValue);
+            var mockDBContext = new Mock<IDynamoDBContext>();
+            mockDBContext
+                .Setup(x => x.ScanAsync<DataItem>(
+                   It.IsAny<IEnumerable<ScanCondition>>(),
+                   It.IsAny<DynamoDBOperationConfig>()))
+                .Returns(
+                   new MockAsyncSearch<DataItem>() // Return mock version of AsyncSearch
+                );
 
-            boolAV.BOOL = false;
-            Assert.True(boolAV.IsBOOLSet);
-            Assert.False(boolAV.BOOL);
+            var search = mockDBContext.Object.ScanAsync<DataItem>(new List<ScanCondition>());
+            Assert.IsInstanceOfType(search, typeof(MockAsyncSearch<DataItem>));
 
-            boolAV.BOOL = true;
-            Assert.True(boolAV.IsBOOLSet);
-            Assert.True(boolAV.BOOL);
-
-            boolAV.IsBOOLSet = true;
-            Assert.True(boolAV.IsBOOLSet);
-            Assert.True(boolAV.BOOL);
-
-            boolAV.IsBOOLSet = false;
-            Assert.False(boolAV.IsBOOLSet);
-            Assert.False(boolAV.BOOL.HasValue);
+            var items = await search.GetNextSetAsync();
+            Assert.AreEqual(0, items.Count());
         }
 
-        #region MockingTests
+        public class DataItem
+        {
+            public string Id { get; set; }
+        }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        public class MockAsyncSearch<T> : AsyncSearch<T>
+        {
+            public override Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default)
+            {
+                return Task.FromResult(new List<T>());
+            }
+        }
+#endif
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_PutItemAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -52,8 +68,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await table.PutItemAsync(document);
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_GetItemAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -66,8 +82,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await table.GetItemAsync("123");
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_UpdateItemAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -83,8 +99,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await table.UpdateItemAsync(document, "123");
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_DeleteItemAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -97,8 +113,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await table.DeleteItemAsync("123");
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_QueryAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -111,8 +127,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await table.Query("123", new QueryFilter()).GetNextSetAsync();
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_ScanAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -125,8 +141,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await table.Scan(new ScanOperationConfig()).GetNextSetAsync();
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_BatchGetAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -142,8 +158,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await batchGet.ExecuteAsync();
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_BatchWriteAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -163,8 +179,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await batchWrite.ExecuteAsync();
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_TransactGetAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -180,8 +196,8 @@ namespace AWSSDK_NetStandard.UnitTests
             await transactGet.ExecuteAsync();
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
         public async Task TestMockingTableClient_TransactWriteAsync()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -197,16 +213,5 @@ namespace AWSSDK_NetStandard.UnitTests
             await transactWrite.ExecuteAsync();
         }
 
-        [Fact]
-        [Trait("Category", "DynamoDBv2")]
-        public void TestMockingTableClient_LoadTable_Throws()
-        {
-            var mockClient = new Mock<IAmazonDynamoDB>();
-
-            // Because we're in ASYNC_AWAIT, the mock client doesn't expose the internal sync LoadTable
-            // that this still relies on, so we expect it to fail
-            Assert.Throws<InvalidOperationException>(() => Table.LoadTable(mockClient.Object, "TestTable"));
-        }
-        #endregion
     }
 }

@@ -212,6 +212,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             List<Document> ret = new List<Document>();
 
+#if NETSTANDARD
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var internalClient = SourceTable.DDBClient as AmazonDynamoDBClient;
+            if (internalClient == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous GetNextSet() from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling GetNextSetAsync instead.");
+            }
+#else
+            var internalClient = SourceTable.DDBClient;
+#endif
+
             if (!IsDone)
             {
                 switch (SearchMethod)
@@ -253,7 +265,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         SourceTable.AddRequestHandler(scanReq, isAsync: false);
 
-                        var scanResult = SourceTable.DDBClient.Scan(scanReq);
+                        var scanResult = internalClient.Scan(scanReq);
                         foreach (var item in scanResult.Items)
                         {
                             Document doc = SourceTable.FromAttributeMap(item);
@@ -303,7 +315,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         SourceTable.AddRequestHandler(queryReq, isAsync: false);
 
-                        var queryResult = SourceTable.DDBClient.Query(queryReq);
+                        var queryResult = internalClient.Query(queryReq);
                         foreach (var item in queryResult.Items)
                         {
                             Document doc = SourceTable.FromAttributeMap(item);
@@ -532,6 +544,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
                 else
                 {
+#if NETSTANDARD
+                    // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+                    var internalClient = SourceTable.DDBClient as AmazonDynamoDBClient;
+                    if (internalClient == null)
+                    {
+                        throw new InvalidOperationException("Accessing the synchronous Count from .NET or .NET Core requires " +
+                            "initializing the Table with an actual AmazonDynamoDBClient.");
+                    }
+#else
+                    var internalClient = SourceTable.DDBClient;
+#endif
                     switch (SearchMethod)
                     {
                         case SearchType.Scan:
@@ -558,7 +581,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                             SourceTable.AddRequestHandler(scanReq, isAsync: false);
 
-                            var scanResult = SourceTable.DDBClient.Scan(scanReq);
+                            var scanResult = internalClient.Scan(scanReq);
                             count = Matches.Count + scanResult.Count.GetValueOrDefault();
                             return count;
                         case SearchType.Query:
@@ -583,7 +606,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                             SourceTable.AddRequestHandler(queryReq, isAsync: false);
 
-                            var queryResult = SourceTable.DDBClient.Query(queryReq);
+                            var queryResult = internalClient.Query(queryReq);
                             count = Matches.Count + queryResult.Count.GetValueOrDefault();
                             return count;
                         default:

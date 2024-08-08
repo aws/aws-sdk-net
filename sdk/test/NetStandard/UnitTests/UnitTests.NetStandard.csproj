@@ -18,10 +18,20 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>CS1591,CS0612,CS0618,xUnit1013,NU1701</NoWarn>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
-		<SignAssembly>true</SignAssembly>
-    <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
+  <!-- 
+    For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
+    the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
+  -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <LangVersion>11.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+
 	<Choose>
 		<When Condition=" '$(AWSKeyFile)' == '' ">
 			<PropertyGroup>

@@ -598,8 +598,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             try
             {
-                var dynamoDbClient = Items[0].TransactionPart.TargetTable.DDBClient;
-                dynamoDbClient.TransactWriteItems(request);
+#if NETSTANDARD
+                // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+                var internalClient = Items[0].TransactionPart.TargetTable.DDBClient as AmazonDynamoDBClient;
+                if (internalClient == null)
+                {
+                    throw new InvalidOperationException("Calling the synchronous DocumentTransactWrite.Execute() from .NET or .NET Core requires initializing the Table " +
+                       "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling ExecuteAsync instead.");
+                }
+#else
+                var internalClient = Items[0].TransactionPart.TargetTable.DDBClient;
+#endif
+
+                internalClient.TransactWriteItems(request);
             }
             catch (TransactionCanceledException ex)
             {
