@@ -68,10 +68,10 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             Assert.Equal("Type Amazon.DNXCore.IntegrationTests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members", exception.Message);
 
             // Verify that objects that are invalid result in exceptions
-            exception = await Assert.ThrowsAsync<InvalidOperationException>(() => SharedTestFixture.Context.ScanAsync<TimeSpan>(new List<ScanCondition>(), null).GetNextSetAsync());
+            exception = await Assert.ThrowsAsync<InvalidOperationException>(() => SharedTestFixture.Context.ScanAsync<TimeSpan>(new List<ScanCondition>()).GetNextSetAsync());
             Assert.Equal("Type System.TimeSpan is unsupported, it cannot be instantiated", exception.Message);
 
-            exception = await Assert.ThrowsAsync<InvalidOperationException>(() => SharedTestFixture.Context.ScanAsync<EmptyType>(new List<ScanCondition>(), null).GetNextSetAsync());
+            exception = await Assert.ThrowsAsync<InvalidOperationException>(() => SharedTestFixture.Context.ScanAsync<EmptyType>(new List<ScanCondition>()).GetNextSetAsync());
             Assert.Equal("Type Amazon.DNXCore.IntegrationTests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members", exception.Message);
         }
 
