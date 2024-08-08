@@ -19,20 +19,29 @@ namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
     /// Interface for a builder that constructs a <see cref="DynamoDBContext"/>
+    /// Using <see cref="IDynamoDBContextBuilder"/> to construct a <see cref="DynamoDBContext"/> will implicitly set 
+    /// <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/> to true which avoids the DescribeTable call 
+    /// and relies entirely on the DynamoDB attributes set on the .NET classes.
+    /// If needed, you can revert back to the previous behavior by setting <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
+    /// to false using <see cref="IDynamoDBContextBuilder.ConfigureContext(Action{DynamoDBContextConfig})"/> as such:
+    /// <code>
+    /// var context = new DynamoDBContextBuilder()
+    ///   .ConfigureContext(x =>
+    ///   {
+    ///       x.DisableFetchingTableMetadata = false;
+    ///   })
+    ///   .Build();
+    /// </code>
     /// </summary>
-    public interface IDynamoDBContextBuilder : IDisposable
+    public interface IDynamoDBContextBuilder
     {
         /// <summary>
-        /// Sets the DynamoDB client to be used by the <see cref="DynamoDBContext"/> that is constructed
+        /// Supplies a factory method for creating a <see cref="IAmazonDynamoDB"/> client.
+        /// If a factory method is not provided, a new <see cref="IAmazonDynamoDB"/> client
+        /// will be created using the environment to search for credentials and region configuration.
         /// </summary>
-        /// <param name="client"><see cref="IAmazonDynamoDB"/> to use to access DynamoDB.</param>
-        IDynamoDBContextBuilder SetDynamoDBClient(IAmazonDynamoDB client);
-
-        /// <summary>
-        /// Sets the AWS Region to be used by the <see cref="IAmazonDynamoDB"/> client and the constructed <see cref="DynamoDBContext"/>
-        /// </summary>
-        /// <param name="region">The <see cref="RegionEndpoint"/> used by the <see cref="IAmazonDynamoDB"/> client.</param>
-        IDynamoDBContextBuilder SetAWSRegion(RegionEndpoint region);
+        /// <param name="factory">Factory method for creating a <see cref="IAmazonDynamoDB"/> client</param>
+        IDynamoDBContextBuilder WithDynamoDBClient(Func<IAmazonDynamoDB> factory);
 
         /// <summary>
         /// Configures the <see cref="DynamoDBContext"/> that is being constructed
