@@ -70,6 +70,9 @@ namespace Amazon.Util
                     nextToken = GetPropertyValueFromPath<string>(nextSet, tokenResponsePropertyPath);
                     currentItems = GetPropertyValueFromPath<List<ItemType>>(nextSet, itemListPropertyPath);
 
+                    if (currentItems == null)
+                        currentItems = new List<ItemType>();
+
                     return new Marker<ItemType>(currentItems, nextToken);
                 };
             return new PaginatedResource<ItemType>(fetcher);
