@@ -17,22 +17,7 @@ using System;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Builder that constructs a <see cref="DynamoDBContext"/>
-    /// Using <see cref="DynamoDBContextBuilder"/> to construct a <see cref="DynamoDBContext"/> will implicitly set 
-    /// <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/> to true which avoids the DescribeTable call 
-    /// and relies entirely on the DynamoDB attributes set on the .NET classes.
-    /// If needed, you can revert back to the previous behavior by setting <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
-    /// to false using <see cref="DynamoDBContextBuilder.ConfigureContext(Action{DynamoDBContextConfig})"/> as such:
-    /// <code>
-    /// var context = new DynamoDBContextBuilder()
-    ///   .ConfigureContext(x =>
-    ///   {
-    ///       x.DisableFetchingTableMetadata = false;
-    ///   })
-    ///   .Build();
-    /// </code>
-    /// </summary>
+    /// <inheritdoc cref="IDynamoDBContextBuilder" />
 #if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif

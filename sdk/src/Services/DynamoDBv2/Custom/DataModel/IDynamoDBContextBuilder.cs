@@ -21,7 +21,8 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Interface for a builder that constructs a <see cref="DynamoDBContext"/>
     /// Using <see cref="IDynamoDBContextBuilder"/> to construct a <see cref="DynamoDBContext"/> will implicitly set 
     /// <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/> to true which avoids the DescribeTable call 
-    /// and relies entirely on the DynamoDB attributes set on the .NET classes.
+    /// and relies entirely on the DynamoDB attributes set on the .NET classes. Alternatively, you can register the
+    /// table definition using <see cref="DynamoDBContext.RegisterTableDefinition(DocumentModel.Table)"/>.
     /// If needed, you can revert back to the previous behavior by setting <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
     /// to false using <see cref="IDynamoDBContextBuilder.ConfigureContext(Action{DynamoDBContextConfig})"/> as such:
     /// <code>
