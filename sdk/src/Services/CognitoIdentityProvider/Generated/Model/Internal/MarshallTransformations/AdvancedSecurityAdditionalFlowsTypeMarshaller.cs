@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UserPoolAddOnsType Marshaller
+    /// AdvancedSecurityAdditionalFlowsType Marshaller
     /// </summary>
-    public class UserPoolAddOnsTypeMarshaller : IRequestMarshaller<UserPoolAddOnsType, JsonMarshallerContext> 
+    public class AdvancedSecurityAdditionalFlowsTypeMarshaller : IRequestMarshaller<AdvancedSecurityAdditionalFlowsType, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,14 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UserPoolAddOnsType requestObject, JsonMarshallerContext context)
+        public void Marshall(AdvancedSecurityAdditionalFlowsType requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdvancedSecurityAdditionalFlows())
+            if(requestObject.IsSetCustomAuthMode())
             {
-                context.Writer.WritePropertyName("AdvancedSecurityAdditionalFlows");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AdvancedSecurityAdditionalFlowsTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedSecurityAdditionalFlows, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetAdvancedSecurityMode())
-            {
-                context.Writer.WritePropertyName("AdvancedSecurityMode");
-                context.Writer.Write(requestObject.AdvancedSecurityMode);
+                context.Writer.WritePropertyName("CustomAuthMode");
+                context.Writer.Write(requestObject.CustomAuthMode);
             }
 
         }
@@ -70,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UserPoolAddOnsTypeMarshaller Instance = new UserPoolAddOnsTypeMarshaller();
+        public readonly static AdvancedSecurityAdditionalFlowsTypeMarshaller Instance = new AdvancedSecurityAdditionalFlowsTypeMarshaller();
 
     }
 }

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UserPoolAddOnsType Object
+    /// Response Unmarshaller for AdvancedSecurityAdditionalFlowsType Object
     /// </summary>  
-    public class UserPoolAddOnsTypeUnmarshaller : IUnmarshaller<UserPoolAddOnsType, XmlUnmarshallerContext>, IUnmarshaller<UserPoolAddOnsType, JsonUnmarshallerContext>
+    public class AdvancedSecurityAdditionalFlowsTypeUnmarshaller : IUnmarshaller<AdvancedSecurityAdditionalFlowsType, XmlUnmarshallerContext>, IUnmarshaller<AdvancedSecurityAdditionalFlowsType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        UserPoolAddOnsType IUnmarshaller<UserPoolAddOnsType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AdvancedSecurityAdditionalFlowsType IUnmarshaller<AdvancedSecurityAdditionalFlowsType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public UserPoolAddOnsType Unmarshall(JsonUnmarshallerContext context)
+        public AdvancedSecurityAdditionalFlowsType Unmarshall(JsonUnmarshallerContext context)
         {
-            UserPoolAddOnsType unmarshalledObject = new UserPoolAddOnsType();
+            AdvancedSecurityAdditionalFlowsType unmarshalledObject = new AdvancedSecurityAdditionalFlowsType();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdvancedSecurityAdditionalFlows", targetDepth))
-                {
-                    var unmarshaller = AdvancedSecurityAdditionalFlowsTypeUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedSecurityAdditionalFlows = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AdvancedSecurityMode", targetDepth))
+                if (context.TestExpression("CustomAuthMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedSecurityMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomAuthMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         }
 
 
-        private static UserPoolAddOnsTypeUnmarshaller _instance = new UserPoolAddOnsTypeUnmarshaller();        
+        private static AdvancedSecurityAdditionalFlowsTypeUnmarshaller _instance = new AdvancedSecurityAdditionalFlowsTypeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UserPoolAddOnsTypeUnmarshaller Instance
+        public static AdvancedSecurityAdditionalFlowsTypeUnmarshaller Instance
         {
             get
             {
