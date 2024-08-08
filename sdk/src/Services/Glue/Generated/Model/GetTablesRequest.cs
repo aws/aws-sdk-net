@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private string _catalogId;
         private string _databaseName;
         private string _expression;
+        private bool? _includeStatusDetails;
         private int? _maxResults;
         private string _nextToken;
         private DateTime? _queryAsOfTime;
@@ -101,6 +102,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetExpression()
         {
             return this._expression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeStatusDetails. 
+        /// <para>
+        /// Specifies whether to include status details related to a request to create or update
+        /// an Glue Data Catalog view.
+        /// </para>
+        /// </summary>
+        public bool IncludeStatusDetails
+        {
+            get { return this._includeStatusDetails.GetValueOrDefault(); }
+            set { this._includeStatusDetails = value; }
+        }
+
+        // Check to see if IncludeStatusDetails property is set
+        internal bool IsSetIncludeStatusDetails()
+        {
+            return this._includeStatusDetails.HasValue; 
         }
 
         /// <summary>

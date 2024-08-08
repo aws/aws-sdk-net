@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BasicCatalogTarget Object
+    /// Response Unmarshaller for TableStatus Object
     /// </summary>  
-    public class BasicCatalogTargetUnmarshaller : IUnmarshaller<BasicCatalogTarget, XmlUnmarshallerContext>, IUnmarshaller<BasicCatalogTarget, JsonUnmarshallerContext>
+    public class TableStatusUnmarshaller : IUnmarshaller<TableStatus, XmlUnmarshallerContext>, IUnmarshaller<TableStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BasicCatalogTarget IUnmarshaller<BasicCatalogTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TableStatus IUnmarshaller<TableStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BasicCatalogTarget Unmarshall(JsonUnmarshallerContext context)
+        public TableStatus Unmarshall(JsonUnmarshallerContext context)
         {
-            BasicCatalogTarget unmarshalledObject = new BasicCatalogTarget();
+            TableStatus unmarshalledObject = new TableStatus();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,52 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Database", targetDepth))
+                if (context.TestExpression("Action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Database = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Inputs", targetDepth))
+                if (context.TestExpression("Details", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StatusDetailsUnmarshaller.Instance;
+                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Error", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ErrorDetailUnmarshaller.Instance;
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PartitionKeys", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    unmarshalledObject.PartitionKeys = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Table", targetDepth))
+                if (context.TestExpression("RequestedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Table = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequestTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RequestTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpdatedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpdateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +119,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static BasicCatalogTargetUnmarshaller _instance = new BasicCatalogTargetUnmarshaller();        
+        private static TableStatusUnmarshaller _instance = new TableStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BasicCatalogTargetUnmarshaller Instance
+        public static TableStatusUnmarshaller Instance
         {
             get
             {

@@ -290,6 +290,28 @@ namespace Amazon.Glue.Model
         /// For more information, see <a href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
         /// Documentation: Configuring Kafka Brokers</a>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ROLE_ARN</c> - The role to be used for running queries.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REGION</c> - The Amazon Web Services Region where queries will be run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>WORKGROUP_NAME</c> - The name of an Amazon Redshift serverless workgroup or Amazon
+        /// Athena workgroup in which queries will run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CLUSTER_IDENTIFIER</c> - The cluster identifier of an Amazon Redshift cluster
+        /// in which queries will run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DATABASE</c> - The Amazon Redshift database that you are connecting to.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

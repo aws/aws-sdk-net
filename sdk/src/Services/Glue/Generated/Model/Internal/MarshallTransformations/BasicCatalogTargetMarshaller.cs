@@ -71,6 +71,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetPartitionKeys())
+            {
+                context.Writer.WritePropertyName("PartitionKeys");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPartitionKeysListValue in requestObject.PartitionKeys)
+                {
+                    context.Writer.WriteArrayStart();
+                    foreach(var requestObjectPartitionKeysListValueListValue in requestObjectPartitionKeysListValue)
+                    {
+                            context.Writer.Write(requestObjectPartitionKeysListValueListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");

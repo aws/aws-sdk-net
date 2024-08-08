@@ -173,6 +173,16 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
+        ///  <c>VIEW_VALIDATION_REDSHIFT</c> - Designates a connection used for view validation
+        /// by Amazon Redshift.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VIEW_VALIDATION_ATHENA</c> - Designates a connection used for view validation
+        /// by Amazon Athena.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>NETWORK</c> - Designates a network connection to a data source within an Amazon
         /// Virtual Private Cloud environment (Amazon VPC).
         /// </para>

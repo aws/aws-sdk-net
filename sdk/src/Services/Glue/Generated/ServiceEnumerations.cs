@@ -837,6 +837,10 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant CLUSTER_IDENTIFIER for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey CLUSTER_IDENTIFIER = new ConnectionPropertyKey("CLUSTER_IDENTIFIER");
+        /// <summary>
         /// Constant CONFIG_FILES for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey CONFIG_FILES = new ConnectionPropertyKey("CONFIG_FILES");
@@ -864,6 +868,10 @@ namespace Amazon.Glue
         /// Constant CUSTOM_JDBC_CERT_STRING for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey CUSTOM_JDBC_CERT_STRING = new ConnectionPropertyKey("CUSTOM_JDBC_CERT_STRING");
+        /// <summary>
+        /// Constant DATABASE for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey DATABASE = new ConnectionPropertyKey("DATABASE");
         /// <summary>
         /// Constant ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD for ConnectionPropertyKey
         /// </summary>
@@ -993,6 +1001,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey PORT = new ConnectionPropertyKey("PORT");
         /// <summary>
+        /// Constant REGION for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey REGION = new ConnectionPropertyKey("REGION");
+        /// <summary>
         /// Constant ROLE_ARN for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey ROLE_ARN = new ConnectionPropertyKey("ROLE_ARN");
@@ -1008,6 +1020,10 @@ namespace Amazon.Glue
         /// Constant USERNAME for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey USERNAME = new ConnectionPropertyKey("USERNAME");
+        /// <summary>
+        /// Constant WORKGROUP_NAME for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey WORKGROUP_NAME = new ConnectionPropertyKey("WORKGROUP_NAME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1136,6 +1152,14 @@ namespace Amazon.Glue
         /// Constant SFTP for ConnectionType
         /// </summary>
         public static readonly ConnectionType SFTP = new ConnectionType("SFTP");
+        /// <summary>
+        /// Constant VIEW_VALIDATION_ATHENA for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType VIEW_VALIDATION_ATHENA = new ConnectionType("VIEW_VALIDATION_ATHENA");
+        /// <summary>
+        /// Constant VIEW_VALIDATION_REDSHIFT for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType VIEW_VALIDATION_REDSHIFT = new ConnectionType("VIEW_VALIDATION_REDSHIFT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4261,6 +4285,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceAction.
+    /// </summary>
+    public class ResourceAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE for ResourceAction
+        /// </summary>
+        public static readonly ResourceAction CREATE = new ResourceAction("CREATE");
+        /// <summary>
+        /// Constant UPDATE for ResourceAction
+        /// </summary>
+        public static readonly ResourceAction UPDATE = new ResourceAction("UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceAction FindValue(string value)
+        {
+            return FindValue<ResourceAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceShareType.
     /// </summary>
     public class ResourceShareType : ConstantClass
@@ -4308,6 +4382,68 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceShareType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceState.
+    /// </summary>
+    public class ResourceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ResourceState
+        /// </summary>
+        public static readonly ResourceState FAILED = new ResourceState("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ResourceState
+        /// </summary>
+        public static readonly ResourceState IN_PROGRESS = new ResourceState("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for ResourceState
+        /// </summary>
+        public static readonly ResourceState QUEUED = new ResourceState("QUEUED");
+        /// <summary>
+        /// Constant STOPPED for ResourceState
+        /// </summary>
+        public static readonly ResourceState STOPPED = new ResourceState("STOPPED");
+        /// <summary>
+        /// Constant SUCCESS for ResourceState
+        /// </summary>
+        public static readonly ResourceState SUCCESS = new ResourceState("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceState FindValue(string value)
+        {
+            return FindValue<ResourceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceState(string value)
         {
             return FindValue(value);
         }
