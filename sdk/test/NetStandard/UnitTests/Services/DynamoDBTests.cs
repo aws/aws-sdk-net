@@ -1,11 +1,12 @@
-using Xunit;
-using Amazon.DynamoDBv2.Model;
-using System.Threading.Tasks;
-using Moq;
 using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using System.Threading;
+using Amazon.DynamoDBv2.Model;
+using Moq;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_NetStandard.UnitTests
 {
