@@ -453,7 +453,7 @@ namespace Amazon.Runtime
                     var absDiff = diff.Ticks < 0 ? -diff : diff;
 
                     Logger.InfoFormat(clockSkewMessageFormat,
-                        realNow, correctedNow, clientConfig.ClockOffset, serverTime, endpoint);
+                        realNow, correctedNow, CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint), serverTime, endpoint);
 
                     // Always set the correction, for informational purposes
                     CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, newCorrection);

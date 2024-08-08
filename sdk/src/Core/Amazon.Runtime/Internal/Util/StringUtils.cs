@@ -171,11 +171,6 @@ namespace Amazon.Runtime.Internal.Util
             return value ? "true" : "false";
         }
 
-        [Obsolete("This method doesn't handle correctly non-UTC DateTimes. Use FromDateTimeToISO8601 instead.", false)]
-        public static string FromDateTime(DateTime value)
-        {
-            return value.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
-        }
 
         /// <summary>
         /// Converts a DateTime to ISO8601 formatted string.

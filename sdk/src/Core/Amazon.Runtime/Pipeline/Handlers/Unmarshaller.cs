@@ -104,7 +104,9 @@ namespace Amazon.Runtime.Internal
                 var unmarshaller = requestContext.Unmarshaller;
                 try
                 {
-                    var readEntireResponse = _supportsResponseLogging;
+                    var readEntireResponse = _supportsResponseLogging &&
+                        (requestContext.ClientConfig.LogResponse
+                        || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never);
 
                     var context = unmarshaller.CreateContext(responseContext.HttpResponse,
                         readEntireResponse,
@@ -161,7 +163,7 @@ namespace Amazon.Runtime.Internal
                 try
                 {
                     var readEntireResponse = _supportsResponseLogging &&
-                        (requestContext.ClientConfig.LogResponse || requestContext.ClientConfig.ReadEntireResponse
+                        (requestContext.ClientConfig.LogResponse
                         || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never);
 
                     var responseStream = await responseContext.HttpResponse.

@@ -28,6 +28,7 @@ using Amazon.SecurityToken.SAML;
 using Amazon.DynamoDBv2;
 using Amazon.ElasticTranscoder;
 using System.Threading;
+using AWSSDK_DotNet.CommonTest.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -196,16 +197,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 var aace = new AdfsAuthenticationControllerException("Message");
                 TestException(aace);
-
-#pragma warning disable 618
-
-                var ccre = new CredentialCallbackRequiredException("Message");
-                TestException(ccre);
-
-                var afe = new AuthenticationFailedException("Message");
-                TestException(afe);
-
-#pragma warning restore 618
 
             }
         }
@@ -779,21 +770,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             try
             {
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
+                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
                 context.TestAction();
 
-#pragma warning disable CS0618 // Type or member is obsolete
-                Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);
+                Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()) == TimeSpan.Zero);
 
-                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
+                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+new object[] { context.Config.RegionEndpoint.ToString(), IncorrectPositiveClockSkewOffset});
                 context.TestAction();
-#pragma warning disable CS0618 // Type or member is obsolete
-                Assert.AreEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
 
-                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
+                Assert.AreEqual(IncorrectPositiveClockSkewOffset, CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()));
+
+                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+new object[] { context.Config.RegionEndpoint.ToString(), IncorrectNegativeClockSkewOffset });
                 context.TestAction();
-#pragma warning disable CS0618 // Type or member is obsolete
-                Assert.AreEqual(IncorrectNegativeClockSkewOffset, AWSConfigs.ClockOffset);
+
+                Assert.AreEqual(IncorrectNegativeClockSkewOffset, CorrectClockSkew.GetClockCorrectionForEndpoint(context.Config.RegionEndpoint.ToString()));
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
@@ -801,13 +794,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 AssertExtensions.ExpectException(context.TestAction);
                     
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
+
+                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
                 context.TestAction();
 
                 Console.WriteLine("Simulating negative clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
+                ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+new object[] { context.Config.RegionEndpoint.ToString(), TimeSpan.Zero });
                 context.TestAction();
 
                 AWSConfigs.CorrectForClockSkew = false;
@@ -860,8 +856,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             new ClientTest { Client = typeof(AmazonS3Client), Method = "ListBuckets" },
             new ClientTest { Client = typeof(Amazon.Glacier.AmazonGlacierClient), Method = "ListVaults" },
             new ClientTest { Client = typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), Method = "ListGroups" },
-            // ImportExport returns a 500.  Investigating...
-            //new ClientTest { Client = typeof(Amazon.ImportExport.AmazonImportExportClient), Method = "ListJobs" },
         };
 
         // Reflection helpers
