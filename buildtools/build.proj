@@ -493,7 +493,7 @@
         <Exec Command="dotnet test -c $(Configuration) --no-build EC2.DecryptPassword.NetStandard.csproj" WorkingDirectory="../extensions/test/CrtIntegrationTests"/>
         <!-- We build the netframework projects when testing because they are not included in the solution -->
         <Message Text="Build and Test EC2 Extension NetFramework"/>
-        <Exec Command="dotnet test -c $(Configuration) EC2.DecryptPassword.NetFramework.csproj" WorkingDirectory="../extensions/test/CloudFront.SignersTests"/>
+        <Exec Command="dotnet test -c $(Configuration) CloudFront.Signers.Tests.NetFramework.csproj" WorkingDirectory="../extensions/test/CloudFront.SignersTests"/>
 
         <Message Text="Build and Test EC2 Extension Framework"/>
         <Exec Command="dotnet test -c $(Configuration) EC2.DecryptPassword.NetFramework.csproj" WorkingDirectory="../extensions/test/EC2.DecryptPasswordTests"/>
