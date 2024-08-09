@@ -3930,9 +3930,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>IamRole</c> field returned for this API operation is the Identity and Access
-        /// Management (IAM) role assigned to on-premises managed nodes. This operation does not
-        /// return the IAM role for EC2 instances.
+        /// The <c>IamRole</c> field returned for this API operation is the role assigned to an
+        /// Amazon EC2 instance configured with a Systems Manager Quick Setup host management
+        /// configuration or the role assigned to an on-premises managed node.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3994,9 +3994,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>IamRole</c> field returned for this API operation is the Identity and Access
-        /// Management (IAM) role assigned to on-premises managed nodes. This operation does not
-        /// return the IAM role for EC2 instances.
+        /// The <c>IamRole</c> field returned for this API operation is the role assigned to an
+        /// Amazon EC2 instance configured with a Systems Manager Quick Setup host management
+        /// configuration or the role assigned to an on-premises managed node.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5335,6 +5335,10 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// Valid properties: <c>PRODUCT</c> | <c>CLASSIFICATION</c> | <c>SEVERITY</c> 
         /// </para>
+        ///  </dd> <dt>AMAZON_LINUX_2023</dt> <dd> 
+        /// <para>
+        /// Valid properties: <c>PRODUCT</c> | <c>CLASSIFICATION</c> | <c>SEVERITY</c> 
+        /// </para>
         ///  </dd> <dt>CENTOS</dt> <dd> 
         /// <para>
         /// Valid properties: <c>PRODUCT</c> | <c>CLASSIFICATION</c> | <c>SEVERITY</c> 
@@ -5710,6 +5714,11 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Returns detailed information about command execution for an invocation or plugin.
+        /// The Run Command API follows an eventual consistency model, due to the distributed
+        /// nature of the system supporting the API. This means that the result of an API command
+        /// you run that affects your resources might not be immediately visible to all subsequent
+        /// commands you run. You should keep this in mind when you carry out an API command that
+        /// immediately follows a previous API command.
         /// 
         ///  
         /// <para>

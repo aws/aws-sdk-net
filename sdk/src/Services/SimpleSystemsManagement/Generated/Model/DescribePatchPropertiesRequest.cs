@@ -49,6 +49,10 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// Valid properties: <c>PRODUCT</c> | <c>CLASSIFICATION</c> | <c>SEVERITY</c> 
     /// </para>
+    ///  </dd> <dt>AMAZON_LINUX_2023</dt> <dd> 
+    /// <para>
+    /// Valid properties: <c>PRODUCT</c> | <c>CLASSIFICATION</c> | <c>SEVERITY</c> 
+    /// </para>
     ///  </dd> <dt>CENTOS</dt> <dd> 
     /// <para>
     /// Valid properties: <c>PRODUCT</c> | <c>CLASSIFICATION</c> | <c>SEVERITY</c> 

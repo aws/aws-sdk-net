@@ -44,9 +44,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <c>IamRole</c> field returned for this API operation is the Identity and Access
-    /// Management (IAM) role assigned to on-premises managed nodes. This operation does not
-    /// return the IAM role for EC2 instances.
+    /// The <c>IamRole</c> field returned for this API operation is the role assigned to an
+    /// Amazon EC2 instance configured with a Systems Manager Quick Setup host management
+    /// configuration or the role assigned to an on-premises managed node.
     /// </para>
     ///  </note>
     /// </summary>
