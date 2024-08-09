@@ -222,14 +222,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region TransactGet async
 
-        /// <summary>
-        /// Issues a transactional get request with multiple TransactGet objects.
-        /// Results are stored in the individual TransactGet objects.
-        /// </summary>
-        /// <param name="transactionParts">Configured TransactGet objects.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteTransactGetAsync(TransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task ExecuteTransactGetAsync(ITransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
             return transaction.ExecuteAsync(cancellationToken);
