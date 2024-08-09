@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.DocumentModel;
@@ -374,7 +375,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="batches">
         /// Configured BatchWrite objects
         /// </param>
-        void ExecuteBatchWrite(params BatchWrite[] batches);
+        void ExecuteBatchWrite(params IBatchWrite[] batches);
 
         #endregion
 
