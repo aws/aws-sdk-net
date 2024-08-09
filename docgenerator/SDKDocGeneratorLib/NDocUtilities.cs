@@ -165,6 +165,37 @@ namespace SDKDocGenerator
             if (!ndoc.TryGetValue(signature, out element))
                 return null;
 
+            // Follow a plain <inheritdoc/> by searching the base type and interfaces.
+            var inheritdocElement = element.XPathSelectElement("inheritdoc");
+            if (inheritdocElement != null)
+            {
+                if (inheritdocElement.Attribute("cref") != null || inheritdocElement.Attribute("path") != null)
+                {
+                    Trace.WriteLine($"Skipping following <inheritdoc> for {signature} since cref and/or path are not supported yet.");
+                    return element;
+                }
+
+                if (type.BaseType.FullName != "System.Object") // we never expect to inherit class-level docs from here
+                {
+                    var baseTypeDocs = FindDocumentation(ndoc, type.BaseType);
+
+                    if (baseTypeDocs != null)
+                    {
+                        return baseTypeDocs;
+                    }
+                }
+
+                foreach (var baseInterface in type.GetInterfaces())
+                {
+                    var interfaceDocs = FindDocumentation(ndoc, baseInterface);
+
+                    if (interfaceDocs != null)
+                    {
+                        return interfaceDocs;
+                    }
+                }
+            }
+
             return element;
         }
 
@@ -175,6 +206,30 @@ namespace SDKDocGenerator
             XElement element;
             if (!ndoc.TryGetValue(signature, out element))
                 return null;
+
+            // Follow a plain <inheritdoc/> by searching the base type and interfaces.
+            var inheritdocElement = element.XPathSelectElement("inheritdoc");
+            if (inheritdocElement != null)
+            {
+                if (inheritdocElement.Attribute("cref") != null || inheritdocElement.Attribute("path") != null)
+                {
+                    Trace.WriteLine($"Skipping following <inheritdoc> for {signature} since cref and/or path are not supported yet.");
+                    return element;
+                }
+
+                var baseTypeMatchingProperties = info.DeclaringType.BaseType.GetProperties().Where(property => property.Name.Equals(info.Name, StringComparison.OrdinalIgnoreCase));
+
+                if (baseTypeMatchingProperties.Count() == 1)
+                    return FindDocumentation(ndoc, baseTypeMatchingProperties.First());
+
+                foreach (var baseInterface in info.DeclaringType.GetInterfaces())
+                {
+                    var interfaceMatchingProperties = baseInterface.GetProperties().Where(property => property.Name.Equals(info.Name, StringComparison.OrdinalIgnoreCase));
+
+                    if (interfaceMatchingProperties.Count() == 1)
+                        return FindDocumentation(ndoc, interfaceMatchingProperties.First());
+                }
+            }
 
             return element;
         }
@@ -268,6 +323,30 @@ namespace SDKDocGenerator
             XElement element;
             if (!ndoc.TryGetValue(signature, out element))
                 return null;
+
+            // Follow a plain < inheritdoc /> by searching the base type and interfaces.
+            var inheritdocElement = element.XPathSelectElement("inheritdoc");
+            if (inheritdocElement != null)
+            {
+                if (inheritdocElement.Attribute("cref") != null || inheritdocElement.Attribute("path") != null)
+                {
+                    Trace.WriteLine($"Skipping following <inheritdoc> for {signature} since cref and/or path are not supported yet.");
+                    return element;
+                }
+
+                var baseTypeMatchingMethods = info.DeclaringType.BaseType.GetMethodsToDocument().Where(method => method.FullName.Equals(info.FullName, StringComparison.OrdinalIgnoreCase));
+                
+                if (baseTypeMatchingMethods.Count() == 1)
+                    return FindDocumentation(ndoc, baseTypeMatchingMethods.First());
+
+                foreach (var baseInterface in info.DeclaringType.GetInterfaces())
+                {
+                    var interfaceMatchingMethods = baseInterface.GetMethodsToDocument().Where(method => method.FullName.Equals(info.FullName, StringComparison.OrdinalIgnoreCase));
+
+                    if (interfaceMatchingMethods.Count() == 1)
+                        return FindDocumentation(ndoc, interfaceMatchingMethods.First());
+                }
+            }
 
             return element;
         }                
@@ -375,6 +454,30 @@ namespace SDKDocGenerator
             if (!ndoc.TryGetValue(signature, out element))
                 return null;
 
+            // Follow a plain < inheritdoc /> by searching the base type and interfaces.
+            var inheritdocElement = element.XPathSelectElement("inheritdoc");
+            if (inheritdocElement != null)
+            {
+                if (inheritdocElement.Attribute("cref") != null || inheritdocElement.Attribute("path") != null)
+                {
+                    Trace.WriteLine($"Skipping following <inheritdoc> for {signature} since cref and/or path are not supported yet.");
+                    return element;
+                }
+
+                var baseTypeMatchingMethods = info.DeclaringType.BaseType.GetMethodsToDocument().Where(method => method.FullName.Equals(info.FullName, StringComparison.OrdinalIgnoreCase));
+
+                if (baseTypeMatchingMethods.Count() == 1)
+                    return FindDocumentation(ndoc, baseTypeMatchingMethods.First());
+
+                foreach (var baseInterface in info.DeclaringType.GetInterfaces())
+                {
+                    var interfaceMatchingMethods = baseInterface.GetMethodsToDocument().Where(method => method.FullName.Equals(info.FullName, StringComparison.OrdinalIgnoreCase));
+
+                    if (interfaceMatchingMethods.Count() == 1)
+                        return FindDocumentation(ndoc, interfaceMatchingMethods.First());
+                }
+            }
+
             return element;
         }
 
@@ -472,7 +575,7 @@ namespace SDKDocGenerator
                                                 throw new InvalidOperationException();
                                             var typeName = crefParts[1];
                                             var targetType = typeProvider.GetType(typeName);
-                                            if (targetType == null) 
+                                            if (targetType == null)
                                             {
                                                 emptyElementContents = typeName;
                                                 //If the type cannot be found do not render out the href attribute.
@@ -489,7 +592,7 @@ namespace SDKDocGenerator
                                             // extract href value for emptyElementContents
                                             emptyElementContents = attributeValue;
 
-                                            if(attributeValue.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
+                                            if (attributeValue.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
                                                 attributeValue.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
                                             {
                                                 isAbsoluteLink = true;
@@ -504,13 +607,13 @@ namespace SDKDocGenerator
                                             hasTarget = true;
                                         }
 
-                                        if(writeAttribute)
+                                        if (writeAttribute)
                                         {
                                             writer.WriteAttributeString(attributeName, attributeValue);
-                                        }                                        
+                                        }
                                     }
 
-                                    if(elementName == "a" && isAbsoluteLink && !hasTarget)
+                                    if (elementName == "a" && isAbsoluteLink && !hasTarget)
                                     {
                                         //Add a target=\"_blank\" to allow the absolute link to break out
                                         //of the frame.
