@@ -32,7 +32,7 @@ namespace Amazon.Textract
     public partial class AmazonTextractConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Textract", "3.7.400.3");
+            InternalSDKUtils.BuildUserAgentString("Textract", "3.7.400.4");
 
         private string _userAgent = UserAgentString;
         ///<summary>

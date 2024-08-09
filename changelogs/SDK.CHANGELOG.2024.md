@@ -1,3 +1,14 @@
+### 3.7.862.0 (2024-08-09 18:42 UTC)
+* CognitoIdentityProvider (3.7.402.1)
+	* Fixed a description of AdvancedSecurityAdditionalFlows in Amazon Cognito user pool configuration.
+* Connect (3.7.402.0)
+	* This release supports adding RoutingCriteria via UpdateContactRoutingData public API.
+* SimpleSystemsManagement (3.7.401.2)
+	* Systems Manager doc-only updates for August 2024.
+* Core 3.7.400.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.861.0 (2024-08-08 18:16 UTC)
 * CognitoIdentityProvider (3.7.402.0)
 	* Added support for threat protection for custom authentication in Amazon Cognito user pools.
