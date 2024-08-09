@@ -49,7 +49,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AdvancedSecurityAdditionalFlows. 
         /// <para>
         /// Advanced security configuration options for additional authentication types in your
-        /// user pool, including custom authentication and refresh-token authentication. 
+        /// user pool, including custom authentication. 
         /// </para>
         /// </summary>
         public AdvancedSecurityAdditionalFlowsType AdvancedSecurityAdditionalFlows
