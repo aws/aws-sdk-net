@@ -103,6 +103,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient
         /// client and a default DynamoDBContextConfig object for configuration.
         /// </summary>
+        [Obsolete("Use the DynamoDBContextBuilder to construct a DynamoDBContext with the recommended configuration.")]
         public DynamoDBContext()
             : this(new AmazonDynamoDBClient()) { }
 
@@ -111,6 +112,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// client and a default DynamoDBContextConfig object for configuration.
         /// </summary>
         /// <param name="region">The region to configure the AmazonDynamoDBClient to use.</param>
+        [Obsolete("Use the DynamoDBContextBuilder to construct a DynamoDBContext with the recommended configuration.")]
         public DynamoDBContext(RegionEndpoint region)
             : this(new AmazonDynamoDBClient(region), true, new DynamoDBContextConfig()) { }
 
@@ -119,6 +121,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Uses a default AmazonDynamoDBClient as the client.
         /// </summary>
         /// <param name="config"></param>
+        [Obsolete("Use the DynamoDBContextBuilder to construct a DynamoDBContext with the recommended configuration.")]
         public DynamoDBContext(DynamoDBContextConfig config)
             : this(new AmazonDynamoDBClient(), config) { }
 
@@ -128,6 +131,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="region">The region to configure the AmazonDynamoDBClient to use.</param>
         /// <param name="config"></param>
+        [Obsolete("Use the DynamoDBContextBuilder to construct a DynamoDBContext with the recommended configuration.")]
         public DynamoDBContext(RegionEndpoint region, DynamoDBContextConfig config)
             : this(new AmazonDynamoDBClient(region), true, config) { }
 #endif
@@ -137,6 +141,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Uses default DynamoDBContextConfig object for configuration.
         /// </summary>
         /// <param name="client">Client to use for making calls</param>
+        [Obsolete("Use the DynamoDBContextBuilder to construct a DynamoDBContext with the recommended configuration.")]
         public DynamoDBContext(IAmazonDynamoDB client)
             : this(client, false, new DynamoDBContextConfig()) { }
 
@@ -146,10 +151,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="client">Client to use for making calls</param>
         /// <param name="config">Configuration to use</param>
+        [Obsolete("Use the DynamoDBContextBuilder to construct a DynamoDBContext with the recommended configuration.")]
         public DynamoDBContext(IAmazonDynamoDB client, DynamoDBContextConfig config)
             : this(client, false, config) { }
 
-        private DynamoDBContext(IAmazonDynamoDB client, bool ownClient, DynamoDBContextConfig config)
+        internal DynamoDBContext(IAmazonDynamoDB client, bool ownClient, DynamoDBContextConfig config)
         {
             if (client == null) throw new ArgumentNullException("client");
 

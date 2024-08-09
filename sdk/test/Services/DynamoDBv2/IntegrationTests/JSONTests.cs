@@ -348,8 +348,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                   }
                 }";
 
-            using (var dbClient = new AmazonDynamoDBClient())
-            using (var context = new DynamoDBContext(dbClient))
+            using (var context = new DynamoDBContextBuilder().Build())
             {
                 var document = Document.FromJson(json);
                 var container = context.FromDocument<DataContainer>(document);

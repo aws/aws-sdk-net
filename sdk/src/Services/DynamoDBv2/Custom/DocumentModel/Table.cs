@@ -443,6 +443,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="ddbClient">Client to use to access DynamoDB.</param>
         /// <param name="config">Configuration to use for the table.</param>
         /// <returns>Table object representing the specified table.</returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static Table LoadTable(IAmazonDynamoDB ddbClient, TableConfig config)
         {
             Table table = new Table(ddbClient, config);
@@ -648,6 +649,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="ddbClient">Client to use to access DynamoDB.</param>
         /// <param name="tableName">Name of the table.</param>
         /// <returns>Table object representing the specified table.</returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName)
         {
             return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false);
@@ -663,6 +665,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="tableName">Name of the table.</param>
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
         /// <returns>Table object representing the specified table.</returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion)
         {
             return LoadTable(ddbClient, tableName, conversion, false);
@@ -678,6 +681,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="tableName">Name of the table.</param>
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <returns>Table object representing the specified table.</returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled)
         {
             return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled);
@@ -694,6 +698,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <returns>Table object representing the specified table.</returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
             var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: MetadataCachingMode.Default);
@@ -715,6 +720,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
         /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         /// <returns>Table object representing the specified table.</returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode metadataCachingMode)
         {
             var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: metadataCachingMode);
@@ -736,6 +742,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, out Table table)
         {
             return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false, out table);
@@ -754,6 +761,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, out Table table)
         {
             return TryLoadTable(ddbClient, tableName, conversion, false, out table);
@@ -772,6 +780,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled, out Table table)
         {
             return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled, out table);
@@ -791,6 +800,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, out Table table)
         {
             return TryLoadTable(ddbClient, tableName, conversion, isEmptyStringValueEnabled, MetadataCachingMode.Default, out table);
@@ -813,6 +823,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient,
                                         string tableName,
                                         DynamoDBEntryConversion conversion,
@@ -842,6 +853,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
+        [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, TableConfig config, out Table table)
         {
             if (config == null)

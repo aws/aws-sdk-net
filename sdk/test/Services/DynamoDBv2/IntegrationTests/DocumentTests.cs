@@ -167,7 +167,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
             };
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             var numericEpochTable = Table.LoadTable(Client, config);
+#pragma warning restore CS0618 // Re-enable the warning
 
             // Capture current time
             var currTime = DateTime.Now;
@@ -1816,9 +1818,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 // Load table using TryLoadTable API
                 hashTable = null;
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 Assert.IsFalse(Table.TryLoadTable(Client, "FakeHashTableThatShouldNotExist", conversion, true, out hashTable));
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(0, counter.ResponseCount);
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 Assert.IsTrue(Table.TryLoadTable(Client, hashTableName, conversion, true, out hashTable));
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(1, counter.ResponseCount);
 
                 Assert.IsNotNull(hashTable);
@@ -1832,10 +1838,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(0, hashTable.LocalSecondaryIndexes.Count);
                 Assert.AreEqual(0, hashTable.LocalSecondaryIndexNames.Count);
 
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 // Load table using LoadTable API (may throw an exception)
                 AssertExtensions.ExpectException(() => Table.LoadTable(Client, "FakeHashRangeTableThatShouldNotExist", conversion, true));
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(1, counter.ResponseCount);
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 hashRangeTable = Table.LoadTable(Client, hashRangeTableName, conversion, true);
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(2, counter.ResponseCount);
                 Assert.IsNotNull(hashRangeTable);
                 Assert.AreEqual(hashRangeTableName, hashRangeTable.TableName);
@@ -1849,7 +1859,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(2, hashRangeTable.LocalSecondaryIndexes["LocalIndex"].KeySchema.Count);
                 Assert.AreEqual(1, hashRangeTable.LocalSecondaryIndexNames.Count);
 
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 numericHashRangeTable = Table.LoadTable(Client, numericHashRangeTableName, conversion, true);
+#pragma warning restore CS0618 // Re-enable the warning
                 Assert.AreEqual(1, numericHashRangeTable.HashKeys.Count);
                 Assert.AreEqual(1, numericHashRangeTable.RangeKeys.Count);
                 Assert.AreEqual(2, numericHashRangeTable.Keys.Count);
