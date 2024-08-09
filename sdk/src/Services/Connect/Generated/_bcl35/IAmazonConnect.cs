@@ -1818,6 +1818,11 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Create
+        /// an Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// Amazon Connect enforces a limit on the total number of instances that you can create
         /// or delete in 30 days. If you exceed this limit, you will get an error message indicating
         /// there has been an excessive number of attempts at creating or deleting instances.
@@ -2050,7 +2055,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new predefined attribute for the specified Amazon Connect instance.
+        /// Creates a new predefined attribute for the specified Amazon Connect instance. <i>Predefined
+        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
+        /// contacts to an agent or pools of agents within a queue. For more information, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// predefined attributes for routing contacts to agents</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute service method.</param>
         /// 
@@ -2452,6 +2461,14 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a security profile.
+        /// 
+        ///  
+        /// <para>
+        /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
+        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// of security profile permissions</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityProfile service method.</param>
         /// 
@@ -3479,7 +3496,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Deletes the Amazon Connect instance.
+        /// Deletes the Amazon Connect instance. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-connect-instance.html">Delete
+        /// your Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3703,7 +3721,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a queue.
+        /// Deletes a queue. It isn't possible to delete a queue by using the Amazon Connect admin
+        /// website.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
@@ -5254,7 +5273,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a predefined attribute for the specified Amazon Connect instance.
+        /// Describes a predefined attribute for the specified Amazon Connect instance. <i>Predefined
+        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
+        /// contacts to an agent or pools of agents within a queue. For more information, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// predefined attributes for routing contacts to agents</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute service method.</param>
         /// 
@@ -5589,7 +5612,15 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Gets basic information about the security profle.
+        /// Gets basic information about the security profile.
+        /// 
+        ///  
+        /// <para>
+        /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
+        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// of security profile permissions</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityProfile service method.</param>
         /// 
@@ -8909,7 +8940,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists predefined attributes for the specified Amazon Connect instance.
+        /// Lists predefined attributes for the specified Amazon Connect instance. <i>Predefined
+        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
+        /// contacts to an agent or pools of agents within a queue. For more information, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// predefined attributes for routing contacts to agents</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes service method.</param>
         /// 
@@ -9550,6 +9585,14 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Lists the permissions granted to a security profile.
+        /// 
+        ///  
+        /// <para>
+        /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
+        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// of security profile permissions</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfilePermissions service method.</param>
         /// 
@@ -9610,7 +9653,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
+        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfiles service method.</param>
@@ -11052,7 +11097,10 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Predefined attributes that meet certain criteria.
+        /// Searches predefined attributes that meet certain criteria. <i>Predefined attributes</i>
+        /// are attributes in an Amazon Connect instance that can be used to route contacts to
+        /// an agent or pools of agents within a queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// predefined attributes for routing contacts to agents</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes service method.</param>
         /// 
@@ -11387,6 +11435,14 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Searches security profiles in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  
+        /// <para>
+        /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
+        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// of security profile permissions</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchSecurityProfiles service method.</param>
         /// 
@@ -14253,7 +14309,11 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a predefined attribute for the specified Amazon Connect instance.
+        /// Updates a predefined attribute for the specified Amazon Connect instance. <i>Predefined
+        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
+        /// contacts to an agent or pools of agents within a queue. For more information, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// predefined attributes for routing contacts to agents</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute service method.</param>
         /// 
@@ -15151,6 +15211,14 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates a security profile.
+        /// 
+        ///  
+        /// <para>
+        /// For information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
+        /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
+        /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// of security profile permissions</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityProfile service method.</param>
         /// 

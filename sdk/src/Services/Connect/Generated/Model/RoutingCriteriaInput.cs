@@ -30,28 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// An object to define AgentsCriteria.
+    /// An object to define the RoutingCriteria.
     /// </summary>
-    public partial class MatchCriteria
+    public partial class RoutingCriteriaInput
     {
-        private AgentsCriteria _agentsCriteria;
+        private List<RoutingCriteriaInputStep> _steps = AWSConfigs.InitializeCollections ? new List<RoutingCriteriaInputStep>() : null;
 
         /// <summary>
-        /// Gets and sets the property AgentsCriteria. 
+        /// Gets and sets the property Steps. 
         /// <para>
-        /// An object to define agentIds.
+        /// When Amazon Connect does not find an available agent meeting the requirements in a
+        /// step for&#x2028; a given step duration, the routing criteria will move on to the next
+        /// step sequentially until a&#x2028; join is completed with an agent. When all steps
+        /// are exhausted, the contact will be offered to any agent in the queue.
         /// </para>
         /// </summary>
-        public AgentsCriteria AgentsCriteria
+        public List<RoutingCriteriaInputStep> Steps
         {
-            get { return this._agentsCriteria; }
-            set { this._agentsCriteria = value; }
+            get { return this._steps; }
+            set { this._steps = value; }
         }
 
-        // Check to see if AgentsCriteria property is set
-        internal bool IsSetAgentsCriteria()
+        // Check to see if Steps property is set
+        internal bool IsSetSteps()
         {
-            return this._agentsCriteria != null;
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

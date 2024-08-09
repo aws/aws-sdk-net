@@ -37,7 +37,9 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-    /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Profiles</a> in the <i>Amazon Connect Administrator Guide</i>. For a mapping of the
+    /// API name and user interface name of the security profile permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+    /// of security profile permissions</a>. 
     /// </para>
     /// </summary>
     public partial class ListSecurityProfilesRequest : AmazonConnectRequest

@@ -30,28 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// An object to define AgentsCriteria.
+    /// Specify whether this routing criteria step should apply for only a limited amount
+    /// of time,&#x2028; or if it should never expire.
     /// </summary>
-    public partial class MatchCriteria
+    public partial class RoutingCriteriaInputStepExpiry
     {
-        private AgentsCriteria _agentsCriteria;
+        private int? _durationInSeconds;
 
         /// <summary>
-        /// Gets and sets the property AgentsCriteria. 
+        /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// An object to define agentIds.
+        /// The number of seconds that the contact will be routed only to agents matching this
+        /// routing&#x2028; step, if expiry was configured for this routing step.
         /// </para>
         /// </summary>
-        public AgentsCriteria AgentsCriteria
+        public int DurationInSeconds
         {
-            get { return this._agentsCriteria; }
-            set { this._agentsCriteria = value; }
+            get { return this._durationInSeconds.GetValueOrDefault(); }
+            set { this._durationInSeconds = value; }
         }
 
-        // Check to see if AgentsCriteria property is set
-        internal bool IsSetAgentsCriteria()
+        // Check to see if DurationInSeconds property is set
+        internal bool IsSetDurationInSeconds()
         {
-            return this._agentsCriteria != null;
+            return this._durationInSeconds.HasValue; 
         }
 
     }
