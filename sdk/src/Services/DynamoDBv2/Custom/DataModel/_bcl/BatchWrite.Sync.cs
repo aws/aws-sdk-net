@@ -13,56 +13,51 @@
  * permissions and limitations under the License.
  */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using Amazon.DynamoDBv2.Model;
-using Amazon.DynamoDBv2.DocumentModel;
-
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Represents a non-generic object for writing/deleting a batch of items
-    /// in a single DynamoDB table
-    /// </summary>
-    public abstract partial class BatchWrite
+    public partial interface IBatchWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to batch-write/delete the items requested.
         /// 
         /// If more than 25 put/delete operations are specified, calls of up to 25
         /// put/delete items will be made until all items are processed.
         /// </summary>
-        public void Execute()
+        void Execute();
+    }
+
+    public abstract partial class BatchWrite : IBatchWrite
+    {
+        /// <inheritdoc/>
+        public abstract void Execute();
+    }
+
+    public partial class BatchWrite<T> : BatchWrite, IBatchWrite<T>
+    {
+        /// <inheritdoc/>
+        public override void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for writing/deleting a batch of items in multiple DynamoDB tables,
-    /// using multiple strongly-typed BatchWrite objects
-    /// </summary>
-    public partial class MultiTableBatchWrite
+    public partial interface IMultiTableBatchWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table batch request against all configured batches.
         /// 
         /// If more than 25 put/delete operations are specified, calls of up to 25
         /// put/delete items will be made until all items are processed.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class MultiTableBatchWrite : IMultiTableBatchWrite
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 }

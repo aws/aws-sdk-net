@@ -13,7 +13,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
         {
             var mockContext = new Mock<IDynamoDBContext>();
             mockContext
-                .Setup(x => x.CreateBatchGet<Address>(It.IsAny<DynamoDBOperationConfig>()))
+                .Setup(x => x.CreateBatchGet<Address>())
                 .Returns(CreateBatchGetMock(new List<Address>()
                 {
                     { new Address() { State = "CA", Zip = "12345" }}

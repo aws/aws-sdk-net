@@ -211,16 +211,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region BatchWrite async
 
-        /// <summary>
-        /// Issues a batch-write request with multiple batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchWrite objects
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        public Task ExecuteBatchWriteAsync(BatchWrite[] batches, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task ExecuteBatchWriteAsync(IBatchWrite[] batches, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
             return superBatch.ExecuteAsync(cancellationToken);
