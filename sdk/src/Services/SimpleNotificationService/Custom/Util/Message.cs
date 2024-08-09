@@ -15,8 +15,6 @@ using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using ThirdParty.BouncyCastle.OpenSsl;
-
 
 namespace Amazon.SimpleNotificationService.Util
 {
@@ -286,6 +284,47 @@ namespace Amazon.SimpleNotificationService.Util
             return signatureVersion;
         }
 
+        private byte[] ParsePemContent(string content)
+        {
+            const string beginString = "-----BEGIN ";
+            const string endString = "-----END ";
+
+            var buffer = new StringBuilder();
+            var lines = content.Split('\n');
+
+            if (!lines[0].StartsWith(beginString))
+            {
+                throw new AmazonClientException("PEM file missing begin marker");
+            }
+
+            bool endMarkerFound = false;
+            for (var i = 1; i < lines.Length; i++)
+            {
+                if (lines[i].StartsWith(endString))
+                {
+                    endMarkerFound = true;
+                    break;
+                }
+
+                if (lines[i].IndexOf(':') == -1)
+                {
+                    buffer.Append(lines[i].Trim());
+                }
+            }
+
+            if (!endMarkerFound)
+            {
+                throw new AmazonClientException("PEM file missing end marker");
+            }
+
+            if (buffer.Length % 4 != 0)
+            {
+                throw new IOException("The base64 data appears in PEM file is truncated");
+            }
+
+            return Convert.FromBase64String(buffer.ToString());
+        }
+
         #region Message Verification
         /// <summary>
         /// Verifies the authenticity of a message sent by Amazon SNS. This is done by computing a signature from the fields in the message and then comparing 
@@ -438,10 +477,10 @@ namespace Amazon.SimpleNotificationService.Util
 #endif
                             using (var reader = new StreamReader(response.GetResponseStream()))
                             {
-                                var content = reader.ReadToEnd().Trim();
-                                var pemObject = new PemReader(new StringReader(content)).ReadPemObject();
 
-                                X509Certificate2 certificate = new X509Certificate2(pemObject.Content);
+                                var content = reader.ReadToEnd().Trim();
+
+                                X509Certificate2 certificate = new X509Certificate2(ParsePemContent(content));
                                 certificateCache[this.SigningCertURL] = certificate;
                                 return certificate;
                             }

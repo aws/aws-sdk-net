@@ -18,7 +18,9 @@ namespace SDKDocGenerator
         private static readonly IEnumerable<string> _assembliesToSkip = new HashSet<string> 
         { 
             "AWSSDK.Extensions.CrtIntegration.dll",
-            "AWSSDK.Extensions.NETCore.Setup.dll"
+            "AWSSDK.Extensions.NETCore.Setup.dll",
+            "AWSSDK.Extensions.CloudFront.Signers.dll",
+            "AWSSDK.Extensions.EC2.DecryptPassword.dll"
         };
 
         public GeneratorOptions Options { get; private set; }
