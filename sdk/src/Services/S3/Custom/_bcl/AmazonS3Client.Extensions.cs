@@ -132,13 +132,13 @@ namespace Amazon.S3
 
         void ICoreAmazonS3.MakeObjectPublic(string bucket, string objectKey, bool enable)
         {
-            var request = new PutACLRequest
+            var request = new PutObjectAclRequest
             {
                 BucketName = bucket,
                 Key = objectKey,
-                CannedACL = enable ? S3CannedACL.PublicRead : S3CannedACL.Private
+                ACL = enable ? S3CannedACL.PublicRead : S3CannedACL.Private
             };
-            this.PutACL(request);
+            this.PutObjectAcl(request);
         }
 
         void ICoreAmazonS3.EnsureBucketExists(string bucketName)

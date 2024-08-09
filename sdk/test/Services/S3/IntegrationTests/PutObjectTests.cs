@@ -942,6 +942,95 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void PutBucketPutObjectACLTest()
+        {
+            var aclBucketName = S3TestUtils.CreateBucketWithWait(Client, true);
+            try
+            {
+                Client.PutBucket(new PutBucketRequest
+                {
+                    BucketName = aclBucketName,
+                });
+                var getBucketAclResponse = Client.GetBucketAcl(new GetBucketAclRequest
+                {
+                    BucketName = aclBucketName,
+                });
+                S3TestUtils.WaitForBucket(Client, aclBucketName);
+                var response = Client.PutBucketAcl(new PutBucketAclRequest
+                {
+                    BucketName = aclBucketName,
+                    AccessControlPolicy = new S3AccessControlList
+                    {
+                        Grants = new List<S3Grant>()
+                    {
+                        new S3Grant()
+                        {
+                            Grantee = new S3Grantee()
+                            {
+                                URI = "http://acs.amazonaws.com/groups/s3/LogDelivery",
+                            },
+                            Permission = S3Permission.READ
+                        },
+                    },
+                        Owner = getBucketAclResponse.Owner,
+                    },
+                });
+                var getBucketAclResponse2 = Client.GetBucketAcl(new GetBucketAclRequest
+                {
+                    BucketName = aclBucketName,
+                });
+                getBucketAclResponse2.Grants.ForEach(grant =>
+                {
+                    Assert.IsTrue(grant.Grantee.URI == "http://acs.amazonaws.com/groups/s3/LogDelivery");
+                    Assert.IsTrue(grant.Permission == S3Permission.READ);
+                });
+
+                Client.PutObject(new PutObjectRequest
+                {
+                    Key = "putobjectwithacl",
+                    ContentBody = "randomstuff",
+                    BucketName = aclBucketName,
+                });
+                Client.PutObjectAcl(new PutObjectAclRequest
+                {
+                    BucketName = aclBucketName,
+                    Key = "putobjectwithacl",
+                    AccessControlPolicy = new S3AccessControlList
+                    {
+                        Grants = new List<S3Grant>()
+                    {
+                        new S3Grant()
+                        {
+                            Grantee = new S3Grantee()
+                            {
+                                URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers",
+                            },
+                            Permission = S3Permission.READ
+                        },
+                    },
+                        Owner = getBucketAclResponse.Owner,
+                    },
+                });
+                var getObjectAclResponse = Client.GetObjectAcl(new GetObjectAclRequest
+                {
+                    Key = "putobjectwithacl",
+                    BucketName = aclBucketName,
+                });
+
+                getObjectAclResponse.Grants.ForEach(grant =>
+                {
+                    Assert.IsTrue(grant.Grantee.URI == "http://acs.amazonaws.com/groups/global/AuthenticatedUsers");
+                    Assert.IsTrue(grant.Permission == S3Permission.READ);
+                });
+            }
+            finally 
+            {                 
+                AmazonS3Util.DeleteS3BucketWithObjects(Client, aclBucketName);
+            }
+
+        }
+        [TestMethod]
+        [TestCategory("S3")]
         public void PutObjectWithACL()
         {
             PutObjectRequest request = new PutObjectRequest()
@@ -985,9 +1074,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     {
                         new S3Grant
                         {
-                            Grantee = new S3Grantee { URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers" },
-                            Permission = S3Permission.READ
-                        }
+                            Grantee = new S3Grantee { URI = "http://acs.amazonaws.com/groups/global/AuthenticatedUsers"},
+                            Permission = S3Permission.READ,
+                            
+                        },
+                        
                     },
                     Owner = acl.Owner
                 },

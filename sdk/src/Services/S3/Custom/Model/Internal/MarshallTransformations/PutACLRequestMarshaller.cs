@@ -55,7 +55,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (string.IsNullOrEmpty(putObjectAclRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutACLRequest.BucketName");
-            //Not checking if Key is null or empty because PutAcl allows to put an ACL for both a Bucket or an Object. TODO: deprecate PutAcl and create two separate operations
+            //Not checking if Key is null or empty because PutAcl allows to put an ACL for both a Bucket or an Object.
 
             // if we are putting the acl onto the bucket, the keyname component will collapse to empty string
             request.ResourcePath = "/{Key+}";

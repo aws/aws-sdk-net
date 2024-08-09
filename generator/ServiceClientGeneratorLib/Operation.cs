@@ -66,6 +66,8 @@ namespace ServiceClientGenerator
                 return ShapeName;
             }
         }
+
+
         /// <summary>
         /// Returns the raw shape name without customization
         /// </summary>

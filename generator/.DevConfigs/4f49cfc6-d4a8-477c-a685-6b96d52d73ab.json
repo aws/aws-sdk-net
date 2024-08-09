@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Split GetACL into GetBucketACL and GetObjectACL. Split PutACL into PutObjectACL and PutBucketACL. Obsolete PutACL and GetACL"
+            ]
+        }
+    ]
+}

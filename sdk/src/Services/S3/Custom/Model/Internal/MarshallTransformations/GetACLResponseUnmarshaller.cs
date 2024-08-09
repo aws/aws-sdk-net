@@ -80,7 +80,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             response.AccessControlList.Grants = new List<S3Grant>();
                         }
-
                         response.AccessControlList.Grants.Add(GrantUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }
