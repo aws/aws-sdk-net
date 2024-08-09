@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using Amazon.Runtime.Telemetry;
@@ -106,28 +107,27 @@ namespace Amazon.Runtime.Internal
 
         private static void SetUserAgentHeader(IRequestContext requestContext)
         {
-            var sb = new StringBuilder(requestContext.ClientConfig.UserAgent);
+            var sb = new StringBuilder(256);
+
+            sb.Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(requestContext.ClientConfig.UserAgent));
 
             var clientAppId = requestContext.ClientConfig.ClientAppId;
             if (!string.IsNullOrEmpty(clientAppId))
-                sb.AppendFormat(" app/{0}", clientAppId);
+                sb.Append(" app/").Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(clientAppId));
 
-            var retryMode = requestContext.ClientConfig.RetryMode.ToString().ToLower();
-            sb.AppendFormat(" cfg/retry-mode#{0}", retryMode);
+            sb.Append(" cfg/retry-mode#}").Append(ToUserAgentHeaderString(requestContext.ClientConfig.RetryMode));
 
-            sb.AppendFormat(" md/{0}", requestContext.IsAsync ? "ClientAsync" : "ClientSync");
+            sb.Append(" md/").Append(requestContext.IsAsync ? "ClientAsync" : "ClientSync");
 
-            sb.AppendFormat(" cfg/init-coll#{0}", AWSConfigs.InitializeCollections ? "1" : "0");
+            sb.Append(" cfg/init-coll#").Append(AWSConfigs.InitializeCollections ? '1' : '0');
 
             var userAgentAddition = requestContext.OriginalRequest.UserAgentAddition;
             if (!string.IsNullOrEmpty(userAgentAddition))
             {
-                sb.AppendFormat(" {0}", userAgentAddition);
+                sb.Append(' ').Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(userAgentAddition));
             }
 
             var userAgent = sb.ToString();
-
-            userAgent = InternalSDKUtils.ReplaceInvalidUserAgentCharacters(userAgent);
 
             if (requestContext.ClientConfig.UseAlternateUserAgentHeader)
             {
@@ -136,6 +136,19 @@ namespace Amazon.Runtime.Internal
             else
             {
                 requestContext.Request.Headers[HeaderKeys.UserAgentHeader] = userAgent;
+            }
+        }
+
+        private static string ToUserAgentHeaderString(RequestRetryMode requestRetryMode)
+        {
+            switch (requestRetryMode)
+            {
+                case RequestRetryMode.Standard:
+                    return "standard";
+                case RequestRetryMode.Adaptive:
+                    return "adaptive";
+                default:
+                    return requestRetryMode.ToString().ToLowerInvariant();
             }
         }
     }

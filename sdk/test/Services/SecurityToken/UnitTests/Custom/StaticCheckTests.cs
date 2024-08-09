@@ -83,5 +83,15 @@ namespace AWSSDK.UnitTests
             // the properties are used at least once.
             Assert.IsTrue(profileOptionsProperties.SetEquals(referencedProfileOptionsProperties));
         }
+
+        [TestMethod]
+        public void LookForRequestRetryModeChanges()
+        {
+            var expectedHash = "2FC699DB6A4284C5D53F3B7FA4E64165576FD1F6AE458BC737AE503F06DFBE4C";
+            AssertExtensions.AssertEnumUnchanged(
+                typeof(RequestRetryMode),
+                expectedHash,
+                "The Amazon.Runtime.Internal.Marshaller.ToUserAgentHeaderString method implementation may need to be updated.");
+        }
     }
 }
