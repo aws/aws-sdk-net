@@ -195,13 +195,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Batch Write
 
-        /// <summary>
-        /// Issues a batch-write request with multiple batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchWrite objects
-        /// </param>
-        public void ExecuteBatchWrite(params BatchWrite[] batches)
+        /// <inheritdoc/>
+        public void ExecuteBatchWrite(params IBatchWrite[] batches)
         {
             MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
             superBatch.Execute();

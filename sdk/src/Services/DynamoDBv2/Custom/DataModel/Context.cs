@@ -245,105 +245,48 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region BatchWrite
 
-        /// <summary>
-        /// Creates a strongly-typed BatchWrite object, allowing
-        /// a batch-write operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to write</typeparam>
-        /// <returns>Empty strongly-typed BatchWrite object</returns>
-        public BatchWrite<T> CreateBatchWrite<T>()
+        /// <inheritdoc/>
+        public IBatchWrite<T> CreateBatchWrite<T>()
         {
             return CreateBatchWrite<T>((BatchWriteConfig)null);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed BatchWrite object, allowing
-        /// a batch-write operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to write</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        /// <inheritdoc/>
         [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
-        public BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)
+        public IBatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchWrite<T>(this, config);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed BatchWrite object, allowing
-        /// a batch-write operation against DynamoDB.
-        /// 
-        /// This is intended for use only when the valuesType is not known at compile-time, for example,
-        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
-        /// 
-        /// In scenarios when the valuesType is known at compile-time, the <see cref="CreateBatchWrite{T}()"/>
-        /// method is generally preferred.
-        /// </summary>
-        /// <param name="valuesType">Type of objects to write</param>
-        /// <returns>Empty strongly-typed BatchWrite object</returns>
-        public BatchWrite<object> CreateBatchWrite(Type valuesType)
+        /// <inheritdoc/>
+        public IBatchWrite<object> CreateBatchWrite(Type valuesType)
         {
             return CreateBatchWrite(valuesType, (BatchWriteConfig)null);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed BatchWrite object, allowing
-        /// a batch-write operation against DynamoDB.
-        /// 
-        /// This is intended for use only when the valuesType is not known at compile-time, for example,
-        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
-        /// 
-        /// In scenarios when the valuesType is known at compile-time, the 
-        /// <see cref="CreateBatchWrite{T}(DynamoDBOperationConfig)"/> method is generally preferred.
-        /// </summary>
-        /// <param name="valuesType">Type of objects to write</param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        /// <inheritdoc/>
         [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
-        public BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig)
+        public IBatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new BatchWrite<object>(this, valuesType, config);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed BatchWrite object, allowing
-        /// a batch-write operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to write</typeparam>
-        /// <param name="batchWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
-        /// <returns>Empty strongly-typed BatchWrite object</returns>
-        public BatchWrite<T> CreateBatchWrite<T>(BatchWriteConfig batchWriteConfig)
+        /// <inheritdoc/>
+        public IBatchWrite<T> CreateBatchWrite<T>(BatchWriteConfig batchWriteConfig)
         {
             return new BatchWrite<T>(this, new DynamoDBFlatConfig(batchWriteConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
-        /// <summary>
-        /// Creates a strongly-typed BatchWrite object, allowing
-        /// a batch-write operation against DynamoDB.
-        /// 
-        /// This is intended for use only when the valuesType is not known at compile-time, for example,
-        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
-        /// 
-        /// In scenarios when the valuesType is known at compile-time, the 
-        /// <see cref="CreateBatchWrite{T}(DynamoDBOperationConfig)"/> method is generally preferred.
-        /// </summary>
-        /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
-        /// <param name="batchWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
-        /// <returns>Empty strongly-typed BatchWrite object</returns>
-        public BatchWrite<object> CreateBatchWrite(Type valuesType, BatchWriteConfig batchWriteConfig)
+        /// <inheritdoc/>
+        public IBatchWrite<object> CreateBatchWrite(Type valuesType, BatchWriteConfig batchWriteConfig)
         {
             return new BatchWrite<object>(this, valuesType, new DynamoDBFlatConfig(batchWriteConfig.ToDynamoDBOperationConfig(), Config));
         }
 
-        /// <summary>
-        /// Creates a MultiTableBatchWrite object, composed of multiple
-        /// individual BatchWrite objects.
-        /// </summary>
-        /// <param name="batches">Individual BatchWrite objects</param>
-        /// <returns>Composite MultiTableBatchWrite object</returns>
-        public MultiTableBatchWrite CreateMultiTableBatchWrite(params BatchWrite[] batches)
+        /// <inheritdoc/>
+        public IMultiTableBatchWrite CreateMultiTableBatchWrite(params IBatchWrite[] batches)
         {
             return new MultiTableBatchWrite(batches);
         }
