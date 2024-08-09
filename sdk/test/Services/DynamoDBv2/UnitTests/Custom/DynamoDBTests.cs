@@ -707,5 +707,52 @@ namespace AWSSDK_DotNet.UnitTests
                 }
             }
         }
+
+        /// <summary>
+        /// Verifies that non-public properties are set when converting a Document to a .NET object
+        /// </summary>
+        /// <remarks>
+        /// This test is duplicated for .NET Framework and .NET since we once had a 
+        /// bug where behavior differed. See https://github.com/aws/aws-sdk-net/issues/1848
+        /// </remarks>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void FromDocument_NonPublicProperties()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig { DisableFetchingTableMetadata = true });
+
+            var document = new Document();
+            document["pk"] = "Primary";
+            document["private"] = "Private Value";
+            document["internal"] = "Internal Value";
+            document["protected"] = "Protected Value";
+
+            var model = context.FromDocument<DataModelWithMixedAccessibility>(document.ForceConversion(DynamoDBEntryConversion.V2));
+
+            Assert.AreEqual("Private Value", model.PublicAccessToPrivate);
+            Assert.AreEqual("Internal Value", model.Internal);
+            Assert.AreEqual("Protected Value", model.PublicAccessToProtected);
+        }
+
+        [DynamoDBTable("MockTable")]
+        public class DataModelWithMixedAccessibility
+        {
+            [DynamoDBHashKey("pk")]
+            public string pk { get; set; }
+
+            [DynamoDBProperty("private")]
+            private string _private { get; set; }
+
+            public string PublicAccessToPrivate => _private;
+
+            [DynamoDBProperty("internal")]
+            internal string Internal { get; set; }
+
+            [DynamoDBProperty("protected")]
+            protected string _protected { get; set; }
+
+            public string PublicAccessToProtected => _protected;
+        }
     }
 }
