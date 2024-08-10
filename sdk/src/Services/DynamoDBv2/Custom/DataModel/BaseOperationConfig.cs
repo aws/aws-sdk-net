@@ -42,30 +42,6 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableNamePrefix { get; set; }
 
         /// <summary>
-        /// The object persistence model API relies on an internal cache of the DynamoDB table's metadata to 
-        /// construct and validate  requests. This controls how the cache key is derived, which influences 
-        /// when the SDK will call DescribeTable internally to populate the cache.
-        /// </summary>
-        /// <remarks>
-        /// For <see cref="MetadataCachingMode.Default"/> the cache key will be a combination of the table name, credentials, region and service URL. 
-        /// For <see cref="MetadataCachingMode.TableNameOnly"/> the cache key will only consist of the table name. This reduces cache misses in contexts
-        /// where you are accessing tables with identical structure but using different credentials or endpoints (such as a multi-tenant application).
-        /// </remarks>
-        public MetadataCachingMode? MetadataCachingMode { get; set; }
-
-        /// <summary>
-        /// If true disables fetching table metadata automatically from DynamoDB. Table metadata must be 
-        /// defined by <see cref="DynamoDBAttribute"/> attributes and/or in <see cref = "AWSConfigsDynamoDB"/>.
-        /// </summary>
-        /// <remarks>
-        /// Setting this to true can avoid latency and thread starvation due to blocking asynchronous 
-        /// DescribeTable calls that are used to populate the SDK's cache of table metadata. 
-        /// It requires that the table's index schema be accurately described via the above methods, 
-        /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change.
-        /// </remarks>
-        public bool? DisableFetchingTableMetadata { get; set; }
-
-        /// <summary>
         /// Specification which controls the conversion between .NET and DynamoDB types.
         /// </summary>
         public DynamoDBEntryConversion Conversion { get; set; }
@@ -91,8 +67,6 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 OverrideTableName = OverrideTableName,
                 TableNamePrefix = TableNamePrefix,
-                MetadataCachingMode = MetadataCachingMode,
-                DisableFetchingTableMetadata = DisableFetchingTableMetadata,
                 Conversion = Conversion,
                 IsEmptyStringValueEnabled = IsEmptyStringValueEnabled
             };
