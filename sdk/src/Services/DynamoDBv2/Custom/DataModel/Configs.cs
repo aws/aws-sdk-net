@@ -192,18 +192,6 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableNamePrefix { get; set; }
 
         /// <summary>
-        /// The object persistence model API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
-        /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.
-        /// </summary>
-        /// <remarks>
-        /// For <see cref="MetadataCachingMode.Default"/> the cache key will be a combination of the table name, credentials, region and service URL. 
-        /// For <see cref="MetadataCachingMode.TableNameOnly"/> the cache key will only consist of the table name. This reduces cache misses in contexts
-        /// where you are accessing tables with identical structure but using different credentials or endpoints (such as a multi-tenant application).
-        /// </remarks>
-        public MetadataCachingMode? MetadataCachingMode { get; set; }
-
-        /// <summary>
         /// Property that directs  <see cref="DynamoDBContext"/> to ignore null values
         /// on attributes during a Save operation.
         /// If the property is false (or not set), null values will be
@@ -224,18 +212,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// .NET and DynamoDB types happens.
         /// </summary>
         public DynamoDBEntryConversion Conversion { get; set; }
-
-        /// <summary>
-        /// If true disables fetching table metadata automatically from DynamoDB. Table metadata must be 
-        /// defined by <see cref="DynamoDBAttribute"/> attributes and/or in <see cref = "AWSConfigsDynamoDB"/>.
-        /// </summary>
-        /// <remarks>
-        /// Setting this to true can avoid latency and thread starvation due to blocking asynchronous 
-        /// IAmazonDynamoDB.DescribeTable(string) calls that are used to populate the SDK's cache of 
-        /// table metadata. It requires that the table's index schema be accurately described via the above methods, 
-        /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change.
-        /// </remarks>
-        public bool? DisableFetchingTableMetadata { get; set; }
 
         /// <summary>
         /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
@@ -425,8 +401,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexName = null,
             ConditionalOperator = ConditionalOperatorValues.And,
             Conversion = null,
-            IsEmptyStringValueEnabled = null,
-            MetadataCachingMode = null
+            IsEmptyStringValueEnabled = null
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
@@ -450,20 +425,22 @@ namespace Amazon.DynamoDBv2.DataModel
             bool consistentRead = operationConfig.ConsistentRead ?? contextConfig.ConsistentRead ?? false;
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
-            bool disableFetchingTableMetadata = operationConfig.DisableFetchingTableMetadata ?? contextConfig.DisableFetchingTableMetadata ?? false;
             bool retrieveDateTimeInUtc = operationConfig.RetrieveDateTimeInUtc ?? contextConfig.RetrieveDateTimeInUtc ?? false;
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
-            MetadataCachingMode metadataCachingMode = operationConfig.MetadataCachingMode ?? contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
-
             string tableNamePrefix =
                 !string.IsNullOrEmpty(operationConfig.TableNamePrefix) ? operationConfig.TableNamePrefix :
                 !string.IsNullOrEmpty(contextConfig.TableNamePrefix) ? contextConfig.TableNamePrefix : string.Empty;
 
-            // These properties can only be set at the operation level, most are related to querying or scanning.
+            // These properties can only be set at the operation level
+            bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
+            MetadataCachingMode metadataCachingMode = contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
+
             // We don't support overriding the table name at the context level, since a context object can be used with multiple tables.
             string overrideTableName =
                 !string.IsNullOrEmpty(operationConfig.OverrideTableName) ? operationConfig.OverrideTableName : string.Empty;
+
+            // The rest are related to querying or scanning, so only operation level
             bool backwardQuery = operationConfig.BackwardQuery ?? false;
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;

@@ -21,7 +21,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(6, typeof(BaseOperationConfig).GetProperties().Length);
+            Assert.AreEqual(4, typeof(BaseOperationConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(8, typeof(BatchGetConfig).GetProperties().Length);
+            Assert.AreEqual(6, typeof(BatchGetConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(8, typeof(BatchWriteConfig).GetProperties().Length);
+            Assert.AreEqual(6, typeof(BatchWriteConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -95,7 +95,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(7, typeof(TransactGetConfig).GetProperties().Length);
+            Assert.AreEqual(5, typeof(TransactGetConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -128,7 +128,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(7, typeof(TransactWriteConfig).GetProperties().Length);
+            Assert.AreEqual(5, typeof(TransactWriteConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -161,7 +161,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(12, typeof(QueryConfig).GetProperties().Length);
+            Assert.AreEqual(10, typeof(QueryConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -193,7 +193,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(7, typeof(FromQueryConfig).GetProperties().Length);
+            Assert.AreEqual(5, typeof(FromQueryConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -230,7 +230,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(11, typeof(ScanConfig).GetProperties().Length);
+            Assert.AreEqual(9, typeof(ScanConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -262,7 +262,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(7, typeof(FromScanConfig).GetProperties().Length);
+            Assert.AreEqual(5, typeof(FromScanConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -294,7 +294,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(7, typeof(DeleteConfig).GetProperties().Length);
+            Assert.AreEqual(5, typeof(DeleteConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -325,7 +325,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(8, typeof(SaveConfig).GetProperties().Length);
+            Assert.AreEqual(6, typeof(SaveConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -356,7 +356,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(8, typeof(LoadConfig).GetProperties().Length);
+            Assert.AreEqual(6, typeof(LoadConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -387,7 +387,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(7, typeof(ToDocumentConfig).GetProperties().Length);
+            Assert.AreEqual(5, typeof(ToDocumentConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -395,7 +395,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(7, typeof(FromDocumentConfig).GetProperties().Length);
+            Assert.AreEqual(5, typeof(FromDocumentConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -403,7 +403,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(6, typeof(GetTargetTableConfig).GetProperties().Length);
+            Assert.AreEqual(4, typeof(GetTargetTableConfig).GetProperties().Length);
         }
 
         [DynamoDBTable("TableName")]
