@@ -6,6 +6,8 @@ using System.Reflection;
 
 using Xunit;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon;
 
 
 namespace UnitTests
@@ -85,5 +87,35 @@ namespace UnitTests
                 "HttpRequestMessageFactory.CreateConfigUniqueString.  Once evaluated add the new properties to known properties collection. " +
                 $"({string.Join(",", unknownProperties)})");
         }
+
+#if NET8_0_OR_GREATER
+        [Fact]
+        [Trait("Category", "Core")]
+        public void DisableDangerousDisablePathAndQueryCanonicalizationTest()
+        {
+            AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = true;
+            try
+            {
+                var internalRequest = new DefaultRequest(new Amazon.S3.Model.GetObjectRequest
+                {
+                    BucketName = "TheBucket",
+                    Key = "foo/../bar.txt"
+                }, "S3");
+
+                internalRequest.Endpoint = new Uri("https://s3.us-east-1.amazonaws.com/");
+                internalRequest.ResourcePath = "foo/../bar.txt";
+
+                var uri = AmazonServiceClient.ComposeUrl(internalRequest);
+
+                // The GetComponents will throw an exception if the Uri was created with 
+                // DangerousDisablePathAndQueryCanonicalization set to true.
+                Assert.Equal("bar.txt", uri.GetComponents(UriComponents.Path, UriFormat.Unescaped));
+            }
+            finally
+            {
+                AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization = false;
+            }
+        }
+#endif
     }
 }

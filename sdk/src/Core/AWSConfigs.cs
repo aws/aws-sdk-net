@@ -97,6 +97,10 @@ namespace Amazon
         private static bool configPresent = true;
 #pragma warning restore 414
 
+#if NET8_0_OR_GREATER
+        internal static bool _disableDangerousDisablePathAndQueryCanonicalization = GetConfigBool(DisableDangerousDisablePathAndQueryCanonicalizationKey, defaultValue: false);
+#endif
+
         // New config section
         private static RootConfig _rootConfig = new RootConfig();
         #endregion
@@ -427,6 +431,32 @@ namespace Amazon
             set { _rootConfig.InitializeCollections = value; }
         }
         #endregion
+
+        #region Disable DangerousDisablePathAndQueryCanonicalization
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Key for the DisableDangerousDisablePathAndQueryCanonicalization property.
+        /// <seealso cref="Amazon.AWSConfigs.InitializeCollections"/>
+        /// </summary>
+        public const string DisableDangerousDisablePathAndQueryCanonicalizationKey = "AWSDisableDangerousDisablePathAndQueryCanonicalization";
+
+        /// <summary>
+        /// Starting with .NET 8 the AWS SDK for .NET uses the DangerousDisablePathAndQueryCanonicalization setting when creating Uri instances.
+        /// This prevents the .NET Uri class from altering the resource path of the URI for paths like S3 object keys. For 
+        /// example if an S3 object key was "foo/../bar.txt" without enabling DangerousDisablePathAndQueryCanonicalization the
+        /// .NET Uri class would change the resource path to "bar.txt".
+        /// 
+        /// Using Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory for mock testing throws an exception when the 
+        /// DangerousDisablePathAndQueryCanonicalization is enabled. To continue using WebApplicationFactory with the SDK
+        /// this property can be set to true to prevent the SDK from using the DangerousDisablePathAndQueryCanonicalization flag.
+        /// </summary>
+        public static bool DisableDangerousDisablePathAndQueryCanonicalization
+        {
+            get { return _rootConfig.DisableDangerousDisablePathAndQueryCanonicalization; }
+            set { _rootConfig.DisableDangerousDisablePathAndQueryCanonicalization = value; }
+        }
+#endif
+#endregion
 
         #region AWS Config Sections
 
