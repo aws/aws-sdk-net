@@ -69,6 +69,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoMLComputeConfig())
+                {
+                    context.Writer.WritePropertyName("AutoMLComputeConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoMLComputeConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoMLComputeConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAutoMLJobInputDataConfig())
                 {
                     context.Writer.WritePropertyName("AutoMLJobInputDataConfig");

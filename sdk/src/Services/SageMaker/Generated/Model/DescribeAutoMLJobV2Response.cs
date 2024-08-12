@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeAutoMLJobV2Response : AmazonWebServiceResponse
     {
+        private AutoMLComputeConfig _autoMLComputeConfig;
         private string _autoMLJobArn;
         private AutoMLJobArtifacts _autoMLJobArtifacts;
         private List<AutoMLJobChannel> _autoMLJobInputDataConfig = AWSConfigs.InitializeCollections ? new List<AutoMLJobChannel>() : null;
@@ -56,6 +57,24 @@ namespace Amazon.SageMaker.Model
         private AutoMLResolvedAttributes _resolvedAttributes;
         private string _roleArn;
         private AutoMLSecurityConfig _securityConfig;
+
+        /// <summary>
+        /// Gets and sets the property AutoMLComputeConfig. 
+        /// <para>
+        /// The compute configuration used for the AutoML job V2.
+        /// </para>
+        /// </summary>
+        public AutoMLComputeConfig AutoMLComputeConfig
+        {
+            get { return this._autoMLComputeConfig; }
+            set { this._autoMLComputeConfig = value; }
+        }
+
+        // Check to see if AutoMLComputeConfig property is set
+        internal bool IsSetAutoMLComputeConfig()
+        {
+            return this._autoMLComputeConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoMLJobArn. 

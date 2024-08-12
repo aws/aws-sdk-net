@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3OutputPath. 
         /// <para>
-        /// The Amazon S3 output path. Must be 128 characters or less.
+        /// The Amazon S3 output path. Must be 512 characters or less.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

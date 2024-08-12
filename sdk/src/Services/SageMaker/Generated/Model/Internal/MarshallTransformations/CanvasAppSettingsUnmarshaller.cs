@@ -72,6 +72,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DirectDeploySettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EmrServerlessSettings", targetDepth))
+                {
+                    var unmarshaller = EmrServerlessSettingsUnmarshaller.Instance;
+                    unmarshalledObject.EmrServerlessSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GenerativeAiSettings", targetDepth))
                 {
                     var unmarshaller = GenerativeAiSettingsUnmarshaller.Instance;
