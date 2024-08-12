@@ -239,13 +239,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region TransactWrite async
 
-        /// <summary>
-        /// Issues a transactional write request with multiple TransactWrite objects.
-        /// </summary>
-        /// <param name="transactionParts">Configured TransactWrite objects.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteTransactWriteAsync(TransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task ExecuteTransactWriteAsync(ITransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
             return transaction.ExecuteAsync(cancellationToken);

@@ -467,7 +467,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="transactionParts">Configured TransactWrite objects.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        Task ExecuteTransactWriteAsync(TransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken));
+        Task ExecuteTransactWriteAsync(ITransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
 

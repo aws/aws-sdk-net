@@ -206,11 +206,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Transact Write
 
-        /// <summary>
-        /// Issues a transactional write request with multiple TransactWrite objects.
-        /// </summary>
-        /// <param name="transactionParts">Configured TransactWrite objects.</param>
-        public void ExecuteTransactWrite(params TransactWrite[] transactionParts)
+        /// <inheritdoc/>
+        public void ExecuteTransactWrite(params ITransactWrite[] transactionParts)
         {
             MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
             transaction.Execute();
