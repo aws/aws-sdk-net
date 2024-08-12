@@ -153,12 +153,21 @@ namespace Amazon.ComputeOptimizer.Model
         /// Web Services resource are analyzed. When this preference isn't specified, we use the
         /// default value <c>DAYS_14</c>. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// You can only set this preference for the Amazon EC2 instance and Auto Scaling group
-        /// resource types.
+        /// resource types. 
         /// </para>
-        ///  </note>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Amazon EC2 instance lookback preferences can be set at the organization, account,
+        /// and resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Auto Scaling group lookback preferences can only be set at the resource level.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public LookBackPeriodPreference LookBackPeriod
         {
