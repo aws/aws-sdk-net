@@ -34,13 +34,11 @@ namespace Amazon.GroundStation.Model
     /// 
     ///  
     /// <para>
-    ///  Position, velocity, and acceleration units must be represented in <c>km</c>, <c>km/s</c>,
-    /// and <c>km/s**2</c>, respectively, in ephemeris data lines. Covariance matrix line
-    /// units must be represented in <c>km**2</c> if computed from two positions, <c>km**2/s</c>
-    /// if computed from one position and one velocity, and <c>km**2/s**2</c> if computed
-    /// from two velocities. Consult section 7.7.2 of The Consultative Committee for Space
-    /// Data Systems (CCSDS) <a href="https://public.ccsds.org/Pubs/502x0b3e1.pdf">Recommended
-    /// Standard for Orbit Data Messages</a> for more information. 
+    ///  AWS Ground Station processes OEM Customer Provided Ephemerides according to the <a
+    /// href="https://public.ccsds.org/Pubs/502x0b3e1.pdf">CCSDS standard</a> with some extra
+    /// restrictions. OEM files should be in KVN format. For more detail about the OEM format
+    /// that AWS Ground Station supports, see <a href="https://docs.aws.amazon.com/ground-station/latest/ug/providing-custom-ephemeris-data.html#oem-ephemeris-format">OEM
+    /// ephemeris format</a> in the AWS Ground Station user guide. 
     /// </para>
     /// </summary>
     public partial class OEMEphemeris
