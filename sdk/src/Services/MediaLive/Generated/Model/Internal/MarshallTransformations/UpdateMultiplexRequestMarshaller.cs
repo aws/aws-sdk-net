@@ -87,6 +87,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPacketIdentifiersMapping())
+                {
+                    context.Writer.WritePropertyName("packetIdentifiersMapping");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPacketIdentifiersMappingKvp in publicRequest.PacketIdentifiersMapping)
+                    {
+                        context.Writer.WritePropertyName(publicRequestPacketIdentifiersMappingKvp.Key);
+                        var publicRequestPacketIdentifiersMappingValue = publicRequestPacketIdentifiersMappingKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MultiplexProgramPacketIdentifiersMapMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPacketIdentifiersMappingValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
