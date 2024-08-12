@@ -1,3 +1,19 @@
+### 3.7.863.0 (2024-08-12 18:20 UTC)
+* ComputeOptimizer (3.7.400.5)
+	* Doc only update for Compute Optimizer that fixes several customer-reported issues relating to ECS finding classifications
+* ConfigService (3.7.401.0)
+	* Documentation update for the OrganizationConfigRuleName regex pattern.
+* EC2 (3.7.403.0)
+	* This release adds new capabilities to manage On-Demand Capacity Reservations including the ability to split your reservation, move capacity between reservations, and modify the instance eligibility of your reservation.
+* EKS (3.7.402.0)
+	* Added support for new AL2023 GPU AMIs to the supported AMITypes.
+* GroundStation (3.7.400.5)
+	* Updating documentation for OEMEphemeris to link to AWS Ground Station User Guide
+* MediaLive (3.7.401.0)
+	* AWS Elemental MediaLive now supports now supports editing the PID values for a Multiplex.
+* SageMaker (3.7.402.0)
+	* Releasing large data support as part of CreateAutoMLJobV2 in SageMaker Autopilot and CreateDomain API for SageMaker Canvas.
+
 ### 3.7.862.0 (2024-08-09 18:42 UTC)
 * CognitoIdentityProvider (3.7.402.1)
 	* Fixed a description of AdvancedSecurityAdditionalFlows in Amazon Cognito user pool configuration.
