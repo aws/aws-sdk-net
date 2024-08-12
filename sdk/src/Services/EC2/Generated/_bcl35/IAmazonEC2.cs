@@ -2950,6 +2950,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateCapacityReservationBySplitting
+
+
+        /// <summary>
+        /// Create a new Capacity Reservation by splitting the available capacity of the source
+        /// Capacity Reservation. The new Capacity Reservation will have the same attributes as
+        /// the source Capacity Reservation except for tags. The source Capacity Reservation must
+        /// be <c>active</c> and owned by your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationBySplitting service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationBySplitting service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
+        CreateCapacityReservationBySplittingResponse CreateCapacityReservationBySplitting(CreateCapacityReservationBySplittingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCapacityReservationBySplitting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationBySplitting operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCapacityReservationBySplitting
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
+        IAsyncResult BeginCreateCapacityReservationBySplitting(CreateCapacityReservationBySplittingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCapacityReservationBySplitting operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCapacityReservationBySplitting.</param>
+        /// 
+        /// <returns>Returns a  CreateCapacityReservationBySplittingResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
+        CreateCapacityReservationBySplittingResponse EndCreateCapacityReservationBySplitting(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCapacityReservationFleet
 
 
@@ -11058,7 +11101,7 @@ namespace Amazon.EC2
         /// During those seven days, the source account can view the pending transfer by using
         /// this action. After seven days, the transfer expires and ownership of the Elastic IP
         /// address returns to the source account. Accepted transfers are visible to the source
-        /// account for three days after the transfers have been accepted.
+        /// account for 14 days after the transfers have been accepted.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddressTransfers service method.</param>
@@ -24316,11 +24359,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies a Capacity Reservation's capacity and the conditions under which it is to
-        /// be released. You cannot change a Capacity Reservation's instance type, EBS optimization,
-        /// instance store settings, platform, Availability Zone, or instance eligibility. If
-        /// you need to modify any of these attributes, we recommend that you cancel the Capacity
-        /// Reservation, and then create a new one with the required attributes.
+        /// Modifies a Capacity Reservation's capacity, instance eligibility, and the conditions
+        /// under which it is to be released. You can't modify a Capacity Reservation's instance
+        /// type, EBS optimization, platform, instance store settings, Availability Zone, or tenancy.
+        /// If you need to modify any of these attributes, we recommend that you cancel the Capacity
+        /// Reservation, and then create a new one with the required attributes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
+        /// an active Capacity Reservation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
         /// 
@@ -27575,6 +27620,75 @@ namespace Amazon.EC2
         /// <returns>Returns a  MoveByoipCidrToIpamResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">REST API Reference for MoveByoipCidrToIpam Operation</seealso>
         MoveByoipCidrToIpamResponse EndMoveByoipCidrToIpam(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  MoveCapacityReservationInstances
+
+
+        /// <summary>
+        /// Move available capacity from a source Capacity Reservation to a destination Capacity
+        /// Reservation. The source Capacity Reservation and the destination Capacity Reservation
+        /// must be <c>active</c>, owned by your Amazon Web Services account, and share the following:
+        /// 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Instance type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Platform
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Availability Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Placement group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Capacity Reservation end time - <c>At specific time</c> or <c>Manually</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveCapacityReservationInstances service method.</param>
+        /// 
+        /// <returns>The response from the MoveCapacityReservationInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
+        MoveCapacityReservationInstancesResponse MoveCapacityReservationInstances(MoveCapacityReservationInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the MoveCapacityReservationInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the MoveCapacityReservationInstances operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMoveCapacityReservationInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
+        IAsyncResult BeginMoveCapacityReservationInstances(MoveCapacityReservationInstancesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  MoveCapacityReservationInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginMoveCapacityReservationInstances.</param>
+        /// 
+        /// <returns>Returns a  MoveCapacityReservationInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
+        MoveCapacityReservationInstancesResponse EndMoveCapacityReservationInstances(IAsyncResult asyncResult);
 
         #endregion
         

@@ -3910,6 +3910,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateCapacityReservationBySplitting
+
+
+        /// <summary>
+        /// Create a new Capacity Reservation by splitting the available capacity of the source
+        /// Capacity Reservation. The new Capacity Reservation will have the same attributes as
+        /// the source Capacity Reservation except for tags. The source Capacity Reservation must
+        /// be <c>active</c> and owned by your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationBySplitting service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationBySplitting service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
+        public virtual CreateCapacityReservationBySplittingResponse CreateCapacityReservationBySplitting(CreateCapacityReservationBySplittingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationBySplittingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapacityReservationBySplittingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a new Capacity Reservation by splitting the available capacity of the source
+        /// Capacity Reservation. The new Capacity Reservation will have the same attributes as
+        /// the source Capacity Reservation except for tags. The source Capacity Reservation must
+        /// be <c>active</c> and owned by your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationBySplitting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationBySplitting service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
+        public virtual Task<CreateCapacityReservationBySplittingResponse> CreateCapacityReservationBySplittingAsync(CreateCapacityReservationBySplittingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationBySplittingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCapacityReservationBySplittingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCapacityReservationFleet
 
 
@@ -13599,7 +13646,7 @@ namespace Amazon.EC2
         /// During those seven days, the source account can view the pending transfer by using
         /// this action. After seven days, the transfer expires and ownership of the Elastic IP
         /// address returns to the source account. Accepted transfers are visible to the source
-        /// account for three days after the transfers have been accepted.
+        /// account for 14 days after the transfers have been accepted.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddressTransfers service method.</param>
@@ -13628,7 +13675,7 @@ namespace Amazon.EC2
         /// During those seven days, the source account can view the pending transfer by using
         /// this action. After seven days, the transfer expires and ownership of the Elastic IP
         /// address returns to the source account. Accepted transfers are visible to the source
-        /// account for three days after the transfers have been accepted.
+        /// account for 14 days after the transfers have been accepted.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddressTransfers service method.</param>
@@ -30004,11 +30051,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies a Capacity Reservation's capacity and the conditions under which it is to
-        /// be released. You cannot change a Capacity Reservation's instance type, EBS optimization,
-        /// instance store settings, platform, Availability Zone, or instance eligibility. If
-        /// you need to modify any of these attributes, we recommend that you cancel the Capacity
-        /// Reservation, and then create a new one with the required attributes.
+        /// Modifies a Capacity Reservation's capacity, instance eligibility, and the conditions
+        /// under which it is to be released. You can't modify a Capacity Reservation's instance
+        /// type, EBS optimization, platform, instance store settings, Availability Zone, or tenancy.
+        /// If you need to modify any of these attributes, we recommend that you cancel the Capacity
+        /// Reservation, and then create a new one with the required attributes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
+        /// an active Capacity Reservation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
         /// 
@@ -30025,11 +30074,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies a Capacity Reservation's capacity and the conditions under which it is to
-        /// be released. You cannot change a Capacity Reservation's instance type, EBS optimization,
-        /// instance store settings, platform, Availability Zone, or instance eligibility. If
-        /// you need to modify any of these attributes, we recommend that you cancel the Capacity
-        /// Reservation, and then create a new one with the required attributes.
+        /// Modifies a Capacity Reservation's capacity, instance eligibility, and the conditions
+        /// under which it is to be released. You can't modify a Capacity Reservation's instance
+        /// type, EBS optimization, platform, instance store settings, Availability Zone, or tenancy.
+        /// If you need to modify any of these attributes, we recommend that you cancel the Capacity
+        /// Reservation, and then create a new one with the required attributes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
+        /// an active Capacity Reservation</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
         /// <param name="cancellationToken">
@@ -33954,6 +34005,105 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = MoveByoipCidrToIpamResponseUnmarshaller.Instance;
             
             return InvokeAsync<MoveByoipCidrToIpamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MoveCapacityReservationInstances
+
+
+        /// <summary>
+        /// Move available capacity from a source Capacity Reservation to a destination Capacity
+        /// Reservation. The source Capacity Reservation and the destination Capacity Reservation
+        /// must be <c>active</c>, owned by your Amazon Web Services account, and share the following:
+        /// 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Instance type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Platform
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Availability Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Placement group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Capacity Reservation end time - <c>At specific time</c> or <c>Manually</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveCapacityReservationInstances service method.</param>
+        /// 
+        /// <returns>The response from the MoveCapacityReservationInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
+        public virtual MoveCapacityReservationInstancesResponse MoveCapacityReservationInstances(MoveCapacityReservationInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveCapacityReservationInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveCapacityReservationInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<MoveCapacityReservationInstancesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Move available capacity from a source Capacity Reservation to a destination Capacity
+        /// Reservation. The source Capacity Reservation and the destination Capacity Reservation
+        /// must be <c>active</c>, owned by your Amazon Web Services account, and share the following:
+        /// 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Instance type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Platform
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Availability Zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tenancy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Placement group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Capacity Reservation end time - <c>At specific time</c> or <c>Manually</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveCapacityReservationInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MoveCapacityReservationInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
+        public virtual Task<MoveCapacityReservationInstancesResponse> MoveCapacityReservationInstancesAsync(MoveCapacityReservationInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveCapacityReservationInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveCapacityReservationInstancesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<MoveCapacityReservationInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion

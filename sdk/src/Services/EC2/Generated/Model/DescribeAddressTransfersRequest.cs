@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
     /// During those seven days, the source account can view the pending transfer by using
     /// this action. After seven days, the transfer expires and ownership of the Elastic IP
     /// address returns to the source account. Accepted transfers are visible to the source
-    /// account for three days after the transfers have been accepted.
+    /// account for 14 days after the transfers have been accepted.
     /// </para>
     /// </summary>
     public partial class DescribeAddressTransfersRequest : AmazonEC2Request

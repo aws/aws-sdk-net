@@ -192,8 +192,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>requester-managed</c> - Indicates whether the network interface is being managed
-        /// by an Amazon Web Service (for example, Amazon Web Services Management Console, Auto
-        /// Scaling, and so on).
+        /// by an Amazon Web Services service (for example, Amazon Web Services Management Console,
+        /// Auto Scaling, and so on).
         /// </para>
         ///  </li> <li> 
         /// <para>

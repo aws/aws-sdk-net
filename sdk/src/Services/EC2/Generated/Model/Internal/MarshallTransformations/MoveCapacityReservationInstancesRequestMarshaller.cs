@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ModifyCapacityReservation Request Marshaller
+    /// MoveCapacityReservationInstances Request Marshaller
     /// </summary>       
-    public class ModifyCapacityReservationRequestMarshaller : IMarshaller<IRequest, ModifyCapacityReservationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class MoveCapacityReservationInstancesRequestMarshaller : IMarshaller<IRequest, MoveCapacityReservationInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ModifyCapacityReservationRequest)input);
+            return this.Marshall((MoveCapacityReservationInstancesRequest)input);
         }
     
         /// <summary>
@@ -51,48 +51,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ModifyCapacityReservationRequest publicRequest)
+        public IRequest Marshall(MoveCapacityReservationInstancesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "ModifyCapacityReservation");
+            request.Parameters.Add("Action", "MoveCapacityReservationInstances");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAccept())
+                if(publicRequest.IsSetClientToken())
                 {
-                    request.Parameters.Add("Accept", StringUtils.FromBool(publicRequest.Accept));
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
-                if(publicRequest.IsSetAdditionalInfo())
+                else if(!(publicRequest.IsSetClientToken()))
                 {
-                    request.Parameters.Add("AdditionalInfo", StringUtils.FromString(publicRequest.AdditionalInfo));
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
-                if(publicRequest.IsSetCapacityReservationId())
+                if(publicRequest.IsSetDestinationCapacityReservationId())
                 {
-                    request.Parameters.Add("CapacityReservationId", StringUtils.FromString(publicRequest.CapacityReservationId));
-                }
-                if(publicRequest.IsSetEndDate())
-                {
-                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
-                }
-                if(publicRequest.IsSetEndDateType())
-                {
-                    request.Parameters.Add("EndDateType", StringUtils.FromString(publicRequest.EndDateType));
+                    request.Parameters.Add("DestinationCapacityReservationId", StringUtils.FromString(publicRequest.DestinationCapacityReservationId));
                 }
                 if(publicRequest.IsSetInstanceCount())
                 {
                     request.Parameters.Add("InstanceCount", StringUtils.FromInt(publicRequest.InstanceCount));
                 }
-                if(publicRequest.IsSetInstanceMatchCriteria())
+                if(publicRequest.IsSetSourceCapacityReservationId())
                 {
-                    request.Parameters.Add("InstanceMatchCriteria", StringUtils.FromString(publicRequest.InstanceMatchCriteria));
+                    request.Parameters.Add("SourceCapacityReservationId", StringUtils.FromString(publicRequest.SourceCapacityReservationId));
                 }
             }
             return request;
         }
-                    private static ModifyCapacityReservationRequestMarshaller _instance = new ModifyCapacityReservationRequestMarshaller();        
+                    private static MoveCapacityReservationInstancesRequestMarshaller _instance = new MoveCapacityReservationInstancesRequestMarshaller();        
 
-        internal static ModifyCapacityReservationRequestMarshaller GetInstance()
+        internal static MoveCapacityReservationInstancesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -100,7 +92,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyCapacityReservationRequestMarshaller Instance
+        public static MoveCapacityReservationInstancesRequestMarshaller Instance
         {
             get
             {

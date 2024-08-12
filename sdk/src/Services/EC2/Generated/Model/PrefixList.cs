@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Cidrs. 
         /// <para>
-        /// The IP address range of the Amazon Web Service.
+        /// The IP address range of the Amazon Web Services service.
         /// </para>
         /// </summary>
         public List<string> Cidrs
