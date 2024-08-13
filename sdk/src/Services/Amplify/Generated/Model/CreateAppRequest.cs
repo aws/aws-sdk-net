@@ -40,6 +40,7 @@ namespace Amazon.Amplify.Model
         private List<string> _autoBranchCreationPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _basicAuthCredentials;
         private string _buildSpec;
+        private CacheConfig _cacheConfig;
         private string _customHeaders;
         private List<CustomRule> _customRules = AWSConfigs.InitializeCollections ? new List<CustomRule>() : null;
         private string _description;
@@ -167,6 +168,24 @@ namespace Amazon.Amplify.Model
         internal bool IsSetBuildSpec()
         {
             return this._buildSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheConfig. 
+        /// <para>
+        /// The cache configuration for the Amplify app.
+        /// </para>
+        /// </summary>
+        public CacheConfig CacheConfig
+        {
+            get { return this._cacheConfig; }
+            set { this._cacheConfig = value; }
+        }
+
+        // Check to see if CacheConfig property is set
+        internal bool IsSetCacheConfig()
+        {
+            return this._cacheConfig != null;
         }
 
         /// <summary>
