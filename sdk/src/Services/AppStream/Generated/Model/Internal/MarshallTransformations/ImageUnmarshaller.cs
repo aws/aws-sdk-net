@@ -108,6 +108,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DynamicAppProvidersEnabled", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DynamicAppProvidersEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImageBuilderName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -130,6 +136,18 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ImagePermissionsUnmarshaller.Instance;
                     unmarshalledObject.ImagePermissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImageSharedWithOthers", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageSharedWithOthers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestAppstreamAgentVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LatestAppstreamAgentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -160,6 +178,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ImageStateChangeReasonUnmarshaller.Instance;
                     unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupportedInstanceFamilies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedInstanceFamilies = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Visibility", targetDepth))

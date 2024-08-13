@@ -1141,6 +1141,66 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateThemeForStack
+
+
+        /// <summary>
+        /// Creates custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThemeForStack service method.</param>
+        /// 
+        /// <returns>The response from the CreateThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateThemeForStack">REST API Reference for CreateThemeForStack Operation</seealso>
+        CreateThemeForStackResponse CreateThemeForStack(CreateThemeForStackRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateThemeForStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateThemeForStack operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThemeForStack
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateThemeForStack">REST API Reference for CreateThemeForStack Operation</seealso>
+        IAsyncResult BeginCreateThemeForStack(CreateThemeForStackRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateThemeForStack operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateThemeForStack.</param>
+        /// 
+        /// <returns>Returns a  CreateThemeForStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateThemeForStack">REST API Reference for CreateThemeForStack Operation</seealso>
+        CreateThemeForStackResponse EndCreateThemeForStack(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateUpdatedImage
 
 
@@ -1824,6 +1884,56 @@ namespace Amazon.AppStream
         /// <returns>Returns a  DeleteStackResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteThemeForStack
+
+
+        /// <summary>
+        /// Deletes custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThemeForStack service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteThemeForStack">REST API Reference for DeleteThemeForStack Operation</seealso>
+        DeleteThemeForStackResponse DeleteThemeForStack(DeleteThemeForStackRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteThemeForStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThemeForStack operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThemeForStack
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteThemeForStack">REST API Reference for DeleteThemeForStack Operation</seealso>
+        IAsyncResult BeginDeleteThemeForStack(DeleteThemeForStackRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteThemeForStack operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThemeForStack.</param>
+        /// 
+        /// <returns>Returns a  DeleteThemeForStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteThemeForStack">REST API Reference for DeleteThemeForStack Operation</seealso>
+        DeleteThemeForStackResponse EndDeleteThemeForStack(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2516,6 +2626,53 @@ namespace Amazon.AppStream
         /// <returns>Returns a  DescribeStacksResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeThemeForStack
+
+
+        /// <summary>
+        /// Retrieves a list that describes the theme for a specified stack. A theme is custom
+        /// branding that customizes the appearance of the streaming application catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemeForStack service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeThemeForStack">REST API Reference for DescribeThemeForStack Operation</seealso>
+        DescribeThemeForStackResponse DescribeThemeForStack(DescribeThemeForStackRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThemeForStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemeForStack operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThemeForStack
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeThemeForStack">REST API Reference for DescribeThemeForStack Operation</seealso>
+        IAsyncResult BeginDescribeThemeForStack(DescribeThemeForStackRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeThemeForStack operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeThemeForStack.</param>
+        /// 
+        /// <returns>Returns a  DescribeThemeForStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeThemeForStack">REST API Reference for DescribeThemeForStack Operation</seealso>
+        DescribeThemeForStackResponse EndDescribeThemeForStack(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4112,6 +4269,66 @@ namespace Amazon.AppStream
         /// <returns>Returns a  UpdateStackResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateThemeForStack
+
+
+        /// <summary>
+        /// Updates custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemeForStack service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateThemeForStack">REST API Reference for UpdateThemeForStack Operation</seealso>
+        UpdateThemeForStackResponse UpdateThemeForStack(UpdateThemeForStackRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateThemeForStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemeForStack operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThemeForStack
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateThemeForStack">REST API Reference for UpdateThemeForStack Operation</seealso>
+        IAsyncResult BeginUpdateThemeForStack(UpdateThemeForStackRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateThemeForStack operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateThemeForStack.</param>
+        /// 
+        /// <returns>Returns a  UpdateThemeForStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateThemeForStack">REST API Reference for UpdateThemeForStack Operation</seealso>
+        UpdateThemeForStackResponse EndUpdateThemeForStack(IAsyncResult asyncResult);
 
         #endregion
                 

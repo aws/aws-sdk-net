@@ -1724,6 +1724,87 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateThemeForStack
+
+
+        /// <summary>
+        /// Creates custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThemeForStack service method.</param>
+        /// 
+        /// <returns>The response from the CreateThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateThemeForStack">REST API Reference for CreateThemeForStack Operation</seealso>
+        public virtual CreateThemeForStackResponse CreateThemeForStack(CreateThemeForStackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeForStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeForStackResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThemeForStackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThemeForStack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateThemeForStack">REST API Reference for CreateThemeForStack Operation</seealso>
+        public virtual Task<CreateThemeForStackResponse> CreateThemeForStackAsync(CreateThemeForStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThemeForStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThemeForStackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateThemeForStackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUpdatedImage
 
 
@@ -2589,6 +2670,67 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteThemeForStack
+
+
+        /// <summary>
+        /// Deletes custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThemeForStack service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteThemeForStack">REST API Reference for DeleteThemeForStack Operation</seealso>
+        public virtual DeleteThemeForStackResponse DeleteThemeForStack(DeleteThemeForStackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeForStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeForStackResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThemeForStackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThemeForStack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteThemeForStack">REST API Reference for DeleteThemeForStack Operation</seealso>
+        public virtual Task<DeleteThemeForStackResponse> DeleteThemeForStackAsync(DeleteThemeForStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThemeForStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThemeForStackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteThemeForStackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUsageReportSubscription
 
 
@@ -3384,6 +3526,61 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = DescribeStacksResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeStacksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeThemeForStack
+
+
+        /// <summary>
+        /// Retrieves a list that describes the theme for a specified stack. A theme is custom
+        /// branding that customizes the appearance of the streaming application catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemeForStack service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeThemeForStack">REST API Reference for DescribeThemeForStack Operation</seealso>
+        public virtual DescribeThemeForStackResponse DescribeThemeForStack(DescribeThemeForStackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeForStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeForStackResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThemeForStackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list that describes the theme for a specified stack. A theme is custom
+        /// branding that customizes the appearance of the streaming application catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThemeForStack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeThemeForStack">REST API Reference for DescribeThemeForStack Operation</seealso>
+        public virtual Task<DescribeThemeForStackResponse> DescribeThemeForStackAsync(DescribeThemeForStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThemeForStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThemeForStackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeThemeForStackResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5445,6 +5642,87 @@ namespace Amazon.AppStream
             options.ResponseUnmarshaller = UpdateStackResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateStackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThemeForStack
+
+
+        /// <summary>
+        /// Updates custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemeForStack service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateThemeForStack">REST API Reference for UpdateThemeForStack Operation</seealso>
+        public virtual UpdateThemeForStackResponse UpdateThemeForStack(UpdateThemeForStackRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeForStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeForStackResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThemeForStackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates custom branding that customizes the appearance of the streaming application
+        /// catalog page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThemeForStack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThemeForStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateThemeForStack">REST API Reference for UpdateThemeForStack Operation</seealso>
+        public virtual Task<UpdateThemeForStackResponse> UpdateThemeForStackAsync(UpdateThemeForStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThemeForStackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThemeForStackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThemeForStackResponse>(request, options, cancellationToken);
         }
 
         #endregion
