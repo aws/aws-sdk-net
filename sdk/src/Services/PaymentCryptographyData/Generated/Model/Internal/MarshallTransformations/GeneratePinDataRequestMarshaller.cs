@@ -99,7 +99,7 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPinDataLength())
                 {
                     context.Writer.WritePropertyName("PinDataLength");
-                    context.Writer.Write(publicRequest.PinDataLength);
+                    context.Writer.Write(publicRequest.PinDataLength.Value);
                 }
 
                 if(publicRequest.IsSetPrimaryAccountNumber())

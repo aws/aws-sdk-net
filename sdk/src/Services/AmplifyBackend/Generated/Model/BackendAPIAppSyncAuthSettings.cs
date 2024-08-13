@@ -89,9 +89,9 @@ namespace Amazon.AmplifyBackend.Model
         /// to access your data models.
         /// </para>
         /// </summary>
-        public double ExpirationTime
+        public double? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 

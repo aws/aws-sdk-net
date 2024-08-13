@@ -74,31 +74,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeControlDetails", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeControlDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeNullAndEmpty", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeNullAndEmpty = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludePartitionValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludePartitionValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeTableAlterOperations", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeTableAlterOperations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeTransactionDetails", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeTransactionDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,19 +110,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MessageMaxBytes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessageMaxBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NoHexPrefix", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoHexPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PartitionIncludeSchemaTable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PartitionIncludeSchemaTable = unmarshaller.Unmarshall(context);
                     continue;
                 }

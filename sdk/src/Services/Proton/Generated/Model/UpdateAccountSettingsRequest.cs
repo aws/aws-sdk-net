@@ -48,9 +48,9 @@ namespace Amazon.Proton.Model
         /// Don't set this field if you are updating the configured pipeline repository.
         /// </para>
         /// </summary>
-        public bool DeletePipelineProvisioningRepository
+        public bool? DeletePipelineProvisioningRepository
         {
-            get { return this._deletePipelineProvisioningRepository.GetValueOrDefault(); }
+            get { return this._deletePipelineProvisioningRepository; }
             set { this._deletePipelineProvisioningRepository = value; }
         }
 

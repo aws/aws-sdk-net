@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The index of the network card.
         /// </para>
         /// </summary>
-        public int NetworkCardIndex
+        public int? NetworkCardIndex
         {
-            get { return this._networkCardIndex.GetValueOrDefault(); }
+            get { return this._networkCardIndex; }
             set { this._networkCardIndex = value; }
         }
 

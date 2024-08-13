@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSafe())
                 {
                     context.Writer.WritePropertyName("Safe");
-                    context.Writer.Write(publicRequest.Safe);
+                    context.Writer.Write(publicRequest.Safe.Value);
                 }
 
                 if(publicRequest.IsSetWindowId())

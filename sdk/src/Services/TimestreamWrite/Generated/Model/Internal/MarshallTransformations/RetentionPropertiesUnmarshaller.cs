@@ -68,13 +68,13 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MagneticStoreRetentionPeriodInDays", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MagneticStoreRetentionPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MemoryStoreRetentionPeriodInHours", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MemoryStoreRetentionPeriodInHours = unmarshaller.Unmarshall(context);
                     continue;
                 }

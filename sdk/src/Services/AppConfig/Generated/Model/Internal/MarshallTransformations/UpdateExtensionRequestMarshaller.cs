@@ -122,7 +122,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVersionNumber())
                 {
                     context.Writer.WritePropertyName("VersionNumber");
-                    context.Writer.Write(publicRequest.VersionNumber);
+                    context.Writer.Write(publicRequest.VersionNumber.Value);
                 }
 
                 writer.WriteObjectEnd();

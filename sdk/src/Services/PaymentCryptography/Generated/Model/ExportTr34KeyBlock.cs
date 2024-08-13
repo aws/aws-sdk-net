@@ -132,7 +132,7 @@ namespace Amazon.PaymentCryptography.Model
         /// generated using 2 pass.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=16, Max=16)]
+        [AWSProperty(Min=16, Max=32)]
         public string RandomNonce
         {
             get { return this._randomNonce; }

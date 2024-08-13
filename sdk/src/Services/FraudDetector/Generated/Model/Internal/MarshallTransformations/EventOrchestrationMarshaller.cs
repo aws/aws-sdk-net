@@ -51,7 +51,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventBridgeEnabled())
             {
                 context.Writer.WritePropertyName("eventBridgeEnabled");
-                context.Writer.Write(requestObject.EventBridgeEnabled);
+                context.Writer.Write(requestObject.EventBridgeEnabled.Value);
             }
 
         }

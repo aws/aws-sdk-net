@@ -66,9 +66,9 @@ namespace Amazon.CodePipeline.Model
         /// Whether the transition between stages is enabled (true) or disabled (false).
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CodePipeline.Model
         /// The timestamp when the transition state was last changed.
         /// </para>
         /// </summary>
-        public DateTime LastChangedAt
+        public DateTime? LastChangedAt
         {
-            get { return this._lastChangedAt.GetValueOrDefault(); }
+            get { return this._lastChangedAt; }
             set { this._lastChangedAt = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.GroundStation.Model
         /// requested.
         /// </para>
         /// </summary>
-        public int EstimatedMinutesRemaining
+        public int? EstimatedMinutesRemaining
         {
-            get { return this._estimatedMinutesRemaining.GetValueOrDefault(); }
+            get { return this._estimatedMinutesRemaining; }
             set { this._estimatedMinutesRemaining = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.GroundStation.Model
         /// specific to the month being requested.
         /// </para>
         /// </summary>
-        public bool IsReservedMinutesCustomer
+        public bool? IsReservedMinutesCustomer
         {
-            get { return this._isReservedMinutesCustomer.GetValueOrDefault(); }
+            get { return this._isReservedMinutesCustomer; }
             set { this._isReservedMinutesCustomer = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.GroundStation.Model
         /// Total number of reserved minutes allocated, specific to the month being requested.
         /// </para>
         /// </summary>
-        public int TotalReservedMinuteAllocation
+        public int? TotalReservedMinuteAllocation
         {
-            get { return this._totalReservedMinuteAllocation.GetValueOrDefault(); }
+            get { return this._totalReservedMinuteAllocation; }
             set { this._totalReservedMinuteAllocation = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.GroundStation.Model
         /// Total scheduled minutes for an account, specific to the month being requested.
         /// </para>
         /// </summary>
-        public int TotalScheduledMinutes
+        public int? TotalScheduledMinutes
         {
-            get { return this._totalScheduledMinutes.GetValueOrDefault(); }
+            get { return this._totalScheduledMinutes; }
             set { this._totalScheduledMinutes = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.GroundStation.Model
         /// Upcoming minutes scheduled for an account, specific to the month being requested.
         /// </para>
         /// </summary>
-        public int UpcomingMinutesScheduled
+        public int? UpcomingMinutesScheduled
         {
-            get { return this._upcomingMinutesScheduled.GetValueOrDefault(); }
+            get { return this._upcomingMinutesScheduled; }
             set { this._upcomingMinutesScheduled = value; }
         }
 

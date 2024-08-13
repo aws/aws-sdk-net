@@ -43,9 +43,9 @@ namespace Amazon.DataPipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Terminate
+        public bool? Terminate
         {
-            get { return this._terminate.GetValueOrDefault(); }
+            get { return this._terminate; }
             set { this._terminate = value; }
         }
 

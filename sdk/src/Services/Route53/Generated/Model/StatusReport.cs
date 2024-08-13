@@ -65,9 +65,9 @@ namespace Amazon.Route53.Model
         /// represents March 27, 2017 at 17:48:16.751 UTC.
         /// </para>
         /// </summary>
-        public DateTime CheckedTime
+        public DateTime? CheckedTime
         {
-            get { return this._checkedTime.GetValueOrDefault(); }
+            get { return this._checkedTime; }
             set { this._checkedTime = value; }
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Count", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,7 +66,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxResults", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxResults = unmarshaller.Unmarshall(context);
                     continue;
                 }

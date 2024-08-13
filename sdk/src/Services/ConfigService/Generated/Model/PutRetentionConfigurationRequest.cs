@@ -59,9 +59,9 @@ namespace Amazon.ConfigService.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=30, Max=2557)]
-        public int RetentionPeriodInDays
+        public int? RetentionPeriodInDays
         {
-            get { return this._retentionPeriodInDays.GetValueOrDefault(); }
+            get { return this._retentionPeriodInDays; }
             set { this._retentionPeriodInDays = value; }
         }
 

@@ -85,15 +85,19 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SageMaker Serverless endpoint provisioned concurrency
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Amazon SageMaker inference components
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon SageMaker serverless endpoint provisioned concurrency
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Spot Fleets (Amazon EC2)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Pool of WorkSpaces
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -429,8 +433,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-        /// scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
-        /// scheduled scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
@@ -468,7 +471,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// your Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -756,7 +759,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// your Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -822,5 +825,33 @@ namespace Amazon.ApplicationAutoScaling
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonApplicationAutoScalingConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonApplicationAutoScalingConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonApplicationAutoScalingConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonApplicationAutoScalingConfig to create AmazonApplicationAutoScalingClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonApplicationAutoScalingClient(serviceClientConfig) :
+                    new AmazonApplicationAutoScalingClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

@@ -57,9 +57,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime FromDate
+        public DateTime? FromDate
         {
-            get { return this._fromDate.GetValueOrDefault(); }
+            get { return this._fromDate; }
             set { this._fromDate = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ToDate
+        public DateTime? ToDate
         {
-            get { return this._toDate.GetValueOrDefault(); }
+            get { return this._toDate; }
             set { this._toDate = value; }
         }
 

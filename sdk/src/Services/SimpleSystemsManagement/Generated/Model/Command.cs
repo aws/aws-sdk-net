@@ -145,9 +145,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Out, Cancelled, Terminated, or Undeliverable.
         /// </para>
         /// </summary>
-        public int CompletedCount
+        public int? CompletedCount
         {
-            get { return this._completedCount.GetValueOrDefault(); }
+            get { return this._completedCount; }
             set { this._completedCount = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of targets for which the status is Delivery Timed Out.
         /// </para>
         /// </summary>
-        public int DeliveryTimedOutCount
+        public int? DeliveryTimedOutCount
         {
-            get { return this._deliveryTimedOutCount.GetValueOrDefault(); }
+            get { return this._deliveryTimedOutCount; }
             set { this._deliveryTimedOutCount = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of targets for which the status is Failed or Execution Timed Out.
         /// </para>
         /// </summary>
-        public int ErrorCount
+        public int? ErrorCount
         {
-            get { return this._errorCount.GetValueOrDefault(); }
+            get { return this._errorCount; }
             set { this._errorCount = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
-        public DateTime ExpiresAfter
+        public DateTime? ExpiresAfter
         {
-            get { return this._expiresAfter.GetValueOrDefault(); }
+            get { return this._expiresAfter; }
             set { this._expiresAfter = value; }
         }
 
@@ -422,9 +422,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time the command was requested.
         /// </para>
         /// </summary>
-        public DateTime RequestedDateTime
+        public DateTime? RequestedDateTime
         {
-            get { return this._requestedDateTime.GetValueOrDefault(); }
+            get { return this._requestedDateTime; }
             set { this._requestedDateTime = value; }
         }
 
@@ -553,9 +553,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of targets for the command.
         /// </para>
         /// </summary>
-        public int TargetCount
+        public int? TargetCount
         {
-            get { return this._targetCount.GetValueOrDefault(); }
+            get { return this._targetCount; }
             set { this._targetCount = value; }
         }
 
@@ -593,9 +593,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=2592000)]
-        public int TimeoutSeconds
+        public int? TimeoutSeconds
         {
-            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            get { return this._timeoutSeconds; }
             set { this._timeoutSeconds = value; }
         }
 

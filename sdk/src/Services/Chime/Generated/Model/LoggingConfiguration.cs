@@ -45,9 +45,9 @@ namespace Amazon.Chime.Model
         /// CloudWatch logs.
         /// </para>
         /// </summary>
-        public bool EnableMediaMetricLogs
+        public bool? EnableMediaMetricLogs
         {
-            get { return this._enableMediaMetricLogs.GetValueOrDefault(); }
+            get { return this._enableMediaMetricLogs; }
             set { this._enableMediaMetricLogs = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Chime.Model
         /// Boolean that enables SIP message logs to Amazon CloudWatch logs.
         /// </para>
         /// </summary>
-        public bool EnableSIPLogs
+        public bool? EnableSIPLogs
         {
-            get { return this._enableSIPLogs.GetValueOrDefault(); }
+            get { return this._enableSIPLogs; }
             set { this._enableSIPLogs = value; }
         }
 

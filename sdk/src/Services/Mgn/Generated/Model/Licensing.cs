@@ -42,9 +42,9 @@ namespace Amazon.Mgn.Model
         /// Configure BYOL OS licensing.
         /// </para>
         /// </summary>
-        public bool OsByol
+        public bool? OsByol
         {
-            get { return this._osByol.GetValueOrDefault(); }
+            get { return this._osByol; }
             set { this._osByol = value; }
         }
 

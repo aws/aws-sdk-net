@@ -238,9 +238,9 @@ namespace Amazon.WellArchitected.Model
         /// access to the workload is restricted until an owner is added.
         /// </para>
         /// </summary>
-        public bool IsReviewOwnerUpdateAcknowledged
+        public bool? IsReviewOwnerUpdateAcknowledged
         {
-            get { return this._isReviewOwnerUpdateAcknowledged.GetValueOrDefault(); }
+            get { return this._isReviewOwnerUpdateAcknowledged; }
             set { this._isReviewOwnerUpdateAcknowledged = value; }
         }
 
@@ -399,9 +399,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ReviewRestrictionDate.
         /// </summary>
-        public DateTime ReviewRestrictionDate
+        public DateTime? ReviewRestrictionDate
         {
-            get { return this._reviewRestrictionDate.GetValueOrDefault(); }
+            get { return this._reviewRestrictionDate; }
             set { this._reviewRestrictionDate = value; }
         }
 
@@ -466,9 +466,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt.
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

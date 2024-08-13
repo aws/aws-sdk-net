@@ -93,7 +93,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetProductionAccessEnabled())
                 {
                     context.Writer.WritePropertyName("ProductionAccessEnabled");
-                    context.Writer.Write(publicRequest.ProductionAccessEnabled);
+                    context.Writer.Write(publicRequest.ProductionAccessEnabled.Value);
                 }
 
                 if(publicRequest.IsSetUseCaseDescription())

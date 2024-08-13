@@ -65,9 +65,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ErrorTimestamp
+        public DateTime? ErrorTimestamp
         {
-            get { return this._errorTimestamp.GetValueOrDefault(); }
+            get { return this._errorTimestamp; }
             set { this._errorTimestamp = value; }
         }
 

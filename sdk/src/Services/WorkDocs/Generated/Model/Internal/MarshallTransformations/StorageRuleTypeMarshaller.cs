@@ -51,7 +51,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageAllocatedInBytes())
             {
                 context.Writer.WritePropertyName("StorageAllocatedInBytes");
-                context.Writer.Write(requestObject.StorageAllocatedInBytes);
+                context.Writer.Write(requestObject.StorageAllocatedInBytes.Value);
             }
 
             if(requestObject.IsSetStorageType())

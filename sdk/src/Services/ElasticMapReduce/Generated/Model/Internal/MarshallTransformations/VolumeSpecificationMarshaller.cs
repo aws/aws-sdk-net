@@ -51,19 +51,19 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetSizeInGB())
             {
                 context.Writer.WritePropertyName("SizeInGB");
-                context.Writer.Write(requestObject.SizeInGB);
+                context.Writer.Write(requestObject.SizeInGB.Value);
             }
 
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("Throughput");
-                context.Writer.Write(requestObject.Throughput);
+                context.Writer.Write(requestObject.Throughput.Value);
             }
 
             if(requestObject.IsSetVolumeType())

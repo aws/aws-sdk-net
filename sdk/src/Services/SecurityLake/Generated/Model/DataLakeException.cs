@@ -100,9 +100,9 @@ namespace Amazon.SecurityLake.Model
         /// of entries used for validation had errors or missing values.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

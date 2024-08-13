@@ -53,9 +53,9 @@ namespace Amazon.EC2.Model
         /// range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
         /// </para>
         /// </summary>
-        public long AmazonSideAsn
+        public long? AmazonSideAsn
         {
-            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            get { return this._amazonSideAsn; }
             set { this._amazonSideAsn = value; }
         }
 

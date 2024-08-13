@@ -65,9 +65,9 @@ namespace Amazon.Macie2.Model
         /// a score that Amazon Macie calculates automatically after you submit the request.
         /// </para>
         /// </summary>
-        public int SensitivityScoreOverride
+        public int? SensitivityScoreOverride
         {
-            get { return this._sensitivityScoreOverride.GetValueOrDefault(); }
+            get { return this._sensitivityScoreOverride; }
             set { this._sensitivityScoreOverride = value; }
         }
 

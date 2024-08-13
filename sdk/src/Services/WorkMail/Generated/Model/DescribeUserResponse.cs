@@ -141,9 +141,9 @@ namespace Amazon.WorkMail.Model
         /// time format.
         /// </para>
         /// </summary>
-        public DateTime DisabledDate
+        public DateTime? DisabledDate
         {
-            get { return this._disabledDate.GetValueOrDefault(); }
+            get { return this._disabledDate; }
             set { this._disabledDate = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.WorkMail.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime EnabledDate
+        public DateTime? EnabledDate
         {
-            get { return this._enabledDate.GetValueOrDefault(); }
+            get { return this._enabledDate; }
             set { this._enabledDate = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.WorkMail.Model
         /// If enabled, the user is hidden from the global address list.
         /// </para>
         /// </summary>
-        public bool HiddenFromGlobalAddressList
+        public bool? HiddenFromGlobalAddressList
         {
-            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            get { return this._hiddenFromGlobalAddressList; }
             set { this._hiddenFromGlobalAddressList = value; }
         }
 
@@ -310,9 +310,9 @@ namespace Amazon.WorkMail.Model
         /// The date when the mailbox was removed for the user.
         /// </para>
         /// </summary>
-        public DateTime MailboxDeprovisionedDate
+        public DateTime? MailboxDeprovisionedDate
         {
-            get { return this._mailboxDeprovisionedDate.GetValueOrDefault(); }
+            get { return this._mailboxDeprovisionedDate; }
             set { this._mailboxDeprovisionedDate = value; }
         }
 
@@ -328,9 +328,9 @@ namespace Amazon.WorkMail.Model
         /// The date when the mailbox was created for the user.
         /// </para>
         /// </summary>
-        public DateTime MailboxProvisionedDate
+        public DateTime? MailboxProvisionedDate
         {
-            get { return this._mailboxProvisionedDate.GetValueOrDefault(); }
+            get { return this._mailboxProvisionedDate; }
             set { this._mailboxProvisionedDate = value; }
         }
 

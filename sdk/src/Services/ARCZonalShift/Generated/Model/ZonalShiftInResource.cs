@@ -48,17 +48,17 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property AppliedStatus. 
         /// <para>
         /// The <c>appliedStatus</c> field specifies which application traffic shift is in effect
-        /// for a resource when there is more than one traffic shift active. There can be more
+        /// for a resource when there is more than one active traffic shift. There can be more
         /// than one application traffic shift in progress at the same time - that is, practice
-        /// run zonal shifts, customer-started zonal shifts, or an autoshift. The <c>appliedStatus</c>
-        /// field for an autoshift for a resource can have one of two values: <c>APPLIED</c> or
-        /// <c>NOT_APPLIED</c>. The zonal shift or autoshift that is currently in effect for the
-        /// resource has an applied status set to <c>APPLIED</c>.
+        /// run zonal shifts, customer-initiated zonal shifts, or an autoshift. The <c>appliedStatus</c>
+        /// field for a shift that is in progress for a resource can have one of two values: <c>APPLIED</c>
+        /// or <c>NOT_APPLIED</c>. The zonal shift or autoshift that is currently in effect for
+        /// the resource has an <c>appliedStatus</c> set to <c>APPLIED</c>.
         /// </para>
         ///  
         /// <para>
         /// The overall principle for precedence is that zonal shifts that you start as a customer
-        /// take precedence autoshifts, which take precedence over practice runs. That is, customer-started
+        /// take precedence autoshifts, which take precedence over practice runs. That is, customer-initiated
         /// zonal shifts &gt; autoshifts &gt; practice run zonal shifts.
         /// </para>
         ///  
@@ -84,9 +84,10 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property AwayFrom. 
         /// <para>
-        /// The Availability Zone that traffic is moved away from for a resource when you start
-        /// a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource
-        /// is instead moved to other Availability Zones in the Amazon Web Services Region.
+        /// The Availability Zone (for example, <c>use1-az1</c>) that traffic is moved away from
+        /// for a resource when you start a zonal shift. Until the zonal shift expires or you
+        /// cancel it, traffic for the resource is instead moved to other Availability Zones in
+        /// the Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]
@@ -105,9 +106,9 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// A comment that you enter about the zonal shift. Only the latest comment is retained;
-        /// no comment history is maintained. That is, a new comment overwrites any existing comment
-        /// string.
+        /// A comment that you enter for a customer-initiated zonal shift. Only the latest comment
+        /// is retained; no comment history is maintained. That is, a new comment overwrites any
+        /// existing comment string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]
@@ -126,7 +127,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ExpiryTime. 
         /// <para>
-        /// The expiry time (expiration time) for a customer-started zonal shift. A zonal shift
+        /// The expiry time (expiration time) for a customer-initiated zonal shift. A zonal shift
         /// is temporary and must be set to expire when you start the zonal shift. You can initially
         /// set a zonal shift to expire in a maximum of three days (72 hours). However, you can
         /// update a zonal shift to set a new expiration at any time. 
@@ -141,9 +142,9 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExpiryTime
+        public DateTime? ExpiryTime
         {
-            get { return this._expiryTime.GetValueOrDefault(); }
+            get { return this._expiryTime; }
             set { this._expiryTime = value; }
         }
 
@@ -233,9 +234,9 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

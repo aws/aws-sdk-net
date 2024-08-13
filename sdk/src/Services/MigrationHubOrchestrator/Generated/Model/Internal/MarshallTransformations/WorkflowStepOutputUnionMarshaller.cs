@@ -51,7 +51,7 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntegerValue())
             {
                 context.Writer.WritePropertyName("integerValue");
-                context.Writer.Write(requestObject.IntegerValue);
+                context.Writer.Write(requestObject.IntegerValue.Value);
             }
 
             if(requestObject.IsSetListOfStringValue())

@@ -73,7 +73,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRandomSeed())
             {
                 context.Writer.WritePropertyName("RandomSeed");
-                context.Writer.Write(requestObject.RandomSeed);
+                context.Writer.Write(requestObject.RandomSeed.Value);
             }
 
             if(requestObject.IsSetResourceLimits())

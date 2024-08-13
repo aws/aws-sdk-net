@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// an instance from your launch template.
         /// </para>
         /// </summary>
-        public bool EnaSrdEnabled
+        public bool? EnaSrdEnabled
         {
-            get { return this._enaSrdEnabled.GetValueOrDefault(); }
+            get { return this._enaSrdEnabled; }
             set { this._enaSrdEnabled = value; }
         }
 

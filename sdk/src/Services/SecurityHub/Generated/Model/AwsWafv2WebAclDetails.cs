@@ -70,9 +70,9 @@ namespace Amazon.SecurityHub.Model
         ///  The web ACL capacity units (WCUs) currently being used by this web ACL. 
         /// </para>
         /// </summary>
-        public long Capacity
+        public long? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.SecurityHub.Model
         ///  Indicates whether this web ACL is managed by Firewall Manager. 
         /// </para>
         /// </summary>
-        public bool ManagedbyFirewallManager
+        public bool? ManagedbyFirewallManager
         {
-            get { return this._managedbyFirewallManager.GetValueOrDefault(); }
+            get { return this._managedbyFirewallManager; }
             set { this._managedbyFirewallManager = value; }
         }
 

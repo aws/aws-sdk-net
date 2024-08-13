@@ -68,7 +68,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsAnomaly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAnomaly = unmarshaller.Unmarshall(context);
                     continue;
                 }

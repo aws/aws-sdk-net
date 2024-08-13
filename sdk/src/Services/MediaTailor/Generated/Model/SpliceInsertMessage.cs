@@ -47,9 +47,9 @@ namespace Amazon.MediaTailor.Model
         /// and <c>256</c>, inclusive.
         /// </para>
         /// </summary>
-        public int AvailNum
+        public int? AvailNum
         {
-            get { return this._availNum.GetValueOrDefault(); }
+            get { return this._availNum; }
             set { this._availNum = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.MediaTailor.Model
         /// <c>0</c> and <c>256</c>, inclusive.
         /// </para>
         /// </summary>
-        public int AvailsExpected
+        public int? AvailsExpected
         {
-            get { return this._availsExpected.GetValueOrDefault(); }
+            get { return this._availsExpected; }
             set { this._availsExpected = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.MediaTailor.Model
         /// of the SCTE-35 specification. The default value is <c>1</c>.
         /// </para>
         /// </summary>
-        public int SpliceEventId
+        public int? SpliceEventId
         {
-            get { return this._spliceEventId.GetValueOrDefault(); }
+            get { return this._spliceEventId; }
             set { this._spliceEventId = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.MediaTailor.Model
         /// <c>0</c> and <c>256</c>, inclusive.
         /// </para>
         /// </summary>
-        public int UniqueProgramId
+        public int? UniqueProgramId
         {
-            get { return this._uniqueProgramId.GetValueOrDefault(); }
+            get { return this._uniqueProgramId; }
             set { this._uniqueProgramId = value; }
         }
 

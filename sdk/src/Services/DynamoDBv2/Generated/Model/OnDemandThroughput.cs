@@ -51,9 +51,9 @@ namespace Amazon.DynamoDBv2.Model
         /// is currently set on your table, set the value of <c>MaxReadRequestUnits</c> to -1.
         /// </para>
         /// </summary>
-        public long MaxReadRequestUnits
+        public long? MaxReadRequestUnits
         {
-            get { return this._maxReadRequestUnits.GetValueOrDefault(); }
+            get { return this._maxReadRequestUnits; }
             set { this._maxReadRequestUnits = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.DynamoDBv2.Model
         /// is currently set on your table, set the value of <c>MaxWriteRequestUnits</c> to -1.
         /// </para>
         /// </summary>
-        public long MaxWriteRequestUnits
+        public long? MaxWriteRequestUnits
         {
-            get { return this._maxWriteRequestUnits.GetValueOrDefault(); }
+            get { return this._maxWriteRequestUnits; }
             set { this._maxWriteRequestUnits = value; }
         }
 

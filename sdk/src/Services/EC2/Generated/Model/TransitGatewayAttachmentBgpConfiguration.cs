@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// The peer Autonomous System Number (ASN).
         /// </para>
         /// </summary>
-        public long PeerAsn
+        public long? PeerAsn
         {
-            get { return this._peerAsn.GetValueOrDefault(); }
+            get { return this._peerAsn; }
             set { this._peerAsn = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.EC2.Model
         /// The transit gateway Autonomous System Number (ASN).
         /// </para>
         /// </summary>
-        public long TransitGatewayAsn
+        public long? TransitGatewayAsn
         {
-            get { return this._transitGatewayAsn.GetValueOrDefault(); }
+            get { return this._transitGatewayAsn; }
             set { this._transitGatewayAsn = value; }
         }
 

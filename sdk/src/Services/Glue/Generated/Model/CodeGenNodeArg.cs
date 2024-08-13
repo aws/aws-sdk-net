@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// True if the value is used as a parameter.
         /// </para>
         /// </summary>
-        public bool Param
+        public bool? Param
         {
-            get { return this._param.GetValueOrDefault(); }
+            get { return this._param; }
             set { this._param = value; }
         }
 

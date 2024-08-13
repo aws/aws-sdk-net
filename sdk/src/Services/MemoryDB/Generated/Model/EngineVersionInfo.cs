@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// Provides details of the Redis engine version
+    /// Provides details of the Redis OSS engine version
     /// </summary>
     public partial class EngineVersionInfo
     {

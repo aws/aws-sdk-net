@@ -46,9 +46,9 @@ namespace Amazon.SecurityHub.Model
         /// server can only receive requests that originate from within the cluster VPC. 
         /// </para>
         /// </summary>
-        public bool EndpointPublicAccess
+        public bool? EndpointPublicAccess
         {
-            get { return this._endpointPublicAccess.GetValueOrDefault(); }
+            get { return this._endpointPublicAccess; }
             set { this._endpointPublicAccess = value; }
         }
 

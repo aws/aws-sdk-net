@@ -319,9 +319,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool IncludeDeprecated
+        public bool? IncludeDeprecated
         {
-            get { return this._includeDeprecated.GetValueOrDefault(); }
+            get { return this._includeDeprecated; }
             set { this._includeDeprecated = value; }
         }
 
@@ -341,9 +341,9 @@ namespace Amazon.EC2.Model
         /// Default: No disabled AMIs are included in the response.
         /// </para>
         /// </summary>
-        public bool IncludeDisabled
+        public bool? IncludeDisabled
         {
-            get { return this._includeDisabled.GetValueOrDefault(); }
+            get { return this._includeDisabled; }
             set { this._includeDisabled = value; }
         }
 
@@ -361,9 +361,9 @@ namespace Amazon.EC2.Model
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

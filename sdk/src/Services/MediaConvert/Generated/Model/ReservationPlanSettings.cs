@@ -85,9 +85,9 @@ namespace Amazon.MediaConvert.Model
         /// your commitment or revert to your original commitment after you increase the capacity.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ReservedSlots
+        public int? ReservedSlots
         {
-            get { return this._reservedSlots.GetValueOrDefault(); }
+            get { return this._reservedSlots; }
             set { this._reservedSlots = value; }
         }
 

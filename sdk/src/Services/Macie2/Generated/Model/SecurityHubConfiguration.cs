@@ -49,9 +49,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool PublishClassificationFindings
+        public bool? PublishClassificationFindings
         {
-            get { return this._publishClassificationFindings.GetValueOrDefault(); }
+            get { return this._publishClassificationFindings; }
             set { this._publishClassificationFindings = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool PublishPolicyFindings
+        public bool? PublishPolicyFindings
         {
-            get { return this._publishPolicyFindings.GetValueOrDefault(); }
+            get { return this._publishPolicyFindings; }
             set { this._publishPolicyFindings = value; }
         }
 

@@ -110,9 +110,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The date of when the namespace was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 

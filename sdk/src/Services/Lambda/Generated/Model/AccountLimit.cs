@@ -47,9 +47,9 @@ namespace Amazon.Lambda.Model
         /// The maximum size of a function's deployment package and layers when they're extracted.
         /// </para>
         /// </summary>
-        public long CodeSizeUnzipped
+        public long? CodeSizeUnzipped
         {
-            get { return this._codeSizeUnzipped.GetValueOrDefault(); }
+            get { return this._codeSizeUnzipped; }
             set { this._codeSizeUnzipped = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Lambda.Model
         /// Amazon S3 for larger files.
         /// </para>
         /// </summary>
-        public long CodeSizeZipped
+        public long? CodeSizeZipped
         {
-            get { return this._codeSizeZipped.GetValueOrDefault(); }
+            get { return this._codeSizeZipped; }
             set { this._codeSizeZipped = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Lambda.Model
         /// The maximum number of simultaneous function executions.
         /// </para>
         /// </summary>
-        public int ConcurrentExecutions
+        public int? ConcurrentExecutions
         {
-            get { return this._concurrentExecutions.GetValueOrDefault(); }
+            get { return this._concurrentExecutions; }
             set { this._concurrentExecutions = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Lambda.Model
         /// archives.
         /// </para>
         /// </summary>
-        public long TotalCodeSize
+        public long? TotalCodeSize
         {
-            get { return this._totalCodeSize.GetValueOrDefault(); }
+            get { return this._totalCodeSize; }
             set { this._totalCodeSize = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int UnreservedConcurrentExecutions
+        public int? UnreservedConcurrentExecutions
         {
-            get { return this._unreservedConcurrentExecutions.GetValueOrDefault(); }
+            get { return this._unreservedConcurrentExecutions; }
             set { this._unreservedConcurrentExecutions = value; }
         }
 

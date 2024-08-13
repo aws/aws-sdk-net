@@ -57,9 +57,9 @@ namespace Amazon.ECS.Model
         /// API</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.ECS.Model
         /// API</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -226,9 +226,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int SizeInGiB
+        public int? SizeInGiB
         {
-            get { return this._sizeInGiB.GetValueOrDefault(); }
+            get { return this._sizeInGiB; }
             set { this._sizeInGiB = value; }
         }
 
@@ -311,9 +311,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int Throughput
+        public int? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 

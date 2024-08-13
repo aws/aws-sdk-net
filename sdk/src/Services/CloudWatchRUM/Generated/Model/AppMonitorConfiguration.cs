@@ -53,9 +53,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// a sequence of events. Cookies are stored in the top-level domain of the current page.
         /// </para>
         /// </summary>
-        public bool AllowCookies
+        public bool? AllowCookies
         {
-            get { return this._allowCookies.GetValueOrDefault(); }
+            get { return this._allowCookies; }
             set { this._allowCookies = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// is X-Ray?</a> 
         /// </para>
         /// </summary>
-        public bool EnableXRay
+        public bool? EnableXRay
         {
-            get { return this._enableXRay.GetValueOrDefault(); }
+            get { return this._enableXRay; }
             set { this._enableXRay = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double SessionSampleRate
+        public double? SessionSampleRate
         {
-            get { return this._sessionSampleRate.GetValueOrDefault(); }
+            get { return this._sessionSampleRate; }
             set { this._sessionSampleRate = value; }
         }
 

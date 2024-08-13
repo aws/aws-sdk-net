@@ -115,9 +115,9 @@ namespace Amazon.AutoScaling.Model
         /// The duration of the policy's cooldown period, in seconds.
         /// </para>
         /// </summary>
-        public int Cooldown
+        public int? Cooldown
         {
-            get { return this._cooldown.GetValueOrDefault(); }
+            get { return this._cooldown; }
             set { this._cooldown = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.AutoScaling.Model
         /// Indicates whether the policy is enabled (<c>true</c>) or disabled (<c>false</c>).
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.AutoScaling.Model
         /// the CloudWatch metrics.
         /// </para>
         /// </summary>
-        public int EstimatedInstanceWarmup
+        public int? EstimatedInstanceWarmup
         {
-            get { return this._estimatedInstanceWarmup.GetValueOrDefault(); }
+            get { return this._estimatedInstanceWarmup; }
             set { this._estimatedInstanceWarmup = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.AutoScaling.Model
         /// 
         /// </para>
         /// </summary>
-        public int MinAdjustmentMagnitude
+        public int? MinAdjustmentMagnitude
         {
-            get { return this._minAdjustmentMagnitude.GetValueOrDefault(); }
+            get { return this._minAdjustmentMagnitude; }
             set { this._minAdjustmentMagnitude = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.AutoScaling.Model
         /// Available for backward compatibility. Use <c>MinAdjustmentMagnitude</c> instead.
         /// </para>
         /// </summary>
-        public int MinAdjustmentStep
+        public int? MinAdjustmentStep
         {
-            get { return this._minAdjustmentStep.GetValueOrDefault(); }
+            get { return this._minAdjustmentStep; }
             set { this._minAdjustmentStep = value; }
         }
 
@@ -325,9 +325,9 @@ namespace Amazon.AutoScaling.Model
         /// adds to the current capacity while a negative number removes from the current capacity.
         /// </para>
         /// </summary>
-        public int ScalingAdjustment
+        public int? ScalingAdjustment
         {
-            get { return this._scalingAdjustment.GetValueOrDefault(); }
+            get { return this._scalingAdjustment; }
             set { this._scalingAdjustment = value; }
         }
 

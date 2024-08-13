@@ -64,9 +64,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public int SortOrder
+        public int? SortOrder
         {
-            get { return this._sortOrder.GetValueOrDefault(); }
+            get { return this._sortOrder; }
             set { this._sortOrder = value; }
         }
 

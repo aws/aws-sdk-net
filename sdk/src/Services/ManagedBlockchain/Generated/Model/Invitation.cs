@@ -73,9 +73,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// The date and time that the invitation was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// using this <c>InvitationId</c>.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 

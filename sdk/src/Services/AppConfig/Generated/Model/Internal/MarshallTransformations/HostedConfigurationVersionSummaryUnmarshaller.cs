@@ -104,7 +104,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VersionNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

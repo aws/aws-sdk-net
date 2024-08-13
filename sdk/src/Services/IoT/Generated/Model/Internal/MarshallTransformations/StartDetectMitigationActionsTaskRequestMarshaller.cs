@@ -95,13 +95,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeOnlyActiveViolations())
                 {
                     context.Writer.WritePropertyName("includeOnlyActiveViolations");
-                    context.Writer.Write(publicRequest.IncludeOnlyActiveViolations);
+                    context.Writer.Write(publicRequest.IncludeOnlyActiveViolations.Value);
                 }
 
                 if(publicRequest.IsSetIncludeSuppressedAlerts())
                 {
                     context.Writer.WritePropertyName("includeSuppressedAlerts");
-                    context.Writer.Write(publicRequest.IncludeSuppressedAlerts);
+                    context.Writer.Write(publicRequest.IncludeSuppressedAlerts.Value);
                 }
 
                 if(publicRequest.IsSetTarget())

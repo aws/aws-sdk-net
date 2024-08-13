@@ -90,7 +90,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetentionDays())
                 {
                     context.Writer.WritePropertyName("RetentionDays");
-                    context.Writer.Write(publicRequest.RetentionDays);
+                    context.Writer.Write(publicRequest.RetentionDays.Value);
                 }
 
                 writer.WriteObjectEnd();

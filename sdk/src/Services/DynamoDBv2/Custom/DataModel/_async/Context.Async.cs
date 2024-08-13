@@ -33,256 +33,164 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Save async
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Save operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
-        /// </summary>
-        /// <typeparam name="T">Type to save as.</typeparam>
-        /// <param name="value">Object to save.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task SaveAsync<T>(T value, CancellationToken cancellationToken = default)
         {
-            return SaveHelperAsync(value, null, cancellationToken);
+            return SaveHelperAsync(value, new DynamoDBFlatConfig(null, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Save operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
-        /// </summary>
-        /// <typeparam name="T">Type to save as.</typeparam>
-        /// <param name="value">Object to save.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        [Obsolete("Use the SaveAsync overload that takes SaveConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to SaveAsync.")]
+        public Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
         {
-            return SaveHelperAsync(value, operationConfig, cancellationToken);
+            return SaveHelperAsync(value, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Save operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
-        /// </summary>
-        /// <param name="valueType">Type of the Object to save.</param>
-        /// <param name="value">Object to save.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task SaveAsync<T>(T value, SaveConfig saveConfig, CancellationToken cancellationToken = default)
         {
-            return SaveHelperAsync(valueType, value, null, cancellationToken);
+            return SaveHelperAsync(value, new DynamoDBFlatConfig(saveConfig?.ToDynamoDBOperationConfig(), Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Save operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
-        /// </summary>
-        /// <param name="valueType">Type of the Object to save.</param>
-        /// <param name="value">Object to save.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default)
         {
-            return SaveHelperAsync(valueType, value, operationConfig, cancellationToken);
+            return SaveHelperAsync(valueType, value, new DynamoDBFlatConfig(null, Config), cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the SaveAsync overload that takes SaveConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to SaveAsync.")]
+        public Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+        {
+            return SaveHelperAsync(valueType, value, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task SaveAsync(Type valueType, object value, SaveConfig saveConfig, CancellationToken cancellationToken = default)
+        {
+            return SaveHelperAsync(valueType, value, new DynamoDBFlatConfig(saveConfig?.ToDynamoDBOperationConfig(), Config), cancellationToken);
         }
 
         #endregion
 
         #region Load async
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given hash key.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default)
         {
-            return LoadHelperAsync<T>(hashKey, null, null, cancellationToken);
+            return LoadHelperAsync<T>(hashKey, null, new DynamoDBFlatConfig(null, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given hash key and using the given config.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
-        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
-        /// the item's primary key for the table must be specified.
-        /// </param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+        public Task<T> LoadAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
         {
-            return LoadHelperAsync<T>(hashKey, null, operationConfig, cancellationToken);
+            return LoadHelperAsync<T>(hashKey, null, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given hash-and-range primary key.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="rangeKey">Range key element of the target item.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task<T> LoadAsync<T>(object hashKey, LoadConfig loadConfig, CancellationToken cancellationToken = default)
         {
-            return LoadHelperAsync<T>(hashKey, rangeKey, null, cancellationToken);
+            return LoadHelperAsync<T>(hashKey, null, new DynamoDBFlatConfig(loadConfig?.ToDynamoDBOperationConfig(), Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given hash-and-range primary key and using the given config.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="hashKey">Hash key element of the target item.</param>
-        /// <param name="rangeKey">Range key element of the target item.</param>
-        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
-        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
-        /// the item's primary key for the table must be specified.
-        /// </param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task<T> LoadAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default)
         {
-            return LoadHelperAsync<T>(hashKey, rangeKey, operationConfig, cancellationToken);
+            return LoadHelperAsync<T>(hashKey, rangeKey, new DynamoDBFlatConfig(null, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given key.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="keyObject">A partially-specified instance, where the
-        /// hash/range properties are equal to the key of the item you
-        /// want to load.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(T keyObject, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+        public Task<T> LoadAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
         {
-            return LoadHelperAsync(keyObject, null, cancellationToken);
+            return LoadHelperAsync<T>(hashKey, rangeKey, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Loads an object from DynamoDB for the given key and using the given config.
-        /// </summary>
-        /// <remarks>
-        /// This invokes DynamoDB's GetItem operation, which returns an item with the given primary key.
-        /// </remarks>
-        /// <typeparam name="T">Type to populate. It must be marked up with DynamoDBTableAttribute and at least
-        /// one public field/property with DynamoDBHashKeyAttribute.</typeparam>
-        /// <param name="keyObject">A partially-specified instance, where the
-        /// hash/range properties are equal to the key of the item you
-        /// want to load.</param>
-        /// <param name="operationConfig">Overrides the DynamoDBContextConfig on the context object.
-        /// Note that its <c>IndexName</c> <b>does not</b> influence which object is loaded. Rather 
-        /// the item's primary key for the table must be specified.
-        /// </param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task<T> LoadAsync<T>(object hashKey, object rangeKey, LoadConfig loadConfig, CancellationToken cancellationToken = default)
         {
-            return LoadHelperAsync(keyObject, operationConfig, cancellationToken);
+            return LoadHelperAsync<T>(hashKey, rangeKey, new DynamoDBFlatConfig(loadConfig?.ToDynamoDBOperationConfig(), Config), cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<T> LoadAsync<T>(T keyObject, CancellationToken cancellationToken = default)
+        {
+            return LoadHelperAsync(keyObject, new DynamoDBFlatConfig(null, Config), cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the LoadAsync overload that takes LoadConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to LoadAsync.")]
+        public Task<T> LoadAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+        {
+            return LoadHelperAsync(keyObject, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<T> LoadAsync<T>(T keyObject, LoadConfig loadConfig, CancellationToken cancellationToken = default)
+        {
+            return LoadHelperAsync(keyObject, new DynamoDBFlatConfig(loadConfig?.ToDynamoDBOperationConfig(), Config), cancellationToken);
         }
 
         #endregion
 
         #region Delete async
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Delete operation.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="value">Object to delete.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task DeleteAsync<T>(T value, CancellationToken cancellationToken = default)
         {
-            return DeleteHelperAsync(value, null, cancellationToken);
+            return DeleteHelperAsync(value, new DynamoDBFlatConfig(null, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Delete operation.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="value">Object to delete.</param>
-        /// <param name="operationConfig">Overriding configuration.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+        public Task DeleteAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
         {
-            return DeleteHelperAsync(value, operationConfig, cancellationToken);
+            return DeleteHelperAsync(value, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Delete operation.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task DeleteAsync<T>(T value, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
         {
-            return DeleteHelperAsync<T>(hashKey, null, null, cancellationToken);
+            return DeleteHelperAsync(value, new DynamoDBFlatConfig(deleteConfig?.ToDynamoDBOperationConfig(), Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Delete operation.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task DeleteAsync<T>(object hashKey, CancellationToken cancellationToken = default)
         {
-            return DeleteHelperAsync<T>(hashKey, null, operationConfig, cancellationToken);
+            return DeleteHelperAsync<T>(hashKey, null, new DynamoDBFlatConfig(null, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Delete operation.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
-        /// <param name="rangeKey">Range key element of the object to delete.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+        public Task DeleteAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
         {
-            return DeleteHelperAsync<T>(hashKey, rangeKey, null, cancellationToken);
+            return DeleteHelperAsync<T>(hashKey, null, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the Delete operation.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKey">Hash key element of the object to delete.</param>
-        /// <param name="rangeKey">Range key element of the object to delete.</param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        /// <inheritdoc/>
+        public Task DeleteAsync<T>(object hashKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
         {
-            return DeleteHelperAsync<T>(hashKey, rangeKey, operationConfig, cancellationToken);
+            return DeleteHelperAsync<T>(hashKey, null, new DynamoDBFlatConfig(deleteConfig?.ToDynamoDBOperationConfig(), Config), cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task DeleteAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default)
+        {
+            return DeleteHelperAsync<T>(hashKey, rangeKey, new DynamoDBFlatConfig(null, Config), cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the DeleteAsync overload that takes DeleteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to DeleteAsync.")]
+        public Task DeleteAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default)
+        {
+            return DeleteHelperAsync<T>(hashKey, rangeKey, new DynamoDBFlatConfig(operationConfig, Config), cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task DeleteAsync<T>(object hashKey, object rangeKey, DeleteConfig deleteConfig, CancellationToken cancellationToken = default)
+        {
+            return DeleteHelperAsync<T>(hashKey, rangeKey, new DynamoDBFlatConfig(deleteConfig?.ToDynamoDBOperationConfig(), Config), cancellationToken);
         }
 
         #endregion
@@ -375,30 +283,39 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Scan async
 
-        /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="conditions">
-        /// Conditions that the results should meet.
-        /// </param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        /// <inheritdoc/>
+        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions)
+        {
+            var scan = ConvertScan<T>(conditions, null);
+            return FromSearchAsync<T>(scan);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the ScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ScanAsync.")]
         public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
         {
             var scan = ConvertScan<T>(conditions, operationConfig);
             return FromSearchAsync<T>(scan);
         }
 
-        /// <summary>
-        ///  Configures an async Scan operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="scanConfig">Scan request object.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        /// <inheritdoc/>
+        public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, ScanConfig scanConfig)
+        {
+            var scan = ConvertScan<T>(conditions, scanConfig?.ToDynamoDBOperationConfig());
+            return FromSearchAsync<T>(scan);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig)
+        {
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
+
+            var search = ConvertFromScan<T>(scanConfig, null);
+            return FromSearchAsync<T>(search);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the FromScanAsync overload that takes ScanConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromScanAsync.")]
         public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (scanConfig == null) throw new ArgumentNullException("scanConfig");
@@ -407,38 +324,53 @@ namespace Amazon.DynamoDBv2.DataModel
             return FromSearchAsync<T>(search);
         }
 
+        /// <inheritdoc/>
+        public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, FromScanConfig fromScanConfig)
+        {
+            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
+
+            var search = ConvertFromScan<T>(scanConfig, fromScanConfig?.ToDynamoDBOperationConfig());
+            return FromSearchAsync<T>(search);
+        }
+
         #endregion
 
         #region Query async
 
-        /// <summary>
-        /// Configures an async Query operation against DynamoDB, finding items
-        /// that match the specified hash primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        /// <inheritdoc/>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue)
+        {
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
         {
             var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
             return FromSearchAsync<T>(query);
         }
 
-        /// <summary>
-        /// Configures an async Query operation against DynamoDB, finding items
-        /// that match the specified range element condition for a hash-and-range primary key.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="hashKeyValue">Hash key of the items to query.</param>
-        /// <param name="op">Operation of the condition.</param>
-        /// <param name="values">
-        /// Value(s) of the condition.
-        /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Between, values should be two values.
-        /// </param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        /// <inheritdoc/>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryConfig queryConfig)
+        {
+            var query = ConvertQueryByValue<T>(hashKeyValue, null, queryConfig?.ToDynamoDBOperationConfig());
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values)
+        {
+            if (values == null)
+                throw new ArgumentNullException("values");
+
+            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, null);
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the QueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to QueryAsync.")]
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
         {
             if (values == null)
@@ -448,19 +380,41 @@ namespace Amazon.DynamoDBv2.DataModel
             return FromSearchAsync<T>(query);
         }
 
-        /// <summary>
-        /// Configures an async Query operation against DynamoDB, finding items
-        /// that match the specified conditions.
-        /// </summary>
-        /// <typeparam name="T">Type of object.</typeparam>
-        /// <param name="queryConfig">Query request object.</param>
-        /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        /// <inheritdoc/>
+        public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig)
+        {
+            if (values == null)
+                throw new ArgumentNullException("values");
+
+            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, queryConfig?.ToDynamoDBOperationConfig());
+            return FromSearchAsync<T>(query);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig)
+        {
+            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
+
+            var search = ConvertFromQuery<T>(queryConfig, null);
+            return FromSearchAsync<T>(search);
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the FromQueryAsync overload that takes QueryConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromQueryAsync.")]
         public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
         {
             if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
             var search = ConvertFromQuery<T>(queryConfig, operationConfig);
+            return FromSearchAsync<T>(search);
+        }
+
+        /// <inheritdoc/>
+        public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig)
+        {
+            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
+
+            var search = ConvertFromQuery<T>(queryConfig, fromQueryConfig?.ToDynamoDBOperationConfig());
             return FromSearchAsync<T>(search);
         }
 

@@ -61,9 +61,9 @@ namespace Amazon.EC2InstanceConnect.Model
         /// Is true if the request succeeds and an error otherwise.
         /// </para>
         /// </summary>
-        public bool Success
+        public bool? Success
         {
-            get { return this._success.GetValueOrDefault(); }
+            get { return this._success; }
             set { this._success = value; }
         }
 

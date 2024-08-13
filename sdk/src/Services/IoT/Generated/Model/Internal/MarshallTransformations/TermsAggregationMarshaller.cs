@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxBuckets())
             {
                 context.Writer.WritePropertyName("maxBuckets");
-                context.Writer.Write(requestObject.MaxBuckets);
+                context.Writer.Write(requestObject.MaxBuckets.Value);
             }
 
         }

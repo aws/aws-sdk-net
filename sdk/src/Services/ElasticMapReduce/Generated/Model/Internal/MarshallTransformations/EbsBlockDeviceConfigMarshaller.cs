@@ -62,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumesPerInstance())
             {
                 context.Writer.WritePropertyName("VolumesPerInstance");
-                context.Writer.Write(requestObject.VolumesPerInstance);
+                context.Writer.Write(requestObject.VolumesPerInstance.Value);
             }
 
         }

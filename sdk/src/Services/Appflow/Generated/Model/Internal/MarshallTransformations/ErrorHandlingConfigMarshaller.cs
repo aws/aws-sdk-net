@@ -63,7 +63,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailOnFirstDestinationError())
             {
                 context.Writer.WritePropertyName("failOnFirstDestinationError");
-                context.Writer.Write(requestObject.FailOnFirstDestinationError);
+                context.Writer.Write(requestObject.FailOnFirstDestinationError.Value);
             }
 
         }

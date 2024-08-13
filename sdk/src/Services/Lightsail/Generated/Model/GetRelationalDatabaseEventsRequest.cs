@@ -54,9 +54,9 @@ namespace Amazon.Lightsail.Model
         /// The minimum is 1 and the maximum is 14 days (20160 minutes).
         /// </para>
         /// </summary>
-        public int DurationInMinutes
+        public int? DurationInMinutes
         {
-            get { return this._durationInMinutes.GetValueOrDefault(); }
+            get { return this._durationInMinutes; }
             set { this._durationInMinutes = value; }
         }
 

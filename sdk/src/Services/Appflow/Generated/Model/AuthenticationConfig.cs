@@ -65,9 +65,9 @@ namespace Amazon.Appflow.Model
         /// Indicates whether API key authentication is supported by the connector
         /// </para>
         /// </summary>
-        public bool IsApiKeyAuthSupported
+        public bool? IsApiKeyAuthSupported
         {
-            get { return this._isApiKeyAuthSupported.GetValueOrDefault(); }
+            get { return this._isApiKeyAuthSupported; }
             set { this._isApiKeyAuthSupported = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Appflow.Model
         /// Indicates whether basic authentication is supported by the connector.
         /// </para>
         /// </summary>
-        public bool IsBasicAuthSupported
+        public bool? IsBasicAuthSupported
         {
-            get { return this._isBasicAuthSupported.GetValueOrDefault(); }
+            get { return this._isBasicAuthSupported; }
             set { this._isBasicAuthSupported = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Appflow.Model
         /// Indicates whether custom authentication is supported by the connector
         /// </para>
         /// </summary>
-        public bool IsCustomAuthSupported
+        public bool? IsCustomAuthSupported
         {
-            get { return this._isCustomAuthSupported.GetValueOrDefault(); }
+            get { return this._isCustomAuthSupported; }
             set { this._isCustomAuthSupported = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Appflow.Model
         /// Indicates whether OAuth 2.0 authentication is supported by the connector.
         /// </para>
         /// </summary>
-        public bool IsOAuth2Supported
+        public bool? IsOAuth2Supported
         {
-            get { return this._isoAuth2Supported.GetValueOrDefault(); }
+            get { return this._isoAuth2Supported; }
             set { this._isoAuth2Supported = value; }
         }
 

@@ -76,7 +76,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEvaluationFormVersion())
                 {
                     context.Writer.WritePropertyName("EvaluationFormVersion");
-                    context.Writer.Write(publicRequest.EvaluationFormVersion);
+                    context.Writer.Write(publicRequest.EvaluationFormVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

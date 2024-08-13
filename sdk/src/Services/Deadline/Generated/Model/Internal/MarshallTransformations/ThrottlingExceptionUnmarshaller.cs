@@ -79,7 +79,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Retry-After", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

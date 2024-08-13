@@ -123,9 +123,9 @@ namespace Amazon.Batch.Model
         /// EC2 and Fargate compute environments can't be mixed.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

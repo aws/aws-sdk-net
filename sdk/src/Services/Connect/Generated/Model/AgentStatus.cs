@@ -107,9 +107,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int DisplayOrder
+        public int? DisplayOrder
         {
-            get { return this._displayOrder.GetValueOrDefault(); }
+            get { return this._displayOrder; }
             set { this._displayOrder = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when this resource was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

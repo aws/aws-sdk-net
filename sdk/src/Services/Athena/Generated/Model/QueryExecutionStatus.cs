@@ -65,9 +65,9 @@ namespace Amazon.Athena.Model
         /// The date and time that the query completed.
         /// </para>
         /// </summary>
-        public DateTime CompletionDateTime
+        public DateTime? CompletionDateTime
         {
-            get { return this._completionDateTime.GetValueOrDefault(); }
+            get { return this._completionDateTime; }
             set { this._completionDateTime = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.Athena.Model
         /// The date and time that the query was submitted.
         /// </para>
         /// </summary>
-        public DateTime SubmissionDateTime
+        public DateTime? SubmissionDateTime
         {
-            get { return this._submissionDateTime.GetValueOrDefault(); }
+            get { return this._submissionDateTime; }
             set { this._submissionDateTime = value; }
         }
 

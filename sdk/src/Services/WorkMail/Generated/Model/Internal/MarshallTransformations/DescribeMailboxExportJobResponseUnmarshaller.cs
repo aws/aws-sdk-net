@@ -60,7 +60,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EstimatedProgress", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.EstimatedProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -114,7 +114,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

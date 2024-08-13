@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsDefaultVersion())
             {
                 context.Writer.WritePropertyName("IsDefaultVersion");
-                context.Writer.Write(requestObject.IsDefaultVersion);
+                context.Writer.Write(requestObject.IsDefaultVersion.Value);
             }
 
             if(requestObject.IsSetVersionId())

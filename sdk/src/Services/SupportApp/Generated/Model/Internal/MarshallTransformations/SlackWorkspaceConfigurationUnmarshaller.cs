@@ -68,7 +68,7 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowOrganizationMemberAccount", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowOrganizationMemberAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }

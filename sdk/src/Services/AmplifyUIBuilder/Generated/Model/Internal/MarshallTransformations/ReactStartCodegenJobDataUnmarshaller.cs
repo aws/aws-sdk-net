@@ -80,7 +80,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("inlineSourceMap", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InlineSourceMap = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("renderTypeDeclarations", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RenderTypeDeclarations = unmarshaller.Unmarshall(context);
                     continue;
                 }

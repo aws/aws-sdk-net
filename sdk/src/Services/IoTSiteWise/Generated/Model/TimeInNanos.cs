@@ -44,9 +44,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999999999)]
-        public int OffsetInNanos
+        public int? OffsetInNanos
         {
-            get { return this._offsetInNanos.GetValueOrDefault(); }
+            get { return this._offsetInNanos; }
             set { this._offsetInNanos = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=9223372036854774)]
-        public long TimeInSeconds
+        public long? TimeInSeconds
         {
-            get { return this._timeInSeconds.GetValueOrDefault(); }
+            get { return this._timeInSeconds; }
             set { this._timeInSeconds = value; }
         }
 

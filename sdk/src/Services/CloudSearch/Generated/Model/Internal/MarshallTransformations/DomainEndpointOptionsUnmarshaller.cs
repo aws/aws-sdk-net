@@ -57,7 +57,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("EnforceHTTPS", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnforceHTTPS = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -51,13 +51,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDateValue())
             {
                 context.Writer.WritePropertyName("dateValue");
-                context.Writer.Write(requestObject.DateValue);
+                context.Writer.Write(requestObject.DateValue.Value);
             }
 
             if(requestObject.IsSetLongValue())
             {
                 context.Writer.WritePropertyName("longValue");
-                context.Writer.Write(requestObject.LongValue);
+                context.Writer.Write(requestObject.LongValue.Value);
             }
 
             if(requestObject.IsSetStringListValue())

@@ -86,7 +86,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("authorizerResultTtlInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AuthorizerResultTtlInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableSimpleResponses", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableSimpleResponses = unmarshaller.Unmarshall(context);
                     continue;
                 }

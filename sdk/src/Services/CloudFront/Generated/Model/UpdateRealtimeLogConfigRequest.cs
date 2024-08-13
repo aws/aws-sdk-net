@@ -152,9 +152,9 @@ namespace Amazon.CloudFront.Model
         /// You must provide an integer between 1 and 100, inclusive.
         /// </para>
         /// </summary>
-        public long SamplingRate
+        public long? SamplingRate
         {
-            get { return this._samplingRate.GetValueOrDefault(); }
+            get { return this._samplingRate; }
             set { this._samplingRate = value; }
         }
 

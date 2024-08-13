@@ -73,9 +73,9 @@ namespace Amazon.LicenseManager.Model
         /// Token expiration, in days, counted from token creation. The default is 365 days.
         /// </para>
         /// </summary>
-        public int ExpirationInDays
+        public int? ExpirationInDays
         {
-            get { return this._expirationInDays.GetValueOrDefault(); }
+            get { return this._expirationInDays; }
             set { this._expirationInDays = value; }
         }
 

@@ -77,9 +77,9 @@ namespace Amazon.NetworkManager.Model
         /// The policy rule number associated with the attachment.
         /// </para>
         /// </summary>
-        public int AttachmentPolicyRuleNumber
+        public int? AttachmentPolicyRuleNumber
         {
-            get { return this._attachmentPolicyRuleNumber.GetValueOrDefault(); }
+            get { return this._attachmentPolicyRuleNumber; }
             set { this._attachmentPolicyRuleNumber = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.NetworkManager.Model
         /// The timestamp when the attachment was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -354,9 +354,9 @@ namespace Amazon.NetworkManager.Model
         /// The timestamp when the attachment was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

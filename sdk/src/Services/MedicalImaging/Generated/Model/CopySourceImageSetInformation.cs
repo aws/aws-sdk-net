@@ -34,7 +34,27 @@ namespace Amazon.MedicalImaging.Model
     /// </summary>
     public partial class CopySourceImageSetInformation
     {
+        private MetadataCopies _dicomCopies;
         private string _latestVersionId;
+
+        /// <summary>
+        /// Gets and sets the property DICOMCopies. 
+        /// <para>
+        /// Contains <c>MetadataCopies</c> structure and wraps information related to specific
+        /// copy use cases. For example, when copying subsets.
+        /// </para>
+        /// </summary>
+        public MetadataCopies DICOMCopies
+        {
+            get { return this._dicomCopies; }
+            set { this._dicomCopies = value; }
+        }
+
+        // Check to see if DICOMCopies property is set
+        internal bool IsSetDICOMCopies()
+        {
+            return this._dicomCopies != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LatestVersionId. 

@@ -68,9 +68,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that indicates when the model card was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that indicates when the model card was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.SageMaker.Model
         /// The model card version.
         /// </para>
         /// </summary>
-        public int ModelCardVersion
+        public int? ModelCardVersion
         {
-            get { return this._modelCardVersion.GetValueOrDefault(); }
+            get { return this._modelCardVersion; }
             set { this._modelCardVersion = value; }
         }
 

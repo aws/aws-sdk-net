@@ -68,7 +68,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("includeGlobalResourceTypes", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeGlobalResourceTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }

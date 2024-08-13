@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>IdMappingType</c> and <c>ProviderProperties</c>.
+    /// An object containing <c>IdMappingType</c>, <c>ProviderProperties</c>, and <c>RuleBasedProperties</c>.
     /// </summary>
     public partial class IdNamespaceIdMappingWorkflowProperties
     {
         private IdMappingType _idMappingType;
         private NamespaceProviderProperties _providerProperties;
+        private NamespaceRuleBasedProperties _ruleBasedProperties;
 
         /// <summary>
         /// Gets and sets the property IdMappingType. 
@@ -72,6 +73,24 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetProviderProperties()
         {
             return this._providerProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleBasedProperties. 
+        /// <para>
+        ///  An object which defines any additional configurations required by rule-based matching.
+        /// </para>
+        /// </summary>
+        public NamespaceRuleBasedProperties RuleBasedProperties
+        {
+            get { return this._ruleBasedProperties; }
+            set { this._ruleBasedProperties = value; }
+        }
+
+        // Check to see if RuleBasedProperties property is set
+        internal bool IsSetRuleBasedProperties()
+        {
+            return this._ruleBasedProperties != null;
         }
 
     }

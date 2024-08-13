@@ -180,9 +180,9 @@ namespace Amazon.QConnect.Model
         /// Whether the quick response is active.
         /// </para>
         /// </summary>
-        public bool IsActive
+        public bool? IsActive
         {
-            get { return this._isActive.GetValueOrDefault(); }
+            get { return this._isActive; }
             set { this._isActive = value; }
         }
 

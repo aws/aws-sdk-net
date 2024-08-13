@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=3)]
-        public int MaxNumberOfTrainingJobsNotImproving
+        public int? MaxNumberOfTrainingJobsNotImproving
         {
-            get { return this._maxNumberOfTrainingJobsNotImproving.GetValueOrDefault(); }
+            get { return this._maxNumberOfTrainingJobsNotImproving; }
             set { this._maxNumberOfTrainingJobsNotImproving = value; }
         }
 

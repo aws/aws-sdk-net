@@ -68,55 +68,55 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bitMaskLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BitMaskLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bitRightShift", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BitRightShift = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("byteLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ByteLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("offset", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Offset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pid", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Pid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pidResponseLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PidResponseLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scaling", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Scaling = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serviceMode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ServiceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startByte", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartByte = unmarshaller.Unmarshall(context);
                     continue;
                 }

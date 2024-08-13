@@ -89,9 +89,9 @@ namespace Amazon.MedicalImaging.Model
         /// The timestamp for when the import job was ended.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.MedicalImaging.Model
         /// The timestamp for when the import job was submitted.
         /// </para>
         /// </summary>
-        public DateTime SubmittedAt
+        public DateTime? SubmittedAt
         {
-            get { return this._submittedAt.GetValueOrDefault(); }
+            get { return this._submittedAt; }
             set { this._submittedAt = value; }
         }
 

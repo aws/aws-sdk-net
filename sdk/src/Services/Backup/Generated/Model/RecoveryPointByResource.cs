@@ -52,9 +52,9 @@ namespace Amazon.Backup.Model
         /// The size, in bytes, of a backup.
         /// </para>
         /// </summary>
-        public long BackupSizeBytes
+        public long? BackupSizeBytes
         {
-            get { return this._backupSizeBytes.GetValueOrDefault(); }
+            get { return this._backupSizeBytes; }
             set { this._backupSizeBytes = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Backup.Model
         /// This is a boolean value indicating this is a parent (composite) recovery point.
         /// </para>
         /// </summary>
-        public bool IsParent
+        public bool? IsParent
         {
-            get { return this._isParent.GetValueOrDefault(); }
+            get { return this._isParent; }
             set { this._isParent = value; }
         }
 

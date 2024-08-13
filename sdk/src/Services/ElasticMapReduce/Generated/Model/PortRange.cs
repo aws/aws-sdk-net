@@ -46,9 +46,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=65535)]
-        public int MaxRange
+        public int? MaxRange
         {
-            get { return this._maxRange.GetValueOrDefault(); }
+            get { return this._maxRange; }
             set { this._maxRange = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-1, Max=65535)]
-        public int MinRange
+        public int? MinRange
         {
-            get { return this._minRange.GetValueOrDefault(); }
+            get { return this._minRange; }
             set { this._minRange = value; }
         }
 

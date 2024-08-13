@@ -86,7 +86,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("nluIntentConfidenceThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.NluIntentConfidenceThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

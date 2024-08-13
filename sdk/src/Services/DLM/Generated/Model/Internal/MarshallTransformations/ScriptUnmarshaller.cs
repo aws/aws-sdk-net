@@ -68,7 +68,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ExecuteOperationOnScriptFailure", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExecuteOperationOnScriptFailure = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,13 +86,13 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExecutionTimeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumRetryCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumRetryCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

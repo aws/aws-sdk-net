@@ -2,6 +2,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Tests;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 if (TestClockSkewCorrection)
                 {
                     // set clockskew correction to wrong value
-                    SetIncorrectOffset(client.Config);
+                    SetIncorrectOffset();
                 }
             };
             client.AfterResponseEvent += (s, e) =>
@@ -92,14 +93,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             }
         }
 
-        private static void SetIncorrectOffset(IClientConfig config)
+        private static void SetIncorrectOffset()
         {
             TimeSpan offset;
             if (SetIncorrectClockOffsetFuture)
                 offset = General.IncorrectPositiveClockSkewOffset;
             else
                 offset = General.IncorrectNegativeClockSkewOffset;
-            General.SetClockSkewCorrection(config, offset);
+            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+new object[] {AWSConfigs.RegionEndpoint.ToString(), offset });
         }
 
         #endregion
@@ -158,23 +160,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 }
             }
 
-#if BCL45
+#if BCL
             public override System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
             {
                 if (IsRetry || !IsRewindable)
                     return base.GetResponseAsync(cancellationToken);
-                else
-                {
-                    base.Abort();
-                    throw new WebException("Newp!", null, WebExceptionStatus.ConnectionClosed, null);
-                }
-            }
-
-#elif BCL && !BCL45
-            public override IWebResponseData EndGetResponse(IAsyncResult asyncResult)
-            {
-                if (IsRetry || !IsRewindable)
-                    return base.EndGetResponse(asyncResult);
                 else
                 {
                     base.Abort();

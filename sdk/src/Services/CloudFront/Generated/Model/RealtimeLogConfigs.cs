@@ -48,9 +48,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this._isTruncated.GetValueOrDefault(); }
+            get { return this._isTruncated; }
             set { this._isTruncated = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 

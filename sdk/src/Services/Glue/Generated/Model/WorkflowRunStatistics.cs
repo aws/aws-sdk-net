@@ -49,9 +49,9 @@ namespace Amazon.Glue.Model
         /// Indicates the count of job runs in the ERROR state in the workflow run.
         /// </para>
         /// </summary>
-        public int ErroredActions
+        public int? ErroredActions
         {
-            get { return this._erroredActions.GetValueOrDefault(); }
+            get { return this._erroredActions; }
             set { this._erroredActions = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.Glue.Model
         /// Total number of Actions that have failed.
         /// </para>
         /// </summary>
-        public int FailedActions
+        public int? FailedActions
         {
-            get { return this._failedActions.GetValueOrDefault(); }
+            get { return this._failedActions; }
             set { this._failedActions = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Glue.Model
         /// Total number Actions in running state.
         /// </para>
         /// </summary>
-        public int RunningActions
+        public int? RunningActions
         {
-            get { return this._runningActions.GetValueOrDefault(); }
+            get { return this._runningActions; }
             set { this._runningActions = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Glue.Model
         /// Total number of Actions that have stopped.
         /// </para>
         /// </summary>
-        public int StoppedActions
+        public int? StoppedActions
         {
-            get { return this._stoppedActions.GetValueOrDefault(); }
+            get { return this._stoppedActions; }
             set { this._stoppedActions = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.Glue.Model
         /// Total number of Actions that have succeeded.
         /// </para>
         /// </summary>
-        public int SucceededActions
+        public int? SucceededActions
         {
-            get { return this._succeededActions.GetValueOrDefault(); }
+            get { return this._succeededActions; }
             set { this._succeededActions = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.Glue.Model
         /// Total number of Actions that timed out.
         /// </para>
         /// </summary>
-        public int TimeoutActions
+        public int? TimeoutActions
         {
-            get { return this._timeoutActions.GetValueOrDefault(); }
+            get { return this._timeoutActions; }
             set { this._timeoutActions = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.Glue.Model
         /// Total number of Actions in the workflow run.
         /// </para>
         /// </summary>
-        public int TotalActions
+        public int? TotalActions
         {
-            get { return this._totalActions.GetValueOrDefault(); }
+            get { return this._totalActions; }
             set { this._totalActions = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.Glue.Model
         /// Indicates the count of job runs in WAITING state in the workflow run.
         /// </para>
         /// </summary>
-        public int WaitingActions
+        public int? WaitingActions
         {
-            get { return this._waitingActions.GetValueOrDefault(); }
+            get { return this._waitingActions; }
             set { this._waitingActions = value; }
         }
 

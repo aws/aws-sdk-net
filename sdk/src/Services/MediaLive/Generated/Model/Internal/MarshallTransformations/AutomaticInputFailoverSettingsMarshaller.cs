@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorClearTimeMsec())
             {
                 context.Writer.WritePropertyName("errorClearTimeMsec");
-                context.Writer.Write(requestObject.ErrorClearTimeMsec);
+                context.Writer.Write(requestObject.ErrorClearTimeMsec.Value);
             }
 
             if(requestObject.IsSetFailoverConditions())

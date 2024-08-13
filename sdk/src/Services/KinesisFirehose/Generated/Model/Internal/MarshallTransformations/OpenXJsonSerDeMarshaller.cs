@@ -51,7 +51,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaseInsensitive())
             {
                 context.Writer.WritePropertyName("CaseInsensitive");
-                context.Writer.Write(requestObject.CaseInsensitive);
+                context.Writer.Write(requestObject.CaseInsensitive.Value);
             }
 
             if(requestObject.IsSetColumnToJsonKeyMappings())
@@ -71,7 +71,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConvertDotsInJsonKeysToUnderscores())
             {
                 context.Writer.WritePropertyName("ConvertDotsInJsonKeysToUnderscores");
-                context.Writer.Write(requestObject.ConvertDotsInJsonKeysToUnderscores);
+                context.Writer.Write(requestObject.ConvertDotsInJsonKeysToUnderscores.Value);
             }
 
         }

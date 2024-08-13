@@ -190,40 +190,5 @@ namespace AWSSDK.UnitTests
                 }, typeof(AmazonClientException), new Regex("Error reading A SAML endpoint with name")).InnerException;
             }, typeof(ArgumentException), "Requested value 'BLAH!' was not found.");
         }
-
-        [TestMethod]
-        public void ProfileManagerWriteSAMLEndpointManagerReadDefaultAuth()
-        {
-            ProfileManager.RegisterSAMLEndpoint(EndpointName, EndpointUri, null);
-            var samlEndpoint = manager.GetEndpoint(EndpointName);
-
-            Assert.IsNotNull(samlEndpoint);
-            Assert.AreEqual(DefaultAuthSamlEndpoint.Name, samlEndpoint.Name);
-            Assert.AreEqual(DefaultAuthSamlEndpoint.AuthenticationType, samlEndpoint.AuthenticationType);
-            Assert.AreEqual(DefaultAuthSamlEndpoint.EndpointUri, samlEndpoint.EndpointUri);
-        }
-
-        [TestMethod]
-        public void ProfileManagerWriteSAMLEndpointManagerReadExplicitAuth()
-        {
-            ProfileManager.RegisterSAMLEndpoint(EndpointName, OtherEndpointUri, SAMLAuthenticationType.NTLM.ToString());
-            var samlEndpoint = manager.GetEndpoint(EndpointName);
-
-            Assert.IsNotNull(samlEndpoint);
-            Assert.AreEqual(ExplicitAuthSamlEndpoint.Name, samlEndpoint.Name);
-            Assert.AreEqual(ExplicitAuthSamlEndpoint.AuthenticationType, samlEndpoint.AuthenticationType);
-            Assert.AreEqual(ExplicitAuthSamlEndpoint.EndpointUri, samlEndpoint.EndpointUri);
-        }
-
-        [TestMethod]
-        public void SAMLEndpointManagerWriteProfileManagerRead()
-        {
-            manager.RegisterEndpoint(DefaultAuthSamlEndpoint);
-
-            var endpointSettings = ProfileManager.GetSAMLEndpoint(EndpointName);
-            Assert.AreEqual(DefaultAuthSamlEndpoint.Name, endpointSettings.Name);
-            Assert.AreEqual(DefaultAuthSamlEndpoint.AuthenticationType.ToString(), endpointSettings.AuthenticationType);
-            Assert.AreEqual(DefaultAuthSamlEndpoint.EndpointUri, endpointSettings.Endpoint);
-        }
     }
 }

@@ -45,9 +45,9 @@ namespace Amazon.IoT.Model
         /// if it is not connected.
         /// </para>
         /// </summary>
-        public bool Connected
+        public bool? Connected
         {
-            get { return this._connected.GetValueOrDefault(); }
+            get { return this._connected; }
             set { this._connected = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IoT.Model
         /// missing.
         /// </para>
         /// </summary>
-        public long Timestamp
+        public long? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

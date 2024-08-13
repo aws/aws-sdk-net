@@ -62,9 +62,9 @@ namespace Amazon.Neptunedata.Model
         /// or <c>FALSE</c>; the default is <c>FALSE</c>).
         /// </para>
         /// </summary>
-        public bool Details
+        public bool? Details
         {
-            get { return this._details.GetValueOrDefault(); }
+            get { return this._details; }
             set { this._details = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Neptunedata.Model
         /// you to page through all the errors.
         /// </para>
         /// </summary>
-        public bool Errors
+        public bool? Errors
         {
-            get { return this._errors.GetValueOrDefault(); }
+            get { return this._errors; }
             set { this._errors = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ErrorsPerPage
+        public int? ErrorsPerPage
         {
-            get { return this._errorsPerPage.GetValueOrDefault(); }
+            get { return this._errorsPerPage; }
             set { this._errorsPerPage = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Page
+        public int? Page
         {
-            get { return this._page.GetValueOrDefault(); }
+            get { return this._page; }
             set { this._page = value; }
         }
 

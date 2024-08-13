@@ -139,9 +139,9 @@ namespace Amazon.EBS.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -266,9 +266,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=4320)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long VolumeSize
+        public long? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

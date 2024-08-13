@@ -46,9 +46,9 @@ namespace Amazon.DeviceFarm.Model
         /// run tests.
         /// </para>
         /// </summary>
-        public double Metered
+        public double? Metered
         {
-            get { return this._metered.GetValueOrDefault(); }
+            get { return this._metered; }
             set { this._metered = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.DeviceFarm.Model
         /// When specified, represents the total minutes used by the resource to run tests.
         /// </para>
         /// </summary>
-        public double Total
+        public double? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.DeviceFarm.Model
         /// to run tests.
         /// </para>
         /// </summary>
-        public double Unmetered
+        public double? Unmetered
         {
-            get { return this._unmetered.GetValueOrDefault(); }
+            get { return this._unmetered; }
             set { this._unmetered = value; }
         }
 

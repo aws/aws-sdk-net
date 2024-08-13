@@ -81,9 +81,9 @@ namespace Amazon.EC2.Model
         /// The oldest successful resource discovery time.
         /// </para>
         /// </summary>
-        public DateTime OldestSampleTime
+        public DateTime? OldestSampleTime
         {
-            get { return this._oldestSampleTime.GetValueOrDefault(); }
+            get { return this._oldestSampleTime; }
             set { this._oldestSampleTime = value; }
         }
 

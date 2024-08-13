@@ -76,7 +76,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetainPermissions())
                 {
                     context.Writer.WritePropertyName("retainPermissions");
-                    context.Writer.Write(publicRequest.RetainPermissions);
+                    context.Writer.Write(publicRequest.RetainPermissions.Value);
                 }
 
                 writer.WriteObjectEnd();

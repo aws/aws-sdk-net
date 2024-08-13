@@ -68,7 +68,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("latestLaunchTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestLaunchTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

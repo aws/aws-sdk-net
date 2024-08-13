@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputLossThresholdMsec())
             {
                 context.Writer.WritePropertyName("inputLossThresholdMsec");
-                context.Writer.Write(requestObject.InputLossThresholdMsec);
+                context.Writer.Write(requestObject.InputLossThresholdMsec.Value);
             }
 
         }

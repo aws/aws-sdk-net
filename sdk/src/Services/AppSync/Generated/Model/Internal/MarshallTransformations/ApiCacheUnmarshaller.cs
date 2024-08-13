@@ -74,7 +74,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("atRestEncryptionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AtRestEncryptionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,13 +92,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("transitEncryptionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TransitEncryptionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ttl", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Ttl = unmarshaller.Unmarshall(context);
                     continue;
                 }

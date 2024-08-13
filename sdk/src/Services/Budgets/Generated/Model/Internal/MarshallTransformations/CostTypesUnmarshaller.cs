@@ -68,67 +68,67 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IncludeCredit", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeCredit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeDiscount", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeDiscount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeOtherSubscription", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeOtherSubscription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeRecurring", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeRecurring = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeRefund", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeRefund = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeSubscription", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeSubscription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeSupport", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeSupport = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeTax", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeTax = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeUpfront", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeUpfront = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseAmortized", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseAmortized = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseBlended", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseBlended = unmarshaller.Unmarshall(context);
                     continue;
                 }

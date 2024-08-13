@@ -68,7 +68,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("configuredAtLaunch", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ConfiguredAtLaunch = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -28,7 +28,7 @@ namespace Amazon.S3.Model
     {
         private ServerSideEncryptionMethod serverSideEncryption;
         private string eTag;
-        private int partNumber;
+        private int? partNumber;
         private RequestCharged requestCharged;
         private bool? bucketKeyEnabled;
         private string _checksumCRC32;
@@ -75,7 +75,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the part number specified for the part upload.  This is needed when
         /// completing the multipart upload.
         /// </summary>
-        public int PartNumber
+        public int? PartNumber
         {
             get { return this.partNumber; }
             set { this.partNumber = value; }
@@ -111,9 +111,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this.bucketKeyEnabled; }
             set { this.bucketKeyEnabled = value; }
         }
 

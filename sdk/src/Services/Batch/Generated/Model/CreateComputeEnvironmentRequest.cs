@@ -364,9 +364,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int UnmanagedvCpus
+        public int? UnmanagedvCpus
         {
-            get { return this._unmanagedvCpus.GetValueOrDefault(); }
+            get { return this._unmanagedvCpus; }
             set { this._unmanagedvCpus = value; }
         }
 

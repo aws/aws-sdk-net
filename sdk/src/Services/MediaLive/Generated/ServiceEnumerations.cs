@@ -881,6 +881,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type Algorithm.
+    /// </summary>
+    public class Algorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES128 for Algorithm
+        /// </summary>
+        public static readonly Algorithm AES128 = new Algorithm("AES128");
+        /// <summary>
+        /// Constant AES192 for Algorithm
+        /// </summary>
+        public static readonly Algorithm AES192 = new Algorithm("AES192");
+        /// <summary>
+        /// Constant AES256 for Algorithm
+        /// </summary>
+        public static readonly Algorithm AES256 = new Algorithm("AES256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Algorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Algorithm FindValue(string value)
+        {
+            return FindValue<Algorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Algorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArchiveS3LogUploads.
     /// </summary>
     public class ArchiveS3LogUploads : ConstantClass
@@ -10638,6 +10692,10 @@ namespace Amazon.MediaLive
         /// Constant RTP_PUSH for InputType
         /// </summary>
         public static readonly InputType RTP_PUSH = new InputType("RTP_PUSH");
+        /// <summary>
+        /// Constant SRT_CALLER for InputType
+        /// </summary>
+        public static readonly InputType SRT_CALLER = new InputType("SRT_CALLER");
         /// <summary>
         /// Constant TS_FILE for InputType
         /// </summary>

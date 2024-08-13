@@ -68,9 +68,9 @@ namespace Amazon.IoT1ClickProjects.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.IoT1ClickProjects.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedDate
+        public DateTime? UpdatedDate
         {
-            get { return this._updatedDate.GetValueOrDefault(); }
+            get { return this._updatedDate; }
             set { this._updatedDate = value; }
         }
 

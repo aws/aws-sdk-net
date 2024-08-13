@@ -72,9 +72,9 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 

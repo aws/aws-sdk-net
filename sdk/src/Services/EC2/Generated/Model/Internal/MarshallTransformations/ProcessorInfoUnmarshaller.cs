@@ -85,7 +85,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("sustainedClockSpeedInGhz", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.SustainedClockSpeedInGhz = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -196,9 +196,9 @@ namespace Amazon.QuickSight.Model
         /// the reset button.
         /// </para>
         /// </summary>
-        public bool ResetDisabled
+        public bool? ResetDisabled
         {
-            get { return this._resetDisabled.GetValueOrDefault(); }
+            get { return this._resetDisabled; }
             set { this._resetDisabled = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=600)]
-        public long SessionLifetimeInMinutes
+        public long? SessionLifetimeInMinutes
         {
-            get { return this._sessionLifetimeInMinutes.GetValueOrDefault(); }
+            get { return this._sessionLifetimeInMinutes; }
             set { this._sessionLifetimeInMinutes = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.QuickSight.Model
         /// default is <c>FALSE</c>.
         /// </para>
         /// </summary>
-        public bool StatePersistenceEnabled
+        public bool? StatePersistenceEnabled
         {
-            get { return this._statePersistenceEnabled.GetValueOrDefault(); }
+            get { return this._statePersistenceEnabled; }
             set { this._statePersistenceEnabled = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.QuickSight.Model
         /// enables the undo/redo button.
         /// </para>
         /// </summary>
-        public bool UndoRedoDisabled
+        public bool? UndoRedoDisabled
         {
-            get { return this._undoRedoDisabled.GetValueOrDefault(); }
+            get { return this._undoRedoDisabled; }
             set { this._undoRedoDisabled = value; }
         }
 

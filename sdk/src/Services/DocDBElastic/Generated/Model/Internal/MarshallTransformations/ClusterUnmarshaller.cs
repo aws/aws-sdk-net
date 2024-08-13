@@ -80,7 +80,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("backupRetentionPeriod", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -128,19 +128,19 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("shardCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShardCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("shardCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShardCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("shardInstanceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShardInstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

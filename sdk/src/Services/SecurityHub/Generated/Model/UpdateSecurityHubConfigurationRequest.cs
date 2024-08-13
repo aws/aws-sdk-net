@@ -50,9 +50,9 @@ namespace Amazon.SecurityHub.Model
         /// To not automatically enable new controls, set this to <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool AutoEnableControls
+        public bool? AutoEnableControls
         {
-            get { return this._autoEnableControls.GetValueOrDefault(); }
+            get { return this._autoEnableControls; }
             set { this._autoEnableControls = value; }
         }
 

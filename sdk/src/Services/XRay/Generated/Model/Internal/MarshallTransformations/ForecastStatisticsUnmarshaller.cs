@@ -68,13 +68,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FaultCountHigh", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FaultCountHigh = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FaultCountLow", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FaultCountLow = unmarshaller.Unmarshall(context);
                     continue;
                 }

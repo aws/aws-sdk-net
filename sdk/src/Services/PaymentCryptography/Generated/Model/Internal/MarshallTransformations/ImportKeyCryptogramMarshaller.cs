@@ -51,7 +51,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportable())
             {
                 context.Writer.WritePropertyName("Exportable");
-                context.Writer.Write(requestObject.Exportable);
+                context.Writer.Write(requestObject.Exportable.Value);
             }
 
             if(requestObject.IsSetImportToken())

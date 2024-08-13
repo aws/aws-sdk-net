@@ -71,9 +71,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// instance.
         /// </para>
         /// </summary>
-        public int DefaultAllocatedStorage
+        public int? DefaultAllocatedStorage
         {
-            get { return this._defaultAllocatedStorage.GetValueOrDefault(); }
+            get { return this._defaultAllocatedStorage; }
             set { this._defaultAllocatedStorage = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The amount of storage (in gigabytes) that is allocated for the replication instance.
         /// </para>
         /// </summary>
-        public int IncludedAllocatedStorage
+        public int? IncludedAllocatedStorage
         {
-            get { return this._includedAllocatedStorage.GetValueOrDefault(); }
+            get { return this._includedAllocatedStorage; }
             set { this._includedAllocatedStorage = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// instance.
         /// </para>
         /// </summary>
-        public int MaxAllocatedStorage
+        public int? MaxAllocatedStorage
         {
-            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            get { return this._maxAllocatedStorage; }
             set { this._maxAllocatedStorage = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// instance.
         /// </para>
         /// </summary>
-        public int MinAllocatedStorage
+        public int? MinAllocatedStorage
         {
-            get { return this._minAllocatedStorage.GetValueOrDefault(); }
+            get { return this._minAllocatedStorage; }
             set { this._minAllocatedStorage = value; }
         }
 

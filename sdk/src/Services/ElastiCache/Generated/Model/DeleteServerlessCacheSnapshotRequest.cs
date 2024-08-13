@@ -31,7 +31,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteServerlessCacheSnapshot operation.
-    /// Deletes an existing serverless cache snapshot. Available for Redis only.
+    /// Deletes an existing serverless cache snapshot. Available for Redis OSS and Serverless
+    /// Memcached only.
     /// </summary>
     public partial class DeleteServerlessCacheSnapshotRequest : AmazonElastiCacheRequest
     {
@@ -40,7 +41,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ServerlessCacheSnapshotName. 
         /// <para>
-        /// Idenfitier of the snapshot to be deleted. Available for Redis only.
+        /// Idenfitier of the snapshot to be deleted. Available for Redis OSS and Serverless Memcached
+        /// only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

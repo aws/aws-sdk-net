@@ -114,13 +114,24 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIdleSessionTTLInSeconds())
                 {
                     context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds);
+                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetInstruction())
                 {
                     context.Writer.WritePropertyName("instruction");
                     context.Writer.Write(publicRequest.Instruction);
+                }
+
+                if(publicRequest.IsSetMemoryConfiguration())
+                {
+                    context.Writer.WritePropertyName("memoryConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MemoryConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MemoryConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetPromptOverrideConfiguration())

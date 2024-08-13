@@ -64,9 +64,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Allows the private key to be exported.
         /// </para>
         /// </summary>
-        public bool ExportableKey
+        public bool? ExportableKey
         {
-            get { return this._exportableKey.GetValueOrDefault(); }
+            get { return this._exportableKey; }
             set { this._exportableKey = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Require user input when using the private key for enrollment.
         /// </para>
         /// </summary>
-        public bool StrongKeyProtectionRequired
+        public bool? StrongKeyProtectionRequired
         {
-            get { return this._strongKeyProtectionRequired.GetValueOrDefault(); }
+            get { return this._strongKeyProtectionRequired; }
             set { this._strongKeyProtectionRequired = value; }
         }
 

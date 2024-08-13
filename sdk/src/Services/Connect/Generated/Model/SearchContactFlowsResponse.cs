@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model
         /// The total number of contact flows which matched your search query.
         /// </para>
         /// </summary>
-        public long ApproximateTotalCount
+        public long? ApproximateTotalCount
         {
-            get { return this._approximateTotalCount.GetValueOrDefault(); }
+            get { return this._approximateTotalCount; }
             set { this._approximateTotalCount = value; }
         }
 
@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlows. 
         /// <para>
-        /// Information about the contact flows.
+        /// Information about the flows.
         /// </para>
         /// </summary>
         public List<ContactFlow> ContactFlows

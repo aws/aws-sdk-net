@@ -84,7 +84,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSkipFinalSnapshot())
                 {
                     context.Writer.WritePropertyName("skipFinalSnapshot");
-                    context.Writer.Write(publicRequest.SkipFinalSnapshot);
+                    context.Writer.Write(publicRequest.SkipFinalSnapshot.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -72,7 +72,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetActiveDate())
                 {
                     context.Writer.WritePropertyName("ActiveDate");
-                    context.Writer.Write(publicRequest.ActiveDate);
+                    context.Writer.Write(publicRequest.ActiveDate.Value);
                 }
 
                 if(publicRequest.IsSetCertificate())
@@ -96,7 +96,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInactiveDate())
                 {
                     context.Writer.WritePropertyName("InactiveDate");
-                    context.Writer.Write(publicRequest.InactiveDate);
+                    context.Writer.Write(publicRequest.InactiveDate.Value);
                 }
 
                 if(publicRequest.IsSetPrivateKey())

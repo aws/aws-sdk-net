@@ -47,9 +47,9 @@ namespace Amazon.MediaLive.Model
         /// because after this time, MediaLive will switch back to the primary input.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ErrorClearTimeMsec
+        public int? ErrorClearTimeMsec
         {
-            get { return this._errorClearTimeMsec.GetValueOrDefault(); }
+            get { return this._errorClearTimeMsec; }
             set { this._errorClearTimeMsec = value; }
         }
 

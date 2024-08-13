@@ -63,9 +63,9 @@ namespace Amazon.Elasticsearch.Model
         /// be performed. This will not actually perform the Upgrade. 
         /// </para>
         /// </summary>
-        public bool PerformCheckOnly
+        public bool? PerformCheckOnly
         {
-            get { return this._performCheckOnly.GetValueOrDefault(); }
+            get { return this._performCheckOnly; }
             set { this._performCheckOnly = value; }
         }
 

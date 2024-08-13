@@ -46,9 +46,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ConsumersResolved
+        public int? ConsumersResolved
         {
-            get { return this._consumersResolved.GetValueOrDefault(); }
+            get { return this._consumersResolved; }
             set { this._consumersResolved = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ConsumersUnresolved
+        public int? ConsumersUnresolved
         {
-            get { return this._consumersUnresolved.GetValueOrDefault(); }
+            get { return this._consumersUnresolved; }
             set { this._consumersUnresolved = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DependenciesResolved
+        public int? DependenciesResolved
         {
-            get { return this._dependenciesResolved.GetValueOrDefault(); }
+            get { return this._dependenciesResolved; }
             set { this._dependenciesResolved = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DependenciesUnresolved
+        public int? DependenciesUnresolved
         {
-            get { return this._dependenciesUnresolved.GetValueOrDefault(); }
+            get { return this._dependenciesUnresolved; }
             set { this._dependenciesUnresolved = value; }
         }
 

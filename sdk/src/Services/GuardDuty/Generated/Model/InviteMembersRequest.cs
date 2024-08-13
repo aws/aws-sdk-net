@@ -128,9 +128,9 @@ namespace Amazon.GuardDuty.Model
         /// accounts that you are inviting to GuardDuty as members.
         /// </para>
         /// </summary>
-        public bool DisableEmailNotification
+        public bool? DisableEmailNotification
         {
-            get { return this._disableEmailNotification.GetValueOrDefault(); }
+            get { return this._disableEmailNotification; }
             set { this._disableEmailNotification = value; }
         }
 

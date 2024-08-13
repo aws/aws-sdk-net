@@ -86,9 +86,9 @@ namespace Amazon.Snowball.Model
         /// Expiration date of the credential identifying the person picking up the device.
         /// </para>
         /// </summary>
-        public DateTime IdentificationExpirationDate
+        public DateTime? IdentificationExpirationDate
         {
-            get { return this._identificationExpirationDate.GetValueOrDefault(); }
+            get { return this._identificationExpirationDate; }
             set { this._identificationExpirationDate = value; }
         }
 

@@ -178,9 +178,9 @@ namespace Amazon.SageMaker.Model
         /// Timestamp of when the report was generated.
         /// </para>
         /// </summary>
-        public DateTime ReportGenerated
+        public DateTime? ReportGenerated
         {
-            get { return this._reportGenerated.GetValueOrDefault(); }
+            get { return this._reportGenerated; }
             set { this._reportGenerated = value; }
         }
 

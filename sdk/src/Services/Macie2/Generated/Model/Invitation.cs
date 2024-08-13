@@ -81,9 +81,9 @@ namespace Amazon.Macie2.Model
         /// The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.
         /// </para>
         /// </summary>
-        public DateTime InvitedAt
+        public DateTime? InvitedAt
         {
-            get { return this._invitedAt.GetValueOrDefault(); }
+            get { return this._invitedAt; }
             set { this._invitedAt = value; }
         }
 

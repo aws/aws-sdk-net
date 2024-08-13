@@ -77,9 +77,9 @@ namespace Amazon.Macie2.Model
         /// 0 for JSON files.
         /// </para>
         /// </summary>
-        public long RecordIndex
+        public long? RecordIndex
         {
-            get { return this._recordIndex.GetValueOrDefault(); }
+            get { return this._recordIndex; }
             set { this._recordIndex = value; }
         }
 

@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TargetCpuUtilizationPerCore", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TargetCpuUtilizationPerCore = unmarshaller.Unmarshall(context);
                     continue;
                 }

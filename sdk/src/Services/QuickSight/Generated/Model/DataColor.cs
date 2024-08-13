@@ -61,9 +61,9 @@ namespace Amazon.QuickSight.Model
         /// The data value that the color is applied to.
         /// </para>
         /// </summary>
-        public double DataValue
+        public double? DataValue
         {
-            get { return this._dataValue.GetValueOrDefault(); }
+            get { return this._dataValue; }
             set { this._dataValue = value; }
         }
 

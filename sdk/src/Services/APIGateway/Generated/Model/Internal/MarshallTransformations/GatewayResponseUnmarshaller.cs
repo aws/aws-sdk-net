@@ -68,7 +68,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("defaultResponse", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }

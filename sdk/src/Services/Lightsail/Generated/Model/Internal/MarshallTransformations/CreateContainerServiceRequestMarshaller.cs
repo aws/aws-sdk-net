@@ -119,7 +119,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScale())
                 {
                     context.Writer.WritePropertyName("scale");
-                    context.Writer.Write(publicRequest.Scale);
+                    context.Writer.Write(publicRequest.Scale.Value);
                 }
 
                 if(publicRequest.IsSetServiceName())

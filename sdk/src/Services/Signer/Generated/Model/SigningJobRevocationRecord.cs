@@ -62,9 +62,9 @@ namespace Amazon.Signer.Model
         /// The time of revocation.
         /// </para>
         /// </summary>
-        public DateTime RevokedAt
+        public DateTime? RevokedAt
         {
-            get { return this._revokedAt.GetValueOrDefault(); }
+            get { return this._revokedAt; }
             set { this._revokedAt = value; }
         }
 

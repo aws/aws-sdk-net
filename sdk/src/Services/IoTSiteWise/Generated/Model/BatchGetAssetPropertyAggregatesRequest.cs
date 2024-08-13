@@ -79,9 +79,9 @@ namespace Amazon.IoTSiteWise.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

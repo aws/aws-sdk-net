@@ -68,7 +68,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("sizeInGb", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SizeInGb = unmarshaller.Unmarshall(context);
                     continue;
                 }

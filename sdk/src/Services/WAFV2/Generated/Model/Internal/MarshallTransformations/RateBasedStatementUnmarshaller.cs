@@ -80,7 +80,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EvaluationWindowSec", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EvaluationWindowSec = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Limit", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
                     continue;
                 }

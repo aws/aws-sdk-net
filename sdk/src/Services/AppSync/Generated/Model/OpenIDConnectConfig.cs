@@ -45,9 +45,9 @@ namespace Amazon.AppSync.Model
         /// The number of milliseconds that a token is valid after being authenticated.
         /// </para>
         /// </summary>
-        public long AuthTTL
+        public long? AuthTTL
         {
-            get { return this._authttl.GetValueOrDefault(); }
+            get { return this._authttl; }
             set { this._authttl = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.AppSync.Model
         /// The number of milliseconds that a token is valid after it's issued to a user.
         /// </para>
         /// </summary>
-        public long IatTTL
+        public long? IatTTL
         {
-            get { return this._iatttl.GetValueOrDefault(); }
+            get { return this._iatttl; }
             set { this._iatttl = value; }
         }
 

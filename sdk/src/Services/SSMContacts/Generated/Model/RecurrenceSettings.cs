@@ -87,9 +87,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int NumberOfOnCalls
+        public int? NumberOfOnCalls
         {
-            get { return this._numberOfOnCalls.GetValueOrDefault(); }
+            get { return this._numberOfOnCalls; }
             set { this._numberOfOnCalls = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int RecurrenceMultiplier
+        public int? RecurrenceMultiplier
         {
-            get { return this._recurrenceMultiplier.GetValueOrDefault(); }
+            get { return this._recurrenceMultiplier; }
             set { this._recurrenceMultiplier = value; }
         }
 

@@ -88,9 +88,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// and <c>n</c>.
         /// </para>
         /// </summary>
-        public bool AddColumnName
+        public bool? AddColumnName
         {
-            get { return this._addColumnName.GetValueOrDefault(); }
+            get { return this._addColumnName; }
             set { this._addColumnName = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// on string data. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AddTrailingPaddingCharacter
+        public bool? AddTrailingPaddingCharacter
         {
-            get { return this._addTrailingPaddingCharacter.GetValueOrDefault(); }
+            get { return this._addTrailingPaddingCharacter; }
             set { this._addTrailingPaddingCharacter = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool CdcInsertsAndUpdates
+        public bool? CdcInsertsAndUpdates
         {
-            get { return this._cdcInsertsAndUpdates.GetValueOrDefault(); }
+            get { return this._cdcInsertsAndUpdates; }
             set { this._cdcInsertsAndUpdates = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool CdcInsertsOnly
+        public bool? CdcInsertsOnly
         {
-            get { return this._cdcInsertsOnly.GetValueOrDefault(); }
+            get { return this._cdcInsertsOnly; }
             set { this._cdcInsertsOnly = value; }
         }
 
@@ -296,9 +296,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The default value is 60 seconds.
         /// </para>
         /// </summary>
-        public int CdcMaxBatchInterval
+        public int? CdcMaxBatchInterval
         {
-            get { return this._cdcMaxBatchInterval.GetValueOrDefault(); }
+            get { return this._cdcMaxBatchInterval; }
             set { this._cdcMaxBatchInterval = value; }
         }
 
@@ -324,9 +324,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The default value is 32 MB.
         /// </para>
         /// </summary>
-        public int CdcMinFileSize
+        public int? CdcMinFileSize
         {
-            get { return this._cdcMinFileSize.GetValueOrDefault(); }
+            get { return this._cdcMinFileSize; }
             set { this._cdcMinFileSize = value; }
         }
 
@@ -536,9 +536,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// MiB). This number is used for .parquet file format only. 
         /// </para>
         /// </summary>
-        public int DataPageSize
+        public int? DataPageSize
         {
-            get { return this._dataPageSize.GetValueOrDefault(); }
+            get { return this._dataPageSize; }
             set { this._dataPageSize = value; }
         }
 
@@ -577,9 +577,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// date-based folder partitioning</a>.
         /// </para>
         /// </summary>
-        public bool DatePartitionEnabled
+        public bool? DatePartitionEnabled
         {
-            get { return this._datePartitionEnabled.GetValueOrDefault(); }
+            get { return this._datePartitionEnabled; }
             set { this._datePartitionEnabled = value; }
         }
 
@@ -647,9 +647,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// 
         /// </para>
         /// </summary>
-        public int DictPageSizeLimit
+        public int? DictPageSizeLimit
         {
-            get { return this._dictPageSizeLimit.GetValueOrDefault(); }
+            get { return this._dictPageSizeLimit; }
             set { this._dictPageSizeLimit = value; }
         }
 
@@ -668,9 +668,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// is used for .parquet file format only.
         /// </para>
         /// </summary>
-        public bool EnableStatistics
+        public bool? EnableStatistics
         {
-            get { return this._enableStatistics.GetValueOrDefault(); }
+            get { return this._enableStatistics; }
             set { this._enableStatistics = value; }
         }
 
@@ -842,9 +842,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// use Athena to query your data.
         /// </para>
         /// </summary>
-        public bool GlueCatalogGeneration
+        public bool? GlueCatalogGeneration
         {
-            get { return this._glueCatalogGeneration.GetValueOrDefault(); }
+            get { return this._glueCatalogGeneration; }
             set { this._glueCatalogGeneration = value; }
         }
 
@@ -865,9 +865,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The default is 0.
         /// </para>
         /// </summary>
-        public int IgnoreHeaderRows
+        public int? IgnoreHeaderRows
         {
-            get { return this._ignoreHeaderRows.GetValueOrDefault(); }
+            get { return this._ignoreHeaderRows; }
             set { this._ignoreHeaderRows = value; }
         }
 
@@ -912,9 +912,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool IncludeOpForFullLoad
+        public bool? IncludeOpForFullLoad
         {
-            get { return this._includeOpForFullLoad.GetValueOrDefault(); }
+            get { return this._includeOpForFullLoad; }
             set { this._includeOpForFullLoad = value; }
         }
 
@@ -935,9 +935,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The default value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.
         /// </para>
         /// </summary>
-        public int MaxFileSize
+        public int? MaxFileSize
         {
-            get { return this._maxFileSize.GetValueOrDefault(); }
+            get { return this._maxFileSize; }
             set { this._maxFileSize = value; }
         }
 
@@ -983,9 +983,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ParquetTimestampInMillisecond
+        public bool? ParquetTimestampInMillisecond
         {
-            get { return this._parquetTimestampInMillisecond.GetValueOrDefault(); }
+            get { return this._parquetTimestampInMillisecond; }
             set { this._parquetTimestampInMillisecond = value; }
         }
 
@@ -1028,9 +1028,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool PreserveTransactions
+        public bool? PreserveTransactions
         {
-            get { return this._preserveTransactions.GetValueOrDefault(); }
+            get { return this._preserveTransactions; }
             set { this._preserveTransactions = value; }
         }
 
@@ -1065,9 +1065,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <c>y</c>, and <c>n</c>.
         /// </para>
         /// </summary>
-        public bool Rfc4180
+        public bool? Rfc4180
         {
-            get { return this._rfc4180.GetValueOrDefault(); }
+            get { return this._rfc4180; }
             set { this._rfc4180 = value; }
         }
 
@@ -1090,9 +1090,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// max row group length in bytes (64 * 1024 * 1024). 
         /// </para>
         /// </summary>
-        public int RowGroupLength
+        public int? RowGroupLength
         {
-            get { return this._rowGroupLength.GetValueOrDefault(); }
+            get { return this._rowGroupLength; }
             set { this._rowGroupLength = value; }
         }
 
@@ -1212,9 +1212,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool UseCsvNoSupValue
+        public bool? UseCsvNoSupValue
         {
-            get { return this._useCsvNoSupValue.GetValueOrDefault(); }
+            get { return this._useCsvNoSupValue; }
             set { this._useCsvNoSupValue = value; }
         }
 
@@ -1239,9 +1239,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// target. 
         /// </para>
         /// </summary>
-        public bool UseTaskStartTimeForFullLoadTimestamp
+        public bool? UseTaskStartTimeForFullLoadTimestamp
         {
-            get { return this._useTaskStartTimeForFullLoadTimestamp.GetValueOrDefault(); }
+            get { return this._useTaskStartTimeForFullLoadTimestamp; }
             set { this._useTaskStartTimeForFullLoadTimestamp = value; }
         }
 

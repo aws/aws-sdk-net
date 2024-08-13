@@ -72,13 +72,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEffectiveSettings())
                 {
                     context.Writer.WritePropertyName("effectiveSettings");
-                    context.Writer.Write(publicRequest.EffectiveSettings);
+                    context.Writer.Write(publicRequest.EffectiveSettings.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetName())

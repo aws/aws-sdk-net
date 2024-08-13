@@ -124,9 +124,9 @@ namespace Amazon.AppConfig.Model
         /// The extension version number.
         /// </para>
         /// </summary>
-        public int VersionNumber
+        public int? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

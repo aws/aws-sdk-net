@@ -54,9 +54,9 @@ namespace Amazon.Transfer.Model
         /// This parameter applies to both server and connector security policies.
         /// </para>
         /// </summary>
-        public bool Fips
+        public bool? Fips
         {
-            get { return this._fips.GetValueOrDefault(); }
+            get { return this._fips; }
             set { this._fips = value; }
         }
 

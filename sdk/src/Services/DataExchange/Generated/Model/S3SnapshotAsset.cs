@@ -43,9 +43,9 @@ namespace Amazon.DataExchange.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Size
+        public double? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

@@ -79,7 +79,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPreview())
                 {
                     context.Writer.WritePropertyName("Preview");
-                    context.Writer.Write(publicRequest.Preview);
+                    context.Writer.Write(publicRequest.Preview.Value);
                 }
 
                 if(publicRequest.IsSetRecipeStep())
@@ -96,7 +96,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStepIndex())
                 {
                     context.Writer.WritePropertyName("StepIndex");
-                    context.Writer.Write(publicRequest.StepIndex);
+                    context.Writer.Write(publicRequest.StepIndex.Value);
                 }
 
                 if(publicRequest.IsSetViewFrame())

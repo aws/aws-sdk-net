@@ -140,9 +140,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=480)]
-        public int SessionIdleTimeoutInMinutes
+        public int? SessionIdleTimeoutInMinutes
         {
-            get { return this._sessionIdleTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._sessionIdleTimeoutInMinutes; }
             set { this._sessionIdleTimeoutInMinutes = value; }
         }
 

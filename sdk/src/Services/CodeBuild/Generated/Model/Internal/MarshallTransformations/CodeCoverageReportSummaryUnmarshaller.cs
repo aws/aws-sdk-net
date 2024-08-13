@@ -68,37 +68,37 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("branchCoveragePercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BranchCoveragePercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("branchesCovered", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BranchesCovered = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("branchesMissed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BranchesMissed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lineCoveragePercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LineCoveragePercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("linesCovered", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LinesCovered = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("linesMissed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LinesMissed = unmarshaller.Unmarshall(context);
                     continue;
                 }

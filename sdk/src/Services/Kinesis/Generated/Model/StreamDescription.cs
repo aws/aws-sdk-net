@@ -101,9 +101,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool HasMoreShards
+        public bool? HasMoreShards
         {
-            get { return this._hasMoreShards.GetValueOrDefault(); }
+            get { return this._hasMoreShards; }
             set { this._hasMoreShards = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int RetentionPeriodHours
+        public int? RetentionPeriodHours
         {
-            get { return this._retentionPeriodHours.GetValueOrDefault(); }
+            get { return this._retentionPeriodHours; }
             set { this._retentionPeriodHours = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StreamCreationTimestamp
+        public DateTime? StreamCreationTimestamp
         {
-            get { return this._streamCreationTimestamp.GetValueOrDefault(); }
+            get { return this._streamCreationTimestamp; }
             set { this._streamCreationTimestamp = value; }
         }
 

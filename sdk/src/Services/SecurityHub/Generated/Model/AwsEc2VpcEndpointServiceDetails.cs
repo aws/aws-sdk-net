@@ -53,9 +53,9 @@ namespace Amazon.SecurityHub.Model
         /// the service must first be accepted.
         /// </para>
         /// </summary>
-        public bool AcceptanceRequired
+        public bool? AcceptanceRequired
         {
-            get { return this._acceptanceRequired.GetValueOrDefault(); }
+            get { return this._acceptanceRequired; }
             set { this._acceptanceRequired = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the service manages its VPC endpoints.
         /// </para>
         /// </summary>
-        public bool ManagesVpcEndpoints
+        public bool? ManagesVpcEndpoints
         {
-            get { return this._managesVpcEndpoints.GetValueOrDefault(); }
+            get { return this._managesVpcEndpoints; }
             set { this._managesVpcEndpoints = value; }
         }
 

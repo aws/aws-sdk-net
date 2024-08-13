@@ -161,9 +161,9 @@ namespace Amazon.EC2.Model
         /// group strategy is set to <c>partition</c>.
         /// </para>
         /// </summary>
-        public int PartitionNumber
+        public int? PartitionNumber
         {
-            get { return this._partitionNumber.GetValueOrDefault(); }
+            get { return this._partitionNumber; }
             set { this._partitionNumber = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("burstLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BurstLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rateLimit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RateLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

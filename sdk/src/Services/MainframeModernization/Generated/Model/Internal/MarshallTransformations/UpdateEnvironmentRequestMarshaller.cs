@@ -73,13 +73,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApplyDuringMaintenanceWindow())
                 {
                     context.Writer.WritePropertyName("applyDuringMaintenanceWindow");
-                    context.Writer.Write(publicRequest.ApplyDuringMaintenanceWindow);
+                    context.Writer.Write(publicRequest.ApplyDuringMaintenanceWindow.Value);
                 }
 
                 if(publicRequest.IsSetDesiredCapacity())
                 {
                     context.Writer.WritePropertyName("desiredCapacity");
-                    context.Writer.Write(publicRequest.DesiredCapacity);
+                    context.Writer.Write(publicRequest.DesiredCapacity.Value);
                 }
 
                 if(publicRequest.IsSetEngineVersion())
@@ -91,7 +91,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceUpdate())
                 {
                     context.Writer.WritePropertyName("forceUpdate");
-                    context.Writer.Write(publicRequest.ForceUpdate);
+                    context.Writer.Write(publicRequest.ForceUpdate.Value);
                 }
 
                 if(publicRequest.IsSetInstanceType())

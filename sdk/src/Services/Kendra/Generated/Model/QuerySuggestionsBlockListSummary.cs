@@ -59,9 +59,9 @@ namespace Amazon.Kendra.Model
         /// The Unix timestamp when the block list was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.Kendra.Model
         /// The number of items in the block list file.
         /// </para>
         /// </summary>
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.Kendra.Model
         /// The Unix timestamp when the block list was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

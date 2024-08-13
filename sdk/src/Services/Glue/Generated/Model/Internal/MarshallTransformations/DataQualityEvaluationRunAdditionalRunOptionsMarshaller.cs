@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.CloudWatchMetricsEnabled);
+                context.Writer.Write(requestObject.CloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetCompositeRuleEvaluationMethod())

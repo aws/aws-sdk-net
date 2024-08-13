@@ -46,9 +46,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Maximum
+        public double? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Minimum
+        public double? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double SampleCount
+        public double? SampleCount
         {
-            get { return this._sampleCount.GetValueOrDefault(); }
+            get { return this._sampleCount; }
             set { this._sampleCount = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 

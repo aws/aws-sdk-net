@@ -43,9 +43,9 @@ namespace Amazon.Detective.Model
         /// Total volume of data in bytes per day ingested for a given data source package.
         /// </para>
         /// </summary>
-        public long VolumeUsageInBytes
+        public long? VolumeUsageInBytes
         {
-            get { return this._volumeUsageInBytes.GetValueOrDefault(); }
+            get { return this._volumeUsageInBytes; }
             set { this._volumeUsageInBytes = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Detective.Model
         /// is an ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
-        public DateTime VolumeUsageUpdateTime
+        public DateTime? VolumeUsageUpdateTime
         {
-            get { return this._volumeUsageUpdateTime.GetValueOrDefault(); }
+            get { return this._volumeUsageUpdateTime; }
             set { this._volumeUsageUpdateTime = value; }
         }
 

@@ -53,9 +53,9 @@ namespace Amazon.WAFV2.Model
         /// threat mitigation. 
         /// </para>
         /// </summary>
-        public bool IsAdvancedManagedRuleSet
+        public bool? IsAdvancedManagedRuleSet
         {
-            get { return this._isAdvancedManagedRuleSet.GetValueOrDefault(); }
+            get { return this._isAdvancedManagedRuleSet; }
             set { this._isAdvancedManagedRuleSet = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.WAFV2.Model
         /// Indicates whether the rule group is versioned. 
         /// </para>
         /// </summary>
-        public bool IsVersioningSupported
+        public bool? IsVersioningSupported
         {
-            get { return this._isVersioningSupported.GetValueOrDefault(); }
+            get { return this._isVersioningSupported; }
             set { this._isVersioningSupported = value; }
         }
 

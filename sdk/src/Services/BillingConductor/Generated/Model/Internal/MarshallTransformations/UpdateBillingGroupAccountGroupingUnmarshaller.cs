@@ -68,7 +68,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoAssociate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoAssociate = unmarshaller.Unmarshall(context);
                     continue;
                 }

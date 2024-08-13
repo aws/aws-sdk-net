@@ -74,9 +74,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ChallengeRequiredOnNewDevice
+        public bool? ChallengeRequiredOnNewDevice
         {
-            get { return this._challengeRequiredOnNewDevice.GetValueOrDefault(); }
+            get { return this._challengeRequiredOnNewDevice; }
             set { this._challengeRequiredOnNewDevice = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// remembers devices that you register in a <c>ConfirmDevice</c> API request.
         /// </para>
         /// </summary>
-        public bool DeviceOnlyRememberedOnUserPrompt
+        public bool? DeviceOnlyRememberedOnUserPrompt
         {
-            get { return this._deviceOnlyRememberedOnUserPrompt.GetValueOrDefault(); }
+            get { return this._deviceOnlyRememberedOnUserPrompt; }
             set { this._deviceOnlyRememberedOnUserPrompt = value; }
         }
 

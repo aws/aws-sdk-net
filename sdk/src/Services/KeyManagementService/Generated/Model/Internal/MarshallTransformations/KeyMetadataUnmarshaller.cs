@@ -86,7 +86,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeletionDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeletionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,7 +116,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -176,7 +176,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MultiRegion", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MultiRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -194,7 +194,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PendingDeletionWindowInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PendingDeletionWindowInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -206,7 +206,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ValidTo", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ValidTo = unmarshaller.Unmarshall(context);
                     continue;
                 }

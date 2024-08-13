@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Util;
@@ -64,12 +64,11 @@ namespace AWSSDK.UnitTests
         }
 
 
-#if BCL45
-
+#if BCL
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestRedirectAsync()
         {
             var context = CreateTestContext();
@@ -99,45 +98,7 @@ namespace AWSSDK.UnitTests
             await RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(context);
             Assert.AreEqual(2, Tester.CallCount);
         }
-
-#elif !BCL45 && BCL
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestRedirectAsync()
-        {
-            var context = CreateAsyncTestContext();        
-            var httpResponse = context.ResponseContext.HttpResponse;
-            Tester.Reset();
-            Tester.Action2 = (callCount, executionContext) =>
-            {
-                if (callCount == 1)
-                {
-                    executionContext.ResponseContext.HttpResponse = new HttpWebRequestResponseData(
-                        HttpWebResponseHelper.Create(HttpStatusCode.TemporaryRedirect,
-                                new WebHeaderCollection { { "location", RedirectLocation } }));
-                }
-                else
-                {
-                    executionContext.ResponseContext.HttpResponse = httpResponse;
-                }
-            };
-            Tester.Validate = (int callCount) =>
-            {
-                if (callCount == 2)
-                {
-                    Assert.AreEqual(RedirectLocation, context.RequestContext.Request.Endpoint.AbsoluteUri);
-                }
-            };
-
-            var asyncResult = RuntimePipeline.InvokeAsync(context);
-            asyncResult.AsyncWaitHandle.WaitOne();
-            Assert.AreEqual(2, Tester.CallCount);
-        }
-
 #endif
-
     }
 
     public class HttpWebResponseHelper

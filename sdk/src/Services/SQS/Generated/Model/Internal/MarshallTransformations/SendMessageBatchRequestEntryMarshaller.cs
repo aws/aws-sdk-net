@@ -51,7 +51,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDelaySeconds())
             {
                 context.Writer.WritePropertyName("DelaySeconds");
-                context.Writer.Write(requestObject.DelaySeconds);
+                context.Writer.Write(requestObject.DelaySeconds.Value);
             }
 
             if(requestObject.IsSetId())

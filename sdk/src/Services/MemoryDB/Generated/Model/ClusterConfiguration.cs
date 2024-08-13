@@ -70,7 +70,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Redis engine version used by the cluster
+        /// The Redis OSS engine version used by the cluster
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -145,9 +145,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of shards in the cluster
         /// </para>
         /// </summary>
-        public int NumShards
+        public int? NumShards
         {
-            get { return this._numShards.GetValueOrDefault(); }
+            get { return this._numShards; }
             set { this._numShards = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.MemoryDB.Model
         /// The port used by the cluster
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.MemoryDB.Model
         /// The snapshot retention limit set by the cluster
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.SimpleEmail.Model
         /// in the current Amazon Web Services Region.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

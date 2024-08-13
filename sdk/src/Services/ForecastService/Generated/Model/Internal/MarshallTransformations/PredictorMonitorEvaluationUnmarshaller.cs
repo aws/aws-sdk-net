@@ -74,7 +74,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EvaluationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EvaluationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumItemsEvaluated", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumItemsEvaluated = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -122,13 +122,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WindowEndDatetime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.WindowEndDatetime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WindowStartDatetime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.WindowStartDatetime = unmarshaller.Unmarshall(context);
                     continue;
                 }

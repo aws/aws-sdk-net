@@ -123,9 +123,9 @@ namespace Amazon.CodePipeline.Model
         /// The date and time a webhook was last successfully triggered, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime LastTriggered
+        public DateTime? LastTriggered
         {
-            get { return this._lastTriggered.GetValueOrDefault(); }
+            get { return this._lastTriggered; }
             set { this._lastTriggered = value; }
         }
 

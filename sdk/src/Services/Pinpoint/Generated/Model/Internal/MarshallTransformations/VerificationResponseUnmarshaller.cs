@@ -68,7 +68,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Valid", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Valid = unmarshaller.Unmarshall(context);
                     continue;
                 }

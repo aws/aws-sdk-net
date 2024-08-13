@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         /// The time at which the audit mitigation actions task was started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

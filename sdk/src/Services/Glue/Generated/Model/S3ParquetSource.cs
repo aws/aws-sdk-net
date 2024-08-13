@@ -153,9 +153,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxBand
+        public int? MaxBand
         {
-            get { return this._maxBand.GetValueOrDefault(); }
+            get { return this._maxBand; }
             set { this._maxBand = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxFilesInBand
+        public int? MaxFilesInBand
         {
-            get { return this._maxFilesInBand.GetValueOrDefault(); }
+            get { return this._maxFilesInBand; }
             set { this._maxFilesInBand = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.Glue.Model
         /// paths.
         /// </para>
         /// </summary>
-        public bool Recurse
+        public bool? Recurse
         {
-            get { return this._recurse.GetValueOrDefault(); }
+            get { return this._recurse; }
             set { this._recurse = value; }
         }
 

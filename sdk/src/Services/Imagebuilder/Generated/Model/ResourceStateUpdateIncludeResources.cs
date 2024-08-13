@@ -44,9 +44,9 @@ namespace Amazon.Imagebuilder.Model
         /// Specifies whether the lifecycle action should apply to distributed AMIs
         /// </para>
         /// </summary>
-        public bool Amis
+        public bool? Amis
         {
-            get { return this._amis.GetValueOrDefault(); }
+            get { return this._amis; }
             set { this._amis = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Imagebuilder.Model
         /// Specifies whether the lifecycle action should apply to distributed containers.
         /// </para>
         /// </summary>
-        public bool Containers
+        public bool? Containers
         {
-            get { return this._containers.GetValueOrDefault(); }
+            get { return this._containers; }
             set { this._containers = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Imagebuilder.Model
         /// AMIs.
         /// </para>
         /// </summary>
-        public bool Snapshots
+        public bool? Snapshots
         {
-            get { return this._snapshots.GetValueOrDefault(); }
+            get { return this._snapshots; }
             set { this._snapshots = value; }
         }
 

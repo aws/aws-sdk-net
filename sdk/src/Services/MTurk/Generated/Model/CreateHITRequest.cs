@@ -94,9 +94,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long AssignmentDurationInSeconds
+        public long? AssignmentDurationInSeconds
         {
-            get { return this._assignmentDurationInSeconds.GetValueOrDefault(); }
+            get { return this._assignmentDurationInSeconds; }
             set { this._assignmentDurationInSeconds = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.MTurk.Model
         /// rejects it. 
         /// </para>
         /// </summary>
-        public long AutoApprovalDelayInSeconds
+        public long? AutoApprovalDelayInSeconds
         {
-            get { return this._autoApprovalDelayInSeconds.GetValueOrDefault(); }
+            get { return this._autoApprovalDelayInSeconds; }
             set { this._autoApprovalDelayInSeconds = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long LifetimeInSeconds
+        public long? LifetimeInSeconds
         {
-            get { return this._lifetimeInSeconds.GetValueOrDefault(); }
+            get { return this._lifetimeInSeconds; }
             set { this._lifetimeInSeconds = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.MTurk.Model
         /// unavailable. 
         /// </para>
         /// </summary>
-        public int MaxAssignments
+        public int? MaxAssignments
         {
-            get { return this._maxAssignments.GetValueOrDefault(); }
+            get { return this._maxAssignments; }
             set { this._maxAssignments = value; }
         }
 

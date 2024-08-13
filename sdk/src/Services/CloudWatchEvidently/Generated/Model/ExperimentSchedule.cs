@@ -43,9 +43,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// The time and date that Evidently completed the analysis of the experiment.
         /// </para>
         /// </summary>
-        public DateTime AnalysisCompleteTime
+        public DateTime? AnalysisCompleteTime
         {
-            get { return this._analysisCompleteTime.GetValueOrDefault(); }
+            get { return this._analysisCompleteTime; }
             set { this._analysisCompleteTime = value; }
         }
 

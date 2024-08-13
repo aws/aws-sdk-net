@@ -68,13 +68,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DesiredReplicaContainerGroupsPerInstance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredReplicaContainerGroupsPerInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxReplicaContainerGroupsPerInstance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxReplicaContainerGroupsPerInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }

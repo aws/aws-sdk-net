@@ -50,9 +50,9 @@ namespace Amazon.WorkLink.Model
         /// The date that the device first signed in to Amazon WorkLink.
         /// </para>
         /// </summary>
-        public DateTime FirstAccessedTime
+        public DateTime? FirstAccessedTime
         {
-            get { return this._firstAccessedTime.GetValueOrDefault(); }
+            get { return this._firstAccessedTime; }
             set { this._firstAccessedTime = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.WorkLink.Model
         /// The date that the device last accessed Amazon WorkLink.
         /// </para>
         /// </summary>
-        public DateTime LastAccessedTime
+        public DateTime? LastAccessedTime
         {
-            get { return this._lastAccessedTime.GetValueOrDefault(); }
+            get { return this._lastAccessedTime; }
             set { this._lastAccessedTime = value; }
         }
 

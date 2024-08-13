@@ -60,13 +60,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RecurrenceInHours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RecurrenceInHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartAt", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.StartAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

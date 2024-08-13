@@ -11,6 +11,7 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 
+
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
@@ -358,7 +359,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
 
             // Load 
-            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name, operationConfig);
+            var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name, new LoadConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc});
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -370,7 +371,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Query
             QueryFilter filter = new QueryFilter();
             filter.AddCondition("CreationTime", QueryOperator.Equal, currTime);
-            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(new QueryOperationConfig { Filter = filter }, operationConfig).First();
+            storedEmployee = Context.FromQuery<AnnotatedNumericEpochEmployee>(
+                new QueryOperationConfig { Filter = filter }, 
+                new FromQueryConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc}).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -380,7 +383,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Age, storedEmployee.Age);
 
             // Scan
-            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>(new List<ScanCondition>(), operationConfig).First();
+            storedEmployee = Context.Scan<AnnotatedNumericEpochEmployee>(
+                new List<ScanCondition>(), 
+                new ScanConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc }).First();
             Assert.IsNotNull(storedEmployee);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -601,8 +606,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             {
-                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
-                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                var docV1 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 });
                 VerifyConversions(docV1, docV2);
             }
 
@@ -620,7 +625,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
                 {
                     contextV1.Save(product);
-                    contextV1.Save(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                    contextV1.Save(product, new SaveConfig { Conversion = conversionV2 });
                 }
             }
 
@@ -634,8 +639,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     MostPopularProduct = product
                 };
                 AssertExtensions.ExpectException(() => Context.ToDocument(product), typeof(InvalidOperationException));
-                AssertExtensions.ExpectException(() => Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 }), typeof(InvalidOperationException));
-                AssertExtensions.ExpectException(() => Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 }), typeof(InvalidOperationException));
+                AssertExtensions.ExpectException(() => Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 }), typeof(InvalidOperationException));
+                AssertExtensions.ExpectException(() => Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 }), typeof(InvalidOperationException));
 
                 // Remove circular dependence
                 product.CompanyInfo.MostPopularProduct = new Product
@@ -647,29 +652,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     TagSet = new HashSet<string> { "Test" },
                 };
 
-                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
-                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                var docV1 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 });
                 VerifyConversions(docV1, docV2);
             }
 
             // Introduce circular reference in a Document and try to deserialize
             {
                 // Normal serialization
-                var docV1 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV1 });
-                var docV2 = Context.ToDocument(product, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                var docV1 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV1 });
+                var docV2 = Context.ToDocument(product, new ToDocumentConfig { Conversion = conversionV2 });
                 VerifyConversions(docV1, docV2);
 
                 // Add circular references
                 docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;
                 docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV2;
-                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV1, new DynamoDBOperationConfig { Conversion = conversionV1 }));
-                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV2, new DynamoDBOperationConfig { Conversion = conversionV2 }));
+                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV1, new FromDocumentConfig { Conversion = conversionV1 }));
+                AssertExtensions.ExpectException(() => Context.FromDocument<Product>(docV2, new FromDocumentConfig { Conversion = conversionV2 }));
 
                 // Remove circular references
                 docV1["CompanyInfo"].AsDocument()["MostPopularProduct"] = null;
                 docV2["CompanyInfo"].AsDocument()["MostPopularProduct"] = docV1;
-                var prod1 = Context.FromDocument<Product>(docV1, new DynamoDBOperationConfig { Conversion = conversionV1 });
-                var prod2 = Context.FromDocument<Product>(docV2, new DynamoDBOperationConfig { Conversion = conversionV2 });
+                var prod1 = Context.FromDocument<Product>(docV1, new FromDocumentConfig { Conversion = conversionV1 });
+                var prod2 = Context.FromDocument<Product>(docV2, new FromDocumentConfig { Conversion = conversionV2 });
             }
         }
 
@@ -967,7 +972,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     product.CompanyName,            // Hash-key for the index is Company
                     QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
                     new object[] { 90 },            // condition is against a numerical value
-                    new DynamoDBOperationConfig     // Configure the index to use
+                    new QueryConfig     // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
                     });
@@ -978,7 +983,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     product.CompanyName,            // Hash-key for the index is Company
                     QueryOperator.GreaterThan,      // Range-key for the index is Price, so the
                     new object[] { 90 },            // condition is against a numerical value
-                    new DynamoDBOperationConfig     // Configure the index to use
+                    new QueryConfig     // Configure the index to use
                     {
                         IndexName = "GlobalIndex",
                         QueryFilter = new List<ScanCondition>
@@ -1000,7 +1005,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Scan the table with consistent read
                 products = Context.Scan<Product>(
                     new ScanCondition[] { },
-                    new DynamoDBOperationConfig { ConsistentRead = true });
+                    new ScanConfig { ConsistentRead = true });
                 Assert.AreEqual(1, products.Count());
 
                 // Test a versioned product
@@ -1094,7 +1099,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(retrieved.Name, "Alan");
             retrieved = Context.Load(employee);
             Assert.AreEqual(retrieved.Name, "Chuck");
-            retrieved = Context.Load(employee2, new DynamoDBOperationConfig { ConsistentRead = true });
+            retrieved = Context.Load(employee2, new LoadConfig { ConsistentRead = true });
             Assert.AreEqual(retrieved.Name, "Diane");
             Assert.AreEqual(retrieved.Age, 24);
 
@@ -1114,21 +1119,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Index Query
 
             // Query local index for items with Hash-Key = "Diane"
-            employees = Context.Query<T>("Diane", new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+            employees = Context.Query<T>("Diane", new QueryConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
             employees = Context.Query<T>("Diane", QueryOperator.Equal, new object[] { "Eva" },
-                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+                new QueryConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River"
-            employees = Context.Query<T>("Big River", new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).ToList();
+            employees = Context.Query<T>("Big River", new QueryConfig { IndexName = "GlobalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Query global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
             employees = Context.Query<T>("Big River",
-                new DynamoDBOperationConfig
+                new QueryConfig
                 {
                     IndexName = "GlobalIndex",
                     QueryFilter = new List<ScanCondition>
@@ -1144,7 +1149,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Scan local index for items with Hash-Key = "Diane"
             employees = Context.Scan<T>(
                 new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, "Diane") },
-                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+                new ScanConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Scan local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
@@ -1154,13 +1159,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     new ScanCondition("Name", ScanOperator.Equal, "Diane"),
                     new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
                 },
-                new DynamoDBOperationConfig { IndexName = "LocalIndex" }).ToList();
+                new ScanConfig { IndexName = "LocalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River"
             employees = Context.Scan<T>(
                 new List<ScanCondition> { new ScanCondition("CompanyName", ScanOperator.Equal, "Big River") },
-                new DynamoDBOperationConfig { IndexName = "GlobalIndex" }).ToList();
+                new ScanConfig { IndexName = "GlobalIndex" }).ToList();
             Assert.AreEqual(2, employees.Count);
 
             // Scan global index for item with Hash-Key (Company) = "Big River", with QueryFilter for CurrentStatus = Status.Active
@@ -1170,7 +1175,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     new ScanCondition("CompanyName", ScanOperator.Equal, "Big River"),
                     new ScanCondition("CurrentStatus", ScanOperator.Equal, Status.Active)
                 },
-                new DynamoDBOperationConfig
+                new ScanConfig
                 {
                     IndexName = "GlobalIndex"
                 }).ToList();
@@ -1415,6 +1420,101 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
                 Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
                 Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+            }
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItem(employee1.Name, employee1.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 1 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee1.Version }
+                    });
+                transactWrite.AddDeleteKey(employee2.Name, employee2.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee2.Version - 1 }
+                    });
+
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(2, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[1].Code);
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+            }
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedEmployee>();
+                transactWrite.AddSaveItem(employee1.Name, employee1.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 1 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee1.Version }
+                    });
+                transactWrite.AddSaveItem(employee2.Name, employee2.Age,
+                    new Expression
+                    {
+                        ExpressionStatement = "SET #score = #score + :score",
+                        ExpressionAttributeNames = { ["#score"] = "Score" },
+                        ExpressionAttributeValues = { [":score"] = 2 }
+                    },
+                    new Expression
+                    {
+                        ExpressionStatement = "#version = :version",
+                        ExpressionAttributeNames = { ["#version"] = "Version" },
+                        ExpressionAttributeValues = { [":version"] = employee2.Version }
+                    });
+
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedEmployee>();
+                transactGet.AddKeys(new List<VersionedEmployee> { employee1, employee2 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Score + 1, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Score + 2, transactGet.Results[1].Score);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+
+                employee1.Score++;
+                employee2.Score += 2;
             }
 
             {

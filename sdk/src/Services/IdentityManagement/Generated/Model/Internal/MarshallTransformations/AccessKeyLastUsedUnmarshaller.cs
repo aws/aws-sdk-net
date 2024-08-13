@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("LastUsedDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastUsedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

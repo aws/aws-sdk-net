@@ -64,9 +64,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float Similarity
+        public float? Similarity
         {
-            get { return this._similarity.GetValueOrDefault(); }
+            get { return this._similarity; }
             set { this._similarity = value; }
         }
 

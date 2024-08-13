@@ -6,7 +6,6 @@ using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.Auth.AccessControlPolicy;
-using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 using Amazon.IdentityManagement;
 using Amazon.IdentityManagement.Model;
 using Amazon.Lambda;
@@ -17,9 +16,8 @@ using System.Net;
 using Amazon.Lambda.Model.Internal.MarshallTransformations;
 using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Remoting.Messaging;
-using System.ComponentModel.Composition;
 
-#if BCL45
+#if BCL
 using System.IO.Compression;
 using System.Text;
 using AWSSDK_DotNet.IntegrationTests.Utils;
@@ -117,7 +115,7 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
         }
 
         // This test depends on functionality that is only in 4.5
-#if BCL45
+#if BCL
         [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Lambda")]
@@ -376,8 +374,8 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
         {
             var statement = new Amazon.Auth.AccessControlPolicy.Statement(
                 Amazon.Auth.AccessControlPolicy.Statement.StatementEffect.Allow);
-            statement.Actions.Add(S3ActionIdentifiers.PutObject);
-            statement.Actions.Add(S3ActionIdentifiers.GetObject);
+            statement.Actions.Add("s3:PutObject");
+            statement.Actions.Add("s3:GetObject");
             statement.Resources.Add(new Resource("*"));
 
             var policy = new Amazon.Auth.AccessControlPolicy.Policy();

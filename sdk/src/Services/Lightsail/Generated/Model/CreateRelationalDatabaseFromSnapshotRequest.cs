@@ -93,9 +93,9 @@ namespace Amazon.Lightsail.Model
         /// resources in the same region as your database.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -216,9 +216,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime RestoreTime
+        public DateTime? RestoreTime
         {
-            get { return this._restoreTime.GetValueOrDefault(); }
+            get { return this._restoreTime; }
             set { this._restoreTime = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.Lightsail.Model
         /// Constraints: Cannot be specified if the <c>restore time</c> parameter is provided.
         /// </para>
         /// </summary>
-        public bool UseLatestRestorableTime
+        public bool? UseLatestRestorableTime
         {
-            get { return this._useLatestRestorableTime.GetValueOrDefault(); }
+            get { return this._useLatestRestorableTime; }
             set { this._useLatestRestorableTime = value; }
         }
 

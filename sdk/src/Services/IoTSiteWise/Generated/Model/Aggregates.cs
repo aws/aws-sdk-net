@@ -47,9 +47,9 @@ namespace Amazon.IoTSiteWise.Model
         /// The average (mean) value of the time series over a time interval window.
         /// </para>
         /// </summary>
-        public double Average
+        public double? Average
         {
-            get { return this._average.GetValueOrDefault(); }
+            get { return this._average; }
             set { this._average = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.IoTSiteWise.Model
         /// The count of data points in the time series over a time interval window.
         /// </para>
         /// </summary>
-        public double Count
+        public double? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.IoTSiteWise.Model
         /// The maximum value of the time series over a time interval window.
         /// </para>
         /// </summary>
-        public double Maximum
+        public double? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.IoTSiteWise.Model
         /// The minimum value of the time series over a time interval window.
         /// </para>
         /// </summary>
-        public double Minimum
+        public double? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.IoTSiteWise.Model
         /// The standard deviation of the time series over a time interval window.
         /// </para>
         /// </summary>
-        public double StandardDeviation
+        public double? StandardDeviation
         {
-            get { return this._standardDeviation.GetValueOrDefault(); }
+            get { return this._standardDeviation; }
             set { this._standardDeviation = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.IoTSiteWise.Model
         /// The sum of the time series over a time interval window.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 

@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private RecipeReference _recipeReference;
+        private List<RecipeStep> _recipeSteps = AWSConfigs.InitializeCollections ? new List<RecipeStep>() : null;
 
         /// <summary>
         /// Gets and sets the property Inputs. 
@@ -82,7 +83,6 @@ namespace Amazon.Glue.Model
         /// A reference to the DataBrew recipe used by the node.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RecipeReference RecipeReference
         {
             get { return this._recipeReference; }
@@ -93,6 +93,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetRecipeReference()
         {
             return this._recipeReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecipeSteps. 
+        /// <para>
+        /// Transform steps used in the recipe node.
+        /// </para>
+        /// </summary>
+        public List<RecipeStep> RecipeSteps
+        {
+            get { return this._recipeSteps; }
+            set { this._recipeSteps = value; }
+        }
+
+        // Check to see if RecipeSteps property is set
+        internal bool IsSetRecipeSteps()
+        {
+            return this._recipeSteps != null && (this._recipeSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

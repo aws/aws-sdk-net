@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Lex.Endpoints;
 using Amazon.Lex.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class LexEndpointsTests

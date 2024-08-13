@@ -68,7 +68,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastCheckedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastCheckedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

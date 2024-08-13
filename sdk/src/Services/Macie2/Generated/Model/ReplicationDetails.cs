@@ -47,9 +47,9 @@ namespace Amazon.Macie2.Model
         /// destination.
         /// </para>
         /// </summary>
-        public bool Replicated
+        public bool? Replicated
         {
-            get { return this._replicated.GetValueOrDefault(); }
+            get { return this._replicated; }
             set { this._replicated = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Macie2.Model
         /// managed as a group of related accounts through Organizations or by Macie invitation.
         /// </para>
         /// </summary>
-        public bool ReplicatedExternally
+        public bool? ReplicatedExternally
         {
-            get { return this._replicatedExternally.GetValueOrDefault(); }
+            get { return this._replicatedExternally; }
             set { this._replicatedExternally = value; }
         }
 

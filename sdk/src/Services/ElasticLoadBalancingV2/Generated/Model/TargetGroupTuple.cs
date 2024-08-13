@@ -62,9 +62,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The weight. The range is 0 to 999.
         /// </para>
         /// </summary>
-        public int Weight
+        public int? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

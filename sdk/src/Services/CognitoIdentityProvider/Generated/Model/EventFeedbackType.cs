@@ -44,9 +44,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The event feedback date.
         /// </para>
         /// </summary>
-        public DateTime FeedbackDate
+        public DateTime? FeedbackDate
         {
-            get { return this._feedbackDate.GetValueOrDefault(); }
+            get { return this._feedbackDate; }
             set { this._feedbackDate = value; }
         }
 

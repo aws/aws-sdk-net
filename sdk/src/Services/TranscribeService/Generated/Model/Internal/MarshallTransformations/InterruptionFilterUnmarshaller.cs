@@ -74,7 +74,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Negate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Negate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Threshold", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

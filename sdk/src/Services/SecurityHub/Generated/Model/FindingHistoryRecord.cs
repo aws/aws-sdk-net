@@ -50,9 +50,9 @@ namespace Amazon.SecurityHub.Model
         /// isn’t newly created. 
         /// </para>
         /// </summary>
-        public bool FindingCreated
+        public bool? FindingCreated
         {
-            get { return this._findingCreated.GetValueOrDefault(); }
+            get { return this._findingCreated; }
             set { this._findingCreated = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

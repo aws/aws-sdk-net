@@ -51,7 +51,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreated())
             {
                 context.Writer.WritePropertyName("created");
-                context.Writer.Write(requestObject.Created);
+                context.Writer.Write(requestObject.Created.Value);
             }
 
             if(requestObject.IsSetRevisionChangeId())

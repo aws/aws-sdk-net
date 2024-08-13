@@ -68,7 +68,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PercentComplete", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PercentComplete = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,9 +68,9 @@ namespace Amazon.PersonalizeRuntime.Model
         /// action recommendation scoring works</a>.
         /// </para>
         /// </summary>
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

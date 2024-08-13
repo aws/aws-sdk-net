@@ -51,7 +51,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxRequests())
             {
                 context.Writer.WritePropertyName("maxRequests");
-                context.Writer.Write(requestObject.MaxRequests);
+                context.Writer.Write(requestObject.MaxRequests.Value);
             }
 
         }

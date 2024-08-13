@@ -74,7 +74,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SubmittedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SubmittedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -57,13 +57,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDynamic())
             {
                 context.Writer.WritePropertyName("Dynamic");
-                context.Writer.Write(requestObject.Dynamic);
+                context.Writer.Write(requestObject.Dynamic.Value);
             }
 
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("Required");
-                context.Writer.Write(requestObject.Required);
+                context.Writer.Write(requestObject.Required.Value);
             }
 
         }

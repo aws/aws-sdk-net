@@ -51,7 +51,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsWifiEnabled())
             {
                 context.Writer.WritePropertyName("IsWifiEnabled");
-                context.Writer.Write(requestObject.IsWifiEnabled);
+                context.Writer.Write(requestObject.IsWifiEnabled.Value);
             }
 
         }

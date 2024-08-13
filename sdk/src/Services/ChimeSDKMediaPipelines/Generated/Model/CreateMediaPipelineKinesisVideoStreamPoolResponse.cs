@@ -39,8 +39,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property KinesisVideoStreamPoolConfiguration. 
         /// <para>
-        /// The configuration for the Kinesis video stream pool.
+        /// The configuration for applying the streams to the pool.
         /// </para>
+        ///  <note>  </note>
         /// </summary>
         public KinesisVideoStreamPoolConfiguration KinesisVideoStreamPoolConfiguration
         {

@@ -51,13 +51,13 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPreserveDefaultVertexLabels())
             {
                 context.Writer.WritePropertyName("preserveDefaultVertexLabels");
-                context.Writer.Write(requestObject.PreserveDefaultVertexLabels);
+                context.Writer.Write(requestObject.PreserveDefaultVertexLabels.Value);
             }
 
             if(requestObject.IsSetPreserveEdgeIds())
             {
                 context.Writer.WritePropertyName("preserveEdgeIds");
-                context.Writer.Write(requestObject.PreserveEdgeIds);
+                context.Writer.Write(requestObject.PreserveEdgeIds.Value);
             }
 
             if(requestObject.IsSetS3ExportKmsKeyId())

@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// The highest value in the column.
         /// </para>
         /// </summary>
-        public DateTime MaximumValue
+        public DateTime? MaximumValue
         {
-            get { return this._maximumValue.GetValueOrDefault(); }
+            get { return this._maximumValue; }
             set { this._maximumValue = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// The lowest value in the column.
         /// </para>
         /// </summary>
-        public DateTime MinimumValue
+        public DateTime? MinimumValue
         {
-            get { return this._minimumValue.GetValueOrDefault(); }
+            get { return this._minimumValue; }
             set { this._minimumValue = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfDistinctValues
+        public long? NumberOfDistinctValues
         {
-            get { return this._numberOfDistinctValues.GetValueOrDefault(); }
+            get { return this._numberOfDistinctValues; }
             set { this._numberOfDistinctValues = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfNulls
+        public long? NumberOfNulls
         {
-            get { return this._numberOfNulls.GetValueOrDefault(); }
+            get { return this._numberOfNulls; }
             set { this._numberOfNulls = value; }
         }
 

@@ -57,7 +57,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnlockDelayValue())
             {
                 context.Writer.WritePropertyName("UnlockDelayValue");
-                context.Writer.Write(requestObject.UnlockDelayValue);
+                context.Writer.Write(requestObject.UnlockDelayValue.Value);
             }
 
         }

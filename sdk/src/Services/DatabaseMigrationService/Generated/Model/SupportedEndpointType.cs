@@ -128,9 +128,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Indicates if change data capture (CDC) is supported.
         /// </para>
         /// </summary>
-        public bool SupportsCDC
+        public bool? SupportsCDC
         {
-            get { return this._supportsCDC.GetValueOrDefault(); }
+            get { return this._supportsCDC; }
             set { this._supportsCDC = value; }
         }
 

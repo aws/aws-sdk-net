@@ -51,7 +51,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetResourceCount())
             {
                 context.Writer.WritePropertyName("targetResourceCount");
-                context.Writer.Write(requestObject.TargetResourceCount);
+                context.Writer.Write(requestObject.TargetResourceCount.Value);
             }
 
         }

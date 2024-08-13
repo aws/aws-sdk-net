@@ -45,9 +45,9 @@ namespace Amazon.Lightsail.Model
         /// of your request.
         /// </para>
         /// </summary>
-        public bool IncludeDefaultKeyPair
+        public bool? IncludeDefaultKeyPair
         {
-            get { return this._includeDefaultKeyPair.GetValueOrDefault(); }
+            get { return this._includeDefaultKeyPair; }
             set { this._includeDefaultKeyPair = value; }
         }
 

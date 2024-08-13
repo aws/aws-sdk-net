@@ -49,9 +49,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int AllocatedUsageQuantity
+        public int? AllocatedUsageQuantity
         {
-            get { return this._allocatedUsageQuantity.GetValueOrDefault(); }
+            get { return this._allocatedUsageQuantity; }
             set { this._allocatedUsageQuantity = value; }
         }
 

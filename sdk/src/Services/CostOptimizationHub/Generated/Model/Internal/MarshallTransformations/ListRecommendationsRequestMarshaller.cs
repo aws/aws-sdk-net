@@ -83,13 +83,13 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeAllRecommendations())
                 {
                     context.Writer.WritePropertyName("includeAllRecommendations");
-                    context.Writer.Write(publicRequest.IncludeAllRecommendations);
+                    context.Writer.Write(publicRequest.IncludeAllRecommendations.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

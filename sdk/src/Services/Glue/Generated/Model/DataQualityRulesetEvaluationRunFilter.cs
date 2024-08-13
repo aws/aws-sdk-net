@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// Filter results by runs that started after this time.
         /// </para>
         /// </summary>
-        public DateTime StartedAfter
+        public DateTime? StartedAfter
         {
-            get { return this._startedAfter.GetValueOrDefault(); }
+            get { return this._startedAfter; }
             set { this._startedAfter = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Glue.Model
         /// Filter results by runs that started before this time.
         /// </para>
         /// </summary>
-        public DateTime StartedBefore
+        public DateTime? StartedBefore
         {
-            get { return this._startedBefore.GetValueOrDefault(); }
+            get { return this._startedBefore; }
             set { this._startedBefore = value; }
         }
 

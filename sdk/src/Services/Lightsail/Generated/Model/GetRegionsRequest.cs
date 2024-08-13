@@ -46,9 +46,9 @@ namespace Amazon.Lightsail.Model
         /// regions request. Availability Zones are indicated with a letter: <c>us-east-2a</c>.
         /// </para>
         /// </summary>
-        public bool IncludeAvailabilityZones
+        public bool? IncludeAvailabilityZones
         {
-            get { return this._includeAvailabilityZones.GetValueOrDefault(); }
+            get { return this._includeAvailabilityZones; }
             set { this._includeAvailabilityZones = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Lightsail.Model
         /// in your get regions request. Availability Zones are indicated with a letter (<c>us-east-2a</c>).
         /// </para>
         /// </summary>
-        public bool IncludeRelationalDatabaseAvailabilityZones
+        public bool? IncludeRelationalDatabaseAvailabilityZones
         {
-            get { return this._includeRelationalDatabaseAvailabilityZones.GetValueOrDefault(); }
+            get { return this._includeRelationalDatabaseAvailabilityZones; }
             set { this._includeRelationalDatabaseAvailabilityZones = value; }
         }
 

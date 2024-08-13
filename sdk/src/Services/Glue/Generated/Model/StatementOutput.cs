@@ -101,9 +101,9 @@ namespace Amazon.Glue.Model
         /// The execution count of the output.
         /// </para>
         /// </summary>
-        public int ExecutionCount
+        public int? ExecutionCount
         {
-            get { return this._executionCount.GetValueOrDefault(); }
+            get { return this._executionCount; }
             set { this._executionCount = value; }
         }
 

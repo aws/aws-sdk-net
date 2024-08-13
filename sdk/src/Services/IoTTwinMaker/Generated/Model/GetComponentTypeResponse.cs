@@ -135,9 +135,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A Boolean value that specifies whether the component type is abstract.
         /// </para>
         /// </summary>
-        public bool IsAbstract
+        public bool? IsAbstract
         {
-            get { return this._isAbstract.GetValueOrDefault(); }
+            get { return this._isAbstract; }
             set { this._isAbstract = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// and that the schema initializer has run.
         /// </para>
         /// </summary>
-        public bool IsSchemaInitialized
+        public bool? IsSchemaInitialized
         {
-            get { return this._isSchemaInitialized.GetValueOrDefault(); }
+            get { return this._isSchemaInitialized; }
             set { this._isSchemaInitialized = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// of this type.
         /// </para>
         /// </summary>
-        public bool IsSingleton
+        public bool? IsSingleton
         {
-            get { return this._isSingleton.GetValueOrDefault(); }
+            get { return this._isSingleton; }
             set { this._isSingleton = value; }
         }
 
@@ -343,9 +343,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateDateTime
+        public DateTime? UpdateDateTime
         {
-            get { return this._updateDateTime.GetValueOrDefault(); }
+            get { return this._updateDateTime; }
             set { this._updateDateTime = value; }
         }
 

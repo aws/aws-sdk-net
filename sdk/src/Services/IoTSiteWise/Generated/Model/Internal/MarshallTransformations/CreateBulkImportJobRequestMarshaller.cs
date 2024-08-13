@@ -70,13 +70,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAdaptiveIngestion())
                 {
                     context.Writer.WritePropertyName("adaptiveIngestion");
-                    context.Writer.Write(publicRequest.AdaptiveIngestion);
+                    context.Writer.Write(publicRequest.AdaptiveIngestion.Value);
                 }
 
                 if(publicRequest.IsSetDeleteFilesAfterImport())
                 {
                     context.Writer.WritePropertyName("deleteFilesAfterImport");
-                    context.Writer.Write(publicRequest.DeleteFilesAfterImport);
+                    context.Writer.Write(publicRequest.DeleteFilesAfterImport.Value);
                 }
 
                 if(publicRequest.IsSetErrorReportLocation())

@@ -63,9 +63,9 @@ namespace Amazon.Imagebuilder.Model
         /// image.
         /// </para>
         /// </summary>
-        public bool ImageScanningEnabled
+        public bool? ImageScanningEnabled
         {
-            get { return this._imageScanningEnabled.GetValueOrDefault(); }
+            get { return this._imageScanningEnabled; }
             set { this._imageScanningEnabled = value; }
         }
 

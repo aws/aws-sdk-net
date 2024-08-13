@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomatedSnapshotStartHour())
             {
                 context.Writer.WritePropertyName("AutomatedSnapshotStartHour");
-                context.Writer.Write(requestObject.AutomatedSnapshotStartHour);
+                context.Writer.Write(requestObject.AutomatedSnapshotStartHour.Value);
             }
 
         }

@@ -64,9 +64,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DocumentIndex
+        public int? DocumentIndex
         {
-            get { return this._documentIndex.GetValueOrDefault(); }
+            get { return this._documentIndex; }
             set { this._documentIndex = value; }
         }
 

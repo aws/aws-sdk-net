@@ -78,13 +78,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpiresInMinutes())
                 {
                     context.Writer.WritePropertyName("expiresInMinutes");
-                    context.Writer.Write(publicRequest.ExpiresInMinutes);
+                    context.Writer.Write(publicRequest.ExpiresInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetProtectionEnabled())
                 {
                     context.Writer.WritePropertyName("protectionEnabled");
-                    context.Writer.Write(publicRequest.ProtectionEnabled);
+                    context.Writer.Write(publicRequest.ProtectionEnabled.Value);
                 }
 
                 if(publicRequest.IsSetTasks())

@@ -63,7 +63,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PropagateAtLaunch", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PropagateAtLaunch = unmarshaller.Unmarshall(context);
                         continue;
                     }

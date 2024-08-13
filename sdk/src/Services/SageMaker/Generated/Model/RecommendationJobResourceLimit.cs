@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxNumberOfTests
+        public int? MaxNumberOfTests
         {
-            get { return this._maxNumberOfTests.GetValueOrDefault(); }
+            get { return this._maxNumberOfTests; }
             set { this._maxNumberOfTests = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxParallelOfTests
+        public int? MaxParallelOfTests
         {
-            get { return this._maxParallelOfTests.GetValueOrDefault(); }
+            get { return this._maxParallelOfTests; }
             set { this._maxParallelOfTests = value; }
         }
 

@@ -4384,7 +4384,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// List tags for a CloudFront resource.
+        /// List tags for a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -4460,7 +4461,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Add tags to a CloudFront resource.
+        /// Add tags to a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -4540,7 +4542,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Remove tags from a CloudFront resource.
+        /// Remove tags from a CloudFront resource. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/tagging.html">Tagging
+        /// a distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -5947,5 +5950,33 @@ namespace Amazon.CloudFront
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonCloudFrontConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonCloudFrontConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonCloudFrontConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonCloudFrontConfig to create AmazonCloudFrontClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonCloudFrontClient(serviceClientConfig) :
+                    new AmazonCloudFrontClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

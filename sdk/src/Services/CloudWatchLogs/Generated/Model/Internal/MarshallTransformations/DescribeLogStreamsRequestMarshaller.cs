@@ -72,13 +72,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDescending())
                 {
                     context.Writer.WritePropertyName("descending");
-                    context.Writer.Write(publicRequest.Descending);
+                    context.Writer.Write(publicRequest.Descending.Value);
                 }
 
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetLogGroupIdentifier())

@@ -51,9 +51,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HTTPPort
+        public int? HTTPPort
         {
-            get { return this._httpPort.GetValueOrDefault(); }
+            get { return this._httpPort; }
             set { this._httpPort = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HTTPSPort
+        public int? HTTPSPort
         {
-            get { return this._httpsPort.GetValueOrDefault(); }
+            get { return this._httpsPort; }
             set { this._httpsPort = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.CloudFront.Model
         /// Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        public int OriginKeepaliveTimeout
+        public int? OriginKeepaliveTimeout
         {
-            get { return this._originKeepaliveTimeout.GetValueOrDefault(); }
+            get { return this._originKeepaliveTimeout; }
             set { this._originKeepaliveTimeout = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.CloudFront.Model
         /// Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        public int OriginReadTimeout
+        public int? OriginReadTimeout
         {
-            get { return this._originReadTimeout.GetValueOrDefault(); }
+            get { return this._originReadTimeout; }
             set { this._originReadTimeout = value; }
         }
 

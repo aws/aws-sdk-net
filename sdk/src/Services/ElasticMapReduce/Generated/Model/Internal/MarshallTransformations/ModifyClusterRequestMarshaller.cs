@@ -78,7 +78,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStepConcurrencyLevel())
                 {
                     context.Writer.WritePropertyName("StepConcurrencyLevel");
-                    context.Writer.Write(publicRequest.StepConcurrencyLevel);
+                    context.Writer.Write(publicRequest.StepConcurrencyLevel.Value);
                 }
 
                 writer.WriteObjectEnd();

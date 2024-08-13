@@ -99,13 +99,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNluIntentConfidenceThreshold())
                 {
                     context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.NluIntentConfidenceThreshold.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.NluIntentConfidenceThreshold);
+                        context.Writer.Write(publicRequest.NluIntentConfidenceThreshold.Value);
                     }
                 }
 

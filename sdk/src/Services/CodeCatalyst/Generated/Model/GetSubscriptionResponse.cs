@@ -66,9 +66,9 @@ namespace Amazon.CodeCatalyst.Model
         /// 3339</a>.
         /// </para>
         /// </summary>
-        public DateTime PendingSubscriptionStartTime
+        public DateTime? PendingSubscriptionStartTime
         {
-            get { return this._pendingSubscriptionStartTime.GetValueOrDefault(); }
+            get { return this._pendingSubscriptionStartTime; }
             set { this._pendingSubscriptionStartTime = value; }
         }
 

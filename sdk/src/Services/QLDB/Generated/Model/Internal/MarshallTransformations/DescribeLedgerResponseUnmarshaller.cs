@@ -60,13 +60,13 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeletionProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DeletionProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }

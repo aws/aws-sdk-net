@@ -47,9 +47,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableManifestOutput
+        public bool? EnableManifestOutput
         {
-            get { return this._enableManifestOutput.GetValueOrDefault(); }
+            get { return this._enableManifestOutput; }
             set { this._enableManifestOutput = value; }
         }
 

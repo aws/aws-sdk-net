@@ -187,9 +187,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the task last went into <c>CONNECTED</c> status.
         /// </para>
         /// </summary>
-        public DateTime ConnectivityAt
+        public DateTime? ConnectivityAt
         {
-            get { return this._connectivityAt.GetValueOrDefault(); }
+            get { return this._connectivityAt; }
             set { this._connectivityAt = value; }
         }
 
@@ -321,9 +321,9 @@ namespace Amazon.ECS.Model
         /// for the time when the task entered the <c>PENDING</c> state.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -359,9 +359,9 @@ namespace Amazon.ECS.Model
         /// execute command functionality is turned on all the containers in the task.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 
@@ -395,9 +395,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the task execution stopped.
         /// </para>
         /// </summary>
-        public DateTime ExecutionStoppedAt
+        public DateTime? ExecutionStoppedAt
         {
-            get { return this._executionStoppedAt.GetValueOrDefault(); }
+            get { return this._executionStoppedAt; }
             set { this._executionStoppedAt = value; }
         }
 
@@ -673,9 +673,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the container image pull began.
         /// </para>
         /// </summary>
-        public DateTime PullStartedAt
+        public DateTime? PullStartedAt
         {
-            get { return this._pullStartedAt.GetValueOrDefault(); }
+            get { return this._pullStartedAt; }
             set { this._pullStartedAt = value; }
         }
 
@@ -691,9 +691,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the container image pull completed.
         /// </para>
         /// </summary>
-        public DateTime PullStoppedAt
+        public DateTime? PullStoppedAt
         {
-            get { return this._pullStoppedAt.GetValueOrDefault(); }
+            get { return this._pullStoppedAt; }
             set { this._pullStoppedAt = value; }
         }
 
@@ -711,9 +711,9 @@ namespace Amazon.ECS.Model
         /// state.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -774,9 +774,9 @@ namespace Amazon.ECS.Model
         /// state.
         /// </para>
         /// </summary>
-        public DateTime StoppedAt
+        public DateTime? StoppedAt
         {
-            get { return this._stoppedAt.GetValueOrDefault(); }
+            get { return this._stoppedAt; }
             set { this._stoppedAt = value; }
         }
 
@@ -811,9 +811,9 @@ namespace Amazon.ECS.Model
         /// time when the task transitions from the <c>RUNNING</c> state to <c>STOPPING</c>.
         /// </para>
         /// </summary>
-        public DateTime StoppingAt
+        public DateTime? StoppingAt
         {
-            get { return this._stoppingAt.GetValueOrDefault(); }
+            get { return this._stoppingAt; }
             set { this._stoppingAt = value; }
         }
 
@@ -930,9 +930,9 @@ namespace Amazon.ECS.Model
         /// is current.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

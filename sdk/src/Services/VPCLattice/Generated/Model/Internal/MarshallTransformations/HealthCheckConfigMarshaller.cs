@@ -51,25 +51,25 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetHealthCheckIntervalSeconds())
             {
                 context.Writer.WritePropertyName("healthCheckIntervalSeconds");
-                context.Writer.Write(requestObject.HealthCheckIntervalSeconds);
+                context.Writer.Write(requestObject.HealthCheckIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetHealthCheckTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("healthCheckTimeoutSeconds");
-                context.Writer.Write(requestObject.HealthCheckTimeoutSeconds);
+                context.Writer.Write(requestObject.HealthCheckTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetHealthyThresholdCount())
             {
                 context.Writer.WritePropertyName("healthyThresholdCount");
-                context.Writer.Write(requestObject.HealthyThresholdCount);
+                context.Writer.Write(requestObject.HealthyThresholdCount.Value);
             }
 
             if(requestObject.IsSetMatcher())
@@ -92,7 +92,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProtocol())
@@ -110,7 +110,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnhealthyThresholdCount())
             {
                 context.Writer.WritePropertyName("unhealthyThresholdCount");
-                context.Writer.Write(requestObject.UnhealthyThresholdCount);
+                context.Writer.Write(requestObject.UnhealthyThresholdCount.Value);
             }
 
         }

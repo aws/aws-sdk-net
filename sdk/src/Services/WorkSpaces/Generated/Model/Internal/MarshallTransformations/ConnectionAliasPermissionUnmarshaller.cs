@@ -68,7 +68,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowAssociation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowAssociation = unmarshaller.Unmarshall(context);
                     continue;
                 }

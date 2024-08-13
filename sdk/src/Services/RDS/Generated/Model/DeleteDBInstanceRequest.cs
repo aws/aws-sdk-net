@@ -134,9 +134,9 @@ namespace Amazon.RDS.Model
         /// immediately after the DB instance is deleted.
         /// </para>
         /// </summary>
-        public bool DeleteAutomatedBackups
+        public bool? DeleteAutomatedBackups
         {
-            get { return this._deleteAutomatedBackups.GetValueOrDefault(); }
+            get { return this._deleteAutomatedBackups; }
             set { this._deleteAutomatedBackups = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.RDS.Model
         /// This setting is required for RDS Custom.
         /// </para>
         /// </summary>
-        public bool SkipFinalSnapshot
+        public bool? SkipFinalSnapshot
         {
-            get { return this._skipFinalSnapshot.GetValueOrDefault(); }
+            get { return this._skipFinalSnapshot; }
             set { this._skipFinalSnapshot = value; }
         }
 

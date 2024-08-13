@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCancelResize())
             {
                 context.Writer.WritePropertyName("AllowCancelResize");
-                context.Writer.Write(requestObject.AllowCancelResize);
+                context.Writer.Write(requestObject.AllowCancelResize.Value);
             }
 
             if(requestObject.IsSetResizeType())

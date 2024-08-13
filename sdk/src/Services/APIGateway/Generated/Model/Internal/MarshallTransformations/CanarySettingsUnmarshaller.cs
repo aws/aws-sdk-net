@@ -74,7 +74,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("percentTraffic", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PercentTraffic = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("useStageCache", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseStageCache = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -59,11 +59,12 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property AwayFrom. 
         /// <para>
-        /// The Availability Zone that traffic is shifted away from for a resource when Amazon
-        /// Web Services starts an autoshift. Until the autoshift ends, traffic for the resource
-        /// is instead directed to other Availability Zones in the Amazon Web Services Region.
-        /// An autoshift can end for a resource, for example, when Amazon Web Services ends the
-        /// autoshift for the Availability Zone or when you disable zonal autoshift for the resource.
+        /// The Availability Zone (for example, <c>use1-az1</c>) that traffic is shifted away
+        /// from for a resource when Amazon Web Services starts an autoshift. Until the autoshift
+        /// ends, traffic for the resource is instead directed to other Availability Zones in
+        /// the Amazon Web Services Region. An autoshift can end for a resource, for example,
+        /// when Amazon Web Services ends the autoshift for the Availability Zone or when you
+        /// disable zonal autoshift for the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]
@@ -86,9 +87,9 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -105,9 +106,9 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

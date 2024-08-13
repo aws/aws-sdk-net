@@ -99,9 +99,9 @@ namespace Amazon.Neptune.Model
         /// Not supported by Neptune.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.Neptune.Model
         /// Indicates that minor version patches are applied automatically.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the number of days for which automatic DB snapshots are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.Neptune.Model
         /// Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.Neptune.Model
         /// a DB cluster, this can be a different port than the DB cluster port.
         /// </para>
         /// </summary>
-        public int DbInstancePort
+        public int? DbInstancePort
         {
-            get { return this._dbInstancePort.GetValueOrDefault(); }
+            get { return this._dbInstancePort; }
             set { this._dbInstancePort = value; }
         }
 
@@ -432,9 +432,9 @@ namespace Amazon.Neptune.Model
         /// a DB Instance</a>.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -560,9 +560,9 @@ namespace Amazon.Neptune.Model
         /// otherwise false.
         /// </para>
         /// </summary>
-        public bool IAMDatabaseAuthenticationEnabled
+        public bool? IAMDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -578,9 +578,9 @@ namespace Amazon.Neptune.Model
         /// Provides the date and time the DB instance was created.
         /// </para>
         /// </summary>
-        public DateTime InstanceCreateTime
+        public DateTime? InstanceCreateTime
         {
-            get { return this._instanceCreateTime.GetValueOrDefault(); }
+            get { return this._instanceCreateTime; }
             set { this._instanceCreateTime = value; }
         }
 
@@ -596,9 +596,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the Provisioned IOPS (I/O operations per second) value.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -632,9 +632,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the latest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
-        public DateTime LatestRestorableTime
+        public DateTime? LatestRestorableTime
         {
-            get { return this._latestRestorableTime.GetValueOrDefault(); }
+            get { return this._latestRestorableTime; }
             set { this._latestRestorableTime = value; }
         }
 
@@ -687,9 +687,9 @@ namespace Amazon.Neptune.Model
         /// for the DB instance.
         /// </para>
         /// </summary>
-        public int MonitoringInterval
+        public int? MonitoringInterval
         {
-            get { return this._monitoringInterval.GetValueOrDefault(); }
+            get { return this._monitoringInterval; }
             set { this._monitoringInterval = value; }
         }
 
@@ -724,9 +724,9 @@ namespace Amazon.Neptune.Model
         /// Specifies if the DB instance is a Multi-AZ deployment.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -779,9 +779,9 @@ namespace Amazon.Neptune.Model
         ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
-        public bool PerformanceInsightsEnabled
+        public bool? PerformanceInsightsEnabled
         {
-            get { return this._performanceInsightsEnabled.GetValueOrDefault(); }
+            get { return this._performanceInsightsEnabled; }
             set { this._performanceInsightsEnabled = value; }
         }
 
@@ -854,9 +854,9 @@ namespace Amazon.Neptune.Model
         /// instance after a failure of the existing primary instance. 
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 
@@ -873,9 +873,9 @@ namespace Amazon.Neptune.Model
         /// </para>
         /// </summary>
         [Obsolete("This parameter is not supported")]
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -983,9 +983,9 @@ namespace Amazon.Neptune.Model
         /// Not supported: The encryption for DB instances is managed by the DB cluster.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModificationDate
+        public DateTime? LastModificationDate
         {
-            get { return this._lastModificationDate.GetValueOrDefault(); }
+            get { return this._lastModificationDate; }
             set { this._lastModificationDate = value; }
         }
 

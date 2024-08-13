@@ -179,9 +179,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=30, Max=720)]
-        public int TimeoutMinutes
+        public int? TimeoutMinutes
         {
-            get { return this._timeoutMinutes.GetValueOrDefault(); }
+            get { return this._timeoutMinutes; }
             set { this._timeoutMinutes = value; }
         }
 

@@ -66,9 +66,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The latest time that the validation was performed.
         /// </para>
         /// </summary>
-        public DateTime LatestValidationTime
+        public DateTime? LatestValidationTime
         {
-            get { return this._latestValidationTime.GetValueOrDefault(); }
+            get { return this._latestValidationTime; }
             set { this._latestValidationTime = value; }
         }
 

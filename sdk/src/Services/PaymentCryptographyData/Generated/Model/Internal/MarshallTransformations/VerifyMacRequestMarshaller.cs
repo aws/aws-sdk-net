@@ -82,7 +82,7 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMacLength())
                 {
                     context.Writer.WritePropertyName("MacLength");
-                    context.Writer.Write(publicRequest.MacLength);
+                    context.Writer.Write(publicRequest.MacLength.Value);
                 }
 
                 if(publicRequest.IsSetMessageData())

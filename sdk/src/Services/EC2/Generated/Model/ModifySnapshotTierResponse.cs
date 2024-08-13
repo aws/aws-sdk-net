@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The date and time when the archive process was started.
         /// </para>
         /// </summary>
-        public DateTime TieringStartTime
+        public DateTime? TieringStartTime
         {
-            get { return this._tieringStartTime.GetValueOrDefault(); }
+            get { return this._tieringStartTime; }
             set { this._tieringStartTime = value; }
         }
 

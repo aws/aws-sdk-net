@@ -164,9 +164,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
         /// </para>
         /// </summary>
-        public long VolumeSizeInBytes
+        public long? VolumeSizeInBytes
         {
-            get { return this._volumeSizeInBytes.GetValueOrDefault(); }
+            get { return this._volumeSizeInBytes; }
             set { this._volumeSizeInBytes = value; }
         }
 

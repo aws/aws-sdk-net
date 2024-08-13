@@ -46,9 +46,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=102400)]
-        public long AverageDownloadRateLimitInBitsPerSec
+        public long? AverageDownloadRateLimitInBitsPerSec
         {
-            get { return this._averageDownloadRateLimitInBitsPerSec.GetValueOrDefault(); }
+            get { return this._averageDownloadRateLimitInBitsPerSec; }
             set { this._averageDownloadRateLimitInBitsPerSec = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=51200)]
-        public long AverageUploadRateLimitInBitsPerSec
+        public long? AverageUploadRateLimitInBitsPerSec
         {
-            get { return this._averageUploadRateLimitInBitsPerSec.GetValueOrDefault(); }
+            get { return this._averageUploadRateLimitInBitsPerSec; }
             set { this._averageUploadRateLimitInBitsPerSec = value; }
         }
 

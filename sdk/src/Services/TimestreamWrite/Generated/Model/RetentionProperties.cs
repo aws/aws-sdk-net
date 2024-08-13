@@ -45,9 +45,9 @@ namespace Amazon.TimestreamWrite.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=73000)]
-        public long MagneticStoreRetentionPeriodInDays
+        public long? MagneticStoreRetentionPeriodInDays
         {
-            get { return this._magneticStoreRetentionPeriodInDays.GetValueOrDefault(); }
+            get { return this._magneticStoreRetentionPeriodInDays; }
             set { this._magneticStoreRetentionPeriodInDays = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.TimestreamWrite.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8766)]
-        public long MemoryStoreRetentionPeriodInHours
+        public long? MemoryStoreRetentionPeriodInHours
         {
-            get { return this._memoryStoreRetentionPeriodInHours.GetValueOrDefault(); }
+            get { return this._memoryStoreRetentionPeriodInHours; }
             set { this._memoryStoreRetentionPeriodInHours = value; }
         }
 

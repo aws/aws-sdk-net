@@ -64,9 +64,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long AuthTokenExpirationTime
+        public long? AuthTokenExpirationTime
         {
-            get { return this._authTokenExpirationTime.GetValueOrDefault(); }
+            get { return this._authTokenExpirationTime; }
             set { this._authTokenExpirationTime = value; }
         }
 

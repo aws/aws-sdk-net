@@ -70,9 +70,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The last time the sync operations returned a status of <c>SUCCESSFUL</c> (UTC).
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulSyncTime
+        public DateTime? LastSuccessfulSyncTime
         {
-            get { return this._lastSuccessfulSyncTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulSyncTime; }
             set { this._lastSuccessfulSyncTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The last time the configuration attempted to sync (UTC).
         /// </para>
         /// </summary>
-        public DateTime LastSyncTime
+        public DateTime? LastSyncTime
         {
-            get { return this._lastSyncTime.GetValueOrDefault(); }
+            get { return this._lastSyncTime; }
             set { this._lastSyncTime = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time the configuration was created (UTC).
         /// </para>
         /// </summary>
-        public DateTime SyncCreatedTime
+        public DateTime? SyncCreatedTime
         {
-            get { return this._syncCreatedTime.GetValueOrDefault(); }
+            get { return this._syncCreatedTime; }
             set { this._syncCreatedTime = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time the resource data sync was changed. 
         /// </para>
         /// </summary>
-        public DateTime SyncLastModifiedTime
+        public DateTime? SyncLastModifiedTime
         {
-            get { return this._syncLastModifiedTime.GetValueOrDefault(); }
+            get { return this._syncLastModifiedTime; }
             set { this._syncLastModifiedTime = value; }
         }
 

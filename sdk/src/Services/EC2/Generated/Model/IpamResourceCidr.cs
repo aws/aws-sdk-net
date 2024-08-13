@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class IpamResourceCidr
     {
+        private string _availabilityZoneId;
         private IpamComplianceStatus _complianceStatus;
         private string _ipamId;
         private string _ipamPoolId;
@@ -49,6 +50,24 @@ namespace Amazon.EC2.Model
         private List<IpamResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<IpamResourceTag>() : null;
         private IpamResourceType _resourceType;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The Availability Zone ID.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ComplianceStatus. 
@@ -150,9 +169,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public double IpUsage
+        public double? IpUsage
         {
-            get { return this._ipUsage.GetValueOrDefault(); }
+            get { return this._ipUsage; }
             set { this._ipUsage = value; }
         }
 

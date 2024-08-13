@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShow())
             {
                 context.Writer.WritePropertyName("Show");
-                context.Writer.Write(requestObject.Show);
+                context.Writer.Write(requestObject.Show.Value);
             }
 
         }

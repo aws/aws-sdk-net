@@ -109,7 +109,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInitialRun())
                 {
                     context.Writer.WritePropertyName("initialRun");
-                    context.Writer.Write(publicRequest.InitialRun);
+                    context.Writer.Write(publicRequest.InitialRun.Value);
                 }
 
                 if(publicRequest.IsSetJobType())
@@ -155,7 +155,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSamplingPercentage())
                 {
                     context.Writer.WritePropertyName("samplingPercentage");
-                    context.Writer.Write(publicRequest.SamplingPercentage);
+                    context.Writer.Write(publicRequest.SamplingPercentage.Value);
                 }
 
                 if(publicRequest.IsSetScheduleFrequency())

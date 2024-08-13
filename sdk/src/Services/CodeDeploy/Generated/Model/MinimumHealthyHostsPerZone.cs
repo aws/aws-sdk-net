@@ -61,9 +61,9 @@ namespace Amazon.CodeDeploy.Model
         /// The <c>value</c> associated with the <c>MinimumHealthyHostsPerZone</c> option.
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

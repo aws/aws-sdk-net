@@ -79,9 +79,9 @@ namespace Amazon.ECS.Model
         /// value from the task definition. You must also specify a container name.
         /// </para>
         /// </summary>
-        public int Cpu
+        public int? Cpu
         {
-            get { return this._cpu.GetValueOrDefault(); }
+            get { return this._cpu; }
             set { this._cpu = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.ECS.Model
         /// here, the container is killed. You must also specify a container name.
         /// </para>
         /// </summary>
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.ECS.Model
         /// value from the task definition. You must also specify a container name.
         /// </para>
         /// </summary>
-        public int MemoryReservation
+        public int? MemoryReservation
         {
-            get { return this._memoryReservation.GetValueOrDefault(); }
+            get { return this._memoryReservation; }
             set { this._memoryReservation = value; }
         }
 

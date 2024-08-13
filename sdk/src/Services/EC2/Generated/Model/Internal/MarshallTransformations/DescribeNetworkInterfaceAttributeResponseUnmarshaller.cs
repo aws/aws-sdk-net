@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("associatePublicIpAddress", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("sourceDestCheck/value", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.SourceDestCheck = unmarshaller.Unmarshall(context);
                         continue;
                     }

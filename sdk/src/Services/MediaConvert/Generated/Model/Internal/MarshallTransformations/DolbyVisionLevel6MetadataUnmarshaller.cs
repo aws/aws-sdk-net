@@ -68,13 +68,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxCll", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCll = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxFall", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxFall = unmarshaller.Unmarshall(context);
                     continue;
                 }

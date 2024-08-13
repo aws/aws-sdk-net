@@ -68,7 +68,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("limit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
                     continue;
                 }

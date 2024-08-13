@@ -93,9 +93,9 @@ namespace Amazon.DeviceFarm.Model
         /// by running tests.
         /// </para>
         /// </summary>
-        public int MaxDevices
+        public int? MaxDevices
         {
-            get { return this._maxDevices.GetValueOrDefault(); }
+            get { return this._maxDevices; }
             set { this._maxDevices = value; }
         }
 

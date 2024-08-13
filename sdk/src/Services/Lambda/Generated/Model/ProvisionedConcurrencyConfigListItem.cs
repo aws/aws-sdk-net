@@ -51,9 +51,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AllocatedProvisionedConcurrentExecutions
+        public int? AllocatedProvisionedConcurrentExecutions
         {
-            get { return this._allocatedProvisionedConcurrentExecutions.GetValueOrDefault(); }
+            get { return this._allocatedProvisionedConcurrentExecutions; }
             set { this._allocatedProvisionedConcurrentExecutions = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AvailableProvisionedConcurrentExecutions
+        public int? AvailableProvisionedConcurrentExecutions
         {
-            get { return this._availableProvisionedConcurrentExecutions.GetValueOrDefault(); }
+            get { return this._availableProvisionedConcurrentExecutions; }
             set { this._availableProvisionedConcurrentExecutions = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int RequestedProvisionedConcurrentExecutions
+        public int? RequestedProvisionedConcurrentExecutions
         {
-            get { return this._requestedProvisionedConcurrentExecutions.GetValueOrDefault(); }
+            get { return this._requestedProvisionedConcurrentExecutions; }
             set { this._requestedProvisionedConcurrentExecutions = value; }
         }
 

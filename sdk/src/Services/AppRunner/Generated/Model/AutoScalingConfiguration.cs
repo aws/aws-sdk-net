@@ -110,9 +110,9 @@ namespace Amazon.AppRunner.Model
         /// configurations (<c>"Status": "ACTIVE"</c>) that share the same <c>AutoScalingConfigurationName</c>.
         /// </para>
         /// </summary>
-        public int AutoScalingConfigurationRevision
+        public int? AutoScalingConfigurationRevision
         {
-            get { return this._autoScalingConfigurationRevision.GetValueOrDefault(); }
+            get { return this._autoScalingConfigurationRevision; }
             set { this._autoScalingConfigurationRevision = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.AppRunner.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.AppRunner.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime DeletedAt
+        public DateTime? DeletedAt
         {
-            get { return this._deletedAt.GetValueOrDefault(); }
+            get { return this._deletedAt; }
             set { this._deletedAt = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.AppRunner.Model
         /// of <c>false</c> indicates no services are associated.
         /// </para>
         /// </summary>
-        public bool HasAssociatedService
+        public bool? HasAssociatedService
         {
-            get { return this._hasAssociatedService.GetValueOrDefault(); }
+            get { return this._hasAssociatedService; }
             set { this._hasAssociatedService = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.AppRunner.Model
         /// the same <c>AutoScalingConfigurationName</c>.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.AppRunner.Model
         /// to <c>false</c> otherwise.
         /// </para>
         /// </summary>
-        public bool Latest
+        public bool? Latest
         {
-            get { return this._latest.GetValueOrDefault(); }
+            get { return this._latest; }
             set { this._latest = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.AppRunner.Model
         /// of concurrent requests exceeds this limit, App Runner scales the service up.
         /// </para>
         /// </summary>
-        public int MaxConcurrency
+        public int? MaxConcurrency
         {
-            get { return this._maxConcurrency.GetValueOrDefault(); }
+            get { return this._maxConcurrency; }
             set { this._maxConcurrency = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.AppRunner.Model
         /// instances actively serve traffic for your service.
         /// </para>
         /// </summary>
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -275,9 +275,9 @@ namespace Amazon.AppRunner.Model
         /// to maintain the same capacity for both old and new code.
         /// </para>
         /// </summary>
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 

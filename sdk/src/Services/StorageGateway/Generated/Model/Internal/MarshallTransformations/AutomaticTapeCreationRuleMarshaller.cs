@@ -51,7 +51,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumNumTapes())
             {
                 context.Writer.WritePropertyName("MinimumNumTapes");
-                context.Writer.Write(requestObject.MinimumNumTapes);
+                context.Writer.Write(requestObject.MinimumNumTapes.Value);
             }
 
             if(requestObject.IsSetPoolId())
@@ -69,13 +69,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTapeSizeInBytes())
             {
                 context.Writer.WritePropertyName("TapeSizeInBytes");
-                context.Writer.Write(requestObject.TapeSizeInBytes);
+                context.Writer.Write(requestObject.TapeSizeInBytes.Value);
             }
 
             if(requestObject.IsSetWorm())
             {
                 context.Writer.WritePropertyName("Worm");
-                context.Writer.Write(requestObject.Worm);
+                context.Writer.Write(requestObject.Worm.Value);
             }
 
         }

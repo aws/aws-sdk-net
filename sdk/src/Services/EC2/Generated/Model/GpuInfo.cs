@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The total size of the memory for the GPU accelerators for the instance type, in MiB.
         /// </para>
         /// </summary>
-        public int TotalGpuMemoryInMiB
+        public int? TotalGpuMemoryInMiB
         {
-            get { return this._totalGpuMemoryInMiB.GetValueOrDefault(); }
+            get { return this._totalGpuMemoryInMiB; }
             set { this._totalGpuMemoryInMiB = value; }
         }
 

@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllColumnsRequested())
             {
                 context.Writer.WritePropertyName("AllColumnsRequested");
-                context.Writer.Write(requestObject.AllColumnsRequested);
+                context.Writer.Write(requestObject.AllColumnsRequested.Value);
             }
 
             if(requestObject.IsSetRequestedColumns())

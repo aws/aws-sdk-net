@@ -187,9 +187,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating the report resource effective end.
         /// </para>
         /// </summary>
-        public DateTime PeriodEnd
+        public DateTime? PeriodEnd
         {
-            get { return this._periodEnd.GetValueOrDefault(); }
+            get { return this._periodEnd; }
             set { this._periodEnd = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating the report resource effective start.
         /// </para>
         /// </summary>
-        public DateTime PeriodStart
+        public DateTime? PeriodStart
         {
-            get { return this._periodStart.GetValueOrDefault(); }
+            get { return this._periodStart; }
             set { this._periodStart = value; }
         }
 
@@ -316,9 +316,9 @@ namespace Amazon.Artifact.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

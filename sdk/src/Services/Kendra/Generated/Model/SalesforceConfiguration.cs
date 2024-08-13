@@ -68,9 +68,9 @@ namespace Amazon.Kendra.Model
         /// Indicates whether Amazon Kendra should index attachments to Salesforce objects.
         /// </para>
         /// </summary>
-        public bool CrawlAttachments
+        public bool? CrawlAttachments
         {
-            get { return this._crawlAttachments.GetValueOrDefault(); }
+            get { return this._crawlAttachments; }
             set { this._crawlAttachments = value; }
         }
 

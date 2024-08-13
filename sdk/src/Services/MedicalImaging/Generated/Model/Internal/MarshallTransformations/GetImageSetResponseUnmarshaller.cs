@@ -54,7 +54,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,7 +66,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("deletedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DeletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -100,9 +100,15 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("overrides", targetDepth))
+                {
+                    var unmarshaller = OverridesUnmarshaller.Instance;
+                    response.Overrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

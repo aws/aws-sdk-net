@@ -308,9 +308,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -328,9 +328,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// are set to null.
         /// </para>
         /// </summary>
-        public bool Replace
+        public bool? Replace
         {
-            get { return this._replace.GetValueOrDefault(); }
+            get { return this._replace; }
             set { this._replace = value; }
         }
 

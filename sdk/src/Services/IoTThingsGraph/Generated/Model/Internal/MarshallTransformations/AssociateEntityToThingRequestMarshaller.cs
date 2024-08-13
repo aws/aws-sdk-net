@@ -78,7 +78,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNamespaceVersion())
                 {
                     context.Writer.WritePropertyName("namespaceVersion");
-                    context.Writer.Write(publicRequest.NamespaceVersion);
+                    context.Writer.Write(publicRequest.NamespaceVersion.Value);
                 }
 
                 if(publicRequest.IsSetThingName())

@@ -68,49 +68,49 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("numberOfCanceledThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfCanceledThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfFailedThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfFailedThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfInProgressThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfInProgressThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfQueuedThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfQueuedThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfRejectedThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRejectedThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfRemovedThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRemovedThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfSucceededThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSucceededThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfTimedOutThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfTimedOutThings = unmarshaller.Unmarshall(context);
                     continue;
                 }

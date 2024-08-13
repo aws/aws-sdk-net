@@ -58,9 +58,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AssociateDefaultSecurityGroup
+        public bool? AssociateDefaultSecurityGroup
         {
-            get { return this._associateDefaultSecurityGroup.GetValueOrDefault(); }
+            get { return this._associateDefaultSecurityGroup; }
             set { this._associateDefaultSecurityGroup = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
-        public long BandwidthThrottling
+        public long? BandwidthThrottling
         {
-            get { return this._bandwidthThrottling.GetValueOrDefault(); }
+            get { return this._bandwidthThrottling; }
             set { this._bandwidthThrottling = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool CreatePublicIP
+        public bool? CreatePublicIP
         {
-            get { return this._createPublicIP.GetValueOrDefault(); }
+            get { return this._createPublicIP; }
             set { this._createPublicIP = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool UseDedicatedReplicationServer
+        public bool? UseDedicatedReplicationServer
         {
-            get { return this._useDedicatedReplicationServer.GetValueOrDefault(); }
+            get { return this._useDedicatedReplicationServer; }
             set { this._useDedicatedReplicationServer = value; }
         }
 
@@ -309,9 +309,9 @@ namespace Amazon.Mgn.Model
         /// Request to use Fips Endpoint during Replication Settings template creation.
         /// </para>
         /// </summary>
-        public bool UseFipsEndpoint
+        public bool? UseFipsEndpoint
         {
-            get { return this._useFipsEndpoint.GetValueOrDefault(); }
+            get { return this._useFipsEndpoint; }
             set { this._useFipsEndpoint = value; }
         }
 

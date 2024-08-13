@@ -91,9 +91,9 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.CodeArtifact.Model
         /// that would be associated with a package group, even if it does not exist. 
         /// </para>
         /// </summary>
-        public bool Preview
+        public bool? Preview
         {
-            get { return this._preview.GetValueOrDefault(); }
+            get { return this._preview; }
             set { this._preview = value; }
         }
 

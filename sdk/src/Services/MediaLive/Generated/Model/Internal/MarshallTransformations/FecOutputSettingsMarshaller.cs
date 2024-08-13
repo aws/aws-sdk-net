@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnDepth())
             {
                 context.Writer.WritePropertyName("columnDepth");
-                context.Writer.Write(requestObject.ColumnDepth);
+                context.Writer.Write(requestObject.ColumnDepth.Value);
             }
 
             if(requestObject.IsSetIncludeFec())
@@ -63,7 +63,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRowLength())
             {
                 context.Writer.WritePropertyName("rowLength");
-                context.Writer.Write(requestObject.RowLength);
+                context.Writer.Write(requestObject.RowLength.Value);
             }
 
         }

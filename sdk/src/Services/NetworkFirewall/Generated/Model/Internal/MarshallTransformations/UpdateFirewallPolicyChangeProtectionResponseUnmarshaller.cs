@@ -66,7 +66,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FirewallPolicyChangeProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.FirewallPolicyChangeProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }

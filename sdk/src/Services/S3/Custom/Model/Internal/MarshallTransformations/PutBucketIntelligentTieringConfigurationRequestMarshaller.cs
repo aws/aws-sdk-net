@@ -110,7 +110,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 								if (tiering != null)
 								{
 									xmlWriter.WriteStartElement("Tiering");
-									xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(tiering.Days));
+									xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(tiering.Days.Value));
 									xmlWriter.WriteElementString("AccessTier", S3Transforms.ToXmlStringValue(tiering.AccessTier));
 									xmlWriter.WriteEndElement();
 								}

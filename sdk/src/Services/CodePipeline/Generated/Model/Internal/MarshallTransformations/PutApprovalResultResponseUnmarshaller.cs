@@ -54,7 +54,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("approvedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ApprovedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

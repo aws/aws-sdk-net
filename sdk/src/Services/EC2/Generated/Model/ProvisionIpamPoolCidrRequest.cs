@@ -45,8 +45,10 @@ namespace Amazon.EC2.Model
         private string _cidr;
         private IpamCidrAuthorizationContext _cidrAuthorizationContext;
         private string _clientToken;
+        private string _ipamExternalResourceVerificationTokenId;
         private string _ipamPoolId;
         private int? _netmaskLength;
+        private VerificationMethod _verificationMethod;
 
         /// <summary>
         /// Gets and sets the property Cidr. 
@@ -72,7 +74,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CidrAuthorizationContext. 
         /// <para>
         /// A signed document that proves that you are authorized to bring a specified IP address
-        /// range to Amazon using BYOIP. This option applies to public pools only.
+        /// range to Amazon using BYOIP. This option only applies to IPv4 and IPv6 pools in the
+        /// public scope.
         /// </para>
         /// </summary>
         public IpamCidrAuthorizationContext CidrAuthorizationContext
@@ -108,6 +111,25 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpamExternalResourceVerificationTokenId. 
+        /// <para>
+        /// Verification token ID. This option only applies to IPv4 and IPv6 pools in the public
+        /// scope.
+        /// </para>
+        /// </summary>
+        public string IpamExternalResourceVerificationTokenId
+        {
+            get { return this._ipamExternalResourceVerificationTokenId; }
+            set { this._ipamExternalResourceVerificationTokenId = value; }
+        }
+
+        // Check to see if IpamExternalResourceVerificationTokenId property is set
+        internal bool IsSetIpamExternalResourceVerificationTokenId()
+        {
+            return this._ipamExternalResourceVerificationTokenId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IpamPoolId. 
         /// <para>
         /// The ID of the IPAM pool to which you want to assign a CIDR.
@@ -135,9 +157,9 @@ namespace Amazon.EC2.Model
         /// Either "NetmaskLength" or "Cidr" is required.
         /// </para>
         /// </summary>
-        public int NetmaskLength
+        public int? NetmaskLength
         {
-            get { return this._netmaskLength.GetValueOrDefault(); }
+            get { return this._netmaskLength; }
             set { this._netmaskLength = value; }
         }
 
@@ -145,6 +167,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetmaskLength()
         {
             return this._netmaskLength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationMethod. 
+        /// <para>
+        /// The method for verifying control of a public IP address range. Defaults to <c>remarks-x509</c>
+        /// if not specified. This option only applies to IPv4 and IPv6 pools in the public scope.
+        /// </para>
+        /// </summary>
+        public VerificationMethod VerificationMethod
+        {
+            get { return this._verificationMethod; }
+            set { this._verificationMethod = value; }
+        }
+
+        // Check to see if VerificationMethod property is set
+        internal bool IsSetVerificationMethod()
+        {
+            return this._verificationMethod != null;
         }
 
     }

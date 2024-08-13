@@ -48,9 +48,9 @@ namespace Amazon.ControlTower.Model
         /// The end time of the operation (if applicable), in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.ControlTower.Model
         /// The start time of the operation, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

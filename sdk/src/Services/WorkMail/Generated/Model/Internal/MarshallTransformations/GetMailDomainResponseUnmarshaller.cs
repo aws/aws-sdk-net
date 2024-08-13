@@ -60,13 +60,13 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsDefault", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsDefault = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsTestDomain", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsTestDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }

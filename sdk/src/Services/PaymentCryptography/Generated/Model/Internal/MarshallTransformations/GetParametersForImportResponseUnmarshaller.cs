@@ -60,7 +60,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ParametersValidUntilTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ParametersValidUntilTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

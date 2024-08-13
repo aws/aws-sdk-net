@@ -64,9 +64,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// rule matches when all the specified keywords or phrases are absent. Default: <c>FALSE</c>.
         /// </para>
         /// </summary>
-        public bool Negate
+        public bool? Negate
         {
-            get { return this._negate.GetValueOrDefault(); }
+            get { return this._negate; }
             set { this._negate = value; }
         }
 

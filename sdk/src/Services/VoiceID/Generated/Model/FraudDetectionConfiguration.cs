@@ -46,9 +46,9 @@ namespace Amazon.VoiceID.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int RiskThreshold
+        public int? RiskThreshold
         {
-            get { return this._riskThreshold.GetValueOrDefault(); }
+            get { return this._riskThreshold; }
             set { this._riskThreshold = value; }
         }
 

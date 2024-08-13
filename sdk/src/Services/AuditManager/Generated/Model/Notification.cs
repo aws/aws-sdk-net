@@ -145,9 +145,9 @@ namespace Amazon.AuditManager.Model
         ///  The time when the notification was sent. 
         /// </para>
         /// </summary>
-        public DateTime EventTime
+        public DateTime? EventTime
         {
-            get { return this._eventTime.GetValueOrDefault(); }
+            get { return this._eventTime; }
             set { this._eventTime = value; }
         }
 

@@ -89,9 +89,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExportRequestTime
+        public DateTime? ExportRequestTime
         {
-            get { return this._exportRequestTime.GetValueOrDefault(); }
+            get { return this._exportRequestTime; }
             set { this._exportRequestTime = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// select a smaller time range for the export by using <c>startDate</c> and <c>endDate</c>.
         /// </para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this._isTruncated.GetValueOrDefault(); }
+            get { return this._isTruncated; }
             set { this._isTruncated = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// was requested, this result does not appear in <c>ExportInfo</c>.
         /// </para>
         /// </summary>
-        public DateTime RequestedEndTime
+        public DateTime? RequestedEndTime
         {
-            get { return this._requestedEndTime.GetValueOrDefault(); }
+            get { return this._requestedEndTime; }
             set { this._requestedEndTime = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// no <c>startTime</c> was requested, this result does not appear in <c>ExportInfo</c>.
         /// </para>
         /// </summary>
-        public DateTime RequestedStartTime
+        public DateTime? RequestedStartTime
         {
-            get { return this._requestedStartTime.GetValueOrDefault(); }
+            get { return this._requestedStartTime; }
             set { this._requestedStartTime = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AccessControlAllowCredentials
+        public bool? AccessControlAllowCredentials
         {
-            get { return this._accessControlAllowCredentials.GetValueOrDefault(); }
+            get { return this._accessControlAllowCredentials; }
             set { this._accessControlAllowCredentials = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.CloudFront.Model
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
-        public int AccessControlMaxAgeSec
+        public int? AccessControlMaxAgeSec
         {
-            get { return this._accessControlMaxAgeSec.GetValueOrDefault(); }
+            get { return this._accessControlMaxAgeSec; }
             set { this._accessControlMaxAgeSec = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool OriginOverride
+        public bool? OriginOverride
         {
-            get { return this._originOverride.GetValueOrDefault(); }
+            get { return this._originOverride; }
             set { this._originOverride = value; }
         }
 

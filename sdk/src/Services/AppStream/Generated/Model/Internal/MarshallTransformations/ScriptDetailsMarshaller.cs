@@ -74,7 +74,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("TimeoutInSeconds");
-                context.Writer.Write(requestObject.TimeoutInSeconds);
+                context.Writer.Write(requestObject.TimeoutInSeconds.Value);
             }
 
         }

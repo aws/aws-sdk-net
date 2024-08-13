@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// action.
         /// </para>
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this._days.GetValueOrDefault(); }
+            get { return this._days; }
             set { this._days = value; }
         }
 

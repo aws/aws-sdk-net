@@ -204,9 +204,9 @@ namespace Amazon.SecurityHub.Model
         /// If 0, then all payloads are compressed.
         /// </para>
         /// </summary>
-        public int MinimumCompressionSize
+        public int? MinimumCompressionSize
         {
-            get { return this._minimumCompressionSize.GetValueOrDefault(); }
+            get { return this._minimumCompressionSize; }
             set { this._minimumCompressionSize = value; }
         }
 

@@ -101,9 +101,9 @@ namespace Amazon.IoT.Model
         /// is in effect for the certificates to which the policy is attached).
         /// </para>
         /// </summary>
-        public bool SetAsDefault
+        public bool? SetAsDefault
         {
-            get { return this._setAsDefault.GetValueOrDefault(); }
+            get { return this._setAsDefault; }
             set { this._setAsDefault = value; }
         }
 

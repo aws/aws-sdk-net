@@ -31,12 +31,13 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyReplicationGroup operation.
-    /// Modifies the settings for a replication group. This is limited to Redis 7 and newer.
+    /// Modifies the settings for a replication group. This is limited to Redis OSS 7 and
+    /// newer.
     /// 
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
-    /// for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache User
+    /// for Amazon ElastiCache (Redis OSS) (cluster mode enabled)</a> in the ElastiCache User
     /// Guide
     /// </para>
     ///  </li> <li> 
@@ -46,7 +47,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// This operation is valid for Redis only.
+    /// This operation is valid for Redis OSS only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -103,9 +104,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -172,7 +173,7 @@ namespace Amazon.ElastiCache.Model
         ///  </li> </ul> 
         /// <para>
         ///  For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
-        /// Users with Redis AUTH</a> 
+        /// Users with Redis OSS AUTH</a> 
         /// </para>
         /// </summary>
         public AuthTokenUpdateStrategyType AuthTokenUpdateStrategy
@@ -198,9 +199,9 @@ namespace Amazon.ElastiCache.Model
         /// Valid values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AutomaticFailoverEnabled
+        public bool? AutomaticFailoverEnabled
         {
-            get { return this._automaticFailoverEnabled.GetValueOrDefault(); }
+            get { return this._automaticFailoverEnabled; }
             set { this._automaticFailoverEnabled = value; }
         }
 
@@ -213,14 +214,14 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
-        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
+        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -300,10 +301,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ClusterMode. 
         /// <para>
         /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
-        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
-        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
-        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
-        /// and set the cluster mode to Enabled.
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis OSS clients
+        /// to connect using both cluster mode enabled and cluster mode disabled. After you migrate
+        /// all Redis OSS clients to use cluster mode enabled, you can then complete cluster mode
+        /// configuration and set the cluster mode to Enabled.
         /// </para>
         /// </summary>
         public ClusterMode ClusterMode
@@ -348,7 +349,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
-        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
         /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
@@ -389,9 +390,9 @@ namespace Amazon.ElastiCache.Model
         /// A flag to indicate MultiAZ is enabled.
         /// </para>
         /// </summary>
-        public bool MultiAZEnabled
+        public bool? MultiAZEnabled
         {
-            get { return this._multiAZEnabled.GetValueOrDefault(); }
+            get { return this._multiAZEnabled; }
             set { this._multiAZEnabled = value; }
         }
 
@@ -549,9 +550,9 @@ namespace Amazon.ElastiCache.Model
         /// Removes the user group associated with this replication group.
         /// </para>
         /// </summary>
-        public bool RemoveUserGroups
+        public bool? RemoveUserGroups
         {
-            get { return this._removeUserGroups.GetValueOrDefault(); }
+            get { return this._removeUserGroups; }
             set { this._removeUserGroups = value; }
         }
 
@@ -635,9 +636,9 @@ namespace Amazon.ElastiCache.Model
         /// are turned off.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 
@@ -651,7 +652,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshottingClusterId. 
         /// <para>
         /// The cluster ID that is used as the daily snapshot source for the replication group.
-        /// This parameter cannot be set for Redis (cluster mode enabled) replication groups.
+        /// This parameter cannot be set for Redis OSS (cluster mode enabled) replication groups.
         /// </para>
         /// </summary>
         public string SnapshottingClusterId
@@ -702,9 +703,9 @@ namespace Amazon.ElastiCache.Model
         /// to <c>preferred</c>.
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 
@@ -725,7 +726,7 @@ namespace Amazon.ElastiCache.Model
         /// You must set <c>TransitEncryptionEnabled</c> to <c>true</c>, for your existing cluster,
         /// and set <c>TransitEncryptionMode</c> to <c>preferred</c> in the same request to allow
         /// both encrypted and unencrypted connections at the same time. Once you migrate all
-        /// your Redis clients to use encrypted connections you can set the value to <c>required</c>
+        /// your Redis OSS clients to use encrypted connections you can set the value to <c>required</c>
         /// to allow encrypted connections only.
         /// </para>
         ///  

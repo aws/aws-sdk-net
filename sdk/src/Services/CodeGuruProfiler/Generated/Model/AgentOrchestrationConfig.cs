@@ -46,9 +46,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ProfilingEnabled
+        public bool? ProfilingEnabled
         {
-            get { return this._profilingEnabled.GetValueOrDefault(); }
+            get { return this._profilingEnabled; }
             set { this._profilingEnabled = value; }
         }
 

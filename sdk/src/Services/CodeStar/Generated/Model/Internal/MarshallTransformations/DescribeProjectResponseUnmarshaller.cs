@@ -66,7 +66,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdTimeStamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimeStamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

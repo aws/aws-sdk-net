@@ -51,7 +51,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("instanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
+                context.Writer.Write(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceType())
@@ -63,7 +63,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeSizeInGb())
             {
                 context.Writer.WritePropertyName("volumeSizeInGb");
-                context.Writer.Write(requestObject.VolumeSizeInGb);
+                context.Writer.Write(requestObject.VolumeSizeInGb.Value);
             }
 
         }

@@ -53,9 +53,9 @@ namespace Amazon.LexModelsV2.Model
         /// If the <c>allowMutlipleValues</c> is not set, the default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AllowMultipleValues
+        public bool? AllowMultipleValues
         {
-            get { return this._allowMultipleValues.GetValueOrDefault(); }
+            get { return this._allowMultipleValues; }
             set { this._allowMultipleValues = value; }
         }
 

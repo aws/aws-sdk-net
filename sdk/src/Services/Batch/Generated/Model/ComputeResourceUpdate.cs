@@ -140,9 +140,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int BidPercentage
+        public int? BidPercentage
         {
-            get { return this._bidPercentage.GetValueOrDefault(); }
+            get { return this._bidPercentage; }
             set { this._bidPercentage = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int DesiredvCpus
+        public int? DesiredvCpus
         {
-            get { return this._desiredvCpus.GetValueOrDefault(); }
+            get { return this._desiredvCpus; }
             set { this._desiredvCpus = value; }
         }
 
@@ -441,9 +441,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MaxvCpus
+        public int? MaxvCpus
         {
-            get { return this._maxvCpus.GetValueOrDefault(); }
+            get { return this._maxvCpus; }
             set { this._maxvCpus = value; }
         }
 
@@ -466,9 +466,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MinvCpus
+        public int? MinvCpus
         {
-            get { return this._minvCpus.GetValueOrDefault(); }
+            get { return this._minvCpus; }
             set { this._minvCpus = value; }
         }
 
@@ -677,9 +677,9 @@ namespace Amazon.Batch.Model
         /// compute environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
-        public bool UpdateToLatestImageVersion
+        public bool? UpdateToLatestImageVersion
         {
-            get { return this._updateToLatestImageVersion.GetValueOrDefault(); }
+            get { return this._updateToLatestImageVersion; }
             set { this._updateToLatestImageVersion = value; }
         }
 

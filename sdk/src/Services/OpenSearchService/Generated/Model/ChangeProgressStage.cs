@@ -63,9 +63,9 @@ namespace Amazon.OpenSearchService.Model
         /// The most recent updated timestamp of the stage.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

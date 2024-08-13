@@ -106,9 +106,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long PublishingFailureStartTimestamp
+        public long? PublishingFailureStartTimestamp
         {
-            get { return this._publishingFailureStartTimestamp.GetValueOrDefault(); }
+            get { return this._publishingFailureStartTimestamp; }
             set { this._publishingFailureStartTimestamp = value; }
         }
 

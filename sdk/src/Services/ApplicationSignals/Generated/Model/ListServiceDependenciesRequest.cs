@@ -51,11 +51,15 @@ namespace Amazon.ApplicationSignals.Model
         /// Query API, it is formatted as be epoch time in seconds. For example: <c>1698778057</c>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// Your requested end time will be rounded to the nearest hour.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -122,9 +126,9 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -160,11 +164,15 @@ namespace Amazon.ApplicationSignals.Model
         /// Query API, it is formatted as be epoch time in seconds. For example: <c>1698778057</c>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// Your requested start time will be rounded to the nearest hour.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

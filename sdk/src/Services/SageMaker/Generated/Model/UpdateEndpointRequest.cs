@@ -160,9 +160,9 @@ namespace Amazon.SageMaker.Model
         /// The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool RetainAllVariantProperties
+        public bool? RetainAllVariantProperties
         {
-            get { return this._retainAllVariantProperties.GetValueOrDefault(); }
+            get { return this._retainAllVariantProperties; }
             set { this._retainAllVariantProperties = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.SageMaker.Model
         /// false (the configuration is not reused).
         /// </para>
         /// </summary>
-        public bool RetainDeploymentConfig
+        public bool? RetainDeploymentConfig
         {
-            get { return this._retainDeploymentConfig.GetValueOrDefault(); }
+            get { return this._retainDeploymentConfig; }
             set { this._retainDeploymentConfig = value; }
         }
 

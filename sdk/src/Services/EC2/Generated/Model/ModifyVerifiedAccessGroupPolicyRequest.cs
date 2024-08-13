@@ -85,9 +85,9 @@ namespace Amazon.EC2.Model
         /// The status of the Verified Access policy.
         /// </para>
         /// </summary>
-        public bool PolicyEnabled
+        public bool? PolicyEnabled
         {
-            get { return this._policyEnabled.GetValueOrDefault(); }
+            get { return this._policyEnabled; }
             set { this._policyEnabled = value; }
         }
 

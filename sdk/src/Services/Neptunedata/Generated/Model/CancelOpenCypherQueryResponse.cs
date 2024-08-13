@@ -43,9 +43,9 @@ namespace Amazon.Neptunedata.Model
         /// The cancelation payload for the openCypher query.
         /// </para>
         /// </summary>
-        public bool Payload
+        public bool? Payload
         {
-            get { return this._payload.GetValueOrDefault(); }
+            get { return this._payload; }
             set { this._payload = value; }
         }
 

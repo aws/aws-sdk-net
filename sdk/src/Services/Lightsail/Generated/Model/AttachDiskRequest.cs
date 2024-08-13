@@ -61,9 +61,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public bool AutoMounting
+        public bool? AutoMounting
         {
-            get { return this._autoMounting.GetValueOrDefault(); }
+            get { return this._autoMounting; }
             set { this._autoMounting = value; }
         }
 

@@ -68,19 +68,19 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowsUnencryptedObjectUploads", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AllowsUnencryptedObjectUploads = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("deniesUnencryptedObjectUploads", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DeniesUnencryptedObjectUploads = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unknown", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Unknown = unmarshaller.Unmarshall(context);
                     continue;
                 }

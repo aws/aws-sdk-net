@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// The starting port value for the port range.
         /// </para>
         /// </summary>
-        public int FromPort
+        public int? FromPort
         {
-            get { return this._fromPort.GetValueOrDefault(); }
+            get { return this._fromPort; }
             set { this._fromPort = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.SecurityHub.Model
         /// The ending port value for the port range.
         /// </para>
         /// </summary>
-        public int ToPort
+        public int? ToPort
         {
-            get { return this._toPort.GetValueOrDefault(); }
+            get { return this._toPort; }
             set { this._toPort = value; }
         }
 

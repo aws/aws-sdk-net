@@ -44,9 +44,9 @@ namespace Amazon.MQ.Model
         /// Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
         /// </para>
         /// </summary>
-        public bool ConsoleAccess
+        public bool? ConsoleAccess
         {
-            get { return this._consoleAccess.GetValueOrDefault(); }
+            get { return this._consoleAccess; }
             set { this._consoleAccess = value; }
         }
 

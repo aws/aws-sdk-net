@@ -74,7 +74,8 @@ namespace Amazon.DynamoDBv2
         /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
         /// using PartiQL. Each read statement in a <c>BatchExecuteStatement</c> must specify
         /// an equality condition on all key attributes. This enforces that each <c>SELECT</c>
-        /// statement in a batch returns at most a single item.
+        /// statement in a batch returns at most a single item. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html">Running
+        /// batch operations with PartiQL for DynamoDB </a>.
         /// 
         ///  <note> 
         /// <para>
@@ -444,8 +445,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -590,8 +595,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1503,7 +1512,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1593,7 +1602,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2958,7 +2967,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool? consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
@@ -3404,7 +3413,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int? limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
@@ -3421,7 +3430,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        Task<ListTablesResponse> ListTablesAsync(int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListTablesResponse> ListTablesAsync(int? limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
@@ -6234,5 +6243,33 @@ namespace Amazon.DynamoDBv2
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonDynamoDBConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonDynamoDBConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonDynamoDBConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonDynamoDBConfig to create AmazonDynamoDBClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonDynamoDBClient(serviceClientConfig) :
+                    new AmazonDynamoDBClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

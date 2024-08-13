@@ -47,9 +47,9 @@ namespace Amazon.SSMIncidents.Model
         /// After the specified timestamp.
         /// </para>
         /// </summary>
-        public DateTime After
+        public DateTime? After
         {
-            get { return this._after.GetValueOrDefault(); }
+            get { return this._after; }
             set { this._after = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SSMIncidents.Model
         /// Before the specified timestamp
         /// </para>
         /// </summary>
-        public DateTime Before
+        public DateTime? Before
         {
-            get { return this._before.GetValueOrDefault(); }
+            get { return this._before; }
             set { this._before = value; }
         }
 

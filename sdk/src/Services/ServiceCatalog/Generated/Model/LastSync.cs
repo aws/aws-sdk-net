@@ -90,9 +90,9 @@ namespace Amazon.ServiceCatalog.Model
         /// Catalog product.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulSyncTime
+        public DateTime? LastSuccessfulSyncTime
         {
-            get { return this._lastSuccessfulSyncTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulSyncTime; }
             set { this._lastSuccessfulSyncTime = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.ServiceCatalog.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime LastSyncTime
+        public DateTime? LastSyncTime
         {
-            get { return this._lastSyncTime.GetValueOrDefault(); }
+            get { return this._lastSyncTime; }
             set { this._lastSyncTime = value; }
         }
 

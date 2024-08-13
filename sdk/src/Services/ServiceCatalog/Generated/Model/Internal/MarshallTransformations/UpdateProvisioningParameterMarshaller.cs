@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUsePreviousValue())
             {
                 context.Writer.WritePropertyName("UsePreviousValue");
-                context.Writer.Write(requestObject.UsePreviousValue);
+                context.Writer.Write(requestObject.UsePreviousValue.Value);
             }
 
             if(requestObject.IsSetValue())

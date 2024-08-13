@@ -39,6 +39,11 @@ namespace Amazon.LexModelsV2.Model
     /// <para>
     /// You can't create a resource policy statement that allows cross-account access.
     /// </para>
+    ///  
+    /// <para>
+    /// You need to add the <c>CreateResourcePolicy</c> or <c>UpdateResourcePolicy</c> action
+    /// to the bot role in order to call the API.
+    /// </para>
     /// </summary>
     public partial class CreateResourcePolicyStatementRequest : AmazonLexModelsV2Request
     {

@@ -43,9 +43,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property DataStorage. Data storage information for the identity
         /// pool.
         /// </summary>
-        public long DataStorage
+        public long? DataStorage
         {
-            get { return this._dataStorage.GetValueOrDefault(); }
+            get { return this._dataStorage; }
             set { this._dataStorage = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property LastModifiedDate. Date on which the identity pool was last
         /// modified.
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property SyncSessionsCount. Number of sync sessions for the identity
         /// pool.
         /// </summary>
-        public long SyncSessionsCount
+        public long? SyncSessionsCount
         {
-            get { return this._syncSessionsCount.GetValueOrDefault(); }
+            get { return this._syncSessionsCount; }
             set { this._syncSessionsCount = value; }
         }
 

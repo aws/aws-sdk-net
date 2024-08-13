@@ -54,7 +54,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("datetime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Datetime = unmarshaller.Unmarshall(context);
                     continue;
                 }

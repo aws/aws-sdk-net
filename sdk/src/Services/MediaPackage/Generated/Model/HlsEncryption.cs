@@ -76,9 +76,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property KeyRotationIntervalSeconds. Interval (in seconds) between
         /// each encryption key rotation.
         /// </summary>
-        public int KeyRotationIntervalSeconds
+        public int? KeyRotationIntervalSeconds
         {
-            get { return this._keyRotationIntervalSeconds.GetValueOrDefault(); }
+            get { return this._keyRotationIntervalSeconds; }
             set { this._keyRotationIntervalSeconds = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property RepeatExtXKey. When enabled, the EXT-X-KEY tag will be
         /// repeated in output manifests.
         /// </summary>
-        public bool RepeatExtXKey
+        public bool? RepeatExtXKey
         {
-            get { return this._repeatExtXKey.GetValueOrDefault(); }
+            get { return this._repeatExtXKey; }
             set { this._repeatExtXKey = value; }
         }
 

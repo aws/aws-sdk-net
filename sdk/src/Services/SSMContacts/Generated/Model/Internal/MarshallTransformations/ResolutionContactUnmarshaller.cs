@@ -74,7 +74,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StageIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StageIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,7 +68,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("SnapshotsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SnapshotsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -160,9 +160,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// is as claimed.
         /// </para>
         /// </summary>
-        public bool IsVerifiedAuthor
+        public bool? IsVerifiedAuthor
         {
-            get { return this._isVerifiedAuthor.GetValueOrDefault(); }
+            get { return this._isVerifiedAuthor; }
             set { this._isVerifiedAuthor = value; }
         }
 

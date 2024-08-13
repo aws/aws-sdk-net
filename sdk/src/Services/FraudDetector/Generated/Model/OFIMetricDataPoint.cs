@@ -46,9 +46,9 @@ namespace Amazon.FraudDetector.Model
         /// incorrectly predicted as fraud. 
         /// </para>
         /// </summary>
-        public float Fpr
+        public float? Fpr
         {
-            get { return this._fpr.GetValueOrDefault(); }
+            get { return this._fpr; }
             set { this._fpr = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.FraudDetector.Model
         /// events predicted as fraudulent. 
         /// </para>
         /// </summary>
-        public float Precision
+        public float? Precision
         {
-            get { return this._precision.GetValueOrDefault(); }
+            get { return this._precision; }
             set { this._precision = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.FraudDetector.Model
         /// a threshold of 500 means any model score 500 or above is labeled as fraud. 
         /// </para>
         /// </summary>
-        public float Threshold
+        public float? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.FraudDetector.Model
         /// Also known as capture rate. 
         /// </para>
         /// </summary>
-        public float Tpr
+        public float? Tpr
         {
-            get { return this._tpr.GetValueOrDefault(); }
+            get { return this._tpr; }
             set { this._tpr = value; }
         }
 

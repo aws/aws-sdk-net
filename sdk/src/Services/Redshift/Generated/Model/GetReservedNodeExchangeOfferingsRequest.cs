@@ -65,9 +65,9 @@ namespace Amazon.Redshift.Model
         /// An integer setting the maximum number of ReservedNodeOfferings to retrieve.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

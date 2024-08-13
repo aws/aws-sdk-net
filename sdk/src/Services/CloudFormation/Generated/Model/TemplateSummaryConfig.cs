@@ -44,9 +44,9 @@ namespace Amazon.CloudFormation.Model
         /// parameter.
         /// </para>
         /// </summary>
-        public bool TreatUnrecognizedResourceTypesAsWarnings
+        public bool? TreatUnrecognizedResourceTypesAsWarnings
         {
-            get { return this._treatUnrecognizedResourceTypesAsWarnings.GetValueOrDefault(); }
+            get { return this._treatUnrecognizedResourceTypesAsWarnings; }
             set { this._treatUnrecognizedResourceTypesAsWarnings = value; }
         }
 

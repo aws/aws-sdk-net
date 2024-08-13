@@ -68,13 +68,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Cap", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Cap = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Days", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Days = unmarshaller.Unmarshall(context);
                     continue;
                 }

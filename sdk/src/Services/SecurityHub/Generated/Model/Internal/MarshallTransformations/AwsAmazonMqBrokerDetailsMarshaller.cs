@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoMinorVersionUpgrade())
             {
                 context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                context.Writer.Write(requestObject.AutoMinorVersionUpgrade);
+                context.Writer.Write(requestObject.AutoMinorVersionUpgrade.Value);
             }
 
             if(requestObject.IsSetBrokerArn())
@@ -149,7 +149,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("PubliclyAccessible");
-                context.Writer.Write(requestObject.PubliclyAccessible);
+                context.Writer.Write(requestObject.PubliclyAccessible.Value);
             }
 
             if(requestObject.IsSetSecurityGroups())

@@ -57,7 +57,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ManagedByStack", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ManagedByStack = unmarshaller.Unmarshall(context);
                         continue;
                     }

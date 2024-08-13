@@ -64,9 +64,9 @@ namespace Amazon.Glue.Model
         /// Whether to automatically determine the schema from the incoming data.
         /// </para>
         /// </summary>
-        public bool DetectSchema
+        public bool? DetectSchema
         {
-            get { return this._detectSchema.GetValueOrDefault(); }
+            get { return this._detectSchema; }
             set { this._detectSchema = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int WindowSize
+        public int? WindowSize
         {
-            get { return this._windowSize.GetValueOrDefault(); }
+            get { return this._windowSize; }
             set { this._windowSize = value; }
         }
 

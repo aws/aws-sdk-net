@@ -46,9 +46,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The size of the RDS storage in gigabytes (GB). 
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The provisioned IOPs of the RDS storage. 
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// the storage of the RDS instance. 
         /// </para>
         /// </summary>
-        public int MaxAllocatedStorage
+        public int? MaxAllocatedStorage
         {
-            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            get { return this._maxAllocatedStorage; }
             set { this._maxAllocatedStorage = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The storage throughput of the RDS storage. 
         /// </para>
         /// </summary>
-        public int StorageThroughput
+        public int? StorageThroughput
         {
-            get { return this._storageThroughput.GetValueOrDefault(); }
+            get { return this._storageThroughput; }
             set { this._storageThroughput = value; }
         }
 

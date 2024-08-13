@@ -43,9 +43,9 @@ namespace Amazon.MediaConvert.Model
         /// and the left edge of the video frame.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int ImageX
+        public int? ImageX
         {
-            get { return this._imageX.GetValueOrDefault(); }
+            get { return this._imageX; }
             set { this._imageX = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.MediaConvert.Model
         /// and the top edge of the video frame.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int ImageY
+        public int? ImageY
         {
-            get { return this._imageY.GetValueOrDefault(); }
+            get { return this._imageY; }
             set { this._imageY = value; }
         }
 

@@ -51,9 +51,9 @@ namespace Amazon.IoT.Model
         /// The average of the aggregated field values.
         /// </para>
         /// </summary>
-        public double Average
+        public double? Average
         {
-            get { return this._average.GetValueOrDefault(); }
+            get { return this._average; }
             set { this._average = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.IoT.Model
         /// field value.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.IoT.Model
         /// The maximum aggregated field value.
         /// </para>
         /// </summary>
-        public double Maximum
+        public double? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.IoT.Model
         /// The minimum aggregated field value.
         /// </para>
         /// </summary>
-        public double Minimum
+        public double? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.IoT.Model
         /// The standard deviation of the aggregated field values.
         /// </para>
         /// </summary>
-        public double StdDeviation
+        public double? StdDeviation
         {
-            get { return this._stdDeviation.GetValueOrDefault(); }
+            get { return this._stdDeviation; }
             set { this._stdDeviation = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.IoT.Model
         /// The sum of the aggregated field values.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.IoT.Model
         /// The sum of the squares of the aggregated field values.
         /// </para>
         /// </summary>
-        public double SumOfSquares
+        public double? SumOfSquares
         {
-            get { return this._sumOfSquares.GetValueOrDefault(); }
+            get { return this._sumOfSquares; }
             set { this._sumOfSquares = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.IoT.Model
         /// The variance of the aggregated field values.
         /// </para>
         /// </summary>
-        public double Variance
+        public double? Variance
         {
-            get { return this._variance.GetValueOrDefault(); }
+            get { return this._variance; }
             set { this._variance = value; }
         }
 

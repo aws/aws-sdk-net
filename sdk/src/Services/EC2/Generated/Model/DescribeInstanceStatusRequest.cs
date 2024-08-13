@@ -169,9 +169,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool IncludeAllInstances
+        public bool? IncludeAllInstances
         {
-            get { return this._includeAllInstances.GetValueOrDefault(); }
+            get { return this._includeAllInstances; }
             set { this._includeAllInstances = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.EC2.Model
         /// You cannot specify this parameter and the instance IDs parameter in the same request.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

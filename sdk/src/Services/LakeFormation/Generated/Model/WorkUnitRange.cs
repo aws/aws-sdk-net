@@ -45,9 +45,9 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long WorkUnitIdMax
+        public long? WorkUnitIdMax
         {
-            get { return this._workUnitIdMax.GetValueOrDefault(); }
+            get { return this._workUnitIdMax; }
             set { this._workUnitIdMax = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long WorkUnitIdMin
+        public long? WorkUnitIdMin
         {
-            get { return this._workUnitIdMin.GetValueOrDefault(); }
+            get { return this._workUnitIdMin; }
             set { this._workUnitIdMin = value; }
         }
 

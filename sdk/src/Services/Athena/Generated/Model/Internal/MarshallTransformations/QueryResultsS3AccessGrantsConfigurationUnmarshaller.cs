@@ -74,13 +74,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreateUserLevelPrefix", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CreateUserLevelPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableS3AccessGrants", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableS3AccessGrants = unmarshaller.Unmarshall(context);
                     continue;
                 }

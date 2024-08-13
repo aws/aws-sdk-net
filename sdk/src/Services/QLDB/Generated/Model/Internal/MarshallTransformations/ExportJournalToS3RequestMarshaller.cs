@@ -73,13 +73,13 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExclusiveEndTime())
                 {
                     context.Writer.WritePropertyName("ExclusiveEndTime");
-                    context.Writer.Write(publicRequest.ExclusiveEndTime);
+                    context.Writer.Write(publicRequest.ExclusiveEndTime.Value);
                 }
 
                 if(publicRequest.IsSetInclusiveStartTime())
                 {
                     context.Writer.WritePropertyName("InclusiveStartTime");
-                    context.Writer.Write(publicRequest.InclusiveStartTime);
+                    context.Writer.Write(publicRequest.InclusiveStartTime.Value);
                 }
 
                 if(publicRequest.IsSetOutputFormat())

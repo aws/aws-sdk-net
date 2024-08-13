@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Kinesis.Model;
 using Amazon.Kinesis;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class KinesisMethodCustomizationsTests
@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("SimpleMethods"), TestCategory("Kinesis")]
         public void KinesisSimpleMethodTests()
         {
-            EnsureSimpleMethodExists(typeof(Amazon.Kinesis.AmazonKinesisClient), "DecreaseStreamRetentionPeriod", new Type[] { typeof(string), typeof(int), });
-            EnsureSimpleMethodExists(typeof(Amazon.Kinesis.AmazonKinesisClient), "IncreaseStreamRetentionPeriod", new Type[] { typeof(string), typeof(int), });
+            EnsureSimpleMethodExists(typeof(Amazon.Kinesis.AmazonKinesisClient), "DecreaseStreamRetentionPeriod", new Type[] { typeof(string), typeof(int?), });
+            EnsureSimpleMethodExists(typeof(Amazon.Kinesis.AmazonKinesisClient), "IncreaseStreamRetentionPeriod", new Type[] { typeof(string), typeof(int?), });
         }
         
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)

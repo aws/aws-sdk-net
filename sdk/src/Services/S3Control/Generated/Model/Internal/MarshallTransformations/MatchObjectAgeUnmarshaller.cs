@@ -58,13 +58,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DaysGreaterThan", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DaysGreaterThan = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DaysLessThan", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DaysLessThan = unmarshaller.Unmarshall(context);
                         continue;
                     }

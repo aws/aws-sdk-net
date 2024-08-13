@@ -92,9 +92,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ProjectCreationDate
+        public DateTime? ProjectCreationDate
         {
-            get { return this._projectCreationDate.GetValueOrDefault(); }
+            get { return this._projectCreationDate; }
             set { this._projectCreationDate = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ProjectLastUpdateDate
+        public DateTime? ProjectLastUpdateDate
         {
-            get { return this._projectLastUpdateDate.GetValueOrDefault(); }
+            get { return this._projectLastUpdateDate; }
             set { this._projectLastUpdateDate = value; }
         }
 

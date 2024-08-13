@@ -74,13 +74,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CrawlComments", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlComments = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlSystemFolders", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlSystemFolders = unmarshaller.Unmarshall(context);
                     continue;
                 }

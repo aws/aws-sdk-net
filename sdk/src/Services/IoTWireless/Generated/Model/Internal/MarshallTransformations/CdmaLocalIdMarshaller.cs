@@ -51,13 +51,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCdmaChannel())
             {
                 context.Writer.WritePropertyName("CdmaChannel");
-                context.Writer.Write(requestObject.CdmaChannel);
+                context.Writer.Write(requestObject.CdmaChannel.Value);
             }
 
             if(requestObject.IsSetPnOffset())
             {
                 context.Writer.WritePropertyName("PnOffset");
-                context.Writer.Write(requestObject.PnOffset);
+                context.Writer.Write(requestObject.PnOffset.Value);
             }
 
         }

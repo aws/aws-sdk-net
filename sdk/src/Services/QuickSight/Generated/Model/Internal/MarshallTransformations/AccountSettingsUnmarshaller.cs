@@ -92,13 +92,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PublicSharingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PublicSharingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TerminationProtectionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TerminationProtectionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

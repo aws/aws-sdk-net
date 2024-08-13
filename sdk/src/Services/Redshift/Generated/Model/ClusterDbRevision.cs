@@ -83,9 +83,9 @@ namespace Amazon.Redshift.Model
         /// The date on which the database revision was released.
         /// </para>
         /// </summary>
-        public DateTime DatabaseRevisionReleaseDate
+        public DateTime? DatabaseRevisionReleaseDate
         {
-            get { return this._databaseRevisionReleaseDate.GetValueOrDefault(); }
+            get { return this._databaseRevisionReleaseDate; }
             set { this._databaseRevisionReleaseDate = value; }
         }
 

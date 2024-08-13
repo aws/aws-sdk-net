@@ -51,9 +51,9 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxCount
+        public int? MaxCount
         {
-            get { return this._maxCount.GetValueOrDefault(); }
+            get { return this._maxCount; }
             set { this._maxCount = value; }
         }
 

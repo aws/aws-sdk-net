@@ -101,7 +101,7 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSessionDurationInMinutes())
                 {
                     context.Writer.WritePropertyName("sessionDurationInMinutes");
-                    context.Writer.Write(publicRequest.SessionDurationInMinutes);
+                    context.Writer.Write(publicRequest.SessionDurationInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetUserId())

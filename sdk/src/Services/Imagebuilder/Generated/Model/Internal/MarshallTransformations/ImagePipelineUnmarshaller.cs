@@ -116,7 +116,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enhancedImageMetadataEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnhancedImageMetadataEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

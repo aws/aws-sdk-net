@@ -45,7 +45,7 @@ using System.Runtime.InteropServices;
             this.Write("\")]\r\n[assembly: AssemblyDescription(\"");
             
             #line 14 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "3.5")));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription()));
             
             #line default
             #line hidden

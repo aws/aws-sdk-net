@@ -145,9 +145,9 @@ namespace Amazon.Imagebuilder.Model
         /// experience of using EC2 Image Builder. Enabled by default.
         /// </para>
         /// </summary>
-        public bool EnhancedImageMetadataEnabled
+        public bool? EnhancedImageMetadataEnabled
         {
-            get { return this._enhancedImageMetadataEnabled.GetValueOrDefault(); }
+            get { return this._enhancedImageMetadataEnabled; }
             set { this._enhancedImageMetadataEnabled = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AttainmentGoal", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AttainmentGoal = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WarningThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.WarningThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

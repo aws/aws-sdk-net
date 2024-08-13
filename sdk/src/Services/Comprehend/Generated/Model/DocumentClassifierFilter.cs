@@ -86,9 +86,9 @@ namespace Amazon.Comprehend.Model
         /// are returned in descending order, newest to oldest.
         /// </para>
         /// </summary>
-        public DateTime SubmitTimeAfter
+        public DateTime? SubmitTimeAfter
         {
-            get { return this._submitTimeAfter.GetValueOrDefault(); }
+            get { return this._submitTimeAfter; }
             set { this._submitTimeAfter = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.Comprehend.Model
         /// are returned in ascending order, oldest to newest.
         /// </para>
         /// </summary>
-        public DateTime SubmitTimeBefore
+        public DateTime? SubmitTimeBefore
         {
-            get { return this._submitTimeBefore.GetValueOrDefault(); }
+            get { return this._submitTimeBefore; }
             set { this._submitTimeBefore = value; }
         }
 

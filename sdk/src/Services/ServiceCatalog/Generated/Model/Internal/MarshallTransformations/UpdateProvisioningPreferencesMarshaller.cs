@@ -62,25 +62,25 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStackSetFailureToleranceCount())
             {
                 context.Writer.WritePropertyName("StackSetFailureToleranceCount");
-                context.Writer.Write(requestObject.StackSetFailureToleranceCount);
+                context.Writer.Write(requestObject.StackSetFailureToleranceCount.Value);
             }
 
             if(requestObject.IsSetStackSetFailureTolerancePercentage())
             {
                 context.Writer.WritePropertyName("StackSetFailureTolerancePercentage");
-                context.Writer.Write(requestObject.StackSetFailureTolerancePercentage);
+                context.Writer.Write(requestObject.StackSetFailureTolerancePercentage.Value);
             }
 
             if(requestObject.IsSetStackSetMaxConcurrencyCount())
             {
                 context.Writer.WritePropertyName("StackSetMaxConcurrencyCount");
-                context.Writer.Write(requestObject.StackSetMaxConcurrencyCount);
+                context.Writer.Write(requestObject.StackSetMaxConcurrencyCount.Value);
             }
 
             if(requestObject.IsSetStackSetMaxConcurrencyPercentage())
             {
                 context.Writer.WritePropertyName("StackSetMaxConcurrencyPercentage");
-                context.Writer.Write(requestObject.StackSetMaxConcurrencyPercentage);
+                context.Writer.Write(requestObject.StackSetMaxConcurrencyPercentage.Value);
             }
 
             if(requestObject.IsSetStackSetOperationType())

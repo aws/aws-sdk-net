@@ -62,7 +62,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxRetries())
             {
                 context.Writer.WritePropertyName("maxRetries");
-                context.Writer.Write(requestObject.MaxRetries);
+                context.Writer.Write(requestObject.MaxRetries.Value);
             }
 
             if(requestObject.IsSetPerRetryTimeout())

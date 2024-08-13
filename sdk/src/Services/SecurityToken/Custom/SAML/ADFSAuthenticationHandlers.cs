@@ -150,9 +150,7 @@ namespace Amazon.SecurityToken.SAML
                 finally
                 {
                     response?.Close();
-#if !BCL35
                     response?.Dispose();
-#endif
                 }
             }
 

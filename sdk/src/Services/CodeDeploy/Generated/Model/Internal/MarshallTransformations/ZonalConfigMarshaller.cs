@@ -51,7 +51,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstZoneMonitorDurationInSeconds())
             {
                 context.Writer.WritePropertyName("firstZoneMonitorDurationInSeconds");
-                context.Writer.Write(requestObject.FirstZoneMonitorDurationInSeconds);
+                context.Writer.Write(requestObject.FirstZoneMonitorDurationInSeconds.Value);
             }
 
             if(requestObject.IsSetMinimumHealthyHostsPerZone())
@@ -68,7 +68,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMonitorDurationInSeconds())
             {
                 context.Writer.WritePropertyName("monitorDurationInSeconds");
-                context.Writer.Write(requestObject.MonitorDurationInSeconds);
+                context.Writer.Write(requestObject.MonitorDurationInSeconds.Value);
             }
 
         }

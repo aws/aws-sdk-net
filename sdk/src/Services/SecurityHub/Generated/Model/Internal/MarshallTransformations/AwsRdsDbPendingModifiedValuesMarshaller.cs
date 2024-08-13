@@ -51,13 +51,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedStorage())
             {
                 context.Writer.WritePropertyName("AllocatedStorage");
-                context.Writer.Write(requestObject.AllocatedStorage);
+                context.Writer.Write(requestObject.AllocatedStorage.Value);
             }
 
             if(requestObject.IsSetBackupRetentionPeriod())
             {
                 context.Writer.WritePropertyName("BackupRetentionPeriod");
-                context.Writer.Write(requestObject.BackupRetentionPeriod);
+                context.Writer.Write(requestObject.BackupRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetCaCertificateIdentifier())
@@ -93,7 +93,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetLicenseModel())
@@ -111,7 +111,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMultiAZ())
             {
                 context.Writer.WritePropertyName("MultiAZ");
-                context.Writer.Write(requestObject.MultiAZ);
+                context.Writer.Write(requestObject.MultiAZ.Value);
             }
 
             if(requestObject.IsSetPendingCloudWatchLogsExports())
@@ -128,7 +128,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProcessorFeatures())

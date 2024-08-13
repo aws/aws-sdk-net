@@ -68,7 +68,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseBase64())
             {
                 context.Writer.WritePropertyName("useBase64");
-                context.Writer.Write(requestObject.UseBase64);
+                context.Writer.Write(requestObject.UseBase64.Value);
             }
 
         }

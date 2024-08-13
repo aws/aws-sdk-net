@@ -52,9 +52,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The elapsed time of the replication, in milliseconds.
         /// </para>
         /// </summary>
-        public long ElapsedTimeMillis
+        public long? ElapsedTimeMillis
         {
-            get { return this._elapsedTimeMillis.GetValueOrDefault(); }
+            get { return this._elapsedTimeMillis; }
             set { this._elapsedTimeMillis = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the replication was started either with a fresh start or a target reload.
         /// </para>
         /// </summary>
-        public DateTime FreshStartDate
+        public DateTime? FreshStartDate
         {
-            get { return this._freshStartDate.GetValueOrDefault(); }
+            get { return this._freshStartDate; }
             set { this._freshStartDate = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the replication full load was finished.
         /// </para>
         /// </summary>
-        public DateTime FullLoadFinishDate
+        public DateTime? FullLoadFinishDate
         {
-            get { return this._fullLoadFinishDate.GetValueOrDefault(); }
+            get { return this._fullLoadFinishDate; }
             set { this._fullLoadFinishDate = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The percent complete for the full load serverless replication.
         /// </para>
         /// </summary>
-        public int FullLoadProgressPercent
+        public int? FullLoadProgressPercent
         {
-            get { return this._fullLoadProgressPercent.GetValueOrDefault(); }
+            get { return this._fullLoadProgressPercent; }
             set { this._fullLoadProgressPercent = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the replication full load was started.
         /// </para>
         /// </summary>
-        public DateTime FullLoadStartDate
+        public DateTime? FullLoadStartDate
         {
-            get { return this._fullLoadStartDate.GetValueOrDefault(); }
+            get { return this._fullLoadStartDate; }
             set { this._fullLoadStartDate = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the replication is scheduled to start.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the replication was stopped.
         /// </para>
         /// </summary>
-        public DateTime StopDate
+        public DateTime? StopDate
         {
-            get { return this._stopDate.GetValueOrDefault(); }
+            get { return this._stopDate; }
             set { this._stopDate = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of errors that have occured for this replication.
         /// </para>
         /// </summary>
-        public int TablesErrored
+        public int? TablesErrored
         {
-            get { return this._tablesErrored.GetValueOrDefault(); }
+            get { return this._tablesErrored; }
             set { this._tablesErrored = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of tables loaded for this replication.
         /// </para>
         /// </summary>
-        public int TablesLoaded
+        public int? TablesLoaded
         {
-            get { return this._tablesLoaded.GetValueOrDefault(); }
+            get { return this._tablesLoaded; }
             set { this._tablesLoaded = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of tables currently loading for this replication.
         /// </para>
         /// </summary>
-        public int TablesLoading
+        public int? TablesLoading
         {
-            get { return this._tablesLoading.GetValueOrDefault(); }
+            get { return this._tablesLoading; }
             set { this._tablesLoading = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of tables queued for this replication.
         /// </para>
         /// </summary>
-        public int TablesQueued
+        public int? TablesQueued
         {
-            get { return this._tablesQueued.GetValueOrDefault(); }
+            get { return this._tablesQueued; }
             set { this._tablesQueued = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllPolicyTypesEnabled())
             {
                 context.Writer.WritePropertyName("AllPolicyTypesEnabled");
-                context.Writer.Write(requestObject.AllPolicyTypesEnabled);
+                context.Writer.Write(requestObject.AllPolicyTypesEnabled.Value);
             }
 
             if(requestObject.IsSetPolicyTypes())

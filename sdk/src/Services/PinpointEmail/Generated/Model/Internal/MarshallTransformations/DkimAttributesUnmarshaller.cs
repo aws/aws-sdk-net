@@ -68,7 +68,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("SigningEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SigningEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

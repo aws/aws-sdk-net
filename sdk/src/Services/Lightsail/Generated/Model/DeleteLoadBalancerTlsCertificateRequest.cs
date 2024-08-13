@@ -78,9 +78,9 @@ namespace Amazon.Lightsail.Model
         /// is in use by an instance attached to the load balancer.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

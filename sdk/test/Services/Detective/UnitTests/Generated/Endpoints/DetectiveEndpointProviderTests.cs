@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Detective.Endpoints;
 using Amazon.Detective.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class DetectiveEndpointsTests

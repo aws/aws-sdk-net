@@ -68,19 +68,19 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("F1Score", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.F1Score = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Precision", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Recall", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Recall = unmarshaller.Unmarshall(context);
                     continue;
                 }

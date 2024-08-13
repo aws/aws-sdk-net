@@ -89,9 +89,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int AllocationDefaultNetmaskLength
+        public int? AllocationDefaultNetmaskLength
         {
-            get { return this._allocationDefaultNetmaskLength.GetValueOrDefault(); }
+            get { return this._allocationDefaultNetmaskLength; }
             set { this._allocationDefaultNetmaskLength = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int AllocationMaxNetmaskLength
+        public int? AllocationMaxNetmaskLength
         {
-            get { return this._allocationMaxNetmaskLength.GetValueOrDefault(); }
+            get { return this._allocationMaxNetmaskLength; }
             set { this._allocationMaxNetmaskLength = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int AllocationMinNetmaskLength
+        public int? AllocationMinNetmaskLength
         {
-            get { return this._allocationMinNetmaskLength.GetValueOrDefault(); }
+            get { return this._allocationMinNetmaskLength; }
             set { this._allocationMinNetmaskLength = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.EC2.Model
         /// A locale must be set on the pool for this feature to work.
         /// </para>
         /// </summary>
-        public bool AutoImport
+        public bool? AutoImport
         {
-            get { return this._autoImport.GetValueOrDefault(); }
+            get { return this._autoImport; }
             set { this._autoImport = value; }
         }
 
@@ -350,13 +350,27 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale of the IPAM pool. In IPAM, the locale is the Amazon Web Services Region
-        /// where you want to make an IPAM pool available for allocations. Only resources in the
-        /// same Region as the locale of the pool can get IP address allocations from the pool.
-        /// You can only allocate a CIDR for a VPC, for example, from an IPAM pool that shares
-        /// a locale with the VPC’s Region. Note that once you choose a Locale for a pool, you
-        /// cannot modify it. If you choose an Amazon Web Services Region for locale that has
-        /// not been configured as an operating Region for the IPAM, you'll get an error.
+        /// The locale of the IPAM pool.
+        /// </para>
+        ///  
+        /// <para>
+        /// The locale for the pool should be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Web Services Region where you want this IPAM pool to be available for allocations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The network border group for an Amazon Web Services Local Zone where you want this
+        /// IPAM pool to be available for allocations (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported
+        /// Local Zones</a>). This option is only available for IPAM IPv4 pools in the public
+        /// scope.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you choose an Amazon Web Services Region for locale that has not been configured
+        /// as an operating Region for the IPAM, you'll get an error.
         /// </para>
         /// </summary>
         public string Locale
@@ -397,9 +411,9 @@ namespace Amazon.EC2.Model
         /// in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// </para>
         /// </summary>
-        public int PoolDepth
+        public int? PoolDepth
         {
-            get { return this._poolDepth.GetValueOrDefault(); }
+            get { return this._poolDepth; }
             set { this._poolDepth = value; }
         }
 
@@ -440,9 +454,9 @@ namespace Amazon.EC2.Model
         /// with AddressFamily set to <c>ipv4</c>.
         /// </para>
         /// </summary>
-        public bool PubliclyAdvertisable
+        public bool? PubliclyAdvertisable
         {
-            get { return this._publiclyAdvertisable.GetValueOrDefault(); }
+            get { return this._publiclyAdvertisable; }
             set { this._publiclyAdvertisable = value; }
         }
 

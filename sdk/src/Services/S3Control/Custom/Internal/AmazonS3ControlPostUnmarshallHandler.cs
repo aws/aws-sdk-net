@@ -42,8 +42,8 @@ namespace Amazon.S3Control.Internal
             base.InvokeSync(executionContext);
             PostInvoke(executionContext);
         }
-#if AWS_ASYNC_API
 
+#if AWS_ASYNC_API
         /// <summary>
         /// Calls the and post invoke logic after calling the next handler 
         /// in the pipeline.
@@ -57,24 +57,6 @@ namespace Amazon.S3Control.Internal
             var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
             PostInvoke(executionContext);
             return response;
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Calls the PostInvoke methods after calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            // Process the response if an exception hasn't occured
-            if (executionContext.ResponseContext.AsyncResult.Exception == null)
-            {
-                PostInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            }
-            base.InvokeAsyncCallback(executionContext);
         }
 #endif
 

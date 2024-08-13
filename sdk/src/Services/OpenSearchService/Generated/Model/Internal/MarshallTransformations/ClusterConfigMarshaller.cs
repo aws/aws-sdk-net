@@ -62,13 +62,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDedicatedMasterCount())
             {
                 context.Writer.WritePropertyName("DedicatedMasterCount");
-                context.Writer.Write(requestObject.DedicatedMasterCount);
+                context.Writer.Write(requestObject.DedicatedMasterCount.Value);
             }
 
             if(requestObject.IsSetDedicatedMasterEnabled())
             {
                 context.Writer.WritePropertyName("DedicatedMasterEnabled");
-                context.Writer.Write(requestObject.DedicatedMasterEnabled);
+                context.Writer.Write(requestObject.DedicatedMasterEnabled.Value);
             }
 
             if(requestObject.IsSetDedicatedMasterType())
@@ -80,7 +80,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
+                context.Writer.Write(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceType())
@@ -92,19 +92,19 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMultiAZWithStandbyEnabled())
             {
                 context.Writer.WritePropertyName("MultiAZWithStandbyEnabled");
-                context.Writer.Write(requestObject.MultiAZWithStandbyEnabled);
+                context.Writer.Write(requestObject.MultiAZWithStandbyEnabled.Value);
             }
 
             if(requestObject.IsSetWarmCount())
             {
                 context.Writer.WritePropertyName("WarmCount");
-                context.Writer.Write(requestObject.WarmCount);
+                context.Writer.Write(requestObject.WarmCount.Value);
             }
 
             if(requestObject.IsSetWarmEnabled())
             {
                 context.Writer.WritePropertyName("WarmEnabled");
-                context.Writer.Write(requestObject.WarmEnabled);
+                context.Writer.Write(requestObject.WarmEnabled.Value);
             }
 
             if(requestObject.IsSetWarmType())
@@ -127,7 +127,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetZoneAwarenessEnabled())
             {
                 context.Writer.WritePropertyName("ZoneAwarenessEnabled");
-                context.Writer.Write(requestObject.ZoneAwarenessEnabled);
+                context.Writer.Write(requestObject.ZoneAwarenessEnabled.Value);
             }
 
         }

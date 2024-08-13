@@ -99,7 +99,7 @@ namespace Amazon.CodeArtifact.Model
         protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.RetryAfterSeconds = (int)info.GetValue("RetryAfterSeconds", typeof(int));
+            this.RetryAfterSeconds = (int?)info.GetValue("RetryAfterSeconds", typeof(int?));
         }
 
         /// <summary>
@@ -108,11 +108,6 @@ namespace Amazon.CodeArtifact.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -130,9 +125,9 @@ namespace Amazon.CodeArtifact.Model
         ///  The time period, in seconds, to wait before retrying the request. 
         /// </para>
         /// </summary>
-        public int RetryAfterSeconds
+        public int? RetryAfterSeconds
         {
-            get { return this._retryAfterSeconds.GetValueOrDefault(); }
+            get { return this._retryAfterSeconds; }
             set { this._retryAfterSeconds = value; }
         }
 

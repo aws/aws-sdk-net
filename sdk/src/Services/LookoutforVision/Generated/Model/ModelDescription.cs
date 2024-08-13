@@ -55,9 +55,9 @@ namespace Amazon.LookoutforVision.Model
         /// The unix timestamp for the date and time that the model was created. 
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.LookoutforVision.Model
         /// The unix timestamp for the date and time that the evaluation ended. 
         /// </para>
         /// </summary>
-        public DateTime EvaluationEndTimestamp
+        public DateTime? EvaluationEndTimestamp
         {
-            get { return this._evaluationEndTimestamp.GetValueOrDefault(); }
+            get { return this._evaluationEndTimestamp; }
             set { this._evaluationEndTimestamp = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.LookoutforVision.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxInferenceUnits
+        public int? MaxInferenceUnits
         {
-            get { return this._maxInferenceUnits.GetValueOrDefault(); }
+            get { return this._maxInferenceUnits; }
             set { this._maxInferenceUnits = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.LookoutforVision.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinInferenceUnits
+        public int? MinInferenceUnits
         {
-            get { return this._minInferenceUnits.GetValueOrDefault(); }
+            get { return this._minInferenceUnits; }
             set { this._minInferenceUnits = value; }
         }
 

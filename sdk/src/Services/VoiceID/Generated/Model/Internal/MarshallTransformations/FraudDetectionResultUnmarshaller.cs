@@ -68,13 +68,13 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AudioAggregationEndedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AudioAggregationEndedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AudioAggregationStartedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AudioAggregationStartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

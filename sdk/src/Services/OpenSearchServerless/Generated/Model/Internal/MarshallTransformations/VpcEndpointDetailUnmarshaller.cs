@@ -68,7 +68,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

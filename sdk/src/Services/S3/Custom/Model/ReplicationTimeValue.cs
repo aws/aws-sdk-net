@@ -22,9 +22,9 @@ namespace Amazon.S3.Model
         ///  Valid value: 15
         /// </para>
         /// </summary>
-        public int Minutes
+        public int? Minutes
         {
-            get { return this.minutes ?? default(int); }
+            get { return this.minutes; }
             set { this.minutes = value; }
         }
 

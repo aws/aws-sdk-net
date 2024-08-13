@@ -102,7 +102,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOverwrite())
                 {
                     context.Writer.WritePropertyName("Overwrite");
-                    context.Writer.Write(publicRequest.Overwrite);
+                    context.Writer.Write(publicRequest.Overwrite.Value);
                 }
 
                 if(publicRequest.IsSetPolicies())

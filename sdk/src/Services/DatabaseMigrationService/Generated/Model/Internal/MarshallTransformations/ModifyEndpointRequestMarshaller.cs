@@ -152,7 +152,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExactSettings())
                 {
                     context.Writer.WritePropertyName("ExactSettings");
-                    context.Writer.Write(publicRequest.ExactSettings);
+                    context.Writer.Write(publicRequest.ExactSettings.Value);
                 }
 
                 if(publicRequest.IsSetExternalTableDefinition())
@@ -275,7 +275,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPort())
                 {
                     context.Writer.WritePropertyName("Port");
-                    context.Writer.Write(publicRequest.Port);
+                    context.Writer.Write(publicRequest.Port.Value);
                 }
 
                 if(publicRequest.IsSetPostgreSQLSettings())

@@ -86,7 +86,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HealthCheckIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HealthCheckPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,13 +116,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ThresholdCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThresholdCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrafficDialPercentage", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.TrafficDialPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

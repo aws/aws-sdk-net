@@ -74,9 +74,9 @@ namespace Amazon.OpenSearchService.Model
         /// 2 and not 4, otherwise you receive a validation exception.
         /// </para>
         /// </summary>
-        public int DedicatedMasterCount
+        public int? DedicatedMasterCount
         {
-            get { return this._dedicatedMasterCount.GetValueOrDefault(); }
+            get { return this._dedicatedMasterCount; }
             set { this._dedicatedMasterCount = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.OpenSearchService.Model
         /// the cluster will use a dedicated master node.<c>False</c> if the cluster will not.
         /// </para>
         /// </summary>
-        public bool DedicatedMasterEnabled
+        public bool? DedicatedMasterEnabled
         {
-            get { return this._dedicatedMasterEnabled.GetValueOrDefault(); }
+            get { return this._dedicatedMasterEnabled; }
             set { this._dedicatedMasterEnabled = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.OpenSearchService.Model
         /// you receive a validation exception.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.OpenSearchService.Model
         /// a multi-AZ domain in Amazon OpenSearch Service</a>. 
         /// </para>
         /// </summary>
-        public bool MultiAZWithStandbyEnabled
+        public bool? MultiAZWithStandbyEnabled
         {
-            get { return this._multiAZWithStandbyEnabled.GetValueOrDefault(); }
+            get { return this._multiAZWithStandbyEnabled; }
             set { this._multiAZWithStandbyEnabled = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.OpenSearchService.Model
         /// The number of warm nodes in the cluster.
         /// </para>
         /// </summary>
-        public int WarmCount
+        public int? WarmCount
         {
-            get { return this._warmCount.GetValueOrDefault(); }
+            get { return this._warmCount; }
             set { this._warmCount = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether to enable warm storage for the cluster.
         /// </para>
         /// </summary>
-        public bool WarmEnabled
+        public bool? WarmEnabled
         {
-            get { return this._warmEnabled.GetValueOrDefault(); }
+            get { return this._warmEnabled; }
             set { this._warmEnabled = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.OpenSearchService.Model
         /// a multi-AZ domain in Amazon OpenSearch Service</a>.
         /// </para>
         /// </summary>
-        public bool ZoneAwarenessEnabled
+        public bool? ZoneAwarenessEnabled
         {
-            get { return this._zoneAwarenessEnabled.GetValueOrDefault(); }
+            get { return this._zoneAwarenessEnabled; }
             set { this._zoneAwarenessEnabled = value; }
         }
 

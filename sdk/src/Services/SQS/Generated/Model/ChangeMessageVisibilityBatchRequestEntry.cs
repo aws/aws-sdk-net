@@ -108,9 +108,9 @@ namespace Amazon.SQS.Model
         /// The new value (in seconds) for the message's visibility timeout.
         /// </para>
         /// </summary>
-        public int VisibilityTimeout
+        public int? VisibilityTimeout
         {
-            get { return this._visibilityTimeout.GetValueOrDefault(); }
+            get { return this._visibilityTimeout; }
             set { this._visibilityTimeout = value; }
         }
 

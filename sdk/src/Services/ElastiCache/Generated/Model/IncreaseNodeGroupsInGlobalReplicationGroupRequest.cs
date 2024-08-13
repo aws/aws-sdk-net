@@ -48,9 +48,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NodeGroupCount
+        public int? NodeGroupCount
         {
-            get { return this._nodeGroupCount.GetValueOrDefault(); }
+            get { return this._nodeGroupCount; }
             set { this._nodeGroupCount = value; }
         }
 

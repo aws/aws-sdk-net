@@ -97,9 +97,9 @@ namespace Amazon.Redshift.Model
         /// The size of the incremental backup.
         /// </para>
         /// </summary>
-        public double ActualIncrementalBackupSizeInMegaBytes
+        public double? ActualIncrementalBackupSizeInMegaBytes
         {
-            get { return this._actualIncrementalBackupSizeInMegaBytes.GetValueOrDefault(); }
+            get { return this._actualIncrementalBackupSizeInMegaBytes; }
             set { this._actualIncrementalBackupSizeInMegaBytes = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.Redshift.Model
         /// The number of megabytes that have been transferred to the snapshot backup.
         /// </para>
         /// </summary>
-        public double BackupProgressInMegaBytes
+        public double? BackupProgressInMegaBytes
         {
-            get { return this._backupProgressInMegaBytes.GetValueOrDefault(); }
+            get { return this._backupProgressInMegaBytes; }
             set { this._backupProgressInMegaBytes = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.Redshift.Model
         /// The time (UTC) when the cluster was originally created.
         /// </para>
         /// </summary>
-        public DateTime ClusterCreateTime
+        public DateTime? ClusterCreateTime
         {
-            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            get { return this._clusterCreateTime; }
             set { this._clusterCreateTime = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.Redshift.Model
         /// <c>0</c> for a completed backup. 
         /// </para>
         /// </summary>
-        public double CurrentBackupRateInMegaBytesPerSecond
+        public double? CurrentBackupRateInMegaBytesPerSecond
         {
-            get { return this._currentBackupRateInMegaBytesPerSecond.GetValueOrDefault(); }
+            get { return this._currentBackupRateInMegaBytesPerSecond; }
             set { this._currentBackupRateInMegaBytesPerSecond = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.Redshift.Model
         /// of time it took a completed backup to finish.
         /// </para>
         /// </summary>
-        public long ElapsedTimeInSeconds
+        public long? ElapsedTimeInSeconds
         {
-            get { return this._elapsedTimeInSeconds.GetValueOrDefault(); }
+            get { return this._elapsedTimeInSeconds; }
             set { this._elapsedTimeInSeconds = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.Redshift.Model
         /// If <c>true</c>, the data in the snapshot is encrypted at rest.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.Redshift.Model
         /// keys.
         /// </para>
         /// </summary>
-        public bool EncryptedWithHSM
+        public bool? EncryptedWithHSM
         {
-            get { return this._encryptedWithHSM.GetValueOrDefault(); }
+            get { return this._encryptedWithHSM; }
             set { this._encryptedWithHSM = value; }
         }
 
@@ -334,9 +334,9 @@ namespace Amazon.Redshift.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -353,9 +353,9 @@ namespace Amazon.Redshift.Model
         /// <c>0</c> for a completed backup. 
         /// </para>
         /// </summary>
-        public long EstimatedSecondsToCompletion
+        public long? EstimatedSecondsToCompletion
         {
-            get { return this._estimatedSecondsToCompletion.GetValueOrDefault(); }
+            get { return this._estimatedSecondsToCompletion; }
             set { this._estimatedSecondsToCompletion = value; }
         }
 
@@ -410,9 +410,9 @@ namespace Amazon.Redshift.Model
         /// The number of days until a manual snapshot will pass its retention period.
         /// </para>
         /// </summary>
-        public int ManualSnapshotRemainingDays
+        public int? ManualSnapshotRemainingDays
         {
-            get { return this._manualSnapshotRemainingDays.GetValueOrDefault(); }
+            get { return this._manualSnapshotRemainingDays; }
             set { this._manualSnapshotRemainingDays = value; }
         }
 
@@ -433,9 +433,9 @@ namespace Amazon.Redshift.Model
         /// The value must be either -1 or an integer between 1 and 3,653.
         /// </para>
         /// </summary>
-        public int ManualSnapshotRetentionPeriod
+        public int? ManualSnapshotRetentionPeriod
         {
-            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._manualSnapshotRetentionPeriod; }
             set { this._manualSnapshotRetentionPeriod = value; }
         }
 
@@ -528,9 +528,9 @@ namespace Amazon.Redshift.Model
         /// The number of nodes in the cluster.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 
@@ -567,9 +567,9 @@ namespace Amazon.Redshift.Model
         /// The port that the cluster is listening on.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -623,9 +623,9 @@ namespace Amazon.Redshift.Model
         /// a copy of the cluster data as of this exact time.
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreateTime
+        public DateTime? SnapshotCreateTime
         {
-            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            get { return this._snapshotCreateTime; }
             set { this._snapshotCreateTime = value; }
         }
 
@@ -660,9 +660,9 @@ namespace Amazon.Redshift.Model
         /// A timestamp representing the start of the retention period for the snapshot.
         /// </para>
         /// </summary>
-        public DateTime SnapshotRetentionStartTime
+        public DateTime? SnapshotRetentionStartTime
         {
-            get { return this._snapshotRetentionStartTime.GetValueOrDefault(); }
+            get { return this._snapshotRetentionStartTime; }
             set { this._snapshotRetentionStartTime = value; }
         }
 
@@ -769,9 +769,9 @@ namespace Amazon.Redshift.Model
         /// The size of the complete set of backup data that would be used to restore the cluster.
         /// </para>
         /// </summary>
-        public double TotalBackupSizeInMegaBytes
+        public double? TotalBackupSizeInMegaBytes
         {
-            get { return this._totalBackupSizeInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalBackupSizeInMegaBytes; }
             set { this._totalBackupSizeInMegaBytes = value; }
         }
 

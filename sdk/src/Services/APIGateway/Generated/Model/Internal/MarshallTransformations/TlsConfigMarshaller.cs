@@ -51,7 +51,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInsecureSkipVerification())
             {
                 context.Writer.WritePropertyName("insecureSkipVerification");
-                context.Writer.Write(requestObject.InsecureSkipVerification);
+                context.Writer.Write(requestObject.InsecureSkipVerification.Value);
             }
 
         }

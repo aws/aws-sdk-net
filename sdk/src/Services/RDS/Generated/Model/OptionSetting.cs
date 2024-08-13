@@ -143,9 +143,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the option setting is part of a collection.
         /// </para>
         /// </summary>
-        public bool IsCollection
+        public bool? IsCollection
         {
-            get { return this._isCollection.GetValueOrDefault(); }
+            get { return this._isCollection; }
             set { this._isCollection = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the option setting can be modified from the default.
         /// </para>
         /// </summary>
-        public bool IsModifiable
+        public bool? IsModifiable
         {
-            get { return this._isModifiable.GetValueOrDefault(); }
+            get { return this._isModifiable; }
             set { this._isModifiable = value; }
         }
 

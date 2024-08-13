@@ -58,9 +58,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The maximum size of the packets (in bytes) used to transfer data using BCP.
         /// </para>
         /// </summary>
-        public int BcpPacketSize
+        public int? BcpPacketSize
         {
-            get { return this._bcpPacketSize.GetValueOrDefault(); }
+            get { return this._bcpPacketSize; }
             set { this._bcpPacketSize = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Forces LOB lookup on inline LOB.
         /// </para>
         /// </summary>
-        public bool ForceLobLookup
+        public bool? ForceLobLookup
         {
-            get { return this._forceLobLookup.GetValueOrDefault(); }
+            get { return this._forceLobLookup; }
             set { this._forceLobLookup = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint TCP port.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// instance.
         /// </para>
         /// </summary>
-        public bool QuerySingleAlwaysOnNode
+        public bool? QuerySingleAlwaysOnNode
         {
-            get { return this._querySingleAlwaysOnNode.GetValueOrDefault(); }
+            get { return this._querySingleAlwaysOnNode; }
             set { this._querySingleAlwaysOnNode = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// latency to ongoing replication.
         /// </para>
         /// </summary>
-        public bool ReadBackupOnly
+        public bool? ReadBackupOnly
         {
-            get { return this._readBackupOnly.GetValueOrDefault(); }
+            get { return this._readBackupOnly; }
             set { this._readBackupOnly = value; }
         }
 
@@ -342,9 +342,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// data. The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool TrimSpaceInChar
+        public bool? TrimSpaceInChar
         {
-            get { return this._trimSpaceInChar.GetValueOrDefault(); }
+            get { return this._trimSpaceInChar; }
             set { this._trimSpaceInChar = value; }
         }
 
@@ -362,9 +362,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// you must disable the use BCP for loading table option.
         /// </para>
         /// </summary>
-        public bool UseBcpFullLoad
+        public bool? UseBcpFullLoad
         {
-            get { return this._useBcpFullLoad.GetValueOrDefault(); }
+            get { return this._useBcpFullLoad; }
             set { this._useBcpFullLoad = value; }
         }
 
@@ -399,9 +399,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// backups if they are created in native format.
         /// </para>
         /// </summary>
-        public bool UseThirdPartyBackupDevice
+        public bool? UseThirdPartyBackupDevice
         {
-            get { return this._useThirdPartyBackupDevice.GetValueOrDefault(); }
+            get { return this._useThirdPartyBackupDevice; }
             set { this._useThirdPartyBackupDevice = value; }
         }
 

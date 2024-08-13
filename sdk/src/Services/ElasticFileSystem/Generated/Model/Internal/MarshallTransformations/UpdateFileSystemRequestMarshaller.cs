@@ -73,13 +73,13 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetProvisionedThroughputInMibps())
                 {
                     context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ProvisionedThroughputInMibps.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.ProvisionedThroughputInMibps);
+                        context.Writer.Write(publicRequest.ProvisionedThroughputInMibps.Value);
                     }
                 }
 

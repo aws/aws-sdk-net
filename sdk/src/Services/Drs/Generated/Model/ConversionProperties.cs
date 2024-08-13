@@ -66,9 +66,9 @@ namespace Amazon.Drs.Model
         /// Whether the volume being converted uses UEFI or not
         /// </para>
         /// </summary>
-        public bool ForceUefi
+        public bool? ForceUefi
         {
-            get { return this._forceUefi.GetValueOrDefault(); }
+            get { return this._forceUefi; }
             set { this._forceUefi = value; }
         }
 

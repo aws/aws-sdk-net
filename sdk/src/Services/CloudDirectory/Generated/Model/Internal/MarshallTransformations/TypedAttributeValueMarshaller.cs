@@ -57,13 +57,13 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("BooleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
+                context.Writer.Write(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDatetimeValue())
             {
                 context.Writer.WritePropertyName("DatetimeValue");
-                context.Writer.Write(requestObject.DatetimeValue);
+                context.Writer.Write(requestObject.DatetimeValue.Value);
             }
 
             if(requestObject.IsSetNumberValue())

@@ -31,9 +31,11 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateConnectionOnInterconnect operation.
+    /// <note> 
+    /// <para>
     /// Deprecated. Use <a>AllocateHostedConnection</a> instead.
-    /// 
-    ///  
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Creates a hosted connection on an interconnect.
     /// </para>
@@ -143,9 +145,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Vlan
+        public int? Vlan
         {
-            get { return this._vlan.GetValueOrDefault(); }
+            get { return this._vlan; }
             set { this._vlan = value; }
         }
 

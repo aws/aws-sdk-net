@@ -46,9 +46,9 @@ namespace Amazon.SecurityHub.Model
         /// maximum limit. 
         /// </para>
         /// </summary>
-        public int Max
+        public int? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SecurityHub.Model
         /// minimum limit. 
         /// </para>
         /// </summary>
-        public int Min
+        public int? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 

@@ -100,7 +100,7 @@ namespace Amazon.Shield.Model
         protected LimitsExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.Limit = (long)info.GetValue("Limit", typeof(long));
+            this.Limit = (long?)info.GetValue("Limit", typeof(long?));
             this.Type = (string)info.GetValue("Type", typeof(string));
         }
 
@@ -110,11 +110,6 @@ namespace Amazon.Shield.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -133,9 +128,9 @@ namespace Amazon.Shield.Model
         /// The threshold that would be exceeded.
         /// </para>
         /// </summary>
-        public long Limit
+        public long? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

@@ -72,7 +72,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowForceDelete())
                 {
                     context.Writer.WritePropertyName("AllowForceDelete");
-                    context.Writer.Write(publicRequest.AllowForceDelete);
+                    context.Writer.Write(publicRequest.AllowForceDelete.Value);
                 }
 
                 if(publicRequest.IsSetDeliveryStreamName())

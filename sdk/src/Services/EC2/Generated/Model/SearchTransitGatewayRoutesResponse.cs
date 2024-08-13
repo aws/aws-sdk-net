@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether there are additional routes available.
         /// </para>
         /// </summary>
-        public bool AdditionalRoutesAvailable
+        public bool? AdditionalRoutesAvailable
         {
-            get { return this._additionalRoutesAvailable.GetValueOrDefault(); }
+            get { return this._additionalRoutesAvailable; }
             set { this._additionalRoutesAvailable = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("at", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.At = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -52,9 +52,9 @@ namespace Amazon.ApplicationSignals.Model
         /// If you omit this parameter, 99 is used to represent 99% as the attainment goal.
         /// </para>
         /// </summary>
-        public double AttainmentGoal
+        public double? AttainmentGoal
         {
-            get { return this._attainmentGoal.GetValueOrDefault(); }
+            get { return this._attainmentGoal; }
             set { this._attainmentGoal = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.ApplicationSignals.Model
         /// for. If you omit this parameter, the default of 50.0 is used. 
         /// </para>
         /// </summary>
-        public double WarningThreshold
+        public double? WarningThreshold
         {
-            get { return this._warningThreshold.GetValueOrDefault(); }
+            get { return this._warningThreshold; }
             set { this._warningThreshold = value; }
         }
 

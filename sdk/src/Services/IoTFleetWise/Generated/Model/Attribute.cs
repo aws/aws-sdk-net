@@ -204,9 +204,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The specified possible maximum value of the attribute.
         /// </para>
         /// </summary>
-        public double Max
+        public double? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The specified possible minimum value of the attribute.
         /// </para>
         /// </summary>
-        public double Min
+        public double? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 

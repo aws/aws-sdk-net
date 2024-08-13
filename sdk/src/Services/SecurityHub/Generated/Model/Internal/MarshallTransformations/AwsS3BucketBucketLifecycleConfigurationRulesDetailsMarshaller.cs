@@ -68,13 +68,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpirationInDays())
             {
                 context.Writer.WritePropertyName("ExpirationInDays");
-                context.Writer.Write(requestObject.ExpirationInDays);
+                context.Writer.Write(requestObject.ExpirationInDays.Value);
             }
 
             if(requestObject.IsSetExpiredObjectDeleteMarker())
             {
                 context.Writer.WritePropertyName("ExpiredObjectDeleteMarker");
-                context.Writer.Write(requestObject.ExpiredObjectDeleteMarker);
+                context.Writer.Write(requestObject.ExpiredObjectDeleteMarker.Value);
             }
 
             if(requestObject.IsSetFilter())
@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNoncurrentVersionExpirationInDays())
             {
                 context.Writer.WritePropertyName("NoncurrentVersionExpirationInDays");
-                context.Writer.Write(requestObject.NoncurrentVersionExpirationInDays);
+                context.Writer.Write(requestObject.NoncurrentVersionExpirationInDays.Value);
             }
 
             if(requestObject.IsSetNoncurrentVersionTransitions())

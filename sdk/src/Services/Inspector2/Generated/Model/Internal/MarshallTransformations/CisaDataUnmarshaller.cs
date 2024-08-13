@@ -74,13 +74,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("dateAdded", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateAdded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dateDue", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateDue = unmarshaller.Unmarshall(context);
                     continue;
                 }

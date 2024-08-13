@@ -107,9 +107,9 @@ namespace Amazon.CleanRoomsML.Model
         /// Whether the seed audience is included in the audience generation output.
         /// </para>
         /// </summary>
-        public bool IncludeSeedInOutput
+        public bool? IncludeSeedInOutput
         {
-            get { return this._includeSeedInOutput.GetValueOrDefault(); }
+            get { return this._includeSeedInOutput; }
             set { this._includeSeedInOutput = value; }
         }
 

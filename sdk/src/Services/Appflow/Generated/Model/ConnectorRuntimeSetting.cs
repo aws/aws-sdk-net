@@ -106,9 +106,9 @@ namespace Amazon.Appflow.Model
         /// Indicates whether this connector runtime setting is required.
         /// </para>
         /// </summary>
-        public bool IsRequired
+        public bool? IsRequired
         {
-            get { return this._isRequired.GetValueOrDefault(); }
+            get { return this._isRequired; }
             set { this._isRequired = value; }
         }
 

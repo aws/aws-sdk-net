@@ -94,9 +94,9 @@ namespace Amazon.AutoScaling.Model
         /// any outstanding lifecycle actions associated with the group.
         /// </para>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

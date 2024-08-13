@@ -43,7 +43,7 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property AwsHardwareCertificate. 
         /// <para>
-        /// The HSM hardware certificate issued (signed) by AWS CloudHSM.
+        /// The HSM hardware certificate issued (signed) by CloudHSM.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20000)]

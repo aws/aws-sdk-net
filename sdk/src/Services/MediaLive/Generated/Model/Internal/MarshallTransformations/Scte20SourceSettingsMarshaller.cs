@@ -57,7 +57,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSource608ChannelNumber())
             {
                 context.Writer.WritePropertyName("source608ChannelNumber");
-                context.Writer.Write(requestObject.Source608ChannelNumber);
+                context.Writer.Write(requestObject.Source608ChannelNumber.Value);
             }
 
         }

@@ -104,7 +104,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("disconnectTimeoutInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,7 +116,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("idleDisconnectTimeoutInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleDisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

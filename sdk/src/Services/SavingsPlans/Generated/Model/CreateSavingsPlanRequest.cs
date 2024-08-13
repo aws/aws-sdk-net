@@ -88,9 +88,9 @@ namespace Amazon.SavingsPlans.Model
         /// The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
         /// </para>
         /// </summary>
-        public DateTime PurchaseTime
+        public DateTime? PurchaseTime
         {
-            get { return this._purchaseTime.GetValueOrDefault(); }
+            get { return this._purchaseTime; }
             set { this._purchaseTime = value; }
         }
 

@@ -159,9 +159,9 @@ namespace Amazon.AutoScaling.Model
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public bool CapacityRebalance
+        public bool? CapacityRebalance
         {
-            get { return this._capacityRebalance.GetValueOrDefault(); }
+            get { return this._capacityRebalance; }
             set { this._capacityRebalance = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.AutoScaling.Model
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public int DefaultCooldown
+        public int? DefaultCooldown
         {
-            get { return this._defaultCooldown.GetValueOrDefault(); }
+            get { return this._defaultCooldown; }
             set { this._defaultCooldown = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int DefaultInstanceWarmup
+        public int? DefaultInstanceWarmup
         {
-            get { return this._defaultInstanceWarmup.GetValueOrDefault(); }
+            get { return this._defaultInstanceWarmup; }
             set { this._defaultInstanceWarmup = value; }
         }
 
@@ -262,9 +262,9 @@ namespace Amazon.AutoScaling.Model
         /// maximum size of the group.
         /// </para>
         /// </summary>
-        public int DesiredCapacity
+        public int? DesiredCapacity
         {
-            get { return this._desiredCapacity.GetValueOrDefault(); }
+            get { return this._desiredCapacity; }
             set { this._desiredCapacity = value; }
         }
 
@@ -318,9 +318,9 @@ namespace Amazon.AutoScaling.Model
         /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public int HealthCheckGracePeriod
+        public int? HealthCheckGracePeriod
         {
-            get { return this._healthCheckGracePeriod.GetValueOrDefault(); }
+            get { return this._healthCheckGracePeriod; }
             set { this._healthCheckGracePeriod = value; }
         }
 
@@ -429,9 +429,9 @@ namespace Amazon.AutoScaling.Model
         /// Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public int MaxInstanceLifetime
+        public int? MaxInstanceLifetime
         {
-            get { return this._maxInstanceLifetime.GetValueOrDefault(); }
+            get { return this._maxInstanceLifetime; }
             set { this._maxInstanceLifetime = value; }
         }
 
@@ -456,9 +456,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -474,9 +474,9 @@ namespace Amazon.AutoScaling.Model
         /// The minimum size of the Auto Scaling group.
         /// </para>
         /// </summary>
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 
@@ -515,9 +515,9 @@ namespace Amazon.AutoScaling.Model
         /// instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public bool NewInstancesProtectedFromScaleIn
+        public bool? NewInstancesProtectedFromScaleIn
         {
-            get { return this._newInstancesProtectedFromScaleIn.GetValueOrDefault(); }
+            get { return this._newInstancesProtectedFromScaleIn; }
             set { this._newInstancesProtectedFromScaleIn = value; }
         }
 
@@ -614,7 +614,7 @@ namespace Amazon.AutoScaling.Model
         /// must reside in those Availability Zones.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2047)]
+        [AWSProperty(Min=1, Max=5000)]
         public string VPCZoneIdentifier
         {
             get { return this._vpcZoneIdentifier; }

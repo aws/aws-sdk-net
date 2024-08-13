@@ -80,9 +80,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Order
+        public int? Order
         {
-            get { return this._order.GetValueOrDefault(); }
+            get { return this._order; }
             set { this._order = value; }
         }
 

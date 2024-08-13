@@ -68,13 +68,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DefaultSessionExpiryMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DefaultSessionExpiryMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Disabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Disabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

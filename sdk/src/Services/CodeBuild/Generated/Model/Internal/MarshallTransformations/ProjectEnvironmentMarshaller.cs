@@ -102,7 +102,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrivilegedMode())
             {
                 context.Writer.WritePropertyName("privilegedMode");
-                context.Writer.Write(requestObject.PrivilegedMode);
+                context.Writer.Write(requestObject.PrivilegedMode.Value);
             }
 
             if(requestObject.IsSetRegistryCredential())

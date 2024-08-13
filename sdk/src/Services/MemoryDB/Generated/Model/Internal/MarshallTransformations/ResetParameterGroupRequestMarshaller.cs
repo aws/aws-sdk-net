@@ -72,7 +72,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllParameters())
                 {
                     context.Writer.WritePropertyName("AllParameters");
-                    context.Writer.Write(publicRequest.AllParameters);
+                    context.Writer.Write(publicRequest.AllParameters.Value);
                 }
 
                 if(publicRequest.IsSetParameterGroupName())

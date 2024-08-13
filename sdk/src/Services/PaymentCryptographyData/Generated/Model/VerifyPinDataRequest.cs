@@ -104,7 +104,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The encrypted PIN block data that Amazon Web Services Payment Cryptography verifies.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=32)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=32)]
         public string EncryptedPinBlock
         {
             get { return this._encryptedPinBlock; }
@@ -175,9 +175,9 @@ namespace Amazon.PaymentCryptographyData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=12)]
-        public int PinDataLength
+        public int? PinDataLength
         {
-            get { return this._pinDataLength.GetValueOrDefault(); }
+            get { return this._pinDataLength; }
             set { this._pinDataLength = value; }
         }
 

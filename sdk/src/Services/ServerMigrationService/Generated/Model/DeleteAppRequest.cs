@@ -66,9 +66,9 @@ namespace Amazon.ServerMigrationService.Model
         /// application while deleting the application.
         /// </para>
         /// </summary>
-        public bool ForceStopAppReplication
+        public bool? ForceStopAppReplication
         {
-            get { return this._forceStopAppReplication.GetValueOrDefault(); }
+            get { return this._forceStopAppReplication; }
             set { this._forceStopAppReplication = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.ServerMigrationService.Model
         /// the application.
         /// </para>
         /// </summary>
-        public bool ForceTerminateApp
+        public bool? ForceTerminateApp
         {
-            get { return this._forceTerminateApp.GetValueOrDefault(); }
+            get { return this._forceTerminateApp; }
             set { this._forceTerminateApp = value; }
         }
 

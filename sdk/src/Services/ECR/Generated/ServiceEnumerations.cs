@@ -477,6 +477,56 @@ namespace Amazon.ECR
 
 
     /// <summary>
+    /// Constants used for properties of type RCTAppliedFor.
+    /// </summary>
+    public class RCTAppliedFor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PULL_THROUGH_CACHE for RCTAppliedFor
+        /// </summary>
+        public static readonly RCTAppliedFor PULL_THROUGH_CACHE = new RCTAppliedFor("PULL_THROUGH_CACHE");
+        /// <summary>
+        /// Constant REPLICATION for RCTAppliedFor
+        /// </summary>
+        public static readonly RCTAppliedFor REPLICATION = new RCTAppliedFor("REPLICATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RCTAppliedFor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RCTAppliedFor FindValue(string value)
+        {
+            return FindValue<RCTAppliedFor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RCTAppliedFor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReplicationStatus.
     /// </summary>
     public class ReplicationStatus : ConstantClass

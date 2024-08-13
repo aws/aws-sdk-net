@@ -57,13 +57,13 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetIsBootDisk())
             {
                 context.Writer.WritePropertyName("isBootDisk");
-                context.Writer.Write(requestObject.IsBootDisk);
+                context.Writer.Write(requestObject.IsBootDisk.Value);
             }
 
             if(requestObject.IsSetOptimizedStagingDiskType())
@@ -81,7 +81,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("throughput");
-                context.Writer.Write(requestObject.Throughput);
+                context.Writer.Write(requestObject.Throughput.Value);
             }
 
         }

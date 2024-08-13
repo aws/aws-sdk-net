@@ -107,9 +107,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Prob
+        public double? Prob
         {
-            get { return this._prob.GetValueOrDefault(); }
+            get { return this._prob; }
             set { this._prob = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Topk
+        public int? Topk
         {
-            get { return this._topk.GetValueOrDefault(); }
+            get { return this._topk; }
             set { this._topk = value; }
         }
 

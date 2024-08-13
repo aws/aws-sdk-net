@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCookieExpirationPeriod())
             {
                 context.Writer.WritePropertyName("CookieExpirationPeriod");
-                context.Writer.Write(requestObject.CookieExpirationPeriod);
+                context.Writer.Write(requestObject.CookieExpirationPeriod.Value);
             }
 
             if(requestObject.IsSetPolicyName())

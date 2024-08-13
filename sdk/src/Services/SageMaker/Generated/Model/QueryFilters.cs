@@ -49,9 +49,9 @@ namespace Amazon.SageMaker.Model
         /// Filter the lineage entities connected to the <c>StartArn</c>(s) after the create date.
         /// </para>
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SageMaker.Model
         /// Filter the lineage entities connected to the <c>StartArn</c>(s) by created date.
         /// </para>
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.SageMaker.Model
         /// date.
         /// </para>
         /// </summary>
-        public DateTime ModifiedAfter
+        public DateTime? ModifiedAfter
         {
-            get { return this._modifiedAfter.GetValueOrDefault(); }
+            get { return this._modifiedAfter; }
             set { this._modifiedAfter = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.SageMaker.Model
         /// date.
         /// </para>
         /// </summary>
-        public DateTime ModifiedBefore
+        public DateTime? ModifiedBefore
         {
-            get { return this._modifiedBefore.GetValueOrDefault(); }
+            get { return this._modifiedBefore; }
             set { this._modifiedBefore = value; }
         }
 

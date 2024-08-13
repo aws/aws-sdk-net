@@ -68,13 +68,13 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("gpuCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GpuCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("gpuMemorySizeInMiB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GpuMemorySizeInMiB = unmarshaller.Unmarshall(context);
                     continue;
                 }

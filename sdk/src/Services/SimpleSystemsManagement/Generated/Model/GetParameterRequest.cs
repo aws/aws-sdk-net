@@ -82,9 +82,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// and <c>StringList</c> parameter types.
         /// </para>
         /// </summary>
-        public bool WithDecryption
+        public bool? WithDecryption
         {
-            get { return this._withDecryption.GetValueOrDefault(); }
+            get { return this._withDecryption; }
             set { this._withDecryption = value; }
         }
 

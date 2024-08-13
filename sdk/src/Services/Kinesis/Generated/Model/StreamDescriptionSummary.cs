@@ -53,9 +53,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public int ConsumerCount
+        public int? ConsumerCount
         {
-            get { return this._consumerCount.GetValueOrDefault(); }
+            get { return this._consumerCount; }
             set { this._consumerCount = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000000)]
-        public int OpenShardCount
+        public int? OpenShardCount
         {
-            get { return this._openShardCount.GetValueOrDefault(); }
+            get { return this._openShardCount; }
             set { this._openShardCount = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int RetentionPeriodHours
+        public int? RetentionPeriodHours
         {
-            get { return this._retentionPeriodHours.GetValueOrDefault(); }
+            get { return this._retentionPeriodHours; }
             set { this._retentionPeriodHours = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StreamCreationTimestamp
+        public DateTime? StreamCreationTimestamp
         {
-            get { return this._streamCreationTimestamp.GetValueOrDefault(); }
+            get { return this._streamCreationTimestamp; }
             set { this._streamCreationTimestamp = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplianceModeSupport())
             {
                 context.Writer.WritePropertyName("ApplianceModeSupport");
-                context.Writer.Write(requestObject.ApplianceModeSupport);
+                context.Writer.Write(requestObject.ApplianceModeSupport.Value);
             }
 
             if(requestObject.IsSetIpv6Support())
             {
                 context.Writer.WritePropertyName("Ipv6Support");
-                context.Writer.Write(requestObject.Ipv6Support);
+                context.Writer.Write(requestObject.Ipv6Support.Value);
             }
 
         }

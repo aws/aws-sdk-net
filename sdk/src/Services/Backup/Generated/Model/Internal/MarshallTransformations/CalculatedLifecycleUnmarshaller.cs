@@ -68,13 +68,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DeleteAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeleteAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MoveToColdStorageAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.MoveToColdStorageAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

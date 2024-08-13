@@ -185,9 +185,9 @@ namespace Amazon.AutoScaling.Model
         /// The end time of the activity.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.AutoScaling.Model
         /// A value between 0 and 100 that indicates the progress of the activity.
         /// </para>
         /// </summary>
-        public int Progress
+        public int? Progress
         {
-            get { return this._progress.GetValueOrDefault(); }
+            get { return this._progress; }
             set { this._progress = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

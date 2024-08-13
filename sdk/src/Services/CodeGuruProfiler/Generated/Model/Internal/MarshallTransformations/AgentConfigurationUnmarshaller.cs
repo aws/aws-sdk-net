@@ -74,13 +74,13 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("periodInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PeriodInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("shouldProfile", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ShouldProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -38,6 +38,7 @@ namespace Amazon.WorkSpaces.Model
         private List<string> _directoryIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
+        private List<string> _workspaceDirectoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DirectoryIds. 
@@ -65,9 +66,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -95,6 +96,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceDirectoryNames. 
+        /// <para>
+        /// The names of the WorkSpace directories.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public List<string> WorkspaceDirectoryNames
+        {
+            get { return this._workspaceDirectoryNames; }
+            set { this._workspaceDirectoryNames = value; }
+        }
+
+        // Check to see if WorkspaceDirectoryNames property is set
+        internal bool IsSetWorkspaceDirectoryNames()
+        {
+            return this._workspaceDirectoryNames != null && (this._workspaceDirectoryNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

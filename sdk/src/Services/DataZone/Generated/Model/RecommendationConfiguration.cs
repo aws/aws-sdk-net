@@ -43,9 +43,9 @@ namespace Amazon.DataZone.Model
         /// of the recommendation configuration.
         /// </para>
         /// </summary>
-        public bool EnableBusinessNameGeneration
+        public bool? EnableBusinessNameGeneration
         {
-            get { return this._enableBusinessNameGeneration.GetValueOrDefault(); }
+            get { return this._enableBusinessNameGeneration; }
             set { this._enableBusinessNameGeneration = value; }
         }
 

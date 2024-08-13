@@ -82,9 +82,9 @@ namespace Amazon.Omics.Model
         /// The sequence's total base count.
         /// </para>
         /// </summary>
-        public long TotalBaseCount
+        public long? TotalBaseCount
         {
-            get { return this._totalBaseCount.GetValueOrDefault(); }
+            get { return this._totalBaseCount; }
             set { this._totalBaseCount = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Omics.Model
         /// The sequence's total read count.
         /// </para>
         /// </summary>
-        public long TotalReadCount
+        public long? TotalReadCount
         {
-            get { return this._totalReadCount.GetValueOrDefault(); }
+            get { return this._totalReadCount; }
             set { this._totalReadCount = value; }
         }
 

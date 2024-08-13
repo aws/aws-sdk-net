@@ -57,13 +57,13 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGridGap())
             {
                 context.Writer.WritePropertyName("gridGap");
-                context.Writer.Write(requestObject.GridGap);
+                context.Writer.Write(requestObject.GridGap.Value);
             }
 
             if(requestObject.IsSetOmitStoppedVideo())
             {
                 context.Writer.WritePropertyName("omitStoppedVideo");
-                context.Writer.Write(requestObject.OmitStoppedVideo);
+                context.Writer.Write(requestObject.OmitStoppedVideo.Value);
             }
 
             if(requestObject.IsSetVideoAspectRatio())

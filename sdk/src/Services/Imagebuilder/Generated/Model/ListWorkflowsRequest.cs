@@ -47,9 +47,9 @@ namespace Amazon.Imagebuilder.Model
         /// Specify all or part of the workflow name to streamline results.
         /// </para>
         /// </summary>
-        public bool ByName
+        public bool? ByName
         {
-            get { return this._byName.GetValueOrDefault(); }
+            get { return this._byName; }
             set { this._byName = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -62,9 +62,9 @@ namespace Amazon.Chatbot.Model
         /// included in the response so that the remaining results can be retrieved.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

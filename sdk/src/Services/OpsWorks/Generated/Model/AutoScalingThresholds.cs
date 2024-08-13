@@ -78,9 +78,9 @@ namespace Amazon.OpsWorks.Model
         /// the threshold.
         /// </para>
         /// </summary>
-        public double CpuThreshold
+        public double? CpuThreshold
         {
-            get { return this._cpuThreshold.GetValueOrDefault(); }
+            get { return this._cpuThreshold; }
             set { this._cpuThreshold = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int IgnoreMetricsTime
+        public int? IgnoreMetricsTime
         {
-            get { return this._ignoreMetricsTime.GetValueOrDefault(); }
+            get { return this._ignoreMetricsTime; }
             set { this._ignoreMetricsTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances to add or remove when the load exceeds a threshold.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.OpsWorks.Model
         /// (computing)</a>.
         /// </para>
         /// </summary>
-        public double LoadThreshold
+        public double? LoadThreshold
         {
-            get { return this._loadThreshold.GetValueOrDefault(); }
+            get { return this._loadThreshold; }
             set { this._loadThreshold = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.OpsWorks.Model
         /// -1 disables the threshold.
         /// </para>
         /// </summary>
-        public double MemoryThreshold
+        public double? MemoryThreshold
         {
-            get { return this._memoryThreshold.GetValueOrDefault(); }
+            get { return this._memoryThreshold; }
             set { this._memoryThreshold = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int ThresholdsWaitTime
+        public int? ThresholdsWaitTime
         {
-            get { return this._thresholdsWaitTime.GetValueOrDefault(); }
+            get { return this._thresholdsWaitTime; }
             set { this._thresholdsWaitTime = value; }
         }
 

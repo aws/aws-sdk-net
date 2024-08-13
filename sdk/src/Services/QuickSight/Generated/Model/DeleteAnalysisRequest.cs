@@ -104,9 +104,9 @@ namespace Amazon.QuickSight.Model
         /// an analysis after it's deleted. 
         /// </para>
         /// </summary>
-        public bool ForceDeleteWithoutRecovery
+        public bool? ForceDeleteWithoutRecovery
         {
-            get { return this._forceDeleteWithoutRecovery.GetValueOrDefault(); }
+            get { return this._forceDeleteWithoutRecovery; }
             set { this._forceDeleteWithoutRecovery = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=30)]
-        public long RecoveryWindowInDays
+        public long? RecoveryWindowInDays
         {
-            get { return this._recoveryWindowInDays.GetValueOrDefault(); }
+            get { return this._recoveryWindowInDays; }
             set { this._recoveryWindowInDays = value; }
         }
 

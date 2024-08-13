@@ -48,9 +48,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int OpenActivityTasks
+        public int? OpenActivityTasks
         {
-            get { return this._openActivityTasks.GetValueOrDefault(); }
+            get { return this._openActivityTasks; }
             set { this._openActivityTasks = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int OpenChildWorkflowExecutions
+        public int? OpenChildWorkflowExecutions
         {
-            get { return this._openChildWorkflowExecutions.GetValueOrDefault(); }
+            get { return this._openChildWorkflowExecutions; }
             set { this._openChildWorkflowExecutions = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public int OpenDecisionTasks
+        public int? OpenDecisionTasks
         {
-            get { return this._openDecisionTasks.GetValueOrDefault(); }
+            get { return this._openDecisionTasks; }
             set { this._openDecisionTasks = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int OpenLambdaFunctions
+        public int? OpenLambdaFunctions
         {
-            get { return this._openLambdaFunctions.GetValueOrDefault(); }
+            get { return this._openLambdaFunctions; }
             set { this._openLambdaFunctions = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int OpenTimers
+        public int? OpenTimers
         {
-            get { return this._openTimers.GetValueOrDefault(); }
+            get { return this._openTimers; }
             set { this._openTimers = value; }
         }
 

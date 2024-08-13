@@ -84,7 +84,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetTableName())
@@ -96,13 +96,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeRangeLowerBound())
                 {
                     context.Writer.WritePropertyName("TimeRangeLowerBound");
-                    context.Writer.Write(publicRequest.TimeRangeLowerBound);
+                    context.Writer.Write(publicRequest.TimeRangeLowerBound.Value);
                 }
 
                 if(publicRequest.IsSetTimeRangeUpperBound())
                 {
                     context.Writer.WritePropertyName("TimeRangeUpperBound");
-                    context.Writer.Write(publicRequest.TimeRangeUpperBound);
+                    context.Writer.Write(publicRequest.TimeRangeUpperBound.Value);
                 }
 
                 writer.WriteObjectEnd();

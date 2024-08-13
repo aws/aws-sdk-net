@@ -72,7 +72,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetProductCode())
@@ -84,7 +84,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimestamp())
                 {
                     context.Writer.WritePropertyName("Timestamp");
-                    context.Writer.Write(publicRequest.Timestamp);
+                    context.Writer.Write(publicRequest.Timestamp.Value);
                 }
 
                 if(publicRequest.IsSetUsageAllocations())
@@ -112,7 +112,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUsageQuantity())
                 {
                     context.Writer.WritePropertyName("UsageQuantity");
-                    context.Writer.Write(publicRequest.UsageQuantity);
+                    context.Writer.Write(publicRequest.UsageQuantity.Value);
                 }
 
                 writer.WriteObjectEnd();

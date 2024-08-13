@@ -95,9 +95,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Attempt
+        public int? Attempt
         {
-            get { return this._attempt.GetValueOrDefault(); }
+            get { return this._attempt; }
             set { this._attempt = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime JobCreatedAt
+        public DateTime? JobCreatedAt
         {
-            get { return this._jobCreatedAt.GetValueOrDefault(); }
+            get { return this._jobCreatedAt; }
             set { this._jobCreatedAt = value; }
         }
 
@@ -321,9 +321,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

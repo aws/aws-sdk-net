@@ -130,9 +130,9 @@ namespace Amazon.Pinpoint.Model
         /// Specifies whether the GCM channel is enabled for the application.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.Pinpoint.Model
         /// (Not used) This property is retained only for backward compatibility.
         /// </para>
         /// </summary>
-        public bool HasCredential
+        public bool? HasCredential
         {
-            get { return this._hasCredential.GetValueOrDefault(); }
+            get { return this._hasCredential; }
             set { this._hasCredential = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.Pinpoint.Model
         /// in the <b>ServiceJson</b> field of the request.
         /// </para>
         /// </summary>
-        public bool HasFcmServiceCredentials
+        public bool? HasFcmServiceCredentials
         {
-            get { return this._hasFcmServiceCredentials.GetValueOrDefault(); }
+            get { return this._hasFcmServiceCredentials; }
             set { this._hasFcmServiceCredentials = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.Pinpoint.Model
         /// Specifies whether the GCM channel is archived.
         /// </para>
         /// </summary>
-        public bool IsArchived
+        public bool? IsArchived
         {
-            get { return this._isArchived.GetValueOrDefault(); }
+            get { return this._isArchived; }
             set { this._isArchived = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.Pinpoint.Model
         /// The current version of the GCM channel.
         /// </para>
         /// </summary>
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

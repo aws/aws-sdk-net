@@ -46,9 +46,9 @@ namespace Amazon.Chime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool InboundCalling
+        public bool? InboundCalling
         {
-            get { return this._inboundCalling.GetValueOrDefault(); }
+            get { return this._inboundCalling; }
             set { this._inboundCalling = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Chime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool OutboundCalling
+        public bool? OutboundCalling
         {
-            get { return this._outboundCalling.GetValueOrDefault(); }
+            get { return this._outboundCalling; }
             set { this._outboundCalling = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Chime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool SMS
+        public bool? SMS
         {
-            get { return this._sms.GetValueOrDefault(); }
+            get { return this._sms; }
             set { this._sms = value; }
         }
 

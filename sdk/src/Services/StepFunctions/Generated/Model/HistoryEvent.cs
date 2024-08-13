@@ -268,9 +268,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Id
+        public long? Id
         {
-            get { return this._id.GetValueOrDefault(); }
+            get { return this._id; }
             set { this._id = value; }
         }
 
@@ -527,9 +527,9 @@ namespace Amazon.StepFunctions.Model
         /// The id of the previous event.
         /// </para>
         /// </summary>
-        public long PreviousEventId
+        public long? PreviousEventId
         {
-            get { return this._previousEventId.GetValueOrDefault(); }
+            get { return this._previousEventId; }
             set { this._previousEventId = value; }
         }
 
@@ -720,9 +720,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

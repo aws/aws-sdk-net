@@ -101,7 +101,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPort())
                 {
                     context.Writer.WritePropertyName("port");
-                    context.Writer.Write(publicRequest.Port);
+                    context.Writer.Write(publicRequest.Port.Value);
                 }
 
                 if(publicRequest.IsSetProtocol())

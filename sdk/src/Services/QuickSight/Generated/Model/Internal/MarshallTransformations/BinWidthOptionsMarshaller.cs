@@ -51,19 +51,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBinCountLimit())
             {
                 context.Writer.WritePropertyName("BinCountLimit");
-                context.Writer.Write(requestObject.BinCountLimit);
+                context.Writer.Write(requestObject.BinCountLimit.Value);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Value))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Value.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Value);
+                    context.Writer.Write(requestObject.Value.Value);
                 }
             }
 

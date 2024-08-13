@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DataRetentionInHours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DataRetentionInHours = unmarshaller.Unmarshall(context);
                     continue;
                 }

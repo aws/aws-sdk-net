@@ -46,9 +46,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// Specifies the latest start or close date and time to return.
         /// </para>
         /// </summary>
-        public DateTime LatestDate
+        public DateTime? LatestDate
         {
-            get { return this._latestDate.GetValueOrDefault(); }
+            get { return this._latestDate; }
             set { this._latestDate = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime OldestDate
+        public DateTime? OldestDate
         {
-            get { return this._oldestDate.GetValueOrDefault(); }
+            get { return this._oldestDate; }
             set { this._oldestDate = value; }
         }
 

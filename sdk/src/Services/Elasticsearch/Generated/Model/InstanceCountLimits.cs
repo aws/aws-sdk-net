@@ -41,9 +41,9 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property MaximumInstanceCount.
         /// </summary>
-        public int MaximumInstanceCount
+        public int? MaximumInstanceCount
         {
-            get { return this._maximumInstanceCount.GetValueOrDefault(); }
+            get { return this._maximumInstanceCount; }
             set { this._maximumInstanceCount = value; }
         }
 
@@ -56,9 +56,9 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property MinimumInstanceCount.
         /// </summary>
-        public int MinimumInstanceCount
+        public int? MinimumInstanceCount
         {
-            get { return this._minimumInstanceCount.GetValueOrDefault(); }
+            get { return this._minimumInstanceCount; }
             set { this._minimumInstanceCount = value; }
         }
 

@@ -87,9 +87,9 @@ namespace Amazon.GlueDataBrew.Model
         /// If true, the result of the recipe step will be returned, but not applied.
         /// </para>
         /// </summary>
-        public bool Preview
+        public bool? Preview
         {
-            get { return this._preview.GetValueOrDefault(); }
+            get { return this._preview; }
             set { this._preview = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int StepIndex
+        public int? StepIndex
         {
-            get { return this._stepIndex.GetValueOrDefault(); }
+            get { return this._stepIndex; }
             set { this._stepIndex = value; }
         }
 

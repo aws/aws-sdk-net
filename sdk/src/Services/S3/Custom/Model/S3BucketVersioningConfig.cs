@@ -54,9 +54,9 @@ namespace Amazon.S3.Model
         /// PutBucketVersioningRequest's MfaCodes property is set with 
         /// the Serial of and Token on the MFA device.
         /// </remarks>
-        public bool EnableMfaDelete
+        public bool? EnableMfaDelete
         {
-            get { return this.enableMfaDelete.GetValueOrDefault(); }
+            get { return this.enableMfaDelete; }
             set { this.enableMfaDelete = value; }
         }
 

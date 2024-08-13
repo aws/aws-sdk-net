@@ -128,9 +128,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// you are required to specify.
         /// </para>
         /// </summary>
-        public int MaxCapacityUnits
+        public int? MaxCapacityUnits
         {
-            get { return this._maxCapacityUnits.GetValueOrDefault(); }
+            get { return this._maxCapacityUnits; }
             set { this._maxCapacityUnits = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// this parameter to the minimum DCU value allowed, 1.
         /// </para>
         /// </summary>
-        public int MinCapacityUnits
+        public int? MinCapacityUnits
         {
-            get { return this._minCapacityUnits.GetValueOrDefault(); }
+            get { return this._minCapacityUnits; }
             set { this._minCapacityUnits = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <c>true</c>.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 

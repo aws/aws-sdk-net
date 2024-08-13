@@ -57,37 +57,37 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("baselineBandwidthInMbps", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.BaselineBandwidthInMbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("baselineIops", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.BaselineIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("baselineThroughputInMBps", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.BaselineThroughputInMBps = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("maximumBandwidthInMbps", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaximumBandwidthInMbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("maximumIops", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaximumIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("maximumThroughputInMBps", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.MaximumThroughputInMBps = unmarshaller.Unmarshall(context);
                         continue;
                     }

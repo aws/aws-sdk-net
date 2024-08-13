@@ -100,9 +100,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool FirewallPolicyChangeProtection
+        public bool? FirewallPolicyChangeProtection
         {
-            get { return this._firewallPolicyChangeProtection.GetValueOrDefault(); }
+            get { return this._firewallPolicyChangeProtection; }
             set { this._firewallPolicyChangeProtection = value; }
         }
 

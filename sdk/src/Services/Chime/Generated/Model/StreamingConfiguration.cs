@@ -47,9 +47,9 @@ namespace Amazon.Chime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int DataRetentionInHours
+        public int? DataRetentionInHours
         {
-            get { return this._dataRetentionInHours.GetValueOrDefault(); }
+            get { return this._dataRetentionInHours; }
             set { this._dataRetentionInHours = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Chime.Model
         /// When true, media streaming to Amazon Kinesis is turned off.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

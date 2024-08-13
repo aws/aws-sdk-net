@@ -70,7 +70,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("TrafficDialPercentage", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TrafficDialPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }

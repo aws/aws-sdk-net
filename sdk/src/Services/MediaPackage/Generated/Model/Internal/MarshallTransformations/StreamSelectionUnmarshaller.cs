@@ -68,13 +68,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxVideoBitsPerSecond", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxVideoBitsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minVideoBitsPerSecond", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinVideoBitsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }

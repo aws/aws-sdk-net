@@ -51,26 +51,26 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoolValue())
             {
                 context.Writer.WritePropertyName("boolValue");
-                context.Writer.Write(requestObject.BoolValue);
+                context.Writer.Write(requestObject.BoolValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DoubleValue);
+                    context.Writer.Write(requestObject.DoubleValue.Value);
                 }
             }
 
             if(requestObject.IsSetLongValue())
             {
                 context.Writer.WritePropertyName("longValue");
-                context.Writer.Write(requestObject.LongValue);
+                context.Writer.Write(requestObject.LongValue.Value);
             }
 
             if(requestObject.IsSetStringValue())

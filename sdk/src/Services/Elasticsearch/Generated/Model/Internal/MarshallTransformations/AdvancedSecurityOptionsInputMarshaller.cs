@@ -51,19 +51,19 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnonymousAuthEnabled())
             {
                 context.Writer.WritePropertyName("AnonymousAuthEnabled");
-                context.Writer.Write(requestObject.AnonymousAuthEnabled);
+                context.Writer.Write(requestObject.AnonymousAuthEnabled.Value);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetInternalUserDatabaseEnabled())
             {
                 context.Writer.WritePropertyName("InternalUserDatabaseEnabled");
-                context.Writer.Write(requestObject.InternalUserDatabaseEnabled);
+                context.Writer.Write(requestObject.InternalUserDatabaseEnabled.Value);
             }
 
             if(requestObject.IsSetMasterUserOptions())

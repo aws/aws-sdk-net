@@ -68,13 +68,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxRange", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinRange", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinRange = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -56,6 +56,12 @@ namespace Amazon.BedrockAgent.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
+    /// To enable your agent to retain conversational context across multiple sessions, include
+    /// a <c>memoryConfiguration</c> object. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-configure-memory.html">Configure
+    /// memory</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// To override the default prompt behavior for agent orchestration and to use advanced
     /// prompts, include a <c>promptOverrideConfiguration</c> object. For more information,
     /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
@@ -79,6 +85,7 @@ namespace Amazon.BedrockAgent.Model
         private GuardrailConfiguration _guardrailConfiguration;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
+        private MemoryConfiguration _memoryConfiguration;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -232,9 +239,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 
@@ -262,6 +269,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetInstruction()
         {
             return this._instruction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryConfiguration. 
+        /// <para>
+        ///  Contains the details of the memory configured for the agent.
+        /// </para>
+        /// </summary>
+        public MemoryConfiguration MemoryConfiguration
+        {
+            get { return this._memoryConfiguration; }
+            set { this._memoryConfiguration = value; }
+        }
+
+        // Check to see if MemoryConfiguration property is set
+        internal bool IsSetMemoryConfiguration()
+        {
+            return this._memoryConfiguration != null;
         }
 
         /// <summary>

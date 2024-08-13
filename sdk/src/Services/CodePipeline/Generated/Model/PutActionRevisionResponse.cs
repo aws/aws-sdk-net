@@ -44,9 +44,9 @@ namespace Amazon.CodePipeline.Model
         /// specified pipeline.
         /// </para>
         /// </summary>
-        public bool NewRevision
+        public bool? NewRevision
         {
-            get { return this._newRevision.GetValueOrDefault(); }
+            get { return this._newRevision; }
             set { this._newRevision = value; }
         }
 

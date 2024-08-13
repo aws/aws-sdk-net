@@ -96,7 +96,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInvocationRateLimitPerSecond())
                 {
                     context.Writer.WritePropertyName("InvocationRateLimitPerSecond");
-                    context.Writer.Write(publicRequest.InvocationRateLimitPerSecond);
+                    context.Writer.Write(publicRequest.InvocationRateLimitPerSecond.Value);
                 }
 
                 if(publicRequest.IsSetName())

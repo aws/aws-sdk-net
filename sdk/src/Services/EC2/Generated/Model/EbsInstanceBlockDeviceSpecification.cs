@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the volume is deleted on instance termination.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 

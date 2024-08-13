@@ -68,13 +68,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DurationMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FileSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FileSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,13 +86,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Height", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Width", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Width = unmarshaller.Unmarshall(context);
                     continue;
                 }

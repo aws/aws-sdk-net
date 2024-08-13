@@ -125,7 +125,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRelativeDateValue())
             {
                 context.Writer.WritePropertyName("RelativeDateValue");
-                context.Writer.Write(requestObject.RelativeDateValue);
+                context.Writer.Write(requestObject.RelativeDateValue.Value);
             }
 
             if(requestObject.IsSetTimeGranularity())

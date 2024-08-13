@@ -66,7 +66,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("childDirected", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ChildDirected = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,13 +90,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("detectSentiment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DetectSentiment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enableModelImprovements", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableModelImprovements = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -108,7 +108,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.IdleSessionTTLInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -120,7 +120,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

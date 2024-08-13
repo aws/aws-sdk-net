@@ -51,7 +51,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailureThreshold())
             {
                 context.Writer.WritePropertyName("FailureThreshold");
-                context.Writer.Write(requestObject.FailureThreshold);
+                context.Writer.Write(requestObject.FailureThreshold.Value);
             }
 
         }

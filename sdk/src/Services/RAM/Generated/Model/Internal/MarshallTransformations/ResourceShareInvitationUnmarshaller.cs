@@ -68,7 +68,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("invitationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InvitationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

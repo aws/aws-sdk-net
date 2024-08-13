@@ -74,7 +74,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRootVolumeSizeGib())
             {
                 context.Writer.WritePropertyName("RootVolumeSizeGib");
-                context.Writer.Write(requestObject.RootVolumeSizeGib);
+                context.Writer.Write(requestObject.RootVolumeSizeGib.Value);
             }
 
             if(requestObject.IsSetRunningMode())
@@ -86,13 +86,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRunningModeAutoStopTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("RunningModeAutoStopTimeoutInMinutes");
-                context.Writer.Write(requestObject.RunningModeAutoStopTimeoutInMinutes);
+                context.Writer.Write(requestObject.RunningModeAutoStopTimeoutInMinutes.Value);
             }
 
             if(requestObject.IsSetUserVolumeSizeGib())
             {
                 context.Writer.WritePropertyName("UserVolumeSizeGib");
-                context.Writer.Write(requestObject.UserVolumeSizeGib);
+                context.Writer.Write(requestObject.UserVolumeSizeGib.Value);
             }
 
         }

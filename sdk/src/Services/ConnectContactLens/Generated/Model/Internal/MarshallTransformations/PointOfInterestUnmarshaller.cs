@@ -68,13 +68,13 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BeginOffsetMillis", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffsetMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EndOffsetMillis", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

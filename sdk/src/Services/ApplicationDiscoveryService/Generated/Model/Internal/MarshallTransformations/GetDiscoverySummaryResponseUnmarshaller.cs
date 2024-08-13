@@ -66,7 +66,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 }
                 if (context.TestExpression("applications", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Applications = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -84,19 +84,19 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 }
                 if (context.TestExpression("servers", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Servers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serversMappedToApplications", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ServersMappedToApplications = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serversMappedtoTags", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ServersMappedtoTags = unmarshaller.Unmarshall(context);
                     continue;
                 }

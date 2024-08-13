@@ -102,19 +102,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLabelIndex())
             {
                 context.Writer.WritePropertyName("LabelIndex");
-                context.Writer.Write(requestObject.LabelIndex);
+                context.Writer.Write(requestObject.LabelIndex.Value);
             }
 
             if(requestObject.IsSetMaxPayloadInMB())
             {
                 context.Writer.WritePropertyName("MaxPayloadInMB");
-                context.Writer.Write(requestObject.MaxPayloadInMB);
+                context.Writer.Write(requestObject.MaxPayloadInMB.Value);
             }
 
             if(requestObject.IsSetMaxRecordCount())
             {
                 context.Writer.WritePropertyName("MaxRecordCount");
-                context.Writer.Write(requestObject.MaxRecordCount);
+                context.Writer.Write(requestObject.MaxRecordCount.Value);
             }
 
             if(requestObject.IsSetProbabilityAttribute())
@@ -126,7 +126,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProbabilityIndex())
             {
                 context.Writer.WritePropertyName("ProbabilityIndex");
-                context.Writer.Write(requestObject.ProbabilityIndex);
+                context.Writer.Write(requestObject.ProbabilityIndex.Value);
             }
 
         }

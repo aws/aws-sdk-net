@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigured())
             {
                 context.Writer.WritePropertyName("Configured");
-                context.Writer.Write(requestObject.Configured);
+                context.Writer.Write(requestObject.Configured.Value);
             }
 
         }

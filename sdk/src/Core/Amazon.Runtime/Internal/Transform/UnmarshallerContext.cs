@@ -382,11 +382,7 @@ namespace Amazon.Runtime.Internal.Transform
                 {
                     _xmlTextReader = new XmlTextReader(streamReader);
                     _xmlTextReader.WhitespaceHandling = WhitespaceHandling.None;
-#if BCL35
-                    _xmlTextReader.ProhibitDtd = false;
-#else
                     _xmlTextReader.DtdProcessing = DtdProcessing.Ignore;
-#endif
                 }
                 return _xmlTextReader;
             }

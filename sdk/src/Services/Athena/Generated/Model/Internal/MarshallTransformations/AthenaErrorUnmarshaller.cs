@@ -68,7 +68,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ErrorCategory", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorCategory = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,13 +80,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ErrorType", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Retryable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Retryable = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -45,9 +45,9 @@ namespace Amazon.CustomerProfiles.Model
         /// objects while running a flow.
         /// </para>
         /// </summary>
-        public bool EnableDynamicFieldUpdate
+        public bool? EnableDynamicFieldUpdate
         {
-            get { return this._enableDynamicFieldUpdate.GetValueOrDefault(); }
+            get { return this._enableDynamicFieldUpdate; }
             set { this._enableDynamicFieldUpdate = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.CustomerProfiles.Model
         /// Indicates whether Amazon AppFlow includes deleted files in the flow run.
         /// </para>
         /// </summary>
-        public bool IncludeDeletedRecords
+        public bool? IncludeDeletedRecords
         {
-            get { return this._includeDeletedRecords.GetValueOrDefault(); }
+            get { return this._includeDeletedRecords; }
             set { this._includeDeletedRecords = value; }
         }
 

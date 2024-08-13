@@ -68,7 +68,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("count", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }

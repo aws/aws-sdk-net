@@ -51,19 +51,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfFalses())
             {
                 context.Writer.WritePropertyName("NumberOfFalses");
-                context.Writer.Write(requestObject.NumberOfFalses);
+                context.Writer.Write(requestObject.NumberOfFalses.Value);
             }
 
             if(requestObject.IsSetNumberOfNulls())
             {
                 context.Writer.WritePropertyName("NumberOfNulls");
-                context.Writer.Write(requestObject.NumberOfNulls);
+                context.Writer.Write(requestObject.NumberOfNulls.Value);
             }
 
             if(requestObject.IsSetNumberOfTrues())
             {
                 context.Writer.WritePropertyName("NumberOfTrues");
-                context.Writer.Write(requestObject.NumberOfTrues);
+                context.Writer.Write(requestObject.NumberOfTrues.Value);
             }
 
         }

@@ -95,7 +95,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxSessionDuration())
             {
                 context.Writer.WritePropertyName("MaxSessionDuration");
-                context.Writer.Write(requestObject.MaxSessionDuration);
+                context.Writer.Write(requestObject.MaxSessionDuration.Value);
             }
 
             if(requestObject.IsSetPath())

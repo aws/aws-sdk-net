@@ -52,9 +52,9 @@ namespace Amazon.SecurityHub.Model
         /// then <c>DedicatedMasterEnabled</c> must be <c>true</c>.
         /// </para>
         /// </summary>
-        public int DedicatedMasterCount
+        public int? DedicatedMasterCount
         {
-            get { return this._dedicatedMasterCount.GetValueOrDefault(); }
+            get { return this._dedicatedMasterCount; }
             set { this._dedicatedMasterCount = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.SecurityHub.Model
         /// upload requests.
         /// </para>
         /// </summary>
-        public bool DedicatedMasterEnabled
+        public bool? DedicatedMasterEnabled
         {
-            get { return this._dedicatedMasterEnabled.GetValueOrDefault(); }
+            get { return this._dedicatedMasterEnabled; }
             set { this._dedicatedMasterEnabled = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of data nodes to use in the OpenSearch domain.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of UltraWarm instances.
         /// </para>
         /// </summary>
-        public int WarmCount
+        public int? WarmCount
         {
-            get { return this._warmCount.GetValueOrDefault(); }
+            get { return this._warmCount; }
             set { this._warmCount = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether UltraWarm is enabled.
         /// </para>
         /// </summary>
-        public bool WarmEnabled
+        public bool? WarmEnabled
         {
-            get { return this._warmEnabled.GetValueOrDefault(); }
+            get { return this._warmEnabled; }
             set { this._warmEnabled = value; }
         }
 
@@ -231,9 +231,9 @@ namespace Amazon.SecurityHub.Model
         /// downtime if a node or data center fails.
         /// </para>
         /// </summary>
-        public bool ZoneAwarenessEnabled
+        public bool? ZoneAwarenessEnabled
         {
-            get { return this._zoneAwarenessEnabled.GetValueOrDefault(); }
+            get { return this._zoneAwarenessEnabled; }
             set { this._zoneAwarenessEnabled = value; }
         }
 

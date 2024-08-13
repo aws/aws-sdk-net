@@ -83,13 +83,24 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetWorkspaceDirectoryNames())
+                {
+                    context.Writer.WritePropertyName("WorkspaceDirectoryNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestWorkspaceDirectoryNamesListValue in publicRequest.WorkspaceDirectoryNames)
+                    {
+                            context.Writer.Write(publicRequestWorkspaceDirectoryNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

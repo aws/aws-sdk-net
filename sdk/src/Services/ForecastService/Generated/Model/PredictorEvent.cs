@@ -43,9 +43,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp for when the event occurred.
         /// </para>
         /// </summary>
-        public DateTime Datetime
+        public DateTime? Datetime
         {
-            get { return this._datetime.GetValueOrDefault(); }
+            get { return this._datetime; }
             set { this._datetime = value; }
         }
 

@@ -78,13 +78,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRecurrenceInHours())
                 {
                     context.Writer.WritePropertyName("RecurrenceInHours");
-                    context.Writer.Write(publicRequest.RecurrenceInHours);
+                    context.Writer.Write(publicRequest.RecurrenceInHours.Value);
                 }
 
                 if(publicRequest.IsSetStartAt())
                 {
                     context.Writer.WritePropertyName("StartAt");
-                    context.Writer.Write(publicRequest.StartAt);
+                    context.Writer.Write(publicRequest.StartAt.Value);
                 }
 
                 if(publicRequest.IsSetTags())

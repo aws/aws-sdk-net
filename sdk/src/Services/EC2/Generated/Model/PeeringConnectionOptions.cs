@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// IP addresses when queried from instances in the peer VPC.
         /// </para>
         /// </summary>
-        public bool AllowDnsResolutionFromRemoteVpc
+        public bool? AllowDnsResolutionFromRemoteVpc
         {
-            get { return this._allowDnsResolutionFromRemoteVpc.GetValueOrDefault(); }
+            get { return this._allowDnsResolutionFromRemoteVpc; }
             set { this._allowDnsResolutionFromRemoteVpc = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// Deprecated.
         /// </para>
         /// </summary>
-        public bool AllowEgressFromLocalClassicLinkToRemoteVpc
+        public bool? AllowEgressFromLocalClassicLinkToRemoteVpc
         {
-            get { return this._allowEgressFromLocalClassicLinkToRemoteVpc.GetValueOrDefault(); }
+            get { return this._allowEgressFromLocalClassicLinkToRemoteVpc; }
             set { this._allowEgressFromLocalClassicLinkToRemoteVpc = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.EC2.Model
         /// Deprecated.
         /// </para>
         /// </summary>
-        public bool AllowEgressFromLocalVpcToRemoteClassicLink
+        public bool? AllowEgressFromLocalVpcToRemoteClassicLink
         {
-            get { return this._allowEgressFromLocalVpcToRemoteClassicLink.GetValueOrDefault(); }
+            get { return this._allowEgressFromLocalVpcToRemoteClassicLink; }
             set { this._allowEgressFromLocalVpcToRemoteClassicLink = value; }
         }
 

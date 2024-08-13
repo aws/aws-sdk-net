@@ -44,7 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Redis engine. 
+        /// The Redis OSS engine. 
         /// </para>
         /// </summary>
         public string Engine
@@ -105,9 +105,9 @@ namespace Amazon.ElastiCache.Model
         /// results can be retrieved. 
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("mcuCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.McuCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("workerCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WorkerCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

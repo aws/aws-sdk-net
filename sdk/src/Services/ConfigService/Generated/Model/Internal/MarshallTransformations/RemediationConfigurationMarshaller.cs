@@ -57,7 +57,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomatic())
             {
                 context.Writer.WritePropertyName("Automatic");
-                context.Writer.Write(requestObject.Automatic);
+                context.Writer.Write(requestObject.Automatic.Value);
             }
 
             if(requestObject.IsSetConfigRuleName())
@@ -86,7 +86,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumAutomaticAttempts())
             {
                 context.Writer.WritePropertyName("MaximumAutomaticAttempts");
-                context.Writer.Write(requestObject.MaximumAutomaticAttempts);
+                context.Writer.Write(requestObject.MaximumAutomaticAttempts.Value);
             }
 
             if(requestObject.IsSetParameters())
@@ -117,7 +117,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetryAttemptSeconds())
             {
                 context.Writer.WritePropertyName("RetryAttemptSeconds");
-                context.Writer.Write(requestObject.RetryAttemptSeconds);
+                context.Writer.Write(requestObject.RetryAttemptSeconds.Value);
             }
 
             if(requestObject.IsSetTargetId())

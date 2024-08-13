@@ -44,9 +44,9 @@ namespace Amazon.Macie2.Model
         /// The latitude coordinate of the location, rounded to four decimal places.
         /// </para>
         /// </summary>
-        public double Lat
+        public double? Lat
         {
-            get { return this._lat.GetValueOrDefault(); }
+            get { return this._lat; }
             set { this._lat = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Macie2.Model
         /// The longitude coordinate of the location, rounded to four decimal places.
         /// </para>
         /// </summary>
-        public double Lon
+        public double? Lon
         {
-            get { return this._lon.GetValueOrDefault(); }
+            get { return this._lon; }
             set { this._lon = value; }
         }
 

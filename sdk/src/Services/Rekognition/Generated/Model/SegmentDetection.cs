@@ -55,9 +55,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long DurationFrames
+        public long? DurationFrames
         {
-            get { return this._durationFrames.GetValueOrDefault(); }
+            get { return this._durationFrames; }
             set { this._durationFrames = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long DurationMillis
+        public long? DurationMillis
         {
-            get { return this._durationMillis.GetValueOrDefault(); }
+            get { return this._durationMillis; }
             set { this._durationMillis = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long EndFrameNumber
+        public long? EndFrameNumber
         {
-            get { return this._endFrameNumber.GetValueOrDefault(); }
+            get { return this._endFrameNumber; }
             set { this._endFrameNumber = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.Rekognition.Model
         /// This value is rounded down.
         /// </para>
         /// </summary>
-        public long EndTimestampMillis
+        public long? EndTimestampMillis
         {
-            get { return this._endTimestampMillis.GetValueOrDefault(); }
+            get { return this._endTimestampMillis; }
             set { this._endTimestampMillis = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long StartFrameNumber
+        public long? StartFrameNumber
         {
-            get { return this._startFrameNumber.GetValueOrDefault(); }
+            get { return this._startFrameNumber; }
             set { this._startFrameNumber = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.Rekognition.Model
         /// Amazon Rekognition Video returns a value of 100 millis.
         /// </para>
         /// </summary>
-        public long StartTimestampMillis
+        public long? StartTimestampMillis
         {
-            get { return this._startTimestampMillis.GetValueOrDefault(); }
+            get { return this._startTimestampMillis; }
             set { this._startTimestampMillis = value; }
         }
 

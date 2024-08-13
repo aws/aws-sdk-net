@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEvaluationOrder())
             {
                 context.Writer.WritePropertyName("evaluationOrder");
-                context.Writer.Write(requestObject.EvaluationOrder);
+                context.Writer.Write(requestObject.EvaluationOrder.Value);
             }
 
             if(requestObject.IsSetSegment())

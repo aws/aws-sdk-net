@@ -74,7 +74,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ASNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ASNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

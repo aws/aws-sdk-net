@@ -49,9 +49,9 @@ namespace Amazon.VoiceID.Model
         /// A timestamp of when audio aggregation ended for this fraud detection result.
         /// </para>
         /// </summary>
-        public DateTime AudioAggregationEndedAt
+        public DateTime? AudioAggregationEndedAt
         {
-            get { return this._audioAggregationEndedAt.GetValueOrDefault(); }
+            get { return this._audioAggregationEndedAt; }
             set { this._audioAggregationEndedAt = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.VoiceID.Model
         /// A timestamp of when audio aggregation started for this fraud detection result.
         /// </para>
         /// </summary>
-        public DateTime AudioAggregationStartedAt
+        public DateTime? AudioAggregationStartedAt
         {
-            get { return this._audioAggregationStartedAt.GetValueOrDefault(); }
+            get { return this._audioAggregationStartedAt; }
             set { this._audioAggregationStartedAt = value; }
         }
 

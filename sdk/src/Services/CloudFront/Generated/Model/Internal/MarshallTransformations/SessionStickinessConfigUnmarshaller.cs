@@ -58,13 +58,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("IdleTTL", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.IdleTTL = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaximumTTL", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaximumTTL = unmarshaller.Unmarshall(context);
                         continue;
                     }

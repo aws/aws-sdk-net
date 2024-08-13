@@ -62,9 +62,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// The target frame that triggered a match.
         /// </para>
         /// </summary>
-        public int TargetFramesIndex
+        public int? TargetFramesIndex
         {
-            get { return this._targetFramesIndex.GetValueOrDefault(); }
+            get { return this._targetFramesIndex; }
             set { this._targetFramesIndex = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// The value in the profile data that exceeded the recommendation threshold.
         /// </para>
         /// </summary>
-        public double ThresholdBreachValue
+        public double? ThresholdBreachValue
         {
-            get { return this._thresholdBreachValue.GetValueOrDefault(); }
+            get { return this._thresholdBreachValue; }
             set { this._thresholdBreachValue = value; }
         }
 

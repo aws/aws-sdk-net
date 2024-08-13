@@ -68,9 +68,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int ConflictingPriority
+        public int? ConflictingPriority
         {
-            get { return this._conflictingPriority.GetValueOrDefault(); }
+            get { return this._conflictingPriority; }
             set { this._conflictingPriority = value; }
         }
 

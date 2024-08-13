@@ -101,9 +101,9 @@ namespace Amazon.EC2.Model
         /// The number of partitions. Valid only when <b>Strategy</b> is set to <c>partition</c>.
         /// </para>
         /// </summary>
-        public int PartitionCount
+        public int? PartitionCount
         {
-            get { return this._partitionCount.GetValueOrDefault(); }
+            get { return this._partitionCount; }
             set { this._partitionCount = value; }
         }
 

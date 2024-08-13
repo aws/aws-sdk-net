@@ -60,9 +60,9 @@ namespace Amazon.SecurityHub.Model
         /// accounts.
         /// </para>
         /// </summary>
-        public bool AutoEnable
+        public bool? AutoEnable
         {
-            get { return this._autoEnable.GetValueOrDefault(); }
+            get { return this._autoEnable; }
             set { this._autoEnable = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.SecurityHub.Model
         /// the Security Hub administrator account.
         /// </para>
         /// </summary>
-        public bool MemberAccountLimitReached
+        public bool? MemberAccountLimitReached
         {
-            get { return this._memberAccountLimitReached.GetValueOrDefault(); }
+            get { return this._memberAccountLimitReached; }
             set { this._memberAccountLimitReached = value; }
         }
 

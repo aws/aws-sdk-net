@@ -51,7 +51,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("encrypted");
-                context.Writer.Write(requestObject.Encrypted);
+                context.Writer.Write(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetFilesystemType())
@@ -63,7 +63,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
@@ -81,7 +81,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSizeInGiB())
             {
                 context.Writer.WritePropertyName("sizeInGiB");
-                context.Writer.Write(requestObject.SizeInGiB);
+                context.Writer.Write(requestObject.SizeInGiB.Value);
             }
 
             if(requestObject.IsSetSnapshotId())
@@ -109,7 +109,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("throughput");
-                context.Writer.Write(requestObject.Throughput);
+                context.Writer.Write(requestObject.Throughput.Value);
             }
 
             if(requestObject.IsSetVolumeType())

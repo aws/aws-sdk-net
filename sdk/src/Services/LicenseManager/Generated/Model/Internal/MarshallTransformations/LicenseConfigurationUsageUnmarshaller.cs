@@ -68,13 +68,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AssociationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AssociationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ConsumedLicenses", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ConsumedLicenses = unmarshaller.Unmarshall(context);
                     continue;
                 }

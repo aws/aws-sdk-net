@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
+using Amazon.Runtime.Telemetry;
 #if NETSTANDARD
 using System.Net.Http;
 #endif
@@ -168,12 +169,7 @@ namespace Amazon.Runtime
         /// </summary>
         bool LogResponse { get; }
 
-        /// <summary>
-        /// Gets the ReadEntireResponse.
-        /// If this property is set to true, the service response
-        /// is read in its entirety before being processed.
-        /// </summary>
-        bool ReadEntireResponse { get; }
+
 
 
         /// <summary>
@@ -191,10 +187,9 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Returns the flag indicating how many retry HTTP requests an SDK should
-        /// make for a single SDK operation invocation before giving up. This flag will 
-        /// return 4 when the RetryMode is set to "Legacy" which is the default. For
+        /// make for a single SDK operation invocation before giving up. For
         /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
-        /// addition to the values returned that are dependant on the RetryMode, the
+        /// addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
         /// variable, max_attempts in the shared configuration file, or by setting a
         /// value directly on this property. When using AWS_MAX_ATTEMPTS or max_attempts
@@ -293,17 +288,12 @@ namespace Amazon.Runtime
         bool ThrottleRetries { get; }
 
         /// <summary>
-        /// Using either the RegionEndpoint or the ServiceURL determine what the URL to the service is.
+        /// Returns the endpoint that will be used for a particular request.
         /// </summary>
-        /// <returns>The URL to the service.</returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        string DetermineServiceURL();
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters);
 
-        /// <summary>
-        /// Given this client configuration, return a DNS suffix for service endpoint url.
-        /// </summary>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        string DetermineDnsSuffix();
 
         /// <summary>
         /// Performs validation on this config object.
@@ -312,16 +302,9 @@ namespace Amazon.Runtime
         /// <exception cref="Amazon.Runtime.AmazonClientException">The timeout specified is null.</exception>
         void Validate();
 
-        /// <summary>
-        /// Returns the clock skew adjusted utc now.  This value is affected by AWSConfigs.ManualClockCorrection
-        /// </summary>
-        DateTime CorrectedUtcNow { get; }
 
-        /// <summary>
-        /// Returns the calculated clock skew value for this config's service endpoint. If AWSConfigs.CorrectForClockSkew is false,
-        /// this value won't be used to construct service requests.
-        /// </summary>
-        TimeSpan ClockOffset { get; }
+
+
 
         /// <summary>
         /// Gets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
@@ -369,6 +352,16 @@ namespace Amazon.Runtime
         /// which doesn't allow to specify the User-Agent header.
         /// </summary>
         bool UseAlternateUserAgentHeader { get; }
+        
+        /// <summary>
+        /// <para>
+        /// This telemetry provider is used to collect and report telemetry data 
+        /// (such as traces and metrics) for operations performed by this specific client.
+        /// If this property is not explicitly set, it will default to the global 
+        /// <see cref="AWSConfigs.TelemetryProvider"/>.
+        /// </para>
+        /// </summary>
+        TelemetryProvider TelemetryProvider { get; }
 #if BCL
         /// <summary>
         /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 

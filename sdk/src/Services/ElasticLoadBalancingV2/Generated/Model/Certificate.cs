@@ -63,9 +63,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// when describing a listener, but is included when describing listener certificates.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

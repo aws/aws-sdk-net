@@ -92,7 +92,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LogEventTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LogEventTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfLogLinesOccurrences", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfLogLinesOccurrences = unmarshaller.Unmarshall(context);
                     continue;
                 }

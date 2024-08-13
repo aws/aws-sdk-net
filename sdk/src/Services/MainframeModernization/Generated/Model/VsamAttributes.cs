@@ -67,9 +67,9 @@ namespace Amazon.MainframeModernization.Model
         /// have a large data set (typically &gt; 100 Mb), consider setting this flag to True.
         /// </para>
         /// </summary>
-        public bool Compressed
+        public bool? Compressed
         {
-            get { return this._compressed.GetValueOrDefault(); }
+            get { return this._compressed; }
             set { this._compressed = value; }
         }
 

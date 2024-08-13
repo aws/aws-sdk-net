@@ -83,7 +83,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableVisualization())
                 {
                     context.Writer.WritePropertyName("EnableVisualization");
-                    context.Writer.Write(publicRequest.EnableVisualization);
+                    context.Writer.Write(publicRequest.EnableVisualization.Value);
                 }
 
                 if(publicRequest.IsSetEndDateTime())

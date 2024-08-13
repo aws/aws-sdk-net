@@ -51,9 +51,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IgnorePublicAcls
+        public bool? IgnorePublicAcls
         {
-            get { return this._ignorePublicAcls.GetValueOrDefault(); }
+            get { return this._ignorePublicAcls; }
             set { this._ignorePublicAcls = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RestrictPublicBuckets
+        public bool? RestrictPublicBuckets
         {
-            get { return this._restrictPublicBuckets.GetValueOrDefault(); }
+            get { return this._restrictPublicBuckets; }
             set { this._restrictPublicBuckets = value; }
         }
 

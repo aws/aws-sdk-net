@@ -91,9 +91,9 @@ namespace Amazon.Glue.Model
         /// matching requirements.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.Glue.Model
         /// not create the archived version.
         /// </para>
         /// </summary>
-        public bool SkipArchive
+        public bool? SkipArchive
         {
-            get { return this._skipArchive.GetValueOrDefault(); }
+            get { return this._skipArchive; }
             set { this._skipArchive = value; }
         }
 

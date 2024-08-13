@@ -78,7 +78,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxNumberOfMessagesPerSecond())
                 {
                     context.Writer.WritePropertyName("MaxNumberOfMessagesPerSecond");
-                    context.Writer.Write(publicRequest.MaxNumberOfMessagesPerSecond);
+                    context.Writer.Write(publicRequest.MaxNumberOfMessagesPerSecond.Value);
                 }
 
                 if(publicRequest.IsSetSourceArn())

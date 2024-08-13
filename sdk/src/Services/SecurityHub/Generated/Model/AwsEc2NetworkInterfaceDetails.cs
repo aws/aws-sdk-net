@@ -175,9 +175,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether traffic to or from the instance is validated.
         /// </para>
         /// </summary>
-        public bool SourceDestCheck
+        public bool? SourceDestCheck
         {
-            get { return this._sourceDestCheck.GetValueOrDefault(); }
+            get { return this._sourceDestCheck; }
             set { this._sourceDestCheck = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DeviceIndex
+        public int? DeviceIndex
         {
-            get { return this._deviceIndex.GetValueOrDefault(); }
+            get { return this._deviceIndex; }
             set { this._deviceIndex = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.EC2.Model
         /// is network card index 0.
         /// </para>
         /// </summary>
-        public int NetworkCardIndex
+        public int? NetworkCardIndex
         {
-            get { return this._networkCardIndex.GetValueOrDefault(); }
+            get { return this._networkCardIndex; }
             set { this._networkCardIndex = value; }
         }
 

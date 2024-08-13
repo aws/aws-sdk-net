@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
         /// Valid values: <c>True</c> | <c>False</c> 
         /// </para>
         /// </summary>
-        public bool SkipTunnelReplacement
+        public bool? SkipTunnelReplacement
         {
-            get { return this._skipTunnelReplacement.GetValueOrDefault(); }
+            get { return this._skipTunnelReplacement; }
             set { this._skipTunnelReplacement = value; }
         }
 

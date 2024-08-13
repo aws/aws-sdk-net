@@ -45,9 +45,9 @@ namespace Amazon.Connect.Model
         /// automatic fail answer, this flag will be true.
         /// </para>
         /// </summary>
-        public bool AutomaticFail
+        public bool? AutomaticFail
         {
-            get { return this._automaticFail.GetValueOrDefault(); }
+            get { return this._automaticFail; }
             set { this._automaticFail = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Connect.Model
         /// The flag to mark the item as not applicable for scoring.
         /// </para>
         /// </summary>
-        public bool NotApplicable
+        public bool? NotApplicable
         {
-            get { return this._notApplicable.GetValueOrDefault(); }
+            get { return this._notApplicable; }
             set { this._notApplicable = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double Percentage
+        public double? Percentage
         {
-            get { return this._percentage.GetValueOrDefault(); }
+            get { return this._percentage; }
             set { this._percentage = value; }
         }
 

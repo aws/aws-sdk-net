@@ -50,9 +50,9 @@ namespace Amazon.Chime.Model
         /// The time at which the SIP rule was created, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Chime.Model
         /// you can delete it.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Chime.Model
         /// The time at which the SIP rule was last updated, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

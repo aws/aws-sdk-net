@@ -34,7 +34,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphRequest.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -60,7 +60,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphResponse.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -116,12 +116,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphUsingImportTaskRequest.MaxProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphUsingImportTaskRequest.MinProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -183,7 +183,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.DeleteGraphResponse.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -261,7 +261,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetGraphResponse.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -437,7 +437,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ResetGraphResponse.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -457,7 +457,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.RestoreGraphFromSnapshotRequest.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -487,7 +487,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.RestoreGraphFromSnapshotResponse.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -537,7 +537,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.UpdateGraphRequest.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -558,7 +558,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.UpdateGraphResponse.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>
@@ -602,7 +602,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GraphSummary.ProvisionedMemory</property>
-    <min>128</min>
+    <min>32</min>
     <max>24576</max>
   </property-value-rule>
   <property-value-rule>

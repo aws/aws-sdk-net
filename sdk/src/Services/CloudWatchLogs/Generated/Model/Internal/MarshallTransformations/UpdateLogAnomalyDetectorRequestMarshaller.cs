@@ -78,13 +78,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAnomalyVisibilityTime())
                 {
                     context.Writer.WritePropertyName("anomalyVisibilityTime");
-                    context.Writer.Write(publicRequest.AnomalyVisibilityTime);
+                    context.Writer.Write(publicRequest.AnomalyVisibilityTime.Value);
                 }
 
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 if(publicRequest.IsSetEvaluationFrequency())

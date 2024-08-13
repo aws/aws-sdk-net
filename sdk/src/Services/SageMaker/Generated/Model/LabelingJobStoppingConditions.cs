@@ -52,9 +52,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxHumanLabeledObjectCount
+        public int? MaxHumanLabeledObjectCount
         {
-            get { return this._maxHumanLabeledObjectCount.GetValueOrDefault(); }
+            get { return this._maxHumanLabeledObjectCount; }
             set { this._maxHumanLabeledObjectCount = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxPercentageOfInputDatasetLabeled
+        public int? MaxPercentageOfInputDatasetLabeled
         {
-            get { return this._maxPercentageOfInputDatasetLabeled.GetValueOrDefault(); }
+            get { return this._maxPercentageOfInputDatasetLabeled; }
             set { this._maxPercentageOfInputDatasetLabeled = value; }
         }
 

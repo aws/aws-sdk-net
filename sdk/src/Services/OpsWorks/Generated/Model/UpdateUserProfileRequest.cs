@@ -56,9 +56,9 @@ namespace Amazon.OpsWorks.Model
         /// User Permissions</a>.
         /// </para>
         /// </summary>
-        public bool AllowSelfManagement
+        public bool? AllowSelfManagement
         {
-            get { return this._allowSelfManagement.GetValueOrDefault(); }
+            get { return this._allowSelfManagement; }
             set { this._allowSelfManagement = value; }
         }
 

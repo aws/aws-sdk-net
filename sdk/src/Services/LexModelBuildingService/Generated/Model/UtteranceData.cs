@@ -46,9 +46,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The number of times that the utterance was processed.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The total number of individuals that used the utterance.
         /// </para>
         /// </summary>
-        public int DistinctUsers
+        public int? DistinctUsers
         {
-            get { return this._distinctUsers.GetValueOrDefault(); }
+            get { return this._distinctUsers; }
             set { this._distinctUsers = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The date that the utterance was first recorded.
         /// </para>
         /// </summary>
-        public DateTime FirstUtteredDate
+        public DateTime? FirstUtteredDate
         {
-            get { return this._firstUtteredDate.GetValueOrDefault(); }
+            get { return this._firstUtteredDate; }
             set { this._firstUtteredDate = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The date that the utterance was last recorded.
         /// </para>
         /// </summary>
-        public DateTime LastUtteredDate
+        public DateTime? LastUtteredDate
         {
-            get { return this._lastUtteredDate.GetValueOrDefault(); }
+            get { return this._lastUtteredDate; }
             set { this._lastUtteredDate = value; }
         }
 

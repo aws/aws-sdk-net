@@ -54,7 +54,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,7 +66,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ItemCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,7 +90,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

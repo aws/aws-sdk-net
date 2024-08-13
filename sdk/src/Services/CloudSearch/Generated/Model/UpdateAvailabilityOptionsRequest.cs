@@ -70,9 +70,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 

@@ -68,25 +68,25 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EstimatedDataToScanBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EstimatedDataToScanBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PlanningTimeMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PlanningTimeMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("QueueTimeMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueueTimeMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkUnitsGeneratedCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WorkUnitsGeneratedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

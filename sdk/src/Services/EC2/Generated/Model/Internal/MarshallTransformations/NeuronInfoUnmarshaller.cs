@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("totalNeuronDeviceMemoryInMiB", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TotalNeuronDeviceMemoryInMiB = unmarshaller.Unmarshall(context);
                         continue;
                     }

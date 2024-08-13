@@ -1017,5 +1017,33 @@ namespace Amazon.MigrationHubOrchestrator
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonMigrationHubOrchestratorConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonMigrationHubOrchestratorConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonMigrationHubOrchestratorConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonMigrationHubOrchestratorConfig to create AmazonMigrationHubOrchestratorClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonMigrationHubOrchestratorClient(serviceClientConfig) :
+                    new AmazonMigrationHubOrchestratorClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

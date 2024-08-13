@@ -50,9 +50,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double MaxLineCoveragePercentage
+        public double? MaxLineCoveragePercentage
         {
-            get { return this._maxLineCoveragePercentage.GetValueOrDefault(); }
+            get { return this._maxLineCoveragePercentage; }
             set { this._maxLineCoveragePercentage = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double MinLineCoveragePercentage
+        public double? MinLineCoveragePercentage
         {
-            get { return this._minLineCoveragePercentage.GetValueOrDefault(); }
+            get { return this._minLineCoveragePercentage; }
             set { this._minLineCoveragePercentage = value; }
         }
 

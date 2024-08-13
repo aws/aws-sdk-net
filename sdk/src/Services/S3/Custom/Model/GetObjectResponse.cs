@@ -38,7 +38,7 @@ namespace Amazon.S3.Model
         private string contentRange;
         private Expiration expiration;
         private DateTime? restoreExpiration;
-        private bool restoreInProgress;
+        private bool? restoreInProgress;
         private DateTime? lastModified;
         private string eTag;
         private int? missingMeta;
@@ -218,7 +218,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool RestoreInProgress
+        public bool? RestoreInProgress
         {
             get { return this.restoreInProgress; }
             set { this.restoreInProgress = value; }
@@ -230,9 +230,9 @@ namespace Amazon.S3.Model
         /// Date and time when the object was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this.lastModified ?? default(DateTime); }
+            get { return this.lastModified; }
             set { this.lastModified = value; }
         }
 
@@ -272,9 +272,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MissingMeta
+        public int? MissingMeta
         {
-            get { return this.missingMeta ?? default(int); }
+            get { return this.missingMeta; }
             set { this.missingMeta = value; }
         }
 
@@ -312,17 +312,24 @@ namespace Amazon.S3.Model
         ///  
         /// </summary>
         [Obsolete("This property is deprecated for handling cases where Expires cannot be parsed as a DateTime. Instead, use ExpiresString, which returns the unparsed value from S3.")]
-        public DateTime Expires
+        public DateTime? Expires
         {
             get
             {
                 if (this.isExpiresUnmarshalled)
                 {
-                    return this.expires.GetValueOrDefault();
+                    return this.expires;
                 }
                 else
                 {
-                    this.expires = AmazonS3Util.ParseExpiresHeader(this.ExpiresString, this.ResponseMetadata.RequestId);
+                    if (!string.IsNullOrEmpty(this.ExpiresString))
+                    {
+                        this.expires = AmazonS3Util.ParseExpiresHeader(this.ExpiresString, this.ResponseMetadata.RequestId);
+                    }
+                    else
+                    {
+                        this.expires = null;
+                    }
                     this.isExpiresUnmarshalled = true;
                     return this.expires.GetValueOrDefault();
                 }
@@ -394,9 +401,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime ObjectLockRetainUntilDate
+        public DateTime? ObjectLockRetainUntilDate
         {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            get { return this.objectLockRetainUntilDate; }
             set { this.objectLockRetainUntilDate = value; }
         }
 
@@ -635,9 +642,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this.bucketKeyEnabled; }
             set { this.bucketKeyEnabled = value; }
         }
 
@@ -870,7 +877,7 @@ namespace Amazon.S3.Model
             }
         }
 
-#if BCL45 || NETSTANDARD
+#if BCL || NETSTANDARD
         /// <summary>
         /// Writes the content of the ResponseStream a file indicated by the filePath argument.
         /// </summary>

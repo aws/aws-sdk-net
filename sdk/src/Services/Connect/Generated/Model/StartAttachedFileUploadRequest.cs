@@ -35,8 +35,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  <important> 
     /// <para>
-    /// You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
-    /// Case</a>.
+    /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
+    /// Connect Case</a>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -143,9 +143,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long FileSizeInBytes
+        public long? FileSizeInBytes
         {
-            get { return this._fileSizeInBytes.GetValueOrDefault(); }
+            get { return this._fileSizeInBytes; }
             set { this._fileSizeInBytes = value; }
         }
 
@@ -177,7 +177,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The unique identifier of the Connect instance.
+        /// The unique identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -221,9 +221,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
-        public int UrlExpiryInSeconds
+        public int? UrlExpiryInSeconds
         {
-            get { return this._urlExpiryInSeconds.GetValueOrDefault(); }
+            get { return this._urlExpiryInSeconds; }
             set { this._urlExpiryInSeconds = value; }
         }
 

@@ -87,7 +87,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEncrypted())
                 {
                     context.Writer.WritePropertyName("Encrypted");
-                    context.Writer.Write(publicRequest.Encrypted);
+                    context.Writer.Write(publicRequest.Encrypted.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyArn())
@@ -121,13 +121,13 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
+                    context.Writer.Write(publicRequest.Timeout.Value);
                 }
 
                 if(publicRequest.IsSetVolumeSize())
                 {
                     context.Writer.WritePropertyName("VolumeSize");
-                    context.Writer.Write(publicRequest.VolumeSize);
+                    context.Writer.Write(publicRequest.VolumeSize.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -101,7 +101,6 @@ namespace AWSSDK.UnitTests
             MfaSerial = "mfa_serial_number"
         };
 
-#if !BCL35
         private static readonly string SsoProfileText = new StringBuilder()
             .AppendLine("[sso]")
             .AppendLine($"sso_account_id={SampleValues.SsoAccountId}")
@@ -183,7 +182,6 @@ namespace AWSSDK.UnitTests
             SsoRegistrationScopes = SampleValues.SsoRegistrationScopes,
             SsoStartUrl = SampleValues.SsoStartUrl,
         };
-#endif
 
         private static readonly string BasicProfileConfigText = new StringBuilder()
             .AppendLine("[profile basic_profile]")
@@ -195,12 +193,6 @@ namespace AWSSDK.UnitTests
 
         private static readonly string BasicProfileCredentialsText =
             BasicProfileConfigText.Replace("[profile ", "[");
-
-        private static readonly string LegacyBasicProfileCredentialsText = new StringBuilder()
-            .AppendLine("[basic_profile]")
-            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
-            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
-            .ToString();
 
         private static readonly string BasicProfileTextConfigPartial = new StringBuilder()
             .AppendLine("[profile basic_profile]")
@@ -308,11 +300,6 @@ namespace AWSSDK.UnitTests
             .AppendLine("disable_request_compression=always")
             .ToString();
 
-        private static readonly string RetriesLegacyModeProfileText = new StringBuilder()
-            .AppendLine("[retries_legacymode_profile_text]")
-            .Append("retry_mode=legacy")
-            .ToString();
-
         private static readonly string RetriesStandardModeProfileText = new StringBuilder()
             .AppendLine("[retries_standardmode_profile_text]")
             .Append("retry_mode=standard")
@@ -332,7 +319,6 @@ namespace AWSSDK.UnitTests
             .AppendLine("[retries_max_attempts_profile_text]")
             .Append("max_attempts=100")
             .ToString();
-
 
         private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions
         {
@@ -473,9 +459,8 @@ namespace AWSSDK.UnitTests
             .AppendLine(" name2 = value2")
             .ToString();
 
-        /// in reality a services section would not have aws_access_key and aws_secret_access_key
-        /// but for the purposes of testing we include it since the testFixture expects ProfileOptions
-        ///
+        // In reality a services section would not have aws_access_key and aws_secret_access_key
+        // but for the purposes of testing we include it since the testFixture expects ProfileOptions
         private static readonly string ServicesConfigurationWithMultipleProperties = new StringBuilder()
             .AppendLine("[profile bar]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
@@ -671,7 +656,6 @@ namespace AWSSDK.UnitTests
             }
         }
 
-#if !BCL35
         [TestMethod]
         public void ReadSsoProfile()
         {
@@ -728,7 +712,6 @@ namespace AWSSDK.UnitTests
                 tester.AssertWriteProfile("sso", SsoProfileOptions, SsoProfileText);
             }
         }
-#endif
 
         [TestMethod]
         public void ReadRegionOnlyProfile()
@@ -851,24 +834,6 @@ namespace AWSSDK.UnitTests
             {
                 CredentialProfile profile1;
                 Assert.IsFalse(tester.CredentialsFile.TryGetProfile("any_disable_request_compression", out profile1));
-            }
-        }
-
-        [TestMethod]
-        public void ReadRetriesLegacyModeProfile()
-        {
-            using (var tester = new SharedCredentialsFileTestFixture(RetriesLegacyModeProfileText))
-            {
-                tester.TestTryGetProfile("retries_legacymode_profile_text", true, false);
-            }
-        }
-
-        [TestMethod]
-        public void WriteRetriesLegacyModeProfile()
-        {
-            using (var tester = new SharedCredentialsFileTestFixture())
-            {
-                tester.AssertWriteProfileRetryMode("retries_legacymode_profile_text", RetriesOnlyProfileOptions, RequestRetryMode.Legacy, RetriesLegacyModeProfileText);
             }
         }
 

@@ -72,7 +72,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForce())
                 {
                     context.Writer.WritePropertyName("force");
-                    context.Writer.Write(publicRequest.Force);
+                    context.Writer.Write(publicRequest.Force.Value);
                 }
 
                 if(publicRequest.IsSetRegistryId())

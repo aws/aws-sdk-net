@@ -74,13 +74,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ConnectionStateCheckTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConnectionStateCheckTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastKnownUserConnectionTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastKnownUserConnectionTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

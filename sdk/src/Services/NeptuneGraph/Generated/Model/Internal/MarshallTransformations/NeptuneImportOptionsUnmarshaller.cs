@@ -68,13 +68,13 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("preserveDefaultVertexLabels", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PreserveDefaultVertexLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("preserveEdgeIds", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PreserveEdgeIds = unmarshaller.Unmarshall(context);
                     continue;
                 }

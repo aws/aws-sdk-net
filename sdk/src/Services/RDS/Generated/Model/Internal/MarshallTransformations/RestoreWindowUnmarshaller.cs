@@ -57,13 +57,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("EarliestTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.EarliestTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LatestTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LatestTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

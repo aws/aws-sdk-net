@@ -115,9 +115,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// http status code from API execution response (for example: 200, 400, 500).
         /// </para>
         /// </summary>
-        public int HttpStatusCode
+        public int? HttpStatusCode
         {
-            get { return this._httpStatusCode.GetValueOrDefault(); }
+            get { return this._httpStatusCode; }
             set { this._httpStatusCode = value; }
         }
 

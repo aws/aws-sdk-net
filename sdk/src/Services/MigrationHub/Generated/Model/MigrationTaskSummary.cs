@@ -69,9 +69,9 @@ namespace Amazon.MigrationHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int ProgressPercent
+        public int? ProgressPercent
         {
-            get { return this._progressPercent.GetValueOrDefault(); }
+            get { return this._progressPercent; }
             set { this._progressPercent = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.MigrationHub.Model
         /// The timestamp when the task was gathered.
         /// </para>
         /// </summary>
-        public DateTime UpdateDateTime
+        public DateTime? UpdateDateTime
         {
-            get { return this._updateDateTime.GetValueOrDefault(); }
+            get { return this._updateDateTime; }
             set { this._updateDateTime = value; }
         }
 

@@ -72,31 +72,31 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreationTimeAfter())
                 {
                     context.Writer.WritePropertyName("creationTimeAfter");
-                    context.Writer.Write(publicRequest.CreationTimeAfter);
+                    context.Writer.Write(publicRequest.CreationTimeAfter.Value);
                 }
 
                 if(publicRequest.IsSetCreationTimeBefore())
                 {
                     context.Writer.WritePropertyName("creationTimeBefore");
-                    context.Writer.Write(publicRequest.CreationTimeBefore);
+                    context.Writer.Write(publicRequest.CreationTimeBefore.Value);
                 }
 
                 if(publicRequest.IsSetEndTimeAfter())
                 {
                     context.Writer.WritePropertyName("endTimeAfter");
-                    context.Writer.Write(publicRequest.EndTimeAfter);
+                    context.Writer.Write(publicRequest.EndTimeAfter.Value);
                 }
 
                 if(publicRequest.IsSetEndTimeBefore())
                 {
                     context.Writer.WritePropertyName("endTimeBefore");
-                    context.Writer.Write(publicRequest.EndTimeBefore);
+                    context.Writer.Write(publicRequest.EndTimeBefore.Value);
                 }
 
                 if(publicRequest.IsSetMaxResult())
                 {
                     context.Writer.WritePropertyName("maxResult");
-                    context.Writer.Write(publicRequest.MaxResult);
+                    context.Writer.Write(publicRequest.MaxResult.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

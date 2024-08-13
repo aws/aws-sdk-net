@@ -46,9 +46,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int ConcurrentDeploymentPercentage
+        public int? ConcurrentDeploymentPercentage
         {
-            get { return this._concurrentDeploymentPercentage.GetValueOrDefault(); }
+            get { return this._concurrentDeploymentPercentage; }
             set { this._concurrentDeploymentPercentage = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int FailureThresholdPercentage
+        public int? FailureThresholdPercentage
         {
-            get { return this._failureThresholdPercentage.GetValueOrDefault(); }
+            get { return this._failureThresholdPercentage; }
             set { this._failureThresholdPercentage = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.RoboMaker.Model
         /// Choose a time between 1 minute and 7 days. The default is 5 hours.
         /// </para>
         /// </summary>
-        public long RobotDeploymentTimeoutInSeconds
+        public long? RobotDeploymentTimeoutInSeconds
         {
-            get { return this._robotDeploymentTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._robotDeploymentTimeoutInSeconds; }
             set { this._robotDeploymentTimeoutInSeconds = value; }
         }
 

@@ -77,9 +77,9 @@ namespace Amazon.FSx.Model
         /// backup, no tags are copied from the volume, regardless of this value.
         /// </para>
         /// </summary>
-        public bool CopyTagsToBackups
+        public bool? CopyTagsToBackups
         {
-            get { return this._copyTagsToBackups.GetValueOrDefault(); }
+            get { return this._copyTagsToBackups; }
             set { this._copyTagsToBackups = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=22517998000000000)]
-        public long SizeInBytes
+        public long? SizeInBytes
         {
-            get { return this._sizeInBytes.GetValueOrDefault(); }
+            get { return this._sizeInBytes; }
             set { this._sizeInBytes = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.FSx.Model
         /// </summary>
         [Obsolete("This property is deprecated, use SizeInBytes instead")]
         [AWSProperty(Min=0, Max=2147483647)]
-        public int SizeInMegabytes
+        public int? SizeInMegabytes
         {
-            get { return this._sizeInMegabytes.GetValueOrDefault(); }
+            get { return this._sizeInMegabytes; }
             set { this._sizeInMegabytes = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.FSx.Model
         /// set to <c>RW</c>).
         /// </para>
         /// </summary>
-        public bool StorageEfficiencyEnabled
+        public bool? StorageEfficiencyEnabled
         {
-            get { return this._storageEfficiencyEnabled.GetValueOrDefault(); }
+            get { return this._storageEfficiencyEnabled; }
             set { this._storageEfficiencyEnabled = value; }
         }
 

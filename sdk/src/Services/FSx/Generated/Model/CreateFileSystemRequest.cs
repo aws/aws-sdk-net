@@ -342,9 +342,9 @@ namespace Amazon.FSx.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int StorageCapacity
+        public int? StorageCapacity
         {
-            get { return this._storageCapacity.GetValueOrDefault(); }
+            get { return this._storageCapacity; }
             set { this._storageCapacity = value; }
         }
 

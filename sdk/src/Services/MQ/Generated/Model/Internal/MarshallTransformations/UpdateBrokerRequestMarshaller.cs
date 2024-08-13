@@ -79,7 +79,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     context.Writer.WritePropertyName("autoMinorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade);
+                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
                 }
 
                 if(publicRequest.IsSetConfiguration())

@@ -68,7 +68,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

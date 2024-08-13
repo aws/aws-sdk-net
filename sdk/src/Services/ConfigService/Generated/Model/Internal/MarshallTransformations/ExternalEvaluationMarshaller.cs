@@ -75,7 +75,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOrderingTimestamp())
             {
                 context.Writer.WritePropertyName("OrderingTimestamp");
-                context.Writer.Write(requestObject.OrderingTimestamp);
+                context.Writer.Write(requestObject.OrderingTimestamp.Value);
             }
 
         }

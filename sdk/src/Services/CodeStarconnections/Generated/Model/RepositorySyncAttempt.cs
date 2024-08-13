@@ -64,9 +64,9 @@ namespace Amazon.CodeStarconnections.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

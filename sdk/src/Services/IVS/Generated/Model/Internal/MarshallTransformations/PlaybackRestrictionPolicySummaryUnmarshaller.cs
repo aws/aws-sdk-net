@@ -86,7 +86,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableStrictOriginEnforcement", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableStrictOriginEnforcement = unmarshaller.Unmarshall(context);
                     continue;
                 }

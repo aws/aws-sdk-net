@@ -68,9 +68,9 @@ namespace Amazon.ECS.Model
         /// The port number on the container that's used with the network binding.
         /// </para>
         /// </summary>
-        public int ContainerPort
+        public int? ContainerPort
         {
-            get { return this._containerPort.GetValueOrDefault(); }
+            get { return this._containerPort; }
             set { this._containerPort = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.ECS.Model
         /// The port number on the host that's used with the network binding.
         /// </para>
         /// </summary>
-        public int HostPort
+        public int? HostPort
         {
-            get { return this._hostPort.GetValueOrDefault(); }
+            get { return this._hostPort; }
             set { this._hostPort = value; }
         }
 

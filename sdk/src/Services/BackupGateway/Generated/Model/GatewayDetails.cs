@@ -126,9 +126,9 @@ namespace Amazon.BackupGateway.Model
         /// format and UTC time.
         /// </para>
         /// </summary>
-        public DateTime LastSeenTime
+        public DateTime? LastSeenTime
         {
-            get { return this._lastSeenTime.GetValueOrDefault(); }
+            get { return this._lastSeenTime; }
             set { this._lastSeenTime = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.BackupGateway.Model
         /// Details showing the next update availability time of the gateway.
         /// </para>
         /// </summary>
-        public DateTime NextUpdateAvailabilityTime
+        public DateTime? NextUpdateAvailabilityTime
         {
-            get { return this._nextUpdateAvailabilityTime.GetValueOrDefault(); }
+            get { return this._nextUpdateAvailabilityTime; }
             set { this._nextUpdateAvailabilityTime = value; }
         }
 

@@ -260,7 +260,7 @@ namespace Amazon.S3.Model
         internal void SetupForFilePath()
         {
             var fileStream = new FileStream(this.FilePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-            fileStream.Position = this.FilePosition;
+            fileStream.Position = this.FilePosition.GetValueOrDefault();
             this.InputStream = fileStream;
         }
     }

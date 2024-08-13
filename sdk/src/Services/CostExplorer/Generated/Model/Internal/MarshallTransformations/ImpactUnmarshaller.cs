@@ -68,31 +68,31 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxImpact", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxImpact = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalActualSpend", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalActualSpend = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalExpectedSpend", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalExpectedSpend = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalImpact", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalImpact = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalImpactPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalImpactPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

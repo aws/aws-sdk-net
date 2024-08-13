@@ -74,9 +74,9 @@ namespace Amazon.Glue.Model
         /// The last time that the table was accessed.
         /// </para>
         /// </summary>
-        public DateTime LastAccessTime
+        public DateTime? LastAccessTime
         {
-            get { return this._lastAccessTime.GetValueOrDefault(); }
+            get { return this._lastAccessTime; }
             set { this._lastAccessTime = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.Glue.Model
         /// The last time that column statistics were computed for this table.
         /// </para>
         /// </summary>
-        public DateTime LastAnalyzedTime
+        public DateTime? LastAnalyzedTime
         {
-            get { return this._lastAnalyzedTime.GetValueOrDefault(); }
+            get { return this._lastAnalyzedTime; }
             set { this._lastAnalyzedTime = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Retention
+        public int? Retention
         {
-            get { return this._retention.GetValueOrDefault(); }
+            get { return this._retention; }
             set { this._retention = value; }
         }
 

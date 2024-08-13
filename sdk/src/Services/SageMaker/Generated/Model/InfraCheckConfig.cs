@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// Enables an infrastructure health check.
         /// </para>
         /// </summary>
-        public bool EnableInfraCheck
+        public bool? EnableInfraCheck
         {
-            get { return this._enableInfraCheck.GetValueOrDefault(); }
+            get { return this._enableInfraCheck; }
             set { this._enableInfraCheck = value; }
         }
 

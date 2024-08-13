@@ -45,9 +45,9 @@ namespace Amazon.Drs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Bytes
+        public long? Bytes
         {
-            get { return this._bytes.GetValueOrDefault(); }
+            get { return this._bytes; }
             set { this._bytes = value; }
         }
 

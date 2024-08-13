@@ -62,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQos())
             {
                 context.Writer.WritePropertyName("qos");
-                context.Writer.Write(requestObject.Qos);
+                context.Writer.Write(requestObject.Qos.Value);
             }
 
             if(requestObject.IsSetRoleArn())

@@ -87,9 +87,9 @@ namespace Amazon.QuickSight.Model
         /// The time that the export job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.QuickSight.Model
         /// bundle.
         /// </para>
         /// </summary>
-        public bool IncludeAllDependencies
+        public bool? IncludeAllDependencies
         {
-            get { return this._includeAllDependencies.GetValueOrDefault(); }
+            get { return this._includeAllDependencies; }
             set { this._includeAllDependencies = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.QuickSight.Model
         /// ARN.
         /// </para>
         /// </summary>
-        public bool IncludePermissions
+        public bool? IncludePermissions
         {
-            get { return this._includePermissions.GetValueOrDefault(); }
+            get { return this._includePermissions; }
             set { this._includePermissions = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.QuickSight.Model
         /// The flag that determines the inclusion of tags associated with each resource ARN.
         /// </para>
         /// </summary>
-        public bool IncludeTags
+        public bool? IncludeTags
         {
-            get { return this._includeTags.GetValueOrDefault(); }
+            get { return this._includeTags; }
             set { this._includeTags = value; }
         }
 

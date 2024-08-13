@@ -87,9 +87,9 @@ namespace Amazon.Appflow.Model
         /// to place data in the destination. 
         /// </para>
         /// </summary>
-        public bool FailOnFirstDestinationError
+        public bool? FailOnFirstDestinationError
         {
-            get { return this._failOnFirstDestinationError.GetValueOrDefault(); }
+            get { return this._failOnFirstDestinationError; }
             set { this._failOnFirstDestinationError = value; }
         }
 

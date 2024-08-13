@@ -95,9 +95,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20160)]
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.IVSRealTime.Model
         /// ISO 8601 timestamp (returned as a string) for when this token expires.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 

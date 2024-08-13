@@ -51,9 +51,9 @@ namespace Amazon.IoTSiteWise.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=30)]
-        public int NumberOfDays
+        public int? NumberOfDays
         {
-            get { return this._numberOfDays.GetValueOrDefault(); }
+            get { return this._numberOfDays; }
             set { this._numberOfDays = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Unlimited
+        public bool? Unlimited
         {
-            get { return this._unlimited.GetValueOrDefault(); }
+            get { return this._unlimited; }
             set { this._unlimited = value; }
         }
 

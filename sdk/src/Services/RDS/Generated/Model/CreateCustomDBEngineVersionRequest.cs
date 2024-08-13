@@ -315,9 +315,9 @@ namespace Amazon.RDS.Model
         /// the CEV. If you specify <c>UseAwsProvidedLatestImage</c>, you can't also specify <c>ImageId</c>.
         /// </para>
         /// </summary>
-        public bool UseAwsProvidedLatestImage
+        public bool? UseAwsProvidedLatestImage
         {
-            get { return this._useAwsProvidedLatestImage.GetValueOrDefault(); }
+            get { return this._useAwsProvidedLatestImage; }
             set { this._useAwsProvidedLatestImage = value; }
         }
 

@@ -233,9 +233,9 @@ namespace Amazon.RDS.Model
         /// If you copy the snapshot, the creation time changes.
         /// </para>
         /// </summary>
-        public DateTime TenantDatabaseCreateTime
+        public DateTime? TenantDatabaseCreateTime
         {
-            get { return this._tenantDatabaseCreateTime.GetValueOrDefault(); }
+            get { return this._tenantDatabaseCreateTime; }
             set { this._tenantDatabaseCreateTime = value; }
         }
 

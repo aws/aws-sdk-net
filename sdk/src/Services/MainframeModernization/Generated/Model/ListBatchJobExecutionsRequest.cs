@@ -107,9 +107,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.MainframeModernization.Model
         /// The time after which the batch job executions started.
         /// </para>
         /// </summary>
-        public DateTime StartedAfter
+        public DateTime? StartedAfter
         {
-            get { return this._startedAfter.GetValueOrDefault(); }
+            get { return this._startedAfter; }
             set { this._startedAfter = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.MainframeModernization.Model
         /// The time before the batch job executions started.
         /// </para>
         /// </summary>
-        public DateTime StartedBefore
+        public DateTime? StartedBefore
         {
-            get { return this._startedBefore.GetValueOrDefault(); }
+            get { return this._startedBefore; }
             set { this._startedBefore = value; }
         }
 

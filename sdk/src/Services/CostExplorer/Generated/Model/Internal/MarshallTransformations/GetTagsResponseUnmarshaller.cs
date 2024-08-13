@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReturnSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ReturnSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -72,7 +72,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

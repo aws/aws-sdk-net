@@ -68,7 +68,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enableCodeHookInvocation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableCodeHookInvocation = unmarshaller.Unmarshall(context);
                     continue;
                 }

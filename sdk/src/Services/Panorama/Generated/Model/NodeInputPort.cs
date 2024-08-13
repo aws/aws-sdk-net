@@ -84,9 +84,9 @@ namespace Amazon.Panorama.Model
         /// The input port's max connections.
         /// </para>
         /// </summary>
-        public int MaxConnections
+        public int? MaxConnections
         {
-            get { return this._maxConnections.GetValueOrDefault(); }
+            get { return this._maxConnections; }
             set { this._maxConnections = value; }
         }
 

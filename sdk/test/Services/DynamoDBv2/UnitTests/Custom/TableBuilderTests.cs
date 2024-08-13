@@ -3,7 +3,7 @@ using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     /// <summary>
     /// Tests for <see cref="TableBuilder"/>

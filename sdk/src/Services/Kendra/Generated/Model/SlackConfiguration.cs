@@ -78,9 +78,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index bot messages from your Slack workspace team.
         /// </para>
         /// </summary>
-        public bool CrawlBotMessage
+        public bool? CrawlBotMessage
         {
-            get { return this._crawlBotMessage.GetValueOrDefault(); }
+            get { return this._crawlBotMessage; }
             set { this._crawlBotMessage = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to exclude archived messages to index from your Slack workspace team.
         /// </para>
         /// </summary>
-        public bool ExcludeArchived
+        public bool? ExcludeArchived
         {
-            get { return this._excludeArchived.GetValueOrDefault(); }
+            get { return this._excludeArchived; }
             set { this._excludeArchived = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=168)]
-        public int LookBackPeriod
+        public int? LookBackPeriod
         {
-            get { return this._lookBackPeriod.GetValueOrDefault(); }
+            get { return this._lookBackPeriod; }
             set { this._lookBackPeriod = value; }
         }
 
@@ -346,9 +346,9 @@ namespace Amazon.Kendra.Model
         /// Kendra to use the change log than to scan all of your documents in Slack.
         /// </para>
         /// </summary>
-        public bool UseChangeLog
+        public bool? UseChangeLog
         {
-            get { return this._useChangeLog.GetValueOrDefault(); }
+            get { return this._useChangeLog; }
             set { this._useChangeLog = value; }
         }
 

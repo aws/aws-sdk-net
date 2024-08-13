@@ -88,9 +88,9 @@ namespace Amazon.CodeStar.Model
         /// The date and time the project was created, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimeStamp
+        public DateTime? CreatedTimeStamp
         {
-            get { return this._createdTimeStamp.GetValueOrDefault(); }
+            get { return this._createdTimeStamp; }
             set { this._createdTimeStamp = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInProgressTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("inProgressTimeoutInMinutes");
-                context.Writer.Write(requestObject.InProgressTimeoutInMinutes);
+                context.Writer.Write(requestObject.InProgressTimeoutInMinutes.Value);
             }
 
         }

@@ -70,7 +70,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCrossAccount())
                 {
                     context.Writer.WritePropertyName("CrossAccount");
-                    context.Writer.Write(publicRequest.CrossAccount);
+                    context.Writer.Write(publicRequest.CrossAccount.Value);
                 }
 
                 if(publicRequest.IsSetDescription())

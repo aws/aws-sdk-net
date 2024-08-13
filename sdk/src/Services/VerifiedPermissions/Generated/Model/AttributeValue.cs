@@ -67,9 +67,9 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public bool Boolean
+        public bool? Boolean
         {
-            get { return this._boolean.GetValueOrDefault(); }
+            get { return this._boolean; }
             set { this._boolean = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public long Long
+        public long? Long
         {
-            get { return this._long.GetValueOrDefault(); }
+            get { return this._long; }
             set { this._long = value; }
         }
 

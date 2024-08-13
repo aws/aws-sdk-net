@@ -55,9 +55,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Specifies the time at which the inference scheduler was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
-        public long DataDelayOffsetInMinutes
+        public long? DataDelayOffsetInMinutes
         {
-            get { return this._dataDelayOffsetInMinutes.GetValueOrDefault(); }
+            get { return this._dataDelayOffsetInMinutes; }
             set { this._dataDelayOffsetInMinutes = value; }
         }
 
@@ -314,9 +314,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Specifies the time at which the inference scheduler was last updated, if it was. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

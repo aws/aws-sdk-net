@@ -76,9 +76,9 @@ namespace Amazon.RDS.Model
         /// The date and time when the target group was first created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.RDS.Model
         /// target group, currently this setting is always <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.RDS.Model
         /// The date and time when the target group was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedDate
+        public DateTime? UpdatedDate
         {
-            get { return this._updatedDate.GetValueOrDefault(); }
+            get { return this._updatedDate; }
             set { this._updatedDate = value; }
         }
 

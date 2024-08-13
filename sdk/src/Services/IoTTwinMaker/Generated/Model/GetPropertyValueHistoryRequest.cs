@@ -124,9 +124,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated and will throw an error in the future. Use endTime instead.")]
-        public DateTime EndDateTime
+        public DateTime? EndDateTime
         {
-            get { return this._endDateTime.GetValueOrDefault(); }
+            get { return this._endDateTime; }
             set { this._endDateTime = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -302,9 +302,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated and will throw an error in the future. Use startTime instead.")]
-        public DateTime StartDateTime
+        public DateTime? StartDateTime
         {
-            get { return this._startDateTime.GetValueOrDefault(); }
+            get { return this._startDateTime; }
             set { this._startDateTime = value; }
         }
 

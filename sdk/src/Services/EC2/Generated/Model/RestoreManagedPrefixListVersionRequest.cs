@@ -47,9 +47,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long CurrentVersion
+        public long? CurrentVersion
         {
-            get { return this._currentVersion.GetValueOrDefault(); }
+            get { return this._currentVersion; }
             set { this._currentVersion = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long PreviousVersion
+        public long? PreviousVersion
         {
-            get { return this._previousVersion.GetValueOrDefault(); }
+            get { return this._previousVersion; }
             set { this._previousVersion = value; }
         }
 

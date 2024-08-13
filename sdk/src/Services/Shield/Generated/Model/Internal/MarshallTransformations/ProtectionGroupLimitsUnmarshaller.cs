@@ -68,7 +68,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxProtectionGroups", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxProtectionGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,7 +68,7 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("forceStop", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceStop = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,9 +71,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the deployment on the device started.
         /// </para>
         /// </summary>
-        public DateTime DeploymentStartTime
+        public DateTime? DeploymentStartTime
         {
-            get { return this._deploymentStartTime.GetValueOrDefault(); }
+            get { return this._deploymentStartTime; }
             set { this._deploymentStartTime = value; }
         }
 

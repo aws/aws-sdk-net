@@ -53,9 +53,9 @@ namespace Amazon.MainframeModernization.Model
         /// it will fail if <c>applyDuringMaintenanceWindow</c> is set to true.
         /// </para>
         /// </summary>
-        public bool ApplyDuringMaintenanceWindow
+        public bool? ApplyDuringMaintenanceWindow
         {
-            get { return this._applyDuringMaintenanceWindow.GetValueOrDefault(); }
+            get { return this._applyDuringMaintenanceWindow; }
             set { this._applyDuringMaintenanceWindow = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.MainframeModernization.Model
         /// is 0 and the maximum is 100.
         /// </para>
         /// </summary>
-        public int DesiredCapacity
+        public int? DesiredCapacity
         {
-            get { return this._desiredCapacity.GetValueOrDefault(); }
+            get { return this._desiredCapacity; }
             set { this._desiredCapacity = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.MainframeModernization.Model
         /// This option is not needed if the attribute being updated is <c>preferredMaintenanceWindow</c>.
         /// </para>
         /// </summary>
-        public bool ForceUpdate
+        public bool? ForceUpdate
         {
-            get { return this._forceUpdate.GetValueOrDefault(); }
+            get { return this._forceUpdate; }
             set { this._forceUpdate = value; }
         }
 

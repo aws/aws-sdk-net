@@ -75,7 +75,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUserDataShared())
             {
                 context.Writer.WritePropertyName("UserDataShared");
-                context.Writer.Write(requestObject.UserDataShared);
+                context.Writer.Write(requestObject.UserDataShared.Value);
             }
 
         }

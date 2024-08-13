@@ -51,7 +51,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");
-                context.Writer.Write(requestObject.End);
+                context.Writer.Write(requestObject.End.Value);
             }
 
             if(requestObject.IsSetManifestFilter())
@@ -63,13 +63,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStart())
             {
                 context.Writer.WritePropertyName("Start");
-                context.Writer.Write(requestObject.Start);
+                context.Writer.Write(requestObject.Start.Value);
             }
 
             if(requestObject.IsSetTimeDelaySeconds())
             {
                 context.Writer.WritePropertyName("TimeDelaySeconds");
-                context.Writer.Write(requestObject.TimeDelaySeconds);
+                context.Writer.Write(requestObject.TimeDelaySeconds.Value);
             }
 
         }

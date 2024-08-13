@@ -44,9 +44,9 @@ namespace Amazon.Greengrass.Model
         /// file uses an invalid format or specifies a nonexistent group version, or if the execution
         /// role doesn't grant permission to deploy a group or group version.
         /// </summary>
-        public int InvalidInputRecords
+        public int? InvalidInputRecords
         {
-            get { return this._invalidInputRecords.GetValueOrDefault(); }
+            get { return this._invalidInputRecords; }
             set { this._invalidInputRecords = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property RecordsProcessed. The total number of group records from
         /// the input file that have been processed so far, or attempted.
         /// </summary>
-        public int RecordsProcessed
+        public int? RecordsProcessed
         {
-            get { return this._recordsProcessed.GetValueOrDefault(); }
+            get { return this._recordsProcessed; }
             set { this._recordsProcessed = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.Greengrass.Model
         /// to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group
         /// deployment up to five times.
         /// </summary>
-        public int RetryAttempts
+        public int? RetryAttempts
         {
-            get { return this._retryAttempts.GetValueOrDefault(); }
+            get { return this._retryAttempts; }
             set { this._retryAttempts = value; }
         }
 

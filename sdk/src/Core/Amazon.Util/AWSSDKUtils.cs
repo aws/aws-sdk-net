@@ -20,6 +20,7 @@
 
 using Amazon.Runtime.Internal.Util;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -32,7 +33,11 @@ using Amazon.Util.Internal;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading;
+using Amazon.Runtime.Endpoints;
+using ThirdParty.RuntimeBackports;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -75,16 +80,8 @@ namespace Amazon.Util
         // Default value of progress update interval for streaming is 100KB.
         public const long DefaultProgressUpdateInterval = 102400;
 
-        internal static Dictionary<int, string> RFCEncodingSchemes = new Dictionary<int, string>
-        {
-            { 3986,  ValidUrlCharacters },
-            { 1738,  ValidUrlCharactersRFC1738 }
-        };
-
         internal const string S3Accelerate = "s3-accelerate";
         internal const string S3Control = "s3-control";
-
-        private const int DefaultMarshallerVersion = 2;
 
         private static readonly string _userAgent = InternalSDKUtils.BuildUserAgentString(string.Empty, string.Empty);
 
@@ -121,12 +118,14 @@ namespace Amazon.Util
         /// </summary>
         public const string ValidTraceIdHeaderValueCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=;:+&[]{}\"',";
 
-        // Checks which path characters should not be encoded
-        // This set will be different for .NET 4 and .NET 4.5, as
-        // per http://msdn.microsoft.com/en-us/library/hh367887%28v=vs.110%29.aspx
+
+        // Valid path characters per RFC 3986 https://datatracker.ietf.org/doc/html/rfc3986#section-3.3
+        // segment-nz-nc = 1*( unreserved / pct-encoded / sub-delims / "@" ) ; non-zero-length segment without any colon ":"
+        // check https://datatracker.ietf.org/doc/html/rfc3986#section-2.2 for sub-delims
+
         private static string DetermineValidPathCharacters()
         {
-            const string basePathCharacters = "/:'()!*[]$";
+            const string basePathCharacters = "/'()!*$+,;=&";
 
             var sb = new StringBuilder();
             foreach (var c in basePathCharacters)
@@ -196,8 +195,31 @@ namespace Amazon.Util
         /// <returns></returns>
         public static string GetExtension(string path)
         {
-            if (path == null)
+            if (path is null)
                 return null;
+
+#if NET8_0_OR_GREATER
+            // LastIndexOf and LastIndexOfAny is vectorized on .NET8+ and is
+            // significantly faster for cases where 'path' does not end with a short file
+            // extension, such as GUIDs
+            ReadOnlySpan<char> pathSpan = path.AsSpan();
+            int extensionIndex = pathSpan.LastIndexOf('.');
+            if (extensionIndex == -1)
+            {
+                return string.Empty;
+            }
+
+            int directoryIndex = pathSpan.LastIndexOfAny('/', '\\', ':');
+
+            // extension separator is found and exists before path separator or path separator doesn't exist
+            // AND it's not the last one in the string
+            if (directoryIndex < extensionIndex && extensionIndex < pathSpan.Length - 1)
+            {
+                return pathSpan.Slice(extensionIndex).ToString();
+            }
+
+            return string.Empty;
+#else
             int length = path.Length;
             int index = length;
 
@@ -214,15 +236,16 @@ namespace Amazon.Util
                 else if (IsPathSeparator(ch))
                     break;
             }
-            return string.Empty;
-        }
 
-        // Checks if the character is one \ / :
-        private static bool IsPathSeparator(char ch)
-        {
-            return (ch == '\\' ||
-                    ch == '/' ||
-                    ch == ':');
+            return string.Empty;
+
+            bool IsPathSeparator(char ch)
+            {
+                return (ch == '\\' ||
+                        ch == '/' ||
+                        ch == ':');
+            }
+#endif
         }
 
         /*
@@ -298,80 +321,32 @@ namespace Amazon.Util
          */
         internal static string GetParametersAsString(ParameterCollection parameterCollection)
         {
-            var sortedParameters = parameterCollection.GetSortedParametersList();
-
-            StringBuilder data = new StringBuilder(512);
-            foreach (var kvp in sortedParameters)
+            var parameterBuilder = new ValueStringBuilder(512);
+            foreach (var kvp in parameterCollection.GetParametersEnumerable())
             {
-                var key = kvp.Key;
                 var value = kvp.Value;
-                if (value != null)
-                {
-                    data.Append(key);
-                    data.Append('=');
-                    data.Append(AWSSDKUtils.UrlEncode(value, false));
-                    data.Append('&');
-                }
+                if (value == null)
+                    continue;
+                parameterBuilder.Append(kvp.Key);
+                parameterBuilder.Append('=');
+                parameterBuilder.Append(AWSSDKUtils.UrlEncode(value, false));
+                parameterBuilder.Append('&');
             }
-            string result = data.ToString();
-            if (result.Length == 0)
-                return string.Empty;
 
-            return result.Remove(result.Length - 1);
+            var length = parameterBuilder.Length;
+            return length == 0 ? string.Empty : parameterBuilder.ToString(0, length - 1);
         }
 
         /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint with single URL encoded path segments.
+        /// Returns the canonicalized resource path for the service endpoint.
         /// </summary>
-        /// <param name="endpoint">Endpoint URL for the request</param>
-        /// <param name="resourcePath">Resource path for the request</param>
-        /// <remarks>
-        /// If resourcePath begins or ends with slash, the resulting canonicalized
-        /// path will follow suit.
-        /// </remarks>
-        /// <returns>Canonicalized resource path for the endpoint</returns>
-        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
-        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath)
-        {
-            // This overload is kept for backward compatibility in existing code bases.
-            return CanonicalizeResourcePath(endpoint, resourcePath, false, null, DefaultMarshallerVersion);
-        }
-
-        /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint
-        /// </summary>
-        /// <param name="endpoint">Endpoint URL for the request</param>
-        /// <param name="resourcePath">Resource path for the request</param>
-        /// <param name="detectPreEncode">If true pre URL encode path segments if necessary.
-        /// S3 is currently the only service that does not expect pre URL encoded segments.</param>
-        /// <remarks>
-        /// If resourcePath begins or ends with slash, the resulting canonicalized
-        /// path will follow suit.
-        /// </remarks>
-        /// <returns>Canonicalized resource path for the endpoint</returns>
-        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
-        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode)
-        {
-            // This overload is kept for backward compatibility in existing code bases.
-            return CanonicalizeResourcePath(endpoint, resourcePath, detectPreEncode, null, DefaultMarshallerVersion);
-        }
-
-        /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint
-        /// </summary>
-        /// <param name="endpoint">Endpoint URL for the request</param>
-        /// <param name="resourcePath">Resource path for the request</param>
-        /// <param name="detectPreEncode">If true pre URL encode path segments if necessary.
-        /// S3 is currently the only service that does not expect pre URL encoded segments.</param>
-        /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements</param>
-        /// <param name="marshallerVersion">The version of the marshaller that constructed the request object.</param>
-        /// <remarks>
-        /// If resourcePath begins or ends with slash, the resulting canonicalized
-        /// path will follow suit.
-        /// </remarks>
-        /// <returns>Canonicalized resource path for the endpoint</returns>
-        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
-        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode, IDictionary<string, string> pathResources, int marshallerVersion)
+        /// <param name="endpoint">Endpoint URL for the request.</param>
+        /// <param name="resourcePath">Resource path for the request.</param>
+        /// <param name="encode">If true will URL-encode path segments including "/". "S3" is currently the only service that does not expect pre URL-encoded segments.</param>
+        /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements.</param>
+        /// <remarks>If resourcePath begins or ends with slash, the resulting canonicalized path will follow suit.</remarks>
+        /// <returns>Canonicalized resource path for the endpoint.</returns>
+        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources)
         {
             if (endpoint != null)
             {
@@ -391,84 +366,23 @@ namespace Amazon.Util
             if (string.IsNullOrEmpty(resourcePath))
                 return Slash;
 
-            IEnumerable<string> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, pathResources);
-            
-            var pathWasPreEncoded = false;
-            if (detectPreEncode)
-            {
-                if (endpoint == null)
-                    throw new ArgumentNullException(nameof(endpoint), "A non-null endpoint is necessary to decide whether or not to pre URL encode.");
-
-                // S3 is a special case.  For S3 skip the pre encode.
-                // For everything else URL pre encode the resource path segments.
-                if (!S3Uri.IsS3Uri(endpoint))
-                {
-                    encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true).Replace(Slash, EncodedSlash));
-                    
-                    pathWasPreEncoded = true;
-                }
-            }
-#pragma warning disable 0618
-            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
-#pragma warning restore 0618
-            // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
-            Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
-                pathWasPreEncoded ? "Double" : "Single",
-                resourcePath,
-                endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
-                canonicalizedResourcePath);
-
-            return canonicalizedResourcePath;
-        }
-
-        /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint.
-        /// </summary>
-        /// <param name="endpoint">Endpoint URL for the request.</param>
-        /// <param name="resourcePath">Resource path for the request.</param>
-        /// <param name="encode">If true will URL-encode path segments including "/". "S3" is currently the only service that does not expect pre URL-encoded segments.</param>
-        /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements.</param>
-        /// <remarks>If resourcePath begins or ends with slash, the resulting canonicalized path will follow suit.</remarks>
-        /// <returns>Canonicalized resource path for the endpoint.</returns>
-        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources)
-        {
-            // Single encode the resourcepath from the endpoint i.e. treat it like a regular uri.
-            // Double encode the resource path from the request
-            string resourcePathFromRequest = resourcePath != null ? resourcePath : string.Empty;
-            string resourcePathFromEndpoint = endpoint != null? endpoint.AbsolutePath : string.Empty;
-
-            if (endpoint != null)
-            {
-                // If the resource path from the endpoint is just a slash, it is the equivalent of being empty, so just set it to empty.
-                if (string.IsNullOrEmpty(resourcePathFromEndpoint) || string.Equals(resourcePathFromEndpoint, Slash, StringComparison.Ordinal))
-                    resourcePathFromEndpoint = string.Empty;
-
-                if (!string.IsNullOrEmpty(resourcePathFromRequest) && resourcePathFromRequest.StartsWith(Slash, StringComparison.Ordinal))
-                    resourcePathFromRequest = resourcePathFromRequest.Substring(1);
-
-                // If the resource path from the endpoint is empty, add a slash in front of the resource path from the request,
-                // so that when we split and join the resource path segments, we don't encode the slash. Removing this will cause odd unwanted behavior.
-                // We don't want to add a slash if the resource path from the endpoint has a value because that will result in two slashes, one from the
-                // endpoint and one from the resource path.
-                if (string.IsNullOrEmpty(resourcePathFromEndpoint) && !string.IsNullOrEmpty(resourcePathFromRequest))
-                    resourcePathFromRequest = Slash + resourcePathFromRequest;
-
-            }
-
-            if (string.IsNullOrEmpty(resourcePathFromRequest) && string.IsNullOrEmpty(resourcePathFromEndpoint))
-                return Slash;
-            IEnumerable<string> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePathFromRequest, pathResources);
+            IEnumerable<UriComponent> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegmentsV2(resourcePath, pathResources);
 
             var pathWasPreEncoded = false;
             if (encode)
             {
                 if (endpoint == null)
                     throw new ArgumentNullException(nameof(endpoint), "A non-null endpoint is necessary to decide whether or not to pre URL encode.");
-
-                encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, false));
+                foreach(var segment in encodedSegments)
+                {
+                    if (segment.SegmentType == SegmentType.Label)
+                        segment.Value = UrlEncode(segment.Value, false);
+                    else
+                        segment.Value = UrlEncode(segment.Value, true);
+                }
                 pathWasPreEncoded = true;
             }
-            string canonicalizedResourcePath = GetFullCanonicalizedResourcePath(resourcePathFromEndpoint, encodedSegments);
+            string canonicalizedResourcePath = JoinResourcePathSegmentsV2(encodedSegments);
 
             // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
             Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
@@ -481,31 +395,9 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// This method returns the full canonicalized resource path which includes the resource path from the request and the resource path from the endpoint.
-        /// </summary>
-        /// <param name="resourcePathFromEndpoint">This is the resource path that comes from the endpoint itself and not the request</param>
-        /// <param name="encodedSegments">If double encoded, encoded segments contains the encoded segments from the resource path from the request</param>
-        /// <returns>The full canonicalized resource path that contains the single encoded canonicalized resource path from the endpoint and the double encoded
-        /// resource path from the request</returns>
-        private static string GetFullCanonicalizedResourcePath(string resourcePathFromEndpoint, IEnumerable<string> encodedSegments)
-        {
-            // Most of the time resourcePathFromEndpoint will just be "/", meaning it is essentially empty, so check to see if the length is > 1.
-            if (resourcePathFromEndpoint.Length > 1)
-            {
-                // Since we are resolving the configured endpoint here, we don't want to subsitute any key/value pairs from path resources.
-                IEnumerable<string> absolutePathSegment = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePathFromEndpoint, null);
-                // If encodedSegments' first value is empty, that means the resourcePath was empty, so no need to concatenate it since that will produce an extra "/" character at the end.
-                IEnumerable<string> fullPath = string.IsNullOrEmpty(encodedSegments.FirstOrDefault()) ? absolutePathSegment : absolutePathSegment.Concat(encodedSegments);
-                return AWSSDKUtils.JoinResourcePathSegmentsV2(fullPath);
-            }
-            else
-            {
-                return AWSSDKUtils.JoinResourcePathSegmentsV2(encodedSegments);
-            }
-        }
-        /// <summary>
         /// Splits the resourcePath at / into segments then resolves any keys with the path resource values. Greedy
-        /// key values will be split into multiple segments at each /.
+        /// key values will be split into multiple segments at each /. This is used for splitting resource path into segments for
+        /// signing.
         /// </summary>
         /// <param name="resourcePath">The patterned resourcePath</param>
         /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
@@ -544,6 +436,52 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// This is used to split resource path into segments for composing a URL, not for signing. When splitting resource path into 
+        /// segments for composing a URL we must discern that which is a literal which we do not encode and that which is a label which
+        /// we do encode.
+        /// </summary>
+        /// <param name="resourcePath">The resource path, which includes literals and labels.</param>
+        /// <param name="pathResources">The dictionary for substituting label values.</param>
+        /// <returns></returns>
+        public static IEnumerable<UriComponent> SplitResourcePathIntoSegmentsV2(string resourcePath, IDictionary<string, string> pathResources)
+        {
+            var splitChars = new char[] { SlashChar };
+            var pathSegments = resourcePath.Split(splitChars, StringSplitOptions.None);
+            var uriComponentSegments = new List<UriComponent>();
+            if (pathResources == null || pathResources.Count == 0)
+            {
+                foreach (var segment in pathSegments)
+                {
+                    uriComponentSegments.Add(new UriComponent { SegmentType = SegmentType.Literal, Value = segment});
+                }
+                return uriComponentSegments;
+            }
+
+            //Otherwise there are key/values that need to be resolved
+            foreach (var segment in pathSegments)
+            {
+                string resolvedSegment;
+                if (!pathResources.TryGetValue(segment, out resolvedSegment))
+                {
+                    uriComponentSegments.Add(new UriComponent { SegmentType = SegmentType.Literal, Value = segment});
+                    continue;
+                }
+
+                //Determine if the path is greedy. If greedy the segment will be split at each / into multiple segments.
+                if (segment.EndsWith("+}", StringComparison.Ordinal))
+                {
+                    uriComponentSegments.AddRange(resolvedSegment.Split(splitChars, StringSplitOptions.None).Select(x => new UriComponent { Value = x, SegmentType = SegmentType.Label}));
+                }
+                else
+                {
+                    uriComponentSegments.Add(new UriComponent { SegmentType = SegmentType.Label, Value = resolvedSegment });
+                }
+            }
+
+            return uriComponentSegments;
+        }
+
+        /// <summary>
         /// Joins all path segments with the / character and encodes each segment before joining.
         /// </summary>
         /// <param name="pathSegments">The segments of a URL path split at each / character</param>
@@ -578,38 +516,24 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// Takes a patterned resource path and resolves it using the key/value path resources into
-        /// a segmented encoded URL.
+        /// Joins all path segments with the / character and encodes each non-literal segment before joining
         /// </summary>
-        /// <param name="resourcePath">The patterned resourcePath</param>
-        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
-        /// <returns>A segmented encoded URL</returns>
-        [Obsolete("ResolveResourcePath has been deprecated in favor of ResolveResourcePathV2 due to an encoding issue. Use ResolveResourcePathV2 instead.")]
-        public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources)
+        /// <param name="pathSegments"></param>
+        /// <returns></returns>
+        public static string JoinResourcePathSegmentsV2(IEnumerable<UriComponent> pathSegments)
         {
-#pragma warning disable 0618
-            return ResolveResourcePath(resourcePath, pathResources, true);
-#pragma warning restore 0618
-        }
-
-        /// <summary>
-        /// Takes a patterned resource path and resolves it using the key/value path resources into
-        /// a segmented encoded URL.
-        /// </summary>
-        /// <param name="resourcePath">The patterned resourcePath</param>
-        /// <param name="pathResources">The key/value lookup for the patterned resourcePath</param>
-        /// <param name="skipEncodingValidPathChars">If true valid path characters {/+:} are not encoded</param>
-        /// <returns>A segmented encoded URL</returns>
-        [Obsolete("This method has been deprecated in favor of ResolveResourcePathV2 due to an encoding issue with special characters. Please use ResolveResourcePathV2.")]
-        public static string ResolveResourcePath(string resourcePath, IDictionary<string, string> pathResources, bool skipEncodingValidPathChars)
-        {
-            if (string.IsNullOrEmpty(resourcePath))
+            List<string> encodedSegments = pathSegments.Select(segment =>
             {
-                return resourcePath;
-            }
-
-            return JoinResourcePathSegments(SplitResourcePathIntoSegments(resourcePath, pathResources), skipEncodingValidPathChars);
+                if (segment.SegmentType == SegmentType.Label)
+                    return UrlEncode(segment.Value, false);
+                else
+                    return UrlEncode(segment.Value, true);
+            }).ToList();
+            // join the encoded segments with /
+            return string.Join(Slash, encodedSegments);
         }
+
+
         /// <summary>
         /// Takes a patterned resource path and resolves it using the key/value path resources into
         /// a segmented encoded URL.
@@ -623,7 +547,7 @@ namespace Amazon.Util
             {
                 return resourcePath; 
             }
-            return JoinResourcePathSegmentsV2(SplitResourcePathIntoSegments(resourcePath, pathResources));
+            return JoinResourcePathSegmentsV2(SplitResourcePathIntoSegmentsV2(resourcePath, pathResources));
         }
 
         /// <summary>
@@ -636,18 +560,7 @@ namespace Amazon.Util
         /// specified list together, with a comma between strings.</returns>
         public static String Join(List<String> strings)
         {
-            StringBuilder result = new StringBuilder();
-
-            Boolean first = true;
-            foreach (String s in strings)
-            {
-                if (!first) result.Append(", ");
-
-                result.Append(s);
-                first = false;
-            }
-
-            return result.ToString();
+            return string.Join(", ", strings);
         }
 
         /// <summary>
@@ -661,7 +574,7 @@ namespace Amazon.Util
         public static string DetermineRegion(string url)
         {
             var regionEndpoint = RegionFinder.Instance.FindRegion(url);
-            return regionEndpoint?.RegionName;
+            return regionEndpoint?.SystemName;
         }
 
         /// <summary>
@@ -675,32 +588,31 @@ namespace Amazon.Util
         /// </returns>
         public static string DetermineService(string url)
         {
-            int delimIndex = url.IndexOf("//", StringComparison.Ordinal);
-            if (delimIndex >= 0)
-                url = url.Substring(delimIndex + 2);
+            var urlSpan = url.AsSpan();
 
-            string[] urlParts = url.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
-            if (urlParts == null || urlParts.Length == 0)
+            var doubleSlashIndex = urlSpan.IndexOf(DoubleSlash, StringComparison.Ordinal);
+            if (doubleSlashIndex >= 0)
+                urlSpan = urlSpan.Slice(doubleSlashIndex + 2);
+
+            var dotIndex = urlSpan.IndexOf('.');
+
+            if (dotIndex < 0)
                 return string.Empty;
 
-            string servicePart = urlParts[0];
-            int hyphenated = servicePart.IndexOf('-');
-            string service;
-            if (hyphenated < 0)
-            { service = servicePart; }
-            else
-            { service = servicePart.Substring(0, hyphenated); }
+            var servicePartSpan = urlSpan.Slice(0, dotIndex);
+            var hyphenIndex = servicePartSpan.IndexOf('-');
+            if (hyphenIndex > 0)
+            {
+                servicePartSpan = servicePartSpan.Slice(0, hyphenIndex);
+            }
 
-            // Check for SQS : return "sqs" incase service is determined to be "queue" as per the URL.
-            if (service.Equals("queue"))
-            {
-                return "sqs";
-            }
-            else
-            {
-                return service;
-            }
+            // Check for SQS : return "sqs" in case service is determined to be "queue" as per the URL.
+            return servicePartSpan.Equals(Queue, StringComparison.OrdinalIgnoreCase) ? "sqs" : servicePartSpan.ToString();
         }
+
+        // Compiler trick to directly refer to static data in the assembly
+        private static ReadOnlySpan<char> DoubleSlash => new[] { '/', '/' };
+        private static ReadOnlySpan<char> Queue => new[] { 'q', 'u', 'e', 'u', 'e' };
 
         /// <summary>
         /// Utility method for converting Unix epoch seconds to DateTime structure.
@@ -732,11 +644,6 @@ namespace Amazon.Util
             return Convert.ToInt64(GetTimeSpanInTicks(dateTime).TotalSeconds).ToString(CultureInfo.InvariantCulture);
         }
 
-        [Obsolete("This method isn't named correctly: it returns seconds instead of milliseconds. Use ConvertToUnixEpochSecondsDouble instead.", false)]
-        public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)
-        {
-            return ConvertToUnixEpochSecondsDouble(dateTime);
-        }
 
         public static double ConvertToUnixEpochSecondsDouble(DateTime dateTime)
         {
@@ -766,14 +673,32 @@ namespace Amazon.Util
         /// <returns>String version of the data</returns>
         public static string ToHex(byte[] data, bool lowercase)
         {
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < data.Length; i++)
+#if NET8_0_OR_GREATER
+            if (!lowercase)
             {
-                sb.Append(data[i].ToString(lowercase ? "x2" : "X2", CultureInfo.InvariantCulture));
+                return Convert.ToHexString(data);
             }
+#endif
 
-            return sb.ToString();
+#if NETCOREAPP3_1_OR_GREATER
+            return string.Create(data.Length * 2, (data, lowercase), static (chars, state) =>
+            {
+                ToHexString(state.data, chars, state.lowercase);
+            });
+#else
+            char[] chars = ArrayPool<char>.Shared.Rent(data.Length * 2);
+
+            try
+            {
+                ToHexString(data, chars, lowercase);
+
+                return new string(chars, 0, data.Length * 2);
+            }
+            finally
+            {
+                ArrayPool<char>.Shared.Return(chars);
+            }
+#endif
         }
 
         /// <summary>
@@ -920,19 +845,7 @@ namespace Amazon.Util
         /// <param name="bufferSize"></param>
         public static void CopyStream(Stream source, Stream destination, int bufferSize)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-            if (destination == null)
-                throw new ArgumentNullException("destination");
-            if (bufferSize <= 0)
-                throw new ArgumentOutOfRangeException("bufferSize");
-
-            byte[] array = new byte[bufferSize];
-            int count;
-            while ((count = source.Read(array, 0, array.Length)) != 0)
-            {
-                destination.Write(array, 0, count);
-            }
+            source.CopyTo(destination, bufferSize);
         }
 #endregion
 
@@ -985,9 +898,12 @@ namespace Amazon.Util
 #pragma warning restore CS0618 // Type or member is obsolete
         }
 
-        internal static string GetFormattedTimestampISO8601(IClientConfig config)
+        internal static string GetFormattedTimestampISO8601(IClientConfig config, AmazonWebServiceRequest request)
         {
-            return GetFormattedTimestampISO8601(config.CorrectedUtcNow);
+            var endpoint = config.DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(request));
+            var correctedUtcNow = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL);
+
+            return GetFormattedTimestampISO8601(correctedUtcNow);
         }
 
         private static string GetFormattedTimestampISO8601(DateTime dateTime)
@@ -1136,35 +1052,93 @@ namespace Amazon.Util
         /// Currently recognised RFC versions are 1738 (Dec '94) and 3986 (Jan '05). 
         /// If the specified RFC is not recognised, 3986 is used by default.
         /// </remarks>
+        [SkipLocalsInit]
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
-            StringBuilder encoded = new StringBuilder(data.Length * 2);
-            string validUrlCharacters;
-            if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
-                validUrlCharacters = ValidUrlCharacters;
-
-            string unreservedChars = String.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
-            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
+            byte[] sharedDataBuffer = null;
+            const int MaxStackLimit = 256;
+            try
             {
-                if (unreservedChars.IndexOf(symbol) != -1)
-                {
-                    encoded.Append(symbol);
-                }
-                else
-                {
-                    encoded.Append('%');
+                if (!TryGetRFCEncodingSchemes(rfcNumber, out var validUrlCharacters))
+                    validUrlCharacters = ValidUrlCharacters;
 
-                    // Break apart the byte into two four-bit components and
-                    // then convert each into their hexadecimal equivalent.
-                    byte b = (byte)symbol;
-                    int hiNibble = b >> 4;
-                    int loNibble = b & 0xF;
-                    encoded.Append(ToUpperHex(hiNibble));
-                    encoded.Append(ToUpperHex(loNibble));
+                var unreservedChars = string.Concat(validUrlCharacters, path ? ValidPathCharacters : string.Empty).AsSpan();
+
+                var dataAsSpan = data.AsSpan();
+                var encoding = Encoding.UTF8;
+
+                var dataByteLength = encoding.GetMaxByteCount(dataAsSpan.Length);
+                var encodedByteLength = 2 * dataByteLength;
+                var dataBuffer = encodedByteLength <= MaxStackLimit
+                    ? stackalloc byte[MaxStackLimit]
+                    : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
+                // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
+                // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer 
+                // for the encoded representation.
+                var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
+                var bytesWritten = encoding.GetBytes(dataAsSpan, encodingBuffer);
+            
+                var index = 0;
+                foreach (var symbol in encodingBuffer.Slice(0, bytesWritten))
+                {
+                    if (unreservedChars.IndexOf((char)symbol) != -1)
+                    {
+                        dataBuffer[index++] = symbol;
+                    }
+                    else
+                    {
+                        dataBuffer[index++] = (byte)'%';
+
+                        // Break apart the byte into two four-bit components and
+                        // then convert each into their hexadecimal equivalent.
+                        var hiNibble = symbol >> 4;
+                        var loNibble = symbol & 0xF;
+                        dataBuffer[index++] = (byte)ToUpperHex(hiNibble);
+                        dataBuffer[index++] = (byte)ToUpperHex(loNibble);
+                    }
                 }
+
+                return encoding.GetString(dataBuffer.Slice(0, index));
+            }
+            finally
+            {
+                if (sharedDataBuffer != null) ArrayPool<byte>.Shared.Return(sharedDataBuffer);
+            }
+        }
+        
+        internal static bool TryGetRFCEncodingSchemes(int rfcNumber, out string encodingScheme)
+        {
+            if (rfcNumber == 3986)
+            {
+                encodingScheme = ValidUrlCharacters;
+                return true;
             }
 
-            return encoded.ToString();
+            if (rfcNumber == 1738)
+            {
+                encodingScheme = ValidUrlCharactersRFC1738;
+                return true;
+            }
+
+            encodingScheme = null;
+            return false;
+        }
+
+        private static void ToHexString(Span<byte> source, Span<char> destination, bool lowercase)
+        {
+            Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
+
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                // Break apart the byte into two four-bit components and
+                // then convert each into their hexadecimal equivalent.
+                byte b = source[i];
+                int hiNibble = b >> 4;
+                int loNibble = b & 0xF;
+
+                destination[i * 2] = converter(hiNibble);
+                destination[i * 2 + 1] = converter(loNibble);
+            }
         }
 
         private static char ToUpperHex(int value)
@@ -1177,7 +1151,18 @@ namespace Amazon.Util
             // Maps 10-15 to the Unicode range of 'A' - 'F' (0x41 - 0x46).
             return (char)(value - 10 + 'A');
         }
-                
+
+        private static char ToLowerHex(int value)
+        {
+            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
+            if (value <= 9)
+            {
+                return (char)(value + '0');
+            }
+            // Maps 10-15 to the Unicode range of 'a' - 'f' (0x61 - 0x66).
+            return (char)(value - 10 + 'a');
+        }
+
         internal static string UrlEncodeSlash(string data)
         {
             if (string.IsNullOrEmpty(data))
@@ -1212,45 +1197,6 @@ namespace Amazon.Util
             return encoded.ToString();
         }
 
-        /// <summary>
-        /// URL encodes a string per the specified RFC with the exception of preserving the encoding of previously encoded slashes.
-        /// If the path property is specified, the accepted path characters {/+:} are not encoded. 
-        /// </summary>
-        /// <param name="data">The string to encode</param>
-        /// <param name="path">Whether the string is a URL path or not</param>
-        /// <returns>The encoded string with any previously encoded %2F preserved</returns>
-        [Obsolete("This method is not supported in AWSSDK 3.5")]
-        public static string ProtectEncodedSlashUrlEncode(string data, bool path)
-        {
-            if (string.IsNullOrEmpty(data))
-            {
-                return data;
-            }
-
-            var index = 0;
-            var sb = new StringBuilder();
-            var findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
-            while (findIndex != -1)
-            {
-                sb.Append(UrlEncode(data.Substring(index, findIndex - index), path));
-                sb.Append(EncodedSlash);
-                index = findIndex + EncodedSlash.Length;
-                findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
-            }            
-
-            //If encoded slash was not found return the original data
-            if(index == 0)
-            {
-                return UrlEncode(data, path);
-            }
-
-            if(data.Length > index)
-            {
-                sb.Append(UrlEncode(data.Substring(index), path));
-            }
-            
-            return sb.ToString();
-        }
 
         /// <summary>
         /// Generates an MD5 Digest for the stream specified
@@ -1332,18 +1278,6 @@ namespace Amazon.Util
         public static void Sleep(TimeSpan ts)
         {
             Sleep((int)ts.TotalMilliseconds);
-        }
-
-        /// <summary>
-        /// Convert bytes to a hex string
-        /// </summary>
-        /// <param name="value">Bytes to convert.</param>
-        /// <returns>Hexadecimal string representing the byte array.</returns>
-        public static string BytesToHexString(byte[] value)
-        {
-            string hex = BitConverter.ToString(value);
-            hex = hex.Replace("-", string.Empty);
-            return hex;
         }
 
         /// <summary>
@@ -1626,21 +1560,40 @@ namespace Amazon.Util
                 return null;
             }
 
-            if (data.Length == 0)
+            var dataLength = data.Length;
+            if (dataLength == 0)
             {
                 return string.Empty;
             }
 
-            var stringBuilder = new StringBuilder();
+            var stringBuilder = new ValueStringBuilder(dataLength);
+            int index = 0;
             var isWhiteSpace = false;
             foreach (var character in data)
             {
                 if (!isWhiteSpace | !(isWhiteSpace = char.IsWhiteSpace(character)))
                 {
                     stringBuilder.Append(isWhiteSpace ? ' ' : character);
+                    index++;
                 }
             }
-            return stringBuilder.ToString();
+            return stringBuilder.ToString(0, index);
+        }
+
+        /// <summary>
+        /// Extracts the operation name from a given request name.
+        /// </summary>
+        /// <param name="requestName">The name of the request from which the operation name is to be extracted.</param>
+        /// <returns>
+        /// The operation name if the request name ends with "Request"; otherwise, returns the original request name.
+        /// </returns>
+        internal static string ExtractOperationName(string requestName)
+        {
+            if (requestName.EndsWith("Request", StringComparison.Ordinal))
+            {
+                return requestName.Substring(0, requestName.Length - 7);
+            }
+            return requestName;
         }
 
         /// <summary>
@@ -1843,4 +1796,15 @@ namespace Amazon.Util
             _count = 0;
         }
     }
+    public class UriComponent
+    {
+        public SegmentType SegmentType { get; set; }
+        public string Value { get; set; }
+    }
+    public enum SegmentType
+    {
+        Literal,
+        Label,
+    }
+    
 }

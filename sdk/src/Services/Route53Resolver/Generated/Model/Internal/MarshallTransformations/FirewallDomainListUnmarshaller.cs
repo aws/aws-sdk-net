@@ -86,7 +86,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DomainCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DomainCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

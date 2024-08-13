@@ -49,9 +49,9 @@ namespace Amazon.DynamoDBv2.Model
         /// from this date.
         /// </para>
         /// </summary>
-        public DateTime InaccessibleEncryptionDateTime
+        public DateTime? InaccessibleEncryptionDateTime
         {
-            get { return this._inaccessibleEncryptionDateTime.GetValueOrDefault(); }
+            get { return this._inaccessibleEncryptionDateTime; }
             set { this._inaccessibleEncryptionDateTime = value; }
         }
 

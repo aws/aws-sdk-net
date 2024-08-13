@@ -57,9 +57,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the volume should be auto-enabled for I/O operations.
         /// </para>
         /// </summary>
-        public bool AutoEnableIO
+        public bool? AutoEnableIO
         {
-            get { return this._autoEnableIO.GetValueOrDefault(); }
+            get { return this._autoEnableIO; }
             set { this._autoEnableIO = value; }
         }
 

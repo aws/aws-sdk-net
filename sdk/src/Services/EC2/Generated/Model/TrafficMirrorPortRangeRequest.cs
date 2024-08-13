@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// The first port in the Traffic Mirror port range. This applies to the TCP and UDP protocols.
         /// </para>
         /// </summary>
-        public int FromPort
+        public int? FromPort
         {
-            get { return this._fromPort.GetValueOrDefault(); }
+            get { return this._fromPort; }
             set { this._fromPort = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The last port in the Traffic Mirror port range. This applies to the TCP and UDP protocols.
         /// </para>
         /// </summary>
-        public int ToPort
+        public int? ToPort
         {
-            get { return this._toPort.GetValueOrDefault(); }
+            get { return this._toPort; }
             set { this._toPort = value; }
         }
 

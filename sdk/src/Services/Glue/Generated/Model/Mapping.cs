@@ -88,9 +88,9 @@ namespace Amazon.Glue.Model
         /// If true, then the column is removed.
         /// </para>
         /// </summary>
-        public bool Dropped
+        public bool? Dropped
         {
-            get { return this._dropped.GetValueOrDefault(); }
+            get { return this._dropped; }
             set { this._dropped = value; }
         }
 

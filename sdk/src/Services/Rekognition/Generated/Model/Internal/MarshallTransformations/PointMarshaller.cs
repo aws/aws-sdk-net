@@ -51,26 +51,26 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetX())
             {
                 context.Writer.WritePropertyName("X");
-                if(StringUtils.IsSpecialFloatValue(requestObject.X))
+                if(StringUtils.IsSpecialFloatValue(requestObject.X.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.X));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.X.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.X);
+                    context.Writer.Write(requestObject.X.Value);
                 }
             }
 
             if(requestObject.IsSetY())
             {
                 context.Writer.WritePropertyName("Y");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Y))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Y.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Y));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Y.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Y);
+                    context.Writer.Write(requestObject.Y.Value);
                 }
             }
 

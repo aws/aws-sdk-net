@@ -46,9 +46,9 @@ namespace Amazon.MediaTailor.Model
         /// Maximum value: <c>3600</c> seconds.
         /// </para>
         /// </summary>
-        public int ManifestWindowSeconds
+        public int? ManifestWindowSeconds
         {
-            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            get { return this._manifestWindowSeconds; }
             set { this._manifestWindowSeconds = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.MediaTailor.Model
         /// in the buffer. Minimum value: <c>2</c> seconds. Maximum value: <c>60</c> seconds.
         /// </para>
         /// </summary>
-        public int MinBufferTimeSeconds
+        public int? MinBufferTimeSeconds
         {
-            get { return this._minBufferTimeSeconds.GetValueOrDefault(); }
+            get { return this._minBufferTimeSeconds; }
             set { this._minBufferTimeSeconds = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MediaTailor.Model
         /// seconds.
         /// </para>
         /// </summary>
-        public int MinUpdatePeriodSeconds
+        public int? MinUpdatePeriodSeconds
         {
-            get { return this._minUpdatePeriodSeconds.GetValueOrDefault(); }
+            get { return this._minUpdatePeriodSeconds; }
             set { this._minUpdatePeriodSeconds = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.MediaTailor.Model
         /// of the manifest. Minimum value: <c>2</c> seconds. Maximum value: <c>60</c> seconds.
         /// </para>
         /// </summary>
-        public int SuggestedPresentationDelaySeconds
+        public int? SuggestedPresentationDelaySeconds
         {
-            get { return this._suggestedPresentationDelaySeconds.GetValueOrDefault(); }
+            get { return this._suggestedPresentationDelaySeconds; }
             set { this._suggestedPresentationDelaySeconds = value; }
         }
 

@@ -57,7 +57,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Average", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.Average = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -74,31 +74,31 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Maximum", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Minimum", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SampleCount", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.SampleCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Sum", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.Sum = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Timestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }

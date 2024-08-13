@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxRows())
             {
                 context.Writer.WritePropertyName("MaxRows");
-                context.Writer.Write(requestObject.MaxRows);
+                context.Writer.Write(requestObject.MaxRows.Value);
             }
 
             if(requestObject.IsSetQuery())

@@ -68,7 +68,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enableBusinessNameGeneration", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableBusinessNameGeneration = unmarshaller.Unmarshall(context);
                     continue;
                 }

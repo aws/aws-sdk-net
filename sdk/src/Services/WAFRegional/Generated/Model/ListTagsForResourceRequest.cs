@@ -67,9 +67,9 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Limit.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

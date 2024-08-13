@@ -51,32 +51,32 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccuracyCostTradeoff())
             {
                 context.Writer.WritePropertyName("AccuracyCostTradeoff");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.AccuracyCostTradeoff))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AccuracyCostTradeoff));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AccuracyCostTradeoff);
+                    context.Writer.Write(requestObject.AccuracyCostTradeoff.Value);
                 }
             }
 
             if(requestObject.IsSetEnforceProvidedLabels())
             {
                 context.Writer.WritePropertyName("EnforceProvidedLabels");
-                context.Writer.Write(requestObject.EnforceProvidedLabels);
+                context.Writer.Write(requestObject.EnforceProvidedLabels.Value);
             }
 
             if(requestObject.IsSetPrecisionRecallTradeoff())
             {
                 context.Writer.WritePropertyName("PrecisionRecallTradeoff");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PrecisionRecallTradeoff))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PrecisionRecallTradeoff));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PrecisionRecallTradeoff);
+                    context.Writer.Write(requestObject.PrecisionRecallTradeoff.Value);
                 }
             }
 

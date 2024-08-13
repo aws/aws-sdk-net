@@ -51,13 +51,13 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxSeconds())
             {
                 context.Writer.WritePropertyName("maxSeconds");
-                context.Writer.Write(requestObject.MaxSeconds);
+                context.Writer.Write(requestObject.MaxSeconds.Value);
             }
 
             if(requestObject.IsSetMinSeconds())
             {
                 context.Writer.WritePropertyName("minSeconds");
-                context.Writer.Write(requestObject.MinSeconds);
+                context.Writer.Write(requestObject.MinSeconds.Value);
             }
 
         }

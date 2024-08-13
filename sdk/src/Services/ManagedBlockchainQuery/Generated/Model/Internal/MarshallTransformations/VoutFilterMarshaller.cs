@@ -51,7 +51,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVoutSpent())
             {
                 context.Writer.WritePropertyName("voutSpent");
-                context.Writer.Write(requestObject.VoutSpent);
+                context.Writer.Write(requestObject.VoutSpent.Value);
             }
 
         }

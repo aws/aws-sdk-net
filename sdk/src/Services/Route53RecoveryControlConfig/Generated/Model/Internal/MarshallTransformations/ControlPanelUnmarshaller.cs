@@ -80,7 +80,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 }
                 if (context.TestExpression("DefaultControlPanel", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultControlPanel = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 }
                 if (context.TestExpression("RoutingControlCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RoutingControlCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

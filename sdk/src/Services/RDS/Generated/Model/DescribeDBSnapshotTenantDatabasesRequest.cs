@@ -210,9 +210,9 @@ namespace Amazon.RDS.Model
         /// in the response so that you can retrieve the remaining results.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

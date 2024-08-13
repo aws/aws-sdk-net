@@ -88,9 +88,9 @@ namespace Amazon.SageMaker.Model
         /// Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.
         /// </para>
         /// </summary>
-        public bool CertifyForMarketplace
+        public bool? CertifyForMarketplace
         {
-            get { return this._certifyForMarketplace.GetValueOrDefault(); }
+            get { return this._certifyForMarketplace; }
             set { this._certifyForMarketplace = value; }
         }
 

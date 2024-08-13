@@ -92,9 +92,9 @@ namespace Amazon.CloudFormation.Model
         /// published by Amazon. For public third-party extensions, CloudFormation returns <c>null</c>.
         /// </para>
         /// </summary>
-        public bool IsDefaultVersion
+        public bool? IsDefaultVersion
         {
-            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            get { return this._isDefaultVersion; }
             set { this._isDefaultVersion = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.CloudFormation.Model
         /// When the version was registered.
         /// </para>
         /// </summary>
-        public DateTime TimeCreated
+        public DateTime? TimeCreated
         {
-            get { return this._timeCreated.GetValueOrDefault(); }
+            get { return this._timeCreated; }
             set { this._timeCreated = value; }
         }
 

@@ -73,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceTerminationTimeout())
             {
                 context.Writer.WritePropertyName("InstanceTerminationTimeout");
-                context.Writer.Write(requestObject.InstanceTerminationTimeout);
+                context.Writer.Write(requestObject.InstanceTerminationTimeout.Value);
             }
 
         }

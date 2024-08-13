@@ -74,7 +74,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfTrainMentions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfTrainMentions = unmarshaller.Unmarshall(context);
                     continue;
                 }

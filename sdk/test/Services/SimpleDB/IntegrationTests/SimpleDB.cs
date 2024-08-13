@@ -203,9 +203,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 expectedAttributeValueCount += item.Attributes.Count;
             }
 
-            Assert.AreEqual<int>(expectedItemCount, domainMetadataResult.ItemCount);
-            Assert.AreEqual<int>(expectedAttributeNameCount, domainMetadataResult.AttributeNameCount);
-            Assert.AreEqual<int>(expectedAttributeValueCount, domainMetadataResult.AttributeValueCount);
+            Assert.AreEqual<int>(expectedItemCount, domainMetadataResult.ItemCount.Value);
+            Assert.AreEqual<int>(expectedAttributeNameCount, domainMetadataResult.AttributeNameCount.Value);
+            Assert.AreEqual<int>(expectedAttributeValueCount, domainMetadataResult.AttributeValueCount.Value);
             Assert.IsNotNull(domainMetadataResult.Timestamp);
         }
 

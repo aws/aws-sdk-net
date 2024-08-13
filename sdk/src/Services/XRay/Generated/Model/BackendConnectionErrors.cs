@@ -44,9 +44,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ConnectionRefusedCount.
         /// </summary>
-        public int ConnectionRefusedCount
+        public int? ConnectionRefusedCount
         {
-            get { return this._connectionRefusedCount.GetValueOrDefault(); }
+            get { return this._connectionRefusedCount; }
             set { this._connectionRefusedCount = value; }
         }
 
@@ -59,9 +59,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property HTTPCode4XXCount.
         /// </summary>
-        public int HTTPCode4XXCount
+        public int? HTTPCode4XXCount
         {
-            get { return this._httpCode4XXCount.GetValueOrDefault(); }
+            get { return this._httpCode4XXCount; }
             set { this._httpCode4XXCount = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property HTTPCode5XXCount.
         /// </summary>
-        public int HTTPCode5XXCount
+        public int? HTTPCode5XXCount
         {
-            get { return this._httpCode5XXCount.GetValueOrDefault(); }
+            get { return this._httpCode5XXCount; }
             set { this._httpCode5XXCount = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property OtherCount.
         /// </summary>
-        public int OtherCount
+        public int? OtherCount
         {
-            get { return this._otherCount.GetValueOrDefault(); }
+            get { return this._otherCount; }
             set { this._otherCount = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property TimeoutCount.
         /// </summary>
-        public int TimeoutCount
+        public int? TimeoutCount
         {
-            get { return this._timeoutCount.GetValueOrDefault(); }
+            get { return this._timeoutCount; }
             set { this._timeoutCount = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property UnknownHostCount.
         /// </summary>
-        public int UnknownHostCount
+        public int? UnknownHostCount
         {
-            get { return this._unknownHostCount.GetValueOrDefault(); }
+            get { return this._unknownHostCount; }
             set { this._unknownHostCount = value; }
         }
 

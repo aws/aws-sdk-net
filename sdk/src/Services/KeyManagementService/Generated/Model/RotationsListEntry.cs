@@ -63,9 +63,9 @@ namespace Amazon.KeyManagementService.Model
         /// Date and time that the key material rotation completed. Formatted as Unix time.
         /// </para>
         /// </summary>
-        public DateTime RotationDate
+        public DateTime? RotationDate
         {
-            get { return this._rotationDate.GetValueOrDefault(); }
+            get { return this._rotationDate; }
             set { this._rotationDate = value; }
         }
 

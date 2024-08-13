@@ -93,7 +93,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceId())
             {
                 context.Writer.WritePropertyName("sourceId");
-                context.Writer.Write(requestObject.SourceId);
+                context.Writer.Write(requestObject.SourceId.Value);
             }
 
             if(requestObject.IsSetSourceWatermarkStatus())

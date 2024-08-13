@@ -68,9 +68,9 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int LensesAppliedCount
+        public int? LensesAppliedCount
         {
-            get { return this._lensesAppliedCount.GetValueOrDefault(); }
+            get { return this._lensesAppliedCount; }
             set { this._lensesAppliedCount = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt.
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

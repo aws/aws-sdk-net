@@ -57,7 +57,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsMove())
             {
                 context.Writer.WritePropertyName("isMove");
-                context.Writer.Write(requestObject.IsMove);
+                context.Writer.Write(requestObject.IsMove.Value);
             }
 
         }

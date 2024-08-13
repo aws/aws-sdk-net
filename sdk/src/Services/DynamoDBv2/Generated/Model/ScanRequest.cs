@@ -188,9 +188,9 @@ namespace Amazon.DynamoDBv2.Model
         /// receive a <c>ValidationException</c>.
         /// </para>
         /// </summary>
-        public bool ConsistentRead
+        public bool? ConsistentRead
         {
-            get { return this._consistentRead.GetValueOrDefault(); }
+            get { return this._consistentRead; }
             set { this._consistentRead = value; }
         }
 
@@ -416,9 +416,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -544,9 +544,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999999)]
-        public int Segment
+        public int? Segment
         {
-            get { return this._segment.GetValueOrDefault(); }
+            get { return this._segment; }
             set { this._segment = value; }
         }
 
@@ -699,9 +699,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000000)]
-        public int TotalSegments
+        public int? TotalSegments
         {
-            get { return this._totalSegments.GetValueOrDefault(); }
+            get { return this._totalSegments; }
             set { this._totalSegments = value; }
         }
 

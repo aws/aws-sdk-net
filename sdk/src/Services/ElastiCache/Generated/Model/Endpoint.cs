@@ -67,9 +67,9 @@ namespace Amazon.ElastiCache.Model
         /// The port number that the cache engine is listening on.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

@@ -51,9 +51,9 @@ namespace Amazon.LexModelsV2.Model
         /// The creation date and time for the updated test set.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.LexModelsV2.Model
         ///  The date and time of the last update for the updated test set.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.LexModelsV2.Model
         /// The number of conversation turns from the updated test set.
         /// </para>
         /// </summary>
-        public int NumTurns
+        public int? NumTurns
         {
-            get { return this._numTurns.GetValueOrDefault(); }
+            get { return this._numTurns; }
             set { this._numTurns = value; }
         }
 

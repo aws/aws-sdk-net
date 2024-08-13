@@ -13,11 +13,13 @@
   * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.S3;
+using Amazon.S3.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AWSSDK.UnitTests.S3.Net45.Custom
+namespace AWSSDK.UnitTests.S3.Custom
 {
     [TestClass]
     public class S3EndpointFlagTests
@@ -41,7 +43,8 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
                     RegionEndpoint = Amazon.RegionEndpoint.USEast1
                 };
                 // Simulate a first service call
-                var url = config.DetermineServiceURL();
+                // Use ListBucketsRequest as it is the most basic S3 request
+                var url = config.DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(new ListBucketsRequest())).URL;
                 Assert.AreEqual(expectedEndpointUrl, url);
             }
             finally
@@ -69,7 +72,8 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
                     USEast1RegionalEndpointValue = configFlagValue
                 };
                 // Simulate a first service call
-                var url = config.DetermineServiceURL();
+                // Use ListBucketsRequest as it is the most basic S3 request
+                var url = config.DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(new ListBucketsRequest())).URL;
                 Assert.AreEqual(expectedValue, config.USEast1RegionalEndpointValue);
                 Assert.AreEqual(expectedEndpointUrl, url);
             }
@@ -119,8 +123,9 @@ namespace AWSSDK.UnitTests.S3.Net45.Custom
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, invalidValue);
-                
-                Assert.ThrowsException<InvalidOperationException>(() => new AmazonS3Config().DetermineServiceURL());
+
+                // Use ListBucketsRequest as it is the most basic S3 request
+                Assert.ThrowsException<InvalidOperationException>(() => new AmazonS3Config().DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(new ListBucketsRequest())));
             }
             finally
             {

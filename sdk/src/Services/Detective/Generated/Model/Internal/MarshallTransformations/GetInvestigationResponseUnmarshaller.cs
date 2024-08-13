@@ -54,7 +54,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -84,13 +84,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ScopeEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ScopeEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScopeStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ScopeStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

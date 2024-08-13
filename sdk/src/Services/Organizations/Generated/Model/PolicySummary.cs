@@ -74,9 +74,9 @@ namespace Amazon.Organizations.Model
         /// but you cannot edit it.
         /// </para>
         /// </summary>
-        public bool AwsManaged
+        public bool? AwsManaged
         {
-            get { return this._awsManaged.GetValueOrDefault(); }
+            get { return this._awsManaged; }
             set { this._awsManaged = value; }
         }
 

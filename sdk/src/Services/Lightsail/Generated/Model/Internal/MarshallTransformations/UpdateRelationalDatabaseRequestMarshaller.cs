@@ -72,7 +72,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApplyImmediately())
                 {
                     context.Writer.WritePropertyName("applyImmediately");
-                    context.Writer.Write(publicRequest.ApplyImmediately);
+                    context.Writer.Write(publicRequest.ApplyImmediately.Value);
                 }
 
                 if(publicRequest.IsSetCaCertificateIdentifier())
@@ -84,13 +84,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisableBackupRetention())
                 {
                     context.Writer.WritePropertyName("disableBackupRetention");
-                    context.Writer.Write(publicRequest.DisableBackupRetention);
+                    context.Writer.Write(publicRequest.DisableBackupRetention.Value);
                 }
 
                 if(publicRequest.IsSetEnableBackupRetention())
                 {
                     context.Writer.WritePropertyName("enableBackupRetention");
-                    context.Writer.Write(publicRequest.EnableBackupRetention);
+                    context.Writer.Write(publicRequest.EnableBackupRetention.Value);
                 }
 
                 if(publicRequest.IsSetMasterUserPassword())
@@ -114,7 +114,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
                 }
 
                 if(publicRequest.IsSetRelationalDatabaseBlueprintId())
@@ -132,7 +132,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRotateMasterUserPassword())
                 {
                     context.Writer.WritePropertyName("rotateMasterUserPassword");
-                    context.Writer.Write(publicRequest.RotateMasterUserPassword);
+                    context.Writer.Write(publicRequest.RotateMasterUserPassword.Value);
                 }
 
                 writer.WriteObjectEnd();

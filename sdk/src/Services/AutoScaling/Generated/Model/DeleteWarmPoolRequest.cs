@@ -71,9 +71,9 @@ namespace Amazon.AutoScaling.Model
         /// outstanding lifecycle actions associated with the warm pool instances.
         /// </para>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

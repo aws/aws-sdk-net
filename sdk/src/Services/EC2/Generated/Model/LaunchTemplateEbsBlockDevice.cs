@@ -49,9 +49,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the EBS volume is deleted on instance termination.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the EBS volume is encrypted.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.EC2.Model
         /// The number of I/O operations per second (IOPS) that the volume supports. 
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.EC2.Model
         /// The throughput that the volume supports, in MiB/s.
         /// </para>
         /// </summary>
-        public int Throughput
+        public int? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.EC2.Model
         /// The size of the volume, in GiB.
         /// </para>
         /// </summary>
-        public int VolumeSize
+        public int? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

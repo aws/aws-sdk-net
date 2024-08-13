@@ -44,9 +44,9 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         /// The total amount of running instances using this subscription.
         /// </para>
         /// </summary>
-        public long InstanceCount
+        public long? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

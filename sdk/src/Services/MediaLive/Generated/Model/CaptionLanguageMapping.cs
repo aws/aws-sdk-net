@@ -45,9 +45,9 @@ namespace Amazon.MediaLive.Model
         /// (maximum of 4)
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]
-        public int CaptionChannel
+        public int? CaptionChannel
         {
-            get { return this._captionChannel.GetValueOrDefault(); }
+            get { return this._captionChannel; }
             set { this._captionChannel = value; }
         }
 

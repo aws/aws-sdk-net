@@ -103,9 +103,9 @@ namespace Amazon.FSx.Model
         /// your account and the ones shared with you from another account.
         /// </para>
         /// </summary>
-        public bool IncludeShared
+        public bool? IncludeShared
         {
-            get { return this._includeShared.GetValueOrDefault(); }
+            get { return this._includeShared; }
             set { this._includeShared = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property MaxResults.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

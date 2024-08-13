@@ -70,9 +70,9 @@ namespace Amazon.Appflow.Model
         /// flow run. 
         /// </para>
         /// </summary>
-        public DateTime FirstExecutionFrom
+        public DateTime? FirstExecutionFrom
         {
-            get { return this._firstExecutionFrom.GetValueOrDefault(); }
+            get { return this._firstExecutionFrom; }
             set { this._firstExecutionFrom = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Appflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int FlowErrorDeactivationThreshold
+        public int? FlowErrorDeactivationThreshold
         {
-            get { return this._flowErrorDeactivationThreshold.GetValueOrDefault(); }
+            get { return this._flowErrorDeactivationThreshold; }
             set { this._flowErrorDeactivationThreshold = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Appflow.Model
         /// follows the ISO 8601 standard, such as <c>2022-04-27T13:00:00-07:00</c>.
         /// </para>
         /// </summary>
-        public DateTime ScheduleEndTime
+        public DateTime? ScheduleEndTime
         {
-            get { return this._scheduleEndTime.GetValueOrDefault(); }
+            get { return this._scheduleEndTime; }
             set { this._scheduleEndTime = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.Appflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=36000)]
-        public long ScheduleOffset
+        public long? ScheduleOffset
         {
-            get { return this._scheduleOffset.GetValueOrDefault(); }
+            get { return this._scheduleOffset; }
             set { this._scheduleOffset = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.Appflow.Model
         /// that follows the ISO 8601 standard, such as <c>2022-04-26T13:00:00-07:00</c>.
         /// </para>
         /// </summary>
-        public DateTime ScheduleStartTime
+        public DateTime? ScheduleStartTime
         {
-            get { return this._scheduleStartTime.GetValueOrDefault(); }
+            get { return this._scheduleStartTime; }
             set { this._scheduleStartTime = value; }
         }
 

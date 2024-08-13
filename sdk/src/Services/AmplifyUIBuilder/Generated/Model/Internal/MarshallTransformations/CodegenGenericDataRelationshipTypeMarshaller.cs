@@ -68,13 +68,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCanUnlinkAssociatedModel())
             {
                 context.Writer.WritePropertyName("canUnlinkAssociatedModel");
-                context.Writer.Write(requestObject.CanUnlinkAssociatedModel);
+                context.Writer.Write(requestObject.CanUnlinkAssociatedModel.Value);
             }
 
             if(requestObject.IsSetIsHasManyIndex())
             {
                 context.Writer.WritePropertyName("isHasManyIndex");
-                context.Writer.Write(requestObject.IsHasManyIndex);
+                context.Writer.Write(requestObject.IsHasManyIndex.Value);
             }
 
             if(requestObject.IsSetRelatedJoinFieldName())

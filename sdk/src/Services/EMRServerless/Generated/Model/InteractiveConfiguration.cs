@@ -44,9 +44,9 @@ namespace Amazon.EMRServerless.Model
         /// Enables an Apache Livy endpoint that you can connect to and run interactive jobs.
         /// </para>
         /// </summary>
-        public bool LivyEndpointEnabled
+        public bool? LivyEndpointEnabled
         {
-            get { return this._livyEndpointEnabled.GetValueOrDefault(); }
+            get { return this._livyEndpointEnabled; }
             set { this._livyEndpointEnabled = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.EMRServerless.Model
         /// in a notebook.
         /// </para>
         /// </summary>
-        public bool StudioEnabled
+        public bool? StudioEnabled
         {
-            get { return this._studioEnabled.GetValueOrDefault(); }
+            get { return this._studioEnabled; }
             set { this._studioEnabled = value; }
         }
 

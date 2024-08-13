@@ -46,9 +46,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public long ExpiresInSec
+        public long? ExpiresInSec
         {
-            get { return this._expiresInSec.GetValueOrDefault(); }
+            get { return this._expiresInSec; }
             set { this._expiresInSec = value; }
         }
 

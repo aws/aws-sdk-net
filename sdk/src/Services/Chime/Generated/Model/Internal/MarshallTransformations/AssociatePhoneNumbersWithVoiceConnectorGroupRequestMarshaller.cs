@@ -85,7 +85,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceAssociate())
                 {
                     context.Writer.WritePropertyName("ForceAssociate");
-                    context.Writer.Write(publicRequest.ForceAssociate);
+                    context.Writer.Write(publicRequest.ForceAssociate.Value);
                 }
 
                 writer.WriteObjectEnd();

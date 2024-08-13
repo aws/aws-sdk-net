@@ -45,9 +45,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int NodeCount
+        public int? NodeCount
         {
-            get { return this._nodeCount.GetValueOrDefault(); }
+            get { return this._nodeCount; }
             set { this._nodeCount = value; }
         }
 

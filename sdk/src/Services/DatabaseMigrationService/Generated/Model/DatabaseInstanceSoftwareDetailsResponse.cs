@@ -105,9 +105,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The operating system architecture of the database.
         /// </para>
         /// </summary>
-        public int OsArchitecture
+        public int? OsArchitecture
         {
-            get { return this._osArchitecture.GetValueOrDefault(); }
+            get { return this._osArchitecture; }
             set { this._osArchitecture = value; }
         }
 

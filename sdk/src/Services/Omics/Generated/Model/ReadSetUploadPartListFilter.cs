@@ -43,9 +43,9 @@ namespace Amazon.Omics.Model
         ///  Filters for read set uploads after a specified time. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Omics.Model
         ///  Filters for read set part uploads before a specified time. 
         /// </para>
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 

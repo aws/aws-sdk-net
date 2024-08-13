@@ -101,6 +101,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAIMLOptions())
+                {
+                    context.Writer.WritePropertyName("AIMLOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AIMLOptionsInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AIMLOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAutoTuneOptions())
                 {
                     context.Writer.WritePropertyName("AutoTuneOptions");
@@ -148,7 +159,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetDryRunMode())

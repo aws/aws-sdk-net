@@ -181,9 +181,9 @@ namespace Amazon.RDS.Model
         /// The progress of the snapshot or cluster export task as a percentage.
         /// </para>
         /// </summary>
-        public int PercentProgress
+        public int? PercentProgress
         {
-            get { return this._percentProgress.GetValueOrDefault(); }
+            get { return this._percentProgress; }
             set { this._percentProgress = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.RDS.Model
         /// The time when the snapshot was created.
         /// </para>
         /// </summary>
-        public DateTime SnapshotTime
+        public DateTime? SnapshotTime
         {
-            get { return this._snapshotTime.GetValueOrDefault(); }
+            get { return this._snapshotTime; }
             set { this._snapshotTime = value; }
         }
 
@@ -332,9 +332,9 @@ namespace Amazon.RDS.Model
         /// The time when the snapshot or cluster export task ended.
         /// </para>
         /// </summary>
-        public DateTime TaskEndTime
+        public DateTime? TaskEndTime
         {
-            get { return this._taskEndTime.GetValueOrDefault(); }
+            get { return this._taskEndTime; }
             set { this._taskEndTime = value; }
         }
 
@@ -350,9 +350,9 @@ namespace Amazon.RDS.Model
         /// The time when the snapshot or cluster export task started.
         /// </para>
         /// </summary>
-        public DateTime TaskStartTime
+        public DateTime? TaskStartTime
         {
-            get { return this._taskStartTime.GetValueOrDefault(); }
+            get { return this._taskStartTime; }
             set { this._taskStartTime = value; }
         }
 
@@ -368,9 +368,9 @@ namespace Amazon.RDS.Model
         /// The total amount of data exported, in gigabytes.
         /// </para>
         /// </summary>
-        public int TotalExtractedDataInGB
+        public int? TotalExtractedDataInGB
         {
-            get { return this._totalExtractedDataInGB.GetValueOrDefault(); }
+            get { return this._totalExtractedDataInGB; }
             set { this._totalExtractedDataInGB = value; }
         }
 

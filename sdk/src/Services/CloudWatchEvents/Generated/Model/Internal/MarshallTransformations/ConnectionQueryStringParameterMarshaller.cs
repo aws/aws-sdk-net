@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsValueSecret())
             {
                 context.Writer.WritePropertyName("IsValueSecret");
-                context.Writer.Write(requestObject.IsValueSecret);
+                context.Writer.Write(requestObject.IsValueSecret.Value);
             }
 
             if(requestObject.IsSetKey())

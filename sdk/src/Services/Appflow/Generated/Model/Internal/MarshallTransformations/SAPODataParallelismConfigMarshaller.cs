@@ -51,7 +51,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxParallelism())
             {
                 context.Writer.WritePropertyName("maxParallelism");
-                context.Writer.Write(requestObject.MaxParallelism);
+                context.Writer.Write(requestObject.MaxParallelism.Value);
             }
 
         }

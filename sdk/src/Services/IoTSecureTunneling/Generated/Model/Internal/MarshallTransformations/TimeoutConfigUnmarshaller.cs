@@ -68,7 +68,7 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxLifetimeTimeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLifetimeTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

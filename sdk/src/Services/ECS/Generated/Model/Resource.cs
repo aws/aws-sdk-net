@@ -48,9 +48,9 @@ namespace Amazon.ECS.Model
         /// precision floating-point type.
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.ECS.Model
         /// When the <c>integerValue</c> type is set, the value of the resource must be an integer.
         /// </para>
         /// </summary>
-        public int IntegerValue
+        public int? IntegerValue
         {
-            get { return this._integerValue.GetValueOrDefault(); }
+            get { return this._integerValue; }
             set { this._integerValue = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.ECS.Model
         /// precision floating-point type.
         /// </para>
         /// </summary>
-        public long LongValue
+        public long? LongValue
         {
-            get { return this._longValue.GetValueOrDefault(); }
+            get { return this._longValue; }
             set { this._longValue = value; }
         }
 

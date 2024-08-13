@@ -53,9 +53,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the cached responses are encrypted. 
         /// </para>
         /// </summary>
-        public bool CacheDataEncrypted
+        public bool? CacheDataEncrypted
         {
-            get { return this._cacheDataEncrypted.GetValueOrDefault(); }
+            get { return this._cacheDataEncrypted; }
             set { this._cacheDataEncrypted = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.SecurityHub.Model
         /// TTL, the longer the response is cached.
         /// </para>
         /// </summary>
-        public int CacheTtlInSeconds
+        public int? CacheTtlInSeconds
         {
-            get { return this._cacheTtlInSeconds.GetValueOrDefault(); }
+            get { return this._cacheTtlInSeconds; }
             set { this._cacheTtlInSeconds = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.SecurityHub.Model
         /// be cached, a cache cluster must be enabled on the stage.
         /// </para>
         /// </summary>
-        public bool CachingEnabled
+        public bool? CachingEnabled
         {
-            get { return this._cachingEnabled.GetValueOrDefault(); }
+            get { return this._cachingEnabled; }
             set { this._cachingEnabled = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.SecurityHub.Model
         /// affects the log entries that are pushed to CloudWatch Logs.
         /// </para>
         /// </summary>
-        public bool DataTraceEnabled
+        public bool? DataTraceEnabled
         {
-            get { return this._dataTraceEnabled.GetValueOrDefault(); }
+            get { return this._dataTraceEnabled; }
             set { this._dataTraceEnabled = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether CloudWatch metrics are enabled for the method. 
         /// </para>
         /// </summary>
-        public bool MetricsEnabled
+        public bool? MetricsEnabled
         {
-            get { return this._metricsEnabled.GetValueOrDefault(); }
+            get { return this._metricsEnabled; }
             set { this._metricsEnabled = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether authorization is required for a cache invalidation request.
         /// </para>
         /// </summary>
-        public bool RequireAuthorizationForCacheControl
+        public bool? RequireAuthorizationForCacheControl
         {
-            get { return this._requireAuthorizationForCacheControl.GetValueOrDefault(); }
+            get { return this._requireAuthorizationForCacheControl; }
             set { this._requireAuthorizationForCacheControl = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.SecurityHub.Model
         /// The throttling burst limit for the method.
         /// </para>
         /// </summary>
-        public int ThrottlingBurstLimit
+        public int? ThrottlingBurstLimit
         {
-            get { return this._throttlingBurstLimit.GetValueOrDefault(); }
+            get { return this._throttlingBurstLimit; }
             set { this._throttlingBurstLimit = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.SecurityHub.Model
         /// The throttling rate limit for the method.
         /// </para>
         /// </summary>
-        public double ThrottlingRateLimit
+        public double? ThrottlingRateLimit
         {
-            get { return this._throttlingRateLimit.GetValueOrDefault(); }
+            get { return this._throttlingRateLimit; }
             set { this._throttlingRateLimit = value; }
         }
 

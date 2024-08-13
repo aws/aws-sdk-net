@@ -310,9 +310,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-360, Max=360)]
-        public double StartAngle
+        public double? StartAngle
         {
-            get { return this._startAngle.GetValueOrDefault(); }
+            get { return this._startAngle; }
             set { this._startAngle = value; }
         }
 

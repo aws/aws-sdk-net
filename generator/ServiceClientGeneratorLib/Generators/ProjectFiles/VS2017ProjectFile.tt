@@ -66,14 +66,6 @@
 <#
     }
 
-    if (this.Project.TargetFrameworks.Contains("net35"))
-    {
-#>
-    <!-- workaround per https://github.com/dotnet/msbuild/issues/5985 -->
-    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
-<#
-    }
-
     if (!string.IsNullOrEmpty(this.Project.SupressWarnings))
     {
 #>
@@ -109,6 +101,27 @@
   </PropertyGroup>
 <#
     }
+    if (this.Project.AssemblyName.Contains("UnitTests") && this.Project.TargetFrameworks.Contains("net472"))
+    {
+#>
+  <PropertyGroup>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+<#
+    }
+#>
+  <!-- 
+    For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
+    the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
+  -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <LangVersion>11.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+<#
+
 #>
 <#
 	if (!this.Project.AssemblyName.Contains("UnitTests"))
@@ -130,7 +143,7 @@
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
 <#
-    if(this.Project.AssemblyName == "AWSSDK.UnitTests.Net35" || this.Project.AssemblyName == "AWSSDK.UnitTests.Net45")
+    if (this.Project.AssemblyName == "AWSSDK.UnitTests.NetFramework")
     {
 #>
         <AssemblyOriginatorKeyFile>../../awssdk.dll.snk</AssemblyOriginatorKeyFile>

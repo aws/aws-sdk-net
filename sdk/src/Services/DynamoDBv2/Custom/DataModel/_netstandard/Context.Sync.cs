@@ -26,14 +26,23 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Table methods
 
-        /// <summary>
-        /// Retrieves the target table for the specified type
-        /// </summary>
-        /// <typeparam name="T">Type to retrieve table for</typeparam>
-        /// <returns>Table object</returns>
+        /// <inheritdoc/>
+        public Table GetTargetTable<T>()
+        {
+            return GetTargetTableInternal<T>(new DynamoDBFlatConfig(null, Config));
+        }
+
+        /// <inheritdoc/>
+        [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
         public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
         {
-            return GetTargetTableInternal<T>(operationConfig);
+            return GetTargetTableInternal<T>(new DynamoDBFlatConfig(operationConfig, Config));
+        }
+
+        /// <inheritdoc/>
+        public Table GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
+        {
+            return GetTargetTableInternal<T>(new DynamoDBFlatConfig(getTargetTableConfig?.ToDynamoDBOperationConfig(), Config));
         }
 
         #endregion

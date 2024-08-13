@@ -72,7 +72,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeMemberAccounts())
                 {
                     context.Writer.WritePropertyName("includeMemberAccounts");
-                    context.Writer.Write(publicRequest.IncludeMemberAccounts);
+                    context.Writer.Write(publicRequest.IncludeMemberAccounts.Value);
                 }
 
                 if(publicRequest.IsSetStatus())

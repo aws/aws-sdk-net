@@ -63,9 +63,9 @@ namespace Amazon.TaxSettings.Model
         /// Otherwise, this is false. 
         /// </para>
         /// </summary>
-        public bool IsGroupVatEnabled
+        public bool? IsGroupVatEnabled
         {
-            get { return this._isGroupVatEnabled.GetValueOrDefault(); }
+            get { return this._isGroupVatEnabled; }
             set { this._isGroupVatEnabled = value; }
         }
 

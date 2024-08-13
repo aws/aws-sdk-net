@@ -111,9 +111,9 @@ namespace Amazon.FSx.Model
         /// associations. This value defaults to false.
         /// </para>
         /// </summary>
-        public bool CopyTagsToDataRepositoryAssociations
+        public bool? CopyTagsToDataRepositoryAssociations
         {
-            get { return this._copyTagsToDataRepositoryAssociations.GetValueOrDefault(); }
+            get { return this._copyTagsToDataRepositoryAssociations; }
             set { this._copyTagsToDataRepositoryAssociations = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int StorageCapacity
+        public int? StorageCapacity
         {
-            get { return this._storageCapacity.GetValueOrDefault(); }
+            get { return this._storageCapacity; }
             set { this._storageCapacity = value; }
         }
 

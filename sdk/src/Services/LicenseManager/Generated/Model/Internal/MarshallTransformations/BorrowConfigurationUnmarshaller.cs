@@ -68,13 +68,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowEarlyCheckIn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowEarlyCheckIn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxTimeToLiveInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTimeToLiveInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -143,9 +143,9 @@ namespace Amazon.DataExchange.Model
         /// The time and date at which the signed URL expires, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime SignedUrlExpiresAt
+        public DateTime? SignedUrlExpiresAt
         {
-            get { return this._signedUrlExpiresAt.GetValueOrDefault(); }
+            get { return this._signedUrlExpiresAt; }
             set { this._signedUrlExpiresAt = value; }
         }
 

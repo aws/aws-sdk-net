@@ -57,7 +57,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcluded())
             {
                 context.Writer.WritePropertyName("excluded");
-                context.Writer.Write(requestObject.Excluded);
+                context.Writer.Write(requestObject.Excluded.Value);
             }
 
             if(requestObject.IsSetExcludeReason())

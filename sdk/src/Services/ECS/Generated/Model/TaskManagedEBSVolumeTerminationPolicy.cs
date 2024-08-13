@@ -49,9 +49,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 

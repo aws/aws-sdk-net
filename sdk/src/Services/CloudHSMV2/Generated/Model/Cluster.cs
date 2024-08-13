@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Contains information about an AWS CloudHSM cluster.
+    /// Contains information about an CloudHSM cluster.
     /// </summary>
     public partial class Cluster
     {
@@ -129,9 +129,9 @@ namespace Amazon.CloudHSMV2.Model
         /// The date and time when the cluster was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTimestamp
+        public DateTime? CreateTimestamp
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
+            get { return this._createTimestamp; }
             set { this._createTimestamp = value; }
         }
 

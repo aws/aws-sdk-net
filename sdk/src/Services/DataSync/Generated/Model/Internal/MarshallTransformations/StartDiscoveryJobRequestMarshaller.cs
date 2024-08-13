@@ -83,7 +83,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCollectionDurationMinutes())
                 {
                     context.Writer.WritePropertyName("CollectionDurationMinutes");
-                    context.Writer.Write(publicRequest.CollectionDurationMinutes);
+                    context.Writer.Write(publicRequest.CollectionDurationMinutes.Value);
                 }
 
                 if(publicRequest.IsSetStorageSystemArn())

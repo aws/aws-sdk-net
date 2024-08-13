@@ -43,9 +43,9 @@ namespace Amazon.AppTest.Model
         /// Force stops the AWS Mainframe Modernization managed action properties.
         /// </para>
         /// </summary>
-        public bool ForceStop
+        public bool? ForceStop
         {
-            get { return this._forceStop.GetValueOrDefault(); }
+            get { return this._forceStop; }
             set { this._forceStop = value; }
         }
 

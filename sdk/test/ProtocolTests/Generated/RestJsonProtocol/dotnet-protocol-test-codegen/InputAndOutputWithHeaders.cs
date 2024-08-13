@@ -18,7 +18,7 @@
  */
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Amazon.RestJsonProtocol;
 using Amazon.RestJsonProtocol.Model;
 using Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations;
@@ -458,8 +458,6 @@ namespace AWSSDK.ProtocolTests.RestJson
         /// Tests responses with string list header bindings that require
         /// quoting
         /// </summary>
-        // This test requires a breaking change, and will be addressed in V4
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]

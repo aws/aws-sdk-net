@@ -68,13 +68,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("rpoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RpoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rtoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RtoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }

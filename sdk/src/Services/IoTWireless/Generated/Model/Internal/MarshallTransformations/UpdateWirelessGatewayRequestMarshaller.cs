@@ -95,13 +95,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxEirp())
                 {
                     context.Writer.WritePropertyName("MaxEirp");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.MaxEirp))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.MaxEirp.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MaxEirp));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MaxEirp.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.MaxEirp);
+                        context.Writer.Write(publicRequest.MaxEirp.Value);
                     }
                 }
 

@@ -47,9 +47,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// A numeric value corresponding to a critical finding.
         /// </para>
         /// </summary>
-        public double Critical
+        public double? Critical
         {
-            get { return this._critical.GetValueOrDefault(); }
+            get { return this._critical; }
             set { this._critical = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// A numeric value corresponding to a high severity finding.
         /// </para>
         /// </summary>
-        public double High
+        public double? High
         {
-            get { return this._high.GetValueOrDefault(); }
+            get { return this._high; }
             set { this._high = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// A numeric value corresponding to an informational finding.
         /// </para>
         /// </summary>
-        public double Info
+        public double? Info
         {
-            get { return this._info.GetValueOrDefault(); }
+            get { return this._info; }
             set { this._info = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// A numeric value corresponding to a low severity finding.
         /// </para>
         /// </summary>
-        public double Low
+        public double? Low
         {
-            get { return this._low.GetValueOrDefault(); }
+            get { return this._low; }
             set { this._low = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// A numeric value corresponding to a medium severity finding.
         /// </para>
         /// </summary>
-        public double Medium
+        public double? Medium
         {
-            get { return this._medium.GetValueOrDefault(); }
+            get { return this._medium; }
             set { this._medium = value; }
         }
 

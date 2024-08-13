@@ -57,7 +57,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Options", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                         continue;
                     }

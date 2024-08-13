@@ -59,9 +59,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ProgramNumber. Unique program number.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=65535)]
-        public int ProgramNumber
+        public int? ProgramNumber
         {
-            get { return this._programNumber.GetValueOrDefault(); }
+            get { return this._programNumber; }
             set { this._programNumber = value; }
         }
 

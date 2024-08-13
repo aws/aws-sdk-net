@@ -127,9 +127,9 @@ namespace Amazon.DeviceFarm.Model
         /// The date and time the remote access session was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -348,9 +348,9 @@ namespace Amazon.DeviceFarm.Model
         /// longer supported</a>.
         /// </para>
         /// </summary>
-        public bool RemoteDebugEnabled
+        public bool? RemoteDebugEnabled
         {
-            get { return this._remoteDebugEnabled.GetValueOrDefault(); }
+            get { return this._remoteDebugEnabled; }
             set { this._remoteDebugEnabled = value; }
         }
 
@@ -386,9 +386,9 @@ namespace Amazon.DeviceFarm.Model
         /// session.
         /// </para>
         /// </summary>
-        public bool RemoteRecordEnabled
+        public bool? RemoteRecordEnabled
         {
-            get { return this._remoteRecordEnabled.GetValueOrDefault(); }
+            get { return this._remoteRecordEnabled; }
             set { this._remoteRecordEnabled = value; }
         }
 
@@ -457,9 +457,9 @@ namespace Amazon.DeviceFarm.Model
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>
-        public bool SkipAppResign
+        public bool? SkipAppResign
         {
-            get { return this._skipAppResign.GetValueOrDefault(); }
+            get { return this._skipAppResign; }
             set { this._skipAppResign = value; }
         }
 
@@ -475,9 +475,9 @@ namespace Amazon.DeviceFarm.Model
         /// The date and time the remote access session was started.
         /// </para>
         /// </summary>
-        public DateTime Started
+        public DateTime? Started
         {
-            get { return this._started.GetValueOrDefault(); }
+            get { return this._started; }
             set { this._started = value; }
         }
 
@@ -548,9 +548,9 @@ namespace Amazon.DeviceFarm.Model
         /// The date and time the remote access session was stopped.
         /// </para>
         /// </summary>
-        public DateTime Stopped
+        public DateTime? Stopped
         {
-            get { return this._stopped.GetValueOrDefault(); }
+            get { return this._stopped; }
             set { this._stopped = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The number of data access policies in the current account.
         /// </para>
         /// </summary>
-        public long DataPolicyCount
+        public long? DataPolicyCount
         {
-            get { return this._dataPolicyCount.GetValueOrDefault(); }
+            get { return this._dataPolicyCount; }
             set { this._dataPolicyCount = value; }
         }
 

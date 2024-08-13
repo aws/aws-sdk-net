@@ -46,9 +46,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int InitialNumberOfUsers
+        public int? InitialNumberOfUsers
         {
-            get { return this._initialNumberOfUsers.GetValueOrDefault(); }
+            get { return this._initialNumberOfUsers; }
             set { this._initialNumberOfUsers = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int SpawnRate
+        public int? SpawnRate
         {
-            get { return this._spawnRate.GetValueOrDefault(); }
+            get { return this._spawnRate; }
             set { this._spawnRate = value; }
         }
 

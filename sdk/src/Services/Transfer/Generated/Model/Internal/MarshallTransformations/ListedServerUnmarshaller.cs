@@ -110,7 +110,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UserCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UserCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

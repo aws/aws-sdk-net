@@ -47,17 +47,5 @@ namespace Amazon.Runtime.Internal.Util
 
             return request.Parameters.Count > 0;
         }
-
-#if BCL35
-        public static bool Wait(this WaitHandle semaphore)
-        {
-            return semaphore.WaitOne();
-        }
-        
-        public static void Dispose(this WaitHandle semaphore)
-        {
-            semaphore.Close();
-        }
-#endif
     }
 }

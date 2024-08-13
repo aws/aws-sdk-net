@@ -69,9 +69,9 @@ namespace Amazon.CustomerProfiles.Model
         /// flow run.
         /// </para>
         /// </summary>
-        public DateTime FirstExecutionFrom
+        public DateTime? FirstExecutionFrom
         {
-            get { return this._firstExecutionFrom.GetValueOrDefault(); }
+            get { return this._firstExecutionFrom; }
             set { this._firstExecutionFrom = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.CustomerProfiles.Model
         /// Specifies the scheduled end time for a scheduled-trigger flow.
         /// </para>
         /// </summary>
-        public DateTime ScheduleEndTime
+        public DateTime? ScheduleEndTime
         {
-            get { return this._scheduleEndTime.GetValueOrDefault(); }
+            get { return this._scheduleEndTime; }
             set { this._scheduleEndTime = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=36000)]
-        public long ScheduleOffset
+        public long? ScheduleOffset
         {
-            get { return this._scheduleOffset.GetValueOrDefault(); }
+            get { return this._scheduleOffset; }
             set { this._scheduleOffset = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.CustomerProfiles.Model
         /// Specifies the scheduled start time for a scheduled-trigger flow.
         /// </para>
         /// </summary>
-        public DateTime ScheduleStartTime
+        public DateTime? ScheduleStartTime
         {
-            get { return this._scheduleStartTime.GetValueOrDefault(); }
+            get { return this._scheduleStartTime; }
             set { this._scheduleStartTime = value; }
         }
 

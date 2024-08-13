@@ -60,13 +60,13 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expiresIn", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ExpiresIn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("interval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Interval = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,7 +51,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoEnable())
             {
                 context.Writer.WritePropertyName("autoEnable");
-                context.Writer.Write(requestObject.AutoEnable);
+                context.Writer.Write(requestObject.AutoEnable.Value);
             }
 
         }

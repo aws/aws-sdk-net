@@ -83,9 +83,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// 
         /// </para>
         /// </summary>
-        public bool CleanSourceMetadataOnMismatch
+        public bool? CleanSourceMetadataOnMismatch
         {
-            get { return this._cleanSourceMetadataOnMismatch.GetValueOrDefault(); }
+            get { return this._cleanSourceMetadataOnMismatch; }
             set { this._cleanSourceMetadataOnMismatch = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// In the example, DMS checks for changes in the binary logs every five seconds.
         /// </para>
         /// </summary>
-        public int EventsPollInterval
+        public int? EventsPollInterval
         {
-            get { return this._eventsPollInterval.GetValueOrDefault(); }
+            get { return this._eventsPollInterval; }
             set { this._eventsPollInterval = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Sets the client statement timeout (in seconds) for a MySQL source endpoint.
         /// </para>
         /// </summary>
-        public int ExecuteTimeout
+        public int? ExecuteTimeout
         {
-            get { return this._executeTimeout.GetValueOrDefault(); }
+            get { return this._executeTimeout; }
             set { this._executeTimeout = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Example: <c>maxFileSize=512</c> 
         /// </para>
         /// </summary>
-        public int MaxFileSize
+        public int? MaxFileSize
         {
-            get { return this._maxFileSize.GetValueOrDefault(); }
+            get { return this._maxFileSize; }
             set { this._maxFileSize = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Example: <c>parallelLoadThreads=1</c> 
         /// </para>
         /// </summary>
-        public int ParallelLoadThreads
+        public int? ParallelLoadThreads
         {
-            get { return this._parallelLoadThreads.GetValueOrDefault(); }
+            get { return this._parallelLoadThreads; }
             set { this._parallelLoadThreads = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint TCP port.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

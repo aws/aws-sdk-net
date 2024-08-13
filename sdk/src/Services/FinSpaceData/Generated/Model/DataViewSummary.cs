@@ -55,9 +55,9 @@ namespace Amazon.FinSpaceData.Model
         /// 1635768000000.
         /// </para>
         /// </summary>
-        public long AsOfTimestamp
+        public long? AsOfTimestamp
         {
-            get { return this._asOfTimestamp.GetValueOrDefault(); }
+            get { return this._asOfTimestamp; }
             set { this._asOfTimestamp = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.FinSpaceData.Model
         /// The flag to indicate Dataview should be updated automatically.
         /// </para>
         /// </summary>
-        public bool AutoUpdate
+        public bool? AutoUpdate
         {
-            get { return this._autoUpdate.GetValueOrDefault(); }
+            get { return this._autoUpdate; }
             set { this._autoUpdate = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.FinSpaceData.Model
         /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public long CreateTime
+        public long? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.FinSpaceData.Model
         /// is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

@@ -128,7 +128,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 }
                 if (context.TestExpression("lastAnalyzedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAnalyzedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -140,7 +140,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 }
                 if (context.TestExpression("moreServerAssociationExists", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MoreServerAssociationExists = unmarshaller.Unmarshall(context);
                     continue;
                 }

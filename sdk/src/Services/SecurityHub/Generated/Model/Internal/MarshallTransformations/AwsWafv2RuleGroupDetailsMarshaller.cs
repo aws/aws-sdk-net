@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacity())
             {
                 context.Writer.WritePropertyName("Capacity");
-                context.Writer.Write(requestObject.Capacity);
+                context.Writer.Write(requestObject.Capacity.Value);
             }
 
             if(requestObject.IsSetDescription())

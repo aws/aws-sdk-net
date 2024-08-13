@@ -68,7 +68,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AddIdleTimeBetweenReads", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AddIdleTimeBetweenReads = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AvoidEmptyBatches", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AvoidEmptyBatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DescribeShardInterval", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DescribeShardInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,43 +116,43 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IdleTimeBetweenReadsInMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IdleTimeBetweenReadsInMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxFetchRecordsPerShard", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxFetchRecordsPerShard = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxFetchTimeInMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxFetchTimeInMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxRecordPerRead", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxRecordPerRead = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxRetryIntervalMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxRetryIntervalMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumRetries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumRetries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RetryIntervalMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RetryIntervalMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -176,7 +176,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartingTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartingTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

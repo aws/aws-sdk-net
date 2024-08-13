@@ -74,7 +74,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MetricThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

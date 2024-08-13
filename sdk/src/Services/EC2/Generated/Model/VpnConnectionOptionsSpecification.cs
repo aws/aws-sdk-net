@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool EnableAcceleration
+        public bool? EnableAcceleration
         {
-            get { return this._enableAcceleration.GetValueOrDefault(); }
+            get { return this._enableAcceleration; }
             set { this._enableAcceleration = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool StaticRoutesOnly
+        public bool? StaticRoutesOnly
         {
-            get { return this._staticRoutesOnly.GetValueOrDefault(); }
+            get { return this._staticRoutesOnly; }
             set { this._staticRoutesOnly = value; }
         }
 

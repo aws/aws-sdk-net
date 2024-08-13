@@ -90,7 +90,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -102,13 +102,13 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSubmittedAfter())
                 {
                     context.Writer.WritePropertyName("SubmittedAfter");
-                    context.Writer.Write(publicRequest.SubmittedAfter);
+                    context.Writer.Write(publicRequest.SubmittedAfter.Value);
                 }
 
                 if(publicRequest.IsSetSubmittedBefore())
                 {
                     context.Writer.WritePropertyName("SubmittedBefore");
-                    context.Writer.Write(publicRequest.SubmittedBefore);
+                    context.Writer.Write(publicRequest.SubmittedBefore.Value);
                 }
 
                 writer.WriteObjectEnd();

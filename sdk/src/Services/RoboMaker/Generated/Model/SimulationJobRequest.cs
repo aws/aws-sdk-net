@@ -163,9 +163,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MaxJobDurationInSeconds
+        public long? MaxJobDurationInSeconds
         {
-            get { return this._maxJobDurationInSeconds.GetValueOrDefault(); }
+            get { return this._maxJobDurationInSeconds; }
             set { this._maxJobDurationInSeconds = value; }
         }
 
@@ -255,9 +255,9 @@ namespace Amazon.RoboMaker.Model
         /// applications include Gazebo, rqt, rviz and terminal access. 
         /// </para>
         /// </summary>
-        public bool UseDefaultApplications
+        public bool? UseDefaultApplications
         {
-            get { return this._useDefaultApplications.GetValueOrDefault(); }
+            get { return this._useDefaultApplications; }
             set { this._useDefaultApplications = value; }
         }
 

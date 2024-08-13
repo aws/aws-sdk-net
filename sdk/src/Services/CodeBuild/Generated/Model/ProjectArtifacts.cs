@@ -86,9 +86,9 @@ namespace Amazon.CodeBuild.Model
         /// an invalidInputException is thrown. 
         /// </para>
         /// </summary>
-        public bool EncryptionDisabled
+        public bool? EncryptionDisabled
         {
-            get { return this._encryptionDisabled.GetValueOrDefault(); }
+            get { return this._encryptionDisabled; }
             set { this._encryptionDisabled = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.CodeBuild.Model
         /// name so that it is always unique. 
         /// </para>
         /// </summary>
-        public bool OverrideArtifactName
+        public bool? OverrideArtifactName
         {
-            get { return this._overrideArtifactName.GetValueOrDefault(); }
+            get { return this._overrideArtifactName; }
             set { this._overrideArtifactName = value; }
         }
 

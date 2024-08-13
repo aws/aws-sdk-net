@@ -95,9 +95,9 @@ namespace Amazon.CodeDeploy.Model
         /// The minimum healthy instance value.
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

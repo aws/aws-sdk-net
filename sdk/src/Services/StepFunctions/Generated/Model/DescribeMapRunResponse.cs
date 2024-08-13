@@ -135,9 +135,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int MaxConcurrency
+        public int? MaxConcurrency
         {
-            get { return this._maxConcurrency.GetValueOrDefault(); }
+            get { return this._maxConcurrency; }
             set { this._maxConcurrency = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.StepFunctions.Model
         /// redrive a Map Run.
         /// </para>
         /// </summary>
-        public int RedriveCount
+        public int? RedriveCount
         {
-            get { return this._redriveCount.GetValueOrDefault(); }
+            get { return this._redriveCount; }
             set { this._redriveCount = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.StepFunctions.Model
         /// <c>redriveDate</c> is null.
         /// </para>
         /// </summary>
-        public DateTime RedriveDate
+        public DateTime? RedriveDate
         {
-            get { return this._redriveDate.GetValueOrDefault(); }
+            get { return this._redriveDate; }
             set { this._redriveDate = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.StepFunctions.Model
         /// The date when the Map Run was stopped.
         /// </para>
         /// </summary>
-        public DateTime StopDate
+        public DateTime? StopDate
         {
-            get { return this._stopDate.GetValueOrDefault(); }
+            get { return this._stopDate; }
             set { this._stopDate = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long ToleratedFailureCount
+        public long? ToleratedFailureCount
         {
-            get { return this._toleratedFailureCount.GetValueOrDefault(); }
+            get { return this._toleratedFailureCount; }
             set { this._toleratedFailureCount = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public float ToleratedFailurePercentage
+        public float? ToleratedFailurePercentage
         {
-            get { return this._toleratedFailurePercentage.GetValueOrDefault(); }
+            get { return this._toleratedFailurePercentage; }
             set { this._toleratedFailurePercentage = value; }
         }
 

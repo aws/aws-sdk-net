@@ -66,9 +66,9 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
-        public int VolumeSizeInGB
+        public int? VolumeSizeInGB
         {
-            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            get { return this._volumeSizeInGB; }
             set { this._volumeSizeInGB = value; }
         }
 

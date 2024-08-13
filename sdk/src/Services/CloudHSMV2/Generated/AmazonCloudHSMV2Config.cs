@@ -21,6 +21,8 @@ using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Endpoints;
 using Amazon.CloudHSMV2.Internal;
 
 namespace Amazon.CloudHSMV2
@@ -32,7 +34,10 @@ namespace Amazon.CloudHSMV2
     public partial class AmazonCloudHSMV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudHSM V2", "3.7.301.4");
+            InternalSDKUtils.BuildUserAgentString("CloudHSM V2", "4.0.0.0");
+
+        private static readonly AmazonCloudHSMV2EndpointResolver EndpointResolver =
+            new AmazonCloudHSMV2EndpointResolver();
 
         private string _userAgent = UserAgentString;
         ///<summary>
@@ -88,6 +93,25 @@ namespace Amazon.CloudHSMV2
                 return _userAgent;
             }
         }
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            var requestContext = new RequestContext(false, new AWS4Signer())
+            {
+                ClientConfig = this,
+                OriginalRequest = parameters.Request,
+                Request = new DefaultRequest(parameters.Request, ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            return EndpointResolver.GetEndpoint(executionContext);
+        }
+
 
     }
 }

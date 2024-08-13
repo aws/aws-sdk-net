@@ -90,9 +90,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// results in a single page along with a <c>nextToken</c> response element.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long DurationMillis
+        public long? DurationMillis
         {
-            get { return this._durationMillis.GetValueOrDefault(); }
+            get { return this._durationMillis; }
             set { this._durationMillis = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long NumberOfChannels
+        public long? NumberOfChannels
         {
-            get { return this._numberOfChannels.GetValueOrDefault(); }
+            get { return this._numberOfChannels; }
             set { this._numberOfChannels = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long SampleRate
+        public long? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

@@ -123,9 +123,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the alarm was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Lightsail.Model
         /// the alarm.
         /// </para>
         /// </summary>
-        public int DatapointsToAlarm
+        public int? DatapointsToAlarm
         {
-            get { return this._datapointsToAlarm.GetValueOrDefault(); }
+            get { return this._datapointsToAlarm; }
             set { this._datapointsToAlarm = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Lightsail.Model
         /// The number of periods over which data is compared to the specified threshold.
         /// </para>
         /// </summary>
-        public int EvaluationPeriods
+        public int? EvaluationPeriods
         {
-            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            get { return this._evaluationPeriods; }
             set { this._evaluationPeriods = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.Lightsail.Model
         /// Indicates whether the alarm is enabled.
         /// </para>
         /// </summary>
-        public bool NotificationEnabled
+        public bool? NotificationEnabled
         {
-            get { return this._notificationEnabled.GetValueOrDefault(); }
+            get { return this._notificationEnabled; }
             set { this._notificationEnabled = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=86400)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -429,9 +429,9 @@ namespace Amazon.Lightsail.Model
         /// The value against which the specified statistic is compared.
         /// </para>
         /// </summary>
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

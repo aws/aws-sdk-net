@@ -108,9 +108,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=36500)]
-        public int RetentionLockTimeInDays
+        public int? RetentionLockTimeInDays
         {
-            get { return this._retentionLockTimeInDays.GetValueOrDefault(); }
+            get { return this._retentionLockTimeInDays; }
             set { this._retentionLockTimeInDays = value; }
         }
 

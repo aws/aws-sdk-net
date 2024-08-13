@@ -78,6 +78,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.FormTypeItem = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lineageNodeTypeItem", targetDepth))
+                {
+                    var unmarshaller = LineageNodeTypeItemUnmarshaller.Instance;
+                    unmarshalledObject.LineageNodeTypeItem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -112,9 +112,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The amount of data restored to the new table so far, in megabytes (MB).
         /// </para>
         /// </summary>
-        public long ProgressInMegaBytes
+        public long? ProgressInMegaBytes
         {
-            get { return this._progressInMegaBytes.GetValueOrDefault(); }
+            get { return this._progressInMegaBytes; }
             set { this._progressInMegaBytes = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The time that the table restore request was made, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime RequestTime
+        public DateTime? RequestTime
         {
-            get { return this._requestTime.GetValueOrDefault(); }
+            get { return this._requestTime; }
             set { this._requestTime = value; }
         }
 
@@ -311,9 +311,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The total amount of data to restore to the new table, in megabytes (MB).
         /// </para>
         /// </summary>
-        public long TotalDataInMegaBytes
+        public long? TotalDataInMegaBytes
         {
-            get { return this._totalDataInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalDataInMegaBytes; }
             set { this._totalDataInMegaBytes = value; }
         }
 

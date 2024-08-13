@@ -67,9 +67,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the world generator job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.RoboMaker.Model
         /// The number of worlds that failed.
         /// </para>
         /// </summary>
-        public int FailedWorldCount
+        public int? FailedWorldCount
         {
-            get { return this._failedWorldCount.GetValueOrDefault(); }
+            get { return this._failedWorldCount; }
             set { this._failedWorldCount = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.RoboMaker.Model
         /// The number of worlds that were generated.
         /// </para>
         /// </summary>
-        public int SucceededWorldCount
+        public int? SucceededWorldCount
         {
-            get { return this._succeededWorldCount.GetValueOrDefault(); }
+            get { return this._succeededWorldCount; }
             set { this._succeededWorldCount = value; }
         }
 

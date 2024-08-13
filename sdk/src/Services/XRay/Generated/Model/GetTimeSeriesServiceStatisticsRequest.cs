@@ -51,9 +51,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.XRay.Model
         /// the EntitySelectorExpression ID be provided.
         /// </para>
         /// </summary>
-        public bool ForecastStatistics
+        public bool? ForecastStatistics
         {
-            get { return this._forecastStatistics.GetValueOrDefault(); }
+            get { return this._forecastStatistics; }
             set { this._forecastStatistics = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.XRay.Model
         /// Aggregation period in seconds.
         /// </para>
         /// </summary>
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

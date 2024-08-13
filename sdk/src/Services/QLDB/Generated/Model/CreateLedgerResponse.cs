@@ -68,9 +68,9 @@ namespace Amazon.QLDB.Model
         /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.QLDB.Model
         /// this parameter to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 

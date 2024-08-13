@@ -61,9 +61,9 @@ namespace Amazon.ResilienceHub.Model
         /// Date and time when the resiliency policy was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

@@ -122,10 +122,7 @@ namespace Amazon.Util
 
         internal LoggingConfig()
         {
-            LogTo = AWSConfigs._logging;
-            LogResponses = AWSConfigs._responseLogging;
             LogResponsesSizeLimit = DefaultLogResponsesSizeLimit;
-            LogMetrics = AWSConfigs._logMetrics;
         }
     }
 

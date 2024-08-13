@@ -82,9 +82,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enable
+        public bool? Enable
         {
-            get { return this._enable.GetValueOrDefault(); }
+            get { return this._enable; }
             set { this._enable = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Rollback
+        public bool? Rollback
         {
-            get { return this._rollback.GetValueOrDefault(); }
+            get { return this._rollback; }
             set { this._rollback = value; }
         }
 

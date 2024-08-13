@@ -68,7 +68,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsValueSecret", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsValueSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -84,7 +84,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 }
                 if (context.TestExpression("isVerifiedAuthor", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsVerifiedAuthor = unmarshaller.Unmarshall(context);
                     continue;
                 }

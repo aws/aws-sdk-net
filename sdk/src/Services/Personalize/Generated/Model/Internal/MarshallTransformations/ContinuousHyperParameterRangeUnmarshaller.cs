@@ -68,13 +68,13 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MinValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

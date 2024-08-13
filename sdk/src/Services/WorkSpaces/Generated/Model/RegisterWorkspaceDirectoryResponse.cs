@@ -34,6 +34,45 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class RegisterWorkspaceDirectoryResponse : AmazonWebServiceResponse
     {
+        private string _directoryId;
+        private WorkspaceDirectoryState _state;
+
+        /// <summary>
+        /// Gets and sets the property DirectoryId. 
+        /// <para>
+        /// The identifier of the directory.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=65)]
+        public string DirectoryId
+        {
+            get { return this._directoryId; }
+            set { this._directoryId = value; }
+        }
+
+        // Check to see if DirectoryId property is set
+        internal bool IsSetDirectoryId()
+        {
+            return this._directoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The registration status of the WorkSpace directory.
+        /// </para>
+        /// </summary>
+        public WorkspaceDirectoryState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
 
     }
 }

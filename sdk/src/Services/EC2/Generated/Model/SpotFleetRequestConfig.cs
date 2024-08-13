@@ -87,9 +87,9 @@ namespace Amazon.EC2.Model
         /// The creation date and time of the request.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("replicated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Replicated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("replicatedExternally", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReplicatedExternally = unmarshaller.Unmarshall(context);
                     continue;
                 }

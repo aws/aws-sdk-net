@@ -74,7 +74,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enforce", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enforce = unmarshaller.Unmarshall(context);
                     continue;
                 }

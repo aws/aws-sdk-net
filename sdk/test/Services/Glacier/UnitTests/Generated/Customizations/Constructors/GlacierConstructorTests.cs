@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Glacier;
 using Amazon.Glacier.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class GlacierConstructorCustomizationsTests
@@ -131,8 +131,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("Glacier")]
         public void InitiateMultipartUploadRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.Glacier.Model.InitiateMultipartUploadRequest), new System.Type[] { typeof(string), typeof(string), typeof(long), });
-            EnsureConstructorExists(typeof(Amazon.Glacier.Model.InitiateMultipartUploadRequest), new System.Type[] { typeof(string), typeof(string), typeof(string), typeof(long), });
+            EnsureConstructorExists(typeof(Amazon.Glacier.Model.InitiateMultipartUploadRequest), new System.Type[] { typeof(string), typeof(string), typeof(long?), });
+            EnsureConstructorExists(typeof(Amazon.Glacier.Model.InitiateMultipartUploadRequest), new System.Type[] { typeof(string), typeof(string), typeof(string), typeof(long?), });
         }
 
         [TestMethod]
@@ -168,7 +168,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public void ListVaultsRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.Glacier.Model.ListVaultsRequest), new System.Type[] { typeof(string), });
-            EnsureConstructorExists(typeof(Amazon.Glacier.Model.ListVaultsRequest), new System.Type[] { typeof(string), typeof(string), typeof(int), });
+            EnsureConstructorExists(typeof(Amazon.Glacier.Model.ListVaultsRequest), new System.Type[] { typeof(string), typeof(string), typeof(int?), });
         }
 
         [TestMethod]

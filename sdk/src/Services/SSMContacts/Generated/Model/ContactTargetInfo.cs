@@ -64,9 +64,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsEssential
+        public bool? IsEssential
         {
-            get { return this._isEssential.GetValueOrDefault(); }
+            get { return this._isEssential; }
             set { this._isEssential = value; }
         }
 

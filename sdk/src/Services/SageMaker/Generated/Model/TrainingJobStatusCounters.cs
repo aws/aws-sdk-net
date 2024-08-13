@@ -48,9 +48,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Completed
+        public int? Completed
         {
-            get { return this._completed.GetValueOrDefault(); }
+            get { return this._completed; }
             set { this._completed = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InProgress
+        public int? InProgress
         {
-            get { return this._inProgress.GetValueOrDefault(); }
+            get { return this._inProgress; }
             set { this._inProgress = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NonRetryableError
+        public int? NonRetryableError
         {
-            get { return this._nonRetryableError.GetValueOrDefault(); }
+            get { return this._nonRetryableError; }
             set { this._nonRetryableError = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RetryableError
+        public int? RetryableError
         {
-            get { return this._retryableError.GetValueOrDefault(); }
+            get { return this._retryableError; }
             set { this._retryableError = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Stopped
+        public int? Stopped
         {
-            get { return this._stopped.GetValueOrDefault(); }
+            get { return this._stopped; }
             set { this._stopped = value; }
         }
 

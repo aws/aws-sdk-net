@@ -75,9 +75,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the snapshot was created (<c>1479907467.024</c>).
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether the snapshot was created from an automatic snapshot.
         /// </para>
         /// </summary>
-        public bool IsFromAutoSnapshot
+        public bool? IsFromAutoSnapshot
         {
-            get { return this._isFromAutoSnapshot.GetValueOrDefault(); }
+            get { return this._isFromAutoSnapshot; }
             set { this._isFromAutoSnapshot = value; }
         }
 
@@ -281,9 +281,9 @@ namespace Amazon.Lightsail.Model
         /// The size in GB of the SSD.
         /// </para>
         /// </summary>
-        public int SizeInGb
+        public int? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 

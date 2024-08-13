@@ -75,9 +75,9 @@ namespace Amazon.SecurityHub.Model
         /// Valid values: Either <c>-1</c> or an integer between 1 and 3,653
         /// </para>
         /// </summary>
-        public int ManualSnapshotRetentionPeriod
+        public int? ManualSnapshotRetentionPeriod
         {
-            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._manualSnapshotRetentionPeriod; }
             set { this._manualSnapshotRetentionPeriod = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.SecurityHub.Model
         /// are copied from a source Region.
         /// </para>
         /// </summary>
-        public int RetentionPeriod
+        public int? RetentionPeriod
         {
-            get { return this._retentionPeriod.GetValueOrDefault(); }
+            get { return this._retentionPeriod; }
             set { this._retentionPeriod = value; }
         }
 

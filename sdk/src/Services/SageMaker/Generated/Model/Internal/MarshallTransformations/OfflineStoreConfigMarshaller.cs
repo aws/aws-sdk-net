@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableGlueTableCreation())
             {
                 context.Writer.WritePropertyName("DisableGlueTableCreation");
-                context.Writer.Write(requestObject.DisableGlueTableCreation);
+                context.Writer.Write(requestObject.DisableGlueTableCreation.Value);
             }
 
             if(requestObject.IsSetS3StorageConfig())

@@ -69,9 +69,9 @@ namespace Amazon.PinpointEmail.Model
         /// messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.
         /// </para>
         /// </summary>
-        public bool SigningEnabled
+        public bool? SigningEnabled
         {
-            get { return this._signingEnabled.GetValueOrDefault(); }
+            get { return this._signingEnabled; }
             set { this._signingEnabled = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property BulkPublishCompleteTime. If BulkPublishStatus is SUCCEEDED,
         /// the time the last bulk publish operation completed.
         /// </summary>
-        public DateTime BulkPublishCompleteTime
+        public DateTime? BulkPublishCompleteTime
         {
-            get { return this._bulkPublishCompleteTime.GetValueOrDefault(); }
+            get { return this._bulkPublishCompleteTime; }
             set { this._bulkPublishCompleteTime = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property BulkPublishStartTime. The date/time at which the last bulk
         /// publish was initiated.
         /// </summary>
-        public DateTime BulkPublishStartTime
+        public DateTime? BulkPublishStartTime
         {
-            get { return this._bulkPublishStartTime.GetValueOrDefault(); }
+            get { return this._bulkPublishStartTime; }
             set { this._bulkPublishStartTime = value; }
         }
 

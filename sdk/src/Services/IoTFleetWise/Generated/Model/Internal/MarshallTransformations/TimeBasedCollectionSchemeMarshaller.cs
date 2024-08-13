@@ -51,7 +51,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeriodMs())
             {
                 context.Writer.WritePropertyName("periodMs");
-                context.Writer.Write(requestObject.PeriodMs);
+                context.Writer.Write(requestObject.PeriodMs.Value);
             }
 
         }

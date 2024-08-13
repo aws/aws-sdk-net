@@ -92,9 +92,9 @@ namespace Amazon.EMRContainers.Model
         /// The date and time after which the virtual clusters are created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.EMRContainers.Model
         /// The date and time before which the virtual clusters are created.
         /// </para>
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.EMRContainers.Model
         /// operation returns all applicable virtual clusters.
         /// </para>
         /// </summary>
-        public bool EksAccessEntryIntegrated
+        public bool? EksAccessEntryIntegrated
         {
-            get { return this._eksAccessEntryIntegrated.GetValueOrDefault(); }
+            get { return this._eksAccessEntryIntegrated; }
             set { this._eksAccessEntryIntegrated = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.EMRContainers.Model
         /// The maximum number of virtual clusters that can be listed.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -57,13 +57,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGpuUnitLimit())
             {
                 context.Writer.WritePropertyName("gpuUnitLimit");
-                context.Writer.Write(requestObject.GpuUnitLimit);
+                context.Writer.Write(requestObject.GpuUnitLimit.Value);
             }
 
             if(requestObject.IsSetSimulationUnitLimit())
             {
                 context.Writer.WritePropertyName("simulationUnitLimit");
-                context.Writer.Write(requestObject.SimulationUnitLimit);
+                context.Writer.Write(requestObject.SimulationUnitLimit.Value);
             }
 
         }

@@ -90,19 +90,19 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPerformAutoML())
                 {
                     context.Writer.WritePropertyName("performAutoML");
-                    context.Writer.Write(publicRequest.PerformAutoML);
+                    context.Writer.Write(publicRequest.PerformAutoML.Value);
                 }
 
                 if(publicRequest.IsSetPerformAutoTraining())
                 {
                     context.Writer.WritePropertyName("performAutoTraining");
-                    context.Writer.Write(publicRequest.PerformAutoTraining);
+                    context.Writer.Write(publicRequest.PerformAutoTraining.Value);
                 }
 
                 if(publicRequest.IsSetPerformHPO())
                 {
                     context.Writer.WritePropertyName("performHPO");
-                    context.Writer.Write(publicRequest.PerformHPO);
+                    context.Writer.Write(publicRequest.PerformHPO.Value);
                 }
 
                 if(publicRequest.IsSetRecipeArn())

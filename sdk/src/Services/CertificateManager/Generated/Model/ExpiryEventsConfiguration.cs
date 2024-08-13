@@ -46,9 +46,9 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int DaysBeforeExpiry
+        public int? DaysBeforeExpiry
         {
-            get { return this._daysBeforeExpiry.GetValueOrDefault(); }
+            get { return this._daysBeforeExpiry; }
             set { this._daysBeforeExpiry = value; }
         }
 

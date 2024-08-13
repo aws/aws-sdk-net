@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int HumanLabeled
+        public int? HumanLabeled
         {
-            get { return this._humanLabeled.GetValueOrDefault(); }
+            get { return this._humanLabeled; }
             set { this._humanLabeled = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PendingHuman
+        public int? PendingHuman
         {
-            get { return this._pendingHuman.GetValueOrDefault(); }
+            get { return this._pendingHuman; }
             set { this._pendingHuman = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

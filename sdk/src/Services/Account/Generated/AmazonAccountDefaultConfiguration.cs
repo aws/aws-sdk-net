@@ -43,8 +43,7 @@ namespace Amazon.Account
                 InRegion,
                 CrossRegion,
                 Mobile,
-                Auto,
-                Legacy
+                Auto
             });
         }
 
@@ -55,7 +54,6 @@ namespace Amazon.Account
         {
             Name = DefaultConfigurationMode.Standard,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:03.1
             ConnectTimeout = TimeSpan.FromMilliseconds(3100L),
@@ -71,7 +69,6 @@ namespace Amazon.Account
         {
             Name = DefaultConfigurationMode.InRegion,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:01.1
             ConnectTimeout = TimeSpan.FromMilliseconds(1100L),
@@ -87,7 +84,6 @@ namespace Amazon.Account
         {
             Name = DefaultConfigurationMode.CrossRegion,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:03.1
             ConnectTimeout = TimeSpan.FromMilliseconds(3100L),
@@ -103,7 +99,6 @@ namespace Amazon.Account
         {
             Name = DefaultConfigurationMode.Mobile,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:30
             ConnectTimeout = TimeSpan.FromMilliseconds(30000L),
@@ -119,26 +114,11 @@ namespace Amazon.Account
         {
             Name = DefaultConfigurationMode.Auto,
             RetryMode = RequestRetryMode.Standard,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Regional,
             S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Regional,
             // 0:00:01.1
             ConnectTimeout = TimeSpan.FromMilliseconds(1100L),
             // 0:00:01.1
             TlsNegotiationTimeout = TimeSpan.FromMilliseconds(1100L),
-            TimeToFirstByteTimeout = null,
-            HttpRequestTimeout = null
-        };
-        /// <summary>
-        /// <p>The LEGACY mode provides default settings that vary per SDK and were used prior to establishment of defaults_mode</p>
-        /// </summary>
-        public static IDefaultConfiguration Legacy {get;} = new DefaultConfiguration
-        {
-            Name = DefaultConfigurationMode.Legacy,
-            RetryMode = RequestRetryMode.Legacy,
-            StsRegionalEndpoints = StsRegionalEndpointsValue.Legacy,
-            S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Legacy,
-            ConnectTimeout = null,
-            TlsNegotiationTimeout = null,
             TimeToFirstByteTimeout = null,
             HttpRequestTimeout = null
         };

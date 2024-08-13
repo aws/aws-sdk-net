@@ -60,9 +60,9 @@ namespace Amazon.AppStream.Model
         /// image without displaying whether image updates are available.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

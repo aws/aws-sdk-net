@@ -63,9 +63,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int FCntStart
+        public int? FCntStart
         {
-            get { return this._fCntStart.GetValueOrDefault(); }
+            get { return this._fCntStart; }
             set { this._fCntStart = value; }
         }
 

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.Runtime.Internal.Util;
 using System.Threading;
 using System.Net;
@@ -248,11 +248,10 @@ namespace AWSSDK.UnitTests
         }
 
 
-#if BCL45
-
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestSuppressed404Async()
         {
             Tester.Reset();
@@ -277,7 +276,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task Test404Async()
         {
             Tester.Reset();
@@ -299,7 +298,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestExceptionWithNoServerResponseAsync()
         {
             Tester.Reset();
@@ -322,7 +321,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestExceptionWithNoServerResponseBodyAsync()
         {
             Tester.Reset();
@@ -342,102 +341,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(exception.GetType() == typeof(AmazonServiceException));
             Assert.AreEqual(1, Tester.CallCount);
         }
-
-#elif !BCL45 && BCL
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestSuppressed404Async()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("404Response.txt");
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
-            };
-
-            var context = CreateAsyncTestContext();
-            var request = new GetBucketPolicyRequest
-            {
-                BucketName = "nonexistentbucket"
-            };
-            ((RequestContext)context.RequestContext).OriginalRequest = request;
-            ((RequestContext)context.RequestContext).Request = new GetBucketPolicyRequestMarshaller().Marshall(request);
-            ((RequestContext)context.RequestContext).Unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
-
-            var asyncResult = RuntimePipeline.InvokeAsync(context);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsNull(((RuntimeAsyncResult)asyncResult).Exception);
-            Assert.AreEqual(1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void Test404Async()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("404Response.txt");
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
-            };
-
-            var context = CreateAsyncTestContext();
-
-            var asyncResult = RuntimePipeline.InvokeAsync(context);
-            asyncResult.AsyncWaitHandle.WaitOne();
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception.GetType()
-                == typeof(AmazonS3Exception));
-            Assert.AreEqual(1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestExceptionWithNoServerResponseAsync()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new WebException("Name resolution failure.",
-                    WebExceptionStatus.NameResolutionFailure);
-            };
-
-            var context = CreateAsyncTestContext();
-
-            var asyncResult = RuntimePipeline.InvokeAsync(context);
-            asyncResult.AsyncWaitHandle.WaitOne();
-            // Test the exact exception type.
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception.GetType()
-                == typeof(AmazonServiceException));
-            Assert.AreEqual(1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestExceptionWithNoServerResponseBodyAsync()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new WebException("Connection closed.",
-                    WebExceptionStatus.ConnectionClosed);
-            };
-
-            var context = CreateAsyncTestContext();
-
-            var asyncResult = RuntimePipeline.InvokeAsync(context);
-            asyncResult.AsyncWaitHandle.WaitOne();
-            // Test the exact exception type.
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception.GetType()
-                == typeof(AmazonServiceException));
-            Assert.AreEqual(1, Tester.CallCount);
-        }
-
 #endif
     }
 }

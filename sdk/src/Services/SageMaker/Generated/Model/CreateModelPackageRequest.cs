@@ -115,9 +115,9 @@ namespace Amazon.SageMaker.Model
         /// models.
         /// </para>
         /// </summary>
-        public bool CertifyForMarketplace
+        public bool? CertifyForMarketplace
         {
-            get { return this._certifyForMarketplace.GetValueOrDefault(); }
+            get { return this._certifyForMarketplace; }
             set { this._certifyForMarketplace = value; }
         }
 

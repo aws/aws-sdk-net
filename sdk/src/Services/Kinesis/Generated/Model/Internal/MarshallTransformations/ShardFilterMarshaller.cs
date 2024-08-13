@@ -57,7 +57,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp);
+                context.Writer.Write(requestObject.Timestamp.Value);
             }
 
             if(requestObject.IsSetType())

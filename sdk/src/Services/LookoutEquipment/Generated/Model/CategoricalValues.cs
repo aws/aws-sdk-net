@@ -43,9 +43,9 @@ namespace Amazon.LookoutEquipment.Model
         ///  Indicates the number of categories in the data. 
         /// </para>
         /// </summary>
-        public int NumberOfCategory
+        public int? NumberOfCategory
         {
-            get { return this._numberOfCategory.GetValueOrDefault(); }
+            get { return this._numberOfCategory; }
             set { this._numberOfCategory = value; }
         }
 

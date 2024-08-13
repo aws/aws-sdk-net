@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDays())
             {
                 context.Writer.WritePropertyName("Days");
-                context.Writer.Write(requestObject.Days);
+                context.Writer.Write(requestObject.Days.Value);
             }
 
             if(requestObject.IsSetMode())
@@ -63,7 +63,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetYears())
             {
                 context.Writer.WritePropertyName("Years");
-                context.Writer.Write(requestObject.Years);
+                context.Writer.Write(requestObject.Years.Value);
             }
 
         }

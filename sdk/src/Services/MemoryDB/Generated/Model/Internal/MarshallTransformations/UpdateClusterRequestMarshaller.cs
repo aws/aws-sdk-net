@@ -147,7 +147,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSnapshotRetentionLimit())
                 {
                     context.Writer.WritePropertyName("SnapshotRetentionLimit");
-                    context.Writer.Write(publicRequest.SnapshotRetentionLimit);
+                    context.Writer.Write(publicRequest.SnapshotRetentionLimit.Value);
                 }
 
                 if(publicRequest.IsSetSnapshotWindow())

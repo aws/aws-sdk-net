@@ -68,13 +68,13 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             {
                 if (context.TestExpression("Inverted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Inverted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Threshold", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

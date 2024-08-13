@@ -321,9 +321,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The default value is <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool TrustedIdentityPropagationEnabled
+        public bool? TrustedIdentityPropagationEnabled
         {
-            get { return this._trustedIdentityPropagationEnabled.GetValueOrDefault(); }
+            get { return this._trustedIdentityPropagationEnabled; }
             set { this._trustedIdentityPropagationEnabled = value; }
         }
 

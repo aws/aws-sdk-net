@@ -85,9 +85,9 @@ namespace Amazon.ComprehendMedical.Model
         /// linked to an ICD-10-CM concept.
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

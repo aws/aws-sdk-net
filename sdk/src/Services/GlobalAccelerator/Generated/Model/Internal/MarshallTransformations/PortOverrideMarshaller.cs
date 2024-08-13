@@ -51,13 +51,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointPort())
             {
                 context.Writer.WritePropertyName("EndpointPort");
-                context.Writer.Write(requestObject.EndpointPort);
+                context.Writer.Write(requestObject.EndpointPort.Value);
             }
 
             if(requestObject.IsSetListenerPort())
             {
                 context.Writer.WritePropertyName("ListenerPort");
-                context.Writer.Write(requestObject.ListenerPort);
+                context.Writer.Write(requestObject.ListenerPort.Value);
             }
 
         }

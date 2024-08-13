@@ -49,9 +49,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// tracking is turned on and the device has been trusted.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Specifies whether software token MFA is the preferred MFA method.
         /// </para>
         /// </summary>
-        public bool PreferredMfa
+        public bool? PreferredMfa
         {
-            get { return this._preferredMfa.GetValueOrDefault(); }
+            get { return this._preferredMfa; }
             set { this._preferredMfa = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.ConfigService.Model
         /// The number of resources.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

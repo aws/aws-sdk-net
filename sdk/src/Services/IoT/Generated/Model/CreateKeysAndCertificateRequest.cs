@@ -57,9 +57,9 @@ namespace Amazon.IoT.Model
         /// Specifies whether the certificate is active.
         /// </para>
         /// </summary>
-        public bool SetAsActive
+        public bool? SetAsActive
         {
-            get { return this._setAsActive.GetValueOrDefault(); }
+            get { return this._setAsActive; }
             set { this._setAsActive = value; }
         }
 

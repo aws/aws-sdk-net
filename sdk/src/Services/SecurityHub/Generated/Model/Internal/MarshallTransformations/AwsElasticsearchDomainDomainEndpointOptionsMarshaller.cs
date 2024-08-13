@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnforceHTTPS())
             {
                 context.Writer.WritePropertyName("EnforceHTTPS");
-                context.Writer.Write(requestObject.EnforceHTTPS);
+                context.Writer.Write(requestObject.EnforceHTTPS.Value);
             }
 
             if(requestObject.IsSetTLSSecurityPolicy())

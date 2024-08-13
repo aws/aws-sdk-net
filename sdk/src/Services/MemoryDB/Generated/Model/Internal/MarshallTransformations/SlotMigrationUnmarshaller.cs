@@ -68,7 +68,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ProgressPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ProgressPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

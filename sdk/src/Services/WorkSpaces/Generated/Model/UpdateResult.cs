@@ -70,9 +70,9 @@ namespace Amazon.WorkSpaces.Model
         /// WorkSpace image.
         /// </para>
         /// </summary>
-        public bool UpdateAvailable
+        public bool? UpdateAvailable
         {
-            get { return this._updateAvailable.GetValueOrDefault(); }
+            get { return this._updateAvailable; }
             set { this._updateAvailable = value; }
         }
 

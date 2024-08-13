@@ -52,9 +52,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The time that the import task completed. 
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The number of records that failed to be imported. 
         /// </para>
         /// </summary>
-        public int NumberOfRecordsFailed
+        public int? NumberOfRecordsFailed
         {
-            get { return this._numberOfRecordsFailed.GetValueOrDefault(); }
+            get { return this._numberOfRecordsFailed; }
             set { this._numberOfRecordsFailed = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The number of records successfully imported. 
         /// </para>
         /// </summary>
-        public int NumberOfRecordsSuccess
+        public int? NumberOfRecordsSuccess
         {
-            get { return this._numberOfRecordsSuccess.GetValueOrDefault(); }
+            get { return this._numberOfRecordsSuccess; }
             set { this._numberOfRecordsSuccess = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  Start time of the import task. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

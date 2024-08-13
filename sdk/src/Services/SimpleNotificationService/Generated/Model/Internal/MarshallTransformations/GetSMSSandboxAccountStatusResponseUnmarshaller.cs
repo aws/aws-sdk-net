@@ -84,7 +84,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
 
                     if (context.TestExpression("IsInSandbox", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.IsInSandbox = unmarshaller.Unmarshall(context);
                         continue;
                     }

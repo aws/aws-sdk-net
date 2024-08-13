@@ -50,9 +50,9 @@ namespace Amazon.EC2.Model
         /// The compliance mode cooling-off period, in hours.
         /// </para>
         /// </summary>
-        public int CoolOffPeriod
+        public int? CoolOffPeriod
         {
-            get { return this._coolOffPeriod.GetValueOrDefault(); }
+            get { return this._coolOffPeriod; }
             set { this._coolOffPeriod = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
         /// </para>
         /// </summary>
-        public DateTime CoolOffPeriodExpiresOn
+        public DateTime? CoolOffPeriodExpiresOn
         {
-            get { return this._coolOffPeriodExpiresOn.GetValueOrDefault(); }
+            get { return this._coolOffPeriodExpiresOn; }
             set { this._coolOffPeriodExpiresOn = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.EC2.Model
         /// The date and time at which the snapshot was locked, in the UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
         /// </para>
         /// </summary>
-        public DateTime LockCreatedOn
+        public DateTime? LockCreatedOn
         {
-            get { return this._lockCreatedOn.GetValueOrDefault(); }
+            get { return this._lockCreatedOn; }
             set { this._lockCreatedOn = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// The period of time for which the snapshot is locked, in days.
         /// </para>
         /// </summary>
-        public int LockDuration
+        public int? LockDuration
         {
-            get { return this._lockDuration.GetValueOrDefault(); }
+            get { return this._lockDuration; }
             set { this._lockDuration = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.EC2.Model
         /// only once the snapshot enters the <c>completed</c> state.
         /// </para>
         /// </summary>
-        public DateTime LockDurationStartTime
+        public DateTime? LockDurationStartTime
         {
-            get { return this._lockDurationStartTime.GetValueOrDefault(); }
+            get { return this._lockDurationStartTime; }
             set { this._lockDurationStartTime = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.EC2.Model
         /// The date and time at which the lock will expire, in the UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
         /// </para>
         /// </summary>
-        public DateTime LockExpiresOn
+        public DateTime? LockExpiresOn
         {
-            get { return this._lockExpiresOn.GetValueOrDefault(); }
+            get { return this._lockExpiresOn; }
             set { this._lockExpiresOn = value; }
         }
 

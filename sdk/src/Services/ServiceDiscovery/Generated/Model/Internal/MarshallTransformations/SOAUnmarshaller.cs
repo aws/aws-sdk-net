@@ -68,7 +68,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("TTL", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TTL = unmarshaller.Unmarshall(context);
                     continue;
                 }

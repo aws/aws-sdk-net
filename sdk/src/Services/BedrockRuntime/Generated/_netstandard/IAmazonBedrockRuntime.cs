@@ -37,6 +37,46 @@ namespace Amazon.BedrockRuntime
     public partial interface IAmazonBedrockRuntime : IAmazonService, IDisposable
     {
                 
+        #region  ApplyGuardrail
+
+
+
+        /// <summary>
+        /// The action to apply a guardrail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyGuardrail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ApplyGuardrail service method, as returned by BedrockRuntime.</returns>
+        /// <exception cref="Amazon.BedrockRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
+        /// Your request exceeds the service quota for your account. You can view your quotas
+        /// at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing
+        /// service quotas</a>. You can resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
+        /// Your request was throttled because of service-wide limitations. Resubmit your request
+        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> to increase the rate or number of tokens you can process.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ApplyGuardrail">REST API Reference for ApplyGuardrail Operation</seealso>
+        Task<ApplyGuardrailResponse> ApplyGuardrailAsync(ApplyGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  Converse
 
 
@@ -44,9 +84,14 @@ namespace Amazon.BedrockRuntime
         /// <summary>
         /// Sends messages to the specified Amazon Bedrock model. <c>Converse</c> provides a consistent
         /// interface that works with all models that support messages. This allows you to write
-        /// code once and use it with different models. Should a model have unique inference parameters,
+        /// code once and use it with different models. If a model has unique inference parameters,
         /// you can also pass those unique parameters to the model.
         /// 
+        ///  
+        /// <para>
+        /// Amazon Bedrock doesn't store any text, images, or documents that you provide as content.
+        /// The data is only used to generate the response.
+        /// </para>
         ///  
         /// <para>
         /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon
@@ -88,8 +133,13 @@ namespace Amazon.BedrockRuntime
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// Your request was throttled because of service-wide limitations. Resubmit your request
+        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> to increase the rate or number of tokens you can process.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
         /// Input validation failed. Check your request parameters and retry the request.
@@ -114,6 +164,15 @@ namespace Amazon.BedrockRuntime
         /// <para>
         /// To find out if a model supports streaming, call <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html">GetFoundationModel</a>
         /// and check the <c>responseStreamingSupported</c> field in the response.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>ConverseStream</c>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Amazon Bedrock doesn't store any text, images, or documents that you provide as content.
+        /// The data is only used to generate the response.
         /// </para>
         ///  
         /// <para>
@@ -157,8 +216,13 @@ namespace Amazon.BedrockRuntime
         /// <exception cref="Amazon.BedrockRuntime.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. Try again later.
+        /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// Your request was throttled because of service-wide limitations. Resubmit your request
+        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> to increase the rate or number of tokens you can process.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
         /// Input validation failed. Check your request parameters and retry the request.
@@ -212,10 +276,17 @@ namespace Amazon.BedrockRuntime
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
-        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// Your request exceeds the service quota for your account. You can view your quotas
+        /// at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing
+        /// service quotas</a>. You can resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// Your request was throttled because of service-wide limitations. Resubmit your request
+        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> to increase the rate or number of tokens you can process.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
         /// Input validation failed. Check your request parameters and retry the request.
@@ -240,7 +311,7 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  <note> 
         /// <para>
-        /// The CLI doesn't support <c>InvokeModelWithResponseStream</c>.
+        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeModelWithResponseStream</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -281,10 +352,17 @@ namespace Amazon.BedrockRuntime
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ServiceQuotaExceededException">
-        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// Your request exceeds the service quota for your account. You can view your quotas
+        /// at <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/gs-request-quota.html">Viewing
+        /// service quotas</a>. You can resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockRuntime.Model.ServiceUnavailableException">
+        /// The service isn't currently available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ThrottlingException">
-        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// Your request was throttled because of service-wide limitations. Resubmit your request
+        /// later or in a different region. You can also purchase <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+        /// Throughput</a> to increase the rate or number of tokens you can process.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ValidationException">
         /// Input validation failed. Check your request parameters and retry the request.
@@ -305,5 +383,33 @@ namespace Amazon.BedrockRuntime
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonBedrockRuntimeConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonBedrockRuntimeConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonBedrockRuntimeConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonBedrockRuntimeConfig to create AmazonBedrockRuntimeClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonBedrockRuntimeClient(serviceClientConfig) :
+                    new AmazonBedrockRuntimeClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

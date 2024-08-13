@@ -70,7 +70,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     context.Writer.WritePropertyName("DeletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection);
+                    context.Writer.Write(publicRequest.DeletionProtection.Value);
                 }
 
                 if(publicRequest.IsSetKmsKey())

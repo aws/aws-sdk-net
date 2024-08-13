@@ -82,9 +82,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// they are updated by a device.
         /// </para>
         /// </summary>
-        public long VersionNumber
+        public long? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

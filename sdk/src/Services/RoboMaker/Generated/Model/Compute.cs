@@ -64,9 +64,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public int GpuUnitLimit
+        public int? GpuUnitLimit
         {
-            get { return this._gpuUnitLimit.GetValueOrDefault(); }
+            get { return this._gpuUnitLimit; }
             set { this._gpuUnitLimit = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
-        public int SimulationUnitLimit
+        public int? SimulationUnitLimit
         {
-            get { return this._simulationUnitLimit.GetValueOrDefault(); }
+            get { return this._simulationUnitLimit; }
             set { this._simulationUnitLimit = value; }
         }
 

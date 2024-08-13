@@ -85,12 +85,6 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Usage", "CA2219:DoNotRaiseExceptionsInExceptionClauses", Scope = "member", Target = "Amazon.Runtime.Internal.HttpRequest.#WriteToRequestBody(System.IO.Stream,System.IO.Stream,System.Collections.Generic.IDictionary`2<System.String,System.String>,Amazon.Runtime.IRequestContext)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2219:Do not raise exceptions in finally clauses", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpRequest.WriteToRequestBodyAsync(System.IO.Stream,System.IO.Stream,System.Collections.Generic.IDictionary{System.String,System.String},Amazon.Runtime.IRequestContext)~System.Threading.Tasks.Task")]
 
-// Suppressions for DisposableFieldsShouldBeDisposed
-#if BCL35
-// In this case the semaphore is being disposed. The semaphore.Close() has been renamed to semaphore.Dispose()
-[module: SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", Scope = "member", Target = "Amazon.Runtime.RefreshingAWSCredentials.#Dispose(System.Boolean)")]
-#endif
-
 // Serialization-only classes
 [module: SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses", Scope = "type", Target = "Amazon.Runtime.InstanceProfileAWSCredentials+SecurityCredentials")]
 [module: SuppressMessage("Microsoft.Performance", "CA1812:AvoidUninstantiatedInternalClasses", Scope = "type", Target = "Amazon.Runtime.InstanceProfileAWSCredentials+SecurityInfo")]
@@ -141,7 +135,6 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.Util.EventStream.#BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.AWSSection.#Serialize(System.String)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.AbstractWebServiceClient.#DontUnescapePathDotsAndSlashes(System.Uri)")]
-[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.RegionEndpoint.#TryLoadEndpointDefinitionsFromAssemblyDir()")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.HttpHandler`1.#DontUnescapePathDotsAndSlashes(System.Uri)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.HttpHandler`1.#GetResponseCallback(System.IAsyncResult)")]
 [module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Runtime.Internal.HttpHandler`1.#GetRequestStreamCallback(System.IAsyncResult)")]
@@ -274,7 +267,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.S3Signer.#SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.Internal.Util.RequestMetrics,System.String,System.String)")]
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope="member", Target="Amazon.Runtime.Internal.CSMHandler.#CSMMetricsCapture(Amazon.Runtime.IRequestContext,Amazon.Runtime.IResponseContext)")]
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope="member", Target="Amazon.Runtime.Internal.CSMHandler.#PreInvoke(Amazon.Runtime.IExecutionContext)")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpRequest.WriteToRequestBodyAsync(System.IO.Stream,System.Byte[],System.Collections.Generic.IDictionary{System.String,System.String})~System.Threading.Tasks.Task")]
+[assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.HttpRequest.WriteToRequestBodyAsync(System.IO.Stream,System.Byte[],System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)~System.Threading.Tasks.Task")]
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.IClientConfig,Amazon.Runtime.Internal.Util.RequestMetrics,Amazon.Runtime.ImmutableCredentials)~Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.Presign4a(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.IClientConfig,Amazon.Runtime.Internal.Util.RequestMetrics,Amazon.Runtime.ImmutableCredentials,System.String,System.String)~Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
 [assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Auth.AWS4aSignerCRTWrapper.SignChunk(System.IO.Stream,System.String,Amazon.Runtime.Internal.Auth.AWS4aSigningResult")]
@@ -447,7 +440,6 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Scope = "type", Target = "~T:ThirdParty.Json.LitJson.JsonData")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1010:Collections should implement generic interface", Scope = "type", Target = "~T:ThirdParty.Json.LitJson.JsonData")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1001:Types that own disposable fields should be disposable", Scope = "type", Target = "~T:ThirdParty.Json.LitJson.JsonWriter")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Internal.RegionEndpointProviderV2.RegionEndpoint.TryLoadEndpointDefinitionsFromAssemblyDir~System.Boolean")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.AWSCredentialsFactory.GetCredentialSourceAWSCredentials(System.String,System.Boolean)~Amazon.Runtime.AWSCredentials")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.Internal.SAMLRoleSessionManager.TryGetRoleSession(System.String,Amazon.Runtime.SAMLImmutableCredentials@)~System.Boolean")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.SharedCredentialsFile.TryGetProfile(System.String,Amazon.Runtime.CredentialManagement.CredentialProfile@)~System.Boolean")]
@@ -455,6 +447,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.CredentialManagement.NetSDKCredentialsFile.TryGetProfile(System.String,Amazon.Runtime.CredentialManagement.CredentialProfile@)~System.Boolean")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.DefaultInstanceProfileAWSCredentials.RenewCredentials(System.Object)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.EventStreams.Internal.EventStream`2.ProcessLoop(System.Object)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.EventStreams.Internal.EventStream`2.ProcessLoopAsync()")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.FallbackEndpointDiscoveryEnabledFactory.GetEnabled~System.Nullable{System.Boolean}")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.FallbackRegionFactory.GetRegionEndpoint(System.Boolean)~Amazon.RegionEndpoint")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Scope = "member", Target = "~M:Amazon.Runtime.Internal.CSMFallbackConfigChain.GetCSMConfig~Amazon.Runtime.Internal.CSMConfiguration")]
@@ -519,8 +512,6 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1033:Interface methods should be callable by child types", Scope = "member", Target = "~P:ThirdParty.Json.LitJson.JsonData.System#Collections#IList#IsReadOnly")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Scope = "member", Target = "~F:ThirdParty.BouncyCastle.Asn1.Utilities.FilterStream.s")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1052:Static holder types should be Static or NotInheritable", Scope = "type", Target = "~T:ThirdParty.Json.LitJson.JsonMapper")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1055:Uri return values should not be strings", Scope = "member", Target = "~M:Amazon.Runtime.ClientConfig.DetermineServiceURL~System.String")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1055:Uri return values should not be strings", Scope = "member", Target = "~M:Amazon.Runtime.IClientConfig.DetermineServiceURL~System.String")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1055:Uri return values should not be strings", Scope = "member", Target = "~M:Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.GeneratePreSignedURL(System.String,System.String,System.DateTime,System.Collections.Generic.IDictionary{System.String,System.Object})~System.String")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1055:Uri return values should not be strings", Scope = "member", Target = "~M:Amazon.Util.AWSSDKUtils.ProtectEncodedSlashUrlEncode(System.String,System.Boolean)~System.String")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1055:Uri return values should not be strings", Scope = "member", Target = "~M:Amazon.Util.AWSSDKUtils.UrlEncode(System.Int32,System.String,System.Boolean)~System.String")]

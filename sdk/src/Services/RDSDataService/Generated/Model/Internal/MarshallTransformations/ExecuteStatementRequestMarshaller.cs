@@ -70,7 +70,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetContinueAfterTimeout())
                 {
                     context.Writer.WritePropertyName("continueAfterTimeout");
-                    context.Writer.Write(publicRequest.ContinueAfterTimeout);
+                    context.Writer.Write(publicRequest.ContinueAfterTimeout.Value);
                 }
 
                 if(publicRequest.IsSetDatabase())
@@ -88,7 +88,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeResultMetadata())
                 {
                     context.Writer.WritePropertyName("includeResultMetadata");
-                    context.Writer.Write(publicRequest.IncludeResultMetadata);
+                    context.Writer.Write(publicRequest.IncludeResultMetadata.Value);
                 }
 
                 if(publicRequest.IsSetParameters())

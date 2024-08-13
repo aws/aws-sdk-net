@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudFrontDefaultCertificate())
             {
                 context.Writer.WritePropertyName("CloudFrontDefaultCertificate");
-                context.Writer.Write(requestObject.CloudFrontDefaultCertificate);
+                context.Writer.Write(requestObject.CloudFrontDefaultCertificate.Value);
             }
 
             if(requestObject.IsSetIamCertificateId())

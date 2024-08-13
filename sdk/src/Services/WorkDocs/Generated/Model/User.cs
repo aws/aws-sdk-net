@@ -56,9 +56,9 @@ namespace Amazon.WorkDocs.Model
         /// The time when the user was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.WorkDocs.Model
         /// The time when the user was modified.
         /// </para>
         /// </summary>
-        public DateTime ModifiedTimestamp
+        public DateTime? ModifiedTimestamp
         {
-            get { return this._modifiedTimestamp.GetValueOrDefault(); }
+            get { return this._modifiedTimestamp; }
             set { this._modifiedTimestamp = value; }
         }
 

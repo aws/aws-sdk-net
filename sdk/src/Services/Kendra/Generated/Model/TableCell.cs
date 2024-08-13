@@ -45,9 +45,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> means that the table cell should be treated as a header.
         /// </para>
         /// </summary>
-        public bool Header
+        public bool? Header
         {
-            get { return this._header.GetValueOrDefault(); }
+            get { return this._header; }
             set { this._header = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Kendra.Model
         /// to the query, so the value or content should be highlighted.
         /// </para>
         /// </summary>
-        public bool Highlighted
+        public bool? Highlighted
         {
-            get { return this._highlighted.GetValueOrDefault(); }
+            get { return this._highlighted; }
             set { this._highlighted = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Kendra.Model
         /// query.
         /// </para>
         /// </summary>
-        public bool TopAnswer
+        public bool? TopAnswer
         {
-            get { return this._topAnswer.GetValueOrDefault(); }
+            get { return this._topAnswer; }
             set { this._topAnswer = value; }
         }
 

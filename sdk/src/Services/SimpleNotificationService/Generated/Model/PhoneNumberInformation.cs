@@ -47,9 +47,9 @@ namespace Amazon.SimpleNotificationService.Model
         /// The date and time when the phone number was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

@@ -78,6 +78,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hashed", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Hashed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("matchKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

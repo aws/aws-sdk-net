@@ -298,9 +298,9 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int PersonalizationThresholdSeconds
+        public int? PersonalizationThresholdSeconds
         {
-            get { return this._personalizationThresholdSeconds.GetValueOrDefault(); }
+            get { return this._personalizationThresholdSeconds; }
             set { this._personalizationThresholdSeconds = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetectSentiment())
             {
                 context.Writer.WritePropertyName("detectSentiment");
-                context.Writer.Write(requestObject.DetectSentiment);
+                context.Writer.Write(requestObject.DetectSentiment.Value);
             }
 
         }

@@ -63,9 +63,9 @@ namespace Amazon.Chime.Model
         /// Starts or stops Alexa for Business.
         /// </para>
         /// </summary>
-        public bool IsAlexaForBusinessEnabled
+        public bool? IsAlexaForBusinessEnabled
         {
-            get { return this._isAlexaForBusinessEnabled.GetValueOrDefault(); }
+            get { return this._isAlexaForBusinessEnabled; }
             set { this._isAlexaForBusinessEnabled = value; }
         }
 

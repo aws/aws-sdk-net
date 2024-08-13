@@ -50,9 +50,9 @@ namespace Amazon.DAX.Model
         /// The value for <c>MaxResults</c> must be between 20 and 100.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

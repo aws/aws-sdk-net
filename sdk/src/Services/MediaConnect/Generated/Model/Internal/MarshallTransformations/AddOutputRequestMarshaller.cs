@@ -85,7 +85,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxLatency())
             {
                 context.Writer.WritePropertyName("maxLatency");
-                context.Writer.Write(requestObject.MaxLatency);
+                context.Writer.Write(requestObject.MaxLatency.Value);
             }
 
             if(requestObject.IsSetMediaStreamOutputConfigurations())
@@ -107,7 +107,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinLatency())
             {
                 context.Writer.WritePropertyName("minLatency");
-                context.Writer.Write(requestObject.MinLatency);
+                context.Writer.Write(requestObject.MinLatency.Value);
             }
 
             if(requestObject.IsSetName())
@@ -116,10 +116,16 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetOutputStatus())
+            {
+                context.Writer.WritePropertyName("outputStatus");
+                context.Writer.Write(requestObject.OutputStatus);
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProtocol())
@@ -137,13 +143,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSenderControlPort())
             {
                 context.Writer.WritePropertyName("senderControlPort");
-                context.Writer.Write(requestObject.SenderControlPort);
+                context.Writer.Write(requestObject.SenderControlPort.Value);
             }
 
             if(requestObject.IsSetSmoothingLatency())
             {
                 context.Writer.WritePropertyName("smoothingLatency");
-                context.Writer.Write(requestObject.SmoothingLatency);
+                context.Writer.Write(requestObject.SmoothingLatency.Value);
             }
 
             if(requestObject.IsSetStreamId())

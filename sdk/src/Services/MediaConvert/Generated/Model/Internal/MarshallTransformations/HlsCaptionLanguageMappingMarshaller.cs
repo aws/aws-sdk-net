@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptionChannel())
             {
                 context.Writer.WritePropertyName("captionChannel");
-                context.Writer.Write(requestObject.CaptionChannel);
+                context.Writer.Write(requestObject.CaptionChannel.Value);
             }
 
             if(requestObject.IsSetCustomLanguageCode())

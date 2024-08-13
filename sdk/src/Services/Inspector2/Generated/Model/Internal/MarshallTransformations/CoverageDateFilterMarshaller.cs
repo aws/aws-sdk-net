@@ -51,13 +51,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndInclusive())
             {
                 context.Writer.WritePropertyName("endInclusive");
-                context.Writer.Write(requestObject.EndInclusive);
+                context.Writer.Write(requestObject.EndInclusive.Value);
             }
 
             if(requestObject.IsSetStartInclusive())
             {
                 context.Writer.WritePropertyName("startInclusive");
-                context.Writer.Write(requestObject.StartInclusive);
+                context.Writer.Write(requestObject.StartInclusive.Value);
             }
 
         }

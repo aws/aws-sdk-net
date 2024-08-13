@@ -66,9 +66,9 @@ namespace Amazon.WorkDocs.Model
         /// Flag to request removal of all labels from the specified resource.
         /// </para>
         /// </summary>
-        public bool DeleteAll
+        public bool? DeleteAll
         {
-            get { return this._deleteAll.GetValueOrDefault(); }
+            get { return this._deleteAll; }
             set { this._deleteAll = value; }
         }
 

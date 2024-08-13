@@ -44,9 +44,9 @@ namespace Amazon.CodeCommit.Model
         /// The size of a file in the base of a merge or pull request.
         /// </para>
         /// </summary>
-        public long Base
+        public long? Base
         {
-            get { return this._base.GetValueOrDefault(); }
+            get { return this._base; }
             set { this._base = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.CodeCommit.Model
         /// The size of a file in the destination of a merge or pull request.
         /// </para>
         /// </summary>
-        public long Destination
+        public long? Destination
         {
-            get { return this._destination.GetValueOrDefault(); }
+            get { return this._destination; }
             set { this._destination = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.CodeCommit.Model
         /// The size of a file in the source of a merge or pull request.
         /// </para>
         /// </summary>
-        public long Source
+        public long? Source
         {
-            get { return this._source.GetValueOrDefault(); }
+            get { return this._source; }
             set { this._source = value; }
         }
 

@@ -85,9 +85,9 @@ namespace Amazon.CloudFormation.Model
         /// in the Amazon Web Services Management Console.
         /// </para>
         /// </summary>
-        public bool NoEcho
+        public bool? NoEcho
         {
-            get { return this._noEcho.GetValueOrDefault(); }
+            get { return this._noEcho; }
             set { this._noEcho = value; }
         }
 

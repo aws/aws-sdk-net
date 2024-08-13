@@ -46,9 +46,9 @@ namespace Amazon.Imagebuilder.Model
         /// The total number of findings across all severity levels for the specified filter.
         /// </para>
         /// </summary>
-        public long All
+        public long? All
         {
-            get { return this._all.GetValueOrDefault(); }
+            get { return this._all; }
             set { this._all = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Imagebuilder.Model
         /// The number of critical severity findings for the specified filter.
         /// </para>
         /// </summary>
-        public long Critical
+        public long? Critical
         {
-            get { return this._critical.GetValueOrDefault(); }
+            get { return this._critical; }
             set { this._critical = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Imagebuilder.Model
         /// The number of high severity findings for the specified filter.
         /// </para>
         /// </summary>
-        public long High
+        public long? High
         {
-            get { return this._high.GetValueOrDefault(); }
+            get { return this._high; }
             set { this._high = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Imagebuilder.Model
         /// The number of medium severity findings for the specified filter.
         /// </para>
         /// </summary>
-        public long Medium
+        public long? Medium
         {
-            get { return this._medium.GetValueOrDefault(); }
+            get { return this._medium; }
             set { this._medium = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.CodeArtifact.Model
         /// the response with an <c>ALREADY_EXISTS</c> error code. 
         /// </para>
         /// </summary>
-        public bool AllowOverwrite
+        public bool? AllowOverwrite
         {
-            get { return this._allowOverwrite.GetValueOrDefault(); }
+            get { return this._allowOverwrite; }
             set { this._allowOverwrite = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.CodeArtifact.Model
         /// with upstream repositories</a>. 
         /// </para>
         /// </summary>
-        public bool IncludeFromUpstream
+        public bool? IncludeFromUpstream
         {
-            get { return this._includeFromUpstream.GetValueOrDefault(); }
+            get { return this._includeFromUpstream; }
             set { this._includeFromUpstream = value; }
         }
 

@@ -63,7 +63,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Expiration", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
                         continue;
                     }

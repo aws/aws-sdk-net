@@ -66,9 +66,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// If set to <c>true</c>, this option appends the source path to the service URL endpoint.
         /// </para>
         /// </summary>
-        public bool AppendSourcePath
+        public bool? AppendSourcePath
         {
-            get { return this._appendSourcePath.GetValueOrDefault(); }
+            get { return this._appendSourcePath; }
             set { this._appendSourcePath = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// to this route's service. 
         /// </para>
         /// </summary>
-        public bool IncludeChildPaths
+        public bool? IncludeChildPaths
         {
-            get { return this._includeChildPaths.GetValueOrDefault(); }
+            get { return this._includeChildPaths; }
             set { this._includeChildPaths = value; }
         }
 

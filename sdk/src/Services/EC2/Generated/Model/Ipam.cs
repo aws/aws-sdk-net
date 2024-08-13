@@ -249,9 +249,9 @@ namespace Amazon.EC2.Model
         /// The IPAM's resource discovery association count.
         /// </para>
         /// </summary>
-        public int ResourceDiscoveryAssociationCount
+        public int? ResourceDiscoveryAssociationCount
         {
-            get { return this._resourceDiscoveryAssociationCount.GetValueOrDefault(); }
+            get { return this._resourceDiscoveryAssociationCount; }
             set { this._resourceDiscoveryAssociationCount = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.EC2.Model
         /// in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// </para>
         /// </summary>
-        public int ScopeCount
+        public int? ScopeCount
         {
-            get { return this._scopeCount.GetValueOrDefault(); }
+            get { return this._scopeCount; }
             set { this._scopeCount = value; }
         }
 

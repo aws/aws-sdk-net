@@ -128,9 +128,9 @@ namespace Amazon.Ivschat.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=180)]
-        public int SessionDurationInMinutes
+        public int? SessionDurationInMinutes
         {
-            get { return this._sessionDurationInMinutes.GetValueOrDefault(); }
+            get { return this._sessionDurationInMinutes; }
             set { this._sessionDurationInMinutes = value; }
         }
 

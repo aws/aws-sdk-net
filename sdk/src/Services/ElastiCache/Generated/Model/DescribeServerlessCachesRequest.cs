@@ -49,9 +49,9 @@ namespace Amazon.ElastiCache.Model
         /// can be retrieved. The default is 50.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

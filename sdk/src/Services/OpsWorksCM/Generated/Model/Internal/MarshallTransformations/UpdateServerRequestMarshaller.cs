@@ -72,13 +72,13 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBackupRetentionCount())
                 {
                     context.Writer.WritePropertyName("BackupRetentionCount");
-                    context.Writer.Write(publicRequest.BackupRetentionCount);
+                    context.Writer.Write(publicRequest.BackupRetentionCount.Value);
                 }
 
                 if(publicRequest.IsSetDisableAutomatedBackup())
                 {
                     context.Writer.WritePropertyName("DisableAutomatedBackup");
-                    context.Writer.Write(publicRequest.DisableAutomatedBackup);
+                    context.Writer.Write(publicRequest.DisableAutomatedBackup.Value);
                 }
 
                 if(publicRequest.IsSetPreferredBackupWindow())

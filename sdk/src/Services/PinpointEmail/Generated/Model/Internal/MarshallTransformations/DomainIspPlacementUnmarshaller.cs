@@ -68,13 +68,13 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("InboxPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.InboxPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InboxRawCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InboxRawCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,13 +86,13 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SpamPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SpamPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SpamRawCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SpamRawCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

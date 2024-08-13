@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model
         ///  The Security Hub default value for a control parameter that is an integer. 
         /// </para>
         /// </summary>
-        public int DefaultValue
+        public int? DefaultValue
         {
-            get { return this._defaultValue.GetValueOrDefault(); }
+            get { return this._defaultValue; }
             set { this._defaultValue = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.SecurityHub.Model
         ///  The maximum valid value for a control parameter that is an integer. 
         /// </para>
         /// </summary>
-        public int Max
+        public int? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.SecurityHub.Model
         ///  The minimum valid value for a control parameter that is an integer. 
         /// </para>
         /// </summary>
-        public int Min
+        public int? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 

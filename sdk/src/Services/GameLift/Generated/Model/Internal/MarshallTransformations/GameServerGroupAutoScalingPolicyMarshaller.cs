@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEstimatedInstanceWarmup())
             {
                 context.Writer.WritePropertyName("EstimatedInstanceWarmup");
-                context.Writer.Write(requestObject.EstimatedInstanceWarmup);
+                context.Writer.Write(requestObject.EstimatedInstanceWarmup.Value);
             }
 
             if(requestObject.IsSetTargetTrackingConfiguration())

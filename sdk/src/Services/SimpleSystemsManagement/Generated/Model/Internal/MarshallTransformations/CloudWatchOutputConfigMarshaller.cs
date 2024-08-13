@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchOutputEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchOutputEnabled");
-                context.Writer.Write(requestObject.CloudWatchOutputEnabled);
+                context.Writer.Write(requestObject.CloudWatchOutputEnabled.Value);
             }
 
         }

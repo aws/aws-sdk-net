@@ -98,9 +98,9 @@ namespace Amazon.CloudTrail.Model
         /// before attempting to import events. 
         /// </para>
         /// </summary>
-        public DateTime EndEventTime
+        public DateTime? EndEventTime
         {
-            get { return this._endEventTime.GetValueOrDefault(); }
+            get { return this._endEventTime; }
             set { this._endEventTime = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.CloudTrail.Model
         /// before attempting to import events. 
         /// </para>
         /// </summary>
-        public DateTime StartEventTime
+        public DateTime? StartEventTime
         {
-            get { return this._startEventTime.GetValueOrDefault(); }
+            get { return this._startEventTime; }
             set { this._startEventTime = value; }
         }
 

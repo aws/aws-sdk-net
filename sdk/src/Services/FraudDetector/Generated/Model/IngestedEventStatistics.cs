@@ -46,9 +46,9 @@ namespace Amazon.FraudDetector.Model
         /// The total size of the stored events.
         /// </para>
         /// </summary>
-        public long EventDataSizeInBytes
+        public long? EventDataSizeInBytes
         {
-            get { return this._eventDataSizeInBytes.GetValueOrDefault(); }
+            get { return this._eventDataSizeInBytes; }
             set { this._eventDataSizeInBytes = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.FraudDetector.Model
         /// The number of stored events.
         /// </para>
         /// </summary>
-        public long NumberOfEvents
+        public long? NumberOfEvents
         {
-            get { return this._numberOfEvents.GetValueOrDefault(); }
+            get { return this._numberOfEvents; }
             set { this._numberOfEvents = value; }
         }
 

@@ -185,7 +185,12 @@ namespace Amazon.S3.Model
         private int? partNumber;
         private RequestPayer requestPayer;
         private string expectedBucketOwner;
-
+        private string _responseCacheControl;
+        private string _responseContentDisposition;
+        private string _responseContentEncoding;
+        private string _responseContentLanguage;
+        private string _responseContentType;
+        private DateTime? _responseExpires;
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
@@ -301,13 +306,21 @@ namespace Amazon.S3.Model
             "ModifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
             "reflected in the value of both. ModifiedSinceDate is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ModifiedSinceDate
+        public DateTime? ModifiedSinceDate
         {
-            get { return this.modifiedSinceDate.GetValueOrDefault(); }
+            get { return this.modifiedSinceDate; }
             set
             {
-                this.modifiedSinceDate = value;
-                this.modifiedSinceDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value == null)
+                {
+                    this.modifiedSinceDate = null;
+                    this.modifiedSinceDateUtc = null;
+                }
+                else
+                {
+                    this.modifiedSinceDate = value;
+                    this.modifiedSinceDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
             }
         }
 
@@ -315,13 +328,21 @@ namespace Amazon.S3.Model
         /// Returns the object only if it has been modified since the specified time, 
         /// otherwise returns a PreconditionFailed.
         /// </summary>
-        public DateTime ModifiedSinceDateUtc
+        public DateTime? ModifiedSinceDateUtc
         {
-            get { return this.modifiedSinceDateUtc.GetValueOrDefault(); }
+            get { return this.modifiedSinceDateUtc ?? default(DateTime); }
             set
             {
-                this.modifiedSinceDateUtc = value;
-                this.modifiedSinceDate = value;
+                if (value == null)
+                {
+                    this.modifiedSinceDate = null;
+                    this.modifiedSinceDateUtc = null;
+                }
+                else
+                {
+                    this.modifiedSinceDateUtc = value;
+                    this.modifiedSinceDate = value;
+                }
             }
         }
 
@@ -364,13 +385,21 @@ namespace Amazon.S3.Model
             "UnmodifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
             "reflected in the value of both. UnmodifiedSinceDate is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime UnmodifiedSinceDate
+        public DateTime? UnmodifiedSinceDate
         {
-            get { return this.unmodifiedSinceDate.GetValueOrDefault(); }
+            get { return this.unmodifiedSinceDate ?? default(DateTime); }
             set
             {
-                this.unmodifiedSinceDate = value;
-                this.unmodifiedSinceDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value == null)
+                {
+                    this.unmodifiedSinceDate = null;
+                    this.unmodifiedSinceDateUtc = null;
+                }
+                else
+                {
+                    this.unmodifiedSinceDate = value;
+                    this.unmodifiedSinceDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
             }
         }
 
@@ -378,13 +407,21 @@ namespace Amazon.S3.Model
         /// Returns the object only if it has not been modified since the specified time, 
         /// otherwise returns a PreconditionFailed.
         /// </summary>
-        public DateTime UnmodifiedSinceDateUtc
+        public DateTime? UnmodifiedSinceDateUtc
         {
             get { return this.unmodifiedSinceDateUtc ?? default(DateTime); }
             set
             {
-                this.unmodifiedSinceDateUtc = value;
-                this.unmodifiedSinceDate = value;
+                if (value == null)
+                {
+                    this.unmodifiedSinceDate = null;
+                    this.unmodifiedSinceDateUtc = null;
+                }
+                else
+                {
+                    this.unmodifiedSinceDateUtc = value;
+                    this.unmodifiedSinceDate = value;
+                }
             }
         }
 
@@ -600,6 +637,114 @@ namespace Amazon.S3.Model
         internal bool IsSetExpectedBucketOwner()
         {
             return !String.IsNullOrEmpty(this.expectedBucketOwner);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseCacheControl. 
+        /// <para>
+        /// Sets the <c>Cache-Control</c> header of the response.
+        /// </para>
+        /// </summary>
+        public string ResponseCacheControl
+        {
+            get { return this._responseCacheControl; }
+            set { this._responseCacheControl = value; }
+        }
+
+        // Check to see if ResponseCacheControl property is set
+        internal bool IsSetResponseCacheControl()
+        {
+            return this._responseCacheControl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseContentDisposition. 
+        /// <para>
+        /// Sets the <c>Content-Disposition</c> header of the response.
+        /// </para>
+        /// </summary>
+        public string ResponseContentDisposition
+        {
+            get { return this._responseContentDisposition; }
+            set { this._responseContentDisposition = value; }
+        }
+
+        // Check to see if ResponseContentDisposition property is set
+        internal bool IsSetResponseContentDisposition()
+        {
+            return this._responseContentDisposition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseContentEncoding. 
+        /// <para>
+        /// Sets the <c>Content-Encoding</c> header of the response.
+        /// </para>
+        /// </summary>
+        public string ResponseContentEncoding
+        {
+            get { return this._responseContentEncoding; }
+            set { this._responseContentEncoding = value; }
+        }
+
+        // Check to see if ResponseContentEncoding property is set
+        internal bool IsSetResponseContentEncoding()
+        {
+            return this._responseContentEncoding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseContentLanguage. 
+        /// <para>
+        /// Sets the <c>Content-Language</c> header of the response.
+        /// </para>
+        /// </summary>
+        public string ResponseContentLanguage
+        {
+            get { return this._responseContentLanguage; }
+            set { this._responseContentLanguage = value; }
+        }
+
+        // Check to see if ResponseContentLanguage property is set
+        internal bool IsSetResponseContentLanguage()
+        {
+            return this._responseContentLanguage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseContentType. 
+        /// <para>
+        /// Sets the <c>Content-Type</c> header of the response.
+        /// </para>
+        /// </summary>
+        public string ResponseContentType
+        {
+            get { return this._responseContentType; }
+            set { this._responseContentType = value; }
+        }
+
+        // Check to see if ResponseContentType property is set
+        internal bool IsSetResponseContentType()
+        {
+            return this._responseContentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseExpires. 
+        /// <para>
+        /// Sets the <c>Expires</c> header of the response.
+        /// </para>
+        /// </summary>
+        public DateTime ResponseExpires
+        {
+            get { return this._responseExpires.GetValueOrDefault(); }
+            set { this._responseExpires = value; }
+        }
+
+        // Check to see if ResponseExpires property is set
+        internal bool IsSetResponseExpires()
+        {
+            return this._responseExpires.HasValue;
         }
     }
 }

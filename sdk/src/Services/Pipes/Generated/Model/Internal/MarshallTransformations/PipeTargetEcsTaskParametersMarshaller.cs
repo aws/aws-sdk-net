@@ -67,13 +67,13 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableECSManagedTags())
             {
                 context.Writer.WritePropertyName("EnableECSManagedTags");
-                context.Writer.Write(requestObject.EnableECSManagedTags);
+                context.Writer.Write(requestObject.EnableECSManagedTags.Value);
             }
 
             if(requestObject.IsSetEnableExecuteCommand())
             {
                 context.Writer.WritePropertyName("EnableExecuteCommand");
-                context.Writer.Write(requestObject.EnableExecuteCommand);
+                context.Writer.Write(requestObject.EnableExecuteCommand.Value);
             }
 
             if(requestObject.IsSetGroup())
@@ -179,7 +179,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTaskCount())
             {
                 context.Writer.WritePropertyName("TaskCount");
-                context.Writer.Write(requestObject.TaskCount);
+                context.Writer.Write(requestObject.TaskCount.Value);
             }
 
             if(requestObject.IsSetTaskDefinitionArn())

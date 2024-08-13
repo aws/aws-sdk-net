@@ -62,9 +62,9 @@ namespace Amazon.AppTest.Model
         /// The test suite version of the test suite.
         /// </para>
         /// </summary>
-        public int TestSuiteVersion
+        public int? TestSuiteVersion
         {
-            get { return this._testSuiteVersion.GetValueOrDefault(); }
+            get { return this._testSuiteVersion; }
             set { this._testSuiteVersion = value; }
         }
 

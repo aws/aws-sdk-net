@@ -86,9 +86,9 @@ namespace Amazon.AppStream.Model
         /// The date and time the user was created in the user pool.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.AppStream.Model
         /// Specifies whether the user in the user pool is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

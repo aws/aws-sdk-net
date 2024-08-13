@@ -35,10 +35,13 @@ namespace Amazon.CodePipeline.Model
     public partial class StageState
     {
         private List<ActionState> _actionStates = AWSConfigs.InitializeCollections ? new List<ActionState>() : null;
+        private StageConditionState _beforeEntryConditionState;
         private StageExecution _inboundExecution;
         private List<StageExecution> _inboundExecutions = AWSConfigs.InitializeCollections ? new List<StageExecution>() : null;
         private TransitionState _inboundTransitionState;
         private StageExecution _latestExecution;
+        private StageConditionState _onFailureConditionState;
+        private StageConditionState _onSuccessConditionState;
         private string _stageName;
 
         /// <summary>
@@ -57,6 +60,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetActionStates()
         {
             return this._actionStates != null && (this._actionStates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BeforeEntryConditionState. 
+        /// <para>
+        /// The state of the entry conditions for a stage.
+        /// </para>
+        /// </summary>
+        public StageConditionState BeforeEntryConditionState
+        {
+            get { return this._beforeEntryConditionState; }
+            set { this._beforeEntryConditionState = value; }
+        }
+
+        // Check to see if BeforeEntryConditionState property is set
+        internal bool IsSetBeforeEntryConditionState()
+        {
+            return this._beforeEntryConditionState != null;
         }
 
         /// <summary>
@@ -126,6 +147,42 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetLatestExecution()
         {
             return this._latestExecution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnFailureConditionState. 
+        /// <para>
+        /// The state of the failure conditions for a stage.
+        /// </para>
+        /// </summary>
+        public StageConditionState OnFailureConditionState
+        {
+            get { return this._onFailureConditionState; }
+            set { this._onFailureConditionState = value; }
+        }
+
+        // Check to see if OnFailureConditionState property is set
+        internal bool IsSetOnFailureConditionState()
+        {
+            return this._onFailureConditionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnSuccessConditionState. 
+        /// <para>
+        /// The state of the success conditions for a stage.
+        /// </para>
+        /// </summary>
+        public StageConditionState OnSuccessConditionState
+        {
+            get { return this._onSuccessConditionState; }
+            set { this._onSuccessConditionState = value; }
+        }
+
+        // Check to see if OnSuccessConditionState property is set
+        internal bool IsSetOnSuccessConditionState()
+        {
+            return this._onSuccessConditionState != null;
         }
 
         /// <summary>

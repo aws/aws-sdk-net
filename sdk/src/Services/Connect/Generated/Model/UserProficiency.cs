@@ -85,9 +85,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
-        public float Level
+        public float? Level
         {
-            get { return this._level.GetValueOrDefault(); }
+            get { return this._level; }
             set { this._level = value; }
         }
 

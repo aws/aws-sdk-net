@@ -75,25 +75,25 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ForwardingEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ForwardingEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HeadersInBounceNotificationsEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.HeadersInBounceNotificationsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HeadersInComplaintNotificationsEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.HeadersInComplaintNotificationsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HeadersInDeliveryNotificationsEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.HeadersInDeliveryNotificationsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }

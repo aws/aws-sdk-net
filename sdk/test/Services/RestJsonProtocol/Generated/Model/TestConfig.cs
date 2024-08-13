@@ -39,9 +39,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Timeout.
         /// </summary>
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

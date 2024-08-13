@@ -68,13 +68,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IndexedTextBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IndexedTextBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IndexedTextDocumentsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IndexedTextDocumentsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

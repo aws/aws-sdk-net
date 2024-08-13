@@ -51,13 +51,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableProfiler())
             {
                 context.Writer.WritePropertyName("DisableProfiler");
-                context.Writer.Write(requestObject.DisableProfiler);
+                context.Writer.Write(requestObject.DisableProfiler.Value);
             }
 
             if(requestObject.IsSetProfilingIntervalInMilliseconds())
             {
                 context.Writer.WritePropertyName("ProfilingIntervalInMilliseconds");
-                context.Writer.Write(requestObject.ProfilingIntervalInMilliseconds);
+                context.Writer.Write(requestObject.ProfilingIntervalInMilliseconds.Value);
             }
 
             if(requestObject.IsSetProfilingParameters())

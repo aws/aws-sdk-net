@@ -175,9 +175,9 @@ namespace Amazon.WorkMail.Model
         /// If enabled, the user is hidden from the global address list.
         /// </para>
         /// </summary>
-        public bool HiddenFromGlobalAddressList
+        public bool? HiddenFromGlobalAddressList
         {
-            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            get { return this._hiddenFromGlobalAddressList; }
             set { this._hiddenFromGlobalAddressList = value; }
         }
 

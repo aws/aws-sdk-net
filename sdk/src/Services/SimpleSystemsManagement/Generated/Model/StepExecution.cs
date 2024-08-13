@@ -84,9 +84,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// step hasn't yet concluded, this field isn't populated.
         /// </para>
         /// </summary>
-        public DateTime ExecutionEndTime
+        public DateTime? ExecutionEndTime
         {
-            get { return this._executionEndTime.GetValueOrDefault(); }
+            get { return this._executionEndTime; }
             set { this._executionEndTime = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// is in Pending status, this field isn't populated.
         /// </para>
         /// </summary>
-        public DateTime ExecutionStartTime
+        public DateTime? ExecutionStartTime
         {
-            get { return this._executionStartTime.GetValueOrDefault(); }
+            get { return this._executionStartTime; }
             set { this._executionStartTime = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to the Automation failure.
         /// </para>
         /// </summary>
-        public bool IsCritical
+        public bool? IsCritical
         {
-            get { return this._isCritical.GetValueOrDefault(); }
+            get { return this._isCritical; }
             set { this._isCritical = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// fails.
         /// </para>
         /// </summary>
-        public bool IsEnd
+        public bool? IsEnd
         {
-            get { return this._isEnd.GetValueOrDefault(); }
+            get { return this._isEnd; }
             set { this._isEnd = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of tries to run the action of the step. The default value is <c>1</c>.
         /// </para>
         /// </summary>
-        public int MaxAttempts
+        public int? MaxAttempts
         {
-            get { return this._maxAttempts.GetValueOrDefault(); }
+            get { return this._maxAttempts; }
             set { this._maxAttempts = value; }
         }
 
@@ -451,9 +451,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The timeout seconds of the step.
         /// </para>
         /// </summary>
-        public long TimeoutSeconds
+        public long? TimeoutSeconds
         {
-            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            get { return this._timeoutSeconds; }
             set { this._timeoutSeconds = value; }
         }
 

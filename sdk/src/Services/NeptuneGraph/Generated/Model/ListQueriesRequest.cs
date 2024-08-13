@@ -65,9 +65,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

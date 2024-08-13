@@ -51,9 +51,9 @@ namespace Amazon.Detective.Model
         /// The creation time of the investigation report in UTC time stamp format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.Detective.Model
         /// string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
-        public DateTime ScopeEndTime
+        public DateTime? ScopeEndTime
         {
-            get { return this._scopeEndTime.GetValueOrDefault(); }
+            get { return this._scopeEndTime; }
             set { this._scopeEndTime = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Detective.Model
         /// <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
-        public DateTime ScopeStartTime
+        public DateTime? ScopeStartTime
         {
-            get { return this._scopeStartTime.GetValueOrDefault(); }
+            get { return this._scopeStartTime; }
             set { this._scopeStartTime = value; }
         }
 

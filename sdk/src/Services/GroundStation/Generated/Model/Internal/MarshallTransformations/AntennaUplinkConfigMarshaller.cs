@@ -73,7 +73,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTransmitDisabled())
             {
                 context.Writer.WritePropertyName("transmitDisabled");
-                context.Writer.Write(requestObject.TransmitDisabled);
+                context.Writer.Write(requestObject.TransmitDisabled.Value);
             }
 
         }

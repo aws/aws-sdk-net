@@ -44,9 +44,9 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=120)]
-        public int MessageTtlSeconds
+        public int? MessageTtlSeconds
         {
-            get { return this._messageTtlSeconds.GetValueOrDefault(); }
+            get { return this._messageTtlSeconds; }
             set { this._messageTtlSeconds = value; }
         }
 

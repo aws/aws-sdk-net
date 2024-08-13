@@ -143,6 +143,39 @@ namespace Amazon.DynamoDBv2.DataModel
             objectItems.Add(objectItem);
         }
 
+        /// <summary>
+        /// Add a single item to be saved in the current transaction operation.
+        /// Item is identified by its hash primary key and will be updated using the update expression provided.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        public void AddSaveItem(object hashKey, Expression updateExpression, Expression conditionExpression = null)
+        {
+            AddSaveItem(hashKey, rangeKey: null, updateExpression, conditionExpression);
+        }
+
+        /// <summary>
+        /// Add a single item to be saved in the current transaction operation.
+        /// Item is identified by its hash-and-range primary key and will be updated using the update expression provided.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="rangeKey">Range key of the item to delete.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        public void AddSaveItem(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null)
+        {
+            var operationConfig = conditionExpression != null
+                ? new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionExpression,
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                }
+                : null;
+
+            DocumentTransaction.AddDocumentToUpdateHelper(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config), updateExpression, operationConfig);
+        }
+
         #endregion
 
 
@@ -188,7 +221,18 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key of the item to delete.</param>
         public void AddDeleteKey(object hashKey)
         {
-            AddDeleteKey(hashKey, rangeKey: null);
+            AddDeleteKey(hashKey, conditionExpression: null);
+        }
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// Item is identified by its hash primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        public void AddDeleteKey(object hashKey, Expression conditionExpression)
+        {
+            AddDeleteKey(hashKey, rangeKey: null, conditionExpression);
         }
 
         /// <summary>
@@ -199,7 +243,27 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key of the item to delete.</param>
         public void AddDeleteKey(object hashKey, object rangeKey)
         {
-            DocumentTransaction.AddKeyToDeleteHelper(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config));
+            AddDeleteKey(hashKey, rangeKey, conditionExpression: null);
+        }
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// Item is identified by its hash-and-range primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="rangeKey">Range key of the item to delete.</param>
+        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        public void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression)
+        {
+            var operationConfig = conditionExpression != null
+                ? new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionExpression,
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                }
+                : null;
+
+            DocumentTransaction.AddKeyToDeleteHelper(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config), operationConfig);
         }
 
         #endregion

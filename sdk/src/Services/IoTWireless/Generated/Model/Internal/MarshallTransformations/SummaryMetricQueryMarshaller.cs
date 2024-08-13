@@ -73,7 +73,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTimestamp())
             {
                 context.Writer.WritePropertyName("EndTimestamp");
-                context.Writer.Write(requestObject.EndTimestamp);
+                context.Writer.Write(requestObject.EndTimestamp.Value);
             }
 
             if(requestObject.IsSetMetricName())
@@ -91,7 +91,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartTimestamp())
             {
                 context.Writer.WritePropertyName("StartTimestamp");
-                context.Writer.Write(requestObject.StartTimestamp);
+                context.Writer.Write(requestObject.StartTimestamp.Value);
             }
 
         }

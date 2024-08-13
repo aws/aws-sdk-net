@@ -68,13 +68,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("jobExecutionTimeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.JobExecutionTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("terminateJobsOnUpdate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TerminateJobsOnUpdate = unmarshaller.Unmarshall(context);
                     continue;
                 }

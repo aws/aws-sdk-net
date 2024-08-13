@@ -46,9 +46,9 @@ namespace Amazon.GuardDuty.Model
         /// Information whether the user has the permission to call the Kubernetes API.
         /// </para>
         /// </summary>
-        public bool Allowed
+        public bool? Allowed
         {
-            get { return this._allowed.GetValueOrDefault(); }
+            get { return this._allowed; }
             set { this._allowed = value; }
         }
 

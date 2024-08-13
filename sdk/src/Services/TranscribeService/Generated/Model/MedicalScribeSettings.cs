@@ -64,9 +64,9 @@ namespace Amazon.TranscribeService.Model
         /// multi-channel audio</a>.
         /// </para>
         /// </summary>
-        public bool ChannelIdentification
+        public bool? ChannelIdentification
         {
-            get { return this._channelIdentification.GetValueOrDefault(); }
+            get { return this._channelIdentification; }
             set { this._channelIdentification = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=30)]
-        public int MaxSpeakerLabels
+        public int? MaxSpeakerLabels
         {
-            get { return this._maxSpeakerLabels.GetValueOrDefault(); }
+            get { return this._maxSpeakerLabels; }
             set { this._maxSpeakerLabels = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.TranscribeService.Model
         /// speakers (diarization)</a>.
         /// </para>
         /// </summary>
-        public bool ShowSpeakerLabels
+        public bool? ShowSpeakerLabels
         {
-            get { return this._showSpeakerLabels.GetValueOrDefault(); }
+            get { return this._showSpeakerLabels; }
             set { this._showSpeakerLabels = value; }
         }
 

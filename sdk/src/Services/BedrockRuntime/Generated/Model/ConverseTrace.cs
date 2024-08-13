@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The trace object in a response from <a>Converse</a>. Currently, you can only trace
-    /// guardrails.
+    /// The trace object in a response from <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>.
+    /// Currently, you can only trace guardrails.
     /// </summary>
     public partial class ConverseTrace
     {

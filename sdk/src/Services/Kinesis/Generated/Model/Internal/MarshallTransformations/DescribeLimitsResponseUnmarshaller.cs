@@ -54,25 +54,25 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("OnDemandStreamCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.OnDemandStreamCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OnDemandStreamCountLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.OnDemandStreamCountLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OpenShardCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.OpenShardCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ShardLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ShardLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

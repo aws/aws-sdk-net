@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgramId())
             {
                 context.Writer.WritePropertyName("programId");
-                context.Writer.Write(requestObject.ProgramId);
+                context.Writer.Write(requestObject.ProgramId.Value);
             }
 
         }

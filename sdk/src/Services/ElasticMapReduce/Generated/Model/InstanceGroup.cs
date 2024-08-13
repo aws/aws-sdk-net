@@ -125,9 +125,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// group.
         /// </para>
         /// </summary>
-        public long ConfigurationsVersion
+        public long? ConfigurationsVersion
         {
-            get { return this._configurationsVersion.GetValueOrDefault(); }
+            get { return this._configurationsVersion; }
             set { this._configurationsVersion = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// for an instance group last time. 
         /// </para>
         /// </summary>
-        public long LastSuccessfullyAppliedConfigurationsVersion
+        public long? LastSuccessfullyAppliedConfigurationsVersion
         {
-            get { return this._lastSuccessfullyAppliedConfigurationsVersion.GetValueOrDefault(); }
+            get { return this._lastSuccessfullyAppliedConfigurationsVersion; }
             set { this._lastSuccessfullyAppliedConfigurationsVersion = value; }
         }
 
@@ -329,9 +329,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The target number of instances for the instance group.
         /// </para>
         /// </summary>
-        public int RequestedInstanceCount
+        public int? RequestedInstanceCount
         {
-            get { return this._requestedInstanceCount.GetValueOrDefault(); }
+            get { return this._requestedInstanceCount; }
             set { this._requestedInstanceCount = value; }
         }
 
@@ -347,9 +347,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The number of instances currently running in this instance group.
         /// </para>
         /// </summary>
-        public int RunningInstanceCount
+        public int? RunningInstanceCount
         {
-            get { return this._runningInstanceCount.GetValueOrDefault(); }
+            get { return this._runningInstanceCount; }
             set { this._runningInstanceCount = value; }
         }
 

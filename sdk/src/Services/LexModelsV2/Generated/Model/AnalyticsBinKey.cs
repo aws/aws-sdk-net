@@ -62,9 +62,9 @@ namespace Amazon.LexModelsV2.Model
         /// The value of the criterion that defines the bin.
         /// </para>
         /// </summary>
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -55,9 +55,9 @@ namespace Amazon.SecurityHub.Model
         /// The maximum number of operating resources that this rule group can use.
         /// </para>
         /// </summary>
-        public int Capacity
+        public int? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.ConfigService.Model
         /// The time that Config created the compliance summary.
         /// </para>
         /// </summary>
-        public DateTime ComplianceSummaryTimestamp
+        public DateTime? ComplianceSummaryTimestamp
         {
-            get { return this._complianceSummaryTimestamp.GetValueOrDefault(); }
+            get { return this._complianceSummaryTimestamp; }
             set { this._complianceSummaryTimestamp = value; }
         }
 

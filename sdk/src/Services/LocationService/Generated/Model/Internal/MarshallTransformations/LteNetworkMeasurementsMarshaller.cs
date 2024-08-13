@@ -51,37 +51,37 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCellId())
             {
                 context.Writer.WritePropertyName("CellId");
-                context.Writer.Write(requestObject.CellId);
+                context.Writer.Write(requestObject.CellId.Value);
             }
 
             if(requestObject.IsSetEarfcn())
             {
                 context.Writer.WritePropertyName("Earfcn");
-                context.Writer.Write(requestObject.Earfcn);
+                context.Writer.Write(requestObject.Earfcn.Value);
             }
 
             if(requestObject.IsSetPci())
             {
                 context.Writer.WritePropertyName("Pci");
-                context.Writer.Write(requestObject.Pci);
+                context.Writer.Write(requestObject.Pci.Value);
             }
 
             if(requestObject.IsSetRsrp())
             {
                 context.Writer.WritePropertyName("Rsrp");
-                context.Writer.Write(requestObject.Rsrp);
+                context.Writer.Write(requestObject.Rsrp.Value);
             }
 
             if(requestObject.IsSetRsrq())
             {
                 context.Writer.WritePropertyName("Rsrq");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Rsrq);
+                    context.Writer.Write(requestObject.Rsrq.Value);
                 }
             }
 

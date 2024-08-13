@@ -139,9 +139,9 @@ namespace Amazon.MediaConvert.Model
         /// GOP boundary.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FragmentLength
+        public int? FragmentLength
         {
-            get { return this._fragmentLength.GetValueOrDefault(); }
+            get { return this._fragmentLength; }
             set { this._fragmentLength = value; }
         }
 

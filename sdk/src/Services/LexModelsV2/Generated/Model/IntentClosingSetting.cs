@@ -48,9 +48,9 @@ namespace Amazon.LexModelsV2.Model
         /// the default is true.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 

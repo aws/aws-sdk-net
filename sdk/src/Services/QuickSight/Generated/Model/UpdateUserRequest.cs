@@ -299,9 +299,9 @@ namespace Amazon.QuickSight.Model
         /// any other value.
         /// </para>
         /// </summary>
-        public bool UnapplyCustomPermissions
+        public bool? UnapplyCustomPermissions
         {
-            get { return this._unapplyCustomPermissions.GetValueOrDefault(); }
+            get { return this._unapplyCustomPermissions; }
             set { this._unapplyCustomPermissions = value; }
         }
 

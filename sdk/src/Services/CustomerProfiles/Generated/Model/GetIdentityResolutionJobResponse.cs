@@ -107,9 +107,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the Identity Resolution Job was completed.
         /// </para>
         /// </summary>
-        public DateTime JobEndTime
+        public DateTime? JobEndTime
         {
-            get { return this._jobEndTime.GetValueOrDefault(); }
+            get { return this._jobEndTime; }
             set { this._jobEndTime = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the Identity Resolution Job will expire.
         /// </para>
         /// </summary>
-        public DateTime JobExpirationTime
+        public DateTime? JobExpirationTime
         {
-            get { return this._jobExpirationTime.GetValueOrDefault(); }
+            get { return this._jobExpirationTime; }
             set { this._jobExpirationTime = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the Identity Resolution Job was started or will be started.
         /// </para>
         /// </summary>
-        public DateTime JobStartTime
+        public DateTime? JobStartTime
         {
-            get { return this._jobStartTime.GetValueOrDefault(); }
+            get { return this._jobStartTime; }
             set { this._jobStartTime = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the Identity Resolution Job was most recently edited.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

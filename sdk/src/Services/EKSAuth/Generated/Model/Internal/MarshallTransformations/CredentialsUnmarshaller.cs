@@ -74,7 +74,7 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expiration", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
                     continue;
                 }

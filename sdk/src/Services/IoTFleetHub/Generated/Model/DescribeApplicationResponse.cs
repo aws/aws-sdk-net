@@ -73,9 +73,9 @@ namespace Amazon.IoTFleetHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ApplicationCreationDate
+        public long? ApplicationCreationDate
         {
-            get { return this._applicationCreationDate.GetValueOrDefault(); }
+            get { return this._applicationCreationDate; }
             set { this._applicationCreationDate = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.IoTFleetHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ApplicationLastUpdateDate
+        public long? ApplicationLastUpdateDate
         {
-            get { return this._applicationLastUpdateDate.GetValueOrDefault(); }
+            get { return this._applicationLastUpdateDate; }
             set { this._applicationLastUpdateDate = value; }
         }
 

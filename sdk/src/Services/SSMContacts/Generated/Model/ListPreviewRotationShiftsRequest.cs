@@ -59,9 +59,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.SSMContacts.Model
         /// date and time.
         /// </para>
         /// </summary>
-        public DateTime RotationStartTime
+        public DateTime? RotationStartTime
         {
-            get { return this._rotationStartTime.GetValueOrDefault(); }
+            get { return this._rotationStartTime; }
             set { this._rotationStartTime = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.SSMContacts.Model
         /// the user. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

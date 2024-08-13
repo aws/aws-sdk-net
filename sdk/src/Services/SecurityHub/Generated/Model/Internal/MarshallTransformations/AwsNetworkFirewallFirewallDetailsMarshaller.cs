@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteProtection())
             {
                 context.Writer.WritePropertyName("DeleteProtection");
-                context.Writer.Write(requestObject.DeleteProtection);
+                context.Writer.Write(requestObject.DeleteProtection.Value);
             }
 
             if(requestObject.IsSetDescription())
@@ -87,13 +87,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirewallPolicyChangeProtection())
             {
                 context.Writer.WritePropertyName("FirewallPolicyChangeProtection");
-                context.Writer.Write(requestObject.FirewallPolicyChangeProtection);
+                context.Writer.Write(requestObject.FirewallPolicyChangeProtection.Value);
             }
 
             if(requestObject.IsSetSubnetChangeProtection())
             {
                 context.Writer.WritePropertyName("SubnetChangeProtection");
-                context.Writer.Write(requestObject.SubnetChangeProtection);
+                context.Writer.Write(requestObject.SubnetChangeProtection.Value);
             }
 
             if(requestObject.IsSetSubnetMappings())

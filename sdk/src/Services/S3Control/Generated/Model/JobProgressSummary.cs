@@ -44,9 +44,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NumberOfTasksFailed.
         /// </summary>
         [AWSProperty(Min=0)]
-        public long NumberOfTasksFailed
+        public long? NumberOfTasksFailed
         {
-            get { return this._numberOfTasksFailed.GetValueOrDefault(); }
+            get { return this._numberOfTasksFailed; }
             set { this._numberOfTasksFailed = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NumberOfTasksSucceeded.
         /// </summary>
         [AWSProperty(Min=0)]
-        public long NumberOfTasksSucceeded
+        public long? NumberOfTasksSucceeded
         {
-            get { return this._numberOfTasksSucceeded.GetValueOrDefault(); }
+            get { return this._numberOfTasksSucceeded; }
             set { this._numberOfTasksSucceeded = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property TotalNumberOfTasks.
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TotalNumberOfTasks
+        public long? TotalNumberOfTasks
         {
-            get { return this._totalNumberOfTasks.GetValueOrDefault(); }
+            get { return this._totalNumberOfTasks; }
             set { this._totalNumberOfTasks = value; }
         }
 

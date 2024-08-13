@@ -68,7 +68,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("aggregatedVariablesImportance", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.AggregatedVariablesImportance = unmarshaller.Unmarshall(context);
                     continue;
                 }

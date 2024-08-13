@@ -49,9 +49,9 @@ namespace Amazon.CloudTrail.Model
         /// and Region replication trails will not be returned. The default is true.
         /// </para>
         /// </summary>
-        public bool IncludeShadowTrails
+        public bool? IncludeShadowTrails
         {
-            get { return this._includeShadowTrails.GetValueOrDefault(); }
+            get { return this._includeShadowTrails; }
             set { this._includeShadowTrails = value; }
         }
 

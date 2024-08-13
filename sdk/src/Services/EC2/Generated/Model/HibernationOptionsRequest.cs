@@ -65,9 +65,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool Configured
+        public bool? Configured
         {
-            get { return this._configured.GetValueOrDefault(); }
+            get { return this._configured; }
             set { this._configured = value; }
         }
 

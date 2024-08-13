@@ -88,9 +88,9 @@ namespace Amazon.CodeArtifact.Model
         /// A timestamp that represents the date and time the repository was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 

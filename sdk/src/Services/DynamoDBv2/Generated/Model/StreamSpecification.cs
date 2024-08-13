@@ -44,9 +44,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool StreamEnabled
+        public bool? StreamEnabled
         {
-            get { return this._streamEnabled.GetValueOrDefault(); }
+            get { return this._streamEnabled; }
             set { this._streamEnabled = value; }
         }
 

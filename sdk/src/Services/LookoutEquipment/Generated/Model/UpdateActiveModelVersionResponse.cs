@@ -49,9 +49,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long CurrentActiveVersion
+        public long? CurrentActiveVersion
         {
-            get { return this._currentActiveVersion.GetValueOrDefault(); }
+            get { return this._currentActiveVersion; }
             set { this._currentActiveVersion = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long PreviousActiveVersion
+        public long? PreviousActiveVersion
         {
-            get { return this._previousActiveVersion.GetValueOrDefault(); }
+            get { return this._previousActiveVersion; }
             set { this._previousActiveVersion = value; }
         }
 

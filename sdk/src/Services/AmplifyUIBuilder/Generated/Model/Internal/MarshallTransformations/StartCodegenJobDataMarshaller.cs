@@ -51,7 +51,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoGenerateForms())
             {
                 context.Writer.WritePropertyName("autoGenerateForms");
-                context.Writer.Write(requestObject.AutoGenerateForms);
+                context.Writer.Write(requestObject.AutoGenerateForms.Value);
             }
 
             if(requestObject.IsSetFeatures())

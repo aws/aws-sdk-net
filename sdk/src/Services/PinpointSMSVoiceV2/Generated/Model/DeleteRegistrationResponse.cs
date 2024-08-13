@@ -69,9 +69,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long ApprovedVersionNumber
+        public long? ApprovedVersionNumber
         {
-            get { return this._approvedVersionNumber.GetValueOrDefault(); }
+            get { return this._approvedVersionNumber; }
             set { this._approvedVersionNumber = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100000)]
-        public long CurrentVersionNumber
+        public long? CurrentVersionNumber
         {
-            get { return this._currentVersionNumber.GetValueOrDefault(); }
+            get { return this._currentVersionNumber; }
             set { this._currentVersionNumber = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long LatestDeniedVersionNumber
+        public long? LatestDeniedVersionNumber
         {
-            get { return this._latestDeniedVersionNumber.GetValueOrDefault(); }
+            get { return this._latestDeniedVersionNumber; }
             set { this._latestDeniedVersionNumber = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("dimensions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
                     continue;
                 }

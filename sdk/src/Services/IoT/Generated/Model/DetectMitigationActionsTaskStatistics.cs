@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         ///  The actions that were performed. 
         /// </para>
         /// </summary>
-        public long ActionsExecuted
+        public long? ActionsExecuted
         {
-            get { return this._actionsExecuted.GetValueOrDefault(); }
+            get { return this._actionsExecuted; }
             set { this._actionsExecuted = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.IoT.Model
         ///  The actions that failed. 
         /// </para>
         /// </summary>
-        public long ActionsFailed
+        public long? ActionsFailed
         {
-            get { return this._actionsFailed.GetValueOrDefault(); }
+            get { return this._actionsFailed; }
             set { this._actionsFailed = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.IoT.Model
         ///  The actions that were skipped. 
         /// </para>
         /// </summary>
-        public long ActionsSkipped
+        public long? ActionsSkipped
         {
-            get { return this._actionsSkipped.GetValueOrDefault(); }
+            get { return this._actionsSkipped; }
             set { this._actionsSkipped = value; }
         }
 

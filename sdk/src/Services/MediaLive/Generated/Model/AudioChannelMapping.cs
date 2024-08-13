@@ -58,9 +58,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property OutputChannel. The index of the output channel being produced.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=7)]
-        public int OutputChannel
+        public int? OutputChannel
         {
-            get { return this._outputChannel.GetValueOrDefault(); }
+            get { return this._outputChannel; }
             set { this._outputChannel = value; }
         }
 

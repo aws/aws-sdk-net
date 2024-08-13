@@ -90,9 +90,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool TerminationProtected
+        public bool? TerminationProtected
         {
-            get { return this._terminationProtected.GetValueOrDefault(); }
+            get { return this._terminationProtected; }
             set { this._terminationProtected = value; }
         }
 

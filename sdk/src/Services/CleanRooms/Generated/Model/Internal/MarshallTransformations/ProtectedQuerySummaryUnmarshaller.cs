@@ -68,7 +68,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -88,6 +88,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MembershipId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("receiverConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReceiverConfiguration, ReceiverConfigurationUnmarshaller>(ReceiverConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ReceiverConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

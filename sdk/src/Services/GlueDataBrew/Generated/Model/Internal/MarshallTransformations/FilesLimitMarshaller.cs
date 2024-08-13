@@ -51,7 +51,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxFiles())
             {
                 context.Writer.WritePropertyName("MaxFiles");
-                context.Writer.Write(requestObject.MaxFiles);
+                context.Writer.Write(requestObject.MaxFiles.Value);
             }
 
             if(requestObject.IsSetOrder())

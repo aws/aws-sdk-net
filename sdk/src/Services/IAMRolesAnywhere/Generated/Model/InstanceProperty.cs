@@ -44,9 +44,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Indicates whether the temporary credential request was successful. 
         /// </para>
         /// </summary>
-        public bool Failed
+        public bool? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// request.
         /// </para>
         /// </summary>
-        public DateTime SeenAt
+        public DateTime? SeenAt
         {
-            get { return this._seenAt.GetValueOrDefault(); }
+            get { return this._seenAt; }
             set { this._seenAt = value; }
         }
 

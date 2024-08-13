@@ -104,13 +104,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProbabilityThresholdAttribute())
             {
                 context.Writer.WritePropertyName("ProbabilityThresholdAttribute");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ProbabilityThresholdAttribute);
+                    context.Writer.Write(requestObject.ProbabilityThresholdAttribute.Value);
                 }
             }
 

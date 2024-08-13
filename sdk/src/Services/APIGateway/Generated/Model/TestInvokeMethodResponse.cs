@@ -83,9 +83,9 @@ namespace Amazon.APIGateway.Model
         /// The execution latency, in ms, of the test invoke request.
         /// </para>
         /// </summary>
-        public long Latency
+        public long? Latency
         {
-            get { return this._latency.GetValueOrDefault(); }
+            get { return this._latency; }
             set { this._latency = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.APIGateway.Model
         /// The HTTP status code.
         /// </para>
         /// </summary>
-        public int Status
+        public int? Status
         {
-            get { return this._status.GetValueOrDefault(); }
+            get { return this._status; }
             set { this._status = value; }
         }
 

@@ -110,9 +110,9 @@ namespace Amazon.BackupGateway.Model
         /// This is the time when the most recent successful sync of metadata occurred.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulMetadataSyncTime
+        public DateTime? LastSuccessfulMetadataSyncTime
         {
-            get { return this._lastSuccessfulMetadataSyncTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulMetadataSyncTime; }
             set { this._lastSuccessfulMetadataSyncTime = value; }
         }
 

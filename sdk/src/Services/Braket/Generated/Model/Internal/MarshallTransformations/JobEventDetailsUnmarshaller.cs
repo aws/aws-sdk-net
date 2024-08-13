@@ -80,7 +80,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timeOfEvent", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TimeOfEvent = unmarshaller.Unmarshall(context);
                     continue;
                 }

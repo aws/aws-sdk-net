@@ -63,7 +63,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMostRecent())
             {
                 context.Writer.WritePropertyName("MostRecent");
-                context.Writer.Write(requestObject.MostRecent);
+                context.Writer.Write(requestObject.MostRecent.Value);
             }
 
         }

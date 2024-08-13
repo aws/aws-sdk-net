@@ -44,9 +44,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool AccessPointAlias
+        public bool? AccessPointAlias
         {
-            get { return this._accessPointAlias.GetValueOrDefault(); }
+            get { return this._accessPointAlias; }
             set { this._accessPointAlias = value; }
         }
 

@@ -88,9 +88,9 @@ namespace Amazon.AppRegistry.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AssociatedResourceCount
+        public int? AssociatedResourceCount
         {
-            get { return this._associatedResourceCount.GetValueOrDefault(); }
+            get { return this._associatedResourceCount; }
             set { this._associatedResourceCount = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.AppRegistry.Model
         /// The ISO-8601 formatted timestamp of the moment when the application was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.AppRegistry.Model
         /// The ISO-8601 formatted timestamp of the moment when the application was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

@@ -91,9 +91,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ParameterVersion
+        public long? ParameterVersion
         {
-            get { return this._parameterVersion.GetValueOrDefault(); }
+            get { return this._parameterVersion; }
             set { this._parameterVersion = value; }
         }
 

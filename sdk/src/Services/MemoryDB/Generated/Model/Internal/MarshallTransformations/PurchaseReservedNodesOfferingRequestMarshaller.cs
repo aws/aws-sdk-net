@@ -72,7 +72,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNodeCount())
                 {
                     context.Writer.WritePropertyName("NodeCount");
-                    context.Writer.Write(publicRequest.NodeCount);
+                    context.Writer.Write(publicRequest.NodeCount.Value);
                 }
 
                 if(publicRequest.IsSetReservationId())

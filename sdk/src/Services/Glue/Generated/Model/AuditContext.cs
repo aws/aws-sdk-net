@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// All columns request for audit.
         /// </para>
         /// </summary>
-        public bool AllColumnsRequested
+        public bool? AllColumnsRequested
         {
-            get { return this._allColumnsRequested.GetValueOrDefault(); }
+            get { return this._allColumnsRequested; }
             set { this._allColumnsRequested = value; }
         }
 

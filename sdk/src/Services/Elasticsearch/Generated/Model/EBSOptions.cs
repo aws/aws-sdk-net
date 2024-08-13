@@ -48,9 +48,9 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies whether EBS-based storage is enabled.
         /// </para>
         /// </summary>
-        public bool EBSEnabled
+        public bool? EBSEnabled
         {
-            get { return this._ebsEnabled.GetValueOrDefault(); }
+            get { return this._ebsEnabled; }
             set { this._ebsEnabled = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies the Throughput for GP3 EBS volume (SSD).
         /// </para>
         /// </summary>
-        public int Throughput
+        public int? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Elasticsearch.Model
         ///  Integer to specify the size of an EBS volume.
         /// </para>
         /// </summary>
-        public int VolumeSize
+        public int? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

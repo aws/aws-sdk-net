@@ -376,9 +376,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]
-        public int MemorySize
+        public int? MemorySize
         {
-            get { return this._memorySize.GetValueOrDefault(); }
+            get { return this._memorySize; }
             set { this._memorySize = value; }
         }
 
@@ -478,9 +478,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

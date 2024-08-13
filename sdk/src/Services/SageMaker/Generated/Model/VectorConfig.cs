@@ -43,9 +43,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8192)]
-        public int Dimension
+        public int? Dimension
         {
-            get { return this._dimension.GetValueOrDefault(); }
+            get { return this._dimension; }
             set { this._dimension = value; }
         }
 

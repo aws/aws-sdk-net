@@ -47,9 +47,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int DatapointsToAlert
+        public int? DatapointsToAlert
         {
-            get { return this._datapointsToAlert.GetValueOrDefault(); }
+            get { return this._datapointsToAlert; }
             set { this._datapointsToAlert = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int EvaluationPeriod
+        public int? EvaluationPeriod
         {
-            get { return this._evaluationPeriod.GetValueOrDefault(); }
+            get { return this._evaluationPeriod; }
             set { this._evaluationPeriod = value; }
         }
 

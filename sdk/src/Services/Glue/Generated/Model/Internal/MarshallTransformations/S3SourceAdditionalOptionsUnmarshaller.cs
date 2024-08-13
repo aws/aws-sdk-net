@@ -68,13 +68,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BoundedFiles", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BoundedFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BoundedSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BoundedSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

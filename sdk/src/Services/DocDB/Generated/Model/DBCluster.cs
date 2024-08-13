@@ -113,9 +113,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the number of days for which automatic snapshots are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime ClusterCreateTime
+        public DateTime? ClusterCreateTime
         {
-            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            get { return this._clusterCreateTime; }
             set { this._clusterCreateTime = value; }
         }
 
@@ -281,9 +281,9 @@ namespace Amazon.DocDB.Model
         /// is disabled. <c>DeletionProtection</c> protects clusters from being accidentally deleted.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.DocDB.Model
         /// The earliest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
-        public DateTime EarliestRestorableTime
+        public DateTime? EarliestRestorableTime
         {
-            get { return this._earliestRestorableTime.GetValueOrDefault(); }
+            get { return this._earliestRestorableTime; }
             set { this._earliestRestorableTime = value; }
         }
 
@@ -427,9 +427,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the latest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
-        public DateTime LatestRestorableTime
+        public DateTime? LatestRestorableTime
         {
-            get { return this._latestRestorableTime.GetValueOrDefault(); }
+            get { return this._latestRestorableTime; }
             set { this._latestRestorableTime = value; }
         }
 
@@ -463,9 +463,9 @@ namespace Amazon.DocDB.Model
         /// Specifies whether the cluster has instances in multiple Availability Zones.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -499,9 +499,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the port that the database engine is listening on.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -640,9 +640,9 @@ namespace Amazon.DocDB.Model
         /// Specifies whether the cluster is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

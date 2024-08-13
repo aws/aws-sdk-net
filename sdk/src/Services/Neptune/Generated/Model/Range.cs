@@ -44,9 +44,9 @@ namespace Amazon.Neptune.Model
         /// The minimum value in the range.
         /// </para>
         /// </summary>
-        public int From
+        public int? From
         {
-            get { return this._from.GetValueOrDefault(); }
+            get { return this._from; }
             set { this._from = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Neptune.Model
         /// values are 5,000, 6,000, 7,000, 8,000...
         /// </para>
         /// </summary>
-        public int Step
+        public int? Step
         {
-            get { return this._step.GetValueOrDefault(); }
+            get { return this._step; }
             set { this._step = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Neptune.Model
         /// The maximum value in the range.
         /// </para>
         /// </summary>
-        public int To
+        public int? To
         {
-            get { return this._to.GetValueOrDefault(); }
+            get { return this._to; }
             set { this._to = value; }
         }
 

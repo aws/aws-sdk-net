@@ -44,9 +44,9 @@ namespace Amazon.CostExplorer.Model
         /// The upper bound dollar value that's used in the filter. 
         /// </para>
         /// </summary>
-        public double EndValue
+        public double? EndValue
         {
-            get { return this._endValue.GetValueOrDefault(); }
+            get { return this._endValue; }
             set { this._endValue = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double StartValue
+        public double? StartValue
         {
-            get { return this._startValue.GetValueOrDefault(); }
+            get { return this._startValue; }
             set { this._startValue = value; }
         }
 

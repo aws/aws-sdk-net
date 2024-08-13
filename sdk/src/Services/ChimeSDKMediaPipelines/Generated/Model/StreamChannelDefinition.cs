@@ -63,9 +63,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
-        public int NumberOfChannels
+        public int? NumberOfChannels
         {
-            get { return this._numberOfChannels.GetValueOrDefault(); }
+            get { return this._numberOfChannels; }
             set { this._numberOfChannels = value; }
         }
 

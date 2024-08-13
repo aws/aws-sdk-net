@@ -51,7 +51,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumConcurrency())
             {
                 context.Writer.WritePropertyName("MaximumConcurrency");
-                context.Writer.Write(requestObject.MaximumConcurrency);
+                context.Writer.Write(requestObject.MaximumConcurrency.Value);
             }
 
         }

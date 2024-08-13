@@ -89,9 +89,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// lower bound). A null value indicates negative infinity.
         /// </para>
         /// </summary>
-        public double MetricIntervalLowerBound
+        public double? MetricIntervalLowerBound
         {
-            get { return this._metricIntervalLowerBound.GetValueOrDefault(); }
+            get { return this._metricIntervalLowerBound; }
             set { this._metricIntervalLowerBound = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The upper bound must be greater than the lower bound.
         /// </para>
         /// </summary>
-        public double MetricIntervalUpperBound
+        public double? MetricIntervalUpperBound
         {
-            get { return this._metricIntervalUpperBound.GetValueOrDefault(); }
+            get { return this._metricIntervalUpperBound; }
             set { this._metricIntervalUpperBound = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ScalingAdjustment
+        public int? ScalingAdjustment
         {
-            get { return this._scalingAdjustment.GetValueOrDefault(); }
+            get { return this._scalingAdjustment; }
             set { this._scalingAdjustment = value; }
         }
 

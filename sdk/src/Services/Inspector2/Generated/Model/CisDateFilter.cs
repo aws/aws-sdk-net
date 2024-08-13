@@ -43,9 +43,9 @@ namespace Amazon.Inspector2.Model
         /// The CIS date filter's earliest scan start time.
         /// </para>
         /// </summary>
-        public DateTime EarliestScanStartTime
+        public DateTime? EarliestScanStartTime
         {
-            get { return this._earliestScanStartTime.GetValueOrDefault(); }
+            get { return this._earliestScanStartTime; }
             set { this._earliestScanStartTime = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Inspector2.Model
         /// The CIS date filter's latest scan start time.
         /// </para>
         /// </summary>
-        public DateTime LatestScanStartTime
+        public DateTime? LatestScanStartTime
         {
-            get { return this._latestScanStartTime.GetValueOrDefault(); }
+            get { return this._latestScanStartTime; }
             set { this._latestScanStartTime = value; }
         }
 

@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCodeSize())
             {
                 context.Writer.WritePropertyName("CodeSize");
-                context.Writer.Write(requestObject.CodeSize);
+                context.Writer.Write(requestObject.CodeSize.Value);
             }
 
         }

@@ -51,13 +51,13 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMcuCount())
             {
                 context.Writer.WritePropertyName("mcuCount");
-                context.Writer.Write(requestObject.McuCount);
+                context.Writer.Write(requestObject.McuCount.Value);
             }
 
             if(requestObject.IsSetWorkerCount())
             {
                 context.Writer.WritePropertyName("workerCount");
-                context.Writer.Write(requestObject.WorkerCount);
+                context.Writer.Write(requestObject.WorkerCount.Value);
             }
 
         }

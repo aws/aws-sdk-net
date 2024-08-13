@@ -61,9 +61,9 @@ namespace Amazon.TranscribeService.Model
         /// <c>DataAccessRoleArn</c>.
         /// </para>
         /// </summary>
-        public bool AllowDeferredExecution
+        public bool? AllowDeferredExecution
         {
-            get { return this._allowDeferredExecution.GetValueOrDefault(); }
+            get { return this._allowDeferredExecution; }
             set { this._allowDeferredExecution = value; }
         }
 

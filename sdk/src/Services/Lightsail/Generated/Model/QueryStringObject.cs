@@ -50,9 +50,9 @@ namespace Amazon.Lightsail.Model
         /// Indicates whether the distribution forwards and caches based on query strings.
         /// </para>
         /// </summary>
-        public bool Option
+        public bool? Option
         {
-            get { return this._option.GetValueOrDefault(); }
+            get { return this._option; }
             set { this._option = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.Kendra.Model
         /// The Unix timestamp when the set of the featured results was created.
         /// </para>
         /// </summary>
-        public long CreationTimestamp
+        public long? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Kendra.Model
         /// The timestamp when the set of featured results was last updated.
         /// </para>
         /// </summary>
-        public long LastUpdatedTimestamp
+        public long? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 

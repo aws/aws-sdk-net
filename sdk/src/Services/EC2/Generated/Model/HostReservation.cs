@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
         /// The number of Dedicated Hosts the reservation is associated with.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.EC2.Model
         /// year)</c> | <c>94608000 (3 years)</c>.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.EC2.Model
         /// The date and time that the reservation ends.
         /// </para>
         /// </summary>
-        public DateTime End
+        public DateTime? End
         {
-            get { return this._end.GetValueOrDefault(); }
+            get { return this._end; }
             set { this._end = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.EC2.Model
         /// The date and time that the reservation started.
         /// </para>
         /// </summary>
-        public DateTime Start
+        public DateTime? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 

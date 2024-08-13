@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ForwardWhenQueryArgProfileIsUnknown", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ForwardWhenQueryArgProfileIsUnknown = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -82,7 +82,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRequireEncryption())
                 {
                     context.Writer.WritePropertyName("RequireEncryption");
-                    context.Writer.Write(publicRequest.RequireEncryption);
+                    context.Writer.Write(publicRequest.RequireEncryption.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -77,9 +77,6 @@ namespace Amazon.S3.Transfer.Internal
                 ObjectLockLegalHoldStatus = this._request.ObjectLockLegalHoldStatus,
                 ObjectLockMode = this._request.ObjectLockMode,
                 DisablePayloadSigning = this._request.DisablePayloadSigning,
-#if (BCL && !BCL45)
-                Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._request.Timeout)
-#endif
             };
             
             if (this._request.IsSetObjectLockRetainUntilDate())

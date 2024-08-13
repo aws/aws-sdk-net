@@ -56,9 +56,9 @@ namespace Amazon.IoT.Model
         /// <c>BatchPutMessage</c> </a>. The resulting array can't have more than 10 messages.
         /// </para>
         /// </summary>
-        public bool BatchMode
+        public bool? BatchMode
         {
-            get { return this._batchMode.GetValueOrDefault(); }
+            get { return this._batchMode; }
             set { this._batchMode = value; }
         }
 

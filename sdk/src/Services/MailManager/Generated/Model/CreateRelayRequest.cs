@@ -127,9 +127,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
-        public int ServerPort
+        public int? ServerPort
         {
-            get { return this._serverPort.GetValueOrDefault(); }
+            get { return this._serverPort; }
             set { this._serverPort = value; }
         }
 

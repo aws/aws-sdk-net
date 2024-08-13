@@ -32,9 +32,21 @@ namespace Amazon.Connect
     /// <summary>
     /// <para>Interface for accessing Connect</para>
     ///
+    /// <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Amazon
+    /// Connect actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html">Amazon
+    /// Connect data types</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// Amazon Connect is a cloud-based contact center solution that you use to set up and
     /// manage a customer contact center and provide reliable customer engagement at any scale.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon Connect provides metrics and real-time reporting that enable you to optimize
@@ -2984,6 +2996,45 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  DescribeAuthenticationProfile
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// access to this API, contact Amazon Web Services Support.
+        /// 
+        ///  
+        /// <para>
+        /// Describes the target authentication profile.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuthenticationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAuthenticationProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAuthenticationProfile">REST API Reference for DescribeAuthenticationProfile Operation</seealso>
+        Task<DescribeAuthenticationProfileResponse> DescribeAuthenticationProfileAsync(DescribeAuthenticationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeContact
 
 
@@ -4810,6 +4861,35 @@ namespace Amazon.Connect
         /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
         /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
         /// Services Region where the Amazon Connect instance was created.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+        /// API to verify the status of a previous <c>ImportPhoneNumber</c> operation. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you plan to claim or import numbers and then release numbers frequently, contact
+        /// us for a service quota exception. Otherwise, it is possible you will be blocked from
+        /// claiming and releasing any more numbers until up to 180 days past the oldest number
+        /// released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  By default you can claim or import and then release up to 200% of your maximum number
+        /// of active phone numbers. If you claim or import and then release phone numbers using
+        /// the UI or API during a rolling 180 day cycle that exceeds 200% of your phone number
+        /// service level quota, you will be blocked from claiming or importing any more numbers
+        /// until 180 days past the oldest number released has expired. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you already have 99 claimed or imported numbers and a service level
+        /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
+        /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
+        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportPhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -4951,6 +5031,46 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">REST API Reference for ListApprovedOrigins Operation</seealso>
         Task<ListApprovedOriginsResponse> ListApprovedOriginsAsync(ListApprovedOriginsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAuthenticationProfiles
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// access to this API, contact Amazon Web Services Support.
+        /// 
+        ///  
+        /// <para>
+        /// Provides summary information about the authentication profiles in a specified Amazon
+        /// Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuthenticationProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAuthenticationProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAuthenticationProfiles">REST API Reference for ListAuthenticationProfiles Operation</seealso>
+        Task<ListAuthenticationProfilesResponse> ListAuthenticationProfilesAsync(ListAuthenticationProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6790,6 +6910,39 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  SearchAgentStatuses
+
+
+
+        /// <summary>
+        /// Searches AgentStatuses in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAgentStatuses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchAgentStatuses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAgentStatuses">REST API Reference for SearchAgentStatuses Operation</seealso>
+        Task<SearchAgentStatusesResponse> SearchAgentStatusesAsync(SearchAgentStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SearchAvailablePhoneNumbers
 
 
@@ -7190,6 +7343,46 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  SearchUserHierarchyGroups
+
+
+
+        /// <summary>
+        /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The UserHierarchyGroup with <c>"LevelId": "0"</c> is the foundation for building levels
+        /// on top of an instance. It is not user-definable, nor is it visible in the UI.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchUserHierarchyGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchUserHierarchyGroups service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUserHierarchyGroups">REST API Reference for SearchUserHierarchyGroups Operation</seealso>
+        Task<SearchUserHierarchyGroupsResponse> SearchUserHierarchyGroupsAsync(SearchUserHierarchyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SearchUsers
 
 
@@ -7325,8 +7518,8 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
-        /// You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
-        /// Case</a>.
+        /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
+        /// Connect Case</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -7396,9 +7589,20 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
-        /// in the <i>Amazon Connect Administrator Guide</i>.
+        /// For more information about chat, see the following topics in the <i>Amazon Connect
+        /// Administrator Guide</i>: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+        /// Web and mobile messaging capabilities in Amazon Connect</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChatContact service method.</param>
         /// <param name="cancellationToken">
@@ -7542,6 +7746,22 @@ namespace Amazon.Connect
         ///  For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
         /// real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information about chat, see the following topics in the <i>Amazon Connect
+        /// Administrator Guide</i>: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+        /// Web and mobile messaging capabilities in Amazon Connect</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+        /// Connect Chat security best practices</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartContactStreaming service method.</param>
         /// <param name="cancellationToken">
@@ -8237,6 +8457,45 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAgentStatus">REST API Reference for UpdateAgentStatus Operation</seealso>
         Task<UpdateAgentStatusResponse> UpdateAgentStatusAsync(UpdateAgentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAuthenticationProfile
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change. To request
+        /// access to this API, contact Amazon Web Services Support.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the selected authentication profile.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAuthenticationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAuthenticationProfile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAuthenticationProfile">REST API Reference for UpdateAuthenticationProfile Operation</seealso>
+        Task<UpdateAuthenticationProfileResponse> UpdateAuthenticationProfileAsync(UpdateAuthenticationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -10066,5 +10325,33 @@ namespace Amazon.Connect
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonConnectConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonConnectConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonConnectConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonConnectConfig to create AmazonConnectClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonConnectClient(serviceClientConfig) :
+                    new AmazonConnectClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

@@ -68,7 +68,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CdcInsertsAndUpdates", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CdcInsertsAndUpdates = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,19 +80,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableMagneticStoreWrites", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMagneticStoreWrites = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MagneticDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MagneticDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MemoryDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemoryDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }

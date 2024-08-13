@@ -72,7 +72,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    context.Writer.Write(publicRequest.EndTime.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -84,7 +84,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 writer.WriteObjectEnd();

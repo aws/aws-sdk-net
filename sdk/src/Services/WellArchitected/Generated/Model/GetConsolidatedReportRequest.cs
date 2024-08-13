@@ -75,9 +75,9 @@ namespace Amazon.WellArchitected.Model
         /// Set to <c>true</c> to have shared resources included in the report.
         /// </para>
         /// </summary>
-        public bool IncludeSharedResources
+        public bool? IncludeSharedResources
         {
-            get { return this._includeSharedResources.GetValueOrDefault(); }
+            get { return this._includeSharedResources; }
             set { this._includeSharedResources = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

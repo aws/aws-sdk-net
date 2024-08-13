@@ -46,9 +46,9 @@ namespace Amazon.Pinpoint.Model
         /// value is 100. If set to 0, this limit will not apply.
         /// </para>
         /// </summary>
-        public int DailyCap
+        public int? DailyCap
         {
-            get { return this._dailyCap.GetValueOrDefault(); }
+            get { return this._dailyCap; }
             set { this._dailyCap = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Pinpoint.Model
         /// endpoint. The maximum value is 100. If set to 0, this limit will not apply.
         /// </para>
         /// </summary>
-        public int TotalCap
+        public int? TotalCap
         {
-            get { return this._totalCap.GetValueOrDefault(); }
+            get { return this._totalCap; }
             set { this._totalCap = value; }
         }
 

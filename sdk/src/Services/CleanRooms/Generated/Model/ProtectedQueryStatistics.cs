@@ -39,12 +39,12 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property TotalDurationInMillis. 
         /// <para>
-        /// The duration of the Protected Query, from creation until query completion.
+        /// The duration of the protected query, from creation until query completion.
         /// </para>
         /// </summary>
-        public long TotalDurationInMillis
+        public long? TotalDurationInMillis
         {
-            get { return this._totalDurationInMillis.GetValueOrDefault(); }
+            get { return this._totalDurationInMillis; }
             set { this._totalDurationInMillis = value; }
         }
 

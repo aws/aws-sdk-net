@@ -88,7 +88,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCommitTime())
                 {
                     context.Writer.WritePropertyName("commitTime");
-                    context.Writer.Write(publicRequest.CommitTime);
+                    context.Writer.Write(publicRequest.CommitTime.Value);
                 }
 
                 if(publicRequest.IsSetJobId())

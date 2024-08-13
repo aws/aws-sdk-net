@@ -57,13 +57,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreateUserLevelPrefix())
             {
                 context.Writer.WritePropertyName("CreateUserLevelPrefix");
-                context.Writer.Write(requestObject.CreateUserLevelPrefix);
+                context.Writer.Write(requestObject.CreateUserLevelPrefix.Value);
             }
 
             if(requestObject.IsSetEnableS3AccessGrants())
             {
                 context.Writer.WritePropertyName("EnableS3AccessGrants");
-                context.Writer.Write(requestObject.EnableS3AccessGrants);
+                context.Writer.Write(requestObject.EnableS3AccessGrants.Value);
             }
 
         }

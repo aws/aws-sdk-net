@@ -70,40 +70,40 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("HealthCheckConfig");
                     if(publicRequest.HealthCheckConfig.IsSetIPAddress())
-                        xmlWriter.WriteElementString("IPAddress", StringUtils.FromString(publicRequest.HealthCheckConfig.IPAddress));                 
+                        xmlWriter.WriteElementString("IPAddress", StringUtils.FromString(publicRequest.HealthCheckConfig.IPAddress));
 
                     if(publicRequest.HealthCheckConfig.IsSetPort())
-                        xmlWriter.WriteElementString("Port", StringUtils.FromInt(publicRequest.HealthCheckConfig.Port));                 
+                        xmlWriter.WriteElementString("Port", StringUtils.FromInt(publicRequest.HealthCheckConfig.Port.Value));
 
                     if(publicRequest.HealthCheckConfig.IsSetType())
-                        xmlWriter.WriteElementString("Type", StringUtils.FromString(publicRequest.HealthCheckConfig.Type));                 
+                        xmlWriter.WriteElementString("Type", StringUtils.FromString(publicRequest.HealthCheckConfig.Type));
 
                     if(publicRequest.HealthCheckConfig.IsSetResourcePath())
-                        xmlWriter.WriteElementString("ResourcePath", StringUtils.FromString(publicRequest.HealthCheckConfig.ResourcePath));                 
+                        xmlWriter.WriteElementString("ResourcePath", StringUtils.FromString(publicRequest.HealthCheckConfig.ResourcePath));
 
                     if(publicRequest.HealthCheckConfig.IsSetFullyQualifiedDomainName())
-                        xmlWriter.WriteElementString("FullyQualifiedDomainName", StringUtils.FromString(publicRequest.HealthCheckConfig.FullyQualifiedDomainName));                 
+                        xmlWriter.WriteElementString("FullyQualifiedDomainName", StringUtils.FromString(publicRequest.HealthCheckConfig.FullyQualifiedDomainName));
 
                     if(publicRequest.HealthCheckConfig.IsSetSearchString())
-                        xmlWriter.WriteElementString("SearchString", StringUtils.FromString(publicRequest.HealthCheckConfig.SearchString));                 
+                        xmlWriter.WriteElementString("SearchString", StringUtils.FromString(publicRequest.HealthCheckConfig.SearchString));
 
                     if(publicRequest.HealthCheckConfig.IsSetRequestInterval())
-                        xmlWriter.WriteElementString("RequestInterval", StringUtils.FromInt(publicRequest.HealthCheckConfig.RequestInterval));                 
+                        xmlWriter.WriteElementString("RequestInterval", StringUtils.FromInt(publicRequest.HealthCheckConfig.RequestInterval.Value));
 
                     if(publicRequest.HealthCheckConfig.IsSetFailureThreshold())
-                        xmlWriter.WriteElementString("FailureThreshold", StringUtils.FromInt(publicRequest.HealthCheckConfig.FailureThreshold));                 
+                        xmlWriter.WriteElementString("FailureThreshold", StringUtils.FromInt(publicRequest.HealthCheckConfig.FailureThreshold.Value));
 
                     if(publicRequest.HealthCheckConfig.IsSetMeasureLatency())
-                        xmlWriter.WriteElementString("MeasureLatency", StringUtils.FromBool(publicRequest.HealthCheckConfig.MeasureLatency));                 
+                        xmlWriter.WriteElementString("MeasureLatency", StringUtils.FromBool(publicRequest.HealthCheckConfig.MeasureLatency.Value));
 
                     if(publicRequest.HealthCheckConfig.IsSetInverted())
-                        xmlWriter.WriteElementString("Inverted", StringUtils.FromBool(publicRequest.HealthCheckConfig.Inverted));                 
+                        xmlWriter.WriteElementString("Inverted", StringUtils.FromBool(publicRequest.HealthCheckConfig.Inverted.Value));
 
                     if(publicRequest.HealthCheckConfig.IsSetDisabled())
-                        xmlWriter.WriteElementString("Disabled", StringUtils.FromBool(publicRequest.HealthCheckConfig.Disabled));                 
+                        xmlWriter.WriteElementString("Disabled", StringUtils.FromBool(publicRequest.HealthCheckConfig.Disabled.Value));
 
                     if(publicRequest.HealthCheckConfig.IsSetHealthThreshold())
-                        xmlWriter.WriteElementString("HealthThreshold", StringUtils.FromInt(publicRequest.HealthCheckConfig.HealthThreshold));                 
+                        xmlWriter.WriteElementString("HealthThreshold", StringUtils.FromInt(publicRequest.HealthCheckConfig.HealthThreshold.Value));
 
                     var publicRequestHealthCheckConfigChildHealthChecks = publicRequest.HealthCheckConfig.ChildHealthChecks;
                     if (publicRequestHealthCheckConfigChildHealthChecks != null && (publicRequestHealthCheckConfigChildHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections)) 
@@ -118,7 +118,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.HealthCheckConfig.IsSetEnableSNI())
-                        xmlWriter.WriteElementString("EnableSNI", StringUtils.FromBool(publicRequest.HealthCheckConfig.EnableSNI));                 
+                        xmlWriter.WriteElementString("EnableSNI", StringUtils.FromBool(publicRequest.HealthCheckConfig.EnableSNI.Value));
 
                     var publicRequestHealthCheckConfigRegions = publicRequest.HealthCheckConfig.Regions;
                     if (publicRequestHealthCheckConfigRegions != null && (publicRequestHealthCheckConfigRegions.Count > 0 || !AWSConfigs.InitializeCollections)) 
@@ -136,18 +136,18 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("AlarmIdentifier");
                         if(publicRequest.HealthCheckConfig.AlarmIdentifier.IsSetRegion())
-                            xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequest.HealthCheckConfig.AlarmIdentifier.Region));                 
+                            xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequest.HealthCheckConfig.AlarmIdentifier.Region));
 
                         if(publicRequest.HealthCheckConfig.AlarmIdentifier.IsSetName())
-                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.HealthCheckConfig.AlarmIdentifier.Name));                 
+                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.HealthCheckConfig.AlarmIdentifier.Name));
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.HealthCheckConfig.IsSetInsufficientDataHealthStatus())
-                        xmlWriter.WriteElementString("InsufficientDataHealthStatus", StringUtils.FromString(publicRequest.HealthCheckConfig.InsufficientDataHealthStatus));                 
+                        xmlWriter.WriteElementString("InsufficientDataHealthStatus", StringUtils.FromString(publicRequest.HealthCheckConfig.InsufficientDataHealthStatus));
 
                     if(publicRequest.HealthCheckConfig.IsSetRoutingControlArn())
-                        xmlWriter.WriteElementString("RoutingControlArn", StringUtils.FromString(publicRequest.HealthCheckConfig.RoutingControlArn));                 
+                        xmlWriter.WriteElementString("RoutingControlArn", StringUtils.FromString(publicRequest.HealthCheckConfig.RoutingControlArn));
 
                     xmlWriter.WriteEndElement();
                 }

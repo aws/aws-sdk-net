@@ -66,9 +66,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Iops
+        public long? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Mgn.Model
         /// Replication Configuration replicated disk boot disk.
         /// </para>
         /// </summary>
-        public bool IsBootDisk
+        public bool? IsBootDisk
         {
-            get { return this._isBootDisk.GetValueOrDefault(); }
+            get { return this._isBootDisk; }
             set { this._isBootDisk = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Throughput
+        public long? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 

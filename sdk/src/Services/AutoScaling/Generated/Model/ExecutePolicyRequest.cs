@@ -71,9 +71,9 @@ namespace Amazon.AutoScaling.Model
         /// Required if the policy type is <c>StepScaling</c> and not supported otherwise.
         /// </para>
         /// </summary>
-        public double BreachThreshold
+        public double? BreachThreshold
         {
-            get { return this._breachThreshold.GetValueOrDefault(); }
+            get { return this._breachThreshold; }
             set { this._breachThreshold = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.AutoScaling.Model
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public bool HonorCooldown
+        public bool? HonorCooldown
         {
-            get { return this._honorCooldown.GetValueOrDefault(); }
+            get { return this._honorCooldown; }
             set { this._honorCooldown = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.AutoScaling.Model
         /// Required if the policy type is <c>StepScaling</c> and not supported otherwise.
         /// </para>
         /// </summary>
-        public double MetricValue
+        public double? MetricValue
         {
-            get { return this._metricValue.GetValueOrDefault(); }
+            get { return this._metricValue; }
             set { this._metricValue = value; }
         }
 

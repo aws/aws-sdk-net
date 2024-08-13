@@ -48,9 +48,9 @@ namespace Amazon.EC2.Model
         /// The creation time.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether this is the default association route table for the transit gateway.
         /// </para>
         /// </summary>
-        public bool DefaultAssociationRouteTable
+        public bool? DefaultAssociationRouteTable
         {
-            get { return this._defaultAssociationRouteTable.GetValueOrDefault(); }
+            get { return this._defaultAssociationRouteTable; }
             set { this._defaultAssociationRouteTable = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether this is the default propagation route table for the transit gateway.
         /// </para>
         /// </summary>
-        public bool DefaultPropagationRouteTable
+        public bool? DefaultPropagationRouteTable
         {
-            get { return this._defaultPropagationRouteTable.GetValueOrDefault(); }
+            get { return this._defaultPropagationRouteTable; }
             set { this._defaultPropagationRouteTable = value; }
         }
 

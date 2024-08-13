@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SupportsDistributedTraining", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SupportsDistributedTraining = unmarshaller.Unmarshall(context);
                     continue;
                 }

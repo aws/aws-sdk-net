@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoSoftwareUpdateEnabled())
             {
                 context.Writer.WritePropertyName("AutoSoftwareUpdateEnabled");
-                context.Writer.Write(requestObject.AutoSoftwareUpdateEnabled);
+                context.Writer.Write(requestObject.AutoSoftwareUpdateEnabled.Value);
             }
 
         }

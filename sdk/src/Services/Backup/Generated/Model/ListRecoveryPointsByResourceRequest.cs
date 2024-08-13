@@ -67,9 +67,9 @@ namespace Amazon.Backup.Model
         /// Type: Boolean
         /// </para>
         /// </summary>
-        public bool ManagedByAWSBackupOnly
+        public bool? ManagedByAWSBackupOnly
         {
-            get { return this._managedByAWSBackupOnly.GetValueOrDefault(); }
+            get { return this._managedByAWSBackupOnly; }
             set { this._managedByAWSBackupOnly = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Backup.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

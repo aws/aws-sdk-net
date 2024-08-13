@@ -64,9 +64,9 @@ namespace Amazon.ServerMigrationService.Model
         /// Indicates whether the replication job is deleted or failed.
         /// </para>
         /// </summary>
-        public bool ReplicationJobTerminated
+        public bool? ReplicationJobTerminated
         {
-            get { return this._replicationJobTerminated.GetValueOrDefault(); }
+            get { return this._replicationJobTerminated; }
             set { this._replicationJobTerminated = value; }
         }
 

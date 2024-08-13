@@ -45,9 +45,9 @@ namespace Amazon.Inspector2.Model
         /// The total count of findings from all severities.
         /// </para>
         /// </summary>
-        public long All
+        public long? All
         {
-            get { return this._all.GetValueOrDefault(); }
+            get { return this._all; }
             set { this._all = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Inspector2.Model
         /// The total count of critical severity findings.
         /// </para>
         /// </summary>
-        public long Critical
+        public long? Critical
         {
-            get { return this._critical.GetValueOrDefault(); }
+            get { return this._critical; }
             set { this._critical = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Inspector2.Model
         /// The total count of high severity findings.
         /// </para>
         /// </summary>
-        public long High
+        public long? High
         {
-            get { return this._high.GetValueOrDefault(); }
+            get { return this._high; }
             set { this._high = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Inspector2.Model
         /// The total count of medium severity findings.
         /// </para>
         /// </summary>
-        public long Medium
+        public long? Medium
         {
-            get { return this._medium.GetValueOrDefault(); }
+            get { return this._medium; }
             set { this._medium = value; }
         }
 

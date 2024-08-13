@@ -74,13 +74,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Freshness", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Freshness = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Importance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Importance = unmarshaller.Unmarshall(context);
                     continue;
                 }

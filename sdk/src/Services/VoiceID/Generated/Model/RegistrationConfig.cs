@@ -67,9 +67,9 @@ namespace Amazon.VoiceID.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int FraudsterSimilarityThreshold
+        public int? FraudsterSimilarityThreshold
         {
-            get { return this._fraudsterSimilarityThreshold.GetValueOrDefault(); }
+            get { return this._fraudsterSimilarityThreshold; }
             set { this._fraudsterSimilarityThreshold = value; }
         }
 

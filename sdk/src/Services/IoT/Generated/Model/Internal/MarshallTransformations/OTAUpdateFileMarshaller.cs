@@ -93,7 +93,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileType())
             {
                 context.Writer.WritePropertyName("fileType");
-                context.Writer.Write(requestObject.FileType);
+                context.Writer.Write(requestObject.FileType.Value);
             }
 
             if(requestObject.IsSetFileVersion())

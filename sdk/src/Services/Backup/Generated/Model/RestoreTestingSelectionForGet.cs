@@ -55,9 +55,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.Backup.Model
         /// the specified retention period, whichever comes first.
         /// </para>
         /// </summary>
-        public int ValidationWindowHours
+        public int? ValidationWindowHours
         {
-            get { return this._validationWindowHours.GetValueOrDefault(); }
+            get { return this._validationWindowHours; }
             set { this._validationWindowHours = value; }
         }
 

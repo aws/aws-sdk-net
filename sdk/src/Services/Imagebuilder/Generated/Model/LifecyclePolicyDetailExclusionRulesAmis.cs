@@ -46,9 +46,9 @@ namespace Amazon.Imagebuilder.Model
         /// Configures whether public AMIs are excluded from the lifecycle action.
         /// </para>
         /// </summary>
-        public bool IsPublic
+        public bool? IsPublic
         {
-            get { return this._isPublic.GetValueOrDefault(); }
+            get { return this._isPublic; }
             set { this._isPublic = value; }
         }
 

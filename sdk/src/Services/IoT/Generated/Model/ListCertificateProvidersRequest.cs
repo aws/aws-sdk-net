@@ -50,9 +50,9 @@ namespace Amazon.IoT.Model
         /// Returns the list of certificate providers in ascending alphabetical order.
         /// </para>
         /// </summary>
-        public bool AscendingOrder
+        public bool? AscendingOrder
         {
-            get { return this._ascendingOrder.GetValueOrDefault(); }
+            get { return this._ascendingOrder; }
             set { this._ascendingOrder = value; }
         }
 

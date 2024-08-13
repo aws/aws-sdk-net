@@ -69,9 +69,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// without DKIM signing.
         /// </para>
         /// </summary>
-        public bool SigningEnabled
+        public bool? SigningEnabled
         {
-            get { return this._signingEnabled.GetValueOrDefault(); }
+            get { return this._signingEnabled; }
             set { this._signingEnabled = value; }
         }
 

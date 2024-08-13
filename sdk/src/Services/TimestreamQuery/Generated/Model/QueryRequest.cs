@@ -151,9 +151,9 @@ namespace Amazon.TimestreamQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxRows
+        public int? MaxRows
         {
-            get { return this._maxRows.GetValueOrDefault(); }
+            get { return this._maxRows; }
             set { this._maxRows = value; }
         }
 

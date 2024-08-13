@@ -68,13 +68,13 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("OwnerGid", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OwnerGid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OwnerUid", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OwnerUid = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -119,9 +119,9 @@ namespace Amazon.Route53.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long CollectionVersion
+        public long? CollectionVersion
         {
-            get { return this._collectionVersion.GetValueOrDefault(); }
+            get { return this._collectionVersion; }
             set { this._collectionVersion = value; }
         }
 

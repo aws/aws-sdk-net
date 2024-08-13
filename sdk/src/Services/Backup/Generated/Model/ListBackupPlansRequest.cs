@@ -48,9 +48,9 @@ namespace Amazon.Backup.Model
         /// when set to <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool IncludeDeleted
+        public bool? IncludeDeleted
         {
-            get { return this._includeDeleted.GetValueOrDefault(); }
+            get { return this._includeDeleted; }
             set { this._includeDeleted = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

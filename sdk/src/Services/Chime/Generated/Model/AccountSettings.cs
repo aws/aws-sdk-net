@@ -46,9 +46,9 @@ namespace Amazon.Chime.Model
         /// Setting that stops or starts remote control of shared screens during meetings.
         /// </para>
         /// </summary>
-        public bool DisableRemoteControl
+        public bool? DisableRemoteControl
         {
-            get { return this._disableRemoteControl.GetValueOrDefault(); }
+            get { return this._disableRemoteControl; }
             set { this._disableRemoteControl = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Chime.Model
         /// a Meeting without the Amazon Chime App</a>.
         /// </para>
         /// </summary>
-        public bool EnableDialOut
+        public bool? EnableDialOut
         {
-            get { return this._enableDialOut.GetValueOrDefault(); }
+            get { return this._enableDialOut; }
             set { this._enableDialOut = value; }
         }
 

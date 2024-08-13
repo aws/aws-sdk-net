@@ -52,9 +52,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The end time of 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -111,7 +111,7 @@ namespace Amazon.RedshiftServerless.Model
         /// snapshots. (Principal scheduler.redshift.amazonaws.com) to assume permissions on your
         /// behalf. For more information about the IAM role to use with the Amazon Redshift scheduler,
         /// see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using
-        /// Identity-Based Policies for Amazon Redshift</a> in the Amazon Redshift Cluster Management
+        /// Identity-Based Policies for Amazon Redshift</a> in the Amazon Redshift Management
         /// Guide
         /// </para>
         /// </summary>
@@ -220,9 +220,9 @@ namespace Amazon.RedshiftServerless.Model
         /// action does not trigger.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.Connect.Model
         /// Timestamp that measures the end of the customer greeting from an outbound voice call.
         /// </para>
         /// </summary>
-        public DateTime GreetingEndTimestamp
+        public DateTime? GreetingEndTimestamp
         {
-            get { return this._greetingEndTimestamp.GetValueOrDefault(); }
+            get { return this._greetingEndTimestamp; }
             set { this._greetingEndTimestamp = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Connect.Model
         /// call.
         /// </para>
         /// </summary>
-        public DateTime GreetingStartTimestamp
+        public DateTime? GreetingStartTimestamp
         {
-            get { return this._greetingStartTimestamp.GetValueOrDefault(); }
+            get { return this._greetingStartTimestamp; }
             set { this._greetingStartTimestamp = value; }
         }
 

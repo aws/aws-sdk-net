@@ -92,9 +92,9 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// The timestamp of when the environment was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// The timestamp of when the device was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

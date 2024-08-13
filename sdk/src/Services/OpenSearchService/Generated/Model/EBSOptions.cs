@@ -48,9 +48,9 @@ namespace Amazon.OpenSearchService.Model
         /// domain.
         /// </para>
         /// </summary>
-        public bool EBSEnabled
+        public bool? EBSEnabled
         {
-            get { return this._ebsEnabled.GetValueOrDefault(); }
+            get { return this._ebsEnabled; }
             set { this._ebsEnabled = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.OpenSearchService.Model
         /// nodes. Applicable only for the <c>gp3</c> and provisioned IOPS EBS volume types.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.OpenSearchService.Model
         /// only for the <c>gp3</c> volume type.
         /// </para>
         /// </summary>
-        public int Throughput
+        public int? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.OpenSearchService.Model
         /// Specifies the size (in GiB) of EBS volumes attached to data nodes.
         /// </para>
         /// </summary>
-        public int VolumeSize
+        public int? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

@@ -156,9 +156,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long GlobalTableProvisionedWriteCapacityUnits
+        public long? GlobalTableProvisionedWriteCapacityUnits
         {
-            get { return this._globalTableProvisionedWriteCapacityUnits.GetValueOrDefault(); }
+            get { return this._globalTableProvisionedWriteCapacityUnits; }
             set { this._globalTableProvisionedWriteCapacityUnits = value; }
         }
 

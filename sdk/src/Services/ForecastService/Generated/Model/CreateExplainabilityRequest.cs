@@ -199,9 +199,9 @@ namespace Amazon.ForecastService.Model
         /// console.
         /// </para>
         /// </summary>
-        public bool EnableVisualization
+        public bool? EnableVisualization
         {
-            get { return this._enableVisualization.GetValueOrDefault(); }
+            get { return this._enableVisualization; }
             set { this._enableVisualization = value; }
         }
 

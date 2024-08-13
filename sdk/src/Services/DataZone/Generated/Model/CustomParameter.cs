@@ -103,9 +103,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether the parameter is editable.
         /// </para>
         /// </summary>
-        public bool IsEditable
+        public bool? IsEditable
         {
-            get { return this._isEditable.GetValueOrDefault(); }
+            get { return this._isEditable; }
             set { this._isEditable = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether the custom parameter is optional.
         /// </para>
         /// </summary>
-        public bool IsOptional
+        public bool? IsOptional
         {
-            get { return this._isOptional.GetValueOrDefault(); }
+            get { return this._isOptional; }
             set { this._isOptional = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// Specified whether the value is a secret.
         /// </para>
         /// </summary>
-        public bool IsValueSecret
+        public bool? IsValueSecret
         {
-            get { return this._isValueSecret.GetValueOrDefault(); }
+            get { return this._isValueSecret; }
             set { this._isValueSecret = value; }
         }
 

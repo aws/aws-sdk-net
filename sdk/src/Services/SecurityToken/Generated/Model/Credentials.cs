@@ -51,7 +51,7 @@ namespace Amazon.SecurityToken.Model
         /// <param name="secretAccessKey">The secret access key that can be used to sign requests.</param>
         /// <param name="sessionToken">The token that users must pass to the service API to use the temporary credentials.</param>
         /// <param name="expiration">The date on which the current credentials expire.</param>
-        public Credentials(string accessKeyId, string secretAccessKey, string sessionToken, DateTime expiration)
+        public Credentials(string accessKeyId, string secretAccessKey, string sessionToken, DateTime? expiration)
         {
             _accessKeyId = accessKeyId;
             _secretAccessKey = secretAccessKey;
@@ -85,9 +85,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

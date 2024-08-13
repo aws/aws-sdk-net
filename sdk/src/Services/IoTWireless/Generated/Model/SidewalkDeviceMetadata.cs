@@ -99,9 +99,9 @@ namespace Amazon.IoTWireless.Model
         /// The RSSI value.
         /// </para>
         /// </summary>
-        public int Rssi
+        public int? Rssi
         {
-            get { return this._rssi.GetValueOrDefault(); }
+            get { return this._rssi; }
             set { this._rssi = value; }
         }
 

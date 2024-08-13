@@ -41,9 +41,9 @@ namespace Amazon.MediaConvert.Model
         /// values produce stronger filtering.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
-        public int Strength
+        public int? Strength
         {
-            get { return this._strength.GetValueOrDefault(); }
+            get { return this._strength; }
             set { this._strength = value; }
         }
 

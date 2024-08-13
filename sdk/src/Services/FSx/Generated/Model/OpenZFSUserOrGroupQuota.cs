@@ -47,9 +47,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int Id
+        public int? Id
         {
-            get { return this._id.GetValueOrDefault(); }
+            get { return this._id; }
             set { this._id = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int StorageCapacityQuotaGiB
+        public int? StorageCapacityQuotaGiB
         {
-            get { return this._storageCapacityQuotaGiB.GetValueOrDefault(); }
+            get { return this._storageCapacityQuotaGiB; }
             set { this._storageCapacityQuotaGiB = value; }
         }
 

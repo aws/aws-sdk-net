@@ -78,7 +78,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationTime())
                 {
                     context.Writer.WritePropertyName("ExpirationTime");
-                    context.Writer.Write(publicRequest.ExpirationTime);
+                    context.Writer.Write(publicRequest.ExpirationTime.Value);
                 }
 
                 if(publicRequest.IsSetMessage())

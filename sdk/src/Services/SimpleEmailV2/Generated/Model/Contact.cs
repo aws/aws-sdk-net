@@ -64,9 +64,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// A timestamp noting the last time the contact's information was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// topics.
         /// </para>
         /// </summary>
-        public bool UnsubscribeAll
+        public bool? UnsubscribeAll
         {
-            get { return this._unsubscribeAll.GetValueOrDefault(); }
+            get { return this._unsubscribeAll; }
             set { this._unsubscribeAll = value; }
         }
 

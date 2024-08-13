@@ -48,9 +48,9 @@ namespace Amazon.IoTWireless.Model
         /// The DataRate value.
         /// </para>
         /// </summary>
-        public int DataRate
+        public int? DataRate
         {
-            get { return this._dataRate.GetValueOrDefault(); }
+            get { return this._dataRate; }
             set { this._dataRate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IoTWireless.Model
         /// The FPort value.
         /// </para>
         /// </summary>
-        public int FPort
+        public int? FPort
         {
-            get { return this._fPort.GetValueOrDefault(); }
+            get { return this._fPort; }
             set { this._fPort = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.IoTWireless.Model
         /// The device's channel frequency in Hz.
         /// </para>
         /// </summary>
-        public int Frequency
+        public int? Frequency
         {
-            get { return this._frequency.GetValueOrDefault(); }
+            get { return this._frequency; }
             set { this._frequency = value; }
         }
 

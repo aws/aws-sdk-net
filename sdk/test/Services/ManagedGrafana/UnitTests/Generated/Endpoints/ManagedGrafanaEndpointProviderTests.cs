@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.ManagedGrafana.Endpoints;
 using Amazon.ManagedGrafana.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class ManagedGrafanaEndpointsTests

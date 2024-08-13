@@ -111,9 +111,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// PM UTC. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// 1, 2020 1:15:02 PM UTC. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

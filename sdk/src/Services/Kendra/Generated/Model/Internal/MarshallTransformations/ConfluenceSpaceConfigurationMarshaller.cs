@@ -51,13 +51,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlArchivedSpaces())
             {
                 context.Writer.WritePropertyName("CrawlArchivedSpaces");
-                context.Writer.Write(requestObject.CrawlArchivedSpaces);
+                context.Writer.Write(requestObject.CrawlArchivedSpaces.Value);
             }
 
             if(requestObject.IsSetCrawlPersonalSpaces())
             {
                 context.Writer.WritePropertyName("CrawlPersonalSpaces");
-                context.Writer.Write(requestObject.CrawlPersonalSpaces);
+                context.Writer.Write(requestObject.CrawlPersonalSpaces.Value);
             }
 
             if(requestObject.IsSetExcludeSpaces())

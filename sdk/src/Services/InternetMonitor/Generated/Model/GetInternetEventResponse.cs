@@ -69,9 +69,9 @@ namespace Amazon.InternetMonitor.Model
         /// is empty.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTdtInterval())
             {
                 context.Writer.WritePropertyName("tdtInterval");
-                context.Writer.Write(requestObject.TdtInterval);
+                context.Writer.Write(requestObject.TdtInterval.Value);
             }
 
         }

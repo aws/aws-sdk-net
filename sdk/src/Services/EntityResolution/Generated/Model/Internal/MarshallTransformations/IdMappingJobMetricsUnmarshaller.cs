@@ -68,19 +68,37 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("inputRecords", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InputRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("recordsNotProcessed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordsNotProcessed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalMappedRecords", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalMappedSourceRecords", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedSourceRecords = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("totalMappedTargetRecords", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TotalMappedTargetRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalRecordsProcessed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalRecordsProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }

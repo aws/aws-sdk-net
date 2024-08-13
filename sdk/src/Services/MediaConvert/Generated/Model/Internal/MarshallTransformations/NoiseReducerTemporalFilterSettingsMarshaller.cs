@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggressiveMode())
             {
                 context.Writer.WritePropertyName("aggressiveMode");
-                context.Writer.Write(requestObject.AggressiveMode);
+                context.Writer.Write(requestObject.AggressiveMode.Value);
             }
 
             if(requestObject.IsSetPostTemporalSharpening())
@@ -69,13 +69,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpeed())
             {
                 context.Writer.WritePropertyName("speed");
-                context.Writer.Write(requestObject.Speed);
+                context.Writer.Write(requestObject.Speed.Value);
             }
 
             if(requestObject.IsSetStrength())
             {
                 context.Writer.WritePropertyName("strength");
-                context.Writer.Write(requestObject.Strength);
+                context.Writer.Write(requestObject.Strength.Value);
             }
 
         }

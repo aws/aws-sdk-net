@@ -69,9 +69,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// is set to <c>Ec2RecommendationsExportPreferences</c>. 
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

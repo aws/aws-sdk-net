@@ -63,9 +63,9 @@ namespace Amazon.ECS.Model
         /// the task set. Accepted values are numbers between 0 and 100.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

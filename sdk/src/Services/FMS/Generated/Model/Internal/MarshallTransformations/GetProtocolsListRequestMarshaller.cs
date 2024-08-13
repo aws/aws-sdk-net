@@ -72,7 +72,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultList())
                 {
                     context.Writer.WritePropertyName("DefaultList");
-                    context.Writer.Write(publicRequest.DefaultList);
+                    context.Writer.Write(publicRequest.DefaultList.Value);
                 }
 
                 if(publicRequest.IsSetListId())

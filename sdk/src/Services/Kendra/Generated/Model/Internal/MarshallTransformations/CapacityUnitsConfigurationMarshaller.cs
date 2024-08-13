@@ -51,13 +51,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryCapacityUnits())
             {
                 context.Writer.WritePropertyName("QueryCapacityUnits");
-                context.Writer.Write(requestObject.QueryCapacityUnits);
+                context.Writer.Write(requestObject.QueryCapacityUnits.Value);
             }
 
             if(requestObject.IsSetStorageCapacityUnits())
             {
                 context.Writer.WritePropertyName("StorageCapacityUnits");
-                context.Writer.Write(requestObject.StorageCapacityUnits);
+                context.Writer.Write(requestObject.StorageCapacityUnits.Value);
             }
 
         }

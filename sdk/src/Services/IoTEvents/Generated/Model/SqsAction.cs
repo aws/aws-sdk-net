@@ -83,9 +83,9 @@ namespace Amazon.IoTEvents.Model
         /// the queue. Otherwise, set this to FALSE.
         /// </para>
         /// </summary>
-        public bool UseBase64
+        public bool? UseBase64
         {
-            get { return this._useBase64.GetValueOrDefault(); }
+            get { return this._useBase64; }
             set { this._useBase64 = value; }
         }
 

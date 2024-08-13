@@ -48,9 +48,9 @@ namespace Amazon.RDS.Model
         /// The timestamp of the time from which the DB cluster was backtracked.
         /// </para>
         /// </summary>
-        public DateTime BacktrackedFrom
+        public DateTime? BacktrackedFrom
         {
-            get { return this._backtrackedFrom.GetValueOrDefault(); }
+            get { return this._backtrackedFrom; }
             set { this._backtrackedFrom = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.RDS.Model
         /// The timestamp of the time at which the backtrack was requested.
         /// </para>
         /// </summary>
-        public DateTime BacktrackRequestCreationTime
+        public DateTime? BacktrackRequestCreationTime
         {
-            get { return this._backtrackRequestCreationTime.GetValueOrDefault(); }
+            get { return this._backtrackRequestCreationTime; }
             set { this._backtrackRequestCreationTime = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.RDS.Model
         /// The timestamp of the time to which the DB cluster was backtracked.
         /// </para>
         /// </summary>
-        public DateTime BacktrackTo
+        public DateTime? BacktrackTo
         {
-            get { return this._backtrackTo.GetValueOrDefault(); }
+            get { return this._backtrackTo; }
             set { this._backtrackTo = value; }
         }
 

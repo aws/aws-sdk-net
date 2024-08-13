@@ -78,7 +78,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBaseCapacity())
                 {
                     context.Writer.WritePropertyName("baseCapacity");
-                    context.Writer.Write(publicRequest.BaseCapacity);
+                    context.Writer.Write(publicRequest.BaseCapacity.Value);
                 }
 
                 if(publicRequest.IsSetComputeType())

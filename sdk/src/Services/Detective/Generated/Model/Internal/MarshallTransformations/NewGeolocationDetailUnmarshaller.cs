@@ -74,7 +74,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsNewForEntireAccount", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNewForEntireAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -74,9 +74,9 @@ namespace Amazon.S3Control.Model
         /// This property is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
-        public bool BlockPublicAcls
+        public bool? BlockPublicAcls
         {
-            get { return this._blockPublicAcls.GetValueOrDefault(); }
+            get { return this._blockPublicAcls; }
             set { this._blockPublicAcls = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.S3Control.Model
         /// This property is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
-        public bool BlockPublicPolicy
+        public bool? BlockPublicPolicy
         {
-            get { return this._blockPublicPolicy.GetValueOrDefault(); }
+            get { return this._blockPublicPolicy; }
             set { this._blockPublicPolicy = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.S3Control.Model
         /// This property is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
-        public bool IgnorePublicAcls
+        public bool? IgnorePublicAcls
         {
-            get { return this._ignorePublicAcls.GetValueOrDefault(); }
+            get { return this._ignorePublicAcls; }
             set { this._ignorePublicAcls = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.S3Control.Model
         /// This property is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
-        public bool RestrictPublicBuckets
+        public bool? RestrictPublicBuckets
         {
-            get { return this._restrictPublicBuckets.GetValueOrDefault(); }
+            get { return this._restrictPublicBuckets; }
             set { this._restrictPublicBuckets = value; }
         }
 

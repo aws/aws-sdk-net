@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// plain text. The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool InCluster
+        public bool? InCluster
         {
-            get { return this._inCluster.GetValueOrDefault(); }
+            get { return this._inCluster; }
             set { this._inCluster = value; }
         }
 

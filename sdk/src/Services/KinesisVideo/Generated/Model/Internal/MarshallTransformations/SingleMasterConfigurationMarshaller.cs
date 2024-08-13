@@ -51,7 +51,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMessageTtlSeconds())
             {
                 context.Writer.WritePropertyName("MessageTtlSeconds");
-                context.Writer.Write(requestObject.MessageTtlSeconds);
+                context.Writer.Write(requestObject.MessageTtlSeconds.Value);
             }
 
         }

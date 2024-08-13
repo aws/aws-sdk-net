@@ -51,13 +51,13 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudit())
             {
                 context.Writer.WritePropertyName("audit");
-                context.Writer.Write(requestObject.Audit);
+                context.Writer.Write(requestObject.Audit.Value);
             }
 
             if(requestObject.IsSetGeneral())
             {
                 context.Writer.WritePropertyName("general");
-                context.Writer.Write(requestObject.General);
+                context.Writer.Write(requestObject.General.Value);
             }
 
         }

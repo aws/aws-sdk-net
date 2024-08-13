@@ -142,9 +142,9 @@ namespace Amazon.Glue.Model
         /// 1 and 249.
         /// </para>
         /// </summary>
-        public int SampleSize
+        public int? SampleSize
         {
-            get { return this._sampleSize.GetValueOrDefault(); }
+            get { return this._sampleSize; }
             set { this._sampleSize = value; }
         }
 

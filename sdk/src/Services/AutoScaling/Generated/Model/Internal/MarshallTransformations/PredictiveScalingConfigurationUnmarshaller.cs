@@ -63,7 +63,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxCapacityBuffer", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxCapacityBuffer = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -86,7 +86,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SchedulingBufferTime", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SchedulingBufferTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

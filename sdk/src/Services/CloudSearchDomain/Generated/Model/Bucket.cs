@@ -43,9 +43,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The number of hits that contain the facet value in the specified facet field.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

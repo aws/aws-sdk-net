@@ -51,25 +51,25 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEBSEnabled())
             {
                 context.Writer.WritePropertyName("EBSEnabled");
-                context.Writer.Write(requestObject.EBSEnabled);
+                context.Writer.Write(requestObject.EBSEnabled.Value);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("Throughput");
-                context.Writer.Write(requestObject.Throughput);
+                context.Writer.Write(requestObject.Throughput.Value);
             }
 
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("VolumeSize");
-                context.Writer.Write(requestObject.VolumeSize);
+                context.Writer.Write(requestObject.VolumeSize.Value);
             }
 
             if(requestObject.IsSetVolumeType())

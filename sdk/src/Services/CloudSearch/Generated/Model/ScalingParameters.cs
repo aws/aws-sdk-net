@@ -64,9 +64,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DesiredPartitionCount
+        public int? DesiredPartitionCount
         {
-            get { return this._desiredPartitionCount.GetValueOrDefault(); }
+            get { return this._desiredPartitionCount; }
             set { this._desiredPartitionCount = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DesiredReplicationCount
+        public int? DesiredReplicationCount
         {
-            get { return this._desiredReplicationCount.GetValueOrDefault(); }
+            get { return this._desiredReplicationCount; }
             set { this._desiredReplicationCount = value; }
         }
 

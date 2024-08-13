@@ -48,9 +48,9 @@ namespace Amazon.PinpointEmail.Model
         /// email provider that arrived in recipients' inboxes.
         /// </para>
         /// </summary>
-        public double InboxPercentage
+        public double? InboxPercentage
         {
-            get { return this._inboxPercentage.GetValueOrDefault(); }
+            get { return this._inboxPercentage; }
             set { this._inboxPercentage = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.PinpointEmail.Model
         /// email provider that arrived in recipients' inboxes.
         /// </para>
         /// </summary>
-        public long InboxRawCount
+        public long? InboxRawCount
         {
-            get { return this._inboxRawCount.GetValueOrDefault(); }
+            get { return this._inboxRawCount; }
             set { this._inboxRawCount = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.PinpointEmail.Model
         /// email provider that arrived in recipients' spam or junk mail folders.
         /// </para>
         /// </summary>
-        public double SpamPercentage
+        public double? SpamPercentage
         {
-            get { return this._spamPercentage.GetValueOrDefault(); }
+            get { return this._spamPercentage; }
             set { this._spamPercentage = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.PinpointEmail.Model
         /// email provider that arrived in recipients' spam or junk mail folders.
         /// </para>
         /// </summary>
-        public long SpamRawCount
+        public long? SpamRawCount
         {
-            get { return this._spamRawCount.GetValueOrDefault(); }
+            get { return this._spamRawCount; }
             set { this._spamRawCount = value; }
         }
 

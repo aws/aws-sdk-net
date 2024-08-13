@@ -84,9 +84,9 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property CreationDate.
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property ErrorCount.
         /// </summary>
-        public int ErrorCount
+        public int? ErrorCount
         {
-            get { return this._errorCount.GetValueOrDefault(); }
+            get { return this._errorCount; }
             set { this._errorCount = value; }
         }
 

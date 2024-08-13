@@ -54,7 +54,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             {
                 if (context.TestExpression("knownDependencyCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.KnownDependencyCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

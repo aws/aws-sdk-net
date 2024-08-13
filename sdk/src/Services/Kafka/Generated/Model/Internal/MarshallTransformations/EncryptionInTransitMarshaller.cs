@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInCluster())
             {
                 context.Writer.WritePropertyName("inCluster");
-                context.Writer.Write(requestObject.InCluster);
+                context.Writer.Write(requestObject.InCluster.Value);
             }
 
         }

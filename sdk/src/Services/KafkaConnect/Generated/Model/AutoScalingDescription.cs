@@ -46,9 +46,9 @@ namespace Amazon.KafkaConnect.Model
         /// The maximum number of workers allocated to the connector.
         /// </para>
         /// </summary>
-        public int MaxWorkerCount
+        public int? MaxWorkerCount
         {
-            get { return this._maxWorkerCount.GetValueOrDefault(); }
+            get { return this._maxWorkerCount; }
             set { this._maxWorkerCount = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.KafkaConnect.Model
         /// valid values are 1,2,4,8.
         /// </para>
         /// </summary>
-        public int McuCount
+        public int? McuCount
         {
-            get { return this._mcuCount.GetValueOrDefault(); }
+            get { return this._mcuCount; }
             set { this._mcuCount = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.KafkaConnect.Model
         /// The minimum number of workers allocated to the connector.
         /// </para>
         /// </summary>
-        public int MinWorkerCount
+        public int? MinWorkerCount
         {
-            get { return this._minWorkerCount.GetValueOrDefault(); }
+            get { return this._minWorkerCount; }
             set { this._minWorkerCount = value; }
         }
 

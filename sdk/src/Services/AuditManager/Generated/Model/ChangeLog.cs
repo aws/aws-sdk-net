@@ -65,9 +65,9 @@ namespace Amazon.AuditManager.Model
         ///  The time when the action was performed and the changelog record was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

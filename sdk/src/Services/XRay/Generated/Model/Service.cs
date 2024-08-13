@@ -109,9 +109,9 @@ namespace Amazon.XRay.Model
         /// The end time of the last segment that the service generated.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.XRay.Model
         /// Identifier for the service. Unique within the service map.
         /// </para>
         /// </summary>
-        public int ReferenceId
+        public int? ReferenceId
         {
-            get { return this._referenceId.GetValueOrDefault(); }
+            get { return this._referenceId; }
             set { this._referenceId = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.XRay.Model
         /// Indicates that the service was the first service to process a request.
         /// </para>
         /// </summary>
-        public bool Root
+        public bool? Root
         {
-            get { return this._root.GetValueOrDefault(); }
+            get { return this._root; }
             set { this._root = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.XRay.Model
         /// The start time of the first segment that the service generated.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

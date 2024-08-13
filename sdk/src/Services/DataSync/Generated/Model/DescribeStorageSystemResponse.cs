@@ -109,9 +109,9 @@ namespace Amazon.DataSync.Model
         /// The time when you added the on-premises storage system to DataSync Discovery.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

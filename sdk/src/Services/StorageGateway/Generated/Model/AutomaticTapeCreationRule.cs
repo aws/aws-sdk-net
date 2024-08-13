@@ -54,9 +54,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
-        public int MinimumNumTapes
+        public int? MinimumNumTapes
         {
-            get { return this._minimumNumTapes.GetValueOrDefault(); }
+            get { return this._minimumNumTapes; }
             set { this._minimumNumTapes = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TapeSizeInBytes
+        public long? TapeSizeInBytes
         {
-            get { return this._tapeSizeInBytes.GetValueOrDefault(); }
+            get { return this._tapeSizeInBytes; }
             set { this._tapeSizeInBytes = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.StorageGateway.Model
         /// (WORM). Set to <c>false</c> when WORM is not enabled for tapes.
         /// </para>
         /// </summary>
-        public bool Worm
+        public bool? Worm
         {
-            get { return this._worm.GetValueOrDefault(); }
+            get { return this._worm; }
             set { this._worm = value; }
         }
 

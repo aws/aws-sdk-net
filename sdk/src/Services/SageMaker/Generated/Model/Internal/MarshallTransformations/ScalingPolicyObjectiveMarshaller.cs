@@ -51,13 +51,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxInvocationsPerMinute())
             {
                 context.Writer.WritePropertyName("MaxInvocationsPerMinute");
-                context.Writer.Write(requestObject.MaxInvocationsPerMinute);
+                context.Writer.Write(requestObject.MaxInvocationsPerMinute.Value);
             }
 
             if(requestObject.IsSetMinInvocationsPerMinute())
             {
                 context.Writer.WritePropertyName("MinInvocationsPerMinute");
-                context.Writer.Write(requestObject.MinInvocationsPerMinute);
+                context.Writer.Write(requestObject.MinInvocationsPerMinute.Value);
             }
 
         }

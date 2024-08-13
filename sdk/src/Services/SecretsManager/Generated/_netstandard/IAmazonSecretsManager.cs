@@ -337,6 +337,14 @@ namespace Amazon.SecretsManager
         /// To encrypt the secret with a KMS key other than <c>aws/secretsmanager</c>, you need
         /// <c>kms:GenerateDataKey</c> and <c>kms:Decrypt</c> permission to the key. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you enter commands in a command shell, there is a risk of the command history
+        /// being accessed or utilities having access to your command parameters. This is a concern
+        /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+        /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -1107,6 +1115,14 @@ namespace Amazon.SecretsManager
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you enter commands in a command shell, there is a risk of the command history
+        /// being accessed or utilities having access to your command parameters. This is a concern
+        /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+        /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSecretValue service method.</param>
         /// <param name="cancellationToken">
@@ -1742,10 +1758,18 @@ namespace Amazon.SecretsManager
         /// and access control in Secrets Manager</a>. If you use a customer managed key, you
         /// must also have <c>kms:GenerateDataKey</c>, <c>kms:Encrypt</c>, and <c>kms:Decrypt</c>
         /// permissions on the key. If you change the KMS key and you don't have <c>kms:Encrypt</c>
-        /// permission to the new key, Secrets Manager does not re-ecrypt existing secret versions
+        /// permission to the new key, Secrets Manager does not re-encrypt existing secret versions
         /// with the new key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
         /// Secret encryption and decryption</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you enter commands in a command shell, there is a risk of the command history
+        /// being accessed or utilities having access to your command parameters. This is a concern
+        /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+        /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSecret service method.</param>
         /// <param name="cancellationToken">
@@ -2006,5 +2030,33 @@ namespace Amazon.SecretsManager
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonSecretsManagerConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonSecretsManagerConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonSecretsManagerConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonSecretsManagerConfig to create AmazonSecretsManagerClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonSecretsManagerClient(serviceClientConfig) :
+                    new AmazonSecretsManagerClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

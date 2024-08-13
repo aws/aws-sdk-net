@@ -47,9 +47,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ClusterCloudStorageUsed
+        public long? ClusterCloudStorageUsed
         {
-            get { return this._clusterCloudStorageUsed.GetValueOrDefault(); }
+            get { return this._clusterCloudStorageUsed; }
             set { this._clusterCloudStorageUsed = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LogicalUsed
+        public long? LogicalUsed
         {
-            get { return this._logicalUsed.GetValueOrDefault(); }
+            get { return this._logicalUsed; }
             set { this._logicalUsed = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Provisioned
+        public long? Provisioned
         {
-            get { return this._provisioned.GetValueOrDefault(); }
+            get { return this._provisioned; }
             set { this._provisioned = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Used
+        public long? Used
         {
-            get { return this._used.GetValueOrDefault(); }
+            get { return this._used; }
             set { this._used = value; }
         }
 

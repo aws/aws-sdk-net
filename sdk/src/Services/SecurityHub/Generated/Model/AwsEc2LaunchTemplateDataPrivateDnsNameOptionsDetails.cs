@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// records. 
         /// </para>
         /// </summary>
-        public bool EnableResourceNameDnsAAAARecord
+        public bool? EnableResourceNameDnsAAAARecord
         {
-            get { return this._enableResourceNameDnsAAAARecord.GetValueOrDefault(); }
+            get { return this._enableResourceNameDnsAAAARecord; }
             set { this._enableResourceNameDnsAAAARecord = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public bool EnableResourceNameDnsARecord
+        public bool? EnableResourceNameDnsARecord
         {
-            get { return this._enableResourceNameDnsARecord.GetValueOrDefault(); }
+            get { return this._enableResourceNameDnsARecord; }
             set { this._enableResourceNameDnsARecord = value; }
         }
 

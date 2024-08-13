@@ -86,7 +86,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PageNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PageNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -42,9 +42,9 @@ namespace Amazon.QuickSight.Model
         /// This Boolean value controls whether to display sheet margins.
         /// </para>
         /// </summary>
-        public bool Show
+        public bool? Show
         {
-            get { return this._show.GetValueOrDefault(); }
+            get { return this._show; }
             set { this._show = value; }
         }
 

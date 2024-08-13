@@ -46,9 +46,9 @@ namespace Amazon.IoT.Model
         /// The date and time the rule was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.IoT.Model
         /// Specifies whether the rule is disabled.
         /// </para>
         /// </summary>
-        public bool RuleDisabled
+        public bool? RuleDisabled
         {
-            get { return this._ruleDisabled.GetValueOrDefault(); }
+            get { return this._ruleDisabled; }
             set { this._ruleDisabled = value; }
         }
 

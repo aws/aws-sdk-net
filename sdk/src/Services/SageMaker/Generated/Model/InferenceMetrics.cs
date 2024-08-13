@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxInvocations
+        public int? MaxInvocations
         {
-            get { return this._maxInvocations.GetValueOrDefault(); }
+            get { return this._maxInvocations; }
             set { this._maxInvocations = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ModelLatency
+        public int? ModelLatency
         {
-            get { return this._modelLatency.GetValueOrDefault(); }
+            get { return this._modelLatency; }
             set { this._modelLatency = value; }
         }
 

@@ -70,7 +70,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAssociatePublicIpAddress())
                 {
                     context.Writer.WritePropertyName("associatePublicIpAddress");
-                    context.Writer.Write(publicRequest.AssociatePublicIpAddress);
+                    context.Writer.Write(publicRequest.AssociatePublicIpAddress.Value);
                 }
 
                 if(publicRequest.IsSetBootMode())
@@ -82,19 +82,19 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCopyPrivateIp())
                 {
                     context.Writer.WritePropertyName("copyPrivateIp");
-                    context.Writer.Write(publicRequest.CopyPrivateIp);
+                    context.Writer.Write(publicRequest.CopyPrivateIp.Value);
                 }
 
                 if(publicRequest.IsSetCopyTags())
                 {
                     context.Writer.WritePropertyName("copyTags");
-                    context.Writer.Write(publicRequest.CopyTags);
+                    context.Writer.Write(publicRequest.CopyTags.Value);
                 }
 
                 if(publicRequest.IsSetEnableMapAutoTagging())
                 {
                     context.Writer.WritePropertyName("enableMapAutoTagging");
-                    context.Writer.Write(publicRequest.EnableMapAutoTagging);
+                    context.Writer.Write(publicRequest.EnableMapAutoTagging.Value);
                 }
 
                 if(publicRequest.IsSetLargeVolumeConf())
@@ -162,7 +162,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSmallVolumeMaxSize())
                 {
                     context.Writer.WritePropertyName("smallVolumeMaxSize");
-                    context.Writer.Write(publicRequest.SmallVolumeMaxSize);
+                    context.Writer.Write(publicRequest.SmallVolumeMaxSize.Value);
                 }
 
                 if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())

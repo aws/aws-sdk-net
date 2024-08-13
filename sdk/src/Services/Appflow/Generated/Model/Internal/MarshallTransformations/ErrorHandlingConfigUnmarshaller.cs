@@ -80,7 +80,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("failOnFirstDestinationError", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FailOnFirstDestinationError = unmarshaller.Unmarshall(context);
                     continue;
                 }

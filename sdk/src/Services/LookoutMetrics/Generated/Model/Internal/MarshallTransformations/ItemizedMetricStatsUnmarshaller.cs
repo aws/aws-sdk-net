@@ -74,7 +74,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OccurrenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OccurrenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

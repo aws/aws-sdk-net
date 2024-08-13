@@ -65,9 +65,9 @@ namespace Amazon.Athena.Model
         /// output location.
         /// </para>
         /// </summary>
-        public bool CreateUserLevelPrefix
+        public bool? CreateUserLevelPrefix
         {
-            get { return this._createUserLevelPrefix.GetValueOrDefault(); }
+            get { return this._createUserLevelPrefix; }
             set { this._createUserLevelPrefix = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableS3AccessGrants
+        public bool? EnableS3AccessGrants
         {
-            get { return this._enableS3AccessGrants.GetValueOrDefault(); }
+            get { return this._enableS3AccessGrants; }
             set { this._enableS3AccessGrants = value; }
         }
 

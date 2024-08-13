@@ -125,9 +125,9 @@ namespace Amazon.ElastiCache.Model
         /// Indicates whether the parameter group is associated with a Global datastore
         /// </para>
         /// </summary>
-        public bool IsGlobal
+        public bool? IsGlobal
         {
-            get { return this._isGlobal.GetValueOrDefault(); }
+            get { return this._isGlobal; }
             set { this._isGlobal = value; }
         }
 

@@ -62,7 +62,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("ManifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds);
+                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
             }
 
         }

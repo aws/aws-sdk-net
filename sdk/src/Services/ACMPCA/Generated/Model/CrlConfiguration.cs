@@ -213,9 +213,9 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int ExpirationInDays
+        public int? ExpirationInDays
         {
-            get { return this._expirationInDays.GetValueOrDefault(); }
+            get { return this._expirationInDays; }
             set { this._expirationInDays = value; }
         }
 

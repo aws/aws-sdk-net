@@ -42,11 +42,11 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Redis (cluster mode enabled) clusters
+    /// Redis OSS (cluster mode enabled) clusters
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Redis (cluster mode disabled) clusters
+    /// Redis OSS (cluster mode disabled) clusters
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A cluster from a Redis (cluster mode enabled) replication group
+    /// A cluster from a Redis OSS (cluster mode enabled) replication group
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -48,9 +48,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double Distance
+        public double? Distance
         {
-            get { return this._distance.GetValueOrDefault(); }
+            get { return this._distance; }
             set { this._distance = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double DurationSeconds
+        public double? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GeometryOffset
+        public int? GeometryOffset
         {
-            get { return this._geometryOffset.GetValueOrDefault(); }
+            get { return this._geometryOffset; }
             set { this._geometryOffset = value; }
         }
 

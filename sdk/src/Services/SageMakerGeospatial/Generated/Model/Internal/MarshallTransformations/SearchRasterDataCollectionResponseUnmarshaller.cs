@@ -54,7 +54,7 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApproximateResultCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ApproximateResultCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

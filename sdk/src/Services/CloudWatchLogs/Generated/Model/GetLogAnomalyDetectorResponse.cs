@@ -73,9 +73,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=90)]
-        public long AnomalyVisibilityTime
+        public long? AnomalyVisibilityTime
         {
-            get { return this._anomalyVisibilityTime.GetValueOrDefault(); }
+            get { return this._anomalyVisibilityTime; }
             set { this._anomalyVisibilityTime = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long CreationTimeStamp
+        public long? CreationTimeStamp
         {
-            get { return this._creationTimeStamp.GetValueOrDefault(); }
+            get { return this._creationTimeStamp; }
             set { this._creationTimeStamp = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LastModifiedTimeStamp
+        public long? LastModifiedTimeStamp
         {
-            get { return this._lastModifiedTimeStamp.GetValueOrDefault(); }
+            get { return this._lastModifiedTimeStamp; }
             set { this._lastModifiedTimeStamp = value; }
         }
 

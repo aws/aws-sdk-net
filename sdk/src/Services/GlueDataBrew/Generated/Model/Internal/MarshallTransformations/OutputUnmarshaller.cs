@@ -92,13 +92,13 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxOutputFiles", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxOutputFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Overwrite", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Overwrite = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -53,9 +53,9 @@ namespace Amazon.EKS.Model
         /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
-        public bool EndpointPrivateAccess
+        public bool? EndpointPrivateAccess
         {
-            get { return this._endpointPrivateAccess.GetValueOrDefault(); }
+            get { return this._endpointPrivateAccess; }
             set { this._endpointPrivateAccess = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.EKS.Model
         /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
-        public bool EndpointPublicAccess
+        public bool? EndpointPublicAccess
         {
-            get { return this._endpointPublicAccess.GetValueOrDefault(); }
+            get { return this._endpointPublicAccess; }
             set { this._endpointPublicAccess = value; }
         }
 

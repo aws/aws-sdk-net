@@ -98,9 +98,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The total number of items to return. The maximum value is 100.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

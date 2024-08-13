@@ -87,9 +87,9 @@ namespace Amazon.IdentityManagement.Model
         /// check <c>IsTruncated</c> after every call to ensure that you receive all your results.
         /// </para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this._isTruncated.GetValueOrDefault(); }
+            get { return this._isTruncated; }
             set { this._isTruncated = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.IdentityManagement.Model
         /// of <c>IN_PROGRESS</c>.
         /// </para>
         /// </summary>
-        public DateTime JobCompletionDate
+        public DateTime? JobCompletionDate
         {
-            get { return this._jobCompletionDate.GetValueOrDefault(); }
+            get { return this._jobCompletionDate; }
             set { this._jobCompletionDate = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime JobCreationDate
+        public DateTime? JobCreationDate
         {
-            get { return this._jobCreationDate.GetValueOrDefault(); }
+            get { return this._jobCreationDate; }
             set { this._jobCreationDate = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.IdentityManagement.Model
         /// The number of services that the applicable SCPs allow account principals to access.
         /// </para>
         /// </summary>
-        public int NumberOfServicesAccessible
+        public int? NumberOfServicesAccessible
         {
-            get { return this._numberOfServicesAccessible.GetValueOrDefault(); }
+            get { return this._numberOfServicesAccessible; }
             set { this._numberOfServicesAccessible = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.IdentityManagement.Model
         /// access.
         /// </para>
         /// </summary>
-        public int NumberOfServicesNotAccessed
+        public int? NumberOfServicesNotAccessed
         {
-            get { return this._numberOfServicesNotAccessed.GetValueOrDefault(); }
+            get { return this._numberOfServicesNotAccessed; }
             set { this._numberOfServicesNotAccessed = value; }
         }
 

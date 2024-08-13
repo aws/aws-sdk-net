@@ -57,13 +57,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("instancePort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InstancePort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("loadBalancerPort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.LoadBalancerPort = unmarshaller.Unmarshall(context);
                         continue;
                     }

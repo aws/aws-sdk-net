@@ -72,13 +72,13 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeNotScaledActivities())
                 {
                     context.Writer.WritePropertyName("IncludeNotScaledActivities");
-                    context.Writer.Write(publicRequest.IncludeNotScaledActivities);
+                    context.Writer.Write(publicRequest.IncludeNotScaledActivities.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

@@ -54,9 +54,9 @@ namespace Amazon.S3Control.Model
         /// Valid value: 15
         /// </para>
         /// </summary>
-        public int Minutes
+        public int? Minutes
         {
-            get { return this._minutes.GetValueOrDefault(); }
+            get { return this._minutes; }
             set { this._minutes = value; }
         }
 

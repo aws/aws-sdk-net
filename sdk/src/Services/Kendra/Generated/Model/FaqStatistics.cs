@@ -44,9 +44,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int IndexedQuestionAnswersCount
+        public int? IndexedQuestionAnswersCount
         {
-            get { return this._indexedQuestionAnswersCount.GetValueOrDefault(); }
+            get { return this._indexedQuestionAnswersCount; }
             set { this._indexedQuestionAnswersCount = value; }
         }
 

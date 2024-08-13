@@ -53,9 +53,9 @@ namespace Amazon.Backup.Model
         /// or it will be canceled by Backup. This value is optional.
         /// </para>
         /// </summary>
-        public long CompletionWindowMinutes
+        public long? CompletionWindowMinutes
         {
-            get { return this._completionWindowMinutes.GetValueOrDefault(); }
+            get { return this._completionWindowMinutes; }
             set { this._completionWindowMinutes = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Backup.Model
         /// causes Backup to create snapshot backups.
         /// </para>
         /// </summary>
-        public bool EnableContinuousBackup
+        public bool? EnableContinuousBackup
         {
-            get { return this._enableContinuousBackup.GetValueOrDefault(); }
+            get { return this._enableContinuousBackup; }
             set { this._enableContinuousBackup = value; }
         }
 
@@ -255,9 +255,9 @@ namespace Amazon.Backup.Model
         /// over).
         /// </para>
         /// </summary>
-        public long StartWindowMinutes
+        public long? StartWindowMinutes
         {
-            get { return this._startWindowMinutes.GetValueOrDefault(); }
+            get { return this._startWindowMinutes; }
             set { this._startWindowMinutes = value; }
         }
 

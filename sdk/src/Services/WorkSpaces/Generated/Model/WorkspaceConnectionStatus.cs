@@ -64,9 +64,9 @@ namespace Amazon.WorkSpaces.Model
         /// The timestamp of the connection status check.
         /// </para>
         /// </summary>
-        public DateTime ConnectionStateCheckTimestamp
+        public DateTime? ConnectionStateCheckTimestamp
         {
-            get { return this._connectionStateCheckTimestamp.GetValueOrDefault(); }
+            get { return this._connectionStateCheckTimestamp; }
             set { this._connectionStateCheckTimestamp = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.WorkSpaces.Model
         /// The timestamp of the last known user connection.
         /// </para>
         /// </summary>
-        public DateTime LastKnownUserConnectionTimestamp
+        public DateTime? LastKnownUserConnectionTimestamp
         {
-            get { return this._lastKnownUserConnectionTimestamp.GetValueOrDefault(); }
+            get { return this._lastKnownUserConnectionTimestamp; }
             set { this._lastKnownUserConnectionTimestamp = value; }
         }
 

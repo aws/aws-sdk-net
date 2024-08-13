@@ -74,9 +74,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// The date and time that the member was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// a different Amazon Web Services account.
         /// </para>
         /// </summary>
-        public bool IsOwned
+        public bool? IsOwned
         {
-            get { return this._isOwned.GetValueOrDefault(); }
+            get { return this._isOwned; }
             set { this._isOwned = value; }
         }
 

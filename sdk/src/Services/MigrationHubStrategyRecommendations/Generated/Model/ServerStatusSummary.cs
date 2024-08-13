@@ -43,9 +43,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// The number of servers successfully analyzed, partially successful or failed analysis.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

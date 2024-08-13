@@ -89,9 +89,9 @@ namespace Amazon.Ivschat.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaximumMessageLength
+        public int? MaximumMessageLength
         {
-            get { return this._maximumMessageLength.GetValueOrDefault(); }
+            get { return this._maximumMessageLength; }
             set { this._maximumMessageLength = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Ivschat.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaximumMessageRatePerSecond
+        public int? MaximumMessageRatePerSecond
         {
-            get { return this._maximumMessageRatePerSecond.GetValueOrDefault(); }
+            get { return this._maximumMessageRatePerSecond; }
             set { this._maximumMessageRatePerSecond = value; }
         }
 

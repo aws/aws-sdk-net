@@ -45,9 +45,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
         /// </para>
         /// </summary>
-        public bool AllRegions
+        public bool? AllRegions
         {
-            get { return this._allRegions.GetValueOrDefault(); }
+            get { return this._allRegions; }
             set { this._allRegions = value; }
         }
 

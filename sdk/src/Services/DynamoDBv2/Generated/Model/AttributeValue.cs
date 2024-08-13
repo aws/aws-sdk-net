@@ -111,9 +111,9 @@ namespace Amazon.DynamoDBv2.Model
         ///  <c>"BOOL": true</c> 
         /// </para>
         /// </summary>
-        public bool BOOL
+        public bool? BOOL
         {
-            get { return this._bool.GetValueOrDefault(); }
+            get { return this._bool; }
             set { this._bool = value; }
         }
 
@@ -365,9 +365,9 @@ namespace Amazon.DynamoDBv2.Model
         ///  <c>"NULL": true</c> 
         /// </para>
         /// </summary>
-        public bool NULL
+        public bool? NULL
         {
-            get { return this._null.GetValueOrDefault(); }
+            get { return this._null; }
             set { this._null = value; }
         }
 

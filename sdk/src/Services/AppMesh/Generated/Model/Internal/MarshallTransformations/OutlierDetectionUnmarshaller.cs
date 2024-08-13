@@ -80,13 +80,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxEjectionPercent", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxEjectionPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxServerErrors", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxServerErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,52 +51,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEast())
             {
                 context.Writer.WritePropertyName("East");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.East))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.East.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.East));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.East.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.East);
+                    context.Writer.Write(requestObject.East.Value);
                 }
             }
 
             if(requestObject.IsSetNorth())
             {
                 context.Writer.WritePropertyName("North");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.North))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.North.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.North));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.North.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.North);
+                    context.Writer.Write(requestObject.North.Value);
                 }
             }
 
             if(requestObject.IsSetSouth())
             {
                 context.Writer.WritePropertyName("South");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.South))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.South.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.South));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.South.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.South);
+                    context.Writer.Write(requestObject.South.Value);
                 }
             }
 
             if(requestObject.IsSetWest())
             {
                 context.Writer.WritePropertyName("West");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.West))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.West.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.West));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.West.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.West);
+                    context.Writer.Write(requestObject.West.Value);
                 }
             }
 

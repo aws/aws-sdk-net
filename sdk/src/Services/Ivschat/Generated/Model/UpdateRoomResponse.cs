@@ -71,9 +71,9 @@ namespace Amazon.Ivschat.Model
         /// returned as a string</i>.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Ivschat.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaximumMessageLength
+        public int? MaximumMessageLength
         {
-            get { return this._maximumMessageLength.GetValueOrDefault(); }
+            get { return this._maximumMessageLength; }
             set { this._maximumMessageLength = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.Ivschat.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaximumMessageRatePerSecond
+        public int? MaximumMessageRatePerSecond
         {
-            get { return this._maximumMessageRatePerSecond.GetValueOrDefault(); }
+            get { return this._maximumMessageRatePerSecond; }
             set { this._maximumMessageRatePerSecond = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.Ivschat.Model
         /// returned as a string</i>.
         /// </para>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

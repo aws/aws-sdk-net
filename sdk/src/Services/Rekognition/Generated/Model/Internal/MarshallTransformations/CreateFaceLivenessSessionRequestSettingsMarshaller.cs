@@ -51,7 +51,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuditImagesLimit())
             {
                 context.Writer.WritePropertyName("AuditImagesLimit");
-                context.Writer.Write(requestObject.AuditImagesLimit);
+                context.Writer.Write(requestObject.AuditImagesLimit.Value);
             }
 
             if(requestObject.IsSetOutputConfig())

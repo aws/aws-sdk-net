@@ -68,7 +68,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableIdentityCenter", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableIdentityCenter = unmarshaller.Unmarshall(context);
                     continue;
                 }

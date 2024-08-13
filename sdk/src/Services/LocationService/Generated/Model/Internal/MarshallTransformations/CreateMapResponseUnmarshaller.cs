@@ -54,7 +54,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

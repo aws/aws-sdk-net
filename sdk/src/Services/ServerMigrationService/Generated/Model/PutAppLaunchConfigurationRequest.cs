@@ -65,9 +65,9 @@ namespace Amazon.ServerMigrationService.Model
         /// is complete.
         /// </para>
         /// </summary>
-        public bool AutoLaunch
+        public bool? AutoLaunch
         {
-            get { return this._autoLaunch.GetValueOrDefault(); }
+            get { return this._autoLaunch; }
             set { this._autoLaunch = value; }
         }
 

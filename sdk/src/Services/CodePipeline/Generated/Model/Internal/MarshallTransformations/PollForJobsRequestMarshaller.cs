@@ -83,7 +83,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxBatchSize())
                 {
                     context.Writer.WritePropertyName("maxBatchSize");
-                    context.Writer.Write(publicRequest.MaxBatchSize);
+                    context.Writer.Write(publicRequest.MaxBatchSize.Value);
                 }
 
                 if(publicRequest.IsSetQueryParam())

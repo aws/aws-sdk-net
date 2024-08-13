@@ -68,7 +68,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("instanceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("volumeSizeInGb", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSizeInGb = unmarshaller.Unmarshall(context);
                     continue;
                 }

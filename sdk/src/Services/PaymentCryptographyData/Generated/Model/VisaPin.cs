@@ -43,10 +43,10 @@ namespace Amazon.PaymentCryptographyData.Model
         /// the PVV (PIN Verification Value).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=9)]
-        public int PinVerificationKeyIndex
+        [AWSProperty(Required=true, Min=0, Max=6)]
+        public int? PinVerificationKeyIndex
         {
-            get { return this._pinVerificationKeyIndex.GetValueOrDefault(); }
+            get { return this._pinVerificationKeyIndex; }
             set { this._pinVerificationKeyIndex = value; }
         }
 

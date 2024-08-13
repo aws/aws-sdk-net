@@ -110,9 +110,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -288,9 +288,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]
-        public int TotalCpuLimit
+        public int? TotalCpuLimit
         {
-            get { return this._totalCpuLimit.GetValueOrDefault(); }
+            get { return this._totalCpuLimit; }
             set { this._totalCpuLimit = value; }
         }
 
@@ -328,9 +328,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024000)]
-        public int TotalMemoryLimit
+        public int? TotalMemoryLimit
         {
-            get { return this._totalMemoryLimit.GetValueOrDefault(); }
+            get { return this._totalMemoryLimit; }
             set { this._totalMemoryLimit = value; }
         }
 

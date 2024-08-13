@@ -56,9 +56,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid values: <c>TRUE</c> | <c>FALSE</c> 
         /// </para>
         /// </summary>
-        public bool BypassGovernanceRetention
+        public bool? BypassGovernanceRetention
         {
-            get { return this._bypassGovernanceRetention.GetValueOrDefault(); }
+            get { return this._bypassGovernanceRetention; }
             set { this._bypassGovernanceRetention = value; }
         }
 

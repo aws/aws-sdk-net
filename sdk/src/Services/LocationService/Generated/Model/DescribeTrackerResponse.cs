@@ -55,9 +55,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.LocationService.Model
         /// to <c>true</c> these events will be sent to EventBridge.
         /// </para>
         /// </summary>
-        public bool EventBridgeEnabled
+        public bool? EventBridgeEnabled
         {
-            get { return this._eventBridgeEnabled.GetValueOrDefault(); }
+            get { return this._eventBridgeEnabled; }
             set { this._eventBridgeEnabled = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool KmsKeyEnableGeospatialQueries
+        public bool? KmsKeyEnableGeospatialQueries
         {
-            get { return this._kmsKeyEnableGeospatialQueries.GetValueOrDefault(); }
+            get { return this._kmsKeyEnableGeospatialQueries; }
             set { this._kmsKeyEnableGeospatialQueries = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

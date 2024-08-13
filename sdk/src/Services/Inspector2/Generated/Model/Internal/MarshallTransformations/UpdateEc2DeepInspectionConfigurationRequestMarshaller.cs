@@ -70,7 +70,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetActivateDeepInspection())
                 {
                     context.Writer.WritePropertyName("activateDeepInspection");
-                    context.Writer.Write(publicRequest.ActivateDeepInspection);
+                    context.Writer.Write(publicRequest.ActivateDeepInspection.Value);
                 }
 
                 if(publicRequest.IsSetPackagePaths())

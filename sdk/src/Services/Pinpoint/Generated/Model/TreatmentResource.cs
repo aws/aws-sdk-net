@@ -127,9 +127,9 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SizePercent
+        public int? SizePercent
         {
-            get { return this._sizePercent.GetValueOrDefault(); }
+            get { return this._sizePercent; }
             set { this._sizePercent = value; }
         }
 

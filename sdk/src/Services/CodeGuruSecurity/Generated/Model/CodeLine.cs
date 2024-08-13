@@ -61,9 +61,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The code line number.
         /// </para>
         /// </summary>
-        public int Number
+        public int? Number
         {
-            get { return this._number.GetValueOrDefault(); }
+            get { return this._number; }
             set { this._number = value; }
         }
 

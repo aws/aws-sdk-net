@@ -43,9 +43,9 @@ namespace Amazon.QLDBSession.Model
         /// The number of read I/O requests that the command made.
         /// </para>
         /// </summary>
-        public long ReadIOs
+        public long? ReadIOs
         {
-            get { return this._readIOs.GetValueOrDefault(); }
+            get { return this._readIOs; }
             set { this._readIOs = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.QLDBSession.Model
         /// The number of write I/O requests that the command made.
         /// </para>
         /// </summary>
-        public long WriteIOs
+        public long? WriteIOs
         {
-            get { return this._writeIOs.GetValueOrDefault(); }
+            get { return this._writeIOs; }
             set { this._writeIOs = value; }
         }
 

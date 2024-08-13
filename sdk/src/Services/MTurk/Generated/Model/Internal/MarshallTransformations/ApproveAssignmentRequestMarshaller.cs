@@ -78,7 +78,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOverrideRejection())
                 {
                     context.Writer.WritePropertyName("OverrideRejection");
-                    context.Writer.Write(publicRequest.OverrideRejection);
+                    context.Writer.Write(publicRequest.OverrideRejection.Value);
                 }
 
                 if(publicRequest.IsSetRequesterFeedback())

@@ -119,7 +119,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSilentPush())
             {
                 context.Writer.WritePropertyName("SilentPush");
-                context.Writer.Write(requestObject.SilentPush);
+                context.Writer.Write(requestObject.SilentPush.Value);
             }
 
             if(requestObject.IsSetSmallImageIconUrl())

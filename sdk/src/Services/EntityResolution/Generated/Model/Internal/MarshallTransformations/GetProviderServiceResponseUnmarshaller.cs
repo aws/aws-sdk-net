@@ -54,7 +54,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("anonymizedOutput", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AnonymizedOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }

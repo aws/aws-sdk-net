@@ -65,9 +65,9 @@ namespace Amazon.Detective.Model
         /// is an ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
-        public DateTime DelegationTime
+        public DateTime? DelegationTime
         {
-            get { return this._delegationTime.GetValueOrDefault(); }
+            get { return this._delegationTime; }
             set { this._delegationTime = value; }
         }
 

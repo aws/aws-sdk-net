@@ -80,9 +80,9 @@ namespace Amazon.Private5G.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AutomaticRenewal
+        public bool? AutomaticRenewal
         {
-            get { return this._automaticRenewal.GetValueOrDefault(); }
+            get { return this._automaticRenewal; }
             set { this._automaticRenewal = value; }
         }
 

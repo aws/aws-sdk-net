@@ -103,9 +103,9 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int PortNumber
+        public int? PortNumber
         {
-            get { return this._portNumber.GetValueOrDefault(); }
+            get { return this._portNumber; }
             set { this._portNumber = value; }
         }
 

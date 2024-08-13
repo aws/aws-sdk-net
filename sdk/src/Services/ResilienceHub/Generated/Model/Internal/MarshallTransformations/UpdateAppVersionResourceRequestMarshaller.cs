@@ -118,7 +118,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExcluded())
                 {
                     context.Writer.WritePropertyName("excluded");
-                    context.Writer.Write(publicRequest.Excluded);
+                    context.Writer.Write(publicRequest.Excluded.Value);
                 }
 
                 if(publicRequest.IsSetLogicalResourceId())

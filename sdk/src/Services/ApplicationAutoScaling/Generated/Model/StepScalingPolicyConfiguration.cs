@@ -79,9 +79,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// period</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public int Cooldown
+        public int? Cooldown
         {
-            get { return this._cooldown.GetValueOrDefault(); }
+            get { return this._cooldown; }
             set { this._cooldown = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Scaling scales out the service by 2 tasks.
         /// </para>
         /// </summary>
-        public int MinAdjustmentMagnitude
+        public int? MinAdjustmentMagnitude
         {
-            get { return this._minAdjustmentMagnitude.GetValueOrDefault(); }
+            get { return this._minAdjustmentMagnitude; }
             set { this._minAdjustmentMagnitude = value; }
         }
 

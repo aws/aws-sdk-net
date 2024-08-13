@@ -80,7 +80,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SyncShadow", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SyncShadow = unmarshaller.Unmarshall(context);
                     continue;
                 }

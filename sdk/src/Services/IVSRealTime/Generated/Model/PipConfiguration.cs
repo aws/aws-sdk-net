@@ -51,7 +51,7 @@ namespace Amazon.IVSRealTime.Model
         /// <para>
         /// This attribute name identifies the featured slot. A participant with this attribute
         /// set to <c>"true"</c> (as a string value) in <a>ParticipantTokenConfiguration</a> is
-        /// placed in the featured slot.
+        /// placed in the featured slot. Default: <c>""</c> (no featured participant).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -74,9 +74,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GridGap
+        public int? GridGap
         {
-            get { return this._gridGap.GetValueOrDefault(); }
+            get { return this._gridGap; }
             set { this._gridGap = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.IVSRealTime.Model
         /// <c>false</c>.
         /// </para>
         /// </summary>
-        public bool OmitStoppedVideo
+        public bool? OmitStoppedVideo
         {
-            get { return this._omitStoppedVideo.GetValueOrDefault(); }
+            get { return this._omitStoppedVideo; }
             set { this._omitStoppedVideo = value; }
         }
 
@@ -108,7 +108,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property PipBehavior. 
         /// <para>
-        /// Defines PiP behavior when all participants have left. Default: <c>STATIC</c>.
+        /// Defines PiP behavior when all participants have left: <c>STATIC</c> (maintains original
+        /// position/size) or <c>DYNAMIC</c> (expands to full composition). Default: <c>STATIC</c>.
         /// </para>
         /// </summary>
         public PipBehavior PipBehavior
@@ -132,9 +133,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int PipHeight
+        public int? PipHeight
         {
-            get { return this._pipHeight.GetValueOrDefault(); }
+            get { return this._pipHeight; }
             set { this._pipHeight = value; }
         }
 
@@ -152,9 +153,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PipOffset
+        public int? PipOffset
         {
-            get { return this._pipOffset.GetValueOrDefault(); }
+            get { return this._pipOffset; }
             set { this._pipOffset = value; }
         }
 
@@ -167,8 +168,9 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property PipParticipantAttribute. 
         /// <para>
-        /// Identifies the PiP slot. A participant with this attribute set to <c>"true"</c> (as
-        /// a string value) in <a>ParticipantTokenConfiguration</a> is placed in the PiP slot.
+        /// Specifies the participant for the PiP window. A participant with this attribute set
+        /// to <c>"true"</c> (as a string value) in <a>ParticipantTokenConfiguration</a> is placed
+        /// in the PiP slot. Default: <c>""</c> (no PiP participant).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -211,9 +213,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int PipWidth
+        public int? PipWidth
         {
-            get { return this._pipWidth.GetValueOrDefault(); }
+            get { return this._pipWidth; }
             set { this._pipWidth = value; }
         }
 
@@ -226,7 +228,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property VideoFillMode. 
         /// <para>
-        /// Defines how video fits within the participant tile. Default: <c>COVER</c>. 
+        /// Defines how video content fits within the participant tile: <c>FILL</c> (stretched),
+        /// <c>COVER</c> (cropped), or <c>CONTAIN</c> (letterboxed). Default: <c>COVER</c>.
         /// </para>
         /// </summary>
         public VideoFillMode VideoFillMode

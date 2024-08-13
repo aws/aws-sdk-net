@@ -62,9 +62,9 @@ namespace Amazon.IoTWireless.Model
         /// The RSSI value.
         /// </para>
         /// </summary>
-        public double Rssi
+        public double? Rssi
         {
-            get { return this._rssi.GetValueOrDefault(); }
+            get { return this._rssi; }
             set { this._rssi = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.IoTWireless.Model
         /// The SNR value.
         /// </para>
         /// </summary>
-        public double Snr
+        public double? Snr
         {
-            get { return this._snr.GetValueOrDefault(); }
+            get { return this._snr; }
             set { this._snr = value; }
         }
 

@@ -74,7 +74,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReturnConnectionPasswordEncrypted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReturnConnectionPasswordEncrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }

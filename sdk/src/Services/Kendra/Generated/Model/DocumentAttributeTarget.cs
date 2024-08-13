@@ -113,9 +113,9 @@ namespace Amazon.Kendra.Model
         /// value (<c>TargetDocumentAttributeValue</c>), set this to <c>FALSE</c>.
         /// </para>
         /// </summary>
-        public bool TargetDocumentAttributeValueDeletion
+        public bool? TargetDocumentAttributeValueDeletion
         {
-            get { return this._targetDocumentAttributeValueDeletion.GetValueOrDefault(); }
+            get { return this._targetDocumentAttributeValueDeletion; }
             set { this._targetDocumentAttributeValueDeletion = value; }
         }
 

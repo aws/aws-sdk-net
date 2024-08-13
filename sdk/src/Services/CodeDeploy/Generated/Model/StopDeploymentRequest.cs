@@ -45,9 +45,9 @@ namespace Amazon.CodeDeploy.Model
         /// should be rolled back to the previous version of the application revision. 
         /// </para>
         /// </summary>
-        public bool AutoRollbackEnabled
+        public bool? AutoRollbackEnabled
         {
-            get { return this._autoRollbackEnabled.GetValueOrDefault(); }
+            get { return this._autoRollbackEnabled; }
             set { this._autoRollbackEnabled = value; }
         }
 

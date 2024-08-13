@@ -68,13 +68,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxUnavailable", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxUnavailable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxUnavailablePercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxUnavailablePercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

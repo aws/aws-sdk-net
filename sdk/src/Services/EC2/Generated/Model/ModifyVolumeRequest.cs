@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// the volume type to <c>io1</c>, <c>io2</c>, or <c>gp3</c>, the default is 3,000.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.EC2.Model
         /// Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
-        public bool MultiAttachEnabled
+        public bool? MultiAttachEnabled
         {
-            get { return this._multiAttachEnabled.GetValueOrDefault(); }
+            get { return this._multiAttachEnabled; }
             set { this._multiAttachEnabled = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.EC2.Model
         /// Default: The existing size is retained.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.EC2.Model
         /// Valid Range: Minimum value of 125. Maximum value of 1000.
         /// </para>
         /// </summary>
-        public int Throughput
+        public int? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 

@@ -32,7 +32,8 @@ namespace Amazon.Bedrock.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
-    /// resources</a> in the Amazon Bedrock User Guide.
+    /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Bedrock User Guide</a>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonBedrockRequest
     {

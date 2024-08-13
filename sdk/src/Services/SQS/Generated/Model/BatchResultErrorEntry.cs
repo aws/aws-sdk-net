@@ -102,9 +102,9 @@ namespace Amazon.SQS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool SenderFault
+        public bool? SenderFault
         {
-            get { return this._senderFault.GetValueOrDefault(); }
+            get { return this._senderFault; }
             set { this._senderFault = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("Algorithm");
-                context.Writer.Write(requestObject.Algorithm);
+                context.Writer.Write(requestObject.Algorithm.Value);
             }
 
             if(requestObject.IsSetFlags())
             {
                 context.Writer.WritePropertyName("Flags");
-                context.Writer.Write(requestObject.Flags);
+                context.Writer.Write(requestObject.Flags.Value);
             }
 
             if(requestObject.IsSetPublicKey())

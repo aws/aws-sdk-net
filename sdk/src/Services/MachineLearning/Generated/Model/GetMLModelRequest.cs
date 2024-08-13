@@ -77,9 +77,9 @@ namespace Amazon.MachineLearning.Model
         /// If false, <c>Recipe</c> is not returned.
         /// </para>
         /// </summary>
-        public bool Verbose
+        public bool? Verbose
         {
-            get { return this._verbose.GetValueOrDefault(); }
+            get { return this._verbose; }
             set { this._verbose = value; }
         }
 

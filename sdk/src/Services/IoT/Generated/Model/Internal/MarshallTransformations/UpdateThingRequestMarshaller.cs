@@ -84,13 +84,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpectedVersion())
                 {
                     context.Writer.WritePropertyName("expectedVersion");
-                    context.Writer.Write(publicRequest.ExpectedVersion);
+                    context.Writer.Write(publicRequest.ExpectedVersion.Value);
                 }
 
                 if(publicRequest.IsSetRemoveThingType())
                 {
                     context.Writer.WritePropertyName("removeThingType");
-                    context.Writer.Write(publicRequest.RemoveThingType);
+                    context.Writer.Write(publicRequest.RemoveThingType.Value);
                 }
 
                 if(publicRequest.IsSetThingTypeName())

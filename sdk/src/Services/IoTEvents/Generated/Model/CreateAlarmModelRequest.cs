@@ -209,9 +209,9 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Severity
+        public int? Severity
         {
-            get { return this._severity.GetValueOrDefault(); }
+            get { return this._severity; }
             set { this._severity = value; }
         }
 

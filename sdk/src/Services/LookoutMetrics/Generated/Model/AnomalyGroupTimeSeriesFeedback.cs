@@ -64,9 +64,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsAnomaly
+        public bool? IsAnomaly
         {
-            get { return this._isAnomaly.GetValueOrDefault(); }
+            get { return this._isAnomaly; }
             set { this._isAnomaly = value; }
         }
 

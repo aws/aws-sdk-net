@@ -31,7 +31,9 @@ namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
     /// A block of content for a message that you pass to, or receive from, a model with the
-    /// Converse API (<a>Converse</a> and <a>ConverseStream</a>).
+    /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+    /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
+    /// API operations.
     /// </summary>
     public partial class ContentBlock
     {
@@ -146,7 +148,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property ToolUse. 
         /// <para>
-        /// Information about a tool use request from a model. 
+        /// Information about a tool use request from a model.
         /// </para>
         /// </summary>
         public ToolUseBlock ToolUse

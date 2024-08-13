@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScanOnPush())
             {
                 context.Writer.WritePropertyName("ScanOnPush");
-                context.Writer.Write(requestObject.ScanOnPush);
+                context.Writer.Write(requestObject.ScanOnPush.Value);
             }
 
         }

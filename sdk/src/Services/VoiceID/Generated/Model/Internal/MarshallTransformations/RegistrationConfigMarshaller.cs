@@ -57,7 +57,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFraudsterSimilarityThreshold())
             {
                 context.Writer.WritePropertyName("FraudsterSimilarityThreshold");
-                context.Writer.Write(requestObject.FraudsterSimilarityThreshold);
+                context.Writer.Write(requestObject.FraudsterSimilarityThreshold.Value);
             }
 
             if(requestObject.IsSetWatchlistIds())

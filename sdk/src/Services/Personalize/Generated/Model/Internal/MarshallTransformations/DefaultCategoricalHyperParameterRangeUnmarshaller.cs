@@ -68,7 +68,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isTunable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsTunable = unmarshaller.Unmarshall(context);
                     continue;
                 }

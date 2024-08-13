@@ -62,7 +62,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays);
+                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
@@ -88,6 +88,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FsxAdminPassword);
             }
 
+            if(requestObject.IsSetHAPairs())
+            {
+                context.Writer.WritePropertyName("HAPairs");
+                context.Writer.Write(requestObject.HAPairs.Value);
+            }
+
             if(requestObject.IsSetRemoveRouteTableIds())
             {
                 context.Writer.WritePropertyName("RemoveRouteTableIds");
@@ -102,13 +108,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThroughputCapacity())
             {
                 context.Writer.WritePropertyName("ThroughputCapacity");
-                context.Writer.Write(requestObject.ThroughputCapacity);
+                context.Writer.Write(requestObject.ThroughputCapacity.Value);
             }
 
             if(requestObject.IsSetThroughputCapacityPerHAPair())
             {
                 context.Writer.WritePropertyName("ThroughputCapacityPerHAPair");
-                context.Writer.Write(requestObject.ThroughputCapacityPerHAPair);
+                context.Writer.Write(requestObject.ThroughputCapacityPerHAPair.Value);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())

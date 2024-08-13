@@ -91,7 +91,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxConcurrentSessions())
                 {
                     context.Writer.WritePropertyName("maxConcurrentSessions");
-                    context.Writer.Write(publicRequest.MaxConcurrentSessions);
+                    context.Writer.Write(publicRequest.MaxConcurrentSessions.Value);
                 }
 
                 writer.WriteObjectEnd();

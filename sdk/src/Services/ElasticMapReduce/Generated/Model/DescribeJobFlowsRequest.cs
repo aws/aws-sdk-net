@@ -92,9 +92,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Return only job flows created after this date and time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Return only job flows created before this date and time.
         /// </para>
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 

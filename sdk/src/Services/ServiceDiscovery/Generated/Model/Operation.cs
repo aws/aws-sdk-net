@@ -52,9 +52,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime UpdateDate
+        public DateTime? UpdateDate
         {
-            get { return this._updateDate.GetValueOrDefault(); }
+            get { return this._updateDate; }
             set { this._updateDate = value; }
         }
 

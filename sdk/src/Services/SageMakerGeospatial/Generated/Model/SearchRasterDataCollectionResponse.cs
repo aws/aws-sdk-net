@@ -45,9 +45,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ApproximateResultCount
+        public int? ApproximateResultCount
         {
-            get { return this._approximateResultCount.GetValueOrDefault(); }
+            get { return this._approximateResultCount; }
             set { this._approximateResultCount = value; }
         }
 

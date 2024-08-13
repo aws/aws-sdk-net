@@ -74,7 +74,7 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
                 }
                 if (context.TestExpression("Ttl", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Ttl = unmarshaller.Unmarshall(context);
                     continue;
                 }

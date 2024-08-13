@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.EC2InstanceConnect.Endpoints;
 using Amazon.EC2InstanceConnect.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class EC2InstanceConnectEndpointsTests

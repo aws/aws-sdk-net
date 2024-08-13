@@ -72,9 +72,9 @@ namespace Amazon.Personalize.Model
         /// The time at which the batch segment job was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Personalize.Model
         /// The time at which the batch segment job last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.Personalize.Model
         /// input data. The maximum number of users per segment is 5 million.
         /// </para>
         /// </summary>
-        public int NumResults
+        public int? NumResults
         {
-            get { return this._numResults.GetValueOrDefault(); }
+            get { return this._numResults; }
             set { this._numResults = value; }
         }
 

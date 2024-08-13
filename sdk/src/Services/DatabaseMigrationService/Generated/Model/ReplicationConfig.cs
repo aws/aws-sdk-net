@@ -88,9 +88,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time the serverless replication config was created.
         /// </para>
         /// </summary>
-        public DateTime ReplicationConfigCreateTime
+        public DateTime? ReplicationConfigCreateTime
         {
-            get { return this._replicationConfigCreateTime.GetValueOrDefault(); }
+            get { return this._replicationConfigCreateTime; }
             set { this._replicationConfigCreateTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time the serverless replication config was updated.
         /// </para>
         /// </summary>
-        public DateTime ReplicationConfigUpdateTime
+        public DateTime? ReplicationConfigUpdateTime
         {
-            get { return this._replicationConfigUpdateTime.GetValueOrDefault(); }
+            get { return this._replicationConfigUpdateTime; }
             set { this._replicationConfigUpdateTime = value; }
         }
 

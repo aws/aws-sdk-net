@@ -31,7 +31,7 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusters operation.
-    /// Gets information about AWS CloudHSM clusters.
+    /// Gets information about CloudHSM clusters.
     /// 
     ///  
     /// <para>
@@ -40,6 +40,11 @@ namespace Amazon.CloudHSMV2.Model
     /// it includes a <c>NextToken</c> value. Use this value in a subsequent <c>DescribeClusters</c>
     /// request to get more clusters. When you receive a response with no <c>NextToken</c>
     /// (or an empty or null value), that means there are no more clusters to get.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on CloudHSM clusters
+    /// in a different Amazon Web Services account.
     /// </para>
     /// </summary>
     public partial class DescribeClustersRequest : AmazonCloudHSMV2Request
@@ -89,9 +94,9 @@ namespace Amazon.CloudHSMV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

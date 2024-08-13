@@ -34,7 +34,8 @@ namespace Amazon.ARCZonalShift.Model
     /// practice runs with zonal autoshift for a resource, you specify Amazon CloudWatch alarms,
     /// which you create in CloudWatch to use with the practice run. The alarms that you specify
     /// are an <i>outcome alarm</i>, to monitor application health during practice runs and,
-    /// optionally, a <i>blocking alarm</i>, to block practice runs from starting.
+    /// optionally, a <i>blocking alarm</i>, to block practice runs from starting or to interrupt
+    /// a practice run in progress.
     /// 
     ///  
     /// <para>
@@ -55,7 +56,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property AlarmIdentifier. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you specify as
+        /// The Amazon Resource Name (ARN) for an Amazon CloudWatch alarm that you specify as
         /// a control condition for a practice run.
         /// </para>
         /// </summary>
@@ -75,7 +76,8 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of alarm specified for a practice run. The only valid value is <c>CLOUDWATCH</c>.
+        /// The type of alarm specified for a practice run. You can only specify Amazon CloudWatch
+        /// alarms for practice runs, so the only valid value is <c>CLOUDWATCH</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

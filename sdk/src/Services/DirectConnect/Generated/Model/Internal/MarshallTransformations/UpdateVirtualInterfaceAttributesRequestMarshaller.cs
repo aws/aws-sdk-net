@@ -72,13 +72,13 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableSiteLink())
                 {
                     context.Writer.WritePropertyName("enableSiteLink");
-                    context.Writer.Write(publicRequest.EnableSiteLink);
+                    context.Writer.Write(publicRequest.EnableSiteLink.Value);
                 }
 
                 if(publicRequest.IsSetMtu())
                 {
                     context.Writer.WritePropertyName("mtu");
-                    context.Writer.Write(publicRequest.Mtu);
+                    context.Writer.Write(publicRequest.Mtu.Value);
                 }
 
                 if(publicRequest.IsSetVirtualInterfaceId())

@@ -80,13 +80,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("source608ChannelNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Source608ChannelNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("source608TrackNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Source608TrackNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

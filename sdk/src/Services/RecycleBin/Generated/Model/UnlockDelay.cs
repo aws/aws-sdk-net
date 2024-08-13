@@ -67,9 +67,9 @@ namespace Amazon.RecycleBin.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=30)]
-        public int UnlockDelayValue
+        public int? UnlockDelayValue
         {
-            get { return this._unlockDelayValue.GetValueOrDefault(); }
+            get { return this._unlockDelayValue; }
             set { this._unlockDelayValue = value; }
         }
 

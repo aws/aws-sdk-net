@@ -101,7 +101,7 @@ namespace Amazon.S3.Model
         /// </returns>
         public int CompareTo(PartETag other)
         {
-            return this.PartNumber.CompareTo(other.PartNumber);
+            return this.PartNumber.GetValueOrDefault().CompareTo(other.PartNumber.GetValueOrDefault());
         }
 
         #region PartNumber
@@ -109,9 +109,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The part number identifying the part.
         /// </summary>
-        public int PartNumber
+        public int? PartNumber
         {
-            get { return this.partNumber.GetValueOrDefault(); }
+            get { return this.partNumber; }
             set { this.partNumber = value; }
         }
 

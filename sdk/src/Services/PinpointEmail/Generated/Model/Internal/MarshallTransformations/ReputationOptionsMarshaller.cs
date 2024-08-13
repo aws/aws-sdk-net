@@ -51,13 +51,13 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastFreshStart())
             {
                 context.Writer.WritePropertyName("LastFreshStart");
-                context.Writer.Write(requestObject.LastFreshStart);
+                context.Writer.Write(requestObject.LastFreshStart.Value);
             }
 
             if(requestObject.IsSetReputationMetricsEnabled())
             {
                 context.Writer.WritePropertyName("ReputationMetricsEnabled");
-                context.Writer.Write(requestObject.ReputationMetricsEnabled);
+                context.Writer.Write(requestObject.ReputationMetricsEnabled.Value);
             }
 
         }

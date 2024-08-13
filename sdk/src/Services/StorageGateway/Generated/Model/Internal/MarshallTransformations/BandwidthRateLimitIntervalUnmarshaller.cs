@@ -68,13 +68,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AverageDownloadRateLimitInBitsPerSec", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AverageDownloadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,25 +86,25 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndHourOfDay", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndHourOfDay = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EndMinuteOfHour", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndMinuteOfHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartHourOfDay", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartHourOfDay = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartMinuteOfHour", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartMinuteOfHour = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,13 +51,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTimestamp())
             {
                 context.Writer.WritePropertyName("EndTimestamp");
-                context.Writer.Write(requestObject.EndTimestamp);
+                context.Writer.Write(requestObject.EndTimestamp.Value);
             }
 
             if(requestObject.IsSetStartTimestamp())
             {
                 context.Writer.WritePropertyName("StartTimestamp");
-                context.Writer.Write(requestObject.StartTimestamp);
+                context.Writer.Write(requestObject.StartTimestamp.Value);
             }
 
         }

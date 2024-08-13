@@ -104,7 +104,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInactivityTimeoutMinutes())
                 {
                     context.Writer.WritePropertyName("inactivityTimeoutMinutes");
-                    context.Writer.Write(publicRequest.InactivityTimeoutMinutes);
+                    context.Writer.Write(publicRequest.InactivityTimeoutMinutes.Value);
                 }
 
                 if(publicRequest.IsSetInstanceType())

@@ -55,9 +55,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Cpus
+        public int? Cpus
         {
-            get { return this._cpus.GetValueOrDefault(); }
+            get { return this._cpus; }
             set { this._cpus = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.Omics.Model
         /// When the task was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Gpus
+        public int? Gpus
         {
-            get { return this._gpus.GetValueOrDefault(); }
+            get { return this._gpus; }
             set { this._gpus = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.Omics.Model
         /// The task's start time.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.Omics.Model
         /// The task's stop time.
         /// </para>
         /// </summary>
-        public DateTime StopTime
+        public DateTime? StopTime
         {
-            get { return this._stopTime.GetValueOrDefault(); }
+            get { return this._stopTime; }
             set { this._stopTime = value; }
         }
 

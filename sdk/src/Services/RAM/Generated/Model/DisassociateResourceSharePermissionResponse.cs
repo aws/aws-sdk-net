@@ -65,9 +65,9 @@ namespace Amazon.RAM.Model
         /// indicates that the request failed.
         /// </para>
         /// </summary>
-        public bool ReturnValue
+        public bool? ReturnValue
         {
-            get { return this._returnValue.GetValueOrDefault(); }
+            get { return this._returnValue; }
             set { this._returnValue = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the HTTP endpoint is enabled or disabled for the DB cluster.
         /// </para>
         /// </summary>
-        public bool HttpEndpointEnabled
+        public bool? HttpEndpointEnabled
         {
-            get { return this._httpEndpointEnabled.GetValueOrDefault(); }
+            get { return this._httpEndpointEnabled; }
             set { this._httpEndpointEnabled = value; }
         }
 

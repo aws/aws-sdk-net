@@ -45,9 +45,9 @@ namespace Amazon.Batch.Model
         /// position in the job queue.
         /// </para>
         /// </summary>
-        public long EarliestTimeAtPosition
+        public long? EarliestTimeAtPosition
         {
-            get { return this._earliestTimeAtPosition.GetValueOrDefault(); }
+            get { return this._earliestTimeAtPosition; }
             set { this._earliestTimeAtPosition = value; }
         }
 

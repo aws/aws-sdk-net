@@ -116,9 +116,9 @@ namespace Amazon.EMRContainers.Model
         /// The date and time when the job run was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.EMRContainers.Model
         /// The date and time when the job run has finished.
         /// </para>
         /// </summary>
-        public DateTime FinishedAt
+        public DateTime? FinishedAt
         {
-            get { return this._finishedAt.GetValueOrDefault(); }
+            get { return this._finishedAt; }
             set { this._finishedAt = value; }
         }
 

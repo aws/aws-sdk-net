@@ -119,9 +119,9 @@ namespace Amazon.EC2.Model
         /// The latest end time of the event.
         /// </para>
         /// </summary>
-        public DateTime NotAfter
+        public DateTime? NotAfter
         {
-            get { return this._notAfter.GetValueOrDefault(); }
+            get { return this._notAfter; }
             set { this._notAfter = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.EC2.Model
         /// The earliest start time of the event.
         /// </para>
         /// </summary>
-        public DateTime NotBefore
+        public DateTime? NotBefore
         {
-            get { return this._notBefore.GetValueOrDefault(); }
+            get { return this._notBefore; }
             set { this._notBefore = value; }
         }
 

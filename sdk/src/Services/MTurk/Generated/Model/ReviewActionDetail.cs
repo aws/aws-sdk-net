@@ -90,9 +90,9 @@ namespace Amazon.MTurk.Model
         ///  The date when the action was completed.
         /// </para>
         /// </summary>
-        public DateTime CompleteTime
+        public DateTime? CompleteTime
         {
-            get { return this._completeTime.GetValueOrDefault(); }
+            get { return this._completeTime; }
             set { this._completeTime = value; }
         }
 

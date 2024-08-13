@@ -74,7 +74,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("volumeSizeInGB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSizeInGB = unmarshaller.Unmarshall(context);
                     continue;
                 }

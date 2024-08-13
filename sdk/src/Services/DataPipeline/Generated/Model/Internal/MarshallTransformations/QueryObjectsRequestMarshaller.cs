@@ -72,7 +72,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetMarker())

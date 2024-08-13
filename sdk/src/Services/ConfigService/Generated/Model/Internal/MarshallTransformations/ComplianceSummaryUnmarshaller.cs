@@ -68,7 +68,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ComplianceSummaryTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ComplianceSummaryTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

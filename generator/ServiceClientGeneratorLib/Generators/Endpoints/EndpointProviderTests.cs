@@ -52,8 +52,8 @@ namespace ServiceClientGenerator.Generators.Endpoints
             
             #line default
             #line hidden
-            this.Write(".Internal;\r\n\r\nnamespace AWSSDK_DotNet35.UnitTests.Endpoints\r\n{\r\n    [TestClass]\r\n" +
-                    "    public partial class ");
+            this.Write(".Internal;\r\n\r\nnamespace AWSSDK_DotNet.UnitTests.Endpoints\r\n{\r\n    [TestClass]\r\n  " +
+                    "  public partial class ");
             
             #line 19 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));

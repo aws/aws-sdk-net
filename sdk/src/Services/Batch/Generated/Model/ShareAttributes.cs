@@ -83,9 +83,9 @@ namespace Amazon.Batch.Model
         /// The smallest supported value is 0.0001, and the largest supported value is 999.9999.
         /// </para>
         /// </summary>
-        public float WeightFactor
+        public float? WeightFactor
         {
-            get { return this._weightFactor.GetValueOrDefault(); }
+            get { return this._weightFactor; }
             set { this._weightFactor = value; }
         }
 

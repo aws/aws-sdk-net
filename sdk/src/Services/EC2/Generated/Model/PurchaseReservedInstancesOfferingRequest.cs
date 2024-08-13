@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="reservedInstancesOfferingId">The ID of the Reserved Instance offering to purchase.</param>
         /// <param name="instanceCount">The number of Reserved Instances to purchase.</param>
-        public PurchaseReservedInstancesOfferingRequest(string reservedInstancesOfferingId, int instanceCount)
+        public PurchaseReservedInstancesOfferingRequest(string reservedInstancesOfferingId, int? instanceCount)
         {
             _reservedInstancesOfferingId = reservedInstancesOfferingId;
             _instanceCount = instanceCount;
@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.EC2.Model
         /// The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
-        public DateTime PurchaseTime
+        public DateTime? PurchaseTime
         {
-            get { return this._purchaseTime.GetValueOrDefault(); }
+            get { return this._purchaseTime; }
             set { this._purchaseTime = value; }
         }
 

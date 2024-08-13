@@ -87,9 +87,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ScheduledTime
+        public DateTime? ScheduledTime
         {
-            get { return this._scheduledTime.GetValueOrDefault(); }
+            get { return this._scheduledTime; }
             set { this._scheduledTime = value; }
         }
 

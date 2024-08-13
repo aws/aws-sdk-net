@@ -139,9 +139,9 @@ namespace Amazon.Batch.Model
         /// mount helper</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>
-        public int TransitEncryptionPort
+        public int? TransitEncryptionPort
         {
-            get { return this._transitEncryptionPort.GetValueOrDefault(); }
+            get { return this._transitEncryptionPort; }
             set { this._transitEncryptionPort = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.Lambda.Model
         /// The size of the layer archive in bytes.
         /// </para>
         /// </summary>
-        public long CodeSize
+        public long? CodeSize
         {
-            get { return this._codeSize.GetValueOrDefault(); }
+            get { return this._codeSize; }
             set { this._codeSize = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RangeMaximum
+        public DateTime? RangeMaximum
         {
-            get { return this._rangeMaximum.GetValueOrDefault(); }
+            get { return this._rangeMaximum; }
             set { this._rangeMaximum = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RangeMinimum
+        public DateTime? RangeMinimum
         {
-            get { return this._rangeMinimum.GetValueOrDefault(); }
+            get { return this._rangeMinimum; }
             set { this._rangeMinimum = value; }
         }
 

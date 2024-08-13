@@ -57,19 +57,19 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstExecutionFrom())
             {
                 context.Writer.WritePropertyName("firstExecutionFrom");
-                context.Writer.Write(requestObject.FirstExecutionFrom);
+                context.Writer.Write(requestObject.FirstExecutionFrom.Value);
             }
 
             if(requestObject.IsSetFlowErrorDeactivationThreshold())
             {
                 context.Writer.WritePropertyName("flowErrorDeactivationThreshold");
-                context.Writer.Write(requestObject.FlowErrorDeactivationThreshold);
+                context.Writer.Write(requestObject.FlowErrorDeactivationThreshold.Value);
             }
 
             if(requestObject.IsSetScheduleEndTime())
             {
                 context.Writer.WritePropertyName("scheduleEndTime");
-                context.Writer.Write(requestObject.ScheduleEndTime);
+                context.Writer.Write(requestObject.ScheduleEndTime.Value);
             }
 
             if(requestObject.IsSetScheduleExpression())
@@ -81,13 +81,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScheduleOffset())
             {
                 context.Writer.WritePropertyName("scheduleOffset");
-                context.Writer.Write(requestObject.ScheduleOffset);
+                context.Writer.Write(requestObject.ScheduleOffset.Value);
             }
 
             if(requestObject.IsSetScheduleStartTime())
             {
                 context.Writer.WritePropertyName("scheduleStartTime");
-                context.Writer.Write(requestObject.ScheduleStartTime);
+                context.Writer.Write(requestObject.ScheduleStartTime.Value);
             }
 
             if(requestObject.IsSetTimezone())

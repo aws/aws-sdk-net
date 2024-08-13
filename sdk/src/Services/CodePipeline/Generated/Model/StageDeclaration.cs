@@ -35,9 +35,11 @@ namespace Amazon.CodePipeline.Model
     public partial class StageDeclaration
     {
         private List<ActionDeclaration> _actions = AWSConfigs.InitializeCollections ? new List<ActionDeclaration>() : null;
+        private BeforeEntryConditions _beforeEntry;
         private List<BlockerDeclaration> _blockers = AWSConfigs.InitializeCollections ? new List<BlockerDeclaration>() : null;
         private string _name;
         private FailureConditions _onFailure;
+        private SuccessConditions _onSuccess;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -56,6 +58,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetActions()
         {
             return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BeforeEntry. 
+        /// <para>
+        /// The method to use when a stage allows entry. For example, configuring this field for
+        /// conditions will allow entry to the stage when the conditions are met.
+        /// </para>
+        /// </summary>
+        public BeforeEntryConditions BeforeEntry
+        {
+            get { return this._beforeEntry; }
+            set { this._beforeEntry = value; }
+        }
+
+        // Check to see if BeforeEntry property is set
+        internal bool IsSetBeforeEntry()
+        {
+            return this._beforeEntry != null;
         }
 
         /// <summary>
@@ -113,6 +134,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetOnFailure()
         {
             return this._onFailure != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnSuccess. 
+        /// <para>
+        /// The method to use when a stage has succeeded. For example, configuring this field
+        /// for conditions will allow the stage to succeed when the conditions are met.
+        /// </para>
+        /// </summary>
+        public SuccessConditions OnSuccess
+        {
+            get { return this._onSuccess; }
+            set { this._onSuccess = value; }
+        }
+
+        // Check to see if OnSuccess property is set
+        internal bool IsSetOnSuccess()
+        {
+            return this._onSuccess != null;
         }
 
     }

@@ -51,7 +51,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");
-                context.Writer.Write(requestObject.Interval);
+                context.Writer.Write(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetIntervalUnit())

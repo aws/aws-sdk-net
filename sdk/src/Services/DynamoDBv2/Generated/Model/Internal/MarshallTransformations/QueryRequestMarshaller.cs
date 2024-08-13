@@ -89,7 +89,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConsistentRead())
                 {
                     context.Writer.WritePropertyName("ConsistentRead");
-                    context.Writer.Write(publicRequest.ConsistentRead);
+                    context.Writer.Write(publicRequest.ConsistentRead.Value);
                 }
 
                 if(publicRequest.IsSetExclusiveStartKey())
@@ -184,7 +184,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetProjectionExpression())
@@ -221,7 +221,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScanIndexForward())
                 {
                     context.Writer.WritePropertyName("ScanIndexForward");
-                    context.Writer.Write(publicRequest.ScanIndexForward);
+                    context.Writer.Write(publicRequest.ScanIndexForward.Value);
                 }
 
                 if(publicRequest.IsSetSelect())

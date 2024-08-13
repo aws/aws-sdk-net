@@ -44,9 +44,9 @@ namespace Amazon.Comprehend.Model
         /// Offset of the start of the child block within its parent block.
         /// </para>
         /// </summary>
-        public int BeginOffset
+        public int? BeginOffset
         {
-            get { return this._beginOffset.GetValueOrDefault(); }
+            get { return this._beginOffset; }
             set { this._beginOffset = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Comprehend.Model
         /// Offset of the end of the child block within its parent block.
         /// </para>
         /// </summary>
-        public int EndOffset
+        public int? EndOffset
         {
-            get { return this._endOffset.GetValueOrDefault(); }
+            get { return this._endOffset; }
             set { this._endOffset = value; }
         }
 

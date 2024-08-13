@@ -60,7 +60,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

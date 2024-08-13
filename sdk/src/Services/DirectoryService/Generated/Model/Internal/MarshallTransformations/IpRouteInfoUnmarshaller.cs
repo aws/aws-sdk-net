@@ -68,7 +68,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AddedDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AddedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

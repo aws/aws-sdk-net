@@ -63,7 +63,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParentPid())
             {
                 context.Writer.WritePropertyName("ParentPid");
-                context.Writer.Write(requestObject.ParentPid);
+                context.Writer.Write(requestObject.ParentPid.Value);
             }
 
             if(requestObject.IsSetPath())
@@ -75,7 +75,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("Pid");
-                context.Writer.Write(requestObject.Pid);
+                context.Writer.Write(requestObject.Pid.Value);
             }
 
             if(requestObject.IsSetTerminatedAt())

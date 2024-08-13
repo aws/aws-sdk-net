@@ -69,9 +69,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// like ISO 8601 or a Java <c>Date</c> object.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 

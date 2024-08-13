@@ -86,9 +86,9 @@ namespace Amazon.DataExchange.Model
         /// to your products.
         /// </para>
         /// </summary>
-        public bool Finalized
+        public bool? Finalized
         {
-            get { return this._finalized.GetValueOrDefault(); }
+            get { return this._finalized; }
             set { this._finalized = value; }
         }
 

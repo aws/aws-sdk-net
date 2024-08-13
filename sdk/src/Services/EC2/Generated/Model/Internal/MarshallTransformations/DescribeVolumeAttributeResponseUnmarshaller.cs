@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("autoEnableIO/value", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.AutoEnableIO = unmarshaller.Unmarshall(context);
                         continue;
                     }

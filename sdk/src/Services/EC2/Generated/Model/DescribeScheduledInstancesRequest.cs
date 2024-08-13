@@ -80,9 +80,9 @@ namespace Amazon.EC2.Model
         /// call with the returned <c>NextToken</c> value.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

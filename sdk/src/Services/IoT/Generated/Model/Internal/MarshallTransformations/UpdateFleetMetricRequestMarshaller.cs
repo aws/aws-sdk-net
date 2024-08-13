@@ -96,7 +96,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpectedVersion())
                 {
                     context.Writer.WritePropertyName("expectedVersion");
-                    context.Writer.Write(publicRequest.ExpectedVersion);
+                    context.Writer.Write(publicRequest.ExpectedVersion.Value);
                 }
 
                 if(publicRequest.IsSetIndexName())
@@ -108,7 +108,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPeriod())
                 {
                     context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period);
+                    context.Writer.Write(publicRequest.Period.Value);
                 }
 
                 if(publicRequest.IsSetQueryString())

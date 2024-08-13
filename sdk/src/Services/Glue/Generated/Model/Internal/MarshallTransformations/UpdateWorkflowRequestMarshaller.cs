@@ -92,7 +92,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxConcurrentRuns())
                 {
                     context.Writer.WritePropertyName("MaxConcurrentRuns");
-                    context.Writer.Write(publicRequest.MaxConcurrentRuns);
+                    context.Writer.Write(publicRequest.MaxConcurrentRuns.Value);
                 }
 
                 if(publicRequest.IsSetName())

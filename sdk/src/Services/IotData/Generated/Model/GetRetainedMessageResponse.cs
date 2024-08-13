@@ -47,9 +47,9 @@ namespace Amazon.IotData.Model
         /// IoT.
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IotData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public int Qos
+        public int? Qos
         {
-            get { return this._qos.GetValueOrDefault(); }
+            get { return this._qos; }
             set { this._qos = value; }
         }
 

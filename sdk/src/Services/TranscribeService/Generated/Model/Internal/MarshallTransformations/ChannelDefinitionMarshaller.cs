@@ -51,7 +51,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelId())
             {
                 context.Writer.WritePropertyName("ChannelId");
-                context.Writer.Write(requestObject.ChannelId);
+                context.Writer.Write(requestObject.ChannelId.Value);
             }
 
             if(requestObject.IsSetParticipantRole())

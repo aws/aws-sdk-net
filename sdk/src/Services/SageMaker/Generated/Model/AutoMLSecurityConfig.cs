@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// Whether to use traffic encryption between the container layers.
         /// </para>
         /// </summary>
-        public bool EnableInterContainerTrafficEncryption
+        public bool? EnableInterContainerTrafficEncryption
         {
-            get { return this._enableInterContainerTrafficEncryption.GetValueOrDefault(); }
+            get { return this._enableInterContainerTrafficEncryption; }
             set { this._enableInterContainerTrafficEncryption = value; }
         }
 

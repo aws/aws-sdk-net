@@ -45,9 +45,9 @@ namespace Amazon.Ivschat.Model
         /// <i>note that this is returned as a string</i>.
         /// </para>
         /// </summary>
-        public DateTime SessionExpirationTime
+        public DateTime? SessionExpirationTime
         {
-            get { return this._sessionExpirationTime.GetValueOrDefault(); }
+            get { return this._sessionExpirationTime; }
             set { this._sessionExpirationTime = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Ivschat.Model
         /// This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.
         /// </para>
         /// </summary>
-        public DateTime TokenExpirationTime
+        public DateTime? TokenExpirationTime
         {
-            get { return this._tokenExpirationTime.GetValueOrDefault(); }
+            get { return this._tokenExpirationTime; }
             set { this._tokenExpirationTime = value; }
         }
 

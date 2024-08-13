@@ -57,7 +57,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetEvent())
@@ -69,7 +69,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("threshold");
-                context.Writer.Write(requestObject.Threshold);
+                context.Writer.Write(requestObject.Threshold.Value);
             }
 
         }

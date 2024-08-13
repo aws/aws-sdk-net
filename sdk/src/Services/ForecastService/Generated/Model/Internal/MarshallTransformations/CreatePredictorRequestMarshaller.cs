@@ -117,7 +117,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForecastHorizon())
                 {
                     context.Writer.WritePropertyName("ForecastHorizon");
-                    context.Writer.Write(publicRequest.ForecastHorizon);
+                    context.Writer.Write(publicRequest.ForecastHorizon.Value);
                 }
 
                 if(publicRequest.IsSetForecastTypes())
@@ -162,13 +162,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPerformAutoML())
                 {
                     context.Writer.WritePropertyName("PerformAutoML");
-                    context.Writer.Write(publicRequest.PerformAutoML);
+                    context.Writer.Write(publicRequest.PerformAutoML.Value);
                 }
 
                 if(publicRequest.IsSetPerformHPO())
                 {
                     context.Writer.WritePropertyName("PerformHPO");
-                    context.Writer.Write(publicRequest.PerformHPO);
+                    context.Writer.Write(publicRequest.PerformHPO.Value);
                 }
 
                 if(publicRequest.IsSetPredictorName())

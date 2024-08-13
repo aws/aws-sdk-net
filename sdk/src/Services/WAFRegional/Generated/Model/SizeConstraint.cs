@@ -147,9 +147,9 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=21474836480)]
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

@@ -112,9 +112,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether there is an override for the default certificate identifier.
         /// </para>
         /// </summary>
-        public bool CustomerOverride
+        public bool? CustomerOverride
         {
-            get { return this._customerOverride.GetValueOrDefault(); }
+            get { return this._customerOverride; }
             set { this._customerOverride = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.RDS.Model
         /// expires.
         /// </para>
         /// </summary>
-        public DateTime CustomerOverrideValidTill
+        public DateTime? CustomerOverrideValidTill
         {
-            get { return this._customerOverrideValidTill.GetValueOrDefault(); }
+            get { return this._customerOverrideValidTill; }
             set { this._customerOverrideValidTill = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.RDS.Model
         /// The starting date from which the certificate is valid.
         /// </para>
         /// </summary>
-        public DateTime ValidFrom
+        public DateTime? ValidFrom
         {
-            get { return this._validFrom.GetValueOrDefault(); }
+            get { return this._validFrom; }
             set { this._validFrom = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.RDS.Model
         /// The final date that the certificate continues to be valid.
         /// </para>
         /// </summary>
-        public DateTime ValidTill
+        public DateTime? ValidTill
         {
-            get { return this._validTill.GetValueOrDefault(); }
+            get { return this._validTill; }
             set { this._validTill = value; }
         }
 

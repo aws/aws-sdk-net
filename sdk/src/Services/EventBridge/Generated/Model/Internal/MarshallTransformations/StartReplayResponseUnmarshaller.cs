@@ -60,7 +60,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReplayStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ReplayStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

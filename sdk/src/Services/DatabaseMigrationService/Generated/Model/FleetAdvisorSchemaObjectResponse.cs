@@ -46,9 +46,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of lines of code in a schema object in a Fleet Advisor collector inventory.
         /// </para>
         /// </summary>
-        public long CodeLineCount
+        public long? CodeLineCount
         {
-            get { return this._codeLineCount.GetValueOrDefault(); }
+            get { return this._codeLineCount; }
             set { this._codeLineCount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The size level of the code in a schema object in a Fleet Advisor collector inventory.
         /// </para>
         /// </summary>
-        public long CodeSize
+        public long? CodeSize
         {
-            get { return this._codeSize.GetValueOrDefault(); }
+            get { return this._codeSize; }
             set { this._codeSize = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of objects in a schema object in a Fleet Advisor collector inventory.
         /// </para>
         /// </summary>
-        public long NumberOfObjects
+        public long? NumberOfObjects
         {
-            get { return this._numberOfObjects.GetValueOrDefault(); }
+            get { return this._numberOfObjects; }
             set { this._numberOfObjects = value; }
         }
 

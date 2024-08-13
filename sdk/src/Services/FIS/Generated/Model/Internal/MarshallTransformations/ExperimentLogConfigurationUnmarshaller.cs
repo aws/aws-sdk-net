@@ -74,7 +74,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("logSchemaVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LogSchemaVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -72,9 +72,9 @@ namespace Amazon.Rekognition.Model
         /// frame where the person's path first appears.
         /// </para>
         /// </summary>
-        public long Timestamp
+        public long? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

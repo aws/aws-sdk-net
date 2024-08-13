@@ -102,7 +102,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseLatestRestorableAutoSnapshot())
                 {
                     context.Writer.WritePropertyName("useLatestRestorableAutoSnapshot");
-                    context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot);
+                    context.Writer.Write(publicRequest.UseLatestRestorableAutoSnapshot.Value);
                 }
 
                 writer.WriteObjectEnd();

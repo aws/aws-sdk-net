@@ -92,7 +92,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ManagedByFirewallManager", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ManagedByFirewallManager = unmarshaller.Unmarshall(context);
                     continue;
                 }

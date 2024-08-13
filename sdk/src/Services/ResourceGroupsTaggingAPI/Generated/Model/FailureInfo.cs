@@ -113,9 +113,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// The HTTP status code of the common error.
         /// </para>
         /// </summary>
-        public int StatusCode
+        public int? StatusCode
         {
-            get { return this._statusCode.GetValueOrDefault(); }
+            get { return this._statusCode; }
             set { this._statusCode = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The number of documents that were found to match the query string.
         /// </para>
         /// </summary>
-        public long Found
+        public long? Found
         {
-            get { return this._found.GetValueOrDefault(); }
+            get { return this._found; }
             set { this._found = value; }
         }
 

@@ -131,9 +131,9 @@ namespace Amazon.Route53Resolver.Model
         /// Amazon EC2 instance count for the Resolver on the Outpost.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

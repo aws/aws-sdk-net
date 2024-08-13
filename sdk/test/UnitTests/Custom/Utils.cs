@@ -9,7 +9,7 @@ using ServiceClientGenerator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     public static class Utils
     {
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests
             }
         }
 
-#if BCL45
+#if BCL
         public static async Task<Exception> AssertExceptionExpectedAsync(Func<Task> func, Type expectedExceptionType, string expectedExceptionMessage = null)
         {
             try

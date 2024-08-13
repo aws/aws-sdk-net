@@ -100,7 +100,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHorovod())
                 {
                     context.Writer.WritePropertyName("Horovod");
-                    context.Writer.Write(publicRequest.Horovod);
+                    context.Writer.Write(publicRequest.Horovod.Value);
                 }
 
                 if(publicRequest.IsSetImageName())
@@ -148,7 +148,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("Version");
-                    context.Writer.Write(publicRequest.Version);
+                    context.Writer.Write(publicRequest.Version.Value);
                 }
 
                 writer.WriteObjectEnd();

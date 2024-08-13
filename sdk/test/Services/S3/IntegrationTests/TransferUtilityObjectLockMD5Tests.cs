@@ -420,7 +420,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(content, getBody);
                 Assert.AreEqual(desiredObjectLockLegalHoldStatus, getResponse.ObjectLockLegalHoldStatus);
                 Assert.AreEqual(desiredObjectLockMode, getResponse.ObjectLockMode);
-                Assert.AreEqual(desiredObjectLockRetainUntilDate.Date, getResponse.ObjectLockRetainUntilDate.ToUniversalTime().Date);
+                Assert.AreEqual(desiredObjectLockRetainUntilDate.Date, getResponse.ObjectLockRetainUntilDate.Value.ToUniversalTime().Date);
             }
         }
 
@@ -477,7 +477,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(new string('a', file.Value), getBody);
                     Assert.AreEqual(desiredObjectLockLegalHoldStatus, getResponse.ObjectLockLegalHoldStatus);
                     Assert.AreEqual(desiredObjectLockMode, getResponse.ObjectLockMode);
-                    Assert.AreEqual(desiredObjectLockRetainUntilDate.Date, getResponse.ObjectLockRetainUntilDate.ToUniversalTime().Date);
+                    Assert.AreEqual(desiredObjectLockRetainUntilDate.Date, getResponse.ObjectLockRetainUntilDate.Value.ToUniversalTime().Date);
                 }
             }
         }
@@ -522,7 +522,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(content, getBody);
                 Assert.AreEqual(desiredObjectLockLegalHoldStatus, getResponse.ObjectLockLegalHoldStatus);
                 Assert.AreEqual(desiredObjectLockMode, getResponse.ObjectLockMode);
-                Assert.AreEqual(desiredObjectLockRetainUntilDate.Date, getResponse.ObjectLockRetainUntilDate.ToUniversalTime().Date);
+                Assert.AreEqual(desiredObjectLockRetainUntilDate.Date, getResponse.ObjectLockRetainUntilDate.Value.ToUniversalTime().Date);
             }
         }
 
@@ -605,7 +605,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             }
             // Continue listing objects and deleting them until the bucket is empty.
-            while (listVersionsResponse.IsTruncated);
+            while (listVersionsResponse.IsTruncated.Value);
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowAuthorizerOverride())
             {
                 context.Writer.WritePropertyName("allowAuthorizerOverride");
-                context.Writer.Write(requestObject.AllowAuthorizerOverride);
+                context.Writer.Write(requestObject.AllowAuthorizerOverride.Value);
             }
 
             if(requestObject.IsSetDefaultAuthorizerName())

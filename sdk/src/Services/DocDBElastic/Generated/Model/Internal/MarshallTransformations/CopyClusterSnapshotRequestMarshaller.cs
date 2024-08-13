@@ -73,7 +73,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCopyTags())
                 {
                     context.Writer.WritePropertyName("copyTags");
-                    context.Writer.Write(publicRequest.CopyTags);
+                    context.Writer.Write(publicRequest.CopyTags.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyId())

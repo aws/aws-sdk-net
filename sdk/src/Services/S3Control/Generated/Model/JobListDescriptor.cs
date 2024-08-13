@@ -50,9 +50,9 @@ namespace Amazon.S3Control.Model
         /// A timestamp indicating when the specified job was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.S3Control.Model
         /// is the date and time when it succeeded, failed, or was canceled.
         /// </para>
         /// </summary>
-        public DateTime TerminationDate
+        public DateTime? TerminationDate
         {
-            get { return this._terminationDate.GetValueOrDefault(); }
+            get { return this._terminationDate; }
             set { this._terminationDate = value; }
         }
 

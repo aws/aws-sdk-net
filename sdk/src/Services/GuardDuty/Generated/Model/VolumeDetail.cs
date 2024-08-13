@@ -138,9 +138,9 @@ namespace Amazon.GuardDuty.Model
         /// EBS volume size in GB.
         /// </para>
         /// </summary>
-        public int VolumeSizeInGB
+        public int? VolumeSizeInGB
         {
-            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            get { return this._volumeSizeInGB; }
             set { this._volumeSizeInGB = value; }
         }
 

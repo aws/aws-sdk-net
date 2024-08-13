@@ -64,9 +64,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// specified, and <c>false</c> otherwise.
         /// </para>
         /// </summary>
-        public bool IsComplete
+        public bool? IsComplete
         {
-            get { return this._isComplete.GetValueOrDefault(); }
+            get { return this._isComplete; }
             set { this._isComplete = value; }
         }
 

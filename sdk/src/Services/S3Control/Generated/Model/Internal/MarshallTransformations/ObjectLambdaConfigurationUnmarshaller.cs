@@ -68,7 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CloudWatchMetricsEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CloudWatchMetricsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }

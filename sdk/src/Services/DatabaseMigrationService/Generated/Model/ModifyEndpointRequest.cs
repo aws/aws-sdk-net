@@ -333,9 +333,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// the exact settings that you specify. 
         /// </para>
         /// </summary>
-        public bool ExactSettings
+        public bool? ExactSettings
         {
-            get { return this._exactSettings.GetValueOrDefault(); }
+            get { return this._exactSettings; }
             set { this._exactSettings = value; }
         }
 
@@ -596,9 +596,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The port used by the endpoint database.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

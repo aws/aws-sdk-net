@@ -40,6 +40,7 @@ namespace Amazon.RedshiftServerless.Model
         private int? _baseCapacity;
         private List<ConfigParameter> _configParameters = AWSConfigs.InitializeCollections ? new List<ConfigParameter>() : null;
         private bool? _enhancedVpcRouting;
+        private string _ipAddressType;
         private int? _maxCapacity;
         private int? _port;
         private bool? _publiclyAccessible;
@@ -53,9 +54,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The new base data warehouse capacity in Redshift Processing Units (RPUs).
         /// </para>
         /// </summary>
-        public int BaseCapacity
+        public int? BaseCapacity
         {
-            get { return this._baseCapacity.GetValueOrDefault(); }
+            get { return this._baseCapacity; }
             set { this._baseCapacity = value; }
         }
 
@@ -95,9 +96,9 @@ namespace Amazon.RedshiftServerless.Model
         /// which forces Amazon Redshift Serverless to route traffic through your VPC.
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -108,15 +109,34 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type that the workgroup supports. Possible values are <c>ipv4</c> and
+        /// <c>dualstack</c>.
+        /// </para>
+        /// </summary>
+        public string IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
         /// The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries.
         /// The max capacity is specified in RPUs.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -133,9 +153,9 @@ namespace Amazon.RedshiftServerless.Model
         /// and 8191-8215. The default is 5439.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -151,9 +171,9 @@ namespace Amazon.RedshiftServerless.Model
         /// A value that specifies whether the workgroup can be accessible from a public network.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

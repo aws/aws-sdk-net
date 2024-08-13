@@ -139,9 +139,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// out any related build that does not get marked as completed. The default is 60 minutes.
         /// </para>
         /// </summary>
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

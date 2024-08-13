@@ -91,9 +91,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long PrepareDuration
+        public long? PrepareDuration
         {
-            get { return this._prepareDuration.GetValueOrDefault(); }
+            get { return this._prepareDuration; }
             set { this._prepareDuration = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TotalDuration
+        public long? TotalDuration
         {
-            get { return this._totalDuration.GetValueOrDefault(); }
+            get { return this._totalDuration; }
             set { this._totalDuration = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TransferDuration
+        public long? TransferDuration
         {
-            get { return this._transferDuration.GetValueOrDefault(); }
+            get { return this._transferDuration; }
             set { this._transferDuration = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long VerifyDuration
+        public long? VerifyDuration
         {
-            get { return this._verifyDuration.GetValueOrDefault(); }
+            get { return this._verifyDuration; }
             set { this._verifyDuration = value; }
         }
 

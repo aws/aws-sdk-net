@@ -62,9 +62,9 @@ namespace Amazon.Neptunedata.Model
         /// The time it took to create the new processing job, in milliseconds.
         /// </para>
         /// </summary>
-        public long CreationTimeInMillis
+        public long? CreationTimeInMillis
         {
-            get { return this._creationTimeInMillis.GetValueOrDefault(); }
+            get { return this._creationTimeInMillis; }
             set { this._creationTimeInMillis = value; }
         }
 

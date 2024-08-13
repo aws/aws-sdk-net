@@ -92,9 +92,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967294)]
-        public long GroupId
+        public long? GroupId
         {
-            get { return this._groupId.GetValueOrDefault(); }
+            get { return this._groupId; }
             set { this._groupId = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967294)]
-        public long OwnerId
+        public long? OwnerId
         {
-            get { return this._ownerId.GetValueOrDefault(); }
+            get { return this._ownerId; }
             set { this._ownerId = value; }
         }
 

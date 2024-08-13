@@ -63,9 +63,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The flag that enables the matching process of duplicate profiles.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

@@ -146,9 +146,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Timestamp of the last time the status was changed.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateDateTime
+        public DateTime? LastUpdateDateTime
         {
-            get { return this._lastUpdateDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateDateTime; }
             set { this._lastUpdateDateTime = value; }
         }
 

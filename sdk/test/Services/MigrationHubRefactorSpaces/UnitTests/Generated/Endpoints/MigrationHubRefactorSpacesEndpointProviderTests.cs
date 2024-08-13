@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.MigrationHubRefactorSpaces.Endpoints;
 using Amazon.MigrationHubRefactorSpaces.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class MigrationHubRefactorSpacesEndpointsTests

@@ -57,19 +57,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConsecutiveDatapointsToAlarm())
             {
                 context.Writer.WritePropertyName("consecutiveDatapointsToAlarm");
-                context.Writer.Write(requestObject.ConsecutiveDatapointsToAlarm);
+                context.Writer.Write(requestObject.ConsecutiveDatapointsToAlarm.Value);
             }
 
             if(requestObject.IsSetConsecutiveDatapointsToClear())
             {
                 context.Writer.WritePropertyName("consecutiveDatapointsToClear");
-                context.Writer.Write(requestObject.ConsecutiveDatapointsToClear);
+                context.Writer.Write(requestObject.ConsecutiveDatapointsToClear.Value);
             }
 
             if(requestObject.IsSetDurationSeconds())
             {
                 context.Writer.WritePropertyName("durationSeconds");
-                context.Writer.Write(requestObject.DurationSeconds);
+                context.Writer.Write(requestObject.DurationSeconds.Value);
             }
 
             if(requestObject.IsSetMlDetectionConfig())

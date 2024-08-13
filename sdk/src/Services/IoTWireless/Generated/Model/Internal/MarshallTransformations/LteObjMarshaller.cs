@@ -51,7 +51,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEutranCid())
             {
                 context.Writer.WritePropertyName("EutranCid");
-                context.Writer.Write(requestObject.EutranCid);
+                context.Writer.Write(requestObject.EutranCid.Value);
             }
 
             if(requestObject.IsSetLteLocalId())
@@ -84,50 +84,50 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLteTimingAdvance())
             {
                 context.Writer.WritePropertyName("LteTimingAdvance");
-                context.Writer.Write(requestObject.LteTimingAdvance);
+                context.Writer.Write(requestObject.LteTimingAdvance.Value);
             }
 
             if(requestObject.IsSetMcc())
             {
                 context.Writer.WritePropertyName("Mcc");
-                context.Writer.Write(requestObject.Mcc);
+                context.Writer.Write(requestObject.Mcc.Value);
             }
 
             if(requestObject.IsSetMnc())
             {
                 context.Writer.WritePropertyName("Mnc");
-                context.Writer.Write(requestObject.Mnc);
+                context.Writer.Write(requestObject.Mnc.Value);
             }
 
             if(requestObject.IsSetNrCapable())
             {
                 context.Writer.WritePropertyName("NrCapable");
-                context.Writer.Write(requestObject.NrCapable);
+                context.Writer.Write(requestObject.NrCapable.Value);
             }
 
             if(requestObject.IsSetRsrp())
             {
                 context.Writer.WritePropertyName("Rsrp");
-                context.Writer.Write(requestObject.Rsrp);
+                context.Writer.Write(requestObject.Rsrp.Value);
             }
 
             if(requestObject.IsSetRsrq())
             {
                 context.Writer.WritePropertyName("Rsrq");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Rsrq);
+                    context.Writer.Write(requestObject.Rsrq.Value);
                 }
             }
 
             if(requestObject.IsSetTac())
             {
                 context.Writer.WritePropertyName("Tac");
-                context.Writer.Write(requestObject.Tac);
+                context.Writer.Write(requestObject.Tac.Value);
             }
 
         }

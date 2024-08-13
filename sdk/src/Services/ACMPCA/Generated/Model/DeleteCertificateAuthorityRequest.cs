@@ -104,9 +104,9 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=30)]
-        public int PermanentDeletionTimeInDays
+        public int? PermanentDeletionTimeInDays
         {
-            get { return this._permanentDeletionTimeInDays.GetValueOrDefault(); }
+            get { return this._permanentDeletionTimeInDays; }
             set { this._permanentDeletionTimeInDays = value; }
         }
 

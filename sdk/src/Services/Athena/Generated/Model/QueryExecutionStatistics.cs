@@ -75,9 +75,9 @@ namespace Amazon.Athena.Model
         /// The number of bytes in the data that was queried.
         /// </para>
         /// </summary>
-        public long DataScannedInBytes
+        public long? DataScannedInBytes
         {
-            get { return this._dataScannedInBytes.GetValueOrDefault(); }
+            get { return this._dataScannedInBytes; }
             set { this._dataScannedInBytes = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.Athena.Model
         /// The number of milliseconds that the query took to execute.
         /// </para>
         /// </summary>
-        public long EngineExecutionTimeInMillis
+        public long? EngineExecutionTimeInMillis
         {
-            get { return this._engineExecutionTimeInMillis.GetValueOrDefault(); }
+            get { return this._engineExecutionTimeInMillis; }
             set { this._engineExecutionTimeInMillis = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.Athena.Model
         /// of engine processing time.
         /// </para>
         /// </summary>
-        public long QueryPlanningTimeInMillis
+        public long? QueryPlanningTimeInMillis
         {
-            get { return this._queryPlanningTimeInMillis.GetValueOrDefault(); }
+            get { return this._queryPlanningTimeInMillis; }
             set { this._queryPlanningTimeInMillis = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.Athena.Model
         /// to the queue.
         /// </para>
         /// </summary>
-        public long QueryQueueTimeInMillis
+        public long? QueryQueueTimeInMillis
         {
-            get { return this._queryQueueTimeInMillis.GetValueOrDefault(); }
+            get { return this._queryQueueTimeInMillis; }
             set { this._queryQueueTimeInMillis = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.Athena.Model
         /// the query to the query engine.
         /// </para>
         /// </summary>
-        public long ServicePreProcessingTimeInMillis
+        public long? ServicePreProcessingTimeInMillis
         {
-            get { return this._servicePreProcessingTimeInMillis.GetValueOrDefault(); }
+            get { return this._servicePreProcessingTimeInMillis; }
             set { this._servicePreProcessingTimeInMillis = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.Athena.Model
         /// after the query engine finished running the query.
         /// </para>
         /// </summary>
-        public long ServiceProcessingTimeInMillis
+        public long? ServiceProcessingTimeInMillis
         {
-            get { return this._serviceProcessingTimeInMillis.GetValueOrDefault(); }
+            get { return this._serviceProcessingTimeInMillis; }
             set { this._serviceProcessingTimeInMillis = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.Athena.Model
         /// The number of milliseconds that Athena took to run the query.
         /// </para>
         /// </summary>
-        public long TotalExecutionTimeInMillis
+        public long? TotalExecutionTimeInMillis
         {
-            get { return this._totalExecutionTimeInMillis.GetValueOrDefault(); }
+            get { return this._totalExecutionTimeInMillis; }
             set { this._totalExecutionTimeInMillis = value; }
         }
 

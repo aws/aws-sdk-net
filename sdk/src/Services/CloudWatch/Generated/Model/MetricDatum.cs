@@ -144,9 +144,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int StorageResolution
+        public int? StorageResolution
         {
-            get { return this._storageResolution.GetValueOrDefault(); }
+            get { return this._storageResolution; }
             set { this._storageResolution = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.CloudWatch.Model
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
-        public DateTime TimestampUtc
+        public DateTime? TimestampUtc
         {
-            get { return this._timestampUtc.GetValueOrDefault(); }
+            get { return this._timestampUtc; }
             set { this._timestamp = this._timestampUtc = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.CloudWatch.Model
         /// In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 
@@ -275,13 +275,20 @@ namespace Amazon.CloudWatch.Model
             "TimestampUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. Timestamp is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }
             set
             {
                 this._timestamp = value;
-                this._timestampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._timestampUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._timestampUtc = null;
+                }
             }
         }
 #endregion

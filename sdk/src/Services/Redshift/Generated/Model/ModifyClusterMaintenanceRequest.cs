@@ -67,9 +67,9 @@ namespace Amazon.Redshift.Model
         /// A boolean indicating whether to enable the deferred maintenance window. 
         /// </para>
         /// </summary>
-        public bool DeferMaintenance
+        public bool? DeferMaintenance
         {
-            get { return this._deferMaintenance.GetValueOrDefault(); }
+            get { return this._deferMaintenance; }
             set { this._deferMaintenance = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Redshift.Model
         /// a duration, you can't specify an end time. The duration must be 45 days or less.
         /// </para>
         /// </summary>
-        public int DeferMaintenanceDuration
+        public int? DeferMaintenanceDuration
         {
-            get { return this._deferMaintenanceDuration.GetValueOrDefault(); }
+            get { return this._deferMaintenanceDuration; }
             set { this._deferMaintenanceDuration = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Redshift.Model
         /// an end time, you can't specify a duration.
         /// </para>
         /// </summary>
-        public DateTime DeferMaintenanceEndTime
+        public DateTime? DeferMaintenanceEndTime
         {
-            get { return this._deferMaintenanceEndTime.GetValueOrDefault(); }
+            get { return this._deferMaintenanceEndTime; }
             set { this._deferMaintenanceEndTime = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Redshift.Model
         /// A timestamp indicating the start time for the deferred maintenance window.
         /// </para>
         /// </summary>
-        public DateTime DeferMaintenanceStartTime
+        public DateTime? DeferMaintenanceStartTime
         {
-            get { return this._deferMaintenanceStartTime.GetValueOrDefault(); }
+            get { return this._deferMaintenanceStartTime; }
             set { this._deferMaintenanceStartTime = value; }
         }
 

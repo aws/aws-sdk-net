@@ -51,7 +51,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttempts())
             {
                 context.Writer.WritePropertyName("Attempts");
-                context.Writer.Write(requestObject.Attempts);
+                context.Writer.Write(requestObject.Attempts.Value);
             }
 
         }

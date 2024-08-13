@@ -43,9 +43,9 @@ namespace Amazon.EMRContainers.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int CurrentAttemptCount
+        public int? CurrentAttemptCount
         {
-            get { return this._currentAttemptCount.GetValueOrDefault(); }
+            get { return this._currentAttemptCount; }
             set { this._currentAttemptCount = value; }
         }
 

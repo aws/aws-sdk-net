@@ -54,9 +54,9 @@ namespace Amazon.GuardDuty.Model
         /// The effective user ID of the user that executed the process.
         /// </para>
         /// </summary>
-        public int Euid
+        public int? Euid
         {
-            get { return this._euid.GetValueOrDefault(); }
+            get { return this._euid; }
             set { this._euid = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.GuardDuty.Model
         /// The ID of the child process.
         /// </para>
         /// </summary>
-        public int NamespacePid
+        public int? NamespacePid
         {
-            get { return this._namespacePid.GetValueOrDefault(); }
+            get { return this._namespacePid; }
             set { this._namespacePid = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.GuardDuty.Model
         /// The ID of the process.
         /// </para>
         /// </summary>
-        public int Pid
+        public int? Pid
         {
-            get { return this._pid.GetValueOrDefault(); }
+            get { return this._pid; }
             set { this._pid = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.GuardDuty.Model
         /// The time when the process started. This is in UTC format.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.GuardDuty.Model
         /// The unique ID of the user that executed the process.
         /// </para>
         /// </summary>
-        public int UserId
+        public int? UserId
         {
-            get { return this._userId.GetValueOrDefault(); }
+            get { return this._userId; }
             set { this._userId = value; }
         }
 

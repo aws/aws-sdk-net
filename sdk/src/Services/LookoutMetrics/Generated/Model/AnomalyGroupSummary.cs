@@ -66,9 +66,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double AnomalyGroupScore
+        public double? AnomalyGroupScore
         {
-            get { return this._anomalyGroupScore.GetValueOrDefault(); }
+            get { return this._anomalyGroupScore; }
             set { this._anomalyGroupScore = value; }
         }
 

@@ -133,9 +133,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long SamplingRate
+        public long? SamplingRate
         {
-            get { return this._samplingRate.GetValueOrDefault(); }
+            get { return this._samplingRate; }
             set { this._samplingRate = value; }
         }
 

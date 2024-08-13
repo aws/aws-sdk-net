@@ -58,7 +58,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ElapsedTimeInActiveSeconds", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.ElapsedTimeInActiveSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }

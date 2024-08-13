@@ -68,25 +68,25 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DayOfMonth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DayOfMonth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DayOfWeek", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DayOfWeek = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HourOfDay", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HourOfDay = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinuteOfHour", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinuteOfHour = unmarshaller.Unmarshall(context);
                     continue;
                 }

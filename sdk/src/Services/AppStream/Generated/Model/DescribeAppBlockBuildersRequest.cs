@@ -45,9 +45,9 @@ namespace Amazon.AppStream.Model
         /// The maximum size of each page of results. The maximum value is 25.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

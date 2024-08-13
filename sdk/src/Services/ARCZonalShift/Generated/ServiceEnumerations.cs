@@ -175,6 +175,56 @@ namespace Amazon.ARCZonalShift
 
 
     /// <summary>
+    /// Constants used for properties of type AutoshiftObserverNotificationStatus.
+    /// </summary>
+    public class AutoshiftObserverNotificationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutoshiftObserverNotificationStatus
+        /// </summary>
+        public static readonly AutoshiftObserverNotificationStatus DISABLED = new AutoshiftObserverNotificationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutoshiftObserverNotificationStatus
+        /// </summary>
+        public static readonly AutoshiftObserverNotificationStatus ENABLED = new AutoshiftObserverNotificationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoshiftObserverNotificationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoshiftObserverNotificationStatus FindValue(string value)
+        {
+            return FindValue<AutoshiftObserverNotificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoshiftObserverNotificationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictExceptionReason.
     /// </summary>
     public class ConflictExceptionReason : ConstantClass

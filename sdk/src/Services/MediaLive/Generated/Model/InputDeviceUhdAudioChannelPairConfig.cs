@@ -42,9 +42,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Id. The ID for one audio pair configuration, a value from
         /// 1 to 8.
         /// </summary>
-        public int Id
+        public int? Id
         {
-            get { return this._id.GetValueOrDefault(); }
+            get { return this._id; }
             set { this._id = value; }
         }
 

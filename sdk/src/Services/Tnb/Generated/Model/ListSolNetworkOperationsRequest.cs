@@ -44,6 +44,7 @@ namespace Amazon.Tnb.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _nsInstanceId;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -52,9 +53,9 @@ namespace Amazon.Tnb.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -80,6 +81,25 @@ namespace Amazon.Tnb.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NsInstanceId. 
+        /// <para>
+        /// Network instance id filter, to retrieve network operations associated to a network
+        /// instance.
+        /// </para>
+        /// </summary>
+        public string NsInstanceId
+        {
+            get { return this._nsInstanceId; }
+            set { this._nsInstanceId = value; }
+        }
+
+        // Check to see if NsInstanceId property is set
+        internal bool IsSetNsInstanceId()
+        {
+            return this._nsInstanceId != null;
         }
 
     }

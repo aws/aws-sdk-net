@@ -52,9 +52,9 @@ namespace Amazon.EKS.Model
         /// A boolean indicating whether the subscription auto renews at the end of the term.
         /// </para>
         /// </summary>
-        public bool AutoRenew
+        public bool? AutoRenew
         {
-            get { return this._autoRenew.GetValueOrDefault(); }
+            get { return this._autoRenew; }
             set { this._autoRenew = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.EKS.Model
         /// 1 and 100. This value can't be changed after creating the subscription.
         /// </para>
         /// </summary>
-        public int LicenseQuantity
+        public int? LicenseQuantity
         {
-            get { return this._licenseQuantity.GetValueOrDefault(); }
+            get { return this._licenseQuantity; }
             set { this._licenseQuantity = value; }
         }
 

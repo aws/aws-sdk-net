@@ -44,9 +44,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The number of I/O operations per second.
         /// </para>
         /// </summary>
-        public double Iops
+        public double? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The throughput that the volume supports.
         /// </para>
         /// </summary>
-        public double Throughput
+        public double? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 

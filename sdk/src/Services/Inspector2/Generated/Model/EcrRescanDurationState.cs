@@ -103,9 +103,9 @@ namespace Amazon.Inspector2.Model
         /// A timestamp representing when the last time the ECR scan duration setting was changed.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

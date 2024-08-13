@@ -166,9 +166,9 @@ namespace Amazon.CodeBuild.Model
         /// and are not run.
         /// </para>
         /// </summary>
-        public int ConcurrentBuildLimit
+        public int? ConcurrentBuildLimit
         {
-            get { return this._concurrentBuildLimit.GetValueOrDefault(); }
+            get { return this._concurrentBuildLimit; }
             set { this._concurrentBuildLimit = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.CodeBuild.Model
         /// When the build project was created, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -292,9 +292,9 @@ namespace Amazon.CodeBuild.Model
         /// When the build project's settings were last modified, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -383,9 +383,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=480)]
-        public int QueuedTimeoutInMinutes
+        public int? QueuedTimeoutInMinutes
         {
-            get { return this._queuedTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._queuedTimeoutInMinutes; }
             set { this._queuedTimeoutInMinutes = value; }
         }
 
@@ -600,9 +600,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=2160)]
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

@@ -80,19 +80,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxColumnValue", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MaxColumnValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minColumnValue", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MinColumnValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("userContributionLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UserContributionLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

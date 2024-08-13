@@ -68,7 +68,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isSuppressed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSuppressed = unmarshaller.Unmarshall(context);
                     continue;
                 }

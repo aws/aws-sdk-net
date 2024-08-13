@@ -57,7 +57,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseDefaultIfPreferenceUnavailable())
             {
                 context.Writer.WritePropertyName("UseDefaultIfPreferenceUnavailable");
-                context.Writer.Write(requestObject.UseDefaultIfPreferenceUnavailable);
+                context.Writer.Write(requestObject.UseDefaultIfPreferenceUnavailable.Value);
             }
 
         }

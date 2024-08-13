@@ -67,9 +67,9 @@ namespace Amazon.MemoryDB.Model
         /// results can be retrieved.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.MemoryDB.Model
         /// the individual shard(s).
         /// </para>
         /// </summary>
-        public bool ShowShardDetails
+        public bool? ShowShardDetails
         {
-            get { return this._showShardDetails.GetValueOrDefault(); }
+            get { return this._showShardDetails; }
             set { this._showShardDetails = value; }
         }
 

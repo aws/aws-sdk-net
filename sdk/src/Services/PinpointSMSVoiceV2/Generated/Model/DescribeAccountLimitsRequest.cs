@@ -31,16 +31,16 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountLimits operation.
-    /// Describes the current Amazon Pinpoint SMS Voice V2 resource quotas for your account.
-    /// The description for a quota includes the quota name, current usage toward that quota,
-    /// and the quota's maximum value.
+    /// Describes the current AWS End User Messaging SMS and Voice SMS Voice V2 resource quotas
+    /// for your account. The description for a quota includes the quota name, current usage
+    /// toward that quota, and the quota's maximum value.
     /// 
     ///  
     /// <para>
     /// When you establish an Amazon Web Services account, the account has initial quotas
     /// on the maximum number of configuration sets, opt-out lists, phone numbers, and pools
-    /// that you can create in a given Region. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/quotas.html">
-    /// Amazon Pinpoint quotas </a> in the <i>Amazon Pinpoint Developer Guide</i>.
+    /// that you can create in a given Region. For more information see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas
+    /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeAccountLimitsRequest : AmazonPinpointSMSVoiceV2Request
@@ -55,9 +55,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -118,9 +118,9 @@ namespace Amazon.EC2.Model
         /// The time the IAM instance profile was associated with the instance.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

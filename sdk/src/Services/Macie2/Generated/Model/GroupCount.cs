@@ -44,9 +44,9 @@ namespace Amazon.Macie2.Model
         /// The total number of findings in the group of query results.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

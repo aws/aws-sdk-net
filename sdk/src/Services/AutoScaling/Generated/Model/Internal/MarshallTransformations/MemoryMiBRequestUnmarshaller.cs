@@ -57,13 +57,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Max", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Max = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Min", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Min = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -45,9 +45,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The total number of capacity units consumed on a table or an index.
         /// </para>
         /// </summary>
-        public double CapacityUnits
+        public double? CapacityUnits
         {
-            get { return this._capacityUnits.GetValueOrDefault(); }
+            get { return this._capacityUnits; }
             set { this._capacityUnits = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The total number of read capacity units consumed on a table or an index.
         /// </para>
         /// </summary>
-        public double ReadCapacityUnits
+        public double? ReadCapacityUnits
         {
-            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            get { return this._readCapacityUnits; }
             set { this._readCapacityUnits = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The total number of write capacity units consumed on a table or an index.
         /// </para>
         /// </summary>
-        public double WriteCapacityUnits
+        public double? WriteCapacityUnits
         {
-            get { return this._writeCapacityUnits.GetValueOrDefault(); }
+            get { return this._writeCapacityUnits; }
             set { this._writeCapacityUnits = value; }
         }
 

@@ -62,7 +62,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTtl())
             {
                 context.Writer.WritePropertyName("ttl");
-                context.Writer.Write(requestObject.Ttl);
+                context.Writer.Write(requestObject.Ttl.Value);
             }
 
         }

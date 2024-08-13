@@ -52,9 +52,9 @@ namespace Amazon.SimpleEmail.Model
         /// 822</a> date-time format.
         /// </para>
         /// </summary>
-        public DateTime ArrivalDateUtc
+        public DateTime? ArrivalDateUtc
         {
-            get { return this._arrivalDateUtc.GetValueOrDefault(); }
+            get { return this._arrivalDateUtc; }
             set { this._arrivalDate = this._arrivalDateUtc = value; }
         }
 
@@ -127,13 +127,20 @@ namespace Amazon.SimpleEmail.Model
             "ArrivalDateUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ArrivalDate is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ArrivalDate
+        public DateTime? ArrivalDate
         {
             get { return this._arrivalDate.GetValueOrDefault(); }
             set
             {
                 this._arrivalDate = value;
-                this._arrivalDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._arrivalDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._arrivalDateUtc = null;
+                }
             }
         }
 #endregion

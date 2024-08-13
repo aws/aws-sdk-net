@@ -56,9 +56,9 @@ namespace Amazon.QuickSight.Model
         /// for encryption and decryption use.
         /// </para>
         /// </summary>
-        public bool DefaultKey
+        public bool? DefaultKey
         {
-            get { return this._defaultKey.GetValueOrDefault(); }
+            get { return this._defaultKey; }
             set { this._defaultKey = value; }
         }
 

@@ -102,8 +102,8 @@ namespace Amazon.Inspector.Model
             : base(info, context)
         {
             this.AssessmentRunArns = (List<string>)info.GetValue("AssessmentRunArns", typeof(List<string>));
-            this.AssessmentRunArnsTruncated = (bool)info.GetValue("AssessmentRunArnsTruncated", typeof(bool));
-            this.CanRetry = (bool)info.GetValue("CanRetry", typeof(bool));
+            this.AssessmentRunArnsTruncated = (bool?)info.GetValue("AssessmentRunArnsTruncated", typeof(bool?));
+            this.CanRetry = (bool?)info.GetValue("CanRetry", typeof(bool?));
         }
 
         /// <summary>
@@ -112,11 +112,6 @@ namespace Amazon.Inspector.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -156,9 +151,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AssessmentRunArnsTruncated
+        public bool? AssessmentRunArnsTruncated
         {
-            get { return this._assessmentRunArnsTruncated.GetValueOrDefault(); }
+            get { return this._assessmentRunArnsTruncated; }
             set { this._assessmentRunArnsTruncated = value; }
         }
 
@@ -175,9 +170,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool CanRetry
+        public bool? CanRetry
         {
-            get { return this._canRetry.GetValueOrDefault(); }
+            get { return this._canRetry; }
             set { this._canRetry = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.SageMaker.Model
         /// by Amazon SageMaker.
         /// </para>
         /// </summary>
-        public bool AppManaged
+        public bool? AppManaged
         {
-            get { return this._appManaged.GetValueOrDefault(); }
+            get { return this._appManaged; }
             set { this._appManaged = value; }
         }
 

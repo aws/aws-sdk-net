@@ -51,13 +51,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("DeleteOnTermination");
-                context.Writer.Write(requestObject.DeleteOnTermination);
+                context.Writer.Write(requestObject.DeleteOnTermination.Value);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetSnapshotId())
@@ -69,7 +69,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("VolumeSize");
-                context.Writer.Write(requestObject.VolumeSize);
+                context.Writer.Write(requestObject.VolumeSize.Value);
             }
 
             if(requestObject.IsSetVolumeType())

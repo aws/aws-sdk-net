@@ -20,7 +20,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.Runtime.Internal.Util;
 using System.Threading;
 using System.Net;
@@ -32,7 +32,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
 using Amazon.ElasticMapReduce.Model;
 
@@ -211,12 +211,11 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(configurations[2].Properties.ContainsKey("name"));
         }
 
-#if BCL45
-
+#if BCL
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestListBucketsResponseUnmarshallingAsync()
         {
             Tester.Reset();
@@ -237,36 +236,6 @@ namespace AWSSDK.UnitTests
             Assert.IsInstanceOfType(context.ResponseContext.Response, typeof(ListBucketsResponse));
             Assert.AreEqual(4, listBucketsResponse.Buckets.Count);
         }
-
-#elif !BCL45 && BCL
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestListBucketsResponseUnmarshallingAsync()
-        {
-            Tester.Reset();
-
-            var context = CreateAsyncTestContext();
-            var request = new ListBucketsRequest();
-            ((RequestContext)context.RequestContext).OriginalRequest = request;
-            ((RequestContext)context.RequestContext).Request = new ListBucketsRequestMarshaller().Marshall(request);
-            ((RequestContext)context.RequestContext).Unmarshaller = ListBucketsResponseUnmarshaller.Instance;
-
-            var response = MockWebResponse.CreateFromResource("ListBucketsResponse.txt")
-                as HttpWebResponse;
-            context.ResponseContext.HttpResponse = new HttpWebRequestResponseData(response);
-
-            var asyncResult = RuntimePipeline.InvokeAsync(context);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.AreEqual(1, Tester.CallCount);
-            Assert.IsInstanceOfType(context.ResponseContext.Response, typeof(ListBucketsResponse));
-
-            var listBucketsResponse = context.ResponseContext.Response as ListBucketsResponse;
-            Assert.AreEqual(4, listBucketsResponse.Buckets.Count);
-        }
-
 #endif
 
 

@@ -144,9 +144,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the task assessment was completed. 
         /// </para>
         /// </summary>
-        public DateTime ReplicationTaskLastAssessmentDate
+        public DateTime? ReplicationTaskLastAssessmentDate
         {
-            get { return this._replicationTaskLastAssessmentDate.GetValueOrDefault(); }
+            get { return this._replicationTaskLastAssessmentDate; }
             set { this._replicationTaskLastAssessmentDate = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHealthyThreshold())
             {
                 context.Writer.WritePropertyName("healthyThreshold");
-                context.Writer.Write(requestObject.HealthyThreshold);
+                context.Writer.Write(requestObject.HealthyThreshold.Value);
             }
 
             if(requestObject.IsSetIntervalSeconds())
             {
                 context.Writer.WritePropertyName("intervalSeconds");
-                context.Writer.Write(requestObject.IntervalSeconds);
+                context.Writer.Write(requestObject.IntervalSeconds.Value);
             }
 
             if(requestObject.IsSetPath())
@@ -75,13 +75,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("timeoutSeconds");
-                context.Writer.Write(requestObject.TimeoutSeconds);
+                context.Writer.Write(requestObject.TimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetUnhealthyThreshold())
             {
                 context.Writer.WritePropertyName("unhealthyThreshold");
-                context.Writer.Write(requestObject.UnhealthyThreshold);
+                context.Writer.Write(requestObject.UnhealthyThreshold.Value);
             }
 
         }

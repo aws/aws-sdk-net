@@ -5,7 +5,7 @@ using Amazon.S3;
 using Amazon.S3.Util;
 using System.Globalization;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class S3EventNotificationTests

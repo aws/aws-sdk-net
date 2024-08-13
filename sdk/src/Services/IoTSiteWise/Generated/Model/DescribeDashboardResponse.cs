@@ -75,9 +75,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime DashboardCreationDate
+        public DateTime? DashboardCreationDate
         {
-            get { return this._dashboardCreationDate.GetValueOrDefault(); }
+            get { return this._dashboardCreationDate; }
             set { this._dashboardCreationDate = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime DashboardLastUpdateDate
+        public DateTime? DashboardLastUpdateDate
         {
-            get { return this._dashboardLastUpdateDate.GetValueOrDefault(); }
+            get { return this._dashboardLastUpdateDate; }
             set { this._dashboardLastUpdateDate = value; }
         }
 

@@ -96,9 +96,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=32535158400000)]
-        public long OrderingId
+        public long? OrderingId
         {
-            get { return this._orderingId.GetValueOrDefault(); }
+            get { return this._orderingId; }
             set { this._orderingId = value; }
         }
 

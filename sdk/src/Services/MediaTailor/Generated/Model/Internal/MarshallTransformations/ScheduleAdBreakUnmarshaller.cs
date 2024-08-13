@@ -68,13 +68,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApproximateDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApproximateDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ApproximateStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ApproximateStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

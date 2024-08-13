@@ -68,7 +68,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FailureThreshold", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailureThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

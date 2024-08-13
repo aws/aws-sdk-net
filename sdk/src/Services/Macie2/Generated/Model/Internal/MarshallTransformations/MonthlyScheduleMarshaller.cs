@@ -51,7 +51,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDayOfMonth())
             {
                 context.Writer.WritePropertyName("dayOfMonth");
-                context.Writer.Write(requestObject.DayOfMonth);
+                context.Writer.Write(requestObject.DayOfMonth.Value);
             }
 
         }

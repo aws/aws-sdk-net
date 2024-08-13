@@ -68,19 +68,19 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ChannelIdentification", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ChannelIdentification = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxSpeakerLabels", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSpeakerLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ShowSpeakerLabels", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ShowSpeakerLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }

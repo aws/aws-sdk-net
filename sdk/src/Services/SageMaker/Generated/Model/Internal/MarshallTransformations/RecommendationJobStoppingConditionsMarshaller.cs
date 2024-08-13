@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxInvocations())
             {
                 context.Writer.WritePropertyName("MaxInvocations");
-                context.Writer.Write(requestObject.MaxInvocations);
+                context.Writer.Write(requestObject.MaxInvocations.Value);
             }
 
             if(requestObject.IsSetModelLatencyThresholds())

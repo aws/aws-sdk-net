@@ -43,9 +43,9 @@ namespace Amazon.WorkDocs.Model
         /// Timestamp range end value (in epochs).
         /// </para>
         /// </summary>
-        public DateTime EndValue
+        public DateTime? EndValue
         {
-            get { return this._endValue.GetValueOrDefault(); }
+            get { return this._endValue; }
             set { this._endValue = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.WorkDocs.Model
         /// Timestamp range start value (in epochs)
         /// </para>
         /// </summary>
-        public DateTime StartValue
+        public DateTime? StartValue
         {
-            get { return this._startValue.GetValueOrDefault(); }
+            get { return this._startValue; }
             set { this._startValue = value; }
         }
 

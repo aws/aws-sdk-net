@@ -42,9 +42,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of replicas to scale up or down to
         /// </para>
         /// </summary>
-        public int ReplicaCount
+        public int? ReplicaCount
         {
-            get { return this._replicaCount.GetValueOrDefault(); }
+            get { return this._replicaCount; }
             set { this._replicaCount = value; }
         }
 

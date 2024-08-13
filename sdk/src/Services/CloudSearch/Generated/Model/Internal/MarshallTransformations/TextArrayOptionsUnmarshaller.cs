@@ -69,13 +69,13 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("HighlightEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.HighlightEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReturnEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ReturnEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }

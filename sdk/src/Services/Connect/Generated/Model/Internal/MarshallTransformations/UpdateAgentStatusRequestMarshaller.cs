@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisplayOrder())
                 {
                     context.Writer.WritePropertyName("DisplayOrder");
-                    context.Writer.Write(publicRequest.DisplayOrder);
+                    context.Writer.Write(publicRequest.DisplayOrder.Value);
                 }
 
                 if(publicRequest.IsSetName())
@@ -94,7 +94,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetResetOrderNumber())
                 {
                     context.Writer.WritePropertyName("ResetOrderNumber");
-                    context.Writer.Write(publicRequest.ResetOrderNumber);
+                    context.Writer.Write(publicRequest.ResetOrderNumber.Value);
                 }
 
                 if(publicRequest.IsSetState())

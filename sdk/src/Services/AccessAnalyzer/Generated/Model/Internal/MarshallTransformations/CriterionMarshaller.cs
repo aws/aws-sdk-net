@@ -73,7 +73,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExists())
             {
                 context.Writer.WritePropertyName("exists");
-                context.Writer.Write(requestObject.Exists);
+                context.Writer.Write(requestObject.Exists.Value);
             }
 
             if(requestObject.IsSetNeq())

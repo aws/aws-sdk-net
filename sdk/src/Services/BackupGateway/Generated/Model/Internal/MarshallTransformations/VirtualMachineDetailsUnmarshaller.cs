@@ -80,7 +80,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastBackupDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastBackupDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

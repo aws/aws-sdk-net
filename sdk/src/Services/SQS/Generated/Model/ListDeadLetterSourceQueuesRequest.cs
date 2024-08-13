@@ -63,9 +63,9 @@ namespace Amazon.SQS.Model
         /// must set <c>MaxResults</c> to receive a value for <c>NextToken</c> in the response.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

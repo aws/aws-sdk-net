@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeepAlivePeriodInSeconds())
             {
                 context.Writer.WritePropertyName("KeepAlivePeriodInSeconds");
-                context.Writer.Write(requestObject.KeepAlivePeriodInSeconds);
+                context.Writer.Write(requestObject.KeepAlivePeriodInSeconds.Value);
             }
 
         }

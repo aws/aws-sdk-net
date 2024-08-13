@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddIdleTimeBetweenReads())
             {
                 context.Writer.WritePropertyName("AddIdleTimeBetweenReads");
-                context.Writer.Write(requestObject.AddIdleTimeBetweenReads);
+                context.Writer.Write(requestObject.AddIdleTimeBetweenReads.Value);
             }
 
             if(requestObject.IsSetAddRecordTimestamp())
@@ -63,7 +63,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvoidEmptyBatches())
             {
                 context.Writer.WritePropertyName("AvoidEmptyBatches");
-                context.Writer.Write(requestObject.AvoidEmptyBatches);
+                context.Writer.Write(requestObject.AvoidEmptyBatches.Value);
             }
 
             if(requestObject.IsSetClassification())
@@ -81,7 +81,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescribeShardInterval())
             {
                 context.Writer.WritePropertyName("DescribeShardInterval");
-                context.Writer.Write(requestObject.DescribeShardInterval);
+                context.Writer.Write(requestObject.DescribeShardInterval.Value);
             }
 
             if(requestObject.IsSetEmitConsumerLagMetrics())
@@ -99,43 +99,43 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdleTimeBetweenReadsInMs())
             {
                 context.Writer.WritePropertyName("IdleTimeBetweenReadsInMs");
-                context.Writer.Write(requestObject.IdleTimeBetweenReadsInMs);
+                context.Writer.Write(requestObject.IdleTimeBetweenReadsInMs.Value);
             }
 
             if(requestObject.IsSetMaxFetchRecordsPerShard())
             {
                 context.Writer.WritePropertyName("MaxFetchRecordsPerShard");
-                context.Writer.Write(requestObject.MaxFetchRecordsPerShard);
+                context.Writer.Write(requestObject.MaxFetchRecordsPerShard.Value);
             }
 
             if(requestObject.IsSetMaxFetchTimeInMs())
             {
                 context.Writer.WritePropertyName("MaxFetchTimeInMs");
-                context.Writer.Write(requestObject.MaxFetchTimeInMs);
+                context.Writer.Write(requestObject.MaxFetchTimeInMs.Value);
             }
 
             if(requestObject.IsSetMaxRecordPerRead())
             {
                 context.Writer.WritePropertyName("MaxRecordPerRead");
-                context.Writer.Write(requestObject.MaxRecordPerRead);
+                context.Writer.Write(requestObject.MaxRecordPerRead.Value);
             }
 
             if(requestObject.IsSetMaxRetryIntervalMs())
             {
                 context.Writer.WritePropertyName("MaxRetryIntervalMs");
-                context.Writer.Write(requestObject.MaxRetryIntervalMs);
+                context.Writer.Write(requestObject.MaxRetryIntervalMs.Value);
             }
 
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("NumRetries");
-                context.Writer.Write(requestObject.NumRetries);
+                context.Writer.Write(requestObject.NumRetries.Value);
             }
 
             if(requestObject.IsSetRetryIntervalMs())
             {
                 context.Writer.WritePropertyName("RetryIntervalMs");
-                context.Writer.Write(requestObject.RetryIntervalMs);
+                context.Writer.Write(requestObject.RetryIntervalMs.Value);
             }
 
             if(requestObject.IsSetRoleArn())

@@ -48,9 +48,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4)]
-        public int AuditImagesLimit
+        public int? AuditImagesLimit
         {
-            get { return this._auditImagesLimit.GetValueOrDefault(); }
+            get { return this._auditImagesLimit; }
             set { this._auditImagesLimit = value; }
         }
 

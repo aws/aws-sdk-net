@@ -42,9 +42,9 @@ namespace Amazon.MediaConvert.Model
         /// of this table in the output transport stream.
         /// </summary>
         [AWSProperty(Min=1000, Max=30000)]
-        public int TdtInterval
+        public int? TdtInterval
         {
-            get { return this._tdtInterval.GetValueOrDefault(); }
+            get { return this._tdtInterval; }
             set { this._tdtInterval = value; }
         }
 

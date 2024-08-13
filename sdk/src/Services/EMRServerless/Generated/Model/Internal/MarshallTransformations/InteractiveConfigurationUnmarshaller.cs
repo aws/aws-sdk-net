@@ -68,13 +68,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("livyEndpointEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LivyEndpointEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("studioEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StudioEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

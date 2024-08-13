@@ -53,9 +53,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int BaseCapacity
+        public int? BaseCapacity
         {
-            get { return this._baseCapacity.GetValueOrDefault(); }
+            get { return this._baseCapacity; }
             set { this._baseCapacity = value; }
         }
 

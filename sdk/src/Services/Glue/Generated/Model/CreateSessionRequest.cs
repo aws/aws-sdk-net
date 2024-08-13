@@ -173,9 +173,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int IdleTimeout
+        public int? IdleTimeout
         {
-            get { return this._idleTimeout.GetValueOrDefault(); }
+            get { return this._idleTimeout; }
             set { this._idleTimeout = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.Glue.Model
         /// compute capacity and 16 GB memory. 
         /// </para>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.Glue.Model
         /// The number of workers of a defined <c>WorkerType</c> to use for the session. 
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

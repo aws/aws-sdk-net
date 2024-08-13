@@ -68,7 +68,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BytesPerHour", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesPerHour = unmarshaller.Unmarshall(context);
                     continue;
                 }

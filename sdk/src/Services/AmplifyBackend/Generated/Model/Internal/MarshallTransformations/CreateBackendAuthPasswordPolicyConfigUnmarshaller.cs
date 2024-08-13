@@ -74,7 +74,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minimumLength", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MinimumLength = unmarshaller.Unmarshall(context);
                     continue;
                 }

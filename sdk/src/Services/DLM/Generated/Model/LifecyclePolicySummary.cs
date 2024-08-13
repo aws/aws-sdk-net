@@ -56,9 +56,9 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool DefaultPolicy
+        public bool? DefaultPolicy
         {
-            get { return this._defaultPolicy.GetValueOrDefault(); }
+            get { return this._defaultPolicy; }
             set { this._defaultPolicy = value; }
         }
 

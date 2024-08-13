@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableSipMediaApplicationMessageLogs", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableSipMediaApplicationMessageLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -112,9 +112,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimeStamp
+        public DateTime? LastUpdatedTimeStamp
         {
-            get { return this._lastUpdatedTimeStamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimeStamp; }
             set { this._lastUpdatedTimeStamp = value; }
         }
 

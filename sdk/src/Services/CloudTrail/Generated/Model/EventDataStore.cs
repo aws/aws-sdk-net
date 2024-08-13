@@ -74,9 +74,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [Obsolete("CreatedTimestamp is no longer returned by ListEventDataStores")]
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [Obsolete("MultiRegionEnabled is no longer returned by ListEventDataStores")]
-        public bool MultiRegionEnabled
+        public bool? MultiRegionEnabled
         {
-            get { return this._multiRegionEnabled.GetValueOrDefault(); }
+            get { return this._multiRegionEnabled; }
             set { this._multiRegionEnabled = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [Obsolete("OrganizationEnabled is no longer returned by ListEventDataStores")]
-        public bool OrganizationEnabled
+        public bool? OrganizationEnabled
         {
-            get { return this._organizationEnabled.GetValueOrDefault(); }
+            get { return this._organizationEnabled; }
             set { this._organizationEnabled = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.CloudTrail.Model
         /// </summary>
         [Obsolete("RetentionPeriod is no longer returned by ListEventDataStores")]
         [AWSProperty(Min=7, Max=3653)]
-        public int RetentionPeriod
+        public int? RetentionPeriod
         {
-            get { return this._retentionPeriod.GetValueOrDefault(); }
+            get { return this._retentionPeriod; }
             set { this._retentionPeriod = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [Obsolete("TerminationProtectionEnabled is no longer returned by ListEventDataStores")]
-        public bool TerminationProtectionEnabled
+        public bool? TerminationProtectionEnabled
         {
-            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            get { return this._terminationProtectionEnabled; }
             set { this._terminationProtectionEnabled = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [Obsolete("UpdatedTimestamp is no longer returned by ListEventDataStores")]
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

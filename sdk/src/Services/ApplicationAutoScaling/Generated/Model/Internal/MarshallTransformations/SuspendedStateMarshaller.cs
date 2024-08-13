@@ -51,19 +51,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDynamicScalingInSuspended())
             {
                 context.Writer.WritePropertyName("DynamicScalingInSuspended");
-                context.Writer.Write(requestObject.DynamicScalingInSuspended);
+                context.Writer.Write(requestObject.DynamicScalingInSuspended.Value);
             }
 
             if(requestObject.IsSetDynamicScalingOutSuspended())
             {
                 context.Writer.WritePropertyName("DynamicScalingOutSuspended");
-                context.Writer.Write(requestObject.DynamicScalingOutSuspended);
+                context.Writer.Write(requestObject.DynamicScalingOutSuspended.Value);
             }
 
             if(requestObject.IsSetScheduledScalingSuspended())
             {
                 context.Writer.WritePropertyName("ScheduledScalingSuspended");
-                context.Writer.Write(requestObject.ScheduledScalingSuspended);
+                context.Writer.Write(requestObject.ScheduledScalingSuspended.Value);
             }
 
         }

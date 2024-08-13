@@ -76,7 +76,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoUpdate())
                 {
                     context.Writer.WritePropertyName("autoUpdate");
-                    context.Writer.Write(publicRequest.AutoUpdate);
+                    context.Writer.Write(publicRequest.AutoUpdate.Value);
                 }
 
                 if(publicRequest.IsSetAvailabilityZoneId())
@@ -123,7 +123,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReadWrite())
                 {
                     context.Writer.WritePropertyName("readWrite");
-                    context.Writer.Write(publicRequest.ReadWrite);
+                    context.Writer.Write(publicRequest.ReadWrite.Value);
                 }
 
                 if(publicRequest.IsSetSegmentConfigurations())

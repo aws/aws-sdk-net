@@ -48,9 +48,9 @@ namespace Amazon.GuardDuty.Model
         /// not.
         /// </para>
         /// </summary>
-        public bool Activate
+        public bool? Activate
         {
-            get { return this._activate.GetValueOrDefault(); }
+            get { return this._activate; }
             set { this._activate = value; }
         }
 

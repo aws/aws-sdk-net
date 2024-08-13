@@ -72,25 +72,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllocatedStorage())
                 {
                     context.Writer.WritePropertyName("AllocatedStorage");
-                    context.Writer.Write(publicRequest.AllocatedStorage);
+                    context.Writer.Write(publicRequest.AllocatedStorage.Value);
                 }
 
                 if(publicRequest.IsSetAllowMajorVersionUpgrade())
                 {
                     context.Writer.WritePropertyName("AllowMajorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AllowMajorVersionUpgrade);
+                    context.Writer.Write(publicRequest.AllowMajorVersionUpgrade.Value);
                 }
 
                 if(publicRequest.IsSetApplyImmediately())
                 {
                     context.Writer.WritePropertyName("ApplyImmediately");
-                    context.Writer.Write(publicRequest.ApplyImmediately);
+                    context.Writer.Write(publicRequest.ApplyImmediately.Value);
                 }
 
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade);
+                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
                 }
 
                 if(publicRequest.IsSetEngineVersion())
@@ -102,7 +102,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMultiAZ())
                 {
                     context.Writer.WritePropertyName("MultiAZ");
-                    context.Writer.Write(publicRequest.MultiAZ);
+                    context.Writer.Write(publicRequest.MultiAZ.Value);
                 }
 
                 if(publicRequest.IsSetNetworkType())

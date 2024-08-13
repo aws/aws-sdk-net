@@ -90,7 +90,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                                     if (serverSideEncryptionRule.IsSetBucketKeyEnabled())
                                     {
-                                        xmlWriter.WriteElementString("BucketKeyEnabled", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
+                                        xmlWriter.WriteElementString("BucketKeyEnabled", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled.Value));
                                     }
                                 }
                                 xmlWriter.WriteEndElement();

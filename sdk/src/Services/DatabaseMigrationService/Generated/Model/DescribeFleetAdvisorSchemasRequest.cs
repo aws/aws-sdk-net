@@ -105,9 +105,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Sets the maximum number of records returned in the response.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

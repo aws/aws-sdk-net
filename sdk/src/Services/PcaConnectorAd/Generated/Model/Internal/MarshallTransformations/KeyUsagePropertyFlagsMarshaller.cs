@@ -51,19 +51,19 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecrypt())
             {
                 context.Writer.WritePropertyName("Decrypt");
-                context.Writer.Write(requestObject.Decrypt);
+                context.Writer.Write(requestObject.Decrypt.Value);
             }
 
             if(requestObject.IsSetKeyAgreement())
             {
                 context.Writer.WritePropertyName("KeyAgreement");
-                context.Writer.Write(requestObject.KeyAgreement);
+                context.Writer.Write(requestObject.KeyAgreement.Value);
             }
 
             if(requestObject.IsSetSign())
             {
                 context.Writer.WritePropertyName("Sign");
-                context.Writer.Write(requestObject.Sign);
+                context.Writer.Write(requestObject.Sign.Value);
             }
 
         }

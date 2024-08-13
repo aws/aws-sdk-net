@@ -83,7 +83,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -107,7 +107,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVersionNumber())
                 {
                     context.Writer.WritePropertyName("VersionNumber");
-                    context.Writer.Write(publicRequest.VersionNumber);
+                    context.Writer.Write(publicRequest.VersionNumber.Value);
                 }
 
                 writer.WriteObjectEnd();

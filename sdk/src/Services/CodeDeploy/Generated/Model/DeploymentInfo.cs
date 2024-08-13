@@ -145,9 +145,9 @@ namespace Amazon.CodeDeploy.Model
         /// A timestamp that indicates when the deployment was complete.
         /// </para>
         /// </summary>
-        public DateTime CompleteTime
+        public DateTime? CompleteTime
         {
-            get { return this._completeTime.GetValueOrDefault(); }
+            get { return this._completeTime; }
             set { this._completeTime = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.CodeDeploy.Model
         /// A timestamp that indicates when the deployment was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -464,9 +464,9 @@ namespace Amazon.CodeDeploy.Model
         /// failures should be ignored. 
         /// </para>
         /// </summary>
-        public bool IgnoreApplicationStopFailures
+        public bool? IgnoreApplicationStopFailures
         {
-            get { return this._ignoreApplicationStopFailures.GetValueOrDefault(); }
+            get { return this._ignoreApplicationStopFailures; }
             set { this._ignoreApplicationStopFailures = value; }
         }
 
@@ -484,9 +484,9 @@ namespace Amazon.CodeDeploy.Model
         /// Otherwise, 'true' as soon as the termination wait period starts.
         /// </para>
         /// </summary>
-        public bool InstanceTerminationWaitTimeStarted
+        public bool? InstanceTerminationWaitTimeStarted
         {
-            get { return this._instanceTerminationWaitTimeStarted.GetValueOrDefault(); }
+            get { return this._instanceTerminationWaitTimeStarted; }
             set { this._instanceTerminationWaitTimeStarted = value; }
         }
 
@@ -612,9 +612,9 @@ namespace Amazon.CodeDeploy.Model
         /// in the deployment process.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -668,9 +668,9 @@ namespace Amazon.CodeDeploy.Model
         /// are to be deployed to.
         /// </para>
         /// </summary>
-        public bool UpdateOutdatedInstancesOnly
+        public bool? UpdateOutdatedInstancesOnly
         {
-            get { return this._updateOutdatedInstancesOnly.GetValueOrDefault(); }
+            get { return this._updateOutdatedInstancesOnly; }
             set { this._updateOutdatedInstancesOnly = value; }
         }
 

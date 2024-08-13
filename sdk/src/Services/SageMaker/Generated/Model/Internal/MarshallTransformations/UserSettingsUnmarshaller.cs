@@ -156,6 +156,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.StudioWebPortal = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StudioWebPortalSettings", targetDepth))
+                {
+                    var unmarshaller = StudioWebPortalSettingsUnmarshaller.Instance;
+                    unmarshalledObject.StudioWebPortalSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TensorBoardAppSettings", targetDepth))
                 {
                     var unmarshaller = TensorBoardAppSettingsUnmarshaller.Instance;

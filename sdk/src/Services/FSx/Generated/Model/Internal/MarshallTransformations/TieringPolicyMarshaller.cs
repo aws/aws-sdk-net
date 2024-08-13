@@ -51,7 +51,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoolingPeriod())
             {
                 context.Writer.WritePropertyName("CoolingPeriod");
-                context.Writer.Write(requestObject.CoolingPeriod);
+                context.Writer.Write(requestObject.CoolingPeriod.Value);
             }
 
             if(requestObject.IsSetName())

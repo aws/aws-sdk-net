@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// interface created by <a>RunInstances</a>) receives an IPv6 address.
         /// </para>
         /// </summary>
-        public bool AssignIpv6AddressOnCreation
+        public bool? AssignIpv6AddressOnCreation
         {
-            get { return this._assignIpv6AddressOnCreation.GetValueOrDefault(); }
+            get { return this._assignIpv6AddressOnCreation; }
             set { this._assignIpv6AddressOnCreation = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.EC2.Model
         /// any stopped instances are considered unavailable.
         /// </para>
         /// </summary>
-        public int AvailableIpAddressCount
+        public int? AvailableIpAddressCount
         {
-            get { return this._availableIpAddressCount.GetValueOrDefault(); }
+            get { return this._availableIpAddressCount; }
             set { this._availableIpAddressCount = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether this is the default subnet for the Availability Zone.
         /// </para>
         /// </summary>
-        public bool DefaultForAz
+        public bool? DefaultForAz
         {
-            get { return this._defaultForAz.GetValueOrDefault(); }
+            get { return this._defaultForAz; }
             set { this._defaultForAz = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.EC2.Model
         /// should return synthetic IPv6 addresses for IPv4-only destinations.
         /// </para>
         /// </summary>
-        public bool EnableDns64
+        public bool? EnableDns64
         {
-            get { return this._enableDns64.GetValueOrDefault(); }
+            get { return this._enableDns64; }
             set { this._enableDns64 = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.EC2.Model
         /// interface (eth1). 
         /// </para>
         /// </summary>
-        public int EnableLniAtDeviceIndex
+        public int? EnableLniAtDeviceIndex
         {
-            get { return this._enableLniAtDeviceIndex.GetValueOrDefault(); }
+            get { return this._enableLniAtDeviceIndex; }
             set { this._enableLniAtDeviceIndex = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether this is an IPv6 only subnet.
         /// </para>
         /// </summary>
-        public bool Ipv6Native
+        public bool? Ipv6Native
         {
-            get { return this._ipv6Native.GetValueOrDefault(); }
+            get { return this._ipv6Native; }
             set { this._ipv6Native = value; }
         }
 
@@ -266,9 +266,9 @@ namespace Amazon.EC2.Model
         /// interface created by <a>RunInstances</a>) receives a customer-owned IPv4 address.
         /// </para>
         /// </summary>
-        public bool MapCustomerOwnedIpOnLaunch
+        public bool? MapCustomerOwnedIpOnLaunch
         {
-            get { return this._mapCustomerOwnedIpOnLaunch.GetValueOrDefault(); }
+            get { return this._mapCustomerOwnedIpOnLaunch; }
             set { this._mapCustomerOwnedIpOnLaunch = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.EC2.Model
         /// VPC pricing page</a>.
         /// </para>
         /// </summary>
-        public bool MapPublicIpOnLaunch
+        public bool? MapPublicIpOnLaunch
         {
-            get { return this._mapPublicIpOnLaunch.GetValueOrDefault(); }
+            get { return this._mapPublicIpOnLaunch; }
             set { this._mapPublicIpOnLaunch = value; }
         }
 

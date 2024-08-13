@@ -49,9 +49,9 @@ namespace Amazon.KinesisVideo.Model
         /// The timestamp at which a stream’s edge configuration was first created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.KinesisVideo.Model
         /// The timestamp at which a stream’s edge configuration was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

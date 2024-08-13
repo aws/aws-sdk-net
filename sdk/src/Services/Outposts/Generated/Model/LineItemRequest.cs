@@ -63,9 +63,9 @@ namespace Amazon.Outposts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Quantity
+        public int? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

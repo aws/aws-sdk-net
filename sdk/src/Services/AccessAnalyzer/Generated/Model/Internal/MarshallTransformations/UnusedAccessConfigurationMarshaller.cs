@@ -51,7 +51,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnusedAccessAge())
             {
                 context.Writer.WritePropertyName("unusedAccessAge");
-                context.Writer.Write(requestObject.UnusedAccessAge);
+                context.Writer.Write(requestObject.UnusedAccessAge.Value);
             }
 
         }

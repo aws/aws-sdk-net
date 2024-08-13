@@ -85,9 +85,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SampleTime
+        public DateTime? SampleTime
         {
-            get { return this._sampleTime.GetValueOrDefault(); }
+            get { return this._sampleTime; }
             set { this._sampleTime = value; }
         }
 

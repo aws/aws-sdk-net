@@ -62,31 +62,31 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentsReceivedCount())
             {
                 context.Writer.WritePropertyName("SegmentsReceivedCount");
-                context.Writer.Write(requestObject.SegmentsReceivedCount);
+                context.Writer.Write(requestObject.SegmentsReceivedCount.Value);
             }
 
             if(requestObject.IsSetSegmentsRejectedCount())
             {
                 context.Writer.WritePropertyName("SegmentsRejectedCount");
-                context.Writer.Write(requestObject.SegmentsRejectedCount);
+                context.Writer.Write(requestObject.SegmentsRejectedCount.Value);
             }
 
             if(requestObject.IsSetSegmentsSentCount())
             {
                 context.Writer.WritePropertyName("SegmentsSentCount");
-                context.Writer.Write(requestObject.SegmentsSentCount);
+                context.Writer.Write(requestObject.SegmentsSentCount.Value);
             }
 
             if(requestObject.IsSetSegmentsSpilloverCount())
             {
                 context.Writer.WritePropertyName("SegmentsSpilloverCount");
-                context.Writer.Write(requestObject.SegmentsSpilloverCount);
+                context.Writer.Write(requestObject.SegmentsSpilloverCount.Value);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp);
+                context.Writer.Write(requestObject.Timestamp.Value);
             }
 
         }

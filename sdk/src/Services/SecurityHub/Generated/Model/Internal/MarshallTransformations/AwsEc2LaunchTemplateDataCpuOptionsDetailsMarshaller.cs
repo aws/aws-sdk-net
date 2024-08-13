@@ -51,13 +51,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoreCount())
             {
                 context.Writer.WritePropertyName("CoreCount");
-                context.Writer.Write(requestObject.CoreCount);
+                context.Writer.Write(requestObject.CoreCount.Value);
             }
 
             if(requestObject.IsSetThreadsPerCore())
             {
                 context.Writer.WritePropertyName("ThreadsPerCore");
-                context.Writer.Write(requestObject.ThreadsPerCore);
+                context.Writer.Write(requestObject.ThreadsPerCore.Value);
             }
 
         }

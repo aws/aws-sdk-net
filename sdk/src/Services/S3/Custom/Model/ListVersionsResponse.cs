@@ -50,9 +50,9 @@ namespace Amazon.S3.Model
         /// results.
         /// </para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.S3.Model
         /// This is the maximum number of keys in the S3ObjectVersions collection.
         /// The value is derived from the MaxKeys parameter to ListVersionsRequest.
         /// </summary>
-        public int MaxKeys
+        public int? MaxKeys
         {
-            get { return this.maxKeys ?? default(int); }
+            get { return this.maxKeys; }
             set { this.maxKeys = value; }
         }
 

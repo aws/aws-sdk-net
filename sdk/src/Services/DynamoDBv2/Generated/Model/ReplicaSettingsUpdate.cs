@@ -107,9 +107,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ReplicaProvisionedReadCapacityUnits
+        public long? ReplicaProvisionedReadCapacityUnits
         {
-            get { return this._replicaProvisionedReadCapacityUnits.GetValueOrDefault(); }
+            get { return this._replicaProvisionedReadCapacityUnits; }
             set { this._replicaProvisionedReadCapacityUnits = value; }
         }
 

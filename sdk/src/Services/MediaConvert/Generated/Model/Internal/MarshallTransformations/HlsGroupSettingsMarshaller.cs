@@ -193,20 +193,20 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinFinalSegmentLength())
             {
                 context.Writer.WritePropertyName("minFinalSegmentLength");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MinFinalSegmentLength))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinFinalSegmentLength.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinFinalSegmentLength);
+                    context.Writer.Write(requestObject.MinFinalSegmentLength.Value);
                 }
             }
 
             if(requestObject.IsSetMinSegmentLength())
             {
                 context.Writer.WritePropertyName("minSegmentLength");
-                context.Writer.Write(requestObject.MinSegmentLength);
+                context.Writer.Write(requestObject.MinSegmentLength.Value);
             }
 
             if(requestObject.IsSetOutputSelection())
@@ -224,7 +224,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgramDateTimePeriod())
             {
                 context.Writer.WritePropertyName("programDateTimePeriod");
-                context.Writer.Write(requestObject.ProgramDateTimePeriod);
+                context.Writer.Write(requestObject.ProgramDateTimePeriod.Value);
             }
 
             if(requestObject.IsSetProgressiveWriteHlsManifest())
@@ -242,7 +242,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentLength())
             {
                 context.Writer.WritePropertyName("segmentLength");
-                context.Writer.Write(requestObject.SegmentLength);
+                context.Writer.Write(requestObject.SegmentLength.Value);
             }
 
             if(requestObject.IsSetSegmentLengthControl())
@@ -254,7 +254,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentsPerSubdirectory())
             {
                 context.Writer.WritePropertyName("segmentsPerSubdirectory");
-                context.Writer.Write(requestObject.SegmentsPerSubdirectory);
+                context.Writer.Write(requestObject.SegmentsPerSubdirectory.Value);
             }
 
             if(requestObject.IsSetStreamInfResolution())
@@ -278,13 +278,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimedMetadataId3Period())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Period");
-                context.Writer.Write(requestObject.TimedMetadataId3Period);
+                context.Writer.Write(requestObject.TimedMetadataId3Period.Value);
             }
 
             if(requestObject.IsSetTimestampDeltaMilliseconds())
             {
                 context.Writer.WritePropertyName("timestampDeltaMilliseconds");
-                context.Writer.Write(requestObject.TimestampDeltaMilliseconds);
+                context.Writer.Write(requestObject.TimestampDeltaMilliseconds.Value);
             }
 
         }

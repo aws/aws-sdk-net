@@ -54,7 +54,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastByteReceived", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LastByteReceived = unmarshaller.Unmarshall(context);
                     continue;
                 }

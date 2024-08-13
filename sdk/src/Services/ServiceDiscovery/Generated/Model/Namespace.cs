@@ -73,9 +73,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// The number of services that are associated with the namespace.
         /// </para>
         /// </summary>
-        public int ServiceCount
+        public int? ServiceCount
         {
-            get { return this._serviceCount.GetValueOrDefault(); }
+            get { return this._serviceCount; }
             set { this._serviceCount = value; }
         }
 

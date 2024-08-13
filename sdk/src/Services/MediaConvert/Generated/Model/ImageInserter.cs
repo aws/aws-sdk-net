@@ -64,9 +64,9 @@ namespace Amazon.MediaConvert.Model
         /// default value of 100, or specify an integer from 100 to 1000.
         /// </summary>
         [AWSProperty(Min=100, Max=1000)]
-        public int SdrReferenceWhiteLevel
+        public int? SdrReferenceWhiteLevel
         {
-            get { return this._sdrReferenceWhiteLevel.GetValueOrDefault(); }
+            get { return this._sdrReferenceWhiteLevel; }
             set { this._sdrReferenceWhiteLevel = value; }
         }
 

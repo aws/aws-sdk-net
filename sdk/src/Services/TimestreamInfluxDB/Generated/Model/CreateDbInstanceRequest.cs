@@ -58,9 +58,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=16384)]
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Configures the DB instance with a public IP to facilitate access.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportFromTime())
             {
                 context.Writer.WritePropertyName("ExportFromTime");
-                context.Writer.Write(requestObject.ExportFromTime);
+                context.Writer.Write(requestObject.ExportFromTime.Value);
             }
 
             if(requestObject.IsSetExportToTime())
             {
                 context.Writer.WritePropertyName("ExportToTime");
-                context.Writer.Write(requestObject.ExportToTime);
+                context.Writer.Write(requestObject.ExportToTime.Value);
             }
 
             if(requestObject.IsSetExportViewType())

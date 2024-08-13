@@ -98,9 +98,9 @@ namespace Amazon.EC2.Model
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTimeUtc
+        public DateTime? StartTimeUtc
         {
-            get { return this._startTimeUtc.GetValueOrDefault(); }
+            get { return this._startTimeUtc; }
             set { this._startTime = this._startTimeUtc = value; }
         }
 
@@ -171,13 +171,20 @@ namespace Amazon.EC2.Model
             "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
             set
             {
                 this._startTime = value;
-                this._startTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._startTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._startTimeUtc = null;
+                }
             }
         }
 #endregion

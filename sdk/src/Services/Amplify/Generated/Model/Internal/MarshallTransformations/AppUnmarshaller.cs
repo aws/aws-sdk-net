@@ -104,7 +104,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -134,25 +134,25 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableAutoBranchCreation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAutoBranchCreation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enableBasicAuth", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableBasicAuth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enableBranchAutoBuild", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableBranchAutoBuild = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enableBranchAutoDeletion", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableBranchAutoDeletion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -206,7 +206,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

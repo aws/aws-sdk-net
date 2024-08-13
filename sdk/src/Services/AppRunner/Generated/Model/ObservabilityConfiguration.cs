@@ -60,9 +60,9 @@ namespace Amazon.AppRunner.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.AppRunner.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime DeletedAt
+        public DateTime? DeletedAt
         {
-            get { return this._deletedAt.GetValueOrDefault(); }
+            get { return this._deletedAt; }
             set { this._deletedAt = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.AppRunner.Model
         /// set to <c>false</c> otherwise.
         /// </para>
         /// </summary>
-        public bool Latest
+        public bool? Latest
         {
-            get { return this._latest.GetValueOrDefault(); }
+            get { return this._latest; }
             set { this._latest = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.AppRunner.Model
         /// configurations (<c>"Status": "ACTIVE"</c>) that share the same <c>ObservabilityConfigurationName</c>.
         /// </para>
         /// </summary>
-        public int ObservabilityConfigurationRevision
+        public int? ObservabilityConfigurationRevision
         {
-            get { return this._observabilityConfigurationRevision.GetValueOrDefault(); }
+            get { return this._observabilityConfigurationRevision; }
             set { this._observabilityConfigurationRevision = value; }
         }
 

@@ -84,9 +84,9 @@ namespace Amazon.AppSync.Model
         /// as seconds since the epoch. For more information, see .
         /// </para>
         /// </summary>
-        public long Expires
+        public long? Expires
         {
-            get { return this._expires.GetValueOrDefault(); }
+            get { return this._expires; }
             set { this._expires = value; }
         }
 

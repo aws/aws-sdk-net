@@ -58,9 +58,9 @@ namespace Amazon.IoT.Model
         /// Allows this CA certificate to be used for auto registration of device certificates.
         /// </para>
         /// </summary>
-        public bool AllowAutoRegistration
+        public bool? AllowAutoRegistration
         {
-            get { return this._allowAutoRegistration.GetValueOrDefault(); }
+            get { return this._allowAutoRegistration; }
             set { this._allowAutoRegistration = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.IoT.Model
         /// Valid values: <c>ACTIVE | INACTIVE</c> 
         /// </para>
         /// </summary>
-        public bool SetAsActive
+        public bool? SetAsActive
         {
-            get { return this._setAsActive.GetValueOrDefault(); }
+            get { return this._setAsActive; }
             set { this._setAsActive = value; }
         }
 

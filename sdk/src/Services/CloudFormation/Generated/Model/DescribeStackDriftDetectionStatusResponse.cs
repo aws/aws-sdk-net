@@ -111,9 +111,9 @@ namespace Amazon.CloudFormation.Model
         /// stacks whose drift status is <c>IN_SYNC</c>.
         /// </para>
         /// </summary>
-        public int DriftedStackResourceCount
+        public int? DriftedStackResourceCount
         {
-            get { return this._driftedStackResourceCount.GetValueOrDefault(); }
+            get { return this._driftedStackResourceCount; }
             set { this._driftedStackResourceCount = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

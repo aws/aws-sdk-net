@@ -94,9 +94,9 @@ namespace Amazon.Scheduler.Model
         /// The time at which the schedule was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.Scheduler.Model
         /// you specify. EventBridge Scheduler ignores <c>EndDate</c> for one-time schedules.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.Scheduler.Model
         /// The time at which the schedule was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModificationDate
+        public DateTime? LastModificationDate
         {
-            get { return this._lastModificationDate.GetValueOrDefault(); }
+            get { return this._lastModificationDate; }
             set { this._lastModificationDate = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.Scheduler.Model
         /// schedules.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

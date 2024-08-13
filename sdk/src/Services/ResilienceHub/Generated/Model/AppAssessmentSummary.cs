@@ -151,7 +151,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
-        /// TCurrent status of compliance for the resiliency policy.
+        /// Current status of compliance for the resiliency policy.
         /// </para>
         /// </summary>
         public ComplianceStatus ComplianceStatus
@@ -209,9 +209,9 @@ namespace Amazon.ResilienceHub.Model
         /// End time for the action.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -264,9 +264,9 @@ namespace Amazon.ResilienceHub.Model
         /// Current resiliency score for the application.
         /// </para>
         /// </summary>
-        public double ResiliencyScore
+        public double? ResiliencyScore
         {
-            get { return this._resiliencyScore.GetValueOrDefault(); }
+            get { return this._resiliencyScore; }
             set { this._resiliencyScore = value; }
         }
 
@@ -282,9 +282,9 @@ namespace Amazon.ResilienceHub.Model
         /// Starting time for the action.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

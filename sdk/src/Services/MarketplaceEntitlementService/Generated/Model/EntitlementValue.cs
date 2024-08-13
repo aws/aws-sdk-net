@@ -47,9 +47,9 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// is a boolean type. Otherwise, the field will not be set.
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// a double type. Otherwise, the field will not be set.
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// is an integer type. Otherwise, the field will not be set.
         /// </para>
         /// </summary>
-        public int IntegerValue
+        public int? IntegerValue
         {
-            get { return this._integerValue.GetValueOrDefault(); }
+            get { return this._integerValue; }
             set { this._integerValue = value; }
         }
 

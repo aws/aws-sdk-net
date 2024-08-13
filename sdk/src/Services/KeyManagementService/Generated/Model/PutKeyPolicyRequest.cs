@@ -93,9 +93,9 @@ namespace Amazon.KeyManagementService.Model
         /// request on the KMS key.
         /// </para>
         /// </summary>
-        public bool BypassPolicyLockoutSafetyCheck
+        public bool? BypassPolicyLockoutSafetyCheck
         {
-            get { return this._bypassPolicyLockoutSafetyCheck.GetValueOrDefault(); }
+            get { return this._bypassPolicyLockoutSafetyCheck; }
             set { this._bypassPolicyLockoutSafetyCheck = value; }
         }
 

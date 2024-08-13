@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecimalPlaces())
             {
                 context.Writer.WritePropertyName("DecimalPlaces");
-                context.Writer.Write(requestObject.DecimalPlaces);
+                context.Writer.Write(requestObject.DecimalPlaces.Value);
             }
 
         }

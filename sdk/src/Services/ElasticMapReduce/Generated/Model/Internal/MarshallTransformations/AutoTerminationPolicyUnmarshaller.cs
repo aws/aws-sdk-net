@@ -68,7 +68,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IdleTimeout", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IdleTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -200,9 +200,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Backup
+        public bool? Backup
         {
-            get { return this._backup.GetValueOrDefault(); }
+            get { return this._backup; }
             set { this._backup = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// 
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -346,9 +346,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public double ProvisionedThroughputInMibps
+        public double? ProvisionedThroughputInMibps
         {
-            get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }
+            get { return this._provisionedThroughputInMibps; }
             set { this._provisionedThroughputInMibps = value; }
         }
 

@@ -62,13 +62,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumPercent())
             {
                 context.Writer.WritePropertyName("MaximumPercent");
-                context.Writer.Write(requestObject.MaximumPercent);
+                context.Writer.Write(requestObject.MaximumPercent.Value);
             }
 
             if(requestObject.IsSetMinimumHealthyPercent())
             {
                 context.Writer.WritePropertyName("MinimumHealthyPercent");
-                context.Writer.Write(requestObject.MinimumHealthyPercent);
+                context.Writer.Write(requestObject.MinimumHealthyPercent.Value);
             }
 
         }

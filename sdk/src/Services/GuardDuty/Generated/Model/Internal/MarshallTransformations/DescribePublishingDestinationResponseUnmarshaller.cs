@@ -72,7 +72,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("publishingFailureStartTimestamp", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.PublishingFailureStartTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

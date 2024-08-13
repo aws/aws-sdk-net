@@ -79,7 +79,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPresignedUrlTimeToLive())
                 {
                     context.Writer.WritePropertyName("presignedUrlTimeToLive");
-                    context.Writer.Write(publicRequest.PresignedUrlTimeToLive);
+                    context.Writer.Write(publicRequest.PresignedUrlTimeToLive.Value);
                 }
 
                 writer.WriteObjectEnd();

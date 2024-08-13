@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// MiB.
         /// </para>
         /// </summary>
-        public int TotalNeuronDeviceMemoryInMiB
+        public int? TotalNeuronDeviceMemoryInMiB
         {
-            get { return this._totalNeuronDeviceMemoryInMiB.GetValueOrDefault(); }
+            get { return this._totalNeuronDeviceMemoryInMiB; }
             set { this._totalNeuronDeviceMemoryInMiB = value; }
         }
 

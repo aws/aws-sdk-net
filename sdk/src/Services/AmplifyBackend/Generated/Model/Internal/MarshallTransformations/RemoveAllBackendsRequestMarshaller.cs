@@ -73,7 +73,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCleanAmplifyApp())
                 {
                     context.Writer.WritePropertyName("cleanAmplifyApp");
-                    context.Writer.Write(publicRequest.CleanAmplifyApp);
+                    context.Writer.Write(publicRequest.CleanAmplifyApp.Value);
                 }
 
                 writer.WriteObjectEnd();

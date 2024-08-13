@@ -47,9 +47,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowAssociation
+        public bool? AllowAssociation
         {
-            get { return this._allowAssociation.GetValueOrDefault(); }
+            get { return this._allowAssociation; }
             set { this._allowAssociation = value; }
         }
 

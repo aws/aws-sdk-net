@@ -66,13 +66,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WorkingStorageAllocatedInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.WorkingStorageAllocatedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkingStorageUsedInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.WorkingStorageUsedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

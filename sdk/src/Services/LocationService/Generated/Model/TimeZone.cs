@@ -64,9 +64,9 @@ namespace Amazon.LocationService.Model
         /// The time zone's offset, in seconds, from UTC.
         /// </para>
         /// </summary>
-        public int Offset
+        public int? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingEnabled())
             {
                 context.Writer.WritePropertyName("AutoScalingEnabled");
-                context.Writer.Write(requestObject.AutoScalingEnabled);
+                context.Writer.Write(requestObject.AutoScalingEnabled.Value);
             }
 
             if(requestObject.IsSetConfigurationType())
@@ -63,13 +63,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParallelism())
             {
                 context.Writer.WritePropertyName("Parallelism");
-                context.Writer.Write(requestObject.Parallelism);
+                context.Writer.Write(requestObject.Parallelism.Value);
             }
 
             if(requestObject.IsSetParallelismPerKPU())
             {
                 context.Writer.WritePropertyName("ParallelismPerKPU");
-                context.Writer.Write(requestObject.ParallelismPerKPU);
+                context.Writer.Write(requestObject.ParallelismPerKPU.Value);
             }
 
         }

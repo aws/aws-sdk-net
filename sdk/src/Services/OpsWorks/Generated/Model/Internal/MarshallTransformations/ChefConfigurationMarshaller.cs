@@ -57,7 +57,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManageBerkshelf())
             {
                 context.Writer.WritePropertyName("ManageBerkshelf");
-                context.Writer.Write(requestObject.ManageBerkshelf);
+                context.Writer.Write(requestObject.ManageBerkshelf.Value);
             }
 
         }

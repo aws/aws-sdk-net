@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("denyAllIgwTraffic", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DenyAllIgwTraffic = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ipv6Native", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Ipv6Native = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -208,13 +208,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("requesterManaged", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequesterManaged = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sourceDestCheck", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SourceDestCheck = unmarshaller.Unmarshall(context);
                         continue;
                     }

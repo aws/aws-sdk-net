@@ -85,9 +85,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The number of applications discovered.
         /// </para>
         /// </summary>
-        public long Applications
+        public long? Applications
         {
-            get { return this._applications.GetValueOrDefault(); }
+            get { return this._applications; }
             set { this._applications = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The number of servers discovered.
         /// </para>
         /// </summary>
-        public long Servers
+        public long? Servers
         {
-            get { return this._servers.GetValueOrDefault(); }
+            get { return this._servers; }
             set { this._servers = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The number of servers mapped to applications.
         /// </para>
         /// </summary>
-        public long ServersMappedToApplications
+        public long? ServersMappedToApplications
         {
-            get { return this._serversMappedToApplications.GetValueOrDefault(); }
+            get { return this._serversMappedToApplications; }
             set { this._serversMappedToApplications = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The number of servers mapped to tags.
         /// </para>
         /// </summary>
-        public long ServersMappedtoTags
+        public long? ServersMappedtoTags
         {
-            get { return this._serversMappedtoTags.GetValueOrDefault(); }
+            get { return this._serversMappedtoTags; }
             set { this._serversMappedtoTags = value; }
         }
 

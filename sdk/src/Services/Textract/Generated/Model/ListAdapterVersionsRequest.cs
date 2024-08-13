@@ -68,9 +68,9 @@ namespace Amazon.Textract.Model
         /// returns only adapter versions created after the specified creation time.
         /// </para>
         /// </summary>
-        public DateTime AfterCreationTime
+        public DateTime? AfterCreationTime
         {
-            get { return this._afterCreationTime.GetValueOrDefault(); }
+            get { return this._afterCreationTime; }
             set { this._afterCreationTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Textract.Model
         /// returns only adapter versions created after the specified creation time.
         /// </para>
         /// </summary>
-        public DateTime BeforeCreationTime
+        public DateTime? BeforeCreationTime
         {
-            get { return this._beforeCreationTime.GetValueOrDefault(); }
+            get { return this._beforeCreationTime; }
             set { this._beforeCreationTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

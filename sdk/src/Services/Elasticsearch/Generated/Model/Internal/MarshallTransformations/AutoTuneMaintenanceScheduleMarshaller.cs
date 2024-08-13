@@ -68,7 +68,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartAt())
             {
                 context.Writer.WritePropertyName("StartAt");
-                context.Writer.Write(requestObject.StartAt);
+                context.Writer.Write(requestObject.StartAt.Value);
             }
 
         }

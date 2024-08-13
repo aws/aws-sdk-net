@@ -109,9 +109,9 @@ namespace Amazon.IVS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
-        public int RecordingReconnectWindowSeconds
+        public int? RecordingReconnectWindowSeconds
         {
-            get { return this._recordingReconnectWindowSeconds.GetValueOrDefault(); }
+            get { return this._recordingReconnectWindowSeconds; }
             set { this._recordingReconnectWindowSeconds = value; }
         }
 

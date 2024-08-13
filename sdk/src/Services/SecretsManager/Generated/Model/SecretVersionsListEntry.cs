@@ -46,9 +46,9 @@ namespace Amazon.SecretsManager.Model
         /// The date and time this version of the secret was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SecretsManager.Model
         /// of this field is at the date level and does not include the time.
         /// </para>
         /// </summary>
-        public DateTime LastAccessedDate
+        public DateTime? LastAccessedDate
         {
-            get { return this._lastAccessedDate.GetValueOrDefault(); }
+            get { return this._lastAccessedDate; }
             set { this._lastAccessedDate = value; }
         }
 

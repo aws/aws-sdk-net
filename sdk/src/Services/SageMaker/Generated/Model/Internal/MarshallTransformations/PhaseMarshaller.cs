@@ -51,19 +51,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationInSeconds())
             {
                 context.Writer.WritePropertyName("DurationInSeconds");
-                context.Writer.Write(requestObject.DurationInSeconds);
+                context.Writer.Write(requestObject.DurationInSeconds.Value);
             }
 
             if(requestObject.IsSetInitialNumberOfUsers())
             {
                 context.Writer.WritePropertyName("InitialNumberOfUsers");
-                context.Writer.Write(requestObject.InitialNumberOfUsers);
+                context.Writer.Write(requestObject.InitialNumberOfUsers.Value);
             }
 
             if(requestObject.IsSetSpawnRate())
             {
                 context.Writer.WritePropertyName("SpawnRate");
-                context.Writer.Write(requestObject.SpawnRate);
+                context.Writer.Write(requestObject.SpawnRate.Value);
             }
 
         }

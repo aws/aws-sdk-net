@@ -57,7 +57,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientIPPreservationEnabled())
             {
                 context.Writer.WritePropertyName("ClientIPPreservationEnabled");
-                context.Writer.Write(requestObject.ClientIPPreservationEnabled);
+                context.Writer.Write(requestObject.ClientIPPreservationEnabled.Value);
             }
 
             if(requestObject.IsSetEndpointId())
@@ -69,7 +69,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("Weight");
-                context.Writer.Write(requestObject.Weight);
+                context.Writer.Write(requestObject.Weight.Value);
             }
 
         }

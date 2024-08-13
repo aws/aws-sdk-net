@@ -109,9 +109,9 @@ namespace Amazon.EC2.Model
         /// is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).
         /// </para>
         /// </summary>
-        public int FromPort
+        public int? FromPort
         {
-            get { return this._fromPort.GetValueOrDefault(); }
+            get { return this._fromPort; }
             set { this._fromPort = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the security group rule is an outbound rule.
         /// </para>
         /// </summary>
-        public bool IsEgress
+        public bool? IsEgress
         {
-            get { return this._isEgress.GetValueOrDefault(); }
+            get { return this._isEgress; }
             set { this._isEgress = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.EC2.Model
         /// is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).
         /// </para>
         /// </summary>
-        public int ToPort
+        public int? ToPort
         {
-            get { return this._toPort.GetValueOrDefault(); }
+            get { return this._toPort; }
             set { this._toPort = value; }
         }
 

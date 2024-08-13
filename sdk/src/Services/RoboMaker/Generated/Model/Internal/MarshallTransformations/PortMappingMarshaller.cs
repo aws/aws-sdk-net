@@ -51,19 +51,19 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationPort())
             {
                 context.Writer.WritePropertyName("applicationPort");
-                context.Writer.Write(requestObject.ApplicationPort);
+                context.Writer.Write(requestObject.ApplicationPort.Value);
             }
 
             if(requestObject.IsSetEnableOnPublicIp())
             {
                 context.Writer.WritePropertyName("enableOnPublicIp");
-                context.Writer.Write(requestObject.EnableOnPublicIp);
+                context.Writer.Write(requestObject.EnableOnPublicIp.Value);
             }
 
             if(requestObject.IsSetJobPort())
             {
                 context.Writer.WritePropertyName("jobPort");
-                context.Writer.Write(requestObject.JobPort);
+                context.Writer.Write(requestObject.JobPort.Value);
             }
 
         }

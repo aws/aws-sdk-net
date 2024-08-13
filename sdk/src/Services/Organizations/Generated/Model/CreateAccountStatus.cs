@@ -94,9 +94,9 @@ namespace Amazon.Organizations.Model
         /// The date and time that the account was created and the request completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedTimestamp
+        public DateTime? CompletedTimestamp
         {
-            get { return this._completedTimestamp.GetValueOrDefault(); }
+            get { return this._completedTimestamp; }
             set { this._completedTimestamp = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.Organizations.Model
         /// The date and time that the request was made for the account creation.
         /// </para>
         /// </summary>
-        public DateTime RequestedTimestamp
+        public DateTime? RequestedTimestamp
         {
-            get { return this._requestedTimestamp.GetValueOrDefault(); }
+            get { return this._requestedTimestamp; }
             set { this._requestedTimestamp = value; }
         }
 

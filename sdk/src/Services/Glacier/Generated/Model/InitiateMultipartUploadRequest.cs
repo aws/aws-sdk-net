@@ -95,7 +95,7 @@ namespace Amazon.Glacier.Model
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="archiveDescription">The archive description that you are uploading in parts. The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</param>
         /// <param name="partSize">The size of each part except the last, in bytes. The last part can be smaller than this part size.</param>
-        public InitiateMultipartUploadRequest(string vaultName, string archiveDescription, long partSize)
+        public InitiateMultipartUploadRequest(string vaultName, string archiveDescription, long? partSize)
         {
             _vaultName = vaultName;
             _archiveDescription = archiveDescription;
@@ -109,7 +109,7 @@ namespace Amazon.Glacier.Model
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="archiveDescription">The archive description that you are uploading in parts. The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</param>
         /// <param name="partSize">The size of each part except the last, in bytes. The last part can be smaller than this part size.</param>
-        public InitiateMultipartUploadRequest(string accountId, string vaultName, string archiveDescription, long partSize)
+        public InitiateMultipartUploadRequest(string accountId, string vaultName, string archiveDescription, long? partSize)
         {
             _accountId = accountId;
             _vaultName = vaultName;
@@ -171,16 +171,16 @@ namespace Amazon.Glacier.Model
         /// this part size.
         /// </para>
         /// </summary>
-        public long PartSize
+        public long? PartSize
         {
-            get { return this._partSize.GetValueOrDefault(); }
+            get { return this._partSize; }
             set { this._partSize = value; }
         }
 
         // Check to see if PartSize property is set
         internal bool IsSetPartSize()
         {
-            return this._partSize.HasValue; 
+            return this._partSize != null;
         }
 
         /// <summary>

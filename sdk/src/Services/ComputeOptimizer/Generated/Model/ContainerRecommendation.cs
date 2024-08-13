@@ -63,9 +63,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The recommended number of CPU units reserved for the container. 
         /// </para>
         /// </summary>
-        public int Cpu
+        public int? Cpu
         {
-            get { return this._cpu.GetValueOrDefault(); }
+            get { return this._cpu; }
             set { this._cpu = value; }
         }
 

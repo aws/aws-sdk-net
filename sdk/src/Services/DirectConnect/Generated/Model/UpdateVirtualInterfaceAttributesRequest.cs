@@ -35,7 +35,7 @@ namespace Amazon.DirectConnect.Model
     /// 
     ///  
     /// <para>
-    /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
+    /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
     /// to the underlying physical connection if it wasn't updated to support jumbo frames.
     /// Updating the connection disrupts network connectivity for all virtual interfaces associated
     /// with the connection for up to 30 seconds. To check whether your connection supports
@@ -56,9 +56,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether to enable or disable SiteLink.
         /// </para>
         /// </summary>
-        public bool EnableSiteLink
+        public bool? EnableSiteLink
         {
-            get { return this._enableSiteLink.GetValueOrDefault(); }
+            get { return this._enableSiteLink; }
             set { this._enableSiteLink = value; }
         }
 
@@ -71,13 +71,13 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Mtu. 
         /// <para>
-        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
+        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500.
         /// The default value is 1500.
         /// </para>
         /// </summary>
-        public int Mtu
+        public int? Mtu
         {
-            get { return this._mtu.GetValueOrDefault(); }
+            get { return this._mtu; }
             set { this._mtu = value; }
         }
 

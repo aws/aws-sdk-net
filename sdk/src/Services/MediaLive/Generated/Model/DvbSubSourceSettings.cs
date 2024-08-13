@@ -60,9 +60,9 @@ namespace Amazon.MediaLive.Model
         /// passed through, regardless of selectors.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Pid
+        public int? Pid
         {
-            get { return this._pid.GetValueOrDefault(); }
+            get { return this._pid; }
             set { this._pid = value; }
         }
 

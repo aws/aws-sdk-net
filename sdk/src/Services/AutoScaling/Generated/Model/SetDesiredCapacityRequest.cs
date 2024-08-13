@@ -78,9 +78,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DesiredCapacity
+        public int? DesiredCapacity
         {
-            get { return this._desiredCapacity.GetValueOrDefault(); }
+            get { return this._desiredCapacity; }
             set { this._desiredCapacity = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.AutoScaling.Model
         /// scaling activities.
         /// </para>
         /// </summary>
-        public bool HonorCooldown
+        public bool? HonorCooldown
         {
-            get { return this._honorCooldown.GetValueOrDefault(); }
+            get { return this._honorCooldown; }
             set { this._honorCooldown = value; }
         }
 

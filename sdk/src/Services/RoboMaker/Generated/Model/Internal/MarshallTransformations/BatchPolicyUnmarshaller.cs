@@ -68,13 +68,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxConcurrency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("timeoutInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

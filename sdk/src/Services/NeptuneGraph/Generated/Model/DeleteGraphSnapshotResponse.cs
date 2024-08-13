@@ -129,9 +129,9 @@ namespace Amazon.NeptuneGraph.Model
         /// The time when the snapshot was created.
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreateTime
+        public DateTime? SnapshotCreateTime
         {
-            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            get { return this._snapshotCreateTime; }
             set { this._snapshotCreateTime = value; }
         }
 

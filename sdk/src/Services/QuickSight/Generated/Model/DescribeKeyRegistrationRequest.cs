@@ -64,9 +64,9 @@ namespace Amazon.QuickSight.Model
         /// Determines whether the request returns the default key only.
         /// </para>
         /// </summary>
-        public bool DefaultKeyOnly
+        public bool? DefaultKeyOnly
         {
-            get { return this._defaultKeyOnly.GetValueOrDefault(); }
+            get { return this._defaultKeyOnly; }
             set { this._defaultKeyOnly = value; }
         }
 

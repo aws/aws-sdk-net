@@ -95,9 +95,9 @@ namespace Amazon.SageMaker.Model
         /// When the version was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates Horovod compatibility.
         /// </para>
         /// </summary>
-        public bool Horovod
+        public bool? Horovod
         {
-            get { return this._horovod.GetValueOrDefault(); }
+            get { return this._horovod; }
             set { this._horovod = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.SageMaker.Model
         /// When the version was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -377,9 +377,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

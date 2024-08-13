@@ -142,9 +142,9 @@ namespace Amazon.GuardDuty.Model
         /// has the IP protocol.
         /// </para>
         /// </summary>
-        public int IanaProtocolNumber
+        public int? IanaProtocolNumber
         {
-            get { return this._ianaProtocolNumber.GetValueOrDefault(); }
+            get { return this._ianaProtocolNumber; }
             set { this._ianaProtocolNumber = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.GuardDuty.Model
         /// in UTC date string format.
         /// </para>
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

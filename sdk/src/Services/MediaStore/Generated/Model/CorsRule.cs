@@ -154,9 +154,9 @@ namespace Amazon.MediaStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MaxAgeSeconds
+        public int? MaxAgeSeconds
         {
-            get { return this._maxAgeSeconds.GetValueOrDefault(); }
+            get { return this._maxAgeSeconds; }
             set { this._maxAgeSeconds = value; }
         }
 

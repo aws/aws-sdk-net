@@ -90,9 +90,9 @@ namespace Amazon.AutoScaling.Model
         /// The date and time at which the instance refresh ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.AutoScaling.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InstancesToUpdate
+        public int? InstancesToUpdate
         {
-            get { return this._instancesToUpdate.GetValueOrDefault(); }
+            get { return this._instancesToUpdate; }
             set { this._instancesToUpdate = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.AutoScaling.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int PercentageComplete
+        public int? PercentageComplete
         {
-            get { return this._percentageComplete.GetValueOrDefault(); }
+            get { return this._percentageComplete; }
             set { this._percentageComplete = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.AutoScaling.Model
         /// The date and time at which the instance refresh began.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

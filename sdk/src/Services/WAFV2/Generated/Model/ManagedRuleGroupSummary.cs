@@ -111,9 +111,9 @@ namespace Amazon.WAFV2.Model
         /// the versions list by calling <a>ListAvailableManagedRuleGroupVersions</a>. 
         /// </para>
         /// </summary>
-        public bool VersioningSupported
+        public bool? VersioningSupported
         {
-            get { return this._versioningSupported.GetValueOrDefault(); }
+            get { return this._versioningSupported; }
             set { this._versioningSupported = value; }
         }
 

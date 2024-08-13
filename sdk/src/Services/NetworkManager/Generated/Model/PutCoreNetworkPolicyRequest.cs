@@ -105,9 +105,9 @@ namespace Amazon.NetworkManager.Model
         /// The ID of a core network policy. 
         /// </para>
         /// </summary>
-        public int LatestVersionId
+        public int? LatestVersionId
         {
-            get { return this._latestVersionId.GetValueOrDefault(); }
+            get { return this._latestVersionId; }
             set { this._latestVersionId = value; }
         }
 

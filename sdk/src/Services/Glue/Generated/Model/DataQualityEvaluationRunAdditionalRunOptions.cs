@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// Whether or not to enable CloudWatch metrics.
         /// </para>
         /// </summary>
-        public bool CloudWatchMetricsEnabled
+        public bool? CloudWatchMetricsEnabled
         {
-            get { return this._cloudWatchMetricsEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchMetricsEnabled; }
             set { this._cloudWatchMetricsEnabled = value; }
         }
 

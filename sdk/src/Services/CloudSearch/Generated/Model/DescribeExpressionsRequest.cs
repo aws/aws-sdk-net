@@ -51,9 +51,9 @@ namespace Amazon.CloudSearch.Model
         /// changes (<c>false</c>). Defaults to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool Deployed
+        public bool? Deployed
         {
-            get { return this._deployed.GetValueOrDefault(); }
+            get { return this._deployed; }
             set { this._deployed = value; }
         }
 

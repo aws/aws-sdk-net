@@ -61,9 +61,9 @@ namespace Amazon.Connect.Model
         /// The corresponding value of the metric returned in the response.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

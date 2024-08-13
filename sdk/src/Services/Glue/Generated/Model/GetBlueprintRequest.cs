@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// Specifies whether or not to include the blueprint in the response.
         /// </para>
         /// </summary>
-        public bool IncludeBlueprint
+        public bool? IncludeBlueprint
         {
-            get { return this._includeBlueprint.GetValueOrDefault(); }
+            get { return this._includeBlueprint; }
             set { this._includeBlueprint = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// Specifies whether or not to include the parameter specification.
         /// </para>
         /// </summary>
-        public bool IncludeParameterSpec
+        public bool? IncludeParameterSpec
         {
-            get { return this._includeParameterSpec.GetValueOrDefault(); }
+            get { return this._includeParameterSpec; }
             set { this._includeParameterSpec = value; }
         }
 

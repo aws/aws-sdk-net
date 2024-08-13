@@ -84,9 +84,9 @@ namespace Amazon.RDS.Model
         /// timestamp format with milliseconds.
         /// </para>
         /// </summary>
-        public long FileLastWritten
+        public long? FileLastWritten
         {
-            get { return this._fileLastWritten.GetValueOrDefault(); }
+            get { return this._fileLastWritten; }
             set { this._fileLastWritten = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.RDS.Model
         /// Filters the available log files for files larger than the specified size.
         /// </para>
         /// </summary>
-        public long FileSize
+        public long? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.RDS.Model
         /// the response so you can retrieve the remaining results.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

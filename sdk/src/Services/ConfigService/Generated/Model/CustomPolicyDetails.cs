@@ -47,9 +47,9 @@ namespace Amazon.ConfigService.Model
         /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnableDebugLogDelivery
+        public bool? EnableDebugLogDelivery
         {
-            get { return this._enableDebugLogDelivery.GetValueOrDefault(); }
+            get { return this._enableDebugLogDelivery; }
             set { this._enableDebugLogDelivery = value; }
         }
 

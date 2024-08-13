@@ -47,9 +47,9 @@ namespace Amazon.Kinesis.Model
         /// The approximate time that the record was inserted into the stream.
         /// </para>
         /// </summary>
-        public DateTime ApproximateArrivalTimestamp
+        public DateTime? ApproximateArrivalTimestamp
         {
-            get { return this._approximateArrivalTimestamp.GetValueOrDefault(); }
+            get { return this._approximateArrivalTimestamp; }
             set { this._approximateArrivalTimestamp = value; }
         }
 

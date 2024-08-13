@@ -66,9 +66,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int SensitivityThreshold
+        public int? SensitivityThreshold
         {
-            get { return this._sensitivityThreshold.GetValueOrDefault(); }
+            get { return this._sensitivityThreshold; }
             set { this._sensitivityThreshold = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.AppTest.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.AppTest.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.AppTest.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int LatestVersion
+        public int? LatestVersion
         {
-            get { return this._latestVersion.GetValueOrDefault(); }
+            get { return this._latestVersion; }
             set { this._latestVersion = value; }
         }
 

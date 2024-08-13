@@ -211,9 +211,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int MaximumPlayerSessionCount
+        public int? MaximumPlayerSessionCount
         {
-            get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }
+            get { return this._maximumPlayerSessionCount; }
             set { this._maximumPlayerSessionCount = value; }
         }
 

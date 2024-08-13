@@ -68,13 +68,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("computeReservation", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ComputeReservation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("shareDecaySeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShareDecaySeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

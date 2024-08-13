@@ -51,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowAdminCreateUserOnly())
             {
                 context.Writer.WritePropertyName("AllowAdminCreateUserOnly");
-                context.Writer.Write(requestObject.AllowAdminCreateUserOnly);
+                context.Writer.Write(requestObject.AllowAdminCreateUserOnly.Value);
             }
 
             if(requestObject.IsSetInviteMessageTemplate())
@@ -68,7 +68,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnusedAccountValidityDays())
             {
                 context.Writer.WritePropertyName("UnusedAccountValidityDays");
-                context.Writer.Write(requestObject.UnusedAccountValidityDays);
+                context.Writer.Write(requestObject.UnusedAccountValidityDays.Value);
             }
 
         }

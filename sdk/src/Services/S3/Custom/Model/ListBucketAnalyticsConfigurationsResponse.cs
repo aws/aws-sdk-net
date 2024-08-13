@@ -68,9 +68,9 @@ namespace Amazon.S3.Model
         /// Indicates whether the returned list of analytics configurations is complete. 
         /// A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 

@@ -79,7 +79,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPreserveSourceDataTyping())
             {
                 context.Writer.WritePropertyName("preserveSourceDataTyping");
-                context.Writer.Write(requestObject.PreserveSourceDataTyping);
+                context.Writer.Write(requestObject.PreserveSourceDataTyping.Value);
             }
 
         }

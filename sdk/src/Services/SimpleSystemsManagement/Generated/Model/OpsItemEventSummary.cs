@@ -67,9 +67,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time the OpsItem event was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 

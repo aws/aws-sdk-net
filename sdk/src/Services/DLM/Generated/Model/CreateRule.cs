@@ -83,9 +83,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 

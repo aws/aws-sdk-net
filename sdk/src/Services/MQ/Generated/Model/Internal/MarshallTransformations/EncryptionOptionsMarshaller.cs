@@ -57,7 +57,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseAwsOwnedKey())
             {
                 context.Writer.WritePropertyName("useAwsOwnedKey");
-                context.Writer.Write(requestObject.UseAwsOwnedKey);
+                context.Writer.Write(requestObject.UseAwsOwnedKey.Value);
             }
 
         }

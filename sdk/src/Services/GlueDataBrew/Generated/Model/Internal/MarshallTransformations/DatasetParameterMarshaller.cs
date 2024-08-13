@@ -51,7 +51,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreateColumn())
             {
                 context.Writer.WritePropertyName("CreateColumn");
-                context.Writer.Write(requestObject.CreateColumn);
+                context.Writer.Write(requestObject.CreateColumn.Value);
             }
 
             if(requestObject.IsSetDatetimeOptions())

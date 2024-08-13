@@ -68,13 +68,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("GrantTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.GrantTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IntegerValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntegerValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

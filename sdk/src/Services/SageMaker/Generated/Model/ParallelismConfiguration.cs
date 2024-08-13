@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxParallelExecutionSteps
+        public int? MaxParallelExecutionSteps
         {
-            get { return this._maxParallelExecutionSteps.GetValueOrDefault(); }
+            get { return this._maxParallelExecutionSteps; }
             set { this._maxParallelExecutionSteps = value; }
         }
 

@@ -83,7 +83,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRotateImmediately())
                 {
                     context.Writer.WritePropertyName("RotateImmediately");
-                    context.Writer.Write(publicRequest.RotateImmediately);
+                    context.Writer.Write(publicRequest.RotateImmediately.Value);
                 }
 
                 if(publicRequest.IsSetRotationLambdaARN())

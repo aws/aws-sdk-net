@@ -49,9 +49,9 @@ namespace Amazon.IoT.Model
         /// IoT Core Developer Guide.
         /// </para>
         /// </summary>
-        public bool EnableOCSPCheck
+        public bool? EnableOCSPCheck
         {
-            get { return this._enableocspCheck.GetValueOrDefault(); }
+            get { return this._enableocspCheck; }
             set { this._enableocspCheck = value; }
         }
 

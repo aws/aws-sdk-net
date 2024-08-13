@@ -83,9 +83,9 @@ namespace Amazon.Glue.Model
         /// The line number of the node.
         /// </para>
         /// </summary>
-        public int LineNumber
+        public int? LineNumber
         {
-            get { return this._lineNumber.GetValueOrDefault(); }
+            get { return this._lineNumber; }
             set { this._lineNumber = value; }
         }
 

@@ -70,9 +70,9 @@ namespace Amazon.Redshift.Model
         /// The default value is -1.
         /// </para>
         /// </summary>
-        public int ManualSnapshotRetentionPeriod
+        public int? ManualSnapshotRetentionPeriod
         {
-            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._manualSnapshotRetentionPeriod; }
             set { this._manualSnapshotRetentionPeriod = value; }
         }
 

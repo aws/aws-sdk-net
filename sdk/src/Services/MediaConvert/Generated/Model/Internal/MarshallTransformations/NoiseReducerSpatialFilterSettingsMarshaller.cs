@@ -51,19 +51,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPostFilterSharpenStrength())
             {
                 context.Writer.WritePropertyName("postFilterSharpenStrength");
-                context.Writer.Write(requestObject.PostFilterSharpenStrength);
+                context.Writer.Write(requestObject.PostFilterSharpenStrength.Value);
             }
 
             if(requestObject.IsSetSpeed())
             {
                 context.Writer.WritePropertyName("speed");
-                context.Writer.Write(requestObject.Speed);
+                context.Writer.Write(requestObject.Speed.Value);
             }
 
             if(requestObject.IsSetStrength())
             {
                 context.Writer.WritePropertyName("strength");
-                context.Writer.Write(requestObject.Strength);
+                context.Writer.Write(requestObject.Strength.Value);
             }
 
         }

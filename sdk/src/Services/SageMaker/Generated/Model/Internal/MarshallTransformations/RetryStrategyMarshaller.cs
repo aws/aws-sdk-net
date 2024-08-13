@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumRetryAttempts())
             {
                 context.Writer.WritePropertyName("MaximumRetryAttempts");
-                context.Writer.Write(requestObject.MaximumRetryAttempts);
+                context.Writer.Write(requestObject.MaximumRetryAttempts.Value);
             }
 
         }

@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationInMinutes())
             {
                 context.Writer.WritePropertyName("durationInMinutes");
-                context.Writer.Write(requestObject.DurationInMinutes);
+                context.Writer.Write(requestObject.DurationInMinutes.Value);
             }
 
             if(requestObject.IsSetStartTime())

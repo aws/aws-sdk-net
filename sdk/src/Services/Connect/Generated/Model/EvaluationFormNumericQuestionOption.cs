@@ -46,9 +46,9 @@ namespace Amazon.Connect.Model
         /// the overall evaluation gets a score of 0.
         /// </para>
         /// </summary>
-        public bool AutomaticFail
+        public bool? AutomaticFail
         {
-            get { return this._automaticFail.GetValueOrDefault(); }
+            get { return this._automaticFail; }
             set { this._automaticFail = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxValue
+        public int? MaxValue
         {
-            get { return this._maxValue.GetValueOrDefault(); }
+            get { return this._maxValue; }
             set { this._maxValue = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MinValue
+        public int? MinValue
         {
-            get { return this._minValue.GetValueOrDefault(); }
+            get { return this._minValue; }
             set { this._minValue = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int Score
+        public int? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

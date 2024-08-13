@@ -57,9 +57,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double ApproximateAggregateValue
+        public double? ApproximateAggregateValue
         {
-            get { return this._approximateAggregateValue.GetValueOrDefault(); }
+            get { return this._approximateAggregateValue; }
             set { this._approximateAggregateValue = value; }
         }
 

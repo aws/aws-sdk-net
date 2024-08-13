@@ -51,26 +51,26 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPixelThreshold())
             {
                 context.Writer.WritePropertyName("MaxPixelThreshold");
-                if(StringUtils.IsSpecialFloatValue(requestObject.MaxPixelThreshold))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxPixelThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxPixelThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxPixelThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxPixelThreshold);
+                    context.Writer.Write(requestObject.MaxPixelThreshold.Value);
                 }
             }
 
             if(requestObject.IsSetMinCoveragePercentage())
             {
                 context.Writer.WritePropertyName("MinCoveragePercentage");
-                if(StringUtils.IsSpecialFloatValue(requestObject.MinCoveragePercentage))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinCoveragePercentage.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinCoveragePercentage));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinCoveragePercentage.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinCoveragePercentage);
+                    context.Writer.Write(requestObject.MinCoveragePercentage.Value);
                 }
             }
 

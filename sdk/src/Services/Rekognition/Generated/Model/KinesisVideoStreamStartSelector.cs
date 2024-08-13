@@ -68,9 +68,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ProducerTimestamp
+        public long? ProducerTimestamp
         {
-            get { return this._producerTimestamp.GetValueOrDefault(); }
+            get { return this._producerTimestamp; }
             set { this._producerTimestamp = value; }
         }
 

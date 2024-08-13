@@ -44,9 +44,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The latest time that this application was launched successfully.
         /// </para>
         /// </summary>
-        public DateTime LatestLaunchTime
+        public DateTime? LatestLaunchTime
         {
-            get { return this._latestLaunchTime.GetValueOrDefault(); }
+            get { return this._latestLaunchTime; }
             set { this._latestLaunchTime = value; }
         }
 

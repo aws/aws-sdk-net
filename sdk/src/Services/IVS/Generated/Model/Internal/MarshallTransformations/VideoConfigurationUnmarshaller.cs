@@ -92,25 +92,25 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("targetBitrate", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TargetBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("targetFramerate", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TargetFramerate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("videoHeight", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VideoHeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("videoWidth", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VideoWidth = unmarshaller.Unmarshall(context);
                     continue;
                 }

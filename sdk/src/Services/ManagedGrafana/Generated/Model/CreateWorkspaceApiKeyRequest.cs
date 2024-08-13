@@ -99,9 +99,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2592000)]
-        public int SecondsToLive
+        public int? SecondsToLive
         {
-            get { return this._secondsToLive.GetValueOrDefault(); }
+            get { return this._secondsToLive; }
             set { this._secondsToLive = value; }
         }
 

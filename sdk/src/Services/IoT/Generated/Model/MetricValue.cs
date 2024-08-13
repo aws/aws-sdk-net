@@ -68,9 +68,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.IoT.Model
         ///  The numeral value of a metric. 
         /// </para>
         /// </summary>
-        public double Number
+        public double? Number
         {
-            get { return this._number.GetValueOrDefault(); }
+            get { return this._number; }
             set { this._number = value; }
         }
 

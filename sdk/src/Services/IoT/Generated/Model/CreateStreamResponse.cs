@@ -102,9 +102,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int StreamVersion
+        public int? StreamVersion
         {
-            get { return this._streamVersion.GetValueOrDefault(); }
+            get { return this._streamVersion; }
             set { this._streamVersion = value; }
         }
 

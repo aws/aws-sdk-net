@@ -130,9 +130,9 @@ namespace Amazon.IdentityManagement.Model
         /// The date when the signing certificate was uploaded.
         /// </para>
         /// </summary>
-        public DateTime UploadDate
+        public DateTime? UploadDate
         {
-            get { return this._uploadDate.GetValueOrDefault(); }
+            get { return this._uploadDate; }
             set { this._uploadDate = value; }
         }
 

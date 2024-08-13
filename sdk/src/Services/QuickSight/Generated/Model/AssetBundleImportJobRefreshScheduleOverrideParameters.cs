@@ -86,9 +86,9 @@ namespace Amazon.QuickSight.Model
         /// that the <c>StartAfterDateTime</c> is set to a time that takes place in the future.
         /// </para>
         /// </summary>
-        public DateTime StartAfterDateTime
+        public DateTime? StartAfterDateTime
         {
-            get { return this._startAfterDateTime.GetValueOrDefault(); }
+            get { return this._startAfterDateTime; }
             set { this._startAfterDateTime = value; }
         }
 

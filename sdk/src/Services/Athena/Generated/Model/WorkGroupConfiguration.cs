@@ -80,9 +80,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10000000)]
-        public long BytesScannedCutoffPerQuery
+        public long? BytesScannedCutoffPerQuery
         {
-            get { return this._bytesScannedCutoffPerQuery.GetValueOrDefault(); }
+            get { return this._bytesScannedCutoffPerQuery; }
             set { this._bytesScannedCutoffPerQuery = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.Athena.Model
         /// flag is ignored, and the workgroup configuration for encryption is used.
         /// </para>
         /// </summary>
-        public bool EnableMinimumEncryptionConfiguration
+        public bool? EnableMinimumEncryptionConfiguration
         {
-            get { return this._enableMinimumEncryptionConfiguration.GetValueOrDefault(); }
+            get { return this._enableMinimumEncryptionConfiguration; }
             set { this._enableMinimumEncryptionConfiguration = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.Athena.Model
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
-        public bool EnforceWorkGroupConfiguration
+        public bool? EnforceWorkGroupConfiguration
         {
-            get { return this._enforceWorkGroupConfiguration.GetValueOrDefault(); }
+            get { return this._enforceWorkGroupConfiguration; }
             set { this._enforceWorkGroupConfiguration = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.Athena.Model
         /// Indicates that the Amazon CloudWatch metrics are enabled for the workgroup.
         /// </para>
         /// </summary>
-        public bool PublishCloudWatchMetricsEnabled
+        public bool? PublishCloudWatchMetricsEnabled
         {
-            get { return this._publishCloudWatchMetricsEnabled.GetValueOrDefault(); }
+            get { return this._publishCloudWatchMetricsEnabled; }
             set { this._publishCloudWatchMetricsEnabled = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.Athena.Model
         /// Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool RequesterPaysEnabled
+        public bool? RequesterPaysEnabled
         {
-            get { return this._requesterPaysEnabled.GetValueOrDefault(); }
+            get { return this._requesterPaysEnabled; }
             set { this._requesterPaysEnabled = value; }
         }
 

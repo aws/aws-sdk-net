@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Bytes
+        public long? Bytes
         {
-            get { return this._bytes.GetValueOrDefault(); }
+            get { return this._bytes; }
             set { this._bytes = value; }
         }
 

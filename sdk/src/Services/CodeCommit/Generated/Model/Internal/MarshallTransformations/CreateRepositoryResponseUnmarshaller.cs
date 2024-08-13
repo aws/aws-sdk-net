@@ -125,6 +125,10 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 {
                     return InvalidTagsMapExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotAllowedException"))
+                {
+                    return OperationNotAllowedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryLimitExceededException"))
                 {
                     return RepositoryLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -68,9 +68,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxConcurrency
+        public int? MaxConcurrency
         {
-            get { return this._maxConcurrency.GetValueOrDefault(); }
+            get { return this._maxConcurrency; }
             set { this._maxConcurrency = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ToleratedFailureCount
+        public long? ToleratedFailureCount
         {
-            get { return this._toleratedFailureCount.GetValueOrDefault(); }
+            get { return this._toleratedFailureCount; }
             set { this._toleratedFailureCount = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float ToleratedFailurePercentage
+        public float? ToleratedFailurePercentage
         {
-            get { return this._toleratedFailurePercentage.GetValueOrDefault(); }
+            get { return this._toleratedFailurePercentage; }
             set { this._toleratedFailurePercentage = value; }
         }
 

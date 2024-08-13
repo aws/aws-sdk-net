@@ -81,7 +81,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDurationSeconds())
                 {
                     context.Writer.WritePropertyName("DurationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds);
+                    context.Writer.Write(publicRequest.DurationSeconds.Value);
                 }
 
                 if(publicRequest.IsSetPermissions())

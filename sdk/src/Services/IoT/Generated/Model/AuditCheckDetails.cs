@@ -48,9 +48,9 @@ namespace Amazon.IoT.Model
         /// True if the check is complete and found all resources compliant.
         /// </para>
         /// </summary>
-        public bool CheckCompliant
+        public bool? CheckCompliant
         {
-            get { return this._checkCompliant.GetValueOrDefault(); }
+            get { return this._checkCompliant; }
             set { this._checkCompliant = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.IoT.Model
         /// The number of resources that were found noncompliant during the check.
         /// </para>
         /// </summary>
-        public long NonCompliantResourcesCount
+        public long? NonCompliantResourcesCount
         {
-            get { return this._nonCompliantResourcesCount.GetValueOrDefault(); }
+            get { return this._nonCompliantResourcesCount; }
             set { this._nonCompliantResourcesCount = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.IoT.Model
         /// an audit check were marked as suppressed. 
         /// </para>
         /// </summary>
-        public long SuppressedNonCompliantResourcesCount
+        public long? SuppressedNonCompliantResourcesCount
         {
-            get { return this._suppressedNonCompliantResourcesCount.GetValueOrDefault(); }
+            get { return this._suppressedNonCompliantResourcesCount; }
             set { this._suppressedNonCompliantResourcesCount = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.IoT.Model
         /// The number of resources on which the check was performed.
         /// </para>
         /// </summary>
-        public long TotalResourcesCount
+        public long? TotalResourcesCount
         {
-            get { return this._totalResourcesCount.GetValueOrDefault(); }
+            get { return this._totalResourcesCount; }
             set { this._totalResourcesCount = value; }
         }
 

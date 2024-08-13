@@ -45,9 +45,9 @@ namespace Amazon.Outposts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=9999)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

@@ -16,7 +16,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+    #line 1 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EndpointsGenerator : EndpointsGeneratorBase
     {
@@ -26,35 +26,90 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("/*******************************************************************************\r" +
-                    "\n *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\r\n *  Lic" +
-                    "ensed under the Apache License, Version 2.0 (the \"License\"). You may not use\r\n *" +
-                    "  this file except in compliance with the License. A copy of the License is loca" +
-                    "ted at\r\n *\r\n *  http://aws.amazon.com/apache2.0\r\n *\r\n *  or in the \"license\" fil" +
-                    "e accompanying this file.\r\n *  This file is distributed on an \"AS IS\" BASIS, WIT" +
-                    "HOUT WARRANTIES OR\r\n *  CONDITIONS OF ANY KIND, either express or implied. See t" +
-                    "he License for the\r\n *  specific language governing permissions and limitations " +
-                    "under the License.\r\n * *********************************************************" +
-                    "********************\r\n *    __  _    _  ___\r\n *   (  )( \\/\\/ )/ __)\r\n *   /__\\ \\" +
-                    "    / \\__ \\\r\n *  (_)(_) \\/\\/  (___/\r\n *\r\n *  AWS SDK for .NET\r\n *\r\n */\r\nnamespac" +
-                    "e Amazon\r\n{\r\n    /// <summary>\r\n    /// This class contains region information u" +
-                    "sed to lazily compute the service endpoints. The static constants representing t" +
-                    "he \r\n    /// regions can be used while constructing the AWS client instead of lo" +
-                    "oking up the exact endpoint URL.\r\n    /// </summary>\r\n    public partial class R" +
-                    "egionEndpoint\r\n    {\r\n        /// <summary>\r\n        /// The US East (Virginia) " +
-                    "regional endpoint.\r\n        /// S3-specific, use for backward compatibility only" +
-                    ".\r\n        /// </summary>\r\n        private static readonly RegionEndpoint USEast" +
-                    "1Regional = GetEndpoint(\"us-east-1-regional\", \"US East (Virginia) regional\");\r\n\r" +
-                    "\n");
+            this.Write(@"/*******************************************************************************
+ *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Licensed under the Apache License, Version 2.0 (the ""License""). You may not use
+ *  this file except in compliance with the License. A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ *  or in the ""license"" file accompanying this file.
+ *  This file is distributed on an ""AS IS"" BASIS, WITHOUT WARRANTIES OR
+ *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ *  specific language governing permissions and limitations under the License.
+ * *****************************************************************************
+ *    __  _    _  ___
+ *   (  )( \/\/ )/ __)
+ *   /__\ \    / \__ \
+ *  (_)(_) \/\/  (___/
+ *
+ *  AWS SDK for .NET
+ *
+ */
+namespace Amazon
+{
+    /// <summary>
+    /// This class contains region information used to lazily compute the service endpoints. The static constants representing the 
+    /// regions can be used while constructing the AWS client instead of looking up the exact endpoint URL.
+    /// </summary>
+    public partial class RegionEndpoint
+    {
+");
             
-            #line 37 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 31 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
  foreach (var endpoint in Endpoints) { 
             
             #line default
             #line hidden
-            this.Write("        /// <summary>\r\n        /// The ");
             
-            #line 39 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 32 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+ if (endpoint.RegionCode == "us-east-1") { 
+            
+            #line default
+            #line hidden
+            this.Write(@"
+        /// <summary>
+        /// The US East (Virginia) regional endpoint.
+        /// S3-specific, use for backward compatibility only.
+        /// </summary>
+        private static readonly RegionEndpoint USEast1Regional = GetRegionEndpoint(""us-east-1-regional"", ""US East (Virginia) regional"", """);
+            
+            #line 38 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.PartitionName));
+            
+            #line default
+            #line hidden
+            this.Write("\", \"");
+            
+            #line 38 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.PartitionDnsSuffix));
+            
+            #line default
+            #line hidden
+            this.Write("\", @\"");
+            
+            #line 38 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.PartitionRegionRegex));
+            
+            #line default
+            #line hidden
+            this.Write("\", \"");
+            
+            #line 38 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.HostnameTemplate));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n");
+            
+            #line 39 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\r\n        /// <summary>\r\n        /// The ");
+            
+            #line 42 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionName));
             
             #line default
@@ -62,28 +117,56 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(" endpoint.\r\n        /// </summary>\r\n        public static readonly RegionEndpoint" +
                     " ");
             
-            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 44 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.Name));
             
             #line default
             #line hidden
-            this.Write(" = GetEndpoint(\"");
+            this.Write(" = GetRegionEndpoint(\"");
             
-            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 44 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionCode));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 44 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionName));
             
             #line default
             #line hidden
-            this.Write("\");\r\n\r\n");
+            this.Write("\", \"");
             
-            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 44 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.PartitionName));
+            
+            #line default
+            #line hidden
+            this.Write("\", \"");
+            
+            #line 44 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.PartitionDnsSuffix));
+            
+            #line default
+            #line hidden
+            this.Write("\", @\"");
+            
+            #line 44 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.PartitionRegionRegex));
+            
+            #line default
+            #line hidden
+            this.Write("\", \"");
+            
+            #line 44 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.HostnameTemplate));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n");
+            
+            #line 45 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
  } 
             
             #line default
@@ -92,7 +175,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+        #line 49 "C:\repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
 
 public System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> Endpoints { get; set; }
 

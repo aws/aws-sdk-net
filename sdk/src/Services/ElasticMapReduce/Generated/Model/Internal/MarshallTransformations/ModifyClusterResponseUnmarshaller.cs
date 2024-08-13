@@ -54,7 +54,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("StepConcurrencyLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.StepConcurrencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

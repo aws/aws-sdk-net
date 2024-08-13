@@ -108,7 +108,7 @@ namespace CrtIntegrationTests
         }
 
         #region HTTP signing with headers
-        internal static IRequest BuildHeaderRequestToSign(string resourcePath)
+        internal static IRequest BuildHeaderRequestToSign(string resourcePath, Dictionary<string,string> pathResources)
         {
             var mock = new Mock<IRequest>();
 
@@ -123,7 +123,6 @@ namespace CrtIntegrationTests
                 { "x-amzn-trace-id", "Root=1-63441c4a-abcdef012345678912345678" }
             };
 
-            var pathResources = new Dictionary<string, string>();
 
             mock.SetupGet(x => x.Headers).Returns(headers);
             mock.SetupGet(x => x.PathResources).Returns(pathResources);
@@ -131,7 +130,6 @@ namespace CrtIntegrationTests
             IRequest request = mock.Object;
             request.HttpMethod = "POST";
             request.ResourcePath = resourcePath;
-            request.MarshallerVersion = 2;
             request.Content = Encoding.ASCII.GetBytes("Param1=value1");
             request.Endpoint = new Uri("https://" + SigningTestHost + "/");
 
@@ -156,30 +154,36 @@ namespace CrtIntegrationTests
         }
 
         [Theory]
-        [InlineData(SigningTestService, "", "/")]
-        [InlineData(SigningTestService, "foo$*[]!()bar", "/foo%2524%252A%255B%255D%2521%2528%2529bar")]
-        [InlineData(SigningTestService, "foo bar", "/foo%2520bar")]
-        [InlineData(SigningTestService, "foo/bar", "/foo/bar")]
-        [InlineData(SigningTestService, "foo%2Fbar", "/foo%25252Fbar")]
-        [InlineData(SigningTestService, "foo\\bar", "/foo%255Cbar")]
-        [InlineData(SigningTestService, "foo&bar", "/foo%2526bar")]
-        [InlineData(SigningTestService, "my-object//example//photo.user", "/my-object/example/photo.user")] // should normalize
+        [InlineData(SigningTestService,"","" , "", "/")]
+        [InlineData(SigningTestService, "{resource}","{resource}", "foo$*[]!()bar", "/foo%2524%252A%255B%255D%2521%2528%2529bar")]
+        [InlineData(SigningTestService, "{resource}", "{resource}", "foo bar", "/foo%2520bar")]
+        [InlineData(SigningTestService, "{resource+}", "{resource+}", "foo/bar", "/foo/bar")]
+        [InlineData(SigningTestService, "{resource}", "{resource}", "foo%2Fbar", "/foo%25252Fbar")]
+        [InlineData(SigningTestService, "{resource}", "{resource}", "foo\\bar", "/foo%255Cbar")]
+        [InlineData(SigningTestService, "{resource}", "{resource}", "foo&bar", "/foo%2526bar")]
+        [InlineData(SigningTestService, "{resource+}", "{resource+}", "my-object//example//photo.user", "/my-object/example/photo.user")] // should normalize
+        [InlineData(SigningTestService, "my-object//example//photo.user", "", "", "/my-object/example/photo.user")] // should normalize
         //
         // Test S3 specifically since it has slightly different behavior due to UseDoubleUriEncode and ShouldNormalizeUriPath being false
         //
-        [InlineData("s3", "", "/")]
-        [InlineData("s3", "foo$*[]!()bar", "/foo%24%2A%5B%5D%21%28%29bar")]
-        [InlineData("s3", "foo bar", "/foo%20bar")]
-        [InlineData("s3", "foo%2Fbar", "/foo%252Fbar")]
-        [InlineData("s3", "foo/bar", "/foo/bar")]
-        [InlineData("s3", "foo\\bar", "/foo%5Cbar")]
-        [InlineData("s3", "foo&bar", "/foo%26bar")]
-        [InlineData("s3", "my-object//example//photo.user", "/my-object//example//photo.user")] // should not normalize
-        public void SignRequestViaHeadersWithSigv4a(string service, string resourcePath, string canonicalizedResourcePath)
+        [InlineData("s3", "", "", "", "/")]
+        [InlineData("s3", "{resource}","{resource}","foo$*[]!()bar", "/foo%24%2A%5B%5D%21%28%29bar")]
+        [InlineData("s3", "{resource}","{resource}" , "foo bar", "/foo%20bar")]
+        [InlineData("s3", "{resource}", "{resource}", "foo%2Fbar", "/foo%252Fbar")]
+        [InlineData("s3", "{resource+}", "{resource+}", "foo/bar", "/foo/bar")] // if greedy label is attached we don't encode the forward slash
+        [InlineData("s3", "{resource}", "{resource}", "foo\\bar", "/foo%5Cbar")]
+        [InlineData("s3", "{resource}", "{resource}", "foo&bar", "/foo%26bar")]
+        [InlineData("s3", "{resource+}", "{resource+}", "my-object//example//photo.user", "/my-object//example//photo.user")] // should not normalize
+        [InlineData("s3", "my-object//example//photo.user", "", "", "/my-object//example//photo.user")] // should not normalize
+        public void SignRequestViaHeadersWithSigv4a(string service, string resourcePath,string key, string value, string canonicalizedResourcePath)
         {
             var signer = new CrtAWS4aSigner();
 
-            var request = BuildHeaderRequestToSign(resourcePath);
+            Dictionary<string, string> pathResources = new Dictionary<string, string>()
+            {
+                {key, value  }
+            };
+            var request = BuildHeaderRequestToSign(resourcePath, pathResources);
 
             request.UseDoubleEncoding = service != "s3";
 
@@ -220,7 +224,6 @@ namespace CrtIntegrationTests
             var request = mock.Object;
             request.HttpMethod = "GET";
             request.ResourcePath = "/";
-            request.MarshallerVersion = 2;
             request.Endpoint = new Uri("https://" + SigningTestHost + "/");
 
             return request;
@@ -276,7 +279,6 @@ namespace CrtIntegrationTests
             mock.SetupGet(x => x.SubResources).Returns(new Dictionary<string, string>());
 
             var request = mock.Object;
-            request.MarshallerVersion = 2;
             request.HttpMethod = "PUT";
             request.ResourcePath = "/examplebucket/chunkObject.txt";
             request.Endpoint = new Uri("https://s3.amazonaws.com/");

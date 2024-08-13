@@ -43,9 +43,9 @@ namespace Amazon.S3.Model
         /// The number of days that you want to specify for the default retention period.
         /// </para>
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this._days.GetValueOrDefault(); }
+            get { return this._days; }
             set { this._days = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.S3.Model
         /// The number of years that you want to specify for the default retention period.
         /// </para>
         /// </summary>
-        public int Years
+        public int? Years
         {
-            get { return this._years.GetValueOrDefault(); }
+            get { return this._years; }
             set { this._years = value; }
         }
 

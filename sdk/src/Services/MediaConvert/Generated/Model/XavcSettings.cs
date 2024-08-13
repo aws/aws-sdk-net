@@ -144,9 +144,9 @@ namespace Amazon.MediaConvert.Model
         /// value as a decimal number for Frame rate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=1001)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.MediaConvert.Model
         /// as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=24, Max=60000)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -226,9 +226,9 @@ namespace Amazon.MediaConvert.Model
         /// in the softest video.
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int Softness
+        public int? Softness
         {
-            get { return this._softness.GetValueOrDefault(); }
+            get { return this._softness; }
             set { this._softness = value; }
         }
 

@@ -189,9 +189,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=31)]
-        public int SecondaryPrivateIpAddressCount
+        public int? SecondaryPrivateIpAddressCount
         {
-            get { return this._secondaryPrivateIpAddressCount.GetValueOrDefault(); }
+            get { return this._secondaryPrivateIpAddressCount; }
             set { this._secondaryPrivateIpAddressCount = value; }
         }
 

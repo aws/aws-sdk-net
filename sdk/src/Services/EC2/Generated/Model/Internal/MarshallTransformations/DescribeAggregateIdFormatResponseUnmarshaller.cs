@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("useLongIdsAggregated", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.UseLongIdsAggregated = unmarshaller.Unmarshall(context);
                         continue;
                     }

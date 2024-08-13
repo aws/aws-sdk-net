@@ -99,9 +99,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=360)]
-        public int Threshold
+        public int? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

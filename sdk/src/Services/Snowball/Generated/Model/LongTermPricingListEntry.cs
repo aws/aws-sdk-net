@@ -72,9 +72,9 @@ namespace Amazon.Snowball.Model
         /// should be automatically renewed before the long-term pricing contract expires.
         /// </para>
         /// </summary>
-        public bool IsLongTermPricingAutoRenew
+        public bool? IsLongTermPricingAutoRenew
         {
-            get { return this._isLongTermPricingAutoRenew.GetValueOrDefault(); }
+            get { return this._isLongTermPricingAutoRenew; }
             set { this._isLongTermPricingAutoRenew = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.Snowball.Model
         /// The end date the long-term pricing contract.
         /// </para>
         /// </summary>
-        public DateTime LongTermPricingEndDate
+        public DateTime? LongTermPricingEndDate
         {
-            get { return this._longTermPricingEndDate.GetValueOrDefault(); }
+            get { return this._longTermPricingEndDate; }
             set { this._longTermPricingEndDate = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.Snowball.Model
         /// The start date of the long-term pricing contract.
         /// </para>
         /// </summary>
-        public DateTime LongTermPricingStartDate
+        public DateTime? LongTermPricingStartDate
         {
-            get { return this._longTermPricingStartDate.GetValueOrDefault(); }
+            get { return this._longTermPricingStartDate; }
             set { this._longTermPricingStartDate = value; }
         }
 

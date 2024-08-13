@@ -68,25 +68,25 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Anomaly", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Anomaly = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Labeled", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Labeled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Normal", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Normal = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

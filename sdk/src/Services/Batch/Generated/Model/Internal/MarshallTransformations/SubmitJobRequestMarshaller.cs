@@ -173,7 +173,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPropagateTags())
                 {
                     context.Writer.WritePropertyName("propagateTags");
-                    context.Writer.Write(publicRequest.PropagateTags);
+                    context.Writer.Write(publicRequest.PropagateTags.Value);
                 }
 
                 if(publicRequest.IsSetRetryStrategy())
@@ -190,7 +190,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSchedulingPriorityOverride())
                 {
                     context.Writer.WritePropertyName("schedulingPriorityOverride");
-                    context.Writer.Write(publicRequest.SchedulingPriorityOverride);
+                    context.Writer.Write(publicRequest.SchedulingPriorityOverride.Value);
                 }
 
                 if(publicRequest.IsSetShareIdentifier())

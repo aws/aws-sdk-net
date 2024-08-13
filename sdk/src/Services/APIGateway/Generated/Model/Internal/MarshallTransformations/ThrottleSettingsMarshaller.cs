@@ -51,19 +51,19 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBurstLimit())
             {
                 context.Writer.WritePropertyName("burstLimit");
-                context.Writer.Write(requestObject.BurstLimit);
+                context.Writer.Write(requestObject.BurstLimit.Value);
             }
 
             if(requestObject.IsSetRateLimit())
             {
                 context.Writer.WritePropertyName("rateLimit");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.RateLimit))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.RateLimit.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RateLimit));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RateLimit.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.RateLimit);
+                    context.Writer.Write(requestObject.RateLimit.Value);
                 }
             }
 

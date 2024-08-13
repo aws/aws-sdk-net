@@ -51,7 +51,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("batchSize");
-                context.Writer.Write(requestObject.BatchSize);
+                context.Writer.Write(requestObject.BatchSize.Value);
             }
 
             if(requestObject.IsSetLambdaName())

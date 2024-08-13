@@ -67,9 +67,9 @@ namespace Amazon.MainframeModernization.Model
         /// If set to True, enforces loading the data set into cache before it’s used by the application.
         /// </para>
         /// </summary>
-        public bool CacheAtStartup
+        public bool? CacheAtStartup
         {
-            get { return this._cacheAtStartup.GetValueOrDefault(); }
+            get { return this._cacheAtStartup; }
             set { this._cacheAtStartup = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.MainframeModernization.Model
         /// have a large data set (typically &gt; 100 Mb), consider setting this flag to True.
         /// </para>
         /// </summary>
-        public bool Compressed
+        public bool? Compressed
         {
-            get { return this._compressed.GetValueOrDefault(); }
+            get { return this._compressed; }
             set { this._compressed = value; }
         }
 

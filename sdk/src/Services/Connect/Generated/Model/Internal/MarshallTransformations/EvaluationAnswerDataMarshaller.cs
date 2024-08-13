@@ -51,19 +51,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNotApplicable())
             {
                 context.Writer.WritePropertyName("NotApplicable");
-                context.Writer.Write(requestObject.NotApplicable);
+                context.Writer.Write(requestObject.NotApplicable.Value);
             }
 
             if(requestObject.IsSetNumericValue())
             {
                 context.Writer.WritePropertyName("NumericValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.NumericValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NumericValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumericValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumericValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NumericValue);
+                    context.Writer.Write(requestObject.NumericValue.Value);
                 }
             }
 

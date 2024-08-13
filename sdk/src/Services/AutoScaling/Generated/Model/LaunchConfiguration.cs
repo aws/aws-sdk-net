@@ -68,9 +68,9 @@ namespace Amazon.AutoScaling.Model
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.AutoScaling.Model
         /// EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 

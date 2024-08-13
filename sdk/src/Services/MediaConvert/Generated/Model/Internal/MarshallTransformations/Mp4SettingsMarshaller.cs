@@ -63,7 +63,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCttsVersion())
             {
                 context.Writer.WritePropertyName("cttsVersion");
-                context.Writer.Write(requestObject.CttsVersion);
+                context.Writer.Write(requestObject.CttsVersion.Value);
             }
 
             if(requestObject.IsSetFreeSpaceBox())

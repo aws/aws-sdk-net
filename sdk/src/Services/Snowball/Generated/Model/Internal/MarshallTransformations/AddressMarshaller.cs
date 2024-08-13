@@ -75,7 +75,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsRestricted())
             {
                 context.Writer.WritePropertyName("IsRestricted");
-                context.Writer.Write(requestObject.IsRestricted);
+                context.Writer.Write(requestObject.IsRestricted.Value);
             }
 
             if(requestObject.IsSetLandmark())

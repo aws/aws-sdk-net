@@ -66,13 +66,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UploadBufferAllocatedInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.UploadBufferAllocatedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UploadBufferUsedInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.UploadBufferUsedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

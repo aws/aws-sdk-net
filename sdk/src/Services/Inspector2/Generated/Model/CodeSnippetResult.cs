@@ -66,9 +66,9 @@ namespace Amazon.Inspector2.Model
         /// The line number of the last line of a code snippet.
         /// </para>
         /// </summary>
-        public int EndLine
+        public int? EndLine
         {
-            get { return this._endLine.GetValueOrDefault(); }
+            get { return this._endLine; }
             set { this._endLine = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Inspector2.Model
         /// The line number of the first line of a code snippet.
         /// </para>
         /// </summary>
-        public int StartLine
+        public int? StartLine
         {
-            get { return this._startLine.GetValueOrDefault(); }
+            get { return this._startLine; }
             set { this._startLine = value; }
         }
 

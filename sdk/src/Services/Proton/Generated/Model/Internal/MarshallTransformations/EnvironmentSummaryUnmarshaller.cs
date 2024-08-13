@@ -80,7 +80,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -122,13 +122,13 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastDeploymentAttemptedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastDeploymentAttemptedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastDeploymentSucceededAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastDeploymentSucceededAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

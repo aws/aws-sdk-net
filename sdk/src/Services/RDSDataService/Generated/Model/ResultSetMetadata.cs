@@ -43,9 +43,9 @@ namespace Amazon.RDSDataService.Model
         /// The number of columns in the result set.
         /// </para>
         /// </summary>
-        public long ColumnCount
+        public long? ColumnCount
         {
-            get { return this._columnCount.GetValueOrDefault(); }
+            get { return this._columnCount; }
             set { this._columnCount = value; }
         }
 

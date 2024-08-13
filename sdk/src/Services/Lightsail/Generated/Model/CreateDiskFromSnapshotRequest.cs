@@ -195,9 +195,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SizeInGb
+        public int? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool UseLatestRestorableAutoSnapshot
+        public bool? UseLatestRestorableAutoSnapshot
         {
-            get { return this._useLatestRestorableAutoSnapshot.GetValueOrDefault(); }
+            get { return this._useLatestRestorableAutoSnapshot; }
             set { this._useLatestRestorableAutoSnapshot = value; }
         }
 

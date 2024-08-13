@@ -46,9 +46,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DryRun.
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NextInvocations.
         /// </summary>
-        public int NextInvocations
+        public int? NextInvocations
         {
-            get { return this._nextInvocations.GetValueOrDefault(); }
+            get { return this._nextInvocations; }
             set { this._nextInvocations = value; }
         }
 

@@ -57,25 +57,25 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ResourcesFailed", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ResourcesFailed = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourcesPending", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ResourcesPending = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourcesProcessing", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ResourcesProcessing = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourcesSucceeded", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ResourcesSucceeded = unmarshaller.Unmarshall(context);
                         continue;
                     }

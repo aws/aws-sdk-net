@@ -86,7 +86,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TimeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

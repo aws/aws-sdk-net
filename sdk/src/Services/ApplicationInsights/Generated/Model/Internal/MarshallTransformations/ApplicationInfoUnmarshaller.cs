@@ -74,19 +74,19 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AttachMissingPermission", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AttachMissingPermission = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AutoConfigEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoConfigEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CWEMonitorEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CWEMonitorEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OpsCenterEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OpsCenterEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

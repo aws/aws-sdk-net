@@ -68,7 +68,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("failedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FailedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -55,9 +55,9 @@ namespace Amazon.RDSDataService.Model
         /// The type of the column.
         /// </para>
         /// </summary>
-        public int ArrayBaseColumnType
+        public int? ArrayBaseColumnType
         {
-            get { return this._arrayBaseColumnType.GetValueOrDefault(); }
+            get { return this._arrayBaseColumnType; }
             set { this._arrayBaseColumnType = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.RDSDataService.Model
         /// A value that indicates whether the column increments automatically.
         /// </para>
         /// </summary>
-        public bool IsAutoIncrement
+        public bool? IsAutoIncrement
         {
-            get { return this._isAutoIncrement.GetValueOrDefault(); }
+            get { return this._isAutoIncrement; }
             set { this._isAutoIncrement = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.RDSDataService.Model
         /// A value that indicates whether the column is case-sensitive.
         /// </para>
         /// </summary>
-        public bool IsCaseSensitive
+        public bool? IsCaseSensitive
         {
-            get { return this._isCaseSensitive.GetValueOrDefault(); }
+            get { return this._isCaseSensitive; }
             set { this._isCaseSensitive = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.RDSDataService.Model
         /// A value that indicates whether the column contains currency values.
         /// </para>
         /// </summary>
-        public bool IsCurrency
+        public bool? IsCurrency
         {
-            get { return this._isCurrency.GetValueOrDefault(); }
+            get { return this._isCurrency; }
             set { this._isCurrency = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.RDSDataService.Model
         /// A value that indicates whether an integer column is signed.
         /// </para>
         /// </summary>
-        public bool IsSigned
+        public bool? IsSigned
         {
-            get { return this._isSigned.GetValueOrDefault(); }
+            get { return this._isSigned; }
             set { this._isSigned = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.RDSDataService.Model
         /// A value that indicates whether the column is nullable.
         /// </para>
         /// </summary>
-        public int Nullable
+        public int? Nullable
         {
-            get { return this._nullable.GetValueOrDefault(); }
+            get { return this._nullable; }
             set { this._nullable = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.RDSDataService.Model
         /// The precision value of a decimal number column.
         /// </para>
         /// </summary>
-        public int Precision
+        public int? Precision
         {
-            get { return this._precision.GetValueOrDefault(); }
+            get { return this._precision; }
             set { this._precision = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.RDSDataService.Model
         /// The scale value of a decimal number column.
         /// </para>
         /// </summary>
-        public int Scale
+        public int? Scale
         {
-            get { return this._scale.GetValueOrDefault(); }
+            get { return this._scale; }
             set { this._scale = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.RDSDataService.Model
         /// The type of the column.
         /// </para>
         /// </summary>
-        public int Type
+        public int? Type
         {
-            get { return this._type.GetValueOrDefault(); }
+            get { return this._type; }
             set { this._type = value; }
         }
 

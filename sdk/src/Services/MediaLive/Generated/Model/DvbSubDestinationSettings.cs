@@ -97,9 +97,9 @@ namespace Amazon.MediaLive.Model
         /// to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int BackgroundOpacity
+        public int? BackgroundOpacity
         {
-            get { return this._backgroundOpacity.GetValueOrDefault(); }
+            get { return this._backgroundOpacity; }
             set { this._backgroundOpacity = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.MediaLive.Model
         /// 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int FontOpacity
+        public int? FontOpacity
         {
-            get { return this._fontOpacity.GetValueOrDefault(); }
+            get { return this._fontOpacity; }
             set { this._fontOpacity = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.MediaLive.Model
         /// default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
         /// </summary>
         [AWSProperty(Min=96, Max=600)]
-        public int FontResolution
+        public int? FontResolution
         {
-            get { return this._fontResolution.GetValueOrDefault(); }
+            get { return this._fontResolution; }
             set { this._fontResolution = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.MediaLive.Model
         /// DVB-Sub font settings must match.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int OutlineSize
+        public int? OutlineSize
         {
-            get { return this._outlineSize.GetValueOrDefault(); }
+            get { return this._outlineSize; }
             set { this._outlineSize = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.MediaLive.Model
         /// it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int ShadowOpacity
+        public int? ShadowOpacity
         {
-            get { return this._shadowOpacity.GetValueOrDefault(); }
+            get { return this._shadowOpacity; }
             set { this._shadowOpacity = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.MediaLive.Model
         /// relative to the captions in pixels. A value of -2 would result in a shadow offset
         /// 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
         /// </summary>
-        public int ShadowXOffset
+        public int? ShadowXOffset
         {
-            get { return this._shadowXOffset.GetValueOrDefault(); }
+            get { return this._shadowXOffset; }
             set { this._shadowXOffset = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.MediaLive.Model
         /// relative to the captions in pixels. A value of -2 would result in a shadow offset
         /// 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
         /// </summary>
-        public int ShadowYOffset
+        public int? ShadowYOffset
         {
-            get { return this._shadowYOffset.GetValueOrDefault(); }
+            get { return this._shadowYOffset; }
             set { this._shadowYOffset = value; }
         }
 
@@ -329,9 +329,9 @@ namespace Amazon.MediaLive.Model
         /// and DVB-Sub font settings must match.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int XPosition
+        public int? XPosition
         {
-            get { return this._xPosition.GetValueOrDefault(); }
+            get { return this._xPosition; }
             set { this._xPosition = value; }
         }
 
@@ -351,9 +351,9 @@ namespace Amazon.MediaLive.Model
         /// must match.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int YPosition
+        public int? YPosition
         {
-            get { return this._yPosition.GetValueOrDefault(); }
+            get { return this._yPosition; }
             set { this._yPosition = value; }
         }
 

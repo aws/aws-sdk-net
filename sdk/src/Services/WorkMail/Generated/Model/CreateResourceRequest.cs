@@ -66,9 +66,9 @@ namespace Amazon.WorkMail.Model
         /// If this parameter is enabled, the resource will be hidden from the address book.
         /// </para>
         /// </summary>
-        public bool HiddenFromGlobalAddressList
+        public bool? HiddenFromGlobalAddressList
         {
-            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            get { return this._hiddenFromGlobalAddressList; }
             set { this._hiddenFromGlobalAddressList = value; }
         }
 

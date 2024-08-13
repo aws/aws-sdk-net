@@ -322,9 +322,9 @@ namespace Amazon.APIGateway.Model
         /// or 29 seconds.
         /// </para>
         /// </summary>
-        public int TimeoutInMillis
+        public int? TimeoutInMillis
         {
-            get { return this._timeoutInMillis.GetValueOrDefault(); }
+            get { return this._timeoutInMillis; }
             set { this._timeoutInMillis = value; }
         }
 

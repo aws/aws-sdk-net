@@ -57,13 +57,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFreshness())
             {
                 context.Writer.WritePropertyName("Freshness");
-                context.Writer.Write(requestObject.Freshness);
+                context.Writer.Write(requestObject.Freshness.Value);
             }
 
             if(requestObject.IsSetImportance())
             {
                 context.Writer.WritePropertyName("Importance");
-                context.Writer.Write(requestObject.Importance);
+                context.Writer.Write(requestObject.Importance.Value);
             }
 
             if(requestObject.IsSetRankOrder())

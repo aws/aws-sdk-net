@@ -117,9 +117,9 @@ namespace Amazon.SecurityHub.Model
         /// The length in days of the lifetime for objects that are subject to the rule.
         /// </para>
         /// </summary>
-        public int ExpirationInDays
+        public int? ExpirationInDays
         {
-            get { return this._expirationInDays.GetValueOrDefault(); }
+            get { return this._expirationInDays; }
             set { this._expirationInDays = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SecurityHub.Model
         /// or <c>ExpirationDate</c>.
         /// </para>
         /// </summary>
-        public bool ExpiredObjectDeleteMarker
+        public bool? ExpiredObjectDeleteMarker
         {
-            get { return this._expiredObjectDeleteMarker.GetValueOrDefault(); }
+            get { return this._expiredObjectDeleteMarker; }
             set { this._expiredObjectDeleteMarker = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.SecurityHub.Model
         /// action.
         /// </para>
         /// </summary>
-        public int NoncurrentVersionExpirationInDays
+        public int? NoncurrentVersionExpirationInDays
         {
-            get { return this._noncurrentVersionExpirationInDays.GetValueOrDefault(); }
+            get { return this._noncurrentVersionExpirationInDays; }
             set { this._noncurrentVersionExpirationInDays = value; }
         }
 

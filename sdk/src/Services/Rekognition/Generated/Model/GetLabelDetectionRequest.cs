@@ -126,6 +126,11 @@ namespace Amazon.Rekognition.Model
     /// To get the next page of results, call <c>GetlabelDetection</c> and populate the <c>NextToken</c>
     /// request parameter with the token value returned from the previous call to <c>GetLabelDetection</c>.
     /// </para>
+    ///  
+    /// <para>
+    /// If you are retrieving results while using the Amazon Simple Notification Service,
+    /// note that you will receive an "ERROR" notification if the job encounters an issue.
+    /// </para>
     /// </summary>
     public partial class GetLabelDetectionRequest : AmazonRekognitionRequest
     {
@@ -183,9 +188,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -114,9 +114,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <c>True</c> if the password is permanent, <c>False</c> if it is temporary.
         /// </para>
         /// </summary>
-        public bool Permanent
+        public bool? Permanent
         {
-            get { return this._permanent.GetValueOrDefault(); }
+            get { return this._permanent; }
             set { this._permanent = value; }
         }
 

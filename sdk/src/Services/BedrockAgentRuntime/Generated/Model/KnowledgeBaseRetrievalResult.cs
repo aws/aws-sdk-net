@@ -115,9 +115,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The level of relevance of the result to the query.
         /// </para>
         /// </summary>
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

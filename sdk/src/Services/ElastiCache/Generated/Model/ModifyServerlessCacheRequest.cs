@@ -66,8 +66,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property DailySnapshotTime. 
         /// <para>
         /// The daily time during which Elasticache begins taking a daily snapshot of the serverless
-        /// cache. Available for Redis only. The default is NULL, i.e. the existing snapshot time
-        /// configured for the cluster is not removed.
+        /// cache. Available for Redis OSS and Serverless Memcached only. The default is NULL,
+        /// i.e. the existing snapshot time configured for the cluster is not removed.
         /// </para>
         /// </summary>
         public string DailySnapshotTime
@@ -104,13 +104,13 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property RemoveUserGroup. 
         /// <para>
-        /// The identifier of the UserGroup to be removed from association with the Redis serverless
-        /// cache. Available for Redis only. Default is NULL.
+        /// The identifier of the UserGroup to be removed from association with the Redis OSS
+        /// serverless cache. Available for Redis OSS only. Default is NULL.
         /// </para>
         /// </summary>
-        public bool RemoveUserGroup
+        public bool? RemoveUserGroup
         {
-            get { return this._removeUserGroup.GetValueOrDefault(); }
+            get { return this._removeUserGroup; }
             set { this._removeUserGroup = value; }
         }
 
@@ -164,13 +164,14 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
         /// The number of days for which Elasticache retains automatic snapshots before deleting
-        /// them. Available for Redis only. Default = NULL, i.e. the existing snapshot-retention-limit
-        /// will not be removed or modified. The maximum value allowed is 35 days.
+        /// them. Available for Redis OSS and Serverless Memcached only. Default = NULL, i.e.
+        /// the existing snapshot-retention-limit will not be removed or modified. The maximum
+        /// value allowed is 35 days.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 
@@ -184,7 +185,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property UserGroupId. 
         /// <para>
         /// The identifier of the UserGroup to be associated with the serverless cache. Available
-        /// for Redis only. Default is NULL - the existing UserGroup is not removed.
+        /// for Redis OSS only. Default is NULL - the existing UserGroup is not removed.
         /// </para>
         /// </summary>
         public string UserGroupId

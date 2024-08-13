@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// your account.
         /// </para>
         /// </summary>
-        public bool AllRegions
+        public bool? AllRegions
         {
-            get { return this._allRegions.GetValueOrDefault(); }
+            get { return this._allRegions; }
             set { this._allRegions = value; }
         }
 

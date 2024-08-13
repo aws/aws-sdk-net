@@ -89,9 +89,9 @@ namespace Amazon.DeviceFarm.Model
         /// When the suite was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.DeviceFarm.Model
         /// The suite's start time.
         /// </para>
         /// </summary>
-        public DateTime Started
+        public DateTime? Started
         {
-            get { return this._started.GetValueOrDefault(); }
+            get { return this._started; }
             set { this._started = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.DeviceFarm.Model
         /// The suite's stop time.
         /// </para>
         /// </summary>
-        public DateTime Stopped
+        public DateTime? Stopped
         {
-            get { return this._stopped.GetValueOrDefault(); }
+            get { return this._stopped; }
             set { this._stopped = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Hours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Hours = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Minutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Minutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.Lambda.Model
         /// The status code.
         /// </para>
         /// </summary>
-        public int Status
+        public int? Status
         {
-            get { return this._status.GetValueOrDefault(); }
+            get { return this._status; }
             set { this._status = value; }
         }
 

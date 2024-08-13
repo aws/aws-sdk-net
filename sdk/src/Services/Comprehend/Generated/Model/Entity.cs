@@ -57,9 +57,9 @@ namespace Amazon.Comprehend.Model
         /// This field is empty for non-text input.
         /// </para>
         /// </summary>
-        public int BeginOffset
+        public int? BeginOffset
         {
-            get { return this._beginOffset.GetValueOrDefault(); }
+            get { return this._beginOffset; }
             set { this._beginOffset = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.Comprehend.Model
         /// This field is empty for non-text input.
         /// </para>
         /// </summary>
-        public int EndOffset
+        public int? EndOffset
         {
-            get { return this._endOffset.GetValueOrDefault(); }
+            get { return this._endOffset; }
             set { this._endOffset = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.Comprehend.Model
         /// The level of confidence that Amazon Comprehend has in the accuracy of the detection.
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

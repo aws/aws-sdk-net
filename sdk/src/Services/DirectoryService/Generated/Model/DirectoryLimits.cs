@@ -51,9 +51,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CloudOnlyDirectoriesCurrentCount
+        public int? CloudOnlyDirectoriesCurrentCount
         {
-            get { return this._cloudOnlyDirectoriesCurrentCount.GetValueOrDefault(); }
+            get { return this._cloudOnlyDirectoriesCurrentCount; }
             set { this._cloudOnlyDirectoriesCurrentCount = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CloudOnlyDirectoriesLimit
+        public int? CloudOnlyDirectoriesLimit
         {
-            get { return this._cloudOnlyDirectoriesLimit.GetValueOrDefault(); }
+            get { return this._cloudOnlyDirectoriesLimit; }
             set { this._cloudOnlyDirectoriesLimit = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.DirectoryService.Model
         /// Indicates if the cloud directory limit has been reached.
         /// </para>
         /// </summary>
-        public bool CloudOnlyDirectoriesLimitReached
+        public bool? CloudOnlyDirectoriesLimitReached
         {
-            get { return this._cloudOnlyDirectoriesLimitReached.GetValueOrDefault(); }
+            get { return this._cloudOnlyDirectoriesLimitReached; }
             set { this._cloudOnlyDirectoriesLimitReached = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CloudOnlyMicrosoftADCurrentCount
+        public int? CloudOnlyMicrosoftADCurrentCount
         {
-            get { return this._cloudOnlyMicrosoftADCurrentCount.GetValueOrDefault(); }
+            get { return this._cloudOnlyMicrosoftADCurrentCount; }
             set { this._cloudOnlyMicrosoftADCurrentCount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CloudOnlyMicrosoftADLimit
+        public int? CloudOnlyMicrosoftADLimit
         {
-            get { return this._cloudOnlyMicrosoftADLimit.GetValueOrDefault(); }
+            get { return this._cloudOnlyMicrosoftADLimit; }
             set { this._cloudOnlyMicrosoftADLimit = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.DirectoryService.Model
         /// Indicates if the Managed Microsoft AD directory limit has been reached.
         /// </para>
         /// </summary>
-        public bool CloudOnlyMicrosoftADLimitReached
+        public bool? CloudOnlyMicrosoftADLimitReached
         {
-            get { return this._cloudOnlyMicrosoftADLimitReached.GetValueOrDefault(); }
+            get { return this._cloudOnlyMicrosoftADLimitReached; }
             set { this._cloudOnlyMicrosoftADLimitReached = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ConnectedDirectoriesCurrentCount
+        public int? ConnectedDirectoriesCurrentCount
         {
-            get { return this._connectedDirectoriesCurrentCount.GetValueOrDefault(); }
+            get { return this._connectedDirectoriesCurrentCount; }
             set { this._connectedDirectoriesCurrentCount = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ConnectedDirectoriesLimit
+        public int? ConnectedDirectoriesLimit
         {
-            get { return this._connectedDirectoriesLimit.GetValueOrDefault(); }
+            get { return this._connectedDirectoriesLimit; }
             set { this._connectedDirectoriesLimit = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.DirectoryService.Model
         /// Indicates if the connected directory limit has been reached.
         /// </para>
         /// </summary>
-        public bool ConnectedDirectoriesLimitReached
+        public bool? ConnectedDirectoriesLimitReached
         {
-            get { return this._connectedDirectoriesLimitReached.GetValueOrDefault(); }
+            get { return this._connectedDirectoriesLimitReached; }
             set { this._connectedDirectoriesLimitReached = value; }
         }
 

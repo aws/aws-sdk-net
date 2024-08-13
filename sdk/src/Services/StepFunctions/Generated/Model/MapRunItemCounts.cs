@@ -54,9 +54,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Aborted
+        public long? Aborted
         {
-            get { return this._aborted.GetValueOrDefault(); }
+            get { return this._aborted; }
             set { this._aborted = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Failed
+        public long? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.StepFunctions.Model
         /// <c>ABORTED</c>, or <c>TIMED_OUT</c> and a <c>redriveStatus</c> of <c>NOT_REDRIVABLE</c>.
         /// </para>
         /// </summary>
-        public long FailuresNotRedrivable
+        public long? FailuresNotRedrivable
         {
-            get { return this._failuresNotRedrivable.GetValueOrDefault(); }
+            get { return this._failuresNotRedrivable; }
             set { this._failuresNotRedrivable = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Pending
+        public long? Pending
         {
-            get { return this._pending.GetValueOrDefault(); }
+            get { return this._pending; }
             set { this._pending = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.StepFunctions.Model
         /// be redriven.
         /// </para>
         /// </summary>
-        public long PendingRedrive
+        public long? PendingRedrive
         {
-            get { return this._pendingRedrive.GetValueOrDefault(); }
+            get { return this._pendingRedrive; }
             set { this._pendingRedrive = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long ResultsWritten
+        public long? ResultsWritten
         {
-            get { return this._resultsWritten.GetValueOrDefault(); }
+            get { return this._resultsWritten; }
             set { this._resultsWritten = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Running
+        public long? Running
         {
-            get { return this._running.GetValueOrDefault(); }
+            get { return this._running; }
             set { this._running = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Succeeded
+        public long? Succeeded
         {
-            get { return this._succeeded.GetValueOrDefault(); }
+            get { return this._succeeded; }
             set { this._succeeded = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long TimedOut
+        public long? TimedOut
         {
-            get { return this._timedOut.GetValueOrDefault(); }
+            get { return this._timedOut; }
             set { this._timedOut = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Total
+        public long? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

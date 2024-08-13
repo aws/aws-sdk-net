@@ -47,9 +47,9 @@ namespace Amazon.IoTWireless.Model
         /// The average of the values of all data points collected during the aggregation period.
         /// </para>
         /// </summary>
-        public double Avg
+        public double? Avg
         {
-            get { return this._avg.GetValueOrDefault(); }
+            get { return this._avg; }
             set { this._avg = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.IoTWireless.Model
         /// period.
         /// </para>
         /// </summary>
-        public double Max
+        public double? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IoTWireless.Model
         /// The minimum of the values of all data points collected during the aggregation period.
         /// </para>
         /// </summary>
-        public double Min
+        public double? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.IoTWireless.Model
         /// period.
         /// </para>
         /// </summary>
-        public double P90
+        public double? P90
         {
-            get { return this._p90.GetValueOrDefault(); }
+            get { return this._p90; }
             set { this._p90 = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.IoTWireless.Model
         /// period.
         /// </para>
         /// </summary>
-        public double Std
+        public double? Std
         {
-            get { return this._std.GetValueOrDefault(); }
+            get { return this._std; }
             set { this._std = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.IoTWireless.Model
         /// The sum of the values of all data points collected during the aggregation period.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 

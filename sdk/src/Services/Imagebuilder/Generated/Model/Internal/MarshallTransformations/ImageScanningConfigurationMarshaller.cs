@@ -62,7 +62,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageScanningEnabled())
             {
                 context.Writer.WritePropertyName("imageScanningEnabled");
-                context.Writer.Write(requestObject.ImageScanningEnabled);
+                context.Writer.Write(requestObject.ImageScanningEnabled.Value);
             }
 
         }

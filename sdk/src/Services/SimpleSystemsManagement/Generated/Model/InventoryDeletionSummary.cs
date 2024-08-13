@@ -44,9 +44,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Remaining number of items to delete.
         /// </para>
         /// </summary>
-        public int RemainingCount
+        public int? RemainingCount
         {
-            get { return this._remainingCount.GetValueOrDefault(); }
+            get { return this._remainingCount; }
             set { this._remainingCount = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The total number of items to delete. This count doesn't change during the delete operation.
         /// </para>
         /// </summary>
-        public int TotalCount
+        public int? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

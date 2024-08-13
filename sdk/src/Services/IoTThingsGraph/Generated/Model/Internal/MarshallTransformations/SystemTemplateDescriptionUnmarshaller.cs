@@ -80,7 +80,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("validatedNamespaceVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ValidatedNamespaceVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

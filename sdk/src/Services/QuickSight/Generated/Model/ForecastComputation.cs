@@ -72,9 +72,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=180)]
-        public int CustomSeasonalityValue
+        public int? CustomSeasonalityValue
         {
-            get { return this._customSeasonalityValue.GetValueOrDefault(); }
+            get { return this._customSeasonalityValue; }
             set { this._customSeasonalityValue = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.QuickSight.Model
         /// The lower boundary setup of a forecast computation.
         /// </para>
         /// </summary>
-        public double LowerBoundary
+        public double? LowerBoundary
         {
-            get { return this._lowerBoundary.GetValueOrDefault(); }
+            get { return this._lowerBoundary; }
             set { this._lowerBoundary = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PeriodsBackward
+        public int? PeriodsBackward
         {
-            get { return this._periodsBackward.GetValueOrDefault(); }
+            get { return this._periodsBackward; }
             set { this._periodsBackward = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int PeriodsForward
+        public int? PeriodsForward
         {
-            get { return this._periodsForward.GetValueOrDefault(); }
+            get { return this._periodsForward; }
             set { this._periodsForward = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=95)]
-        public int PredictionInterval
+        public int? PredictionInterval
         {
-            get { return this._predictionInterval.GetValueOrDefault(); }
+            get { return this._predictionInterval; }
             set { this._predictionInterval = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.QuickSight.Model
         /// The upper boundary setup of a forecast computation.
         /// </para>
         /// </summary>
-        public double UpperBoundary
+        public double? UpperBoundary
         {
-            get { return this._upperBoundary.GetValueOrDefault(); }
+            get { return this._upperBoundary; }
             set { this._upperBoundary = value; }
         }
 

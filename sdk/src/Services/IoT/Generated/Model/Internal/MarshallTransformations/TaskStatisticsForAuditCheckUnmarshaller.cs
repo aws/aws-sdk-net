@@ -68,31 +68,31 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("canceledFindingsCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CanceledFindingsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("failedFindingsCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FailedFindingsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("skippedFindingsCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SkippedFindingsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("succeededFindingsCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SucceededFindingsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalFindingsCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalFindingsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

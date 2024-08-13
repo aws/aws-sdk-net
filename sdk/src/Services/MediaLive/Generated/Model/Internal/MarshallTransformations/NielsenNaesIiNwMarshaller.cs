@@ -57,13 +57,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSid())
             {
                 context.Writer.WritePropertyName("sid");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Sid))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Sid.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sid));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Sid.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Sid);
+                    context.Writer.Write(requestObject.Sid.Value);
                 }
             }
 

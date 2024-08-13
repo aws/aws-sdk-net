@@ -116,9 +116,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// already exist.
         /// </para>
         /// </summary>
-        public bool AutoCreateApplication
+        public bool? AutoCreateApplication
         {
-            get { return this._autoCreateApplication.GetValueOrDefault(); }
+            get { return this._autoCreateApplication; }
             set { this._autoCreateApplication = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Process
+        public bool? Process
         {
-            get { return this._process.GetValueOrDefault(); }
+            get { return this._process; }
             set { this._process = value; }
         }
 

@@ -100,9 +100,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime ArrivalTime
+        public DateTime? ArrivalTime
         {
-            get { return this._arrivalTime.GetValueOrDefault(); }
+            get { return this._arrivalTime; }
             set { this._arrivalTime = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
-        public bool DepartNow
+        public bool? DepartNow
         {
-            get { return this._departNow.GetValueOrDefault(); }
+            get { return this._departNow; }
             set { this._departNow = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime DepartureTime
+        public DateTime? DepartureTime
         {
-            get { return this._departureTime.GetValueOrDefault(); }
+            get { return this._departureTime; }
             set { this._departureTime = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
-        public bool IncludeLegGeometry
+        public bool? IncludeLegGeometry
         {
-            get { return this._includeLegGeometry.GetValueOrDefault(); }
+            get { return this._includeLegGeometry; }
             set { this._includeLegGeometry = value; }
         }
 

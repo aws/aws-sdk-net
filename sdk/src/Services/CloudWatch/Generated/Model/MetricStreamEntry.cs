@@ -67,9 +67,9 @@ namespace Amazon.CloudWatch.Model
         /// The date that the metric stream was originally created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.CloudWatch.Model
         /// The date that the configuration of this metric stream was most recently updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateDate
+        public DateTime? LastUpdateDate
         {
-            get { return this._lastUpdateDate.GetValueOrDefault(); }
+            get { return this._lastUpdateDate; }
             set { this._lastUpdateDate = value; }
         }
 

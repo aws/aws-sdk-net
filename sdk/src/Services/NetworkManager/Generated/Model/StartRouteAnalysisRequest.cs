@@ -87,9 +87,9 @@ namespace Amazon.NetworkManager.Model
         /// Indicates whether to analyze the return path. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludeReturnPath
+        public bool? IncludeReturnPath
         {
-            get { return this._includeReturnPath.GetValueOrDefault(); }
+            get { return this._includeReturnPath; }
             set { this._includeReturnPath = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.NetworkManager.Model
         /// The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool UseMiddleboxes
+        public bool? UseMiddleboxes
         {
-            get { return this._useMiddleboxes.GetValueOrDefault(); }
+            get { return this._useMiddleboxes; }
             set { this._useMiddleboxes = value; }
         }
 

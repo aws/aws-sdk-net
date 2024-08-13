@@ -94,9 +94,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Asn
+        public int? Asn
         {
-            get { return this._asn.GetValueOrDefault(); }
+            get { return this._asn; }
             set { this._asn = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether to enable or disable SiteLink.
         /// </para>
         /// </summary>
-        public bool EnableSiteLink
+        public bool? EnableSiteLink
         {
-            get { return this._enableSiteLink.GetValueOrDefault(); }
+            get { return this._enableSiteLink; }
             set { this._enableSiteLink = value; }
         }
 
@@ -182,13 +182,13 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Mtu. 
         /// <para>
-        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
+        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500.
         /// The default value is 1500.
         /// </para>
         /// </summary>
-        public int Mtu
+        public int? Mtu
         {
-            get { return this._mtu.GetValueOrDefault(); }
+            get { return this._mtu; }
             set { this._mtu = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Vlan
+        public int? Vlan
         {
-            get { return this._vlan.GetValueOrDefault(); }
+            get { return this._vlan; }
             set { this._vlan = value; }
         }
 

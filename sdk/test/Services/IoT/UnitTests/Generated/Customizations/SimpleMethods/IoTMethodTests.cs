@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.IoT.Model;
 using Amazon.IoT;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class IoTMethodCustomizationsTests
@@ -40,12 +40,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "AttachThingPrincipal", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CancelCertificateTransfer", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreateCertificateFromCsr", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreateCertificateFromCsr", new Type[] { typeof(string), typeof(bool), });
+            EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreateCertificateFromCsr", new Type[] { typeof(string), typeof(bool?), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreateKeysAndCertificate", new Type[] { });
-            EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreateKeysAndCertificate", new Type[] { typeof(bool), });
+            EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreateKeysAndCertificate", new Type[] { typeof(bool?), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreatePolicy", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreatePolicyVersion", new Type[] { typeof(string), typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreatePolicyVersion", new Type[] { typeof(string), typeof(string), typeof(bool), });
+            EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "CreatePolicyVersion", new Type[] { typeof(string), typeof(string), typeof(bool?), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "DeleteCertificate", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "DeletePolicy", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.IoT.AmazonIoTClient), "DeletePolicyVersion", new Type[] { typeof(string), typeof(string), });

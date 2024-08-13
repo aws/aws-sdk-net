@@ -67,13 +67,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForceRemediateForFirstEntries())
             {
                 context.Writer.WritePropertyName("ForceRemediateForFirstEntries");
-                context.Writer.Write(requestObject.ForceRemediateForFirstEntries);
+                context.Writer.Write(requestObject.ForceRemediateForFirstEntries.Value);
             }
 
             if(requestObject.IsSetForceRemediateForLastEntries())
             {
                 context.Writer.WritePropertyName("ForceRemediateForLastEntries");
-                context.Writer.Write(requestObject.ForceRemediateForLastEntries);
+                context.Writer.Write(requestObject.ForceRemediateForLastEntries.Value);
             }
 
             if(requestObject.IsSetLastEntries())

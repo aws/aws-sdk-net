@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CloudFrontDefaultCertificate", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CloudFrontDefaultCertificate = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -44,9 +44,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int AffectedSensorCount
+        public int? AffectedSensorCount
         {
-            get { return this._affectedSensorCount.GetValueOrDefault(); }
+            get { return this._affectedSensorCount; }
             set { this._affectedSensorCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalNumberOfInvalidValues
+        public int? TotalNumberOfInvalidValues
         {
-            get { return this._totalNumberOfInvalidValues.GetValueOrDefault(); }
+            get { return this._totalNumberOfInvalidValues; }
             set { this._totalNumberOfInvalidValues = value; }
         }
 

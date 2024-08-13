@@ -106,13 +106,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseDefaultTools())
             {
                 context.Writer.WritePropertyName("useDefaultTools");
-                context.Writer.Write(requestObject.UseDefaultTools);
+                context.Writer.Write(requestObject.UseDefaultTools.Value);
             }
 
             if(requestObject.IsSetUseDefaultUploadConfigurations())
             {
                 context.Writer.WritePropertyName("useDefaultUploadConfigurations");
-                context.Writer.Write(requestObject.UseDefaultUploadConfigurations);
+                context.Writer.Write(requestObject.UseDefaultUploadConfigurations.Value);
             }
 
         }

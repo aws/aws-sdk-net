@@ -187,9 +187,9 @@ namespace Amazon.SecurityHub.Model
         /// The last time that a control's enablement status in a specified standard was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

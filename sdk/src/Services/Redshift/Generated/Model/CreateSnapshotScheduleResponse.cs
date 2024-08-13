@@ -49,9 +49,9 @@ namespace Amazon.Redshift.Model
         /// The number of clusters associated with the schedule.
         /// </para>
         /// </summary>
-        public int AssociatedClusterCount
+        public int? AssociatedClusterCount
         {
-            get { return this._associatedClusterCount.GetValueOrDefault(); }
+            get { return this._associatedClusterCount; }
             set { this._associatedClusterCount = value; }
         }
 

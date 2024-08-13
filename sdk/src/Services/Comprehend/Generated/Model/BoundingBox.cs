@@ -54,9 +54,9 @@ namespace Amazon.Comprehend.Model
         /// The height of the bounding box as a ratio of the overall document page height.
         /// </para>
         /// </summary>
-        public float Height
+        public float? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.Comprehend.Model
         /// The left coordinate of the bounding box as a ratio of overall document page width.
         /// </para>
         /// </summary>
-        public float Left
+        public float? Left
         {
-            get { return this._left.GetValueOrDefault(); }
+            get { return this._left; }
             set { this._left = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Comprehend.Model
         /// The top coordinate of the bounding box as a ratio of overall document page height.
         /// </para>
         /// </summary>
-        public float Top
+        public float? Top
         {
-            get { return this._top.GetValueOrDefault(); }
+            get { return this._top; }
             set { this._top = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.Comprehend.Model
         /// The width of the bounding box as a ratio of the overall document page width.
         /// </para>
         /// </summary>
-        public float Width
+        public float? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

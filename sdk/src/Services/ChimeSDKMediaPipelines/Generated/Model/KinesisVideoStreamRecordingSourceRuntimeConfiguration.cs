@@ -63,7 +63,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The stream or streams to be recorded.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public List<RecordingStreamConfiguration> Streams
         {
             get { return this._streams; }

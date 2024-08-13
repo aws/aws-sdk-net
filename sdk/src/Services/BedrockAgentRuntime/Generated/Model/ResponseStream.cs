@@ -48,6 +48,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         {
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"Chunk", payload => new PayloadPartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"Files", payload => new FilePartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
             {"ReturnControl", payload => new ReturnControlPayloadUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
             {"Trace", payload => new TracePartUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
         };
@@ -98,6 +99,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<PayloadPart>> ChunkReceived;
         ///<summary>
+        ///Raised when an Files event is received
+        ///</summary>
+        public event EventHandler<EventStreamEventReceivedArgs<FilePart>> FilesReceived;
+        ///<summary>
         ///Raised when an ReturnControl event is received
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<ReturnControlPayload>> ReturnControlReceived;
@@ -143,6 +148,7 @@ namespace Amazon.BedrockAgentRuntime.Model
                 var _ =
                     RaiseEvent(InitialResponseReceived, ev) ||
                     RaiseEvent(ChunkReceived,ev) ||
+                    RaiseEvent(FilesReceived,ev) ||
                     RaiseEvent(ReturnControlReceived,ev) ||
                     RaiseEvent(TraceReceived,ev);
             };       

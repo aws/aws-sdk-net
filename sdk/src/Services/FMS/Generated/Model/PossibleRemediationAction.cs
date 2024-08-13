@@ -63,9 +63,9 @@ namespace Amazon.FMS.Model
         /// Information about whether an action is taken by default.
         /// </para>
         /// </summary>
-        public bool IsDefaultAction
+        public bool? IsDefaultAction
         {
-            get { return this._isDefaultAction.GetValueOrDefault(); }
+            get { return this._isDefaultAction; }
             set { this._isDefaultAction = value; }
         }
 

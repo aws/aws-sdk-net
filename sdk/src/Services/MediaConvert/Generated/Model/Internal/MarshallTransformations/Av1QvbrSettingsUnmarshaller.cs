@@ -68,13 +68,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("qvbrQualityLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QvbrQualityLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("qvbrQualityLevelFineTune", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.QvbrQualityLevelFineTune = unmarshaller.Unmarshall(context);
                     continue;
                 }

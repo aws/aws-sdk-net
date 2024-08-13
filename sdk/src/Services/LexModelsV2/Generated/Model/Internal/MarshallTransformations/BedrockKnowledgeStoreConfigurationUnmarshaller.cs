@@ -72,6 +72,18 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.BedrockKnowledgeBaseArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("exactResponse", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.ExactResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("exactResponseFields", targetDepth))
+                {
+                    var unmarshaller = BedrockKnowledgeStoreExactResponseFieldsUnmarshaller.Instance;
+                    unmarshalledObject.ExactResponseFields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

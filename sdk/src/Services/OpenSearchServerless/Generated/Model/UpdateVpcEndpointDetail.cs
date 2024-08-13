@@ -66,9 +66,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The timestamp of when the endpoint was last modified.
         /// </para>
         /// </summary>
-        public long LastModifiedDate
+        public long? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

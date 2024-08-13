@@ -74,7 +74,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DocumentIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DocumentIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

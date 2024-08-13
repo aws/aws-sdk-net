@@ -74,7 +74,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RotationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RotationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

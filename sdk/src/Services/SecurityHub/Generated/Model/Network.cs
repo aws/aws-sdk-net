@@ -111,9 +111,9 @@ namespace Amazon.SecurityHub.Model
         /// The destination port of network-related information about a finding.
         /// </para>
         /// </summary>
-        public int DestinationPort
+        public int? DestinationPort
         {
-            get { return this._destinationPort.GetValueOrDefault(); }
+            get { return this._destinationPort; }
             set { this._destinationPort = value; }
         }
 
@@ -264,9 +264,9 @@ namespace Amazon.SecurityHub.Model
         /// The source port of network-related information about a finding.
         /// </para>
         /// </summary>
-        public int SourcePort
+        public int? SourcePort
         {
-            get { return this._sourcePort.GetValueOrDefault(); }
+            get { return this._sourcePort; }
             set { this._sourcePort = value; }
         }
 

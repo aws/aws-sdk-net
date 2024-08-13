@@ -103,9 +103,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ReservedConcurrentExecutions
+        public int? ReservedConcurrentExecutions
         {
-            get { return this._reservedConcurrentExecutions.GetValueOrDefault(); }
+            get { return this._reservedConcurrentExecutions; }
             set { this._reservedConcurrentExecutions = value; }
         }
 

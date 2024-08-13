@@ -54,7 +54,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowsHostedConnections", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AllowsHostedConnections = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -102,7 +102,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("jumboFrameCapable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.JumboFrameCapable = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -132,7 +132,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("macSecCapable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MacSecCapable = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -144,13 +144,13 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minimumLinks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinimumLinks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfConnections", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.NumberOfConnections = unmarshaller.Unmarshall(context);
                     continue;
                 }

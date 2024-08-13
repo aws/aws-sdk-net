@@ -74,13 +74,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isSandboxEnvironment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSandboxEnvironment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("usePrivateLinkForMetadataAndAuthorization", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UsePrivateLinkForMetadataAndAuthorization = unmarshaller.Unmarshall(context);
                     continue;
                 }

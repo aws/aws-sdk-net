@@ -10,7 +10,7 @@ using Amazon.CognitoIdentityProvider;
 using Amazon.CognitoIdentityProvider.Model;
 using System.IO;
 
-namespace AWSSDK_DotNet35.UnitTests.Marshalling
+namespace AWSSDK_DotNet.UnitTests.Marshalling
 {
     [TestClass]
     public class NullSignerTests

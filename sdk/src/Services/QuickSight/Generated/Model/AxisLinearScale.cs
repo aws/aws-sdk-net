@@ -49,9 +49,9 @@ namespace Amazon.QuickSight.Model
         /// The step count setup of a linear axis.
         /// </para>
         /// </summary>
-        public int StepCount
+        public int? StepCount
         {
-            get { return this._stepCount.GetValueOrDefault(); }
+            get { return this._stepCount; }
             set { this._stepCount = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.QuickSight.Model
         /// The step size setup of a linear axis.
         /// </para>
         /// </summary>
-        public double StepSize
+        public double? StepSize
         {
-            get { return this._stepSize.GetValueOrDefault(); }
+            get { return this._stepSize; }
             set { this._stepSize = value; }
         }
 

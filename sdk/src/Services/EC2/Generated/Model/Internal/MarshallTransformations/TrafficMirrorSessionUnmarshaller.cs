@@ -75,13 +75,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("packetLength", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.PacketLength = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sessionNumber", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SessionNumber = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -116,7 +116,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("virtualNetworkId", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.VirtualNetworkId = unmarshaller.Unmarshall(context);
                         continue;
                     }

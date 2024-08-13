@@ -57,7 +57,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPartNumber())
             {
                 context.Writer.WritePropertyName("partNumber");
-                context.Writer.Write(requestObject.PartNumber);
+                context.Writer.Write(requestObject.PartNumber.Value);
             }
 
             if(requestObject.IsSetPartSource())

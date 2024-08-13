@@ -68,13 +68,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LossValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LossValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Quantile", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Quantile = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionsEnabled())
             {
                 context.Writer.WritePropertyName("ActionsEnabled");
-                context.Writer.Write(requestObject.ActionsEnabled);
+                context.Writer.Write(requestObject.ActionsEnabled.Value);
             }
 
             if(requestObject.IsSetAlarmActions())
@@ -98,7 +98,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatapointsToAlarm())
             {
                 context.Writer.WritePropertyName("DatapointsToAlarm");
-                context.Writer.Write(requestObject.DatapointsToAlarm);
+                context.Writer.Write(requestObject.DatapointsToAlarm.Value);
             }
 
             if(requestObject.IsSetDimensions())
@@ -126,7 +126,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEvaluationPeriods())
             {
                 context.Writer.WritePropertyName("EvaluationPeriods");
-                context.Writer.Write(requestObject.EvaluationPeriods);
+                context.Writer.Write(requestObject.EvaluationPeriods.Value);
             }
 
             if(requestObject.IsSetExtendedStatistic())
@@ -172,7 +172,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("Period");
-                context.Writer.Write(requestObject.Period);
+                context.Writer.Write(requestObject.Period.Value);
             }
 
             if(requestObject.IsSetStatistic())
@@ -184,13 +184,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Threshold);
+                    context.Writer.Write(requestObject.Threshold.Value);
                 }
             }
 

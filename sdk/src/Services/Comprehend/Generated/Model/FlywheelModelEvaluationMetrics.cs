@@ -45,9 +45,9 @@ namespace Amazon.Comprehend.Model
         /// Average accuracy metric for the model.
         /// </para>
         /// </summary>
-        public double AverageAccuracy
+        public double? AverageAccuracy
         {
-            get { return this._averageAccuracy.GetValueOrDefault(); }
+            get { return this._averageAccuracy; }
             set { this._averageAccuracy = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Comprehend.Model
         /// The average F1 score from the evaluation metrics.
         /// </para>
         /// </summary>
-        public double AverageF1Score
+        public double? AverageF1Score
         {
-            get { return this._averageF1Score.GetValueOrDefault(); }
+            get { return this._averageF1Score; }
             set { this._averageF1Score = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Comprehend.Model
         /// Average precision metric for the model.
         /// </para>
         /// </summary>
-        public double AveragePrecision
+        public double? AveragePrecision
         {
-            get { return this._averagePrecision.GetValueOrDefault(); }
+            get { return this._averagePrecision; }
             set { this._averagePrecision = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Comprehend.Model
         /// Average recall metric for the model.
         /// </para>
         /// </summary>
-        public double AverageRecall
+        public double? AverageRecall
         {
-            get { return this._averageRecall.GetValueOrDefault(); }
+            get { return this._averageRecall; }
             set { this._averageRecall = value; }
         }
 

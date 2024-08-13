@@ -54,37 +54,37 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BytesCompressed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BytesCompressed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BytesTransferred", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BytesTransferred = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BytesWritten", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BytesWritten = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EstimatedBytesToTransfer", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedBytesToTransfer = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EstimatedFilesToDelete", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedFilesToDelete = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EstimatedFilesToTransfer", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedFilesToTransfer = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -96,25 +96,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FilesDeleted", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesDeleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FilesSkipped", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesSkipped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FilesTransferred", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesTransferred = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FilesVerified", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesVerified = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -150,7 +150,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

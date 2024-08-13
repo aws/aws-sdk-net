@@ -51,13 +51,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCheckpointingEnabled())
             {
                 context.Writer.WritePropertyName("CheckpointingEnabled");
-                context.Writer.Write(requestObject.CheckpointingEnabled);
+                context.Writer.Write(requestObject.CheckpointingEnabled.Value);
             }
 
             if(requestObject.IsSetCheckpointInterval())
             {
                 context.Writer.WritePropertyName("CheckpointInterval");
-                context.Writer.Write(requestObject.CheckpointInterval);
+                context.Writer.Write(requestObject.CheckpointInterval.Value);
             }
 
             if(requestObject.IsSetConfigurationType())
@@ -69,7 +69,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinPauseBetweenCheckpoints())
             {
                 context.Writer.WritePropertyName("MinPauseBetweenCheckpoints");
-                context.Writer.Write(requestObject.MinPauseBetweenCheckpoints);
+                context.Writer.Write(requestObject.MinPauseBetweenCheckpoints.Value);
             }
 
         }

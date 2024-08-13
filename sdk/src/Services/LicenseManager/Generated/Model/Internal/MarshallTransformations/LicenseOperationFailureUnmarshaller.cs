@@ -74,7 +74,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FailureTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FailureTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

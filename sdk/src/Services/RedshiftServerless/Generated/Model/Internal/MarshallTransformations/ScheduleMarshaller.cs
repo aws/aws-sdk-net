@@ -51,7 +51,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAt())
             {
                 context.Writer.WritePropertyName("at");
-                context.Writer.Write(requestObject.At);
+                context.Writer.Write(requestObject.At.Value);
             }
 
             if(requestObject.IsSetCron())

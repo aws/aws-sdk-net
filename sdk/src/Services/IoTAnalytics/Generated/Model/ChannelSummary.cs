@@ -84,9 +84,9 @@ namespace Amazon.IoTAnalytics.Model
         /// When the channel was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.IoTAnalytics.Model
         /// 23, 2020. 
         /// </para>
         /// </summary>
-        public DateTime LastMessageArrivalTime
+        public DateTime? LastMessageArrivalTime
         {
-            get { return this._lastMessageArrivalTime.GetValueOrDefault(); }
+            get { return this._lastMessageArrivalTime; }
             set { this._lastMessageArrivalTime = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.IoTAnalytics.Model
         /// The last time the channel was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

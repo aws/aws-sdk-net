@@ -68,7 +68,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoSoftwareUpdateEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoSoftwareUpdateEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

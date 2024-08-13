@@ -82,9 +82,9 @@ namespace Amazon.WorkDocs.Model
         /// The timestamp when the content of the document was originally created.
         /// </para>
         /// </summary>
-        public DateTime ContentCreatedTimestamp
+        public DateTime? ContentCreatedTimestamp
         {
-            get { return this._contentCreatedTimestamp.GetValueOrDefault(); }
+            get { return this._contentCreatedTimestamp; }
             set { this._contentCreatedTimestamp = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.WorkDocs.Model
         /// The timestamp when the content of the document was modified.
         /// </para>
         /// </summary>
-        public DateTime ContentModifiedTimestamp
+        public DateTime? ContentModifiedTimestamp
         {
-            get { return this._contentModifiedTimestamp.GetValueOrDefault(); }
+            get { return this._contentModifiedTimestamp; }
             set { this._contentModifiedTimestamp = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.WorkDocs.Model
         /// The size of the document, in bytes.
         /// </para>
         /// </summary>
-        public long DocumentSizeInBytes
+        public long? DocumentSizeInBytes
         {
-            get { return this._documentSizeInBytes.GetValueOrDefault(); }
+            get { return this._documentSizeInBytes; }
             set { this._documentSizeInBytes = value; }
         }
 

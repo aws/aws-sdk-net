@@ -83,9 +83,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the end time of the inference data that has been accumulated. 
         /// </para>
         /// </summary>
-        public DateTime AccumulatedInferenceDataEndTime
+        public DateTime? AccumulatedInferenceDataEndTime
         {
-            get { return this._accumulatedInferenceDataEndTime.GetValueOrDefault(); }
+            get { return this._accumulatedInferenceDataEndTime; }
             set { this._accumulatedInferenceDataEndTime = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the start time of the inference data that has been accumulated. 
         /// </para>
         /// </summary>
-        public DateTime AccumulatedInferenceDataStartTime
+        public DateTime? AccumulatedInferenceDataStartTime
         {
-            get { return this._accumulatedInferenceDataStartTime.GetValueOrDefault(); }
+            get { return this._accumulatedInferenceDataStartTime; }
             set { this._accumulatedInferenceDataStartTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ActiveModelVersion
+        public long? ActiveModelVersion
         {
-            get { return this._activeModelVersion.GetValueOrDefault(); }
+            get { return this._activeModelVersion; }
             set { this._activeModelVersion = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the time and date at which the machine learning model was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.LookoutEquipment.Model
         /// data for the machine learning model. 
         /// </para>
         /// </summary>
-        public DateTime EvaluationDataEndTime
+        public DateTime? EvaluationDataEndTime
         {
-            get { return this._evaluationDataEndTime.GetValueOrDefault(); }
+            get { return this._evaluationDataEndTime; }
             set { this._evaluationDataEndTime = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.LookoutEquipment.Model
         /// evaluation data for the machine learning model. 
         /// </para>
         /// </summary>
-        public DateTime EvaluationDataStartTime
+        public DateTime? EvaluationDataStartTime
         {
-            get { return this._evaluationDataStartTime.GetValueOrDefault(); }
+            get { return this._evaluationDataStartTime; }
             set { this._evaluationDataStartTime = value; }
         }
 
@@ -304,9 +304,9 @@ namespace Amazon.LookoutEquipment.Model
         /// model version was imported.
         /// </para>
         /// </summary>
-        public DateTime ImportJobEndTime
+        public DateTime? ImportJobEndTime
         {
-            get { return this._importJobEndTime.GetValueOrDefault(); }
+            get { return this._importJobEndTime; }
             set { this._importJobEndTime = value; }
         }
 
@@ -323,9 +323,9 @@ namespace Amazon.LookoutEquipment.Model
         /// model version was imported.
         /// </para>
         /// </summary>
-        public DateTime ImportJobStartTime
+        public DateTime? ImportJobStartTime
         {
-            get { return this._importJobStartTime.GetValueOrDefault(); }
+            get { return this._importJobStartTime; }
             set { this._importJobStartTime = value; }
         }
 
@@ -361,9 +361,9 @@ namespace Amazon.LookoutEquipment.Model
         /// is not specified. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -380,9 +380,9 @@ namespace Amazon.LookoutEquipment.Model
         /// run. 
         /// </para>
         /// </summary>
-        public int LatestScheduledRetrainingAvailableDataInDays
+        public int? LatestScheduledRetrainingAvailableDataInDays
         {
-            get { return this._latestScheduledRetrainingAvailableDataInDays.GetValueOrDefault(); }
+            get { return this._latestScheduledRetrainingAvailableDataInDays; }
             set { this._latestScheduledRetrainingAvailableDataInDays = value; }
         }
 
@@ -419,9 +419,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long LatestScheduledRetrainingModelVersion
+        public long? LatestScheduledRetrainingModelVersion
         {
-            get { return this._latestScheduledRetrainingModelVersion.GetValueOrDefault(); }
+            get { return this._latestScheduledRetrainingModelVersion; }
             set { this._latestScheduledRetrainingModelVersion = value; }
         }
 
@@ -437,9 +437,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the start time of the most recent scheduled retraining run. 
         /// </para>
         /// </summary>
-        public DateTime LatestScheduledRetrainingStartTime
+        public DateTime? LatestScheduledRetrainingStartTime
         {
-            get { return this._latestScheduledRetrainingStartTime.GetValueOrDefault(); }
+            get { return this._latestScheduledRetrainingStartTime; }
             set { this._latestScheduledRetrainingStartTime = value; }
         }
 
@@ -586,9 +586,9 @@ namespace Amazon.LookoutEquipment.Model
         /// The date the active model version was activated.
         /// </para>
         /// </summary>
-        public DateTime ModelVersionActivatedAt
+        public DateTime? ModelVersionActivatedAt
         {
-            get { return this._modelVersionActivatedAt.GetValueOrDefault(); }
+            get { return this._modelVersionActivatedAt; }
             set { this._modelVersionActivatedAt = value; }
         }
 
@@ -605,9 +605,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Lookout for Equipment truncates the time you provide to the nearest UTC day.
         /// </para>
         /// </summary>
-        public DateTime NextScheduledRetrainingStartDate
+        public DateTime? NextScheduledRetrainingStartDate
         {
-            get { return this._nextScheduledRetrainingStartDate.GetValueOrDefault(); }
+            get { return this._nextScheduledRetrainingStartDate; }
             set { this._nextScheduledRetrainingStartDate = value; }
         }
 
@@ -646,9 +646,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long PreviousActiveModelVersion
+        public long? PreviousActiveModelVersion
         {
-            get { return this._previousActiveModelVersion.GetValueOrDefault(); }
+            get { return this._previousActiveModelVersion; }
             set { this._previousActiveModelVersion = value; }
         }
 
@@ -684,9 +684,9 @@ namespace Amazon.LookoutEquipment.Model
         /// The date and time when the previous active model version was activated.
         /// </para>
         /// </summary>
-        public DateTime PreviousModelVersionActivatedAt
+        public DateTime? PreviousModelVersionActivatedAt
         {
-            get { return this._previousModelVersionActivatedAt.GetValueOrDefault(); }
+            get { return this._previousModelVersionActivatedAt; }
             set { this._previousModelVersionActivatedAt = value; }
         }
 
@@ -841,9 +841,9 @@ namespace Amazon.LookoutEquipment.Model
         /// data for the machine learning model. 
         /// </para>
         /// </summary>
-        public DateTime TrainingDataEndTime
+        public DateTime? TrainingDataEndTime
         {
-            get { return this._trainingDataEndTime.GetValueOrDefault(); }
+            get { return this._trainingDataEndTime; }
             set { this._trainingDataEndTime = value; }
         }
 
@@ -860,9 +860,9 @@ namespace Amazon.LookoutEquipment.Model
         /// training data for the machine learning model. 
         /// </para>
         /// </summary>
-        public DateTime TrainingDataStartTime
+        public DateTime? TrainingDataStartTime
         {
-            get { return this._trainingDataStartTime.GetValueOrDefault(); }
+            get { return this._trainingDataStartTime; }
             set { this._trainingDataStartTime = value; }
         }
 
@@ -879,9 +879,9 @@ namespace Amazon.LookoutEquipment.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime TrainingExecutionEndTime
+        public DateTime? TrainingExecutionEndTime
         {
-            get { return this._trainingExecutionEndTime.GetValueOrDefault(); }
+            get { return this._trainingExecutionEndTime; }
             set { this._trainingExecutionEndTime = value; }
         }
 
@@ -897,9 +897,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the time at which the training of the machine learning model began. 
         /// </para>
         /// </summary>
-        public DateTime TrainingExecutionStartTime
+        public DateTime? TrainingExecutionStartTime
         {
-            get { return this._trainingExecutionStartTime.GetValueOrDefault(); }
+            get { return this._trainingExecutionStartTime; }
             set { this._trainingExecutionStartTime = value; }
         }
 

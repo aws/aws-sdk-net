@@ -145,9 +145,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int PipelineVersion
+        public int? PipelineVersion
         {
-            get { return this._pipelineVersion.GetValueOrDefault(); }
+            get { return this._pipelineVersion; }
             set { this._pipelineVersion = value; }
         }
 

@@ -58,9 +58,9 @@ namespace Amazon.Redshift.Model
         /// Default: <c>60</c> 
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Redshift.Model
         /// Example: <c>2009-07-08T18:00Z</c> 
         /// </para>
         /// </summary>
-        public DateTime EndTimeUtc
+        public DateTime? EndTimeUtc
         {
-            get { return this._endTimeUtc.GetValueOrDefault(); }
+            get { return this._endTimeUtc; }
             set { this._endTime = this._endTimeUtc = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.Redshift.Model
         /// Constraints: minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.Redshift.Model
         /// Example: <c>2009-07-08T18:00Z</c> 
         /// </para>
         /// </summary>
-        public DateTime StartTimeUtc
+        public DateTime? StartTimeUtc
         {
-            get { return this._startTimeUtc.GetValueOrDefault(); }
+            get { return this._startTimeUtc; }
             set { this._startTime = this._startTimeUtc = value; }
         }
 
@@ -292,13 +292,20 @@ namespace Amazon.Redshift.Model
             "EndTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. EndTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
             set
             {
                 this._endTime = value;
-                this._endTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._endTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._endTimeUtc = null;
+                }
             }
         }
         /// <summary>
@@ -327,13 +334,20 @@ namespace Amazon.Redshift.Model
             "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
             set
             {
                 this._startTime = value;
-                this._startTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._startTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._startTimeUtc = null;
+                }
             }
         }
 #endregion

@@ -75,7 +75,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Bandwidth. 
         /// <para>
-        /// The port bandwidth, in Gbps. The possible values are 1 and 10.
+        /// The port bandwidth, in Gbps. The possible values are 1, 10, and 100.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

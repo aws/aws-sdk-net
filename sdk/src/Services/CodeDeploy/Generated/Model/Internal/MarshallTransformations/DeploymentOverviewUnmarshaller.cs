@@ -68,37 +68,37 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Failed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InProgress", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Pending", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Ready", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Ready = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Skipped", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Skipped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Succeeded", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Succeeded = unmarshaller.Unmarshall(context);
                     continue;
                 }

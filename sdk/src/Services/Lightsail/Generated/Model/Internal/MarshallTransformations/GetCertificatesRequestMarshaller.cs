@@ -89,7 +89,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeCertificateDetails())
                 {
                     context.Writer.WritePropertyName("includeCertificateDetails");
-                    context.Writer.Write(publicRequest.IncludeCertificateDetails);
+                    context.Writer.Write(publicRequest.IncludeCertificateDetails.Value);
                 }
 
                 if(publicRequest.IsSetPageToken())

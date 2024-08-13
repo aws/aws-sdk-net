@@ -64,9 +64,9 @@ namespace Amazon.RAM.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool AllowExternalPrincipals
+        public bool? AllowExternalPrincipals
         {
-            get { return this._allowExternalPrincipals.GetValueOrDefault(); }
+            get { return this._allowExternalPrincipals; }
             set { this._allowExternalPrincipals = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowEarlyCheckIn
+        public bool? AllowEarlyCheckIn
         {
-            get { return this._allowEarlyCheckIn.GetValueOrDefault(); }
+            get { return this._allowEarlyCheckIn; }
             set { this._allowEarlyCheckIn = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxTimeToLiveInMinutes
+        public int? MaxTimeToLiveInMinutes
         {
-            get { return this._maxTimeToLiveInMinutes.GetValueOrDefault(); }
+            get { return this._maxTimeToLiveInMinutes; }
             set { this._maxTimeToLiveInMinutes = value; }
         }
 

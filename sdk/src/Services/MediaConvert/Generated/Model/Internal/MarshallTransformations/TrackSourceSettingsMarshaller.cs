@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrackNumber())
             {
                 context.Writer.WritePropertyName("trackNumber");
-                context.Writer.Write(requestObject.TrackNumber);
+                context.Writer.Write(requestObject.TrackNumber.Value);
             }
 
         }

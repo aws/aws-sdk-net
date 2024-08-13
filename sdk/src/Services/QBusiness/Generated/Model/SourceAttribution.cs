@@ -47,9 +47,9 @@ namespace Amazon.QBusiness.Model
         /// The number attached to a citation in an Amazon Q Business generated response.
         /// </para>
         /// </summary>
-        public int CitationNumber
+        public int? CitationNumber
         {
-            get { return this._citationNumber.GetValueOrDefault(); }
+            get { return this._citationNumber; }
             set { this._citationNumber = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.QBusiness.Model
         /// The Unix timestamp when the Amazon Q Business application was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

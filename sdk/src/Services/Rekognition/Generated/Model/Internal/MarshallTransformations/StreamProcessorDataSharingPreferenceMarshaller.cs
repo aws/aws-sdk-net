@@ -51,7 +51,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOptIn())
             {
                 context.Writer.WritePropertyName("OptIn");
-                context.Writer.Write(requestObject.OptIn);
+                context.Writer.Write(requestObject.OptIn.Value);
             }
 
         }

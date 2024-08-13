@@ -102,9 +102,9 @@ namespace Amazon.Macie2.Model
         /// The maximum number of items to include in each page of the response.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

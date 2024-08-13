@@ -70,7 +70,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDashboardEnabled())
                 {
                     context.Writer.WritePropertyName("DashboardEnabled");
-                    context.Writer.Write(publicRequest.DashboardEnabled);
+                    context.Writer.Write(publicRequest.DashboardEnabled.Value);
                 }
 
                 if(publicRequest.IsSetSubscribedDomains())

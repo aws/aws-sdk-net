@@ -66,13 +66,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("clientStatus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ClientStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("latency", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Latency = unmarshaller.Unmarshall(context);
                     continue;
                 }

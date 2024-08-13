@@ -119,7 +119,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoteDebugEnabled())
                 {
                     context.Writer.WritePropertyName("remoteDebugEnabled");
-                    context.Writer.Write(publicRequest.RemoteDebugEnabled);
+                    context.Writer.Write(publicRequest.RemoteDebugEnabled.Value);
                 }
 
                 if(publicRequest.IsSetRemoteRecordAppArn())
@@ -131,13 +131,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoteRecordEnabled())
                 {
                     context.Writer.WritePropertyName("remoteRecordEnabled");
-                    context.Writer.Write(publicRequest.RemoteRecordEnabled);
+                    context.Writer.Write(publicRequest.RemoteRecordEnabled.Value);
                 }
 
                 if(publicRequest.IsSetSkipAppResign())
                 {
                     context.Writer.WritePropertyName("skipAppResign");
-                    context.Writer.Write(publicRequest.SkipAppResign);
+                    context.Writer.Write(publicRequest.SkipAppResign.Value);
                 }
 
                 if(publicRequest.IsSetSshPublicKey())

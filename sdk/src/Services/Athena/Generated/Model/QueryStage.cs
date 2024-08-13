@@ -51,9 +51,9 @@ namespace Amazon.Athena.Model
         /// Time taken to execute this stage.
         /// </para>
         /// </summary>
-        public long ExecutionTime
+        public long? ExecutionTime
         {
-            get { return this._executionTime.GetValueOrDefault(); }
+            get { return this._executionTime; }
             set { this._executionTime = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Athena.Model
         /// The number of bytes input into the stage for execution.
         /// </para>
         /// </summary>
-        public long InputBytes
+        public long? InputBytes
         {
-            get { return this._inputBytes.GetValueOrDefault(); }
+            get { return this._inputBytes; }
             set { this._inputBytes = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Athena.Model
         /// The number of rows input into the stage for execution.
         /// </para>
         /// </summary>
-        public long InputRows
+        public long? InputRows
         {
-            get { return this._inputRows.GetValueOrDefault(); }
+            get { return this._inputRows; }
             set { this._inputRows = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Athena.Model
         /// The number of bytes output from the stage after execution.
         /// </para>
         /// </summary>
-        public long OutputBytes
+        public long? OutputBytes
         {
-            get { return this._outputBytes.GetValueOrDefault(); }
+            get { return this._outputBytes; }
             set { this._outputBytes = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Athena.Model
         /// The number of rows output from the stage after execution.
         /// </para>
         /// </summary>
-        public long OutputRows
+        public long? OutputRows
         {
-            get { return this._outputRows.GetValueOrDefault(); }
+            get { return this._outputRows; }
             set { this._outputRows = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.Athena.Model
         /// The identifier for a stage.
         /// </para>
         /// </summary>
-        public long StageId
+        public long? StageId
         {
-            get { return this._stageId.GetValueOrDefault(); }
+            get { return this._stageId; }
             set { this._stageId = value; }
         }
 

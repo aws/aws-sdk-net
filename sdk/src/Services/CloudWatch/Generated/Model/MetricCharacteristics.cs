@@ -46,9 +46,9 @@ namespace Amazon.CloudWatch.Model
         /// and won't flag future similar spikes as anomalies.
         /// </para>
         /// </summary>
-        public bool PeriodicSpikes
+        public bool? PeriodicSpikes
         {
-            get { return this._periodicSpikes.GetValueOrDefault(); }
+            get { return this._periodicSpikes; }
             set { this._periodicSpikes = value; }
         }
 

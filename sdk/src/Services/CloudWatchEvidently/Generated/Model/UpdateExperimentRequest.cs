@@ -178,9 +178,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// the experiment is currently running.
         /// </para>
         /// </summary>
-        public bool RemoveSegment
+        public bool? RemoveSegment
         {
-            get { return this._removeSegment.GetValueOrDefault(); }
+            get { return this._removeSegment; }
             set { this._removeSegment = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
-        public long SamplingRate
+        public long? SamplingRate
         {
-            get { return this._samplingRate.GetValueOrDefault(); }
+            get { return this._samplingRate; }
             set { this._samplingRate = value; }
         }
 

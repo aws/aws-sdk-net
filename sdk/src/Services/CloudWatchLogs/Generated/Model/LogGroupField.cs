@@ -63,9 +63,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Percent
+        public int? Percent
         {
-            get { return this._percent.GetValueOrDefault(); }
+            get { return this._percent; }
             set { this._percent = value; }
         }
 

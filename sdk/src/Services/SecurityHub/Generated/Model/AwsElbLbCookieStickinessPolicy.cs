@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// of the browser session.
         /// </para>
         /// </summary>
-        public long CookieExpirationPeriod
+        public long? CookieExpirationPeriod
         {
-            get { return this._cookieExpirationPeriod.GetValueOrDefault(); }
+            get { return this._cookieExpirationPeriod; }
             set { this._cookieExpirationPeriod = value; }
         }
 

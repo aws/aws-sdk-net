@@ -70,9 +70,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool AutoApprove
+        public bool? AutoApprove
         {
-            get { return this._autoApprove.GetValueOrDefault(); }
+            get { return this._autoApprove; }
             set { this._autoApprove = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to complete. The time is an estimate only that the requester provides for reviewers.
         /// </para>
         /// </summary>
-        public DateTime ScheduledEndTime
+        public DateTime? ScheduledEndTime
         {
-            get { return this._scheduledEndTime.GetValueOrDefault(); }
+            get { return this._scheduledEndTime; }
             set { this._scheduledEndTime = value; }
         }
 
@@ -254,9 +254,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime ScheduledTime
+        public DateTime? ScheduledTime
         {
-            get { return this._scheduledTime.GetValueOrDefault(); }
+            get { return this._scheduledTime; }
             set { this._scheduledTime = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBrightness())
             {
                 context.Writer.WritePropertyName("brightness");
-                context.Writer.Write(requestObject.Brightness);
+                context.Writer.Write(requestObject.Brightness.Value);
             }
 
             if(requestObject.IsSetClipLimits())
@@ -74,7 +74,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContrast())
             {
                 context.Writer.WritePropertyName("contrast");
-                context.Writer.Write(requestObject.Contrast);
+                context.Writer.Write(requestObject.Contrast.Value);
             }
 
             if(requestObject.IsSetHdr10Metadata())
@@ -97,13 +97,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHue())
             {
                 context.Writer.WritePropertyName("hue");
-                context.Writer.Write(requestObject.Hue);
+                context.Writer.Write(requestObject.Hue.Value);
             }
 
             if(requestObject.IsSetMaxLuminance())
             {
                 context.Writer.WritePropertyName("maxLuminance");
-                context.Writer.Write(requestObject.MaxLuminance);
+                context.Writer.Write(requestObject.MaxLuminance.Value);
             }
 
             if(requestObject.IsSetSampleRangeConversion())
@@ -115,13 +115,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSaturation())
             {
                 context.Writer.WritePropertyName("saturation");
-                context.Writer.Write(requestObject.Saturation);
+                context.Writer.Write(requestObject.Saturation.Value);
             }
 
             if(requestObject.IsSetSdrReferenceWhiteLevel())
             {
                 context.Writer.WritePropertyName("sdrReferenceWhiteLevel");
-                context.Writer.Write(requestObject.SdrReferenceWhiteLevel);
+                context.Writer.Write(requestObject.SdrReferenceWhiteLevel.Value);
             }
 
         }

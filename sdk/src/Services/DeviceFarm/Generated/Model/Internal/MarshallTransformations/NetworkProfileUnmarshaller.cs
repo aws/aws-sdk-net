@@ -80,25 +80,25 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("downlinkBandwidthBits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DownlinkBandwidthBits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("downlinkDelayMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DownlinkDelayMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("downlinkJitterMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DownlinkJitterMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("downlinkLossPercent", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DownlinkLossPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,25 +116,25 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("uplinkBandwidthBits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.UplinkBandwidthBits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("uplinkDelayMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.UplinkDelayMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("uplinkJitterMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.UplinkJitterMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("uplinkLossPercent", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UplinkLossPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }

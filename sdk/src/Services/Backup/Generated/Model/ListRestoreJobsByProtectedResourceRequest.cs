@@ -56,9 +56,9 @@ namespace Amazon.Backup.Model
         /// date.
         /// </para>
         /// </summary>
-        public DateTime ByRecoveryPointCreationDateAfter
+        public DateTime? ByRecoveryPointCreationDateAfter
         {
-            get { return this._byRecoveryPointCreationDateAfter.GetValueOrDefault(); }
+            get { return this._byRecoveryPointCreationDateAfter; }
             set { this._byRecoveryPointCreationDateAfter = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.Backup.Model
         /// date.
         /// </para>
         /// </summary>
-        public DateTime ByRecoveryPointCreationDateBefore
+        public DateTime? ByRecoveryPointCreationDateBefore
         {
-            get { return this._byRecoveryPointCreationDateBefore.GetValueOrDefault(); }
+            get { return this._byRecoveryPointCreationDateBefore; }
             set { this._byRecoveryPointCreationDateBefore = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

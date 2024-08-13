@@ -65,16 +65,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
         // Check to see if Timestamp property is set
         internal bool IsSetTimestamp()
         {
-            return this._timestamp.HasValue; 
+            return this._timestamp != null;
         }
 
     }

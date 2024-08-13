@@ -52,9 +52,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool FluxLogEnabled
+        public bool? FluxLogEnabled
         {
-            get { return this._fluxLogEnabled.GetValueOrDefault(); }
+            get { return this._fluxLogEnabled; }
             set { this._fluxLogEnabled = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool MetricsDisabled
+        public bool? MetricsDisabled
         {
-            get { return this._metricsDisabled.GetValueOrDefault(); }
+            get { return this._metricsDisabled; }
             set { this._metricsDisabled = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool NoTasks
+        public bool? NoTasks
         {
-            get { return this._noTasks.GetValueOrDefault(); }
+            get { return this._noTasks; }
             set { this._noTasks = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
-        public int QueryConcurrency
+        public int? QueryConcurrency
         {
-            get { return this._queryConcurrency.GetValueOrDefault(); }
+            get { return this._queryConcurrency; }
             set { this._queryConcurrency = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
-        public int QueryQueueSize
+        public int? QueryQueueSize
         {
-            get { return this._queryQueueSize.GetValueOrDefault(); }
+            get { return this._queryQueueSize; }
             set { this._queryQueueSize = value; }
         }
 

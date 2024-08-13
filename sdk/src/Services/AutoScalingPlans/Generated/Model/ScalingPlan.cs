@@ -69,9 +69,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// The Unix time stamp when the scaling plan was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ScalingPlanVersion
+        public long? ScalingPlanVersion
         {
-            get { return this._scalingPlanVersion.GetValueOrDefault(); }
+            get { return this._scalingPlanVersion; }
             set { this._scalingPlanVersion = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// The Unix time stamp when the scaling plan entered the current status.
         /// </para>
         /// </summary>
-        public DateTime StatusStartTime
+        public DateTime? StatusStartTime
         {
-            get { return this._statusStartTime.GetValueOrDefault(); }
+            get { return this._statusStartTime; }
             set { this._statusStartTime = value; }
         }
 

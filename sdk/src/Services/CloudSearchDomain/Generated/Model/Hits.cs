@@ -64,9 +64,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The total number of documents that match the search request.
         /// </para>
         /// </summary>
-        public long Found
+        public long? Found
         {
-            get { return this._found.GetValueOrDefault(); }
+            get { return this._found; }
             set { this._found = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The index of the first matching document.
         /// </para>
         /// </summary>
-        public long Start
+        public long? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 

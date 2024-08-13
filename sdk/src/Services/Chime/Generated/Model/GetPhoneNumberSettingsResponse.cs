@@ -62,9 +62,9 @@ namespace Amazon.Chime.Model
         /// The updated outbound calling name timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CallingNameUpdatedTimestamp
+        public DateTime? CallingNameUpdatedTimestamp
         {
-            get { return this._callingNameUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._callingNameUpdatedTimestamp; }
             set { this._callingNameUpdatedTimestamp = value; }
         }
 

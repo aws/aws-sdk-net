@@ -68,7 +68,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("contentBlockIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContentBlockIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

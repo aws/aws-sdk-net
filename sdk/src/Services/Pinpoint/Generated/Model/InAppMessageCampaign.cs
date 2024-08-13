@@ -68,9 +68,9 @@ namespace Amazon.Pinpoint.Model
         /// endpoint during a day.
         /// </para>
         /// </summary>
-        public int DailyCap
+        public int? DailyCap
         {
-            get { return this._dailyCap.GetValueOrDefault(); }
+            get { return this._dailyCap; }
             set { this._dailyCap = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Pinpoint.Model
         /// Priority of the in-app message.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Pinpoint.Model
         /// endpoint during an application session.
         /// </para>
         /// </summary>
-        public int SessionCap
+        public int? SessionCap
         {
-            get { return this._sessionCap.GetValueOrDefault(); }
+            get { return this._sessionCap; }
             set { this._sessionCap = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Pinpoint.Model
         /// endpoint.
         /// </para>
         /// </summary>
-        public int TotalCap
+        public int? TotalCap
         {
-            get { return this._totalCap.GetValueOrDefault(); }
+            get { return this._totalCap; }
             set { this._totalCap = value; }
         }
 

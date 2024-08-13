@@ -111,9 +111,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Determines whether or not to return a valid data mask.
         /// </para>
         /// </summary>
-        public bool ImageMask
+        public bool? ImageMask
         {
-            get { return this._imageMask.GetValueOrDefault(); }
+            get { return this._imageMask; }
             set { this._imageMask = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int X
+        public int? X
         {
-            get { return this._x.GetValueOrDefault(); }
+            get { return this._x; }
             set { this._x = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Y
+        public int? Y
         {
-            get { return this._y.GetValueOrDefault(); }
+            get { return this._y; }
             set { this._y = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Z
+        public int? Z
         {
-            get { return this._z.GetValueOrDefault(); }
+            get { return this._z; }
             set { this._z = value; }
         }
 

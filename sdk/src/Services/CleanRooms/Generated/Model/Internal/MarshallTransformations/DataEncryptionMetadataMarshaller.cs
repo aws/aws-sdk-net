@@ -51,25 +51,25 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCleartext())
             {
                 context.Writer.WritePropertyName("allowCleartext");
-                context.Writer.Write(requestObject.AllowCleartext);
+                context.Writer.Write(requestObject.AllowCleartext.Value);
             }
 
             if(requestObject.IsSetAllowDuplicates())
             {
                 context.Writer.WritePropertyName("allowDuplicates");
-                context.Writer.Write(requestObject.AllowDuplicates);
+                context.Writer.Write(requestObject.AllowDuplicates.Value);
             }
 
             if(requestObject.IsSetAllowJoinsOnColumnsWithDifferentNames())
             {
                 context.Writer.WritePropertyName("allowJoinsOnColumnsWithDifferentNames");
-                context.Writer.Write(requestObject.AllowJoinsOnColumnsWithDifferentNames);
+                context.Writer.Write(requestObject.AllowJoinsOnColumnsWithDifferentNames.Value);
             }
 
             if(requestObject.IsSetPreserveNulls())
             {
                 context.Writer.WritePropertyName("preserveNulls");
-                context.Writer.Write(requestObject.PreserveNulls);
+                context.Writer.Write(requestObject.PreserveNulls.Value);
             }
 
         }

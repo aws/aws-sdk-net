@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.Runtime.Internal.Util;
 using System.Net;
+using System.Reflection;
 
 using Amazon.S3;
 using Amazon.S3.Model;
@@ -76,11 +77,10 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(httpRequest.IsDisposed);
         }
 
-#if BCL45
-
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestSuccessfulAsyncCall()
         {
             var factory = new MockHttpRequestFactory();
@@ -103,7 +103,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestErrorAsyncCall()
         {
             var factory = new MockHttpRequestFactory
@@ -136,60 +136,6 @@ namespace AWSSDK.UnitTests
             requestContext.ContextAttributes["foo"] = "bar";
             Assert.AreEqual("bar", requestContext.ContextAttributes["foo"]);
         }
-
-
-#elif !BCL45 && BCL
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestSuccessfulAsyncCall()
-        {
-            var factory = new MockHttpRequestFactory();
-            var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
-
-            var listBucketsRequest = new ListBucketsRequest();
-            var executionContext = CreateAsyncExecutionContextForListBuckets();
-
-            var asyncResult = httpHandler.InvokeAsync(executionContext);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsNull(executionContext.ResponseContext.AsyncResult.Exception);
-            Assert.IsNotNull(executionContext.ResponseContext.HttpResponse);
-            var httpRequest = factory.LastCreatedRequest;
-            Assert.AreEqual("GET", httpRequest.Method);
-            Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
-            Assert.IsTrue(httpRequest.IsSetRequestHeadersCalled);
-            Assert.IsTrue(httpRequest.IsDisposed);
-            Assert.IsFalse(httpRequest.IsAborted);   
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestErrorAsyncCall()
-        {
-            var factory = new MockHttpRequestFactory
-            {
-                GetResponseAction = () => { throw new IOException(); }
-            };
-            var httpHandler = new HttpHandler<Stream>(factory, callbackSender);
-            var runtimePipeline = new RuntimePipeline(httpHandler);
-            var executionContext = CreateAsyncExecutionContextForListBuckets();
-
-            var asyncResult = httpHandler.InvokeAsync(executionContext);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsNotNull(executionContext.ResponseContext.AsyncResult.Exception);
-            Assert.IsInstanceOfType(executionContext.ResponseContext.AsyncResult.Exception,typeof(IOException));
-
-            var httpRequest = factory.LastCreatedRequest;
-            Assert.AreEqual("GET", httpRequest.Method);
-            Assert.IsTrue(httpRequest.IsConfigureRequestCalled);
-            Assert.IsTrue(httpRequest.IsSetRequestHeadersCalled);
-            Assert.IsTrue(httpRequest.IsDisposed);
-        }
 #endif
 
         private ExecutionContext CreateExecutionContextForListBuckets()
@@ -206,6 +152,11 @@ namespace AWSSDK.UnitTests
                 },
                 new ResponseContext()
             );
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(executionContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            executionContext.RequestContext.GetType().GetProperty("ServiceMetaData").SetValue(executionContext.RequestContext, serviceMetaData);
+
             executionContext.RequestContext.Request.Endpoint = new Uri(@"http://ListBuckets");
             return executionContext;
         }
@@ -224,6 +175,11 @@ namespace AWSSDK.UnitTests
                 },
                 new AsyncResponseContext()
             );
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(executionContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            executionContext.RequestContext.GetType().GetProperty("ServiceMetaData").SetValue(executionContext.RequestContext, serviceMetaData);
+
             executionContext.RequestContext.Request.Endpoint = new Uri(@"http://ListBuckets");
             return executionContext;
         }
@@ -347,7 +303,7 @@ namespace AWSSDK.UnitTests
                 this.IsAborted = true;
             }
 
-#if BCL45
+#if BCL
             public Task WriteToRequestBodyAsync(Stream requestContent, Stream contentStream,
                        IDictionary<string, string> contentHeaders, IRequestContext requestContext)
             {
@@ -387,53 +343,8 @@ namespace AWSSDK.UnitTests
                     MockWebResponse.CreateFromResource(this.RequestUri.Host)
                     as HttpWebResponse));
             }
-
-#elif !BCL45 && BCL
-
-            public IAsyncResult BeginGetRequestContent(AsyncCallback callback, object state)
-            {
-                var asyncResult = new RuntimeAsyncResult(callback, state);
-
-                System.Threading.ThreadPool.QueueUserWorkItem((obj) =>
-                {
-                    callback(asyncResult);
-                });
-
-                return asyncResult;
-            }
-
-            public Stream EndGetRequestContent(IAsyncResult asyncResult)
-            {
-                requestStream = new MemoryStream();
-                return requestStream;
-            }
-
-            public IAsyncResult BeginGetResponse(AsyncCallback callback, object state)
-            {
-                var asyncResult = new RuntimeAsyncResult(callback, state);
-
-                System.Threading.ThreadPool.QueueUserWorkItem((obj) =>
-                {
-                    ((System.Threading.ManualResetEvent)asyncResult.AsyncWaitHandle).Set();
-                    if (callback!=null)
-                    {
-                        callback(asyncResult);    
-                    }                    
-                });
-
-                return asyncResult;
-            }
-
-            public Amazon.Runtime.Internal.Transform.IWebResponseData EndGetResponse(IAsyncResult asyncResult)
-            {
-                if (this.GetResponseAction != null)
-                    this.GetResponseAction();
-
-                return new HttpWebRequestResponseData(
-                    MockWebResponse.CreateFromResource(this.RequestUri.Host)
-                    as HttpWebResponse);
-            }
 #endif
+
             public void Dispose()
             {
                 this.IsDisposed = true;

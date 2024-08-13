@@ -66,16 +66,40 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("confluenceConfiguration", targetDepth))
+                {
+                    var unmarshaller = ConfluenceDataSourceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ConfluenceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Configuration", targetDepth))
                 {
                     var unmarshaller = S3DataSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("salesforceConfiguration", targetDepth))
+                {
+                    var unmarshaller = SalesforceDataSourceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SalesforceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sharePointConfiguration", targetDepth))
+                {
+                    var unmarshaller = SharePointDataSourceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SharePointConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("webConfiguration", targetDepth))
+                {
+                    var unmarshaller = WebDataSourceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.WebConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

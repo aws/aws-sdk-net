@@ -102,9 +102,9 @@ namespace Amazon.CloudWatch.Model
         /// The ending date to retrieve alarm history.
         /// </para>
         /// </summary>
-        public DateTime EndDateUtc
+        public DateTime? EndDateUtc
         {
-            get { return this._endDateUtc.GetValueOrDefault(); }
+            get { return this._endDateUtc; }
             set { this._endDate = this._endDateUtc = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.CloudWatch.Model
         /// The starting date to retrieve alarm history.
         /// </para>
         /// </summary>
-        public DateTime StartDateUtc
+        public DateTime? StartDateUtc
         {
-            get { return this._startDateUtc.GetValueOrDefault(); }
+            get { return this._startDateUtc; }
             set { this._startDate = this._startDateUtc = value; }
         }
 
@@ -231,13 +231,20 @@ namespace Amazon.CloudWatch.Model
             "EndDateUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. EndDate is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime EndDate
+        public DateTime? EndDate
         {
             get { return this._endDate.GetValueOrDefault(); }
             set
             {
                 this._endDate = value;
-                this._endDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._endDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._endDateUtc = null;
+                }
             }
         }
         /// <summary>
@@ -260,13 +267,20 @@ namespace Amazon.CloudWatch.Model
             "StartDateUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. StartDate is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime StartDate
+        public DateTime? StartDate
         {
             get { return this._startDate.GetValueOrDefault(); }
             set
             {
                 this._startDate = value;
-                this._startDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._startDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._startDateUtc = null;
+                }
             }
         }
 #endregion

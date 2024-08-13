@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model
         /// Enables fine-grained access control. 
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.SecurityHub.Model
         /// Enables the internal user database. 
         /// </para>
         /// </summary>
-        public bool InternalUserDatabaseEnabled
+        public bool? InternalUserDatabaseEnabled
         {
-            get { return this._internalUserDatabaseEnabled.GetValueOrDefault(); }
+            get { return this._internalUserDatabaseEnabled; }
             set { this._internalUserDatabaseEnabled = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time the address block was added to the directory.
         /// </para>
         /// </summary>
-        public DateTime AddedDateTime
+        public DateTime? AddedDateTime
         {
-            get { return this._addedDateTime.GetValueOrDefault(); }
+            get { return this._addedDateTime; }
             set { this._addedDateTime = value; }
         }
 

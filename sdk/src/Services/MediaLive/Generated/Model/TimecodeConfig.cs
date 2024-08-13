@@ -65,9 +65,9 @@ namespace Amazon.MediaLive.Model
         /// sync when this is not specified.
         /// </summary>
         [AWSProperty(Min=1, Max=1000000)]
-        public int SyncThreshold
+        public int? SyncThreshold
         {
-            get { return this._syncThreshold.GetValueOrDefault(); }
+            get { return this._syncThreshold; }
             set { this._syncThreshold = value; }
         }
 

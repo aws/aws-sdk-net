@@ -124,9 +124,9 @@ namespace Amazon.EventBridge.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int InvocationRateLimitPerSecond
+        public int? InvocationRateLimitPerSecond
         {
-            get { return this._invocationRateLimitPerSecond.GetValueOrDefault(); }
+            get { return this._invocationRateLimitPerSecond; }
             set { this._invocationRateLimitPerSecond = value; }
         }
 

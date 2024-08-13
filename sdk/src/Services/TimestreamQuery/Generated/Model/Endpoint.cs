@@ -64,9 +64,9 @@ namespace Amazon.TimestreamQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long CachePeriodInMinutes
+        public long? CachePeriodInMinutes
         {
-            get { return this._cachePeriodInMinutes.GetValueOrDefault(); }
+            get { return this._cachePeriodInMinutes; }
             set { this._cachePeriodInMinutes = value; }
         }
 

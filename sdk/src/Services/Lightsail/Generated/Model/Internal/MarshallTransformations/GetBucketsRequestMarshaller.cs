@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeConnectedResources())
                 {
                     context.Writer.WritePropertyName("includeConnectedResources");
-                    context.Writer.Write(publicRequest.IncludeConnectedResources);
+                    context.Writer.Write(publicRequest.IncludeConnectedResources.Value);
                 }
 
                 if(publicRequest.IsSetPageToken())

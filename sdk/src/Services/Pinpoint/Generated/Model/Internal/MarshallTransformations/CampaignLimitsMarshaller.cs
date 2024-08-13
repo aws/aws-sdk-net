@@ -51,31 +51,31 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDaily())
             {
                 context.Writer.WritePropertyName("Daily");
-                context.Writer.Write(requestObject.Daily);
+                context.Writer.Write(requestObject.Daily.Value);
             }
 
             if(requestObject.IsSetMaximumDuration())
             {
                 context.Writer.WritePropertyName("MaximumDuration");
-                context.Writer.Write(requestObject.MaximumDuration);
+                context.Writer.Write(requestObject.MaximumDuration.Value);
             }
 
             if(requestObject.IsSetMessagesPerSecond())
             {
                 context.Writer.WritePropertyName("MessagesPerSecond");
-                context.Writer.Write(requestObject.MessagesPerSecond);
+                context.Writer.Write(requestObject.MessagesPerSecond.Value);
             }
 
             if(requestObject.IsSetSession())
             {
                 context.Writer.WritePropertyName("Session");
-                context.Writer.Write(requestObject.Session);
+                context.Writer.Write(requestObject.Session.Value);
             }
 
             if(requestObject.IsSetTotal())
             {
                 context.Writer.WritePropertyName("Total");
-                context.Writer.Write(requestObject.Total);
+                context.Writer.Write(requestObject.Total.Value);
             }
 
         }

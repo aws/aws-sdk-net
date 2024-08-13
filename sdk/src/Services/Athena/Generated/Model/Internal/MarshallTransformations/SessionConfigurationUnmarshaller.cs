@@ -80,7 +80,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IdleTimeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IdleTimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

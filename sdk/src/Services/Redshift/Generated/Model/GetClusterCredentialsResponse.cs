@@ -87,9 +87,9 @@ namespace Amazon.Redshift.Model
         /// The date and time the password in <c>DbPassword</c> expires.
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

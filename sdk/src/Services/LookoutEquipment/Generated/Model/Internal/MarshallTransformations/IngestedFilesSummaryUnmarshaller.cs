@@ -74,13 +74,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IngestedNumberOfFiles", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IngestedNumberOfFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfFiles", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }

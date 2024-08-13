@@ -51,13 +51,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowExternalDataFiltering())
             {
                 context.Writer.WritePropertyName("AllowExternalDataFiltering");
-                context.Writer.Write(requestObject.AllowExternalDataFiltering);
+                context.Writer.Write(requestObject.AllowExternalDataFiltering.Value);
             }
 
             if(requestObject.IsSetAllowFullTableExternalDataAccess())
             {
                 context.Writer.WritePropertyName("AllowFullTableExternalDataAccess");
-                context.Writer.Write(requestObject.AllowFullTableExternalDataAccess);
+                context.Writer.Write(requestObject.AllowFullTableExternalDataAccess.Value);
             }
 
             if(requestObject.IsSetAuthorizedSessionTagValueList())

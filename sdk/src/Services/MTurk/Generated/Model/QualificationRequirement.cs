@@ -181,9 +181,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [Obsolete("Use the ActionsGuarded field instead")]
-        public bool RequiredToPreview
+        public bool? RequiredToPreview
         {
-            get { return this._requiredToPreview.GetValueOrDefault(); }
+            get { return this._requiredToPreview; }
             set { this._requiredToPreview = value; }
         }
 

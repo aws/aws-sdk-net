@@ -37,7 +37,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeletePublicIpv4PoolRequest : AmazonEC2Request
     {
+        private string _networkBorderGroup;
         private string _poolId;
+
+        /// <summary>
+        /// Gets and sets the property NetworkBorderGroup. 
+        /// <para>
+        /// The Availability Zone (AZ) or Local Zone (LZ) network border group that the resource
+        /// that the IP address is assigned to is in. Defaults to an AZ network border group.
+        /// For more information on available Local Zones, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">Local
+        /// Zone availability</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string NetworkBorderGroup
+        {
+            get { return this._networkBorderGroup; }
+            set { this._networkBorderGroup = value; }
+        }
+
+        // Check to see if NetworkBorderGroup property is set
+        internal bool IsSetNetworkBorderGroup()
+        {
+            return this._networkBorderGroup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PoolId. 

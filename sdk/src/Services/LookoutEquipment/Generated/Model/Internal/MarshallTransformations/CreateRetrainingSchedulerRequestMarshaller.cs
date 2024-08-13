@@ -107,7 +107,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetrainingStartDate())
                 {
                     context.Writer.WritePropertyName("RetrainingStartDate");
-                    context.Writer.Write(publicRequest.RetrainingStartDate);
+                    context.Writer.Write(publicRequest.RetrainingStartDate.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -51,13 +51,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdleTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("idleTimeoutSeconds");
-                context.Writer.Write(requestObject.IdleTimeoutSeconds);
+                context.Writer.Write(requestObject.IdleTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetPerRequestTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("perRequestTimeoutSeconds");
-                context.Writer.Write(requestObject.PerRequestTimeoutSeconds);
+                context.Writer.Write(requestObject.PerRequestTimeoutSeconds.Value);
             }
 
         }

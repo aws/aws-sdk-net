@@ -145,9 +145,9 @@ namespace Amazon.CodeCommit.Model
         /// The date and time the comment was created, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.CodeCommit.Model
         /// A Boolean value indicating whether the comment has been deleted.
         /// </para>
         /// </summary>
-        public bool Deleted
+        public bool? Deleted
         {
-            get { return this._deleted.GetValueOrDefault(); }
+            get { return this._deleted; }
             set { this._deleted = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.CodeCommit.Model
         /// The date and time the comment was most recently modified, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

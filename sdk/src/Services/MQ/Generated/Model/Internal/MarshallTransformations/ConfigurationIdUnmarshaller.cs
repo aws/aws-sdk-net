@@ -74,7 +74,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("revision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }

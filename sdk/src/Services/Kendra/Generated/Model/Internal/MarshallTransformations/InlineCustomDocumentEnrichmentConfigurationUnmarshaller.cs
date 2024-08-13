@@ -74,7 +74,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DocumentContentDeletion", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DocumentContentDeletion = unmarshaller.Unmarshall(context);
                     continue;
                 }

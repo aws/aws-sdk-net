@@ -80,13 +80,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("includeAssetModel", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeAssetModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("includeOffspring", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeOffspring = unmarshaller.Unmarshall(context);
                     continue;
                 }

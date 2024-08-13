@@ -62,9 +62,9 @@ namespace Amazon.WorkDocs.Model
         /// Boolean value to indicate an email notification should be sent to the recipients.
         /// </para>
         /// </summary>
-        public bool SendEmail
+        public bool? SendEmail
         {
-            get { return this._sendEmail.GetValueOrDefault(); }
+            get { return this._sendEmail; }
             set { this._sendEmail = value; }
         }
 

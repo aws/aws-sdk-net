@@ -223,9 +223,9 @@ namespace Amazon.FMS.Model
         /// Information about whether the route table is used in another Availability Zone.
         /// </para>
         /// </summary>
-        public bool IsRouteTableUsedInDifferentAZ
+        public bool? IsRouteTableUsedInDifferentAZ
         {
-            get { return this._isRouteTableUsedInDifferentAZ.GetValueOrDefault(); }
+            get { return this._isRouteTableUsedInDifferentAZ; }
             set { this._isRouteTableUsedInDifferentAZ = value; }
         }
 

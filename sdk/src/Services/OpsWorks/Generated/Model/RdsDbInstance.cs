@@ -142,9 +142,9 @@ namespace Amazon.OpsWorks.Model
         /// to <c>true</c>, you must deregister the instance, and then register it again.
         /// </para>
         /// </summary>
-        public bool MissingOnRds
+        public bool? MissingOnRds
         {
-            get { return this._missingOnRds.GetValueOrDefault(); }
+            get { return this._missingOnRds; }
             set { this._missingOnRds = value; }
         }
 

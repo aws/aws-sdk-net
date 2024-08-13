@@ -117,9 +117,9 @@ namespace Amazon.AppStream.Model
         /// The time stamp when the image builder was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.AppStream.Model
         /// Enables or disables default internet access for the image builder.
         /// </para>
         /// </summary>
-        public bool EnableDefaultInternetAccess
+        public bool? EnableDefaultInternetAccess
         {
-            get { return this._enableDefaultInternetAccess.GetValueOrDefault(); }
+            get { return this._enableDefaultInternetAccess; }
             set { this._enableDefaultInternetAccess = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.MediaConnect.Model
         /// as it is reported in the Program Association Table.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int PcrPid
+        public int? PcrPid
         {
-            get { return this._pcrPid.GetValueOrDefault(); }
+            get { return this._pcrPid; }
             set { this._pcrPid = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.MediaConnect.Model
         /// the Program Association Table.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ProgramNumber
+        public int? ProgramNumber
         {
-            get { return this._programNumber.GetValueOrDefault(); }
+            get { return this._programNumber; }
             set { this._programNumber = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.MediaConnect.Model
         /// in the Program Association Table.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ProgramPid
+        public int? ProgramPid
         {
-            get { return this._programPid.GetValueOrDefault(); }
+            get { return this._programPid; }
             set { this._programPid = value; }
         }
 

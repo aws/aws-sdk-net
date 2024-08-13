@@ -212,19 +212,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOnDemandMaxPricePercentageOverLowestPrice())
             {
                 context.Writer.WritePropertyName("OnDemandMaxPricePercentageOverLowestPrice");
-                context.Writer.Write(requestObject.OnDemandMaxPricePercentageOverLowestPrice);
+                context.Writer.Write(requestObject.OnDemandMaxPricePercentageOverLowestPrice.Value);
             }
 
             if(requestObject.IsSetRequireHibernateSupport())
             {
                 context.Writer.WritePropertyName("RequireHibernateSupport");
-                context.Writer.Write(requestObject.RequireHibernateSupport);
+                context.Writer.Write(requestObject.RequireHibernateSupport.Value);
             }
 
             if(requestObject.IsSetSpotMaxPricePercentageOverLowestPrice())
             {
                 context.Writer.WritePropertyName("SpotMaxPricePercentageOverLowestPrice");
-                context.Writer.Write(requestObject.SpotMaxPricePercentageOverLowestPrice);
+                context.Writer.Write(requestObject.SpotMaxPricePercentageOverLowestPrice.Value);
             }
 
             if(requestObject.IsSetTotalLocalStorageGB())

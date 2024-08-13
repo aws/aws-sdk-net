@@ -52,9 +52,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxAutoMLJobRuntimeInSeconds
+        public int? MaxAutoMLJobRuntimeInSeconds
         {
-            get { return this._maxAutoMLJobRuntimeInSeconds.GetValueOrDefault(); }
+            get { return this._maxAutoMLJobRuntimeInSeconds; }
             set { this._maxAutoMLJobRuntimeInSeconds = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=750)]
-        public int MaxCandidates
+        public int? MaxCandidates
         {
-            get { return this._maxCandidates.GetValueOrDefault(); }
+            get { return this._maxCandidates; }
             set { this._maxCandidates = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxRuntimePerTrainingJobInSeconds
+        public int? MaxRuntimePerTrainingJobInSeconds
         {
-            get { return this._maxRuntimePerTrainingJobInSeconds.GetValueOrDefault(); }
+            get { return this._maxRuntimePerTrainingJobInSeconds; }
             set { this._maxRuntimePerTrainingJobInSeconds = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.GlueDataBrew.Model
         /// client is currently accessing the project.
         /// </para>
         /// </summary>
-        public bool AssumeControl
+        public bool? AssumeControl
         {
-            get { return this._assumeControl.GetValueOrDefault(); }
+            get { return this._assumeControl; }
             set { this._assumeControl = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)
         /// </para>
         /// </summary>
-        public int CacheStaleTimeoutInSeconds
+        public int? CacheStaleTimeoutInSeconds
         {
-            get { return this._cacheStaleTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._cacheStaleTimeoutInSeconds; }
             set { this._cacheStaleTimeoutInSeconds = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
-        public int RetryIntervalInMinutes
+        public int? RetryIntervalInMinutes
         {
-            get { return this._retryIntervalInMinutes.GetValueOrDefault(); }
+            get { return this._retryIntervalInMinutes; }
             set { this._retryIntervalInMinutes = value; }
         }
 

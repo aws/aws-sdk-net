@@ -51,9 +51,9 @@ namespace Amazon.Glue.Model
         /// Enables the processing of files that contain only one column.
         /// </para>
         /// </summary>
-        public bool AllowSingleColumn
+        public bool? AllowSingleColumn
         {
-            get { return this._allowSingleColumn.GetValueOrDefault(); }
+            get { return this._allowSingleColumn; }
             set { this._allowSingleColumn = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Glue.Model
         /// Specifies the configuration of custom datatypes.
         /// </para>
         /// </summary>
-        public bool CustomDatatypeConfigured
+        public bool? CustomDatatypeConfigured
         {
-            get { return this._customDatatypeConfigured.GetValueOrDefault(); }
+            get { return this._customDatatypeConfigured; }
             set { this._customDatatypeConfigured = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Glue.Model
         /// value is true.
         /// </para>
         /// </summary>
-        public bool DisableValueTrimming
+        public bool? DisableValueTrimming
         {
-            get { return this._disableValueTrimming.GetValueOrDefault(); }
+            get { return this._disableValueTrimming; }
             set { this._disableValueTrimming = value; }
         }
 

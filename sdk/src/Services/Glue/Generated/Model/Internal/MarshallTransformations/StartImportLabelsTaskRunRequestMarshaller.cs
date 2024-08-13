@@ -78,7 +78,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReplaceAllLabels())
                 {
                     context.Writer.WritePropertyName("ReplaceAllLabels");
-                    context.Writer.Write(publicRequest.ReplaceAllLabels);
+                    context.Writer.Write(publicRequest.ReplaceAllLabels.Value);
                 }
 
                 if(publicRequest.IsSetTransformId())

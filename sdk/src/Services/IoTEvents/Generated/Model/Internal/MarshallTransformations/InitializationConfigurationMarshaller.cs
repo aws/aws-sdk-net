@@ -51,7 +51,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisabledOnInitialization())
             {
                 context.Writer.WritePropertyName("disabledOnInitialization");
-                context.Writer.Write(requestObject.DisabledOnInitialization);
+                context.Writer.Write(requestObject.DisabledOnInitialization.Value);
             }
 
         }

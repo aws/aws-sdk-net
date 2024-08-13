@@ -44,9 +44,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000000)]
-        public double Horizontal
+        public double? Horizontal
         {
-            get { return this._horizontal.GetValueOrDefault(); }
+            get { return this._horizontal; }
             set { this._horizontal = value; }
         }
 

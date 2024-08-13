@@ -44,9 +44,9 @@ namespace Amazon.ElastiCache.Model
         /// The configuration for the maximum number of ECPUs the cache can consume per second.
         /// </para>
         /// </summary>
-        public int Maximum
+        public int? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.ElastiCache.Model
         /// per second.
         /// </para>
         /// </summary>
-        public int Minimum
+        public int? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 

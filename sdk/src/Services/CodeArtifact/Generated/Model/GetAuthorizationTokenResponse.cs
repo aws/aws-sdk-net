@@ -61,9 +61,9 @@ namespace Amazon.CodeArtifact.Model
         ///  A timestamp that specifies the date and time the authorization token expires. 
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

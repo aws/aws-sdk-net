@@ -74,7 +74,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreateDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,7 +110,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ServiceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ServiceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -108,9 +108,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -440,10 +440,19 @@ namespace Amazon.EC2.Model
         /// the number of instances to the next whole number. If this value is not specified,
         /// the default is 1.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When specifying weights, the price used in the <c>lowestPrice</c> and <c>priceCapacityOptimized</c>
+        /// allocation strategies is per <i>unit</i> hour (where the instance price is divided
+        /// by the specified weight). However, if all the specified weights are above the requested
+        /// <c>TargetCapacity</c>, resulting in only 1 instance being launched, the price used
+        /// is per <i>instance</i> hour.
+        /// </para>
+        ///  </note>
         /// </summary>
-        public double WeightedCapacity
+        public double? WeightedCapacity
         {
-            get { return this._weightedCapacity.GetValueOrDefault(); }
+            get { return this._weightedCapacity; }
             set { this._weightedCapacity = value; }
         }
 

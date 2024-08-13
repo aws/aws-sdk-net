@@ -74,7 +74,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("revokedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RevokedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

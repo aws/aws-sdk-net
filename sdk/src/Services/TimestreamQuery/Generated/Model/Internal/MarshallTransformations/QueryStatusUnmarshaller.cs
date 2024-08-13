@@ -68,19 +68,19 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CumulativeBytesMetered", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CumulativeBytesMetered = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CumulativeBytesScanned", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CumulativeBytesScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProgressPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ProgressPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

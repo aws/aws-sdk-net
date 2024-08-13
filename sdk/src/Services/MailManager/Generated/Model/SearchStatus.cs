@@ -45,9 +45,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the search completed (if finished).
         /// </para>
         /// </summary>
-        public DateTime CompletionTimestamp
+        public DateTime? CompletionTimestamp
         {
-            get { return this._completionTimestamp.GetValueOrDefault(); }
+            get { return this._completionTimestamp; }
             set { this._completionTimestamp = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the search was submitted.
         /// </para>
         /// </summary>
-        public DateTime SubmissionTimestamp
+        public DateTime? SubmissionTimestamp
         {
-            get { return this._submissionTimestamp.GetValueOrDefault(); }
+            get { return this._submissionTimestamp; }
             set { this._submissionTimestamp = value; }
         }
 

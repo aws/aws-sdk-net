@@ -63,9 +63,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// Indicates whether this function is inherited.
         /// </para>
         /// </summary>
-        public bool IsInherited
+        public bool? IsInherited
         {
-            get { return this._isInherited.GetValueOrDefault(); }
+            get { return this._isInherited; }
             set { this._isInherited = value; }
         }
 

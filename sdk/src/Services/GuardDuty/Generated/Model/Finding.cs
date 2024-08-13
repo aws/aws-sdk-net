@@ -95,9 +95,9 @@ namespace Amazon.GuardDuty.Model
         /// The confidence score for the finding.
         /// </para>
         /// </summary>
-        public double Confidence
+        public double? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Severity
+        public double? Severity
         {
-            get { return this._severity.GetValueOrDefault(); }
+            get { return this._severity; }
             set { this._severity = value; }
         }
 

@@ -78,9 +78,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The creation time of the application.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The last modified time of the application.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The timestamp of the application's most recent successful replication.
         /// </para>
         /// </summary>
-        public DateTime LatestReplicationTime
+        public DateTime? LatestReplicationTime
         {
-            get { return this._latestReplicationTime.GetValueOrDefault(); }
+            get { return this._latestReplicationTime; }
             set { this._latestReplicationTime = value; }
         }
 
@@ -366,9 +366,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The number of server groups present in the application.
         /// </para>
         /// </summary>
-        public int TotalServerGroups
+        public int? TotalServerGroups
         {
-            get { return this._totalServerGroups.GetValueOrDefault(); }
+            get { return this._totalServerGroups; }
             set { this._totalServerGroups = value; }
         }
 
@@ -384,9 +384,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The number of servers present in the application.
         /// </para>
         /// </summary>
-        public int TotalServers
+        public int? TotalServers
         {
-            get { return this._totalServers.GetValueOrDefault(); }
+            get { return this._totalServers; }
             set { this._totalServers = value; }
         }
 

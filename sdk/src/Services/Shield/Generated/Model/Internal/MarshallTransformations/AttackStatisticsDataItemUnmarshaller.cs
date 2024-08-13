@@ -68,7 +68,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AttackCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AttackCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

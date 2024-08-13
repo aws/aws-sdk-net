@@ -57,7 +57,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.Write(requestObject.Key.Value);
             }
 
             if(requestObject.IsSetName())
@@ -69,19 +69,19 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNoEcho())
             {
                 context.Writer.WritePropertyName("noEcho");
-                context.Writer.Write(requestObject.NoEcho);
+                context.Writer.Write(requestObject.NoEcho.Value);
             }
 
             if(requestObject.IsSetOptional())
             {
                 context.Writer.WritePropertyName("optional");
-                context.Writer.Write(requestObject.Optional);
+                context.Writer.Write(requestObject.Optional.Value);
             }
 
             if(requestObject.IsSetQueryable())
             {
                 context.Writer.WritePropertyName("queryable");
-                context.Writer.Write(requestObject.Queryable);
+                context.Writer.Write(requestObject.Queryable.Value);
             }
 
         }

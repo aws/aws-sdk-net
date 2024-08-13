@@ -54,9 +54,9 @@ namespace Amazon.EC2.Model
         /// The index of the default network card, starting at 0.
         /// </para>
         /// </summary>
-        public int DefaultNetworkCardIndex
+        public int? DefaultNetworkCardIndex
         {
-            get { return this._defaultNetworkCardIndex.GetValueOrDefault(); }
+            get { return this._defaultNetworkCardIndex; }
             set { this._defaultNetworkCardIndex = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether Elastic Fabric Adapter (EFA) is supported.
         /// </para>
         /// </summary>
-        public bool EfaSupported
+        public bool? EfaSupported
         {
-            get { return this._efaSupported.GetValueOrDefault(); }
+            get { return this._efaSupported; }
             set { this._efaSupported = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.EC2.Model
         /// used per stream and minimize tail latency of network traffic between EC2 instances.
         /// </para>
         /// </summary>
-        public bool EnaSrdSupported
+        public bool? EnaSrdSupported
         {
-            get { return this._enaSrdSupported.GetValueOrDefault(); }
+            get { return this._enaSrdSupported; }
             set { this._enaSrdSupported = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.EC2.Model
         /// instances.
         /// </para>
         /// </summary>
-        public bool EncryptionInTransitSupported
+        public bool? EncryptionInTransitSupported
         {
-            get { return this._encryptionInTransitSupported.GetValueOrDefault(); }
+            get { return this._encryptionInTransitSupported; }
             set { this._encryptionInTransitSupported = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.EC2.Model
         /// The maximum number of IPv4 addresses per network interface.
         /// </para>
         /// </summary>
-        public int Ipv4AddressesPerInterface
+        public int? Ipv4AddressesPerInterface
         {
-            get { return this._ipv4AddressesPerInterface.GetValueOrDefault(); }
+            get { return this._ipv4AddressesPerInterface; }
             set { this._ipv4AddressesPerInterface = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.EC2.Model
         /// The maximum number of IPv6 addresses per network interface.
         /// </para>
         /// </summary>
-        public int Ipv6AddressesPerInterface
+        public int? Ipv6AddressesPerInterface
         {
-            get { return this._ipv6AddressesPerInterface.GetValueOrDefault(); }
+            get { return this._ipv6AddressesPerInterface; }
             set { this._ipv6AddressesPerInterface = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether IPv6 is supported.
         /// </para>
         /// </summary>
-        public bool Ipv6Supported
+        public bool? Ipv6Supported
         {
-            get { return this._ipv6Supported.GetValueOrDefault(); }
+            get { return this._ipv6Supported; }
             set { this._ipv6Supported = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.EC2.Model
         /// The maximum number of physical network cards that can be allocated to the instance.
         /// </para>
         /// </summary>
-        public int MaximumNetworkCards
+        public int? MaximumNetworkCards
         {
-            get { return this._maximumNetworkCards.GetValueOrDefault(); }
+            get { return this._maximumNetworkCards; }
             set { this._maximumNetworkCards = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.EC2.Model
         /// The maximum number of network interfaces for the instance type.
         /// </para>
         /// </summary>
-        public int MaximumNetworkInterfaces
+        public int? MaximumNetworkInterfaces
         {
-            get { return this._maximumNetworkInterfaces.GetValueOrDefault(); }
+            get { return this._maximumNetworkInterfaces; }
             set { this._maximumNetworkInterfaces = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.NimbleStudio.Model
         /// The ISO timestamp in seconds for when the EULA was accepted.
         /// </para>
         /// </summary>
-        public DateTime AcceptedAt
+        public DateTime? AcceptedAt
         {
-            get { return this._acceptedAt.GetValueOrDefault(); }
+            get { return this._acceptedAt; }
             set { this._acceptedAt = value; }
         }
 

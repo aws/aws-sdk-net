@@ -51,7 +51,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllRegionsEnabled())
             {
                 context.Writer.WritePropertyName("AllRegionsEnabled");
-                context.Writer.Write(requestObject.AllRegionsEnabled);
+                context.Writer.Write(requestObject.AllRegionsEnabled.Value);
             }
 
             if(requestObject.IsSetRegions())

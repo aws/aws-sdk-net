@@ -96,9 +96,9 @@ namespace Amazon.IoT.Model
         ///  Specifies to list only active violations. 
         /// </para>
         /// </summary>
-        public bool IncludeOnlyActiveViolations
+        public bool? IncludeOnlyActiveViolations
         {
-            get { return this._includeOnlyActiveViolations.GetValueOrDefault(); }
+            get { return this._includeOnlyActiveViolations; }
             set { this._includeOnlyActiveViolations = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.IoT.Model
         ///  Specifies to include suppressed alerts. 
         /// </para>
         /// </summary>
-        public bool IncludeSuppressedAlerts
+        public bool? IncludeSuppressedAlerts
         {
-            get { return this._includeSuppressedAlerts.GetValueOrDefault(); }
+            get { return this._includeSuppressedAlerts; }
             set { this._includeSuppressedAlerts = value; }
         }
 

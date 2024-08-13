@@ -68,7 +68,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isSemVer", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSemVer = unmarshaller.Unmarshall(context);
                     continue;
                 }

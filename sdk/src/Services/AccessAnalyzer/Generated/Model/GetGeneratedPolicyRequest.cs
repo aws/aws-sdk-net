@@ -52,9 +52,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// as <c>"Resource":"arn:aws:s3:::${BucketName}"</c> instead of <c>"*"</c>.
         /// </para>
         /// </summary>
-        public bool IncludeResourcePlaceholders
+        public bool? IncludeResourcePlaceholders
         {
-            get { return this._includeResourcePlaceholders.GetValueOrDefault(); }
+            get { return this._includeResourcePlaceholders; }
             set { this._includeResourcePlaceholders = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// have been used recently to create this service-level template.
         /// </para>
         /// </summary>
-        public bool IncludeServiceLevelTemplate
+        public bool? IncludeServiceLevelTemplate
         {
-            get { return this._includeServiceLevelTemplate.GetValueOrDefault(); }
+            get { return this._includeServiceLevelTemplate; }
             set { this._includeServiceLevelTemplate = value; }
         }
 

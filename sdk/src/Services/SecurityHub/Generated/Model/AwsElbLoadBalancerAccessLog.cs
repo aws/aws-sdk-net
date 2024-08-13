@@ -49,9 +49,9 @@ namespace Amazon.SecurityHub.Model
         /// You can publish access logs either every 5 minutes or every 60 minutes.
         /// </para>
         /// </summary>
-        public int EmitInterval
+        public int? EmitInterval
         {
-            get { return this._emitInterval.GetValueOrDefault(); }
+            get { return this._emitInterval; }
             set { this._emitInterval = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether access logs are enabled for the load balancer.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

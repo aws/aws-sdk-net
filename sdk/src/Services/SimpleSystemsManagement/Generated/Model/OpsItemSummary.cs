@@ -58,9 +58,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time a runbook workflow ended. Currently reported only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
-        public DateTime ActualEndTime
+        public DateTime? ActualEndTime
         {
-            get { return this._actualEndTime.GetValueOrDefault(); }
+            get { return this._actualEndTime; }
             set { this._actualEndTime = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
-        public DateTime ActualStartTime
+        public DateTime? ActualStartTime
         {
-            get { return this._actualStartTime.GetValueOrDefault(); }
+            get { return this._actualStartTime; }
             set { this._actualStartTime = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time the OpsItem was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time the OpsItem was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
-        public DateTime PlannedEndTime
+        public DateTime? PlannedEndTime
         {
-            get { return this._plannedEndTime.GetValueOrDefault(); }
+            get { return this._plannedEndTime; }
             set { this._plannedEndTime = value; }
         }
 
@@ -288,9 +288,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// supported only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
-        public DateTime PlannedStartTime
+        public DateTime? PlannedStartTime
         {
-            get { return this._plannedStartTime.GetValueOrDefault(); }
+            get { return this._plannedStartTime; }
             set { this._plannedStartTime = value; }
         }
 
@@ -307,9 +307,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

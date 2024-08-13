@@ -60,7 +60,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("apiGatewayManaged", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ApiGatewayManaged = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -84,7 +84,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -96,13 +96,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("disableExecuteApiEndpoint", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DisableExecuteApiEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("disableSchemaValidation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DisableSchemaValidation = unmarshaller.Unmarshall(context);
                     continue;
                 }

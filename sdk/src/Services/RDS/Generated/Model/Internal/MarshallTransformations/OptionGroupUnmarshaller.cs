@@ -57,13 +57,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AllowsVpcAndNonVpcInstanceMemberships", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AllowsVpcAndNonVpcInstanceMemberships = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CopyTimestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CopyTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }

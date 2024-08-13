@@ -68,7 +68,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowDeferredExecution", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowDeferredExecution = unmarshaller.Unmarshall(context);
                     continue;
                 }

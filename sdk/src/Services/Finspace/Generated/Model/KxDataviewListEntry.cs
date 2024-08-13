@@ -76,9 +76,9 @@ namespace Amazon.Finspace.Model
         /// false. 
         /// </para>
         /// </summary>
-        public bool AutoUpdate
+        public bool? AutoUpdate
         {
-            get { return this._autoUpdate.GetValueOrDefault(); }
+            get { return this._autoUpdate; }
             set { this._autoUpdate = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Finspace.Model
         /// 1, 2021 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.Finspace.Model
         /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTimestamp
+        public DateTime? LastModifiedTimestamp
         {
-            get { return this._lastModifiedTimestamp.GetValueOrDefault(); }
+            get { return this._lastModifiedTimestamp; }
             set { this._lastModifiedTimestamp = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.Finspace.Model
         ///  Returns True if the dataview is created as writeable and False otherwise. 
         /// </para>
         /// </summary>
-        public bool ReadWrite
+        public bool? ReadWrite
         {
-            get { return this._readWrite.GetValueOrDefault(); }
+            get { return this._readWrite; }
             set { this._readWrite = value; }
         }
 

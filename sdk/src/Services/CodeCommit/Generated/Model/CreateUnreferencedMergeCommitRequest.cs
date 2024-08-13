@@ -201,9 +201,9 @@ namespace Amazon.CodeCommit.Model
         /// is created for empty folders. The default is false.
         /// </para>
         /// </summary>
-        public bool KeepEmptyFolders
+        public bool? KeepEmptyFolders
         {
-            get { return this._keepEmptyFolders.GetValueOrDefault(); }
+            get { return this._keepEmptyFolders; }
             set { this._keepEmptyFolders = value; }
         }
 

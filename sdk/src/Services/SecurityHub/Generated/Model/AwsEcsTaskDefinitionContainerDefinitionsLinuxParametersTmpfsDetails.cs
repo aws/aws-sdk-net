@@ -92,9 +92,9 @@ namespace Amazon.SecurityHub.Model
         /// The maximum size (in MiB) of the tmpfs volume.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime AnalysisCompleteTime
+        public DateTime? AnalysisCompleteTime
         {
-            get { return this._analysisCompleteTime.GetValueOrDefault(); }
+            get { return this._analysisCompleteTime; }
             set { this._analysisCompleteTime = value; }
         }
 

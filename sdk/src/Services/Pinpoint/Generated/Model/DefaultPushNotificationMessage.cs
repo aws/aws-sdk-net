@@ -125,9 +125,9 @@ namespace Amazon.Pinpoint.Model
         /// to an in-app notification center.
         /// </para>
         /// </summary>
-        public bool SilentPush
+        public bool? SilentPush
         {
-            get { return this._silentPush.GetValueOrDefault(); }
+            get { return this._silentPush; }
             set { this._silentPush = value; }
         }
 

@@ -77,9 +77,9 @@ namespace Amazon.Pinpoint.Model
         /// as of the time of the request.
         /// </para>
         /// </summary>
-        public int CompletedPieces
+        public int? CompletedPieces
         {
-            get { return this._completedPieces.GetValueOrDefault(); }
+            get { return this._completedPieces; }
             set { this._completedPieces = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.Pinpoint.Model
         /// as of the time of the request.
         /// </para>
         /// </summary>
-        public int FailedPieces
+        public int? FailedPieces
         {
-            get { return this._failedPieces.GetValueOrDefault(); }
+            get { return this._failedPieces; }
             set { this._failedPieces = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.Pinpoint.Model
         /// by the export job, typically because an error, such as a syntax error, occurred.
         /// </para>
         /// </summary>
-        public int TotalFailures
+        public int? TotalFailures
         {
-            get { return this._totalFailures.GetValueOrDefault(); }
+            get { return this._totalFailures; }
             set { this._totalFailures = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.Pinpoint.Model
         /// are part of the export job.
         /// </para>
         /// </summary>
-        public int TotalPieces
+        public int? TotalPieces
         {
-            get { return this._totalPieces.GetValueOrDefault(); }
+            get { return this._totalPieces; }
             set { this._totalPieces = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.Pinpoint.Model
         /// The total number of endpoint definitions that were processed by the export job.
         /// </para>
         /// </summary>
-        public int TotalProcessed
+        public int? TotalProcessed
         {
-            get { return this._totalProcessed.GetValueOrDefault(); }
+            get { return this._totalProcessed; }
             set { this._totalProcessed = value; }
         }
 

@@ -98,8 +98,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The unique identifier of the session. Reuse the same value to continue the same session
-        /// with the knowledge base.
+        /// The unique identifier of the session. When you first make a <c>RetrieveAndGenerate</c>
+        /// request, Amazon Bedrock automatically generates this value. You must reuse this value
+        /// for all subsequent requests in the same conversational session. This value allows
+        /// Amazon Bedrock to maintain context and knowledge from previous interactions. You can't
+        /// explicitly set the <c>sessionId</c> yourself.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]

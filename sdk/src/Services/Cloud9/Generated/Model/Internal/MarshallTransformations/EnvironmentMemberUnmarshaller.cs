@@ -74,7 +74,7 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastAccess", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }

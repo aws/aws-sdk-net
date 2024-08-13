@@ -82,9 +82,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ItemCount
+        public long? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime TableCreationDateTime
+        public DateTime? TableCreationDateTime
         {
-            get { return this._tableCreationDateTime.GetValueOrDefault(); }
+            get { return this._tableCreationDateTime; }
             set { this._tableCreationDateTime = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Size of the table in bytes. Note that this is an approximate value.
         /// </para>
         /// </summary>
-        public long TableSizeBytes
+        public long? TableSizeBytes
         {
-            get { return this._tableSizeBytes.GetValueOrDefault(); }
+            get { return this._tableSizeBytes; }
             set { this._tableSizeBytes = value; }
         }
 

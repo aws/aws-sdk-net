@@ -47,9 +47,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowCleartext
+        public bool? AllowCleartext
         {
-            get { return this._allowCleartext.GetValueOrDefault(); }
+            get { return this._allowCleartext; }
             set { this._allowCleartext = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowDuplicates
+        public bool? AllowDuplicates
         {
-            get { return this._allowDuplicates.GetValueOrDefault(); }
+            get { return this._allowDuplicates; }
             set { this._allowDuplicates = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowJoinsOnColumnsWithDifferentNames
+        public bool? AllowJoinsOnColumnsWithDifferentNames
         {
-            get { return this._allowJoinsOnColumnsWithDifferentNames.GetValueOrDefault(); }
+            get { return this._allowJoinsOnColumnsWithDifferentNames; }
             set { this._allowJoinsOnColumnsWithDifferentNames = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool PreserveNulls
+        public bool? PreserveNulls
         {
-            get { return this._preserveNulls.GetValueOrDefault(); }
+            get { return this._preserveNulls; }
             set { this._preserveNulls = value; }
         }
 

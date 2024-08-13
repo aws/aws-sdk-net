@@ -84,7 +84,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLoginValidityDuration())
             {
                 context.Writer.WritePropertyName("loginValidityDuration");
-                context.Writer.Write(requestObject.LoginValidityDuration);
+                context.Writer.Write(requestObject.LoginValidityDuration.Value);
             }
 
             if(requestObject.IsSetRoleValues())

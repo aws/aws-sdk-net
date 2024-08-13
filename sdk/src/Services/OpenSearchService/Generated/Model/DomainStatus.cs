@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
         private string _accessPolicies;
         private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AdvancedSecurityOptions _advancedSecurityOptions;
+        private AIMLOptionsOutput _aimlOptions;
         private string _arn;
         private AutoTuneOptionsOutput _autoTuneOptions;
         private ChangeProgressDetails _changeProgressDetails;
@@ -121,6 +122,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAdvancedSecurityOptions()
         {
             return this._advancedSecurityOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AIMLOptions. 
+        /// <para>
+        /// Container for parameters required to enable all machine learning features.
+        /// </para>
+        /// </summary>
+        public AIMLOptionsOutput AIMLOptions
+        {
+            get { return this._aimlOptions; }
+            set { this._aimlOptions = value; }
+        }
+
+        // Check to see if AIMLOptions property is set
+        internal bool IsSetAIMLOptions()
+        {
+            return this._aimlOptions != null;
         }
 
         /// <summary>
@@ -223,9 +242,9 @@ namespace Amazon.OpenSearchService.Model
         /// False if domain creation is still in progress.
         /// </para>
         /// </summary>
-        public bool Created
+        public bool? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -243,9 +262,9 @@ namespace Amazon.OpenSearchService.Model
         /// of the domain is no longer returned.
         /// </para>
         /// </summary>
-        public bool Deleted
+        public bool? Deleted
         {
-            get { return this._deleted.GetValueOrDefault(); }
+            get { return this._deleted; }
             set { this._deleted = value; }
         }
 
@@ -573,9 +592,9 @@ namespace Amazon.OpenSearchService.Model
         /// changes. False if the configuration is active.
         /// </para>
         /// </summary>
-        public bool Processing
+        public bool? Processing
         {
-            get { return this._processing.GetValueOrDefault(); }
+            get { return this._processing; }
             set { this._processing = value; }
         }
 
@@ -648,9 +667,9 @@ namespace Amazon.OpenSearchService.Model
         /// is active.
         /// </para>
         /// </summary>
-        public bool UpgradeProcessing
+        public bool? UpgradeProcessing
         {
-            get { return this._upgradeProcessing.GetValueOrDefault(); }
+            get { return this._upgradeProcessing; }
             set { this._upgradeProcessing = value; }
         }
 

@@ -179,9 +179,9 @@ namespace Amazon.PaymentCryptographyData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=12)]
-        public int PinDataLength
+        public int? PinDataLength
         {
-            get { return this._pinDataLength.GetValueOrDefault(); }
+            get { return this._pinDataLength; }
             set { this._pinDataLength = value; }
         }
 

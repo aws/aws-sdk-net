@@ -63,9 +63,9 @@ namespace Amazon.DataSync.Model
         /// compressible.
         /// </para>
         /// </summary>
-        public long BytesCompressed
+        public long? BytesCompressed
         {
-            get { return this._bytesCompressed.GetValueOrDefault(); }
+            get { return this._bytesCompressed; }
             set { this._bytesCompressed = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.DataSync.Model
         /// sent over the network, see <c>BytesCompressed</c>. 
         /// </para>
         /// </summary>
-        public long BytesTransferred
+        public long? BytesTransferred
         {
-            get { return this._bytesTransferred.GetValueOrDefault(); }
+            get { return this._bytesTransferred; }
             set { this._bytesTransferred = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.DataSync.Model
         /// The number of logical bytes written to the destination location.
         /// </para>
         /// </summary>
-        public long BytesWritten
+        public long? BytesWritten
         {
-            get { return this._bytesWritten.GetValueOrDefault(); }
+            get { return this._bytesWritten; }
             set { this._bytesWritten = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.DataSync.Model
         /// The estimated physical number of bytes that will transfer over the network.
         /// </para>
         /// </summary>
-        public long EstimatedBytesToTransfer
+        public long? EstimatedBytesToTransfer
         {
-            get { return this._estimatedBytesToTransfer.GetValueOrDefault(); }
+            get { return this._estimatedBytesToTransfer; }
             set { this._estimatedBytesToTransfer = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.DataSync.Model
         /// is always <c>0</c>.
         /// </para>
         /// </summary>
-        public long EstimatedFilesToDelete
+        public long? EstimatedFilesToDelete
         {
-            get { return this._estimatedFilesToDelete.GetValueOrDefault(); }
+            get { return this._estimatedFilesToDelete; }
             set { this._estimatedFilesToDelete = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.DataSync.Model
         /// needs to be transferred. 
         /// </para>
         /// </summary>
-        public long EstimatedFilesToTransfer
+        public long? EstimatedFilesToTransfer
         {
-            get { return this._estimatedFilesToTransfer.GetValueOrDefault(); }
+            get { return this._estimatedFilesToTransfer; }
             set { this._estimatedFilesToTransfer = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.DataSync.Model
         /// is always <c>0</c>.
         /// </para>
         /// </summary>
-        public long FilesDeleted
+        public long? FilesDeleted
         {
-            get { return this._filesDeleted.GetValueOrDefault(); }
+            get { return this._filesDeleted; }
             set { this._filesDeleted = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.DataSync.Model
         /// The number of files, objects, and directories that DataSync skipped during your transfer.
         /// </para>
         /// </summary>
-        public long FilesSkipped
+        public long? FilesSkipped
         {
-            get { return this._filesSkipped.GetValueOrDefault(); }
+            get { return this._filesSkipped; }
             set { this._filesSkipped = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.DataSync.Model
         /// an exact indication of what transferred or to monitor your task execution.
         /// </para>
         /// </summary>
-        public long FilesTransferred
+        public long? FilesTransferred
         {
-            get { return this._filesTransferred.GetValueOrDefault(); }
+            get { return this._filesTransferred; }
             set { this._filesTransferred = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long FilesVerified
+        public long? FilesVerified
         {
-            get { return this._filesVerified.GetValueOrDefault(); }
+            get { return this._filesVerified; }
             set { this._filesVerified = value; }
         }
 
@@ -384,9 +384,9 @@ namespace Amazon.DataSync.Model
         /// The time when the task execution started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

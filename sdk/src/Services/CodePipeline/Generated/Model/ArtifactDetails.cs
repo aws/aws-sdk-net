@@ -44,9 +44,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5)]
-        public int MaximumCount
+        public int? MaximumCount
         {
-            get { return this._maximumCount.GetValueOrDefault(); }
+            get { return this._maximumCount; }
             set { this._maximumCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5)]
-        public int MinimumCount
+        public int? MinimumCount
         {
-            get { return this._minimumCount.GetValueOrDefault(); }
+            get { return this._minimumCount; }
             set { this._minimumCount = value; }
         }
 

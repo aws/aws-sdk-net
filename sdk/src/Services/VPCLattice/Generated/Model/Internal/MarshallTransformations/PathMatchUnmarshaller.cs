@@ -68,7 +68,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("caseSensitive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CaseSensitive = unmarshaller.Unmarshall(context);
                     continue;
                 }

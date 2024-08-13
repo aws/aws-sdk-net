@@ -57,7 +57,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAncDataSize())
             {
                 context.Writer.WritePropertyName("maxAncDataSize");
-                context.Writer.Write(requestObject.MaxAncDataSize);
+                context.Writer.Write(requestObject.MaxAncDataSize.Value);
             }
 
         }

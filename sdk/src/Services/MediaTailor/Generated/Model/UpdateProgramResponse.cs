@@ -143,9 +143,9 @@ namespace Amazon.MediaTailor.Model
         /// The time the program was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.MediaTailor.Model
         /// The duration of the live program in milliseconds.
         /// </para>
         /// </summary>
-        public long DurationMillis
+        public long? DurationMillis
         {
-            get { return this._durationMillis.GetValueOrDefault(); }
+            get { return this._durationMillis; }
             set { this._durationMillis = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.MediaTailor.Model
         /// The scheduled start time for this Program.
         /// </para>
         /// </summary>
-        public DateTime ScheduledStartTime
+        public DateTime? ScheduledStartTime
         {
-            get { return this._scheduledStartTime.GetValueOrDefault(); }
+            get { return this._scheduledStartTime; }
             set { this._scheduledStartTime = value; }
         }
 

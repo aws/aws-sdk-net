@@ -54,7 +54,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ScalingPlanVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ScalingPlanVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

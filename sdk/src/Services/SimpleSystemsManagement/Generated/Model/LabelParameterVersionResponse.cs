@@ -64,9 +64,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The version of the parameter that has been labeled.
         /// </para>
         /// </summary>
-        public long ParameterVersion
+        public long? ParameterVersion
         {
-            get { return this._parameterVersion.GetValueOrDefault(); }
+            get { return this._parameterVersion; }
             set { this._parameterVersion = value; }
         }
 

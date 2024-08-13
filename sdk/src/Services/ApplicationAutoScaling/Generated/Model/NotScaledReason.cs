@@ -33,7 +33,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// Describes the reason for an activity that isn't scaled (<i>not scaled activity</i>),
     /// in machine-readable format. For help interpreting the not scaled reason details, see
     /// <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling
-    /// activities for Application Auto Scaling</a>.
+    /// activities for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+    /// Guide</i>.
     /// </summary>
     public partial class NotScaledReason
     {
@@ -92,9 +93,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The current capacity.
         /// </para>
         /// </summary>
-        public int CurrentCapacity
+        public int? CurrentCapacity
         {
-            get { return this._currentCapacity.GetValueOrDefault(); }
+            get { return this._currentCapacity; }
             set { this._currentCapacity = value; }
         }
 
@@ -110,9 +111,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The maximum capacity.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -128,9 +129,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The minimum capacity.
         /// </para>
         /// </summary>
-        public int MinCapacity
+        public int? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("result", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Result = unmarshaller.Unmarshall(context);
                     continue;
                 }

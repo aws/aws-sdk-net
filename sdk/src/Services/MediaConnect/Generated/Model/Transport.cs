@@ -69,9 +69,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property MaxBitrate. The smoothing max bitrate (in bps) for RIST,
         /// RTP, and RTP-FEC streams.
         /// </summary>
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property MaxLatency. The maximum latency in milliseconds. This parameter
         /// applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
         /// </summary>
-        public int MaxLatency
+        public int? MaxLatency
         {
-            get { return this._maxLatency.GetValueOrDefault(); }
+            get { return this._maxLatency; }
             set { this._maxLatency = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property MaxSyncBuffer. The size of the buffer (in milliseconds)
         /// to use to sync incoming source data.
         /// </summary>
-        public int MaxSyncBuffer
+        public int? MaxSyncBuffer
         {
-            get { return this._maxSyncBuffer.GetValueOrDefault(); }
+            get { return this._maxSyncBuffer; }
             set { this._maxSyncBuffer = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.MediaConnect.Model
         /// latency of the stream is set to the highest number between the sender’s minimum latency
         /// and the receiver’s minimum latency.
         /// </summary>
-        public int MinLatency
+        public int? MinLatency
         {
-            get { return this._minLatency.GetValueOrDefault(); }
+            get { return this._minLatency; }
             set { this._minLatency = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property SenderControlPort. The port that the flow uses to send
         /// outbound requests to initiate connection with the sender.
         /// </summary>
-        public int SenderControlPort
+        public int? SenderControlPort
         {
-            get { return this._senderControlPort.GetValueOrDefault(); }
+            get { return this._senderControlPort; }
             set { this._senderControlPort = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property SmoothingLatency. The smoothing latency in milliseconds
         /// for RIST, RTP, and RTP-FEC streams.
         /// </summary>
-        public int SmoothingLatency
+        public int? SmoothingLatency
         {
-            get { return this._smoothingLatency.GetValueOrDefault(); }
+            get { return this._smoothingLatency; }
             set { this._smoothingLatency = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property SourceListenerPort. Source port for SRT-caller protocol.
         /// </summary>
-        public int SourceListenerPort
+        public int? SourceListenerPort
         {
-            get { return this._sourceListenerPort.GetValueOrDefault(); }
+            get { return this._sourceListenerPort; }
             set { this._sourceListenerPort = value; }
         }
 

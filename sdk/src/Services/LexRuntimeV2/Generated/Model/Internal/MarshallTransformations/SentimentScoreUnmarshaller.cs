@@ -68,25 +68,25 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("mixed", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Mixed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("negative", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Negative = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("neutral", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Neutral = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("positive", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Positive = unmarshaller.Unmarshall(context);
                     continue;
                 }

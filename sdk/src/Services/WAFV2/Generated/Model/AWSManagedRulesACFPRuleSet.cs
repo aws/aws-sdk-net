@@ -78,9 +78,9 @@ namespace Amazon.WAFV2.Model
         /// creation path. 
         /// </para>
         /// </summary>
-        public bool EnableRegexInPath
+        public bool? EnableRegexInPath
         {
-            get { return this._enableRegexInPath.GetValueOrDefault(); }
+            get { return this._enableRegexInPath; }
             set { this._enableRegexInPath = value; }
         }
 

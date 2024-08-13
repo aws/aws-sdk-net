@@ -99,7 +99,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnhancedImageMetadataEnabled())
                 {
                     context.Writer.WritePropertyName("enhancedImageMetadataEnabled");
-                    context.Writer.Write(publicRequest.EnhancedImageMetadataEnabled);
+                    context.Writer.Write(publicRequest.EnhancedImageMetadataEnabled.Value);
                 }
 
                 if(publicRequest.IsSetExecutionRole())

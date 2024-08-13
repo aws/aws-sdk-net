@@ -63,9 +63,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Whether the local collector can access its Amazon S3 bucket.
         /// </para>
         /// </summary>
-        public bool LocalCollectorS3Access
+        public bool? LocalCollectorS3Access
         {
-            get { return this._localCollectorS3Access.GetValueOrDefault(); }
+            get { return this._localCollectorS3Access; }
             set { this._localCollectorS3Access = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// permissions to access the Fleet Advisor web collector.
         /// </para>
         /// </summary>
-        public bool WebCollectorGrantedRoleBasedAccess
+        public bool? WebCollectorGrantedRoleBasedAccess
         {
-            get { return this._webCollectorGrantedRoleBasedAccess.GetValueOrDefault(); }
+            get { return this._webCollectorGrantedRoleBasedAccess; }
             set { this._webCollectorGrantedRoleBasedAccess = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Whether the web collector can access its Amazon S3 bucket.
         /// </para>
         /// </summary>
-        public bool WebCollectorS3Access
+        public bool? WebCollectorS3Access
         {
-            get { return this._webCollectorS3Access.GetValueOrDefault(); }
+            get { return this._webCollectorS3Access; }
             set { this._webCollectorS3Access = value; }
         }
 

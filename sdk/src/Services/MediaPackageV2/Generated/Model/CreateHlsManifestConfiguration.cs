@@ -110,9 +110,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30)]
-        public int ManifestWindowSeconds
+        public int? ManifestWindowSeconds
         {
-            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            get { return this._manifestWindowSeconds; }
             set { this._manifestWindowSeconds = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1209600)]
-        public int ProgramDateTimeIntervalSeconds
+        public int? ProgramDateTimeIntervalSeconds
         {
-            get { return this._programDateTimeIntervalSeconds.GetValueOrDefault(); }
+            get { return this._programDateTimeIntervalSeconds; }
             set { this._programDateTimeIntervalSeconds = value; }
         }
 

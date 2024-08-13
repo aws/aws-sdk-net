@@ -198,9 +198,9 @@ namespace Amazon.RedshiftServerless.Model
         /// for the admin user account's password. 
         /// </para>
         /// </summary>
-        public bool ManageAdminPassword
+        public bool? ManageAdminPassword
         {
-            get { return this._manageAdminPassword.GetValueOrDefault(); }
+            get { return this._manageAdminPassword; }
             set { this._manageAdminPassword = value; }
         }
 

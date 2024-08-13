@@ -72,7 +72,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMonthlyLimit())
                 {
                     context.Writer.WritePropertyName("MonthlyLimit");
-                    context.Writer.Write(publicRequest.MonthlyLimit);
+                    context.Writer.Write(publicRequest.MonthlyLimit.Value);
                 }
 
                 writer.WriteObjectEnd();

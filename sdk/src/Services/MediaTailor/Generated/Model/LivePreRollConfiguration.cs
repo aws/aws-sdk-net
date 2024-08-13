@@ -67,9 +67,9 @@ namespace Amazon.MediaTailor.Model
         /// of ads that the ADS returns.
         /// </para>
         /// </summary>
-        public int MaxDurationSeconds
+        public int? MaxDurationSeconds
         {
-            get { return this._maxDurationSeconds.GetValueOrDefault(); }
+            get { return this._maxDurationSeconds; }
             set { this._maxDurationSeconds = value; }
         }
 

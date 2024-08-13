@@ -48,9 +48,9 @@ namespace Amazon.Inspector2.Model
         /// a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.
         /// </para>
         /// </summary>
-        public bool ActivateDeepInspection
+        public bool? ActivateDeepInspection
         {
-            get { return this._activateDeepInspection.GetValueOrDefault(); }
+            get { return this._activateDeepInspection; }
             set { this._activateDeepInspection = value; }
         }
 

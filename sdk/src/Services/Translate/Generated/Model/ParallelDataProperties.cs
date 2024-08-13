@@ -77,9 +77,9 @@ namespace Amazon.Translate.Model
         /// The time at which the parallel data resource was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Translate.Model
         /// The number of records unsuccessfully imported from the parallel data input file.
         /// </para>
         /// </summary>
-        public long FailedRecordCount
+        public long? FailedRecordCount
         {
-            get { return this._failedRecordCount.GetValueOrDefault(); }
+            get { return this._failedRecordCount; }
             set { this._failedRecordCount = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.Translate.Model
         /// the tags.
         /// </para>
         /// </summary>
-        public long ImportedDataSize
+        public long? ImportedDataSize
         {
-            get { return this._importedDataSize.GetValueOrDefault(); }
+            get { return this._importedDataSize; }
             set { this._importedDataSize = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.Translate.Model
         /// The number of records successfully imported from the parallel data input file.
         /// </para>
         /// </summary>
-        public long ImportedRecordCount
+        public long? ImportedRecordCount
         {
-            get { return this._importedRecordCount.GetValueOrDefault(); }
+            get { return this._importedRecordCount; }
             set { this._importedRecordCount = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.Translate.Model
         /// The time at which the parallel data resource was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.Translate.Model
         /// The time that the most recent update was attempted.
         /// </para>
         /// </summary>
-        public DateTime LatestUpdateAttemptAt
+        public DateTime? LatestUpdateAttemptAt
         {
-            get { return this._latestUpdateAttemptAt.GetValueOrDefault(); }
+            get { return this._latestUpdateAttemptAt; }
             set { this._latestUpdateAttemptAt = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.Translate.Model
         /// empty target texts, and empty lines.
         /// </para>
         /// </summary>
-        public long SkippedRecordCount
+        public long? SkippedRecordCount
         {
-            get { return this._skippedRecordCount.GetValueOrDefault(); }
+            get { return this._skippedRecordCount; }
             set { this._skippedRecordCount = value; }
         }
 

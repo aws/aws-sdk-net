@@ -23,4 +23,108 @@ using Amazon.Runtime;
 
 namespace Amazon.ControlCatalog
 {
+
+    /// <summary>
+    /// Constants used for properties of type ControlBehavior.
+    /// </summary>
+    public class ControlBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DETECTIVE for ControlBehavior
+        /// </summary>
+        public static readonly ControlBehavior DETECTIVE = new ControlBehavior("DETECTIVE");
+        /// <summary>
+        /// Constant PREVENTIVE for ControlBehavior
+        /// </summary>
+        public static readonly ControlBehavior PREVENTIVE = new ControlBehavior("PREVENTIVE");
+        /// <summary>
+        /// Constant PROACTIVE for ControlBehavior
+        /// </summary>
+        public static readonly ControlBehavior PROACTIVE = new ControlBehavior("PROACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlBehavior FindValue(string value)
+        {
+            return FindValue<ControlBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ControlScope.
+    /// </summary>
+    public class ControlScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLOBAL for ControlScope
+        /// </summary>
+        public static readonly ControlScope GLOBAL = new ControlScope("GLOBAL");
+        /// <summary>
+        /// Constant REGIONAL for ControlScope
+        /// </summary>
+        public static readonly ControlScope REGIONAL = new ControlScope("REGIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlScope FindValue(string value)
+        {
+            return FindValue<ControlScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

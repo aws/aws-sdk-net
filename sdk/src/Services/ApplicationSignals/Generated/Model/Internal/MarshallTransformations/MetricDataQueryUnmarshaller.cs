@@ -98,13 +98,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Period", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Period = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReturnData", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReturnData = unmarshaller.Unmarshall(context);
                     continue;
                 }

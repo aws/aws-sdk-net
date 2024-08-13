@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to enable private DNS only for inbound endpoints.
         /// </para>
         /// </summary>
-        public bool PrivateDnsOnlyForInboundResolverEndpoint
+        public bool? PrivateDnsOnlyForInboundResolverEndpoint
         {
-            get { return this._privateDnsOnlyForInboundResolverEndpoint.GetValueOrDefault(); }
+            get { return this._privateDnsOnlyForInboundResolverEndpoint; }
             set { this._privateDnsOnlyForInboundResolverEndpoint = value; }
         }
 

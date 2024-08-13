@@ -76,7 +76,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -88,7 +88,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSensitivityThreshold())
                 {
                     context.Writer.WritePropertyName("SensitivityThreshold");
-                    context.Writer.Write(publicRequest.SensitivityThreshold);
+                    context.Writer.Write(publicRequest.SensitivityThreshold.Value);
                 }
 
                 writer.WriteObjectEnd();

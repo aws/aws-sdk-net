@@ -93,9 +93,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether to autogenerate forms in the code generation job.
         /// </para>
         /// </summary>
-        public bool AutoGenerateForms
+        public bool? AutoGenerateForms
         {
-            get { return this._autoGenerateForms.GetValueOrDefault(); }
+            get { return this._autoGenerateForms; }
             set { this._autoGenerateForms = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The time that the code generation job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The time that the code generation job was modified.
         /// </para>
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

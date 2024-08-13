@@ -51,9 +51,9 @@ namespace Amazon.Pinpoint.Model
         /// a 24-hour period. The maximum value is 100.
         /// </para>
         /// </summary>
-        public int Daily
+        public int? Daily
         {
-            get { return this._daily.GetValueOrDefault(); }
+            get { return this._daily; }
             set { this._daily = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Pinpoint.Model
         /// after the scheduled start time for the campaign. The minimum value is 60 seconds.
         /// </para>
         /// </summary>
-        public int MaximumDuration
+        public int? MaximumDuration
         {
-            get { return this._maximumDuration.GetValueOrDefault(); }
+            get { return this._maximumDuration; }
             set { this._maximumDuration = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Pinpoint.Model
         /// send each second. The minimum value is 1. The maximum value is 20,000.
         /// </para>
         /// </summary>
-        public int MessagesPerSecond
+        public int? MessagesPerSecond
         {
-            get { return this._messagesPerSecond.GetValueOrDefault(); }
+            get { return this._messagesPerSecond; }
             set { this._messagesPerSecond = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.Pinpoint.Model
         /// The maximum total number of messages that the campaign can send per user session.
         /// </para>
         /// </summary>
-        public int Session
+        public int? Session
         {
-            get { return this._session.GetValueOrDefault(); }
+            get { return this._session; }
             set { this._session = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Pinpoint.Model
         /// of the campaign. The maximum value is 100.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

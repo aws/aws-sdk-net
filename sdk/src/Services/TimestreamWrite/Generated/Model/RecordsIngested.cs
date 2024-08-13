@@ -44,9 +44,9 @@ namespace Amazon.TimestreamWrite.Model
         /// Count of records ingested into the magnetic store.
         /// </para>
         /// </summary>
-        public int MagneticStore
+        public int? MagneticStore
         {
-            get { return this._magneticStore.GetValueOrDefault(); }
+            get { return this._magneticStore; }
             set { this._magneticStore = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.TimestreamWrite.Model
         /// Count of records ingested into the memory store.
         /// </para>
         /// </summary>
-        public int MemoryStore
+        public int? MemoryStore
         {
-            get { return this._memoryStore.GetValueOrDefault(); }
+            get { return this._memoryStore; }
             set { this._memoryStore = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.TimestreamWrite.Model
         /// Total count of successfully ingested records.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

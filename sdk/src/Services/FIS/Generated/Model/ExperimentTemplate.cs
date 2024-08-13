@@ -91,9 +91,9 @@ namespace Amazon.FIS.Model
         /// The time the experiment template was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.FIS.Model
         /// The time the experiment template was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.FIS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TargetAccountConfigurationsCount
+        public long? TargetAccountConfigurationsCount
         {
-            get { return this._targetAccountConfigurationsCount.GetValueOrDefault(); }
+            get { return this._targetAccountConfigurationsCount; }
             set { this._targetAccountConfigurationsCount = value; }
         }
 

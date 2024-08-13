@@ -74,13 +74,13 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CopyTags", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreateInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CreateInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExtendDeletion", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExtendDeletion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -146,7 +146,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetainInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetainInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,67 +51,67 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeCredit())
             {
                 context.Writer.WritePropertyName("IncludeCredit");
-                context.Writer.Write(requestObject.IncludeCredit);
+                context.Writer.Write(requestObject.IncludeCredit.Value);
             }
 
             if(requestObject.IsSetIncludeDiscount())
             {
                 context.Writer.WritePropertyName("IncludeDiscount");
-                context.Writer.Write(requestObject.IncludeDiscount);
+                context.Writer.Write(requestObject.IncludeDiscount.Value);
             }
 
             if(requestObject.IsSetIncludeOtherSubscription())
             {
                 context.Writer.WritePropertyName("IncludeOtherSubscription");
-                context.Writer.Write(requestObject.IncludeOtherSubscription);
+                context.Writer.Write(requestObject.IncludeOtherSubscription.Value);
             }
 
             if(requestObject.IsSetIncludeRecurring())
             {
                 context.Writer.WritePropertyName("IncludeRecurring");
-                context.Writer.Write(requestObject.IncludeRecurring);
+                context.Writer.Write(requestObject.IncludeRecurring.Value);
             }
 
             if(requestObject.IsSetIncludeRefund())
             {
                 context.Writer.WritePropertyName("IncludeRefund");
-                context.Writer.Write(requestObject.IncludeRefund);
+                context.Writer.Write(requestObject.IncludeRefund.Value);
             }
 
             if(requestObject.IsSetIncludeSubscription())
             {
                 context.Writer.WritePropertyName("IncludeSubscription");
-                context.Writer.Write(requestObject.IncludeSubscription);
+                context.Writer.Write(requestObject.IncludeSubscription.Value);
             }
 
             if(requestObject.IsSetIncludeSupport())
             {
                 context.Writer.WritePropertyName("IncludeSupport");
-                context.Writer.Write(requestObject.IncludeSupport);
+                context.Writer.Write(requestObject.IncludeSupport.Value);
             }
 
             if(requestObject.IsSetIncludeTax())
             {
                 context.Writer.WritePropertyName("IncludeTax");
-                context.Writer.Write(requestObject.IncludeTax);
+                context.Writer.Write(requestObject.IncludeTax.Value);
             }
 
             if(requestObject.IsSetIncludeUpfront())
             {
                 context.Writer.WritePropertyName("IncludeUpfront");
-                context.Writer.Write(requestObject.IncludeUpfront);
+                context.Writer.Write(requestObject.IncludeUpfront.Value);
             }
 
             if(requestObject.IsSetUseAmortized())
             {
                 context.Writer.WritePropertyName("UseAmortized");
-                context.Writer.Write(requestObject.UseAmortized);
+                context.Writer.Write(requestObject.UseAmortized.Value);
             }
 
             if(requestObject.IsSetUseBlended())
             {
                 context.Writer.WritePropertyName("UseBlended");
-                context.Writer.Write(requestObject.UseBlended);
+                context.Writer.Write(requestObject.UseBlended.Value);
             }
 
         }

@@ -63,9 +63,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The percentage of emails that were sent from the domain that were read by their recipients.
         /// </para>
         /// </summary>
-        public double ReadRatePercent
+        public double? ReadRatePercent
         {
-            get { return this._readRatePercent.GetValueOrDefault(); }
+            get { return this._readRatePercent; }
             set { this._readRatePercent = value; }
         }
 

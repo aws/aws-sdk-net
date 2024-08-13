@@ -53,9 +53,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.IoT.Model
         /// When true, list things in this thing group and in all child groups as well.
         /// </para>
         /// </summary>
-        public bool Recursive
+        public bool? Recursive
         {
-            get { return this._recursive.GetValueOrDefault(); }
+            get { return this._recursive; }
             set { this._recursive = value; }
         }
 

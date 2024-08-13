@@ -158,9 +158,9 @@ namespace Amazon.DataExchange.Model
         /// The date and time that the upload URL expires, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime ApiSpecificationDownloadUrlExpiresAt
+        public DateTime? ApiSpecificationDownloadUrlExpiresAt
         {
-            get { return this._apiSpecificationDownloadUrlExpiresAt.GetValueOrDefault(); }
+            get { return this._apiSpecificationDownloadUrlExpiresAt; }
             set { this._apiSpecificationDownloadUrlExpiresAt = value; }
         }
 

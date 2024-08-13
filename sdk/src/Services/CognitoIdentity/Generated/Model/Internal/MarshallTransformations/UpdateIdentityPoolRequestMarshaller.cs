@@ -72,13 +72,13 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowClassicFlow())
                 {
                     context.Writer.WritePropertyName("AllowClassicFlow");
-                    context.Writer.Write(publicRequest.AllowClassicFlow);
+                    context.Writer.Write(publicRequest.AllowClassicFlow.Value);
                 }
 
                 if(publicRequest.IsSetAllowUnauthenticatedIdentities())
                 {
                     context.Writer.WritePropertyName("AllowUnauthenticatedIdentities");
-                    context.Writer.Write(publicRequest.AllowUnauthenticatedIdentities);
+                    context.Writer.Write(publicRequest.AllowUnauthenticatedIdentities.Value);
                 }
 
                 if(publicRequest.IsSetCognitoIdentityProviders())

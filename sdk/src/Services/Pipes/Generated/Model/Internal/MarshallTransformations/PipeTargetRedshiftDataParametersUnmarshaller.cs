@@ -98,7 +98,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WithEvent", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.WithEvent = unmarshaller.Unmarshall(context);
                     continue;
                 }

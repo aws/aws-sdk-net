@@ -52,9 +52,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Activate
+        public bool? Activate
         {
-            get { return this._activate.GetValueOrDefault(); }
+            get { return this._activate; }
             set { this._activate = value; }
         }
 

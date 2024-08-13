@@ -68,7 +68,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("associationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AssociationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

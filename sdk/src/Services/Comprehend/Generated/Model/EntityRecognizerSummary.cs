@@ -46,9 +46,9 @@ namespace Amazon.Comprehend.Model
         ///  The time that the latest entity recognizer version was submitted for processing.
         /// </para>
         /// </summary>
-        public DateTime LatestVersionCreatedAt
+        public DateTime? LatestVersionCreatedAt
         {
-            get { return this._latestVersionCreatedAt.GetValueOrDefault(); }
+            get { return this._latestVersionCreatedAt; }
             set { this._latestVersionCreatedAt = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Comprehend.Model
         ///  The number of versions you created.
         /// </para>
         /// </summary>
-        public int NumberOfVersions
+        public int? NumberOfVersions
         {
-            get { return this._numberOfVersions.GetValueOrDefault(); }
+            get { return this._numberOfVersions; }
             set { this._numberOfVersions = value; }
         }
 

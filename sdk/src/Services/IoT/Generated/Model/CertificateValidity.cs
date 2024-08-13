@@ -43,9 +43,9 @@ namespace Amazon.IoT.Model
         /// The certificate is not valid after this date.
         /// </para>
         /// </summary>
-        public DateTime NotAfter
+        public DateTime? NotAfter
         {
-            get { return this._notAfter.GetValueOrDefault(); }
+            get { return this._notAfter; }
             set { this._notAfter = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.IoT.Model
         /// The certificate is not valid before this date.
         /// </para>
         /// </summary>
-        public DateTime NotBefore
+        public DateTime? NotBefore
         {
-            get { return this._notBefore.GetValueOrDefault(); }
+            get { return this._notBefore; }
             set { this._notBefore = value; }
         }
 

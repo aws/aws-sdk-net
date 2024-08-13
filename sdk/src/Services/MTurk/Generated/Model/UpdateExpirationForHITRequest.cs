@@ -46,9 +46,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExpireAt
+        public DateTime? ExpireAt
         {
-            get { return this._expireAt.GetValueOrDefault(); }
+            get { return this._expireAt; }
             set { this._expireAt = value; }
         }
 

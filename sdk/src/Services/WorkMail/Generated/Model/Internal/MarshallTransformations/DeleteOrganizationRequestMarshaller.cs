@@ -83,13 +83,13 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteDirectory())
                 {
                     context.Writer.WritePropertyName("DeleteDirectory");
-                    context.Writer.Write(publicRequest.DeleteDirectory);
+                    context.Writer.Write(publicRequest.DeleteDirectory.Value);
                 }
 
                 if(publicRequest.IsSetForceDelete())
                 {
                     context.Writer.WritePropertyName("ForceDelete");
-                    context.Writer.Write(publicRequest.ForceDelete);
+                    context.Writer.Write(publicRequest.ForceDelete.Value);
                 }
 
                 if(publicRequest.IsSetOrganizationId())

@@ -51,9 +51,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=101)]
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -334,9 +334,9 @@ namespace Amazon.GameLift.Model
         /// time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime EventTime
+        public DateTime? EventTime
         {
-            get { return this._eventTime.GetValueOrDefault(); }
+            get { return this._eventTime; }
             set { this._eventTime = value; }
         }
 

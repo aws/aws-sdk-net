@@ -66,9 +66,9 @@ namespace Amazon.CloudTrail.Model
         /// The time stamp of the most recent attempt to ingest events on the channel.
         /// </para>
         /// </summary>
-        public DateTime LatestIngestionAttemptTime
+        public DateTime? LatestIngestionAttemptTime
         {
-            get { return this._latestIngestionAttemptTime.GetValueOrDefault(); }
+            get { return this._latestIngestionAttemptTime; }
             set { this._latestIngestionAttemptTime = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.CloudTrail.Model
         /// The time stamp of the most recent successful ingestion of events for the channel.
         /// </para>
         /// </summary>
-        public DateTime LatestIngestionSuccessTime
+        public DateTime? LatestIngestionSuccessTime
         {
-            get { return this._latestIngestionSuccessTime.GetValueOrDefault(); }
+            get { return this._latestIngestionSuccessTime; }
             set { this._latestIngestionSuccessTime = value; }
         }
 

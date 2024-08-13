@@ -98,37 +98,37 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator);
+                context.Writer.Write(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator);
+                context.Writer.Write(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetGopClosedCadence())
             {
                 context.Writer.WritePropertyName("gopClosedCadence");
-                context.Writer.Write(requestObject.GopClosedCadence);
+                context.Writer.Write(requestObject.GopClosedCadence.Value);
             }
 
             if(requestObject.IsSetGopNumBFrames())
             {
                 context.Writer.WritePropertyName("gopNumBFrames");
-                context.Writer.Write(requestObject.GopNumBFrames);
+                context.Writer.Write(requestObject.GopNumBFrames.Value);
             }
 
             if(requestObject.IsSetGopSize())
             {
                 context.Writer.WritePropertyName("gopSize");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.GopSize);
+                    context.Writer.Write(requestObject.GopSize.Value);
                 }
             }
 

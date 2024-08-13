@@ -62,13 +62,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinConfidence())
             {
                 context.Writer.WritePropertyName("MinConfidence");
-                if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinConfidence.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinConfidence.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinConfidence);
+                    context.Writer.Write(requestObject.MinConfidence.Value);
                 }
             }
 

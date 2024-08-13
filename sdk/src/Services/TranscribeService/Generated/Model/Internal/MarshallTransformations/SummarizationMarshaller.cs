@@ -51,7 +51,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGenerateAbstractiveSummary())
             {
                 context.Writer.WritePropertyName("GenerateAbstractiveSummary");
-                context.Writer.Write(requestObject.GenerateAbstractiveSummary);
+                context.Writer.Write(requestObject.GenerateAbstractiveSummary.Value);
             }
 
         }

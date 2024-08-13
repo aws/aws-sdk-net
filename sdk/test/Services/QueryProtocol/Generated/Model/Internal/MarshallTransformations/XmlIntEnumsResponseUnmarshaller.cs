@@ -84,19 +84,19 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("intEnum1", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.IntEnum1 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("intEnum2", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.IntEnum2 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("intEnum3", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.IntEnum3 = unmarshaller.Unmarshall(context);
                         continue;
                     }

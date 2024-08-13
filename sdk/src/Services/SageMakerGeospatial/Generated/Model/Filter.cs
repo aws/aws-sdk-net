@@ -45,9 +45,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// The maximum value of the filter.
         /// </para>
         /// </summary>
-        public float Maximum
+        public float? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// The minimum value of the filter.
         /// </para>
         /// </summary>
-        public float Minimum
+        public float? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 

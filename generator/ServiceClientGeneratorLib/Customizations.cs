@@ -1598,7 +1598,7 @@ namespace ServiceClientGenerator
                 /// any code that would be valid within the Amazon[ServiceName]Client
                 /// class for the ServiceName where the override is being made. For 
                 /// example, a valid condition is: 
-                /// "if(this.Config.RetryMode == RequestRetryMode.Legacy)"
+                /// "if(this.Config.RetryMode == RequestRetryMode.Standard)"
                 /// </summary>
                 public string Condition { get; set; }
 

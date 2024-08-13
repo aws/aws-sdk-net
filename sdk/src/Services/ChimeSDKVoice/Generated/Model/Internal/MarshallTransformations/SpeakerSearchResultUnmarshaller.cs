@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ConfidenceScore", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ConfidenceScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

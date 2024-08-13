@@ -79,7 +79,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("retryAfter", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RetryAfter = unmarshaller.Unmarshall(context);
                     continue;
                 }

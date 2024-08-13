@@ -78,13 +78,13 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeOrganizationInfo())
                 {
                     context.Writer.WritePropertyName("includeOrganizationInfo");
-                    context.Writer.Write(publicRequest.IncludeOrganizationInfo);
+                    context.Writer.Write(publicRequest.IncludeOrganizationInfo.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

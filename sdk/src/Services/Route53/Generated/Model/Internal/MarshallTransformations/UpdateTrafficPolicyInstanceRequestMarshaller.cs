@@ -67,13 +67,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("UpdateTrafficPolicyInstanceRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetTTL())
-                    xmlWriter.WriteElementString("TTL", StringUtils.FromLong(publicRequest.TTL));
+                    xmlWriter.WriteElementString("TTL", StringUtils.FromLong(publicRequest.TTL.Value));
 
                 if(publicRequest.IsSetTrafficPolicyId())
                     xmlWriter.WriteElementString("TrafficPolicyId", StringUtils.FromString(publicRequest.TrafficPolicyId));
 
                 if(publicRequest.IsSetTrafficPolicyVersion())
-                    xmlWriter.WriteElementString("TrafficPolicyVersion", StringUtils.FromInt(publicRequest.TrafficPolicyVersion));
+                    xmlWriter.WriteElementString("TrafficPolicyVersion", StringUtils.FromInt(publicRequest.TrafficPolicyVersion.Value));
 
 
                 xmlWriter.WriteEndElement();

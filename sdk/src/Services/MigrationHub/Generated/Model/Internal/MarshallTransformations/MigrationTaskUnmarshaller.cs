@@ -92,7 +92,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UpdateDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

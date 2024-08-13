@@ -51,7 +51,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOccurrencesThreshold())
             {
                 context.Writer.WritePropertyName("occurrencesThreshold");
-                context.Writer.Write(requestObject.OccurrencesThreshold);
+                context.Writer.Write(requestObject.OccurrencesThreshold.Value);
             }
 
             if(requestObject.IsSetSeverity())

@@ -51,7 +51,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRunBackTestMode())
             {
                 context.Writer.WritePropertyName("RunBackTestMode");
-                context.Writer.Write(requestObject.RunBackTestMode);
+                context.Writer.Write(requestObject.RunBackTestMode.Value);
             }
 
         }

@@ -87,7 +87,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoDeploy())
                 {
                     context.Writer.WritePropertyName("autoDeploy");
-                    context.Writer.Write(publicRequest.AutoDeploy);
+                    context.Writer.Write(publicRequest.AutoDeploy.Value);
                 }
 
                 if(publicRequest.IsSetClientCertificateId())

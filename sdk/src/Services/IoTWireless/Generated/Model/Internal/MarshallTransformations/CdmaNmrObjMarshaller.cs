@@ -51,25 +51,25 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseStationId())
             {
                 context.Writer.WritePropertyName("BaseStationId");
-                context.Writer.Write(requestObject.BaseStationId);
+                context.Writer.Write(requestObject.BaseStationId.Value);
             }
 
             if(requestObject.IsSetCdmaChannel())
             {
                 context.Writer.WritePropertyName("CdmaChannel");
-                context.Writer.Write(requestObject.CdmaChannel);
+                context.Writer.Write(requestObject.CdmaChannel.Value);
             }
 
             if(requestObject.IsSetPilotPower())
             {
                 context.Writer.WritePropertyName("PilotPower");
-                context.Writer.Write(requestObject.PilotPower);
+                context.Writer.Write(requestObject.PilotPower.Value);
             }
 
             if(requestObject.IsSetPnOffset())
             {
                 context.Writer.WritePropertyName("PnOffset");
-                context.Writer.Write(requestObject.PnOffset);
+                context.Writer.Write(requestObject.PnOffset.Value);
             }
 
         }

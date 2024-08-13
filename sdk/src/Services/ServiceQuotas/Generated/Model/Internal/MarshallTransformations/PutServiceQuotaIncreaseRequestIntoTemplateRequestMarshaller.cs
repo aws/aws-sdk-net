@@ -78,13 +78,13 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDesiredValue())
                 {
                     context.Writer.WritePropertyName("DesiredValue");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DesiredValue))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.DesiredValue.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DesiredValue));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.DesiredValue.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.DesiredValue);
+                        context.Writer.Write(publicRequest.DesiredValue.Value);
                     }
                 }
 

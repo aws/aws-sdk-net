@@ -49,9 +49,9 @@ namespace Amazon.Batch.Model
         /// than its parent process. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AllowPrivilegeEscalation
+        public bool? AllowPrivilegeEscalation
         {
-            get { return this._allowPrivilegeEscalation.GetValueOrDefault(); }
+            get { return this._allowPrivilegeEscalation; }
             set { this._allowPrivilegeEscalation = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.Batch.Model
         /// pod security policies</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
-        public bool Privileged
+        public bool? Privileged
         {
-            get { return this._privileged.GetValueOrDefault(); }
+            get { return this._privileged; }
             set { this._privileged = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.Batch.Model
         /// and file systems pod security policies</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
-        public bool ReadOnlyRootFilesystem
+        public bool? ReadOnlyRootFilesystem
         {
-            get { return this._readOnlyRootFilesystem.GetValueOrDefault(); }
+            get { return this._readOnlyRootFilesystem; }
             set { this._readOnlyRootFilesystem = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.Batch.Model
         /// and groups pod security policies</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
-        public long RunAsGroup
+        public long? RunAsGroup
         {
-            get { return this._runAsGroup.GetValueOrDefault(); }
+            get { return this._runAsGroup; }
             set { this._runAsGroup = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.Batch.Model
         /// and groups pod security policies</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
-        public bool RunAsNonRoot
+        public bool? RunAsNonRoot
         {
-            get { return this._runAsNonRoot.GetValueOrDefault(); }
+            get { return this._runAsNonRoot; }
             set { this._runAsNonRoot = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.Batch.Model
         /// and groups pod security policies</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
-        public long RunAsUser
+        public long? RunAsUser
         {
-            get { return this._runAsUser.GetValueOrDefault(); }
+            get { return this._runAsUser; }
             set { this._runAsUser = value; }
         }
 

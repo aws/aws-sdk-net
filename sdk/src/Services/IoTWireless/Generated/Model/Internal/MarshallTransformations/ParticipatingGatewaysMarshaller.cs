@@ -73,7 +73,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTransmissionInterval())
             {
                 context.Writer.WritePropertyName("TransmissionInterval");
-                context.Writer.Write(requestObject.TransmissionInterval);
+                context.Writer.Write(requestObject.TransmissionInterval.Value);
             }
 
         }

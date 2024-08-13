@@ -68,7 +68,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cloudMetricEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CloudMetricEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

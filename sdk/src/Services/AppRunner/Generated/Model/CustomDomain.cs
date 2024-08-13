@@ -86,9 +86,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableWWWSubdomain
+        public bool? EnableWWWSubdomain
         {
-            get { return this._enableWWWSubdomain.GetValueOrDefault(); }
+            get { return this._enableWWWSubdomain; }
             set { this._enableWWWSubdomain = value; }
         }
 

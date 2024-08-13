@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociatePublicIpAddress())
             {
                 context.Writer.WritePropertyName("AssociatePublicIpAddress");
-                context.Writer.Write(requestObject.AssociatePublicIpAddress);
+                context.Writer.Write(requestObject.AssociatePublicIpAddress.Value);
             }
 
             if(requestObject.IsSetBlockDeviceMappings())
@@ -96,7 +96,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEbsOptimized())
             {
                 context.Writer.WritePropertyName("EbsOptimized");
-                context.Writer.Write(requestObject.EbsOptimized);
+                context.Writer.Write(requestObject.EbsOptimized.Value);
             }
 
             if(requestObject.IsSetIamInstanceProfile())

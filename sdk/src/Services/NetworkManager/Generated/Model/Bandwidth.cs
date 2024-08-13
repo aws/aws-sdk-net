@@ -43,9 +43,9 @@ namespace Amazon.NetworkManager.Model
         /// Download speed in Mbps.
         /// </para>
         /// </summary>
-        public int DownloadSpeed
+        public int? DownloadSpeed
         {
-            get { return this._downloadSpeed.GetValueOrDefault(); }
+            get { return this._downloadSpeed; }
             set { this._downloadSpeed = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.NetworkManager.Model
         /// Upload speed in Mbps.
         /// </para>
         /// </summary>
-        public int UploadSpeed
+        public int? UploadSpeed
         {
-            get { return this._uploadSpeed.GetValueOrDefault(); }
+            get { return this._uploadSpeed; }
             set { this._uploadSpeed = value; }
         }
 

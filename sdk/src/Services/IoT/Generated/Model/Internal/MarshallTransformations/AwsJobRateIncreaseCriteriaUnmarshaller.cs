@@ -68,13 +68,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("numberOfNotifiedThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfNotifiedThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfSucceededThings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSucceededThings = unmarshaller.Unmarshall(context);
                     continue;
                 }

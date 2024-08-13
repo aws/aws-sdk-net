@@ -46,13 +46,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(getObjectRequest.EtagToMatch));
 
             if (getObjectRequest.IsSetModifiedSinceDateUtc())
-                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.ModifiedSinceDateUtc));
+                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.ModifiedSinceDateUtc.Value));
 
             if (getObjectRequest.IsSetEtagToNotMatch())
                 request.Headers.Add(HeaderKeys.IfNoneMatchHeader, S3Transforms.ToStringValue(getObjectRequest.EtagToNotMatch));
             
             if(getObjectRequest.IsSetUnmodifiedSinceDateUtc())
-                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.UnmodifiedSinceDateUtc));
+                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.UnmodifiedSinceDateUtc.Value));
             
             if(getObjectRequest.IsSetByteRange())
                 request.Headers.Add(HeaderKeys.RangeHeader, getObjectRequest.ByteRange.FormattedByteRange);
@@ -81,8 +81,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(getObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectRequest.Key");
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(getObjectRequest.Key));
+
+            request.ResourcePath = "/{Key+}";
+            request.AddPathResource("{Key+}",S3Transforms.ToStringValue(getObjectRequest.Key));
 
             var headerOverrides = getObjectRequest.ResponseHeaderOverrides;
             if (headerOverrides.CacheControl != null)
@@ -96,7 +97,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (headerOverrides.ContentType != null)
                 request.Parameters.Add("response-content-type", S3Transforms.ToStringValue(headerOverrides.ContentType));
             if (getObjectRequest.IsSetResponseExpiresUtc())
-                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(getObjectRequest.ResponseExpiresUtc));
+                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(getObjectRequest.ResponseExpiresUtc.Value));
             if (getObjectRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(getObjectRequest.VersionId));
             if (getObjectRequest.IsSetPartNumber())

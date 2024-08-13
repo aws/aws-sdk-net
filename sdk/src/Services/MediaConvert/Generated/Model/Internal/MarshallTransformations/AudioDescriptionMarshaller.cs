@@ -79,7 +79,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioType())
             {
                 context.Writer.WritePropertyName("audioType");
-                context.Writer.Write(requestObject.AudioType);
+                context.Writer.Write(requestObject.AudioType.Value);
             }
 
             if(requestObject.IsSetAudioTypeControl())

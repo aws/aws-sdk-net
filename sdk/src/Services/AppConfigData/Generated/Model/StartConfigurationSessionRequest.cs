@@ -109,9 +109,9 @@ namespace Amazon.AppConfigData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=86400)]
-        public int RequiredMinimumPollIntervalInSeconds
+        public int? RequiredMinimumPollIntervalInSeconds
         {
-            get { return this._requiredMinimumPollIntervalInSeconds.GetValueOrDefault(); }
+            get { return this._requiredMinimumPollIntervalInSeconds; }
             set { this._requiredMinimumPollIntervalInSeconds = value; }
         }
 

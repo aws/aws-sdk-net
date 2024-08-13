@@ -45,9 +45,9 @@ namespace Amazon.Appflow.Model
         ///  Indicates if the field can be queried. 
         /// </para>
         /// </summary>
-        public bool IsQueryable
+        public bool? IsQueryable
         {
-            get { return this._isQueryable.GetValueOrDefault(); }
+            get { return this._isQueryable; }
             set { this._isQueryable = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Appflow.Model
         ///  Indicates whether the field can be returned in a search result. 
         /// </para>
         /// </summary>
-        public bool IsRetrievable
+        public bool? IsRetrievable
         {
-            get { return this._isRetrievable.GetValueOrDefault(); }
+            get { return this._isRetrievable; }
             set { this._isRetrievable = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Appflow.Model
         /// Indicates if this timestamp field can be used for incremental queries.
         /// </para>
         /// </summary>
-        public bool IsTimestampFieldForIncrementalQueries
+        public bool? IsTimestampFieldForIncrementalQueries
         {
-            get { return this._isTimestampFieldForIncrementalQueries.GetValueOrDefault(); }
+            get { return this._isTimestampFieldForIncrementalQueries; }
             set { this._isTimestampFieldForIncrementalQueries = value; }
         }
 

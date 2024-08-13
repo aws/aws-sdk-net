@@ -45,9 +45,9 @@ namespace Amazon.Kendra.Model
         /// The zero-based location in the response string or text where the corrected word starts.
         /// </para>
         /// </summary>
-        public int BeginOffset
+        public int? BeginOffset
         {
-            get { return this._beginOffset.GetValueOrDefault(); }
+            get { return this._beginOffset; }
             set { this._beginOffset = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Kendra.Model
         /// The zero-based location in the response string or text where the corrected word ends.
         /// </para>
         /// </summary>
-        public int EndOffset
+        public int? EndOffset
         {
-            get { return this._endOffset.GetValueOrDefault(); }
+            get { return this._endOffset; }
             set { this._endOffset = value; }
         }
 

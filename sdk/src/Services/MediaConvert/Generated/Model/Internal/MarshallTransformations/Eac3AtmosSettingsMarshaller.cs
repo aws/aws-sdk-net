@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                context.Writer.Write(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetBitstreamMode())
@@ -99,52 +99,52 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLoRoCenterMixLevel())
             {
                 context.Writer.WritePropertyName("loRoCenterMixLevel");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoCenterMixLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoCenterMixLevel));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LoRoCenterMixLevel);
+                    context.Writer.Write(requestObject.LoRoCenterMixLevel.Value);
                 }
             }
 
             if(requestObject.IsSetLoRoSurroundMixLevel())
             {
                 context.Writer.WritePropertyName("loRoSurroundMixLevel");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoSurroundMixLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoSurroundMixLevel));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LoRoSurroundMixLevel);
+                    context.Writer.Write(requestObject.LoRoSurroundMixLevel.Value);
                 }
             }
 
             if(requestObject.IsSetLtRtCenterMixLevel())
             {
                 context.Writer.WritePropertyName("ltRtCenterMixLevel");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtCenterMixLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtCenterMixLevel));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LtRtCenterMixLevel);
+                    context.Writer.Write(requestObject.LtRtCenterMixLevel.Value);
                 }
             }
 
             if(requestObject.IsSetLtRtSurroundMixLevel())
             {
                 context.Writer.WritePropertyName("ltRtSurroundMixLevel");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtSurroundMixLevel))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtSurroundMixLevel));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LtRtSurroundMixLevel);
+                    context.Writer.Write(requestObject.LtRtSurroundMixLevel.Value);
                 }
             }
 
@@ -157,13 +157,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate);
+                context.Writer.Write(requestObject.SampleRate.Value);
             }
 
             if(requestObject.IsSetSpeechThreshold())
             {
                 context.Writer.WritePropertyName("speechThreshold");
-                context.Writer.Write(requestObject.SpeechThreshold);
+                context.Writer.Write(requestObject.SpeechThreshold.Value);
             }
 
             if(requestObject.IsSetStereoDownmix())

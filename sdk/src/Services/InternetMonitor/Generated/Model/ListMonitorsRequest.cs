@@ -52,9 +52,9 @@ namespace Amazon.InternetMonitor.Model
         /// User Guide.
         /// </para>
         /// </summary>
-        public bool IncludeLinkedAccounts
+        public bool? IncludeLinkedAccounts
         {
-            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            get { return this._includeLinkedAccounts; }
             set { this._includeLinkedAccounts = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -143,9 +143,9 @@ namespace Amazon.Neptune.Model
         /// changed.
         /// </para>
         /// </summary>
-        public bool IsModifiable
+        public bool? IsModifiable
         {
-            get { return this._isModifiable.GetValueOrDefault(); }
+            get { return this._isModifiable; }
             set { this._isModifiable = value; }
         }
 

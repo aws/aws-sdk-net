@@ -43,9 +43,9 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsInSandbox
+        public bool? IsInSandbox
         {
-            get { return this._isInSandbox.GetValueOrDefault(); }
+            get { return this._isInSandbox; }
             set { this._isInSandbox = value; }
         }
 

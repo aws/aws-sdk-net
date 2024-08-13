@@ -45,9 +45,9 @@ namespace Amazon.Macie2.Model
         /// The total number of occurrences of the type of sensitive data that was detected.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

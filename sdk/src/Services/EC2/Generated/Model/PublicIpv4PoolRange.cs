@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// The number of addresses in the range.
         /// </para>
         /// </summary>
-        public int AddressCount
+        public int? AddressCount
         {
-            get { return this._addressCount.GetValueOrDefault(); }
+            get { return this._addressCount; }
             set { this._addressCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// The number of available addresses in the range.
         /// </para>
         /// </summary>
-        public int AvailableAddressCount
+        public int? AvailableAddressCount
         {
-            get { return this._availableAddressCount.GetValueOrDefault(); }
+            get { return this._availableAddressCount; }
             set { this._availableAddressCount = value; }
         }
 

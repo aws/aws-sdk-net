@@ -94,9 +94,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=100, Max=10000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int StartingBlockIndex
+        public int? StartingBlockIndex
         {
-            get { return this._startingBlockIndex.GetValueOrDefault(); }
+            get { return this._startingBlockIndex; }
             set { this._startingBlockIndex = value; }
         }
 

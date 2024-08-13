@@ -82,9 +82,9 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long PartFirstByte
+        public long? PartFirstByte
         {
-            get { return this._partFirstByte.GetValueOrDefault(); }
+            get { return this._partFirstByte; }
             set { this._partFirstByte = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long PartLastByte
+        public long? PartLastByte
         {
-            get { return this._partLastByte.GetValueOrDefault(); }
+            get { return this._partLastByte; }
             set { this._partLastByte = value; }
         }
 

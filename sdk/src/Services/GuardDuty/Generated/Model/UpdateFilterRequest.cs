@@ -148,9 +148,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Rank
+        public int? Rank
         {
-            get { return this._rank.GetValueOrDefault(); }
+            get { return this._rank; }
             set { this._rank = value; }
         }
 

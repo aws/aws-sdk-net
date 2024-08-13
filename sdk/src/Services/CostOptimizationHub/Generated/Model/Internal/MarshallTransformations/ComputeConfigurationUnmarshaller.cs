@@ -74,7 +74,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("memorySizeInMB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemorySizeInMB = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("vCpu", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.VCpu = unmarshaller.Unmarshall(context);
                     continue;
                 }

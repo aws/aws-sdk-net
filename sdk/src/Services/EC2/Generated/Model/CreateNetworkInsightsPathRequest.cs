@@ -119,9 +119,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int DestinationPort
+        public int? DestinationPort
         {
-            get { return this._destinationPort.GetValueOrDefault(); }
+            get { return this._destinationPort; }
             set { this._destinationPort = value; }
         }
 

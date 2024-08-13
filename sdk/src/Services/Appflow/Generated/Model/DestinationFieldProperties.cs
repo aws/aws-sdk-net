@@ -47,9 +47,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies if the destination field can be created by the current user. 
         /// </para>
         /// </summary>
-        public bool IsCreatable
+        public bool? IsCreatable
         {
-            get { return this._isCreatable.GetValueOrDefault(); }
+            get { return this._isCreatable; }
             set { this._isCreatable = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Appflow.Model
         /// Specifies whether the field can use the default value during a Create operation.
         /// </para>
         /// </summary>
-        public bool IsDefaultedOnCreate
+        public bool? IsDefaultedOnCreate
         {
-            get { return this._isDefaultedOnCreate.GetValueOrDefault(); }
+            get { return this._isDefaultedOnCreate; }
             set { this._isDefaultedOnCreate = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies if the destination field can have a null value. 
         /// </para>
         /// </summary>
-        public bool IsNullable
+        public bool? IsNullable
         {
-            get { return this._isNullable.GetValueOrDefault(); }
+            get { return this._isNullable; }
             set { this._isNullable = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Appflow.Model
         /// write operation. 
         /// </para>
         /// </summary>
-        public bool IsUpdatable
+        public bool? IsUpdatable
         {
-            get { return this._isUpdatable.GetValueOrDefault(); }
+            get { return this._isUpdatable; }
             set { this._isUpdatable = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.Appflow.Model
         /// they do not already exist, or update them if they do. 
         /// </para>
         /// </summary>
-        public bool IsUpsertable
+        public bool? IsUpsertable
         {
-            get { return this._isUpsertable.GetValueOrDefault(); }
+            get { return this._isUpsertable; }
             set { this._isUpsertable = value; }
         }
 

@@ -90,12 +90,12 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         /// </summary>
-        public bool AtRestEncryptionEnabled
+        public bool? AtRestEncryptionEnabled
         {
-            get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._atRestEncryptionEnabled; }
             set { this._atRestEncryptionEnabled = value; }
         }
 
@@ -108,16 +108,16 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthTokenEnabled. 
         /// <para>
-        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis commands.
+        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis OSS commands.
         /// </para>
         ///  
         /// <para>
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AuthTokenEnabled
+        public bool? AuthTokenEnabled
         {
-            get { return this._authTokenEnabled.GetValueOrDefault(); }
+            get { return this._authTokenEnabled; }
             set { this._authTokenEnabled = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.ElastiCache.Model
         /// A flag that indicates whether the Global datastore is cluster enabled.
         /// </para>
         /// </summary>
-        public bool ClusterEnabled
+        public bool? ClusterEnabled
         {
-            get { return this._clusterEnabled.GetValueOrDefault(); }
+            get { return this._clusterEnabled; }
             set { this._clusterEnabled = value; }
         }
 
@@ -166,7 +166,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Elasticache engine. For Redis only.
+        /// The Elasticache engine. For Redis OSS only.
         /// </para>
         /// </summary>
         public string Engine
@@ -184,7 +184,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Elasticache Redis engine version.
+        /// The Elasticache (Redis OSS) engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -297,12 +297,12 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 

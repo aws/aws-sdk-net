@@ -51,7 +51,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetainAtLeast())
             {
                 context.Writer.WritePropertyName("retainAtLeast");
-                context.Writer.Write(requestObject.RetainAtLeast);
+                context.Writer.Write(requestObject.RetainAtLeast.Value);
             }
 
             if(requestObject.IsSetType())
@@ -69,7 +69,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.Write(requestObject.Value.Value);
             }
 
         }

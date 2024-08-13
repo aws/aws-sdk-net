@@ -155,9 +155,9 @@ namespace Amazon.MediaConvert.Model
         /// value as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.MediaConvert.Model
         /// as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.MediaConvert.Model
         /// be greater than zero and preferably equal to 1 + ((numberBFrames + 1) * x), where
         /// x is an integer value.
         /// </summary>
-        public double GopSize
+        public double? GopSize
         {
-            get { return this._gopSize.GetValueOrDefault(); }
+            get { return this._gopSize; }
             set { this._gopSize = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.MediaConvert.Model
         /// enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
         /// </summary>
         [AWSProperty(Min=1000, Max=1152000000)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.MediaConvert.Model
         /// for better video quality.
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int NumberBFramesBetweenReferenceFrames
+        public int? NumberBFramesBetweenReferenceFrames
         {
-            get { return this._numberBFramesBetweenReferenceFrames.GetValueOrDefault(); }
+            get { return this._numberBFramesBetweenReferenceFrames; }
             set { this._numberBFramesBetweenReferenceFrames = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.MediaConvert.Model
         /// value must be less than or equal to half the number of macroblock rows.
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
-        public int Slices
+        public int? Slices
         {
-            get { return this._slices.GetValueOrDefault(); }
+            get { return this._slices; }
             set { this._slices = value; }
         }
 

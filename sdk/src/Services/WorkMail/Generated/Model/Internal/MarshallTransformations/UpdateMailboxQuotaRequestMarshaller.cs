@@ -72,7 +72,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMailboxQuota())
                 {
                     context.Writer.WritePropertyName("MailboxQuota");
-                    context.Writer.Write(publicRequest.MailboxQuota);
+                    context.Writer.Write(publicRequest.MailboxQuota.Value);
                 }
 
                 if(publicRequest.IsSetOrganizationId())

@@ -80,9 +80,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int DesiredReplicaContainerGroupsPerInstance
+        public int? DesiredReplicaContainerGroupsPerInstance
         {
-            get { return this._desiredReplicaContainerGroupsPerInstance.GetValueOrDefault(); }
+            get { return this._desiredReplicaContainerGroupsPerInstance; }
             set { this._desiredReplicaContainerGroupsPerInstance = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int MaxReplicaContainerGroupsPerInstance
+        public int? MaxReplicaContainerGroupsPerInstance
         {
-            get { return this._maxReplicaContainerGroupsPerInstance.GetValueOrDefault(); }
+            get { return this._maxReplicaContainerGroupsPerInstance; }
             set { this._maxReplicaContainerGroupsPerInstance = value; }
         }
 

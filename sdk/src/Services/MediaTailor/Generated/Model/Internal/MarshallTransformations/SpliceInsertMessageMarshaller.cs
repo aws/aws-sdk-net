@@ -51,25 +51,25 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailNum())
             {
                 context.Writer.WritePropertyName("AvailNum");
-                context.Writer.Write(requestObject.AvailNum);
+                context.Writer.Write(requestObject.AvailNum.Value);
             }
 
             if(requestObject.IsSetAvailsExpected())
             {
                 context.Writer.WritePropertyName("AvailsExpected");
-                context.Writer.Write(requestObject.AvailsExpected);
+                context.Writer.Write(requestObject.AvailsExpected.Value);
             }
 
             if(requestObject.IsSetSpliceEventId())
             {
                 context.Writer.WritePropertyName("SpliceEventId");
-                context.Writer.Write(requestObject.SpliceEventId);
+                context.Writer.Write(requestObject.SpliceEventId.Value);
             }
 
             if(requestObject.IsSetUniqueProgramId())
             {
                 context.Writer.WritePropertyName("UniqueProgramId");
-                context.Writer.Write(requestObject.UniqueProgramId);
+                context.Writer.Write(requestObject.UniqueProgramId.Value);
             }
 
         }

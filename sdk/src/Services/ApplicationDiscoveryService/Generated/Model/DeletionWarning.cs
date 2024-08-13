@@ -63,9 +63,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         ///  The integer warning code associated with the warning message. 
         /// </para>
         /// </summary>
-        public int WarningCode
+        public int? WarningCode
         {
-            get { return this._warningCode.GetValueOrDefault(); }
+            get { return this._warningCode; }
             set { this._warningCode = value; }
         }
 

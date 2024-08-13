@@ -62,7 +62,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNegate())
             {
                 context.Writer.WritePropertyName("Negate");
-                context.Writer.Write(requestObject.Negate);
+                context.Writer.Write(requestObject.Negate.Value);
             }
 
             if(requestObject.IsSetRelativeTimeRange())
@@ -79,7 +79,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.Write(requestObject.Threshold);
+                context.Writer.Write(requestObject.Threshold.Value);
             }
 
         }

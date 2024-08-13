@@ -76,9 +76,9 @@ namespace Amazon.AutoScaling.Model
         /// The maximum number of items to return with this call. The maximum value is <c>50</c>.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

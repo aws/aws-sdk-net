@@ -34,10 +34,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DomainSettingsForUpdate
     {
+        private AmazonQSettings _amazonQSettings;
         private DockerSettings _dockerSettings;
         private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
         private RStudioServerProDomainSettingsForUpdate _rStudioServerProDomainSettingsForUpdate;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AmazonQSettings. 
+        /// <para>
+        /// A collection of settings that configure the Amazon Q experience within the domain.
+        /// </para>
+        /// </summary>
+        public AmazonQSettings AmazonQSettings
+        {
+            get { return this._amazonQSettings; }
+            set { this._amazonQSettings = value; }
+        }
+
+        // Check to see if AmazonQSettings property is set
+        internal bool IsSetAmazonQSettings()
+        {
+            return this._amazonQSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DockerSettings. 

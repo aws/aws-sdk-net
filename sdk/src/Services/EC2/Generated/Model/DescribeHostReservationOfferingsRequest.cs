@@ -89,9 +89,9 @@ namespace Amazon.EC2.Model
         /// supported durations (1 or 3). For example, specify 94608000 for three years.
         /// </para>
         /// </summary>
-        public int MaxDuration
+        public int? MaxDuration
         {
-            get { return this._maxDuration.GetValueOrDefault(); }
+            get { return this._maxDuration; }
             set { this._maxDuration = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.EC2.Model
         /// one of the supported durations (1 or 3). For example, specify 31536000 for one year.
         /// </para>
         /// </summary>
-        public int MinDuration
+        public int? MinDuration
         {
-            get { return this._minDuration.GetValueOrDefault(); }
+            get { return this._minDuration; }
             set { this._minDuration = value; }
         }
 

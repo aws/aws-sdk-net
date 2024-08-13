@@ -52,9 +52,9 @@ namespace Amazon.EC2.Model
         /// Reserved. Capacity Reservations you have created are accepted by default.
         /// </para>
         /// </summary>
-        public bool Accept
+        public bool? Accept
         {
-            get { return this._accept.GetValueOrDefault(); }
+            get { return this._accept; }
             set { this._accept = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.EC2.Model
         /// Omit <c>EndDate</c> if <c>EndDateType</c> is <c>unlimited</c>.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.EC2.Model
         /// be increased or decreased by more than <c>1000</c> in a single request.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

@@ -51,9 +51,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int NumOfReports
+        public int? NumOfReports
         {
-            get { return this._numOfReports.GetValueOrDefault(); }
+            get { return this._numOfReports; }
             set { this._numOfReports = value; }
         }
 

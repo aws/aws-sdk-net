@@ -69,9 +69,9 @@ namespace Amazon.Route53.Model
         /// A value that indicates whether this is a private hosted zone.
         /// </para>
         /// </summary>
-        public bool PrivateZone
+        public bool? PrivateZone
         {
-            get { return this._privateZone.GetValueOrDefault(); }
+            get { return this._privateZone; }
             set { this._privateZone = value; }
         }
 

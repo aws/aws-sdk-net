@@ -67,9 +67,9 @@ namespace Amazon.DataZone.Model
         /// source run.
         /// </para>
         /// </summary>
-        public bool AutoImportDataQualityResult
+        public bool? AutoImportDataQualityResult
         {
-            get { return this._autoImportDataQualityResult.GetValueOrDefault(); }
+            get { return this._autoImportDataQualityResult; }
             set { this._autoImportDataQualityResult = value; }
         }
 

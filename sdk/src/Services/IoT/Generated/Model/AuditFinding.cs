@@ -90,9 +90,9 @@ namespace Amazon.IoT.Model
         /// The time the result (finding) was discovered.
         /// </para>
         /// </summary>
-        public DateTime FindingTime
+        public DateTime? FindingTime
         {
-            get { return this._findingTime.GetValueOrDefault(); }
+            get { return this._findingTime; }
             set { this._findingTime = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.IoT.Model
         ///  Indicates whether the audit finding was suppressed or not during reporting. 
         /// </para>
         /// </summary>
-        public bool IsSuppressed
+        public bool? IsSuppressed
         {
-            get { return this._isSuppressed.GetValueOrDefault(); }
+            get { return this._isSuppressed; }
             set { this._isSuppressed = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.IoT.Model
         /// The time the audit started.
         /// </para>
         /// </summary>
-        public DateTime TaskStartTime
+        public DateTime? TaskStartTime
         {
-            get { return this._taskStartTime.GetValueOrDefault(); }
+            get { return this._taskStartTime; }
             set { this._taskStartTime = value; }
         }
 

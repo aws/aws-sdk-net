@@ -68,7 +68,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -76,6 +76,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("idMappingWorkflowProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IdNamespaceIdMappingWorkflowMetadata, IdNamespaceIdMappingWorkflowMetadataUnmarshaller>(IdNamespaceIdMappingWorkflowMetadataUnmarshaller.Instance);
+                    unmarshalledObject.IdMappingWorkflowProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("idNamespaceArn", targetDepth))
@@ -98,7 +104,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

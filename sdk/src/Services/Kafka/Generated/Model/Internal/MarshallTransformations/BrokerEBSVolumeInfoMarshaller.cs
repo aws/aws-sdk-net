@@ -68,7 +68,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeSizeGB())
             {
                 context.Writer.WritePropertyName("volumeSizeGB");
-                context.Writer.Write(requestObject.VolumeSizeGB);
+                context.Writer.Write(requestObject.VolumeSizeGB.Value);
             }
 
         }

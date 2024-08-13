@@ -106,9 +106,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EventTime
+        public DateTime? EventTime
         {
-            get { return this._eventTime.GetValueOrDefault(); }
+            get { return this._eventTime; }
             set { this._eventTime = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EventUpdatedTime
+        public DateTime? EventUpdatedTime
         {
-            get { return this._eventUpdatedTime.GetValueOrDefault(); }
+            get { return this._eventUpdatedTime; }
             set { this._eventUpdatedTime = value; }
         }
 

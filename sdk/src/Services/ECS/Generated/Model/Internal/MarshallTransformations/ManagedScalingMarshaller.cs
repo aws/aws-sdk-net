@@ -51,19 +51,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceWarmupPeriod())
             {
                 context.Writer.WritePropertyName("instanceWarmupPeriod");
-                context.Writer.Write(requestObject.InstanceWarmupPeriod);
+                context.Writer.Write(requestObject.InstanceWarmupPeriod.Value);
             }
 
             if(requestObject.IsSetMaximumScalingStepSize())
             {
                 context.Writer.WritePropertyName("maximumScalingStepSize");
-                context.Writer.Write(requestObject.MaximumScalingStepSize);
+                context.Writer.Write(requestObject.MaximumScalingStepSize.Value);
             }
 
             if(requestObject.IsSetMinimumScalingStepSize())
             {
                 context.Writer.WritePropertyName("minimumScalingStepSize");
-                context.Writer.Write(requestObject.MinimumScalingStepSize);
+                context.Writer.Write(requestObject.MinimumScalingStepSize.Value);
             }
 
             if(requestObject.IsSetStatus())
@@ -75,7 +75,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetCapacity())
             {
                 context.Writer.WritePropertyName("targetCapacity");
-                context.Writer.Write(requestObject.TargetCapacity);
+                context.Writer.Write(requestObject.TargetCapacity.Value);
             }
 
         }

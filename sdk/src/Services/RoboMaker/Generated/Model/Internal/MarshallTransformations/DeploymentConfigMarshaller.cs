@@ -51,7 +51,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConcurrentDeploymentPercentage())
             {
                 context.Writer.WritePropertyName("concurrentDeploymentPercentage");
-                context.Writer.Write(requestObject.ConcurrentDeploymentPercentage);
+                context.Writer.Write(requestObject.ConcurrentDeploymentPercentage.Value);
             }
 
             if(requestObject.IsSetDownloadConditionFile())
@@ -68,13 +68,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailureThresholdPercentage())
             {
                 context.Writer.WritePropertyName("failureThresholdPercentage");
-                context.Writer.Write(requestObject.FailureThresholdPercentage);
+                context.Writer.Write(requestObject.FailureThresholdPercentage.Value);
             }
 
             if(requestObject.IsSetRobotDeploymentTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("robotDeploymentTimeoutInSeconds");
-                context.Writer.Write(requestObject.RobotDeploymentTimeoutInSeconds);
+                context.Writer.Write(requestObject.RobotDeploymentTimeoutInSeconds.Value);
             }
 
         }

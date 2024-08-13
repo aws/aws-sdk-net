@@ -68,9 +68,9 @@ namespace Amazon.GuardDuty.Model
         /// The date and time the bucket was created at.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

@@ -106,7 +106,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxFaces())
                 {
                     context.Writer.WritePropertyName("MaxFaces");
-                    context.Writer.Write(publicRequest.MaxFaces);
+                    context.Writer.Write(publicRequest.MaxFaces.Value);
                 }
 
                 if(publicRequest.IsSetQualityFilter())

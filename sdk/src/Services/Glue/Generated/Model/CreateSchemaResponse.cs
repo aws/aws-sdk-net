@@ -112,9 +112,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long LatestSchemaVersion
+        public long? LatestSchemaVersion
         {
-            get { return this._latestSchemaVersion.GetValueOrDefault(); }
+            get { return this._latestSchemaVersion; }
             set { this._latestSchemaVersion = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long NextSchemaVersion
+        public long? NextSchemaVersion
         {
-            get { return this._nextSchemaVersion.GetValueOrDefault(); }
+            get { return this._nextSchemaVersion; }
             set { this._nextSchemaVersion = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long SchemaCheckpoint
+        public long? SchemaCheckpoint
         {
-            get { return this._schemaCheckpoint.GetValueOrDefault(); }
+            get { return this._schemaCheckpoint; }
             set { this._schemaCheckpoint = value; }
         }
 

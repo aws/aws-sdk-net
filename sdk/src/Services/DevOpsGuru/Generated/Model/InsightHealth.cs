@@ -45,9 +45,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The Meant Time to Recover (MTTR) for the insight. 
         /// </para>
         /// </summary>
-        public long MeanTimeToRecoverInMilliseconds
+        public long? MeanTimeToRecoverInMilliseconds
         {
-            get { return this._meanTimeToRecoverInMilliseconds.GetValueOrDefault(); }
+            get { return this._meanTimeToRecoverInMilliseconds; }
             set { this._meanTimeToRecoverInMilliseconds = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The number of open proactive insights. 
         /// </para>
         /// </summary>
-        public int OpenProactiveInsights
+        public int? OpenProactiveInsights
         {
-            get { return this._openProactiveInsights.GetValueOrDefault(); }
+            get { return this._openProactiveInsights; }
             set { this._openProactiveInsights = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The number of open reactive insights. 
         /// </para>
         /// </summary>
-        public int OpenReactiveInsights
+        public int? OpenReactiveInsights
         {
-            get { return this._openReactiveInsights.GetValueOrDefault(); }
+            get { return this._openReactiveInsights; }
             set { this._openReactiveInsights = value; }
         }
 

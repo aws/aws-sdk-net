@@ -51,19 +51,19 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumSubChannels())
             {
                 context.Writer.WritePropertyName("MaximumSubChannels");
-                context.Writer.Write(requestObject.MaximumSubChannels);
+                context.Writer.Write(requestObject.MaximumSubChannels.Value);
             }
 
             if(requestObject.IsSetMinimumMembershipPercentage())
             {
                 context.Writer.WritePropertyName("MinimumMembershipPercentage");
-                context.Writer.Write(requestObject.MinimumMembershipPercentage);
+                context.Writer.Write(requestObject.MinimumMembershipPercentage.Value);
             }
 
             if(requestObject.IsSetTargetMembershipsPerSubChannel())
             {
                 context.Writer.WritePropertyName("TargetMembershipsPerSubChannel");
-                context.Writer.Write(requestObject.TargetMembershipsPerSubChannel);
+                context.Writer.Write(requestObject.TargetMembershipsPerSubChannel.Value);
             }
 
         }

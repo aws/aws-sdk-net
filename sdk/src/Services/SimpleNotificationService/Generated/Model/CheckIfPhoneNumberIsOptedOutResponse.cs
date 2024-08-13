@@ -53,9 +53,9 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool IsOptedOut
+        public bool? IsOptedOut
         {
-            get { return this._isOptedOut.GetValueOrDefault(); }
+            get { return this._isOptedOut; }
             set { this._isOptedOut = value; }
         }
 

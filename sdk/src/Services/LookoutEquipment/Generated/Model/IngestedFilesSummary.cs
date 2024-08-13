@@ -66,9 +66,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int IngestedNumberOfFiles
+        public int? IngestedNumberOfFiles
         {
-            get { return this._ingestedNumberOfFiles.GetValueOrDefault(); }
+            get { return this._ingestedNumberOfFiles; }
             set { this._ingestedNumberOfFiles = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalNumberOfFiles
+        public int? TotalNumberOfFiles
         {
-            get { return this._totalNumberOfFiles.GetValueOrDefault(); }
+            get { return this._totalNumberOfFiles; }
             set { this._totalNumberOfFiles = value; }
         }
 

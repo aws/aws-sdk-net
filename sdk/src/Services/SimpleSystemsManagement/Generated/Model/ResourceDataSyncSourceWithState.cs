@@ -92,9 +92,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableAllOpsDataSources
+        public bool? EnableAllOpsDataSources
         {
-            get { return this._enableAllOpsDataSources.GetValueOrDefault(); }
+            get { return this._enableAllOpsDataSources; }
             set { this._enableAllOpsDataSources = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Regions when those Regions come online.
         /// </para>
         /// </summary>
-        public bool IncludeFutureRegions
+        public bool? IncludeFutureRegions
         {
-            get { return this._includeFutureRegions.GetValueOrDefault(); }
+            get { return this._includeFutureRegions; }
             set { this._includeFutureRegions = value; }
         }
 

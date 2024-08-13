@@ -49,9 +49,9 @@ namespace Amazon.GuardDuty.Model
         /// The number of services that are running on the cluster in an ACTIVE state.
         /// </para>
         /// </summary>
-        public int ActiveServicesCount
+        public int? ActiveServicesCount
         {
-            get { return this._activeServicesCount.GetValueOrDefault(); }
+            get { return this._activeServicesCount; }
             set { this._activeServicesCount = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.GuardDuty.Model
         /// The number of container instances registered into the cluster.
         /// </para>
         /// </summary>
-        public int RegisteredContainerInstancesCount
+        public int? RegisteredContainerInstancesCount
         {
-            get { return this._registeredContainerInstancesCount.GetValueOrDefault(); }
+            get { return this._registeredContainerInstancesCount; }
             set { this._registeredContainerInstancesCount = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.GuardDuty.Model
         /// The number of tasks in the cluster that are in the RUNNING state.
         /// </para>
         /// </summary>
-        public int RunningTasksCount
+        public int? RunningTasksCount
         {
-            get { return this._runningTasksCount.GetValueOrDefault(); }
+            get { return this._runningTasksCount; }
             set { this._runningTasksCount = value; }
         }
 

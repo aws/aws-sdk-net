@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// Confirmation of replace tunnel operation.
         /// </para>
         /// </summary>
-        public bool Return
+        public bool? Return
         {
-            get { return this._return.GetValueOrDefault(); }
+            get { return this._return; }
             set { this._return = value; }
         }
 

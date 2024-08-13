@@ -72,9 +72,9 @@ namespace Amazon.CloudWatch.Model
         /// The date that the metric stream was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.CloudWatch.Model
         /// to.
         /// </para>
         /// </summary>
-        public bool IncludeLinkedAccountsMetrics
+        public bool? IncludeLinkedAccountsMetrics
         {
-            get { return this._includeLinkedAccountsMetrics.GetValueOrDefault(); }
+            get { return this._includeLinkedAccountsMetrics; }
             set { this._includeLinkedAccountsMetrics = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.CloudWatch.Model
         /// The date of the most recent update to the metric stream's configuration.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateDate
+        public DateTime? LastUpdateDate
         {
-            get { return this._lastUpdateDate.GetValueOrDefault(); }
+            get { return this._lastUpdateDate; }
             set { this._lastUpdateDate = value; }
         }
 

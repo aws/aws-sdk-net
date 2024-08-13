@@ -55,9 +55,9 @@ namespace Amazon.ForecastService.Model
         /// For a numeric field, the average value in the field.
         /// </para>
         /// </summary>
-        public double Avg
+        public double? Avg
         {
-            get { return this._avg.GetValueOrDefault(); }
+            get { return this._avg; }
             set { this._avg = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.ForecastService.Model
         /// The number of values in the field. If the response value is -1, refer to <c>CountLong</c>.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.ForecastService.Model
         /// <c>CountDistinctLong</c>.
         /// </para>
         /// </summary>
-        public int CountDistinct
+        public int? CountDistinct
         {
-            get { return this._countDistinct.GetValueOrDefault(); }
+            get { return this._countDistinct; }
             set { this._countDistinct = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.ForecastService.Model
         /// of <c>CountDistinct</c> if the value is greater than 2,147,483,647.
         /// </para>
         /// </summary>
-        public long CountDistinctLong
+        public long? CountDistinctLong
         {
-            get { return this._countDistinctLong.GetValueOrDefault(); }
+            get { return this._countDistinctLong; }
             set { this._countDistinctLong = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.ForecastService.Model
         /// if the value is greater than 2,147,483,647.
         /// </para>
         /// </summary>
-        public long CountLong
+        public long? CountLong
         {
-            get { return this._countLong.GetValueOrDefault(); }
+            get { return this._countLong; }
             set { this._countLong = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.ForecastService.Model
         /// refer to <c>CountNanLong</c>.
         /// </para>
         /// </summary>
-        public int CountNan
+        public int? CountNan
         {
-            get { return this._countNan.GetValueOrDefault(); }
+            get { return this._countNan; }
             set { this._countNan = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.ForecastService.Model
         /// instead of <c>CountNan</c> if the value is greater than 2,147,483,647.
         /// </para>
         /// </summary>
-        public long CountNanLong
+        public long? CountNanLong
         {
-            get { return this._countNanLong.GetValueOrDefault(); }
+            get { return this._countNanLong; }
             set { this._countNanLong = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.ForecastService.Model
         /// The number of null values in the field. If the response value is -1, refer to <c>CountNullLong</c>.
         /// </para>
         /// </summary>
-        public int CountNull
+        public int? CountNull
         {
-            get { return this._countNull.GetValueOrDefault(); }
+            get { return this._countNull; }
             set { this._countNull = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.ForecastService.Model
         /// if the value is greater than 2,147,483,647.
         /// </para>
         /// </summary>
-        public long CountNullLong
+        public long? CountNullLong
         {
-            get { return this._countNullLong.GetValueOrDefault(); }
+            get { return this._countNullLong; }
             set { this._countNullLong = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.ForecastService.Model
         /// For a numeric field, the standard deviation.
         /// </para>
         /// </summary>
-        public double Stddev
+        public double? Stddev
         {
-            get { return this._stddev.GetValueOrDefault(); }
+            get { return this._stddev; }
             set { this._stddev = value; }
         }
 

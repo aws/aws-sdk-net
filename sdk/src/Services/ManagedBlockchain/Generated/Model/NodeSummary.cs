@@ -86,9 +86,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// The date and time that the node was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 

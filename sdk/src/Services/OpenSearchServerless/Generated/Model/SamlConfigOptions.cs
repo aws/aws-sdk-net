@@ -85,9 +85,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=720)]
-        public int SessionTimeout
+        public int? SessionTimeout
         {
-            get { return this._sessionTimeout.GetValueOrDefault(); }
+            get { return this._sessionTimeout; }
             set { this._sessionTimeout = value; }
         }
 

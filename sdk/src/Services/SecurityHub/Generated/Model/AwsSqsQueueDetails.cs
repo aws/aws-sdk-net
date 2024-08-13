@@ -65,9 +65,9 @@ namespace Amazon.SecurityHub.Model
         /// or decrypt messages before calling KMS again.
         /// </para>
         /// </summary>
-        public int KmsDataKeyReusePeriodSeconds
+        public int? KmsDataKeyReusePeriodSeconds
         {
-            get { return this._kmsDataKeyReusePeriodSeconds.GetValueOrDefault(); }
+            get { return this._kmsDataKeyReusePeriodSeconds; }
             set { this._kmsDataKeyReusePeriodSeconds = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// host's available capacity.
         /// </para>
         /// </summary>
-        public int AvailableCapacity
+        public int? AvailableCapacity
         {
-            get { return this._availableCapacity.GetValueOrDefault(); }
+            get { return this._availableCapacity; }
             set { this._availableCapacity = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.EC2.Model
         /// are no instances running on it.
         /// </para>
         /// </summary>
-        public int TotalCapacity
+        public int? TotalCapacity
         {
-            get { return this._totalCapacity.GetValueOrDefault(); }
+            get { return this._totalCapacity; }
             set { this._totalCapacity = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The time the anomalous log events stopped. 
         /// </para>
         /// </summary>
-        public DateTime ImpactEndTime
+        public DateTime? ImpactEndTime
         {
-            get { return this._impactEndTime.GetValueOrDefault(); }
+            get { return this._impactEndTime; }
             set { this._impactEndTime = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.DevOpsGuru.Model
         /// of the first log anomaly event that occurs. 
         /// </para>
         /// </summary>
-        public DateTime ImpactStartTime
+        public DateTime? ImpactStartTime
         {
-            get { return this._impactStartTime.GetValueOrDefault(); }
+            get { return this._impactStartTime; }
             set { this._impactStartTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The number of log lines that were scanned for anomalous log events. 
         /// </para>
         /// </summary>
-        public int NumberOfLogLinesScanned
+        public int? NumberOfLogLinesScanned
         {
-            get { return this._numberOfLogLinesScanned.GetValueOrDefault(); }
+            get { return this._numberOfLogLinesScanned; }
             set { this._numberOfLogLinesScanned = value; }
         }
 

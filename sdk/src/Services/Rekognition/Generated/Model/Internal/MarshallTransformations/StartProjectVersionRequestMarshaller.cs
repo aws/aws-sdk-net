@@ -72,13 +72,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxInferenceUnits())
                 {
                     context.Writer.WritePropertyName("MaxInferenceUnits");
-                    context.Writer.Write(publicRequest.MaxInferenceUnits);
+                    context.Writer.Write(publicRequest.MaxInferenceUnits.Value);
                 }
 
                 if(publicRequest.IsSetMinInferenceUnits())
                 {
                     context.Writer.WritePropertyName("MinInferenceUnits");
-                    context.Writer.Write(publicRequest.MinInferenceUnits);
+                    context.Writer.Write(publicRequest.MinInferenceUnits.Value);
                 }
 
                 if(publicRequest.IsSetProjectVersionArn())

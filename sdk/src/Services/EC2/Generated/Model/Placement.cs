@@ -207,9 +207,9 @@ namespace Amazon.EC2.Model
         /// This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
         /// </para>
         /// </summary>
-        public int PartitionNumber
+        public int? PartitionNumber
         {
-            get { return this._partitionNumber.GetValueOrDefault(); }
+            get { return this._partitionNumber; }
             set { this._partitionNumber = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ExcludeBootVolume", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExcludeBootVolume = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NoReboot", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoReboot = unmarshaller.Unmarshall(context);
                     continue;
                 }

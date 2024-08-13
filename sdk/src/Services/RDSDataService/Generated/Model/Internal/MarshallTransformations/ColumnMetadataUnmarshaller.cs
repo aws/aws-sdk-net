@@ -68,31 +68,31 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("arrayBaseColumnType", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ArrayBaseColumnType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isAutoIncrement", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAutoIncrement = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isCaseSensitive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCaseSensitive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isCurrency", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCurrency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isSigned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSigned = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,19 +110,19 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("nullable", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Nullable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("precision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scale", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Scale = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -140,7 +140,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("type", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }

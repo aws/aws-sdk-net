@@ -68,7 +68,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DeleteProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,13 +110,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FirewallPolicyChangeProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FirewallPolicyChangeProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubnetChangeProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SubnetChangeProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }

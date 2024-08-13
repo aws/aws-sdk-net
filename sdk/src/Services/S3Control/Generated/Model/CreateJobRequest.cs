@@ -136,9 +136,9 @@ namespace Amazon.S3Control.Model
         /// is only required for jobs created through the Amazon S3 console.
         /// </para>
         /// </summary>
-        public bool ConfirmationRequired
+        public bool? ConfirmationRequired
         {
-            get { return this._confirmationRequired.GetValueOrDefault(); }
+            get { return this._confirmationRequired; }
             set { this._confirmationRequired = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The number of documents that were added to the search domain.
         /// </para>
         /// </summary>
-        public long Adds
+        public long? Adds
         {
-            get { return this._adds.GetValueOrDefault(); }
+            get { return this._adds; }
             set { this._adds = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The number of documents that were deleted from the search domain.
         /// </para>
         /// </summary>
-        public long Deletes
+        public long? Deletes
         {
-            get { return this._deletes.GetValueOrDefault(); }
+            get { return this._deletes; }
             set { this._deletes = value; }
         }
 

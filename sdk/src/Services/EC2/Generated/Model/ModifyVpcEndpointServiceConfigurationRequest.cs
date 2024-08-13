@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether requests to create an endpoint to your service must be accepted.
         /// </para>
         /// </summary>
-        public bool AcceptanceRequired
+        public bool? AcceptanceRequired
         {
-            get { return this._acceptanceRequired.GetValueOrDefault(); }
+            get { return this._acceptanceRequired; }
             set { this._acceptanceRequired = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.EC2.Model
         /// (Interface endpoint configuration) Removes the private DNS name of the endpoint service.
         /// </para>
         /// </summary>
-        public bool RemovePrivateDnsName
+        public bool? RemovePrivateDnsName
         {
-            get { return this._removePrivateDnsName.GetValueOrDefault(); }
+            get { return this._removePrivateDnsName; }
             set { this._removePrivateDnsName = value; }
         }
 

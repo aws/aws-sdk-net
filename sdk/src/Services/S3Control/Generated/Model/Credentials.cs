@@ -67,9 +67,9 @@ namespace Amazon.S3Control.Model
         /// to grantees and client applications. 
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

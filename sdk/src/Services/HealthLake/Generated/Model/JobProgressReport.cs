@@ -49,9 +49,9 @@ namespace Amazon.HealthLake.Model
         /// The throughput (in MB/sec) of the import job.
         /// </para>
         /// </summary>
-        public double Throughput
+        public double? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.HealthLake.Model
         /// error.
         /// </para>
         /// </summary>
-        public long TotalNumberOfFilesReadWithCustomerError
+        public long? TotalNumberOfFilesReadWithCustomerError
         {
-            get { return this._totalNumberOfFilesReadWithCustomerError.GetValueOrDefault(); }
+            get { return this._totalNumberOfFilesReadWithCustomerError; }
             set { this._totalNumberOfFilesReadWithCustomerError = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.HealthLake.Model
         /// The number of files imported so far.
         /// </para>
         /// </summary>
-        public long TotalNumberOfImportedFiles
+        public long? TotalNumberOfImportedFiles
         {
-            get { return this._totalNumberOfImportedFiles.GetValueOrDefault(); }
+            get { return this._totalNumberOfImportedFiles; }
             set { this._totalNumberOfImportedFiles = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.HealthLake.Model
         /// The number of resources imported so far.
         /// </para>
         /// </summary>
-        public long TotalNumberOfResourcesImported
+        public long? TotalNumberOfResourcesImported
         {
-            get { return this._totalNumberOfResourcesImported.GetValueOrDefault(); }
+            get { return this._totalNumberOfResourcesImported; }
             set { this._totalNumberOfResourcesImported = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.HealthLake.Model
         /// The number of resources scanned from the input S3 bucket.
         /// </para>
         /// </summary>
-        public long TotalNumberOfResourcesScanned
+        public long? TotalNumberOfResourcesScanned
         {
-            get { return this._totalNumberOfResourcesScanned.GetValueOrDefault(); }
+            get { return this._totalNumberOfResourcesScanned; }
             set { this._totalNumberOfResourcesScanned = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.HealthLake.Model
         /// The number of resources that failed due to customer error.
         /// </para>
         /// </summary>
-        public long TotalNumberOfResourcesWithCustomerError
+        public long? TotalNumberOfResourcesWithCustomerError
         {
-            get { return this._totalNumberOfResourcesWithCustomerError.GetValueOrDefault(); }
+            get { return this._totalNumberOfResourcesWithCustomerError; }
             set { this._totalNumberOfResourcesWithCustomerError = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.HealthLake.Model
         /// The number of files scanned from input S3 bucket.
         /// </para>
         /// </summary>
-        public long TotalNumberOfScannedFiles
+        public long? TotalNumberOfScannedFiles
         {
-            get { return this._totalNumberOfScannedFiles.GetValueOrDefault(); }
+            get { return this._totalNumberOfScannedFiles; }
             set { this._totalNumberOfScannedFiles = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.HealthLake.Model
         /// The size (in MB) of the files scanned from the input S3 bucket.
         /// </para>
         /// </summary>
-        public double TotalSizeOfScannedFilesInMB
+        public double? TotalSizeOfScannedFilesInMB
         {
-            get { return this._totalSizeOfScannedFilesInMB.GetValueOrDefault(); }
+            get { return this._totalSizeOfScannedFilesInMB; }
             set { this._totalSizeOfScannedFilesInMB = value; }
         }
 

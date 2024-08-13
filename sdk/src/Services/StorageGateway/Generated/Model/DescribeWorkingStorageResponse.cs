@@ -83,9 +83,9 @@ namespace Amazon.StorageGateway.Model
         /// is configured for the gateway, this field returns 0.
         /// </para>
         /// </summary>
-        public long WorkingStorageAllocatedInBytes
+        public long? WorkingStorageAllocatedInBytes
         {
-            get { return this._workingStorageAllocatedInBytes.GetValueOrDefault(); }
+            get { return this._workingStorageAllocatedInBytes; }
             set { this._workingStorageAllocatedInBytes = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.StorageGateway.Model
         /// configured for the gateway, this field returns 0.
         /// </para>
         /// </summary>
-        public long WorkingStorageUsedInBytes
+        public long? WorkingStorageUsedInBytes
         {
-            get { return this._workingStorageUsedInBytes.GetValueOrDefault(); }
+            get { return this._workingStorageUsedInBytes; }
             set { this._workingStorageUsedInBytes = value; }
         }
 

@@ -73,7 +73,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("priority");
-                context.Writer.Write(requestObject.Priority);
+                context.Writer.Write(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetRuleIdentifier())

@@ -89,9 +89,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the <c>Force</c> flag in an Identity and Access Management (IAM) policy.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

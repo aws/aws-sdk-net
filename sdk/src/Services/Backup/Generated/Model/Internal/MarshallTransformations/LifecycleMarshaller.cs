@@ -51,19 +51,19 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteAfterDays())
             {
                 context.Writer.WritePropertyName("DeleteAfterDays");
-                context.Writer.Write(requestObject.DeleteAfterDays);
+                context.Writer.Write(requestObject.DeleteAfterDays.Value);
             }
 
             if(requestObject.IsSetMoveToColdStorageAfterDays())
             {
                 context.Writer.WritePropertyName("MoveToColdStorageAfterDays");
-                context.Writer.Write(requestObject.MoveToColdStorageAfterDays);
+                context.Writer.Write(requestObject.MoveToColdStorageAfterDays.Value);
             }
 
             if(requestObject.IsSetOptInToArchiveForSupportedResources())
             {
                 context.Writer.WritePropertyName("OptInToArchiveForSupportedResources");
-                context.Writer.Write(requestObject.OptInToArchiveForSupportedResources);
+                context.Writer.Write(requestObject.OptInToArchiveForSupportedResources.Value);
             }
 
         }

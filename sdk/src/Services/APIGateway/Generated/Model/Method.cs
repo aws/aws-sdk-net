@@ -60,9 +60,9 @@ namespace Amazon.APIGateway.Model
         /// A boolean flag specifying whether a valid ApiKey is required to invoke this method.
         /// </para>
         /// </summary>
-        public bool ApiKeyRequired
+        public bool? ApiKeyRequired
         {
-            get { return this._apiKeyRequired.GetValueOrDefault(); }
+            get { return this._apiKeyRequired; }
             set { this._apiKeyRequired = value; }
         }
 

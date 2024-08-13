@@ -65,13 +65,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFixedRate())
             {
                 context.Writer.WritePropertyName("FixedRate");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.FixedRate))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.FixedRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FixedRate));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FixedRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.FixedRate);
+                    context.Writer.Write(requestObject.FixedRate.Value);
                 }
             }
 
@@ -90,13 +90,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority);
+                context.Writer.Write(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetReservoirSize())
             {
                 context.Writer.WritePropertyName("ReservoirSize");
-                context.Writer.Write(requestObject.ReservoirSize);
+                context.Writer.Write(requestObject.ReservoirSize.Value);
             }
 
             if(requestObject.IsSetResourceARN())

@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.EC2.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.EC2
+namespace AWSSDK_DotNet.UnitTests.EC2
 {
     [TestClass]
     public class PasswordTest

@@ -74,13 +74,13 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BooleanValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DatetimeValue", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DatetimeValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

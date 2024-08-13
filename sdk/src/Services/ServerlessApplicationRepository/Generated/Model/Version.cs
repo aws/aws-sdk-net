@@ -168,9 +168,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ResourcesSupported
+        public bool? ResourcesSupported
         {
-            get { return this._resourcesSupported.GetValueOrDefault(); }
+            get { return this._resourcesSupported; }
             set { this._resourcesSupported = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("assignPublicIp", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AssignPublicIp = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -64,7 +64,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="callerReference">A unique value (for example, a date-time stamp) that ensures that the request can't be replayed. If the value of <c>CallerReference</c> is new (regardless of the content of the <c>DistributionConfig</c> object), CloudFront creates a new distribution. If <c>CallerReference</c> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <c>DistributionAlreadyExists</c> error.</param>
         /// <param name="enabled">From this field, you can enable or disable the selected distribution.</param>
-        public DistributionConfig(string callerReference, bool enabled)
+        public DistributionConfig(string callerReference, bool? enabled)
         {
             _callerReference = callerReference;
             _enabled = enabled;
@@ -280,9 +280,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -374,9 +374,9 @@ namespace Amazon.CloudFront.Model
         /// of the viewer request.
         /// </para>
         /// </summary>
-        public bool IsIPV6Enabled
+        public bool? IsIPV6Enabled
         {
-            get { return this._isIPV6Enabled.GetValueOrDefault(); }
+            get { return this._isIPV6Enabled; }
             set { this._isIPV6Enabled = value; }
         }
 
@@ -508,9 +508,9 @@ namespace Amazon.CloudFront.Model
         /// is not a staging distribution.
         /// </para>
         /// </summary>
-        public bool Staging
+        public bool? Staging
         {
-            get { return this._staging.GetValueOrDefault(); }
+            get { return this._staging; }
             set { this._staging = value; }
         }
 

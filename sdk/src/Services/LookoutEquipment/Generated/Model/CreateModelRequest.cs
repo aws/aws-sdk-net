@@ -159,9 +159,9 @@ namespace Amazon.LookoutEquipment.Model
         /// of evaluation data for the machine learning model. 
         /// </para>
         /// </summary>
-        public DateTime EvaluationDataEndTime
+        public DateTime? EvaluationDataEndTime
         {
-            get { return this._evaluationDataEndTime.GetValueOrDefault(); }
+            get { return this._evaluationDataEndTime; }
             set { this._evaluationDataEndTime = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.LookoutEquipment.Model
         /// of evaluation data for the machine learning model. 
         /// </para>
         /// </summary>
-        public DateTime EvaluationDataStartTime
+        public DateTime? EvaluationDataStartTime
         {
-            get { return this._evaluationDataStartTime.GetValueOrDefault(); }
+            get { return this._evaluationDataStartTime; }
             set { this._evaluationDataStartTime = value; }
         }
 
@@ -334,9 +334,9 @@ namespace Amazon.LookoutEquipment.Model
         /// of training data for the machine learning model. 
         /// </para>
         /// </summary>
-        public DateTime TrainingDataEndTime
+        public DateTime? TrainingDataEndTime
         {
-            get { return this._trainingDataEndTime.GetValueOrDefault(); }
+            get { return this._trainingDataEndTime; }
             set { this._trainingDataEndTime = value; }
         }
 
@@ -353,9 +353,9 @@ namespace Amazon.LookoutEquipment.Model
         /// of training data for the machine learning model. 
         /// </para>
         /// </summary>
-        public DateTime TrainingDataStartTime
+        public DateTime? TrainingDataStartTime
         {
-            get { return this._trainingDataStartTime.GetValueOrDefault(); }
+            get { return this._trainingDataStartTime; }
             set { this._trainingDataStartTime = value; }
         }
 

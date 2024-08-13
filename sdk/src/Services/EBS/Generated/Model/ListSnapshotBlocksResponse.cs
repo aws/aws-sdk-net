@@ -65,9 +65,9 @@ namespace Amazon.EBS.Model
         /// The size of the blocks in the snapshot, in bytes.
         /// </para>
         /// </summary>
-        public int BlockSize
+        public int? BlockSize
         {
-            get { return this._blockSize.GetValueOrDefault(); }
+            get { return this._blockSize; }
             set { this._blockSize = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.EBS.Model
         /// The time when the <c>BlockToken</c> expires.
         /// </para>
         /// </summary>
-        public DateTime ExpiryTime
+        public DateTime? ExpiryTime
         {
-            get { return this._expiryTime.GetValueOrDefault(); }
+            get { return this._expiryTime; }
             set { this._expiryTime = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long VolumeSize
+        public long? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

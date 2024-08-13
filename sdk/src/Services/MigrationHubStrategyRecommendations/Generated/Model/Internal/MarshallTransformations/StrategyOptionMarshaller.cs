@@ -51,7 +51,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             if(requestObject.IsSetIsPreferred())
             {
                 context.Writer.WritePropertyName("isPreferred");
-                context.Writer.Write(requestObject.IsPreferred);
+                context.Writer.Write(requestObject.IsPreferred.Value);
             }
 
             if(requestObject.IsSetStrategy())

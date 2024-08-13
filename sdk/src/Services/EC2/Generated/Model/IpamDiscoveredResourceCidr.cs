@@ -37,8 +37,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class IpamDiscoveredResourceCidr
     {
+        private string _availabilityZoneId;
         private string _ipamResourceDiscoveryId;
         private double? _ipUsage;
+        private IpamNetworkInterfaceAttachmentStatus _networkInterfaceAttachmentStatus;
         private string _resourceCidr;
         private string _resourceId;
         private string _resourceOwnerId;
@@ -47,6 +49,24 @@ namespace Amazon.EC2.Model
         private IpamResourceType _resourceType;
         private DateTime? _sampleTime;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The Availability Zone ID.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IpamResourceDiscoveryId. 
@@ -92,9 +112,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public double IpUsage
+        public double? IpUsage
         {
-            get { return this._ipUsage.GetValueOrDefault(); }
+            get { return this._ipUsage; }
             set { this._ipUsage = value; }
         }
 
@@ -102,6 +122,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpUsage()
         {
             return this._ipUsage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceAttachmentStatus. 
+        /// <para>
+        /// For elastic network interfaces, this is the status of whether or not the elastic network
+        /// interface is attached.
+        /// </para>
+        /// </summary>
+        public IpamNetworkInterfaceAttachmentStatus NetworkInterfaceAttachmentStatus
+        {
+            get { return this._networkInterfaceAttachmentStatus; }
+            set { this._networkInterfaceAttachmentStatus = value; }
+        }
+
+        // Check to see if NetworkInterfaceAttachmentStatus property is set
+        internal bool IsSetNetworkInterfaceAttachmentStatus()
+        {
+            return this._networkInterfaceAttachmentStatus != null;
         }
 
         /// <summary>
@@ -218,9 +257,9 @@ namespace Amazon.EC2.Model
         /// The last successful resource discovery time.
         /// </para>
         /// </summary>
-        public DateTime SampleTime
+        public DateTime? SampleTime
         {
-            get { return this._sampleTime.GetValueOrDefault(); }
+            get { return this._sampleTime; }
             set { this._sampleTime = value; }
         }
 

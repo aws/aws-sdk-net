@@ -44,9 +44,9 @@ namespace Amazon.RDS.Model
         /// A Boolean value that, if true, indicates there is more data to be downloaded.
         /// </para>
         /// </summary>
-        public bool AdditionalDataPending
+        public bool? AdditionalDataPending
         {
-            get { return this._additionalDataPending.GetValueOrDefault(); }
+            get { return this._additionalDataPending; }
             set { this._additionalDataPending = value; }
         }
 

@@ -68,9 +68,9 @@ namespace Amazon.FMS.Model
         /// Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool DefaultAdmin
+        public bool? DefaultAdmin
         {
-            get { return this._defaultAdmin.GetValueOrDefault(); }
+            get { return this._defaultAdmin; }
             set { this._defaultAdmin = value; }
         }
 

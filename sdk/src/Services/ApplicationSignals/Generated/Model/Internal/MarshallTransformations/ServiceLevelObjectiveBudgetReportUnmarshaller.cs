@@ -74,13 +74,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Attainment", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Attainment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BudgetSecondsRemaining", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BudgetSecondsRemaining = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,7 +110,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalBudgetSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalBudgetSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -66,13 +66,13 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("deletionProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DeletionProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -102,19 +102,19 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("provisionedMemory", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ProvisionedMemory = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("publicConnectivity", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PublicConnectivity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("replicaCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ReplicaCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

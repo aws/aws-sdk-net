@@ -44,9 +44,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowAudioInput
+        public bool? AllowAudioInput
         {
-            get { return this._allowAudioInput.GetValueOrDefault(); }
+            get { return this._allowAudioInput; }
             set { this._allowAudioInput = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowDTMFInput
+        public bool? AllowDTMFInput
         {
-            get { return this._allowdtmfInput.GetValueOrDefault(); }
+            get { return this._allowdtmfInput; }
             set { this._allowdtmfInput = value; }
         }
 

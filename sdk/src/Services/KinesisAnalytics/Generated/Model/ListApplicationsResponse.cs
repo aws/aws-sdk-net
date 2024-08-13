@@ -63,9 +63,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool HasMoreApplications
+        public bool? HasMoreApplications
         {
-            get { return this._hasMoreApplications.GetValueOrDefault(); }
+            get { return this._hasMoreApplications; }
             set { this._hasMoreApplications = value; }
         }
 

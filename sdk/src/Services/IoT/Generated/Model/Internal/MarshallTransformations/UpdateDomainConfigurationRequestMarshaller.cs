@@ -90,7 +90,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoveAuthorizerConfig())
                 {
                     context.Writer.WritePropertyName("removeAuthorizerConfig");
-                    context.Writer.Write(publicRequest.RemoveAuthorizerConfig);
+                    context.Writer.Write(publicRequest.RemoveAuthorizerConfig.Value);
                 }
 
                 if(publicRequest.IsSetServerCertificateConfig())

@@ -85,9 +85,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The time the recovery point is created.
         /// </para>
         /// </summary>
-        public DateTime RecoveryPointCreateTime
+        public DateTime? RecoveryPointCreateTime
         {
-            get { return this._recoveryPointCreateTime.GetValueOrDefault(); }
+            get { return this._recoveryPointCreateTime; }
             set { this._recoveryPointCreateTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The total size of the data in the recovery point in megabytes.
         /// </para>
         /// </summary>
-        public double TotalSizeInMegaBytes
+        public double? TotalSizeInMegaBytes
         {
-            get { return this._totalSizeInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalSizeInMegaBytes; }
             set { this._totalSizeInMegaBytes = value; }
         }
 

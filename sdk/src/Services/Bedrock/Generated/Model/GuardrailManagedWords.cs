@@ -31,7 +31,7 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// The managed word list that was configured for the guardrail. (This is a list of words
-    /// that are pre-defined and managed by Guardrails only.)
+    /// that are pre-defined and managed by guardrails only.)
     /// </summary>
     public partial class GuardrailManagedWords
     {

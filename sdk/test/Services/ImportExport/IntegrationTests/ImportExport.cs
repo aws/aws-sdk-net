@@ -121,10 +121,10 @@ returnAddress:
             Job job = FindJob(createdJobId, listJobsResponse.Jobs);
             Assert.IsNotNull(job);
             Assert.IsTrue(job.CreationDate > DateTime.MinValue);
-            Assert.IsFalse(job.IsCanceled);
+            Assert.IsFalse(job.IsCanceled.Value);
             Assert.AreEqual(createdJobId, job.JobId);
             Assert.AreEqual(JobType.Export, job.JobType);
-            Assert.IsFalse(job.IsCanceled);
+            Assert.IsFalse(job.IsCanceled.Value);
 
 
             // GetStatus
@@ -164,7 +164,7 @@ returnAddress:
         private void AssertJobIsCancelled(string jobId)
         {
             Job job = FindJob(jobId, Client.ListJobs(new ListJobsRequest()).Jobs);
-            Assert.IsTrue(job.IsCanceled);
+            Assert.IsTrue(job.IsCanceled.Value);
         }
 
 

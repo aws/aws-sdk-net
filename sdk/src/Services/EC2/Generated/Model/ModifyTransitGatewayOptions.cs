@@ -78,9 +78,9 @@ namespace Amazon.EC2.Model
         /// to modifying the ASN on the transit gateway.
         /// </para>
         /// </summary>
-        public long AmazonSideAsn
+        public long? AmazonSideAsn
         {
-            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            get { return this._amazonSideAsn; }
             set { this._amazonSideAsn = value; }
         }
 

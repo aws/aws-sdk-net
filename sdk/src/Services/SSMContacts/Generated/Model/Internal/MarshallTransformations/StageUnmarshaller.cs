@@ -68,7 +68,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DurationInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DurationInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

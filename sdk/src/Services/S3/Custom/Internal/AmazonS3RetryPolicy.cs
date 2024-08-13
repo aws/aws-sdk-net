@@ -14,6 +14,7 @@
  */
 
 using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.S3.Model;
@@ -72,14 +73,16 @@ namespace Amazon.S3.Internal
 
                 if (serviceException.StatusCode == HttpStatusCode.BadRequest)
                 {
-#pragma warning disable CS0612,CS0618
-                    var configuredUri = new Uri(executionContext.RequestContext.ClientConfig.DetermineServiceURL());
+                    var parameters = new ServiceOperationEndpointParameters(executionContext.RequestContext.OriginalRequest);
+                    var endpoint = executionContext.RequestContext.ClientConfig
+                        .DetermineServiceOperationEndpoint(parameters);
+                    var configuredUri = new Uri(endpoint.URL);
+
                     if (configuredUri.Host.Equals(S3Constants.S3DefaultEndpoint) &&
                         (serviceException.Message.Contains(AWS4Signer.AWS4AlgorithmTag) ||
                          serviceException.Message.Contains(AWS_KMS_Signature_Error))
                         )
                     {
-#pragma warning restore CS0612,CS0618
                         // If the response message indicates AWS4 signing should have been used,
                         // we've attempted to access a bucket in an AWS4-only region (e.g. EU Central (Frankfurt)) with an AWS2
                         // signature and/or client not configured with the correct region.

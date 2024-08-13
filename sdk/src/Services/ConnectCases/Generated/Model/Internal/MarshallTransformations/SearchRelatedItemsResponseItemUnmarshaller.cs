@@ -68,7 +68,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("associationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AssociationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

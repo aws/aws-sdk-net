@@ -130,9 +130,9 @@ namespace Amazon.IoT.Model
         /// If true, removes auto registration.
         /// </para>
         /// </summary>
-        public bool RemoveAutoRegistration
+        public bool? RemoveAutoRegistration
         {
-            get { return this._removeAutoRegistration.GetValueOrDefault(); }
+            get { return this._removeAutoRegistration; }
             set { this._removeAutoRegistration = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.ServiceCatalog.Model
         /// The active state.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 

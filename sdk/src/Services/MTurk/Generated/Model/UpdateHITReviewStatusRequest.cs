@@ -76,9 +76,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool Revert
+        public bool? Revert
         {
-            get { return this._revert.GetValueOrDefault(); }
+            get { return this._revert; }
             set { this._revert = value; }
         }
 

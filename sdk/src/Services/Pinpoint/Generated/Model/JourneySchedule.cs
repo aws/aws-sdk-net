@@ -44,9 +44,9 @@ namespace Amazon.Pinpoint.Model
         /// The scheduled time, in ISO 8601 format, when the journey ended or will end.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Pinpoint.Model
         /// The scheduled time, in ISO 8601 format, when the journey began or will begin.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

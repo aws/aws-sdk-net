@@ -113,9 +113,9 @@ namespace Amazon.Route53Resolver.Model
         /// group association after you create it.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

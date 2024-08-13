@@ -74,13 +74,13 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("targetFramesIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetFramesIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("thresholdBreachValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThresholdBreachValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,13 +51,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvoidFerries())
             {
                 context.Writer.WritePropertyName("AvoidFerries");
-                context.Writer.Write(requestObject.AvoidFerries);
+                context.Writer.Write(requestObject.AvoidFerries.Value);
             }
 
             if(requestObject.IsSetAvoidTolls())
             {
                 context.Writer.WritePropertyName("AvoidTolls");
-                context.Writer.Write(requestObject.AvoidTolls);
+                context.Writer.Write(requestObject.AvoidTolls.Value);
             }
 
         }

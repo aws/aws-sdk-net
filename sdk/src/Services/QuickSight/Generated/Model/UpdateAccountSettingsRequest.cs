@@ -109,9 +109,9 @@ namespace Amazon.QuickSight.Model
         /// A <c>False</c> value will allow the account to be deleted.
         /// </para>
         /// </summary>
-        public bool TerminationProtectionEnabled
+        public bool? TerminationProtectionEnabled
         {
-            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            get { return this._terminationProtectionEnabled; }
             set { this._terminationProtectionEnabled = value; }
         }
 

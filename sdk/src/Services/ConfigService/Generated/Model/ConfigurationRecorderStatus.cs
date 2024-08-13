@@ -92,9 +92,9 @@ namespace Amazon.ConfigService.Model
         /// The time the recorder was last started.
         /// </para>
         /// </summary>
-        public DateTime LastStartTime
+        public DateTime? LastStartTime
         {
-            get { return this._lastStartTime.GetValueOrDefault(); }
+            get { return this._lastStartTime; }
             set { this._lastStartTime = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.ConfigService.Model
         /// The time of the latest change in status of an recording event processed by the recorder.
         /// </para>
         /// </summary>
-        public DateTime LastStatusChangeTime
+        public DateTime? LastStatusChangeTime
         {
-            get { return this._lastStatusChangeTime.GetValueOrDefault(); }
+            get { return this._lastStatusChangeTime; }
             set { this._lastStatusChangeTime = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.ConfigService.Model
         /// The time the recorder was last stopped.
         /// </para>
         /// </summary>
-        public DateTime LastStopTime
+        public DateTime? LastStopTime
         {
-            get { return this._lastStopTime.GetValueOrDefault(); }
+            get { return this._lastStopTime; }
             set { this._lastStopTime = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.ConfigService.Model
         /// Specifies whether or not the recorder is currently recording.
         /// </para>
         /// </summary>
-        public bool Recording
+        public bool? Recording
         {
-            get { return this._recording.GetValueOrDefault(); }
+            get { return this._recording; }
             set { this._recording = value; }
         }
 

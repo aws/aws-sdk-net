@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class SQSConstructorCustomizationsTests
@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("SQS")]
         public void ChangeMessageVisibilityRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.SQS.Model.ChangeMessageVisibilityRequest), new System.Type[] { typeof(string), typeof(string), typeof(int), });
+            EnsureConstructorExists(typeof(Amazon.SQS.Model.ChangeMessageVisibilityRequest), new System.Type[] { typeof(string), typeof(string), typeof(int?), });
         }
 
         [TestMethod]

@@ -48,9 +48,9 @@ namespace Amazon.IVSRealTime.Model
         /// if the stage is active.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IVSRealTime.Model
         ///  ISO 8601 timestamp (returned as a string) when this stage session began.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

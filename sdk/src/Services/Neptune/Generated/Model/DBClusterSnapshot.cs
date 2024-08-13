@@ -68,9 +68,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the allocated storage size in gibibytes (GiB).
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.Neptune.Model
         /// (UTC).
         /// </para>
         /// </summary>
-        public DateTime ClusterCreateTime
+        public DateTime? ClusterCreateTime
         {
-            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            get { return this._clusterCreateTime; }
             set { this._clusterCreateTime = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.Neptune.Model
         /// accounts is enabled, and otherwise false.
         /// </para>
         /// </summary>
-        public bool IAMDatabaseAuthenticationEnabled
+        public bool? IAMDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -305,9 +305,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the percentage of the estimated data that has been transferred.
         /// </para>
         /// </summary>
-        public int PercentProgress
+        public int? PercentProgress
         {
-            get { return this._percentProgress.GetValueOrDefault(); }
+            get { return this._percentProgress; }
             set { this._percentProgress = value; }
         }
 
@@ -323,9 +323,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the port that the DB cluster was listening on at the time of the snapshot.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -341,9 +341,9 @@ namespace Amazon.Neptune.Model
         /// Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreateTime
+        public DateTime? SnapshotCreateTime
         {
-            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            get { return this._snapshotCreateTime; }
             set { this._snapshotCreateTime = value; }
         }
 
@@ -414,9 +414,9 @@ namespace Amazon.Neptune.Model
         /// Specifies whether the DB cluster snapshot is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

@@ -88,9 +88,9 @@ namespace Amazon.MediaConvert.Model
         /// be corrected.
         /// </summary>
         [AWSProperty(Min=-70, Max=0)]
-        public int CorrectionGateLevel
+        public int? CorrectionGateLevel
         {
-            get { return this._correctionGateLevel.GetValueOrDefault(); }
+            get { return this._correctionGateLevel; }
             set { this._correctionGateLevel = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.MediaConvert.Model
         /// If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder
         /// will choose -23 LKFS.
         /// </summary>
-        public double TargetLkfs
+        public double? TargetLkfs
         {
-            get { return this._targetLkfs.GetValueOrDefault(); }
+            get { return this._targetLkfs; }
             set { this._targetLkfs = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.MediaConvert.Model
         /// overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value
         /// 0.
         /// </summary>
-        public double TruePeakLimiterThreshold
+        public double? TruePeakLimiterThreshold
         {
-            get { return this._truePeakLimiterThreshold.GetValueOrDefault(); }
+            get { return this._truePeakLimiterThreshold; }
             set { this._truePeakLimiterThreshold = value; }
         }
 

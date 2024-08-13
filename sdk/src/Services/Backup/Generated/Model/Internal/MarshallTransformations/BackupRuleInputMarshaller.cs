@@ -51,7 +51,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompletionWindowMinutes())
             {
                 context.Writer.WritePropertyName("CompletionWindowMinutes");
-                context.Writer.Write(requestObject.CompletionWindowMinutes);
+                context.Writer.Write(requestObject.CompletionWindowMinutes.Value);
             }
 
             if(requestObject.IsSetCopyActions())
@@ -73,7 +73,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableContinuousBackup())
             {
                 context.Writer.WritePropertyName("EnableContinuousBackup");
-                context.Writer.Write(requestObject.EnableContinuousBackup);
+                context.Writer.Write(requestObject.EnableContinuousBackup.Value);
             }
 
             if(requestObject.IsSetLifecycle())
@@ -122,7 +122,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartWindowMinutes())
             {
                 context.Writer.WritePropertyName("StartWindowMinutes");
-                context.Writer.Write(requestObject.StartWindowMinutes);
+                context.Writer.Write(requestObject.StartWindowMinutes.Value);
             }
 
             if(requestObject.IsSetTargetBackupVaultName())

@@ -44,9 +44,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  Set to true if the recommendation is set as preferred. 
         /// </para>
         /// </summary>
-        public bool IsPreferred
+        public bool? IsPreferred
         {
-            get { return this._isPreferred.GetValueOrDefault(); }
+            get { return this._isPreferred; }
             set { this._isPreferred = value; }
         }
 

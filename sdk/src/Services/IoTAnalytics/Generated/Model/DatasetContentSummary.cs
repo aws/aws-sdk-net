@@ -46,9 +46,9 @@ namespace Amazon.IoTAnalytics.Model
         /// The time the dataset content status was updated to SUCCEEDED or FAILED.
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.IoTAnalytics.Model
         /// The actual time the creation of the dataset contents was started.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.IoTAnalytics.Model
         /// The time the creation of the dataset contents was scheduled to start.
         /// </para>
         /// </summary>
-        public DateTime ScheduleTime
+        public DateTime? ScheduleTime
         {
-            get { return this._scheduleTime.GetValueOrDefault(); }
+            get { return this._scheduleTime; }
             set { this._scheduleTime = value; }
         }
 

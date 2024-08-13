@@ -82,9 +82,9 @@ namespace Amazon.Kinesis.Model
         /// 
         /// </para>
         /// </summary>
-        public bool EnforceConsumerDeletion
+        public bool? EnforceConsumerDeletion
         {
-            get { return this._enforceConsumerDeletion.GetValueOrDefault(); }
+            get { return this._enforceConsumerDeletion; }
             set { this._enforceConsumerDeletion = value; }
         }
 

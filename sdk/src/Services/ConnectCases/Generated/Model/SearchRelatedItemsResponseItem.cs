@@ -48,9 +48,9 @@ namespace Amazon.ConnectCases.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime AssociationTime
+        public DateTime? AssociationTime
         {
-            get { return this._associationTime.GetValueOrDefault(); }
+            get { return this._associationTime; }
             set { this._associationTime = value; }
         }
 

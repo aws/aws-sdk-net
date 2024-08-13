@@ -92,7 +92,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// for ARQC verification using a major encryption key and transaction data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=16)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=16)]
         public string AuthRequestCryptogram
         {
             get { return this._authRequestCryptogram; }
@@ -194,7 +194,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Cryptography.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=1024)]
         public string TransactionData
         {
             get { return this._transactionData; }

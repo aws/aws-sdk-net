@@ -64,9 +64,9 @@ namespace Amazon.ElasticInference.Model
         ///  The throughput value of the Elastic Inference Accelerator type. 
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

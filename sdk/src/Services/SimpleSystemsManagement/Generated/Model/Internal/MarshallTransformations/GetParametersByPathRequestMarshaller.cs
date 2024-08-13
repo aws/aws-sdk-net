@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -106,13 +106,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRecursive())
                 {
                     context.Writer.WritePropertyName("Recursive");
-                    context.Writer.Write(publicRequest.Recursive);
+                    context.Writer.Write(publicRequest.Recursive.Value);
                 }
 
                 if(publicRequest.IsSetWithDecryption())
                 {
                     context.Writer.WritePropertyName("WithDecryption");
-                    context.Writer.Write(publicRequest.WithDecryption);
+                    context.Writer.Write(publicRequest.WithDecryption.Value);
                 }
 
                 writer.WriteObjectEnd();

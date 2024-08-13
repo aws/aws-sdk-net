@@ -286,9 +286,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=75)]
-        public int QueryDepthLimit
+        public int? QueryDepthLimit
         {
-            get { return this._queryDepthLimit.GetValueOrDefault(); }
+            get { return this._queryDepthLimit; }
             set { this._queryDepthLimit = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int ResolverCountLimit
+        public int? ResolverCountLimit
         {
-            get { return this._resolverCountLimit.GetValueOrDefault(); }
+            get { return this._resolverCountLimit; }
             set { this._resolverCountLimit = value; }
         }
 
@@ -383,9 +383,9 @@ namespace Amazon.AppSync.Model
         /// A flag indicating whether to use X-Ray tracing for the <c>GraphqlApi</c>.
         /// </para>
         /// </summary>
-        public bool XrayEnabled
+        public bool? XrayEnabled
         {
-            get { return this._xrayEnabled.GetValueOrDefault(); }
+            get { return this._xrayEnabled; }
             set { this._xrayEnabled = value; }
         }
 

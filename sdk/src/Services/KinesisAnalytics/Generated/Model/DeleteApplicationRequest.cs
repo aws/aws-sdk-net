@@ -81,9 +81,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTimestamp
+        public DateTime? CreateTimestamp
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
+            get { return this._createTimestamp; }
             set { this._createTimestamp = value; }
         }
 

@@ -72,19 +72,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreatedAfter())
                 {
                     context.Writer.WritePropertyName("CreatedAfter");
-                    context.Writer.Write(publicRequest.CreatedAfter);
+                    context.Writer.Write(publicRequest.CreatedAfter.Value);
                 }
 
                 if(publicRequest.IsSetCreatedBefore())
                 {
                     context.Writer.WritePropertyName("CreatedBefore");
-                    context.Writer.Write(publicRequest.CreatedBefore);
+                    context.Writer.Write(publicRequest.CreatedBefore.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

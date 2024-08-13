@@ -4,7 +4,7 @@ using System.Reflection;
 using Amazon.Util.Internal;
 using System;
 
-namespace AWSSDK.UnitTests.Custom.Net45.Custom.Util
+namespace AWSSDK.UnitTests.Custom.Custom.Util
 {
     [TestClass]
     public class InternalSDKUtilsTests

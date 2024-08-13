@@ -72,13 +72,13 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeDeprecated())
                 {
                     context.Writer.WritePropertyName("IncludeDeprecated");
-                    context.Writer.Write(publicRequest.IncludeDeprecated);
+                    context.Writer.Write(publicRequest.IncludeDeprecated.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

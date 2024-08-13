@@ -56,9 +56,9 @@ namespace Amazon.EC2.Model
         /// your account.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

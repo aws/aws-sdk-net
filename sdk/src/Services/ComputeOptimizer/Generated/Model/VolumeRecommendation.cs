@@ -161,9 +161,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The timestamp of when the volume recommendation was last generated.
         /// </para>
         /// </summary>
-        public DateTime LastRefreshTimestamp
+        public DateTime? LastRefreshTimestamp
         {
-            get { return this._lastRefreshTimestamp.GetValueOrDefault(); }
+            get { return this._lastRefreshTimestamp; }
             set { this._lastRefreshTimestamp = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The number of days for which utilization metrics were analyzed for the volume.
         /// </para>
         /// </summary>
-        public double LookBackPeriodInDays
+        public double? LookBackPeriodInDays
         {
-            get { return this._lookBackPeriodInDays.GetValueOrDefault(); }
+            get { return this._lookBackPeriodInDays; }
             set { this._lookBackPeriodInDays = value; }
         }
 

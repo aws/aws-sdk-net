@@ -61,9 +61,9 @@ namespace Amazon.QuickSight.Model
         /// The reserved range of the arc axis.
         /// </para>
         /// </summary>
-        public int ReserveRange
+        public int? ReserveRange
         {
-            get { return this._reserveRange.GetValueOrDefault(); }
+            get { return this._reserveRange; }
             set { this._reserveRange = value; }
         }
 

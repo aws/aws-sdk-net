@@ -53,9 +53,9 @@ namespace Amazon.SageMaker.Model
         /// Policy for SageMaker Pipelines steps</a>.
         /// </para>
         /// </summary>
-        public int AttemptCount
+        public int? AttemptCount
         {
-            get { return this._attemptCount.GetValueOrDefault(); }
+            get { return this._attemptCount; }
             set { this._attemptCount = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.SageMaker.Model
         /// The time that the step stopped executing.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.SageMaker.Model
         /// The time that the step started executing.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

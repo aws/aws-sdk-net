@@ -42,9 +42,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Enables message logging for the specified SIP media application.
         /// </para>
         /// </summary>
-        public bool EnableSipMediaApplicationMessageLogs
+        public bool? EnableSipMediaApplicationMessageLogs
         {
-            get { return this._enableSipMediaApplicationMessageLogs.GetValueOrDefault(); }
+            get { return this._enableSipMediaApplicationMessageLogs; }
             set { this._enableSipMediaApplicationMessageLogs = value; }
         }
 

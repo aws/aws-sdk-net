@@ -67,7 +67,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Retry-After", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

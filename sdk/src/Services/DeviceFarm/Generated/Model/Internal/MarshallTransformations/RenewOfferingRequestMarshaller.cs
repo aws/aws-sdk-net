@@ -78,7 +78,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQuantity())
                 {
                     context.Writer.WritePropertyName("quantity");
-                    context.Writer.Write(publicRequest.Quantity);
+                    context.Writer.Write(publicRequest.Quantity.Value);
                 }
 
                 writer.WriteObjectEnd();

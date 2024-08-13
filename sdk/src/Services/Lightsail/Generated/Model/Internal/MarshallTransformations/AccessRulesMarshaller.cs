@@ -51,7 +51,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowPublicOverrides())
             {
                 context.Writer.WritePropertyName("allowPublicOverrides");
-                context.Writer.Write(requestObject.AllowPublicOverrides);
+                context.Writer.Write(requestObject.AllowPublicOverrides.Value);
             }
 
             if(requestObject.IsSetGetObject())

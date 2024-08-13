@@ -80,7 +80,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRoleSearchSubtree())
             {
                 context.Writer.WritePropertyName("roleSearchSubtree");
-                context.Writer.Write(requestObject.RoleSearchSubtree);
+                context.Writer.Write(requestObject.RoleSearchSubtree.Value);
             }
 
             if(requestObject.IsSetServiceAccountPassword())
@@ -116,7 +116,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUserSearchSubtree())
             {
                 context.Writer.WritePropertyName("userSearchSubtree");
-                context.Writer.Write(requestObject.UserSearchSubtree);
+                context.Writer.Write(requestObject.UserSearchSubtree.Value);
             }
 
         }

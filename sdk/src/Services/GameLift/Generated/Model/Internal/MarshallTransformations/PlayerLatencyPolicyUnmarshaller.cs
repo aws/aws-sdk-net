@@ -68,13 +68,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaximumIndividualPlayerLatencyMilliseconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumIndividualPlayerLatencyMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PolicyDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PolicyDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

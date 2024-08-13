@@ -64,9 +64,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property IncludeIframeOnlyStream. When enabled, an I-Frame only
         /// stream will be included in the output.
         /// </summary>
-        public bool IncludeIframeOnlyStream
+        public bool? IncludeIframeOnlyStream
         {
-            get { return this._includeIframeOnlyStream.GetValueOrDefault(); }
+            get { return this._includeIframeOnlyStream; }
             set { this._includeIframeOnlyStream = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.MediaPackageVod.Model
         /// ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,it will be passed through
         /// to HLS output.
         /// </summary>
-        public int ProgramDateTimeIntervalSeconds
+        public int? ProgramDateTimeIntervalSeconds
         {
-            get { return this._programDateTimeIntervalSeconds.GetValueOrDefault(); }
+            get { return this._programDateTimeIntervalSeconds; }
             set { this._programDateTimeIntervalSeconds = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property RepeatExtXKey. When enabled, the EXT-X-KEY tag will be
         /// repeated in output manifests.
         /// </summary>
-        public bool RepeatExtXKey
+        public bool? RepeatExtXKey
         {
-            get { return this._repeatExtXKey.GetValueOrDefault(); }
+            get { return this._repeatExtXKey; }
             set { this._repeatExtXKey = value; }
         }
 

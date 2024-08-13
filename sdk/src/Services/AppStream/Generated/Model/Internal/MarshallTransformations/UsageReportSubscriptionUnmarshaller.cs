@@ -68,7 +68,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LastGeneratedReportDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastGeneratedReportDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

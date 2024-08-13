@@ -54,19 +54,19 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AccumulatedInferenceDataEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AccumulatedInferenceDataEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AccumulatedInferenceDataStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AccumulatedInferenceDataStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ActiveModelVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ActiveModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -102,13 +102,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EvaluationDataEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EvaluationDataEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EvaluationDataStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EvaluationDataStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -120,13 +120,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ImportJobEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ImportJobEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ImportJobStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ImportJobStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -138,13 +138,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestScheduledRetrainingAvailableDataInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.LatestScheduledRetrainingAvailableDataInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -156,13 +156,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestScheduledRetrainingModelVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LatestScheduledRetrainingModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestScheduledRetrainingStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestScheduledRetrainingStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -204,13 +204,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ModelVersionActivatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModelVersionActivatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NextScheduledRetrainingStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.NextScheduledRetrainingStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -222,7 +222,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PreviousActiveModelVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.PreviousActiveModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -234,7 +234,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PreviousModelVersionActivatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.PreviousModelVersionActivatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -282,25 +282,25 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TrainingDataEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TrainingDataEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrainingDataStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TrainingDataStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrainingExecutionEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TrainingExecutionEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrainingExecutionStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TrainingExecutionStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

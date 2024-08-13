@@ -57,7 +57,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxDurationSeconds())
             {
                 context.Writer.WritePropertyName("MaxDurationSeconds");
-                context.Writer.Write(requestObject.MaxDurationSeconds);
+                context.Writer.Write(requestObject.MaxDurationSeconds.Value);
             }
 
         }

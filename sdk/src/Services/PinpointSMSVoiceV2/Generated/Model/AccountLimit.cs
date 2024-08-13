@@ -45,9 +45,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Max
+        public long? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Used
+        public long? Used
         {
-            get { return this._used.GetValueOrDefault(); }
+            get { return this._used; }
             set { this._used = value; }
         }
 

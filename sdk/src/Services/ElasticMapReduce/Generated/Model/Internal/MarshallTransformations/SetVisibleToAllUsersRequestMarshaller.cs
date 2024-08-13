@@ -83,7 +83,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVisibleToAllUsers())
                 {
                     context.Writer.WritePropertyName("VisibleToAllUsers");
-                    context.Writer.Write(publicRequest.VisibleToAllUsers);
+                    context.Writer.Write(publicRequest.VisibleToAllUsers.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -67,9 +67,9 @@ namespace Amazon.WorkDocs.Model
         /// Flag to indicate removal of all custom metadata properties from the specified resource.
         /// </para>
         /// </summary>
-        public bool DeleteAll
+        public bool? DeleteAll
         {
-            get { return this._deleteAll.GetValueOrDefault(); }
+            get { return this._deleteAll; }
             set { this._deleteAll = value; }
         }
 

@@ -61,9 +61,9 @@ namespace Amazon.ECS.Model
         /// You can view these services with <a>ListServices</a>.
         /// </para>
         /// </summary>
-        public int ActiveServicesCount
+        public int? ActiveServicesCount
         {
-            get { return this._activeServicesCount.GetValueOrDefault(); }
+            get { return this._activeServicesCount; }
             set { this._activeServicesCount = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.ECS.Model
         /// The number of tasks in the cluster that are in the <c>PENDING</c> state.
         /// </para>
         /// </summary>
-        public int PendingTasksCount
+        public int? PendingTasksCount
         {
-            get { return this._pendingTasksCount.GetValueOrDefault(); }
+            get { return this._pendingTasksCount; }
             set { this._pendingTasksCount = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.ECS.Model
         /// instances in both <c>ACTIVE</c> and <c>DRAINING</c> status.
         /// </para>
         /// </summary>
-        public int RegisteredContainerInstancesCount
+        public int? RegisteredContainerInstancesCount
         {
-            get { return this._registeredContainerInstancesCount.GetValueOrDefault(); }
+            get { return this._registeredContainerInstancesCount; }
             set { this._registeredContainerInstancesCount = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.ECS.Model
         /// The number of tasks in the cluster that are in the <c>RUNNING</c> state.
         /// </para>
         /// </summary>
-        public int RunningTasksCount
+        public int? RunningTasksCount
         {
-            get { return this._runningTasksCount.GetValueOrDefault(); }
+            get { return this._runningTasksCount; }
             set { this._runningTasksCount = value; }
         }
 

@@ -80,9 +80,9 @@ namespace Amazon.LakeFormation.Model
         /// The time that the query was submitted.
         /// </para>
         /// </summary>
-        public DateTime QuerySubmissionTime
+        public DateTime? QuerySubmissionTime
         {
-            get { return this._querySubmissionTime.GetValueOrDefault(); }
+            get { return this._querySubmissionTime; }
             set { this._querySubmissionTime = value; }
         }
 

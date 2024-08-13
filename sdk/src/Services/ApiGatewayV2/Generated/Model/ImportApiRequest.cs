@@ -85,9 +85,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// API creation continues if a warning is encountered.
         /// </para>
         /// </summary>
-        public bool FailOnWarnings
+        public bool? FailOnWarnings
         {
-            get { return this._failOnWarnings.GetValueOrDefault(); }
+            get { return this._failOnWarnings; }
             set { this._failOnWarnings = value; }
         }
 

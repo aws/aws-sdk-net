@@ -51,13 +51,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeranCid())
             {
                 context.Writer.WritePropertyName("GeranCid");
-                context.Writer.Write(requestObject.GeranCid);
+                context.Writer.Write(requestObject.GeranCid.Value);
             }
 
             if(requestObject.IsSetLac())
             {
                 context.Writer.WritePropertyName("Lac");
-                context.Writer.Write(requestObject.Lac);
+                context.Writer.Write(requestObject.Lac.Value);
             }
 
         }

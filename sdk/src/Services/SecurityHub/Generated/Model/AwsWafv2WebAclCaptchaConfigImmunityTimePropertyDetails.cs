@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// valid by WAF. 
         /// </para>
         /// </summary>
-        public long ImmunityTime
+        public long? ImmunityTime
         {
-            get { return this._immunityTime.GetValueOrDefault(); }
+            get { return this._immunityTime; }
             set { this._immunityTime = value; }
         }
 

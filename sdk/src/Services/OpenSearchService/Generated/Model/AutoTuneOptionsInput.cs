@@ -85,9 +85,9 @@ namespace Amazon.OpenSearchService.Model
         /// the domain's configured daily off-peak window.
         /// </para>
         /// </summary>
-        public bool UseOffPeakWindow
+        public bool? UseOffPeakWindow
         {
-            get { return this._useOffPeakWindow.GetValueOrDefault(); }
+            get { return this._useOffPeakWindow; }
             set { this._useOffPeakWindow = value; }
         }
 

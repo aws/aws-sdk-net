@@ -70,7 +70,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EvaluateTargetHealth", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EvaluateTargetHealth = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -136,9 +136,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of instantiations of the task definition to run on the service.
         /// </para>
         /// </summary>
-        public int DesiredCount
+        public int? DesiredCount
         {
-            get { return this._desiredCount.GetValueOrDefault(); }
+            get { return this._desiredCount; }
             set { this._desiredCount = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to enable Amazon ECS managed tags for the tasks in the service.
         /// </para>
         /// </summary>
-        public bool EnableEcsManagedTags
+        public bool? EnableEcsManagedTags
         {
-            get { return this._enableEcsManagedTags.GetValueOrDefault(); }
+            get { return this._enableEcsManagedTags; }
             set { this._enableEcsManagedTags = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the execute command functionality is enabled for the service.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.SecurityHub.Model
         /// ignores unhealthy Elastic Load Balancing target health checks.
         /// </para>
         /// </summary>
-        public int HealthCheckGracePeriodSeconds
+        public int? HealthCheckGracePeriodSeconds
         {
-            get { return this._healthCheckGracePeriodSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckGracePeriodSeconds; }
             set { this._healthCheckGracePeriodSeconds = value; }
         }
 

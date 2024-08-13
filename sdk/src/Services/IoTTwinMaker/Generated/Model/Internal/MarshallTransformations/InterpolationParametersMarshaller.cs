@@ -57,7 +57,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntervalInSeconds())
             {
                 context.Writer.WritePropertyName("intervalInSeconds");
-                context.Writer.Write(requestObject.IntervalInSeconds);
+                context.Writer.Write(requestObject.IntervalInSeconds.Value);
             }
 
         }

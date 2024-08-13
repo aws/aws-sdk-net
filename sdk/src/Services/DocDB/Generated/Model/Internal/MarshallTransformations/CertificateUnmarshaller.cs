@@ -81,13 +81,13 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ValidFrom", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ValidFrom = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ValidTill", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ValidTill = unmarshaller.Unmarshall(context);
                         continue;
                     }

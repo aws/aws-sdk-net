@@ -135,9 +135,9 @@ namespace Amazon.S3.Model
         /// The date retrieved from S3 is in ISO8601 format. A GMT formatted date is passed back to the user.
         /// </remarks>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this.lastModified ?? default(DateTime); }
+            get { return this.lastModified; }
             set { this.lastModified = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The size of the object.
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this.size ?? default(long); }
+            get { return this.size; }
             set { this.size = value; }
         }
 

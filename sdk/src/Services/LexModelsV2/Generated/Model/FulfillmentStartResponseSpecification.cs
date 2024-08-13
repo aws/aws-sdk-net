@@ -45,9 +45,9 @@ namespace Amazon.LexModelsV2.Model
         /// Determines whether the user can interrupt the start message while it is playing.
         /// </para>
         /// </summary>
-        public bool AllowInterrupt
+        public bool? AllowInterrupt
         {
-            get { return this._allowInterrupt.GetValueOrDefault(); }
+            get { return this._allowInterrupt; }
             set { this._allowInterrupt = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=900)]
-        public int DelayInSeconds
+        public int? DelayInSeconds
         {
-            get { return this._delayInSeconds.GetValueOrDefault(); }
+            get { return this._delayInSeconds; }
             set { this._delayInSeconds = value; }
         }
 

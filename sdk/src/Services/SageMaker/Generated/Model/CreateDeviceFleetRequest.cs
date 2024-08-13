@@ -92,9 +92,9 @@ namespace Amazon.SageMaker.Model
         /// will be "SageMakerEdge-demo-fleet".
         /// </para>
         /// </summary>
-        public bool EnableIotRoleAlias
+        public bool? EnableIotRoleAlias
         {
-            get { return this._enableIotRoleAlias.GetValueOrDefault(); }
+            get { return this._enableIotRoleAlias; }
             set { this._enableIotRoleAlias = value; }
         }
 

@@ -84,9 +84,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ASNumber
+        public long? ASNumber
         {
-            get { return this._asNumber.GetValueOrDefault(); }
+            get { return this._asNumber; }
             set { this._asNumber = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.InternetMonitor.Model
         /// The latitude where the health event is located.
         /// </para>
         /// </summary>
-        public double Latitude
+        public double? Latitude
         {
-            get { return this._latitude.GetValueOrDefault(); }
+            get { return this._latitude; }
             set { this._latitude = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.InternetMonitor.Model
         /// The longitude where the health event is located.
         /// </para>
         /// </summary>
-        public double Longitude
+        public double? Longitude
         {
-            get { return this._longitude.GetValueOrDefault(); }
+            get { return this._longitude; }
             set { this._longitude = value; }
         }
 

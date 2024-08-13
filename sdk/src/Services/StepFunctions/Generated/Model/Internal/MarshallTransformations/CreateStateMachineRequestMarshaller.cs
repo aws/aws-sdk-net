@@ -75,6 +75,17 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Definition);
                 }
 
+                if(publicRequest.IsSetEncryptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("encryptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLoggingConfiguration())
                 {
                     context.Writer.WritePropertyName("loggingConfiguration");
@@ -95,7 +106,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublish())
                 {
                     context.Writer.WritePropertyName("publish");
-                    context.Writer.Write(publicRequest.Publish);
+                    context.Writer.Write(publicRequest.Publish.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

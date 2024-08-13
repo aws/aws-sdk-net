@@ -54,7 +54,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsLatestPatch", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsLatestPatch = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -96,7 +96,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RegisteredTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.RegisteredTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

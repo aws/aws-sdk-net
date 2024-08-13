@@ -93,9 +93,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int DisplayOrder
+        public int? DisplayOrder
         {
-            get { return this._displayOrder.GetValueOrDefault(); }
+            get { return this._displayOrder; }
             set { this._displayOrder = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.Connect.Model
         /// A number indicating the reset order of the agent status.
         /// </para>
         /// </summary>
-        public bool ResetOrderNumber
+        public bool? ResetOrderNumber
         {
-            get { return this._resetOrderNumber.GetValueOrDefault(); }
+            get { return this._resetOrderNumber; }
             set { this._resetOrderNumber = value; }
         }
 

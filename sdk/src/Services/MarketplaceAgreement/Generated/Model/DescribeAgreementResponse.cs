@@ -57,9 +57,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime AcceptanceTime
+        public DateTime? AcceptanceTime
         {
-            get { return this._acceptanceTime.GetValueOrDefault(); }
+            get { return this._acceptanceTime; }
             set { this._acceptanceTime = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// agreements, which don’t have end dates.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// The date and time when the agreement starts.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("activeAccountsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveAccountsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,19 +80,19 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enabledAccountsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EnabledAccountsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("memberAccountsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemberAccountsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalAccountsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalAccountsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

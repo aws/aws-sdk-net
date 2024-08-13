@@ -72,7 +72,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeDefaultKeyPair())
                 {
                     context.Writer.WritePropertyName("includeDefaultKeyPair");
-                    context.Writer.Write(publicRequest.IncludeDefaultKeyPair);
+                    context.Writer.Write(publicRequest.IncludeDefaultKeyPair.Value);
                 }
 
                 if(publicRequest.IsSetPageToken())

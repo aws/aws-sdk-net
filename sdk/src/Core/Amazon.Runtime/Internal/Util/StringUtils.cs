@@ -21,6 +21,7 @@ using System.IO;
 using Amazon.Util;
 using System.Linq;
 using System.Diagnostics.CodeAnalysis;
+using System.Buffers;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -32,7 +33,7 @@ namespace Amazon.Runtime.Internal.Util
         private static readonly Encoding UTF_8 = Encoding.UTF8;
         private static readonly char[] rfc7230HeaderFieldValueDelimeters = "\"(),/:;<=>?@[\\]{}".ToCharArray();
 
-        public static string FromString(String value) 
+        public static string FromString(String value)
         {
             return value;
         }
@@ -49,20 +50,38 @@ namespace Amazon.Runtime.Internal.Util
 
         public static string FromMemoryStream(MemoryStream value)
         {
-            return Convert.ToBase64String(value.ToArray());
+            if (value.TryGetBuffer(out var buffer))
+            {
+                return Convert.ToBase64String(buffer.Array, buffer.Offset, buffer.Count);
+            }
+            else
+            {
+                var array = ArrayPool<byte>.Shared.Rent((int)value.Length);
+                try
+                {
+                    value.Read(array, 0, (int)value.Length);
+                    return Convert.ToBase64String(array, 0, (int)value.Length);
+                }
+                finally
+                {
+                    ArrayPool<byte>.Shared.Return(array);
+                }
+            }
         }
 
         public static string FromInt(int value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
         }
-        
+
         public static string FromInt(int? value)
         {
-            if (value != null)
-                return value.Value.ToString(CultureInfo.InvariantCulture);
+            if (!value.HasValue)
+            {
+                return null;
+            }
 
-            return null;
+            return value.Value.ToString(CultureInfo.InvariantCulture);
         }
 
         public static string FromLong(long value)
@@ -70,9 +89,29 @@ namespace Amazon.Runtime.Internal.Util
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public static string FromLong(long? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
+        }
+
         public static string FromFloat(float value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromFloat(float? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
         }
 
         public static string FromSpecialFloatValue(float value)
@@ -122,16 +161,16 @@ namespace Amazon.Runtime.Internal.Util
                 throw new ArgumentException("Only double.PositiveInfinity, double.NegativeInfinity, or double.Nan are valid");
             }
         }
+        public static string FromBool(bool? value)
+        {
+            return FromBool(value.GetValueOrDefault());
+        }
+
         public static string FromBool(bool value)
         {
             return value ? "true" : "false";
         }
 
-        [Obsolete("This method doesn't handle correctly non-UTC DateTimes. Use FromDateTimeToISO8601 instead.", false)]
-        public static string FromDateTime(DateTime value)
-        {
-            return value.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
-        }
 
         /// <summary>
         /// Converts a DateTime to ISO8601 formatted string.
@@ -140,9 +179,22 @@ namespace Amazon.Runtime.Internal.Util
         {
             return value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
         }
-        
+
         /// <summary>
         /// Converts a DateTime to ISO8601 formatted string without milliseconds.
+        /// </summary>
+        public static string FromDateTimeToISO8601(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
+        /// Converts a DateTime to ISO8601 formatted string.
         /// </summary>
         public static string FromDateTimeToISO8601NoMs(DateTime value)
         {
@@ -162,11 +214,42 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Converts a DateTime to ISO8601 formatted string with milliseconds
+        /// if they are not zero.
+        /// </summary>
+        public static string FromDateTimeToISO8601WithOptionalMs(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            var format = value.Value.Millisecond == 0
+                ? AWSSDKUtils.ISO8601DateFormatNoMS
+                : AWSSDKUtils.ISO8601DateFormat;
+            return value.Value.ToUniversalTime().ToString(format, CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
         /// Converts a DateTime to RFC822 formatted string.
         /// </summary>
         public static string FromDateTimeToRFC822(DateTime value)
         {
             return value.ToUniversalTime().ToString(
+                AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
+        /// Converts a DateTime to RFC822 formatted string.
+        /// </summary>
+        public static string FromDateTimeToRFC822(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToUniversalTime().ToString(
                 AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
         }
 
@@ -178,14 +261,47 @@ namespace Amazon.Runtime.Internal.Util
             return AWSSDKUtils.ConvertToUnixEpochSecondsString(value);
         }
 
+        /// <summary>
+        /// Converts a DateTime to Unix epoch time formatted string.
+        /// </summary>
+        public static string FromDateTimeToUnixTimestamp(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return AWSSDKUtils.ConvertToUnixEpochSecondsString(value.Value);
+        }
+
         public static string FromDouble(double value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public static string FromDouble(double? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
+        }
+
         public static string FromDecimal(decimal value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromDecimal(decimal? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -244,7 +360,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="values">List of T</param>
         /// <returns>Header value representing the list of T</returns>
         [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
-        public static string FromValueTypeList<T>(List<T> values)  where T : struct
+        public static string FromValueTypeList<T>(List<T> values) where T : struct
         {
             // ToString() on boolean types automatically Pascal Cases. Xml-based protocols
             // are case sensitive and accept "true" and "false" as the valid set of booleans.
@@ -300,7 +416,7 @@ namespace Amazon.Runtime.Internal.Util
             if (headerListEntry.IndexOfAny(rfc7230HeaderFieldValueDelimeters) != -1)
             {
                 return $"\"{headerListEntry.Replace("\"", "\\\"")}\"";
-            }            
+            }
 
             return headerListEntry;
         }

@@ -64,9 +64,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
-        public int NumberOfRetries
+        public int? NumberOfRetries
         {
-            get { return this._numberOfRetries.GetValueOrDefault(); }
+            get { return this._numberOfRetries; }
             set { this._numberOfRetries = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumCount())
             {
                 context.Writer.WritePropertyName("maximumCount");
-                context.Writer.Write(requestObject.MaximumCount);
+                context.Writer.Write(requestObject.MaximumCount.Value);
             }
 
             if(requestObject.IsSetMinimumCount())
             {
                 context.Writer.WritePropertyName("minimumCount");
-                context.Writer.Write(requestObject.MinimumCount);
+                context.Writer.Write(requestObject.MinimumCount.Value);
             }
 
         }

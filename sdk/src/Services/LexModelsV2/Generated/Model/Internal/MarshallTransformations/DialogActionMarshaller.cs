@@ -57,7 +57,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSuppressNextMessage())
             {
                 context.Writer.WritePropertyName("suppressNextMessage");
-                context.Writer.Write(requestObject.SuppressNextMessage);
+                context.Writer.Write(requestObject.SuppressNextMessage.Value);
             }
 
             if(requestObject.IsSetType())

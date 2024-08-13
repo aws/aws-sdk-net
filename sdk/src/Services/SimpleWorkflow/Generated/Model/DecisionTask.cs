@@ -97,9 +97,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// in the history new since the last decision task received by the decider.
         /// </para>
         /// </summary>
-        public long PreviousStartedEventId
+        public long? PreviousStartedEventId
         {
-            get { return this._previousStartedEventId.GetValueOrDefault(); }
+            get { return this._previousStartedEventId; }
             set { this._previousStartedEventId = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long StartedEventId
+        public long? StartedEventId
         {
-            get { return this._startedEventId.GetValueOrDefault(); }
+            get { return this._startedEventId; }
             set { this._startedEventId = value; }
         }
 

@@ -68,31 +68,31 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("factor", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Factor = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isBigEndian", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsBigEndian = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isSigned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSigned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("length", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Length = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("messageId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,13 +104,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("offset", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Offset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startBit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartBit = unmarshaller.Unmarshall(context);
                     continue;
                 }

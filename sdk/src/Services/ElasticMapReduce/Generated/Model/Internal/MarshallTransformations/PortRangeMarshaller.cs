@@ -51,13 +51,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxRange())
             {
                 context.Writer.WritePropertyName("MaxRange");
-                context.Writer.Write(requestObject.MaxRange);
+                context.Writer.Write(requestObject.MaxRange.Value);
             }
 
             if(requestObject.IsSetMinRange())
             {
                 context.Writer.WritePropertyName("MinRange");
-                context.Writer.Write(requestObject.MinRange);
+                context.Writer.Write(requestObject.MinRange.Value);
             }
 
         }

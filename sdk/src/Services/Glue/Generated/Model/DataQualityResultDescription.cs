@@ -121,9 +121,9 @@ namespace Amazon.Glue.Model
         /// The time that the run started for this data quality result.
         /// </para>
         /// </summary>
-        public DateTime StartedOn
+        public DateTime? StartedOn
         {
-            get { return this._startedOn.GetValueOrDefault(); }
+            get { return this._startedOn; }
             set { this._startedOn = value; }
         }
 

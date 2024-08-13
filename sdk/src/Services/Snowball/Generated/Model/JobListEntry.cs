@@ -49,9 +49,9 @@ namespace Amazon.Snowball.Model
         /// The creation date for this job.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Snowball.Model
         /// main job are listed, because they are created after the main job is created.
         /// </para>
         /// </summary>
-        public bool IsMaster
+        public bool? IsMaster
         {
-            get { return this._isMaster.GetValueOrDefault(); }
+            get { return this._isMaster; }
             set { this._isMaster = value; }
         }
 

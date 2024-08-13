@@ -65,9 +65,9 @@ namespace Amazon.BedrockAgent.Model
         /// is in use.
         /// </para>
         /// </summary>
-        public bool SkipResourceInUseCheck
+        public bool? SkipResourceInUseCheck
         {
-            get { return this._skipResourceInUseCheck.GetValueOrDefault(); }
+            get { return this._skipResourceInUseCheck; }
             set { this._skipResourceInUseCheck = value; }
         }
 

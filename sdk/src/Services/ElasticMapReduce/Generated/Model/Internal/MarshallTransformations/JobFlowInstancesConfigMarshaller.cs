@@ -114,7 +114,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
+                context.Writer.Write(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceFleets())
@@ -152,7 +152,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeepJobFlowAliveWhenNoSteps())
             {
                 context.Writer.WritePropertyName("KeepJobFlowAliveWhenNoSteps");
-                context.Writer.Write(requestObject.KeepJobFlowAliveWhenNoSteps);
+                context.Writer.Write(requestObject.KeepJobFlowAliveWhenNoSteps.Value);
             }
 
             if(requestObject.IsSetMasterInstanceType())
@@ -187,13 +187,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTerminationProtected())
             {
                 context.Writer.WritePropertyName("TerminationProtected");
-                context.Writer.Write(requestObject.TerminationProtected);
+                context.Writer.Write(requestObject.TerminationProtected.Value);
             }
 
             if(requestObject.IsSetUnhealthyNodeReplacement())
             {
                 context.Writer.WritePropertyName("UnhealthyNodeReplacement");
-                context.Writer.Write(requestObject.UnhealthyNodeReplacement);
+                context.Writer.Write(requestObject.UnhealthyNodeReplacement.Value);
             }
 
         }

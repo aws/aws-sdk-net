@@ -64,9 +64,9 @@ namespace Amazon.DeviceFarm.Model
         /// The date on which an offering transaction was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedOn
+        public DateTime? CreatedOn
         {
-            get { return this._createdOn.GetValueOrDefault(); }
+            get { return this._createdOn; }
             set { this._createdOn = value; }
         }
 

@@ -76,7 +76,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationInSeconds())
                 {
                     context.Writer.WritePropertyName("expirationInSeconds");
-                    context.Writer.Write(publicRequest.ExpirationInSeconds);
+                    context.Writer.Write(publicRequest.ExpirationInSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

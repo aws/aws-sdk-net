@@ -51,9 +51,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ActiveGameSessionCount
+        public int? ActiveGameSessionCount
         {
-            get { return this._activeGameSessionCount.GetValueOrDefault(); }
+            get { return this._activeGameSessionCount; }
             set { this._activeGameSessionCount = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ActiveServerProcessCount
+        public int? ActiveServerProcessCount
         {
-            get { return this._activeServerProcessCount.GetValueOrDefault(); }
+            get { return this._activeServerProcessCount; }
             set { this._activeServerProcessCount = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CurrentPlayerSessionCount
+        public int? CurrentPlayerSessionCount
         {
-            get { return this._currentPlayerSessionCount.GetValueOrDefault(); }
+            get { return this._currentPlayerSessionCount; }
             set { this._currentPlayerSessionCount = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaximumPlayerSessionCount
+        public int? MaximumPlayerSessionCount
         {
-            get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }
+            get { return this._maximumPlayerSessionCount; }
             set { this._maximumPlayerSessionCount = value; }
         }
 

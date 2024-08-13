@@ -45,9 +45,9 @@ namespace Amazon.EventBridge.Model
         /// 2 and 10,000.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

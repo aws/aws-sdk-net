@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// by default if no value is provided (for example, for RabbitMQ brokers). 
         /// </para>
         /// </summary>
-        public bool UseAwsOwnedKey
+        public bool? UseAwsOwnedKey
         {
-            get { return this._useAwsOwnedKey.GetValueOrDefault(); }
+            get { return this._useAwsOwnedKey; }
             set { this._useAwsOwnedKey = value; }
         }
 

@@ -95,7 +95,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilterStrength())
             {
                 context.Writer.WritePropertyName("filterStrength");
-                context.Writer.Write(requestObject.FilterStrength);
+                context.Writer.Write(requestObject.FilterStrength.Value);
             }
 
             if(requestObject.IsSetInputFilter())
@@ -118,7 +118,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScte35Pid())
             {
                 context.Writer.WritePropertyName("scte35Pid");
-                context.Writer.Write(requestObject.Scte35Pid);
+                context.Writer.Write(requestObject.Scte35Pid.Value);
             }
 
             if(requestObject.IsSetSmpte2038DataPreference())

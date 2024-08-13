@@ -77,9 +77,9 @@ namespace Amazon.QLDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExclusiveEndTime
+        public DateTime? ExclusiveEndTime
         {
-            get { return this._exclusiveEndTime.GetValueOrDefault(); }
+            get { return this._exclusiveEndTime; }
             set { this._exclusiveEndTime = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.QLDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime InclusiveStartTime
+        public DateTime? InclusiveStartTime
         {
-            get { return this._inclusiveStartTime.GetValueOrDefault(); }
+            get { return this._inclusiveStartTime; }
             set { this._inclusiveStartTime = value; }
         }
 

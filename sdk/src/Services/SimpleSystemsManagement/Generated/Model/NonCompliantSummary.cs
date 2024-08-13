@@ -44,9 +44,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The total number of compliance items that aren't compliant.
         /// </para>
         /// </summary>
-        public int NonCompliantCount
+        public int? NonCompliantCount
         {
-            get { return this._nonCompliantCount.GetValueOrDefault(); }
+            get { return this._nonCompliantCount; }
             set { this._nonCompliantCount = value; }
         }
 

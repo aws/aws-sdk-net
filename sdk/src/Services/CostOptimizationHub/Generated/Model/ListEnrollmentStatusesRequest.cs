@@ -65,9 +65,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Indicates whether to return the enrollment status for the organization.
         /// </para>
         /// </summary>
-        public bool IncludeOrganizationInfo
+        public bool? IncludeOrganizationInfo
         {
-            get { return this._includeOrganizationInfo.GetValueOrDefault(); }
+            get { return this._includeOrganizationInfo; }
             set { this._includeOrganizationInfo = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

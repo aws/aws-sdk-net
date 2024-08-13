@@ -45,9 +45,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10080)]
-        public int MaxAgeInMinutes
+        public int? MaxAgeInMinutes
         {
-            get { return this._maxAgeInMinutes.GetValueOrDefault(); }
+            get { return this._maxAgeInMinutes; }
             set { this._maxAgeInMinutes = value; }
         }
 

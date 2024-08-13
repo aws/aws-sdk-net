@@ -51,9 +51,9 @@ namespace Amazon.Lambda.Model
         /// default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AllowCredentials
+        public bool? AllowCredentials
         {
-            get { return this._allowCredentials.GetValueOrDefault(); }
+            get { return this._allowCredentials; }
             set { this._allowCredentials = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=86400)]
-        public int MaxAge
+        public int? MaxAge
         {
-            get { return this._maxAge.GetValueOrDefault(); }
+            get { return this._maxAge; }
             set { this._maxAge = value; }
         }
 

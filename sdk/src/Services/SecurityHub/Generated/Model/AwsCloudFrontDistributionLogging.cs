@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// With this field, you can enable or disable the selected distribution.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.SecurityHub.Model
         /// Specifies whether you want CloudFront to include cookies in access logs.
         /// </para>
         /// </summary>
-        public bool IncludeCookies
+        public bool? IncludeCookies
         {
-            get { return this._includeCookies.GetValueOrDefault(); }
+            get { return this._includeCookies; }
             set { this._includeCookies = value; }
         }
 

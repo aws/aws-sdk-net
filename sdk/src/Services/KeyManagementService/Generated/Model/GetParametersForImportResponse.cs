@@ -87,9 +87,9 @@ namespace Amazon.KeyManagementService.Model
         /// send another <c>GetParametersForImport</c> request to get new ones.
         /// </para>
         /// </summary>
-        public DateTime ParametersValidTo
+        public DateTime? ParametersValidTo
         {
-            get { return this._parametersValidTo.GetValueOrDefault(); }
+            get { return this._parametersValidTo; }
             set { this._parametersValidTo = value; }
         }
 

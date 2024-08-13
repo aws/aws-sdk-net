@@ -72,13 +72,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllocatedStorage())
                 {
                     context.Writer.WritePropertyName("AllocatedStorage");
-                    context.Writer.Write(publicRequest.AllocatedStorage);
+                    context.Writer.Write(publicRequest.AllocatedStorage.Value);
                 }
 
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade);
+                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
                 }
 
                 if(publicRequest.IsSetAvailabilityZone())
@@ -108,7 +108,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMultiAZ())
                 {
                     context.Writer.WritePropertyName("MultiAZ");
-                    context.Writer.Write(publicRequest.MultiAZ);
+                    context.Writer.Write(publicRequest.MultiAZ.Value);
                 }
 
                 if(publicRequest.IsSetNetworkType())
@@ -126,7 +126,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("PubliclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
                 }
 
                 if(publicRequest.IsSetReplicationInstanceClass())

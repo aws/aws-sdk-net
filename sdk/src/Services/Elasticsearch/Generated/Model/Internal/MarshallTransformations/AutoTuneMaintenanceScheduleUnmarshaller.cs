@@ -80,7 +80,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

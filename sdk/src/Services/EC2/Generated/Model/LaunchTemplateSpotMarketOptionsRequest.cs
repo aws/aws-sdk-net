@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// Deprecated.
         /// </para>
         /// </summary>
-        public int BlockDurationMinutes
+        public int? BlockDurationMinutes
         {
-            get { return this._blockDurationMinutes.GetValueOrDefault(); }
+            get { return this._blockDurationMinutes; }
             set { this._blockDurationMinutes = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.EC2.Model
         /// Default: 7 days from the current date
         /// </para>
         /// </summary>
-        public DateTime ValidUntilUtc
+        public DateTime? ValidUntilUtc
         {
-            get { return this._validUntilUtc.GetValueOrDefault(); }
+            get { return this._validUntilUtc; }
             set { this._validUntil = this._validUntilUtc = value; }
         }
 
@@ -191,13 +191,20 @@ namespace Amazon.EC2.Model
             "ValidUntilUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ValidUntil is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ValidUntil
+        public DateTime? ValidUntil
         {
             get { return this._validUntil.GetValueOrDefault(); }
             set
             {
                 this._validUntil = value;
-                this._validUntilUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._validUntilUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._validUntilUtc = null;
+                }
             }
         }
 #endregion

@@ -217,9 +217,9 @@ namespace Amazon.IoT.Model
         /// The version of the thing group.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

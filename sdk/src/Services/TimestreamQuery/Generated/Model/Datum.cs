@@ -64,9 +64,9 @@ namespace Amazon.TimestreamQuery.Model
         ///  Indicates if the data point is null. 
         /// </para>
         /// </summary>
-        public bool NullValue
+        public bool? NullValue
         {
-            get { return this._nullValue.GetValueOrDefault(); }
+            get { return this._nullValue; }
             set { this._nullValue = value; }
         }
 

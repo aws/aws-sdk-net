@@ -69,9 +69,9 @@ namespace Amazon.SecurityHub.Model
         /// those that match the predicate settings. 
         /// </para>
         /// </summary>
-        public bool Negated
+        public bool? Negated
         {
-            get { return this._negated.GetValueOrDefault(); }
+            get { return this._negated; }
             set { this._negated = value; }
         }
 

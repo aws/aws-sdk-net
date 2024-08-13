@@ -137,9 +137,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LowerBound
+        public long? LowerBound
         {
-            get { return this._lowerBound.GetValueOrDefault(); }
+            get { return this._lowerBound; }
             set { this._lowerBound = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long NumPartitions
+        public long? NumPartitions
         {
-            get { return this._numPartitions.GetValueOrDefault(); }
+            get { return this._numPartitions; }
             set { this._numPartitions = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long UpperBound
+        public long? UpperBound
         {
-            get { return this._upperBound.GetValueOrDefault(); }
+            get { return this._upperBound; }
             set { this._upperBound = value; }
         }
 

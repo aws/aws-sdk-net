@@ -79,9 +79,9 @@ namespace Amazon.DynamoDBv2.Model
         /// If you did not use a filter in the request, then <c>Count</c> is the same as <c>ScannedCount</c>.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <c>Count</c>.
         /// </para>
         /// </summary>
-        public int ScannedCount
+        public int? ScannedCount
         {
-            get { return this._scannedCount.GetValueOrDefault(); }
+            get { return this._scannedCount; }
             set { this._scannedCount = value; }
         }
 

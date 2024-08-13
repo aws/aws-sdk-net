@@ -55,9 +55,9 @@ namespace Amazon.IoT.Model
         /// The ID of the default provisioning template version.
         /// </para>
         /// </summary>
-        public int DefaultVersionId
+        public int? DefaultVersionId
         {
-            get { return this._defaultVersionId.GetValueOrDefault(); }
+            get { return this._defaultVersionId; }
             set { this._defaultVersionId = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.IoT.Model
         /// True to enable the provisioning template, otherwise false.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.IoT.Model
         /// Removes pre-provisioning hook template.
         /// </para>
         /// </summary>
-        public bool RemovePreProvisioningHook
+        public bool? RemovePreProvisioningHook
         {
-            get { return this._removePreProvisioningHook.GetValueOrDefault(); }
+            get { return this._removePreProvisioningHook; }
             set { this._removePreProvisioningHook = value; }
         }
 

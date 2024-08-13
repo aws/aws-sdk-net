@@ -170,9 +170,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Excluded
+        public bool? Excluded
         {
-            get { return this._excluded.GetValueOrDefault(); }
+            get { return this._excluded; }
             set { this._excluded = value; }
         }
 

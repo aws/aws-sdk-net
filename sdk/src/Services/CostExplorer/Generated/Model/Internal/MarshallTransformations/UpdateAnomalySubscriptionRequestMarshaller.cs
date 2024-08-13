@@ -117,13 +117,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("Threshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.Threshold);
+                        context.Writer.Write(publicRequest.Threshold.Value);
                     }
                 }
 

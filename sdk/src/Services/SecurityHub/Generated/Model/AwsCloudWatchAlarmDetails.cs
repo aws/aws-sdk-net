@@ -64,9 +64,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public bool ActionsEnabled
+        public bool? ActionsEnabled
         {
-            get { return this._actionsEnabled.GetValueOrDefault(); }
+            get { return this._actionsEnabled; }
             set { this._actionsEnabled = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of datapoints that must be breaching to trigger the alarm. 
         /// </para>
         /// </summary>
-        public int DatapointsToAlarm
+        public int? DatapointsToAlarm
         {
-            get { return this._datapointsToAlarm.GetValueOrDefault(); }
+            get { return this._datapointsToAlarm; }
             set { this._datapointsToAlarm = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of periods over which data is compared to the specified threshold. 
         /// </para>
         /// </summary>
-        public int EvaluationPeriods
+        public int? EvaluationPeriods
         {
-            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            get { return this._evaluationPeriods; }
             set { this._evaluationPeriods = value; }
         }
 
@@ -365,9 +365,9 @@ namespace Amazon.SecurityHub.Model
         /// an alarm based on a metric. 
         /// </para>
         /// </summary>
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -412,9 +412,9 @@ namespace Amazon.SecurityHub.Model
         /// The value to compare with the specified statistic. 
         /// </para>
         /// </summary>
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

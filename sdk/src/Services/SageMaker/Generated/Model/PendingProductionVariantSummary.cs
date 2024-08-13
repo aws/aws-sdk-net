@@ -80,9 +80,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CurrentInstanceCount
+        public int? CurrentInstanceCount
         {
-            get { return this._currentInstanceCount.GetValueOrDefault(); }
+            get { return this._currentInstanceCount; }
             set { this._currentInstanceCount = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public float CurrentWeight
+        public float? CurrentWeight
         {
-            get { return this._currentWeight.GetValueOrDefault(); }
+            get { return this._currentWeight; }
             set { this._currentWeight = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DesiredInstanceCount
+        public int? DesiredInstanceCount
         {
-            get { return this._desiredInstanceCount.GetValueOrDefault(); }
+            get { return this._desiredInstanceCount; }
             set { this._desiredInstanceCount = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public float DesiredWeight
+        public float? DesiredWeight
         {
-            get { return this._desiredWeight.GetValueOrDefault(); }
+            get { return this._desiredWeight; }
             set { this._desiredWeight = value; }
         }
 

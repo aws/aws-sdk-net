@@ -238,7 +238,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
             }
             // Continue listing objects and deleting them until the bucket is empty.
-            while (listVersionsResponse.IsTruncated);
+            while (listVersionsResponse.IsTruncated.GetValueOrDefault());
 
             const int maxRetries = 10;
             for (int retries = 1; retries <= maxRetries; retries++)

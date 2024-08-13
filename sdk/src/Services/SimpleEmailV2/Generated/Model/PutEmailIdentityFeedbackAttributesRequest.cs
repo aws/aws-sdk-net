@@ -73,9 +73,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// events occur (even if this setting is disabled).
         /// </para>
         /// </summary>
-        public bool EmailForwardingEnabled
+        public bool? EmailForwardingEnabled
         {
-            get { return this._emailForwardingEnabled.GetValueOrDefault(); }
+            get { return this._emailForwardingEnabled; }
             set { this._emailForwardingEnabled = value; }
         }
 

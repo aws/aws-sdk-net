@@ -148,9 +148,9 @@ namespace Amazon.EC2.Model
         /// transit gateway, including on-premises networks.
         /// </para>
         /// </summary>
-        public bool DenyAllIgwTraffic
+        public bool? DenyAllIgwTraffic
         {
-            get { return this._denyAllIgwTraffic.GetValueOrDefault(); }
+            get { return this._denyAllIgwTraffic; }
             set { this._denyAllIgwTraffic = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether this is an IPv6 only network interface.
         /// </para>
         /// </summary>
-        public bool Ipv6Native
+        public bool? Ipv6Native
         {
-            get { return this._ipv6Native.GetValueOrDefault(); }
+            get { return this._ipv6Native; }
             set { this._ipv6Native = value; }
         }
 
@@ -455,9 +455,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the network interface is being managed by Amazon Web Services.
         /// </para>
         /// </summary>
-        public bool RequesterManaged
+        public bool? RequesterManaged
         {
-            get { return this._requesterManaged.GetValueOrDefault(); }
+            get { return this._requesterManaged; }
             set { this._requesterManaged = value; }
         }
 
@@ -473,9 +473,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether source/destination checking is enabled.
         /// </para>
         /// </summary>
-        public bool SourceDestCheck
+        public bool? SourceDestCheck
         {
-            get { return this._sourceDestCheck.GetValueOrDefault(); }
+            get { return this._sourceDestCheck; }
             set { this._sourceDestCheck = value; }
         }
 

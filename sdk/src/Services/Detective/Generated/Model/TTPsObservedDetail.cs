@@ -50,9 +50,9 @@ namespace Amazon.Detective.Model
         /// The total number of failed API requests.
         /// </para>
         /// </summary>
-        public long APIFailureCount
+        public long? APIFailureCount
         {
-            get { return this._apiFailureCount.GetValueOrDefault(); }
+            get { return this._apiFailureCount; }
             set { this._apiFailureCount = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Detective.Model
         /// The total number of successful API requests.
         /// </para>
         /// </summary>
-        public long APISuccessCount
+        public long? APISuccessCount
         {
-            get { return this._apiSuccessCount.GetValueOrDefault(); }
+            get { return this._apiSuccessCount; }
             set { this._apiSuccessCount = value; }
         }
 

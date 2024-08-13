@@ -109,9 +109,9 @@ namespace Amazon.EC2.Model
         /// The date and time at which the Capacity Reservation Fleet was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.EC2.Model
         /// The date and time at which the Capacity Reservation Fleet expires.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -304,9 +304,9 @@ namespace Amazon.EC2.Model
         /// The capacity units that have been fulfilled.
         /// </para>
         /// </summary>
-        public double TotalFulfilledCapacity
+        public double? TotalFulfilledCapacity
         {
-            get { return this._totalFulfilledCapacity.GetValueOrDefault(); }
+            get { return this._totalFulfilledCapacity; }
             set { this._totalFulfilledCapacity = value; }
         }
 
@@ -324,9 +324,9 @@ namespace Amazon.EC2.Model
         /// target capacity</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
-        public int TotalTargetCapacity
+        public int? TotalTargetCapacity
         {
-            get { return this._totalTargetCapacity.GetValueOrDefault(); }
+            get { return this._totalTargetCapacity; }
             set { this._totalTargetCapacity = value; }
         }
 

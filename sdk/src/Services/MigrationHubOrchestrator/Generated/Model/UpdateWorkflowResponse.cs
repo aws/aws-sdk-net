@@ -89,9 +89,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The time at which the migration workflow was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The time at which the migration workflow was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

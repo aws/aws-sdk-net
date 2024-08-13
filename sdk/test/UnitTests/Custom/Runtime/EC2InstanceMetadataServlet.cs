@@ -5,7 +5,7 @@ using System.Reflection;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
 using AWSSDK_DotNet.CommonTest.Utils;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Json.LitJson;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

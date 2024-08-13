@@ -48,9 +48,9 @@ namespace Amazon.OpenSearchService.Model
         /// True to enable SAML authentication for a domain.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.OpenSearchService.Model
         /// values are between 1 and 1440, and the default value is 60.
         /// </para>
         /// </summary>
-        public int SessionTimeoutMinutes
+        public int? SessionTimeoutMinutes
         {
-            get { return this._sessionTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._sessionTimeoutMinutes; }
             set { this._sessionTimeoutMinutes = value; }
         }
 

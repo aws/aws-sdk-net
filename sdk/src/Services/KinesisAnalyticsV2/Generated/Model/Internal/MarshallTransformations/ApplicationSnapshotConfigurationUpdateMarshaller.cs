@@ -51,7 +51,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSnapshotsEnabledUpdate())
             {
                 context.Writer.WritePropertyName("SnapshotsEnabledUpdate");
-                context.Writer.Write(requestObject.SnapshotsEnabledUpdate);
+                context.Writer.Write(requestObject.SnapshotsEnabledUpdate.Value);
             }
 
         }

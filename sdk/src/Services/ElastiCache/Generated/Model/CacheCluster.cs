@@ -100,16 +100,16 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         ///  
         /// <para>
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AtRestEncryptionEnabled
+        public bool? AtRestEncryptionEnabled
         {
-            get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._atRestEncryptionEnabled; }
             set { this._atRestEncryptionEnabled = value; }
         }
 
@@ -122,16 +122,16 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthTokenEnabled. 
         /// <para>
-        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis commands.
+        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis OSS commands.
         /// </para>
         ///  
         /// <para>
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AuthTokenEnabled
+        public bool? AuthTokenEnabled
         {
-            get { return this._authTokenEnabled.GetValueOrDefault(); }
+            get { return this._authTokenEnabled; }
             set { this._authTokenEnabled = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.ElastiCache.Model
         /// The date the auth token was last modified
         /// </para>
         /// </summary>
-        public DateTime AuthTokenLastModifiedDate
+        public DateTime? AuthTokenLastModifiedDate
         {
-            get { return this._authTokenLastModifiedDate.GetValueOrDefault(); }
+            get { return this._authTokenLastModifiedDate; }
             set { this._authTokenLastModifiedDate = value; }
         }
 
@@ -162,14 +162,14 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
-        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
+        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.ElastiCache.Model
         /// The date and time when the cluster was created.
         /// </para>
         /// </summary>
-        public DateTime CacheClusterCreateTime
+        public DateTime? CacheClusterCreateTime
         {
-            get { return this._cacheClusterCreateTime.GetValueOrDefault(); }
+            get { return this._cacheClusterCreateTime; }
             set { this._cacheClusterCreateTime = value; }
         }
 
@@ -286,8 +286,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>,
+        ///  <b>M6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// for Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>,
         /// <c>cache.m6g.2xlarge</c>, <c>cache.m6g.4xlarge</c>, <c>cache.m6g.8xlarge</c>, <c>cache.m6g.12xlarge</c>,
         /// <c>cache.m6g.16xlarge</c> 
         /// </para>
@@ -303,9 +303,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
-        /// engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>, <c>cache.t4g.medium</c>
-        /// 
+        ///  <b>T4g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// Memcached engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>,
+        /// <c>cache.t4g.medium</c> 
         /// </para>
         ///  
         /// <para>
@@ -370,8 +370,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>,
+        ///  <b>R6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// for Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>,
         /// <c>cache.r6g.2xlarge</c>, <c>cache.r6g.4xlarge</c>, <c>cache.r6g.8xlarge</c>, <c>cache.r6g.12xlarge</c>,
         /// <c>cache.r6g.16xlarge</c> 
         /// </para>
@@ -410,16 +410,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis append-only files (AOF) are not supported for T1 or T2 instances.
+        /// Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis Multi-AZ with automatic failover is not supported on T1 instances.
+        /// Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
-        /// on Redis version 2.8.22 and later.
+        /// Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not
+        /// supported on Redis OSS version 2.8.22 and later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -572,8 +572,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type associated with the cluster, either <c>ipv4</c> | <c>ipv6</c>. IPv6
-        /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
-        /// version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
+        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
         /// </summary>
@@ -611,7 +611,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
-        /// workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6
+        /// workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6
         /// on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
@@ -654,13 +654,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For clusters running Redis, this value must be 1. For clusters running Memcached,
+        /// For clusters running Redis OSS, this value must be 1. For clusters running Memcached,
         /// this value must be between 1 and 40.
         /// </para>
         /// </summary>
-        public int NumCacheNodes
+        public int? NumCacheNodes
         {
-            get { return this._numCacheNodes.GetValueOrDefault(); }
+            get { return this._numCacheNodes; }
             set { this._numCacheNodes = value; }
         }
 
@@ -803,9 +803,9 @@ namespace Amazon.ElastiCache.Model
         /// A boolean value indicating whether log delivery is enabled for the replication group.
         /// </para>
         /// </summary>
-        public bool ReplicationGroupLogDeliveryEnabled
+        public bool? ReplicationGroupLogDeliveryEnabled
         {
-            get { return this._replicationGroupLogDeliveryEnabled.GetValueOrDefault(); }
+            get { return this._replicationGroupLogDeliveryEnabled; }
             set { this._replicationGroupLogDeliveryEnabled = value; }
         }
 
@@ -846,9 +846,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 
@@ -889,16 +889,16 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
+        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         ///  
         /// <para>
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 

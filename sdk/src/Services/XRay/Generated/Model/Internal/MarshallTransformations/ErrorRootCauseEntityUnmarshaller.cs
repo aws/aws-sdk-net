@@ -80,7 +80,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Remote", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Remote = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -108,9 +108,9 @@ namespace Amazon.Pinpoint.Model
         /// The version of the segment to export endpoint definitions from, if specified.
         /// </para>
         /// </summary>
-        public int SegmentVersion
+        public int? SegmentVersion
         {
-            get { return this._segmentVersion.GetValueOrDefault(); }
+            get { return this._segmentVersion; }
             set { this._segmentVersion = value; }
         }
 

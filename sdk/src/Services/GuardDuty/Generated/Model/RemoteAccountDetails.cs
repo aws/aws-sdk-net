@@ -64,9 +64,9 @@ namespace Amazon.GuardDuty.Model
         /// your environment.
         /// </para>
         /// </summary>
-        public bool Affiliated
+        public bool? Affiliated
         {
-            get { return this._affiliated.GetValueOrDefault(); }
+            get { return this._affiliated; }
             set { this._affiliated = value; }
         }
 

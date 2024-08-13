@@ -62,9 +62,9 @@ namespace Amazon.Comprehend.Model
         /// The level of confidence that Amazon Comprehend has in the accuracy of the detection.
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

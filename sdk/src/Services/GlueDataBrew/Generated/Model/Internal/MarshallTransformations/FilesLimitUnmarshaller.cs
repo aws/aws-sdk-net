@@ -68,7 +68,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxFiles", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }

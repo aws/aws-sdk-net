@@ -48,9 +48,9 @@ namespace Amazon.CustomerProfiles.Model
         /// on.
         /// </para>
         /// </summary>
-        public long MeteringProfileCount
+        public long? MeteringProfileCount
         {
-            get { return this._meteringProfileCount.GetValueOrDefault(); }
+            get { return this._meteringProfileCount; }
             set { this._meteringProfileCount = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The total number of objects in domain.
         /// </para>
         /// </summary>
-        public long ObjectCount
+        public long? ObjectCount
         {
-            get { return this._objectCount.GetValueOrDefault(); }
+            get { return this._objectCount; }
             set { this._objectCount = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The total number of profiles currently in the domain.
         /// </para>
         /// </summary>
-        public long ProfileCount
+        public long? ProfileCount
         {
-            get { return this._profileCount.GetValueOrDefault(); }
+            get { return this._profileCount; }
             set { this._profileCount = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The total size, in bytes, of all objects in the domain.
         /// </para>
         /// </summary>
-        public long TotalSize
+        public long? TotalSize
         {
-            get { return this._totalSize.GetValueOrDefault(); }
+            get { return this._totalSize; }
             set { this._totalSize = value; }
         }
 

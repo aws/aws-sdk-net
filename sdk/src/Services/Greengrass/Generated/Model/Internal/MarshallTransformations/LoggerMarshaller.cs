@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpace())
             {
                 context.Writer.WritePropertyName("Space");
-                context.Writer.Write(requestObject.Space);
+                context.Writer.Write(requestObject.Space.Value);
             }
 
             if(requestObject.IsSetType())

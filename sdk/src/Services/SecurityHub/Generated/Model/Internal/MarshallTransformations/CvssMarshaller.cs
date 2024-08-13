@@ -67,13 +67,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseScore())
             {
                 context.Writer.WritePropertyName("BaseScore");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.BaseScore))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BaseScore.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BaseScore));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BaseScore.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BaseScore);
+                    context.Writer.Write(requestObject.BaseScore.Value);
                 }
             }
 

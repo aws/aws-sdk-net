@@ -71,9 +71,9 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  <c>false:</c> There are no updates currently in progress. 
         /// </para>
         /// </summary>
-        public bool AbortableOperationInProgress
+        public bool? AbortableOperationInProgress
         {
-            get { return this._abortableOperationInProgress.GetValueOrDefault(); }
+            get { return this._abortableOperationInProgress; }
             set { this._abortableOperationInProgress = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The creation date for this environment.
         /// </para>
         /// </summary>
-        public DateTime DateCreated
+        public DateTime? DateCreated
         {
-            get { return this._dateCreated.GetValueOrDefault(); }
+            get { return this._dateCreated; }
             set { this._dateCreated = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The last modified date for this environment.
         /// </para>
         /// </summary>
-        public DateTime DateUpdated
+        public DateTime? DateUpdated
         {
-            get { return this._dateUpdated.GetValueOrDefault(); }
+            get { return this._dateUpdated; }
             set { this._dateUpdated = value; }
         }
 

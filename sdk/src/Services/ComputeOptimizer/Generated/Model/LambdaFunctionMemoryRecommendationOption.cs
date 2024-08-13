@@ -46,9 +46,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The memory size, in MB, of the function recommendation option.
         /// </para>
         /// </summary>
-        public int MemorySize
+        public int? MemorySize
         {
-            get { return this._memorySize.GetValueOrDefault(); }
+            get { return this._memorySize; }
             set { this._memorySize = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The top recommendation option is ranked as <c>1</c>.
         /// </para>
         /// </summary>
-        public int Rank
+        public int? Rank
         {
-            get { return this._rank.GetValueOrDefault(); }
+            get { return this._rank; }
             set { this._rank = value; }
         }
 

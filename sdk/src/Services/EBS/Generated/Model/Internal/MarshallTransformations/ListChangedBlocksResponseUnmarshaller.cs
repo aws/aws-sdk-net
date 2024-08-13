@@ -54,7 +54,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BlockSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.BlockSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,7 +66,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExpiryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpiryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VolumeSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.VolumeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

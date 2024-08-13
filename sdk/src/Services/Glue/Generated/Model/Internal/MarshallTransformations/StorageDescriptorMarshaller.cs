@@ -89,7 +89,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompressed())
             {
                 context.Writer.WritePropertyName("Compressed");
-                context.Writer.Write(requestObject.Compressed);
+                context.Writer.Write(requestObject.Compressed.Value);
             }
 
             if(requestObject.IsSetInputFormat())
@@ -107,7 +107,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfBuckets())
             {
                 context.Writer.WritePropertyName("NumberOfBuckets");
-                context.Writer.Write(requestObject.NumberOfBuckets);
+                context.Writer.Write(requestObject.NumberOfBuckets.Value);
             }
 
             if(requestObject.IsSetOutputFormat())
@@ -182,7 +182,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStoredAsSubDirectories())
             {
                 context.Writer.WritePropertyName("StoredAsSubDirectories");
-                context.Writer.Write(requestObject.StoredAsSubDirectories);
+                context.Writer.Write(requestObject.StoredAsSubDirectories.Value);
             }
 
         }

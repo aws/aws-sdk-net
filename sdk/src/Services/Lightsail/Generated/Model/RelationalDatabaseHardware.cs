@@ -44,9 +44,9 @@ namespace Amazon.Lightsail.Model
         /// The number of vCPUs for the database.
         /// </para>
         /// </summary>
-        public int CpuCount
+        public int? CpuCount
         {
-            get { return this._cpuCount.GetValueOrDefault(); }
+            get { return this._cpuCount; }
             set { this._cpuCount = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Lightsail.Model
         /// The size of the disk for the database.
         /// </para>
         /// </summary>
-        public int DiskSizeInGb
+        public int? DiskSizeInGb
         {
-            get { return this._diskSizeInGb.GetValueOrDefault(); }
+            get { return this._diskSizeInGb; }
             set { this._diskSizeInGb = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Lightsail.Model
         /// The amount of RAM in GB for the database.
         /// </para>
         /// </summary>
-        public float RamSizeInGb
+        public float? RamSizeInGb
         {
-            get { return this._ramSizeInGb.GetValueOrDefault(); }
+            get { return this._ramSizeInGb; }
             set { this._ramSizeInGb = value; }
         }
 

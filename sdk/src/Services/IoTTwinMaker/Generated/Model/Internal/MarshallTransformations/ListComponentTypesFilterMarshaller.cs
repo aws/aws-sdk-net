@@ -57,7 +57,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsAbstract())
             {
                 context.Writer.WritePropertyName("isAbstract");
-                context.Writer.Write(requestObject.IsAbstract);
+                context.Writer.Write(requestObject.IsAbstract.Value);
             }
 
             if(requestObject.IsSetNamespace())

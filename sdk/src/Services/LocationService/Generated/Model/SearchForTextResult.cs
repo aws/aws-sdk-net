@@ -54,9 +54,9 @@ namespace Amazon.LocationService.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Distance
+        public double? Distance
         {
-            get { return this._distance.GetValueOrDefault(); }
+            get { return this._distance; }
             set { this._distance = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Relevance
+        public double? Relevance
         {
-            get { return this._relevance.GetValueOrDefault(); }
+            get { return this._relevance; }
             set { this._relevance = value; }
         }
 

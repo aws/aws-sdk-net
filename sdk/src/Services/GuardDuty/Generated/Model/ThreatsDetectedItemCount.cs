@@ -42,9 +42,9 @@ namespace Amazon.GuardDuty.Model
         /// Total number of infected files.
         /// </para>
         /// </summary>
-        public int Files
+        public int? Files
         {
-            get { return this._files.GetValueOrDefault(); }
+            get { return this._files; }
             set { this._files = value; }
         }
 

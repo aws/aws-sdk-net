@@ -75,9 +75,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Creation time of the scheduled query.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.TimestreamQuery.Model
         /// The next time the scheduled query is scheduled to run.
         /// </para>
         /// </summary>
-        public DateTime NextInvocationTime
+        public DateTime? NextInvocationTime
         {
-            get { return this._nextInvocationTime.GetValueOrDefault(); }
+            get { return this._nextInvocationTime; }
             set { this._nextInvocationTime = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Last time the query was run.
         /// </para>
         /// </summary>
-        public DateTime PreviousInvocationTime
+        public DateTime? PreviousInvocationTime
         {
-            get { return this._previousInvocationTime.GetValueOrDefault(); }
+            get { return this._previousInvocationTime; }
             set { this._previousInvocationTime = value; }
         }
 

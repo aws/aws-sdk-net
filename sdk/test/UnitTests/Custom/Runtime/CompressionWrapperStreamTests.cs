@@ -29,7 +29,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class CompressionWrapperStreamTests
     {
-#if BCL45
+#if BCL
         [DataTestMethod]
         [DataRow(0, 10)]
         [DataRow(10, 10)]
@@ -85,75 +85,6 @@ namespace AWSSDK.UnitTests
                 while ((bytesRead = compressedWrapStream.Read(buffer, 0, bufferSize)) > 0)
                 {
                     await compressedStream.WriteAsync(buffer, 0, bytesRead);
-                }
-
-                var decompressedData = DecompressGzip(compressedStream);
-                var resultString = Encoding.UTF8.GetString(decompressedData);
-
-                Assert.AreEqual(resultString, text);
-
-                // Reset compression wrapper stream
-                compressedWrapStream.GetSeekableBaseStream().Position = 0;
-                compressedWrapStream.Reset();
-            }
-        }
-
-#elif !BCL45 && BCL
-        [DataTestMethod]
-        [DataRow(0, 10)]
-        [DataRow(10, 10)]
-        [DataRow(10, 100)]
-        [DataRow(100, 10)]
-        [DataRow(1000, 100)]
-        [DataRow(10000, 1000)]
-        [DataRow(100000, 10000)]
-        [DataRow(1000000, 10000)]
-        public void GzipStreamWrapperCompression(int textRepeatCount, int bufferSize)
-        {
-            var rand = new Random();
-            var text = string.Join("", Enumerable.Repeat(0, textRepeatCount).Select(n => (char)rand.Next(127)));
-
-            var contentStream = new MemoryStream(Encoding.Default.GetBytes(text));
-            var compressedWrapStream = new CompressionWrapperStream(contentStream, new GZipCompression());
-
-            var buffer = new byte[bufferSize];
-
-            var bytesRead = 0;
-            var compressedStream = new MemoryStream();
-
-            while ((bytesRead = compressedWrapStream.Read(buffer, 0, bufferSize)) > 0)
-            {
-                  compressedStream.Write(buffer, 0, bytesRead);
-            }
-
-            var decompressedData = DecompressGzip(compressedStream);
-            var resultString = Encoding.UTF8.GetString(decompressedData);
-
-            Assert.AreEqual(resultString, text);
-        }
-
-        [DataTestMethod]
-        [DataRow(0, 10)]
-        [DataRow(10, 10)]
-        [DataRow(100000, 10000)]
-        public void RetryGzipStreamWrapperCompression(int textRepeatCount, int bufferSize)
-        {
-            var rand = new Random();
-            var text = string.Join("", Enumerable.Repeat(0, textRepeatCount).Select(n => (char)rand.Next(127)));
-
-            var contentStream = new MemoryStream(Encoding.Default.GetBytes(text));
-            var compressedWrapStream = new CompressionWrapperStream(contentStream, new GZipCompression());
-
-            for (int i = 0; i < 3; i++)
-            {
-                var buffer = new byte[bufferSize];
-
-                var bytesRead = 0;
-                var compressedStream = new MemoryStream();
-
-                while ((bytesRead = compressedWrapStream.Read(buffer, 0, bufferSize)) > 0)
-                {
-                    compressedStream.Write(buffer, 0, bytesRead);
                 }
 
                 var decompressedData = DecompressGzip(compressedStream);

@@ -146,9 +146,9 @@ namespace Amazon.Athena.Model
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
-        public bool RemoveAclConfiguration
+        public bool? RemoveAclConfiguration
         {
-            get { return this._removeAclConfiguration.GetValueOrDefault(); }
+            get { return this._removeAclConfiguration; }
             set { this._removeAclConfiguration = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.Athena.Model
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
-        public bool RemoveEncryptionConfiguration
+        public bool? RemoveEncryptionConfiguration
         {
-            get { return this._removeEncryptionConfiguration.GetValueOrDefault(); }
+            get { return this._removeEncryptionConfiguration; }
             set { this._removeEncryptionConfiguration = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.Athena.Model
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
-        public bool RemoveExpectedBucketOwner
+        public bool? RemoveExpectedBucketOwner
         {
-            get { return this._removeExpectedBucketOwner.GetValueOrDefault(); }
+            get { return this._removeExpectedBucketOwner; }
             set { this._removeExpectedBucketOwner = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.Athena.Model
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
-        public bool RemoveOutputLocation
+        public bool? RemoveOutputLocation
         {
-            get { return this._removeOutputLocation.GetValueOrDefault(); }
+            get { return this._removeOutputLocation; }
             set { this._removeOutputLocation = value; }
         }
 

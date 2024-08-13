@@ -63,7 +63,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimePeriod())
             {
                 context.Writer.WritePropertyName("TimePeriod");
-                context.Writer.Write(requestObject.TimePeriod);
+                context.Writer.Write(requestObject.TimePeriod.Value);
             }
 
         }

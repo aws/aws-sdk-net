@@ -84,7 +84,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSizePercent())
             {
                 context.Writer.WritePropertyName("SizePercent");
-                context.Writer.Write(requestObject.SizePercent);
+                context.Writer.Write(requestObject.SizePercent.Value);
             }
 
             if(requestObject.IsSetTemplateConfiguration())

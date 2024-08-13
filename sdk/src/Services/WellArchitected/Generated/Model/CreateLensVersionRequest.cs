@@ -74,9 +74,9 @@ namespace Amazon.WellArchitected.Model
         /// Set to true if this new major lens version.
         /// </para>
         /// </summary>
-        public bool IsMajorVersion
+        public bool? IsMajorVersion
         {
-            get { return this._isMajorVersion.GetValueOrDefault(); }
+            get { return this._isMajorVersion; }
             set { this._isMajorVersion = value; }
         }
 

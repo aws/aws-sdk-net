@@ -51,9 +51,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates when the transform job was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.SageMaker.Model
         /// failed jobs, this is when Amazon SageMaker detected that the job failed.
         /// </para>
         /// </summary>
-        public DateTime TransformEndTime
+        public DateTime? TransformEndTime
         {
-            get { return this._transformEndTime.GetValueOrDefault(); }
+            get { return this._transformEndTime; }
             set { this._transformEndTime = value; }
         }
 

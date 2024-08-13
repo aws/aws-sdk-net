@@ -74,7 +74,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("useAwsOwnedKey", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseAwsOwnedKey = unmarshaller.Unmarshall(context);
                     continue;
                 }

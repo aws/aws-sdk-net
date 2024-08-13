@@ -57,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("volumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB);
+                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
             }
 
         }

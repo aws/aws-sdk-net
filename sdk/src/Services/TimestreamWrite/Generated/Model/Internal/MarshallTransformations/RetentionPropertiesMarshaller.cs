@@ -51,13 +51,13 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMagneticStoreRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("MagneticStoreRetentionPeriodInDays");
-                context.Writer.Write(requestObject.MagneticStoreRetentionPeriodInDays);
+                context.Writer.Write(requestObject.MagneticStoreRetentionPeriodInDays.Value);
             }
 
             if(requestObject.IsSetMemoryStoreRetentionPeriodInHours())
             {
                 context.Writer.WritePropertyName("MemoryStoreRetentionPeriodInHours");
-                context.Writer.Write(requestObject.MemoryStoreRetentionPeriodInHours);
+                context.Writer.Write(requestObject.MemoryStoreRetentionPeriodInHours.Value);
             }
 
         }

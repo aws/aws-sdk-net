@@ -80,7 +80,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CapacityRebalance", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CapacityRebalance = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -92,25 +92,25 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CreatedTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DefaultCooldown", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DefaultCooldown = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DefaultInstanceWarmup", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DefaultInstanceWarmup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DesiredCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DesiredCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -133,7 +133,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("HealthCheckGracePeriod", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HealthCheckGracePeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -185,19 +185,19 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxInstanceLifetime", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxInstanceLifetime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -209,7 +209,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NewInstancesProtectedFromScaleIn", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.NewInstancesProtectedFromScaleIn = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -221,7 +221,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PredictedCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.PredictedCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -306,7 +306,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("WarmPoolSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.WarmPoolSize = unmarshaller.Unmarshall(context);
                         continue;
                     }

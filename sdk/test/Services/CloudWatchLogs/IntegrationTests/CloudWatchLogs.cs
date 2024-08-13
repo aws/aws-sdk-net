@@ -125,12 +125,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                     Assert.AreEqual(2, getResponse.Events.Count);
                     Assert.AreEqual("First Data", getResponse.Events[0].Message);
-                    Assert.AreEqual(DateTime.UtcNow.Date, getResponse.Events[0].Timestamp.Date);
+                    Assert.AreEqual(DateTime.UtcNow.Date, getResponse.Events[0].Timestamp.Value.Date);
 
                     Assert.AreEqual("Second Data", getResponse.Events[1].Message);
-                    Assert.AreEqual(DateTime.UtcNow.Date, getResponse.Events[1].Timestamp.Date);
+                    Assert.AreEqual(DateTime.UtcNow.Date, getResponse.Events[1].Timestamp.Value.Date);
 
-                    Assert.IsTrue(getResponse.Events[0].Timestamp < getResponse.Events[1].Timestamp);
+                    Assert.IsTrue(getResponse.Events[0].Timestamp.Value < getResponse.Events[1].Timestamp.Value);
 
 
                     Client.DeleteLogStream(new DeleteLogStreamRequest

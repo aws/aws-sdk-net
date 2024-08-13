@@ -63,13 +63,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnablePartialResultsStabilization())
             {
                 context.Writer.WritePropertyName("EnablePartialResultsStabilization");
-                context.Writer.Write(requestObject.EnablePartialResultsStabilization);
+                context.Writer.Write(requestObject.EnablePartialResultsStabilization.Value);
             }
 
             if(requestObject.IsSetIdentifyLanguage())
             {
                 context.Writer.WritePropertyName("IdentifyLanguage");
-                context.Writer.Write(requestObject.IdentifyLanguage);
+                context.Writer.Write(requestObject.IdentifyLanguage.Value);
             }
 
             if(requestObject.IsSetLanguageCode())

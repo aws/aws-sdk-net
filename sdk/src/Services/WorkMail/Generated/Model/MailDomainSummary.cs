@@ -43,9 +43,9 @@ namespace Amazon.WorkMail.Model
         /// Whether the domain is default or not.
         /// </para>
         /// </summary>
-        public bool DefaultDomain
+        public bool? DefaultDomain
         {
-            get { return this._defaultDomain.GetValueOrDefault(); }
+            get { return this._defaultDomain; }
             set { this._defaultDomain = value; }
         }
 

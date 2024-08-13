@@ -45,9 +45,9 @@ namespace Amazon.MQ.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.MQ.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Revision
+        public int? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 

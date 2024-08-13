@@ -110,7 +110,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -122,7 +122,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SQLPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SQLPort = unmarshaller.Unmarshall(context);
                     continue;
                 }

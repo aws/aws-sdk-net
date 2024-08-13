@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingDisabled())
             {
                 context.Writer.WritePropertyName("AutoScalingDisabled");
-                context.Writer.Write(requestObject.AutoScalingDisabled);
+                context.Writer.Write(requestObject.AutoScalingDisabled.Value);
             }
 
             if(requestObject.IsSetAutoScalingRoleArn())
@@ -63,13 +63,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumUnits())
             {
                 context.Writer.WritePropertyName("MaximumUnits");
-                context.Writer.Write(requestObject.MaximumUnits);
+                context.Writer.Write(requestObject.MaximumUnits.Value);
             }
 
             if(requestObject.IsSetMinimumUnits())
             {
                 context.Writer.WritePropertyName("MinimumUnits");
-                context.Writer.Write(requestObject.MinimumUnits);
+                context.Writer.Write(requestObject.MinimumUnits.Value);
             }
 
             if(requestObject.IsSetScalingPolicyUpdate())

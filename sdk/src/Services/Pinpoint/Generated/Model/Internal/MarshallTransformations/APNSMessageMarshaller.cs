@@ -63,7 +63,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBadge())
             {
                 context.Writer.WritePropertyName("Badge");
-                context.Writer.Write(requestObject.Badge);
+                context.Writer.Write(requestObject.Badge.Value);
             }
 
             if(requestObject.IsSetBody())
@@ -125,7 +125,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSilentPush())
             {
                 context.Writer.WritePropertyName("SilentPush");
-                context.Writer.Write(requestObject.SilentPush);
+                context.Writer.Write(requestObject.SilentPush.Value);
             }
 
             if(requestObject.IsSetSound())
@@ -162,7 +162,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeToLive())
             {
                 context.Writer.WritePropertyName("TimeToLive");
-                context.Writer.Write(requestObject.TimeToLive);
+                context.Writer.Write(requestObject.TimeToLive.Value);
             }
 
             if(requestObject.IsSetTitle())

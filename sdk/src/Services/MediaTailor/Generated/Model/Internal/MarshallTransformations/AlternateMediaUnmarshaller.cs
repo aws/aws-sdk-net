@@ -80,7 +80,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DurationMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ScheduledStartTimeMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ScheduledStartTimeMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -47,9 +47,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The timestamp when provisioning became available.
         /// </para>
         /// </summary>
-        public DateTime DateNewProvisioningDataAvailable
+        public DateTime? DateNewProvisioningDataAvailable
         {
-            get { return this._dateNewProvisioningDataAvailable.GetValueOrDefault(); }
+            get { return this._dateNewProvisioningDataAvailable; }
             set { this._dateNewProvisioningDataAvailable = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The timestamp when DMS provisioned replication resources.
         /// </para>
         /// </summary>
-        public DateTime DateProvisioned
+        public DateTime? DateProvisioned
         {
-            get { return this._dateProvisioned.GetValueOrDefault(); }
+            get { return this._dateProvisioned; }
             set { this._dateProvisioned = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Whether the new provisioning is available to the replication.
         /// </para>
         /// </summary>
-        public bool IsNewProvisioningAvailable
+        public bool? IsNewProvisioningAvailable
         {
-            get { return this._isNewProvisioningAvailable.GetValueOrDefault(); }
+            get { return this._isNewProvisioningAvailable; }
             set { this._isNewProvisioningAvailable = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of capacity units the replication is using.
         /// </para>
         /// </summary>
-        public int ProvisionedCapacityUnits
+        public int? ProvisionedCapacityUnits
         {
-            get { return this._provisionedCapacityUnits.GetValueOrDefault(); }
+            get { return this._provisionedCapacityUnits; }
             set { this._provisionedCapacityUnits = value; }
         }
 

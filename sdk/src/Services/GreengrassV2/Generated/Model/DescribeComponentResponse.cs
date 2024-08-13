@@ -107,9 +107,9 @@ namespace Amazon.GreengrassV2.Model
         /// The time at which the component was created, expressed in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 

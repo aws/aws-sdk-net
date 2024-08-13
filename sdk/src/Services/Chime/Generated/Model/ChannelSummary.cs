@@ -66,9 +66,9 @@ namespace Amazon.Chime.Model
         /// The time at which the last message in a channel was sent.
         /// </para>
         /// </summary>
-        public DateTime LastMessageTimestamp
+        public DateTime? LastMessageTimestamp
         {
-            get { return this._lastMessageTimestamp.GetValueOrDefault(); }
+            get { return this._lastMessageTimestamp; }
             set { this._lastMessageTimestamp = value; }
         }
 

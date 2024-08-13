@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.CodePipeline
@@ -1263,7 +1264,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        public virtual Task<GetPipelineResponse> GetPipelineAsync(string name, int version, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineResponse> GetPipelineAsync(string name, int? version, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetPipelineRequest();
             request.Name = name;
@@ -1806,6 +1807,96 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  ListRuleExecutions
+
+        internal virtual ListRuleExecutionsResponse ListRuleExecutions(ListRuleExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRuleExecutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the rule executions that have occurred in a pipeline configured for conditions
+        /// with rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRuleExecutions service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provide is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
+        /// The pipeline execution was specified in an invalid format or cannot be found, or an
+        /// execution ID does not belong to the specified pipeline.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleExecutions">REST API Reference for ListRuleExecutions Operation</seealso>
+        public virtual Task<ListRuleExecutionsResponse> ListRuleExecutionsAsync(ListRuleExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRuleExecutionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRuleTypes
+
+        internal virtual ListRuleTypesResponse ListRuleTypes(ListRuleTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRuleTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the rules for the condition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRuleTypes service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provide is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListRuleTypes">REST API Reference for ListRuleTypes Operation</seealso>
+        public virtual Task<ListRuleTypesResponse> ListRuleTypesAsync(ListRuleTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRuleTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1892,6 +1983,63 @@ namespace Amazon.CodePipeline
             options.ResponseUnmarshaller = ListWebhooksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListWebhooksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  OverrideStageCondition
+
+        internal virtual OverrideStageConditionResponse OverrideStageCondition(OverrideStageConditionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = OverrideStageConditionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = OverrideStageConditionResponseUnmarshaller.Instance;
+
+            return Invoke<OverrideStageConditionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Used to override a stage condition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OverrideStageCondition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the OverrideStageCondition service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConditionNotOverridableException">
+        /// Unable to override because the condition does not allow overrides.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
+        /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
+        /// Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
+        /// The stage has failed in a later run of the pipeline and the <c>pipelineExecutionId</c>
+        /// associated with the request is out of date.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.StageNotFoundException">
+        /// The stage was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/OverrideStageCondition">REST API Reference for OverrideStageCondition Operation</seealso>
+        public virtual Task<OverrideStageConditionResponse> OverrideStageConditionAsync(OverrideStageConditionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = OverrideStageConditionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = OverrideStageConditionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<OverrideStageConditionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2021,6 +2169,9 @@ namespace Amazon.CodePipeline
         /// <returns>The response from the PutActionRevision service method, as returned by CodePipeline.</returns>
         /// <exception cref="Amazon.CodePipeline.Model.ActionNotFoundException">
         /// The specified action cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
         /// The pipeline was specified in an invalid format or cannot be found.
@@ -2481,6 +2632,9 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the RetryStageExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
         /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
         /// Try again later.
@@ -2964,16 +3118,8 @@ namespace Amazon.CodePipeline
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonCodePipelineEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

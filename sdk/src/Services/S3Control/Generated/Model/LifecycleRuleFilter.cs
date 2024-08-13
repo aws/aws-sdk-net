@@ -64,9 +64,9 @@ namespace Amazon.S3Control.Model
         /// Minimum object size to which the rule applies.
         /// </para>
         /// </summary>
-        public long ObjectSizeGreaterThan
+        public long? ObjectSizeGreaterThan
         {
-            get { return this._objectSizeGreaterThan.GetValueOrDefault(); }
+            get { return this._objectSizeGreaterThan; }
             set { this._objectSizeGreaterThan = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.S3Control.Model
         /// Maximum object size to which the rule applies.
         /// </para>
         /// </summary>
-        public long ObjectSizeLessThan
+        public long? ObjectSizeLessThan
         {
-            get { return this._objectSizeLessThan.GetValueOrDefault(); }
+            get { return this._objectSizeLessThan; }
             set { this._objectSizeLessThan = value; }
         }
 

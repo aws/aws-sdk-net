@@ -47,9 +47,9 @@ namespace Amazon.TimestreamWrite.Model
         /// identical record exists with a higher version than the version in the write request.
         /// </para>
         /// </summary>
-        public long ExistingVersion
+        public long? ExistingVersion
         {
-            get { return this._existingVersion.GetValueOrDefault(); }
+            get { return this._existingVersion; }
             set { this._existingVersion = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.TimestreamWrite.Model
         /// 0. 
         /// </para>
         /// </summary>
-        public int RecordIndex
+        public int? RecordIndex
         {
-            get { return this._recordIndex.GetValueOrDefault(); }
+            get { return this._recordIndex; }
             set { this._recordIndex = value; }
         }
 

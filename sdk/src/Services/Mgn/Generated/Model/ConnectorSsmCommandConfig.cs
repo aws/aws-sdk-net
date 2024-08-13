@@ -65,9 +65,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool CloudWatchOutputEnabled
+        public bool? CloudWatchOutputEnabled
         {
-            get { return this._cloudWatchOutputEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchOutputEnabled; }
             set { this._cloudWatchOutputEnabled = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool S3OutputEnabled
+        public bool? S3OutputEnabled
         {
-            get { return this._s3OutputEnabled.GetValueOrDefault(); }
+            get { return this._s3OutputEnabled; }
             set { this._s3OutputEnabled = value; }
         }
 

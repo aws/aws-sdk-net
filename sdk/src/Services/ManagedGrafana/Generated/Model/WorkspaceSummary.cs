@@ -74,9 +74,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Modified
+        public DateTime? Modified
         {
-            get { return this._modified.GetValueOrDefault(); }
+            get { return this._modified; }
             set { this._modified = value; }
         }
 

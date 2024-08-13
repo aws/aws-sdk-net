@@ -44,9 +44,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableAutoRenew
+        public bool? EnableAutoRenew
         {
-            get { return this._enableAutoRenew.GetValueOrDefault(); }
+            get { return this._enableAutoRenew; }
             set { this._enableAutoRenew = value; }
         }
 

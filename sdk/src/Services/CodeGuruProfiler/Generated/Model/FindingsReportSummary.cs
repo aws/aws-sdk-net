@@ -67,9 +67,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
         /// </para>
         /// </summary>
-        public DateTime ProfileEndTime
+        public DateTime? ProfileEndTime
         {
-            get { return this._profileEndTime.GetValueOrDefault(); }
+            get { return this._profileEndTime; }
             set { this._profileEndTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// past June 1, 2020 1:15:02 PM UTC.
         /// </para>
         /// </summary>
-        public DateTime ProfileStartTime
+        public DateTime? ProfileStartTime
         {
-            get { return this._profileStartTime.GetValueOrDefault(); }
+            get { return this._profileStartTime; }
             set { this._profileStartTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// The total number of different recommendations that were found by the analysis.
         /// </para>
         /// </summary>
-        public int TotalNumberOfFindings
+        public int? TotalNumberOfFindings
         {
-            get { return this._totalNumberOfFindings.GetValueOrDefault(); }
+            get { return this._totalNumberOfFindings; }
             set { this._totalNumberOfFindings = value; }
         }
 

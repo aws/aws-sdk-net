@@ -42,9 +42,9 @@ namespace Amazon.MediaConnect.Model
         /// video frame.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int FrameHeight
+        public int? FrameHeight
         {
-            get { return this._frameHeight.GetValueOrDefault(); }
+            get { return this._frameHeight; }
             set { this._frameHeight = value; }
         }
 
@@ -59,9 +59,9 @@ namespace Amazon.MediaConnect.Model
         /// frame.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int FrameWidth
+        public int? FrameWidth
         {
-            get { return this._frameWidth.GetValueOrDefault(); }
+            get { return this._frameWidth; }
             set { this._frameWidth = value; }
         }
 

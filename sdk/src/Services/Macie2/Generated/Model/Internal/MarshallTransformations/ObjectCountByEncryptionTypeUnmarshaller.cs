@@ -68,31 +68,31 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("customerManaged", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CustomerManaged = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("kmsManaged", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.KmsManaged = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("s3Managed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.S3Managed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unencrypted", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Unencrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unknown", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Unknown = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -17,6 +17,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using Amazon.Util.Internal;
 
@@ -38,8 +40,8 @@ namespace Amazon.Runtime.Internal
             PreInvoke(executionContext);
             base.InvokeSync(executionContext);
         }
-#if AWS_ASYNC_API 
 
+#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -53,21 +55,6 @@ namespace Amazon.Runtime.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);
         }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
-        }
 #endif
 
         /// <summary>
@@ -77,23 +64,26 @@ namespace Amazon.Runtime.Internal
         /// request and response context.</param>
         protected static void PreInvoke(IExecutionContext executionContext)
         {
-            var requestContext = executionContext.RequestContext;
-            requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
-            requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
-
-            // If the request has a body and its request-specific marshaller didn't already
-            // set Content-Type, follow our existing fallback logic
-            if (requestContext.Request.HasRequestBody() &&
-               !requestContext.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+            using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.SerializationDurationMetricName))
             {
-                if (requestContext.Request.UseQueryString)
-                    requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
-                else
-                    requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
-            }
+                var requestContext = executionContext.RequestContext;
+                requestContext.Request = requestContext.Marshaller.Marshall(requestContext.OriginalRequest);
+                requestContext.Request.AuthenticationRegion = requestContext.ClientConfig.AuthenticationRegion;
 
-            SetRecursionDetectionHeader(requestContext.Request.Headers);
-            SetUserAgentHeader(requestContext);
+                // If the request has a body and its request-specific marshaller didn't already
+                // set Content-Type, follow our existing fallback logic
+                if (requestContext.Request.HasRequestBody() &&
+                !requestContext.Request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
+                {
+                    if (requestContext.Request.UseQueryString)
+                        requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
+                    else
+                        requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+                }
+
+                SetRecursionDetectionHeader(requestContext.Request.Headers);
+                SetUserAgentHeader(requestContext);
+            }
         }
 
         /// <summary>

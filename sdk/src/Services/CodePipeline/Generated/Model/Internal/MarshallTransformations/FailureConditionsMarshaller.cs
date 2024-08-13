@@ -48,6 +48,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConditions())
+            {
+                context.Writer.WritePropertyName("conditions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectConditionsListValue in requestObject.Conditions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConditionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectConditionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResult())
             {
                 context.Writer.WritePropertyName("result");

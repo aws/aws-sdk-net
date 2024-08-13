@@ -90,9 +90,9 @@ namespace Amazon.WorkDocs.Model
         /// the comment is created.
         /// </para>
         /// </summary>
-        public bool NotifyCollaborators
+        public bool? NotifyCollaborators
         {
-            get { return this._notifyCollaborators.GetValueOrDefault(); }
+            get { return this._notifyCollaborators; }
             set { this._notifyCollaborators = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("offsetInNanos", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OffsetInNanos = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("timeInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

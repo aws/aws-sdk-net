@@ -52,9 +52,9 @@ namespace Amazon.Pinpoint.Model
         /// The attempts allowed to validate an OTP.
         /// </para>
         /// </summary>
-        public int AllowedAttempts
+        public int? AllowedAttempts
         {
-            get { return this._allowedAttempts.GetValueOrDefault(); }
+            get { return this._allowedAttempts; }
             set { this._allowedAttempts = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Pinpoint.Model
         /// The number of characters in the generated OTP.
         /// </para>
         /// </summary>
-        public int CodeLength
+        public int? CodeLength
         {
-            get { return this._codeLength.GetValueOrDefault(); }
+            get { return this._codeLength; }
             set { this._codeLength = value; }
         }
 
@@ -238,9 +238,9 @@ namespace Amazon.Pinpoint.Model
         /// The time in minutes before the OTP is no longer valid.
         /// </para>
         /// </summary>
-        public int ValidityPeriod
+        public int? ValidityPeriod
         {
-            get { return this._validityPeriod.GetValueOrDefault(); }
+            get { return this._validityPeriod; }
             set { this._validityPeriod = value; }
         }
 

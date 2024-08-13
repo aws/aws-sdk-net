@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLine())
             {
                 context.Writer.WritePropertyName("Line");
-                context.Writer.Write(requestObject.Line);
+                context.Writer.Write(requestObject.Line.Value);
             }
 
         }

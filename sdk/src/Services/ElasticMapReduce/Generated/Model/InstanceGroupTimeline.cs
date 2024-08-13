@@ -44,9 +44,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The creation date and time of the instance group.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date and time when the instance group terminated.
         /// </para>
         /// </summary>
-        public DateTime EndDateTime
+        public DateTime? EndDateTime
         {
-            get { return this._endDateTime.GetValueOrDefault(); }
+            get { return this._endDateTime; }
             set { this._endDateTime = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date and time when the instance group became ready to perform tasks.
         /// </para>
         /// </summary>
-        public DateTime ReadyDateTime
+        public DateTime? ReadyDateTime
         {
-            get { return this._readyDateTime.GetValueOrDefault(); }
+            get { return this._readyDateTime; }
             set { this._readyDateTime = value; }
         }
 

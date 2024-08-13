@@ -62,9 +62,9 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool AllowExternalPrincipals
+        public bool? AllowExternalPrincipals
         {
-            get { return this._allowExternalPrincipals.GetValueOrDefault(); }
+            get { return this._allowExternalPrincipals; }
             set { this._allowExternalPrincipals = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.RAM.Model
         /// The date and time when the resource share was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.RAM.Model
         /// The date and time when the resource share was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

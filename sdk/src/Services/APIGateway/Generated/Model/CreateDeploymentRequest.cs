@@ -51,9 +51,9 @@ namespace Amazon.APIGateway.Model
         /// Enables a cache cluster for the Stage resource specified in the input.
         /// </para>
         /// </summary>
-        public bool CacheClusterEnabled
+        public bool? CacheClusterEnabled
         {
-            get { return this._cacheClusterEnabled.GetValueOrDefault(); }
+            get { return this._cacheClusterEnabled; }
             set { this._cacheClusterEnabled = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.APIGateway.Model
         /// Specifies whether active tracing with X-ray is enabled for the Stage.
         /// </para>
         /// </summary>
-        public bool TracingEnabled
+        public bool? TracingEnabled
         {
-            get { return this._tracingEnabled.GetValueOrDefault(); }
+            get { return this._tracingEnabled; }
             set { this._tracingEnabled = value; }
         }
 

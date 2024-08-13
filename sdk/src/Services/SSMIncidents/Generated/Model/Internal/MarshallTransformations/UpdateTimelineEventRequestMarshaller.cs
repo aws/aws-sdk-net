@@ -109,7 +109,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEventTime())
                 {
                     context.Writer.WritePropertyName("eventTime");
-                    context.Writer.Write(publicRequest.EventTime);
+                    context.Writer.Write(publicRequest.EventTime.Value);
                 }
 
                 if(publicRequest.IsSetEventType())

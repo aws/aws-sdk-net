@@ -68,7 +68,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("concurrentDeploymentPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConcurrentDeploymentPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,13 +80,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("failureThresholdPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailureThresholdPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("robotDeploymentTimeoutInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RobotDeploymentTimeoutInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

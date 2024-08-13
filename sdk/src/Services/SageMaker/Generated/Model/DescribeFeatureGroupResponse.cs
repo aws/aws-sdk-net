@@ -60,9 +60,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp indicating when the feature group was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -358,9 +358,9 @@ namespace Amazon.SageMaker.Model
         /// The size of the <c>OnlineStore</c> in bytes.
         /// </para>
         /// </summary>
-        public long OnlineStoreTotalSizeBytes
+        public long? OnlineStoreTotalSizeBytes
         {
-            get { return this._onlineStoreTotalSizeBytes.GetValueOrDefault(); }
+            get { return this._onlineStoreTotalSizeBytes; }
             set { this._onlineStoreTotalSizeBytes = value; }
         }
 

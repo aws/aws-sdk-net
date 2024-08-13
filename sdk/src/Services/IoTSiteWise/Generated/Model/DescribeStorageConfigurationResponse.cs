@@ -104,9 +104,9 @@ namespace Amazon.IoTSiteWise.Model
         /// The date the storage configuration was last updated, in Unix epoch time.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateDate
+        public DateTime? LastUpdateDate
         {
-            get { return this._lastUpdateDate.GetValueOrDefault(); }
+            get { return this._lastUpdateDate; }
             set { this._lastUpdateDate = value; }
         }
 

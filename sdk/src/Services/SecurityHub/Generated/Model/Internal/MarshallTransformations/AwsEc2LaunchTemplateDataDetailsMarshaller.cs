@@ -100,19 +100,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableApiStop())
             {
                 context.Writer.WritePropertyName("DisableApiStop");
-                context.Writer.Write(requestObject.DisableApiStop);
+                context.Writer.Write(requestObject.DisableApiStop.Value);
             }
 
             if(requestObject.IsSetDisableApiTermination())
             {
                 context.Writer.WritePropertyName("DisableApiTermination");
-                context.Writer.Write(requestObject.DisableApiTermination);
+                context.Writer.Write(requestObject.DisableApiTermination.Value);
             }
 
             if(requestObject.IsSetEbsOptimized())
             {
                 context.Writer.WritePropertyName("EbsOptimized");
-                context.Writer.Write(requestObject.EbsOptimized);
+                context.Writer.Write(requestObject.EbsOptimized.Value);
             }
 
             if(requestObject.IsSetElasticGpuSpecificationSet())

@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// The Diffie-Hellmann group number.
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

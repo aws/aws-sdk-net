@@ -68,13 +68,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("canaryInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CanaryInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("canaryPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CanaryPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

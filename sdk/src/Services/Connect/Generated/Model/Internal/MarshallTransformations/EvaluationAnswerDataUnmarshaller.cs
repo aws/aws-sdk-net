@@ -68,13 +68,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("NotApplicable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotApplicable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumericValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.NumericValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

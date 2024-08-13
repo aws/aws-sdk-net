@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// this is the time when the instance was launched.
         /// </para>
         /// </summary>
-        public DateTime ImpairedSince
+        public DateTime? ImpairedSince
         {
-            get { return this._impairedSince.GetValueOrDefault(); }
+            get { return this._impairedSince; }
             set { this._impairedSince = value; }
         }
 

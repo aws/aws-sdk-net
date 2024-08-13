@@ -42,8 +42,8 @@ namespace Amazon.S3.Internal
             PreInvoke(executionContext);
             base.InvokeSync(executionContext);
         }
-#if AWS_ASYNC_API
 
+#if AWS_ASYNC_API
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -56,21 +56,6 @@ namespace Amazon.S3.Internal
         {
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
         }
 #endif
 
@@ -136,7 +121,7 @@ namespace Amazon.S3.Internal
             if (uploadPartRequest.InputStream != null)
             {
                 // Wrap input stream in partial wrapper (to upload only part of the stream)
-                var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
+                var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize.GetValueOrDefault());
                 if (partialStream.Length > 0 && !(uploadPartRequest.DisablePayloadSigning ?? false))
                     request.UseChunkEncoding = uploadPartRequest.UseChunkEncoding;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))

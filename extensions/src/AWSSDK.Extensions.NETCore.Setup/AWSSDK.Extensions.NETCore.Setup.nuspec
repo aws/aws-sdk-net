@@ -3,27 +3,43 @@
   <metadata> 
     <id>AWSSDK.Extensions.NETCore.Setup</id>
     <title>AWSSDK - Extensions for NETCore Setup</title>
-    <version>3.7.301</version>
+    <version>4.0.0.0-preview</version>
     <authors>Amazon Web Services</authors>
     <description>Extensions for the AWS SDK for .NET to integrate with .NET Core configuration and dependency injection frameworks.</description>
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
-    <tags>AWS Amazon aws-sdk-v3</tags>
+    <tags>AWS Amazon aws-sdk-v4</tags>
     <icon>images\AWSLogo.png</icon>
 	
     <dependencies>
-      <group>
-        <dependency id="AWSSDK.Core" version="3.7.300" />
+      <group targetFramework="netstandard2.0">
+        <dependency id="AWSSDK.Core" version="4.0.0.0-preview" />
         <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="2.0.0" />
         <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="2.0.0" />
         <dependency id="Microsoft.Extensions.Logging.Abstractions" version="2.0.0" />
       </group>
-	  
-    </dependencies>
+      <group targetFramework="netcoreapp3.1">
+        <dependency id="AWSSDK.Core" version="4.0.0.0-preview" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="2.0.0" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="2.0.0" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="2.0.0" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="AWSSDK.Core" version="4.0.0.0-preview" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="2.0.0" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="2.0.0" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="2.0.0" />
+      </group>
+	</dependencies>
 
   </metadata> 
   <files>
+    <file src=".\Schema\ConfigurationSchema.json" target="\" />
+    <file src=".\Schema\AWSSDK.Extensions.NETCore.Setup.targets" target="\buildTransitive\netstandard2.0" />	
+    <file src=".\Schema\AWSSDK.Extensions.NETCore.Setup.targets" target="\buildTransitive\netcoreapp3.1" />	
+    <file src=".\Schema\AWSSDK.Extensions.NETCore.Setup.targets" target="\buildTransitive\net8.0" />	
+	  
     <file src="..\..\..\sdk\nuget-content\AWSLogo.png" target="images\" />
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.NETCore.Setup.dll" target="lib\netstandard2.0" />
     <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.NETCore.Setup.pdb" target="lib\netstandard2.0" />

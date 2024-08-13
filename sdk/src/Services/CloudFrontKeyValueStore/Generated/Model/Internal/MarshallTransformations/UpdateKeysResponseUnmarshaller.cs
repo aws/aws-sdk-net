@@ -54,13 +54,13 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ItemCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

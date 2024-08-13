@@ -86,7 +86,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastSuccessfulMetadataSyncTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessfulMetadataSyncTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

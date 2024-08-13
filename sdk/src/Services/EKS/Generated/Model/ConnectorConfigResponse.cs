@@ -65,9 +65,9 @@ namespace Amazon.EKS.Model
         /// through the native provider.
         /// </para>
         /// </summary>
-        public DateTime ActivationExpiry
+        public DateTime? ActivationExpiry
         {
-            get { return this._activationExpiry.GetValueOrDefault(); }
+            get { return this._activationExpiry; }
             set { this._activationExpiry = value; }
         }
 

@@ -108,9 +108,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long MaxRetries
+        public long? MaxRetries
         {
-            get { return this._maxRetries.GetValueOrDefault(); }
+            get { return this._maxRetries; }
             set { this._maxRetries = value; }
         }
 

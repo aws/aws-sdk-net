@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerStartupHealthCheckTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("ContainerStartupHealthCheckTimeoutInSeconds");
-                context.Writer.Write(requestObject.ContainerStartupHealthCheckTimeoutInSeconds);
+                context.Writer.Write(requestObject.ContainerStartupHealthCheckTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetCoreDumpConfig())
@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableSSMAccess())
             {
                 context.Writer.WritePropertyName("EnableSSMAccess");
-                context.Writer.Write(requestObject.EnableSSMAccess);
+                context.Writer.Write(requestObject.EnableSSMAccess.Value);
             }
 
             if(requestObject.IsSetInferenceAmiVersion())
@@ -86,19 +86,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInitialInstanceCount())
             {
                 context.Writer.WritePropertyName("InitialInstanceCount");
-                context.Writer.Write(requestObject.InitialInstanceCount);
+                context.Writer.Write(requestObject.InitialInstanceCount.Value);
             }
 
             if(requestObject.IsSetInitialVariantWeight())
             {
                 context.Writer.WritePropertyName("InitialVariantWeight");
-                if(StringUtils.IsSpecialFloatValue(requestObject.InitialVariantWeight))
+                if(StringUtils.IsSpecialFloatValue(requestObject.InitialVariantWeight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.InitialVariantWeight));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.InitialVariantWeight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.InitialVariantWeight);
+                    context.Writer.Write(requestObject.InitialVariantWeight.Value);
                 }
             }
 
@@ -122,7 +122,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetModelDataDownloadTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("ModelDataDownloadTimeoutInSeconds");
-                context.Writer.Write(requestObject.ModelDataDownloadTimeoutInSeconds);
+                context.Writer.Write(requestObject.ModelDataDownloadTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetModelName())
@@ -162,7 +162,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("VolumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB);
+                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
             }
 
         }

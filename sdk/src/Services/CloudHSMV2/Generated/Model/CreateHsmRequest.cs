@@ -31,7 +31,13 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHsm operation.
-    /// Creates a new hardware security module (HSM) in the specified AWS CloudHSM cluster.
+    /// Creates a new hardware security module (HSM) in the specified CloudHSM cluster.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Cross-account use:</b> No. You cannot perform this operation on an CloudHSM cluster
+    /// in a different Amazon Web Service account.
+    /// </para>
     /// </summary>
     public partial class CreateHsmRequest : AmazonCloudHSMV2Request
     {

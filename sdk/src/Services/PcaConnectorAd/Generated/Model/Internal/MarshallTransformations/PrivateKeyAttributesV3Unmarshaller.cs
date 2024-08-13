@@ -92,7 +92,7 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MinimalKeyLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimalKeyLength = unmarshaller.Unmarshall(context);
                     continue;
                 }

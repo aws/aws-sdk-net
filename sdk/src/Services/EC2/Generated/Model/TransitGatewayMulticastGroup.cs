@@ -70,9 +70,9 @@ namespace Amazon.EC2.Model
         /// Indicates that the resource is a transit gateway multicast group member.
         /// </para>
         /// </summary>
-        public bool GroupMember
+        public bool? GroupMember
         {
-            get { return this._groupMember.GetValueOrDefault(); }
+            get { return this._groupMember; }
             set { this._groupMember = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.EC2.Model
         /// Indicates that the resource is a transit gateway multicast group member.
         /// </para>
         /// </summary>
-        public bool GroupSource
+        public bool? GroupSource
         {
-            get { return this._groupSource.GetValueOrDefault(); }
+            get { return this._groupSource; }
             set { this._groupSource = value; }
         }
 

@@ -52,9 +52,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// If no value is specified, the latest version is used by default.
         /// </para>
         /// </summary>
-        public long CompatibleNamespaceVersion
+        public long? CompatibleNamespaceVersion
         {
-            get { return this._compatibleNamespaceVersion.GetValueOrDefault(); }
+            get { return this._compatibleNamespaceVersion; }
             set { this._compatibleNamespaceVersion = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
-        public int ReservedStreamCapacity
+        public int? ReservedStreamCapacity
         {
-            get { return this._reservedStreamCapacity.GetValueOrDefault(); }
+            get { return this._reservedStreamCapacity; }
             set { this._reservedStreamCapacity = value; }
         }
 
@@ -80,7 +80,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property SinkArn. 
         /// <para>
-        /// The ARN of the media stream sink.
+        /// The ARN of the Kinesis Video Stream pool returned by the <a>CreateMediaPipelineKinesisVideoStreamPool</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]

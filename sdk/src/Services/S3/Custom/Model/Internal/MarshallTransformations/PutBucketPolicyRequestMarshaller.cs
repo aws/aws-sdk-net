@@ -48,7 +48,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (!request.Headers.ContainsKey(HeaderKeys.ContentTypeHeader))
                 request.Headers.Add(HeaderKeys.ContentTypeHeader, "text/plain");
             if (putBucketPolicyRequest.IsSetConfirmRemoveSelfBucketAccess())
-                request.Headers.Add(HeaderKeys.ConfirmSelfBucketAccess, S3Transforms.ToStringValue(putBucketPolicyRequest.ConfirmRemoveSelfBucketAccess));
+                request.Headers.Add(HeaderKeys.ConfirmSelfBucketAccess, S3Transforms.ToStringValue(putBucketPolicyRequest.ConfirmRemoveSelfBucketAccess.Value));
             if (putBucketPolicyRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketPolicyRequest.ExpectedBucketOwner));
 

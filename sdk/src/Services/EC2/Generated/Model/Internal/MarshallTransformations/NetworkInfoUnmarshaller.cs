@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("defaultNetworkCardIndex", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DefaultNetworkCardIndex = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -69,13 +69,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("efaSupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EfaSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enaSrdSupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnaSrdSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -87,37 +87,37 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("encryptionInTransitSupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EncryptionInTransitSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ipv4AddressesPerInterface", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Ipv4AddressesPerInterface = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ipv6AddressesPerInterface", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Ipv6AddressesPerInterface = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ipv6Supported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Ipv6Supported = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("maximumNetworkCards", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaximumNetworkCards = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("maximumNetworkInterfaces", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaximumNetworkInterfaces = unmarshaller.Unmarshall(context);
                         continue;
                     }

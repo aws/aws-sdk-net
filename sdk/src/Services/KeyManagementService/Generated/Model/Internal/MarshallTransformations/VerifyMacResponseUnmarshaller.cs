@@ -66,7 +66,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MacValid", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MacValid = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -63,9 +63,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SubscribedAt
+        public DateTime? SubscribedAt
         {
-            get { return this._subscribedAt.GetValueOrDefault(); }
+            get { return this._subscribedAt; }
             set { this._subscribedAt = value; }
         }
 

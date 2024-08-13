@@ -49,9 +49,9 @@ namespace Amazon.LexModelsV2.Model
         /// frequently asked questions (FAQs) to an index</a>.
         /// </para>
         /// </summary>
-        public bool ExactResponse
+        public bool? ExactResponse
         {
-            get { return this._exactResponse.GetValueOrDefault(); }
+            get { return this._exactResponse; }
             set { this._exactResponse = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.LexModelsV2.Model
         /// Specifies whether to enable an Amazon Kendra filter string or not.
         /// </para>
         /// </summary>
-        public bool QueryFilterStringEnabled
+        public bool? QueryFilterStringEnabled
         {
-            get { return this._queryFilterStringEnabled.GetValueOrDefault(); }
+            get { return this._queryFilterStringEnabled; }
             set { this._queryFilterStringEnabled = value; }
         }
 

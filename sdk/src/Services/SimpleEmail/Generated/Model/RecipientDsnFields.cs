@@ -143,9 +143,9 @@ namespace Amazon.SimpleEmail.Model
         /// 822</a> date-time format.
         /// </para>
         /// </summary>
-        public DateTime LastAttemptDateUtc
+        public DateTime? LastAttemptDateUtc
         {
-            get { return this._lastAttemptDateUtc.GetValueOrDefault(); }
+            get { return this._lastAttemptDateUtc; }
             set { this._lastAttemptDate = this._lastAttemptDateUtc = value; }
         }
 
@@ -220,13 +220,20 @@ namespace Amazon.SimpleEmail.Model
             "LastAttemptDateUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. LastAttemptDate is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime LastAttemptDate
+        public DateTime? LastAttemptDate
         {
             get { return this._lastAttemptDate.GetValueOrDefault(); }
             set
             {
                 this._lastAttemptDate = value;
-                this._lastAttemptDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._lastAttemptDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._lastAttemptDateUtc = null;
+                }
             }
         }
 #endregion

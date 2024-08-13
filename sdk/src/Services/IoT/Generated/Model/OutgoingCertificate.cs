@@ -84,9 +84,9 @@ namespace Amazon.IoT.Model
         /// The certificate creation date.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.IoT.Model
         /// The date the transfer was initiated.
         /// </para>
         /// </summary>
-        public DateTime TransferDate
+        public DateTime? TransferDate
         {
-            get { return this._transferDate.GetValueOrDefault(); }
+            get { return this._transferDate; }
             set { this._transferDate = value; }
         }
 

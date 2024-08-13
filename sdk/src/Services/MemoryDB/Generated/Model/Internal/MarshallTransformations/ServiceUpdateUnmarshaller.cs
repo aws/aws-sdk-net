@@ -68,7 +68,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoUpdateStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AutoUpdateStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReleaseDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReleaseDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

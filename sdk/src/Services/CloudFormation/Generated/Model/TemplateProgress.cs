@@ -46,9 +46,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ResourcesFailed
+        public int? ResourcesFailed
         {
-            get { return this._resourcesFailed.GetValueOrDefault(); }
+            get { return this._resourcesFailed; }
             set { this._resourcesFailed = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ResourcesPending
+        public int? ResourcesPending
         {
-            get { return this._resourcesPending.GetValueOrDefault(); }
+            get { return this._resourcesPending; }
             set { this._resourcesPending = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ResourcesProcessing
+        public int? ResourcesProcessing
         {
-            get { return this._resourcesProcessing.GetValueOrDefault(); }
+            get { return this._resourcesProcessing; }
             set { this._resourcesProcessing = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ResourcesSucceeded
+        public int? ResourcesSucceeded
         {
-            get { return this._resourcesSucceeded.GetValueOrDefault(); }
+            get { return this._resourcesSucceeded; }
             set { this._resourcesSucceeded = value; }
         }
 

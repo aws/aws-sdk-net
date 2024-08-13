@@ -60,9 +60,9 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations;\r\nusing Amazon.Runtime.Internal.Transform" +
-                    ";\r\n\r\nusing ServiceClientGenerator;\r\n\r\nusing AWSSDK_DotNet35.UnitTests.TestTools;" +
-                    "\r\n\r\nnamespace AWSSDK_DotNet35.UnitTests.Marshalling\r\n{\r\n    [TestClass]\r\n    pub" +
-                    "lic class ");
+                    ";\r\n\r\nusing ServiceClientGenerator;\r\n\r\nusing AWSSDK_DotNet.UnitTests.TestTools;\r\n" +
+                    "\r\nnamespace AWSSDK_DotNet.UnitTests.Marshalling\r\n{\r\n    [TestClass]\r\n    public " +
+                    "class ");
             
             #line 29 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\EndpointDiscoveryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));

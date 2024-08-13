@@ -34,12 +34,31 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedQueryOutputConfiguration
     {
+        private ProtectedQueryMemberOutputConfiguration _member;
         private ProtectedQueryS3OutputConfiguration _s3;
+
+        /// <summary>
+        /// Gets and sets the property Member. 
+        /// <para>
+        ///  Required configuration for a protected query with a <c>member</c> output type.
+        /// </para>
+        /// </summary>
+        public ProtectedQueryMemberOutputConfiguration Member
+        {
+            get { return this._member; }
+            set { this._member = value; }
+        }
+
+        // Check to see if Member property is set
+        internal bool IsSetMember()
+        {
+            return this._member != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// Required configuration for a protected query with an `S3` output type.
+        /// Required configuration for a protected query with an <c>s3</c> output type.
         /// </para>
         /// </summary>
         public ProtectedQueryS3OutputConfiguration S3

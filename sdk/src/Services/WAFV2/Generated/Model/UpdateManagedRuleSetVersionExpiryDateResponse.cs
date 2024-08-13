@@ -68,9 +68,9 @@ namespace Amazon.WAFV2.Model
         /// designator, Z. For example, "2016-09-27T14:50Z". 
         /// </para>
         /// </summary>
-        public DateTime ExpiryTimestamp
+        public DateTime? ExpiryTimestamp
         {
-            get { return this._expiryTimestamp.GetValueOrDefault(); }
+            get { return this._expiryTimestamp; }
             set { this._expiryTimestamp = value; }
         }
 

@@ -90,7 +90,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBlockOverrideTtl())
                 {
                     context.Writer.WritePropertyName("BlockOverrideTtl");
-                    context.Writer.Write(publicRequest.BlockOverrideTtl);
+                    context.Writer.Write(publicRequest.BlockOverrideTtl.Value);
                 }
 
                 if(publicRequest.IsSetBlockResponse())
@@ -137,7 +137,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("Priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.Write(publicRequest.Priority.Value);
                 }
 
                 if(publicRequest.IsSetQtype())

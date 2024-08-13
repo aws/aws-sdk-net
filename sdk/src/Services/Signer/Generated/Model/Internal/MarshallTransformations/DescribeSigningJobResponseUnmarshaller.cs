@@ -54,13 +54,13 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("completedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CompletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -126,7 +126,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("signatureExpiresAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SignatureExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

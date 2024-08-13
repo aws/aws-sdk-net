@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=225)]
-        public int EndTimeoutMinutes
+        public int? EndTimeoutMinutes
         {
-            get { return this._endTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._endTimeoutMinutes; }
             set { this._endTimeoutMinutes = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=225)]
-        public int StartTimeoutMinutes
+        public int? StartTimeoutMinutes
         {
-            get { return this._startTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._startTimeoutMinutes; }
             set { this._startTimeoutMinutes = value; }
         }
 

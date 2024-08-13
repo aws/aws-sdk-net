@@ -86,9 +86,9 @@ namespace Amazon.NetworkMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30)]
-        public long AggregationPeriod
+        public long? AggregationPeriod
         {
-            get { return this._aggregationPeriod.GetValueOrDefault(); }
+            get { return this._aggregationPeriod; }
             set { this._aggregationPeriod = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DtcRequestIntervalSeconds
+        public int? DtcRequestIntervalSeconds
         {
-            get { return this._dtcRequestIntervalSeconds.GetValueOrDefault(); }
+            get { return this._dtcRequestIntervalSeconds; }
             set { this._dtcRequestIntervalSeconds = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.IoTFleetWise.Model
         /// Whether the vehicle has a transmission control module (TCM).
         /// </para>
         /// </summary>
-        public bool HasTransmissionEcu
+        public bool? HasTransmissionEcu
         {
-            get { return this._hasTransmissionEcu.GetValueOrDefault(); }
+            get { return this._hasTransmissionEcu; }
             set { this._hasTransmissionEcu = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PidRequestIntervalSeconds
+        public int? PidRequestIntervalSeconds
         {
-            get { return this._pidRequestIntervalSeconds.GetValueOrDefault(); }
+            get { return this._pidRequestIntervalSeconds; }
             set { this._pidRequestIntervalSeconds = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int RequestMessageId
+        public int? RequestMessageId
         {
-            get { return this._requestMessageId.GetValueOrDefault(); }
+            get { return this._requestMessageId; }
             set { this._requestMessageId = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.IoTFleetWise.Model
         /// Whether to use extended IDs in the message.
         /// </para>
         /// </summary>
-        public bool UseExtendedIds
+        public bool? UseExtendedIds
         {
-            get { return this._useExtendedIds.GetValueOrDefault(); }
+            get { return this._useExtendedIds; }
             set { this._useExtendedIds = value; }
         }
 

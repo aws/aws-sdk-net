@@ -43,9 +43,9 @@ namespace Amazon.VPCLattice.Model
         /// Indicates whether the match is case sensitive.
         /// </para>
         /// </summary>
-        public bool CaseSensitive
+        public bool? CaseSensitive
         {
-            get { return this._caseSensitive.GetValueOrDefault(); }
+            get { return this._caseSensitive; }
             set { this._caseSensitive = value; }
         }
 

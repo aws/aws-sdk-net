@@ -43,9 +43,9 @@ namespace Amazon.XRay.Model
         /// A flag that denotes that the root cause impacts the trace client.
         /// </para>
         /// </summary>
-        public bool ClientImpacting
+        public bool? ClientImpacting
         {
-            get { return this._clientImpacting.GetValueOrDefault(); }
+            get { return this._clientImpacting; }
             set { this._clientImpacting = value; }
         }
 

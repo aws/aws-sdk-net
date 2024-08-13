@@ -65,9 +65,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// The count of noncompliant resources.
         /// </para>
         /// </summary>
-        public long NonCompliantResources
+        public long? NonCompliantResources
         {
-            get { return this._nonCompliantResources.GetValueOrDefault(); }
+            get { return this._nonCompliantResources; }
             set { this._nonCompliantResources = value; }
         }
 

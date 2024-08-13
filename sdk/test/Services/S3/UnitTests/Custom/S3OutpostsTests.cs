@@ -16,7 +16,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Transform;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using static AWSSDK.UnitTests.S3AccessPointTests;
 
 namespace AWSSDK.UnitTests

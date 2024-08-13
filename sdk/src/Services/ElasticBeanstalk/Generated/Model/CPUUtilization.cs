@@ -50,9 +50,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// seconds.
         /// </para>
         /// </summary>
-        public double Idle
+        public double? Idle
         {
-            get { return this._idle.GetValueOrDefault(); }
+            get { return this._idle; }
             set { this._idle = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// 10 seconds.
         /// </para>
         /// </summary>
-        public double IOWait
+        public double? IOWait
         {
-            get { return this._ioWait.GetValueOrDefault(); }
+            get { return this._ioWait; }
             set { this._ioWait = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// seconds.
         /// </para>
         /// </summary>
-        public double IRQ
+        public double? IRQ
         {
-            get { return this._irq.GetValueOrDefault(); }
+            get { return this._irq; }
             set { this._irq = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// seconds.
         /// </para>
         /// </summary>
-        public double Nice
+        public double? Nice
         {
-            get { return this._nice.GetValueOrDefault(); }
+            get { return this._nice; }
             set { this._nice = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// last 10 seconds.
         /// </para>
         /// </summary>
-        public double Privileged
+        public double? Privileged
         {
-            get { return this._privileged.GetValueOrDefault(); }
+            get { return this._privileged; }
             set { this._privileged = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// 10 seconds.
         /// </para>
         /// </summary>
-        public double SoftIRQ
+        public double? SoftIRQ
         {
-            get { return this._softIRQ.GetValueOrDefault(); }
+            get { return this._softIRQ; }
             set { this._softIRQ = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// 10 seconds.
         /// </para>
         /// </summary>
-        public double System
+        public double? System
         {
-            get { return this._system.GetValueOrDefault(); }
+            get { return this._system; }
             set { this._system = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// seconds.
         /// </para>
         /// </summary>
-        public double User
+        public double? User
         {
-            get { return this._user.GetValueOrDefault(); }
+            get { return this._user; }
             set { this._user = value; }
         }
 

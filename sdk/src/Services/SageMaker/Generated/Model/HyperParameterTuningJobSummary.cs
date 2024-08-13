@@ -52,9 +52,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the tuning job ended.
         /// </para>
         /// </summary>
-        public DateTime HyperParameterTuningEndTime
+        public DateTime? HyperParameterTuningEndTime
         {
-            get { return this._hyperParameterTuningEndTime.GetValueOrDefault(); }
+            get { return this._hyperParameterTuningEndTime; }
             set { this._hyperParameterTuningEndTime = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the tuning job was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

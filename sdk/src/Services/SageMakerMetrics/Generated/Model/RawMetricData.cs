@@ -65,9 +65,9 @@ namespace Amazon.SageMakerMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Step
+        public int? Step
         {
-            get { return this._step.GetValueOrDefault(); }
+            get { return this._step; }
             set { this._step = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.SageMakerMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SageMakerMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

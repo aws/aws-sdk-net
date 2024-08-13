@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the network interface is deleted when the instance is terminated.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 

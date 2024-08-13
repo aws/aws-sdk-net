@@ -139,9 +139,9 @@ namespace Amazon.CloudWatch.Model
         /// The default is <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool ActionsEnabled
+        public bool? ActionsEnabled
         {
-            get { return this._actionsEnabled.GetValueOrDefault(); }
+            get { return this._actionsEnabled; }
             set { this._actionsEnabled = value; }
         }
 
@@ -341,9 +341,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int DatapointsToAlarm
+        public int? DatapointsToAlarm
         {
-            get { return this._datapointsToAlarm.GetValueOrDefault(); }
+            get { return this._datapointsToAlarm; }
             set { this._datapointsToAlarm = value; }
         }
 
@@ -415,9 +415,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int EvaluationPeriods
+        public int? EvaluationPeriods
         {
-            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            get { return this._evaluationPeriods; }
             set { this._evaluationPeriods = value; }
         }
 
@@ -839,9 +839,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -915,9 +915,9 @@ namespace Amazon.CloudWatch.Model
         /// used for alarms based on anomaly detection models.
         /// </para>
         /// </summary>
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

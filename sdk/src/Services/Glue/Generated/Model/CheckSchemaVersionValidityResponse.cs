@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// Return true, if the schema is valid and false otherwise.
         /// </para>
         /// </summary>
-        public bool Valid
+        public bool? Valid
         {
-            get { return this._valid.GetValueOrDefault(); }
+            get { return this._valid; }
             set { this._valid = value; }
         }
 

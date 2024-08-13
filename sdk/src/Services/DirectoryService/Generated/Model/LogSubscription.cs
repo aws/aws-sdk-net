@@ -82,9 +82,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the log subscription was created.
         /// </para>
         /// </summary>
-        public DateTime SubscriptionCreatedDateTime
+        public DateTime? SubscriptionCreatedDateTime
         {
-            get { return this._subscriptionCreatedDateTime.GetValueOrDefault(); }
+            get { return this._subscriptionCreatedDateTime; }
             set { this._subscriptionCreatedDateTime = value; }
         }
 

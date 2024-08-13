@@ -197,9 +197,9 @@ namespace Amazon.ManagedGrafana.Model
         /// will still be required.
         /// </para>
         /// </summary>
-        public bool RemoveNetworkAccessConfiguration
+        public bool? RemoveNetworkAccessConfiguration
         {
-            get { return this._removeNetworkAccessConfiguration.GetValueOrDefault(); }
+            get { return this._removeNetworkAccessConfiguration; }
             set { this._removeNetworkAccessConfiguration = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.ManagedGrafana.Model
         /// an error.
         /// </para>
         /// </summary>
-        public bool RemoveVpcConfiguration
+        public bool? RemoveVpcConfiguration
         {
-            get { return this._removeVpcConfiguration.GetValueOrDefault(); }
+            get { return this._removeVpcConfiguration; }
             set { this._removeVpcConfiguration = value; }
         }
 

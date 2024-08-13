@@ -48,9 +48,9 @@ namespace Amazon.MediaLive.Model
         /// which means a pixel value of 25 or less is 'black'. The range is 0.0 to 1.0, with
         /// any number of decimal places.
         /// </summary>
-        public double BlackDetectThreshold
+        public double? BlackDetectThreshold
         {
-            get { return this._blackDetectThreshold.GetValueOrDefault(); }
+            get { return this._blackDetectThreshold; }
             set { this._blackDetectThreshold = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.MediaLive.Model
         /// that the active input must be black before automatic input failover occurs.
         /// </summary>
         [AWSProperty(Min=1000)]
-        public int VideoBlackThresholdMsec
+        public int? VideoBlackThresholdMsec
         {
-            get { return this._videoBlackThresholdMsec.GetValueOrDefault(); }
+            get { return this._videoBlackThresholdMsec; }
             set { this._videoBlackThresholdMsec = value; }
         }
 

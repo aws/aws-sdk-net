@@ -45,9 +45,9 @@ namespace Amazon.RedshiftServerless.Model
         /// <c>2016-03-04T17:27:00</c>.
         /// </para>
         /// </summary>
-        public DateTime At
+        public DateTime? At
         {
-            get { return this._at.GetValueOrDefault(); }
+            get { return this._at; }
             set { this._at = value; }
         }
 

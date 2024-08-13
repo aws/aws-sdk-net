@@ -41,6 +41,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class CreateProfileRequest : AmazonIAMRolesAnywhereRequest
     {
+        private bool? _acceptRoleSessionName;
         private int? _durationSeconds;
         private bool? _enabled;
         private List<string> _managedPolicyArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -49,6 +50,25 @@ namespace Amazon.IAMRolesAnywhere.Model
         private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionPolicy;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AcceptRoleSessionName. 
+        /// <para>
+        /// Used to determine if a custom role session name will be accepted in a temporary credential
+        /// request.
+        /// </para>
+        /// </summary>
+        public bool? AcceptRoleSessionName
+        {
+            get { return this._acceptRoleSessionName; }
+            set { this._acceptRoleSessionName = value; }
+        }
+
+        // Check to see if AcceptRoleSessionName property is set
+        internal bool IsSetAcceptRoleSessionName()
+        {
+            return this._acceptRoleSessionName.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
@@ -60,9 +80,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=43200)]
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 
@@ -78,9 +98,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Specifies whether the profile is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -135,9 +155,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// with this profile. 
         /// </para>
         /// </summary>
-        public bool RequireInstanceProperties
+        public bool? RequireInstanceProperties
         {
-            get { return this._requireInstanceProperties.GetValueOrDefault(); }
+            get { return this._requireInstanceProperties; }
             set { this._requireInstanceProperties = value; }
         }
 

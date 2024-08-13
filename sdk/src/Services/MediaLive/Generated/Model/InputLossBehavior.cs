@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property BlackFrameMsec. Documentation update needed
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public int BlackFrameMsec
+        public int? BlackFrameMsec
         {
-            get { return this._blackFrameMsec.GetValueOrDefault(); }
+            get { return this._blackFrameMsec; }
             set { this._blackFrameMsec = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RepeatFrameMsec. Documentation update needed
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public int RepeatFrameMsec
+        public int? RepeatFrameMsec
         {
-            get { return this._repeatFrameMsec.GetValueOrDefault(); }
+            get { return this._repeatFrameMsec; }
             set { this._repeatFrameMsec = value; }
         }
 

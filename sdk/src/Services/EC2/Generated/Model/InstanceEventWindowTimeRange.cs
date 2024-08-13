@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
-        public int EndHour
+        public int? EndHour
         {
-            get { return this._endHour.GetValueOrDefault(); }
+            get { return this._endHour; }
             set { this._endHour = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
-        public int StartHour
+        public int? StartHour
         {
-            get { return this._startHour.GetValueOrDefault(); }
+            get { return this._startHour; }
             set { this._startHour = value; }
         }
 

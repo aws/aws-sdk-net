@@ -54,13 +54,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApproximateTotalCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ApproximateTotalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DataSnapshotTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DataSnapshotTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

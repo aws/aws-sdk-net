@@ -68,7 +68,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PercentEnabled", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PercentEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

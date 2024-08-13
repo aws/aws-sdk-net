@@ -62,9 +62,9 @@ namespace Amazon.EMRContainers.Model
         /// The date and time when the session token will expire.
         /// </para>
         /// </summary>
-        public DateTime ExpiresAt
+        public DateTime? ExpiresAt
         {
-            get { return this._expiresAt.GetValueOrDefault(); }
+            get { return this._expiresAt; }
             set { this._expiresAt = value; }
         }
 

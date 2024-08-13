@@ -47,9 +47,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]
-        public int MaximumRetryAttempts
+        public int? MaximumRetryAttempts
         {
-            get { return this._maximumRetryAttempts.GetValueOrDefault(); }
+            get { return this._maximumRetryAttempts; }
             set { this._maximumRetryAttempts = value; }
         }
 

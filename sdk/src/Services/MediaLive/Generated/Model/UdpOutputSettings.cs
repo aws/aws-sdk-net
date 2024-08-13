@@ -46,9 +46,9 @@ namespace Amazon.MediaLive.Model
         /// input switching, input disruptions, picture reordering, etc.
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int BufferMsec
+        public int? BufferMsec
         {
-            get { return this._bufferMsec.GetValueOrDefault(); }
+            get { return this._bufferMsec; }
             set { this._bufferMsec = value; }
         }
 

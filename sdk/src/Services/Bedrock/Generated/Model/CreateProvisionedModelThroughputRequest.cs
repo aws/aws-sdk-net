@@ -34,7 +34,8 @@ namespace Amazon.Bedrock.Model
     /// Creates dedicated throughput for a base or custom model with the model units and for
     /// the duration that you specify. For pricing details, see <a href="http://aws.amazon.com/bedrock/pricing/">Amazon
     /// Bedrock Pricing</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-    /// Throughput</a> in the Amazon Bedrock User Guide.
+    /// Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Bedrock User Guide</a>.
     /// </summary>
     public partial class CreateProvisionedModelThroughputRequest : AmazonBedrockRequest
     {
@@ -78,7 +79,8 @@ namespace Amazon.Bedrock.Model
         /// <para>
         /// Custom models support all levels of commitment. To see which base models support no
         /// commitment, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/pt-supported.html">Supported
-        /// regions and models for Provisioned Throughput</a> in the Amazon Bedrock User Guide
+        /// regions and models for Provisioned Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a> 
         /// </para>
         /// </summary>
         public CommitmentDuration CommitmentDuration
@@ -99,8 +101,8 @@ namespace Amazon.Bedrock.Model
         /// The Amazon Resource Name (ARN) or name of the model to associate with this Provisioned
         /// Throughput. For a list of models for which you can purchase Provisioned Throughput,
         /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#prov-throughput-models">Amazon
-        /// Bedrock model IDs for purchasing Provisioned Throughput</a> in the Amazon Bedrock
-        /// User Guide.
+        /// Bedrock model IDs for purchasing Provisioned Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -129,7 +131,8 @@ namespace Amazon.Bedrock.Model
         ///  
         /// <para>
         /// For model unit quotas, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html#prov-thru-quotas">Provisioned
-        /// Throughput quotas</a> in the Amazon Bedrock User Guide.
+        /// Throughput quotas</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -138,9 +141,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int ModelUnits
+        public int? ModelUnits
         {
-            get { return this._modelUnits.GetValueOrDefault(); }
+            get { return this._modelUnits; }
             set { this._modelUnits = value; }
         }
 

@@ -121,10 +121,9 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Table methods
 
         // Retrieves the target table for the specified type
-        private Table GetTargetTableInternal<T>(DynamoDBOperationConfig operationConfig)
+        private Table GetTargetTableInternal<T>(DynamoDBFlatConfig flatConfig)
         {
             Type type = typeof(T);
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(type, flatConfig);
             Table table = GetTargetTable(storageConfig, flatConfig, Table.DynamoDBConsumer.DocumentModel);
             return table;
@@ -331,7 +330,9 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException("Unrecognized DynamoDBEntry object");
         }
 
-        // Deserializing DynamoDB document into an object
+        /// <summary>
+        /// Deserializes a DynamoDB document to an object
+        /// </summary>
         private T DocumentToObject<T>(ItemStorage storage, DynamoDBFlatConfig flatConfig)
         {
             Type type = typeof(T);
@@ -392,7 +393,9 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        // Serializing an object into a DynamoDB document
+        /// <summary>
+        /// Serializes an object into a DynamoDB document
+        /// </summary>
         private ItemStorage ObjectToItemStorage<T>(T toStore, bool keysOnly, DynamoDBFlatConfig flatConfig)
         {
             if (toStore == null) return null;
@@ -467,9 +470,16 @@ namespace Amazon.DynamoDBv2.DataModel
             if (conversion.HasConverter(targetType))
             {
                 var output = conversion.ConvertFromEntry(targetType, entry);
-                if (targetType == typeof(DateTime) && flatConfig.RetrieveDateTimeInUtc)
+                if (flatConfig.RetrieveDateTimeInUtc)
                 {
-                    return ((DateTime)output).ToUniversalTime();
+                    if (targetType == typeof(DateTime))
+                    {
+                        return ((DateTime)output).ToUniversalTime();
+                    }
+                    else if (targetType == typeof(DateTime?))
+                    {
+                        return ((DateTime?)output)?.ToUniversalTime();
+                    }
                 }
                 return output;
             }
@@ -762,8 +772,10 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        // Deserializes a given Document to instance of targetType
-        // Use only for property conversions, not for full item conversion
+        /// <summary>
+        /// Deserializes a given Document to instance of targetType
+        /// Use only for property conversions, not for full item conversion
+        /// </summary>
         private object DeserializeFromDocument(Document document, Type targetType, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(targetType, flatConfig, conversionOnly: true);
@@ -772,8 +784,11 @@ namespace Amazon.DynamoDBv2.DataModel
             object value = DocumentToObject(targetType, storage, flatConfig);
             return value;
         }
-        // Serializes a given value to Document
-        // Use only for property conversions, not for full item conversion
+
+        /// <summary>
+        /// Serializes a given value to Document
+        /// Use only for property conversions, not for full item conversion
+        /// </summary>
         private Document SerializeToDocument(object value, Type type, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig config = StorageConfigCache.GetConfig(type, flatConfig, conversionOnly: true);
@@ -782,7 +797,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return doc;
         }
 
-        // Get/Set object properties
+        /// <summary>
+        /// Get/Set object properties
+        /// </summary>
         private static bool TrySetValue(object instance, MemberInfo member, object value)
         {
             FieldInfo fieldInfo = member as FieldInfo;
@@ -825,7 +842,9 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        // Query/Scan building
+        /// <summary>
+        /// Query/Scan building
+        /// </summary>
         private ScanFilter ComposeScanFilter(IEnumerable<ScanCondition> conditions, ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
         {
             ScanFilter filter = new ScanFilter();

@@ -70,9 +70,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=480)]
-        public int ParticipantTimerDurationInMinutes
+        public int? ParticipantTimerDurationInMinutes
         {
-            get { return this._participantTimerDurationInMinutes.GetValueOrDefault(); }
+            get { return this._participantTimerDurationInMinutes; }
             set { this._participantTimerDurationInMinutes = value; }
         }
 

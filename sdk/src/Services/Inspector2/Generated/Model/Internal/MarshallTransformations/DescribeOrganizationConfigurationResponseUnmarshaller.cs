@@ -60,7 +60,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxAccountLimitReached", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MaxAccountLimitReached = unmarshaller.Unmarshall(context);
                     continue;
                 }

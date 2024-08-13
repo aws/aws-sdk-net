@@ -203,9 +203,9 @@ namespace Amazon.EC2.Model
         /// Specifies whether enhanced networking with ENA is enabled.
         /// </para>
         /// </summary>
-        public bool EnaSupport
+        public bool? EnaSupport
         {
-            get { return this._enaSupport.GetValueOrDefault(); }
+            get { return this._enaSupport; }
             set { this._enaSupport = value; }
         }
 
@@ -472,9 +472,9 @@ namespace Amazon.EC2.Model
         /// and explicit launch permissions.
         /// </para>
         /// </summary>
-        public bool Public
+        public bool? Public
         {
-            get { return this._public.GetValueOrDefault(); }
+            get { return this._public; }
             set { this._public = value; }
         }
 

@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutomaticModelRegistration())
                 {
                     context.Writer.WritePropertyName("AutomaticModelRegistration");
-                    context.Writer.Write(publicRequest.AutomaticModelRegistration);
+                    context.Writer.Write(publicRequest.AutomaticModelRegistration.Value);
                 }
 
                 if(publicRequest.IsSetMlflowVersion())

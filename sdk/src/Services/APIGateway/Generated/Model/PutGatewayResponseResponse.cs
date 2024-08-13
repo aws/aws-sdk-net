@@ -49,9 +49,9 @@ namespace Amazon.APIGateway.Model
         /// API Gateway without any customization by an API developer. 
         /// </para>
         /// </summary>
-        public bool DefaultResponse
+        public bool? DefaultResponse
         {
-            get { return this._defaultResponse.GetValueOrDefault(); }
+            get { return this._defaultResponse; }
             set { this._defaultResponse = value; }
         }
 

@@ -86,7 +86,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("eventTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("eventUpdatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

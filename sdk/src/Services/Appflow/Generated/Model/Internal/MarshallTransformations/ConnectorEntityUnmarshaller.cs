@@ -68,7 +68,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("hasNestedEntities", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasNestedEntities = unmarshaller.Unmarshall(context);
                     continue;
                 }

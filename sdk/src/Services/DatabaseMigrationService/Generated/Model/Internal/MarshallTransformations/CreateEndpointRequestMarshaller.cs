@@ -269,7 +269,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPort())
                 {
                     context.Writer.WritePropertyName("Port");
-                    context.Writer.Write(publicRequest.Port);
+                    context.Writer.Write(publicRequest.Port.Value);
                 }
 
                 if(publicRequest.IsSetPostgreSQLSettings())

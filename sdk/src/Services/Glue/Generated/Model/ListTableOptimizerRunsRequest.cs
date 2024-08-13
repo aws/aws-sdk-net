@@ -86,9 +86,9 @@ namespace Amazon.Glue.Model
         /// The maximum number of optimizer runs to return on each call.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

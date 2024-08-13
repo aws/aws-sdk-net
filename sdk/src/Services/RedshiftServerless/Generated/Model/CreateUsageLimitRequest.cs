@@ -51,9 +51,9 @@ namespace Amazon.RedshiftServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Amount
+        public long? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

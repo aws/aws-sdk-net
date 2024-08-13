@@ -34,11 +34,12 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Creating a snapshot of a Redis cluster running on a <c>cache.t1.micro</c> cache node.
+    /// Creating a snapshot of a Redis OSS cluster running on a <c>cache.t1.micro</c> cache
+    /// node.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Creating a snapshot of a cluster that is running Memcached rather than Redis.
+    /// Creating a snapshot of a cluster that is running Memcached rather than Redis OSS.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -119,11 +120,6 @@ namespace Amazon.ElastiCache.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]

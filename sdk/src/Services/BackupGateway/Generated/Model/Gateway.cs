@@ -124,9 +124,9 @@ namespace Amazon.BackupGateway.Model
         /// time.
         /// </para>
         /// </summary>
-        public DateTime LastSeenTime
+        public DateTime? LastSeenTime
         {
-            get { return this._lastSeenTime.GetValueOrDefault(); }
+            get { return this._lastSeenTime; }
             set { this._lastSeenTime = value; }
         }
 

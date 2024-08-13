@@ -119,9 +119,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float MinConfidence
+        public float? MinConfidence
         {
-            get { return this._minConfidence.GetValueOrDefault(); }
+            get { return this._minConfidence; }
             set { this._minConfidence = value; }
         }
 

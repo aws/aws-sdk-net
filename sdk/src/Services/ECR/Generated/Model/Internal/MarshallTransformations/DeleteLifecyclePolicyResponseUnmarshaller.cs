@@ -54,7 +54,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastEvaluatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastEvaluatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -84,9 +84,9 @@ namespace Amazon.DynamoDBv2.Model
         /// mode.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateToPayPerRequestDateTime
+        public DateTime? LastUpdateToPayPerRequestDateTime
         {
-            get { return this._lastUpdateToPayPerRequestDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateToPayPerRequestDateTime; }
             set { this._lastUpdateToPayPerRequestDateTime = value; }
         }
 

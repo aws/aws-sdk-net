@@ -70,7 +70,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConnectParticipant())
                 {
                     context.Writer.WritePropertyName("ConnectParticipant");
-                    context.Writer.Write(publicRequest.ConnectParticipant);
+                    context.Writer.Write(publicRequest.ConnectParticipant.Value);
                 }
 
                 if(publicRequest.IsSetType())

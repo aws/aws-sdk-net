@@ -34,6 +34,18 @@ namespace Amazon.StepFunctions.Model
     /// Used by activity workers, Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
     /// pattern, and optionally Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
     /// run</a> pattern to report that the task identified by the <c>taskToken</c> failed.
+    /// 
+    ///  
+    /// <para>
+    /// For an execution with encryption enabled, Step Functions will encrypt the error and
+    /// cause fields using the KMS key for the execution role.
+    /// </para>
+    ///  
+    /// <para>
+    /// A caller can mark a task as fail without using any KMS permissions in the execution
+    /// role if the caller provides a null value for both <c>error</c> and <c>cause</c> fields
+    /// because no data needs to be encrypted.
+    /// </para>
     /// </summary>
     public partial class SendTaskFailureRequest : AmazonStepFunctionsRequest
     {
@@ -87,7 +99,7 @@ namespace Amazon.StepFunctions.Model
         /// object</a> when a workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string TaskToken
         {
             get { return this._taskToken; }

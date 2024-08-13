@@ -27,6 +27,8 @@ using System.Text;
 using System.Linq;
 using System.Threading;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using ExecutionContext = Amazon.Runtime.Internal.ExecutionContext;
 
 namespace Amazon.Runtime
@@ -36,6 +38,7 @@ namespace Amazon.Runtime
         private static volatile bool _isProtocolUpdated;
         private readonly object _lock = new object();
 
+        private IDisposable _uptimeMetricMeasurer;
         private bool _disposed;
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
@@ -164,6 +167,8 @@ namespace Amazon.Runtime
             Initialize();
             UpdateSecurityProtocol();
             BuildRuntimePipeline();
+
+            _uptimeMetricMeasurer = MetricsUtilities.MeasureDuration(config, TelemetryConstants.ClientUptimeMetricName);
         }
 
         protected AbstractAWSSigner Signer
@@ -190,17 +195,6 @@ namespace Amazon.Runtime
 
         #region Invoke methods
 
-        [Obsolete("Invoke taking marshallers is obsolete. Use Invoke taking InvokeOptionsBase instead.")]
-        protected TResponse Invoke<TRequest, TResponse>(TRequest request,
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller)
-            where TRequest : AmazonWebServiceRequest
-            where TResponse : AmazonWebServiceResponse
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = marshaller;
-            options.ResponseUnmarshaller = unmarshaller;
-            return Invoke<TResponse>(request, options);
-        }
 
         protected TResponse Invoke<TResponse>(AmazonWebServiceRequest request, InvokeOptionsBase options)
             where TResponse : AmazonWebServiceResponse
@@ -227,21 +221,6 @@ namespace Amazon.Runtime
 
 #if AWS_ASYNC_API
 
-        [Obsolete("InvokeAsync taking marshallers is obsolete. Use InvokeAsync taking InvokeOptionsBase instead.")]
-        protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TRequest, TResponse>(
-            TRequest request, 
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
-            ResponseUnmarshaller unmarshaller,
-            System.Threading.CancellationToken cancellationToken)
-            where TRequest: AmazonWebServiceRequest
-            where TResponse : AmazonWebServiceResponse, new()
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = marshaller;
-            options.ResponseUnmarshaller = unmarshaller;
-            return InvokeAsync<TResponse>(request, options, cancellationToken);
-        }
-
         protected System.Threading.Tasks.Task<TResponse> InvokeAsync<TResponse>(
             AmazonWebServiceRequest request,
             InvokeOptionsBase options,
@@ -250,10 +229,8 @@ namespace Amazon.Runtime
         {
             ThrowIfDisposed();
 
-#if AWS_ASYNC_API
             if (cancellationToken == default(CancellationToken))
                 cancellationToken = _config.BuildDefaultCancellationToken();
-#endif
 
             var executionContext = new ExecutionContext(
                 new RequestContext(this.Config.LogMetrics, Signer)
@@ -271,72 +248,6 @@ namespace Amazon.Runtime
             );
             SetupCSMHandler(executionContext.RequestContext);
             return this.RuntimePipeline.InvokeAsync<TResponse>(executionContext);
-        }
-
-#elif AWS_APM_API
-        [Obsolete("BeginInvoke taking marshallers is obsolete. Use BeginInvoke taking InvokeOptionsBase instead.")]
-        protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
-            AsyncCallback callback, object state)
-            where TRequest : AmazonWebServiceRequest
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = marshaller;
-            options.ResponseUnmarshaller = unmarshaller;
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        protected IAsyncResult BeginInvoke(AmazonWebServiceRequest request,
-            InvokeOptionsBase options, AsyncCallback callback, object state)
-        {
-            ThrowIfDisposed();
-
-            var executionContext = new AsyncExecutionContext(
-                new AsyncRequestContext(this.Config.LogMetrics, Signer)
-                {
-                    ClientConfig = this.Config,
-                    Marshaller = options.RequestMarshaller,
-                    OriginalRequest = request,
-                    Unmarshaller = options.ResponseUnmarshaller,
-                    Callback = callback,
-                    State = state,
-                    IsAsync = true,
-                    ServiceMetaData = this.ServiceMetadata,
-                    Options = options
-                },
-                new AsyncResponseContext()
-            );
-            SetupCSMHandler(executionContext.RequestContext);
-            var asyncResult = this.RuntimePipeline.InvokeAsync(executionContext);
-            return asyncResult;
-        }
-
-        protected static TResponse EndInvoke<TResponse>(IAsyncResult result)
-            where TResponse : AmazonWebServiceResponse
-        {
-            if (result == null)
-                throw new ArgumentNullException("result", "Parameter result cannot be null.");
-
-            var asyncResult = result as RuntimeAsyncResult;
-
-            if (asyncResult == null)
-                throw new ArgumentOutOfRangeException("result", "Parameter result is not of type RuntimeAsyncResult.");
-
-            using (asyncResult)
-            {
-                if (!asyncResult.IsCompleted)
-                {
-                    asyncResult.AsyncWaitHandle.WaitOne();
-                }
-
-                if (asyncResult.Exception != null)
-                {
-                    AWSSDKUtils.PreserveStackTrace(asyncResult.Exception);
-                    throw asyncResult.Exception;
-                }
-
-                return (TResponse)asyncResult.Response;
-            }
         }
 #endif
 
@@ -408,8 +319,11 @@ namespace Amazon.Runtime
 
             if (disposing)
             {
-                if (RuntimePipeline != null)
-                    RuntimePipeline.Dispose();
+                RuntimePipeline?.Dispose();
+                RuntimePipeline = null;
+
+                _uptimeMetricMeasurer?.Dispose();
+                _uptimeMetricMeasurer = null;
 
                 _disposed = true;
             }
@@ -457,9 +371,6 @@ namespace Amazon.Runtime
                 case RequestRetryMode.Standard:
                     retryPolicy = new StandardRetryPolicy(this.Config);
                     break;
-                case RequestRetryMode.Legacy:
-                    retryPolicy = new DefaultRetryPolicy(this.Config);
-                    break;
                 default:
                     throw new InvalidOperationException("Unknown retry mode");
             }
@@ -488,8 +399,11 @@ namespace Amazon.Runtime
                     new Marshaller(),
                     preMarshallHandler,
                     errorCallbackHandler,
-                    new MetricsHandler()
-                },
+                    new MetricsHandler(),
+#if BCL
+                    new BindingRedirectCheckHandler(),
+#endif
+            },
                 _logger
             );
 
@@ -564,33 +478,7 @@ namespace Amazon.Runtime
             {
                 if (resourcePath.StartsWith("/", StringComparison.Ordinal))
                     resourcePath = resourcePath.Substring(1);
-
-                // Microsoft added support for unicode bidi control characters to the Uri class in .NET 4.7.2
-                // https://github.com/microsoft/dotnet/blob/master/Documentation/compatibility/uri-unicode-bidirectional-characters.md
-                // However, we only want to support it on .NET Core 3.1 and higher due to not having to deal with .NET Standard support matrix.
-#if BCL || NETSTANDARD20
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath) ||
-                    (internalRequest.PathResources?.Any(v => AWSSDKUtils.HasBidiControlCharacters(v.Value)) == true))
-                {
-                    resourcePath = string.Join("/", AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, internalRequest.PathResources).ToArray());
-                    throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
-                        "Target resource path [{0}] has bidirectional characters, which are not supported" +
-                        "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
-                }
-#endif          // Since S3 is the only service that is single encoded, we send the URL unencoded for special characters
-                // to match the previous behavior compatible with the SigV2 backend.
-                if (internalRequest.SignatureVersion == SignatureVersion.SigV2 && String.Equals(internalRequest.ServiceName, "AmazonS3"))
-                {
-#pragma warning disable CS0618 // Type or member is obsolete
-                    resourcePath = AWSSDKUtils.ResolveResourcePath(resourcePath, internalRequest.PathResources,skipEncodingValidPathChars);
-#pragma warning restore CS0618 // Type or member is obsolete
-                }
-                //for all other requests, we need to encode according to RFC3986 in accordance to smithy protocol tests
-                else
-                {
-                    resourcePath = AWSSDKUtils.ResolveResourcePathV2(resourcePath, internalRequest.PathResources);
-                }
-
+                resourcePath = AWSSDKUtils.ResolveResourcePathV2(resourcePath, internalRequest.PathResources);
             }
 
             // Construct any sub resource/query parameter additions to append to the
@@ -618,23 +506,7 @@ namespace Amazon.Runtime
                 sb.AppendFormat("{0}{1}", delim, queryString);
             }
 
-            var parameterizedPath = string.Empty;
-            if(internalRequest.MarshallerVersion >= 2)
-            {
-                parameterizedPath = string.Concat(resourcePath, sb);
-            }
-            else
-            {
-                if (AWSSDKUtils.HasBidiControlCharacters(resourcePath))
-                        throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture,
-                            "Target resource path [{0}] has bidirectional characters, which are not supported" +
-                            "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
-
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
-                parameterizedPath = string.Concat(AWSSDKUtils.ProtectEncodedSlashUrlEncode(resourcePath, skipEncodingValidPathChars), sb);
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
-            }
-
+            var parameterizedPath = string.Concat(resourcePath, sb);
             var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
 
             var strUri = hasSlash
@@ -654,6 +526,7 @@ namespace Amazon.Runtime
             DontUnescapePathDotsAndSlashes(uri);
             return uri;
         }
+ 
 
         /// <summary>
         /// Patches the in-flight uri to stop it unescaping the path etc (what Uri did before

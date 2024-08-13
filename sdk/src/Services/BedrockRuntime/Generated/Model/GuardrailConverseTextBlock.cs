@@ -35,7 +35,26 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class GuardrailConverseTextBlock
     {
+        private List<string> _qualifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Qualifiers. 
+        /// <para>
+        /// The qualifier details for the guardrails contextual grounding filter.
+        /// </para>
+        /// </summary>
+        public List<string> Qualifiers
+        {
+            get { return this._qualifiers; }
+            set { this._qualifiers = value; }
+        }
+
+        // Check to see if Qualifiers property is set
+        internal bool IsSetQualifiers()
+        {
+            return this._qualifiers != null && (this._qualifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

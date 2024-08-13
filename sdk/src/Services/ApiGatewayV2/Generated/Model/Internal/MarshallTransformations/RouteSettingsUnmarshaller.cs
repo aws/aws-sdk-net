@@ -68,13 +68,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("dataTraceEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DataTraceEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("detailedMetricsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DetailedMetricsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,13 +86,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("throttlingBurstLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThrottlingBurstLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("throttlingRateLimit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThrottlingRateLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

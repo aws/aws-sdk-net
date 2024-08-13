@@ -92,26 +92,26 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("max");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Max))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Max.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Max);
+                    context.Writer.Write(requestObject.Max.Value);
                 }
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("min");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Min))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Min.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Min);
+                    context.Writer.Write(requestObject.Min.Value);
                 }
             }
 

@@ -68,7 +68,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("errorClearTimeMsec", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorClearTimeMsec = unmarshaller.Unmarshall(context);
                     continue;
                 }

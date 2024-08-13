@@ -96,7 +96,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRequiredToPreview())
             {
                 context.Writer.WritePropertyName("RequiredToPreview");
-                context.Writer.Write(requestObject.RequiredToPreview);
+                context.Writer.Write(requestObject.RequiredToPreview.Value);
             }
 
         }

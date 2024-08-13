@@ -72,9 +72,9 @@ namespace Amazon.Imagebuilder.Model
         /// The timestamp when Image Builder created the lifecycle policy resource.
         /// </para>
         /// </summary>
-        public DateTime DateCreated
+        public DateTime? DateCreated
         {
-            get { return this._dateCreated.GetValueOrDefault(); }
+            get { return this._dateCreated; }
             set { this._dateCreated = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Imagebuilder.Model
         /// The timestamp for the last time Image Builder ran the lifecycle policy.
         /// </para>
         /// </summary>
-        public DateTime DateLastRun
+        public DateTime? DateLastRun
         {
-            get { return this._dateLastRun.GetValueOrDefault(); }
+            get { return this._dateLastRun; }
             set { this._dateLastRun = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.Imagebuilder.Model
         /// The timestamp when Image Builder updated the lifecycle policy resource.
         /// </para>
         /// </summary>
-        public DateTime DateUpdated
+        public DateTime? DateUpdated
         {
-            get { return this._dateUpdated.GetValueOrDefault(); }
+            get { return this._dateUpdated; }
             set { this._dateUpdated = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// past June 1, 2020 1:15:02 PM UTC.
         /// </para>
         /// </summary>
-        public DateTime LatestAgentOrchestratedAt
+        public DateTime? LatestAgentOrchestratedAt
         {
-            get { return this._latestAgentOrchestratedAt.GetValueOrDefault(); }
+            get { return this._latestAgentOrchestratedAt; }
             set { this._latestAgentOrchestratedAt = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// 1, 2020 1:15:02 PM UTC.
         /// </para>
         /// </summary>
-        public DateTime LatestAgentProfileReportedAt
+        public DateTime? LatestAgentProfileReportedAt
         {
-            get { return this._latestAgentProfileReportedAt.GetValueOrDefault(); }
+            get { return this._latestAgentProfileReportedAt; }
             set { this._latestAgentProfileReportedAt = value; }
         }
 

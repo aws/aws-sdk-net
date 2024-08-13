@@ -69,9 +69,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999)]
-        public int Weight
+        public int? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

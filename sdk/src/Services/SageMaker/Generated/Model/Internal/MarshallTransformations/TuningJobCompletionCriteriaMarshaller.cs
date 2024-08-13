@@ -73,13 +73,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetObjectiveMetricValue())
             {
                 context.Writer.WritePropertyName("TargetObjectiveMetricValue");
-                if(StringUtils.IsSpecialFloatValue(requestObject.TargetObjectiveMetricValue))
+                if(StringUtils.IsSpecialFloatValue(requestObject.TargetObjectiveMetricValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TargetObjectiveMetricValue));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TargetObjectiveMetricValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetObjectiveMetricValue);
+                    context.Writer.Write(requestObject.TargetObjectiveMetricValue.Value);
                 }
             }
 

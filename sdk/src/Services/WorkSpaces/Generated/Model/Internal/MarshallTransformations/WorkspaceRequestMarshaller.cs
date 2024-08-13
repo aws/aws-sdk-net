@@ -63,7 +63,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRootVolumeEncryptionEnabled())
             {
                 context.Writer.WritePropertyName("RootVolumeEncryptionEnabled");
-                context.Writer.Write(requestObject.RootVolumeEncryptionEnabled);
+                context.Writer.Write(requestObject.RootVolumeEncryptionEnabled.Value);
             }
 
             if(requestObject.IsSetTags())
@@ -91,7 +91,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUserVolumeEncryptionEnabled())
             {
                 context.Writer.WritePropertyName("UserVolumeEncryptionEnabled");
-                context.Writer.Write(requestObject.UserVolumeEncryptionEnabled);
+                context.Writer.Write(requestObject.UserVolumeEncryptionEnabled.Value);
             }
 
             if(requestObject.IsSetVolumeEncryptionKey())

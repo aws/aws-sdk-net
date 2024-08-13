@@ -73,7 +73,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffsetMillis())
             {
                 context.Writer.WritePropertyName("OffsetMillis");
-                context.Writer.Write(requestObject.OffsetMillis);
+                context.Writer.Write(requestObject.OffsetMillis.Value);
             }
 
             if(requestObject.IsSetSlate())

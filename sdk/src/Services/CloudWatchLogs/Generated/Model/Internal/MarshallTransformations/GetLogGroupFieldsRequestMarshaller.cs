@@ -84,7 +84,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTime())
                 {
                     context.Writer.WritePropertyName("time");
-                    context.Writer.Write(publicRequest.Time);
+                    context.Writer.Write(publicRequest.Time.Value);
                 }
 
                 writer.WriteObjectEnd();

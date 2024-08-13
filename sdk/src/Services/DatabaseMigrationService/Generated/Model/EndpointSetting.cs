@@ -106,9 +106,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The maximum value of an endpoint setting that is of type <c>int</c>.
         /// </para>
         /// </summary>
-        public int IntValueMax
+        public int? IntValueMax
         {
-            get { return this._intValueMax.GetValueOrDefault(); }
+            get { return this._intValueMax; }
             set { this._intValueMax = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The minimum value of an endpoint setting that is of type <c>int</c>.
         /// </para>
         /// </summary>
-        public int IntValueMin
+        public int? IntValueMin
         {
-            get { return this._intValueMin.GetValueOrDefault(); }
+            get { return this._intValueMin; }
             set { this._intValueMin = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// A value that marks this endpoint setting as sensitive.
         /// </para>
         /// </summary>
-        public bool Sensitive
+        public bool? Sensitive
         {
-            get { return this._sensitive.GetValueOrDefault(); }
+            get { return this._sensitive; }
             set { this._sensitive = value; }
         }
 

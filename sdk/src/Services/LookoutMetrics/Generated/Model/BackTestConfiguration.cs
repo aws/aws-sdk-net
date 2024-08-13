@@ -43,9 +43,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RunBackTestMode
+        public bool? RunBackTestMode
         {
-            get { return this._runBackTestMode.GetValueOrDefault(); }
+            get { return this._runBackTestMode; }
             set { this._runBackTestMode = value; }
         }
 

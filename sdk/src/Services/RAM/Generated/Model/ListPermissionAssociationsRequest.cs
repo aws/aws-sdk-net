@@ -77,9 +77,9 @@ namespace Amazon.RAM.Model
         /// use any version of the specified managed permission.
         /// </para>
         /// </summary>
-        public bool DefaultVersion
+        public bool? DefaultVersion
         {
-            get { return this._defaultVersion.GetValueOrDefault(); }
+            get { return this._defaultVersion; }
             set { this._defaultVersion = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.RAM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.RAM.Model
         /// shares that use any version of the managed permission.
         /// </para>
         /// </summary>
-        public int PermissionVersion
+        public int? PermissionVersion
         {
-            get { return this._permissionVersion.GetValueOrDefault(); }
+            get { return this._permissionVersion; }
             set { this._permissionVersion = value; }
         }
 

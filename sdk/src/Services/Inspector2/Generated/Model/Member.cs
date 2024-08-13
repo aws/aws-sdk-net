@@ -102,9 +102,9 @@ namespace Amazon.Inspector2.Model
         /// A timestamp showing when the status of this member was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

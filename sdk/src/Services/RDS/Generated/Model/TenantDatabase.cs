@@ -109,9 +109,9 @@ namespace Amazon.RDS.Model
         /// Specifies whether deletion protection is enabled for the DB instance.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.RDS.Model
         /// The creation time of the tenant database.
         /// </para>
         /// </summary>
-        public DateTime TenantDatabaseCreateTime
+        public DateTime? TenantDatabaseCreateTime
         {
-            get { return this._tenantDatabaseCreateTime.GetValueOrDefault(); }
+            get { return this._tenantDatabaseCreateTime; }
             set { this._tenantDatabaseCreateTime = value; }
         }
 

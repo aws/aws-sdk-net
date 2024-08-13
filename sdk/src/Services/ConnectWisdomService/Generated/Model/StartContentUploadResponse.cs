@@ -103,9 +103,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UrlExpiry
+        public DateTime? UrlExpiry
         {
-            get { return this._urlExpiry.GetValueOrDefault(); }
+            get { return this._urlExpiry; }
             set { this._urlExpiry = value; }
         }
 

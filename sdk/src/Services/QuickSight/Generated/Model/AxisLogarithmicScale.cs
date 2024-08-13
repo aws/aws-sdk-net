@@ -42,9 +42,9 @@ namespace Amazon.QuickSight.Model
         /// The base setup of a logarithmic axis scale.
         /// </para>
         /// </summary>
-        public double Base
+        public double? Base
         {
-            get { return this._base.GetValueOrDefault(); }
+            get { return this._base; }
             set { this._base = value; }
         }
 

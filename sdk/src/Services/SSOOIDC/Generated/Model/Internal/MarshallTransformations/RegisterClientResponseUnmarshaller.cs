@@ -66,7 +66,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("clientIdIssuedAt", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ClientIdIssuedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("clientSecretExpiresAt", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ClientSecretExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

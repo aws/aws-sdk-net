@@ -86,9 +86,9 @@ namespace Amazon.AppRegistry.Model
         /// The ISO-8601 formatted timestamp of the moment when the application was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.AppRegistry.Model
         ///  The ISO-8601 formatted timestamp of the moment when the application was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

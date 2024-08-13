@@ -51,7 +51,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuditLogVolume())
             {
                 context.Writer.WritePropertyName("AuditLogVolume");
-                context.Writer.Write(requestObject.AuditLogVolume);
+                context.Writer.Write(requestObject.AuditLogVolume.Value);
             }
 
             if(requestObject.IsSetAutocommitPeriod())
@@ -91,7 +91,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeAppendModeEnabled())
             {
                 context.Writer.WritePropertyName("VolumeAppendModeEnabled");
-                context.Writer.Write(requestObject.VolumeAppendModeEnabled);
+                context.Writer.Write(requestObject.VolumeAppendModeEnabled.Value);
             }
 
         }

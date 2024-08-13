@@ -145,9 +145,9 @@ namespace Amazon.TranscribeService.Model
         /// these parameters, your transcription job fails.
         /// </para>
         /// </summary>
-        public bool IdentifyLanguage
+        public bool? IdentifyLanguage
         {
-            get { return this._identifyLanguage.GetValueOrDefault(); }
+            get { return this._identifyLanguage; }
             set { this._identifyLanguage = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.TranscribeService.Model
         /// these parameters, your transcription job fails.
         /// </para>
         /// </summary>
-        public bool IdentifyMultipleLanguages
+        public bool? IdentifyMultipleLanguages
         {
-            get { return this._identifyMultipleLanguages.GetValueOrDefault(); }
+            get { return this._identifyMultipleLanguages; }
             set { this._identifyMultipleLanguages = value; }
         }
 
@@ -424,9 +424,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=8000, Max=48000)]
-        public int MediaSampleRateHertz
+        public int? MediaSampleRateHertz
         {
-            get { return this._mediaSampleRateHertz.GetValueOrDefault(); }
+            get { return this._mediaSampleRateHertz; }
             set { this._mediaSampleRateHertz = value; }
         }
 

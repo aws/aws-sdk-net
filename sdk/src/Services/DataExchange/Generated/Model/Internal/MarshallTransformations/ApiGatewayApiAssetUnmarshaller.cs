@@ -104,7 +104,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ApiSpecificationDownloadUrlExpiresAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ApiSpecificationDownloadUrlExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.SQS.Model;
 using Amazon.SQS;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class SQSMethodCustomizationsTests
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public void SQSSimpleMethodTests()
         {
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "AddPermission", new Type[] { typeof(string), typeof(string), typeof(List<string>), typeof(List<string>), });
-            EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "ChangeMessageVisibility", new Type[] { typeof(string), typeof(string), typeof(int), });
+            EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "ChangeMessageVisibility", new Type[] { typeof(string), typeof(string), typeof(int?), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "ChangeMessageVisibilityBatch", new Type[] { typeof(string), typeof(List<ChangeMessageVisibilityBatchRequestEntry>), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "CreateQueue", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.SQS.AmazonSQSClient), "DeleteMessage", new Type[] { typeof(string), typeof(string), });

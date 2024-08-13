@@ -48,9 +48,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long CommitTimestampInMillis
+        public long? CommitTimestampInMillis
         {
-            get { return this._commitTimestampInMillis.GetValueOrDefault(); }
+            get { return this._commitTimestampInMillis; }
             set { this._commitTimestampInMillis = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.Neptunedata.Model
         /// is set to true. It is useful for ensuring that an entire transaction is consumed.
         /// </para>
         /// </summary>
-        public bool IsLastOp
+        public bool? IsLastOp
         {
-            get { return this._isLastOp.GetValueOrDefault(); }
+            get { return this._isLastOp; }
             set { this._isLastOp = value; }
         }
 

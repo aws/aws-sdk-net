@@ -68,7 +68,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cloudWatchEncryptionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchEncryptionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("s3EncryptionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.S3EncryptionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

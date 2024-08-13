@@ -72,7 +72,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ValidationResult", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ValidationResult = unmarshaller.Unmarshall(context);
                     continue;
                 }

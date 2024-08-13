@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double AccuracyCostTradeoff
+        public double? AccuracyCostTradeoff
         {
-            get { return this._accuracyCostTradeoff.GetValueOrDefault(); }
+            get { return this._accuracyCostTradeoff; }
             set { this._accuracyCostTradeoff = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.Glue.Model
         /// Note that setting this value to true may increase the conflation execution time.
         /// </para>
         /// </summary>
-        public bool EnforceProvidedLabels
+        public bool? EnforceProvidedLabels
         {
-            get { return this._enforceProvidedLabels.GetValueOrDefault(); }
+            get { return this._enforceProvidedLabels; }
             set { this._enforceProvidedLabels = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double PrecisionRecallTradeoff
+        public double? PrecisionRecallTradeoff
         {
-            get { return this._precisionRecallTradeoff.GetValueOrDefault(); }
+            get { return this._precisionRecallTradeoff; }
             set { this._precisionRecallTradeoff = value; }
         }
 

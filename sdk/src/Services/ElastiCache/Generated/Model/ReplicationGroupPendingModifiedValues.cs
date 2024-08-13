@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The settings to be applied to the Redis replication group, either immediately or during
-    /// the next maintenance window.
+    /// The settings to be applied to the Redis OSS replication group, either immediately
+    /// or during the next maintenance window.
     /// </summary>
     public partial class ReplicationGroupPendingModifiedValues
     {
@@ -66,7 +66,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutomaticFailoverStatus. 
         /// <para>
-        /// Indicates the status of automatic failover for this Redis replication group.
+        /// Indicates the status of automatic failover for this Redis OSS replication group.
         /// </para>
         /// </summary>
         public PendingAutomaticFailoverStatus AutomaticFailoverStatus
@@ -85,10 +85,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ClusterMode. 
         /// <para>
         /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
-        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
-        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
-        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
-        /// and set the cluster mode to Enabled.
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis OSS clients
+        /// to connect using both cluster mode enabled and cluster mode disabled. After you migrate
+        /// all Redis OSS clients to use cluster mode enabled, you can then complete cluster mode
+        /// configuration and set the cluster mode to Enabled.
         /// </para>
         /// </summary>
         public ClusterMode ClusterMode
@@ -164,9 +164,9 @@ namespace Amazon.ElastiCache.Model
         /// A flag that enables in-transit encryption when set to true.
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 

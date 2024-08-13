@@ -93,13 +93,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 if(publicRequest.IsSetExpires())
                 {
                     context.Writer.WritePropertyName("Expires");
-                    context.Writer.Write(publicRequest.Expires);
+                    context.Writer.Write(publicRequest.Expires.Value);
                 }
 
                 if(publicRequest.IsSetMaxManifestFragmentResults())
                 {
                     context.Writer.WritePropertyName("MaxManifestFragmentResults");
-                    context.Writer.Write(publicRequest.MaxManifestFragmentResults);
+                    context.Writer.Write(publicRequest.MaxManifestFragmentResults.Value);
                 }
 
                 if(publicRequest.IsSetPlaybackMode())

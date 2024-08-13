@@ -72,9 +72,9 @@ namespace Amazon.EKS.Model
         /// A boolean indicating whether or not a subscription will auto renew when it expires.
         /// </para>
         /// </summary>
-        public bool AutoRenew
+        public bool? AutoRenew
         {
-            get { return this._autoRenew.GetValueOrDefault(); }
+            get { return this._autoRenew; }
             set { this._autoRenew = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.EKS.Model
         /// The Unix timestamp in seconds for when the subscription was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.EKS.Model
         /// The Unix timestamp in seconds for when the subscription is effective.
         /// </para>
         /// </summary>
-        public DateTime EffectiveDate
+        public DateTime? EffectiveDate
         {
-            get { return this._effectiveDate.GetValueOrDefault(); }
+            get { return this._effectiveDate; }
             set { this._effectiveDate = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.EKS.Model
         /// depending on the auto renew configuration of the subscription object.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.EKS.Model
         /// 100.
         /// </para>
         /// </summary>
-        public int LicenseQuantity
+        public int? LicenseQuantity
         {
-            get { return this._licenseQuantity.GetValueOrDefault(); }
+            get { return this._licenseQuantity; }
             set { this._licenseQuantity = value; }
         }
 

@@ -53,9 +53,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of minutes worth of events to retrieve.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.MemoryDB.Model
         /// Example: 2017-03-30T07:03:49.555Z
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.MemoryDB.Model
         /// results can be retrieved.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.MemoryDB.Model
         /// Example: 2017-03-30T07:03:49.555Z
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

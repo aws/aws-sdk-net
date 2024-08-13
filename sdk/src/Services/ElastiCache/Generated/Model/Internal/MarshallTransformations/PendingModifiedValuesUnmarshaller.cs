@@ -97,13 +97,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NumCacheNodes", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NumCacheNodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TransitEncryptionEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.TransitEncryptionEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }

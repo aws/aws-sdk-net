@@ -12,7 +12,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     public abstract class RequestValidator
     {
@@ -99,6 +99,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                         }
 
                         if (property.PropertyType.BaseType.FullName == "System.MulticastDelegate")
+                        {
+                            continue;
+                        }
+
+                        var isNullableType = Nullable.GetUnderlyingType(property.PropertyType) != null;
+                        if (isNullableType)
                         {
                             continue;
                         }
@@ -214,6 +220,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                                     continue;
                                 }
 
+                                var isNullableType = Nullable.GetUnderlyingType(property.PropertyType) != null;
+                                if (isNullableType)
+                                {
+                                    continue;
+                                }
+
                                 var childValue = property.GetValue(item);
                                 var childMarshalledData = GetMarshalledProperty(marshalledListData, childMember.MarshallName);
                                 Visit(childValue, childMember, childMarshalledData, tcr);
@@ -286,6 +298,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                                     continue;
                                 }
 
+                                var isNullableType = Nullable.GetUnderlyingType(property.PropertyType) != null;
+                                if (isNullableType)
+                                {
+                                    continue;
+                                }
+
                                 var childValue = property.GetValue(mapValue);
                                 var childMarshalledData = GetMarshalledProperty(marshalledValue, childMember.MarshallName);
                                 Visit(childValue, childMember, childMarshalledData, tcr);
@@ -304,6 +322,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     foreach (var childMember in member.Shape.Members)
                     {
                         var property = properties.Single(p => childMember.PropertyName == p.Name);
+
+                        var isNullableType = Nullable.GetUnderlyingType(property.PropertyType) != null;
+                        if (isNullableType)
+                        {
+                            continue;
+                        }
 
                         // Check that the child type and any of its generic type arguments types haven't been visited already.
                         // InstantiateClassGenerator also uses TypeCircularReference to make sure it doesn't recurse infinitely.

@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScte35EsamPid())
             {
                 context.Writer.WritePropertyName("scte35EsamPid");
-                context.Writer.Write(requestObject.Scte35EsamPid);
+                context.Writer.Write(requestObject.Scte35EsamPid.Value);
             }
 
         }

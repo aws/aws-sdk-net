@@ -51,7 +51,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxDurationInSeconds())
             {
                 context.Writer.WritePropertyName("MaxDurationInSeconds");
-                context.Writer.Write(requestObject.MaxDurationInSeconds);
+                context.Writer.Write(requestObject.MaxDurationInSeconds.Value);
             }
 
         }

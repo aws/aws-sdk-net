@@ -71,9 +71,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=600)]
-        public int GameSessionActivationTimeoutSeconds
+        public int? GameSessionActivationTimeoutSeconds
         {
-            get { return this._gameSessionActivationTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._gameSessionActivationTimeoutSeconds; }
             set { this._gameSessionActivationTimeoutSeconds = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int MaxConcurrentGameSessionActivations
+        public int? MaxConcurrentGameSessionActivations
         {
-            get { return this._maxConcurrentGameSessionActivations.GetValueOrDefault(); }
+            get { return this._maxConcurrentGameSessionActivations; }
             set { this._maxConcurrentGameSessionActivations = value; }
         }
 

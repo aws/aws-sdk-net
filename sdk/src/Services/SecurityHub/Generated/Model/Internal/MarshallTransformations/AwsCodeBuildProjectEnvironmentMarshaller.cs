@@ -79,7 +79,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrivilegedMode())
             {
                 context.Writer.WritePropertyName("PrivilegedMode");
-                context.Writer.Write(requestObject.PrivilegedMode);
+                context.Writer.Write(requestObject.PrivilegedMode.Value);
             }
 
             if(requestObject.IsSetRegistryCredential())

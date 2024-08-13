@@ -127,9 +127,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StatusChangeTime
+        public DateTime? StatusChangeTime
         {
-            get { return this._statusChangeTime.GetValueOrDefault(); }
+            get { return this._statusChangeTime; }
             set { this._statusChangeTime = value; }
         }
 

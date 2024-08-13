@@ -83,9 +83,9 @@ namespace Amazon.AppSync.Model
         /// A flag that specifies whether the schema introspection should contain directives.
         /// </para>
         /// </summary>
-        public bool IncludeDirectives
+        public bool? IncludeDirectives
         {
-            get { return this._includeDirectives.GetValueOrDefault(); }
+            get { return this._includeDirectives; }
             set { this._includeDirectives = value; }
         }
 

@@ -83,7 +83,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsDefault())
             {
                 context.Writer.WritePropertyName("IsDefault");
-                context.Writer.Write(requestObject.IsDefault);
+                context.Writer.Write(requestObject.IsDefault.Value);
             }
 
             if(requestObject.IsSetNetworkAclId())

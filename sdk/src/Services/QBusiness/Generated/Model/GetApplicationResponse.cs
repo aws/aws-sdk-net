@@ -43,6 +43,7 @@ namespace Amazon.QBusiness.Model
         private EncryptionConfiguration _encryptionConfiguration;
         private ErrorDetail _error;
         private string _identityCenterApplicationArn;
+        private PersonalizationConfiguration _personalizationConfiguration;
         private QAppsConfiguration _qAppsConfiguration;
         private string _roleArn;
         private ApplicationStatus _status;
@@ -110,9 +111,9 @@ namespace Amazon.QBusiness.Model
         /// The Unix timestamp when the Amazon Q Business application was last updated.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -219,6 +220,26 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PersonalizationConfiguration. 
+        /// <para>
+        /// Configuration information about chat response personalization. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/personalizing-chat-responses.html">Personalizing
+        /// chat responses</a>.
+        /// </para>
+        /// </summary>
+        public PersonalizationConfiguration PersonalizationConfiguration
+        {
+            get { return this._personalizationConfiguration; }
+            set { this._personalizationConfiguration = value; }
+        }
+
+        // Check to see if PersonalizationConfiguration property is set
+        internal bool IsSetPersonalizationConfiguration()
+        {
+            return this._personalizationConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QAppsConfiguration. 
         /// <para>
         /// Settings for whether end users can create and use Amazon Q Apps in the web experience.
@@ -280,9 +301,9 @@ namespace Amazon.QBusiness.Model
         /// The Unix timestamp when the Amazon Q Business application was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

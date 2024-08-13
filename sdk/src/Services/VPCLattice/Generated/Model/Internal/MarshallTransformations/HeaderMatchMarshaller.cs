@@ -51,7 +51,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaseSensitive())
             {
                 context.Writer.WritePropertyName("caseSensitive");
-                context.Writer.Write(requestObject.CaseSensitive);
+                context.Writer.Write(requestObject.CaseSensitive.Value);
             }
 
             if(requestObject.IsSetMatch())

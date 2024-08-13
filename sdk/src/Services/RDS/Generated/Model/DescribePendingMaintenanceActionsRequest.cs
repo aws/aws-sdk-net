@@ -33,6 +33,14 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribePendingMaintenanceActions operation.
     /// Returns a list of resources (for example, DB instances) that have at least one pending
     /// maintenance action.
+    /// 
+    ///  
+    /// <para>
+    /// This API follows an eventual consistency model. This means that the result of the
+    /// <c>DescribePendingMaintenanceActions</c> command might not be immediately visible
+    /// to all subsequent RDS commands. Keep this in mind when you use <c>DescribePendingMaintenanceActions</c>
+    /// immediately after using a previous API command such as <c>ApplyPendingMaintenanceActions</c>.
+    /// </para>
     /// </summary>
     public partial class DescribePendingMaintenanceActionsRequest : AmazonRDSRequest
     {
@@ -113,9 +121,9 @@ namespace Amazon.RDS.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

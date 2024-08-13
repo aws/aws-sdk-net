@@ -51,13 +51,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
-                context.Writer.Write(requestObject.MaxCapacity);
+                context.Writer.Write(requestObject.MaxCapacity.Value);
             }
 
             if(requestObject.IsSetMinCapacity())
             {
                 context.Writer.WritePropertyName("MinCapacity");
-                context.Writer.Write(requestObject.MinCapacity);
+                context.Writer.Write(requestObject.MinCapacity.Value);
             }
 
         }

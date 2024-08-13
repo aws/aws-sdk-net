@@ -5,10 +5,10 @@ using Amazon.EC2;
 using Amazon.EC2.Model;
 using Amazon.EC2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK_DotNet35.UnitTests.EC2
+namespace AWSSDK_DotNet.UnitTests.EC2
 {
     [TestClass]
     public class UnmarshallTests
@@ -82,10 +82,10 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
             Assert.AreEqual("snap-1a2b3c4d", image.BlockDeviceMappings[0].Ebs.SnapshotId);
             Assert.AreEqual(15, image.BlockDeviceMappings[0].Ebs.VolumeSize);
             Assert.AreEqual(VolumeType.Standard, image.BlockDeviceMappings[0].Ebs.VolumeType);
-            Assert.IsFalse(image.BlockDeviceMappings[0].Ebs.DeleteOnTermination);
+            Assert.IsFalse(image.BlockDeviceMappings[0].Ebs.DeleteOnTermination.Value);
 
             Assert.AreEqual(VolumeType.Gp2, image.BlockDeviceMappings[1].Ebs.VolumeType);
-            Assert.IsTrue(image.BlockDeviceMappings[1].Ebs.DeleteOnTermination);
+            Assert.IsTrue(image.BlockDeviceMappings[1].Ebs.DeleteOnTermination.Value);
 
         }
 
@@ -223,7 +223,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
             Assert.AreEqual(1, vol.Attachments.Count);
             Assert.AreEqual("vol-1a2b3c4d", vol.Attachments[0].VolumeId);
             Assert.AreEqual("i-1a2b3c4d", vol.Attachments[0].InstanceId);
-            Assert.IsFalse(vol.Attachments[0].DeleteOnTermination);
+            Assert.IsFalse(vol.Attachments[0].DeleteOnTermination.Value);
 
         }
 
@@ -371,7 +371,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
             Assert.IsTrue(string.IsNullOrEmpty(instance.Placement.GroupName));
 
             Assert.AreEqual(MonitoringState.Disabled, instance.Monitoring.State);
-            Assert.IsTrue(instance.SourceDestCheck);
+            Assert.IsTrue(instance.SourceDestCheck.Value);
 
             Assert.AreEqual(1, instance.SecurityGroups.Count);
             Assert.AreEqual("sg-188d9f74", instance.SecurityGroups[0].GroupId);
@@ -385,20 +385,20 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
             Assert.AreEqual("eni-ffc37f96", netInt.NetworkInterfaceId);
             Assert.AreEqual("10.0.2.106", netInt.PrivateIpAddress);
-            Assert.IsTrue(netInt.SourceDestCheck);
+            Assert.IsTrue(netInt.SourceDestCheck.Value);
             Assert.AreEqual(1, netInt.Groups.Count);
             Assert.AreEqual("sg-188d9f74", netInt.Groups[0].GroupId);
             Assert.AreEqual("default", netInt.Groups[0].GroupName);
 
             Assert.AreEqual("eni-attach-d1d917b8", netInt.Attachment.AttachmentId);
-            Assert.IsTrue(netInt.Attachment.DeleteOnTermination);
+            Assert.IsTrue(netInt.Attachment.DeleteOnTermination.Value);
 
             Assert.AreEqual(3, instance.NetworkInterfaces[0].PrivateIpAddresses.Count);
             Assert.AreEqual("10.0.2.106", netInt.PrivateIpAddresses[0].PrivateIpAddress);
-            Assert.IsTrue(netInt.PrivateIpAddresses[0].Primary);
+            Assert.IsTrue(netInt.PrivateIpAddresses[0].Primary.Value);
 
             Assert.AreEqual("10.0.2.108", netInt.PrivateIpAddresses[2].PrivateIpAddress);
-            Assert.IsFalse(netInt.PrivateIpAddresses[2].Primary);
+            Assert.IsFalse(netInt.PrivateIpAddresses[2].Primary.Value);
         }
 
         [TestMethod]
@@ -510,7 +510,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
             Assert.AreEqual(NetworkInterfaceStatus.Attaching, result.NetworkInterface.Status);
             Assert.AreEqual("02:74:b0:78:bf:ab", result.NetworkInterface.MacAddress);
-            Assert.IsTrue(result.NetworkInterface.SourceDestCheck);
+            Assert.IsTrue(result.NetworkInterface.SourceDestCheck.Value);
 
             Assert.AreEqual(1, result.NetworkInterface.Groups.Count);
             Assert.AreEqual("sg-1a2b3c4d", result.NetworkInterface.Groups[0].GroupId);
@@ -527,10 +527,10 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
             Assert.AreEqual(3, result.NetworkInterface.PrivateIpAddresses.Count);
             Assert.AreEqual("10.0.2.130", result.NetworkInterface.PrivateIpAddresses[0].PrivateIpAddress);
-            Assert.IsTrue(result.NetworkInterface.PrivateIpAddresses[0].Primary);
+            Assert.IsTrue(result.NetworkInterface.PrivateIpAddresses[0].Primary.Value);
 
             Assert.AreEqual("10.0.2.132", result.NetworkInterface.PrivateIpAddresses[2].PrivateIpAddress);
-            Assert.IsFalse(result.NetworkInterface.PrivateIpAddresses[2].Primary);
+            Assert.IsFalse(result.NetworkInterface.PrivateIpAddresses[2].Primary.Value);
         }
 
         [TestMethod]
@@ -553,7 +553,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
             Assert.AreEqual("1", result.ResponseMetadata.RequestId);
             Assert.AreEqual("123456", result.VolumeId);
-            Assert.IsTrue(result.AutoEnableIO);
+            Assert.IsTrue(result.AutoEnableIO.Value);
         }
 
         [TestMethod]

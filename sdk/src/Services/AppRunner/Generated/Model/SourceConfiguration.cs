@@ -74,9 +74,9 @@ namespace Amazon.AppRunner.Model
         /// ECR repository).
         /// </para>
         /// </summary>
-        public bool AutoDeploymentsEnabled
+        public bool? AutoDeploymentsEnabled
         {
-            get { return this._autoDeploymentsEnabled.GetValueOrDefault(); }
+            get { return this._autoDeploymentsEnabled; }
             set { this._autoDeploymentsEnabled = value; }
         }
 

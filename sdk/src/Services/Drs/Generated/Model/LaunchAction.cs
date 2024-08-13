@@ -103,9 +103,9 @@ namespace Amazon.Drs.Model
         /// Whether the launch action is active.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.Drs.Model
         /// Whether the launch will not be marked as failed if this action fails.
         /// </para>
         /// </summary>
-        public bool Optional
+        public bool? Optional
         {
-            get { return this._optional.GetValueOrDefault(); }
+            get { return this._optional; }
             set { this._optional = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Drs.Model
         /// Gets and sets the property Order.
         /// </summary>
         [AWSProperty(Min=2, Max=10000)]
-        public int Order
+        public int? Order
         {
-            get { return this._order.GetValueOrDefault(); }
+            get { return this._order; }
             set { this._order = value; }
         }
 

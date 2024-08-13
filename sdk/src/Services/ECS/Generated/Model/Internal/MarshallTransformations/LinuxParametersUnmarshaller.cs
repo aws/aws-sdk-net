@@ -80,25 +80,25 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("initProcessEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxSwap", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSwap = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sharedMemorySize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SharedMemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("swappiness", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Swappiness = unmarshaller.Unmarshall(context);
                     continue;
                 }

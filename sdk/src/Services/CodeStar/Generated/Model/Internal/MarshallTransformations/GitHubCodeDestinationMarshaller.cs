@@ -57,7 +57,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIssuesEnabled())
             {
                 context.Writer.WritePropertyName("issuesEnabled");
-                context.Writer.Write(requestObject.IssuesEnabled);
+                context.Writer.Write(requestObject.IssuesEnabled.Value);
             }
 
             if(requestObject.IsSetName())
@@ -75,7 +75,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrivateRepository())
             {
                 context.Writer.WritePropertyName("privateRepository");
-                context.Writer.Write(requestObject.PrivateRepository);
+                context.Writer.Write(requestObject.PrivateRepository.Value);
             }
 
             if(requestObject.IsSetToken())

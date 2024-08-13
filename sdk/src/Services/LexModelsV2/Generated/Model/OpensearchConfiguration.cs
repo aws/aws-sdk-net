@@ -67,9 +67,9 @@ namespace Amazon.LexModelsV2.Model
         /// the model using the fields you specify from the database.
         /// </para>
         /// </summary>
-        public bool ExactResponse
+        public bool? ExactResponse
         {
-            get { return this._exactResponse.GetValueOrDefault(); }
+            get { return this._exactResponse; }
             set { this._exactResponse = value; }
         }
 

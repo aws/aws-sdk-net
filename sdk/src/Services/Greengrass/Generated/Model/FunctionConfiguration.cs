@@ -125,9 +125,9 @@ namespace Amazon.Greengrass.Model
         /// requires. This setting is not applicable and should be cleared when you run the Lambda
         /// function without containerization.
         /// </summary>
-        public int MemorySize
+        public int? MemorySize
         {
-            get { return this._memorySize.GetValueOrDefault(); }
+            get { return this._memorySize; }
             set { this._memorySize = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property Pinned. True if the function is pinned. Pinned means the
         /// function is long-lived and starts when the core starts.
         /// </summary>
-        public bool Pinned
+        public bool? Pinned
         {
-            get { return this._pinned.GetValueOrDefault(); }
+            get { return this._pinned; }
             set { this._pinned = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.Greengrass.Model
         /// Lambda should terminate the function. This timeout still applies to pinned Lambda
         /// functions for each request.
         /// </summary>
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

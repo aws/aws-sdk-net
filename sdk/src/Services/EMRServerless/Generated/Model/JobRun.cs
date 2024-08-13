@@ -105,9 +105,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Attempt
+        public int? Attempt
         {
-            get { return this._attempt.GetValueOrDefault(); }
+            get { return this._attempt; }
             set { this._attempt = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.EMRServerless.Model
         /// The date and time of when the job run attempt was created.
         /// </para>
         /// </summary>
-        public DateTime AttemptCreatedAt
+        public DateTime? AttemptCreatedAt
         {
-            get { return this._attemptCreatedAt.GetValueOrDefault(); }
+            get { return this._attemptCreatedAt; }
             set { this._attemptCreatedAt = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.EMRServerless.Model
         /// The date and time of when the job run attempt was last updated.
         /// </para>
         /// </summary>
-        public DateTime AttemptUpdatedAt
+        public DateTime? AttemptUpdatedAt
         {
-            get { return this._attemptUpdatedAt.GetValueOrDefault(); }
+            get { return this._attemptUpdatedAt; }
             set { this._attemptUpdatedAt = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public long ExecutionTimeoutMinutes
+        public long? ExecutionTimeoutMinutes
         {
-            get { return this._executionTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._executionTimeoutMinutes; }
             set { this._executionTimeoutMinutes = value; }
         }
 
@@ -460,9 +460,9 @@ namespace Amazon.EMRServerless.Model
         /// job runs in a <c>COMPLETED</c>, <c>FAILED</c>, or <c>CANCELLED</c> state.
         /// </para>
         /// </summary>
-        public int TotalExecutionDurationSeconds
+        public int? TotalExecutionDurationSeconds
         {
-            get { return this._totalExecutionDurationSeconds.GetValueOrDefault(); }
+            get { return this._totalExecutionDurationSeconds; }
             set { this._totalExecutionDurationSeconds = value; }
         }
 
@@ -498,9 +498,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

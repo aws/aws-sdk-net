@@ -63,9 +63,9 @@ namespace Amazon.Elasticsearch.Model
         /// The last updated timestamp of the progress stage.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

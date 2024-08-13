@@ -46,9 +46,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether to autogenerate forms in the code generation job.
         /// </para>
         /// </summary>
-        public bool AutoGenerateForms
+        public bool? AutoGenerateForms
         {
-            get { return this._autoGenerateForms.GetValueOrDefault(); }
+            get { return this._autoGenerateForms; }
             set { this._autoGenerateForms = value; }
         }
 

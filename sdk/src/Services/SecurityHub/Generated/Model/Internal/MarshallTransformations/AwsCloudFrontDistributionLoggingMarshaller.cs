@@ -57,13 +57,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetIncludeCookies())
             {
                 context.Writer.WritePropertyName("IncludeCookies");
-                context.Writer.Write(requestObject.IncludeCookies);
+                context.Writer.Write(requestObject.IncludeCookies.Value);
             }
 
             if(requestObject.IsSetPrefix())

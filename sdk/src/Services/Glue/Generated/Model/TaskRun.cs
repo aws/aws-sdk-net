@@ -51,9 +51,9 @@ namespace Amazon.Glue.Model
         /// The last point in time that the requested task run was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedOn
+        public DateTime? CompletedOn
         {
-            get { return this._completedOn.GetValueOrDefault(); }
+            get { return this._completedOn; }
             set { this._completedOn = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Glue.Model
         /// The amount of time (in seconds) that the task run consumed resources.
         /// </para>
         /// </summary>
-        public int ExecutionTime
+        public int? ExecutionTime
         {
-            get { return this._executionTime.GetValueOrDefault(); }
+            get { return this._executionTime; }
             set { this._executionTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Glue.Model
         /// The last point in time that the requested task run was updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.Glue.Model
         /// The date and time that this task run started.
         /// </para>
         /// </summary>
-        public DateTime StartedOn
+        public DateTime? StartedOn
         {
-            get { return this._startedOn.GetValueOrDefault(); }
+            get { return this._startedOn; }
             set { this._startedOn = value; }
         }
 

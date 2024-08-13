@@ -159,9 +159,9 @@ namespace Amazon.RDS.Model
         /// time.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAfter
+        public DateTime? LastUpdatedAfter
         {
-            get { return this._lastUpdatedAfter.GetValueOrDefault(); }
+            get { return this._lastUpdatedAfter; }
             set { this._lastUpdatedAfter = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.RDS.Model
         /// time.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedBefore
+        public DateTime? LastUpdatedBefore
         {
-            get { return this._lastUpdatedBefore.GetValueOrDefault(); }
+            get { return this._lastUpdatedBefore; }
             set { this._lastUpdatedBefore = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.RDS.Model
         /// is included in the response so that you can retrieve the remaining results.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

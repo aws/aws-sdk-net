@@ -50,9 +50,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index all issues within a repository.
         /// </para>
         /// </summary>
-        public bool CrawlIssue
+        public bool? CrawlIssue
         {
-            get { return this._crawlIssue.GetValueOrDefault(); }
+            get { return this._crawlIssue; }
             set { this._crawlIssue = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index all comments on issues.
         /// </para>
         /// </summary>
-        public bool CrawlIssueComment
+        public bool? CrawlIssueComment
         {
-            get { return this._crawlIssueComment.GetValueOrDefault(); }
+            get { return this._crawlIssueComment; }
             set { this._crawlIssueComment = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to include all comment attachments for issues.
         /// </para>
         /// </summary>
-        public bool CrawlIssueCommentAttachment
+        public bool? CrawlIssueCommentAttachment
         {
-            get { return this._crawlIssueCommentAttachment.GetValueOrDefault(); }
+            get { return this._crawlIssueCommentAttachment; }
             set { this._crawlIssueCommentAttachment = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index all pull requests within a repository.
         /// </para>
         /// </summary>
-        public bool CrawlPullRequest
+        public bool? CrawlPullRequest
         {
-            get { return this._crawlPullRequest.GetValueOrDefault(); }
+            get { return this._crawlPullRequest; }
             set { this._crawlPullRequest = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index all comments on pull requests.
         /// </para>
         /// </summary>
-        public bool CrawlPullRequestComment
+        public bool? CrawlPullRequestComment
         {
-            get { return this._crawlPullRequestComment.GetValueOrDefault(); }
+            get { return this._crawlPullRequestComment; }
             set { this._crawlPullRequestComment = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to include all comment attachments for pull requests.
         /// </para>
         /// </summary>
-        public bool CrawlPullRequestCommentAttachment
+        public bool? CrawlPullRequestCommentAttachment
         {
-            get { return this._crawlPullRequestCommentAttachment.GetValueOrDefault(); }
+            get { return this._crawlPullRequestCommentAttachment; }
             set { this._crawlPullRequestCommentAttachment = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index all files with a repository.
         /// </para>
         /// </summary>
-        public bool CrawlRepositoryDocuments
+        public bool? CrawlRepositoryDocuments
         {
-            get { return this._crawlRepositoryDocuments.GetValueOrDefault(); }
+            get { return this._crawlRepositoryDocuments; }
             set { this._crawlRepositoryDocuments = value; }
         }
 

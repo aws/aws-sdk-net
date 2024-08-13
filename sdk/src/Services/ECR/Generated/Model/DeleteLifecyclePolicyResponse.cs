@@ -45,9 +45,9 @@ namespace Amazon.ECR.Model
         /// The time stamp of the last time that the lifecycle policy was run.
         /// </para>
         /// </summary>
-        public DateTime LastEvaluatedAt
+        public DateTime? LastEvaluatedAt
         {
-            get { return this._lastEvaluatedAt.GetValueOrDefault(); }
+            get { return this._lastEvaluatedAt; }
             set { this._lastEvaluatedAt = value; }
         }
 

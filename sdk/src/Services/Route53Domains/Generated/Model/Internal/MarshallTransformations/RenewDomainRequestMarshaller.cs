@@ -72,7 +72,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCurrentExpiryYear())
                 {
                     context.Writer.WritePropertyName("CurrentExpiryYear");
-                    context.Writer.Write(publicRequest.CurrentExpiryYear);
+                    context.Writer.Write(publicRequest.CurrentExpiryYear.Value);
                 }
 
                 if(publicRequest.IsSetDomainName())
@@ -84,7 +84,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDurationInYears())
                 {
                     context.Writer.WritePropertyName("DurationInYears");
-                    context.Writer.Write(publicRequest.DurationInYears);
+                    context.Writer.Write(publicRequest.DurationInYears.Value);
                 }
 
                 writer.WriteObjectEnd();

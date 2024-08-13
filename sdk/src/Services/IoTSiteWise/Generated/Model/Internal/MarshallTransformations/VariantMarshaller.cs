@@ -51,26 +51,26 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
+                context.Writer.Write(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DoubleValue);
+                    context.Writer.Write(requestObject.DoubleValue.Value);
                 }
             }
 
             if(requestObject.IsSetIntegerValue())
             {
                 context.Writer.WritePropertyName("integerValue");
-                context.Writer.Write(requestObject.IntegerValue);
+                context.Writer.Write(requestObject.IntegerValue.Value);
             }
 
             if(requestObject.IsSetStringValue())

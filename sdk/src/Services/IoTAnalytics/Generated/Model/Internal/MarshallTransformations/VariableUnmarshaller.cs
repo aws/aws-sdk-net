@@ -74,7 +74,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("doubleValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

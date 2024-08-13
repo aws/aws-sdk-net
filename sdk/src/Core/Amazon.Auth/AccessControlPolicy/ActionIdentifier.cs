@@ -68,6 +68,44 @@ namespace Amazon.Auth.AccessControlPolicy
                 this.actionName = value;
             }
         }
+
+        /// <summary>
+        /// Implicit operator to allow assigning action identifiers as a string.
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator ActionIdentifier(string value)
+        {
+            return new ActionIdentifier(value);
+        }
+
+        public override bool Equals(object obj)
+        {
+            string targetActionName;
+            if (obj is ActionIdentifier)
+            {
+                targetActionName = ((ActionIdentifier)obj).ActionName;
+            }
+            else if(obj is string)
+            {
+                targetActionName = obj as string;
+            }
+            else
+            {
+                return false;
+            }
+
+            return string.Equals(ActionName, targetActionName);
+        }
+
+        public override int GetHashCode()
+        {
+            return ActionName.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return ActionName;
+        }
     }
 }
 

@@ -64,9 +64,9 @@ namespace Amazon.ECS.Model
         /// value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 

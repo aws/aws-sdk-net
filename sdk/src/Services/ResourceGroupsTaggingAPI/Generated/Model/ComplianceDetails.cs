@@ -45,9 +45,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Whether a resource is compliant with the effective tag policy.
         /// </para>
         /// </summary>
-        public bool ComplianceStatus
+        public bool? ComplianceStatus
         {
-            get { return this._complianceStatus.GetValueOrDefault(); }
+            get { return this._complianceStatus; }
             set { this._complianceStatus = value; }
         }
 

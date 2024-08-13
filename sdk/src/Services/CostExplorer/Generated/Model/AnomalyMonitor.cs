@@ -72,9 +72,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DimensionalValueCount
+        public int? DimensionalValueCount
         {
-            get { return this._dimensionalValueCount.GetValueOrDefault(); }
+            get { return this._dimensionalValueCount; }
             set { this._dimensionalValueCount = value; }
         }
 

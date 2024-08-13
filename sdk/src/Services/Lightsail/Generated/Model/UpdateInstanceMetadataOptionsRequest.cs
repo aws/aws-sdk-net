@@ -104,9 +104,9 @@ namespace Amazon.Lightsail.Model
         /// the existing state is maintained.
         /// </para>
         /// </summary>
-        public int HttpPutResponseHopLimit
+        public int? HttpPutResponseHopLimit
         {
-            get { return this._httpPutResponseHopLimit.GetValueOrDefault(); }
+            get { return this._httpPutResponseHopLimit; }
             set { this._httpPutResponseHopLimit = value; }
         }
 

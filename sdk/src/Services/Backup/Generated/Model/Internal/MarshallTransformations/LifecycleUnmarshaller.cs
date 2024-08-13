@@ -68,19 +68,19 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DeleteAfterDays", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DeleteAfterDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MoveToColdStorageAfterDays", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MoveToColdStorageAfterDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OptInToArchiveForSupportedResources", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OptInToArchiveForSupportedResources = unmarshaller.Unmarshall(context);
                     continue;
                 }

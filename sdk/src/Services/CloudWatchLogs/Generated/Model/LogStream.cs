@@ -70,16 +70,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
         // Check to see if CreationTime property is set
         internal bool IsSetCreationTime()
         {
-            return this._creationTime.HasValue; 
+            return this._creationTime != null;
         }
 
         /// <summary>
@@ -90,16 +90,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime FirstEventTimestamp
+        public DateTime? FirstEventTimestamp
         {
-            get { return this._firstEventTimestamp.GetValueOrDefault(); }
+            get { return this._firstEventTimestamp; }
             set { this._firstEventTimestamp = value; }
         }
 
         // Check to see if FirstEventTimestamp property is set
         internal bool IsSetFirstEventTimestamp()
         {
-            return this._firstEventTimestamp.HasValue; 
+            return this._firstEventTimestamp != null;
         }
 
         /// <summary>
@@ -112,16 +112,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime LastEventTimestamp
+        public DateTime? LastEventTimestamp
         {
-            get { return this._lastEventTimestamp.GetValueOrDefault(); }
+            get { return this._lastEventTimestamp; }
             set { this._lastEventTimestamp = value; }
         }
 
         // Check to see if LastEventTimestamp property is set
         internal bool IsSetLastEventTimestamp()
         {
-            return this._lastEventTimestamp.HasValue; 
+            return this._lastEventTimestamp != null;
         }
 
         /// <summary>
@@ -134,16 +134,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime LastIngestionTime
+        public DateTime? LastIngestionTime
         {
-            get { return this._lastIngestionTime.GetValueOrDefault(); }
+            get { return this._lastIngestionTime; }
             set { this._lastIngestionTime = value; }
         }
 
         // Check to see if LastIngestionTime property is set
         internal bool IsSetLastIngestionTime()
         {
-            return this._lastIngestionTime.HasValue; 
+            return this._lastIngestionTime != null;
         }
 
         /// <summary>
@@ -179,9 +179,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </summary>
         [Obsolete("Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
         [AWSProperty(Min=0)]
-        public long StoredBytes
+        public long? StoredBytes
         {
-            get { return this._storedBytes.GetValueOrDefault(); }
+            get { return this._storedBytes; }
             set { this._storedBytes = value; }
         }
 

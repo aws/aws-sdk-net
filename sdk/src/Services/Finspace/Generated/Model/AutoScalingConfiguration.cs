@@ -68,9 +68,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxNodeCount
+        public int? MaxNodeCount
         {
-            get { return this._maxNodeCount.GetValueOrDefault(); }
+            get { return this._maxNodeCount; }
             set { this._maxNodeCount = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public double MetricTarget
+        public double? MetricTarget
         {
-            get { return this._metricTarget.GetValueOrDefault(); }
+            get { return this._metricTarget; }
             set { this._metricTarget = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinNodeCount
+        public int? MinNodeCount
         {
-            get { return this._minNodeCount.GetValueOrDefault(); }
+            get { return this._minNodeCount; }
             set { this._minNodeCount = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
-        public double ScaleInCooldownSeconds
+        public double? ScaleInCooldownSeconds
         {
-            get { return this._scaleInCooldownSeconds.GetValueOrDefault(); }
+            get { return this._scaleInCooldownSeconds; }
             set { this._scaleInCooldownSeconds = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
-        public double ScaleOutCooldownSeconds
+        public double? ScaleOutCooldownSeconds
         {
-            get { return this._scaleOutCooldownSeconds.GetValueOrDefault(); }
+            get { return this._scaleOutCooldownSeconds; }
             set { this._scaleOutCooldownSeconds = value; }
         }
 

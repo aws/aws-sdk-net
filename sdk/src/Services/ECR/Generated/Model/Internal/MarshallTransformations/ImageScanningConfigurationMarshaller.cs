@@ -51,7 +51,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScanOnPush())
             {
                 context.Writer.WritePropertyName("scanOnPush");
-                context.Writer.Write(requestObject.ScanOnPush);
+                context.Writer.Write(requestObject.ScanOnPush.Value);
             }
 
         }

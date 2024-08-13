@@ -65,9 +65,9 @@ namespace Amazon.Appflow.Model
         /// Boolean value to include All Versions of files in Veeva document extract flow.
         /// </para>
         /// </summary>
-        public bool IncludeAllVersions
+        public bool? IncludeAllVersions
         {
-            get { return this._includeAllVersions.GetValueOrDefault(); }
+            get { return this._includeAllVersions; }
             set { this._includeAllVersions = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Appflow.Model
         /// Boolean value to include file renditions in Veeva document extract flow.
         /// </para>
         /// </summary>
-        public bool IncludeRenditions
+        public bool? IncludeRenditions
         {
-            get { return this._includeRenditions.GetValueOrDefault(); }
+            get { return this._includeRenditions; }
             set { this._includeRenditions = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Appflow.Model
         /// Boolean value to include source files in Veeva document extract flow.
         /// </para>
         /// </summary>
-        public bool IncludeSourceFiles
+        public bool? IncludeSourceFiles
         {
-            get { return this._includeSourceFiles.GetValueOrDefault(); }
+            get { return this._includeSourceFiles; }
             set { this._includeSourceFiles = value; }
         }
 

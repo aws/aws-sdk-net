@@ -81,9 +81,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Decommissioning timeout override for the specific list of instances to be terminated.
         /// </para>
         /// </summary>
-        public int InstanceTerminationTimeout
+        public int? InstanceTerminationTimeout
         {
-            get { return this._instanceTerminationTimeout.GetValueOrDefault(); }
+            get { return this._instanceTerminationTimeout; }
             set { this._instanceTerminationTimeout = value; }
         }
 

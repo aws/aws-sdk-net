@@ -99,9 +99,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long DecisionTaskCompletedEventId
+        public long? DecisionTaskCompletedEventId
         {
-            get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
+            get { return this._decisionTaskCompletedEventId; }
             set { this._decisionTaskCompletedEventId = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long InitiatedEventId
+        public long? InitiatedEventId
         {
-            get { return this._initiatedEventId.GetValueOrDefault(); }
+            get { return this._initiatedEventId; }
             set { this._initiatedEventId = value; }
         }
 

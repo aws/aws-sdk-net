@@ -51,9 +51,9 @@ namespace Amazon.LocationService.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Total
+        public double? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

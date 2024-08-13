@@ -68,7 +68,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("scanOnPush", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ScanOnPush = unmarshaller.Unmarshall(context);
                     continue;
                 }

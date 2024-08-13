@@ -102,9 +102,9 @@ namespace Amazon.OpsWorks.Model
         /// log in. If they are logged in at the time, they are automatically logged out.
         /// </para>
         /// </summary>
-        public int ValidForInMinutes
+        public int? ValidForInMinutes
         {
-            get { return this._validForInMinutes.GetValueOrDefault(); }
+            get { return this._validForInMinutes; }
             set { this._validForInMinutes = value; }
         }
 

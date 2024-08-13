@@ -159,9 +159,9 @@ namespace Amazon.AppStream.Model
         /// Enables or disables default internet access for the image builder.
         /// </para>
         /// </summary>
-        public bool EnableDefaultInternetAccess
+        public bool? EnableDefaultInternetAccess
         {
-            get { return this._enableDefaultInternetAccess.GetValueOrDefault(); }
+            get { return this._enableDefaultInternetAccess; }
             set { this._enableDefaultInternetAccess = value; }
         }
 

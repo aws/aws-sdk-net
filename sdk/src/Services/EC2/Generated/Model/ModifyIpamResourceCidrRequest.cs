@@ -97,9 +97,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Monitored
+        public bool? Monitored
         {
-            get { return this._monitored.GetValueOrDefault(); }
+            get { return this._monitored; }
             set { this._monitored = value; }
         }
 

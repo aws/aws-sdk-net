@@ -78,7 +78,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceDelete())
                 {
                     context.Writer.WritePropertyName("ForceDelete");
-                    context.Writer.Write(publicRequest.ForceDelete);
+                    context.Writer.Write(publicRequest.ForceDelete.Value);
                 }
 
                 writer.WriteObjectEnd();

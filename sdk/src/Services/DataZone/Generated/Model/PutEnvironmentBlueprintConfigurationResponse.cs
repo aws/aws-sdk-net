@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private List<string> _enabledRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _environmentBlueprintId;
         private string _manageAccessRoleArn;
+        private List<ProvisioningConfiguration> _provisioningConfigurations = AWSConfigs.InitializeCollections ? new List<ProvisioningConfiguration>() : null;
         private string _provisioningRoleArn;
         private Dictionary<string, Dictionary<string, string>> _regionalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private DateTime? _updatedAt;
@@ -49,9 +50,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the environment blueprint was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -137,6 +138,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProvisioningConfigurations. 
+        /// <para>
+        /// The provisioning configuration of a blueprint.
+        /// </para>
+        /// </summary>
+        public List<ProvisioningConfiguration> ProvisioningConfigurations
+        {
+            get { return this._provisioningConfigurations; }
+            set { this._provisioningConfigurations = value; }
+        }
+
+        // Check to see if ProvisioningConfigurations property is set
+        internal bool IsSetProvisioningConfigurations()
+        {
+            return this._provisioningConfigurations != null && (this._provisioningConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisioningRoleArn. 
         /// <para>
         /// The ARN of the provisioning role.
@@ -178,9 +197,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the environment blueprint was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

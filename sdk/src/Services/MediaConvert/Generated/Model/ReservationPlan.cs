@@ -62,9 +62,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ExpiresAt. The timestamp in epoch seconds for when the
         /// current pricing plan term for this reserved queue expires.
         /// </summary>
-        public DateTime ExpiresAt
+        public DateTime? ExpiresAt
         {
-            get { return this._expiresAt.GetValueOrDefault(); }
+            get { return this._expiresAt; }
             set { this._expiresAt = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property PurchasedAt. The timestamp in epoch seconds for when you
         /// set up the current pricing plan for this reserved queue.
         /// </summary>
-        public DateTime PurchasedAt
+        public DateTime? PurchasedAt
         {
-            get { return this._purchasedAt.GetValueOrDefault(); }
+            get { return this._purchasedAt; }
             set { this._purchasedAt = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.MediaConvert.Model
         /// number of RTS. The new commitment begins when you purchase the additional capacity.
         /// You can't decrease the number of RTS in your reserved queue.
         /// </summary>
-        public int ReservedSlots
+        public int? ReservedSlots
         {
-            get { return this._reservedSlots.GetValueOrDefault(); }
+            get { return this._reservedSlots; }
             set { this._reservedSlots = value; }
         }
 

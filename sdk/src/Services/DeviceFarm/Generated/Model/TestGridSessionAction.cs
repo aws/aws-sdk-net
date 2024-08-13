@@ -64,9 +64,9 @@ namespace Amazon.DeviceFarm.Model
         /// The time, in milliseconds, that the action took to complete in the browser.
         /// </para>
         /// </summary>
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.DeviceFarm.Model
         /// The time that the session invoked the action.
         /// </para>
         /// </summary>
-        public DateTime Started
+        public DateTime? Started
         {
-            get { return this._started.GetValueOrDefault(); }
+            get { return this._started; }
             set { this._started = value; }
         }
 

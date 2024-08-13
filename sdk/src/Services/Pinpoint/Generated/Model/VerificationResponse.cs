@@ -42,9 +42,9 @@ namespace Amazon.Pinpoint.Model
         /// Specifies whether the OTP is valid or not.
         /// </para>
         /// </summary>
-        public bool Valid
+        public bool? Valid
         {
-            get { return this._valid.GetValueOrDefault(); }
+            get { return this._valid; }
             set { this._valid = value; }
         }
 

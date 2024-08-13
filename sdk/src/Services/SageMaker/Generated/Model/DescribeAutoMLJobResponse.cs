@@ -213,9 +213,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -231,9 +231,9 @@ namespace Amazon.SageMaker.Model
         /// Returns the end time of the AutoML job.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates whether the output for an AutoML job generates candidate definitions only.
         /// </para>
         /// </summary>
-        public bool GenerateCandidateDefinitionsOnly
+        public bool? GenerateCandidateDefinitionsOnly
         {
-            get { return this._generateCandidateDefinitionsOnly.GetValueOrDefault(); }
+            get { return this._generateCandidateDefinitionsOnly; }
             set { this._generateCandidateDefinitionsOnly = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

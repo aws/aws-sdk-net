@@ -43,9 +43,9 @@ namespace Amazon.XRay.Model
         /// Set the InsightsEnabled value to true to enable insights or false to disable insights.
         /// </para>
         /// </summary>
-        public bool InsightsEnabled
+        public bool? InsightsEnabled
         {
-            get { return this._insightsEnabled.GetValueOrDefault(); }
+            get { return this._insightsEnabled; }
             set { this._insightsEnabled = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.XRay.Model
         /// can only be enabled on a group with InsightsEnabled set to true.
         /// </para>
         /// </summary>
-        public bool NotificationsEnabled
+        public bool? NotificationsEnabled
         {
-            get { return this._notificationsEnabled.GetValueOrDefault(); }
+            get { return this._notificationsEnabled; }
             set { this._notificationsEnabled = value; }
         }
 

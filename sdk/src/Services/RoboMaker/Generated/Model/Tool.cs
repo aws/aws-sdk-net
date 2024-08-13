@@ -105,9 +105,9 @@ namespace Amazon.RoboMaker.Model
         /// is <c>False</c>. 
         /// </para>
         /// </summary>
-        public bool StreamOutputToCloudWatch
+        public bool? StreamOutputToCloudWatch
         {
-            get { return this._streamOutputToCloudWatch.GetValueOrDefault(); }
+            get { return this._streamOutputToCloudWatch; }
             set { this._streamOutputToCloudWatch = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.RoboMaker.Model
         /// The default is <c>False</c>. 
         /// </para>
         /// </summary>
-        public bool StreamUI
+        public bool? StreamUI
         {
-            get { return this._streamui.GetValueOrDefault(); }
+            get { return this._streamui; }
             set { this._streamui = value; }
         }
 

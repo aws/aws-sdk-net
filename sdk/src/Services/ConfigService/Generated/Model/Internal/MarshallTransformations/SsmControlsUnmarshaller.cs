@@ -68,13 +68,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ConcurrentExecutionRatePercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConcurrentExecutionRatePercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ErrorPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

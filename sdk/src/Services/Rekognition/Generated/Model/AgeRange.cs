@@ -51,9 +51,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int High
+        public int? High
         {
-            get { return this._high.GetValueOrDefault(); }
+            get { return this._high; }
             set { this._high = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Low
+        public int? Low
         {
-            get { return this._low.GetValueOrDefault(); }
+            get { return this._low; }
             set { this._low = value; }
         }
 

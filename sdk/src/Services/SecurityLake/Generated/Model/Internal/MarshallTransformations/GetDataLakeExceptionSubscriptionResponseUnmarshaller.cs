@@ -54,7 +54,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("exceptionTimeToLive", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ExceptionTimeToLive = unmarshaller.Unmarshall(context);
                     continue;
                 }

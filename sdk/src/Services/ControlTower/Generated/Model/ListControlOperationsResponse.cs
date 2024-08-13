@@ -40,7 +40,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property ControlOperations. 
         /// <para>
-        /// Returns a list of output from control operations. PLACEHOLDER 
+        /// Returns a list of output from control operations. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

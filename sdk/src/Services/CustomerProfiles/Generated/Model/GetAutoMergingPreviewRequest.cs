@@ -124,9 +124,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double MinAllowedConfidenceScoreForMerging
+        public double? MinAllowedConfidenceScoreForMerging
         {
-            get { return this._minAllowedConfidenceScoreForMerging.GetValueOrDefault(); }
+            get { return this._minAllowedConfidenceScoreForMerging; }
             set { this._minAllowedConfidenceScoreForMerging = value; }
         }
 

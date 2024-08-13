@@ -65,9 +65,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool MultiTurnConversation
+        public bool? MultiTurnConversation
         {
-            get { return this._multiTurnConversation.GetValueOrDefault(); }
+            get { return this._multiTurnConversation; }
             set { this._multiTurnConversation = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalResultCount
+        public int? TotalResultCount
         {
-            get { return this._totalResultCount.GetValueOrDefault(); }
+            get { return this._totalResultCount; }
             set { this._totalResultCount = value; }
         }
 

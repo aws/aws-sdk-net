@@ -47,9 +47,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=16000)]
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

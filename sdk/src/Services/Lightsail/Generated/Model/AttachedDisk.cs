@@ -62,9 +62,9 @@ namespace Amazon.Lightsail.Model
         /// The size of the disk in GB.
         /// </para>
         /// </summary>
-        public int SizeInGb
+        public int? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 

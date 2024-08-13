@@ -73,7 +73,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoEnable())
                 {
                     context.Writer.WritePropertyName("autoEnable");
-                    context.Writer.Write(publicRequest.AutoEnable);
+                    context.Writer.Write(publicRequest.AutoEnable.Value);
                 }
 
                 if(publicRequest.IsSetAutoEnableOrganizationMembers())

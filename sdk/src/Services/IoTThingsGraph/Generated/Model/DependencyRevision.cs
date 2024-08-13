@@ -63,9 +63,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// The revision number of the workflow or system.
         /// </para>
         /// </summary>
-        public long RevisionNumber
+        public long? RevisionNumber
         {
-            get { return this._revisionNumber.GetValueOrDefault(); }
+            get { return this._revisionNumber; }
             set { this._revisionNumber = value; }
         }
 

@@ -67,9 +67,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the deployment finished.
         /// </para>
         /// </summary>
-        public DateTime DeploymentFinishTime
+        public DateTime? DeploymentFinishTime
         {
-            get { return this._deploymentFinishTime.GetValueOrDefault(); }
+            get { return this._deploymentFinishTime; }
             set { this._deploymentFinishTime = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the deployment was started.
         /// </para>
         /// </summary>
-        public DateTime DeploymentStartTime
+        public DateTime? DeploymentStartTime
         {
-            get { return this._deploymentStartTime.GetValueOrDefault(); }
+            get { return this._deploymentStartTime; }
             set { this._deploymentStartTime = value; }
         }
 

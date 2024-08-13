@@ -46,13 +46,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(headObjectRequest.EtagToMatch));
             
             if(headObjectRequest.IsSetModifiedSinceDateUtc())
-                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(headObjectRequest.ModifiedSinceDateUtc));
+                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(headObjectRequest.ModifiedSinceDateUtc.Value));
             
             if(headObjectRequest.IsSetEtagToNotMatch())
                 request.Headers.Add(HeaderKeys.IfNoneMatchHeader, S3Transforms.ToStringValue(headObjectRequest.EtagToNotMatch));
             
             if(headObjectRequest.IsSetUnmodifiedSinceDateUtc())
-                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(headObjectRequest.UnmodifiedSinceDateUtc));
+                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(headObjectRequest.UnmodifiedSinceDateUtc.Value));
 
             if (headObjectRequest.IsSetServerSideEncryptionCustomerMethod())
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, headObjectRequest.ServerSideEncryptionCustomerMethod);
@@ -72,14 +72,31 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (headObjectRequest.IsSetChecksumMode())
                 request.Headers.Add(S3Constants.AmzHeaderChecksumMode, S3Transforms.ToStringValue(headObjectRequest.ChecksumMode));
+            if (headObjectRequest.IsSetResponseCacheControl())
+                request.Parameters.Add("response-cache-control", S3Transforms.ToStringValue(headObjectRequest.ResponseCacheControl));
+
+            if (headObjectRequest.IsSetResponseContentDisposition())
+                request.Parameters.Add("response-content-disposition", S3Transforms.ToStringValue(headObjectRequest.ResponseContentDisposition));
+
+            if (headObjectRequest.IsSetResponseContentEncoding())
+                request.Parameters.Add("response-content-encoding", S3Transforms.ToStringValue(headObjectRequest.ResponseContentEncoding));
+
+            if (headObjectRequest.IsSetResponseContentLanguage())
+                request.Parameters.Add("response-content-language", S3Transforms.ToStringValue(headObjectRequest.ResponseContentLanguage));
+
+            if (headObjectRequest.IsSetResponseContentType())
+                request.Parameters.Add("response-content-type", S3Transforms.ToStringValue(headObjectRequest.ResponseContentType));
+
+            if (headObjectRequest.IsSetResponseExpires())
+                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(headObjectRequest.ResponseExpires));
 
             if (string.IsNullOrEmpty(headObjectRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetObjectMetadataRequest.BucketName");
             if (string.IsNullOrEmpty(headObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectMetadataRequest.Key");
 
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(headObjectRequest.Key));
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(headObjectRequest.Key));
+            request.ResourcePath = "/{Key+}";
 
             if (headObjectRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(headObjectRequest.VersionId));

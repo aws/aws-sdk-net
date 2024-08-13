@@ -47,9 +47,9 @@ namespace Amazon.SecurityHub.Model
         /// to the Healthy state.
         /// </para>
         /// </summary>
-        public int HealthyThreshold
+        public int? HealthyThreshold
         {
-            get { return this._healthyThreshold.GetValueOrDefault(); }
+            get { return this._healthyThreshold; }
             set { this._healthyThreshold = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SecurityHub.Model
         /// The approximate interval, in seconds, between health checks of an individual instance.
         /// </para>
         /// </summary>
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.SecurityHub.Model
         /// The amount of time, in seconds, during which no response means a failed health check.
         /// </para>
         /// </summary>
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.SecurityHub.Model
         /// is moved to the Unhealthy state.
         /// </para>
         /// </summary>
-        public int UnhealthyThreshold
+        public int? UnhealthyThreshold
         {
-            get { return this._unhealthyThreshold.GetValueOrDefault(); }
+            get { return this._unhealthyThreshold; }
             set { this._unhealthyThreshold = value; }
         }
 

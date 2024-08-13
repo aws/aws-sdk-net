@@ -67,13 +67,13 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemorySizeInKB())
             {
                 context.Writer.WritePropertyName("memorySizeInKB");
-                context.Writer.Write(requestObject.MemorySizeInKB);
+                context.Writer.Write(requestObject.MemorySizeInKB.Value);
             }
 
             if(requestObject.IsSetMountROSysfs())
             {
                 context.Writer.WritePropertyName("mountROSysfs");
-                context.Writer.Write(requestObject.MountROSysfs);
+                context.Writer.Write(requestObject.MountROSysfs.Value);
             }
 
             if(requestObject.IsSetVolumes())

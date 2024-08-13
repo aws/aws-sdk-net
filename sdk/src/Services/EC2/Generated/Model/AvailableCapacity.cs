@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// The number of vCPUs available for launching instances onto the Dedicated Host.
         /// </para>
         /// </summary>
-        public int AvailableVCpus
+        public int? AvailableVCpus
         {
-            get { return this._availableVCpus.GetValueOrDefault(); }
+            get { return this._availableVCpus; }
             set { this._availableVCpus = value; }
         }
 

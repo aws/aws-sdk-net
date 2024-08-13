@@ -80,7 +80,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeviceReportedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeviceReportedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

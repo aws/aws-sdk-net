@@ -89,9 +89,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The time at which the most recently analyzed resource was analyzed.
         /// </para>
         /// </summary>
-        public DateTime LastResourceAnalyzedAt
+        public DateTime? LastResourceAnalyzedAt
         {
-            get { return this._lastResourceAnalyzedAt.GetValueOrDefault(); }
+            get { return this._lastResourceAnalyzedAt; }
             set { this._lastResourceAnalyzedAt = value; }
         }
 

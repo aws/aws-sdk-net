@@ -68,7 +68,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowAuthorizerOverride", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowAuthorizerOverride = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -115,9 +115,9 @@ namespace Amazon.AppSync.Model
         /// the epoch, rounded down to the nearest hour.
         /// </para>
         /// </summary>
-        public long Deletes
+        public long? Deletes
         {
-            get { return this._deletes.GetValueOrDefault(); }
+            get { return this._deletes; }
             set { this._deletes = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.AppSync.Model
         /// the epoch, rounded down to the nearest hour.
         /// </para>
         /// </summary>
-        public long Expires
+        public long? Expires
         {
-            get { return this._expires.GetValueOrDefault(); }
+            get { return this._expires; }
             set { this._expires = value; }
         }
 

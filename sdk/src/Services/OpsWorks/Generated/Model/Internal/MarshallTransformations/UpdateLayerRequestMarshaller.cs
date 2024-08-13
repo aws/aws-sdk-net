@@ -86,13 +86,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoAssignElasticIps())
                 {
                     context.Writer.WritePropertyName("AutoAssignElasticIps");
-                    context.Writer.Write(publicRequest.AutoAssignElasticIps);
+                    context.Writer.Write(publicRequest.AutoAssignElasticIps.Value);
                 }
 
                 if(publicRequest.IsSetAutoAssignPublicIps())
                 {
                     context.Writer.WritePropertyName("AutoAssignPublicIps");
-                    context.Writer.Write(publicRequest.AutoAssignPublicIps);
+                    context.Writer.Write(publicRequest.AutoAssignPublicIps.Value);
                 }
 
                 if(publicRequest.IsSetCloudWatchLogsConfiguration())
@@ -143,13 +143,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableAutoHealing())
                 {
                     context.Writer.WritePropertyName("EnableAutoHealing");
-                    context.Writer.Write(publicRequest.EnableAutoHealing);
+                    context.Writer.Write(publicRequest.EnableAutoHealing.Value);
                 }
 
                 if(publicRequest.IsSetInstallUpdatesOnBoot())
                 {
                     context.Writer.WritePropertyName("InstallUpdatesOnBoot");
-                    context.Writer.Write(publicRequest.InstallUpdatesOnBoot);
+                    context.Writer.Write(publicRequest.InstallUpdatesOnBoot.Value);
                 }
 
                 if(publicRequest.IsSetLayerId())
@@ -195,7 +195,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseEbsOptimizedInstances())
                 {
                     context.Writer.WritePropertyName("UseEbsOptimizedInstances");
-                    context.Writer.Write(publicRequest.UseEbsOptimizedInstances);
+                    context.Writer.Write(publicRequest.UseEbsOptimizedInstances.Value);
                 }
 
                 if(publicRequest.IsSetVolumeConfigurations())

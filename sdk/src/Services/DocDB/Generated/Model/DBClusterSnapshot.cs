@@ -78,9 +78,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime ClusterCreateTime
+        public DateTime? ClusterCreateTime
         {
-            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            get { return this._clusterCreateTime; }
             set { this._clusterCreateTime = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the percentage of the estimated data that has been transferred.
         /// </para>
         /// </summary>
-        public int PercentProgress
+        public int? PercentProgress
         {
-            get { return this._percentProgress.GetValueOrDefault(); }
+            get { return this._percentProgress; }
             set { this._percentProgress = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the port that the cluster was listening on at the time of the snapshot.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.DocDB.Model
         /// Provides the time when the snapshot was taken, in UTC.
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreateTime
+        public DateTime? SnapshotCreateTime
         {
-            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            get { return this._snapshotCreateTime; }
             set { this._snapshotCreateTime = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.DocDB.Model
         /// Specifies whether the cluster snapshot is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

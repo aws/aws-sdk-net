@@ -51,13 +51,13 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOwnerGid())
             {
                 context.Writer.WritePropertyName("OwnerGid");
-                context.Writer.Write(requestObject.OwnerGid);
+                context.Writer.Write(requestObject.OwnerGid.Value);
             }
 
             if(requestObject.IsSetOwnerUid())
             {
                 context.Writer.WritePropertyName("OwnerUid");
-                context.Writer.Write(requestObject.OwnerUid);
+                context.Writer.Write(requestObject.OwnerUid.Value);
             }
 
             if(requestObject.IsSetPermissions())

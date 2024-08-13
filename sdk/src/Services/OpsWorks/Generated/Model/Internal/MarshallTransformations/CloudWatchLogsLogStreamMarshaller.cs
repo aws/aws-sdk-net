@@ -51,19 +51,19 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchCount())
             {
                 context.Writer.WritePropertyName("BatchCount");
-                context.Writer.Write(requestObject.BatchCount);
+                context.Writer.Write(requestObject.BatchCount.Value);
             }
 
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
-                context.Writer.Write(requestObject.BatchSize);
+                context.Writer.Write(requestObject.BatchSize.Value);
             }
 
             if(requestObject.IsSetBufferDuration())
             {
                 context.Writer.WritePropertyName("BufferDuration");
-                context.Writer.Write(requestObject.BufferDuration);
+                context.Writer.Write(requestObject.BufferDuration.Value);
             }
 
             if(requestObject.IsSetDatetimeFormat())

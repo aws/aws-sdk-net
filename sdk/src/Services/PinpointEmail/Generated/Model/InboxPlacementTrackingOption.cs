@@ -46,9 +46,9 @@ namespace Amazon.PinpointEmail.Model
         /// Specifies whether inbox placement data is being tracked for the domain.
         /// </para>
         /// </summary>
-        public bool Global
+        public bool? Global
         {
-            get { return this._global.GetValueOrDefault(); }
+            get { return this._global; }
             set { this._global = value; }
         }
 

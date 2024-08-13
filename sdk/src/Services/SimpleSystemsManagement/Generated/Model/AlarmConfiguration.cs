@@ -65,9 +65,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// command continues to run, regardless of this value. Default is <i>false</i>.
         /// </para>
         /// </summary>
-        public bool IgnorePollAlarmFailure
+        public bool? IgnorePollAlarmFailure
         {
-            get { return this._ignorePollAlarmFailure.GetValueOrDefault(); }
+            get { return this._ignorePollAlarmFailure; }
             set { this._ignorePollAlarmFailure = value; }
         }
 

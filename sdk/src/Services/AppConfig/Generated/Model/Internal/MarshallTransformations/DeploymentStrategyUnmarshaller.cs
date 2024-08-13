@@ -68,7 +68,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DeploymentDurationInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DeploymentDurationInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,13 +80,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FinalBakeTimeInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FinalBakeTimeInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("GrowthFactor", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.GrowthFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }

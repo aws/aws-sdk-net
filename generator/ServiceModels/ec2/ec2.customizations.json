@@ -17,21 +17,14 @@
                 "newType": "Amazon.EC2.Internal.AmazonEC2ResponseHandler",
                 "targetType": "Amazon.Runtime.Internal.Unmarshaller"
             },
-			{
-                "condition":"this.Config.RetryMode == RequestRetryMode.Legacy",
-                "operation":"replace",
-                "newType":"Amazon.Runtime.Internal.RetryHandler",
-                "targetType":"Amazon.Runtime.Internal.RetryHandler",
-                "constructorInput":"new Amazon.EC2.Internal.EC2RetryPolicy(this.Config)"
-            },
-			{
+            {
                 "condition":"this.Config.RetryMode == RequestRetryMode.Standard",
                 "operation":"replace",
                 "newType":"Amazon.Runtime.Internal.RetryHandler",
                 "targetType":"Amazon.Runtime.Internal.RetryHandler",
                 "constructorInput":"new Amazon.EC2.Internal.EC2StandardRetryPolicy(this.Config)"
             },
-			{
+            {
                 "condition":"this.Config.RetryMode == RequestRetryMode.Adaptive",
                 "operation":"replace",
                 "newType":"Amazon.Runtime.Internal.RetryHandler",
@@ -117,17 +110,17 @@
 	"dataTypeSwap" : {
         "SpotFleetRequestConfigData": {
             "ValidFrom": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
             },
             "ValidUntil": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
             }
         },
         "DescribeSpotFleetRequestHistoryRequest": {
             "StartTime": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
             }
         }

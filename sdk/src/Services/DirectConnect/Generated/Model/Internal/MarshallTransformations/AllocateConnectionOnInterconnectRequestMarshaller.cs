@@ -96,7 +96,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVlan())
                 {
                     context.Writer.WritePropertyName("vlan");
-                    context.Writer.Write(publicRequest.Vlan);
+                    context.Writer.Write(publicRequest.Vlan.Value);
                 }
 
                 writer.WriteObjectEnd();

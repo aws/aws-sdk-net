@@ -78,9 +78,9 @@ namespace Amazon.CloudControlApi.Model
         /// When the resource operation request was initiated.
         /// </para>
         /// </summary>
-        public DateTime EventTime
+        public DateTime? EventTime
         {
-            get { return this._eventTime.GetValueOrDefault(); }
+            get { return this._eventTime; }
             set { this._eventTime = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.CloudControlApi.Model
         /// When to next request the status of this resource operation request.
         /// </para>
         /// </summary>
-        public DateTime RetryAfter
+        public DateTime? RetryAfter
         {
-            get { return this._retryAfter.GetValueOrDefault(); }
+            get { return this._retryAfter; }
             set { this._retryAfter = value; }
         }
 

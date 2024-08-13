@@ -68,25 +68,25 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bluetooth", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Bluetooth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("gps", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Gps = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("nfc", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Nfc = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("wifi", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Wifi = unmarshaller.Unmarshall(context);
                     continue;
                 }

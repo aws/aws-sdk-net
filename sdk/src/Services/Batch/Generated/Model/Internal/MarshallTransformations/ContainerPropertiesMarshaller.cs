@@ -146,7 +146,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
-                context.Writer.Write(requestObject.Memory);
+                context.Writer.Write(requestObject.Memory.Value);
             }
 
             if(requestObject.IsSetMountPoints())
@@ -179,13 +179,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("privileged");
-                context.Writer.Write(requestObject.Privileged);
+                context.Writer.Write(requestObject.Privileged.Value);
             }
 
             if(requestObject.IsSetReadonlyRootFilesystem())
             {
                 context.Writer.WritePropertyName("readonlyRootFilesystem");
-                context.Writer.Write(requestObject.ReadonlyRootFilesystem);
+                context.Writer.Write(requestObject.ReadonlyRootFilesystem.Value);
             }
 
             if(requestObject.IsSetRepositoryCredentials())
@@ -267,7 +267,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVcpus())
             {
                 context.Writer.WritePropertyName("vcpus");
-                context.Writer.Write(requestObject.Vcpus);
+                context.Writer.Write(requestObject.Vcpus.Value);
             }
 
             if(requestObject.IsSetVolumes())

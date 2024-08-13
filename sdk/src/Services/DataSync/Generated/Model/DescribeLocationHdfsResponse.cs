@@ -91,9 +91,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1048576, Max=1073741824)]
-        public int BlockSize
+        public int? BlockSize
         {
-            get { return this._blockSize.GetValueOrDefault(); }
+            get { return this._blockSize; }
             set { this._blockSize = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.DataSync.Model
         /// The time that the HDFS location was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
-        public int ReplicationFactor
+        public int? ReplicationFactor
         {
-            get { return this._replicationFactor.GetValueOrDefault(); }
+            get { return this._replicationFactor; }
             set { this._replicationFactor = value; }
         }
 

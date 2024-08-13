@@ -42,9 +42,9 @@ namespace Amazon.Kafka.Model
         /// SASL/SCRAM authentication is on or off for VPC connectivity.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

@@ -54,13 +54,13 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("SnowballLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.SnowballLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SnowballsInUse", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.SnowballsInUse = unmarshaller.Unmarshall(context);
                     continue;
                 }

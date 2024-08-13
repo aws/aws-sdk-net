@@ -139,9 +139,9 @@ namespace Amazon.DynamoDBv2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.DynamoDBv2.Model
         /// table.
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 
@@ -316,9 +316,9 @@ namespace Amazon.DynamoDBv2.Model
         /// every six hours. Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
-        public long ItemCount
+        public long? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -708,9 +708,9 @@ namespace Amazon.DynamoDBv2.Model
         /// every six hours. Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
-        public long TableSizeBytes
+        public long? TableSizeBytes
         {
-            get { return this._tableSizeBytes.GetValueOrDefault(); }
+            get { return this._tableSizeBytes; }
             set { this._tableSizeBytes = value; }
         }
 

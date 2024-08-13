@@ -38,7 +38,9 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private string _actionGroupName;
         private string _apiPath;
+        private ExecutionType _executionType;
         private string _function;
+        private string _invocationId;
         private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private RequestBody _requestBody;
         private string _verb;
@@ -82,6 +84,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionType. 
+        /// <para>
+        /// How fulfillment of the action is handled. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/action-handle.html">Handling
+        /// fulfillment of the action</a>.
+        /// </para>
+        /// </summary>
+        public ExecutionType ExecutionType
+        {
+            get { return this._executionType; }
+            set { this._executionType = value; }
+        }
+
+        // Check to see if ExecutionType property is set
+        internal bool IsSetExecutionType()
+        {
+            return this._executionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Function. 
         /// <para>
         /// The function in the action group to call.
@@ -98,6 +119,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetFunction()
         {
             return this._function != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationId. 
+        /// <para>
+        /// The unique identifier of the invocation. Only returned if the <c>executionType</c>
+        /// is <c>RETURN_CONTROL</c>.
+        /// </para>
+        /// </summary>
+        public string InvocationId
+        {
+            get { return this._invocationId; }
+            set { this._invocationId = value; }
+        }
+
+        // Check to see if InvocationId property is set
+        internal bool IsSetInvocationId()
+        {
+            return this._invocationId != null;
         }
 
         /// <summary>

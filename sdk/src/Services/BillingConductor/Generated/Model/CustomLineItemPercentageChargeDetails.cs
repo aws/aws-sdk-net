@@ -65,9 +65,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
-        public double PercentageValue
+        public double? PercentageValue
         {
-            get { return this._percentageValue.GetValueOrDefault(); }
+            get { return this._percentageValue; }
             set { this._percentageValue = value; }
         }
 

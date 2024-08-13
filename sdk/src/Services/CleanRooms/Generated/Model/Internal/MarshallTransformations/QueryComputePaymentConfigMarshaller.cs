@@ -51,7 +51,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsResponsible())
             {
                 context.Writer.WritePropertyName("isResponsible");
-                context.Writer.Write(requestObject.IsResponsible);
+                context.Writer.Write(requestObject.IsResponsible.Value);
             }
 
         }

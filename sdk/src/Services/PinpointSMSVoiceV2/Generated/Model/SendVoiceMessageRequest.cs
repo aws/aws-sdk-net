@@ -31,9 +31,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the SendVoiceMessage operation.
-    /// Allows you to send a request that sends a voice message through Amazon Pinpoint. This
-    /// operation uses <a href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert
-    /// a text script into a voice message.
+    /// Allows you to send a request that sends a voice message. This operation uses <a href="http://aws.amazon.com/polly/">Amazon
+    /// Polly</a> to convert a text script into a voice message.
     /// </summary>
     public partial class SendVoiceMessageRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -115,9 +114,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// recipient.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 
@@ -239,9 +238,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=259200)]
-        public int TimeToLive
+        public int? TimeToLive
         {
-            get { return this._timeToLive.GetValueOrDefault(); }
+            get { return this._timeToLive; }
             set { this._timeToLive = value; }
         }
 

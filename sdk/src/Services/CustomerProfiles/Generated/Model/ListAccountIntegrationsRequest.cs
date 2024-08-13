@@ -46,9 +46,9 @@ namespace Amazon.CustomerProfiles.Model
         /// Boolean to indicate if hidden integration should be returned. Defaults to <c>False</c>.
         /// </para>
         /// </summary>
-        public bool IncludeHidden
+        public bool? IncludeHidden
         {
-            get { return this._includeHidden.GetValueOrDefault(); }
+            get { return this._includeHidden; }
             set { this._includeHidden = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

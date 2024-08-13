@@ -51,7 +51,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("length");
-                context.Writer.Write(requestObject.Length);
+                context.Writer.Write(requestObject.Length.Value);
             }
 
             if(requestObject.IsSetName())
@@ -63,7 +63,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                context.Writer.Write(requestObject.Offset.Value);
             }
 
         }

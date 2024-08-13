@@ -86,7 +86,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OccurredAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.OccurredAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

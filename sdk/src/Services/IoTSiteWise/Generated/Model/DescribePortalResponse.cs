@@ -177,9 +177,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime PortalCreationDate
+        public DateTime? PortalCreationDate
         {
-            get { return this._portalCreationDate.GetValueOrDefault(); }
+            get { return this._portalCreationDate; }
             set { this._portalCreationDate = value; }
         }
 
@@ -234,9 +234,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime PortalLastUpdateDate
+        public DateTime? PortalLastUpdateDate
         {
-            get { return this._portalLastUpdateDate.GetValueOrDefault(); }
+            get { return this._portalLastUpdateDate; }
             set { this._portalLastUpdateDate = value; }
         }
 

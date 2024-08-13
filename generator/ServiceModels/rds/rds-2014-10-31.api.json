@@ -10,7 +10,8 @@
     "serviceId":"RDS",
     "signatureVersion":"v4",
     "uid":"rds-2014-10-31",
-    "xmlNamespace":"http://rds.amazonaws.com/doc/2014-10-31/"
+    "xmlNamespace":"http://rds.amazonaws.com/doc/2014-10-31/",
+    "auth":["aws.auth#sigv4"]
   },
   "operations":{
     "AddRoleToDBCluster":{
@@ -3875,6 +3876,7 @@
         "DBClusterIdentifier":{"shape":"String"},
         "ComputeRedundancy":{"shape":"IntegerOptional"},
         "MaxACU":{"shape":"DoubleOptional"},
+        "MinACU":{"shape":"DoubleOptional"},
         "PubliclyAccessible":{"shape":"BooleanOptional"}
       }
     },
@@ -5425,6 +5427,7 @@
         "DBShardGroupIdentifier":{"shape":"DBShardGroupIdentifier"},
         "DBClusterIdentifier":{"shape":"String"},
         "MaxACU":{"shape":"DoubleOptional"},
+        "MinACU":{"shape":"DoubleOptional"},
         "ComputeRedundancy":{"shape":"IntegerOptional"},
         "Status":{"shape":"String"},
         "PubliclyAccessible":{"shape":"BooleanOptional"},
@@ -8060,7 +8063,8 @@
       "required":["DBShardGroupIdentifier"],
       "members":{
         "DBShardGroupIdentifier":{"shape":"DBShardGroupIdentifier"},
-        "MaxACU":{"shape":"DoubleOptional"}
+        "MaxACU":{"shape":"DoubleOptional"},
+        "MinACU":{"shape":"DoubleOptional"}
       }
     },
     "ModifyDBSnapshotAttributeMessage":{

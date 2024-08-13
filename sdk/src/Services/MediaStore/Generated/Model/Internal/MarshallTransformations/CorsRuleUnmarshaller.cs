@@ -92,7 +92,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxAgeSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAgeSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

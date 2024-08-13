@@ -79,9 +79,9 @@ namespace Amazon.ServiceCatalog.Model
         /// the provisioning parameters. 
         /// </para>
         /// </summary>
-        public bool IncludeProvisioningArtifactParameters
+        public bool? IncludeProvisioningArtifactParameters
         {
-            get { return this._includeProvisioningArtifactParameters.GetValueOrDefault(); }
+            get { return this._includeProvisioningArtifactParameters; }
             set { this._includeProvisioningArtifactParameters = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.ServiceCatalog.Model
         /// Indicates whether a verbose level of detail is enabled.
         /// </para>
         /// </summary>
-        public bool Verbose
+        public bool? Verbose
         {
-            get { return this._verbose.GetValueOrDefault(); }
+            get { return this._verbose; }
             set { this._verbose = value; }
         }
 

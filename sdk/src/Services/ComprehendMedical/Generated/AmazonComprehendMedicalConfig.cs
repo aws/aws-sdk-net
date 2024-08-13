@@ -21,6 +21,8 @@ using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Endpoints;
 using Amazon.ComprehendMedical.Internal;
 
 namespace Amazon.ComprehendMedical
@@ -32,7 +34,10 @@ namespace Amazon.ComprehendMedical
     public partial class AmazonComprehendMedicalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ComprehendMedical", "3.7.300.109");
+            InternalSDKUtils.BuildUserAgentString("ComprehendMedical", "4.0.0.0");
+
+        private static readonly AmazonComprehendMedicalEndpointResolver EndpointResolver =
+            new AmazonComprehendMedicalEndpointResolver();
 
         private string _userAgent = UserAgentString;
         ///<summary>
@@ -88,6 +93,25 @@ namespace Amazon.ComprehendMedical
                 return _userAgent;
             }
         }
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            var requestContext = new RequestContext(false, new AWS4Signer())
+            {
+                ClientConfig = this,
+                OriginalRequest = parameters.Request,
+                Request = new DefaultRequest(parameters.Request, ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            return EndpointResolver.GetEndpoint(executionContext);
+        }
+
 
     }
 }

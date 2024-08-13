@@ -146,9 +146,9 @@ namespace Amazon.Kendra.Model
         /// 100 of the items.
         /// </para>
         /// </summary>
-        public int TotalNumberOfResults
+        public int? TotalNumberOfResults
         {
-            get { return this._totalNumberOfResults.GetValueOrDefault(); }
+            get { return this._totalNumberOfResults; }
             set { this._totalNumberOfResults = value; }
         }
 

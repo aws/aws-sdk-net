@@ -155,19 +155,19 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEbsRootVolumeIops())
                 {
                     context.Writer.WritePropertyName("EbsRootVolumeIops");
-                    context.Writer.Write(publicRequest.EbsRootVolumeIops);
+                    context.Writer.Write(publicRequest.EbsRootVolumeIops.Value);
                 }
 
                 if(publicRequest.IsSetEbsRootVolumeSize())
                 {
                     context.Writer.WritePropertyName("EbsRootVolumeSize");
-                    context.Writer.Write(publicRequest.EbsRootVolumeSize);
+                    context.Writer.Write(publicRequest.EbsRootVolumeSize.Value);
                 }
 
                 if(publicRequest.IsSetEbsRootVolumeThroughput())
                 {
                     context.Writer.WritePropertyName("EbsRootVolumeThroughput");
-                    context.Writer.Write(publicRequest.EbsRootVolumeThroughput);
+                    context.Writer.Write(publicRequest.EbsRootVolumeThroughput.Value);
                 }
 
                 if(publicRequest.IsSetInstances())
@@ -298,7 +298,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStepConcurrencyLevel())
                 {
                     context.Writer.WritePropertyName("StepConcurrencyLevel");
-                    context.Writer.Write(publicRequest.StepConcurrencyLevel);
+                    context.Writer.Write(publicRequest.StepConcurrencyLevel.Value);
                 }
 
                 if(publicRequest.IsSetSteps())
@@ -347,7 +347,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVisibleToAllUsers())
                 {
                     context.Writer.WritePropertyName("VisibleToAllUsers");
-                    context.Writer.Write(publicRequest.VisibleToAllUsers);
+                    context.Writer.Write(publicRequest.VisibleToAllUsers.Value);
                 }
 
                 writer.WriteObjectEnd();

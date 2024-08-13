@@ -42,9 +42,9 @@ namespace Amazon.Snowball.Model
         /// Enables the Wi-Fi adapter on an Snowcone device.
         /// </para>
         /// </summary>
-        public bool IsWifiEnabled
+        public bool? IsWifiEnabled
         {
-            get { return this._isWifiEnabled.GetValueOrDefault(); }
+            get { return this._isWifiEnabled; }
             set { this._isWifiEnabled = value; }
         }
 

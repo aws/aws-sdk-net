@@ -72,7 +72,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDenyAllTrafficToEndpoint())
                 {
                     context.Writer.WritePropertyName("DenyAllTrafficToEndpoint");
-                    context.Writer.Write(publicRequest.DenyAllTrafficToEndpoint);
+                    context.Writer.Write(publicRequest.DenyAllTrafficToEndpoint.Value);
                 }
 
                 if(publicRequest.IsSetDestinationAddresses())

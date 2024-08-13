@@ -62,9 +62,9 @@ namespace Amazon.QuickSight.Model
         /// The static value of the numeric range filter.
         /// </para>
         /// </summary>
-        public double StaticValue
+        public double? StaticValue
         {
-            get { return this._staticValue.GetValueOrDefault(); }
+            get { return this._staticValue; }
             set { this._staticValue = value; }
         }
 

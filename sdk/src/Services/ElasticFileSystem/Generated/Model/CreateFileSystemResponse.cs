@@ -102,9 +102,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// A Boolean value that, if true, indicates that the file system is encrypted.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -275,9 +275,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int NumberOfMountTargets
+        public int? NumberOfMountTargets
         {
-            get { return this._numberOfMountTargets.GetValueOrDefault(); }
+            get { return this._numberOfMountTargets; }
             set { this._numberOfMountTargets = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public double ProvisionedThroughputInMibps
+        public double? ProvisionedThroughputInMibps
         {
-            get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }
+            get { return this._provisionedThroughputInMibps; }
             set { this._provisionedThroughputInMibps = value; }
         }
 

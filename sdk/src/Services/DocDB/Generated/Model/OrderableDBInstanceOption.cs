@@ -156,9 +156,9 @@ namespace Amazon.DocDB.Model
         /// Indicates whether an instance is in a virtual private cloud (VPC).
         /// </para>
         /// </summary>
-        public bool Vpc
+        public bool? Vpc
         {
-            get { return this._vpc.GetValueOrDefault(); }
+            get { return this._vpc; }
             set { this._vpc = value; }
         }
 

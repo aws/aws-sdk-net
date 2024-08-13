@@ -87,9 +87,9 @@ namespace Amazon.Polly.Model
         /// Date lexicon was last modified (a timestamp value).
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Polly.Model
         /// Number of lexemes in the lexicon.
         /// </para>
         /// </summary>
-        public int LexemesCount
+        public int? LexemesCount
         {
-            get { return this._lexemesCount.GetValueOrDefault(); }
+            get { return this._lexemesCount; }
             set { this._lexemesCount = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Polly.Model
         /// Total size of the lexicon, in characters.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

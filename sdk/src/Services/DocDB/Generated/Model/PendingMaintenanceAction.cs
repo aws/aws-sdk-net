@@ -67,9 +67,9 @@ namespace Amazon.DocDB.Model
         /// this date is specified, any <c>next-maintenance</c> opt-in requests are ignored.
         /// </para>
         /// </summary>
-        public DateTime AutoAppliedAfterDate
+        public DateTime? AutoAppliedAfterDate
         {
-            get { return this._autoAppliedAfterDate.GetValueOrDefault(); }
+            get { return this._autoAppliedAfterDate; }
             set { this._autoAppliedAfterDate = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.DocDB.Model
         /// The effective date when the pending maintenance action is applied to the resource.
         /// </para>
         /// </summary>
-        public DateTime CurrentApplyDate
+        public DateTime? CurrentApplyDate
         {
-            get { return this._currentApplyDate.GetValueOrDefault(); }
+            get { return this._currentApplyDate; }
             set { this._currentApplyDate = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.DocDB.Model
         /// resource. If this date is specified, any <c>immediate</c> opt-in requests are ignored.
         /// </para>
         /// </summary>
-        public DateTime ForcedApplyDate
+        public DateTime? ForcedApplyDate
         {
-            get { return this._forcedApplyDate.GetValueOrDefault(); }
+            get { return this._forcedApplyDate; }
             set { this._forcedApplyDate = value; }
         }
 

@@ -233,9 +233,9 @@ namespace Amazon.Kinesis.Model
         /// is for the oldest untrimmed data record (TRIM_HORIZON).
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

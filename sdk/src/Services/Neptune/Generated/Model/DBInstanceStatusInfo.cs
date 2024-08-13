@@ -65,9 +65,9 @@ namespace Amazon.Neptune.Model
         /// instance is in an error state.
         /// </para>
         /// </summary>
-        public bool Normal
+        public bool? Normal
         {
-            get { return this._normal.GetValueOrDefault(); }
+            get { return this._normal; }
             set { this._normal = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExpiresAt
+        public DateTime? ExpiresAt
         {
-            get { return this._expiresAt.GetValueOrDefault(); }
+            get { return this._expiresAt; }
             set { this._expiresAt = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.ManagedGrafana.Model
         /// The last time the token was used to authorize a Grafana HTTP API.
         /// </para>
         /// </summary>
-        public DateTime LastUsedAt
+        public DateTime? LastUsedAt
         {
-            get { return this._lastUsedAt.GetValueOrDefault(); }
+            get { return this._lastUsedAt; }
             set { this._lastUsedAt = value; }
         }
 

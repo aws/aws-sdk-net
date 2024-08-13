@@ -70,9 +70,9 @@ namespace Amazon.StorageGateway.Model
         /// YYYY-MM-DD'T'HH:MM:SS'Z' format.
         /// </para>
         /// </summary>
-        public DateTime TapeRecoveryPointTime
+        public DateTime? TapeRecoveryPointTime
         {
-            get { return this._tapeRecoveryPointTime.GetValueOrDefault(); }
+            get { return this._tapeRecoveryPointTime; }
             set { this._tapeRecoveryPointTime = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.StorageGateway.Model
         /// The size, in bytes, of the virtual tapes to recover.
         /// </para>
         /// </summary>
-        public long TapeSizeInBytes
+        public long? TapeSizeInBytes
         {
-            get { return this._tapeSizeInBytes.GetValueOrDefault(); }
+            get { return this._tapeSizeInBytes; }
             set { this._tapeSizeInBytes = value; }
         }
 

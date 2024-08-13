@@ -51,7 +51,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationInSeconds())
             {
                 context.Writer.WritePropertyName("DurationInSeconds");
-                context.Writer.Write(requestObject.DurationInSeconds);
+                context.Writer.Write(requestObject.DurationInSeconds.Value);
             }
 
             if(requestObject.IsSetScheduleExpression())

@@ -51,13 +51,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIgnoreFilterField())
             {
                 context.Writer.WritePropertyName("ignoreFilterField");
-                context.Writer.Write(requestObject.IgnoreFilterField);
+                context.Writer.Write(requestObject.IgnoreFilterField.Value);
             }
 
             if(requestObject.IsSetIgnoreQualField())
             {
                 context.Writer.WritePropertyName("ignoreQualField");
-                context.Writer.Write(requestObject.IgnoreQualField);
+                context.Writer.Write(requestObject.IgnoreQualField.Value);
             }
 
         }

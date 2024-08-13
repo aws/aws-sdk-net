@@ -142,9 +142,9 @@ namespace Amazon.Elasticsearch.Model
         /// The last time that the status of the configuration change was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.Elasticsearch.Model
         /// The time at which the configuration change is made on the domain.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -216,9 +216,9 @@ namespace Amazon.Elasticsearch.Model
         /// The total number of stages required for the configuration change.
         /// </para>
         /// </summary>
-        public int TotalNumberOfStages
+        public int? TotalNumberOfStages
         {
-            get { return this._totalNumberOfStages.GetValueOrDefault(); }
+            get { return this._totalNumberOfStages; }
             set { this._totalNumberOfStages = value; }
         }
 

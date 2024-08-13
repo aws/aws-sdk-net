@@ -75,9 +75,9 @@ namespace Amazon.PI.Model
         /// Specifies whether or not to include the list of tags in the response.
         /// </para>
         /// </summary>
-        public bool ListTags
+        public bool? ListTags
         {
-            get { return this._listTags.GetValueOrDefault(); }
+            get { return this._listTags; }
             set { this._listTags = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.PI.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

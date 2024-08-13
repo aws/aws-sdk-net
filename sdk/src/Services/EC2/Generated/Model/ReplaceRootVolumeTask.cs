@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// replacement task completes.
         /// </para>
         /// </summary>
-        public bool DeleteReplacedRootVolume
+        public bool? DeleteReplacedRootVolume
         {
-            get { return this._deleteReplacedRootVolume.GetValueOrDefault(); }
+            get { return this._deleteReplacedRootVolume; }
             set { this._deleteReplacedRootVolume = value; }
         }
 

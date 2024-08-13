@@ -68,9 +68,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -106,6 +106,43 @@ namespace Amazon.Connect.Model
         /// The list of resource types to be used to search tags from. If not provided or if any
         /// empty list is provided, this API will search from all supported resource types.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Supported resource types</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AGENT
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ROUTING_PROFILE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// STANDARD_QUEUE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SECURITY_PROFILE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OPERATING_HOURS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PROMPT
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CONTACT_FLOW
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FLOW_MODULE
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> ResourceTypes
         {

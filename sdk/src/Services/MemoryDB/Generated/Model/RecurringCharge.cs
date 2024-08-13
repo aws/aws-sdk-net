@@ -43,9 +43,9 @@ namespace Amazon.MemoryDB.Model
         /// The amount of the recurring charge to run this reserved node.
         /// </para>
         /// </summary>
-        public double RecurringChargeAmount
+        public double? RecurringChargeAmount
         {
-            get { return this._recurringChargeAmount.GetValueOrDefault(); }
+            get { return this._recurringChargeAmount; }
             set { this._recurringChargeAmount = value; }
         }
 

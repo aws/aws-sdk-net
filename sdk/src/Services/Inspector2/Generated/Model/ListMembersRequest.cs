@@ -49,9 +49,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Inspector2.Model
         /// all members within the organization if <c>False</c>.
         /// </para>
         /// </summary>
-        public bool OnlyAssociated
+        public bool? OnlyAssociated
         {
-            get { return this._onlyAssociated.GetValueOrDefault(); }
+            get { return this._onlyAssociated; }
             set { this._onlyAssociated = value; }
         }
 

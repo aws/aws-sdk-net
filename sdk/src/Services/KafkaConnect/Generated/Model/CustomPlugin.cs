@@ -64,9 +64,9 @@ namespace Amazon.KafkaConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=9223372036854775807)]
-        public long Revision
+        public long? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 

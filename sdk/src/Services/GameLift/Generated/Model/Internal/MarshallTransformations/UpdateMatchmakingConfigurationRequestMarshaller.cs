@@ -72,19 +72,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAcceptanceRequired())
                 {
                     context.Writer.WritePropertyName("AcceptanceRequired");
-                    context.Writer.Write(publicRequest.AcceptanceRequired);
+                    context.Writer.Write(publicRequest.AcceptanceRequired.Value);
                 }
 
                 if(publicRequest.IsSetAcceptanceTimeoutSeconds())
                 {
                     context.Writer.WritePropertyName("AcceptanceTimeoutSeconds");
-                    context.Writer.Write(publicRequest.AcceptanceTimeoutSeconds);
+                    context.Writer.Write(publicRequest.AcceptanceTimeoutSeconds.Value);
                 }
 
                 if(publicRequest.IsSetAdditionalPlayerCount())
                 {
                     context.Writer.WritePropertyName("AdditionalPlayerCount");
-                    context.Writer.Write(publicRequest.AdditionalPlayerCount);
+                    context.Writer.Write(publicRequest.AdditionalPlayerCount.Value);
                 }
 
                 if(publicRequest.IsSetBackfillMode())
@@ -159,7 +159,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRequestTimeoutSeconds())
                 {
                     context.Writer.WritePropertyName("RequestTimeoutSeconds");
-                    context.Writer.Write(publicRequest.RequestTimeoutSeconds);
+                    context.Writer.Write(publicRequest.RequestTimeoutSeconds.Value);
                 }
 
                 if(publicRequest.IsSetRuleSetName())

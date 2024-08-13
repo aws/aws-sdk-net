@@ -60,7 +60,7 @@ namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Success", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Success = unmarshaller.Unmarshall(context);
                     continue;
                 }

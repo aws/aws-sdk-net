@@ -51,13 +51,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Bitrate);
+                    context.Writer.Write(requestObject.Bitrate.Value);
                 }
             }
 
@@ -70,7 +70,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDialnorm())
             {
                 context.Writer.WritePropertyName("dialnorm");
-                context.Writer.Write(requestObject.Dialnorm);
+                context.Writer.Write(requestObject.Dialnorm.Value);
             }
 
             if(requestObject.IsSetDrcLine())
@@ -88,26 +88,26 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeightTrim())
             {
                 context.Writer.WritePropertyName("heightTrim");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.HeightTrim))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.HeightTrim.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HeightTrim));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HeightTrim.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.HeightTrim);
+                    context.Writer.Write(requestObject.HeightTrim.Value);
                 }
             }
 
             if(requestObject.IsSetSurroundTrim())
             {
                 context.Writer.WritePropertyName("surroundTrim");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.SurroundTrim))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SurroundTrim.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SurroundTrim));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SurroundTrim.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SurroundTrim);
+                    context.Writer.Write(requestObject.SurroundTrim.Value);
                 }
             }
 

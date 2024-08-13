@@ -82,9 +82,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// is also ranked as <c>1</c> in the same response.
         /// </para>
         /// </summary>
-        public int Rank
+        public int? Rank
         {
-            get { return this._rank.GetValueOrDefault(); }
+            get { return this._rank; }
             set { this._rank = value; }
         }
 

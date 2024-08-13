@@ -68,7 +68,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("mtu", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Mtu = unmarshaller.Unmarshall(context);
                     continue;
                 }

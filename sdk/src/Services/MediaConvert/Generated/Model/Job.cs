@@ -160,9 +160,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CreatedAt. The time, in Unix epoch format in seconds, when
         /// the job got created.
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. Error code for the job
         /// </summary>
-        public int ErrorCode
+        public int? ErrorCode
         {
-            get { return this._errorCode.GetValueOrDefault(); }
+            get { return this._errorCode; }
             set { this._errorCode = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.MediaConvert.Model
         /// MP4, and MXF. For some jobs, the service can't provide information about job progress.
         /// In those cases, jobPercentComplete returns a null value.
         /// </summary>
-        public int JobPercentComplete
+        public int? JobPercentComplete
         {
-            get { return this._jobPercentComplete.GetValueOrDefault(); }
+            get { return this._jobPercentComplete; }
             set { this._jobPercentComplete = value; }
         }
 
@@ -322,9 +322,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Priority. Relative priority on the job.
         /// </summary>
         [AWSProperty(Min=-50, Max=50)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -370,9 +370,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property RetryCount. The number of times that the service automatically
         /// attempted to process your job after encountering an error.
         /// </summary>
-        public int RetryCount
+        public int? RetryCount
         {
-            get { return this._retryCount.GetValueOrDefault(); }
+            get { return this._retryCount; }
             set { this._retryCount = value; }
         }
 

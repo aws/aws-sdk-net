@@ -43,9 +43,9 @@ namespace Amazon.S3Control.Model
         /// upload to the Outposts bucket.
         /// </para>
         /// </summary>
-        public int DaysAfterInitiation
+        public int? DaysAfterInitiation
         {
-            get { return this._daysAfterInitiation.GetValueOrDefault(); }
+            get { return this._daysAfterInitiation; }
             set { this._daysAfterInitiation = value; }
         }
 

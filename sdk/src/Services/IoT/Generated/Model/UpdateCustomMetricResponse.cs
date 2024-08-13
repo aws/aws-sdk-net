@@ -47,9 +47,9 @@ namespace Amazon.IoT.Model
         ///  The creation date of the custom metric in milliseconds since epoch. 
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IoT.Model
         ///  The time the custom metric was last modified in milliseconds since epoch. 
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

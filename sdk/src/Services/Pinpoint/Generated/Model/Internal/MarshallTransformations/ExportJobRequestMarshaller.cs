@@ -69,7 +69,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentVersion())
             {
                 context.Writer.WritePropertyName("SegmentVersion");
-                context.Writer.Write(requestObject.SegmentVersion);
+                context.Writer.Write(requestObject.SegmentVersion.Value);
             }
 
         }

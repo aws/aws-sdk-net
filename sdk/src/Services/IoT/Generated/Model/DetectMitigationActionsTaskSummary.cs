@@ -69,9 +69,9 @@ namespace Amazon.IoT.Model
         ///  Includes only active violations. 
         /// </para>
         /// </summary>
-        public bool OnlyActiveViolationsIncluded
+        public bool? OnlyActiveViolationsIncluded
         {
-            get { return this._onlyActiveViolationsIncluded.GetValueOrDefault(); }
+            get { return this._onlyActiveViolationsIncluded; }
             set { this._onlyActiveViolationsIncluded = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.IoT.Model
         ///  Includes suppressed alerts. 
         /// </para>
         /// </summary>
-        public bool SuppressedAlertsIncluded
+        public bool? SuppressedAlertsIncluded
         {
-            get { return this._suppressedAlertsIncluded.GetValueOrDefault(); }
+            get { return this._suppressedAlertsIncluded; }
             set { this._suppressedAlertsIncluded = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.IoT.Model
         ///  The date the task ended. 
         /// </para>
         /// </summary>
-        public DateTime TaskEndTime
+        public DateTime? TaskEndTime
         {
-            get { return this._taskEndTime.GetValueOrDefault(); }
+            get { return this._taskEndTime; }
             set { this._taskEndTime = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.IoT.Model
         ///  The date the task started. 
         /// </para>
         /// </summary>
-        public DateTime TaskStartTime
+        public DateTime? TaskStartTime
         {
-            get { return this._taskStartTime.GetValueOrDefault(); }
+            get { return this._taskStartTime; }
             set { this._taskStartTime = value; }
         }
 

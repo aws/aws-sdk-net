@@ -57,19 +57,19 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("LastFreshStart", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastFreshStart = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReputationMetricsEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ReputationMetricsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SendingEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SendingEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }

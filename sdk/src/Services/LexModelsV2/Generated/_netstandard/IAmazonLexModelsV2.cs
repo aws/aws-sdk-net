@@ -592,6 +592,11 @@ namespace Amazon.LexModelsV2
         /// <para>
         /// You can't create a resource policy statement that allows cross-account access.
         /// </para>
+        ///  
+        /// <para>
+        /// You need to add the <c>CreateResourcePolicy</c> or <c>UpdateResourcePolicy</c> action
+        /// to the bot role in order to call the API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourcePolicyStatement service method.</param>
         /// <param name="cancellationToken">
@@ -1215,6 +1220,12 @@ namespace Amazon.LexModelsV2
         /// from a policy, the policy is deleted. If you specify a statement ID that doesn't exist
         /// in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex
         /// returns an exception.
+        /// 
+        ///  
+        /// <para>
+        /// You need to add the <c>DeleteResourcePolicy</c> or <c>UpdateResourcePolicy</c> action
+        /// to the bot role in order to call the API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicyStatement service method.</param>
         /// <param name="cancellationToken">
@@ -4164,5 +4175,33 @@ namespace Amazon.LexModelsV2
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonLexModelsV2Config))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonLexModelsV2Config();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonLexModelsV2Config;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonLexModelsV2Config to create AmazonLexModelsV2Client");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonLexModelsV2Client(serviceClientConfig) :
+                    new AmazonLexModelsV2Client(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

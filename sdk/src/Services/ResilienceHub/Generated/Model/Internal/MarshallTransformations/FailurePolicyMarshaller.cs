@@ -51,13 +51,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRpoInSecs())
             {
                 context.Writer.WritePropertyName("rpoInSecs");
-                context.Writer.Write(requestObject.RpoInSecs);
+                context.Writer.Write(requestObject.RpoInSecs.Value);
             }
 
             if(requestObject.IsSetRtoInSecs())
             {
                 context.Writer.WritePropertyName("rtoInSecs");
-                context.Writer.Write(requestObject.RtoInSecs);
+                context.Writer.Write(requestObject.RtoInSecs.Value);
             }
 
         }

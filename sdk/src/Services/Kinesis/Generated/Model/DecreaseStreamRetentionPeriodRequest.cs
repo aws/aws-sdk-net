@@ -62,9 +62,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int RetentionPeriodHours
+        public int? RetentionPeriodHours
         {
-            get { return this._retentionPeriodHours.GetValueOrDefault(); }
+            get { return this._retentionPeriodHours; }
             set { this._retentionPeriodHours = value; }
         }
 

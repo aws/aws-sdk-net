@@ -68,7 +68,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("TotalNumberOfUnsupportedTimestamps", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfUnsupportedTimestamps = unmarshaller.Unmarshall(context);
                     continue;
                 }

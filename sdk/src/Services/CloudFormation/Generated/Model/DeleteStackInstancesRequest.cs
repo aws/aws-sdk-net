@@ -217,9 +217,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RetainStacks
+        public bool? RetainStacks
         {
-            get { return this._retainStacks.GetValueOrDefault(); }
+            get { return this._retainStacks; }
             set { this._retainStacks = value; }
         }
 

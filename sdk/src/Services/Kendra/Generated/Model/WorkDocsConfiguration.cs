@@ -59,9 +59,9 @@ namespace Amazon.Kendra.Model
         /// The default is set to <c>FALSE</c>.
         /// </para>
         /// </summary>
-        public bool CrawlComments
+        public bool? CrawlComments
         {
-            get { return this._crawlComments.GetValueOrDefault(); }
+            get { return this._crawlComments; }
             set { this._crawlComments = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.Kendra.Model
         /// Amazon Kendra to use the change log than to scan all of your documents in Amazon WorkDocs.
         /// </para>
         /// </summary>
-        public bool UseChangeLog
+        public bool? UseChangeLog
         {
-            get { return this._useChangeLog.GetValueOrDefault(); }
+            get { return this._useChangeLog; }
             set { this._useChangeLog = value; }
         }
 

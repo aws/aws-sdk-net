@@ -50,9 +50,9 @@ namespace Amazon.RoboMaker.Model
         /// 
         /// </para>
         /// </summary>
-        public int MaxConcurrency
+        public int? MaxConcurrency
         {
-            get { return this._maxConcurrency.GetValueOrDefault(); }
+            get { return this._maxConcurrency; }
             set { this._maxConcurrency = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.RoboMaker.Model
         /// the batch status will be <c>TimedOut</c>. 
         /// </para>
         /// </summary>
-        public long TimeoutInSeconds
+        public long? TimeoutInSeconds
         {
-            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            get { return this._timeoutInSeconds; }
             set { this._timeoutInSeconds = value; }
         }
 

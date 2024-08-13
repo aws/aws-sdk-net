@@ -108,9 +108,9 @@ namespace Amazon.EC2.Model
         /// The size of the disk image, in GiB.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

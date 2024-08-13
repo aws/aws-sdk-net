@@ -68,13 +68,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("OpenProactiveInsights", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenProactiveInsights = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OpenReactiveInsights", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenReactiveInsights = unmarshaller.Unmarshall(context);
                     continue;
                 }

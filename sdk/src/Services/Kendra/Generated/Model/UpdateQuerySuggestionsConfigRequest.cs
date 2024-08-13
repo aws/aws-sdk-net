@@ -112,9 +112,9 @@ namespace Amazon.Kendra.Model
         /// all queries.
         /// </para>
         /// </summary>
-        public bool IncludeQueriesWithoutUserInformation
+        public bool? IncludeQueriesWithoutUserInformation
         {
-            get { return this._includeQueriesWithoutUserInformation.GetValueOrDefault(); }
+            get { return this._includeQueriesWithoutUserInformation; }
             set { this._includeQueriesWithoutUserInformation = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MinimumNumberOfQueryingUsers
+        public int? MinimumNumberOfQueryingUsers
         {
-            get { return this._minimumNumberOfQueryingUsers.GetValueOrDefault(); }
+            get { return this._minimumNumberOfQueryingUsers; }
             set { this._minimumNumberOfQueryingUsers = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MinimumQueryCount
+        public int? MinimumQueryCount
         {
-            get { return this._minimumQueryCount.GetValueOrDefault(); }
+            get { return this._minimumQueryCount; }
             set { this._minimumQueryCount = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.Kendra.Model
         /// By default, Amazon Kendra sets this to 180.
         /// </para>
         /// </summary>
-        public int QueryLogLookBackWindowInDays
+        public int? QueryLogLookBackWindowInDays
         {
-            get { return this._queryLogLookBackWindowInDays.GetValueOrDefault(); }
+            get { return this._queryLogLookBackWindowInDays; }
             set { this._queryLogLookBackWindowInDays = value; }
         }
 

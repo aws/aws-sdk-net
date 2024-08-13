@@ -45,9 +45,9 @@ namespace Amazon.FMS.Model
         /// be managed by the Firewall Manager default administrator.
         /// </para>
         /// </summary>
-        public bool AllPolicyTypesEnabled
+        public bool? AllPolicyTypesEnabled
         {
-            get { return this._allPolicyTypesEnabled.GetValueOrDefault(); }
+            get { return this._allPolicyTypesEnabled; }
             set { this._allPolicyTypesEnabled = value; }
         }
 

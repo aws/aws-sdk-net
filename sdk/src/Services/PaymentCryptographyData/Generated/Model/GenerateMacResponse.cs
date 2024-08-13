@@ -88,7 +88,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The MAC cryptogram generated within Amazon Web Services Payment Cryptography.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=128)]
         public string Mac
         {
             get { return this._mac; }

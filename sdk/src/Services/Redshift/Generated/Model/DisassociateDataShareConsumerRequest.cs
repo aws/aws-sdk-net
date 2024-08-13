@@ -106,9 +106,9 @@ namespace Amazon.Redshift.Model
         /// account.
         /// </para>
         /// </summary>
-        public bool DisassociateEntireAccount
+        public bool? DisassociateEntireAccount
         {
-            get { return this._disassociateEntireAccount.GetValueOrDefault(); }
+            get { return this._disassociateEntireAccount; }
             set { this._disassociateEntireAccount = value; }
         }
 

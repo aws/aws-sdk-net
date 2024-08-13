@@ -98,9 +98,9 @@ namespace Amazon.EC2.Model
         /// The time stamp when volume creation was initiated.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the volume is encrypted.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the volume was created using fast snapshot restore.
         /// </para>
         /// </summary>
-        public bool FastRestored
+        public bool? FastRestored
         {
-            get { return this._fastRestored.GetValueOrDefault(); }
+            get { return this._fastRestored; }
             set { this._fastRestored = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.EC2.Model
         /// rate at which the volume accumulates I/O credits for bursting.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether Amazon EBS Multi-Attach is enabled.
         /// </para>
         /// </summary>
-        public bool MultiAttachEnabled
+        public bool? MultiAttachEnabled
         {
-            get { return this._multiAttachEnabled.GetValueOrDefault(); }
+            get { return this._multiAttachEnabled; }
             set { this._multiAttachEnabled = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.EC2.Model
         /// The size of the volume, in GiBs.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.EC2.Model
         /// The throughput that the volume supports, in MiB/s.
         /// </para>
         /// </summary>
-        public int Throughput
+        public int? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 

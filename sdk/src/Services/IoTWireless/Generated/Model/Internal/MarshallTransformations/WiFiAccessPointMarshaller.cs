@@ -57,7 +57,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRss())
             {
                 context.Writer.WritePropertyName("Rss");
-                context.Writer.Write(requestObject.Rss);
+                context.Writer.Write(requestObject.Rss.Value);
             }
 
         }

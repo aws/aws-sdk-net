@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.AWSSupport
@@ -90,8 +91,8 @@ namespace Amazon.AWSSupport
     ///  </li> </ul> 
     /// <para>
     /// You can also use the Amazon Web Services Support API to call the Trusted Advisor operations.
-    /// For more information, see <a href="https://docs.aws.amazon.com/">Trusted Advisor</a>
-    /// in the <i>Amazon Web Services Support User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html">Trusted
+    /// Advisor</a> in the <i>Amazon Web Services Support User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -1518,16 +1519,8 @@ namespace Amazon.AWSSupport
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonAWSSupportEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

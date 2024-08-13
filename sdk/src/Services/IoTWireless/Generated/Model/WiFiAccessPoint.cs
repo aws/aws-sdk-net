@@ -63,9 +63,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-128, Max=0)]
-        public int Rss
+        public int? Rss
         {
-            get { return this._rss.GetValueOrDefault(); }
+            get { return this._rss; }
             set { this._rss = value; }
         }
 

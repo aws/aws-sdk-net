@@ -57,13 +57,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricThreshold())
             {
                 context.Writer.WritePropertyName("MetricThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricThreshold);
+                    context.Writer.Write(requestObject.MetricThreshold.Value);
                 }
             }
 

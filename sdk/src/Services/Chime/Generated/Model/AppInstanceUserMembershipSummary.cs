@@ -43,9 +43,9 @@ namespace Amazon.Chime.Model
         /// The time at which a message was last read.
         /// </para>
         /// </summary>
-        public DateTime ReadMarkerTimestamp
+        public DateTime? ReadMarkerTimestamp
         {
-            get { return this._readMarkerTimestamp.GetValueOrDefault(); }
+            get { return this._readMarkerTimestamp; }
             set { this._readMarkerTimestamp = value; }
         }
 

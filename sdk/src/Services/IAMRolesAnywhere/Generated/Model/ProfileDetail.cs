@@ -34,6 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class ProfileDetail
     {
+        private bool? _acceptRoleSessionName;
         private List<AttributeMapping> _attributeMappings = AWSConfigs.InitializeCollections ? new List<AttributeMapping>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
@@ -47,6 +48,25 @@ namespace Amazon.IAMRolesAnywhere.Model
         private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionPolicy;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AcceptRoleSessionName. 
+        /// <para>
+        /// Used to determine if a custom role session name will be accepted in a temporary credential
+        /// request.
+        /// </para>
+        /// </summary>
+        public bool? AcceptRoleSessionName
+        {
+            get { return this._acceptRoleSessionName; }
+            set { this._acceptRoleSessionName = value; }
+        }
+
+        // Check to see if AcceptRoleSessionName property is set
+        internal bool IsSetAcceptRoleSessionName()
+        {
+            return this._acceptRoleSessionName.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AttributeMappings. 
@@ -72,9 +92,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ISO-8601 timestamp when the profile was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -111,9 +131,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// the default value will be 3600. 
         /// </para>
         /// </summary>
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 
@@ -129,9 +149,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Indicates whether the profile is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -224,9 +244,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// with this profile. 
         /// </para>
         /// </summary>
-        public bool RequireInstanceProperties
+        public bool? RequireInstanceProperties
         {
-            get { return this._requireInstanceProperties.GetValueOrDefault(); }
+            get { return this._requireInstanceProperties; }
             set { this._requireInstanceProperties = value; }
         }
 
@@ -280,9 +300,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ISO-8601 timestamp when the profile was last updated. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.SimpleEmail.Model
         /// Number of emails that have bounced.
         /// </para>
         /// </summary>
-        public long Bounces
+        public long? Bounces
         {
-            get { return this._bounces.GetValueOrDefault(); }
+            get { return this._bounces; }
             set { this._bounces = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SimpleEmail.Model
         /// Number of unwanted emails that were rejected by recipients.
         /// </para>
         /// </summary>
-        public long Complaints
+        public long? Complaints
         {
-            get { return this._complaints.GetValueOrDefault(); }
+            get { return this._complaints; }
             set { this._complaints = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SimpleEmail.Model
         /// Number of emails that have been sent.
         /// </para>
         /// </summary>
-        public long DeliveryAttempts
+        public long? DeliveryAttempts
         {
-            get { return this._deliveryAttempts.GetValueOrDefault(); }
+            get { return this._deliveryAttempts; }
             set { this._deliveryAttempts = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.SimpleEmail.Model
         /// Number of emails rejected by Amazon SES.
         /// </para>
         /// </summary>
-        public long Rejects
+        public long? Rejects
         {
-            get { return this._rejects.GetValueOrDefault(); }
+            get { return this._rejects; }
             set { this._rejects = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.SimpleEmail.Model
         /// Time of the data point.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

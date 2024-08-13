@@ -95,9 +95,9 @@ namespace Amazon.ECS.Model
         /// The exit code returned from the container.
         /// </para>
         /// </summary>
-        public int ExitCode
+        public int? ExitCode
         {
-            get { return this._exitCode.GetValueOrDefault(); }
+            get { return this._exitCode; }
             set { this._exitCode = value; }
         }
 

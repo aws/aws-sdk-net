@@ -72,7 +72,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreateSnapshotBeforeSchemaExtension())
                 {
                     context.Writer.WritePropertyName("CreateSnapshotBeforeSchemaExtension");
-                    context.Writer.Write(publicRequest.CreateSnapshotBeforeSchemaExtension);
+                    context.Writer.Write(publicRequest.CreateSnapshotBeforeSchemaExtension.Value);
                 }
 
                 if(publicRequest.IsSetDescription())

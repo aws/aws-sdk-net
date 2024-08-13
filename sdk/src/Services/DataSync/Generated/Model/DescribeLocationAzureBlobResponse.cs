@@ -127,9 +127,9 @@ namespace Amazon.DataSync.Model
         /// The time that your Azure Blob Storage transfer location was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

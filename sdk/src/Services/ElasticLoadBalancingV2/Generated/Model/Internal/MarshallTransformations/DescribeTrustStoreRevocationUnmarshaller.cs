@@ -57,13 +57,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("NumberOfRevokedEntries", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.NumberOfRevokedEntries = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RevocationId", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.RevocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }

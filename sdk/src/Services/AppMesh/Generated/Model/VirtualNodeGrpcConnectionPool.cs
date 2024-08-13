@@ -44,9 +44,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxRequests
+        public int? MaxRequests
         {
-            get { return this._maxRequests.GetValueOrDefault(); }
+            get { return this._maxRequests; }
             set { this._maxRequests = value; }
         }
 

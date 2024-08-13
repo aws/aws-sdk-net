@@ -55,9 +55,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// 
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 
@@ -163,15 +163,15 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property SelfManagedOptOutsEnabled. 
         /// <para>
         /// By default this is set to false. When an end recipient sends a message that begins
-        /// with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically
-        /// replies with a customizable message and adds the end recipient to the OptOutList.
-        /// When set to true you're responsible for responding to HELP and STOP requests. You're
-        /// also responsible for tracking and honoring opt-out requests.
+        /// with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and
+        /// Voice automatically replies with a customizable message and adds the end recipient
+        /// to the OptOutList. When set to true you're responsible for responding to HELP and
+        /// STOP requests. You're also responsible for tracking and honoring opt-out requests.
         /// </para>
         /// </summary>
-        public bool SelfManagedOptOutsEnabled
+        public bool? SelfManagedOptOutsEnabled
         {
-            get { return this._selfManagedOptOutsEnabled.GetValueOrDefault(); }
+            get { return this._selfManagedOptOutsEnabled; }
             set { this._selfManagedOptOutsEnabled = value; }
         }
 
@@ -184,12 +184,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property SharedRoutesEnabled. 
         /// <para>
-        /// Indicates whether shared routes are enabled for the pool.
+        /// Indicates whether shared routes are enabled for the pool. Set to false and only origination
+        /// identities in this pool are used to send messages. 
         /// </para>
         /// </summary>
-        public bool SharedRoutesEnabled
+        public bool? SharedRoutesEnabled
         {
-            get { return this._sharedRoutesEnabled.GetValueOrDefault(); }
+            get { return this._sharedRoutesEnabled; }
             set { this._sharedRoutesEnabled = value; }
         }
 
@@ -294,9 +295,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// from your end recipients.
         /// </para>
         /// </summary>
-        public bool TwoWayEnabled
+        public bool? TwoWayEnabled
         {
-            get { return this._twoWayEnabled.GetValueOrDefault(); }
+            get { return this._twoWayEnabled; }
             set { this._twoWayEnabled = value; }
         }
 

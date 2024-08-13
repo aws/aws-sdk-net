@@ -68,13 +68,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("numberOfDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unlimited", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Unlimited = unmarshaller.Unmarshall(context);
                     continue;
                 }

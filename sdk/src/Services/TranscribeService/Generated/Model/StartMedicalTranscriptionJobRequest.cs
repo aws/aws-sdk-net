@@ -219,9 +219,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=16000, Max=48000)]
-        public int MediaSampleRateHertz
+        public int? MediaSampleRateHertz
         {
-            get { return this._mediaSampleRateHertz.GetValueOrDefault(); }
+            get { return this._mediaSampleRateHertz; }
             set { this._mediaSampleRateHertz = value; }
         }
 

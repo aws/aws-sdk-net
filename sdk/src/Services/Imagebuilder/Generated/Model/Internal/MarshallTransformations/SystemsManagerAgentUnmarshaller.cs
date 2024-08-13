@@ -68,7 +68,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("uninstallAfterBuild", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UninstallAfterBuild = unmarshaller.Unmarshall(context);
                     continue;
                 }

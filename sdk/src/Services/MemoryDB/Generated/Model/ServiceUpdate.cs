@@ -49,9 +49,9 @@ namespace Amazon.MemoryDB.Model
         /// The date at which the service update will be automatically applied
         /// </para>
         /// </summary>
-        public DateTime AutoUpdateStartDate
+        public DateTime? AutoUpdateStartDate
         {
-            get { return this._autoUpdateStartDate.GetValueOrDefault(); }
+            get { return this._autoUpdateStartDate; }
             set { this._autoUpdateStartDate = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.MemoryDB.Model
         /// The date when the service update is initially available
         /// </para>
         /// </summary>
-        public DateTime ReleaseDate
+        public DateTime? ReleaseDate
         {
-            get { return this._releaseDate.GetValueOrDefault(); }
+            get { return this._releaseDate; }
             set { this._releaseDate = value; }
         }
 

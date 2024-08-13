@@ -103,9 +103,9 @@ namespace Amazon.Outposts.Model
         ///  Information about the power draw of an item. 
         /// </para>
         /// </summary>
-        public float PowerKva
+        public float? PowerKva
         {
-            get { return this._powerKva.GetValueOrDefault(); }
+            get { return this._powerKva; }
             set { this._powerKva = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.Outposts.Model
         ///  The weight of the item in pounds. 
         /// </para>
         /// </summary>
-        public int WeightLbs
+        public int? WeightLbs
         {
-            get { return this._weightLbs.GetValueOrDefault(); }
+            get { return this._weightLbs; }
             set { this._weightLbs = value; }
         }
 

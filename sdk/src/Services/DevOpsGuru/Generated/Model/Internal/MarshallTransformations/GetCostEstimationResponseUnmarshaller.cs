@@ -84,7 +84,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalCost", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.TotalCost = unmarshaller.Unmarshall(context);
                     continue;
                 }

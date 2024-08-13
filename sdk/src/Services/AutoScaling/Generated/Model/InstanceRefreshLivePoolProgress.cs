@@ -44,9 +44,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InstancesToUpdate
+        public int? InstancesToUpdate
         {
-            get { return this._instancesToUpdate.GetValueOrDefault(); }
+            get { return this._instancesToUpdate; }
             set { this._instancesToUpdate = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int PercentageComplete
+        public int? PercentageComplete
         {
-            get { return this._percentageComplete.GetValueOrDefault(); }
+            get { return this._percentageComplete; }
             set { this._percentageComplete = value; }
         }
 

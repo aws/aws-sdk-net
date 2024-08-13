@@ -109,9 +109,9 @@ namespace Amazon.Batch.Model
         /// networking</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
-        public bool HostNetwork
+        public bool? HostNetwork
         {
-            get { return this._hostNetwork.GetValueOrDefault(); }
+            get { return this._hostNetwork; }
             set { this._hostNetwork = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.Batch.Model
         /// Process Namespace between Containers in a Pod</a>.
         /// </para>
         /// </summary>
-        public bool ShareProcessNamespace
+        public bool? ShareProcessNamespace
         {
-            get { return this._shareProcessNamespace.GetValueOrDefault(); }
+            get { return this._shareProcessNamespace; }
             set { this._shareProcessNamespace = value; }
         }
 

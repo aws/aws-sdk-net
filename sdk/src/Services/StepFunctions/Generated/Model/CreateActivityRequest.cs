@@ -54,8 +54,27 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class CreateActivityRequest : AmazonStepFunctionsRequest
     {
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _name;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Settings to configure server-side encryption.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

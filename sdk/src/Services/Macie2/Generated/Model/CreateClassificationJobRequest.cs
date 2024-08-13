@@ -138,9 +138,9 @@ namespace Amazon.Macie2.Model
         /// If you configure the job to run only once, don't specify a value for this property.
         /// </para>
         /// </summary>
-        public bool InitialRun
+        public bool? InitialRun
         {
-            get { return this._initialRun.GetValueOrDefault(); }
+            get { return this._initialRun; }
             set { this._initialRun = value; }
         }
 
@@ -318,9 +318,9 @@ namespace Amazon.Macie2.Model
         /// up to the specified percentage, and analyzes all the data in those objects.
         /// </para>
         /// </summary>
-        public int SamplingPercentage
+        public int? SamplingPercentage
         {
-            get { return this._samplingPercentage.GetValueOrDefault(); }
+            get { return this._samplingPercentage; }
             set { this._samplingPercentage = value; }
         }
 

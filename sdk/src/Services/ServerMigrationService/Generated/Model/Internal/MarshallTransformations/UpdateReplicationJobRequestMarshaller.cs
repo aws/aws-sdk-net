@@ -78,13 +78,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEncrypted())
                 {
                     context.Writer.WritePropertyName("encrypted");
-                    context.Writer.Write(publicRequest.Encrypted);
+                    context.Writer.Write(publicRequest.Encrypted.Value);
                 }
 
                 if(publicRequest.IsSetFrequency())
                 {
                     context.Writer.WritePropertyName("frequency");
-                    context.Writer.Write(publicRequest.Frequency);
+                    context.Writer.Write(publicRequest.Frequency.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyId())
@@ -102,13 +102,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNextReplicationRunStartTime())
                 {
                     context.Writer.WritePropertyName("nextReplicationRunStartTime");
-                    context.Writer.Write(publicRequest.NextReplicationRunStartTime);
+                    context.Writer.Write(publicRequest.NextReplicationRunStartTime.Value);
                 }
 
                 if(publicRequest.IsSetNumberOfRecentAmisToKeep())
                 {
                     context.Writer.WritePropertyName("numberOfRecentAmisToKeep");
-                    context.Writer.Write(publicRequest.NumberOfRecentAmisToKeep);
+                    context.Writer.Write(publicRequest.NumberOfRecentAmisToKeep.Value);
                 }
 
                 if(publicRequest.IsSetReplicationJobId())

@@ -51,9 +51,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8766000)]
-        public long Period
+        public long? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 

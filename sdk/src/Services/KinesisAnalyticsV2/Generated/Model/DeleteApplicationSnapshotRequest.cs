@@ -66,9 +66,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SnapshotCreationTimestamp
+        public DateTime? SnapshotCreationTimestamp
         {
-            get { return this._snapshotCreationTimestamp.GetValueOrDefault(); }
+            get { return this._snapshotCreationTimestamp; }
             set { this._snapshotCreationTimestamp = value; }
         }
 

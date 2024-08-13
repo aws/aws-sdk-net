@@ -70,10 +70,16 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAcceptRoleSessionName())
+                {
+                    context.Writer.WritePropertyName("acceptRoleSessionName");
+                    context.Writer.Write(publicRequest.AcceptRoleSessionName.Value);
+                }
+
                 if(publicRequest.IsSetDurationSeconds())
                 {
                     context.Writer.WritePropertyName("durationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds);
+                    context.Writer.Write(publicRequest.DurationSeconds.Value);
                 }
 
                 if(publicRequest.IsSetManagedPolicyArns())

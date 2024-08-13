@@ -63,9 +63,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether the generic data model is a join table.
         /// </para>
         /// </summary>
-        public bool IsJoinTable
+        public bool? IsJoinTable
         {
-            get { return this._isJoinTable.GetValueOrDefault(); }
+            get { return this._isJoinTable; }
             set { this._isJoinTable = value; }
         }
 

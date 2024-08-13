@@ -80,13 +80,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maximumPercent", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimumHealthyPercent", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumHealthyPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }

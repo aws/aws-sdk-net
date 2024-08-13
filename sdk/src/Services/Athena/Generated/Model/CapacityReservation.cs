@@ -51,9 +51,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int AllocatedDpus
+        public int? AllocatedDpus
         {
-            get { return this._allocatedDpus.GetValueOrDefault(); }
+            get { return this._allocatedDpus; }
             set { this._allocatedDpus = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Athena.Model
         /// The time of the most recent capacity allocation that succeeded.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulAllocationTime
+        public DateTime? LastSuccessfulAllocationTime
         {
-            get { return this._lastSuccessfulAllocationTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulAllocationTime; }
             set { this._lastSuccessfulAllocationTime = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=24)]
-        public int TargetDpus
+        public int? TargetDpus
         {
-            get { return this._targetDpus.GetValueOrDefault(); }
+            get { return this._targetDpus; }
             set { this._targetDpus = value; }
         }
 

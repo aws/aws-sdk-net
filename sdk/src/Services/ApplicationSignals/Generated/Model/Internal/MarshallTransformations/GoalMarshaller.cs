@@ -51,13 +51,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttainmentGoal())
             {
                 context.Writer.WritePropertyName("AttainmentGoal");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.AttainmentGoal))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AttainmentGoal.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AttainmentGoal));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AttainmentGoal.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AttainmentGoal);
+                    context.Writer.Write(requestObject.AttainmentGoal.Value);
                 }
             }
 
@@ -75,13 +75,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWarningThreshold())
             {
                 context.Writer.WritePropertyName("WarningThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.WarningThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.WarningThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.WarningThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.WarningThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.WarningThreshold);
+                    context.Writer.Write(requestObject.WarningThreshold.Value);
                 }
             }
 

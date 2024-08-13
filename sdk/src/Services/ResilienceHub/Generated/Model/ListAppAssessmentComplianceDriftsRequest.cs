@@ -64,13 +64,13 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Indicates the maximum number of applications requested.
+        /// Indicates the maximum number of compliance drifts requested.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -83,8 +83,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Indicates the unique token number of the next application to be checked for compliance
-        /// and regulatory requirements from the list of applications.
+        /// Null, or the token from a previous call to get the next set of results.
         /// </para>
         /// </summary>
         public string NextToken

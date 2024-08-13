@@ -68,19 +68,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("expiredLogEventEndIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpiredLogEventEndIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tooNewLogEventStartIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TooNewLogEventStartIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tooOldLogEventEndIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TooOldLogEventEndIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

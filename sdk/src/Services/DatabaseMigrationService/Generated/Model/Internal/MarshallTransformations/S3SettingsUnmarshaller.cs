@@ -68,13 +68,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AddColumnName", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AddColumnName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AddTrailingPaddingCharacter", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AddTrailingPaddingCharacter = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,25 +98,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CdcInsertsAndUpdates", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CdcInsertsAndUpdates = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CdcInsertsOnly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CdcInsertsOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CdcMaxBatchInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CdcMaxBatchInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CdcMinFileSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CdcMinFileSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -164,7 +164,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DataPageSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DataPageSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -176,7 +176,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DatePartitionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DatePartitionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -194,13 +194,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DictPageSizeLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DictPageSizeLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableStatistics", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableStatistics = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -230,31 +230,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("GlueCatalogGeneration", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GlueCatalogGeneration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IgnoreHeaderRows", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IgnoreHeaderRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeOpForFullLoad", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeOpForFullLoad = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxFileSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxFileSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ParquetTimestampInMillisecond", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ParquetTimestampInMillisecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -266,19 +266,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PreserveTransactions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PreserveTransactions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Rfc4180", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Rfc4180 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RowGroupLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RowGroupLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -302,13 +302,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UseCsvNoSupValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseCsvNoSupValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseTaskStartTimeForFullLoadTimestamp", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseTaskStartTimeForFullLoadTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

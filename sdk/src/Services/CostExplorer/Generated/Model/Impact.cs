@@ -47,9 +47,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MaxImpact
+        public double? MaxImpact
         {
-            get { return this._maxImpact.GetValueOrDefault(); }
+            get { return this._maxImpact; }
             set { this._maxImpact = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double TotalActualSpend
+        public double? TotalActualSpend
         {
-            get { return this._totalActualSpend.GetValueOrDefault(); }
+            get { return this._totalActualSpend; }
             set { this._totalActualSpend = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double TotalExpectedSpend
+        public double? TotalExpectedSpend
         {
-            get { return this._totalExpectedSpend.GetValueOrDefault(); }
+            get { return this._totalExpectedSpend; }
             set { this._totalExpectedSpend = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.CostExplorer.Model
         /// spend. It is calculated as <c>TotalActualSpend - TotalExpectedSpend</c>.
         /// </para>
         /// </summary>
-        public double TotalImpact
+        public double? TotalImpact
         {
-            get { return this._totalImpact.GetValueOrDefault(); }
+            get { return this._totalImpact; }
             set { this._totalImpact = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double TotalImpactPercentage
+        public double? TotalImpactPercentage
         {
-            get { return this._totalImpactPercentage.GetValueOrDefault(); }
+            get { return this._totalImpactPercentage; }
             set { this._totalImpactPercentage = value; }
         }
 

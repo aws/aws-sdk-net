@@ -182,13 +182,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UseCustomCookbooks", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseCustomCookbooks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseOpsworksSecurityGroups", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseOpsworksSecurityGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }

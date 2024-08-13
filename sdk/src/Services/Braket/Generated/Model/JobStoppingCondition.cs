@@ -43,9 +43,9 @@ namespace Amazon.Braket.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=432000)]
-        public int MaxRuntimeInSeconds
+        public int? MaxRuntimeInSeconds
         {
-            get { return this._maxRuntimeInSeconds.GetValueOrDefault(); }
+            get { return this._maxRuntimeInSeconds; }
             set { this._maxRuntimeInSeconds = value; }
         }
 

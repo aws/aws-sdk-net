@@ -17,7 +17,6 @@ using Amazon.Runtime;
 using Amazon.SQS.Model;
 
 using Amazon.Auth.AccessControlPolicy;
-using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 using System.Globalization;
 
 namespace Amazon.SQS
@@ -45,9 +44,7 @@ namespace Amazon.SQS
             var sourceArn = string.Format(CultureInfo.InvariantCulture, "arn:aws:s3:*:*:{0}", bucket);
 
             statement = new Statement(Statement.StatementEffect.Allow);
-#pragma warning disable CS0612,CS0618
-            statement.Actions.Add(SQSActionIdentifiers.SendMessage);
-#pragma warning restore CS0612,CS0618
+            statement.Actions.Add("sqs:SendMessage");
             statement.Resources.Add(new Resource(response.QueueARN));
             statement.Principals.Add(new Principal("*"));
             statement.Conditions.Add(ConditionFactory.NewSourceArnCondition(sourceArn));

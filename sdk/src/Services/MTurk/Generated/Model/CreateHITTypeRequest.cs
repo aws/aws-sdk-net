@@ -57,9 +57,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long AssignmentDurationInSeconds
+        public long? AssignmentDurationInSeconds
         {
-            get { return this._assignmentDurationInSeconds.GetValueOrDefault(); }
+            get { return this._assignmentDurationInSeconds; }
             set { this._assignmentDurationInSeconds = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.MTurk.Model
         /// rejects it. 
         /// </para>
         /// </summary>
-        public long AutoApprovalDelayInSeconds
+        public long? AutoApprovalDelayInSeconds
         {
-            get { return this._autoApprovalDelayInSeconds.GetValueOrDefault(); }
+            get { return this._autoApprovalDelayInSeconds; }
             set { this._autoApprovalDelayInSeconds = value; }
         }
 

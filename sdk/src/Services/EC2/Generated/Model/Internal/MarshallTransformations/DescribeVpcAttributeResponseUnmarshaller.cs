@@ -58,19 +58,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("enableDnsHostnames/value", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.EnableDnsHostnames = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enableDnsSupport/value", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.EnableDnsSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enableNetworkAddressUsageMetrics/value", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.EnableNetworkAddressUsageMetrics = unmarshaller.Unmarshall(context);
                         continue;
                     }

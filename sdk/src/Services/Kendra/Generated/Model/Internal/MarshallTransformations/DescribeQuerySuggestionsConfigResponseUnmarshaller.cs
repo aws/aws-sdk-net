@@ -60,31 +60,31 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeQueriesWithoutUserInformation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludeQueriesWithoutUserInformation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastClearTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastClearTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastSuggestionsBuildTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastSuggestionsBuildTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinimumNumberOfQueryingUsers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinimumNumberOfQueryingUsers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinimumQueryCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinimumQueryCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -96,7 +96,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("QueryLogLookBackWindowInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.QueryLogLookBackWindowInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -108,7 +108,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalSuggestionsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalSuggestionsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

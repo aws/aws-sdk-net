@@ -63,7 +63,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProcessExitCode())
             {
                 context.Writer.WritePropertyName("processExitCode");
-                context.Writer.Write(requestObject.ProcessExitCode);
+                context.Writer.Write(requestObject.ProcessExitCode.Value);
             }
 
             if(requestObject.IsSetProgressMessage())
@@ -75,13 +75,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgressPercent())
             {
                 context.Writer.WritePropertyName("progressPercent");
-                if(StringUtils.IsSpecialFloatValue(requestObject.ProgressPercent))
+                if(StringUtils.IsSpecialFloatValue(requestObject.ProgressPercent.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ProgressPercent));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ProgressPercent.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ProgressPercent);
+                    context.Writer.Write(requestObject.ProgressPercent.Value);
                 }
             }
 

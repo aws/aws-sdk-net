@@ -64,9 +64,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ResourceCount
+        public long? ResourceCount
         {
-            get { return this._resourceCount.GetValueOrDefault(); }
+            get { return this._resourceCount; }
             set { this._resourceCount = value; }
         }
 

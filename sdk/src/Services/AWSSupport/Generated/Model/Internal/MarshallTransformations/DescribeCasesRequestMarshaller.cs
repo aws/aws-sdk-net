@@ -101,13 +101,13 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeCommunications())
                 {
                     context.Writer.WritePropertyName("includeCommunications");
-                    context.Writer.Write(publicRequest.IncludeCommunications);
+                    context.Writer.Write(publicRequest.IncludeCommunications.Value);
                 }
 
                 if(publicRequest.IsSetIncludeResolvedCases())
                 {
                     context.Writer.WritePropertyName("includeResolvedCases");
-                    context.Writer.Write(publicRequest.IncludeResolvedCases);
+                    context.Writer.Write(publicRequest.IncludeResolvedCases.Value);
                 }
 
                 if(publicRequest.IsSetLanguage())
@@ -119,7 +119,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

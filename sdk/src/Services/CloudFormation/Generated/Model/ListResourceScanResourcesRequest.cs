@@ -55,9 +55,9 @@ namespace Amazon.CloudFormation.Model
         /// will return at most 100 results in each response. The maximum value is 100.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

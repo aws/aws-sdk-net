@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetIdp())
@@ -86,7 +86,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("SessionTimeoutMinutes");
-                context.Writer.Write(requestObject.SessionTimeoutMinutes);
+                context.Writer.Write(requestObject.SessionTimeoutMinutes.Value);
             }
 
             if(requestObject.IsSetSubjectKey())

@@ -65,9 +65,9 @@ namespace Amazon.Mgn.Model
         /// Request to filter Source Servers list by archived.
         /// </para>
         /// </summary>
-        public bool IsArchived
+        public bool? IsArchived
         {
-            get { return this._isArchived.GetValueOrDefault(); }
+            get { return this._isArchived; }
             set { this._isArchived = value; }
         }
 

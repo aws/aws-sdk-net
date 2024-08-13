@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrentRuns())
             {
                 context.Writer.WritePropertyName("MaxConcurrentRuns");
-                context.Writer.Write(requestObject.MaxConcurrentRuns);
+                context.Writer.Write(requestObject.MaxConcurrentRuns.Value);
             }
 
         }

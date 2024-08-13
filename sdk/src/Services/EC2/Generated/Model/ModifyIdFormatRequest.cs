@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool UseLongIds
+        public bool? UseLongIds
         {
-            get { return this._useLongIds.GetValueOrDefault(); }
+            get { return this._useLongIds; }
             set { this._useLongIds = value; }
         }
 

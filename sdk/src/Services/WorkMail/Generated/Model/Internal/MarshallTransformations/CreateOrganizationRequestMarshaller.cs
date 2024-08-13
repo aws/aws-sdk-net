@@ -111,7 +111,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableInteroperability())
                 {
                     context.Writer.WritePropertyName("EnableInteroperability");
-                    context.Writer.Write(publicRequest.EnableInteroperability);
+                    context.Writer.Write(publicRequest.EnableInteroperability.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyArn())

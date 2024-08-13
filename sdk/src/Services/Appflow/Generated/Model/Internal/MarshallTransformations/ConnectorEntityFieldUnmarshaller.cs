@@ -98,13 +98,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isDeprecated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsDeprecated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isPrimaryKey", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPrimaryKey = unmarshaller.Unmarshall(context);
                     continue;
                 }

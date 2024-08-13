@@ -42,9 +42,9 @@ namespace Amazon.Inspector2.Model
         /// The Exploit Prediction Scoring System (EPSS) score.
         /// </para>
         /// </summary>
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

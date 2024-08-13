@@ -110,7 +110,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
                 }
                 if (context.TestExpression("WaitPeriodMs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WaitPeriodMs = unmarshaller.Unmarshall(context);
                     continue;
                 }

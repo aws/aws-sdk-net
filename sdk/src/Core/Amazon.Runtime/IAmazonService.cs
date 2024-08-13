@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Amazon.Runtime
 {
     /// <summary>
@@ -28,5 +30,33 @@ namespace Amazon.Runtime
         {
             get;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Factory method for creating the service client config object used by the service client.
+        /// This method is intended to be used by AWSSDK.Extensions.NETCore.Setup for creating
+        /// AWS service clients registered in the dependency injection container.
+        /// </summary>
+        /// <returns></returns>
+        static abstract ClientConfig CreateDefaultClientConfig();
+
+        /// <summary>
+        /// Factory method for creating the default implementation of the AWS service interface.
+        /// This method is intended to be used by AWSSDK.Extensions.NETCore.Setup for creating
+        /// AWS service clients registered in the dependency injection container.
+        /// </summary>
+        /// <param name="awsCredentials">The AWS credentials used for the service client.</param>
+        /// <param name="clientConfig">
+        /// The service client config for the service client. The base class ClientConfig  
+        /// will be cast to the sub type expected by the service client.
+        /// </param>
+        /// <returns></returns>
+        [UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. All other service clients have been confirmed to be trim safe. " +
+            "If service clients become unsafe for trimming other compiler warnings will occur forcing the behavor to be addressed. " +
+            "AppSync has been the the service users should be using for syncronization instead of CognitoSync for many years so unlikely " +
+            "users will attempt to use CognitoSync with Native AOT.")]
+        static abstract IAmazonService CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig);
+#endif
     }
 }

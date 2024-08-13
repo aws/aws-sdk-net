@@ -65,9 +65,9 @@ namespace Amazon.Macie2.Model
         /// sensitive data discovery hasn't been enabled for the account.
         /// </para>
         /// </summary>
-        public DateTime AutomatedDiscoveryFreeTrialStartDate
+        public DateTime? AutomatedDiscoveryFreeTrialStartDate
         {
-            get { return this._automatedDiscoveryFreeTrialStartDate.GetValueOrDefault(); }
+            get { return this._automatedDiscoveryFreeTrialStartDate; }
             set { this._automatedDiscoveryFreeTrialStartDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Macie2.Model
         /// trial started for the account.
         /// </para>
         /// </summary>
-        public DateTime FreeTrialStartDate
+        public DateTime? FreeTrialStartDate
         {
-            get { return this._freeTrialStartDate.GetValueOrDefault(); }
+            get { return this._freeTrialStartDate; }
             set { this._freeTrialStartDate = value; }
         }
 

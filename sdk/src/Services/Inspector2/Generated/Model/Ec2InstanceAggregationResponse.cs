@@ -121,9 +121,9 @@ namespace Amazon.Inspector2.Model
         /// The number of network findings for the Amazon EC2 instance.
         /// </para>
         /// </summary>
-        public long NetworkFindings
+        public long? NetworkFindings
         {
-            get { return this._networkFindings.GetValueOrDefault(); }
+            get { return this._networkFindings; }
             set { this._networkFindings = value; }
         }
 

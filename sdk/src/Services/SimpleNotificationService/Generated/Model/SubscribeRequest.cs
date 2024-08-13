@@ -321,9 +321,9 @@ namespace Amazon.SimpleNotificationService.Model
         /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ReturnSubscriptionArn
+        public bool? ReturnSubscriptionArn
         {
-            get { return this._returnSubscriptionArn.GetValueOrDefault(); }
+            get { return this._returnSubscriptionArn; }
             set { this._returnSubscriptionArn = value; }
         }
 

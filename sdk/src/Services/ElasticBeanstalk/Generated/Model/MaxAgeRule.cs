@@ -45,9 +45,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Beanstalk deletes the application version.
         /// </para>
         /// </summary>
-        public bool DeleteSourceFromS3
+        public bool? DeleteSourceFromS3
         {
-            get { return this._deleteSourceFromS3.GetValueOrDefault(); }
+            get { return this._deleteSourceFromS3; }
             set { this._deleteSourceFromS3 = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Specify the number of days to retain an application versions.
         /// </para>
         /// </summary>
-        public int MaxAgeInDays
+        public int? MaxAgeInDays
         {
-            get { return this._maxAgeInDays.GetValueOrDefault(); }
+            get { return this._maxAgeInDays; }
             set { this._maxAgeInDays = value; }
         }
 

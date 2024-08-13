@@ -50,9 +50,9 @@ namespace Amazon.AWSHealth.Model
         /// The starting date and time of a time range.
         /// </para>
         /// </summary>
-        public DateTime From
+        public DateTime? From
         {
-            get { return this._from.GetValueOrDefault(); }
+            get { return this._from; }
             set { this._from = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.AWSHealth.Model
         /// The ending date and time of a time range.
         /// </para>
         /// </summary>
-        public DateTime To
+        public DateTime? To
         {
-            get { return this._to.GetValueOrDefault(); }
+            get { return this._to; }
             set { this._to = value; }
         }
 

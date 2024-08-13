@@ -64,9 +64,9 @@ namespace Amazon.DeviceFarm.Model
         /// CPU is expressed as 1200000000.
         /// </para>
         /// </summary>
-        public double Clock
+        public double? Clock
         {
-            get { return this._clock.GetValueOrDefault(); }
+            get { return this._clock; }
             set { this._clock = value; }
         }
 

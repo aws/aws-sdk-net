@@ -100,7 +100,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void GetObjectFromDefaultEndpointBeforeDNSResolution()
         {
             var client = new AmazonS3Client(RegionEndpoint.USWest2);
-            var defaultEndpointClient = new AmazonS3Client(RegionEndpoint.USEast1);
+            var defaultEndpointClient = new AmazonS3Client(new AmazonS3Config
+            {
+                RegionEndpoint = RegionEndpoint.USEast1,
+                USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
+            });
+            
             var bucketName = S3TestUtils.CreateBucketWithWait(client);
             try
             {
@@ -132,7 +137,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void GetObjectFromDefaultEndpointBeforeDNSResolutionWithDoubleEncryption()
         {
             var client = new AmazonS3Client(RegionEndpoint.USEast2);
-            var defaultEndpointClient = new AmazonS3Client(RegionEndpoint.USEast1);
+            var defaultEndpointClient = new AmazonS3Client(new AmazonS3Config
+            {
+                RegionEndpoint = RegionEndpoint.USEast1,
+                USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
+            });
+
             var bucketName = S3TestUtils.CreateBucketWithWait(client);
             try
             {
@@ -515,7 +525,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     BucketName = bucketName,
                     Key = srcKey
                 });
-                srcTimeStamp = gomr.LastModified;
+                srcTimeStamp = gomr.LastModified.Value;
                 srcVersionID = gomr.VersionId;
                 srcETag = gomr.ETag;
 

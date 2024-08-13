@@ -108,9 +108,9 @@ namespace Amazon.CloudFormation.Model
         /// are activated by default.
         /// </para>
         /// </summary>
-        public bool IsActivated
+        public bool? IsActivated
         {
-            get { return this._isActivated.GetValueOrDefault(); }
+            get { return this._isActivated; }
             set { this._isActivated = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.CloudFormation.Model
         /// For all other extension types, CloudFormation returns <c>null</c>.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

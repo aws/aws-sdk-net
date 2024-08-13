@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseLakeFormationCredentials())
             {
                 context.Writer.WritePropertyName("UseLakeFormationCredentials");
-                context.Writer.Write(requestObject.UseLakeFormationCredentials);
+                context.Writer.Write(requestObject.UseLakeFormationCredentials.Value);
             }
 
         }

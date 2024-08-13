@@ -87,7 +87,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRecordingReconnectWindowSeconds())
                 {
                     context.Writer.WritePropertyName("recordingReconnectWindowSeconds");
-                    context.Writer.Write(publicRequest.RecordingReconnectWindowSeconds);
+                    context.Writer.Write(publicRequest.RecordingReconnectWindowSeconds.Value);
                 }
 
                 if(publicRequest.IsSetRenditionConfiguration())

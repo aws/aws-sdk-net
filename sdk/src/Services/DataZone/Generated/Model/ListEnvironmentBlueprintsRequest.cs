@@ -66,9 +66,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether the environment blueprint is managed by Amazon DataZone.
         /// </para>
         /// </summary>
-        public bool Managed
+        public bool? Managed
         {
-            get { return this._managed.GetValueOrDefault(); }
+            get { return this._managed; }
             set { this._managed = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

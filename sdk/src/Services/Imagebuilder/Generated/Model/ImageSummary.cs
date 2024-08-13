@@ -126,9 +126,9 @@ namespace Amazon.Imagebuilder.Model
         /// date.
         /// </para>
         /// </summary>
-        public DateTime DeprecationTime
+        public DateTime? DeprecationTime
         {
-            get { return this._deprecationTime.GetValueOrDefault(); }
+            get { return this._deprecationTime; }
             set { this._deprecationTime = value; }
         }
 

@@ -135,9 +135,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// events that it publishes to Amazon Pinpoint analytics.
         /// </para>
         /// </summary>
-        public bool UserDataShared
+        public bool? UserDataShared
         {
-            get { return this._userDataShared.GetValueOrDefault(); }
+            get { return this._userDataShared; }
             set { this._userDataShared = value; }
         }
 

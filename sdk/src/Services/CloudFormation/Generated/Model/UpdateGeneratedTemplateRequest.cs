@@ -111,9 +111,9 @@ namespace Amazon.CloudFormation.Model
         /// when a user update the resource properties after generating a template.
         /// </para>
         /// </summary>
-        public bool RefreshAllResources
+        public bool? RefreshAllResources
         {
-            get { return this._refreshAllResources.GetValueOrDefault(); }
+            get { return this._refreshAllResources; }
             set { this._refreshAllResources = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.Backup.Model
         /// This parameter will sort the list of vaults by shared vaults.
         /// </para>
         /// </summary>
-        public bool ByShared
+        public bool? ByShared
         {
-            get { return this._byShared.GetValueOrDefault(); }
+            get { return this._byShared; }
             set { this._byShared = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

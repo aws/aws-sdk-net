@@ -68,9 +68,9 @@ namespace Amazon.Macie2.Model
         /// The value for the property is greater than the specified value.
         /// </para>
         /// </summary>
-        public long Gt
+        public long? Gt
         {
-            get { return this._gt.GetValueOrDefault(); }
+            get { return this._gt; }
             set { this._gt = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Macie2.Model
         /// The value for the property is greater than or equal to the specified value.
         /// </para>
         /// </summary>
-        public long Gte
+        public long? Gte
         {
-            get { return this._gte.GetValueOrDefault(); }
+            get { return this._gte; }
             set { this._gte = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Macie2.Model
         /// The value for the property is less than the specified value.
         /// </para>
         /// </summary>
-        public long Lt
+        public long? Lt
         {
-            get { return this._lt.GetValueOrDefault(); }
+            get { return this._lt; }
             set { this._lt = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.Macie2.Model
         /// The value for the property is less than or equal to the specified value.
         /// </para>
         /// </summary>
-        public long Lte
+        public long? Lte
         {
-            get { return this._lte.GetValueOrDefault(); }
+            get { return this._lte; }
             set { this._lte = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the secret is deleted.
         /// </para>
         /// </summary>
-        public bool Deleted
+        public bool? Deleted
         {
-            get { return this._deleted.GetValueOrDefault(); }
+            get { return this._deleted; }
             set { this._deleted = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether rotation is enabled.
         /// </para>
         /// </summary>
-        public bool RotationEnabled
+        public bool? RotationEnabled
         {
-            get { return this._rotationEnabled.GetValueOrDefault(); }
+            get { return this._rotationEnabled; }
             set { this._rotationEnabled = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the rotation occurred within the specified rotation frequency.
         /// </para>
         /// </summary>
-        public bool RotationOccurredWithinFrequency
+        public bool? RotationOccurredWithinFrequency
         {
-            get { return this._rotationOccurredWithinFrequency.GetValueOrDefault(); }
+            get { return this._rotationOccurredWithinFrequency; }
             set { this._rotationOccurredWithinFrequency = value; }
         }
 

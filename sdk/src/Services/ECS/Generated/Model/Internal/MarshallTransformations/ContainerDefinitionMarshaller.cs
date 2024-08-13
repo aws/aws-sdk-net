@@ -62,7 +62,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("cpu");
-                context.Writer.Write(requestObject.Cpu);
+                context.Writer.Write(requestObject.Cpu.Value);
             }
 
             if(requestObject.IsSetCredentialSpecs())
@@ -95,7 +95,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableNetworking())
             {
                 context.Writer.WritePropertyName("disableNetworking");
-                context.Writer.Write(requestObject.DisableNetworking);
+                context.Writer.Write(requestObject.DisableNetworking.Value);
             }
 
             if(requestObject.IsSetDnsSearchDomains())
@@ -191,7 +191,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEssential())
             {
                 context.Writer.WritePropertyName("essential");
-                context.Writer.Write(requestObject.Essential);
+                context.Writer.Write(requestObject.Essential.Value);
             }
 
             if(requestObject.IsSetExtraHosts())
@@ -247,7 +247,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInteractive())
             {
                 context.Writer.WritePropertyName("interactive");
-                context.Writer.Write(requestObject.Interactive);
+                context.Writer.Write(requestObject.Interactive.Value);
             }
 
             if(requestObject.IsSetLinks())
@@ -286,13 +286,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
-                context.Writer.Write(requestObject.Memory);
+                context.Writer.Write(requestObject.Memory.Value);
             }
 
             if(requestObject.IsSetMemoryReservation())
             {
                 context.Writer.WritePropertyName("memoryReservation");
-                context.Writer.Write(requestObject.MemoryReservation);
+                context.Writer.Write(requestObject.MemoryReservation.Value);
             }
 
             if(requestObject.IsSetMountPoints())
@@ -336,19 +336,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("privileged");
-                context.Writer.Write(requestObject.Privileged);
+                context.Writer.Write(requestObject.Privileged.Value);
             }
 
             if(requestObject.IsSetPseudoTerminal())
             {
                 context.Writer.WritePropertyName("pseudoTerminal");
-                context.Writer.Write(requestObject.PseudoTerminal);
+                context.Writer.Write(requestObject.PseudoTerminal.Value);
             }
 
             if(requestObject.IsSetReadonlyRootFilesystem())
             {
                 context.Writer.WritePropertyName("readonlyRootFilesystem");
-                context.Writer.Write(requestObject.ReadonlyRootFilesystem);
+                context.Writer.Write(requestObject.ReadonlyRootFilesystem.Value);
             }
 
             if(requestObject.IsSetRepositoryCredentials())
@@ -397,13 +397,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartTimeout())
             {
                 context.Writer.WritePropertyName("startTimeout");
-                context.Writer.Write(requestObject.StartTimeout);
+                context.Writer.Write(requestObject.StartTimeout.Value);
             }
 
             if(requestObject.IsSetStopTimeout())
             {
                 context.Writer.WritePropertyName("stopTimeout");
-                context.Writer.Write(requestObject.StopTimeout);
+                context.Writer.Write(requestObject.StopTimeout.Value);
             }
 
             if(requestObject.IsSetSystemControls())

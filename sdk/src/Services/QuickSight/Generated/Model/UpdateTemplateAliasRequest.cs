@@ -108,9 +108,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long TemplateVersionNumber
+        public long? TemplateVersionNumber
         {
-            get { return this._templateVersionNumber.GetValueOrDefault(); }
+            get { return this._templateVersionNumber; }
             set { this._templateVersionNumber = value; }
         }
 

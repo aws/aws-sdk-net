@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Endpoints;
 using System;
 
 namespace Amazon.Runtime.Internal
@@ -33,8 +34,8 @@ namespace Amazon.Runtime.Internal
             PreInvoke(executionContext);
             base.InvokeSync(executionContext);
         }
-#if AWS_ASYNC_API 
 
+#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -47,21 +48,6 @@ namespace Amazon.Runtime.Internal
         {
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);            
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
         }
 #endif
 
@@ -92,9 +78,8 @@ namespace Amazon.Runtime.Internal
         {
             Uri endpoint = request.AlternateEndpoint != null
                 ? new Uri(ClientConfig.GetUrl(config, request.AlternateEndpoint))
-#pragma warning disable CS0612,CS0618
-                : new Uri(config.DetermineServiceURL());
-#pragma warning restore CS0612,CS0618
+                : new Uri(config.DetermineServiceOperationEndpoint(
+                    new ServiceOperationEndpointParameters(request.OriginalRequest)).URL);
 
             return InjectHostPrefix(config, request, endpoint);
         }

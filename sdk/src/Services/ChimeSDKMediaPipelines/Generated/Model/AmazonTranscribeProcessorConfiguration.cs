@@ -31,6 +31,14 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// A structure that contains the configuration settings for an Amazon Transcribe processor.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Calls to this API must include a <c>LanguageCode</c>, <c>IdentifyLanguage</c>, or
+    /// <c>IdentifyMultipleLanguages</c> parameter. If you include more than one of those
+    /// parameters, your transcription job fails.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AmazonTranscribeProcessorConfiguration
     {
@@ -39,6 +47,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private bool? _enablePartialResultsStabilization;
         private bool? _filterPartialResults;
         private bool? _identifyLanguage;
+        private bool? _identifyMultipleLanguages;
         private CallAnalyticsLanguageCode _languageCode;
         private string _languageModelName;
         private string _languageOptions;
@@ -132,9 +141,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// stabilization</a> in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnablePartialResultsStabilization
+        public bool? EnablePartialResultsStabilization
         {
-            get { return this._enablePartialResultsStabilization.GetValueOrDefault(); }
+            get { return this._enablePartialResultsStabilization; }
             set { this._enablePartialResultsStabilization = value; }
         }
 
@@ -151,9 +160,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// insights target.
         /// </para>
         /// </summary>
-        public bool FilterPartialResults
+        public bool? FilterPartialResults
         {
-            get { return this._filterPartialResults.GetValueOrDefault(); }
+            get { return this._filterPartialResults; }
             set { this._filterPartialResults = value; }
         }
 
@@ -169,9 +178,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Turns language identification on or off.
         /// </para>
         /// </summary>
-        public bool IdentifyLanguage
+        public bool? IdentifyLanguage
         {
-            get { return this._identifyLanguage.GetValueOrDefault(); }
+            get { return this._identifyLanguage; }
             set { this._identifyLanguage = value; }
         }
 
@@ -179,6 +188,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetIdentifyLanguage()
         {
             return this._identifyLanguage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentifyMultipleLanguages. 
+        /// <para>
+        /// Turns language identification on or off for multiple languages.
+        /// </para>
+        /// </summary>
+        public bool? IdentifyMultipleLanguages
+        {
+            get { return this._identifyMultipleLanguages; }
+            set { this._identifyMultipleLanguages = value; }
+        }
+
+        // Check to see if IdentifyMultipleLanguages property is set
+        internal bool IsSetIdentifyMultipleLanguages()
+        {
+            return this._identifyMultipleLanguages.HasValue; 
         }
 
         /// <summary>
@@ -353,9 +380,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// speakers (diarization)</a> in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool ShowSpeakerLabel
+        public bool? ShowSpeakerLabel
         {
-            get { return this._showSpeakerLabel.GetValueOrDefault(); }
+            get { return this._showSpeakerLabel; }
             set { this._showSpeakerLabel = value; }
         }
 

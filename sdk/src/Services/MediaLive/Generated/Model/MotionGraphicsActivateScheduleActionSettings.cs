@@ -45,9 +45,9 @@ namespace Amazon.MediaLive.Model
         /// result in rendering continuing until a deactivate action is processed.
         /// </summary>
         [AWSProperty(Min=0, Max=86400000)]
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property FinishTime. The time, in Unix epoch format, that the transcoding
         /// job finished
         /// </summary>
-        public DateTime FinishTime
+        public DateTime? FinishTime
         {
-            get { return this._finishTime.GetValueOrDefault(); }
+            get { return this._finishTime; }
             set { this._finishTime = value; }
         }
 
@@ -59,9 +59,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property StartTime. The time, in Unix epoch format, that transcoding
         /// for the job began.
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SubmitTime. The time, in Unix epoch format, that you submitted
         /// the job.
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

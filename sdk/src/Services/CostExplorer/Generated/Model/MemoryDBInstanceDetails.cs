@@ -47,9 +47,9 @@ namespace Amazon.CostExplorer.Model
         /// Determines whether the recommendation is for a current generation instance.
         /// </para>
         /// </summary>
-        public bool CurrentGeneration
+        public bool? CurrentGeneration
         {
-            get { return this._currentGeneration.GetValueOrDefault(); }
+            get { return this._currentGeneration; }
             set { this._currentGeneration = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.CostExplorer.Model
         /// Determines whether the recommended reservation is size flexible.
         /// </para>
         /// </summary>
-        public bool SizeFlexEligible
+        public bool? SizeFlexEligible
         {
-            get { return this._sizeFlexEligible.GetValueOrDefault(); }
+            get { return this._sizeFlexEligible; }
             set { this._sizeFlexEligible = value; }
         }
 

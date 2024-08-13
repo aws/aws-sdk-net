@@ -79,9 +79,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ForecastedLifetime
+        public int? ForecastedLifetime
         {
-            get { return this._forecastedLifetime.GetValueOrDefault(); }
+            get { return this._forecastedLifetime; }
             set { this._forecastedLifetime = value; }
         }
 

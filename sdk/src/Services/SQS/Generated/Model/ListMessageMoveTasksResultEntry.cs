@@ -50,9 +50,9 @@ namespace Amazon.SQS.Model
         /// The approximate number of messages already moved to the destination queue.
         /// </para>
         /// </summary>
-        public long ApproximateNumberOfMessagesMoved
+        public long? ApproximateNumberOfMessagesMoved
         {
-            get { return this._approximateNumberOfMessagesMoved.GetValueOrDefault(); }
+            get { return this._approximateNumberOfMessagesMoved; }
             set { this._approximateNumberOfMessagesMoved = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.SQS.Model
         /// movement task is selected to start.
         /// </para>
         /// </summary>
-        public long ApproximateNumberOfMessagesToMove
+        public long? ApproximateNumberOfMessagesToMove
         {
-            get { return this._approximateNumberOfMessagesToMove.GetValueOrDefault(); }
+            get { return this._approximateNumberOfMessagesToMove; }
             set { this._approximateNumberOfMessagesToMove = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.SQS.Model
         /// will be NULL.
         /// </para>
         /// </summary>
-        public int MaxNumberOfMessagesPerSecond
+        public int? MaxNumberOfMessagesPerSecond
         {
-            get { return this._maxNumberOfMessagesPerSecond.GetValueOrDefault(); }
+            get { return this._maxNumberOfMessagesPerSecond; }
             set { this._maxNumberOfMessagesPerSecond = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.SQS.Model
         /// The timestamp of starting the message movement task.
         /// </para>
         /// </summary>
-        public long StartedTimestamp
+        public long? StartedTimestamp
         {
-            get { return this._startedTimestamp.GetValueOrDefault(); }
+            get { return this._startedTimestamp; }
             set { this._startedTimestamp = value; }
         }
 

@@ -103,9 +103,9 @@ namespace Amazon.IoTWireless.Model
         /// Whether factory support has been enabled.
         /// </para>
         /// </summary>
-        public bool FactorySupport
+        public bool? FactorySupport
         {
-            get { return this._factorySupport.GetValueOrDefault(); }
+            get { return this._factorySupport; }
             set { this._factorySupport = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.IoTWireless.Model
         /// that there's no device limit.
         /// </para>
         /// </summary>
-        public int MaxAllowedSignature
+        public int? MaxAllowedSignature
         {
-            get { return this._maxAllowedSignature.GetValueOrDefault(); }
+            get { return this._maxAllowedSignature; }
             set { this._maxAllowedSignature = value; }
         }
 

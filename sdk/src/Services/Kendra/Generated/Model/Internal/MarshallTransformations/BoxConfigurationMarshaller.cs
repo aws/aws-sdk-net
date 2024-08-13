@@ -67,19 +67,19 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlComments())
             {
                 context.Writer.WritePropertyName("CrawlComments");
-                context.Writer.Write(requestObject.CrawlComments);
+                context.Writer.Write(requestObject.CrawlComments.Value);
             }
 
             if(requestObject.IsSetCrawlTasks())
             {
                 context.Writer.WritePropertyName("CrawlTasks");
-                context.Writer.Write(requestObject.CrawlTasks);
+                context.Writer.Write(requestObject.CrawlTasks.Value);
             }
 
             if(requestObject.IsSetCrawlWebLinks())
             {
                 context.Writer.WritePropertyName("CrawlWebLinks");
-                context.Writer.Write(requestObject.CrawlWebLinks);
+                context.Writer.Write(requestObject.CrawlWebLinks.Value);
             }
 
             if(requestObject.IsSetEnterpriseId())
@@ -151,7 +151,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseChangeLog())
             {
                 context.Writer.WritePropertyName("UseChangeLog");
-                context.Writer.Write(requestObject.UseChangeLog);
+                context.Writer.Write(requestObject.UseChangeLog.Value);
             }
 
             if(requestObject.IsSetVpcConfiguration())

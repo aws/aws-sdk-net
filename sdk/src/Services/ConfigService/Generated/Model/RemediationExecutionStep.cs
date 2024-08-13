@@ -82,9 +82,9 @@ namespace Amazon.ConfigService.Model
         /// The time when the step started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.ConfigService.Model
         /// The time when the step stopped.
         /// </para>
         /// </summary>
-        public DateTime StopTime
+        public DateTime? StopTime
         {
-            get { return this._stopTime.GetValueOrDefault(); }
+            get { return this._stopTime; }
             set { this._stopTime = value; }
         }
 

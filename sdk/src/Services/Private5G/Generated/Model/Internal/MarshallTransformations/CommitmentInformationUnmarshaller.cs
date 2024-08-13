@@ -74,13 +74,13 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expiresOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExpiresOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

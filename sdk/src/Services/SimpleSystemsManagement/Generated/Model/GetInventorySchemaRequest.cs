@@ -50,9 +50,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the <c>PlatformName</c>, <c>PlatformType</c>, and <c>PlatformVersion</c> attributes.
         /// </para>
         /// </summary>
-        public bool Aggregator
+        public bool? Aggregator
         {
-            get { return this._aggregator.GetValueOrDefault(); }
+            get { return this._aggregator; }
             set { this._aggregator = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=200)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Returns the sub-type schema for a specified inventory type.
         /// </para>
         /// </summary>
-        public bool SubType
+        public bool? SubType
         {
-            get { return this._subType.GetValueOrDefault(); }
+            get { return this._subType; }
             set { this._subType = value; }
         }
 

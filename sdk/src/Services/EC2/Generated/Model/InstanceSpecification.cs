@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// Excludes the root volume from being snapshotted.
         /// </para>
         /// </summary>
-        public bool ExcludeBootVolume
+        public bool? ExcludeBootVolume
         {
-            get { return this._excludeBootVolume.GetValueOrDefault(); }
+            get { return this._excludeBootVolume; }
             set { this._excludeBootVolume = value; }
         }
 

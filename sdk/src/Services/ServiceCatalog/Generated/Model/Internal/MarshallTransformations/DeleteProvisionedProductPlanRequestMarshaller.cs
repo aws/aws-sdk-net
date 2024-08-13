@@ -78,7 +78,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIgnoreErrors())
                 {
                     context.Writer.WritePropertyName("IgnoreErrors");
-                    context.Writer.Write(publicRequest.IgnoreErrors);
+                    context.Writer.Write(publicRequest.IgnoreErrors.Value);
                 }
 
                 if(publicRequest.IsSetPlanId())

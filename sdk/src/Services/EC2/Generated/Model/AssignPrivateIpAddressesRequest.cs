@@ -80,9 +80,9 @@ namespace Amazon.EC2.Model
         /// interface or instance to be reassigned to the specified network interface.
         /// </para>
         /// </summary>
-        public bool AllowReassignment
+        public bool? AllowReassignment
         {
-            get { return this._allowReassignment.GetValueOrDefault(); }
+            get { return this._allowReassignment; }
             set { this._allowReassignment = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.EC2.Model
         /// option.
         /// </para>
         /// </summary>
-        public int Ipv4PrefixCount
+        public int? Ipv4PrefixCount
         {
-            get { return this._ipv4PrefixCount.GetValueOrDefault(); }
+            get { return this._ipv4PrefixCount; }
             set { this._ipv4PrefixCount = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.EC2.Model
         /// specify this parameter when also specifying private IP addresses.
         /// </para>
         /// </summary>
-        public int SecondaryPrivateIpAddressCount
+        public int? SecondaryPrivateIpAddressCount
         {
-            get { return this._secondaryPrivateIpAddressCount.GetValueOrDefault(); }
+            get { return this._secondaryPrivateIpAddressCount; }
             set { this._secondaryPrivateIpAddressCount = value; }
         }
 

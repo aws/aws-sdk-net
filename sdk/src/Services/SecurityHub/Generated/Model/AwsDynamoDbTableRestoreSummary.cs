@@ -91,9 +91,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether a restore is currently in progress.
         /// </para>
         /// </summary>
-        public bool RestoreInProgress
+        public bool? RestoreInProgress
         {
-            get { return this._restoreInProgress.GetValueOrDefault(); }
+            get { return this._restoreInProgress; }
             set { this._restoreInProgress = value; }
         }
 

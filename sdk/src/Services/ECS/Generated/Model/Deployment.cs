@@ -80,9 +80,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the service deployment was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.ECS.Model
         /// or maintain.
         /// </para>
         /// </summary>
-        public int DesiredCount
+        public int? DesiredCount
         {
-            get { return this._desiredCount.GetValueOrDefault(); }
+            get { return this._desiredCount; }
             set { this._desiredCount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int FailedTasks
+        public int? FailedTasks
         {
-            get { return this._failedTasks.GetValueOrDefault(); }
+            get { return this._failedTasks; }
             set { this._failedTasks = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.ECS.Model
         /// The number of tasks in the deployment that are in the <c>PENDING</c> status.
         /// </para>
         /// </summary>
-        public int PendingCount
+        public int? PendingCount
         {
-            get { return this._pendingCount.GetValueOrDefault(); }
+            get { return this._pendingCount; }
             set { this._pendingCount = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.ECS.Model
         /// The number of tasks in the deployment that are in the <c>RUNNING</c> status.
         /// </para>
         /// </summary>
-        public int RunningCount
+        public int? RunningCount
         {
-            get { return this._runningCount.GetValueOrDefault(); }
+            get { return this._runningCount; }
             set { this._runningCount = value; }
         }
 
@@ -449,9 +449,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the service deployment was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

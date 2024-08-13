@@ -119,9 +119,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// your account.
         /// </para>
         /// </summary>
-        public long TotalPolicyCount
+        public long? TotalPolicyCount
         {
-            get { return this._totalPolicyCount.GetValueOrDefault(); }
+            get { return this._totalPolicyCount; }
             set { this._totalPolicyCount = value; }
         }
 

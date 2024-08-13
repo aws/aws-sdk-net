@@ -53,9 +53,9 @@ namespace Amazon.ServerMigrationService.Model
         /// Indicates whether a publicly accessible IP address is created when launching the server.
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 

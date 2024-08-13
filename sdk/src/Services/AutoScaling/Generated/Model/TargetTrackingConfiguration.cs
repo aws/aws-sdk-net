@@ -67,9 +67,9 @@ namespace Amazon.AutoScaling.Model
         /// instances from the Auto Scaling group. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool DisableScaleIn
+        public bool? DisableScaleIn
         {
-            get { return this._disableScaleIn.GetValueOrDefault(); }
+            get { return this._disableScaleIn; }
             set { this._disableScaleIn = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.AutoScaling.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double TargetValue
+        public double? TargetValue
         {
-            get { return this._targetValue.GetValueOrDefault(); }
+            get { return this._targetValue; }
             set { this._targetValue = value; }
         }
 

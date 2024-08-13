@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableSessionTagChaining())
             {
                 context.Writer.WritePropertyName("EnableSessionTagChaining");
-                context.Writer.Write(requestObject.EnableSessionTagChaining);
+                context.Writer.Write(requestObject.EnableSessionTagChaining.Value);
             }
 
         }

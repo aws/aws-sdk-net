@@ -46,9 +46,9 @@ namespace Amazon.EntityResolution.Model
         /// The total number of input records.
         /// </para>
         /// </summary>
-        public int InputRecords
+        public int? InputRecords
         {
-            get { return this._inputRecords.GetValueOrDefault(); }
+            get { return this._inputRecords; }
             set { this._inputRecords = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.EntityResolution.Model
         /// The total number of <c>matchID</c>s generated.
         /// </para>
         /// </summary>
-        public int MatchIDs
+        public int? MatchIDs
         {
-            get { return this._matchiDs.GetValueOrDefault(); }
+            get { return this._matchiDs; }
             set { this._matchiDs = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EntityResolution.Model
         /// The total number of records that did not get processed.
         /// </para>
         /// </summary>
-        public int RecordsNotProcessed
+        public int? RecordsNotProcessed
         {
-            get { return this._recordsNotProcessed.GetValueOrDefault(); }
+            get { return this._recordsNotProcessed; }
             set { this._recordsNotProcessed = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.EntityResolution.Model
         /// The total number of records processed.
         /// </para>
         /// </summary>
-        public int TotalRecordsProcessed
+        public int? TotalRecordsProcessed
         {
-            get { return this._totalRecordsProcessed.GetValueOrDefault(); }
+            get { return this._totalRecordsProcessed; }
             set { this._totalRecordsProcessed = value; }
         }
 

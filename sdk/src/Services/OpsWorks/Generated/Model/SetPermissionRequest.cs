@@ -56,9 +56,9 @@ namespace Amazon.OpsWorks.Model
         /// The user is allowed to use SSH to communicate with the instance.
         /// </para>
         /// </summary>
-        public bool AllowSsh
+        public bool? AllowSsh
         {
-            get { return this._allowSsh.GetValueOrDefault(); }
+            get { return this._allowSsh; }
             set { this._allowSsh = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.OpsWorks.Model
         /// The user is allowed to use <b>sudo</b> to elevate privileges.
         /// </para>
         /// </summary>
-        public bool AllowSudo
+        public bool? AllowSudo
         {
-            get { return this._allowSudo.GetValueOrDefault(); }
+            get { return this._allowSudo; }
             set { this._allowSudo = value; }
         }
 

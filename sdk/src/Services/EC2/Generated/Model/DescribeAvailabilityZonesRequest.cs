@@ -67,9 +67,9 @@ namespace Amazon.EC2.Model
         /// where you have chosen the option to opt in.
         /// </para>
         /// </summary>
-        public bool AllAvailabilityZones
+        public bool? AllAvailabilityZones
         {
-            get { return this._allAvailabilityZones.GetValueOrDefault(); }
+            get { return this._allAvailabilityZones; }
             set { this._allAvailabilityZones = value; }
         }
 

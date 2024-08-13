@@ -161,7 +161,7 @@ namespace <#=this.Config.Namespace#>.Model
                     if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
                         continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable && !member.UseNullable ? "?" : "" #> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#
                 }
 #>
@@ -237,20 +237,7 @@ namespace <#=this.Config.Namespace#>.Model
 #>
         <#=member.AccessModifier#> <#=member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")) ? "new " : ""#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
-<#
-                    if(member.IsNullable && !member.UseNullable)
-                    {
-#>
-            get { return this.<#=member.VariableName#>.GetValueOrDefault(); }
-<#
-                    }
-                    else
-                    {
-#>
             get { return this.<#=member.VariableName#>; }
-<#
-                    }
-#>
             set { <#=member.IsBackwardsCompatibleDateTimeProperty ? "this." + member.BackwardCompatibilityVariableName + " = " : ""#>this.<#=member.VariableName#> = value; }
         }
 
@@ -329,7 +316,9 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
-                        if(member.Shape.IsString && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
+                        // If there's a customization overriding the data type, we'll not use string.IsNullOrEmpty (and rely on checking for not null instead).
+                        // At the moment, this is only the case for Glacier (and InitiateMultipartUploadInput.partSize property).
+                        if (member.Shape.IsString && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers) && member.OverrideDataType == null)
                         {
 #>
             return !string.IsNullOrEmpty(this.<#=member.VariableName#>);
@@ -431,7 +420,7 @@ namespace <#=this.Config.Namespace#>.Model
                         if (member.IsExcluded || !member.IsBackwardsCompatibleDateTimeProperty)
                             continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.BackwardCompatibilityVariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#> <#=member.BackwardCompatibilityVariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
 <#
                     }
 #>
@@ -459,7 +448,14 @@ namespace <#=this.Config.Namespace#>.Model
             set
             {
                 this.<#=member.BackwardCompatibilityVariableName#> = value;
-                this.<#=member.VariableName#> = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this.<#=member.VariableName#> = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this.<#=member.VariableName#> = null;
+                }
             }
         }
 <#

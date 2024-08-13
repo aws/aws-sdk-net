@@ -153,9 +153,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the instance was created (<c>1479734909.17</c>) in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether this instance has a static IP assigned to it.
         /// </para>
         /// </summary>
-        public bool IsStaticIp
+        public bool? IsStaticIp
         {
-            get { return this._isStaticIp.GetValueOrDefault(); }
+            get { return this._isStaticIp; }
             set { this._isStaticIp = value; }
         }
 

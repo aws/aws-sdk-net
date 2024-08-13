@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
+                context.Writer.Write(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceGroups())
@@ -79,7 +79,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeepAlivePeriodInSeconds())
             {
                 context.Writer.WritePropertyName("KeepAlivePeriodInSeconds");
-                context.Writer.Write(requestObject.KeepAlivePeriodInSeconds);
+                context.Writer.Write(requestObject.KeepAlivePeriodInSeconds.Value);
             }
 
             if(requestObject.IsSetVolumeKmsKeyId())
@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("VolumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB);
+                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
             }
 
         }

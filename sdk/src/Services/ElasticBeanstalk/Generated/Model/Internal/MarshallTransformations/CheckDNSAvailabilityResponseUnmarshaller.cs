@@ -84,7 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("Available", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.Available = unmarshaller.Unmarshall(context);
                         continue;
                     }

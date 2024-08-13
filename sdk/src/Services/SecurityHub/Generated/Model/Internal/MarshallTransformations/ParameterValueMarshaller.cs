@@ -51,19 +51,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoolean())
             {
                 context.Writer.WritePropertyName("Boolean");
-                context.Writer.Write(requestObject.Boolean);
+                context.Writer.Write(requestObject.Boolean.Value);
             }
 
             if(requestObject.IsSetDouble())
             {
                 context.Writer.WritePropertyName("Double");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Double))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Double.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Double));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Double.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Double);
+                    context.Writer.Write(requestObject.Double.Value);
                 }
             }
 
@@ -87,7 +87,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInteger())
             {
                 context.Writer.WritePropertyName("Integer");
-                context.Writer.Write(requestObject.Integer);
+                context.Writer.Write(requestObject.Integer.Value);
             }
 
             if(requestObject.IsSetIntegerList())

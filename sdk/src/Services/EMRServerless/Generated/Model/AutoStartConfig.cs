@@ -42,9 +42,9 @@ namespace Amazon.EMRServerless.Model
         /// Enables the application to automatically start on job submission. Defaults to true.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

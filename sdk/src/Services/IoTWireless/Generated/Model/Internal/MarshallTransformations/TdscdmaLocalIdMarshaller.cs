@@ -51,13 +51,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCellParams())
             {
                 context.Writer.WritePropertyName("CellParams");
-                context.Writer.Write(requestObject.CellParams);
+                context.Writer.Write(requestObject.CellParams.Value);
             }
 
             if(requestObject.IsSetUarfcn())
             {
                 context.Writer.WritePropertyName("Uarfcn");
-                context.Writer.Write(requestObject.Uarfcn);
+                context.Writer.Write(requestObject.Uarfcn.Value);
             }
 
         }

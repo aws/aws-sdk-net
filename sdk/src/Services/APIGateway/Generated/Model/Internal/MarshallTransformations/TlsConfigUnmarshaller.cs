@@ -68,7 +68,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("insecureSkipVerification", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InsecureSkipVerification = unmarshaller.Unmarshall(context);
                     continue;
                 }

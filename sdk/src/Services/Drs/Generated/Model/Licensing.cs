@@ -42,9 +42,9 @@ namespace Amazon.Drs.Model
         /// Whether to enable "Bring your own license" or not.
         /// </para>
         /// </summary>
-        public bool OsByol
+        public bool? OsByol
         {
-            get { return this._osByol.GetValueOrDefault(); }
+            get { return this._osByol; }
             set { this._osByol = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.DataPipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Canceled
+        public bool? Canceled
         {
-            get { return this._canceled.GetValueOrDefault(); }
+            get { return this._canceled; }
             set { this._canceled = value; }
         }
 

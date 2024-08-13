@@ -51,7 +51,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableDebugLogDelivery())
             {
                 context.Writer.WritePropertyName("EnableDebugLogDelivery");
-                context.Writer.Write(requestObject.EnableDebugLogDelivery);
+                context.Writer.Write(requestObject.EnableDebugLogDelivery.Value);
             }
 
             if(requestObject.IsSetPolicyRuntime())

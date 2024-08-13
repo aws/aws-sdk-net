@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEbsVolumeSizeInGb())
             {
                 context.Writer.WritePropertyName("EbsVolumeSizeInGb");
-                context.Writer.Write(requestObject.EbsVolumeSizeInGb);
+                context.Writer.Write(requestObject.EbsVolumeSizeInGb.Value);
             }
 
         }

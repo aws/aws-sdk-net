@@ -74,9 +74,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool EventBridgeEnabled
+        public bool? EventBridgeEnabled
         {
-            get { return this._eventBridgeEnabled.GetValueOrDefault(); }
+            get { return this._eventBridgeEnabled; }
             set { this._eventBridgeEnabled = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.LocationService.Model
         /// This parameter is only used if you are using a KMS customer managed key.
         /// </para>
         /// </summary>
-        public bool KmsKeyEnableGeospatialQueries
+        public bool? KmsKeyEnableGeospatialQueries
         {
-            get { return this._kmsKeyEnableGeospatialQueries.GetValueOrDefault(); }
+            get { return this._kmsKeyEnableGeospatialQueries; }
             set { this._kmsKeyEnableGeospatialQueries = value; }
         }
 

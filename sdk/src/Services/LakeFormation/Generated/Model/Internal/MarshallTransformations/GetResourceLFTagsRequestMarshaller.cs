@@ -87,7 +87,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetShowAssignedLFTags())
                 {
                     context.Writer.WritePropertyName("ShowAssignedLFTags");
-                    context.Writer.Write(publicRequest.ShowAssignedLFTags);
+                    context.Writer.Write(publicRequest.ShowAssignedLFTags.Value);
                 }
 
                 writer.WriteObjectEnd();

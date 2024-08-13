@@ -74,25 +74,25 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isApiKeyAuthSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsApiKeyAuthSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isBasicAuthSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsBasicAuthSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isCustomAuthSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCustomAuthSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isOAuth2Supported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsOAuth2Supported = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("endTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -69,25 +69,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("originalIops", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginalIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("originalMultiAttachEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.OriginalMultiAttachEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("originalSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginalSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("originalThroughput", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginalThroughput = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,13 +99,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("progress", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.Progress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("startTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -117,25 +117,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("targetIops", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TargetIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("targetMultiAttachEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.TargetMultiAttachEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("targetSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TargetSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("targetThroughput", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TargetThroughput = unmarshaller.Unmarshall(context);
                         continue;
                     }

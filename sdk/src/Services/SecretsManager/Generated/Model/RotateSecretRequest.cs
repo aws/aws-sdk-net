@@ -133,9 +133,9 @@ namespace Amazon.SecretsManager.Model
         /// By default, Secrets Manager rotates the secret immediately.
         /// </para>
         /// </summary>
-        public bool RotateImmediately
+        public bool? RotateImmediately
         {
-            get { return this._rotateImmediately.GetValueOrDefault(); }
+            get { return this._rotateImmediately; }
             set { this._rotateImmediately = value; }
         }
 

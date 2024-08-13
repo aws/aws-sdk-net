@@ -51,13 +51,13 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBudgetAdjustmentPeriod())
             {
                 context.Writer.WritePropertyName("BudgetAdjustmentPeriod");
-                context.Writer.Write(requestObject.BudgetAdjustmentPeriod);
+                context.Writer.Write(requestObject.BudgetAdjustmentPeriod.Value);
             }
 
             if(requestObject.IsSetLookBackAvailablePeriods())
             {
                 context.Writer.WritePropertyName("LookBackAvailablePeriods");
-                context.Writer.Write(requestObject.LookBackAvailablePeriods);
+                context.Writer.Write(requestObject.LookBackAvailablePeriods.Value);
             }
 
         }

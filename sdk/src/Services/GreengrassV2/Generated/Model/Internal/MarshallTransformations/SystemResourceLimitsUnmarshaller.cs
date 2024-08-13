@@ -68,13 +68,13 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cpus", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Cpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("memory", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
                     continue;
                 }

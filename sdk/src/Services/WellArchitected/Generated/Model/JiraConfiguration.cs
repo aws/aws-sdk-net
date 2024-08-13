@@ -59,9 +59,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LastSyncedTime.
         /// </summary>
-        public DateTime LastSyncedTime
+        public DateTime? LastSyncedTime
         {
-            get { return this._lastSyncedTime.GetValueOrDefault(); }
+            get { return this._lastSyncedTime; }
             set { this._lastSyncedTime = value; }
         }
 

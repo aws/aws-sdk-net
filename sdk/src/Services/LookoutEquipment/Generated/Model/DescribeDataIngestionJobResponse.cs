@@ -55,9 +55,9 @@ namespace Amazon.LookoutEquipment.Model
         /// The time at which the data ingestion job was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.LookoutEquipment.Model
         /// during this specific ingestion job. 
         /// </para>
         /// </summary>
-        public DateTime DataEndTime
+        public DateTime? DataEndTime
         {
-            get { return this._dataEndTime.GetValueOrDefault(); }
+            get { return this._dataEndTime; }
             set { this._dataEndTime = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.LookoutEquipment.Model
         /// during this specific ingestion job. 
         /// </para>
         /// </summary>
-        public DateTime DataStartTime
+        public DateTime? DataStartTime
         {
-            get { return this._dataStartTime.GetValueOrDefault(); }
+            get { return this._dataStartTime; }
             set { this._dataStartTime = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long IngestedDataSize
+        public long? IngestedDataSize
         {
-            get { return this._ingestedDataSize.GetValueOrDefault(); }
+            get { return this._ingestedDataSize; }
             set { this._ingestedDataSize = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDailyCap())
             {
                 context.Writer.WritePropertyName("DailyCap");
-                context.Writer.Write(requestObject.DailyCap);
+                context.Writer.Write(requestObject.DailyCap.Value);
             }
 
             if(requestObject.IsSetTimeframeCap())
@@ -68,7 +68,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTotalCap())
             {
                 context.Writer.WritePropertyName("TotalCap");
-                context.Writer.Write(requestObject.TotalCap);
+                context.Writer.Write(requestObject.TotalCap.Value);
             }
 
         }

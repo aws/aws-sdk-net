@@ -54,7 +54,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ReturnValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ReturnValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -102,9 +102,9 @@ namespace Amazon.MediaLive.Model
         /// buffer size.
         /// </summary>
         [AWSProperty(Min=30)]
-        public int CacheLength
+        public int? CacheLength
         {
-            get { return this._cacheLength.GetValueOrDefault(); }
+            get { return this._cacheLength; }
             set { this._cacheLength = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.MediaLive.Model
         /// to wait until a restart is initiated. A value of 0 means never restart.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RestartDelay
+        public int? RestartDelay
         {
-            get { return this._restartDelay.GetValueOrDefault(); }
+            get { return this._restartDelay; }
             set { this._restartDelay = value; }
         }
 

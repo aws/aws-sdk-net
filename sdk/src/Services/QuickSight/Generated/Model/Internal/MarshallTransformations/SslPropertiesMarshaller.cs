@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableSsl())
             {
                 context.Writer.WritePropertyName("DisableSsl");
-                context.Writer.Write(requestObject.DisableSsl);
+                context.Writer.Write(requestObject.DisableSsl.Value);
             }
 
         }

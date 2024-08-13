@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("InstancePort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InstancePort = unmarshaller.Unmarshall(context);
                         continue;
                     }

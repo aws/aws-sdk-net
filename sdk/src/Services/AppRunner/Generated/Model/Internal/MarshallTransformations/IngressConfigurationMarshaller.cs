@@ -51,7 +51,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("IsPubliclyAccessible");
-                context.Writer.Write(requestObject.IsPubliclyAccessible);
+                context.Writer.Write(requestObject.IsPubliclyAccessible.Value);
             }
 
         }

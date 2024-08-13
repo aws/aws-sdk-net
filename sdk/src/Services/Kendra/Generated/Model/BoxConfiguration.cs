@@ -77,9 +77,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index comments.
         /// </para>
         /// </summary>
-        public bool CrawlComments
+        public bool? CrawlComments
         {
-            get { return this._crawlComments.GetValueOrDefault(); }
+            get { return this._crawlComments; }
             set { this._crawlComments = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index the contents of tasks.
         /// </para>
         /// </summary>
-        public bool CrawlTasks
+        public bool? CrawlTasks
         {
-            get { return this._crawlTasks.GetValueOrDefault(); }
+            get { return this._crawlTasks; }
             set { this._crawlTasks = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index web links.
         /// </para>
         /// </summary>
-        public bool CrawlWebLinks
+        public bool? CrawlWebLinks
         {
-            get { return this._crawlWebLinks.GetValueOrDefault(); }
+            get { return this._crawlWebLinks; }
             set { this._crawlWebLinks = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.Kendra.Model
         /// Amazon Kendra to use the change log than to scan all of your documents.
         /// </para>
         /// </summary>
-        public bool UseChangeLog
+        public bool? UseChangeLog
         {
-            get { return this._useChangeLog.GetValueOrDefault(); }
+            get { return this._useChangeLog; }
             set { this._useChangeLog = value; }
         }
 

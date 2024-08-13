@@ -86,13 +86,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("useCallerCredentials", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseCallerCredentials = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("versioned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Versioned = unmarshaller.Unmarshall(context);
                     continue;
                 }

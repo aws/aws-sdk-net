@@ -54,7 +54,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("overridden", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Overridden = unmarshaller.Unmarshall(context);
                     continue;
                 }

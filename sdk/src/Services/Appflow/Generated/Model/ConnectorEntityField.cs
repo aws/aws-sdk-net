@@ -148,9 +148,9 @@ namespace Amazon.Appflow.Model
         /// Booelan value that indicates whether this field is deprecated or not.
         /// </para>
         /// </summary>
-        public bool IsDeprecated
+        public bool? IsDeprecated
         {
-            get { return this._isDeprecated.GetValueOrDefault(); }
+            get { return this._isDeprecated; }
             set { this._isDeprecated = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Appflow.Model
         /// Booelan value that indicates whether this field can be used as a primary key.
         /// </para>
         /// </summary>
-        public bool IsPrimaryKey
+        public bool? IsPrimaryKey
         {
-            get { return this._isPrimaryKey.GetValueOrDefault(); }
+            get { return this._isPrimaryKey; }
             set { this._isPrimaryKey = value; }
         }
 

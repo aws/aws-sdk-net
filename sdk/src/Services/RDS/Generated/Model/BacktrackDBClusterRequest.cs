@@ -81,9 +81,9 @@ namespace Amazon.RDS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime BacktrackToUtc
+        public DateTime? BacktrackToUtc
         {
-            get { return this._backtrackToUtc.GetValueOrDefault(); }
+            get { return this._backtrackToUtc; }
             set { this._backtrackTo = this._backtrackToUtc = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.RDS.Model
         /// Otherwise, an error occurs when binary logging is enabled.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.RDS.Model
         /// earlier than the earliest backtrack time, an error occurs.
         /// </para>
         /// </summary>
-        public bool UseEarliestTimeOnPointInTimeUnavailable
+        public bool? UseEarliestTimeOnPointInTimeUnavailable
         {
-            get { return this._useEarliestTimeOnPointInTimeUnavailable.GetValueOrDefault(); }
+            get { return this._useEarliestTimeOnPointInTimeUnavailable; }
             set { this._useEarliestTimeOnPointInTimeUnavailable = value; }
         }
 
@@ -219,13 +219,20 @@ namespace Amazon.RDS.Model
             "BacktrackToUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. BacktrackTo is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime BacktrackTo
+        public DateTime? BacktrackTo
         {
             get { return this._backtrackTo.GetValueOrDefault(); }
             set
             {
                 this._backtrackTo = value;
-                this._backtrackToUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._backtrackToUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._backtrackToUtc = null;
+                }
             }
         }
 #endregion

@@ -68,7 +68,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("eventDataSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EventDataSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfEvents", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }

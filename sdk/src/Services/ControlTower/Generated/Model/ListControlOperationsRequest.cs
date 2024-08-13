@@ -31,7 +31,8 @@ namespace Amazon.ControlTower.Model
 {
     /// <summary>
     /// Container for the parameters to the ListControlOperations operation.
-    /// Provides a list of operations in progress or queued.
+    /// Provides a list of operations in progress or queued. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html#list-control-operations-api-examples">ListControlOperation
+    /// examples</a>.
     /// </summary>
     public partial class ListControlOperationsRequest : AmazonControlTowerRequest
     {
@@ -65,9 +66,9 @@ namespace Amazon.ControlTower.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

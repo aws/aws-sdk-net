@@ -82,7 +82,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ResourceRecordSetCount", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.ResourceRecordSetCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

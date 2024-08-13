@@ -174,9 +174,9 @@ namespace Amazon.Pinpoint.Model
         /// to true.
         /// </para>
         /// </summary>
-        public bool LocalTime
+        public bool? LocalTime
         {
-            get { return this._localTime.GetValueOrDefault(); }
+            get { return this._localTime; }
             set { this._localTime = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.Pinpoint.Model
         /// Indicates whether the journey participants should be refreshed when a segment is updated.
         /// </para>
         /// </summary>
-        public bool RefreshOnSegmentUpdate
+        public bool? RefreshOnSegmentUpdate
         {
-            get { return this._refreshOnSegmentUpdate.GetValueOrDefault(); }
+            get { return this._refreshOnSegmentUpdate; }
             set { this._refreshOnSegmentUpdate = value; }
         }
 
@@ -328,9 +328,9 @@ namespace Amazon.Pinpoint.Model
         /// in order to allow using OpenHours and ClosedDays.
         /// </para>
         /// </summary>
-        public bool SendingSchedule
+        public bool? SendingSchedule
         {
-            get { return this._sendingSchedule.GetValueOrDefault(); }
+            get { return this._sendingSchedule; }
             set { this._sendingSchedule = value; }
         }
 
@@ -454,9 +454,9 @@ namespace Amazon.Pinpoint.Model
         /// quiet hours.
         /// </para>
         /// </summary>
-        public bool WaitForQuietTime
+        public bool? WaitForQuietTime
         {
-            get { return this._waitForQuietTime.GetValueOrDefault(); }
+            get { return this._waitForQuietTime; }
             set { this._waitForQuietTime = value; }
         }
 

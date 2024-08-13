@@ -67,9 +67,9 @@ namespace Amazon.SecurityHub.Model
         /// status codes for custom response</a> in the <i>WAF Developer Guide.</i> 
         /// </para>
         /// </summary>
-        public int ResponseCode
+        public int? ResponseCode
         {
-            get { return this._responseCode.GetValueOrDefault(); }
+            get { return this._responseCode; }
             set { this._responseCode = value; }
         }
 

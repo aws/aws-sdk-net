@@ -134,9 +134,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Capacity
+        public long? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.WAFV2.Model
         /// web ACL. 
         /// </para>
         /// </summary>
-        public bool ManagedByFirewallManager
+        public bool? ManagedByFirewallManager
         {
-            get { return this._managedByFirewallManager.GetValueOrDefault(); }
+            get { return this._managedByFirewallManager; }
             set { this._managedByFirewallManager = value; }
         }
 

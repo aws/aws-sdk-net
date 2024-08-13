@@ -48,9 +48,9 @@ namespace Amazon.Redshift.Model
         /// Specifies whether write operations were allowed during data share association.
         /// </para>
         /// </summary>
-        public bool ConsumerAcceptedWrites
+        public bool? ConsumerAcceptedWrites
         {
-            get { return this._consumerAcceptedWrites.GetValueOrDefault(); }
+            get { return this._consumerAcceptedWrites; }
             set { this._consumerAcceptedWrites = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Redshift.Model
         /// The creation date of the datashare that is associated.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Redshift.Model
         /// Specifies whether write operations were allowed during data share authorization.
         /// </para>
         /// </summary>
-        public bool ProducerAllowedWrites
+        public bool? ProducerAllowedWrites
         {
-            get { return this._producerAllowedWrites.GetValueOrDefault(); }
+            get { return this._producerAllowedWrites; }
             set { this._producerAllowedWrites = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.Redshift.Model
         /// The status change data of the datashare that is associated.
         /// </para>
         /// </summary>
-        public DateTime StatusChangeDate
+        public DateTime? StatusChangeDate
         {
-            get { return this._statusChangeDate.GetValueOrDefault(); }
+            get { return this._statusChangeDate; }
             set { this._statusChangeDate = value; }
         }
 

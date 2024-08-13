@@ -219,9 +219,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BypassGovernanceRetention
+        public bool? BypassGovernanceRetention
         {
-            get { return this.bypassGovernanceRetention.GetValueOrDefault(); }
+            get { return this.bypassGovernanceRetention; }
             set { this.bypassGovernanceRetention = value; }
         }
 

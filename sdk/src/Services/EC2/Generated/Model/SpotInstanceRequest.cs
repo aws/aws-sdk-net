@@ -97,9 +97,9 @@ namespace Amazon.EC2.Model
         /// Deprecated.
         /// </para>
         /// </summary>
-        public int BlockDurationMinutes
+        public int? BlockDurationMinutes
         {
-            get { return this._blockDurationMinutes.GetValueOrDefault(); }
+            get { return this._blockDurationMinutes; }
             set { this._blockDurationMinutes = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.EC2.Model
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -380,9 +380,9 @@ namespace Amazon.EC2.Model
         /// The request becomes active at this date and time.
         /// </para>
         /// </summary>
-        public DateTime ValidFrom
+        public DateTime? ValidFrom
         {
-            get { return this._validFrom.GetValueOrDefault(); }
+            get { return this._validFrom; }
             set { this._validFrom = value; }
         }
 
@@ -410,9 +410,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime ValidUntil
+        public DateTime? ValidUntil
         {
-            get { return this._validUntil.GetValueOrDefault(); }
+            get { return this._validUntil; }
             set { this._validUntil = value; }
         }
 

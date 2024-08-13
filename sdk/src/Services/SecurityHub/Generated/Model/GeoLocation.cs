@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// The latitude of the location.
         /// </para>
         /// </summary>
-        public double Lat
+        public double? Lat
         {
-            get { return this._lat.GetValueOrDefault(); }
+            get { return this._lat; }
             set { this._lat = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.SecurityHub.Model
         /// The longitude of the location.
         /// </para>
         /// </summary>
-        public double Lon
+        public double? Lon
         {
-            get { return this._lon.GetValueOrDefault(); }
+            get { return this._lon; }
             set { this._lon = value; }
         }
 

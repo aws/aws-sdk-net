@@ -81,7 +81,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("Privileged");
-                context.Writer.Write(requestObject.Privileged);
+                context.Writer.Write(requestObject.Privileged.Value);
             }
 
             if(requestObject.IsSetVolumeMounts())

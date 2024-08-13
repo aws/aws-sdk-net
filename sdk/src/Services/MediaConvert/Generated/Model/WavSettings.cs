@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model
         /// the encoding quality for this audio track.
         /// </summary>
         [AWSProperty(Min=16, Max=24)]
-        public int BitDepth
+        public int? BitDepth
         {
-            get { return this._bitDepth.GetValueOrDefault(); }
+            get { return this._bitDepth; }
             set { this._bitDepth = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.MediaConvert.Model
         /// and so on, up to 64.
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
-        public int Channels
+        public int? Channels
         {
-            get { return this._channels.GetValueOrDefault(); }
+            get { return this._channels; }
             set { this._channels = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SampleRate. Sample rate in Hz.
         /// </summary>
         [AWSProperty(Min=8000, Max=192000)]
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

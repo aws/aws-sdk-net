@@ -133,9 +133,9 @@ namespace Amazon.DocDB.Model
         /// The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludePublic
+        public bool? IncludePublic
         {
-            get { return this._includePublic.GetValueOrDefault(); }
+            get { return this._includePublic; }
             set { this._includePublic = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.DocDB.Model
         /// to copy or restore, and otherwise <c>false</c>. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludeShared
+        public bool? IncludeShared
         {
-            get { return this._includeShared.GetValueOrDefault(); }
+            get { return this._includeShared; }
             set { this._includeShared = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.DocDB.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

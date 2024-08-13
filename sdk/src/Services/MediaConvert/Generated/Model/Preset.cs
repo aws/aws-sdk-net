@@ -79,9 +79,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. The timestamp in epoch seconds for preset creation.
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property LastUpdated. The timestamp in epoch seconds when the preset
         /// was last updated.
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

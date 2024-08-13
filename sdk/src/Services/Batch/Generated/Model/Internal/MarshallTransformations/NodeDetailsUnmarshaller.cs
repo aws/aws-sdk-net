@@ -68,13 +68,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isMainNode", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsMainNode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("nodeIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NodeIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

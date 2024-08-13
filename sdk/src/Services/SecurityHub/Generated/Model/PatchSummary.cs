@@ -57,9 +57,9 @@ namespace Amazon.SecurityHub.Model
         /// The value can be an integer from <c>0</c> to <c>100000</c>.
         /// </para>
         /// </summary>
-        public int FailedCount
+        public int? FailedCount
         {
-            get { return this._failedCount.GetValueOrDefault(); }
+            get { return this._failedCount; }
             set { this._failedCount = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SecurityHub.Model
         /// The value can be an integer from <c>0</c> to <c>100000</c>.
         /// </para>
         /// </summary>
-        public int InstalledCount
+        public int? InstalledCount
         {
-            get { return this._installedCount.GetValueOrDefault(); }
+            get { return this._installedCount; }
             set { this._installedCount = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.SecurityHub.Model
         /// The value can be an integer from <c>0</c> to <c>100000</c>.
         /// </para>
         /// </summary>
-        public int InstalledOtherCount
+        public int? InstalledOtherCount
         {
-            get { return this._installedOtherCount.GetValueOrDefault(); }
+            get { return this._installedOtherCount; }
             set { this._installedOtherCount = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.SecurityHub.Model
         /// The value can be an integer from <c>0</c> to <c>100000</c>.
         /// </para>
         /// </summary>
-        public int InstalledPendingReboot
+        public int? InstalledPendingReboot
         {
-            get { return this._installedPendingReboot.GetValueOrDefault(); }
+            get { return this._installedPendingReboot; }
             set { this._installedPendingReboot = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.SecurityHub.Model
         /// The value can be an integer from <c>0</c> to <c>100000</c>.
         /// </para>
         /// </summary>
-        public int InstalledRejectedCount
+        public int? InstalledRejectedCount
         {
-            get { return this._installedRejectedCount.GetValueOrDefault(); }
+            get { return this._installedRejectedCount; }
             set { this._installedRejectedCount = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.SecurityHub.Model
         /// The value can be an integer from <c>0</c> to <c>100000</c>.
         /// </para>
         /// </summary>
-        public int MissingCount
+        public int? MissingCount
         {
-            get { return this._missingCount.GetValueOrDefault(); }
+            get { return this._missingCount; }
             set { this._missingCount = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Cores
+        public long? Cores
         {
-            get { return this._cores.GetValueOrDefault(); }
+            get { return this._cores; }
             set { this._cores = value; }
         }
 

@@ -121,7 +121,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublishOnImport())
                 {
                     context.Writer.WritePropertyName("publishOnImport");
-                    context.Writer.Write(publicRequest.PublishOnImport);
+                    context.Writer.Write(publicRequest.PublishOnImport.Value);
                 }
 
                 if(publicRequest.IsSetRecommendation())
@@ -138,7 +138,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetainPermissionsOnRevokeFailure())
                 {
                     context.Writer.WritePropertyName("retainPermissionsOnRevokeFailure");
-                    context.Writer.Write(publicRequest.RetainPermissionsOnRevokeFailure);
+                    context.Writer.Write(publicRequest.RetainPermissionsOnRevokeFailure.Value);
                 }
 
                 if(publicRequest.IsSetSchedule())

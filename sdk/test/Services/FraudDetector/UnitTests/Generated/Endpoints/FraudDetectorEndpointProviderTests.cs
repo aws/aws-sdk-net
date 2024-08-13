@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.FraudDetector.Endpoints;
 using Amazon.FraudDetector.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class FraudDetectorEndpointsTests

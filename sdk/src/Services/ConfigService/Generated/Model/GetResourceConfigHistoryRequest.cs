@@ -97,9 +97,9 @@ namespace Amazon.ConfigService.Model
         /// items that start when the first configuration item was recorded.
         /// </para>
         /// </summary>
-        public DateTime EarlierTime
+        public DateTime? EarlierTime
         {
-            get { return this._earlierTime.GetValueOrDefault(); }
+            get { return this._earlierTime; }
             set { this._earlierTime = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.ConfigService.Model
         /// If not specified, current time is taken.
         /// </para>
         /// </summary>
-        public DateTime LaterTime
+        public DateTime? LaterTime
         {
-            get { return this._laterTime.GetValueOrDefault(); }
+            get { return this._laterTime; }
             set { this._laterTime = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// included.
         /// </para>
         /// </summary>
-        public bool IsMfaDeleteEnabled
+        public bool? IsMfaDeleteEnabled
         {
-            get { return this._isMfaDeleteEnabled.GetValueOrDefault(); }
+            get { return this._isMfaDeleteEnabled; }
             set { this._isMfaDeleteEnabled = value; }
         }
 

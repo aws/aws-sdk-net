@@ -61,9 +61,9 @@ namespace Amazon.PinpointSMSVoice.Model
         /// is enabled. If the event destination is enabled, then Amazon Pinpoint sends response
         /// data to the specified event destination.
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

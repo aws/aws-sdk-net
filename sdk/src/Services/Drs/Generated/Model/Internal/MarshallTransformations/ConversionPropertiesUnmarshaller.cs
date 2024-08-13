@@ -74,7 +74,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("forceUefi", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceUefi = unmarshaller.Unmarshall(context);
                     continue;
                 }

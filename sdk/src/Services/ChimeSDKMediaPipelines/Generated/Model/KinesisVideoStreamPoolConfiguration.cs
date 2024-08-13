@@ -49,9 +49,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The time at which the configuration was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PoolSize
+        public int? PoolSize
         {
-            get { return this._poolSize.GetValueOrDefault(); }
+            get { return this._poolSize; }
             set { this._poolSize = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The time at which the configuration was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

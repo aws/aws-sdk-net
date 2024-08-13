@@ -541,9 +541,9 @@ namespace Amazon.S3.Model
         /// and determine the relative ordering within the destination object.  If a part already
         /// exists with the PartNumber it will be overwritten.
         /// </remarks>
-        public int PartNumber
+        public int? PartNumber
         {
-            get { return this.partNumber.GetValueOrDefault(); }
+            get { return this.partNumber; }
             set { this.partNumber = value; }
         }
 
@@ -563,9 +563,9 @@ namespace Amazon.S3.Model
         /// <remarks>
         /// The LastByte property must also be set or this value will be ignored.
         /// </remarks>
-        public long FirstByte
+        public long? FirstByte
         {
-            get { return this.firstByte.GetValueOrDefault(); }
+            get { return this.firstByte; }
             set { this.firstByte = value; }
         }
 
@@ -585,9 +585,9 @@ namespace Amazon.S3.Model
         /// <remarks>
         /// The FirstByte property must also be set or this value will be ignored.
         /// </remarks>
-        public long LastByte
+        public long? LastByte
         {
-            get { return this.lastByte.GetValueOrDefault(); }
+            get { return this.lastByte; }
             set { this.lastByte = value; }
         }
 

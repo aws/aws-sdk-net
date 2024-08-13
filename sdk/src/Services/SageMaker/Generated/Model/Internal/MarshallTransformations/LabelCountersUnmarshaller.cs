@@ -68,31 +68,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FailedNonRetryableError", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedNonRetryableError = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HumanLabeled", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HumanLabeled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MachineLabeled", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MachineLabeled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalLabeled", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalLabeled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Unlabeled", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Unlabeled = unmarshaller.Unmarshall(context);
                     continue;
                 }

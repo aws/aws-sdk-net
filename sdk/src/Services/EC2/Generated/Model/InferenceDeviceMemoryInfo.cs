@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// The size of the memory available to the inference accelerator, in MiB.
         /// </para>
         /// </summary>
-        public int SizeInMiB
+        public int? SizeInMiB
         {
-            get { return this._sizeInMiB.GetValueOrDefault(); }
+            get { return this._sizeInMiB; }
             set { this._sizeInMiB = value; }
         }
 

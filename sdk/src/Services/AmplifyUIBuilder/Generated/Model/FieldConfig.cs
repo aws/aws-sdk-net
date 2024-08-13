@@ -46,9 +46,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether to hide a field.
         /// </para>
         /// </summary>
-        public bool Excluded
+        public bool? Excluded
         {
-            get { return this._excluded.GetValueOrDefault(); }
+            get { return this._excluded; }
             set { this._excluded = value; }
         }
 

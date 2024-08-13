@@ -126,9 +126,9 @@ namespace Amazon.CodeBuild.Model
         /// When the build was started, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime RequestedOn
+        public DateTime? RequestedOn
         {
-            get { return this._requestedOn.GetValueOrDefault(); }
+            get { return this._requestedOn; }
             set { this._requestedOn = value; }
         }
 

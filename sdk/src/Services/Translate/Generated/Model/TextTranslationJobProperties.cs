@@ -76,9 +76,9 @@ namespace Amazon.Translate.Model
         /// The time at which the translation job ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.Translate.Model
         /// The time at which the translation job was submitted.
         /// </para>
         /// </summary>
-        public DateTime SubmittedTime
+        public DateTime? SubmittedTime
         {
-            get { return this._submittedTime.GetValueOrDefault(); }
+            get { return this._submittedTime; }
             set { this._submittedTime = value; }
         }
 

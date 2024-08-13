@@ -68,7 +68,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("dimension", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Dimension = unmarshaller.Unmarshall(context);
                     continue;
                 }

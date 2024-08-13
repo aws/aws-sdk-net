@@ -72,7 +72,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeInactive())
                 {
                     context.Writer.WritePropertyName("includeInactive");
-                    context.Writer.Write(publicRequest.IncludeInactive);
+                    context.Writer.Write(publicRequest.IncludeInactive.Value);
                 }
 
                 writer.WriteObjectEnd();

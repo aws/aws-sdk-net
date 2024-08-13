@@ -84,9 +84,9 @@ namespace Amazon.ServiceCatalog.Model
         /// parameter is retrieved. This parameter is used to hide sensitive information.
         /// </para>
         /// </summary>
-        public bool IsNoEcho
+        public bool? IsNoEcho
         {
-            get { return this._isNoEcho.GetValueOrDefault(); }
+            get { return this._isNoEcho; }
             set { this._isNoEcho = value; }
         }
 

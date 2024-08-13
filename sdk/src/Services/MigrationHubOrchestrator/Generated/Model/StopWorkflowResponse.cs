@@ -83,9 +83,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The time at which the migration workflow was stopped.
         /// </para>
         /// </summary>
-        public DateTime LastStopTime
+        public DateTime? LastStopTime
         {
-            get { return this._lastStopTime.GetValueOrDefault(); }
+            get { return this._lastStopTime; }
             set { this._lastStopTime = value; }
         }
 

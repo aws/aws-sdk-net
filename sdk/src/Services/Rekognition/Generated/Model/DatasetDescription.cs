@@ -53,9 +53,9 @@ namespace Amazon.Rekognition.Model
         ///  The Unix timestamp for the time and date that the dataset was created. 
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.Rekognition.Model
         ///  The Unix timestamp for the date and time that the dataset was last updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 

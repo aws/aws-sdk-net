@@ -123,9 +123,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// topics.
         /// </para>
         /// </summary>
-        public bool UnsubscribeAll
+        public bool? UnsubscribeAll
         {
-            get { return this._unsubscribeAll.GetValueOrDefault(); }
+            get { return this._unsubscribeAll; }
             set { this._unsubscribeAll = value; }
         }
 

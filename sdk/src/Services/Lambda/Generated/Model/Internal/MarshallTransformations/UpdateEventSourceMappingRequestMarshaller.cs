@@ -73,13 +73,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBatchSize())
                 {
                     context.Writer.WritePropertyName("BatchSize");
-                    context.Writer.Write(publicRequest.BatchSize);
+                    context.Writer.Write(publicRequest.BatchSize.Value);
                 }
 
                 if(publicRequest.IsSetBisectBatchOnFunctionError())
                 {
                     context.Writer.WritePropertyName("BisectBatchOnFunctionError");
-                    context.Writer.Write(publicRequest.BisectBatchOnFunctionError);
+                    context.Writer.Write(publicRequest.BisectBatchOnFunctionError.Value);
                 }
 
                 if(publicRequest.IsSetDestinationConfig())
@@ -107,7 +107,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 if(publicRequest.IsSetFilterCriteria())
@@ -141,25 +141,25 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
                 {
                     context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
-                    context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds);
+                    context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetMaximumRecordAgeInSeconds())
                 {
                     context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
-                    context.Writer.Write(publicRequest.MaximumRecordAgeInSeconds);
+                    context.Writer.Write(publicRequest.MaximumRecordAgeInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetMaximumRetryAttempts())
                 {
                     context.Writer.WritePropertyName("MaximumRetryAttempts");
-                    context.Writer.Write(publicRequest.MaximumRetryAttempts);
+                    context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
                 }
 
                 if(publicRequest.IsSetParallelizationFactor())
                 {
                     context.Writer.WritePropertyName("ParallelizationFactor");
-                    context.Writer.Write(publicRequest.ParallelizationFactor);
+                    context.Writer.Write(publicRequest.ParallelizationFactor.Value);
                 }
 
                 if(publicRequest.IsSetScalingConfig())
@@ -192,7 +192,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTumblingWindowInSeconds())
                 {
                     context.Writer.WritePropertyName("TumblingWindowInSeconds");
-                    context.Writer.Write(publicRequest.TumblingWindowInSeconds);
+                    context.Writer.Write(publicRequest.TumblingWindowInSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

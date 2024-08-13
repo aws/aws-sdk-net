@@ -137,9 +137,9 @@ namespace Amazon.DeviceFarm.Model
         /// The total number of completed jobs.
         /// </para>
         /// </summary>
-        public int CompletedJobs
+        public int? CompletedJobs
         {
-            get { return this._completedJobs.GetValueOrDefault(); }
+            get { return this._completedJobs; }
             set { this._completedJobs = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.DeviceFarm.Model
         /// When the run was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.DeviceFarm.Model
         /// test should perform.
         /// </para>
         /// </summary>
-        public int EventCount
+        public int? EventCount
         {
-            get { return this._eventCount.GetValueOrDefault(); }
+            get { return this._eventCount; }
             set { this._eventCount = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of minutes the job executes before it times out.
         /// </para>
         /// </summary>
-        public int JobTimeoutMinutes
+        public int? JobTimeoutMinutes
         {
-            get { return this._jobTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._jobTimeoutMinutes; }
             set { this._jobTimeoutMinutes = value; }
         }
 
@@ -533,9 +533,9 @@ namespace Amazon.DeviceFarm.Model
         /// same seed value between tests ensures identical event sequences.
         /// </para>
         /// </summary>
-        public int Seed
+        public int? Seed
         {
-            get { return this._seed.GetValueOrDefault(); }
+            get { return this._seed; }
             set { this._seed = value; }
         }
 
@@ -557,9 +557,9 @@ namespace Amazon.DeviceFarm.Model
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>
-        public bool SkipAppResign
+        public bool? SkipAppResign
         {
-            get { return this._skipAppResign.GetValueOrDefault(); }
+            get { return this._skipAppResign; }
             set { this._skipAppResign = value; }
         }
 
@@ -575,9 +575,9 @@ namespace Amazon.DeviceFarm.Model
         /// The run's start time.
         /// </para>
         /// </summary>
-        public DateTime Started
+        public DateTime? Started
         {
-            get { return this._started.GetValueOrDefault(); }
+            get { return this._started; }
             set { this._started = value; }
         }
 
@@ -652,9 +652,9 @@ namespace Amazon.DeviceFarm.Model
         /// The run's stop time.
         /// </para>
         /// </summary>
-        public DateTime Stopped
+        public DateTime? Stopped
         {
-            get { return this._stopped.GetValueOrDefault(); }
+            get { return this._stopped; }
             set { this._stopped = value; }
         }
 
@@ -689,9 +689,9 @@ namespace Amazon.DeviceFarm.Model
         /// The total number of jobs for the run.
         /// </para>
         /// </summary>
-        public int TotalJobs
+        public int? TotalJobs
         {
-            get { return this._totalJobs.GetValueOrDefault(); }
+            get { return this._totalJobs; }
             set { this._totalJobs = value; }
         }
 

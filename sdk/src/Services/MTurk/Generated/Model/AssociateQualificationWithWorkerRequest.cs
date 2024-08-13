@@ -64,9 +64,9 @@ namespace Amazon.MTurk.Model
         /// The value of the Qualification to assign.
         /// </para>
         /// </summary>
-        public int IntegerValue
+        public int? IntegerValue
         {
-            get { return this._integerValue.GetValueOrDefault(); }
+            get { return this._integerValue; }
             set { this._integerValue = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.MTurk.Model
         /// the qualification was assigned to the Worker. Note: this is true by default. 
         /// </para>
         /// </summary>
-        public bool SendNotification
+        public bool? SendNotification
         {
-            get { return this._sendNotification.GetValueOrDefault(); }
+            get { return this._sendNotification; }
             set { this._sendNotification = value; }
         }
 

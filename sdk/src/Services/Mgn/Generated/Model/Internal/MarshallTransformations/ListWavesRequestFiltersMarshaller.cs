@@ -51,7 +51,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsArchived())
             {
                 context.Writer.WritePropertyName("isArchived");
-                context.Writer.Write(requestObject.IsArchived);
+                context.Writer.Write(requestObject.IsArchived.Value);
             }
 
             if(requestObject.IsSetWaveIDs())

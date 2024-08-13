@@ -51,7 +51,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLaunchOrder())
             {
                 context.Writer.WritePropertyName("launchOrder");
-                context.Writer.Write(requestObject.LaunchOrder);
+                context.Writer.Write(requestObject.LaunchOrder.Value);
             }
 
             if(requestObject.IsSetServerGroupId())

@@ -41,8 +41,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CustomerNodeEndpointList. 
         /// <para>
-        /// List of endpoints from which data should be migrated. For Redis (cluster mode disabled),
-        /// list should have only one element.
+        /// List of endpoints from which data should be migrated. For Redis OSS (cluster mode
+        /// disabled), list should have only one element.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

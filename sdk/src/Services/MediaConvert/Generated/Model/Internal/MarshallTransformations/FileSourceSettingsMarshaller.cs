@@ -80,7 +80,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeDelta())
             {
                 context.Writer.WritePropertyName("timeDelta");
-                context.Writer.Write(requestObject.TimeDelta);
+                context.Writer.Write(requestObject.TimeDelta.Value);
             }
 
             if(requestObject.IsSetTimeDeltaUnits())

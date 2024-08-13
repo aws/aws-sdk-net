@@ -43,9 +43,9 @@ namespace Amazon.Inspector.Model
         /// The minimum value of the timestamp range.
         /// </para>
         /// </summary>
-        public DateTime BeginDate
+        public DateTime? BeginDate
         {
-            get { return this._beginDate.GetValueOrDefault(); }
+            get { return this._beginDate; }
             set { this._beginDate = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Inspector.Model
         /// The maximum value of the timestamp range.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.Deadline.Model
         /// The average of the usage statistics.
         /// </para>
         /// </summary>
-        public double Avg
+        public double? Avg
         {
-            get { return this._avg.GetValueOrDefault(); }
+            get { return this._avg; }
             set { this._avg = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Deadline.Model
         /// The maximum among the usage statistics.
         /// </para>
         /// </summary>
-        public double Max
+        public double? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Deadline.Model
         /// The minimum of the usage statistics.
         /// </para>
         /// </summary>
-        public double Min
+        public double? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Deadline.Model
         /// The sum of the usage statistics.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cancelRequested", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CancelRequested = unmarshaller.Unmarshall(context);
                     continue;
                 }

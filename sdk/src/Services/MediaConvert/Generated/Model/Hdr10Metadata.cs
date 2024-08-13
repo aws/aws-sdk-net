@@ -57,9 +57,9 @@ namespace Amazon.MediaConvert.Model
         /// color correction.
         /// </summary>
         [AWSProperty(Min=0, Max=50000)]
-        public int BluePrimaryX
+        public int? BluePrimaryX
         {
-            get { return this._bluePrimaryX.GetValueOrDefault(); }
+            get { return this._bluePrimaryX; }
             set { this._bluePrimaryX = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.MediaConvert.Model
         /// color correction.
         /// </summary>
         [AWSProperty(Min=0, Max=50000)]
-        public int BluePrimaryY
+        public int? BluePrimaryY
         {
-            get { return this._bluePrimaryY.GetValueOrDefault(); }
+            get { return this._bluePrimaryY; }
             set { this._bluePrimaryY = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.MediaConvert.Model
         /// color correction.
         /// </summary>
         [AWSProperty(Min=0, Max=50000)]
-        public int GreenPrimaryX
+        public int? GreenPrimaryX
         {
-            get { return this._greenPrimaryX.GetValueOrDefault(); }
+            get { return this._greenPrimaryX; }
             set { this._greenPrimaryX = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.MediaConvert.Model
         /// color correction.
         /// </summary>
         [AWSProperty(Min=0, Max=50000)]
-        public int GreenPrimaryY
+        public int? GreenPrimaryY
         {
-            get { return this._greenPrimaryY.GetValueOrDefault(); }
+            get { return this._greenPrimaryY; }
             set { this._greenPrimaryY = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.MediaConvert.Model
         /// have a default value; you must specify a value that is suitable for the content.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int MaxContentLightLevel
+        public int? MaxContentLightLevel
         {
-            get { return this._maxContentLightLevel.GetValueOrDefault(); }
+            get { return this._maxContentLightLevel; }
             set { this._maxContentLightLevel = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.MediaConvert.Model
         /// the content.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int MaxFrameAverageLightLevel
+        public int? MaxFrameAverageLightLevel
         {
-            get { return this._maxFrameAverageLightLevel.GetValueOrDefault(); }
+            get { return this._maxFrameAverageLightLevel; }
             set { this._maxFrameAverageLightLevel = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.MediaConvert.Model
         /// in units of of 0.0001 candelas per square meter.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MaxLuminance
+        public int? MaxLuminance
         {
-            get { return this._maxLuminance.GetValueOrDefault(); }
+            get { return this._maxLuminance; }
             set { this._maxLuminance = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.MediaConvert.Model
         /// in units of of 0.0001 candelas per square meter
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MinLuminance
+        public int? MinLuminance
         {
-            get { return this._minLuminance.GetValueOrDefault(); }
+            get { return this._minLuminance; }
             set { this._minLuminance = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.MediaConvert.Model
         /// color correction.
         /// </summary>
         [AWSProperty(Min=0, Max=50000)]
-        public int RedPrimaryX
+        public int? RedPrimaryX
         {
-            get { return this._redPrimaryX.GetValueOrDefault(); }
+            get { return this._redPrimaryX; }
             set { this._redPrimaryX = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.MediaConvert.Model
         /// color correction.
         /// </summary>
         [AWSProperty(Min=0, Max=50000)]
-        public int RedPrimaryY
+        public int? RedPrimaryY
         {
-            get { return this._redPrimaryY.GetValueOrDefault(); }
+            get { return this._redPrimaryY; }
             set { this._redPrimaryY = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.MediaConvert.Model
         /// color correction.
         /// </summary>
         [AWSProperty(Min=0, Max=50000)]
-        public int WhitePointX
+        public int? WhitePointX
         {
-            get { return this._whitePointX.GetValueOrDefault(); }
+            get { return this._whitePointX; }
             set { this._whitePointX = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.MediaConvert.Model
         /// color correction.
         /// </summary>
         [AWSProperty(Min=0, Max=50000)]
-        public int WhitePointY
+        public int? WhitePointY
         {
-            get { return this._whitePointY.GetValueOrDefault(); }
+            get { return this._whitePointY; }
             set { this._whitePointY = value; }
         }
 

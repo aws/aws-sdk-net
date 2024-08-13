@@ -251,9 +251,10 @@ namespace Amazon.DNXCore.IntegrationTests
             Client.DeleteHealthCheckAsync(new DeleteHealthCheckRequest() { HealthCheckId = healthCheckId }).Wait();
 
             listResponse = await Client.ListHealthChecksAsync();
-            Assert.Null(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
-
-
+            if (listResponse.HealthChecks != null)
+            {
+                Assert.Null(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
+            }
         }
 
         [Fact(Skip = "Excluding flaky Route53 delegation set test.")]

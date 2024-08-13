@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool Cascade
+        public bool? Cascade
         {
-            get { return this._cascade.GetValueOrDefault(); }
+            get { return this._cascade; }
             set { this._cascade = value; }
         }
 

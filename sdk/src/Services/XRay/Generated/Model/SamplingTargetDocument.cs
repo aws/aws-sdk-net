@@ -48,9 +48,9 @@ namespace Amazon.XRay.Model
         /// The percentage of matching requests to instrument, after the reservoir is exhausted.
         /// </para>
         /// </summary>
-        public double FixedRate
+        public double? FixedRate
         {
-            get { return this._fixedRate.GetValueOrDefault(); }
+            get { return this._fixedRate; }
             set { this._fixedRate = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.XRay.Model
         /// The number of seconds for the service to wait before getting sampling targets again.
         /// </para>
         /// </summary>
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.XRay.Model
         /// The number of requests per second that X-Ray allocated for this service.
         /// </para>
         /// </summary>
-        public int ReservoirQuota
+        public int? ReservoirQuota
         {
-            get { return this._reservoirQuota.GetValueOrDefault(); }
+            get { return this._reservoirQuota; }
             set { this._reservoirQuota = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.XRay.Model
         /// When the reservoir quota expires.
         /// </para>
         /// </summary>
-        public DateTime ReservoirQuotaTTL
+        public DateTime? ReservoirQuotaTTL
         {
-            get { return this._reservoirQuotaTTL.GetValueOrDefault(); }
+            get { return this._reservoirQuotaTTL; }
             set { this._reservoirQuotaTTL = value; }
         }
 

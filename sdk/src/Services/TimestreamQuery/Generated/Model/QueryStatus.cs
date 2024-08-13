@@ -47,9 +47,9 @@ namespace Amazon.TimestreamQuery.Model
         /// when the query completes running or when the query is cancelled. 
         /// </para>
         /// </summary>
-        public long CumulativeBytesMetered
+        public long? CumulativeBytesMetered
         {
-            get { return this._cumulativeBytesMetered.GetValueOrDefault(); }
+            get { return this._cumulativeBytesMetered; }
             set { this._cumulativeBytesMetered = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.TimestreamQuery.Model
         /// the total amount of bytes scanned since the query was started. 
         /// </para>
         /// </summary>
-        public long CumulativeBytesScanned
+        public long? CumulativeBytesScanned
         {
-            get { return this._cumulativeBytesScanned.GetValueOrDefault(); }
+            get { return this._cumulativeBytesScanned; }
             set { this._cumulativeBytesScanned = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.TimestreamQuery.Model
         /// The progress of the query, expressed as a percentage.
         /// </para>
         /// </summary>
-        public double ProgressPercentage
+        public double? ProgressPercentage
         {
-            get { return this._progressPercentage.GetValueOrDefault(); }
+            get { return this._progressPercentage; }
             set { this._progressPercentage = value; }
         }
 

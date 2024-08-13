@@ -70,7 +70,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("FunctionConfig");
                     if(publicRequest.FunctionConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FunctionConfig.Comment));                 
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.FunctionConfig.Comment));
 
                     if (publicRequest.FunctionConfig.KeyValueStoreAssociations != null)
                     {
@@ -85,7 +85,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("KeyValueStoreAssociation");
                                 if(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.IsSetKeyValueStoreARN())
-                                    xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));                 
+                                    xmlWriter.WriteElementString("KeyValueStoreARN", StringUtils.FromString(publicRequestFunctionConfigKeyValueStoreAssociationsItemsValue.KeyValueStoreARN));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -93,12 +93,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.FunctionConfig.KeyValueStoreAssociations.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.FunctionConfig.KeyValueStoreAssociations.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.FunctionConfig.KeyValueStoreAssociations.Quantity.Value));
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.FunctionConfig.IsSetRuntime())
-                        xmlWriter.WriteElementString("Runtime", StringUtils.FromString(publicRequest.FunctionConfig.Runtime));                 
+                        xmlWriter.WriteElementString("Runtime", StringUtils.FromString(publicRequest.FunctionConfig.Runtime));
 
                     xmlWriter.WriteEndElement();
                 }

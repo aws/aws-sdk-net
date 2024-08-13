@@ -51,13 +51,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmitInterval())
             {
                 context.Writer.WritePropertyName("EmitInterval");
-                context.Writer.Write(requestObject.EmitInterval);
+                context.Writer.Write(requestObject.EmitInterval.Value);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetS3BucketName())

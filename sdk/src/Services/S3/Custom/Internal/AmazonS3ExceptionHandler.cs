@@ -62,22 +62,8 @@ namespace Amazon.S3.Internal
                 throw;
             }
         }
-#elif AWS_APM_API
-        /// <summary>
-        /// Catch exceptions and clean up any open streams.
-        /// </summary>
-        /// <param name="executionContext"></param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            var exception = executionContext.ResponseContext.AsyncResult.Exception;
-            if (executionContext.ResponseContext.AsyncResult.Exception != null)
-            {
-                HandleException(ExecutionContext.CreateFromAsyncContext(executionContext), exception);
-            }
-            // Call outer handler
-            base.InvokeAsyncCallback(executionContext);
-        }
 #endif
+
         /// <summary>
         /// Catch exceptions and clean up any open streams.
         /// </summary>

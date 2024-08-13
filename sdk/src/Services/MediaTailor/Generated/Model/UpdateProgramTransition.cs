@@ -43,9 +43,9 @@ namespace Amazon.MediaTailor.Model
         /// The duration of the live program in seconds.
         /// </para>
         /// </summary>
-        public long DurationMillis
+        public long? DurationMillis
         {
-            get { return this._durationMillis.GetValueOrDefault(); }
+            get { return this._durationMillis; }
             set { this._durationMillis = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.MediaTailor.Model
         /// The date and time that the program is scheduled to start, in epoch milliseconds.
         /// </para>
         /// </summary>
-        public long ScheduledStartTimeMillis
+        public long? ScheduledStartTimeMillis
         {
-            get { return this._scheduledStartTimeMillis.GetValueOrDefault(); }
+            get { return this._scheduledStartTimeMillis; }
             set { this._scheduledStartTimeMillis = value; }
         }
 

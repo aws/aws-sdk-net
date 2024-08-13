@@ -43,9 +43,9 @@ namespace Amazon.AppStream.Model
         /// Indicates whether the image can be used for a fleet.
         /// </para>
         /// </summary>
-        public bool AllowFleet
+        public bool? AllowFleet
         {
-            get { return this._allowFleet.GetValueOrDefault(); }
+            get { return this._allowFleet; }
             set { this._allowFleet = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.AppStream.Model
         /// Indicates whether the image can be used for an image builder.
         /// </para>
         /// </summary>
-        public bool AllowImageBuilder
+        public bool? AllowImageBuilder
         {
-            get { return this._allowImageBuilder.GetValueOrDefault(); }
+            get { return this._allowImageBuilder; }
             set { this._allowImageBuilder = value; }
         }
 

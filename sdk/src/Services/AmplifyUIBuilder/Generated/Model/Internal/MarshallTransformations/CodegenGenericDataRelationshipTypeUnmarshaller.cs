@@ -80,13 +80,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("canUnlinkAssociatedModel", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CanUnlinkAssociatedModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isHasManyIndex", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsHasManyIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

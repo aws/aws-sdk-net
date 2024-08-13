@@ -88,9 +88,9 @@ namespace Amazon.Glue.Model
         /// engines and can therefore be read by those engines.
         /// </para>
         /// </summary>
-        public bool IsMultiDialectView
+        public bool? IsMultiDialectView
         {
-            get { return this._isMultiDialectView.GetValueOrDefault(); }
+            get { return this._isMultiDialectView; }
             set { this._isMultiDialectView = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Glue.Model
         /// guarantees provided, if any.
         /// </para>
         /// </summary>
-        public bool IsProtected
+        public bool? IsProtected
         {
-            get { return this._isProtected.GetValueOrDefault(); }
+            get { return this._isProtected; }
             set { this._isProtected = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Glue.Model
         /// Formation.
         /// </para>
         /// </summary>
-        public bool IsRegisteredWithLakeFormation
+        public bool? IsRegisteredWithLakeFormation
         {
-            get { return this._isRegisteredWithLakeFormation.GetValueOrDefault(); }
+            get { return this._isRegisteredWithLakeFormation; }
             set { this._isRegisteredWithLakeFormation = value; }
         }
 

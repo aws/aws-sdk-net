@@ -80,9 +80,9 @@ namespace Amazon.MediaPackageVod.Model
         /// instead of in the init fragment. This lets you use different SPS/PPS/VPS settings
         /// for your assets during content playback.
         /// </summary>
-        public bool IncludeEncoderConfigurationInSegments
+        public bool? IncludeEncoderConfigurationInSegments
         {
-            get { return this._includeEncoderConfigurationInSegments.GetValueOrDefault(); }
+            get { return this._includeEncoderConfigurationInSegments; }
             set { this._includeEncoderConfigurationInSegments = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property IncludeIframeOnlyStream. When enabled, an I-Frame only
         /// stream will be included in the output.
         /// </summary>
-        public bool IncludeIframeOnlyStream
+        public bool? IncludeIframeOnlyStream
         {
-            get { return this._includeIframeOnlyStream.GetValueOrDefault(); }
+            get { return this._includeIframeOnlyStream; }
             set { this._includeIframeOnlyStream = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property SegmentDurationSeconds. Duration (in seconds) of each segment.
         /// Actual segments will berounded to the nearest multiple of the source segment duration.
         /// </summary>
-        public int SegmentDurationSeconds
+        public int? SegmentDurationSeconds
         {
-            get { return this._segmentDurationSeconds.GetValueOrDefault(); }
+            get { return this._segmentDurationSeconds; }
             set { this._segmentDurationSeconds = value; }
         }
 

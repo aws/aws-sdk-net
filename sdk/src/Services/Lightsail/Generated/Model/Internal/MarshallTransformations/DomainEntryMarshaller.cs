@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsAlias())
             {
                 context.Writer.WritePropertyName("isAlias");
-                context.Writer.Write(requestObject.IsAlias);
+                context.Writer.Write(requestObject.IsAlias.Value);
             }
 
             if(requestObject.IsSetName())

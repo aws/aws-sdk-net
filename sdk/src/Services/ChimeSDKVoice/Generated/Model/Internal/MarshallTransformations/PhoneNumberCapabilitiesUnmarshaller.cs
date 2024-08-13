@@ -68,37 +68,37 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("InboundCall", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InboundCall = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InboundMMS", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InboundMMS = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InboundSMS", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InboundSMS = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutboundCall", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OutboundCall = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutboundMMS", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OutboundMMS = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutboundSMS", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OutboundSMS = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,13 +68,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CompliantConformancePackCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantConformancePackCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantConformancePackCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantConformancePackCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

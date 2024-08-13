@@ -48,9 +48,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long DecisionTaskCompletedEventId
+        public long? DecisionTaskCompletedEventId
         {
-            get { return this._decisionTaskCompletedEventId.GetValueOrDefault(); }
+            get { return this._decisionTaskCompletedEventId; }
             set { this._decisionTaskCompletedEventId = value; }
         }
 

@@ -61,9 +61,9 @@ namespace Amazon.WAFV2.Model
         /// Default: <c>TRUE</c> 
         /// </para>
         /// </summary>
-        public bool EnableMachineLearning
+        public bool? EnableMachineLearning
         {
-            get { return this._enableMachineLearning.GetValueOrDefault(); }
+            get { return this._enableMachineLearning; }
             set { this._enableMachineLearning = value; }
         }
 

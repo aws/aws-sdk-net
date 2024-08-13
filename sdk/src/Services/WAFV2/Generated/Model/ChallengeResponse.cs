@@ -63,9 +63,9 @@ namespace Amazon.WAFV2.Model
         /// If the token is missing, invalid, or expired, this code is <c>202 Request Accepted</c>.
         /// </para>
         /// </summary>
-        public int ResponseCode
+        public int? ResponseCode
         {
-            get { return this._responseCode.GetValueOrDefault(); }
+            get { return this._responseCode; }
             set { this._responseCode = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.WAFV2.Model
         /// The time that the challenge was last solved for the supplied token. 
         /// </para>
         /// </summary>
-        public long SolveTimestamp
+        public long? SolveTimestamp
         {
-            get { return this._solveTimestamp.GetValueOrDefault(); }
+            get { return this._solveTimestamp; }
             set { this._solveTimestamp = value; }
         }
 

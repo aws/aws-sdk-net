@@ -118,9 +118,9 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int PermissionVersion
+        public int? PermissionVersion
         {
-            get { return this._permissionVersion.GetValueOrDefault(); }
+            get { return this._permissionVersion; }
             set { this._permissionVersion = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Replace
+        public bool? Replace
         {
-            get { return this._replace.GetValueOrDefault(); }
+            get { return this._replace; }
             set { this._replace = value; }
         }
 

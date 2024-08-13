@@ -112,9 +112,9 @@ namespace Amazon.OpsWorks.Model
         /// EBS Encryption</a>.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.OpsWorks.Model
         /// For PIOPS volumes, the IOPS per disk.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.OpsWorks.Model
         /// The volume size.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

@@ -196,9 +196,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A numeric response code generated after running the plugin. 
         /// </para>
         /// </summary>
-        public int ResponseCode
+        public int? ResponseCode
         {
-            get { return this._responseCode.GetValueOrDefault(); }
+            get { return this._responseCode; }
             set { this._responseCode = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// command was sent. 
         /// </para>
         /// </summary>
-        public DateTime ResponseFinishDateTime
+        public DateTime? ResponseFinishDateTime
         {
-            get { return this._responseFinishDateTime.GetValueOrDefault(); }
+            get { return this._responseFinishDateTime; }
             set { this._responseFinishDateTime = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time the plugin started running. 
         /// </para>
         /// </summary>
-        public DateTime ResponseStartDateTime
+        public DateTime? ResponseStartDateTime
         {
-            get { return this._responseStartDateTime.GetValueOrDefault(); }
+            get { return this._responseStartDateTime; }
             set { this._responseStartDateTime = value; }
         }
 

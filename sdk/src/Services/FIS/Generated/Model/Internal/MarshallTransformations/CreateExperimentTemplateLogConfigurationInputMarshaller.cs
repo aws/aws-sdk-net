@@ -62,7 +62,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogSchemaVersion())
             {
                 context.Writer.WritePropertyName("logSchemaVersion");
-                context.Writer.Write(requestObject.LogSchemaVersion);
+                context.Writer.Write(requestObject.LogSchemaVersion.Value);
             }
 
             if(requestObject.IsSetS3Configuration())

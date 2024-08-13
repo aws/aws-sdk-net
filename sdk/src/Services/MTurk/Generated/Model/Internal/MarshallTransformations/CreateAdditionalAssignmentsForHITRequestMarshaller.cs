@@ -78,7 +78,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfAdditionalAssignments())
                 {
                     context.Writer.WritePropertyName("NumberOfAdditionalAssignments");
-                    context.Writer.Write(publicRequest.NumberOfAdditionalAssignments);
+                    context.Writer.Write(publicRequest.NumberOfAdditionalAssignments.Value);
                 }
 
                 if(publicRequest.IsSetUniqueRequestToken())

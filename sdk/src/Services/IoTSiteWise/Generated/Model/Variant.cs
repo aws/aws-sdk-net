@@ -45,9 +45,9 @@ namespace Amazon.IoTSiteWise.Model
         /// Asset property data of type Boolean (true or false).
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.IoTSiteWise.Model
         /// Asset property data of type double (floating point number).
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -78,12 +78,12 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property IntegerValue. 
         /// <para>
-        /// Asset property data of type integer (number that's greater than or equal to zero).
+        /// Asset property data of type integer (whole number).
         /// </para>
         /// </summary>
-        public int IntegerValue
+        public int? IntegerValue
         {
-            get { return this._integerValue.GetValueOrDefault(); }
+            get { return this._integerValue; }
             set { this._integerValue = value; }
         }
 

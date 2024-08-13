@@ -40,9 +40,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TransportStreamBitrate. Transport stream bit rate.
         /// </summary>
         [AWSProperty(Min=1000000, Max=100000000)]
-        public int TransportStreamBitrate
+        public int? TransportStreamBitrate
         {
-            get { return this._transportStreamBitrate.GetValueOrDefault(); }
+            get { return this._transportStreamBitrate; }
             set { this._transportStreamBitrate = value; }
         }
 

@@ -59,9 +59,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ChangedBlocksCount
+        public int? ChangedBlocksCount
         {
-            get { return this._changedBlocksCount.GetValueOrDefault(); }
+            get { return this._changedBlocksCount; }
             set { this._changedBlocksCount = value; }
         }
 

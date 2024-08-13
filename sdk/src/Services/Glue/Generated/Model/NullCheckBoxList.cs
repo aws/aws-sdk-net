@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// Specifies that an empty string is considered as a null value.
         /// </para>
         /// </summary>
-        public bool IsEmpty
+        public bool? IsEmpty
         {
-            get { return this._isEmpty.GetValueOrDefault(); }
+            get { return this._isEmpty; }
             set { this._isEmpty = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// Specifies that an integer value of -1 is considered as a null value.
         /// </para>
         /// </summary>
-        public bool IsNegOne
+        public bool? IsNegOne
         {
-            get { return this._isNegOne.GetValueOrDefault(); }
+            get { return this._isNegOne; }
             set { this._isNegOne = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Glue.Model
         /// Specifies that a value spelling out the word 'null' is considered as a null value.
         /// </para>
         /// </summary>
-        public bool IsNullString
+        public bool? IsNullString
         {
-            get { return this._isNullString.GetValueOrDefault(); }
+            get { return this._isNullString; }
             set { this._isNullString = value; }
         }
 

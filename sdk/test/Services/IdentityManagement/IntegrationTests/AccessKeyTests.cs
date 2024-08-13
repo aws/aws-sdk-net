@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                 CreateAccessKeyResponse response =
                     Client.CreateAccessKey(new CreateAccessKeyRequest() { UserName = username });
                 keyId = response.AccessKey.AccessKeyId;
-                Assert.IsTrue(response.AccessKey.CreateDate.Date.CompareTo(DateTime.Now.Date) == 0);
+                Assert.IsTrue(response.AccessKey.CreateDate.Value.Date.CompareTo(DateTime.Now.Date) == 0);
             }
             finally
             {

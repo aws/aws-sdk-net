@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrentInvocationsPerInstance())
             {
                 context.Writer.WritePropertyName("MaxConcurrentInvocationsPerInstance");
-                context.Writer.Write(requestObject.MaxConcurrentInvocationsPerInstance);
+                context.Writer.Write(requestObject.MaxConcurrentInvocationsPerInstance.Value);
             }
 
         }

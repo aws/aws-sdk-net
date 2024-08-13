@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.SimpleDB;
 using Amazon.SimpleDB.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class SimpleDBConstructorCustomizationsTests
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public void SelectRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.SimpleDB.Model.SelectRequest), new System.Type[] { typeof(string), });
-            EnsureConstructorExists(typeof(Amazon.SimpleDB.Model.SelectRequest), new System.Type[] { typeof(string), typeof(bool), });
+            EnsureConstructorExists(typeof(Amazon.SimpleDB.Model.SelectRequest), new System.Type[] { typeof(string), typeof(bool?), });
         }
 
         void EnsureConstructorExists(System.Type type, System.Type[] constructorParams)

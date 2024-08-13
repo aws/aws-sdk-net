@@ -74,7 +74,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SendEmailNotification", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SendEmailNotification = unmarshaller.Unmarshall(context);
                     continue;
                 }

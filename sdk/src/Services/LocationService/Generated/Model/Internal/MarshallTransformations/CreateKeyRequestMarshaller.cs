@@ -88,7 +88,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNoExpiry())
                 {
                     context.Writer.WritePropertyName("NoExpiry");
-                    context.Writer.Write(publicRequest.NoExpiry);
+                    context.Writer.Write(publicRequest.NoExpiry.Value);
                 }
 
                 if(publicRequest.IsSetRestrictions())

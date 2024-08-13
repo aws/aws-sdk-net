@@ -54,7 +54,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("HasMoreStreams", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HasMoreStreams = unmarshaller.Unmarshall(context);
                     continue;
                 }

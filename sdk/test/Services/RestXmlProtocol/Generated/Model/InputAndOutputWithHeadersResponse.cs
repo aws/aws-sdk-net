@@ -69,9 +69,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderByte.
         /// </summary>
-        public int HeaderByte
+        public int? HeaderByte
         {
-            get { return this._headerByte.GetValueOrDefault(); }
+            get { return this._headerByte; }
             set { this._headerByte = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderDouble.
         /// </summary>
-        public double HeaderDouble
+        public double? HeaderDouble
         {
-            get { return this._headerDouble.GetValueOrDefault(); }
+            get { return this._headerDouble; }
             set { this._headerDouble = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderFalseBool.
         /// </summary>
-        public bool HeaderFalseBool
+        public bool? HeaderFalseBool
         {
-            get { return this._headerFalseBool.GetValueOrDefault(); }
+            get { return this._headerFalseBool; }
             set { this._headerFalseBool = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderFloat.
         /// </summary>
-        public float HeaderFloat
+        public float? HeaderFloat
         {
-            get { return this._headerFloat.GetValueOrDefault(); }
+            get { return this._headerFloat; }
             set { this._headerFloat = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderInteger.
         /// </summary>
-        public int HeaderInteger
+        public int? HeaderInteger
         {
-            get { return this._headerInteger.GetValueOrDefault(); }
+            get { return this._headerInteger; }
             set { this._headerInteger = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderLong.
         /// </summary>
-        public long HeaderLong
+        public long? HeaderLong
         {
-            get { return this._headerLong.GetValueOrDefault(); }
+            get { return this._headerLong; }
             set { this._headerLong = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderShort.
         /// </summary>
-        public int HeaderShort
+        public int? HeaderShort
         {
-            get { return this._headerShort.GetValueOrDefault(); }
+            get { return this._headerShort; }
             set { this._headerShort = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// <summary>
         /// Gets and sets the property HeaderTrueBool.
         /// </summary>
-        public bool HeaderTrueBool
+        public bool? HeaderTrueBool
         {
-            get { return this._headerTrueBool.GetValueOrDefault(); }
+            get { return this._headerTrueBool; }
             set { this._headerTrueBool = value; }
         }
 

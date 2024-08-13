@@ -74,13 +74,13 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("gridGap", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GridGap = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("omitStoppedVideo", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OmitStoppedVideo = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,13 +92,13 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pipHeight", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PipHeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pipOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PipOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,7 +116,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pipWidth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PipWidth = unmarshaller.Unmarshall(context);
                     continue;
                 }

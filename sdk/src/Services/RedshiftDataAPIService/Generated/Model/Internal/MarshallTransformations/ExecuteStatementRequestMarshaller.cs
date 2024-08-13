@@ -135,7 +135,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetWithEvent())
                 {
                     context.Writer.WritePropertyName("WithEvent");
-                    context.Writer.Write(publicRequest.WithEvent);
+                    context.Writer.Write(publicRequest.WithEvent.Value);
                 }
 
                 if(publicRequest.IsSetWorkgroupName())

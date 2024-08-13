@@ -72,6 +72,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MatchCriteria", targetDepth))
+                {
+                    var unmarshaller = MatchCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.MatchCriteria = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,7 +86,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProficiencyLevel", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ProficiencyLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

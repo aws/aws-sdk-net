@@ -94,7 +94,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteVpcConfig())
                 {
                     context.Writer.WritePropertyName("DeleteVpcConfig");
-                    context.Writer.Write(publicRequest.DeleteVpcConfig);
+                    context.Writer.Write(publicRequest.DeleteVpcConfig.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -106,7 +106,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisconnectTimeoutInSeconds())
                 {
                     context.Writer.WritePropertyName("DisconnectTimeoutInSeconds");
-                    context.Writer.Write(publicRequest.DisconnectTimeoutInSeconds);
+                    context.Writer.Write(publicRequest.DisconnectTimeoutInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetDisplayName())
@@ -129,7 +129,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableDefaultInternetAccess())
                 {
                     context.Writer.WritePropertyName("EnableDefaultInternetAccess");
-                    context.Writer.Write(publicRequest.EnableDefaultInternetAccess);
+                    context.Writer.Write(publicRequest.EnableDefaultInternetAccess.Value);
                 }
 
                 if(publicRequest.IsSetIamRoleArn())
@@ -141,7 +141,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIdleDisconnectTimeoutInSeconds())
                 {
                     context.Writer.WritePropertyName("IdleDisconnectTimeoutInSeconds");
-                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInSeconds);
+                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetImageArn())
@@ -165,19 +165,19 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxConcurrentSessions())
                 {
                     context.Writer.WritePropertyName("MaxConcurrentSessions");
-                    context.Writer.Write(publicRequest.MaxConcurrentSessions);
+                    context.Writer.Write(publicRequest.MaxConcurrentSessions.Value);
                 }
 
                 if(publicRequest.IsSetMaxSessionsPerInstance())
                 {
                     context.Writer.WritePropertyName("MaxSessionsPerInstance");
-                    context.Writer.Write(publicRequest.MaxSessionsPerInstance);
+                    context.Writer.Write(publicRequest.MaxSessionsPerInstance.Value);
                 }
 
                 if(publicRequest.IsSetMaxUserDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("MaxUserDurationInSeconds");
-                    context.Writer.Write(publicRequest.MaxUserDurationInSeconds);
+                    context.Writer.Write(publicRequest.MaxUserDurationInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetName())

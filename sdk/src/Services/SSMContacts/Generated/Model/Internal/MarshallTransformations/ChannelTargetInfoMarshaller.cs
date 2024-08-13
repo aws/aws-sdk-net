@@ -57,7 +57,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetryIntervalInMinutes())
             {
                 context.Writer.WritePropertyName("RetryIntervalInMinutes");
-                context.Writer.Write(requestObject.RetryIntervalInMinutes);
+                context.Writer.Write(requestObject.RetryIntervalInMinutes.Value);
             }
 
         }

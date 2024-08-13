@@ -45,9 +45,9 @@ namespace Amazon.MediaTailor.Model
         /// The approximate duration of the ad break, in seconds.
         /// </para>
         /// </summary>
-        public long ApproximateDurationSeconds
+        public long? ApproximateDurationSeconds
         {
-            get { return this._approximateDurationSeconds.GetValueOrDefault(); }
+            get { return this._approximateDurationSeconds; }
             set { this._approximateDurationSeconds = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.MediaTailor.Model
         /// The approximate time that the ad will start playing.
         /// </para>
         /// </summary>
-        public DateTime ApproximateStartTime
+        public DateTime? ApproximateStartTime
         {
-            get { return this._approximateStartTime.GetValueOrDefault(); }
+            get { return this._approximateStartTime; }
             set { this._approximateStartTime = value; }
         }
 

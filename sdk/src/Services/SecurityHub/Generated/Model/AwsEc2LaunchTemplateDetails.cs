@@ -47,9 +47,9 @@ namespace Amazon.SecurityHub.Model
         ///  The default version of the launch template. 
         /// </para>
         /// </summary>
-        public long DefaultVersionNumber
+        public long? DefaultVersionNumber
         {
-            get { return this._defaultVersionNumber.GetValueOrDefault(); }
+            get { return this._defaultVersionNumber; }
             set { this._defaultVersionNumber = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SecurityHub.Model
         ///  The latest version of the launch template. 
         /// </para>
         /// </summary>
-        public long LatestVersionNumber
+        public long? LatestVersionNumber
         {
-            get { return this._latestVersionNumber.GetValueOrDefault(); }
+            get { return this._latestVersionNumber; }
             set { this._latestVersionNumber = value; }
         }
 

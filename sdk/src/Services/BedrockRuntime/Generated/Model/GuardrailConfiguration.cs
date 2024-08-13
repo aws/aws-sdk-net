@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Configuration information for a guardrail that you use with the <a>Converse</a> action.
+    /// Configuration information for a guardrail that you use with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+    /// operation.
     /// </summary>
     public partial class GuardrailConfiguration
     {

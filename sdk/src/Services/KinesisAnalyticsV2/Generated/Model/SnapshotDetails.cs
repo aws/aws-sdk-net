@@ -47,9 +47,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
-        public long ApplicationVersionId
+        public long? ApplicationVersionId
         {
-            get { return this._applicationVersionId.GetValueOrDefault(); }
+            get { return this._applicationVersionId; }
             set { this._applicationVersionId = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The timestamp of the application snapshot.
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreationTimestamp
+        public DateTime? SnapshotCreationTimestamp
         {
-            get { return this._snapshotCreationTimestamp.GetValueOrDefault(); }
+            get { return this._snapshotCreationTimestamp; }
             set { this._snapshotCreationTimestamp = value; }
         }
 

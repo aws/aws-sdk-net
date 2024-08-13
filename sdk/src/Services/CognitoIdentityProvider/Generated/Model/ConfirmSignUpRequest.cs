@@ -194,9 +194,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// error.
         /// </para>
         /// </summary>
-        public bool ForceAliasCreation
+        public bool? ForceAliasCreation
         {
-            get { return this._forceAliasCreation.GetValueOrDefault(); }
+            get { return this._forceAliasCreation; }
             set { this._forceAliasCreation = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// The amount of the recurring charge.
         /// </para>
         /// </summary>
-        public double Amount
+        public double? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

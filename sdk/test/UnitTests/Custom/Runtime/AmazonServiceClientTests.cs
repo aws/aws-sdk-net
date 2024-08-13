@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Util;
@@ -41,21 +41,12 @@ namespace AWSSDK.UnitTests
             var presets = _client.ListPresets();
         }
 
-#if BCL45
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public async Task TestSuccessfulCallAsync()
         {
             var presets = await _client.ListPresetsAsync(new ListPresetsRequest());
-        }
-#elif !BCL45 && BCL
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestSuccessfulCallAsync()
-        {
-            var asyncResult = _client.BeginListPresets(new ListPresetsRequest(),null,null);
-            asyncResult.AsyncWaitHandle.WaitOne();
-            var presets = _client.EndListPresets(asyncResult);
         }
 #endif
     }

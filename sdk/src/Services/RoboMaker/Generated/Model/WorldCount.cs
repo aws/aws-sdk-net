@@ -53,9 +53,9 @@ namespace Amazon.RoboMaker.Model
         /// The number of unique floorplans.
         /// </para>
         /// </summary>
-        public int FloorplanCount
+        public int? FloorplanCount
         {
-            get { return this._floorplanCount.GetValueOrDefault(); }
+            get { return this._floorplanCount; }
             set { this._floorplanCount = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.RoboMaker.Model
         /// The number of unique interiors per floorplan.
         /// </para>
         /// </summary>
-        public int InteriorCountPerFloorplan
+        public int? InteriorCountPerFloorplan
         {
-            get { return this._interiorCountPerFloorplan.GetValueOrDefault(); }
+            get { return this._interiorCountPerFloorplan; }
             set { this._interiorCountPerFloorplan = value; }
         }
 

@@ -188,9 +188,9 @@ namespace Amazon.Imagebuilder.Model
         /// skipped, and failed.
         /// </para>
         /// </summary>
-        public int TotalStepCount
+        public int? TotalStepCount
         {
-            get { return this._totalStepCount.GetValueOrDefault(); }
+            get { return this._totalStepCount; }
             set { this._totalStepCount = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.Imagebuilder.Model
         /// of the workflow.
         /// </para>
         /// </summary>
-        public int TotalStepsFailed
+        public int? TotalStepsFailed
         {
-            get { return this._totalStepsFailed.GetValueOrDefault(); }
+            get { return this._totalStepsFailed; }
             set { this._totalStepsFailed = value; }
         }
 
@@ -226,9 +226,9 @@ namespace Amazon.Imagebuilder.Model
         /// instance of the workflow.
         /// </para>
         /// </summary>
-        public int TotalStepsSkipped
+        public int? TotalStepsSkipped
         {
-            get { return this._totalStepsSkipped.GetValueOrDefault(); }
+            get { return this._totalStepsSkipped; }
             set { this._totalStepsSkipped = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.Imagebuilder.Model
         /// instance of the workflow.
         /// </para>
         /// </summary>
-        public int TotalStepsSucceeded
+        public int? TotalStepsSucceeded
         {
-            get { return this._totalStepsSucceeded.GetValueOrDefault(); }
+            get { return this._totalStepsSucceeded; }
             set { this._totalStepsSucceeded = value; }
         }
 

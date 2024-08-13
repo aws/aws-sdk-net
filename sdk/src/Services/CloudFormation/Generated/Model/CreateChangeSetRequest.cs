@@ -331,9 +331,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ImportExistingResources
+        public bool? ImportExistingResources
         {
-            get { return this._importExistingResources.GetValueOrDefault(); }
+            get { return this._importExistingResources; }
             set { this._importExistingResources = value; }
         }
 
@@ -351,9 +351,9 @@ namespace Amazon.CloudFormation.Model
         /// set, specify <c>True</c>.
         /// </para>
         /// </summary>
-        public bool IncludeNestedStacks
+        public bool? IncludeNestedStacks
         {
-            get { return this._includeNestedStacks.GetValueOrDefault(); }
+            get { return this._includeNestedStacks; }
             set { this._includeNestedStacks = value; }
         }
 
@@ -647,9 +647,9 @@ namespace Amazon.CloudFormation.Model
         /// set.
         /// </para>
         /// </summary>
-        public bool UsePreviousTemplate
+        public bool? UsePreviousTemplate
         {
-            get { return this._usePreviousTemplate.GetValueOrDefault(); }
+            get { return this._usePreviousTemplate; }
             set { this._usePreviousTemplate = value; }
         }
 

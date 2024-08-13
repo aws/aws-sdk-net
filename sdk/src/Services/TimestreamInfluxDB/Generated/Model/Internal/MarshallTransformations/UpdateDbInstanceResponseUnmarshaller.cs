@@ -54,7 +54,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.AllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -126,7 +126,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("publiclyAccessible", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PubliclyAccessible = unmarshaller.Unmarshall(context);
                     continue;
                 }

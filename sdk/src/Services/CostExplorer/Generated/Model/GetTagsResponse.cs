@@ -67,9 +67,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ReturnSize
+        public int? ReturnSize
         {
-            get { return this._returnSize.GetValueOrDefault(); }
+            get { return this._returnSize; }
             set { this._returnSize = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalSize
+        public int? TotalSize
         {
-            get { return this._totalSize.GetValueOrDefault(); }
+            get { return this._totalSize; }
             set { this._totalSize = value; }
         }
 

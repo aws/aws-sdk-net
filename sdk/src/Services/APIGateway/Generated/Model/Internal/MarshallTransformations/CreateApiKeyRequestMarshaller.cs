@@ -82,13 +82,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 if(publicRequest.IsSetGenerateDistinctId())
                 {
                     context.Writer.WritePropertyName("generateDistinctId");
-                    context.Writer.Write(publicRequest.GenerateDistinctId);
+                    context.Writer.Write(publicRequest.GenerateDistinctId.Value);
                 }
 
                 if(publicRequest.IsSetName())

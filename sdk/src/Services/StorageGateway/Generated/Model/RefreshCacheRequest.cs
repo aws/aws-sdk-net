@@ -149,9 +149,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool Recursive
+        public bool? Recursive
         {
-            get { return this._recursive.GetValueOrDefault(); }
+            get { return this._recursive; }
             set { this._recursive = value; }
         }
 

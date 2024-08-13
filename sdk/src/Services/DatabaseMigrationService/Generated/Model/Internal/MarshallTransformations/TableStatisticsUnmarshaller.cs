@@ -68,85 +68,85 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AppliedDdls", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AppliedDdls = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AppliedDeletes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AppliedDeletes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AppliedInserts", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AppliedInserts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AppliedUpdates", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AppliedUpdates = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Ddls", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Ddls = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Deletes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Deletes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadCondtnlChkFailedRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FullLoadCondtnlChkFailedRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FullLoadEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadErrorRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FullLoadErrorRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadReloaded", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FullLoadReloaded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FullLoadRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FullLoadStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Inserts", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Inserts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -170,19 +170,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Updates", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Updates = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ValidationFailedRecords", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ValidationFailedRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ValidationPendingRecords", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ValidationPendingRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -200,7 +200,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ValidationSuspendedRecords", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ValidationSuspendedRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -312,9 +312,9 @@ namespace Amazon.Imagebuilder.Model
         /// if the build or test phase of your workflow fails.
         /// </para>
         /// </summary>
-        public bool TerminateInstanceOnFailure
+        public bool? TerminateInstanceOnFailure
         {
-            get { return this._terminateInstanceOnFailure.GetValueOrDefault(); }
+            get { return this._terminateInstanceOnFailure; }
             set { this._terminateInstanceOnFailure = value; }
         }
 

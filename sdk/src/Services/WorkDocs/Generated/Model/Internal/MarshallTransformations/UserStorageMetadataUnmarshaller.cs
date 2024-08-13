@@ -74,7 +74,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StorageUtilizedInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageUtilizedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

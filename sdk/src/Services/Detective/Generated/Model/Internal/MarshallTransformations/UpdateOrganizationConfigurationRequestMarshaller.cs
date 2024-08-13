@@ -70,7 +70,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoEnable())
                 {
                     context.Writer.WritePropertyName("AutoEnable");
-                    context.Writer.Write(publicRequest.AutoEnable);
+                    context.Writer.Write(publicRequest.AutoEnable.Value);
                 }
 
                 if(publicRequest.IsSetGraphArn())

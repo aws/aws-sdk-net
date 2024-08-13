@@ -75,9 +75,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid bitrates
         /// depend on the coding mode.
         /// </summary>
-        public double Bitrate
+        public double? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.MediaLive.Model
         /// input audio is Dolby Digital Plus, dialnorm will be passed through.
         /// </summary>
         [AWSProperty(Min=1, Max=31)]
-        public int Dialnorm
+        public int? Dialnorm
         {
-            get { return this._dialnorm.GetValueOrDefault(); }
+            get { return this._dialnorm; }
             set { this._dialnorm = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LoRoCenterMixLevel. Left only/Right only center mix level.
         /// Only used for 3/2 coding mode.
         /// </summary>
-        public double LoRoCenterMixLevel
+        public double? LoRoCenterMixLevel
         {
-            get { return this._loRoCenterMixLevel.GetValueOrDefault(); }
+            get { return this._loRoCenterMixLevel; }
             set { this._loRoCenterMixLevel = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LoRoSurroundMixLevel. Left only/Right only surround mix
         /// level. Only used for 3/2 coding mode.
         /// </summary>
-        public double LoRoSurroundMixLevel
+        public double? LoRoSurroundMixLevel
         {
-            get { return this._loRoSurroundMixLevel.GetValueOrDefault(); }
+            get { return this._loRoSurroundMixLevel; }
             set { this._loRoSurroundMixLevel = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LtRtCenterMixLevel. Left total/Right total center mix level.
         /// Only used for 3/2 coding mode.
         /// </summary>
-        public double LtRtCenterMixLevel
+        public double? LtRtCenterMixLevel
         {
-            get { return this._ltRtCenterMixLevel.GetValueOrDefault(); }
+            get { return this._ltRtCenterMixLevel; }
             set { this._ltRtCenterMixLevel = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LtRtSurroundMixLevel. Left total/Right total surround mix
         /// level. Only used for 3/2 coding mode.
         /// </summary>
-        public double LtRtSurroundMixLevel
+        public double? LtRtSurroundMixLevel
         {
-            get { return this._ltRtSurroundMixLevel.GetValueOrDefault(); }
+            get { return this._ltRtSurroundMixLevel; }
             set { this._ltRtSurroundMixLevel = value; }
         }
 

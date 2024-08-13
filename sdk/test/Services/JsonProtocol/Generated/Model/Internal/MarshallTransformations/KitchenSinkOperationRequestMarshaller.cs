@@ -78,19 +78,19 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBoolean())
                 {
                     context.Writer.WritePropertyName("Boolean");
-                    context.Writer.Write(publicRequest.Boolean);
+                    context.Writer.Write(publicRequest.Boolean.Value);
                 }
 
                 if(publicRequest.IsSetDouble())
                 {
                     context.Writer.WritePropertyName("Double");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Double))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Double.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Double));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Double.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.Double);
+                        context.Writer.Write(publicRequest.Double.Value);
                     }
                 }
 
@@ -108,13 +108,13 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFloat())
                 {
                     context.Writer.WritePropertyName("Float");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.Float))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.Float.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.Float));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.Float.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.Float);
+                        context.Writer.Write(publicRequest.Float.Value);
                     }
                 }
 
@@ -127,7 +127,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInteger())
                 {
                     context.Writer.WritePropertyName("Integer");
-                    context.Writer.Write(publicRequest.Integer);
+                    context.Writer.Write(publicRequest.Integer.Value);
                 }
 
                 if(publicRequest.IsSetIso8601Timestamp())
@@ -207,7 +207,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLong())
                 {
                     context.Writer.WritePropertyName("Long");
-                    context.Writer.Write(publicRequest.Long);
+                    context.Writer.Write(publicRequest.Long.Value);
                 }
 
                 if(publicRequest.IsSetMapOfListsOfStrings())
@@ -361,13 +361,13 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimestamp())
                 {
                     context.Writer.WritePropertyName("Timestamp");
-                    context.Writer.Write(publicRequest.Timestamp);
+                    context.Writer.Write(publicRequest.Timestamp.Value);
                 }
 
                 if(publicRequest.IsSetUnixTimestamp())
                 {
                     context.Writer.WritePropertyName("UnixTimestamp");
-                    context.Writer.Write(publicRequest.UnixTimestamp);
+                    context.Writer.Write(publicRequest.UnixTimestamp.Value);
                 }
 
                 writer.WriteObjectEnd();

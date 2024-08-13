@@ -63,9 +63,9 @@ namespace Amazon.DAX.Model
         /// The port number that applications should use to connect to the endpoint.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

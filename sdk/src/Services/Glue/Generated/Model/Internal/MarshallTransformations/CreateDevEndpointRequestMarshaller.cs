@@ -110,13 +110,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfNodes())
                 {
                     context.Writer.WritePropertyName("NumberOfNodes");
-                    context.Writer.Write(publicRequest.NumberOfNodes);
+                    context.Writer.Write(publicRequest.NumberOfNodes.Value);
                 }
 
                 if(publicRequest.IsSetNumberOfWorkers())
                 {
                     context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers);
+                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
                 }
 
                 if(publicRequest.IsSetPublicKey())

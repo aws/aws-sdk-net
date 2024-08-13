@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.
         /// </para>
         /// </summary>
-        public bool HiveCompatiblePartitions
+        public bool? HiveCompatiblePartitions
         {
-            get { return this._hiveCompatiblePartitions.GetValueOrDefault(); }
+            get { return this._hiveCompatiblePartitions; }
             set { this._hiveCompatiblePartitions = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to partition the flow log per hour.
         /// </para>
         /// </summary>
-        public bool PerHourPartition
+        public bool? PerHourPartition
         {
-            get { return this._perHourPartition.GetValueOrDefault(); }
+            get { return this._perHourPartition; }
             set { this._perHourPartition = value; }
         }
 

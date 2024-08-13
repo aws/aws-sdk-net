@@ -102,7 +102,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRequestMACSec())
                 {
                     context.Writer.WritePropertyName("requestMACSec");
-                    context.Writer.Write(publicRequest.RequestMACSec);
+                    context.Writer.Write(publicRequest.RequestMACSec.Value);
                 }
 
                 if(publicRequest.IsSetTags())

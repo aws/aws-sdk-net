@@ -61,9 +61,9 @@ namespace Amazon.SecurityHub.Model
         /// The total number of occurrences of sensitive data.
         /// </para>
         /// </summary>
-        public long TotalCount
+        public long? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

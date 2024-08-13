@@ -60,7 +60,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ApplicationVersionId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ApplicationVersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -68,6 +68,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<CloudWatchLoggingOptionDescription, CloudWatchLoggingOptionDescriptionUnmarshaller>(CloudWatchLoggingOptionDescriptionUnmarshaller.Instance);
                     response.CloudWatchLoggingOptionDescriptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OperationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OperationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

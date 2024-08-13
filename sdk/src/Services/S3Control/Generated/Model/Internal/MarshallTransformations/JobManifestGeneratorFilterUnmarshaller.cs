@@ -58,19 +58,19 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("CreatedAfter", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreatedAfter = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CreatedBefore", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreatedBefore = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EligibleForReplication", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EligibleForReplication = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -102,13 +102,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ObjectSizeGreaterThanBytes", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.ObjectSizeGreaterThanBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ObjectSizeLessThanBytes", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.ObjectSizeLessThanBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }

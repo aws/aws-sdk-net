@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// Valid values: <c>true | false</c> 
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

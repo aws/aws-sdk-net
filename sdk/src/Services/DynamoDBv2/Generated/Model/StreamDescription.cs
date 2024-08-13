@@ -50,9 +50,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The date and time when the request to create this stream was issued.
         /// </para>
         /// </summary>
-        public DateTime CreationRequestDateTime
+        public DateTime? CreationRequestDateTime
         {
-            get { return this._creationRequestDateTime.GetValueOrDefault(); }
+            get { return this._creationRequestDateTime; }
             set { this._creationRequestDateTime = value; }
         }
 

@@ -83,7 +83,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryStartTime())
             {
                 context.Writer.WritePropertyName("QueryStartTime");
-                context.Writer.Write(requestObject.QueryStartTime);
+                context.Writer.Write(requestObject.QueryStartTime.Value);
             }
 
         }

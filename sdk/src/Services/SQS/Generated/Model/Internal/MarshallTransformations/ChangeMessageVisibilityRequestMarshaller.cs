@@ -84,7 +84,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVisibilityTimeout())
                 {
                     context.Writer.WritePropertyName("VisibilityTimeout");
-                    context.Writer.Write(publicRequest.VisibilityTimeout);
+                    context.Writer.Write(publicRequest.VisibilityTimeout.Value);
                 }
 
                 writer.WriteObjectEnd();

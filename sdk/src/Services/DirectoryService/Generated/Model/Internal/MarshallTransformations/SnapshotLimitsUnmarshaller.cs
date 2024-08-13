@@ -68,19 +68,19 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ManualSnapshotsCurrentCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManualSnapshotsCurrentCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ManualSnapshotsLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManualSnapshotsLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ManualSnapshotsLimitReached", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ManualSnapshotsLimitReached = unmarshaller.Unmarshall(context);
                     continue;
                 }

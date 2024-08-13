@@ -86,9 +86,9 @@ namespace Amazon.LexModelsV2.Model
         /// A timestamp of the date and time that the bot locale was last built.
         /// </para>
         /// </summary>
-        public DateTime LastBuildSubmittedDateTime
+        public DateTime? LastBuildSubmittedDateTime
         {
-            get { return this._lastBuildSubmittedDateTime.GetValueOrDefault(); }
+            get { return this._lastBuildSubmittedDateTime; }
             set { this._lastBuildSubmittedDateTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.LexModelsV2.Model
         /// A timestamp of the date and time that the bot locale was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 

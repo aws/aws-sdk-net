@@ -122,7 +122,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaximumPlayerSessionCount())
                 {
                     context.Writer.WritePropertyName("MaximumPlayerSessionCount");
-                    context.Writer.Write(publicRequest.MaximumPlayerSessionCount);
+                    context.Writer.Write(publicRequest.MaximumPlayerSessionCount.Value);
                 }
 
                 if(publicRequest.IsSetPlacementId())

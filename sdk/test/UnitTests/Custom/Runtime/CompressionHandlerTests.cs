@@ -27,13 +27,14 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Util;
+using System.Reflection;
 
 namespace AWSSDK.UnitTests
 {                                           
     [TestClass]
     public class CompressionHandlerTests
     {
-#if BCL45 
+#if BCL 
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [DataRow(null, null, CompressionEncodingAlgorithm.gzip, true)]
@@ -133,108 +134,6 @@ namespace AWSSDK.UnitTests
                 Assert.IsInstanceOfType(request.ContentStream, typeof(CompressionWrapperStream));
             }
         }
-
-#elif !BCL45 && BCL
-
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [DataRow(null, null, CompressionEncodingAlgorithm.gzip, true)]
-        [DataRow(true, 0L, CompressionEncodingAlgorithm.gzip, true)]
-        [DataRow(false, 10000L, CompressionEncodingAlgorithm.gzip, true)]
-        [DataRow(false, 0L, CompressionEncodingAlgorithm.NONE, true)]
-        [DataRow(false, 0L, CompressionEncodingAlgorithm.gzip, false)]
-        [DataTestMethod]
-        public void TestCompressionCall(bool? disableCompression, long? minCompressionSize, CompressionEncodingAlgorithm encodingEnum, bool notCompressed)
-        {
-            var handler = new CompressionHandler();
-            var mockHandler = new MockActionHandler();
-            handler.InnerHandler = mockHandler;
-
-            var executionContext = CreateTestContext(false);
-            var request = executionContext.RequestContext.Request;
-            var originalInput = AWSSDKUtils.GetRequestPayloadBytes(request);
-
-            var clientConfig = executionContext.RequestContext.ClientConfig as AmazonCloudWatchConfig;
-            Assert.IsTrue(clientConfig.RequestMinCompressionSizeBytes == 10240);
-
-            request.CompressionAlgorithm = encodingEnum;
-
-            if (disableCompression != null)
-            {
-                clientConfig.DisableRequestCompression = (bool) disableCompression;
-            }
-
-            if (minCompressionSize != null)
-            {
-                clientConfig.RequestMinCompressionSizeBytes = (long) minCompressionSize;
-            }
-            
-            handler.InvokeSync(executionContext);
-            
-            var newInput = AWSSDKUtils.GetRequestPayloadBytes(request);
-
-            Assert.IsNull(request.ContentStream);
-
-            if (notCompressed)
-            {
-                Assert.IsNull(request.Content);
-                CollectionAssert.AreEqual(originalInput, newInput);
-            }
-            else
-            {
-                Assert.IsNotNull(request.Content);
-                CollectionAssert.AreNotEqual(originalInput, newInput);
-            }
-        }
-
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [DataRow(null, null, CompressionEncodingAlgorithm.gzip, false)]
-        [DataRow(true, 0L, CompressionEncodingAlgorithm.gzip, true)]
-        [DataRow(false, 100000L, CompressionEncodingAlgorithm.gzip, false)]
-        [DataRow(false, 0L, CompressionEncodingAlgorithm.NONE, true)]
-        [DataRow(false, 0L, CompressionEncodingAlgorithm.gzip, false)]
-        [DataTestMethod]
-        public void TestStreamCompressionCall(bool? disableCompression, long? minCompressionSize, CompressionEncodingAlgorithm encodingEnum, bool notCompressed)
-        {
-            var handler = new CompressionHandler();
-            var mockHandler = new MockActionHandler();
-            handler.InnerHandler = mockHandler;
-
-            var executionContext = CreateTestContext(true);
-            var request = executionContext.RequestContext.Request;
-            var originalInputLen = request.ContentStream.Length;
-
-            request.CompressionAlgorithm = encodingEnum;
-
-            var clientConfig = executionContext.RequestContext.ClientConfig as AmazonCloudWatchConfig;
-
-            Assert.IsTrue(clientConfig.RequestMinCompressionSizeBytes == 10240);
-            
-            if (disableCompression != null)
-            {
-                clientConfig.DisableRequestCompression = (bool)disableCompression;
-            }
-            if (minCompressionSize != null)
-            {
-                clientConfig.RequestMinCompressionSizeBytes = (long)minCompressionSize;
-            }
-
-            handler.InvokeSync(executionContext);
-
-            Assert.IsNull(request.Content);
-            Assert.IsNotNull(request.ContentStream);
-            Assert.AreEqual(originalInputLen, request.ContentStream.Length);
-
-            if (notCompressed)
-            {
-                Assert.IsInstanceOfType(request.ContentStream, typeof(MemoryStream));
-            }
-            else
-            {
-                Assert.IsInstanceOfType(request.ContentStream, typeof(CompressionWrapperStream));
-            }
-        }
 #endif
 
         private ExecutionContext CreateTestContext(bool isStreaming)
@@ -259,8 +158,12 @@ namespace AWSSDK.UnitTests
             {
                 OriginalRequest = putMetricDataRequest,
                 Request = new PutMetricDataRequestMarshaller().Marshall(putMetricDataRequest),
-                ClientConfig = new AmazonCloudWatchConfig()
+                ClientConfig = new AmazonCloudWatchConfig(),
             };
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
 
             var request = requestContext.Request;
             if (isStreaming)

@@ -46,9 +46,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-1800, Max=1800)]
-        public double East
+        public double? East
         {
-            get { return this._east.GetValueOrDefault(); }
+            get { return this._east; }
             set { this._east = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-90, Max=90)]
-        public double North
+        public double? North
         {
-            get { return this._north.GetValueOrDefault(); }
+            get { return this._north; }
             set { this._north = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-90, Max=90)]
-        public double South
+        public double? South
         {
-            get { return this._south.GetValueOrDefault(); }
+            get { return this._south; }
             set { this._south = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-1800, Max=1800)]
-        public double West
+        public double? West
         {
-            get { return this._west.GetValueOrDefault(); }
+            get { return this._west; }
             set { this._west = value; }
         }
 

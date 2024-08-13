@@ -44,9 +44,9 @@ namespace Amazon.Deadline.Model
         /// The maximum amount of the fleet worker capability.
         /// </para>
         /// </summary>
-        public float Max
+        public float? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float Min
+        public float? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 

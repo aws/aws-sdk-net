@@ -74,7 +74,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("booleanValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,7 +116,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timestampValue", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TimestampValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

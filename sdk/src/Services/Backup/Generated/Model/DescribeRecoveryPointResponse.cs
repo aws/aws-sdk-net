@@ -65,9 +65,9 @@ namespace Amazon.Backup.Model
         /// The size, in bytes, of a backup.
         /// </para>
         /// </summary>
-        public long BackupSizeInBytes
+        public long? BackupSizeInBytes
         {
-            get { return this._backupSizeInBytes.GetValueOrDefault(); }
+            get { return this._backupSizeInBytes; }
             set { this._backupSizeInBytes = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Backup.Model
         /// 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CompletionDate
+        public DateTime? CompletionDate
         {
-            get { return this._completionDate.GetValueOrDefault(); }
+            get { return this._completionDate; }
             set { this._completionDate = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.Backup.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.Backup.Model
         /// encrypted, or <c>FALSE</c> if the recovery point is not encrypted.
         /// </para>
         /// </summary>
-        public bool IsEncrypted
+        public bool? IsEncrypted
         {
-            get { return this._isEncrypted.GetValueOrDefault(); }
+            get { return this._isEncrypted; }
             set { this._isEncrypted = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.Backup.Model
         /// This returns the boolean value that a recovery point is a parent (composite) job.
         /// </para>
         /// </summary>
-        public bool IsParent
+        public bool? IsParent
         {
-            get { return this._isParent.GetValueOrDefault(); }
+            get { return this._isParent; }
             set { this._isParent = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.Backup.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime LastRestoreTime
+        public DateTime? LastRestoreTime
         {
-            get { return this._lastRestoreTime.GetValueOrDefault(); }
+            get { return this._lastRestoreTime; }
             set { this._lastRestoreTime = value; }
         }
 

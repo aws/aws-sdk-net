@@ -57,7 +57,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFineGrainedAuthorizationEnabled())
             {
                 context.Writer.WritePropertyName("FineGrainedAuthorizationEnabled");
-                context.Writer.Write(requestObject.FineGrainedAuthorizationEnabled);
+                context.Writer.Write(requestObject.FineGrainedAuthorizationEnabled.Value);
             }
 
             if(requestObject.IsSetIdpLambdaArn())

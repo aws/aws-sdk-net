@@ -61,9 +61,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int ClassBTimeout
+        public int? ClassBTimeout
         {
-            get { return this._classBTimeout.GetValueOrDefault(); }
+            get { return this._classBTimeout; }
             set { this._classBTimeout = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int ClassCTimeout
+        public int? ClassCTimeout
         {
-            get { return this._classCTimeout.GetValueOrDefault(); }
+            get { return this._classCTimeout; }
             set { this._classCTimeout = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int MaxDutyCycle
+        public int? MaxDutyCycle
         {
-            get { return this._maxDutyCycle.GetValueOrDefault(); }
+            get { return this._maxDutyCycle; }
             set { this._maxDutyCycle = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int MaxEirp
+        public int? MaxEirp
         {
-            get { return this._maxEirp.GetValueOrDefault(); }
+            get { return this._maxEirp; }
             set { this._maxEirp = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int PingSlotDr
+        public int? PingSlotDr
         {
-            get { return this._pingSlotDr.GetValueOrDefault(); }
+            get { return this._pingSlotDr; }
             set { this._pingSlotDr = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1000000, Max=16700000)]
-        public int PingSlotFreq
+        public int? PingSlotFreq
         {
-            get { return this._pingSlotFreq.GetValueOrDefault(); }
+            get { return this._pingSlotFreq; }
             set { this._pingSlotFreq = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=4096)]
-        public int PingSlotPeriod
+        public int? PingSlotPeriod
         {
-            get { return this._pingSlotPeriod.GetValueOrDefault(); }
+            get { return this._pingSlotPeriod; }
             set { this._pingSlotPeriod = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int RxDataRate2
+        public int? RxDataRate2
         {
-            get { return this._rxDataRate2.GetValueOrDefault(); }
+            get { return this._rxDataRate2; }
             set { this._rxDataRate2 = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int RxDelay1
+        public int? RxDelay1
         {
-            get { return this._rxDelay1.GetValueOrDefault(); }
+            get { return this._rxDelay1; }
             set { this._rxDelay1 = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
-        public int RxDrOffset1
+        public int? RxDrOffset1
         {
-            get { return this._rxDrOffset1.GetValueOrDefault(); }
+            get { return this._rxDrOffset1; }
             set { this._rxDrOffset1 = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1000000, Max=16700000)]
-        public int RxFreq2
+        public int? RxFreq2
         {
-            get { return this._rxFreq2.GetValueOrDefault(); }
+            get { return this._rxFreq2; }
             set { this._rxFreq2 = value; }
         }
 
@@ -345,9 +345,9 @@ namespace Amazon.IoTWireless.Model
         /// The Supports32BitFCnt value.
         /// </para>
         /// </summary>
-        public bool Supports32BitFCnt
+        public bool? Supports32BitFCnt
         {
-            get { return this._supports32BitFCnt.GetValueOrDefault(); }
+            get { return this._supports32BitFCnt; }
             set { this._supports32BitFCnt = value; }
         }
 
@@ -363,9 +363,9 @@ namespace Amazon.IoTWireless.Model
         /// The SupportsClassB value.
         /// </para>
         /// </summary>
-        public bool SupportsClassB
+        public bool? SupportsClassB
         {
-            get { return this._supportsClassB.GetValueOrDefault(); }
+            get { return this._supportsClassB; }
             set { this._supportsClassB = value; }
         }
 
@@ -381,9 +381,9 @@ namespace Amazon.IoTWireless.Model
         /// The SupportsClassC value.
         /// </para>
         /// </summary>
-        public bool SupportsClassC
+        public bool? SupportsClassC
         {
-            get { return this._supportsClassC.GetValueOrDefault(); }
+            get { return this._supportsClassC; }
             set { this._supportsClassC = value; }
         }
 
@@ -399,9 +399,9 @@ namespace Amazon.IoTWireless.Model
         /// The SupportsJoin value.
         /// </para>
         /// </summary>
-        public bool SupportsJoin
+        public bool? SupportsJoin
         {
-            get { return this._supportsJoin.GetValueOrDefault(); }
+            get { return this._supportsJoin; }
             set { this._supportsJoin = value; }
         }
 

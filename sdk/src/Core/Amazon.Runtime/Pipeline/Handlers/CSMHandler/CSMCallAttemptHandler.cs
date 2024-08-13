@@ -53,8 +53,8 @@ namespace Amazon.Runtime.Internal
                 CSMUtilities.SerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallAttempt);
             }
         }
-#if AWS_ASYNC_API
 
+#if AWS_ASYNC_API
         /// <summary>
         /// Calls the PreInvoke and PostInvoke methods before and after calling the next handler 
         /// in the pipeline.
@@ -84,40 +84,8 @@ namespace Amazon.Runtime.Internal
                 _ = CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallAttempt);
             }
         }
-#elif AWS_APM_API
-        /// <summary>
-        /// Invokes the CSM handler and captures data for the CSM attempts.
-        /// </summary>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
-        }
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            var syncExecutionContext = ExecutionContext.CreateFromAsyncContext(executionContext);
-            if (executionContext.ResponseContext.AsyncResult.Exception != null)
-            {
-                var exception = executionContext.ResponseContext.AsyncResult.Exception;
-                if (exception is AmazonServiceException)
-                {
-                    CaptureAmazonException(syncExecutionContext.RequestContext.CSMCallAttempt, exception as AmazonServiceException);
-                }
-                else
-                {
-                    if(syncExecutionContext.ResponseContext.HttpResponse == null)
-                    {
-                        CaptureSDKExceptionMessage(syncExecutionContext.RequestContext.CSMCallAttempt, exception);
-                    }
-                }
-            }
-            
-            CSMCallAttemptMetricsCapture(syncExecutionContext.RequestContext, syncExecutionContext.ResponseContext);
-            CSMUtilities.BeginSerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallAttempt);
-            base.InvokeAsyncCallback(executionContext);
-        }
-
 #endif
+
         /// <summary>
         /// Method that gets called in the final clause that captures data for each http request
         /// from the request and response context.

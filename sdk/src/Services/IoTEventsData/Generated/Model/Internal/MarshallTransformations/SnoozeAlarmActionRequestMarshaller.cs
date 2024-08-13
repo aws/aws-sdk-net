@@ -75,7 +75,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSnoozeDuration())
             {
                 context.Writer.WritePropertyName("snoozeDuration");
-                context.Writer.Write(requestObject.SnoozeDuration);
+                context.Writer.Write(requestObject.SnoozeDuration.Value);
             }
 
         }

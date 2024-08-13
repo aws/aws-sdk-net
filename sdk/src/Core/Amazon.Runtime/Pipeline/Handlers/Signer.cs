@@ -15,6 +15,8 @@
 
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using System;
 using System.IO;
@@ -40,8 +42,8 @@ namespace Amazon.Runtime.Internal
             PreInvoke(executionContext);
             base.InvokeSync(executionContext);
         }
-#if AWS_ASYNC_API 
 
+#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -54,21 +56,6 @@ namespace Amazon.Runtime.Internal
         {
             await PreInvokeAsync(executionContext).ConfigureAwait(false);
             return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
         }
 #endif
 
@@ -122,6 +109,7 @@ namespace Amazon.Runtime.Internal
                 return;
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
+            using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
                 if (immutableCredentials?.UseToken == true && 
                     !(requestContext.Signer is NullSigner) && 
@@ -158,6 +146,7 @@ namespace Amazon.Runtime.Internal
                 return;
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
+            using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
                 if (immutableCredentials?.UseToken == true &&
                     !(requestContext.Signer is NullSigner) &&

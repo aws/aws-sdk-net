@@ -65,9 +65,9 @@ namespace Amazon.WorkDocs.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
-        public long TotalNumberOfUsers
+        public long? TotalNumberOfUsers
         {
-            get { return this._totalNumberOfUsers.GetValueOrDefault(); }
+            get { return this._totalNumberOfUsers; }
             set { this._totalNumberOfUsers = value; }
         }
 

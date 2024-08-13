@@ -42,9 +42,9 @@ namespace Amazon.SQS.Model
         /// The approximate number of messages already moved to the destination queue.
         /// </para>
         /// </summary>
-        public long ApproximateNumberOfMessagesMoved
+        public long? ApproximateNumberOfMessagesMoved
         {
-            get { return this._approximateNumberOfMessagesMoved.GetValueOrDefault(); }
+            get { return this._approximateNumberOfMessagesMoved; }
             set { this._approximateNumberOfMessagesMoved = value; }
         }
 

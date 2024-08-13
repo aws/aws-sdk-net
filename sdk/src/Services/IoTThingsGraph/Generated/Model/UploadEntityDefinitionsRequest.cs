@@ -73,9 +73,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// create a new namespace version.
         /// </para>
         /// </summary>
-        public bool DeprecateExistingEntities
+        public bool? DeprecateExistingEntities
         {
-            get { return this._deprecateExistingEntities.GetValueOrDefault(); }
+            get { return this._deprecateExistingEntities; }
             set { this._deprecateExistingEntities = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// namespace. If set to <c>true</c>, the upload will create a new namespace version.
         /// </para>
         /// </summary>
-        public bool SyncWithPublicNamespace
+        public bool? SyncWithPublicNamespace
         {
-            get { return this._syncWithPublicNamespace.GetValueOrDefault(); }
+            get { return this._syncWithPublicNamespace; }
             set { this._syncWithPublicNamespace = value; }
         }
 

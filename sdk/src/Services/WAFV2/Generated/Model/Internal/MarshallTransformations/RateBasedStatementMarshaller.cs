@@ -73,7 +73,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEvaluationWindowSec())
             {
                 context.Writer.WritePropertyName("EvaluationWindowSec");
-                context.Writer.Write(requestObject.EvaluationWindowSec);
+                context.Writer.Write(requestObject.EvaluationWindowSec.Value);
             }
 
             if(requestObject.IsSetForwardedIPConfig())
@@ -90,7 +90,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");
-                context.Writer.Write(requestObject.Limit);
+                context.Writer.Write(requestObject.Limit.Value);
             }
 
             if(requestObject.IsSetScopeDownStatement())

@@ -40,9 +40,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property DurationInMs. Duration in milliseconds
         /// </summary>
-        public int DurationInMs
+        public int? DurationInMs
         {
-            get { return this._durationInMs.GetValueOrDefault(); }
+            get { return this._durationInMs; }
             set { this._durationInMs = value; }
         }
 

@@ -89,9 +89,9 @@ namespace Amazon.DirectConnect.Model
         /// If <c>MaxResults</c> is given a value larger than 100, only 100 results are returned.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

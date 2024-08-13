@@ -54,9 +54,9 @@ namespace Amazon.FraudDetector.Model
         /// to <c>True</c>, 
         /// </para>
         /// </summary>
-        public bool DeleteAuditHistory
+        public bool? DeleteAuditHistory
         {
-            get { return this._deleteAuditHistory.GetValueOrDefault(); }
+            get { return this._deleteAuditHistory; }
             set { this._deleteAuditHistory = value; }
         }
 

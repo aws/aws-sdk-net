@@ -68,7 +68,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("base", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Base = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("weight", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Weight = unmarshaller.Unmarshall(context);
                     continue;
                 }

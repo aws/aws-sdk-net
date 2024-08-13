@@ -54,7 +54,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CollectionDurationMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.CollectionDurationMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,13 +66,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("JobEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.JobEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("JobStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.JobStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

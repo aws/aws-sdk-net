@@ -74,7 +74,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("assessmentReportSelectionCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AssessmentReportSelectionCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,49 +110,49 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("date", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Date = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("evidenceAwsServiceSourceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvidenceAwsServiceSourceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("evidenceByTypeComplianceCheckCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvidenceByTypeComplianceCheckCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("evidenceByTypeComplianceCheckIssuesCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvidenceByTypeComplianceCheckIssuesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("evidenceByTypeConfigurationDataCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvidenceByTypeConfigurationDataCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("evidenceByTypeManualCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvidenceByTypeManualCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("evidenceByTypeUserActivityCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvidenceByTypeUserActivityCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("evidenceResourcesIncludedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvidenceResourcesIncludedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -170,7 +170,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalEvidence", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalEvidence = unmarshaller.Unmarshall(context);
                     continue;
                 }

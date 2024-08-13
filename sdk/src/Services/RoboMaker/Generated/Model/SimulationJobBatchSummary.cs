@@ -67,9 +67,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the simulation job batch was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.RoboMaker.Model
         /// The number of created simulation job requests.
         /// </para>
         /// </summary>
-        public int CreatedRequestCount
+        public int? CreatedRequestCount
         {
-            get { return this._createdRequestCount.GetValueOrDefault(); }
+            get { return this._createdRequestCount; }
             set { this._createdRequestCount = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.RoboMaker.Model
         /// The number of failed simulation job requests.
         /// </para>
         /// </summary>
-        public int FailedRequestCount
+        public int? FailedRequestCount
         {
-            get { return this._failedRequestCount.GetValueOrDefault(); }
+            get { return this._failedRequestCount; }
             set { this._failedRequestCount = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.RoboMaker.Model
         /// updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.RoboMaker.Model
         /// The number of pending simulation job requests.
         /// </para>
         /// </summary>
-        public int PendingRequestCount
+        public int? PendingRequestCount
         {
-            get { return this._pendingRequestCount.GetValueOrDefault(); }
+            get { return this._pendingRequestCount; }
             set { this._pendingRequestCount = value; }
         }
 

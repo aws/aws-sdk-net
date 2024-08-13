@@ -43,9 +43,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ElapsedTimeInActiveSeconds
+        public long? ElapsedTimeInActiveSeconds
         {
-            get { return this._elapsedTimeInActiveSeconds.GetValueOrDefault(); }
+            get { return this._elapsedTimeInActiveSeconds; }
             set { this._elapsedTimeInActiveSeconds = value; }
         }
 

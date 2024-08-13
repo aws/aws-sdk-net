@@ -51,9 +51,9 @@ namespace Amazon.Redshift.Model
         /// Indicates whether all VPCs in the grantee account are allowed access to the cluster.
         /// </para>
         /// </summary>
-        public bool AllowedAllVPCs
+        public bool? AllowedAllVPCs
         {
-            get { return this._allowedAllVPCs.GetValueOrDefault(); }
+            get { return this._allowedAllVPCs; }
             set { this._allowedAllVPCs = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Redshift.Model
         /// The time (UTC) when the authorization was created.
         /// </para>
         /// </summary>
-        public DateTime AuthorizeTime
+        public DateTime? AuthorizeTime
         {
-            get { return this._authorizeTime.GetValueOrDefault(); }
+            get { return this._authorizeTime; }
             set { this._authorizeTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Redshift.Model
         /// The number of Redshift-managed VPC endpoints created for the authorization.
         /// </para>
         /// </summary>
-        public int EndpointCount
+        public int? EndpointCount
         {
-            get { return this._endpointCount.GetValueOrDefault(); }
+            get { return this._endpointCount; }
             set { this._endpointCount = value; }
         }
 

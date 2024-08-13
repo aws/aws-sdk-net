@@ -58,13 +58,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("BytesGreaterThan", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.BytesGreaterThan = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("BytesLessThan", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.BytesLessThan = unmarshaller.Unmarshall(context);
                         continue;
                     }

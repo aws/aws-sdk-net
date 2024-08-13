@@ -107,9 +107,9 @@ namespace Amazon.EventBridge.Model
         /// A time stamp for the time that the API destination was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.EventBridge.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int InvocationRateLimitPerSecond
+        public int? InvocationRateLimitPerSecond
         {
-            get { return this._invocationRateLimitPerSecond.GetValueOrDefault(); }
+            get { return this._invocationRateLimitPerSecond; }
             set { this._invocationRateLimitPerSecond = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.EventBridge.Model
         /// A time stamp for the time that the API destination was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

@@ -93,7 +93,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetModelUnits())
                 {
                     context.Writer.WritePropertyName("modelUnits");
-                    context.Writer.Write(publicRequest.ModelUnits);
+                    context.Writer.Write(publicRequest.ModelUnits.Value);
                 }
 
                 if(publicRequest.IsSetProvisionedModelName())

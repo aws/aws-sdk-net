@@ -106,13 +106,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUserMatchThreshold())
                 {
                     context.Writer.WritePropertyName("UserMatchThreshold");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.UserMatchThreshold))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.UserMatchThreshold.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.UserMatchThreshold));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.UserMatchThreshold.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.UserMatchThreshold);
+                        context.Writer.Write(publicRequest.UserMatchThreshold.Value);
                     }
                 }
 

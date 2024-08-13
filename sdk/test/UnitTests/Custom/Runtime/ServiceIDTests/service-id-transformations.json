@@ -1025,11 +1025,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_MIGRATIONHUBSTRATEGY"
   },
   {
-    "service_id": "Mobile",
-    "services_section_name": "mobile",
-    "service_envvar_name": "AWS_ENDPOINT_URL_MOBILE"
-  },
-  {
     "service_id": "mq",
     "services_section_name": "mq",
     "service_envvar_name": "AWS_ENDPOINT_URL_MQ"

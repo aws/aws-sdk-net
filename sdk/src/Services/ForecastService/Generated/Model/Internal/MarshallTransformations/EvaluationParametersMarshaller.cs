@@ -51,13 +51,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackTestWindowOffset())
             {
                 context.Writer.WritePropertyName("BackTestWindowOffset");
-                context.Writer.Write(requestObject.BackTestWindowOffset);
+                context.Writer.Write(requestObject.BackTestWindowOffset.Value);
             }
 
             if(requestObject.IsSetNumberOfBacktestWindows())
             {
                 context.Writer.WritePropertyName("NumberOfBacktestWindows");
-                context.Writer.Write(requestObject.NumberOfBacktestWindows);
+                context.Writer.Write(requestObject.NumberOfBacktestWindows.Value);
             }
 
         }

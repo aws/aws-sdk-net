@@ -67,9 +67,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long FirstSeen
+        public long? FirstSeen
         {
-            get { return this._firstSeen.GetValueOrDefault(); }
+            get { return this._firstSeen; }
             set { this._firstSeen = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// the pattern is suppressed. If <c>false</c>, then only this particular anomaly is suppressed.
         /// </para>
         /// </summary>
-        public bool IsPatternLevelSuppression
+        public bool? IsPatternLevelSuppression
         {
-            get { return this._isPatternLevelSuppression.GetValueOrDefault(); }
+            get { return this._isPatternLevelSuppression; }
             set { this._isPatternLevelSuppression = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long LastSeen
+        public long? LastSeen
         {
-            get { return this._lastSeen.GetValueOrDefault(); }
+            get { return this._lastSeen; }
             set { this._lastSeen = value; }
         }
 
@@ -385,9 +385,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateAnomaly.html">UpdateAnomaly</a>.
         /// </para>
         /// </summary>
-        public bool Suppressed
+        public bool? Suppressed
         {
-            get { return this._suppressed.GetValueOrDefault(); }
+            get { return this._suppressed; }
             set { this._suppressed = value; }
         }
 
@@ -404,9 +404,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long SuppressedDate
+        public long? SuppressedDate
         {
-            get { return this._suppressedDate.GetValueOrDefault(); }
+            get { return this._suppressedDate; }
             set { this._suppressedDate = value; }
         }
 
@@ -425,9 +425,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long SuppressedUntil
+        public long? SuppressedUntil
         {
-            get { return this._suppressedUntil.GetValueOrDefault(); }
+            get { return this._suppressedUntil; }
             set { this._suppressedUntil = value; }
         }
 

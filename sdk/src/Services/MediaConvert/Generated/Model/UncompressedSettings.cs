@@ -112,9 +112,9 @@ namespace Amazon.MediaConvert.Model
         /// value as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.MediaConvert.Model
         /// as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 

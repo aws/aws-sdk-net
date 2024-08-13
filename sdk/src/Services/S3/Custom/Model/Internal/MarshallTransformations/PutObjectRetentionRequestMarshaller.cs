@@ -58,11 +58,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "AmazonS3");
             request.HttpMethod = "PUT";
-            string uriResourcePath = "/{Key+}";
             request.AddSubResource("retention");
         
             if (publicRequest.IsSetBypassGovernanceRetention())
-                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(publicRequest.BypassGovernanceRetention));
+                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(publicRequest.BypassGovernanceRetention.Value));
             if (publicRequest.IsSetChecksumAlgorithm())
                 request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(publicRequest.ChecksumAlgorithm));
             if (publicRequest.IsSetContentMD5())
@@ -75,11 +74,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
             if (!publicRequest.IsSetKey())
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "publicRequest.Key");
-            uriResourcePath = uriResourcePath.Replace("{Key+}", StringUtils.FromString(publicRequest.Key));
+            request.AddPathResource("{Key+}", publicRequest.Key);
             
             if (publicRequest.IsSetVersionId())
                 request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
-			request.ResourcePath = uriResourcePath;
+            request.ResourcePath = "/{Key+}";
 
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
@@ -88,10 +87,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Retention", S3Constants.S3RequestXmlNamespace);
                     if(publicRequest.Retention.IsSetMode())
-                        xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));                    
+                        xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));
     
                     if(publicRequest.Retention.IsSetRetainUntilDate())
-                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate));                    
+                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate.Value));
     
     
                     xmlWriter.WriteEndElement();

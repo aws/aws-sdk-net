@@ -64,9 +64,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool UserConfirmed
+        public bool? UserConfirmed
         {
-            get { return this._userConfirmed.GetValueOrDefault(); }
+            get { return this._userConfirmed; }
             set { this._userConfirmed = value; }
         }
 

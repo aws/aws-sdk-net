@@ -43,9 +43,9 @@ namespace Amazon.GuardDuty.Model
         /// A value that specifies the number of days left to use each enabled data source.
         /// </para>
         /// </summary>
-        public int FreeTrialDaysRemaining
+        public int? FreeTrialDaysRemaining
         {
-            get { return this._freeTrialDaysRemaining.GetValueOrDefault(); }
+            get { return this._freeTrialDaysRemaining; }
             set { this._freeTrialDaysRemaining = value; }
         }
 

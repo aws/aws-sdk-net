@@ -60,7 +60,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("autoMinorVersionUpgrade", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.OpsWorksCM.Model
         ///  The maximum allowed value. 
         /// </para>
         /// </summary>
-        public int Maximum
+        public int? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.OpsWorksCM.Model
         /// the account. 
         /// </para>
         /// </summary>
-        public int Used
+        public int? Used
         {
-            get { return this._used.GetValueOrDefault(); }
+            get { return this._used; }
             set { this._used = value; }
         }
 

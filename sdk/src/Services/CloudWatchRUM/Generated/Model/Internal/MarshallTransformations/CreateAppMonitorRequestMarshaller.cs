@@ -92,7 +92,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCwLogEnabled())
                 {
                     context.Writer.WritePropertyName("CwLogEnabled");
-                    context.Writer.Write(publicRequest.CwLogEnabled);
+                    context.Writer.Write(publicRequest.CwLogEnabled.Value);
                 }
 
                 if(publicRequest.IsSetDomain())

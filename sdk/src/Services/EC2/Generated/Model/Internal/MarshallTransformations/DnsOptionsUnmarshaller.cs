@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("privateDnsOnlyForInboundResolverEndpoint", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PrivateDnsOnlyForInboundResolverEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }

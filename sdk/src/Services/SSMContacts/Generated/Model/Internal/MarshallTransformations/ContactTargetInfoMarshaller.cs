@@ -57,7 +57,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsEssential())
             {
                 context.Writer.WritePropertyName("IsEssential");
-                context.Writer.Write(requestObject.IsEssential);
+                context.Writer.Write(requestObject.IsEssential.Value);
             }
 
         }

@@ -187,9 +187,9 @@ namespace Amazon.ServiceCatalog.Model
         /// 
         /// </para>
         /// </summary>
-        public bool SharePrincipals
+        public bool? SharePrincipals
         {
-            get { return this._sharePrincipals.GetValueOrDefault(); }
+            get { return this._sharePrincipals; }
             set { this._sharePrincipals = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.ServiceCatalog.Model
         /// If this flag is not provided, TagOptions sharing is disabled.
         /// </para>
         /// </summary>
-        public bool ShareTagOptions
+        public bool? ShareTagOptions
         {
-            get { return this._shareTagOptions.GetValueOrDefault(); }
+            get { return this._shareTagOptions; }
             set { this._shareTagOptions = value; }
         }
 

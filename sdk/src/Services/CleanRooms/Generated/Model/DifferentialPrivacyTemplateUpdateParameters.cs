@@ -45,9 +45,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int Epsilon
+        public int? Epsilon
         {
-            get { return this._epsilon.GetValueOrDefault(); }
+            get { return this._epsilon; }
             set { this._epsilon = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=100)]
-        public int UsersNoisePerQuery
+        public int? UsersNoisePerQuery
         {
-            get { return this._usersNoisePerQuery.GetValueOrDefault(); }
+            get { return this._usersNoisePerQuery; }
             set { this._usersNoisePerQuery = value; }
         }
 

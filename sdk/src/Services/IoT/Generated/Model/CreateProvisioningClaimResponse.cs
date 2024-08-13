@@ -83,9 +83,9 @@ namespace Amazon.IoT.Model
         /// The provisioning claim expiration time.
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ScalingPlanVersion
+        public long? ScalingPlanVersion
         {
-            get { return this._scalingPlanVersion.GetValueOrDefault(); }
+            get { return this._scalingPlanVersion; }
             set { this._scalingPlanVersion = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

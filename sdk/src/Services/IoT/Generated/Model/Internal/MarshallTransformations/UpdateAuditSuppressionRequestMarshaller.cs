@@ -82,7 +82,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationDate())
                 {
                     context.Writer.WritePropertyName("expirationDate");
-                    context.Writer.Write(publicRequest.ExpirationDate);
+                    context.Writer.Write(publicRequest.ExpirationDate.Value);
                 }
 
                 if(publicRequest.IsSetResourceIdentifier())
@@ -99,7 +99,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSuppressIndefinitely())
                 {
                     context.Writer.WritePropertyName("suppressIndefinitely");
-                    context.Writer.Write(publicRequest.SuppressIndefinitely);
+                    context.Writer.Write(publicRequest.SuppressIndefinitely.Value);
                 }
 
                 writer.WriteObjectEnd();

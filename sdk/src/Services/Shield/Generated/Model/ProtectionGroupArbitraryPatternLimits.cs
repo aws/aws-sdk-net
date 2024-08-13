@@ -44,9 +44,9 @@ namespace Amazon.Shield.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MaxMembers
+        public long? MaxMembers
         {
-            get { return this._maxMembers.GetValueOrDefault(); }
+            get { return this._maxMembers; }
             set { this._maxMembers = value; }
         }
 

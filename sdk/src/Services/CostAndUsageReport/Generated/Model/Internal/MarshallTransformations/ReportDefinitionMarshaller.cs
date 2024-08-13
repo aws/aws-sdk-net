@@ -91,7 +91,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRefreshClosedReports())
             {
                 context.Writer.WritePropertyName("RefreshClosedReports");
-                context.Writer.Write(requestObject.RefreshClosedReports);
+                context.Writer.Write(requestObject.RefreshClosedReports.Value);
             }
 
             if(requestObject.IsSetReportName())

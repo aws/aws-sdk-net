@@ -85,9 +85,9 @@ namespace Amazon.AppRunner.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool LatestOnly
+        public bool? LatestOnly
         {
-            get { return this._latestOnly.GetValueOrDefault(); }
+            get { return this._latestOnly; }
             set { this._latestOnly = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

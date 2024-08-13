@@ -49,9 +49,9 @@ namespace Amazon.Signer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EffectiveTime
+        public DateTime? EffectiveTime
         {
-            get { return this._effectiveTime.GetValueOrDefault(); }
+            get { return this._effectiveTime; }
             set { this._effectiveTime = value; }
         }
 

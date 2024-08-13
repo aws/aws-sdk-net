@@ -94,9 +94,9 @@ namespace Amazon.Comprehend.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int DesiredInferenceUnits
+        public int? DesiredInferenceUnits
         {
-            get { return this._desiredInferenceUnits.GetValueOrDefault(); }
+            get { return this._desiredInferenceUnits; }
             set { this._desiredInferenceUnits = value; }
         }
 

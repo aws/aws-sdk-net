@@ -78,7 +78,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScalingPlanVersion())
                 {
                     context.Writer.WritePropertyName("ScalingPlanVersion");
-                    context.Writer.Write(publicRequest.ScalingPlanVersion);
+                    context.Writer.Write(publicRequest.ScalingPlanVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

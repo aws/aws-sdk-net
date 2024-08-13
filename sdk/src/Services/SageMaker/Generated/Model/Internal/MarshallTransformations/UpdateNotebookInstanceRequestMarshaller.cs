@@ -100,25 +100,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisassociateAcceleratorTypes())
                 {
                     context.Writer.WritePropertyName("DisassociateAcceleratorTypes");
-                    context.Writer.Write(publicRequest.DisassociateAcceleratorTypes);
+                    context.Writer.Write(publicRequest.DisassociateAcceleratorTypes.Value);
                 }
 
                 if(publicRequest.IsSetDisassociateAdditionalCodeRepositories())
                 {
                     context.Writer.WritePropertyName("DisassociateAdditionalCodeRepositories");
-                    context.Writer.Write(publicRequest.DisassociateAdditionalCodeRepositories);
+                    context.Writer.Write(publicRequest.DisassociateAdditionalCodeRepositories.Value);
                 }
 
                 if(publicRequest.IsSetDisassociateDefaultCodeRepository())
                 {
                     context.Writer.WritePropertyName("DisassociateDefaultCodeRepository");
-                    context.Writer.Write(publicRequest.DisassociateDefaultCodeRepository);
+                    context.Writer.Write(publicRequest.DisassociateDefaultCodeRepository.Value);
                 }
 
                 if(publicRequest.IsSetDisassociateLifecycleConfig())
                 {
                     context.Writer.WritePropertyName("DisassociateLifecycleConfig");
-                    context.Writer.Write(publicRequest.DisassociateLifecycleConfig);
+                    context.Writer.Write(publicRequest.DisassociateLifecycleConfig.Value);
                 }
 
                 if(publicRequest.IsSetInstanceMetadataServiceConfiguration())
@@ -165,7 +165,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVolumeSizeInGB())
                 {
                     context.Writer.WritePropertyName("VolumeSizeInGB");
-                    context.Writer.Write(publicRequest.VolumeSizeInGB);
+                    context.Writer.Write(publicRequest.VolumeSizeInGB.Value);
                 }
 
                 writer.WriteObjectEnd();

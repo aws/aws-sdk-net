@@ -87,10 +87,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(selectObjectContentRequest, "AmazonS3")
             {
                 HttpMethod = "POST",
-                ResourcePath =
-                    string.Format(CultureInfo.InvariantCulture, "/{0}", S3Transforms.ToStringValue(selectObjectContentRequest.Key)),
+                ResourcePath = "/{Key+}",
                 UseQueryString = true,
             };
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(selectObjectContentRequest.Key));
 
             // Headers
             if (selectObjectContentRequest.IsSetServerSideCustomerEncryptionMethod())

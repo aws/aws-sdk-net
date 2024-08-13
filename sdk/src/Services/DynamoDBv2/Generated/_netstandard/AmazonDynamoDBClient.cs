@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.DynamoDBv2
@@ -262,10 +263,6 @@ namespace Amazon.DynamoDBv2
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            if(this.Config.RetryMode == RequestRetryMode.Legacy)
-            {
-                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.DynamoDBv2.Internal.DynamoDBRetryPolicy(this.Config)));
-            }
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDynamoDBEndpointResolver());
         }
@@ -318,7 +315,7 @@ namespace Amazon.DynamoDBv2
                 var endpoints = new List<DiscoveryEndpointBase>();
                 foreach(var endpoint in response.Endpoints)
                 {
-                    endpoints.Add(new DiscoveryEndpoint(endpoint.Address, endpoint.CachePeriodInMinutes));
+                    endpoints.Add(new DiscoveryEndpoint(endpoint.Address, endpoint.CachePeriodInMinutes.GetValueOrDefault()));
                 }
             
                 return endpoints;
@@ -344,7 +341,8 @@ namespace Amazon.DynamoDBv2
         /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
         /// using PartiQL. Each read statement in a <c>BatchExecuteStatement</c> must specify
         /// an equality condition on all key attributes. This enforces that each <c>SELECT</c>
-        /// statement in a batch returns at most a single item.
+        /// statement in a batch returns at most a single item. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html">Running
+        /// batch operations with PartiQL for DynamoDB </a>.
         /// 
         ///  <note> 
         /// <para>
@@ -765,8 +763,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -917,8 +919,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// For tables and indexes with provisioned capacity, if none of the items can be processed
+        /// due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
+        /// all tables and indexes, if none of the items can be processed due to other throttling
+        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
+        /// a <c>ThrottlingException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1994,7 +2000,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2090,7 +2096,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
         /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-        /// is complete.
+        /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3822,7 +3828,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public virtual Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool? consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetItemRequest();
             request.TableName = tableName;
@@ -4433,7 +4439,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public virtual Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int? limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTablesRequest();
             request.ExclusiveStartTableName = exclusiveStartTableName;
@@ -4457,7 +4463,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public virtual Task<ListTablesResponse> ListTablesAsync(int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(int? limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTablesRequest();
             request.Limit = limit;
@@ -7736,16 +7742,8 @@ namespace Amazon.DynamoDBv2
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonDynamoDBEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

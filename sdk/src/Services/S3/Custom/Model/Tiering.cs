@@ -34,9 +34,9 @@ namespace Amazon.S3.Model
 		/// days specified for Archive Access tier must be at least 90 days and Deep Archive Access tier 
 		/// must be at least 180 days. The maximum can be up to 2 years (730 days).</para>
 		/// </summary>
-		public int Days
+		public int? Days
 		{
-			get { return this.days.GetValueOrDefault(); }
+			get { return this.days; }
 			set { this.days = value; }
 		}
 

@@ -68,7 +68,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PersistentBufferEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PersistentBufferEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

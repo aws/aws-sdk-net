@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
         /// The progress of the task as a percentage.
         /// </para>
         /// </summary>
-        public int ProgressPercentage
+        public int? ProgressPercentage
         {
-            get { return this._progressPercentage.GetValueOrDefault(); }
+            get { return this._progressPercentage; }
             set { this._progressPercentage = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.EC2.Model
         /// The time the task started.
         /// </para>
         /// </summary>
-        public DateTime TaskStartTime
+        public DateTime? TaskStartTime
         {
-            get { return this._taskStartTime.GetValueOrDefault(); }
+            get { return this._taskStartTime; }
             set { this._taskStartTime = value; }
         }
 

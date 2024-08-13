@@ -43,9 +43,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The date and time at which the table class was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateDateTime
+        public DateTime? LastUpdateDateTime
         {
-            get { return this._lastUpdateDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateDateTime; }
             set { this._lastUpdateDateTime = value; }
         }
 

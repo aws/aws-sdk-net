@@ -58,9 +58,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property ManifestWindowSeconds. The time window (in seconds) contained
         /// in each manifest.
         /// </summary>
-        public int ManifestWindowSeconds
+        public int? ManifestWindowSeconds
         {
-            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            get { return this._manifestWindowSeconds; }
             set { this._manifestWindowSeconds = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property SegmentDurationSeconds. The duration (in seconds) of each
         /// segment.
         /// </summary>
-        public int SegmentDurationSeconds
+        public int? SegmentDurationSeconds
         {
-            get { return this._segmentDurationSeconds.GetValueOrDefault(); }
+            get { return this._segmentDurationSeconds; }
             set { this._segmentDurationSeconds = value; }
         }
 

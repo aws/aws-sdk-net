@@ -31,9 +31,11 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInterconnectLoa operation.
+    /// <note> 
+    /// <para>
     /// Deprecated. Use <a>DescribeLoa</a> instead.
-    /// 
-    ///  
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Gets the LOA-CFA for the specified interconnect.
     /// </para>

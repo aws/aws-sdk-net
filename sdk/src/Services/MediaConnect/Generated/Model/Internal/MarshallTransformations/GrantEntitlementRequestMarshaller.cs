@@ -51,7 +51,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataTransferSubscriberFeePercent())
             {
                 context.Writer.WritePropertyName("dataTransferSubscriberFeePercent");
-                context.Writer.Write(requestObject.DataTransferSubscriberFeePercent);
+                context.Writer.Write(requestObject.DataTransferSubscriberFeePercent.Value);
             }
 
             if(requestObject.IsSetDescription())

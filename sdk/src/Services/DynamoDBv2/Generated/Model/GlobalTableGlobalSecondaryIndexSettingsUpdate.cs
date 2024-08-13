@@ -85,9 +85,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ProvisionedWriteCapacityUnits
+        public long? ProvisionedWriteCapacityUnits
         {
-            get { return this._provisionedWriteCapacityUnits.GetValueOrDefault(); }
+            get { return this._provisionedWriteCapacityUnits; }
             set { this._provisionedWriteCapacityUnits = value; }
         }
 

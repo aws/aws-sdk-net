@@ -66,9 +66,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

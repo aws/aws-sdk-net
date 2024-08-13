@@ -94,9 +94,9 @@ namespace Amazon.EC2.Model
         /// The duration of the Reserved Instance, in seconds.
         /// </para>
         /// </summary>
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.EC2.Model
         /// The purchase price of the Reserved Instance.
         /// </para>
         /// </summary>
-        public float FixedPrice
+        public float? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.EC2.Model
         /// this is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool Marketplace
+        public bool? Marketplace
         {
-            get { return this._marketplace.GetValueOrDefault(); }
+            get { return this._marketplace; }
             set { this._marketplace = value; }
         }
 
@@ -316,9 +316,9 @@ namespace Amazon.EC2.Model
         /// The usage price of the Reserved Instance, per hour.
         /// </para>
         /// </summary>
-        public float UsagePrice
+        public float? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

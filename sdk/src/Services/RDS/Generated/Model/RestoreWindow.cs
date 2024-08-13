@@ -43,9 +43,9 @@ namespace Amazon.RDS.Model
         /// The earliest time you can restore an instance to.
         /// </para>
         /// </summary>
-        public DateTime EarliestTime
+        public DateTime? EarliestTime
         {
-            get { return this._earliestTime.GetValueOrDefault(); }
+            get { return this._earliestTime; }
             set { this._earliestTime = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.RDS.Model
         /// The latest time you can restore an instance to.
         /// </para>
         /// </summary>
-        public DateTime LatestTime
+        public DateTime? LatestTime
         {
-            get { return this._latestTime.GetValueOrDefault(); }
+            get { return this._latestTime; }
             set { this._latestTime = value; }
         }
 

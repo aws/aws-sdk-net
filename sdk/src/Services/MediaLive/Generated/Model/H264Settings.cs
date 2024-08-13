@@ -124,9 +124,9 @@ namespace Amazon.MediaLive.Model
         /// multiple of 1000.
         /// </summary>
         [AWSProperty(Min=1000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.MediaLive.Model
         /// be filled (HRD buffer model).
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int BufFillPct
+        public int? BufFillPct
         {
-            get { return this._bufFillPct.GetValueOrDefault(); }
+            get { return this._bufFillPct; }
             set { this._bufFillPct = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property BufSize. Size of buffer (HRD buffer model) in bits.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BufSize
+        public int? BufSize
         {
-            get { return this._bufSize.GetValueOrDefault(); }
+            get { return this._bufSize; }
             set { this._bufSize = value; }
         }
 
@@ -216,8 +216,15 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterSettings. Optional filters that you can apply to
-        /// an encode.
+        /// Gets and sets the property FilterSettings. Optional. Both filters reduce bandwidth
+        /// by removing imperceptible details. You can enable one of the filters. Werecommend
+        /// that you try both filters and observe the results to decide which one to use.The Temporal
+        /// Filter reduces bandwidth by removing imperceptible details in the content. It combines
+        /// perceptualfiltering and motion compensated temporal filtering (MCTF). It operates
+        /// independently of the compression level.The Bandwidth Reduction filter is a perceptual
+        /// filter located within the encoding loop. It adapts to the currentcompression level
+        /// to filter imperceptible signals. This filter works only when the resolution is 1080p
+        /// or lower.
         /// </summary>
         public H264FilterSettings FilterSettings
         {
@@ -314,9 +321,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FramerateDenominator. Framerate denominator.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -331,9 +338,9 @@ namespace Amazon.MediaLive.Model
         /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -365,9 +372,9 @@ namespace Amazon.MediaLive.Model
         /// output segmenting.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GopClosedCadence
+        public int? GopClosedCadence
         {
-            get { return this._gopClosedCadence.GetValueOrDefault(); }
+            get { return this._gopClosedCadence; }
             set { this._gopClosedCadence = value; }
         }
 
@@ -381,9 +388,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property GopNumBFrames. Number of B-frames between reference frames.
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
-        public int GopNumBFrames
+        public int? GopNumBFrames
         {
-            get { return this._gopNumBFrames.GetValueOrDefault(); }
+            get { return this._gopNumBFrames; }
             set { this._gopNumBFrames = value; }
         }
 
@@ -399,9 +406,9 @@ namespace Amazon.MediaLive.Model
         /// and must be greater than or equal to 1.If gopSizeUnits is seconds, gopSize must be
         /// greater than 0, but need not be an integer.
         /// </summary>
-        public double GopSize
+        public double? GopSize
         {
-            get { return this._gopSize.GetValueOrDefault(); }
+            get { return this._gopSize; }
             set { this._gopSize = value; }
         }
 
@@ -466,9 +473,9 @@ namespace Amazon.MediaLive.Model
         /// of the video.
         /// </summary>
         [AWSProperty(Min=1000)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -488,9 +495,9 @@ namespace Amazon.MediaLive.Model
         /// Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
-        public int MinIInterval
+        public int? MinIInterval
         {
-            get { return this._minIInterval.GetValueOrDefault(); }
+            get { return this._minIInterval; }
             set { this._minIInterval = value; }
         }
 
@@ -505,9 +512,9 @@ namespace Amazon.MediaLive.Model
         /// may use more than requested if using B-frames and/or interlaced encoding.
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
-        public int NumRefFrames
+        public int? NumRefFrames
         {
-            get { return this._numRefFrames.GetValueOrDefault(); }
+            get { return this._numRefFrames; }
             set { this._numRefFrames = value; }
         }
 
@@ -540,9 +547,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ParDenominator. Pixel Aspect Ratio denominator.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ParDenominator
+        public int? ParDenominator
         {
-            get { return this._parDenominator.GetValueOrDefault(); }
+            get { return this._parDenominator; }
             set { this._parDenominator = value; }
         }
 
@@ -556,9 +563,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ParNumerator. Pixel Aspect Ratio numerator.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ParNumerator
+        public int? ParNumerator
         {
-            get { return this._parNumerator.GetValueOrDefault(); }
+            get { return this._parNumerator; }
             set { this._parNumerator = value; }
         }
 
@@ -616,9 +623,9 @@ namespace Amazon.MediaLive.Model
         /// rate control mode" in the MediaLive user guide
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int QvbrQualityLevel
+        public int? QvbrQualityLevel
         {
-            get { return this._qvbrQualityLevel.GetValueOrDefault(); }
+            get { return this._qvbrQualityLevel; }
             set { this._qvbrQualityLevel = value; }
         }
 
@@ -693,9 +700,9 @@ namespace Amazon.MediaLive.Model
         /// based on encode resolution.
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
-        public int Slices
+        public int? Slices
         {
-            get { return this._slices.GetValueOrDefault(); }
+            get { return this._slices; }
             set { this._slices = value; }
         }
 
@@ -711,9 +718,9 @@ namespace Amazon.MediaLive.Model
         /// than 15.
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int Softness
+        public int? Softness
         {
-            get { return this._softness.GetValueOrDefault(); }
+            get { return this._softness; }
             set { this._softness = value; }
         }
 

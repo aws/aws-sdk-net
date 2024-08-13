@@ -53,9 +53,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// if you want to find earlier revisions of the flow to update.
         /// </para>
         /// </summary>
-        public long CompatibleNamespaceVersion
+        public long? CompatibleNamespaceVersion
         {
-            get { return this._compatibleNamespaceVersion.GetValueOrDefault(); }
+            get { return this._compatibleNamespaceVersion; }
             set { this._compatibleNamespaceVersion = value; }
         }
 

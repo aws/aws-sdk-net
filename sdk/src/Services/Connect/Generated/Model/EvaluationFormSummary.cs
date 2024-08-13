@@ -53,9 +53,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ActiveVersion
+        public int? ActiveVersion
         {
-            get { return this._activeVersion.GetValueOrDefault(); }
+            get { return this._activeVersion; }
             set { this._activeVersion = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Connect.Model
         /// The timestamp for when the evaluation form was last activated.
         /// </para>
         /// </summary>
-        public DateTime LastActivatedTime
+        public DateTime? LastActivatedTime
         {
-            get { return this._lastActivatedTime.GetValueOrDefault(); }
+            get { return this._lastActivatedTime; }
             set { this._lastActivatedTime = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int LatestVersion
+        public int? LatestVersion
         {
-            get { return this._latestVersion.GetValueOrDefault(); }
+            get { return this._latestVersion; }
             set { this._latestVersion = value; }
         }
 

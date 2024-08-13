@@ -104,7 +104,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFailureRetentionPeriodInDays())
                 {
                     context.Writer.WritePropertyName("FailureRetentionPeriodInDays");
-                    context.Writer.Write(publicRequest.FailureRetentionPeriodInDays);
+                    context.Writer.Write(publicRequest.FailureRetentionPeriodInDays.Value);
                 }
 
                 if(publicRequest.IsSetName())
@@ -144,7 +144,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSuccessRetentionPeriodInDays())
                 {
                     context.Writer.WritePropertyName("SuccessRetentionPeriodInDays");
-                    context.Writer.Write(publicRequest.SuccessRetentionPeriodInDays);
+                    context.Writer.Write(publicRequest.SuccessRetentionPeriodInDays.Value);
                 }
 
                 if(publicRequest.IsSetTags())

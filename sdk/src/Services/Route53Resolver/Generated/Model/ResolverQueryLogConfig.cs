@@ -74,9 +74,9 @@ namespace Amazon.Route53Resolver.Model
         /// The number of VPCs that are associated with the query logging configuration.
         /// </para>
         /// </summary>
-        public int AssociationCount
+        public int? AssociationCount
         {
-            get { return this._associationCount.GetValueOrDefault(); }
+            get { return this._associationCount; }
             set { this._associationCount = value; }
         }
 

@@ -78,7 +78,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVerbose())
                 {
                     context.Writer.WritePropertyName("Verbose");
-                    context.Writer.Write(publicRequest.Verbose);
+                    context.Writer.Write(publicRequest.Verbose.Value);
                 }
 
                 writer.WriteObjectEnd();

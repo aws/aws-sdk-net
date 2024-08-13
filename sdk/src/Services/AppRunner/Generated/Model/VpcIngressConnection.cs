@@ -81,9 +81,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime DeletedAt
+        public DateTime? DeletedAt
         {
-            get { return this._deletedAt.GetValueOrDefault(); }
+            get { return this._deletedAt; }
             set { this._deletedAt = value; }
         }
 

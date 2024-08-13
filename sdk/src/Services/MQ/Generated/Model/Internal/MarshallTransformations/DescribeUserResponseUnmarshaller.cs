@@ -60,7 +60,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("consoleAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ConsoleAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("replicationUser", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ReplicationUser = unmarshaller.Unmarshall(context);
                     continue;
                 }

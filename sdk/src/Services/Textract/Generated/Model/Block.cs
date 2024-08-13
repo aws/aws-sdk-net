@@ -229,9 +229,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ColumnIndex
+        public int? ColumnIndex
         {
-            get { return this._columnIndex.GetValueOrDefault(); }
+            get { return this._columnIndex; }
             set { this._columnIndex = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ColumnSpan
+        public int? ColumnSpan
         {
-            get { return this._columnSpan.GetValueOrDefault(); }
+            get { return this._columnSpan; }
             set { this._columnSpan = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float Confidence
+        public float? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -403,9 +403,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Page
+        public int? Page
         {
-            get { return this._page.GetValueOrDefault(); }
+            get { return this._page; }
             set { this._page = value; }
         }
 
@@ -459,9 +459,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RowIndex
+        public int? RowIndex
         {
-            get { return this._rowIndex.GetValueOrDefault(); }
+            get { return this._rowIndex; }
             set { this._rowIndex = value; }
         }
 
@@ -479,9 +479,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RowSpan
+        public int? RowSpan
         {
-            get { return this._rowSpan.GetValueOrDefault(); }
+            get { return this._rowSpan; }
             set { this._rowSpan = value; }
         }
 

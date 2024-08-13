@@ -88,9 +88,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -147,7 +147,7 @@ namespace Amazon.Connect.Model
         /// may have different sets of supported segment types.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5)]
+        [AWSProperty(Required=true, Max=6)]
         public List<string> SegmentTypes
         {
             get { return this._segmentTypes; }

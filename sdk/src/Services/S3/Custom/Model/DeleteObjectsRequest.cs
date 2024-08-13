@@ -230,9 +230,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BypassGovernanceRetention
+        public bool? BypassGovernanceRetention
         {
-            get { return this.bypassGovernanceRetention.GetValueOrDefault(); }
+            get { return this.bypassGovernanceRetention; }
             set { this.bypassGovernanceRetention = value; }
         }
 
@@ -402,9 +402,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property Quiet.
         /// </summary>
-        public bool Quiet
+        public bool? Quiet
         {
-            get { return this.quiet ?? default(bool); }
+            get { return this.quiet; }
             set { this.quiet = value; }
         }
 

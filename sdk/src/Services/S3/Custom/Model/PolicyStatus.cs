@@ -35,9 +35,9 @@ namespace Amazon.S3.Model
         /// is public. <code>FALSE</code> indicates that the bucket is not public.
         /// </para>
         /// </summary>
-        public bool IsPublic
+        public bool? IsPublic
         {
-            get { return this.isPublic ?? default(bool); }
+            get { return this.isPublic; }
             set { this.isPublic = value; }
         }
 

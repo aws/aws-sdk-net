@@ -47,9 +47,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// Specifies whether a deployment was automatically released.
         /// </para>
         /// </summary>
-        public bool AutoDeployed
+        public bool? AutoDeployed
         {
-            get { return this._autoDeployed.GetValueOrDefault(); }
+            get { return this._autoDeployed; }
             set { this._autoDeployed = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// The date and time when the Deployment resource was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 

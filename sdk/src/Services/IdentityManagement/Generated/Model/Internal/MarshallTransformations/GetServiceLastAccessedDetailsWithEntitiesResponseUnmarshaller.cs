@@ -101,19 +101,19 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.IsTruncated = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("JobCompletionDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.JobCompletionDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("JobCreationDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.JobCreationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

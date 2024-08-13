@@ -47,6 +47,7 @@ namespace Amazon.MediaLive.Model
         private string _roleArn;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<InputSource> _sources = AWSConfigs.InitializeCollections ? new List<InputSource>() : null;
+        private SrtSettings _srtSettings;
         private InputState _state;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private InputType _type;
@@ -258,6 +259,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSources()
         {
             return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SrtSettings. The settings associated with an SRT input.
+        /// </summary>
+        public SrtSettings SrtSettings
+        {
+            get { return this._srtSettings; }
+            set { this._srtSettings = value; }
+        }
+
+        // Check to see if SrtSettings property is set
+        internal bool IsSetSrtSettings()
+        {
+            return this._srtSettings != null;
         }
 
         /// <summary>

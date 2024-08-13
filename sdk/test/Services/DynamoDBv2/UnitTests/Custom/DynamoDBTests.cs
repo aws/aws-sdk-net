@@ -3,6 +3,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Util.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
@@ -13,7 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ThirdParty.Json.LitJson;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class DynamoDBEntryTests
@@ -424,41 +425,6 @@ namespace AWSSDK_DotNet35.UnitTests
             public string ManagerName { get; set; }
         }
 
-#if ASYNC_AWAIT
-        [TestMethod]
-        [TestCategory("DynamoDBv2")]
-        public async Task TestMockingAsyncSeach()
-        {
-            var mockDBContext = new Mock<IDynamoDBContext>();
-            mockDBContext
-                .Setup(x => x.ScanAsync<DataItem>(
-                   It.IsAny<IEnumerable<ScanCondition>>(),
-                   It.IsAny<DynamoDBOperationConfig>()))
-                .Returns(
-                   new MockAsyncSearch<DataItem>() // Return mock version of AsyncSearch
-                );
-
-            var search = mockDBContext.Object.ScanAsync<DataItem>(new List<ScanCondition>());
-            Assert.IsInstanceOfType(search, typeof(MockAsyncSearch<DataItem>));
-
-            var items = await search.GetNextSetAsync();
-            Assert.AreEqual(0, items.Count());
-        }
-
-        public class DataItem
-        {
-            public string Id { get; set; }
-        }
-
-        public class MockAsyncSearch<T> : AsyncSearch<T>
-        {
-            public override Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
-            {
-                return Task.FromResult(new List<T>());
-            }
-        }
-#endif
-
         /// <summary>
         /// Asserts that our desired exception is thrown when attempting to make a query
         /// that relies on the hash key without correct table metadata
@@ -591,6 +557,54 @@ namespace AWSSDK_DotNet35.UnitTests
                 context.Load<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
 
             mock.VerifyNoOtherCalls();
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void FromDocument_NullableDateTime_RetrieveDateTimeInUtc()
+        {
+            var mock = new Mock<IAmazonDynamoDB>();
+            var obj = new NullableDateTime
+            {
+                UserId = Guid.NewGuid().ToString(),
+                AppointmentSlot = DateTime.Parse("2024-06-24T08:00:00.000Z", provider: CultureInfo.CreateSpecificCulture("en-US"), styles: DateTimeStyles.AdjustToUniversal)
+            };
+            var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { RetrieveDateTimeInUtc = true, DisableFetchingTableMetadata = true });
+
+            var json = JsonSerializerHelper.Serialize<NullableDateTime>(obj, new JsonSerializerContext());
+            var document = Document.FromJson(json);
+            var result = context.FromDocument<NullableDateTime>(document);
+
+            Assert.AreEqual(obj.AppointmentSlot, result.AppointmentSlot);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void FromDocument_NullableDateTime_RetrieveDateTimeInUtc_NullValue()
+        {
+            var mock = new Mock<IAmazonDynamoDB>();
+            var obj = new NullableDateTime
+            {
+                UserId = Guid.NewGuid().ToString(),
+                AppointmentSlot = null
+            };
+            var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { RetrieveDateTimeInUtc = true, DisableFetchingTableMetadata = true });
+
+            var json = JsonSerializerHelper.Serialize<NullableDateTime>(obj, new JsonSerializerContext());
+            var document = Document.FromJson(json);
+            var result = context.FromDocument<NullableDateTime>(document);
+
+            Assert.AreEqual(obj.AppointmentSlot, result.AppointmentSlot);
+        }
+
+        [DynamoDBTable("NullableDateTime")]
+        public class NullableDateTime
+        {
+            [DynamoDBHashKey("UserId")]
+            public string UserId { get; set; }
+
+            [DynamoDBProperty("AppointmentSlot")]
+            public DateTime? AppointmentSlot { get; set; }
         }
 
         [DynamoDBTable("EmployeeDetails")]

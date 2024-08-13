@@ -70,9 +70,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int EvaluationFormVersion
+        public int? EvaluationFormVersion
         {
-            get { return this._evaluationFormVersion.GetValueOrDefault(); }
+            get { return this._evaluationFormVersion; }
             set { this._evaluationFormVersion = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Locked
+        public bool? Locked
         {
-            get { return this._locked.GetValueOrDefault(); }
+            get { return this._locked; }
             set { this._locked = value; }
         }
 

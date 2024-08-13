@@ -68,13 +68,13 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("estimatedOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EstimatedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("estimatedSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -35,12 +35,6 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// If a volume has never been modified, some information in the output will be null.
-    /// If a volume has been modified more than once, the output includes only the most recent
-    /// modification request.
-    /// </para>
-    ///  
-    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">
     /// Monitor the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
@@ -127,9 +121,9 @@ namespace Amazon.EC2.Model
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

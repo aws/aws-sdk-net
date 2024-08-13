@@ -163,9 +163,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether monitoring is enabled.
         /// </para>
         /// </summary>
-        public bool Monitoring
+        public bool? Monitoring
         {
-            get { return this._monitoring.GetValueOrDefault(); }
+            get { return this._monitoring; }
             set { this._monitoring = value; }
         }
 

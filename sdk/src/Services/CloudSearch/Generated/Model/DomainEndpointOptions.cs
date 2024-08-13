@@ -43,9 +43,9 @@ namespace Amazon.CloudSearch.Model
         /// Whether the domain is HTTPS only enabled.
         /// </para>
         /// </summary>
-        public bool EnforceHTTPS
+        public bool? EnforceHTTPS
         {
-            get { return this._enforceHTTPS.GetValueOrDefault(); }
+            get { return this._enforceHTTPS; }
             set { this._enforceHTTPS = value; }
         }
 

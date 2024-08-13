@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Contains information about a backup of an AWS CloudHSM cluster. All backup objects
-    /// contain the <c>BackupId</c>, <c>BackupState</c>, <c>ClusterId</c>, and <c>CreateTimestamp</c>
+    /// Contains information about a backup of an CloudHSM cluster. All backup objects contain
+    /// the <c>BackupId</c>, <c>BackupState</c>, <c>ClusterId</c>, and <c>CreateTimestamp</c>
     /// parameters. Backups that were copied into a destination region additionally contain
     /// the <c>CopyTimestamp</c>, <c>SourceBackup</c>, <c>SourceCluster</c>, and <c>SourceRegion</c>
     /// parameters. A backup that is pending deletion will include the <c>DeleteTimestamp</c>
@@ -39,6 +39,7 @@ namespace Amazon.CloudHSMV2.Model
     /// </summary>
     public partial class Backup
     {
+        private string _backupArn;
         private string _backupId;
         private BackupState _backupState;
         private string _clusterId;
@@ -52,6 +53,24 @@ namespace Amazon.CloudHSMV2.Model
         private string _sourceCluster;
         private string _sourceRegion;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BackupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the backup.
+        /// </para>
+        /// </summary>
+        public string BackupArn
+        {
+            get { return this._backupArn; }
+            set { this._backupArn = value; }
+        }
+
+        // Check to see if BackupArn property is set
+        internal bool IsSetBackupArn()
+        {
+            return this._backupArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BackupId. 
@@ -114,9 +133,9 @@ namespace Amazon.CloudHSMV2.Model
         /// The date and time when the backup was copied from a source backup.
         /// </para>
         /// </summary>
-        public DateTime CopyTimestamp
+        public DateTime? CopyTimestamp
         {
-            get { return this._copyTimestamp.GetValueOrDefault(); }
+            get { return this._copyTimestamp; }
             set { this._copyTimestamp = value; }
         }
 
@@ -132,9 +151,9 @@ namespace Amazon.CloudHSMV2.Model
         /// The date and time when the backup was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTimestamp
+        public DateTime? CreateTimestamp
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
+            get { return this._createTimestamp; }
             set { this._createTimestamp = value; }
         }
 
@@ -150,9 +169,9 @@ namespace Amazon.CloudHSMV2.Model
         /// The date and time when the backup will be permanently deleted.
         /// </para>
         /// </summary>
-        public DateTime DeleteTimestamp
+        public DateTime? DeleteTimestamp
         {
-            get { return this._deleteTimestamp.GetValueOrDefault(); }
+            get { return this._deleteTimestamp; }
             set { this._deleteTimestamp = value; }
         }
 
@@ -165,7 +184,7 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property HsmType. 
         /// <para>
-        /// The HSM type of the cluster that was backed up.
+        /// The HSM type used to create the backup.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]
@@ -207,9 +226,9 @@ namespace Amazon.CloudHSMV2.Model
         /// means the service applies the backup retention policy defined at the cluster.
         /// </para>
         /// </summary>
-        public bool NeverExpires
+        public bool? NeverExpires
         {
-            get { return this._neverExpires.GetValueOrDefault(); }
+            get { return this._neverExpires; }
             set { this._neverExpires = value; }
         }
 

@@ -78,9 +78,9 @@ namespace Amazon.AuditManager.Model
         ///  The total count of evidence that's included in the assessment report. 
         /// </para>
         /// </summary>
-        public int AssessmentReportSelectionCount
+        public int? AssessmentReportSelectionCount
         {
-            get { return this._assessmentReportSelectionCount.GetValueOrDefault(); }
+            get { return this._assessmentReportSelectionCount; }
             set { this._assessmentReportSelectionCount = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.AuditManager.Model
         ///  The date when the first evidence was added to the evidence folder. 
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.AuditManager.Model
         /// the evidence. 
         /// </para>
         /// </summary>
-        public int EvidenceAwsServiceSourceCount
+        public int? EvidenceAwsServiceSourceCount
         {
-            get { return this._evidenceAwsServiceSourceCount.GetValueOrDefault(); }
+            get { return this._evidenceAwsServiceSourceCount; }
             set { this._evidenceAwsServiceSourceCount = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.AuditManager.Model
         /// is collected from Config or Security Hub. 
         /// </para>
         /// </summary>
-        public int EvidenceByTypeComplianceCheckCount
+        public int? EvidenceByTypeComplianceCheckCount
         {
-            get { return this._evidenceByTypeComplianceCheckCount.GetValueOrDefault(); }
+            get { return this._evidenceByTypeComplianceCheckCount; }
             set { this._evidenceByTypeComplianceCheckCount = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.AuditManager.Model
         /// or both. 
         /// </para>
         /// </summary>
-        public int EvidenceByTypeComplianceCheckIssuesCount
+        public int? EvidenceByTypeComplianceCheckIssuesCount
         {
-            get { return this._evidenceByTypeComplianceCheckIssuesCount.GetValueOrDefault(); }
+            get { return this._evidenceByTypeComplianceCheckIssuesCount; }
             set { this._evidenceByTypeComplianceCheckIssuesCount = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.AuditManager.Model
         /// EC2, Amazon S3, or IAM. 
         /// </para>
         /// </summary>
-        public int EvidenceByTypeConfigurationDataCount
+        public int? EvidenceByTypeConfigurationDataCount
         {
-            get { return this._evidenceByTypeConfigurationDataCount.GetValueOrDefault(); }
+            get { return this._evidenceByTypeConfigurationDataCount; }
             set { this._evidenceByTypeConfigurationDataCount = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.AuditManager.Model
         /// manually. 
         /// </para>
         /// </summary>
-        public int EvidenceByTypeManualCount
+        public int? EvidenceByTypeManualCount
         {
-            get { return this._evidenceByTypeManualCount.GetValueOrDefault(); }
+            get { return this._evidenceByTypeManualCount; }
             set { this._evidenceByTypeManualCount = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.AuditManager.Model
         /// is collected from CloudTrail logs. 
         /// </para>
         /// </summary>
-        public int EvidenceByTypeUserActivityCount
+        public int? EvidenceByTypeUserActivityCount
         {
-            get { return this._evidenceByTypeUserActivityCount.GetValueOrDefault(); }
+            get { return this._evidenceByTypeUserActivityCount; }
             set { this._evidenceByTypeUserActivityCount = value; }
         }
 
@@ -324,9 +324,9 @@ namespace Amazon.AuditManager.Model
         ///  The amount of evidence that's included in the evidence folder. 
         /// </para>
         /// </summary>
-        public int EvidenceResourcesIncludedCount
+        public int? EvidenceResourcesIncludedCount
         {
-            get { return this._evidenceResourcesIncludedCount.GetValueOrDefault(); }
+            get { return this._evidenceResourcesIncludedCount; }
             set { this._evidenceResourcesIncludedCount = value; }
         }
 
@@ -380,9 +380,9 @@ namespace Amazon.AuditManager.Model
         ///  The total amount of evidence in the evidence folder. 
         /// </para>
         /// </summary>
-        public int TotalEvidence
+        public int? TotalEvidence
         {
-            get { return this._totalEvidence.GetValueOrDefault(); }
+            get { return this._totalEvidence; }
             set { this._totalEvidence = value; }
         }
 

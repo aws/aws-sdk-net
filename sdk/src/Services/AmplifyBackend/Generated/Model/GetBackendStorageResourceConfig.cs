@@ -64,9 +64,9 @@ namespace Amazon.AmplifyBackend.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Imported
+        public bool? Imported
         {
-            get { return this._imported.GetValueOrDefault(); }
+            get { return this._imported; }
             set { this._imported = value; }
         }
 

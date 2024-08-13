@@ -83,7 +83,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeletionProtectionEnabled())
                 {
                     context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                    context.Writer.Write(publicRequest.DeletionProtectionEnabled);
+                    context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
                 }
 
                 if(publicRequest.IsSetIsoCountryCode())

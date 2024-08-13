@@ -86,7 +86,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("repositoriesCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RepositoriesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -156,9 +156,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=90)]
-        public int AutomaticBackupRetentionDays
+        public int? AutomaticBackupRetentionDays
         {
-            get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
+            get { return this._automaticBackupRetentionDays; }
             set { this._automaticBackupRetentionDays = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.FSx.Model
         /// backup, no tags are copied from the file system, regardless of this value.
         /// </para>
         /// </summary>
-        public bool CopyTagsToBackups
+        public bool? CopyTagsToBackups
         {
-            get { return this._copyTagsToBackups.GetValueOrDefault(); }
+            get { return this._copyTagsToBackups; }
             set { this._copyTagsToBackups = value; }
         }
 
@@ -318,9 +318,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=100000)]
-        public int ThroughputCapacity
+        public int? ThroughputCapacity
         {
-            get { return this._throughputCapacity.GetValueOrDefault(); }
+            get { return this._throughputCapacity; }
             set { this._throughputCapacity = value; }
         }
 

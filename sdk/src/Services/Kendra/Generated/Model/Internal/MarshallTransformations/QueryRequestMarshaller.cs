@@ -132,13 +132,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPageNumber())
                 {
                     context.Writer.WritePropertyName("PageNumber");
-                    context.Writer.Write(publicRequest.PageNumber);
+                    context.Writer.Write(publicRequest.PageNumber.Value);
                 }
 
                 if(publicRequest.IsSetPageSize())
                 {
                     context.Writer.WritePropertyName("PageSize");
-                    context.Writer.Write(publicRequest.PageSize);
+                    context.Writer.Write(publicRequest.PageSize.Value);
                 }
 
                 if(publicRequest.IsSetQueryResultTypeFilter())

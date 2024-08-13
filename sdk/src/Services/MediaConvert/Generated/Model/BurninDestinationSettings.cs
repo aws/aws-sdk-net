@@ -130,9 +130,9 @@ namespace Amazon.MediaConvert.Model
         /// your output captions.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int BackgroundOpacity
+        public int? BackgroundOpacity
         {
-            get { return this._backgroundOpacity.GetValueOrDefault(); }
+            get { return this._backgroundOpacity; }
             set { this._backgroundOpacity = value; }
         }
 
@@ -254,9 +254,9 @@ namespace Amazon.MediaConvert.Model
         /// 255 is opaque; 0 is transparent.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int FontOpacity
+        public int? FontOpacity
         {
-            get { return this._fontOpacity.GetValueOrDefault(); }
+            get { return this._fontOpacity; }
             set { this._fontOpacity = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.MediaConvert.Model
         /// per inch).
         /// </summary>
         [AWSProperty(Min=96, Max=600)]
-        public int FontResolution
+        public int? FontResolution
         {
-            get { return this._fontResolution.GetValueOrDefault(); }
+            get { return this._fontResolution; }
             set { this._fontResolution = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.MediaConvert.Model
         /// integer. Set to 0, or leave blank, for automatic font size.
         /// </summary>
         [AWSProperty(Min=0, Max=96)]
-        public int FontSize
+        public int? FontSize
         {
-            get { return this._fontSize.GetValueOrDefault(); }
+            get { return this._fontSize; }
             set { this._fontSize = value; }
         }
 
@@ -361,9 +361,9 @@ namespace Amazon.MediaConvert.Model
         /// outline size data from your input captions, if present.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int OutlineSize
+        public int? OutlineSize
         {
-            get { return this._outlineSize.GetValueOrDefault(); }
+            get { return this._outlineSize; }
             set { this._outlineSize = value; }
         }
 
@@ -398,9 +398,9 @@ namespace Amazon.MediaConvert.Model
         /// leave blank to use a value of 0 and remove all shadows from your output captions.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int ShadowOpacity
+        public int? ShadowOpacity
         {
-            get { return this._shadowOpacity.GetValueOrDefault(); }
+            get { return this._shadowOpacity; }
             set { this._shadowOpacity = value; }
         }
 
@@ -416,9 +416,9 @@ namespace Amazon.MediaConvert.Model
         /// 2 pixels to the left.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int ShadowXOffset
+        public int? ShadowXOffset
         {
-            get { return this._shadowXOffset.GetValueOrDefault(); }
+            get { return this._shadowXOffset; }
             set { this._shadowXOffset = value; }
         }
 
@@ -435,9 +435,9 @@ namespace Amazon.MediaConvert.Model
         /// enabled to use the shadow y-offset data from your input captions, if present.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int ShadowYOffset
+        public int? ShadowYOffset
         {
-            get { return this._shadowYOffset.GetValueOrDefault(); }
+            get { return this._shadowYOffset; }
             set { this._shadowYOffset = value; }
         }
 
@@ -495,9 +495,9 @@ namespace Amazon.MediaConvert.Model
         /// is provided, the horizontal caption position will be determined by the alignment parameter.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int XPosition
+        public int? XPosition
         {
-            get { return this._xPosition.GetValueOrDefault(); }
+            get { return this._xPosition; }
             set { this._xPosition = value; }
         }
 
@@ -514,9 +514,9 @@ namespace Amazon.MediaConvert.Model
         /// the caption will be positioned towards the bottom of the output.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int YPosition
+        public int? YPosition
         {
-            get { return this._yPosition.GetValueOrDefault(); }
+            get { return this._yPosition; }
             set { this._yPosition = value; }
         }
 

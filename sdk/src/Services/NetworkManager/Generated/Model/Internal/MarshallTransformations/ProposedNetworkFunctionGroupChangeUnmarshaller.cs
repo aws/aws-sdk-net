@@ -68,7 +68,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AttachmentPolicyRuleNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AttachmentPolicyRuleNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -153,9 +153,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Plans, it refers to the cost for eligible usage.
         /// </para>
         /// </summary>
-        public double EstimatedMonthlyCost
+        public double? EstimatedMonthlyCost
         {
-            get { return this._estimatedMonthlyCost.GetValueOrDefault(); }
+            get { return this._estimatedMonthlyCost; }
             set { this._estimatedMonthlyCost = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The estimated monthly savings amount for the recommendation.
         /// </para>
         /// </summary>
-        public double EstimatedMonthlySavings
+        public double? EstimatedMonthlySavings
         {
-            get { return this._estimatedMonthlySavings.GetValueOrDefault(); }
+            get { return this._estimatedMonthlySavings; }
             set { this._estimatedMonthlySavings = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// lookback period.
         /// </para>
         /// </summary>
-        public double EstimatedSavingsPercentage
+        public double? EstimatedSavingsPercentage
         {
-            get { return this._estimatedSavingsPercentage.GetValueOrDefault(); }
+            get { return this._estimatedSavingsPercentage; }
             set { this._estimatedSavingsPercentage = value; }
         }
 
@@ -226,9 +226,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The time when the recommendation was last generated.
         /// </para>
         /// </summary>
-        public DateTime LastRefreshTimestamp
+        public DateTime? LastRefreshTimestamp
         {
-            get { return this._lastRefreshTimestamp.GetValueOrDefault(); }
+            get { return this._lastRefreshTimestamp; }
             set { this._lastRefreshTimestamp = value; }
         }
 
@@ -262,9 +262,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The lookback period that's used to generate the recommendation.
         /// </para>
         /// </summary>
-        public int RecommendationLookbackPeriodInDays
+        public int? RecommendationLookbackPeriodInDays
         {
-            get { return this._recommendationLookbackPeriodInDays.GetValueOrDefault(); }
+            get { return this._recommendationLookbackPeriodInDays; }
             set { this._recommendationLookbackPeriodInDays = value; }
         }
 
@@ -370,9 +370,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Whether or not implementing the recommendation requires a restart.
         /// </para>
         /// </summary>
-        public bool RestartNeeded
+        public bool? RestartNeeded
         {
-            get { return this._restartNeeded.GetValueOrDefault(); }
+            get { return this._restartNeeded; }
             set { this._restartNeeded = value; }
         }
 
@@ -388,9 +388,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Whether or not implementing the recommendation can be rolled back.
         /// </para>
         /// </summary>
-        public bool RollbackPossible
+        public bool? RollbackPossible
         {
-            get { return this._rollbackPossible.GetValueOrDefault(); }
+            get { return this._rollbackPossible; }
             set { this._rollbackPossible = value; }
         }
 

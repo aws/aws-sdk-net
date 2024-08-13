@@ -105,9 +105,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether this option group option can be changed from the default value.
         /// </para>
         /// </summary>
-        public bool IsModifiable
+        public bool? IsModifiable
         {
-            get { return this._isModifiable.GetValueOrDefault(); }
+            get { return this._isModifiable; }
             set { this._isModifiable = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.RDS.Model
         /// group option.
         /// </para>
         /// </summary>
-        public bool IsRequired
+        public bool? IsRequired
         {
-            get { return this._isRequired.GetValueOrDefault(); }
+            get { return this._isRequired; }
             set { this._isRequired = value; }
         }
 

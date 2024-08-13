@@ -68,7 +68,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Bytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

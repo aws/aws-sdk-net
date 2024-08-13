@@ -47,9 +47,9 @@ namespace Amazon.EC2.Model
         /// The number of accepted routes.
         /// </para>
         /// </summary>
-        public int AcceptedRouteCount
+        public int? AcceptedRouteCount
         {
-            get { return this._acceptedRouteCount.GetValueOrDefault(); }
+            get { return this._acceptedRouteCount; }
             set { this._acceptedRouteCount = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
         /// in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.
         /// </para>
         /// </summary>
-        public DateTime LastStatusChange
+        public DateTime? LastStatusChange
         {
-            get { return this._lastStatusChange.GetValueOrDefault(); }
+            get { return this._lastStatusChange; }
             set { this._lastStatusChange = value; }
         }
 

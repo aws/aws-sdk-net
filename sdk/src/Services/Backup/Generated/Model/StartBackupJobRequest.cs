@@ -105,9 +105,9 @@ namespace Amazon.Backup.Model
         /// minutes).
         /// </para>
         /// </summary>
-        public long CompleteWindowMinutes
+        public long? CompleteWindowMinutes
         {
-            get { return this._completeWindowMinutes.GetValueOrDefault(); }
+            get { return this._completeWindowMinutes; }
             set { this._completeWindowMinutes = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.Backup.Model
         /// over).
         /// </para>
         /// </summary>
-        public long StartWindowMinutes
+        public long? StartWindowMinutes
         {
-            get { return this._startWindowMinutes.GetValueOrDefault(); }
+            get { return this._startWindowMinutes; }
             set { this._startWindowMinutes = value; }
         }
 

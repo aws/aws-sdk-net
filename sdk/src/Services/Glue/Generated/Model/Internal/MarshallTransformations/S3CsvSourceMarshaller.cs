@@ -97,19 +97,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxBand())
             {
                 context.Writer.WritePropertyName("MaxBand");
-                context.Writer.Write(requestObject.MaxBand);
+                context.Writer.Write(requestObject.MaxBand.Value);
             }
 
             if(requestObject.IsSetMaxFilesInBand())
             {
                 context.Writer.WritePropertyName("MaxFilesInBand");
-                context.Writer.Write(requestObject.MaxFilesInBand);
+                context.Writer.Write(requestObject.MaxFilesInBand.Value);
             }
 
             if(requestObject.IsSetMultiline())
             {
                 context.Writer.WritePropertyName("Multiline");
-                context.Writer.Write(requestObject.Multiline);
+                context.Writer.Write(requestObject.Multiline.Value);
             }
 
             if(requestObject.IsSetName())
@@ -121,7 +121,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOptimizePerformance())
             {
                 context.Writer.WritePropertyName("OptimizePerformance");
-                context.Writer.Write(requestObject.OptimizePerformance);
+                context.Writer.Write(requestObject.OptimizePerformance.Value);
             }
 
             if(requestObject.IsSetOutputSchemas())
@@ -160,7 +160,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecurse())
             {
                 context.Writer.WritePropertyName("Recurse");
-                context.Writer.Write(requestObject.Recurse);
+                context.Writer.Write(requestObject.Recurse.Value);
             }
 
             if(requestObject.IsSetSeparator())
@@ -172,19 +172,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSkipFirst())
             {
                 context.Writer.WritePropertyName("SkipFirst");
-                context.Writer.Write(requestObject.SkipFirst);
+                context.Writer.Write(requestObject.SkipFirst.Value);
             }
 
             if(requestObject.IsSetWithHeader())
             {
                 context.Writer.WritePropertyName("WithHeader");
-                context.Writer.Write(requestObject.WithHeader);
+                context.Writer.Write(requestObject.WithHeader.Value);
             }
 
             if(requestObject.IsSetWriteHeader())
             {
                 context.Writer.WritePropertyName("WriteHeader");
-                context.Writer.Write(requestObject.WriteHeader);
+                context.Writer.Write(requestObject.WriteHeader.Value);
             }
 
         }

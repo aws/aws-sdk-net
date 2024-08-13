@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrimary())
             {
                 context.Writer.WritePropertyName("Primary");
-                context.Writer.Write(requestObject.Primary);
+                context.Writer.Write(requestObject.Primary.Value);
             }
 
             if(requestObject.IsSetPrivateIpAddress())

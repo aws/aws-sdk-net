@@ -155,7 +155,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartoverWindowSeconds())
                 {
                     context.Writer.WritePropertyName("startoverWindowSeconds");
-                    context.Writer.Write(publicRequest.StartoverWindowSeconds);
+                    context.Writer.Write(publicRequest.StartoverWindowSeconds.Value);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -175,7 +175,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeDelaySeconds())
                 {
                     context.Writer.WritePropertyName("timeDelaySeconds");
-                    context.Writer.Write(publicRequest.TimeDelaySeconds);
+                    context.Writer.Write(publicRequest.TimeDelaySeconds.Value);
                 }
 
                 if(publicRequest.IsSetWhitelist())

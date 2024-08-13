@@ -68,7 +68,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApproximateCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ApproximateCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

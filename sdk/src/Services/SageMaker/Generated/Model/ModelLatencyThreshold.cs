@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// The model latency percentile value in milliseconds.
         /// </para>
         /// </summary>
-        public int ValueInMilliseconds
+        public int? ValueInMilliseconds
         {
-            get { return this._valueInMilliseconds.GetValueOrDefault(); }
+            get { return this._valueInMilliseconds; }
             set { this._valueInMilliseconds = value; }
         }
 

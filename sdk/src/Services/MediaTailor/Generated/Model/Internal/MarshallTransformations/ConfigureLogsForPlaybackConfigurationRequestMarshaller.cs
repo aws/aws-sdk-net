@@ -70,7 +70,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPercentEnabled())
                 {
                     context.Writer.WritePropertyName("PercentEnabled");
-                    context.Writer.Write(publicRequest.PercentEnabled);
+                    context.Writer.Write(publicRequest.PercentEnabled.Value);
                 }
 
                 if(publicRequest.IsSetPlaybackConfigurationName())

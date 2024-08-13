@@ -73,9 +73,9 @@ namespace Amazon.Backup.Model
         /// Universal Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime ByCompleteAfter
+        public DateTime? ByCompleteAfter
         {
-            get { return this._byCompleteAfter.GetValueOrDefault(); }
+            get { return this._byCompleteAfter; }
             set { this._byCompleteAfter = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.Backup.Model
         /// Universal Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime ByCompleteBefore
+        public DateTime? ByCompleteBefore
         {
-            get { return this._byCompleteBefore.GetValueOrDefault(); }
+            get { return this._byCompleteBefore; }
             set { this._byCompleteBefore = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Backup.Model
         /// Returns only restore jobs that were created after the specified date.
         /// </para>
         /// </summary>
-        public DateTime ByCreatedAfter
+        public DateTime? ByCreatedAfter
         {
-            get { return this._byCreatedAfter.GetValueOrDefault(); }
+            get { return this._byCreatedAfter; }
             set { this._byCreatedAfter = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Backup.Model
         /// Returns only restore jobs that were created before the specified date.
         /// </para>
         /// </summary>
-        public DateTime ByCreatedBefore
+        public DateTime? ByCreatedBefore
         {
-            get { return this._byCreatedBefore.GetValueOrDefault(); }
+            get { return this._byCreatedBefore; }
             set { this._byCreatedBefore = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

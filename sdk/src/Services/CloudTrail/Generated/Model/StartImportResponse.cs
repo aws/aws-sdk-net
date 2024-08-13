@@ -49,9 +49,9 @@ namespace Amazon.CloudTrail.Model
         ///  The timestamp for the import's creation. 
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.CloudTrail.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime EndEventTime
+        public DateTime? EndEventTime
         {
-            get { return this._endEventTime.GetValueOrDefault(); }
+            get { return this._endEventTime; }
             set { this._endEventTime = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.CloudTrail.Model
         /// trail events to only those events logged within a specified time period. 
         /// </para>
         /// </summary>
-        public DateTime StartEventTime
+        public DateTime? StartEventTime
         {
-            get { return this._startEventTime.GetValueOrDefault(); }
+            get { return this._startEventTime; }
             set { this._startEventTime = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.CloudTrail.Model
         ///  The timestamp of the import's last update, if applicable. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

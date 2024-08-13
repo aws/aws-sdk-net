@@ -74,7 +74,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastAccessedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAccessedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

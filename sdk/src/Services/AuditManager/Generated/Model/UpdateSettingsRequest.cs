@@ -134,9 +134,9 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public bool EvidenceFinderEnabled
+        public bool? EvidenceFinderEnabled
         {
-            get { return this._evidenceFinderEnabled.GetValueOrDefault(); }
+            get { return this._evidenceFinderEnabled; }
             set { this._evidenceFinderEnabled = value; }
         }
 

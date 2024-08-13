@@ -51,7 +51,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedAttempts())
             {
                 context.Writer.WritePropertyName("AllowedAttempts");
-                context.Writer.Write(requestObject.AllowedAttempts);
+                context.Writer.Write(requestObject.AllowedAttempts.Value);
             }
 
             if(requestObject.IsSetBrandName())
@@ -69,7 +69,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCodeLength())
             {
                 context.Writer.WritePropertyName("CodeLength");
-                context.Writer.Write(requestObject.CodeLength);
+                context.Writer.Write(requestObject.CodeLength.Value);
             }
 
             if(requestObject.IsSetDestinationIdentity())
@@ -111,7 +111,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValidityPeriod())
             {
                 context.Writer.WritePropertyName("ValidityPeriod");
-                context.Writer.Write(requestObject.ValidityPeriod);
+                context.Writer.Write(requestObject.ValidityPeriod.Value);
             }
 
         }

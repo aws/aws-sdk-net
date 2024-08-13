@@ -51,13 +51,13 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxVersions())
             {
                 context.Writer.WritePropertyName("maxVersions");
-                context.Writer.Write(requestObject.MaxVersions);
+                context.Writer.Write(requestObject.MaxVersions.Value);
             }
 
             if(requestObject.IsSetUnlimited())
             {
                 context.Writer.WritePropertyName("unlimited");
-                context.Writer.Write(requestObject.Unlimited);
+                context.Writer.Write(requestObject.Unlimited.Value);
             }
 
         }

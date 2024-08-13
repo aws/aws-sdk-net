@@ -107,9 +107,9 @@ namespace Amazon.EC2.Model
         /// The latest scheduled end time for the event.
         /// </para>
         /// </summary>
-        public DateTime NotAfter
+        public DateTime? NotAfter
         {
-            get { return this._notAfter.GetValueOrDefault(); }
+            get { return this._notAfter; }
             set { this._notAfter = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.EC2.Model
         /// The earliest scheduled start time for the event.
         /// </para>
         /// </summary>
-        public DateTime NotBefore
+        public DateTime? NotBefore
         {
-            get { return this._notBefore.GetValueOrDefault(); }
+            get { return this._notBefore; }
             set { this._notBefore = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.EC2.Model
         /// The deadline for starting the event.
         /// </para>
         /// </summary>
-        public DateTime NotBeforeDeadline
+        public DateTime? NotBeforeDeadline
         {
-            get { return this._notBeforeDeadline.GetValueOrDefault(); }
+            get { return this._notBeforeDeadline; }
             set { this._notBeforeDeadline = value; }
         }
 

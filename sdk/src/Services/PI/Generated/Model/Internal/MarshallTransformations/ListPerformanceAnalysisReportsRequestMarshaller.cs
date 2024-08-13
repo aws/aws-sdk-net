@@ -78,13 +78,13 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetListTags())
                 {
                     context.Writer.WritePropertyName("ListTags");
-                    context.Writer.Write(publicRequest.ListTags);
+                    context.Writer.Write(publicRequest.ListTags.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

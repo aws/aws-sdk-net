@@ -27,7 +27,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL45
+#if BCL
 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
@@ -41,21 +41,6 @@ namespace Amazon.CloudSearchDomain.Internal
         {
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);                        
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
         }
 #endif
 

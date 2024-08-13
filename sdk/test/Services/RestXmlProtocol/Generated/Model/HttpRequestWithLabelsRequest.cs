@@ -52,9 +52,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Boolean
+        public bool? Boolean
         {
-            get { return this._boolean.GetValueOrDefault(); }
+            get { return this._boolean; }
             set { this._boolean = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// Gets and sets the property Double.
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Double
+        public double? Double
         {
-            get { return this._double.GetValueOrDefault(); }
+            get { return this._double; }
             set { this._double = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// Gets and sets the property Float.
         /// </summary>
         [AWSProperty(Required=true)]
-        public float Float
+        public float? Float
         {
-            get { return this._float.GetValueOrDefault(); }
+            get { return this._float; }
             set { this._float = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// Gets and sets the property Integer.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Integer
+        public int? Integer
         {
-            get { return this._integer.GetValueOrDefault(); }
+            get { return this._integer; }
             set { this._integer = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// Gets and sets the property Long.
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Long
+        public long? Long
         {
-            get { return this._long.GetValueOrDefault(); }
+            get { return this._long; }
             set { this._long = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// Gets and sets the property Short.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Short
+        public int? Short
         {
-            get { return this._short.GetValueOrDefault(); }
+            get { return this._short; }
             set { this._short = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.RestXmlProtocol.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

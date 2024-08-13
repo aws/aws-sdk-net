@@ -46,9 +46,9 @@ namespace Amazon.StorageGateway.Model
         /// Indicates whether mutual CHAP is enabled for the iSCSI target.
         /// </para>
         /// </summary>
-        public bool ChapEnabled
+        public bool? ChapEnabled
         {
-            get { return this._chapEnabled.GetValueOrDefault(); }
+            get { return this._chapEnabled; }
             set { this._chapEnabled = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int LunNumber
+        public int? LunNumber
         {
-            get { return this._lunNumber.GetValueOrDefault(); }
+            get { return this._lunNumber; }
             set { this._lunNumber = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.StorageGateway.Model
         /// The port used to communicate with iSCSI targets.
         /// </para>
         /// </summary>
-        public int NetworkInterfacePort
+        public int? NetworkInterfacePort
         {
-            get { return this._networkInterfacePort.GetValueOrDefault(); }
+            get { return this._networkInterfacePort; }
             set { this._networkInterfacePort = value; }
         }
 

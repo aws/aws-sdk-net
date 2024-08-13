@@ -44,9 +44,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=31)]
-        public int DayOfMonth
+        public int? DayOfMonth
         {
-            get { return this._dayOfMonth.GetValueOrDefault(); }
+            get { return this._dayOfMonth; }
             set { this._dayOfMonth = value; }
         }
 

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Util;
@@ -18,10 +18,9 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.S3;
 using Amazon;
 using Amazon.Util;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using ServiceClientGenerator;
 using System.Reflection;
-using Amazon.S3.Encryption;
 using System.Security.Cryptography;
 
 namespace AWSSDK.UnitTests

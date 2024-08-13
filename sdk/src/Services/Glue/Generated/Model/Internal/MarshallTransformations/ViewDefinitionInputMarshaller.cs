@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsProtected())
             {
                 context.Writer.WritePropertyName("IsProtected");
-                context.Writer.Write(requestObject.IsProtected);
+                context.Writer.Write(requestObject.IsProtected.Value);
             }
 
             if(requestObject.IsSetRepresentations())

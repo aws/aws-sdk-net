@@ -80,7 +80,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastAutoAdjustTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAutoAdjustTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

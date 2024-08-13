@@ -156,9 +156,9 @@ namespace Amazon.EC2.Model
         /// stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
-        public bool DisableApiStop
+        public bool? DisableApiStop
         {
-            get { return this._disableApiStop.GetValueOrDefault(); }
+            get { return this._disableApiStop; }
             set { this._disableApiStop = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.EC2.Model
         /// you can terminate the instance by running the shutdown command from the instance.
         /// </para>
         /// </summary>
-        public bool DisableApiTermination
+        public bool? DisableApiTermination
         {
-            get { return this._disableApiTermination.GetValueOrDefault(); }
+            get { return this._disableApiTermination; }
             set { this._disableApiTermination = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.EC2.Model
         /// all instance types. Additional usage charges apply when using an EBS-optimized instance.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -338,44 +338,72 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI. Alternatively, you can specify a Systems Manager parameter, which
-        /// will resolve to an AMI ID on launch.
+        /// The ID of the AMI in the format <c>ami-17characters00000</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid formats:
+        /// Alternatively, you can specify a Systems Manager parameter, using one of the following
+        /// formats. The Systems Manager parameter will resolve to an AMI ID on launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// To reference a public parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ami-17characters00000</c> 
+        ///  <c>resolve:ssm:<i>public-parameter</i> </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To reference a parameter stored in the same account:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>parameter-name</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>resolve:ssm:parameter-name</c> 
+        ///  <c>resolve:ssm:<i>parameter-name:version-number</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>resolve:ssm:parameter-name:version-number</c> 
+        ///  <c>resolve:ssm:<i>parameter-name:label</i> </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To reference a parameter shared from another Amazon Web Services account:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resolve:ssm:<i>parameter-ARN</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>resolve:ssm:parameter-name:label</c> 
+        ///  <c>resolve:ssm:<i>parameter-ARN:version-number</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>resolve:ssm:public-parameter</c> 
+        ///  <c>resolve:ssm:<i>parameter-ARN:label</i> </c> 
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter.
-        /// If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify
-        /// the AMI ID.
-        /// </para>
-        ///  </note> 
+        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use
         /// a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the launch template will be used for an EC2 Fleet or Spot Fleet, note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Only EC2 Fleets of type <c>instant</c> support specifying a Systems Manager parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For EC2 Fleets of type <c>maintain</c> or <c>request</c>, or for Spot Fleets, you
+        /// must specify the AMI ID.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public string ImageId
         {

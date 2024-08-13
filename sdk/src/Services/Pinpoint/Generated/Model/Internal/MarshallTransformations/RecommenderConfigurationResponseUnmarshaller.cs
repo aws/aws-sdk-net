@@ -128,7 +128,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RecommendationsPerMessage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecommendationsPerMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }

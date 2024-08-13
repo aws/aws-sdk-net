@@ -171,9 +171,9 @@ namespace Amazon.EC2.Model
         /// VPC.
         /// </para>
         /// </summary>
-        public bool PrivateDnsEnabled
+        public bool? PrivateDnsEnabled
         {
-            get { return this._privateDnsEnabled.GetValueOrDefault(); }
+            get { return this._privateDnsEnabled; }
             set { this._privateDnsEnabled = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.EC2.Model
         /// policy. The default policy allows full access to the service.
         /// </para>
         /// </summary>
-        public bool ResetPolicy
+        public bool? ResetPolicy
         {
-            get { return this._resetPolicy.GetValueOrDefault(); }
+            get { return this._resetPolicy; }
             set { this._resetPolicy = value; }
         }
 

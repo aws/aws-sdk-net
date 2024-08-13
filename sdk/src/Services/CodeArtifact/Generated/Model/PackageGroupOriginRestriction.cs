@@ -109,9 +109,9 @@ namespace Amazon.CodeArtifact.Model
         /// The number of repositories in the allowed repository list.
         /// </para>
         /// </summary>
-        public long RepositoriesCount
+        public long? RepositoriesCount
         {
-            get { return this._repositoriesCount.GetValueOrDefault(); }
+            get { return this._repositoriesCount; }
             set { this._repositoriesCount = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// transaction using an EMV chip card.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16)]
+        [AWSProperty(Sensitive=true, Min=1, Max=16)]
         public string ProprietaryAuthenticationData
         {
             get { return this._proprietaryAuthenticationData; }

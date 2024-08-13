@@ -68,13 +68,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("HybridAccessEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HybridAccessEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WithFederation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.WithFederation = unmarshaller.Unmarshall(context);
                     continue;
                 }

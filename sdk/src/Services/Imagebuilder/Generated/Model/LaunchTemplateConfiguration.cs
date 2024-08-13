@@ -82,9 +82,9 @@ namespace Amazon.Imagebuilder.Model
         /// specified account.
         /// </para>
         /// </summary>
-        public bool SetDefaultVersion
+        public bool? SetDefaultVersion
         {
-            get { return this._setDefaultVersion.GetValueOrDefault(); }
+            get { return this._setDefaultVersion; }
             set { this._setDefaultVersion = value; }
         }
 

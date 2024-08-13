@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// be greater than 90 days plus <c>MoveToColdStorageAfterDays</c>. 
         /// </para>
         /// </summary>
-        public long DeleteAfterDays
+        public long? DeleteAfterDays
         {
-            get { return this._deleteAfterDays.GetValueOrDefault(); }
+            get { return this._deleteAfterDays; }
             set { this._deleteAfterDays = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SecurityHub.Model
         /// storage. 
         /// </para>
         /// </summary>
-        public long MoveToColdStorageAfterDays
+        public long? MoveToColdStorageAfterDays
         {
-            get { return this._moveToColdStorageAfterDays.GetValueOrDefault(); }
+            get { return this._moveToColdStorageAfterDays; }
             set { this._moveToColdStorageAfterDays = value; }
         }
 

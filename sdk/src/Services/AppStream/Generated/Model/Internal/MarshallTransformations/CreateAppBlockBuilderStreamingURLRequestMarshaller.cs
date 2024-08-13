@@ -78,7 +78,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetValidity())
                 {
                     context.Writer.WritePropertyName("Validity");
-                    context.Writer.Write(publicRequest.Validity);
+                    context.Writer.Write(publicRequest.Validity.Value);
                 }
 
                 writer.WriteObjectEnd();

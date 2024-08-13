@@ -223,9 +223,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999)]
-        public int RunOrder
+        public int? RunOrder
         {
-            get { return this._runOrder.GetValueOrDefault(); }
+            get { return this._runOrder; }
             set { this._runOrder = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=86400)]
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

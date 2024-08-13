@@ -92,13 +92,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeMaximum", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeMaximum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeMinimum", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeMinimum = unmarshaller.Unmarshall(context);
                     continue;
                 }

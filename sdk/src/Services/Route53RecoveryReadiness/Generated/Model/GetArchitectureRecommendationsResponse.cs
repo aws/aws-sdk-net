@@ -45,9 +45,9 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime LastAuditTimestamp
+        public DateTime? LastAuditTimestamp
         {
-            get { return this._lastAuditTimestamp.GetValueOrDefault(); }
+            get { return this._lastAuditTimestamp; }
             set { this._lastAuditTimestamp = value; }
         }
 

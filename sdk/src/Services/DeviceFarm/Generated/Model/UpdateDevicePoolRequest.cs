@@ -78,9 +78,9 @@ namespace Amazon.DeviceFarm.Model
         /// in the same request.
         /// </para>
         /// </summary>
-        public bool ClearMaxDevices
+        public bool? ClearMaxDevices
         {
-            get { return this._clearMaxDevices.GetValueOrDefault(); }
+            get { return this._clearMaxDevices; }
             set { this._clearMaxDevices = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.DeviceFarm.Model
         /// parameter in the same request.
         /// </para>
         /// </summary>
-        public int MaxDevices
+        public int? MaxDevices
         {
-            get { return this._maxDevices.GetValueOrDefault(); }
+            get { return this._maxDevices; }
             set { this._maxDevices = value; }
         }
 

@@ -105,19 +105,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCount())
                 {
                     context.Writer.WritePropertyName("count");
-                    context.Writer.Write(publicRequest.Count);
+                    context.Writer.Write(publicRequest.Count.Value);
                 }
 
                 if(publicRequest.IsSetEnableECSManagedTags())
                 {
                     context.Writer.WritePropertyName("enableECSManagedTags");
-                    context.Writer.Write(publicRequest.EnableECSManagedTags);
+                    context.Writer.Write(publicRequest.EnableECSManagedTags.Value);
                 }
 
                 if(publicRequest.IsSetEnableExecuteCommand())
                 {
                     context.Writer.WritePropertyName("enableExecuteCommand");
-                    context.Writer.Write(publicRequest.EnableExecuteCommand);
+                    context.Writer.Write(publicRequest.EnableExecuteCommand.Value);
                 }
 
                 if(publicRequest.IsSetGroup())

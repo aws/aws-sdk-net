@@ -68,43 +68,43 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("canceledChecks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CanceledChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("compliantChecks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("failedChecks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inProgressChecks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InProgressChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("nonCompliantChecks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalChecks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("waitingForDataCollectionChecks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WaitingForDataCollectionChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }

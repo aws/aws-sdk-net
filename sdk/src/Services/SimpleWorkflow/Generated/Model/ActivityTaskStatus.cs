@@ -43,9 +43,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool CancelRequested
+        public bool? CancelRequested
         {
-            get { return this._cancelRequested.GetValueOrDefault(); }
+            get { return this._cancelRequested; }
             set { this._cancelRequested = value; }
         }
 

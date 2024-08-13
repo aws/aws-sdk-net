@@ -45,9 +45,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property DateTime.
         /// </summary>
-        public DateTime DateTime
+        public DateTime? DateTime
         {
-            get { return this._dateTime.GetValueOrDefault(); }
+            get { return this._dateTime; }
             set { this._dateTime = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property DateTimeOnTarget.
         /// </summary>
-        public DateTime DateTimeOnTarget
+        public DateTime? DateTimeOnTarget
         {
-            get { return this._dateTimeOnTarget.GetValueOrDefault(); }
+            get { return this._dateTimeOnTarget; }
             set { this._dateTimeOnTarget = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property EpochSeconds.
         /// </summary>
-        public DateTime EpochSeconds
+        public DateTime? EpochSeconds
         {
-            get { return this._epochSeconds.GetValueOrDefault(); }
+            get { return this._epochSeconds; }
             set { this._epochSeconds = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property EpochSecondsOnTarget.
         /// </summary>
-        public DateTime EpochSecondsOnTarget
+        public DateTime? EpochSecondsOnTarget
         {
-            get { return this._epochSecondsOnTarget.GetValueOrDefault(); }
+            get { return this._epochSecondsOnTarget; }
             set { this._epochSecondsOnTarget = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property HttpDate.
         /// </summary>
-        public DateTime HttpDate
+        public DateTime? HttpDate
         {
-            get { return this._httpDate.GetValueOrDefault(); }
+            get { return this._httpDate; }
             set { this._httpDate = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property HttpDateOnTarget.
         /// </summary>
-        public DateTime HttpDateOnTarget
+        public DateTime? HttpDateOnTarget
         {
-            get { return this._httpDateOnTarget.GetValueOrDefault(); }
+            get { return this._httpDateOnTarget; }
             set { this._httpDateOnTarget = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property Normal.
         /// </summary>
-        public DateTime Normal
+        public DateTime? Normal
         {
-            get { return this._normal.GetValueOrDefault(); }
+            get { return this._normal; }
             set { this._normal = value; }
         }
 

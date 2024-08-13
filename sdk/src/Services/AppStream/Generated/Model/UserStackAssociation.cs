@@ -65,9 +65,9 @@ namespace Amazon.AppStream.Model
         /// user pool.
         /// </para>
         /// </summary>
-        public bool SendEmailNotification
+        public bool? SendEmailNotification
         {
-            get { return this._sendEmailNotification.GetValueOrDefault(); }
+            get { return this._sendEmailNotification; }
             set { this._sendEmailNotification = value; }
         }
 

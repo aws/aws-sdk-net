@@ -89,7 +89,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// card.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=5)]
+        [AWSProperty(Required=true, Sensitive=true, Min=3, Max=5)]
         public string ValidationData
         {
             get { return this._validationData; }

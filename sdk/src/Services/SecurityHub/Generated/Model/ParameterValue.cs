@@ -50,9 +50,9 @@ namespace Amazon.SecurityHub.Model
         ///  A control parameter that is a boolean. 
         /// </para>
         /// </summary>
-        public bool Boolean
+        public bool? Boolean
         {
-            get { return this._boolean.GetValueOrDefault(); }
+            get { return this._boolean; }
             set { this._boolean = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.SecurityHub.Model
         ///  A control parameter that is a double. 
         /// </para>
         /// </summary>
-        public double Double
+        public double? Double
         {
-            get { return this._double.GetValueOrDefault(); }
+            get { return this._double; }
             set { this._double = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.SecurityHub.Model
         ///  A control parameter that is an integer. 
         /// </para>
         /// </summary>
-        public int Integer
+        public int? Integer
         {
-            get { return this._integer.GetValueOrDefault(); }
+            get { return this._integer; }
             set { this._integer = value; }
         }
 

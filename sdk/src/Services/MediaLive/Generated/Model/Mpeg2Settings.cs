@@ -187,9 +187,9 @@ namespace Amazon.MediaLive.Model
         /// example, 24000 / 1001 = 23.976 FPS.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.MediaLive.Model
         /// / 1001 = 23.976 FPS.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property GopClosedCadence. MPEG2: default is open GOP.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GopClosedCadence
+        public int? GopClosedCadence
         {
-            get { return this._gopClosedCadence.GetValueOrDefault(); }
+            get { return this._gopClosedCadence; }
             set { this._gopClosedCadence = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.MediaLive.Model
         /// default.
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
-        public int GopNumBFrames
+        public int? GopNumBFrames
         {
-            get { return this._gopNumBFrames.GetValueOrDefault(); }
+            get { return this._gopNumBFrames; }
             set { this._gopNumBFrames = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.MediaLive.Model
         /// must be greater than or equal to 1.If gopSizeUnits is seconds, the gopSize must be
         /// greater than 0, but does not need to be an integer.
         /// </summary>
-        public double GopSize
+        public double? GopSize
         {
-            get { return this._gopSize.GetValueOrDefault(); }
+            get { return this._gopSize; }
             set { this._gopSize = value; }
         }
 

@@ -51,6 +51,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
+        /// Note: Application Load Balancer authentication only supports IPv4 addresses when connecting
+        /// to an Identity Provider (IdP) or Amazon Cognito endpoint. Without a public IPv4 address
+        /// the load balancer cannot complete the authentication process, resulting in HTTP 500
+        /// errors.
+        /// </para>
+        ///  
+        /// <para>
         /// [Network Load Balancers] The IP address type. The possible values are <c>ipv4</c>
         /// (for only IPv4 addresses) and <c>dualstack</c> (for IPv4 and IPv6 addresses). You
         /// can’t specify <c>dualstack</c> for a load balancer with a UDP or TCP_UDP listener.

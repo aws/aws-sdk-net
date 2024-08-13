@@ -94,9 +94,9 @@ namespace Amazon.AuditManager.Model
         ///  The time when the share request was created. 
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.AuditManager.Model
         /// The number of custom controls that are part of the shared custom framework.
         /// </para>
         /// </summary>
-        public int CustomControlsCount
+        public int? CustomControlsCount
         {
-            get { return this._customControlsCount.GetValueOrDefault(); }
+            get { return this._customControlsCount; }
             set { this._customControlsCount = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.AuditManager.Model
         ///  The time when the share request expires. 
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.AuditManager.Model
         ///  Specifies when the share request was last updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.AuditManager.Model
         /// The number of standard controls that are part of the shared custom framework. 
         /// </para>
         /// </summary>
-        public int StandardControlsCount
+        public int? StandardControlsCount
         {
-            get { return this._standardControlsCount.GetValueOrDefault(); }
+            get { return this._standardControlsCount; }
             set { this._standardControlsCount = value; }
         }
 

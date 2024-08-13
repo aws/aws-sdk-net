@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CallingNameUpdatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CallingNameUpdatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

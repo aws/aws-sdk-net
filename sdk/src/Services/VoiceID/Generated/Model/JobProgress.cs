@@ -44,9 +44,9 @@ namespace Amazon.VoiceID.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int PercentComplete
+        public int? PercentComplete
         {
-            get { return this._percentComplete.GetValueOrDefault(); }
+            get { return this._percentComplete; }
             set { this._percentComplete = value; }
         }
 

@@ -71,9 +71,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The date and time that the ruleset was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The modification date and time of the ruleset.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RuleCount
+        public int? RuleCount
         {
-            get { return this._ruleCount.GetValueOrDefault(); }
+            get { return this._ruleCount; }
             set { this._ruleCount = value; }
         }
 

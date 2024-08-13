@@ -42,9 +42,9 @@ namespace Amazon.MediaLive.Model
         /// the video encode.When this field is defined, StatmuxSettings must be undefined.
         /// </summary>
         [AWSProperty(Min=100000, Max=100000000)]
-        public int ConstantBitrate
+        public int? ConstantBitrate
         {
-            get { return this._constantBitrate.GetValueOrDefault(); }
+            get { return this._constantBitrate; }
             set { this._constantBitrate = value; }
         }
 

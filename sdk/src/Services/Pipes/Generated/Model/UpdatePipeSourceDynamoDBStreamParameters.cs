@@ -49,9 +49,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int BatchSize
+        public int? BatchSize
         {
-            get { return this._batchSize.GetValueOrDefault(); }
+            get { return this._batchSize; }
             set { this._batchSize = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
-        public int MaximumBatchingWindowInSeconds
+        public int? MaximumBatchingWindowInSeconds
         {
-            get { return this._maximumBatchingWindowInSeconds.GetValueOrDefault(); }
+            get { return this._maximumBatchingWindowInSeconds; }
             set { this._maximumBatchingWindowInSeconds = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
-        public int MaximumRecordAgeInSeconds
+        public int? MaximumRecordAgeInSeconds
         {
-            get { return this._maximumRecordAgeInSeconds.GetValueOrDefault(); }
+            get { return this._maximumRecordAgeInSeconds; }
             set { this._maximumRecordAgeInSeconds = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
-        public int MaximumRetryAttempts
+        public int? MaximumRetryAttempts
         {
-            get { return this._maximumRetryAttempts.GetValueOrDefault(); }
+            get { return this._maximumRetryAttempts; }
             set { this._maximumRetryAttempts = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int ParallelizationFactor
+        public int? ParallelizationFactor
         {
-            get { return this._parallelizationFactor.GetValueOrDefault(); }
+            get { return this._parallelizationFactor; }
             set { this._parallelizationFactor = value; }
         }
 

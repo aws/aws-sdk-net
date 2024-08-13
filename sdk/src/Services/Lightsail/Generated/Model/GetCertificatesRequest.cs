@@ -110,9 +110,9 @@ namespace Amazon.Lightsail.Model
         /// (ARNs), domain names, and tags.
         /// </para>
         /// </summary>
-        public bool IncludeCertificateDetails
+        public bool? IncludeCertificateDetails
         {
-            get { return this._includeCertificateDetails.GetValueOrDefault(); }
+            get { return this._includeCertificateDetails; }
             set { this._includeCertificateDetails = value; }
         }
 

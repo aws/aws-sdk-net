@@ -106,9 +106,9 @@ namespace Amazon.CloudTrail.Model
         /// The default is the time of request.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=21600)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -282,9 +282,9 @@ namespace Amazon.CloudTrail.Model
         /// The default is 90 days before the time of request.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

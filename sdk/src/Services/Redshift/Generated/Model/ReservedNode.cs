@@ -74,9 +74,9 @@ namespace Amazon.Redshift.Model
         /// The duration of the node reservation in seconds.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.Redshift.Model
         /// The fixed cost Amazon Redshift charges you for this reserved node.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Redshift.Model
         /// The number of reserved compute nodes.
         /// </para>
         /// </summary>
-        public int NodeCount
+        public int? NodeCount
         {
-            get { return this._nodeCount.GetValueOrDefault(); }
+            get { return this._nodeCount; }
             set { this._nodeCount = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.Redshift.Model
         /// This is the start time of that duration.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -302,9 +302,9 @@ namespace Amazon.Redshift.Model
         /// The hourly rate Amazon Redshift charges you for this reserved node.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

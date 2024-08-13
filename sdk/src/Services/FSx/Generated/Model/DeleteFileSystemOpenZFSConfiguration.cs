@@ -88,9 +88,9 @@ namespace Amazon.FSx.Model
         /// to <c>true</c>.
         /// </para>
         /// </summary>
-        public bool SkipFinalBackup
+        public bool? SkipFinalBackup
         {
-            get { return this._skipFinalBackup.GetValueOrDefault(); }
+            get { return this._skipFinalBackup; }
             set { this._skipFinalBackup = value; }
         }
 

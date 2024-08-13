@@ -73,7 +73,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultVersionId())
                 {
                     context.Writer.WritePropertyName("defaultVersionId");
-                    context.Writer.Write(publicRequest.DefaultVersionId);
+                    context.Writer.Write(publicRequest.DefaultVersionId.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -85,7 +85,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 if(publicRequest.IsSetPreProvisioningHook())
@@ -108,7 +108,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemovePreProvisioningHook())
                 {
                     context.Writer.WritePropertyName("removePreProvisioningHook");
-                    context.Writer.Write(publicRequest.RemovePreProvisioningHook);
+                    context.Writer.Write(publicRequest.RemovePreProvisioningHook.Value);
                 }
 
                 writer.WriteObjectEnd();

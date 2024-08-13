@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private List<CodeRepository> _codeRepositories = AWSConfigs.InitializeCollections ? new List<CodeRepository>() : null;
         private List<CustomImage> _customImages = AWSConfigs.InitializeCollections ? new List<CustomImage>() : null;
         private ResourceSpec _defaultResourceSpec;
+        private EmrSettings _emrSettings;
         private List<string> _lifecycleConfigArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -91,6 +92,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDefaultResourceSpec()
         {
             return this._defaultResourceSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmrSettings. 
+        /// <para>
+        /// The configuration parameters that specify the IAM roles assumed by the execution role
+        /// of SageMaker (assumable roles) and the cluster instances or job execution environments
+        /// (execution roles or runtime roles) to manage and access resources required for running
+        /// Amazon EMR clusters or Amazon EMR Serverless applications.
+        /// </para>
+        /// </summary>
+        public EmrSettings EmrSettings
+        {
+            get { return this._emrSettings; }
+            set { this._emrSettings = value; }
+        }
+
+        // Check to see if EmrSettings property is set
+        internal bool IsSetEmrSettings()
+        {
+            return this._emrSettings != null;
         }
 
         /// <summary>

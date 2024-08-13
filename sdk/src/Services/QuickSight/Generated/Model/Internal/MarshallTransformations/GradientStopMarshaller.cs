@@ -57,26 +57,26 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataValue())
             {
                 context.Writer.WritePropertyName("DataValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DataValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DataValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DataValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DataValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DataValue);
+                    context.Writer.Write(requestObject.DataValue.Value);
                 }
             }
 
             if(requestObject.IsSetGradientOffset())
             {
                 context.Writer.WritePropertyName("GradientOffset");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.GradientOffset))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.GradientOffset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GradientOffset));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GradientOffset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.GradientOffset);
+                    context.Writer.Write(requestObject.GradientOffset.Value);
                 }
             }
 

@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScale())
             {
                 context.Writer.WritePropertyName("Scale");
-                context.Writer.Write(requestObject.Scale);
+                context.Writer.Write(requestObject.Scale.Value);
             }
 
             if(requestObject.IsSetUnscaledValue())

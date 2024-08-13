@@ -49,9 +49,9 @@ namespace Amazon.VoiceID.Model
         /// A timestamp of when of the speaker enrollment job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.VoiceID.Model
         /// A timestamp of when the speaker enrollment job ended.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 

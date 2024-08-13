@@ -78,6 +78,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationSnapshotConfigurationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ApplicationSystemRollbackConfigurationDescription", targetDepth))
+                {
+                    var unmarshaller = ApplicationSystemRollbackConfigurationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationSystemRollbackConfigurationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnvironmentPropertyDescriptions", targetDepth))
                 {
                     var unmarshaller = EnvironmentPropertyDescriptionsUnmarshaller.Instance;

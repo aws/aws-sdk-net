@@ -76,9 +76,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index attachments.
         /// </para>
         /// </summary>
-        public bool CrawlAttachments
+        public bool? CrawlAttachments
         {
-            get { return this._crawlAttachments.GetValueOrDefault(); }
+            get { return this._crawlAttachments; }
             set { this._crawlAttachments = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index the contents of chat rooms.
         /// </para>
         /// </summary>
-        public bool CrawlChatRooms
+        public bool? CrawlChatRooms
         {
-            get { return this._crawlChatRooms.GetValueOrDefault(); }
+            get { return this._crawlChatRooms; }
             set { this._crawlChatRooms = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index file comments.
         /// </para>
         /// </summary>
-        public bool CrawlFileComments
+        public bool? CrawlFileComments
         {
-            get { return this._crawlFileComments.GetValueOrDefault(); }
+            get { return this._crawlFileComments; }
             set { this._crawlFileComments = value; }
         }
 

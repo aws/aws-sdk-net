@@ -69,7 +69,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpStatusCode())
             {
                 context.Writer.WritePropertyName("httpStatusCode");
-                context.Writer.Write(requestObject.HttpStatusCode);
+                context.Writer.Write(requestObject.HttpStatusCode.Value);
             }
 
             if(requestObject.IsSetResponseBody())

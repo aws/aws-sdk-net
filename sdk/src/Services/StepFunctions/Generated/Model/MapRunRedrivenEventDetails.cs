@@ -64,9 +64,9 @@ namespace Amazon.StepFunctions.Model
         /// than 0.
         /// </para>
         /// </summary>
-        public int RedriveCount
+        public int? RedriveCount
         {
-            get { return this._redriveCount.GetValueOrDefault(); }
+            get { return this._redriveCount; }
             set { this._redriveCount = value; }
         }
 

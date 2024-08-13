@@ -126,9 +126,9 @@ namespace Amazon.MarketplaceDeployment.Model
         /// The date when deployment parameters expire and are scheduled for deletion.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 

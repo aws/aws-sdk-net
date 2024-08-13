@@ -67,9 +67,9 @@ namespace Amazon.PinpointEmail.Model
         /// set.
         /// </para>
         /// </summary>
-        public bool ReputationMetricsEnabled
+        public bool? ReputationMetricsEnabled
         {
-            get { return this._reputationMetricsEnabled.GetValueOrDefault(); }
+            get { return this._reputationMetricsEnabled; }
             set { this._reputationMetricsEnabled = value; }
         }
 

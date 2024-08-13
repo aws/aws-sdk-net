@@ -63,7 +63,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("Period");
-                context.Writer.Write(requestObject.Period);
+                context.Writer.Write(requestObject.Period.Value);
             }
 
         }

@@ -68,13 +68,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ExportedRecordsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExportedRecordsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProcessedRecordsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProcessedRecordsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

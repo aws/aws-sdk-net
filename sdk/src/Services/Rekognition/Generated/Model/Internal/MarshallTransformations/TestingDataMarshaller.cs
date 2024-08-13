@@ -67,7 +67,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoCreate())
             {
                 context.Writer.WritePropertyName("AutoCreate");
-                context.Writer.Write(requestObject.AutoCreate);
+                context.Writer.Write(requestObject.AutoCreate.Value);
             }
 
         }

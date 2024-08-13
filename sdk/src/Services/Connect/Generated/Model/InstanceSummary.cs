@@ -69,9 +69,9 @@ namespace Amazon.Connect.Model
         /// When the instance was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.Connect.Model
         /// Whether inbound calls are enabled.
         /// </para>
         /// </summary>
-        public bool InboundCallsEnabled
+        public bool? InboundCallsEnabled
         {
-            get { return this._inboundCallsEnabled.GetValueOrDefault(); }
+            get { return this._inboundCallsEnabled; }
             set { this._inboundCallsEnabled = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.Connect.Model
         /// Whether outbound calls are enabled.
         /// </para>
         /// </summary>
-        public bool OutboundCallsEnabled
+        public bool? OutboundCallsEnabled
         {
-            get { return this._outboundCallsEnabled.GetValueOrDefault(); }
+            get { return this._outboundCallsEnabled; }
             set { this._outboundCallsEnabled = value; }
         }
 

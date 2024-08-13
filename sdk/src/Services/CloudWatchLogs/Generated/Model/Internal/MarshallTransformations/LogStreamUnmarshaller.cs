@@ -74,25 +74,25 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("firstEventTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.FirstEventTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastEventTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.LastEventTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastIngestionTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.LastIngestionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("storedBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StoredBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

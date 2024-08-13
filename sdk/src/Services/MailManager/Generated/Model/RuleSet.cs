@@ -45,9 +45,9 @@ namespace Amazon.MailManager.Model
         /// The last modification date of the rule set.
         /// </para>
         /// </summary>
-        public DateTime LastModificationDate
+        public DateTime? LastModificationDate
         {
-            get { return this._lastModificationDate.GetValueOrDefault(); }
+            get { return this._lastModificationDate; }
             set { this._lastModificationDate = value; }
         }
 

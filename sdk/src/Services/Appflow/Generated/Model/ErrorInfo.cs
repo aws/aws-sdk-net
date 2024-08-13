@@ -63,9 +63,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies the failure count for the attempted flow. 
         /// </para>
         /// </summary>
-        public long PutFailuresCount
+        public long? PutFailuresCount
         {
-            get { return this._putFailuresCount.GetValueOrDefault(); }
+            get { return this._putFailuresCount; }
             set { this._putFailuresCount = value; }
         }
 

@@ -72,7 +72,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowCopyImage())
                 {
                     context.Writer.WritePropertyName("AllowCopyImage");
-                    context.Writer.Write(publicRequest.AllowCopyImage);
+                    context.Writer.Write(publicRequest.AllowCopyImage.Value);
                 }
 
                 if(publicRequest.IsSetImageId())

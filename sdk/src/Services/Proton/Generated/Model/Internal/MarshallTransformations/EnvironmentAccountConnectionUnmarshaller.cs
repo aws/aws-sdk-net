@@ -104,7 +104,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -116,7 +116,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("requestedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RequestedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

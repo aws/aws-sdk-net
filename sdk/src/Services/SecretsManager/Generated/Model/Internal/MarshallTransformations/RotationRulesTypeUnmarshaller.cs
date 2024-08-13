@@ -68,7 +68,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutomaticallyAfterDays", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AutomaticallyAfterDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

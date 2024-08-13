@@ -51,19 +51,19 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingDisabled())
             {
                 context.Writer.WritePropertyName("autoScalingDisabled");
-                context.Writer.Write(requestObject.AutoScalingDisabled);
+                context.Writer.Write(requestObject.AutoScalingDisabled.Value);
             }
 
             if(requestObject.IsSetMaximumUnits())
             {
                 context.Writer.WritePropertyName("maximumUnits");
-                context.Writer.Write(requestObject.MaximumUnits);
+                context.Writer.Write(requestObject.MaximumUnits.Value);
             }
 
             if(requestObject.IsSetMinimumUnits())
             {
                 context.Writer.WritePropertyName("minimumUnits");
-                context.Writer.Write(requestObject.MinimumUnits);
+                context.Writer.Write(requestObject.MinimumUnits.Value);
             }
 
             if(requestObject.IsSetScalingPolicy())

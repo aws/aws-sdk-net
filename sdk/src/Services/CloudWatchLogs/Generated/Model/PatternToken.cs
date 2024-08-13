@@ -53,9 +53,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// of <c>1</c>, the one that appears second is <c>2</c>, and so on.
         /// </para>
         /// </summary>
-        public int DynamicTokenPosition
+        public int? DynamicTokenPosition
         {
-            get { return this._dynamicTokenPosition.GetValueOrDefault(); }
+            get { return this._dynamicTokenPosition; }
             set { this._dynamicTokenPosition = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Specifies whether this is a dynamic token.
         /// </para>
         /// </summary>
-        public bool IsDynamic
+        public bool? IsDynamic
         {
-            get { return this._isDynamic.GetValueOrDefault(); }
+            get { return this._isDynamic; }
             set { this._isDynamic = value; }
         }
 

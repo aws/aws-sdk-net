@@ -85,13 +85,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeDvbSubtitles())
             {
                 context.Writer.WritePropertyName("includeDvbSubtitles");
-                context.Writer.Write(requestObject.IncludeDvbSubtitles);
+                context.Writer.Write(requestObject.IncludeDvbSubtitles.Value);
             }
 
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStream);
+                context.Writer.Write(requestObject.IncludeIframeOnlyStream.Value);
             }
 
             if(requestObject.IsSetPlaylistType())
@@ -103,19 +103,19 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPlaylistWindowSeconds())
             {
                 context.Writer.WritePropertyName("playlistWindowSeconds");
-                context.Writer.Write(requestObject.PlaylistWindowSeconds);
+                context.Writer.Write(requestObject.PlaylistWindowSeconds.Value);
             }
 
             if(requestObject.IsSetProgramDateTimeIntervalSeconds())
             {
                 context.Writer.WritePropertyName("programDateTimeIntervalSeconds");
-                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds);
+                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds);
+                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetStreamSelection())
@@ -132,7 +132,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseAudioRenditionGroup())
             {
                 context.Writer.WritePropertyName("useAudioRenditionGroup");
-                context.Writer.Write(requestObject.UseAudioRenditionGroup);
+                context.Writer.Write(requestObject.UseAudioRenditionGroup.Value);
             }
 
         }

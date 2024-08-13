@@ -51,7 +51,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsPublic())
             {
                 context.Writer.WritePropertyName("isPublic");
-                context.Writer.Write(requestObject.IsPublic);
+                context.Writer.Write(requestObject.IsPublic.Value);
             }
 
             if(requestObject.IsSetLastLaunched())

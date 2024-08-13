@@ -101,7 +101,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUnsubscribeAll())
                 {
                     context.Writer.WritePropertyName("UnsubscribeAll");
-                    context.Writer.Write(publicRequest.UnsubscribeAll);
+                    context.Writer.Write(publicRequest.UnsubscribeAll.Value);
                 }
 
                 writer.WriteObjectEnd();

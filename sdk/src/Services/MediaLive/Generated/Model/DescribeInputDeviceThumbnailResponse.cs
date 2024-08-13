@@ -89,9 +89,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LastModified. The date and time the thumbnail was last
         /// updated at the device.
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 

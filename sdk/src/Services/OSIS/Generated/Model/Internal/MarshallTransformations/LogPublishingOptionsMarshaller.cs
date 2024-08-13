@@ -62,7 +62,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsLoggingEnabled())
             {
                 context.Writer.WritePropertyName("IsLoggingEnabled");
-                context.Writer.Write(requestObject.IsLoggingEnabled);
+                context.Writer.Write(requestObject.IsLoggingEnabled.Value);
             }
 
         }

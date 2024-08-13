@@ -68,9 +68,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime BackupCreationDateTime
+        public DateTime? BackupCreationDateTime
         {
-            get { return this._backupCreationDateTime.GetValueOrDefault(); }
+            get { return this._backupCreationDateTime; }
             set { this._backupCreationDateTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <c>SYSTEM</c> on-demand backup expires automatically 35 days after its creation.
         /// </para>
         /// </summary>
-        public DateTime BackupExpiryDateTime
+        public DateTime? BackupExpiryDateTime
         {
-            get { return this._backupExpiryDateTime.GetValueOrDefault(); }
+            get { return this._backupExpiryDateTime; }
             set { this._backupExpiryDateTime = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long BackupSizeBytes
+        public long? BackupSizeBytes
         {
-            get { return this._backupSizeBytes.GetValueOrDefault(); }
+            get { return this._backupSizeBytes; }
             set { this._backupSizeBytes = value; }
         }
 

@@ -101,9 +101,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
-        public float MaxEirp
+        public float? MaxEirp
         {
-            get { return this._maxEirp.GetValueOrDefault(); }
+            get { return this._maxEirp; }
             set { this._maxEirp = value; }
         }
 

@@ -68,19 +68,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Brightness", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Brightness = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Contrast", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Contrast = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Sharpness", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Sharpness = unmarshaller.Unmarshall(context);
                     continue;
                 }

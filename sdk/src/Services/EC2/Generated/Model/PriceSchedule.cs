@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
         /// of the term, will be active for months 2 and 1.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.EC2.Model
         /// The fixed price for the term.
         /// </para>
         /// </summary>
-        public double Price
+        public double? Price
         {
-            get { return this._price.GetValueOrDefault(); }
+            get { return this._price; }
             set { this._price = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.EC2.Model
         /// the last month before the capacity reservation expires.
         /// </para>
         /// </summary>
-        public long Term
+        public long? Term
         {
-            get { return this._term.GetValueOrDefault(); }
+            get { return this._term; }
             set { this._term = value; }
         }
 

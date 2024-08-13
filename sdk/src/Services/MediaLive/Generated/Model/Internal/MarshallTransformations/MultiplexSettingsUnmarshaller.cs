@@ -68,25 +68,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maximumVideoBufferDelayMilliseconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumVideoBufferDelayMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("transportStreamBitrate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransportStreamBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("transportStreamId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransportStreamId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("transportStreamReservedBitrate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransportStreamReservedBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }

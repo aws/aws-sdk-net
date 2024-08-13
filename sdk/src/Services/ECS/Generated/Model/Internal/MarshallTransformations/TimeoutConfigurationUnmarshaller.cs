@@ -68,13 +68,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("idleTimeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleTimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("perRequestTimeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PerRequestTimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

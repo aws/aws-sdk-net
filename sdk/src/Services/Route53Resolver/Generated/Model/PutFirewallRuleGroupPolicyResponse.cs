@@ -39,9 +39,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ReturnValue.
         /// </summary>
-        public bool ReturnValue
+        public bool? ReturnValue
         {
-            get { return this._returnValue.GetValueOrDefault(); }
+            get { return this._returnValue; }
             set { this._returnValue = value; }
         }
 

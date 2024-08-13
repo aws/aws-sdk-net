@@ -104,7 +104,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("spentVoutIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SpentVoutIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -152,13 +152,13 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("voutIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VoutIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("voutSpent", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.VoutSpent = unmarshaller.Unmarshall(context);
                     continue;
                 }

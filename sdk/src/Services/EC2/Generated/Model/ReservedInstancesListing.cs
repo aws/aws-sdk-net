@@ -71,9 +71,9 @@ namespace Amazon.EC2.Model
         /// The time the listing was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -216,9 +216,9 @@ namespace Amazon.EC2.Model
         /// The last modified timestamp of the listing.
         /// </para>
         /// </summary>
-        public DateTime UpdateDate
+        public DateTime? UpdateDate
         {
-            get { return this._updateDate.GetValueOrDefault(); }
+            get { return this._updateDate; }
             set { this._updateDate = value; }
         }
 

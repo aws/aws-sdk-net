@@ -47,9 +47,9 @@ namespace Amazon.IdentityManagement.Model
         /// every call to ensure that you receive all your results.
         /// </para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this._isTruncated.GetValueOrDefault(); }
+            get { return this._isTruncated; }
             set { this._isTruncated = value; }
         }
 

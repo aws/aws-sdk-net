@@ -70,10 +70,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("VPC");
                     if(publicRequest.VPC.IsSetVPCRegion())
-                        xmlWriter.WriteElementString("VPCRegion", StringUtils.FromString(publicRequest.VPC.VPCRegion));                 
+                        xmlWriter.WriteElementString("VPCRegion", StringUtils.FromString(publicRequest.VPC.VPCRegion));
 
                     if(publicRequest.VPC.IsSetVPCId())
-                        xmlWriter.WriteElementString("VPCId", StringUtils.FromString(publicRequest.VPC.VPCId));                 
+                        xmlWriter.WriteElementString("VPCId", StringUtils.FromString(publicRequest.VPC.VPCId));
 
                     xmlWriter.WriteEndElement();
                 }
@@ -84,10 +84,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("HostedZoneConfig");
                     if(publicRequest.HostedZoneConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.HostedZoneConfig.Comment));                 
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.HostedZoneConfig.Comment));
 
                     if(publicRequest.HostedZoneConfig.IsSetPrivateZone())
-                        xmlWriter.WriteElementString("PrivateZone", StringUtils.FromBool(publicRequest.HostedZoneConfig.PrivateZone));                 
+                        xmlWriter.WriteElementString("PrivateZone", StringUtils.FromBool(publicRequest.HostedZoneConfig.PrivateZone.Value));
 
                     xmlWriter.WriteEndElement();
                 }

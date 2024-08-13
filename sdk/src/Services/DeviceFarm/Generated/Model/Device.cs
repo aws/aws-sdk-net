@@ -203,9 +203,9 @@ namespace Amazon.DeviceFarm.Model
         /// The device's heap size, expressed in bytes.
         /// </para>
         /// </summary>
-        public long HeapSize
+        public long? HeapSize
         {
-            get { return this._heapSize.GetValueOrDefault(); }
+            get { return this._heapSize; }
             set { this._heapSize = value; }
         }
 
@@ -275,9 +275,9 @@ namespace Amazon.DeviceFarm.Model
         /// The device's total memory size, expressed in bytes.
         /// </para>
         /// </summary>
-        public long Memory
+        public long? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -415,9 +415,9 @@ namespace Amazon.DeviceFarm.Model
         /// Specifies whether remote access has been enabled for the specified device.
         /// </para>
         /// </summary>
-        public bool RemoteAccessEnabled
+        public bool? RemoteAccessEnabled
         {
-            get { return this._remoteAccessEnabled.GetValueOrDefault(); }
+            get { return this._remoteAccessEnabled; }
             set { this._remoteAccessEnabled = value; }
         }
 
@@ -438,9 +438,9 @@ namespace Amazon.DeviceFarm.Model
         /// longer supported</a>.
         /// </para>
         /// </summary>
-        public bool RemoteDebugEnabled
+        public bool? RemoteDebugEnabled
         {
-            get { return this._remoteDebugEnabled.GetValueOrDefault(); }
+            get { return this._remoteDebugEnabled; }
             set { this._remoteDebugEnabled = value; }
         }
 

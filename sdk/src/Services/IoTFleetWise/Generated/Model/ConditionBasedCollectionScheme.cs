@@ -47,9 +47,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ConditionLanguageVersion
+        public int? ConditionLanguageVersion
         {
-            get { return this._conditionLanguageVersion.GetValueOrDefault(); }
+            get { return this._conditionLanguageVersion; }
             set { this._conditionLanguageVersion = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.IoTFleetWise.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MinimumTriggerIntervalMs
+        public long? MinimumTriggerIntervalMs
         {
-            get { return this._minimumTriggerIntervalMs.GetValueOrDefault(); }
+            get { return this._minimumTriggerIntervalMs; }
             set { this._minimumTriggerIntervalMs = value; }
         }
 

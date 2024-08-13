@@ -73,9 +73,9 @@ namespace Amazon.RAM.Model
         /// The date and time when the permission was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.RAM.Model
         /// default version for this permission.
         /// </para>
         /// </summary>
-        public bool DefaultVersion
+        public bool? DefaultVersion
         {
-            get { return this._defaultVersion.GetValueOrDefault(); }
+            get { return this._defaultVersion; }
             set { this._defaultVersion = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.RAM.Model
         /// default version for all resources of this resource type.
         /// </para>
         /// </summary>
-        public bool IsResourceTypeDefault
+        public bool? IsResourceTypeDefault
         {
-            get { return this._isResourceTypeDefault.GetValueOrDefault(); }
+            get { return this._isResourceTypeDefault; }
             set { this._isResourceTypeDefault = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.RAM.Model
         /// The date and time when the permission was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

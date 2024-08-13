@@ -81,7 +81,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// This unmarshaller is not implemented for XML context, as XML responses
     /// will null elements (xsi:nil='true') will be skipped by the XML parser.
     /// </summary>
-    public class NullableIntUnmarshaller : IUnmarshaller<int?, JsonUnmarshallerContext>, IUnmarshaller<int?, XmlUnmarshallerContext>
+    public class NullableIntUnmarshaller : IUnmarshaller<int?, XmlUnmarshallerContext>, IUnmarshaller<int?, JsonUnmarshallerContext>
     {   
         private NullableIntUnmarshaller() { }
 
@@ -100,6 +100,18 @@ namespace Amazon.Runtime.Internal.Transform
             return NullableIntUnmarshaller.Instance;
         }
 
+        public int? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return int.Parse(text, CultureInfo.InvariantCulture);
+        }
+
         public int? Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
@@ -110,66 +122,6 @@ namespace Amazon.Runtime.Internal.Transform
                 return null;
             }
             return int.Parse(text, CultureInfo.InvariantCulture);
-        }
-
-        public int? Unmarshall(XmlUnmarshallerContext context)
-        {
-            string text = context.ReadText();
-
-            if (text == null)
-            {
-                return null;
-            }
-            return int.Parse(text, CultureInfo.InvariantCulture);
-        }
-    }
-
-    /// <summary>
-    /// Unmarshaller for nullable bool fields. Implemented only for JSON context
-    /// to handle cases where value can be null e.g. {'Priority': null}.
-    /// This unmarshaller is not implemented for XML context, as XML responses
-    /// will null elements (xsi:nil='true') will be skipped by the XML parser.
-    /// </summary>
-    public class NullableBoolUnmarshaller : IUnmarshaller<bool?, JsonUnmarshallerContext>, IUnmarshaller<bool?, XmlUnmarshallerContext>
-    {
-        private NullableBoolUnmarshaller() { }
-
-        private static NullableBoolUnmarshaller _instance = new NullableBoolUnmarshaller();
-
-        public static NullableBoolUnmarshaller Instance
-        {
-            get
-            {
-                return _instance;
-            }
-        }
-
-        public static NullableBoolUnmarshaller GetInstance()
-        {
-            return NullableBoolUnmarshaller.Instance;
-        }
-
-        public bool? Unmarshall(JsonUnmarshallerContext context)
-        {
-            context.Read();
-            string text = context.ReadText();
-
-            if (text == null)
-            {
-                return null;
-            }
-            return bool.Parse(text);
-        }
-
-        public bool? Unmarshall(XmlUnmarshallerContext context)
-        {
-            string text = context.ReadText();
-
-            if (text == null)
-            {
-                return null;
-            }
-            return bool.Parse(text);
         }
     }
 
@@ -202,6 +154,45 @@ namespace Amazon.Runtime.Internal.Transform
         public long Unmarshall(JsonUnmarshallerContext context)
         {
             return SimpleTypeUnmarshaller<long>.Unmarshall(context);
+        }
+    }
+
+    public class NullableLongUnmarshaller : IUnmarshaller<long?, XmlUnmarshallerContext>, IUnmarshaller<long?, JsonUnmarshallerContext>
+    {
+        private NullableLongUnmarshaller() { }
+
+        private static NullableLongUnmarshaller _instance = new NullableLongUnmarshaller();
+
+        public static NullableLongUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public long? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return long.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+        public long? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return long.Parse(text, CultureInfo.InvariantCulture);
         }
     }
 
@@ -238,6 +229,49 @@ namespace Amazon.Runtime.Internal.Transform
     }
 
     /// <summary>
+    /// Unmarshaller for float fields
+    /// </summary>
+    public class NullableFloatUnmarshaller : IUnmarshaller<float?, XmlUnmarshallerContext>, IUnmarshaller<float?, JsonUnmarshallerContext>
+    {
+        private NullableFloatUnmarshaller() { }
+
+        private static NullableFloatUnmarshaller _instance = new NullableFloatUnmarshaller();
+
+        public static NullableFloatUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public float? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return float.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+        public float? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return float.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+    }
+
+    /// <summary>
     /// Unmarshaller for double fields
     /// </summary>
     public class DoubleUnmarshaller : IUnmarshaller<double, XmlUnmarshallerContext>, IUnmarshaller<double, JsonUnmarshallerContext>
@@ -267,6 +301,48 @@ namespace Amazon.Runtime.Internal.Transform
         public double Unmarshall(JsonUnmarshallerContext context)
         {
             return SimpleTypeUnmarshaller<double>.Unmarshall(context);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for double fields
+    /// </summary>
+    public class NullableDoubleUnmarshaller : IUnmarshaller<double?, XmlUnmarshallerContext>, IUnmarshaller<double?, JsonUnmarshallerContext>
+    {
+        private NullableDoubleUnmarshaller() { }
+
+        private static NullableDoubleUnmarshaller _instance = new NullableDoubleUnmarshaller();
+
+        public static NullableDoubleUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public double? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return double.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+        public double? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return double.Parse(text, CultureInfo.InvariantCulture);
         }
     }
 
@@ -303,6 +379,48 @@ namespace Amazon.Runtime.Internal.Transform
     }
 
     /// <summary>
+    /// Unmarshaller for decimal fields
+    /// </summary>
+    public class NullableDecimalUnmarshaller : IUnmarshaller<decimal?, XmlUnmarshallerContext>, IUnmarshaller<decimal?, JsonUnmarshallerContext>
+    {
+        private NullableDecimalUnmarshaller() { }
+
+        private static NullableDecimalUnmarshaller _instance = new NullableDecimalUnmarshaller();
+
+        public static NullableDecimalUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public decimal? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return decimal.Parse(text, CultureInfo.InvariantCulture);
+        }
+
+        public decimal? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return decimal.Parse(text, CultureInfo.InvariantCulture);
+        }
+    }
+
+    /// <summary>
     /// Unmarshaller for bool fields
     /// </summary>
     public class BoolUnmarshaller : IUnmarshaller<bool, XmlUnmarshallerContext>, IUnmarshaller<bool, JsonUnmarshallerContext>
@@ -331,6 +449,48 @@ namespace Amazon.Runtime.Internal.Transform
         public bool Unmarshall(JsonUnmarshallerContext context)
         {
             return SimpleTypeUnmarshaller<bool>.Unmarshall(context);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for bool fields
+    /// </summary>
+    public class NullableBoolUnmarshaller : IUnmarshaller<bool?, XmlUnmarshallerContext>, IUnmarshaller<bool?, JsonUnmarshallerContext>
+    {
+        private NullableBoolUnmarshaller() { }
+
+        private static NullableBoolUnmarshaller _instance = new NullableBoolUnmarshaller();
+
+        public static NullableBoolUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public bool? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+            if (string.IsNullOrEmpty(text))
+            {
+                return null;
+            }
+
+            return bool.Parse(text);
+        }
+
+        public bool? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+            if(string.IsNullOrEmpty(text))
+            {
+                return null;
+            }
+
+            return bool.Parse(text);
         }
     }
 
@@ -467,7 +627,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// This unmarshaller is not implemented for XML context, as XML responses
     /// will null elements (xsi:nil='true') will be skipped by the XML parser.
     /// </summary>
-    public class NullableDateTimeUnmarshaller : IUnmarshaller<DateTime?, JsonUnmarshallerContext>
+    public class NullableDateTimeUnmarshaller : IUnmarshaller<DateTime?, XmlUnmarshallerContext>, IUnmarshaller<DateTime?, JsonUnmarshallerContext>
     {
         private NullableDateTimeUnmarshaller() { }
 
@@ -484,6 +644,12 @@ namespace Amazon.Runtime.Internal.Transform
         public static NullableDateTimeUnmarshaller GetInstance()
         {
             return NullableDateTimeUnmarshaller.Instance;
+        }
+
+        public DateTime? Unmarshall(XmlUnmarshallerContext context)
+        {
+            string text = context.ReadText();
+            return DateTimeUnmarshaller.UnmarshallInternal(text, treatAsNullable: true);
         }
 
         public DateTime? Unmarshall(JsonUnmarshallerContext context)
@@ -525,6 +691,51 @@ namespace Amazon.Runtime.Internal.Transform
         }
     }
 
+    public class NullableDateTimeEpochLongMillisecondsUnmarshaller : IUnmarshaller<DateTime?, XmlUnmarshallerContext>, IUnmarshaller<DateTime?, JsonUnmarshallerContext>
+    {
+        private NullableDateTimeEpochLongMillisecondsUnmarshaller() { }
+
+        private static NullableDateTimeEpochLongMillisecondsUnmarshaller _instance = new NullableDateTimeEpochLongMillisecondsUnmarshaller();
+
+        public static NullableDateTimeEpochLongMillisecondsUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public DateTime? Unmarshall(XmlUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+
+            long millseconds = long.Parse(text, CultureInfo.InvariantCulture);
+            var ret = Amazon.Util.AWSSDKUtils.EPOCH_START.AddMilliseconds(millseconds);
+            return ret;
+        }
+
+        public DateTime? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+
+            long millseconds = long.Parse(text, CultureInfo.InvariantCulture);
+            var ret = Amazon.Util.AWSSDKUtils.EPOCH_START.AddMilliseconds(millseconds);
+            return ret;
+        }
+    }
+
     /// <summary>
     /// Unmarshaller for MemoryStream fields
     /// </summary>
@@ -550,7 +761,7 @@ namespace Amazon.Runtime.Internal.Transform
         public MemoryStream Unmarshall(XmlUnmarshallerContext context)
         {
             byte[] bytes = Convert.FromBase64String(context.ReadText());
-            MemoryStream stream = new MemoryStream(bytes);
+            MemoryStream stream = new MemoryStream(bytes, 0, bytes.Length, true, true);
             return stream;
         }
 
@@ -561,7 +772,7 @@ namespace Amazon.Runtime.Internal.Transform
                 return null;
 
             byte[] bytes = Convert.FromBase64String(context.ReadText());
-            MemoryStream stream = new MemoryStream(bytes);
+            MemoryStream stream = new MemoryStream(bytes, 0, bytes.Length, true, true);
             return stream;
         }
     }
@@ -717,7 +928,13 @@ namespace Amazon.Runtime.Internal.Transform
         {
             context.Read(); // Read [ or null
             if (context.CurrentTokenType == JsonToken.Null)
-                return new List<I>();
+            {
+                if (AWSConfigs.InitializeCollections)
+                    return new List<I>();
+                else
+                    return null;
+            }
+
 
             // If a list is present in the response, use AlwaysSendList,
             // so if the response was empty, reusing the object in the request we will
@@ -771,7 +988,13 @@ namespace Amazon.Runtime.Internal.Transform
         {
             context.Read(); // Read { or null
             if (context.CurrentTokenType == JsonToken.Null)
-                return new Dictionary<TKey,TValue>();
+            {
+                if (AWSConfigs.InitializeCollections)
+                    return new Dictionary<TKey, TValue>();
+                else
+                    return null;
+            }
+
 
             // If a dictionary is present in the response, use AlwaysSendDictionary,
             // so if the response was empty, reusing the object in the request we will

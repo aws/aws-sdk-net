@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// The Border Gateway Protocol (BGP) Autonomous System Number (ASN) of the local gateway.
         /// </para>
         /// </summary>
-        public int LocalBgpAsn
+        public int? LocalBgpAsn
         {
-            get { return this._localBgpAsn.GetValueOrDefault(); }
+            get { return this._localBgpAsn; }
             set { this._localBgpAsn = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.EC2.Model
         /// The peer BGP ASN.
         /// </para>
         /// </summary>
-        public int PeerBgpAsn
+        public int? PeerBgpAsn
         {
-            get { return this._peerBgpAsn.GetValueOrDefault(); }
+            get { return this._peerBgpAsn; }
             set { this._peerBgpAsn = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.EC2.Model
         /// The ID of the VLAN.
         /// </para>
         /// </summary>
-        public int Vlan
+        public int? Vlan
         {
-            get { return this._vlan.GetValueOrDefault(); }
+            get { return this._vlan; }
             set { this._vlan = value; }
         }
 

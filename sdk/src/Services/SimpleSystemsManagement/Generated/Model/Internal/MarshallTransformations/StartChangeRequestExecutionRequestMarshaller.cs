@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoApprove())
                 {
                     context.Writer.WritePropertyName("AutoApprove");
-                    context.Writer.Write(publicRequest.AutoApprove);
+                    context.Writer.Write(publicRequest.AutoApprove.Value);
                 }
 
                 if(publicRequest.IsSetChangeDetails())
@@ -143,13 +143,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScheduledEndTime())
                 {
                     context.Writer.WritePropertyName("ScheduledEndTime");
-                    context.Writer.Write(publicRequest.ScheduledEndTime);
+                    context.Writer.Write(publicRequest.ScheduledEndTime.Value);
                 }
 
                 if(publicRequest.IsSetScheduledTime())
                 {
                     context.Writer.WritePropertyName("ScheduledTime");
-                    context.Writer.Write(publicRequest.ScheduledTime);
+                    context.Writer.Write(publicRequest.ScheduledTime.Value);
                 }
 
                 if(publicRequest.IsSetTags())

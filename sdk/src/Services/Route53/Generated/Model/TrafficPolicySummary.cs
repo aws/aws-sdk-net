@@ -106,9 +106,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
-        public int LatestVersion
+        public int? LatestVersion
         {
-            get { return this._latestVersion.GetValueOrDefault(); }
+            get { return this._latestVersion; }
             set { this._latestVersion = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
-        public int TrafficPolicyCount
+        public int? TrafficPolicyCount
         {
-            get { return this._trafficPolicyCount.GetValueOrDefault(); }
+            get { return this._trafficPolicyCount; }
             set { this._trafficPolicyCount = value; }
         }
 

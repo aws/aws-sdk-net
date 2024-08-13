@@ -80,7 +80,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HasMoreShards", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasMoreShards = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetentionPeriodHours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,7 +110,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StreamCreationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StreamCreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

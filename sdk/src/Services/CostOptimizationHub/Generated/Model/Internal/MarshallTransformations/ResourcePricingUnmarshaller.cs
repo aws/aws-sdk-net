@@ -68,13 +68,13 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("estimatedCostAfterDiscounts", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedCostAfterDiscounts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("estimatedCostBeforeDiscounts", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedCostBeforeDiscounts = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("estimatedNetUnusedAmortizedCommitments", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedNetUnusedAmortizedCommitments = unmarshaller.Unmarshall(context);
                     continue;
                 }

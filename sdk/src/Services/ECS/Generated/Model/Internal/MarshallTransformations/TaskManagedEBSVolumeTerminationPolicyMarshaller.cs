@@ -51,7 +51,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("deleteOnTermination");
-                context.Writer.Write(requestObject.DeleteOnTermination);
+                context.Writer.Write(requestObject.DeleteOnTermination.Value);
             }
 
         }

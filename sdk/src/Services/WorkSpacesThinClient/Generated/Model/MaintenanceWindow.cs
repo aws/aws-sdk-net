@@ -87,9 +87,9 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
-        public int EndTimeHour
+        public int? EndTimeHour
         {
-            get { return this._endTimeHour.GetValueOrDefault(); }
+            get { return this._endTimeHour; }
             set { this._endTimeHour = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]
-        public int EndTimeMinute
+        public int? EndTimeMinute
         {
-            get { return this._endTimeMinute.GetValueOrDefault(); }
+            get { return this._endTimeMinute; }
             set { this._endTimeMinute = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
-        public int StartTimeHour
+        public int? StartTimeHour
         {
-            get { return this._startTimeHour.GetValueOrDefault(); }
+            get { return this._startTimeHour; }
             set { this._startTimeHour = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]
-        public int StartTimeMinute
+        public int? StartTimeMinute
         {
-            get { return this._startTimeMinute.GetValueOrDefault(); }
+            get { return this._startTimeMinute; }
             set { this._startTimeMinute = value; }
         }
 

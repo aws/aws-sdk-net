@@ -74,7 +74,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ObservabilityEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

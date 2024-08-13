@@ -68,7 +68,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enableMetadataWithRecommendations", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMetadataWithRecommendations = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("syncWithLatestSolutionVersion", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SyncWithLatestSolutionVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

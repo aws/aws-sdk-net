@@ -83,9 +83,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether this is the default network ACL for the VPC.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

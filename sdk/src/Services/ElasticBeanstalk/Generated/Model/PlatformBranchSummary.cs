@@ -70,9 +70,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// A larger <c>BranchOrder</c> value designates a newer platform branch within the platform.
         /// </para>
         /// </summary>
-        public int BranchOrder
+        public int? BranchOrder
         {
-            get { return this._branchOrder.GetValueOrDefault(); }
+            get { return this._branchOrder; }
             set { this._branchOrder = value; }
         }
 

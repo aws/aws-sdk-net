@@ -56,9 +56,9 @@ namespace Amazon.IoT.Model
         /// job execution has reached a terminal status.
         /// </para>
         /// </summary>
-        public long ApproximateSecondsBeforeTimedOut
+        public long? ApproximateSecondsBeforeTimedOut
         {
-            get { return this._approximateSecondsBeforeTimedOut.GetValueOrDefault(); }
+            get { return this._approximateSecondsBeforeTimedOut; }
             set { this._approximateSecondsBeforeTimedOut = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.IoT.Model
         /// update job execution information. 
         /// </para>
         /// </summary>
-        public long ExecutionNumber
+        public long? ExecutionNumber
         {
-            get { return this._executionNumber.GetValueOrDefault(); }
+            get { return this._executionNumber; }
             set { this._executionNumber = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.IoT.Model
         /// parameter set to <c>true</c>.
         /// </para>
         /// </summary>
-        public bool ForceCanceled
+        public bool? ForceCanceled
         {
-            get { return this._forceCanceled.GetValueOrDefault(); }
+            get { return this._forceCanceled; }
             set { this._forceCanceled = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job execution was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job execution was queued.
         /// </para>
         /// </summary>
-        public DateTime QueuedAt
+        public DateTime? QueuedAt
         {
-            get { return this._queuedAt.GetValueOrDefault(); }
+            get { return this._queuedAt; }
             set { this._queuedAt = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job execution started.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.IoT.Model
         /// they are updated by a device.
         /// </para>
         /// </summary>
-        public long VersionNumber
+        public long? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

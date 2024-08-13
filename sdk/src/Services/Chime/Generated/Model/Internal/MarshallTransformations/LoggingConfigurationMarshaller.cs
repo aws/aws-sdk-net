@@ -51,13 +51,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMediaMetricLogs())
             {
                 context.Writer.WritePropertyName("EnableMediaMetricLogs");
-                context.Writer.Write(requestObject.EnableMediaMetricLogs);
+                context.Writer.Write(requestObject.EnableMediaMetricLogs.Value);
             }
 
             if(requestObject.IsSetEnableSIPLogs())
             {
                 context.Writer.WritePropertyName("EnableSIPLogs");
-                context.Writer.Write(requestObject.EnableSIPLogs);
+                context.Writer.Write(requestObject.EnableSIPLogs.Value);
             }
 
         }

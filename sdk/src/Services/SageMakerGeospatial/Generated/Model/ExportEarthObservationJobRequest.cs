@@ -105,9 +105,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// The source images provided to the Earth Observation job being exported.
         /// </para>
         /// </summary>
-        public bool ExportSourceImages
+        public bool? ExportSourceImages
         {
-            get { return this._exportSourceImages.GetValueOrDefault(); }
+            get { return this._exportSourceImages; }
             set { this._exportSourceImages = value; }
         }
 

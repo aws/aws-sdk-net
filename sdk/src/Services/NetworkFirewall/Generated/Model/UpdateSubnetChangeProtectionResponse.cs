@@ -87,9 +87,9 @@ namespace Amazon.NetworkFirewall.Model
         /// initializes this setting to <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool SubnetChangeProtection
+        public bool? SubnetChangeProtection
         {
-            get { return this._subnetChangeProtection.GetValueOrDefault(); }
+            get { return this._subnetChangeProtection; }
             set { this._subnetChangeProtection = value; }
         }
 

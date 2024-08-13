@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
                 var login = getRes.LoginProfile;
                 Assert.AreEqual(username, login.UserName);
-                Assert.IsTrue(login.PasswordResetRequired);
+                Assert.IsTrue(login.PasswordResetRequired.Value);
 
 
                 Client.UpdateLoginProfile(new UpdateLoginProfileRequest
@@ -96,7 +96,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
                 login = getRes.LoginProfile;
                 Assert.AreEqual(username, login.UserName);
-                Assert.IsFalse(login.PasswordResetRequired);
+                Assert.IsFalse(login.PasswordResetRequired.Value);
             }
             finally
             {

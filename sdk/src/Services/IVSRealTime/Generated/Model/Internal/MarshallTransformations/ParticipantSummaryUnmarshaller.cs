@@ -68,7 +68,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("firstJoinTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstJoinTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("published", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Published = unmarshaller.Unmarshall(context);
                     continue;
                 }

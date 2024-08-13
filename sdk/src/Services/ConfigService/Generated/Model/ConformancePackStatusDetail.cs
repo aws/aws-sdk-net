@@ -169,9 +169,9 @@ namespace Amazon.ConfigService.Model
         /// Last time when conformation pack creation and update was successful.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateCompletedTime
+        public DateTime? LastUpdateCompletedTime
         {
-            get { return this._lastUpdateCompletedTime.GetValueOrDefault(); }
+            get { return this._lastUpdateCompletedTime; }
             set { this._lastUpdateCompletedTime = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdateRequestedTime
+        public DateTime? LastUpdateRequestedTime
         {
-            get { return this._lastUpdateRequestedTime.GetValueOrDefault(); }
+            get { return this._lastUpdateRequestedTime; }
             set { this._lastUpdateRequestedTime = value; }
         }
 

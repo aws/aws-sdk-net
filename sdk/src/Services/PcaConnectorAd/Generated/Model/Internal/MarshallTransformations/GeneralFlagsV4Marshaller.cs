@@ -51,13 +51,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoEnrollment())
             {
                 context.Writer.WritePropertyName("AutoEnrollment");
-                context.Writer.Write(requestObject.AutoEnrollment);
+                context.Writer.Write(requestObject.AutoEnrollment.Value);
             }
 
             if(requestObject.IsSetMachineType())
             {
                 context.Writer.WritePropertyName("MachineType");
-                context.Writer.Write(requestObject.MachineType);
+                context.Writer.Write(requestObject.MachineType.Value);
             }
 
         }

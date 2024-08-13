@@ -68,13 +68,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CrawlArchivedSpaces", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlArchivedSpaces = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlPersonalSpaces", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlPersonalSpaces = unmarshaller.Unmarshall(context);
                     continue;
                 }

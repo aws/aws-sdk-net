@@ -42,9 +42,9 @@ namespace Amazon.WorkMail.Model
         /// Lists the enforcement setting of the applied policy.
         /// </para>
         /// </summary>
-        public bool Enforced
+        public bool? Enforced
         {
-            get { return this._enforced.GetValueOrDefault(); }
+            get { return this._enforced; }
             set { this._enforced = value; }
         }
 

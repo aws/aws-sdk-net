@@ -75,9 +75,9 @@ namespace Amazon.APIGateway.Model
         /// 1 hour.
         /// </para>
         /// </summary>
-        public int AuthorizerResultTtlInSeconds
+        public int? AuthorizerResultTtlInSeconds
         {
-            get { return this._authorizerResultTtlInSeconds.GetValueOrDefault(); }
+            get { return this._authorizerResultTtlInSeconds; }
             set { this._authorizerResultTtlInSeconds = value; }
         }
 

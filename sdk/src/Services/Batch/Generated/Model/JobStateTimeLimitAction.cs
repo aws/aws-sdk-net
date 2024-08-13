@@ -70,9 +70,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxTimeSeconds
+        public int? MaxTimeSeconds
         {
-            get { return this._maxTimeSeconds.GetValueOrDefault(); }
+            get { return this._maxTimeSeconds; }
             set { this._maxTimeSeconds = value; }
         }
 

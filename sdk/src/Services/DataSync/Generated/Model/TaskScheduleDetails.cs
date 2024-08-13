@@ -107,9 +107,9 @@ namespace Amazon.DataSync.Model
         /// see when the schedule was disabled.
         /// </para>
         /// </summary>
-        public DateTime StatusUpdateTime
+        public DateTime? StatusUpdateTime
         {
-            get { return this._statusUpdateTime.GetValueOrDefault(); }
+            get { return this._statusUpdateTime; }
             set { this._statusUpdateTime = value; }
         }
 

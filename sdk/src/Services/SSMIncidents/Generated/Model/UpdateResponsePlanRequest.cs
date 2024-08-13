@@ -220,9 +220,9 @@ namespace Amazon.SSMIncidents.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int IncidentTemplateImpact
+        public int? IncidentTemplateImpact
         {
-            get { return this._incidentTemplateImpact.GetValueOrDefault(); }
+            get { return this._incidentTemplateImpact; }
             set { this._incidentTemplateImpact = value; }
         }
 

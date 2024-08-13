@@ -68,13 +68,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CurrentScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.CurrentScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

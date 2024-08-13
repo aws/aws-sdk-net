@@ -75,7 +75,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseEventVariables())
             {
                 context.Writer.WritePropertyName("useEventVariables");
-                context.Writer.Write(requestObject.UseEventVariables);
+                context.Writer.Write(requestObject.UseEventVariables.Value);
             }
 
         }

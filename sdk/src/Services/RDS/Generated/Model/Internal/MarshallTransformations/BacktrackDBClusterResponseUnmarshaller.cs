@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("BacktrackedFrom", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.BacktrackedFrom = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -96,13 +96,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("BacktrackRequestCreationTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.BacktrackRequestCreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("BacktrackTo", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.BacktrackTo = unmarshaller.Unmarshall(context);
                         continue;
                     }

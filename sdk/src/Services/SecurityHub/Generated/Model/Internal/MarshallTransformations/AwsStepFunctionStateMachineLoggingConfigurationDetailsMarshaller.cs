@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeExecutionData())
             {
                 context.Writer.WritePropertyName("IncludeExecutionData");
-                context.Writer.Write(requestObject.IncludeExecutionData);
+                context.Writer.Write(requestObject.IncludeExecutionData.Value);
             }
 
             if(requestObject.IsSetLevel())

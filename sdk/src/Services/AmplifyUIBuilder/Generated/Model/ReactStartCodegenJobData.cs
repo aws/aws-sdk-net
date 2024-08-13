@@ -84,9 +84,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether the code generation job should render inline source maps.
         /// </para>
         /// </summary>
-        public bool InlineSourceMap
+        public bool? InlineSourceMap
         {
-            get { return this._inlineSourceMap.GetValueOrDefault(); }
+            get { return this._inlineSourceMap; }
             set { this._inlineSourceMap = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether the code generation job should render type declaration files.
         /// </para>
         /// </summary>
-        public bool RenderTypeDeclarations
+        public bool? RenderTypeDeclarations
         {
-            get { return this._renderTypeDeclarations.GetValueOrDefault(); }
+            get { return this._renderTypeDeclarations; }
             set { this._renderTypeDeclarations = value; }
         }
 

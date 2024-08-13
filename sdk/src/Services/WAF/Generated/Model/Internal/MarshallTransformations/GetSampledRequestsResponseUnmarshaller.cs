@@ -54,7 +54,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PopulationSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.PopulationSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

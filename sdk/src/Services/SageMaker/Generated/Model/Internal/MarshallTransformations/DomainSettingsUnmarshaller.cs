@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AmazonQSettings", targetDepth))
+                {
+                    var unmarshaller = AmazonQSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AmazonQSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DockerSettings", targetDepth))
                 {
                     var unmarshaller = DockerSettingsUnmarshaller.Instance;

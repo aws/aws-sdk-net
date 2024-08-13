@@ -84,13 +84,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableCapture())
             {
                 context.Writer.WritePropertyName("EnableCapture");
-                context.Writer.Write(requestObject.EnableCapture);
+                context.Writer.Write(requestObject.EnableCapture.Value);
             }
 
             if(requestObject.IsSetInitialSamplingPercentage())
             {
                 context.Writer.WritePropertyName("InitialSamplingPercentage");
-                context.Writer.Write(requestObject.InitialSamplingPercentage);
+                context.Writer.Write(requestObject.InitialSamplingPercentage.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())

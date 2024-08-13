@@ -129,9 +129,9 @@ namespace Amazon.NimbleStudio.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=43200)]
-        public int MaxSessionLengthInMinutes
+        public int? MaxSessionLengthInMinutes
         {
-            get { return this._maxSessionLengthInMinutes.GetValueOrDefault(); }
+            get { return this._maxSessionLengthInMinutes; }
             set { this._maxSessionLengthInMinutes = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.NimbleStudio.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5760)]
-        public int MaxStoppedSessionLengthInMinutes
+        public int? MaxStoppedSessionLengthInMinutes
         {
-            get { return this._maxStoppedSessionLengthInMinutes.GetValueOrDefault(); }
+            get { return this._maxStoppedSessionLengthInMinutes; }
             set { this._maxStoppedSessionLengthInMinutes = value; }
         }
 

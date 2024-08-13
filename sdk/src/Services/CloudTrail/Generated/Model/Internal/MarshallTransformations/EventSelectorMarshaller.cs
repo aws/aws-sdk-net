@@ -78,7 +78,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeManagementEvents())
             {
                 context.Writer.WritePropertyName("IncludeManagementEvents");
-                context.Writer.Write(requestObject.IncludeManagementEvents);
+                context.Writer.Write(requestObject.IncludeManagementEvents.Value);
             }
 
             if(requestObject.IsSetReadWriteType())

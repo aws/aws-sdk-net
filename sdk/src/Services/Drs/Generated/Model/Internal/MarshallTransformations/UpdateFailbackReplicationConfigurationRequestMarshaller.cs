@@ -70,7 +70,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBandwidthThrottling())
                 {
                     context.Writer.WritePropertyName("bandwidthThrottling");
-                    context.Writer.Write(publicRequest.BandwidthThrottling);
+                    context.Writer.Write(publicRequest.BandwidthThrottling.Value);
                 }
 
                 if(publicRequest.IsSetName())
@@ -88,7 +88,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUsePrivateIP())
                 {
                     context.Writer.WritePropertyName("usePrivateIP");
-                    context.Writer.Write(publicRequest.UsePrivateIP);
+                    context.Writer.Write(publicRequest.UsePrivateIP.Value);
                 }
 
                 writer.WriteObjectEnd();

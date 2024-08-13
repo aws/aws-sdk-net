@@ -51,13 +51,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytesReceived())
             {
                 context.Writer.WritePropertyName("bytesReceived");
-                context.Writer.Write(requestObject.BytesReceived);
+                context.Writer.Write(requestObject.BytesReceived.Value);
             }
 
             if(requestObject.IsSetBytesSent())
             {
                 context.Writer.WritePropertyName("bytesSent");
-                context.Writer.Write(requestObject.BytesSent);
+                context.Writer.Write(requestObject.BytesSent.Value);
             }
 
             if(requestObject.IsSetCapabilityArn())
@@ -81,7 +81,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPacketsDropped())
             {
                 context.Writer.WritePropertyName("packetsDropped");
-                context.Writer.Write(requestObject.PacketsDropped);
+                context.Writer.Write(requestObject.PacketsDropped.Value);
             }
 
             if(requestObject.IsSetStatus())

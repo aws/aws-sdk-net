@@ -78,7 +78,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 }
                 if (context.TestExpression("resourcesSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ResourcesSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }

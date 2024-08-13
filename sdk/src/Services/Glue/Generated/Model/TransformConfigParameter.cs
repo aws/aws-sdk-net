@@ -49,9 +49,9 @@ namespace Amazon.Glue.Model
         /// transform.
         /// </para>
         /// </summary>
-        public bool IsOptional
+        public bool? IsOptional
         {
-            get { return this._isOptional.GetValueOrDefault(); }
+            get { return this._isOptional; }
             set { this._isOptional = value; }
         }
 

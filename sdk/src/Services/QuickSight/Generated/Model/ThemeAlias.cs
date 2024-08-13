@@ -82,9 +82,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ThemeVersionNumber
+        public long? ThemeVersionNumber
         {
-            get { return this._themeVersionNumber.GetValueOrDefault(); }
+            get { return this._themeVersionNumber; }
             set { this._themeVersionNumber = value; }
         }
 

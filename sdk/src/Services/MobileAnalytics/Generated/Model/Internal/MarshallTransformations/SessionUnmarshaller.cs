@@ -68,7 +68,7 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("duration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,13 +80,13 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startTimestamp", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTimestampUtc = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stopTimestamp", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StopTimestampUtc = unmarshaller.Unmarshall(context);
                     continue;
                 }

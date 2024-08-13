@@ -51,7 +51,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultChecked())
             {
                 context.Writer.WritePropertyName("defaultChecked");
-                context.Writer.Write(requestObject.DefaultChecked);
+                context.Writer.Write(requestObject.DefaultChecked.Value);
             }
 
             if(requestObject.IsSetDefaultCountryCode())
@@ -86,32 +86,32 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsArray())
             {
                 context.Writer.WritePropertyName("isArray");
-                context.Writer.Write(requestObject.IsArray);
+                context.Writer.Write(requestObject.IsArray.Value);
             }
 
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
-                if(StringUtils.IsSpecialFloatValue(requestObject.MaxValue))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxValue));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxValue);
+                    context.Writer.Write(requestObject.MaxValue.Value);
                 }
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
-                if(StringUtils.IsSpecialFloatValue(requestObject.MinValue))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MinValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinValue));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinValue);
+                    context.Writer.Write(requestObject.MinValue.Value);
                 }
             }
 
@@ -130,25 +130,25 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("readOnly");
-                context.Writer.Write(requestObject.ReadOnly);
+                context.Writer.Write(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("required");
-                context.Writer.Write(requestObject.Required);
+                context.Writer.Write(requestObject.Required.Value);
             }
 
             if(requestObject.IsSetStep())
             {
                 context.Writer.WritePropertyName("step");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Step))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Step.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Step));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Step.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Step);
+                    context.Writer.Write(requestObject.Step.Value);
                 }
             }
 

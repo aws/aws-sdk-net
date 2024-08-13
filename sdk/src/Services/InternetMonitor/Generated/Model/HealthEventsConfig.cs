@@ -97,9 +97,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double AvailabilityScoreThreshold
+        public double? AvailabilityScoreThreshold
         {
-            get { return this._availabilityScoreThreshold.GetValueOrDefault(); }
+            get { return this._availabilityScoreThreshold; }
             set { this._availabilityScoreThreshold = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double PerformanceScoreThreshold
+        public double? PerformanceScoreThreshold
         {
-            get { return this._performanceScoreThreshold.GetValueOrDefault(); }
+            get { return this._performanceScoreThreshold; }
             set { this._performanceScoreThreshold = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("From");
-                context.Writer.Write(requestObject.From);
+                context.Writer.Write(requestObject.From.Value);
             }
 
             if(requestObject.IsSetTo())
             {
                 context.Writer.WritePropertyName("To");
-                context.Writer.Write(requestObject.To);
+                context.Writer.Write(requestObject.To.Value);
             }
 
         }

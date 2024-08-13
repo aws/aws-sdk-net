@@ -40,9 +40,9 @@ namespace Amazon.ConnectCampaignService.Model
         /// Gets and sets the property DialingCapacity.
         /// </summary>
         [AWSProperty(Max=1)]
-        public double DialingCapacity
+        public double? DialingCapacity
         {
-            get { return this._dialingCapacity.GetValueOrDefault(); }
+            get { return this._dialingCapacity; }
             set { this._dialingCapacity = value; }
         }
 

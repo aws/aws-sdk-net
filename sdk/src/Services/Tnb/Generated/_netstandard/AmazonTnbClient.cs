@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.Tnb
@@ -733,7 +734,7 @@ namespace Amazon.Tnb
 
 
         /// <summary>
-        /// Gets the details of a network function instance, including the instantation state
+        /// Gets the details of a network function instance, including the instantiation state
         /// and metadata from the function package descriptor in the network function package.
         /// 
         ///  
@@ -1998,6 +1999,11 @@ namespace Amazon.Tnb
         /// be deployed and on which life-cycle operations (like terminate, update, and delete)
         /// can be performed.
         /// </para>
+        ///  
+        /// <para>
+        /// Choose the <i>updateType</i> parameter to target the necessary update of the network
+        /// instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSolNetworkInstance service method.</param>
         /// <param name="cancellationToken">
@@ -2225,16 +2231,8 @@ namespace Amazon.Tnb
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonTnbEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

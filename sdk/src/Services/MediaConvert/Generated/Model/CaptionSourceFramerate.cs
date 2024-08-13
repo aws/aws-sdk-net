@@ -47,9 +47,9 @@ namespace Amazon.MediaConvert.Model
         /// setting along with the setting Framerate numerator.
         /// </summary>
         [AWSProperty(Min=1, Max=1001)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.MediaConvert.Model
         /// setting along with the setting Framerate denominator.
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 

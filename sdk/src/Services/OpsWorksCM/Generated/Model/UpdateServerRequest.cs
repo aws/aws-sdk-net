@@ -52,9 +52,9 @@ namespace Amazon.OpsWorksCM.Model
         /// Sets the number of automated backups that you want to keep. 
         /// </para>
         /// </summary>
-        public int BackupRetentionCount
+        public int? BackupRetentionCount
         {
-            get { return this._backupRetentionCount.GetValueOrDefault(); }
+            get { return this._backupRetentionCount; }
             set { this._backupRetentionCount = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.OpsWorksCM.Model
         /// Automated backups are enabled by default. 
         /// </para>
         /// </summary>
-        public bool DisableAutomatedBackup
+        public bool? DisableAutomatedBackup
         {
-            get { return this._disableAutomatedBackup.GetValueOrDefault(); }
+            get { return this._disableAutomatedBackup; }
             set { this._disableAutomatedBackup = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.Connect.Model
         /// A Boolean number value type.
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -60,12 +60,12 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DoubleValue. 
         /// <para>
-        /// a Double number value type.
+        /// A Double number value type.
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 

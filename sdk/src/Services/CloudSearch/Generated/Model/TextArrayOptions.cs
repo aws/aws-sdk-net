@@ -83,9 +83,9 @@ namespace Amazon.CloudSearch.Model
         /// Whether highlights can be returned for the field.
         /// </para>
         /// </summary>
-        public bool HighlightEnabled
+        public bool? HighlightEnabled
         {
-            get { return this._highlightEnabled.GetValueOrDefault(); }
+            get { return this._highlightEnabled; }
             set { this._highlightEnabled = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.CloudSearch.Model
         /// Whether the contents of the field can be returned in the search results.
         /// </para>
         /// </summary>
-        public bool ReturnEnabled
+        public bool? ReturnEnabled
         {
-            get { return this._returnEnabled.GetValueOrDefault(); }
+            get { return this._returnEnabled; }
             set { this._returnEnabled = value; }
         }
 

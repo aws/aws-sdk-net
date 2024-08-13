@@ -203,9 +203,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the destination is reachable from the source.
         /// </para>
         /// </summary>
-        public bool NetworkPathFound
+        public bool? NetworkPathFound
         {
-            get { return this._networkPathFound.GetValueOrDefault(); }
+            get { return this._networkPathFound; }
             set { this._networkPathFound = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.EC2.Model
         /// The time the analysis started.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

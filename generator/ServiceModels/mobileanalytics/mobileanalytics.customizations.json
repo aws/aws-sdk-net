@@ -2,21 +2,21 @@
     "dataTypeSwap": {
         "Session": {
             "startTimestamp": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
-                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             },
             "stopTimestamp": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
-                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
         },
         "Event": {
             "timestamp": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
-                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
         }
     },

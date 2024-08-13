@@ -48,9 +48,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool DeleteMarker
+        public bool? DeleteMarker
         {
-            get { return this.deleteMarker ?? default(bool); }
+            get { return this.deleteMarker; }
             set { this.deleteMarker = value; }
         }
 

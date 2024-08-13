@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomValue())
             {
                 context.Writer.WritePropertyName("CustomValue");
-                context.Writer.Write(requestObject.CustomValue);
+                context.Writer.Write(requestObject.CustomValue.Value);
             }
 
             if(requestObject.IsSetValueWhenUnsetOption())

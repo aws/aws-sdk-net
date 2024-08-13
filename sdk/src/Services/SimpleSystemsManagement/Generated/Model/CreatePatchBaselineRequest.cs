@@ -128,9 +128,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to Linux managed nodes only.
         /// </para>
         /// </summary>
-        public bool ApprovedPatchesEnableNonSecurity
+        public bool? ApprovedPatchesEnableNonSecurity
         {
-            get { return this._approvedPatchesEnableNonSecurity.GetValueOrDefault(); }
+            get { return this._approvedPatchesEnableNonSecurity; }
             set { this._approvedPatchesEnableNonSecurity = value; }
         }
 

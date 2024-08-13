@@ -64,9 +64,9 @@ namespace Amazon.Amplify.Model
         /// The last deploy time of the production branch. 
         /// </para>
         /// </summary>
-        public DateTime LastDeployTime
+        public DateTime? LastDeployTime
         {
-            get { return this._lastDeployTime.GetValueOrDefault(); }
+            get { return this._lastDeployTime; }
             set { this._lastDeployTime = value; }
         }
 

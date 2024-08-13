@@ -96,19 +96,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeAllDependencies())
                 {
                     context.Writer.WritePropertyName("IncludeAllDependencies");
-                    context.Writer.Write(publicRequest.IncludeAllDependencies);
+                    context.Writer.Write(publicRequest.IncludeAllDependencies.Value);
                 }
 
                 if(publicRequest.IsSetIncludePermissions())
                 {
                     context.Writer.WritePropertyName("IncludePermissions");
-                    context.Writer.Write(publicRequest.IncludePermissions);
+                    context.Writer.Write(publicRequest.IncludePermissions.Value);
                 }
 
                 if(publicRequest.IsSetIncludeTags())
                 {
                     context.Writer.WritePropertyName("IncludeTags");
-                    context.Writer.Write(publicRequest.IncludeTags);
+                    context.Writer.Write(publicRequest.IncludeTags.Value);
                 }
 
                 if(publicRequest.IsSetResourceArns())

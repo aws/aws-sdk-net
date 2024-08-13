@@ -57,7 +57,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetFileSize())
             {
                 context.Writer.WritePropertyName("targetFileSize");
-                context.Writer.Write(requestObject.TargetFileSize);
+                context.Writer.Write(requestObject.TargetFileSize.Value);
             }
 
         }

@@ -31,10 +31,6 @@ namespace Amazon.S3.Transfer.Internal
 {
     internal abstract partial class BaseCommand
     {
-#if BCL && !BCL45
-        public abstract void Execute();
-#endif 
-
         public virtual object Return
         {
             get { return null; }

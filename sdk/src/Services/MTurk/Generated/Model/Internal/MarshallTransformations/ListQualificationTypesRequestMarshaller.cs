@@ -72,19 +72,19 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetMustBeOwnedByCaller())
                 {
                     context.Writer.WritePropertyName("MustBeOwnedByCaller");
-                    context.Writer.Write(publicRequest.MustBeOwnedByCaller);
+                    context.Writer.Write(publicRequest.MustBeOwnedByCaller.Value);
                 }
 
                 if(publicRequest.IsSetMustBeRequestable())
                 {
                     context.Writer.WritePropertyName("MustBeRequestable");
-                    context.Writer.Write(publicRequest.MustBeRequestable);
+                    context.Writer.Write(publicRequest.MustBeRequestable.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

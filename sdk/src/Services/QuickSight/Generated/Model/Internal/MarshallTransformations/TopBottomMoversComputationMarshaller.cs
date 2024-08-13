@@ -68,7 +68,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMoverSize())
             {
                 context.Writer.WritePropertyName("MoverSize");
-                context.Writer.Write(requestObject.MoverSize);
+                context.Writer.Write(requestObject.MoverSize.Value);
             }
 
             if(requestObject.IsSetName())

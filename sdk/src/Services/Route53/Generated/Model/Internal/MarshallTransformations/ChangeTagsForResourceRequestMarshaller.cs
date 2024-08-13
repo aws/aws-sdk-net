@@ -79,10 +79,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Tag");
                         if(publicRequestAddTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestAddTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestAddTagsValue.Key));
 
                         if(publicRequestAddTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestAddTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestAddTagsValue.Value));
 
                         xmlWriter.WriteEndElement();
                     }

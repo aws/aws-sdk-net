@@ -49,9 +49,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -66,8 +66,9 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// If the value of NodeGroupCount is less than the current number of node groups (shards),
         /// then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove
-        /// is a list of NodeGroupIds to remove from the cluster. ElastiCache for Redis will attempt
-        /// to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. 
+        /// is a list of NodeGroupIds to remove from the cluster. ElastiCache (Redis OSS) will
+        /// attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster.
+        /// 
         /// </para>
         /// </summary>
         public List<string> GlobalNodeGroupsToRemove
@@ -87,8 +88,9 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// If the value of NodeGroupCount is less than the current number of node groups (shards),
         /// then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain
-        /// is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt
-        /// to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster. 
+        /// is a list of NodeGroupIds to retain from the cluster. ElastiCache (Redis OSS) will
+        /// attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster.
+        /// 
         /// </para>
         /// </summary>
         public List<string> GlobalNodeGroupsToRetain
@@ -130,9 +132,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NodeGroupCount
+        public int? NodeGroupCount
         {
-            get { return this._nodeGroupCount.GetValueOrDefault(); }
+            get { return this._nodeGroupCount; }
             set { this._nodeGroupCount = value; }
         }
 

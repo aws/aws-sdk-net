@@ -18,8 +18,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
-using AWSSDK_DotNet35.UnitTests;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceClientGenerator;
 using System;
@@ -29,12 +29,12 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AWSSDK.UnitTests.Net45.Custom.Marshalling
+namespace AWSSDK.UnitTests.Custom.Marshalling
 {
     [TestClass]
     public class ErrorUnmarshallingTests
     {
-        static readonly ServiceModel DynmaoDBServiceModel = AWSSDK_DotNet35.UnitTests.Utils.LoadServiceModel("dynamodb");
+        static readonly ServiceModel DynmaoDBServiceModel = AWSSDK_DotNet.UnitTests.Utils.LoadServiceModel("dynamodb");
 
         private const string UnstructuredText = "not valid json or xml";
         private const string ValidJson = "{\"__type\":\"type\",\"message\":\"message\",\"code\":\"code\",\"ignore\":\"ignore\"}";
@@ -163,7 +163,7 @@ namespace AWSSDK.UnitTests.Net45.Custom.Marshalling
 
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(body).Length.ToString());
 
-            var context = new JsonUnmarshallerContext(AWSSDK_DotNet35.UnitTests.Utils.CreateStreamFromString(body), true, webResponse);
+            var context = new JsonUnmarshallerContext(AWSSDK_DotNet.UnitTests.Utils.CreateStreamFromString(body), true, webResponse);
             return new JsonErrorResponseUnmarshaller().Unmarshall(context);
         }
 
@@ -185,7 +185,7 @@ namespace AWSSDK.UnitTests.Net45.Custom.Marshalling
 
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(body).Length.ToString());
 
-            var context = new XmlUnmarshallerContext(AWSSDK_DotNet35.UnitTests.Utils.CreateStreamFromString(body), true, webResponse);
+            var context = new XmlUnmarshallerContext(AWSSDK_DotNet.UnitTests.Utils.CreateStreamFromString(body), true, webResponse);
             return new ErrorResponseUnmarshaller().Unmarshall(context);
         }
     }

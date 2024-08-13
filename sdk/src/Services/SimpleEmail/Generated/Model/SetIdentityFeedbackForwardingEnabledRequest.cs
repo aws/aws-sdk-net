@@ -68,9 +68,9 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ForwardingEnabled
+        public bool? ForwardingEnabled
         {
-            get { return this._forwardingEnabled.GetValueOrDefault(); }
+            get { return this._forwardingEnabled; }
             set { this._forwardingEnabled = value; }
         }
 

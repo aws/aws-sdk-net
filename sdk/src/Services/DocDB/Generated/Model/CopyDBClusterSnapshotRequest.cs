@@ -63,9 +63,9 @@ namespace Amazon.DocDB.Model
         /// cluster snapshot, and otherwise <c>false</c>. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 

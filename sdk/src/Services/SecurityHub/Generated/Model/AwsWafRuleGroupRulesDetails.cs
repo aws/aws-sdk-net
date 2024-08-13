@@ -66,9 +66,9 @@ namespace Amazon.SecurityHub.Model
         /// the rules in order based on the value of <c>Priority</c>.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

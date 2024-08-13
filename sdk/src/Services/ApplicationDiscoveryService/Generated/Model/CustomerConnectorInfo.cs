@@ -49,9 +49,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ActiveConnectors
+        public int? ActiveConnectors
         {
-            get { return this._activeConnectors.GetValueOrDefault(); }
+            get { return this._activeConnectors; }
             set { this._activeConnectors = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int BlackListedConnectors
+        public int? BlackListedConnectors
         {
-            get { return this._blackListedConnectors.GetValueOrDefault(); }
+            get { return this._blackListedConnectors; }
             set { this._blackListedConnectors = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HealthyConnectors
+        public int? HealthyConnectors
         {
-            get { return this._healthyConnectors.GetValueOrDefault(); }
+            get { return this._healthyConnectors; }
             set { this._healthyConnectors = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ShutdownConnectors
+        public int? ShutdownConnectors
         {
-            get { return this._shutdownConnectors.GetValueOrDefault(); }
+            get { return this._shutdownConnectors; }
             set { this._shutdownConnectors = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalConnectors
+        public int? TotalConnectors
         {
-            get { return this._totalConnectors.GetValueOrDefault(); }
+            get { return this._totalConnectors; }
             set { this._totalConnectors = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int UnhealthyConnectors
+        public int? UnhealthyConnectors
         {
-            get { return this._unhealthyConnectors.GetValueOrDefault(); }
+            get { return this._unhealthyConnectors; }
             set { this._unhealthyConnectors = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int UnknownConnectors
+        public int? UnknownConnectors
         {
-            get { return this._unknownConnectors.GetValueOrDefault(); }
+            get { return this._unknownConnectors; }
             set { this._unknownConnectors = value; }
         }
 

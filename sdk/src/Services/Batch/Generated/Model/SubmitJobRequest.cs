@@ -300,9 +300,9 @@ namespace Amazon.Batch.Model
         /// state. When specified, this overrides the tag propagation setting in the job definition.
         /// </para>
         /// </summary>
-        public bool PropagateTags
+        public bool? PropagateTags
         {
-            get { return this._propagateTags.GetValueOrDefault(); }
+            get { return this._propagateTags; }
             set { this._propagateTags = value; }
         }
 
@@ -345,9 +345,9 @@ namespace Amazon.Batch.Model
         /// The minimum supported value is 0 and the maximum supported value is 9999.
         /// </para>
         /// </summary>
-        public int SchedulingPriorityOverride
+        public int? SchedulingPriorityOverride
         {
-            get { return this._schedulingPriorityOverride.GetValueOrDefault(); }
+            get { return this._schedulingPriorityOverride; }
             set { this._schedulingPriorityOverride = value; }
         }
 

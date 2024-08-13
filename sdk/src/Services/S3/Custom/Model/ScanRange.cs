@@ -29,9 +29,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0.
         /// </summary>
-        public long Start
+        public long? Start
         {
-            get { return this.start.GetValueOrDefault(); }
+            get { return this.start; }
             set { this.start = value; }
         }
 
@@ -43,9 +43,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried.
         /// </summary>
-        public long End
+        public long? End
         {
-            get { return this.end.GetValueOrDefault(); }
+            get { return this.end; }
             set { this.end = value; }
         }
 
@@ -59,9 +59,9 @@ namespace Amazon.S3.Model
             xmlWriter.WriteStartElement(memberName);
             {
                 if (IsSetStart())
-                    xmlWriter.WriteElementString("Start", S3Transforms.ToXmlStringValue(Start));
+                    xmlWriter.WriteElementString("Start", S3Transforms.ToXmlStringValue(Start.Value));
                 if (IsSetEnd())
-                    xmlWriter.WriteElementString("End", S3Transforms.ToXmlStringValue(End));
+                    xmlWriter.WriteElementString("End", S3Transforms.ToXmlStringValue(End.Value));
             }
             xmlWriter.WriteEndElement();
 

@@ -49,9 +49,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The time the assessment completes. 
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The number of failed servers in the assessment. 
         /// </para>
         /// </summary>
-        public int Failed
+        public int? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The number of servers with the assessment status <c>IN_PROGESS</c>. 
         /// </para>
         /// </summary>
-        public int InProgress
+        public int? InProgress
         {
-            get { return this._inProgress.GetValueOrDefault(); }
+            get { return this._inProgress; }
             set { this._inProgress = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The total number of servers in the assessment. 
         /// </para>
         /// </summary>
-        public int Servers
+        public int? Servers
         {
-            get { return this._servers.GetValueOrDefault(); }
+            get { return this._servers; }
             set { this._servers = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The start time of assessment. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The number of successful servers in the assessment. 
         /// </para>
         /// </summary>
-        public int Success
+        public int? Success
         {
-            get { return this._success.GetValueOrDefault(); }
+            get { return this._success; }
             set { this._success = value; }
         }
 

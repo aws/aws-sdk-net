@@ -99,9 +99,9 @@ namespace Amazon.XRay.Model
         /// time of the last segment that completed.
         /// </para>
         /// </summary>
-        public double Duration
+        public double? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.XRay.Model
         /// The root segment document has a 400 series error.
         /// </para>
         /// </summary>
-        public bool HasError
+        public bool? HasError
         {
-            get { return this._hasError.GetValueOrDefault(); }
+            get { return this._hasError; }
             set { this._hasError = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.XRay.Model
         /// The root segment document has a 500 series error.
         /// </para>
         /// </summary>
-        public bool HasFault
+        public bool? HasFault
         {
-            get { return this._hasFault.GetValueOrDefault(); }
+            get { return this._hasFault; }
             set { this._hasFault = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.XRay.Model
         /// One or more of the segment documents has a 429 throttling error.
         /// </para>
         /// </summary>
-        public bool HasThrottle
+        public bool? HasThrottle
         {
-            get { return this._hasThrottle.GetValueOrDefault(); }
+            get { return this._hasThrottle; }
             set { this._hasThrottle = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.XRay.Model
         /// One or more of the segment documents is in progress.
         /// </para>
         /// </summary>
-        public bool IsPartial
+        public bool? IsPartial
         {
-            get { return this._isPartial.GetValueOrDefault(); }
+            get { return this._isPartial; }
             set { this._isPartial = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.XRay.Model
         /// The matched time stamp of a defined event.
         /// </para>
         /// </summary>
-        public DateTime MatchedEventTime
+        public DateTime? MatchedEventTime
         {
-            get { return this._matchedEventTime.GetValueOrDefault(); }
+            get { return this._matchedEventTime; }
             set { this._matchedEventTime = value; }
         }
 
@@ -337,9 +337,9 @@ namespace Amazon.XRay.Model
         /// the last traced activity completes.
         /// </para>
         /// </summary>
-        public double ResponseTime
+        public double? ResponseTime
         {
-            get { return this._responseTime.GetValueOrDefault(); }
+            get { return this._responseTime; }
             set { this._responseTime = value; }
         }
 
@@ -373,9 +373,9 @@ namespace Amazon.XRay.Model
         /// The revision number of a trace.
         /// </para>
         /// </summary>
-        public int Revision
+        public int? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 
@@ -409,9 +409,9 @@ namespace Amazon.XRay.Model
         /// The start time of a trace, based on the earliest trace segment start time.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

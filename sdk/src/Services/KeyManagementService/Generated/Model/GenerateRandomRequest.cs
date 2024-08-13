@@ -118,9 +118,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
-        public int NumberOfBytes
+        public int? NumberOfBytes
         {
-            get { return this._numberOfBytes.GetValueOrDefault(); }
+            get { return this._numberOfBytes; }
             set { this._numberOfBytes = value; }
         }
 

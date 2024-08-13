@@ -57,13 +57,13 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGridGap())
             {
                 context.Writer.WritePropertyName("gridGap");
-                context.Writer.Write(requestObject.GridGap);
+                context.Writer.Write(requestObject.GridGap.Value);
             }
 
             if(requestObject.IsSetOmitStoppedVideo())
             {
                 context.Writer.WritePropertyName("omitStoppedVideo");
-                context.Writer.Write(requestObject.OmitStoppedVideo);
+                context.Writer.Write(requestObject.OmitStoppedVideo.Value);
             }
 
             if(requestObject.IsSetPipBehavior())
@@ -75,13 +75,13 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPipHeight())
             {
                 context.Writer.WritePropertyName("pipHeight");
-                context.Writer.Write(requestObject.PipHeight);
+                context.Writer.Write(requestObject.PipHeight.Value);
             }
 
             if(requestObject.IsSetPipOffset())
             {
                 context.Writer.WritePropertyName("pipOffset");
-                context.Writer.Write(requestObject.PipOffset);
+                context.Writer.Write(requestObject.PipOffset.Value);
             }
 
             if(requestObject.IsSetPipParticipantAttribute())
@@ -99,7 +99,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPipWidth())
             {
                 context.Writer.WritePropertyName("pipWidth");
-                context.Writer.Write(requestObject.PipWidth);
+                context.Writer.Write(requestObject.PipWidth.Value);
             }
 
             if(requestObject.IsSetVideoFillMode())

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.QBusiness.Endpoints;
 using Amazon.QBusiness.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class QBusinessEndpointsTests

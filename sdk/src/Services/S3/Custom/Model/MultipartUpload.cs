@@ -55,9 +55,9 @@ namespace Amazon.S3.Model
         /// Date and time at which the multipart upload was initiated.
         ///  
         /// </summary>
-        public DateTime Initiated
+        public DateTime? Initiated
         {
-            get { return this.initiated ?? default(DateTime); }
+            get { return this.initiated; }
             set { this.initiated = value; }
         }
 

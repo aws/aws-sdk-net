@@ -72,7 +72,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAmount())
                 {
                     context.Writer.WritePropertyName("amount");
-                    context.Writer.Write(publicRequest.Amount);
+                    context.Writer.Write(publicRequest.Amount.Value);
                 }
 
                 if(publicRequest.IsSetBreachAction())

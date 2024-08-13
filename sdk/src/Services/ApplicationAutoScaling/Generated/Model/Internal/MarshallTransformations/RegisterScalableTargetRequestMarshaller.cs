@@ -72,13 +72,13 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
+                    context.Writer.Write(publicRequest.MaxCapacity.Value);
                 }
 
                 if(publicRequest.IsSetMinCapacity())
                 {
                     context.Writer.WritePropertyName("MinCapacity");
-                    context.Writer.Write(publicRequest.MinCapacity);
+                    context.Writer.Write(publicRequest.MinCapacity.Value);
                 }
 
                 if(publicRequest.IsSetResourceId())

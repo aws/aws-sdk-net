@@ -73,9 +73,9 @@ namespace Amazon.EC2.Model
         /// set to <c>true</c> if <c>AccessGroupId</c> is not specified.
         /// </para>
         /// </summary>
-        public bool AuthorizeAllGroups
+        public bool? AuthorizeAllGroups
         {
-            get { return this._authorizeAllGroups.GetValueOrDefault(); }
+            get { return this._authorizeAllGroups; }
             set { this._authorizeAllGroups = value; }
         }
 

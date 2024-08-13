@@ -31,7 +31,7 @@ namespace Amazon.S3.Model
         private InventoryDestination inventoryDestination;
         private InventoryFilter inventoryFilter;
         private string inventoryId;
-        private bool isEnabled;
+        private bool? isEnabled;
         private InventoryIncludedObjectVersions inventoryIncludedObjectVersions;
         private List<InventoryOptionalField> inventoryOptionalFields = AWSConfigs.InitializeCollections ? new List<InventoryOptionalField>() : null;
         private InventorySchedule inventorySchedule;
@@ -113,7 +113,7 @@ namespace Amazon.S3.Model
         /// generated.
         /// </para>
         /// </summary>
-        public bool IsEnabled
+        public bool? IsEnabled
         {
             get { return this.isEnabled; }
             set { this.isEnabled = value; }

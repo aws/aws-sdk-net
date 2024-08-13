@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetentionPeriodInDays())
                 {
                     context.Writer.WritePropertyName("RetentionPeriodInDays");
-                    context.Writer.Write(publicRequest.RetentionPeriodInDays);
+                    context.Writer.Write(publicRequest.RetentionPeriodInDays.Value);
                 }
 
                 writer.WriteObjectEnd();

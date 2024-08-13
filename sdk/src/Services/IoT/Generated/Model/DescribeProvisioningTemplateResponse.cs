@@ -52,9 +52,9 @@ namespace Amazon.IoT.Model
         /// The date when the provisioning template was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.IoT.Model
         /// The default fleet template version ID.
         /// </para>
         /// </summary>
-        public int DefaultVersionId
+        public int? DefaultVersionId
         {
-            get { return this._defaultVersionId.GetValueOrDefault(); }
+            get { return this._defaultVersionId; }
             set { this._defaultVersionId = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.IoT.Model
         /// True if the provisioning template is enabled, otherwise false.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.IoT.Model
         /// The date when the provisioning template was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

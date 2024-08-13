@@ -72,9 +72,9 @@ namespace Amazon.Elasticsearch.Model
         /// The duration, in seconds, for which the Elasticsearch instance is reserved.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Elasticsearch.Model
         /// The number of Elasticsearch instances that have been reserved.
         /// </para>
         /// </summary>
-        public int ElasticsearchInstanceCount
+        public int? ElasticsearchInstanceCount
         {
-            get { return this._elasticsearchInstanceCount.GetValueOrDefault(); }
+            get { return this._elasticsearchInstanceCount; }
             set { this._elasticsearchInstanceCount = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.Elasticsearch.Model
         /// instance offering. 
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.Elasticsearch.Model
         /// The time the reservation started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.Elasticsearch.Model
         /// instance.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

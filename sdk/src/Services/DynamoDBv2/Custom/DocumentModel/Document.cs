@@ -652,7 +652,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             ddbBool = null;
             if (attributeValue.IsSetBOOL())
             {
-                ddbBool = new DynamoDBBool(attributeValue.BOOL);
+                ddbBool = new DynamoDBBool(attributeValue.BOOL.Value);
             }
             return (ddbBool != null);
         }

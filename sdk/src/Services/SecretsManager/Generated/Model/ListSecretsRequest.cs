@@ -103,9 +103,9 @@ namespace Amazon.SecretsManager.Model
         /// for deletion aren't included.
         /// </para>
         /// </summary>
-        public bool IncludePlannedDeletion
+        public bool? IncludePlannedDeletion
         {
-            get { return this._includePlannedDeletion.GetValueOrDefault(); }
+            get { return this._includePlannedDeletion; }
             set { this._includePlannedDeletion = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -141,9 +141,9 @@ namespace Amazon.Connect.Model
         /// The sequentially incremented version of the view version.
         /// </para>
         /// </summary>
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

@@ -308,9 +308,9 @@ namespace Amazon.Route53.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public long Weight
+        public long? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 
@@ -555,9 +555,9 @@ namespace Amazon.Route53.Model
         /// You can't create multivalue answer alias records.
         /// </para>
         /// </summary>
-        public bool MultiValueAnswer
+        public bool? MultiValueAnswer
         {
-            get { return this._multiValueAnswer.GetValueOrDefault(); }
+            get { return this._multiValueAnswer; }
             set { this._multiValueAnswer = value; }
         }
 
@@ -599,9 +599,9 @@ namespace Amazon.Route53.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public long TTL
+        public long? TTL
         {
-            get { return this._ttl.GetValueOrDefault(); }
+            get { return this._ttl; }
             set { this._ttl = value; }
         }
 

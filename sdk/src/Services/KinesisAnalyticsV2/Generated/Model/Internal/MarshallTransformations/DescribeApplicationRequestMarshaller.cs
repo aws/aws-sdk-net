@@ -78,7 +78,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeAdditionalDetails())
                 {
                     context.Writer.WritePropertyName("IncludeAdditionalDetails");
-                    context.Writer.Write(publicRequest.IncludeAdditionalDetails);
+                    context.Writer.Write(publicRequest.IncludeAdditionalDetails.Value);
                 }
 
                 writer.WriteObjectEnd();

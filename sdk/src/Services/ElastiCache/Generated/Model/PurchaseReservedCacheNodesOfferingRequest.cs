@@ -33,7 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// Container for the parameters to the PurchaseReservedCacheNodesOffering operation.
     /// Allows you to purchase a reserved cache node offering. Reserved nodes are not eligible
     /// for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing
-    /// Costs with Reserved Nodes</a> for Redis or <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/reserved-nodes.html">Managing
+    /// Costs with Reserved Nodes</a> for Redis OSS or <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/reserved-nodes.html">Managing
     /// Costs with Reserved Nodes</a> for Memcached.
     /// </summary>
     public partial class PurchaseReservedCacheNodesOfferingRequest : AmazonElastiCacheRequest
@@ -53,9 +53,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>1</c> 
         /// </para>
         /// </summary>
-        public int CacheNodeCount
+        public int? CacheNodeCount
         {
-            get { return this._cacheNodeCount.GetValueOrDefault(); }
+            get { return this._cacheNodeCount; }
             set { this._cacheNodeCount = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.DocDB.Model
         ///  A Boolean value; set to <c>true</c> to activate the subscription. 
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

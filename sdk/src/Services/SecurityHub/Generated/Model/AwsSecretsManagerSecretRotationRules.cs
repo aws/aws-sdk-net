@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of days after the previous rotation to rotate the secret.
         /// </para>
         /// </summary>
-        public int AutomaticallyAfterDays
+        public int? AutomaticallyAfterDays
         {
-            get { return this._automaticallyAfterDays.GetValueOrDefault(); }
+            get { return this._automaticallyAfterDays; }
             set { this._automaticallyAfterDays = value; }
         }
 

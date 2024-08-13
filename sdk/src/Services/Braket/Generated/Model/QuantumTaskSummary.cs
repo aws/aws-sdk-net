@@ -51,9 +51,9 @@ namespace Amazon.Braket.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.Braket.Model
         /// The time at which the task finished.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.Braket.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Shots
+        public long? Shots
         {
-            get { return this._shots.GetValueOrDefault(); }
+            get { return this._shots; }
             set { this._shots = value; }
         }
 

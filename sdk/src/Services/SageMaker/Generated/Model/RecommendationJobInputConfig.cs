@@ -110,9 +110,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int JobDurationInSeconds
+        public int? JobDurationInSeconds
         {
-            get { return this._jobDurationInSeconds.GetValueOrDefault(); }
+            get { return this._jobDurationInSeconds; }
             set { this._jobDurationInSeconds = value; }
         }
 

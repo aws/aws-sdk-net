@@ -46,9 +46,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index archived spaces.
         /// </para>
         /// </summary>
-        public bool CrawlArchivedSpaces
+        public bool? CrawlArchivedSpaces
         {
-            get { return this._crawlArchivedSpaces.GetValueOrDefault(); }
+            get { return this._crawlArchivedSpaces; }
             set { this._crawlArchivedSpaces = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Kendra.Model
         /// on user context</a>.
         /// </para>
         /// </summary>
-        public bool CrawlPersonalSpaces
+        public bool? CrawlPersonalSpaces
         {
-            get { return this._crawlPersonalSpaces.GetValueOrDefault(); }
+            get { return this._crawlPersonalSpaces; }
             set { this._crawlPersonalSpaces = value; }
         }
 

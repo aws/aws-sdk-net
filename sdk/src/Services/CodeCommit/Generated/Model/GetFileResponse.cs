@@ -151,9 +151,9 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long FileSize
+        public long? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 

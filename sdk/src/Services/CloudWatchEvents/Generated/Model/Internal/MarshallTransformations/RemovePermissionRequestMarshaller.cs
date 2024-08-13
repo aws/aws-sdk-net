@@ -78,7 +78,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoveAllPermissions())
                 {
                     context.Writer.WritePropertyName("RemoveAllPermissions");
-                    context.Writer.Write(publicRequest.RemoveAllPermissions);
+                    context.Writer.Write(publicRequest.RemoveAllPermissions.Value);
                 }
 
                 if(publicRequest.IsSetStatementId())

@@ -58,9 +58,9 @@ namespace Amazon.Finspace.Model
         /// false.
         /// </para>
         /// </summary>
-        public bool AutoUpdate
+        public bool? AutoUpdate
         {
-            get { return this._autoUpdate.GetValueOrDefault(); }
+            get { return this._autoUpdate; }
             set { this._autoUpdate = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool ReadWrite
+        public bool? ReadWrite
         {
-            get { return this._readWrite.GetValueOrDefault(); }
+            get { return this._readWrite; }
             set { this._readWrite = value; }
         }
 

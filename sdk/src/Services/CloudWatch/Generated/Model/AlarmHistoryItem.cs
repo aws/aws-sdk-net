@@ -140,9 +140,9 @@ namespace Amazon.CloudWatch.Model
         /// The time stamp for the alarm history item.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

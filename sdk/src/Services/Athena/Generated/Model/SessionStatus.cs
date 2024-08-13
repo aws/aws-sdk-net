@@ -47,9 +47,9 @@ namespace Amazon.Athena.Model
         /// The date and time that the session ended.
         /// </para>
         /// </summary>
-        public DateTime EndDateTime
+        public DateTime? EndDateTime
         {
-            get { return this._endDateTime.GetValueOrDefault(); }
+            get { return this._endDateTime; }
             set { this._endDateTime = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Athena.Model
         /// is not currently idle.
         /// </para>
         /// </summary>
-        public DateTime IdleSinceDateTime
+        public DateTime? IdleSinceDateTime
         {
-            get { return this._idleSinceDateTime.GetValueOrDefault(); }
+            get { return this._idleSinceDateTime; }
             set { this._idleSinceDateTime = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Athena.Model
         /// The most recent date and time that the session was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDateTime
+        public DateTime? LastModifiedDateTime
         {
-            get { return this._lastModifiedDateTime.GetValueOrDefault(); }
+            get { return this._lastModifiedDateTime; }
             set { this._lastModifiedDateTime = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Athena.Model
         /// The date and time that the session started.
         /// </para>
         /// </summary>
-        public DateTime StartDateTime
+        public DateTime? StartDateTime
         {
-            get { return this._startDateTime.GetValueOrDefault(); }
+            get { return this._startDateTime; }
             set { this._startDateTime = value; }
         }
 

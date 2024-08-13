@@ -72,13 +72,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAssignmentDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("AssignmentDurationInSeconds");
-                    context.Writer.Write(publicRequest.AssignmentDurationInSeconds);
+                    context.Writer.Write(publicRequest.AssignmentDurationInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetAutoApprovalDelayInSeconds())
                 {
                     context.Writer.WritePropertyName("AutoApprovalDelayInSeconds");
-                    context.Writer.Write(publicRequest.AutoApprovalDelayInSeconds);
+                    context.Writer.Write(publicRequest.AutoApprovalDelayInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetDescription())

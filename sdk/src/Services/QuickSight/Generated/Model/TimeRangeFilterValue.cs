@@ -87,9 +87,9 @@ namespace Amazon.QuickSight.Model
         /// The static input value.
         /// </para>
         /// </summary>
-        public DateTime StaticValue
+        public DateTime? StaticValue
         {
-            get { return this._staticValue.GetValueOrDefault(); }
+            get { return this._staticValue; }
             set { this._staticValue = value; }
         }
 

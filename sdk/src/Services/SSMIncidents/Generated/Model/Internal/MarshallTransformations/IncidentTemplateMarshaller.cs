@@ -57,7 +57,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImpact())
             {
                 context.Writer.WritePropertyName("impact");
-                context.Writer.Write(requestObject.Impact);
+                context.Writer.Write(requestObject.Impact.Value);
             }
 
             if(requestObject.IsSetIncidentTags())

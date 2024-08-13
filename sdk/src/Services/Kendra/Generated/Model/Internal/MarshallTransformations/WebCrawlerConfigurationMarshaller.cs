@@ -62,32 +62,32 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlDepth())
             {
                 context.Writer.WritePropertyName("CrawlDepth");
-                context.Writer.Write(requestObject.CrawlDepth);
+                context.Writer.Write(requestObject.CrawlDepth.Value);
             }
 
             if(requestObject.IsSetMaxContentSizePerPageInMegaBytes())
             {
                 context.Writer.WritePropertyName("MaxContentSizePerPageInMegaBytes");
-                if(StringUtils.IsSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes))
+                if(StringUtils.IsSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxContentSizePerPageInMegaBytes.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes);
+                    context.Writer.Write(requestObject.MaxContentSizePerPageInMegaBytes.Value);
                 }
             }
 
             if(requestObject.IsSetMaxLinksPerPage())
             {
                 context.Writer.WritePropertyName("MaxLinksPerPage");
-                context.Writer.Write(requestObject.MaxLinksPerPage);
+                context.Writer.Write(requestObject.MaxLinksPerPage.Value);
             }
 
             if(requestObject.IsSetMaxUrlsPerMinuteCrawlRate())
             {
                 context.Writer.WritePropertyName("MaxUrlsPerMinuteCrawlRate");
-                context.Writer.Write(requestObject.MaxUrlsPerMinuteCrawlRate);
+                context.Writer.Write(requestObject.MaxUrlsPerMinuteCrawlRate.Value);
             }
 
             if(requestObject.IsSetProxyConfiguration())

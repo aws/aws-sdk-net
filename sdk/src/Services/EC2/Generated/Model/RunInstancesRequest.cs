@@ -159,7 +159,7 @@ namespace Amazon.EC2.Model
         /// <param name="imageId">The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.</param>
         /// <param name="minCount">The minimum number of instances to launch. If you specify a value that is more capacity than Amazon EC2 can provide in the target Availability Zone, Amazon EC2 does not launch any instances. Constraints: Between 1 and the quota for the specified instance type for your account for this Region. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon EC2 instance type quotas</a>.</param>
         /// <param name="maxCount">The maximum number of instances to launch. If you specify a value that is more capacity than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above the specified minimum count. Constraints: Between 1 and the quota for the specified instance type for your account for this Region. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon EC2 instance type quotas</a>.</param>
-        public RunInstancesRequest(string imageId, int minCount, int maxCount)
+        public RunInstancesRequest(string imageId, int? minCount, int? maxCount)
         {
             _imageId = imageId;
             _minCount = minCount;
@@ -311,9 +311,9 @@ namespace Amazon.EC2.Model
         /// protection</a>. 
         /// </para>
         /// </summary>
-        public bool DisableApiStop
+        public bool? DisableApiStop
         {
-            get { return this._disableApiStop.GetValueOrDefault(); }
+            get { return this._disableApiStop; }
             set { this._disableApiStop = value; }
         }
 
@@ -337,9 +337,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool DisableApiTermination
+        public bool? DisableApiTermination
         {
-            get { return this._disableApiTermination.GetValueOrDefault(); }
+            get { return this._disableApiTermination; }
             set { this._disableApiTermination = value; }
         }
 
@@ -362,9 +362,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -439,9 +439,9 @@ namespace Amazon.EC2.Model
         /// the primary IPv6 address.
         /// </para>
         /// </summary>
-        public bool EnablePrimaryIpv6
+        public bool? EnablePrimaryIpv6
         {
-            get { return this._enablePrimaryIpv6.GetValueOrDefault(); }
+            get { return this._enablePrimaryIpv6; }
             set { this._enablePrimaryIpv6 = value; }
         }
 
@@ -616,9 +616,9 @@ namespace Amazon.EC2.Model
         /// You cannot specify this option and the network interfaces option in the same request.
         /// </para>
         /// </summary>
-        public int Ipv6AddressCount
+        public int? Ipv6AddressCount
         {
-            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            get { return this._ipv6AddressCount; }
             set { this._ipv6AddressCount = value; }
         }
 
@@ -773,9 +773,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxCount
+        public int? MaxCount
         {
-            get { return this._maxCount.GetValueOrDefault(); }
+            get { return this._maxCount; }
             set { this._maxCount = value; }
         }
 
@@ -819,9 +819,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MinCount
+        public int? MinCount
         {
-            get { return this._minCount.GetValueOrDefault(); }
+            get { return this._minCount; }
             set { this._minCount = value; }
         }
 
@@ -837,9 +837,9 @@ namespace Amazon.EC2.Model
         /// Specifies whether detailed monitoring is enabled for the instance.
         /// </para>
         /// </summary>
-        public bool Monitoring
+        public bool? Monitoring
         {
-            get { return this._monitoring.GetValueOrDefault(); }
+            get { return this._monitoring; }
             set { this._monitoring = value; }
         }
 
@@ -1080,12 +1080,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The user data script to make available to the instance. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands
-        /// on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>. If
-        /// you are using a command line tool, base64-encoding is performed for you, and you can
-        /// load the text from a file. Otherwise, you must provide base64-encoded text. User data
-        /// is limited to 16 KB.
+        /// The user data to make available to the instance. User data must be base64-encoded.
+        /// Depending on the tool or SDK that you're using, the base64-encoding might be performed
+        /// for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work
+        /// with instance user data</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

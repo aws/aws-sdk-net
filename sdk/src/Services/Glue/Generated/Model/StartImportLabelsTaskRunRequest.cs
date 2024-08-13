@@ -95,9 +95,9 @@ namespace Amazon.Glue.Model
         /// Indicates whether to overwrite your existing labels.
         /// </para>
         /// </summary>
-        public bool ReplaceAllLabels
+        public bool? ReplaceAllLabels
         {
-            get { return this._replaceAllLabels.GetValueOrDefault(); }
+            get { return this._replaceAllLabels; }
             set { this._replaceAllLabels = value; }
         }
 

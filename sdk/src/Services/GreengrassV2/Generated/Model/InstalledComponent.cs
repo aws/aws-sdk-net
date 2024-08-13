@@ -88,9 +88,9 @@ namespace Amazon.GreengrassV2.Model
         /// Whether or not the component is a root component.
         /// </para>
         /// </summary>
-        public bool IsRoot
+        public bool? IsRoot
         {
-            get { return this._isRoot.GetValueOrDefault(); }
+            get { return this._isRoot; }
             set { this._isRoot = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.GreengrassV2.Model
         /// A component does not need to see a state change for this field to update.
         /// </para>
         /// </summary>
-        public DateTime LastReportedTimestamp
+        public DateTime? LastReportedTimestamp
         {
-            get { return this._lastReportedTimestamp.GetValueOrDefault(); }
+            get { return this._lastReportedTimestamp; }
             set { this._lastReportedTimestamp = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.GreengrassV2.Model
         /// a deployment, it might not undergo a state change and this status would not be updated.
         /// </para>
         /// </summary>
-        public DateTime LastStatusChangeTimestamp
+        public DateTime? LastStatusChangeTimestamp
         {
-            get { return this._lastStatusChangeTimestamp.GetValueOrDefault(); }
+            get { return this._lastStatusChangeTimestamp; }
             set { this._lastStatusChangeTimestamp = value; }
         }
 

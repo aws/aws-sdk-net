@@ -13,7 +13,7 @@ using Amazon.Runtime;
 using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 
-namespace AWSSDK.UnitTests.Custom.Net45.Custom.Runtime
+namespace AWSSDK.UnitTests.Custom.Custom.Runtime
 {
     [TestClass]
     public class ServiceSpecificEndpointTests

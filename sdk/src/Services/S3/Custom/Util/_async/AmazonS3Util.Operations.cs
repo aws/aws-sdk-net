@@ -302,12 +302,12 @@ namespace Amazon.S3.Util
                 {
                     listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
                     listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
-                    isTruncated = listVersionsResponse.IsTruncated;
+                    isTruncated = listVersionsResponse.IsTruncated.GetValueOrDefault();
                 }
                 if(listObjectsV2Response != null)
                 {
                     listObjectsV2Request.ContinuationToken = listObjectsV2Response.NextContinuationToken;
-                    isTruncated = listObjectsV2Response.IsTruncated;
+                    isTruncated = listObjectsV2Response.IsTruncated.GetValueOrDefault();
                 }
 
             }

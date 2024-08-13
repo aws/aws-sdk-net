@@ -51,7 +51,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeInMillis())
             {
                 context.Writer.WritePropertyName("timeInMillis");
-                context.Writer.Write(requestObject.TimeInMillis);
+                context.Writer.Write(requestObject.TimeInMillis.Value);
             }
 
         }

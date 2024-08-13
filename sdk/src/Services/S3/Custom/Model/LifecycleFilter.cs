@@ -158,9 +158,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectSizeGreaterThan.
         /// </summary>
-        public long ObjectSizeGreaterThan
+        public long? ObjectSizeGreaterThan
         {
-            get { return this._objectSizeGreaterThan.GetValueOrDefault(); }
+            get { return this._objectSizeGreaterThan; }
             set { this._objectSizeGreaterThan = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectSizeLessThan.
         /// </summary>
-        public long ObjectSizeLessThan
+        public long? ObjectSizeLessThan
         {
-            get { return this._objectSizeLessThan.GetValueOrDefault(); }
+            get { return this._objectSizeLessThan; }
             set { this._objectSizeLessThan = value; }
         }
 

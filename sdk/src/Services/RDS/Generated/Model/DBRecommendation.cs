@@ -126,9 +126,9 @@ namespace Amazon.RDS.Model
         /// The time when the recommendation was created. For example, <c>2023-09-28T01:13:53.931000+00:00</c>.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -479,9 +479,9 @@ namespace Amazon.RDS.Model
         /// The time when the recommendation was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTime
+        public DateTime? UpdatedTime
         {
-            get { return this._updatedTime.GetValueOrDefault(); }
+            get { return this._updatedTime; }
             set { this._updatedTime = value; }
         }
 

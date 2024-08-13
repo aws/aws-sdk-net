@@ -67,9 +67,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double ContributionPercentage
+        public double? ContributionPercentage
         {
-            get { return this._contributionPercentage.GetValueOrDefault(); }
+            get { return this._contributionPercentage; }
             set { this._contributionPercentage = value; }
         }
 

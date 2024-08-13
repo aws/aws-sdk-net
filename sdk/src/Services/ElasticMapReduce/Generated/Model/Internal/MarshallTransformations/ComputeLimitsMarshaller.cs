@@ -51,25 +51,25 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaximumCapacityUnits");
-                context.Writer.Write(requestObject.MaximumCapacityUnits);
+                context.Writer.Write(requestObject.MaximumCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMaximumCoreCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaximumCoreCapacityUnits");
-                context.Writer.Write(requestObject.MaximumCoreCapacityUnits);
+                context.Writer.Write(requestObject.MaximumCoreCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMaximumOnDemandCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaximumOnDemandCapacityUnits");
-                context.Writer.Write(requestObject.MaximumOnDemandCapacityUnits);
+                context.Writer.Write(requestObject.MaximumOnDemandCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMinimumCapacityUnits())
             {
                 context.Writer.WritePropertyName("MinimumCapacityUnits");
-                context.Writer.Write(requestObject.MinimumCapacityUnits);
+                context.Writer.Write(requestObject.MinimumCapacityUnits.Value);
             }
 
             if(requestObject.IsSetUnitType())

@@ -98,7 +98,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pushedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PushedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -119,9 +119,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int TrafficDialPercentage
+        public int? TrafficDialPercentage
         {
-            get { return this._trafficDialPercentage.GetValueOrDefault(); }
+            get { return this._trafficDialPercentage; }
             set { this._trafficDialPercentage = value; }
         }
 

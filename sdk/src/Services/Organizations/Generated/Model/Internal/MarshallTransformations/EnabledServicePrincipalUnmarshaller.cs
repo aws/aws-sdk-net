@@ -68,7 +68,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DateEnabled", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

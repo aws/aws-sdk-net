@@ -48,9 +48,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DefaultSessionExpiryMinutes
+        public int? DefaultSessionExpiryMinutes
         {
-            get { return this._defaultSessionExpiryMinutes.GetValueOrDefault(); }
+            get { return this._defaultSessionExpiryMinutes; }
             set { this._defaultSessionExpiryMinutes = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Voice Connector.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

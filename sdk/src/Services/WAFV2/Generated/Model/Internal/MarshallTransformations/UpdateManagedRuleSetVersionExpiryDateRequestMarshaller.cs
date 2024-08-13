@@ -72,7 +72,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpiryTimestamp())
                 {
                     context.Writer.WritePropertyName("ExpiryTimestamp");
-                    context.Writer.Write(publicRequest.ExpiryTimestamp);
+                    context.Writer.Write(publicRequest.ExpiryTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetId())

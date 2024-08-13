@@ -90,6 +90,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Issues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PostContactSummary", targetDepth))
+                {
+                    var unmarshaller = RealTimeContactAnalysisSegmentPostContactSummaryUnmarshaller.Instance;
+                    unmarshalledObject.PostContactSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Transcript", targetDepth))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentTranscriptUnmarshaller.Instance;

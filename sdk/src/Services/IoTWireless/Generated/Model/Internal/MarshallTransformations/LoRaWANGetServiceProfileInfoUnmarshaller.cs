@@ -68,7 +68,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AddGwMetadata", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AddGwMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,19 +80,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DevStatusReqFreq", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DevStatusReqFreq = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DlBucketSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DlBucketSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DlRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DlRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,73 +104,73 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DrMax", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DrMax = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DrMin", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DrMin = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HrAllowed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HrAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinGwDiversity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinGwDiversity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NwkGeoLoc", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NwkGeoLoc = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PrAllowed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PrAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RaAllowed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RaAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReportDevStatusBattery", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReportDevStatusBattery = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReportDevStatusMargin", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReportDevStatusMargin = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TargetPer", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetPer = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UlBucketSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UlBucketSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UlRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UlRate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DisableIndexing", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableIndexing = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -134,19 +134,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsIncludedInTopic", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsIncludedInTopic = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NeverAggregateInFilter", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NeverAggregateInFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonAdditive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NonAdditive = unmarshaller.Unmarshall(context);
                     continue;
                 }

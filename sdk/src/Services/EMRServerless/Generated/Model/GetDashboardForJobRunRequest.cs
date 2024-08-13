@@ -80,9 +80,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Attempt
+        public int? Attempt
         {
-            get { return this._attempt.GetValueOrDefault(); }
+            get { return this._attempt; }
             set { this._attempt = value; }
         }
 

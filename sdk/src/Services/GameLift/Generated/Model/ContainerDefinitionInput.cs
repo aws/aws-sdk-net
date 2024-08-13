@@ -118,9 +118,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10240)]
-        public int Cpu
+        public int? Cpu
         {
-            get { return this._cpu.GetValueOrDefault(); }
+            get { return this._cpu; }
             set { this._cpu = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.GameLift.Model
         ///  
         /// </para>
         /// </summary>
-        public bool Essential
+        public bool? Essential
         {
-            get { return this._essential.GetValueOrDefault(); }
+            get { return this._essential; }
             set { this._essential = value; }
         }
 

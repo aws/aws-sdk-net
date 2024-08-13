@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.MarketplaceEntitlementService.Endpoints;
 using Amazon.MarketplaceEntitlementService.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class MarketplaceEntitlementServiceEndpointsTests

@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionDisabled())
             {
                 context.Writer.WritePropertyName("EncryptionDisabled");
-                context.Writer.Write(requestObject.EncryptionDisabled);
+                context.Writer.Write(requestObject.EncryptionDisabled.Value);
             }
 
             if(requestObject.IsSetLocation())

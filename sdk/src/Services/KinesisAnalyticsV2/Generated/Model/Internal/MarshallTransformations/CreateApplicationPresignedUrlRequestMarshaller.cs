@@ -78,7 +78,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSessionExpirationDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");
-                    context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds);
+                    context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetUrlType())

@@ -117,7 +117,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }
 
-                        xmlWriter.WriteElementString("IsEnabled", S3Transforms.ToXmlStringValue(inventoryConfiguration.IsEnabled));
+                        xmlWriter.WriteElementString("IsEnabled", S3Transforms.ToXmlStringValue(inventoryConfiguration.IsEnabled.GetValueOrDefault()));
 
                         if (inventoryConfiguration.IsSetInventoryFilter())
                         {

@@ -51,13 +51,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowEarlyCheckIn())
             {
                 context.Writer.WritePropertyName("AllowEarlyCheckIn");
-                context.Writer.Write(requestObject.AllowEarlyCheckIn);
+                context.Writer.Write(requestObject.AllowEarlyCheckIn.Value);
             }
 
             if(requestObject.IsSetMaxTimeToLiveInMinutes())
             {
                 context.Writer.WritePropertyName("MaxTimeToLiveInMinutes");
-                context.Writer.Write(requestObject.MaxTimeToLiveInMinutes);
+                context.Writer.Write(requestObject.MaxTimeToLiveInMinutes.Value);
             }
 
         }

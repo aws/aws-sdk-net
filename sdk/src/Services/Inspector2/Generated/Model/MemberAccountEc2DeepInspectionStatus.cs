@@ -65,9 +65,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ActivateDeepInspection
+        public bool? ActivateDeepInspection
         {
-            get { return this._activateDeepInspection.GetValueOrDefault(); }
+            get { return this._activateDeepInspection; }
             set { this._activateDeepInspection = value; }
         }
 

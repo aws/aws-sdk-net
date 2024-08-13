@@ -66,9 +66,9 @@ namespace Amazon.Appflow.Model
         /// in use in one or more connector profiles. The default value is false.
         /// </para>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AutoCreateTasks
+        public bool? AutoCreateTasks
         {
-            get { return this._autoCreateTasks.GetValueOrDefault(); }
+            get { return this._autoCreateTasks; }
             set { this._autoCreateTasks = value; }
         }
 

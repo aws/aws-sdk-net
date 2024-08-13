@@ -321,9 +321,9 @@ namespace Amazon.KeyManagementService.Model
         /// your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

@@ -125,9 +125,9 @@ namespace Amazon.Redshift.Model
         /// Range: 900-3600. Default: 900.
         /// </para>
         /// </summary>
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 

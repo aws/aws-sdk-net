@@ -42,9 +42,9 @@ namespace Amazon.NetworkManager.Model
         /// The Peer ASN of the BGP.
         /// </para>
         /// </summary>
-        public long PeerAsn
+        public long? PeerAsn
         {
-            get { return this._peerAsn.GetValueOrDefault(); }
+            get { return this._peerAsn; }
             set { this._peerAsn = value; }
         }
 

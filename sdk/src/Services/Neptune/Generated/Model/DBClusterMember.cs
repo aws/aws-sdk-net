@@ -82,9 +82,9 @@ namespace Amazon.Neptune.Model
         /// cluster and <c>false</c> otherwise.
         /// </para>
         /// </summary>
-        public bool IsClusterWriter
+        public bool? IsClusterWriter
         {
-            get { return this._isClusterWriter.GetValueOrDefault(); }
+            get { return this._isClusterWriter; }
             set { this._isClusterWriter = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Neptune.Model
         /// instance after a failure of the existing primary instance.
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 

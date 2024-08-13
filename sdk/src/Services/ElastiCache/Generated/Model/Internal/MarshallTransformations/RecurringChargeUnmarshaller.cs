@@ -57,7 +57,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("RecurringChargeAmount", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.RecurringChargeAmount = unmarshaller.Unmarshall(context);
                         continue;
                     }

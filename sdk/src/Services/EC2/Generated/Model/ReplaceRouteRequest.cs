@@ -234,9 +234,9 @@ namespace Amazon.EC2.Model
         /// Specifies whether to reset the local route to its default target (<c>local</c>).
         /// </para>
         /// </summary>
-        public bool LocalTarget
+        public bool? LocalTarget
         {
-            get { return this._localTarget.GetValueOrDefault(); }
+            get { return this._localTarget; }
             set { this._localTarget = value; }
         }
 

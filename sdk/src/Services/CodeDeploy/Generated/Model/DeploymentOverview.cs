@@ -47,9 +47,9 @@ namespace Amazon.CodeDeploy.Model
         /// The number of instances in the deployment in a failed state.
         /// </para>
         /// </summary>
-        public long Failed
+        public long? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.CodeDeploy.Model
         /// The number of instances in which the deployment is in progress.
         /// </para>
         /// </summary>
-        public long InProgress
+        public long? InProgress
         {
-            get { return this._inProgress.GetValueOrDefault(); }
+            get { return this._inProgress; }
             set { this._inProgress = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.CodeDeploy.Model
         /// The number of instances in the deployment in a pending state.
         /// </para>
         /// </summary>
-        public long Pending
+        public long? Pending
         {
-            get { return this._pending.GetValueOrDefault(); }
+            get { return this._pending; }
             set { this._pending = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.CodeDeploy.Model
         /// blue/green deployment.
         /// </para>
         /// </summary>
-        public long Ready
+        public long? Ready
         {
-            get { return this._ready.GetValueOrDefault(); }
+            get { return this._ready; }
             set { this._ready = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.CodeDeploy.Model
         /// The number of instances in the deployment in a skipped state.
         /// </para>
         /// </summary>
-        public long Skipped
+        public long? Skipped
         {
-            get { return this._skipped.GetValueOrDefault(); }
+            get { return this._skipped; }
             set { this._skipped = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.CodeDeploy.Model
         /// deployed.
         /// </para>
         /// </summary>
-        public long Succeeded
+        public long? Succeeded
         {
-            get { return this._succeeded.GetValueOrDefault(); }
+            get { return this._succeeded; }
             set { this._succeeded = value; }
         }
 

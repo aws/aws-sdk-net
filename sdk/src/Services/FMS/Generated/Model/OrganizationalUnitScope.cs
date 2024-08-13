@@ -51,9 +51,9 @@ namespace Amazon.FMS.Model
         /// both.
         /// </para>
         /// </summary>
-        public bool AllOrganizationalUnitsEnabled
+        public bool? AllOrganizationalUnitsEnabled
         {
-            get { return this._allOrganizationalUnitsEnabled.GetValueOrDefault(); }
+            get { return this._allOrganizationalUnitsEnabled; }
             set { this._allOrganizationalUnitsEnabled = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.FMS.Model
         /// You cannot specify both.
         /// </para>
         /// </summary>
-        public bool ExcludeSpecifiedOrganizationalUnits
+        public bool? ExcludeSpecifiedOrganizationalUnits
         {
-            get { return this._excludeSpecifiedOrganizationalUnits.GetValueOrDefault(); }
+            get { return this._excludeSpecifiedOrganizationalUnits; }
             set { this._excludeSpecifiedOrganizationalUnits = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.Shield.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MaxProtectionGroups
+        public long? MaxProtectionGroups
         {
-            get { return this._maxProtectionGroups.GetValueOrDefault(); }
+            get { return this._maxProtectionGroups; }
             set { this._maxProtectionGroups = value; }
         }
 

@@ -88,7 +88,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceOverwriteReplicaSecret())
                 {
                     context.Writer.WritePropertyName("ForceOverwriteReplicaSecret");
-                    context.Writer.Write(publicRequest.ForceOverwriteReplicaSecret);
+                    context.Writer.Write(publicRequest.ForceOverwriteReplicaSecret.Value);
                 }
 
                 if(publicRequest.IsSetSecretId())

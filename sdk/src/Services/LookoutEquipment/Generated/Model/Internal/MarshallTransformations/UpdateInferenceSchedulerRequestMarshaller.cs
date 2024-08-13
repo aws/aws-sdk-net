@@ -72,7 +72,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDataDelayOffsetInMinutes())
                 {
                     context.Writer.WritePropertyName("DataDelayOffsetInMinutes");
-                    context.Writer.Write(publicRequest.DataDelayOffsetInMinutes);
+                    context.Writer.Write(publicRequest.DataDelayOffsetInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetDataInputConfiguration())

@@ -96,7 +96,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEventTimestamp())
                 {
                     context.Writer.WritePropertyName("eventTimestamp");
-                    context.Writer.Write(publicRequest.EventTimestamp);
+                    context.Writer.Write(publicRequest.EventTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetEventType())

@@ -51,7 +51,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEbsVolumes())
             {
                 context.Writer.WritePropertyName("ebsVolumes");
-                context.Writer.Write(requestObject.EbsVolumes);
+                context.Writer.Write(requestObject.EbsVolumes.Value);
             }
 
         }

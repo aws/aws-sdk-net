@@ -74,7 +74,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InaccessibleKmsKeyDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InaccessibleKmsKeyDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

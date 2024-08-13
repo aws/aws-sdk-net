@@ -62,9 +62,9 @@ namespace Amazon.ECS.Model
         /// connected to an agent can accept task placement requests.
         /// </para>
         /// </summary>
-        public bool AgentConnected
+        public bool? AgentConnected
         {
-            get { return this._agentConnected.GetValueOrDefault(); }
+            get { return this._agentConnected; }
             set { this._agentConnected = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.ECS.Model
         /// The number of tasks on the container instance that are in the <c>PENDING</c> status.
         /// </para>
         /// </summary>
-        public int PendingTasksCount
+        public int? PendingTasksCount
         {
-            get { return this._pendingTasksCount.GetValueOrDefault(); }
+            get { return this._pendingTasksCount; }
             set { this._pendingTasksCount = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the container instance was registered.
         /// </para>
         /// </summary>
-        public DateTime RegisteredAt
+        public DateTime? RegisteredAt
         {
-            get { return this._registeredAt.GetValueOrDefault(); }
+            get { return this._registeredAt; }
             set { this._registeredAt = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.ECS.Model
         /// of <c>RUNNING</c>.
         /// </para>
         /// </summary>
-        public int RunningTasksCount
+        public int? RunningTasksCount
         {
-            get { return this._runningTasksCount.GetValueOrDefault(); }
+            get { return this._runningTasksCount; }
             set { this._runningTasksCount = value; }
         }
 
@@ -434,9 +434,9 @@ namespace Amazon.ECS.Model
         /// the <c>detail</c> object) to verify that the version in your event stream is current.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

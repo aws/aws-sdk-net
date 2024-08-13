@@ -52,9 +52,9 @@ namespace Amazon.SecurityHub.Model
         /// cannot be deleted.
         /// </para>
         /// </summary>
-        public bool DeleteProtection
+        public bool? DeleteProtection
         {
-            get { return this._deleteProtection.GetValueOrDefault(); }
+            get { return this._deleteProtection; }
             set { this._deleteProtection = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.SecurityHub.Model
         /// <c>true</c>, you cannot associate a different policy with the firewall.
         /// </para>
         /// </summary>
-        public bool FirewallPolicyChangeProtection
+        public bool? FirewallPolicyChangeProtection
         {
-            get { return this._firewallPolicyChangeProtection.GetValueOrDefault(); }
+            get { return this._firewallPolicyChangeProtection; }
             set { this._firewallPolicyChangeProtection = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.SecurityHub.Model
         /// to <c>true</c>, you cannot map different subnets to the firewall.
         /// </para>
         /// </summary>
-        public bool SubnetChangeProtection
+        public bool? SubnetChangeProtection
         {
-            get { return this._subnetChangeProtection.GetValueOrDefault(); }
+            get { return this._subnetChangeProtection; }
             set { this._subnetChangeProtection = value; }
         }
 

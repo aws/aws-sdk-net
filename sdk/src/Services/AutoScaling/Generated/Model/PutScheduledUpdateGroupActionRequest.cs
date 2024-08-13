@@ -96,9 +96,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int DesiredCapacity
+        public int? DesiredCapacity
         {
-            get { return this._desiredCapacity.GetValueOrDefault(); }
+            get { return this._desiredCapacity; }
             set { this._desiredCapacity = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.AutoScaling.Model
         /// The date and time for the recurring schedule to end, in UTC. For example, <c>"2021-06-01T00:00:00Z"</c>.
         /// </para>
         /// </summary>
-        public DateTime EndTimeUtc
+        public DateTime? EndTimeUtc
         {
-            get { return this._endTimeUtc.GetValueOrDefault(); }
+            get { return this._endTimeUtc; }
             set { this._endTime = this._endTimeUtc = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.AutoScaling.Model
         /// The maximum size of the Auto Scaling group.
         /// </para>
         /// </summary>
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.AutoScaling.Model
         /// The minimum size of the Auto Scaling group.
         /// </para>
         /// </summary>
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.AutoScaling.Model
         /// the action at this time, and then performs the action based on the specified recurrence.
         /// </para>
         /// </summary>
-        public DateTime StartTimeUtc
+        public DateTime? StartTimeUtc
         {
-            get { return this._startTimeUtc.GetValueOrDefault(); }
+            get { return this._startTimeUtc; }
             set { this._startTime = this._startTimeUtc = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.AutoScaling.Model
         /// This property is no longer used.
         /// </para>
         /// </summary>
-        public DateTime TimeUtc
+        public DateTime? TimeUtc
         {
-            get { return this._timeUtc.GetValueOrDefault(); }
+            get { return this._timeUtc; }
             set { this._time = this._timeUtc = value; }
         }
 
@@ -305,13 +305,20 @@ namespace Amazon.AutoScaling.Model
             "EndTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. EndTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
             set
             {
                 this._endTime = value;
-                this._endTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._endTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._endTimeUtc = null;
+                }
             }
         }
         /// <summary>
@@ -340,13 +347,20 @@ namespace Amazon.AutoScaling.Model
             "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
             set
             {
                 this._startTime = value;
-                this._startTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._startTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._startTimeUtc = null;
+                }
             }
         }
         /// <summary>
@@ -369,13 +383,20 @@ namespace Amazon.AutoScaling.Model
             "TimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. Time is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime Time
+        public DateTime? Time
         {
             get { return this._time.GetValueOrDefault(); }
             set
             {
                 this._time = value;
-                this._timeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._timeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._timeUtc = null;
+                }
             }
         }
 #endregion

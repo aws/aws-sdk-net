@@ -144,9 +144,9 @@ namespace Amazon.SecurityHub.Model
         /// on the table. 
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of items in the table.
         /// </para>
         /// </summary>
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -414,9 +414,9 @@ namespace Amazon.SecurityHub.Model
         /// The total size of the table in bytes.
         /// </para>
         /// </summary>
-        public long TableSizeBytes
+        public long? TableSizeBytes
         {
-            get { return this._tableSizeBytes.GetValueOrDefault(); }
+            get { return this._tableSizeBytes; }
             set { this._tableSizeBytes = value; }
         }
 

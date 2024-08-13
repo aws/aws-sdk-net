@@ -57,13 +57,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManualSnapshotRetentionPeriod())
             {
                 context.Writer.WritePropertyName("ManualSnapshotRetentionPeriod");
-                context.Writer.Write(requestObject.ManualSnapshotRetentionPeriod);
+                context.Writer.Write(requestObject.ManualSnapshotRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetRetentionPeriod())
             {
                 context.Writer.WritePropertyName("RetentionPeriod");
-                context.Writer.Write(requestObject.RetentionPeriod);
+                context.Writer.Write(requestObject.RetentionPeriod.Value);
             }
 
             if(requestObject.IsSetSnapshotCopyGrantName())

@@ -70,7 +70,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    context.Writer.Write(publicRequest.EndTime.Value);
                 }
 
                 if(publicRequest.IsSetEntitySelectorExpression())
@@ -82,7 +82,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForecastStatistics())
                 {
                     context.Writer.WritePropertyName("ForecastStatistics");
-                    context.Writer.Write(publicRequest.ForecastStatistics);
+                    context.Writer.Write(publicRequest.ForecastStatistics.Value);
                 }
 
                 if(publicRequest.IsSetGroupARN())
@@ -106,13 +106,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPeriod())
                 {
                     context.Writer.WritePropertyName("Period");
-                    context.Writer.Write(publicRequest.Period);
+                    context.Writer.Write(publicRequest.Period.Value);
                 }
 
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 writer.WriteObjectEnd();

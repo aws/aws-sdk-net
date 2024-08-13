@@ -193,9 +193,9 @@ namespace Amazon.Route53Resolver.Model
         /// The number of rules in the rule group.
         /// </para>
         /// </summary>
-        public int RuleCount
+        public int? RuleCount
         {
-            get { return this._ruleCount.GetValueOrDefault(); }
+            get { return this._ruleCount; }
             set { this._ruleCount = value; }
         }
 

@@ -60,7 +60,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="masterInstanceType">The Amazon EC2 master node instance type.</param>
         /// <param name="slaveInstanceType">The Amazon EC2 core and task node instance type.</param>
         /// <param name="instanceCount">The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</param>
-        public JobFlowInstancesDetail(string masterInstanceType, string slaveInstanceType, int instanceCount)
+        public JobFlowInstancesDetail(string masterInstanceType, string slaveInstanceType, int? instanceCount)
         {
             _masterInstanceType = masterInstanceType;
             _slaveInstanceType = slaveInstanceType;
@@ -135,9 +135,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Specifies whether the cluster should remain available after completing all steps.
         /// </para>
         /// </summary>
-        public bool KeepJobFlowAliveWhenNoSteps
+        public bool? KeepJobFlowAliveWhenNoSteps
         {
-            get { return this._keepJobFlowAliveWhenNoSteps.GetValueOrDefault(); }
+            get { return this._keepJobFlowAliveWhenNoSteps; }
             set { this._keepJobFlowAliveWhenNoSteps = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// rate.
         /// </para>
         /// </summary>
-        public int NormalizedInstanceHours
+        public int? NormalizedInstanceHours
         {
-            get { return this._normalizedInstanceHours.GetValueOrDefault(); }
+            get { return this._normalizedInstanceHours; }
             set { this._normalizedInstanceHours = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// by API calls, user intervention, or in the event of a job-flow error.
         /// </para>
         /// </summary>
-        public bool TerminationProtected
+        public bool? TerminationProtected
         {
-            get { return this._terminationProtected.GetValueOrDefault(); }
+            get { return this._terminationProtected; }
             set { this._terminationProtected = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// within the cluster.
         /// </para>
         /// </summary>
-        public bool UnhealthyNodeReplacement
+        public bool? UnhealthyNodeReplacement
         {
-            get { return this._unhealthyNodeReplacement.GetValueOrDefault(); }
+            get { return this._unhealthyNodeReplacement; }
             set { this._unhealthyNodeReplacement = value; }
         }
 

@@ -224,9 +224,9 @@ namespace Amazon.IoTFleetWise.Model
         /// Default: 253402214400 (December 31, 9999, 00:00:00 UTC)
         /// </para>
         /// </summary>
-        public DateTime ExpiryTime
+        public DateTime? ExpiryTime
         {
-            get { return this._expiryTime.GetValueOrDefault(); }
+            get { return this._expiryTime; }
             set { this._expiryTime = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long PostTriggerCollectionDuration
+        public long? PostTriggerCollectionDuration
         {
-            get { return this._postTriggerCollectionDuration.GetValueOrDefault(); }
+            get { return this._postTriggerCollectionDuration; }
             set { this._postTriggerCollectionDuration = value; }
         }
 
@@ -292,9 +292,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -380,9 +380,9 @@ namespace Amazon.IoTFleetWise.Model
         /// Default: <c>0</c> 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

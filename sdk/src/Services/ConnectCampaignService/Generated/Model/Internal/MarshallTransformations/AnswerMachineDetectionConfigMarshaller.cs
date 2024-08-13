@@ -51,13 +51,13 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwaitAnswerMachinePrompt())
             {
                 context.Writer.WritePropertyName("awaitAnswerMachinePrompt");
-                context.Writer.Write(requestObject.AwaitAnswerMachinePrompt);
+                context.Writer.Write(requestObject.AwaitAnswerMachinePrompt.Value);
             }
 
             if(requestObject.IsSetEnableAnswerMachineDetection())
             {
                 context.Writer.WritePropertyName("enableAnswerMachineDetection");
-                context.Writer.Write(requestObject.EnableAnswerMachineDetection);
+                context.Writer.Write(requestObject.EnableAnswerMachineDetection.Value);
             }
 
         }

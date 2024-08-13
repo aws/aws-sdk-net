@@ -55,9 +55,9 @@ namespace Amazon.Signer.Model
         /// The date and time that the signing job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.Signer.Model
         /// Indicates whether the signing job is revoked.
         /// </para>
         /// </summary>
-        public bool IsRevoked
+        public bool? IsRevoked
         {
-            get { return this._isRevoked.GetValueOrDefault(); }
+            get { return this._isRevoked; }
             set { this._isRevoked = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.Signer.Model
         /// The time when the signature of a signing job expires.
         /// </para>
         /// </summary>
-        public DateTime SignatureExpiresAt
+        public DateTime? SignatureExpiresAt
         {
-            get { return this._signatureExpiresAt.GetValueOrDefault(); }
+            get { return this._signatureExpiresAt; }
             set { this._signatureExpiresAt = value; }
         }
 

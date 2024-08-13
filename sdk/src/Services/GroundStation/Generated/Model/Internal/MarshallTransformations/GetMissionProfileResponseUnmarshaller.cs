@@ -54,13 +54,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("contactPostPassDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ContactPostPassDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("contactPrePassDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ContactPrePassDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -72,7 +72,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minimumViableContactDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinimumViableContactDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

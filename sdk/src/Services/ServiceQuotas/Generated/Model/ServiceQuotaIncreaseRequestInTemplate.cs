@@ -69,9 +69,9 @@ namespace Amazon.ServiceQuotas.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000000000)]
-        public double DesiredValue
+        public double? DesiredValue
         {
-            get { return this._desiredValue.GetValueOrDefault(); }
+            get { return this._desiredValue; }
             set { this._desiredValue = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.ServiceQuotas.Model
         /// Indicates whether the quota is global.
         /// </para>
         /// </summary>
-        public bool GlobalQuota
+        public bool? GlobalQuota
         {
-            get { return this._globalQuota.GetValueOrDefault(); }
+            get { return this._globalQuota; }
             set { this._globalQuota = value; }
         }
 

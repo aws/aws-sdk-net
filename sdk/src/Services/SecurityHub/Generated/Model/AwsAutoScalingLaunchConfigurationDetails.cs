@@ -61,9 +61,9 @@ namespace Amazon.SecurityHub.Model
         /// address to the group's instances.
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the launch configuration is optimized for Amazon EBS I/O.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 

@@ -142,9 +142,9 @@ namespace Amazon.AuditManager.Model
         ///  Specifies whether Organizations is enabled. 
         /// </para>
         /// </summary>
-        public bool IsAwsOrgEnabled
+        public bool? IsAwsOrgEnabled
         {
-            get { return this._isAwsOrgEnabled.GetValueOrDefault(); }
+            get { return this._isAwsOrgEnabled; }
             set { this._isAwsOrgEnabled = value; }
         }
 

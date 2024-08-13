@@ -47,9 +47,9 @@ namespace Amazon.Synthetics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=31622400)]
-        public long DurationInSeconds
+        public long? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 

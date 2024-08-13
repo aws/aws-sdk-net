@@ -45,9 +45,9 @@ namespace Amazon.MobileAnalytics.Model
         /// The duration of the session.
         /// </para>
         /// </summary>
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -82,16 +82,16 @@ namespace Amazon.MobileAnalytics.Model
         /// The time the event started in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z
         /// </para>
         /// </summary>
-        public DateTime StartTimestampUtc
+        public DateTime? StartTimestampUtc
         {
-            get { return this._startTimestampUtc.GetValueOrDefault(); }
+            get { return this._startTimestampUtc; }
             set { this._startTimestamp = this._startTimestampUtc = value; }
         }
 
         // Check to see if StartTimestampUtc property is set
         internal bool IsSetStartTimestampUtc()
         {
-            return this._startTimestampUtc.HasValue; 
+            return this._startTimestampUtc != null;
         }
 
         /// <summary>
@@ -101,16 +101,16 @@ namespace Amazon.MobileAnalytics.Model
         /// 2014-06-30T19:07:47.885Z
         /// </para>
         /// </summary>
-        public DateTime StopTimestampUtc
+        public DateTime? StopTimestampUtc
         {
-            get { return this._stopTimestampUtc.GetValueOrDefault(); }
+            get { return this._stopTimestampUtc; }
             set { this._stopTimestamp = this._stopTimestampUtc = value; }
         }
 
         // Check to see if StopTimestampUtc property is set
         internal bool IsSetStopTimestampUtc()
         {
-            return this._stopTimestampUtc.HasValue; 
+            return this._stopTimestampUtc != null;
         }
 
 #region Backwards compatible properties
@@ -137,13 +137,20 @@ namespace Amazon.MobileAnalytics.Model
             "StartTimestampUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. StartTimestamp is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
             get { return this._startTimestamp.GetValueOrDefault(); }
             set
             {
                 this._startTimestamp = value;
-                this._startTimestampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._startTimestampUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._startTimestampUtc = null;
+                }
             }
         }
         /// <summary>
@@ -167,13 +174,20 @@ namespace Amazon.MobileAnalytics.Model
             "StopTimestampUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. StopTimestamp is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime StopTimestamp
+        public DateTime? StopTimestamp
         {
             get { return this._stopTimestamp.GetValueOrDefault(); }
             set
             {
                 this._stopTimestamp = value;
-                this._stopTimestampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._stopTimestampUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._stopTimestampUtc = null;
+                }
             }
         }
 #endregion

@@ -51,39 +51,39 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaximumValue);
+                    context.Writer.Write(requestObject.MaximumValue.Value);
                 }
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinimumValue);
+                    context.Writer.Write(requestObject.MinimumValue.Value);
                 }
             }
 
             if(requestObject.IsSetNumberOfDistinctValues())
             {
                 context.Writer.WritePropertyName("NumberOfDistinctValues");
-                context.Writer.Write(requestObject.NumberOfDistinctValues);
+                context.Writer.Write(requestObject.NumberOfDistinctValues.Value);
             }
 
             if(requestObject.IsSetNumberOfNulls())
             {
                 context.Writer.WritePropertyName("NumberOfNulls");
-                context.Writer.Write(requestObject.NumberOfNulls);
+                context.Writer.Write(requestObject.NumberOfNulls.Value);
             }
 
         }

@@ -78,7 +78,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteStack())
                 {
                     context.Writer.WritePropertyName("deleteStack");
-                    context.Writer.Write(publicRequest.DeleteStack);
+                    context.Writer.Write(publicRequest.DeleteStack.Value);
                 }
 
                 if(publicRequest.IsSetId())

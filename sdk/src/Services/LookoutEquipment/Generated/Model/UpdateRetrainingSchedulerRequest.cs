@@ -142,9 +142,9 @@ namespace Amazon.LookoutEquipment.Model
         /// you provide to the nearest UTC day.
         /// </para>
         /// </summary>
-        public DateTime RetrainingStartDate
+        public DateTime? RetrainingStartDate
         {
-            get { return this._retrainingStartDate.GetValueOrDefault(); }
+            get { return this._retrainingStartDate; }
             set { this._retrainingStartDate = value; }
         }
 

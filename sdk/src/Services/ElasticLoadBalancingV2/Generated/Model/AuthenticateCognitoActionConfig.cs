@@ -142,9 +142,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// seconds (7 days).
         /// </para>
         /// </summary>
-        public long SessionTimeout
+        public long? SessionTimeout
         {
-            get { return this._sessionTimeout.GetValueOrDefault(); }
+            get { return this._sessionTimeout; }
             set { this._sessionTimeout = value; }
         }
 

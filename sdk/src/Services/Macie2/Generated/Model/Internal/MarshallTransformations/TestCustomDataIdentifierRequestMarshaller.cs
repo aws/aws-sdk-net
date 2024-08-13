@@ -92,7 +92,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaximumMatchDistance())
                 {
                     context.Writer.WritePropertyName("maximumMatchDistance");
-                    context.Writer.Write(publicRequest.MaximumMatchDistance);
+                    context.Writer.Write(publicRequest.MaximumMatchDistance.Value);
                 }
 
                 if(publicRequest.IsSetRegex())

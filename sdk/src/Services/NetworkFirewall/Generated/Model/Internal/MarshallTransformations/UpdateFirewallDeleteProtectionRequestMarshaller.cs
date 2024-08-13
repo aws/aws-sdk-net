@@ -72,7 +72,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteProtection())
                 {
                     context.Writer.WritePropertyName("DeleteProtection");
-                    context.Writer.Write(publicRequest.DeleteProtection);
+                    context.Writer.Write(publicRequest.DeleteProtection.Value);
                 }
 
                 if(publicRequest.IsSetFirewallArn())

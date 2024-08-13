@@ -51,19 +51,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDlDr())
             {
                 context.Writer.WritePropertyName("DlDr");
-                context.Writer.Write(requestObject.DlDr);
+                context.Writer.Write(requestObject.DlDr.Value);
             }
 
             if(requestObject.IsSetDlFreq())
             {
                 context.Writer.WritePropertyName("DlFreq");
-                context.Writer.Write(requestObject.DlFreq);
+                context.Writer.Write(requestObject.DlFreq.Value);
             }
 
             if(requestObject.IsSetPingSlotPeriod())
             {
                 context.Writer.WritePropertyName("PingSlotPeriod");
-                context.Writer.Write(requestObject.PingSlotPeriod);
+                context.Writer.Write(requestObject.PingSlotPeriod.Value);
             }
 
             if(requestObject.IsSetSessionStartTime())
@@ -75,7 +75,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionTimeout())
             {
                 context.Writer.WritePropertyName("SessionTimeout");
-                context.Writer.Write(requestObject.SessionTimeout);
+                context.Writer.Write(requestObject.SessionTimeout.Value);
             }
 
         }

@@ -82,7 +82,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 if(publicRequest.IsSetConfigureOnly())
                 {
                     context.Writer.WritePropertyName("configureOnly");
-                    context.Writer.Write(publicRequest.ConfigureOnly);
+                    context.Writer.Write(publicRequest.ConfigureOnly.Value);
                 }
 
                 if(publicRequest.IsSetInclusionStatus())

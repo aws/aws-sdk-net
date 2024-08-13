@@ -57,13 +57,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("CopyableCrossAccount", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CopyableCrossAccount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DefaultPort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DefaultPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -143,37 +143,37 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Permanent", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Permanent = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Persistent", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Persistent = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PortRequired", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PortRequired = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequiresAutoMinorEngineVersionUpgrade", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequiresAutoMinorEngineVersionUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsOptionVersionDowngrade", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsOptionVersionDowngrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VpcOnly", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.VpcOnly = unmarshaller.Unmarshall(context);
                         continue;
                     }

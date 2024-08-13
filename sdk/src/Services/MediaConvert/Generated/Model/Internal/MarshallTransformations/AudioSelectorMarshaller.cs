@@ -92,7 +92,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                context.Writer.Write(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetPids())
@@ -109,7 +109,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgramSelection())
             {
                 context.Writer.WritePropertyName("programSelection");
-                context.Writer.Write(requestObject.ProgramSelection);
+                context.Writer.Write(requestObject.ProgramSelection.Value);
             }
 
             if(requestObject.IsSetRemixSettings())

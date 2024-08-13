@@ -26,7 +26,6 @@ namespace UnitTests
             "AuthenticationServiceName",
             "MaxErrorRetry",
             "LogResponse",
-            "ReadEntireResponse",
             "AWSTokenProvider",
             "BufferSize",
             "ProgressUpdateInterval",
@@ -45,8 +44,6 @@ namespace UnitTests
             "MaxConnectionsPerServer",
             "HttpClientCacheSize",
             "ReadWriteTimeout",
-            "CorrectedUtcNow",
-            "ClockOffset",
             "HttpClientFactory",
             "DisableHostPrefixInjection",
             "EndpointDiscoveryEnabled",
@@ -63,7 +60,8 @@ namespace UnitTests
             "CredentialProfileStoreChain",
             "DisableRequestCompression",
             "RequestMinCompressionSizeBytes",
-            "ClientAppId"
+            "ClientAppId",
+            "TelemetryProvider",
         };
 
         [Fact]
@@ -82,7 +80,9 @@ namespace UnitTests
                 unknownProperties.Any(),
                 "New properties added to ClientConfig. ClientConfig properties that are set on the HttpClient must be added to the " +
                 "HttpRequestMessageFactory.CreateConfigUniqueString.  Once evaluated add the new properties to known properties collection. " +
-                $"({string.Join(",", unknownProperties)})");
+                $"({string.Join(",", unknownProperties)})" +
+                "New properties should also be added to AWSSDK.Extensions.NETCore.Setup. In the DefaultClientConfig source file is " +
+                "maintenance information for instructions on how to add new properties to AWSSDK.Extensions.NETCore.Setup.");
         }
     }
 }

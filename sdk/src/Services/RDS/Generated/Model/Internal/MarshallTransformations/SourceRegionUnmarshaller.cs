@@ -75,7 +75,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SupportsDBInstanceAutomatedBackupsReplication", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsDBInstanceAutomatedBackupsReplication = unmarshaller.Unmarshall(context);
                         continue;
                     }

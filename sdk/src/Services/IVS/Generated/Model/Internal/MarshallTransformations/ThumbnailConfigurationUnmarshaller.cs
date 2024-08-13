@@ -86,7 +86,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("targetIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TargetIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

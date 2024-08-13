@@ -128,7 +128,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartOnCreation())
                 {
                     context.Writer.WritePropertyName("StartOnCreation");
-                    context.Writer.Write(publicRequest.StartOnCreation);
+                    context.Writer.Write(publicRequest.StartOnCreation.Value);
                 }
 
                 if(publicRequest.IsSetTags())

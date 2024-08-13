@@ -142,16 +142,16 @@ namespace Amazon.Glacier.Model
         /// The state of the jobs to return. You can specify <c>true</c> or <c>false</c>.
         /// </para>
         /// </summary>
-        public bool Completed
+        public bool? Completed
         {
-            get { return this._completed.GetValueOrDefault(); }
+            get { return this._completed; }
             set { this._completed = value; }
         }
 
         // Check to see if Completed property is set
         internal bool IsSetCompleted()
         {
-            return this._completed.HasValue; 
+            return this._completed != null;
         }
 
         /// <summary>
@@ -162,16 +162,16 @@ namespace Amazon.Glacier.Model
         /// jobs never exceeds the limit.
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this._limit.HasValue; 
+            return this._limit != null;
         }
 
         /// <summary>

@@ -61,9 +61,9 @@ namespace Amazon.MediaLive.Model
         /// retrying a connection to the Flash Media server if the connection is lost.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ConnectionRetryInterval
+        public int? ConnectionRetryInterval
         {
-            get { return this._connectionRetryInterval.GetValueOrDefault(); }
+            get { return this._connectionRetryInterval; }
             set { this._connectionRetryInterval = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NumRetries. Number of retry attempts.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NumRetries
+        public int? NumRetries
         {
-            get { return this._numRetries.GetValueOrDefault(); }
+            get { return this._numRetries; }
             set { this._numRetries = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.Pinpoint.Model
         /// The duration of the session, in milliseconds.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 

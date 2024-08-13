@@ -68,9 +68,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Key
+        public bool? Key
         {
-            get { return this._key.GetValueOrDefault(); }
+            get { return this._key; }
             set { this._key = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.CodePipeline.Model
         /// value can contain only alphanumeric characters, underscores, and hyphens.
         /// </para>
         /// </summary>
-        public bool Queryable
+        public bool? Queryable
         {
-            get { return this._queryable.GetValueOrDefault(); }
+            get { return this._queryable; }
             set { this._queryable = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Secret
+        public bool? Secret
         {
-            get { return this._secret.GetValueOrDefault(); }
+            get { return this._secret; }
             set { this._secret = value; }
         }
 

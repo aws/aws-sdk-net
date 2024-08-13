@@ -45,9 +45,9 @@ namespace Amazon.NetworkManager.Model
         /// The rule number in the policy document that applies to this change.
         /// </para>
         /// </summary>
-        public int AttachmentPolicyRuleNumber
+        public int? AttachmentPolicyRuleNumber
         {
-            get { return this._attachmentPolicyRuleNumber.GetValueOrDefault(); }
+            get { return this._attachmentPolicyRuleNumber; }
             set { this._attachmentPolicyRuleNumber = value; }
         }
 

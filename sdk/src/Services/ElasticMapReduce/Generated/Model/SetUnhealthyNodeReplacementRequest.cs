@@ -84,9 +84,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool UnhealthyNodeReplacement
+        public bool? UnhealthyNodeReplacement
         {
-            get { return this._unhealthyNodeReplacement.GetValueOrDefault(); }
+            get { return this._unhealthyNodeReplacement; }
             set { this._unhealthyNodeReplacement = value; }
         }
 

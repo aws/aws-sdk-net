@@ -129,9 +129,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long HealthCheckVersion
+        public long? HealthCheckVersion
         {
-            get { return this._healthCheckVersion.GetValueOrDefault(); }
+            get { return this._healthCheckVersion; }
             set { this._healthCheckVersion = value; }
         }
 

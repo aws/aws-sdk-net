@@ -51,13 +51,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("encrypted");
-                context.Writer.Write(requestObject.Encrypted);
+                context.Writer.Write(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("frequency");
-                context.Writer.Write(requestObject.Frequency);
+                context.Writer.Write(requestObject.Frequency.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
@@ -75,19 +75,19 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfRecentAmisToKeep())
             {
                 context.Writer.WritePropertyName("numberOfRecentAmisToKeep");
-                context.Writer.Write(requestObject.NumberOfRecentAmisToKeep);
+                context.Writer.Write(requestObject.NumberOfRecentAmisToKeep.Value);
             }
 
             if(requestObject.IsSetRunOnce())
             {
                 context.Writer.WritePropertyName("runOnce");
-                context.Writer.Write(requestObject.RunOnce);
+                context.Writer.Write(requestObject.RunOnce.Value);
             }
 
             if(requestObject.IsSetSeedTime())
             {
                 context.Writer.WritePropertyName("seedTime");
-                context.Writer.Write(requestObject.SeedTime);
+                context.Writer.Write(requestObject.SeedTime.Value);
             }
 
         }

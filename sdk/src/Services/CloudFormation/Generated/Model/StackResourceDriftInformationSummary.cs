@@ -44,9 +44,9 @@ namespace Amazon.CloudFormation.Model
         /// When CloudFormation last checked if the resource had drifted from its expected configuration.
         /// </para>
         /// </summary>
-        public DateTime LastCheckTimestamp
+        public DateTime? LastCheckTimestamp
         {
-            get { return this._lastCheckTimestamp.GetValueOrDefault(); }
+            get { return this._lastCheckTimestamp; }
             set { this._lastCheckTimestamp = value; }
         }
 

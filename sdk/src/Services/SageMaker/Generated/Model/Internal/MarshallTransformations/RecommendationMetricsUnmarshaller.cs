@@ -68,43 +68,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CostPerHour", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.CostPerHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CostPerInference", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.CostPerInference = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CpuUtilization", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.CpuUtilization = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxInvocations", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxInvocations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MemoryUtilization", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MemoryUtilization = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModelLatency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ModelLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModelSetupTime", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ModelSetupTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

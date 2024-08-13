@@ -87,9 +87,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// managed node reboot. The status of these managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
-        public int CriticalNonCompliantCount
+        public int? CriticalNonCompliantCount
         {
-            get { return this._criticalNonCompliantCount.GetValueOrDefault(); }
+            get { return this._criticalNonCompliantCount; }
             set { this._criticalNonCompliantCount = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// during the last patching operation, but failed to install.
         /// </para>
         /// </summary>
-        public int FailedCount
+        public int? FailedCount
         {
-            get { return this._failedCount.GetValueOrDefault(); }
+            get { return this._failedCount; }
             set { this._failedCount = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of patches from the patch baseline that are installed on the managed node.
         /// </para>
         /// </summary>
-        public int InstalledCount
+        public int? InstalledCount
         {
-            get { return this._installedCount.GetValueOrDefault(); }
+            get { return this._installedCount; }
             set { this._installedCount = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// managed node.
         /// </para>
         /// </summary>
-        public int InstalledOtherCount
+        public int? InstalledOtherCount
         {
-            get { return this._installedOtherCount.GetValueOrDefault(); }
+            get { return this._installedOtherCount; }
             set { this._installedOtherCount = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// was rebooted.
         /// </para>
         /// </summary>
-        public int InstalledPendingRebootCount
+        public int? InstalledPendingRebootCount
         {
-            get { return this._installedPendingRebootCount.GetValueOrDefault(); }
+            get { return this._installedPendingRebootCount; }
             set { this._installedPendingRebootCount = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int InstalledRejectedCount
+        public int? InstalledRejectedCount
         {
-            get { return this._installedRejectedCount.GetValueOrDefault(); }
+            get { return this._installedRejectedCount; }
             set { this._installedRejectedCount = value; }
         }
 
@@ -255,9 +255,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// as the reboot option.
         /// </para>
         /// </summary>
-        public DateTime LastNoRebootInstallOperationTime
+        public DateTime? LastNoRebootInstallOperationTime
         {
-            get { return this._lastNoRebootInstallOperationTime.GetValueOrDefault(); }
+            get { return this._lastNoRebootInstallOperationTime; }
             set { this._lastNoRebootInstallOperationTime = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// node but aren't currently installed.
         /// </para>
         /// </summary>
-        public int MissingCount
+        public int? MissingCount
         {
-            get { return this._missingCount.GetValueOrDefault(); }
+            get { return this._missingCount; }
             set { this._missingCount = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// in <c>UnreportedNotApplicableCount</c>.
         /// </para>
         /// </summary>
-        public int NotApplicableCount
+        public int? NotApplicableCount
         {
-            get { return this._notApplicableCount.GetValueOrDefault(); }
+            get { return this._notApplicableCount; }
             set { this._notApplicableCount = value; }
         }
 
@@ -342,9 +342,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime OperationEndTime
+        public DateTime? OperationEndTime
         {
-            get { return this._operationEndTime.GetValueOrDefault(); }
+            get { return this._operationEndTime; }
             set { this._operationEndTime = value; }
         }
 
@@ -361,9 +361,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime OperationStartTime
+        public DateTime? OperationStartTime
         {
-            get { return this._operationStartTime.GetValueOrDefault(); }
+            get { return this._operationStartTime; }
             set { this._operationStartTime = value; }
         }
 
@@ -381,9 +381,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
-        public int OtherNonCompliantCount
+        public int? OtherNonCompliantCount
         {
-            get { return this._otherNonCompliantCount.GetValueOrDefault(); }
+            get { return this._otherNonCompliantCount; }
             set { this._otherNonCompliantCount = value; }
         }
 
@@ -477,9 +477,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
-        public int SecurityNonCompliantCount
+        public int? SecurityNonCompliantCount
         {
-            get { return this._securityNonCompliantCount.GetValueOrDefault(); }
+            get { return this._securityNonCompliantCount; }
             set { this._securityNonCompliantCount = value; }
         }
 
@@ -517,9 +517,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Systems Manager.
         /// </para>
         /// </summary>
-        public int UnreportedNotApplicableCount
+        public int? UnreportedNotApplicableCount
         {
-            get { return this._unreportedNotApplicableCount.GetValueOrDefault(); }
+            get { return this._unreportedNotApplicableCount; }
             set { this._unreportedNotApplicableCount = value; }
         }
 

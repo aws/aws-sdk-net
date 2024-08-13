@@ -59,8 +59,7 @@ namespace Amazon.Polly
             var options = new PreSignerOptions();
 
 #pragma warning disable CS0612,CS0618
-            if (region.SystemName.Contains("fips-") || region.SystemName.Contains("-fips") ||
-                region.OriginalSystemName.Contains("fips-") || region.OriginalSystemName.Contains("-fips"))
+            if (region.SystemName.Contains("fips-") || region.SystemName.Contains("-fips"))
             {
                 region = RegionEndpoint.GetBySystemName(region.SystemName.Replace("fips-", "").Replace("-fips", ""));
                 options.FIPS = true;

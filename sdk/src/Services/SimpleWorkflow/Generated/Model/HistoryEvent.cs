@@ -736,9 +736,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long EventId
+        public long? EventId
         {
-            get { return this._eventId.GetValueOrDefault(); }
+            get { return this._eventId; }
             set { this._eventId = value; }
         }
 
@@ -755,9 +755,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EventTimestamp
+        public DateTime? EventTimestamp
         {
-            get { return this._eventTimestamp.GetValueOrDefault(); }
+            get { return this._eventTimestamp; }
             set { this._eventTimestamp = value; }
         }
 

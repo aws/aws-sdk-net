@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Scheduler.Endpoints;
 using Amazon.Scheduler.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class SchedulerEndpointsTests

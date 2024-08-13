@@ -60,7 +60,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MillisBehindLatest", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.MillisBehindLatest = unmarshaller.Unmarshall(context);
                     continue;
                 }

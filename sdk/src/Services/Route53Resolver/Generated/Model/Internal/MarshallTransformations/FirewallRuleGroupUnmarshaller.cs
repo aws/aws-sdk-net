@@ -110,7 +110,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RuleCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RuleCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

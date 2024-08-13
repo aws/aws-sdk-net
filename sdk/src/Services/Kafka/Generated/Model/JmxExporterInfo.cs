@@ -43,9 +43,9 @@ namespace Amazon.Kafka.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnabledInBroker
+        public bool? EnabledInBroker
         {
-            get { return this._enabledInBroker.GetValueOrDefault(); }
+            get { return this._enabledInBroker; }
             set { this._enabledInBroker = value; }
         }
 

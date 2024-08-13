@@ -51,9 +51,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Factor
+        public double? Factor
         {
-            get { return this._factor.GetValueOrDefault(); }
+            get { return this._factor; }
             set { this._factor = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsBigEndian
+        public bool? IsBigEndian
         {
-            get { return this._isBigEndian.GetValueOrDefault(); }
+            get { return this._isBigEndian; }
             set { this._isBigEndian = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsSigned
+        public bool? IsSigned
         {
-            get { return this._isSigned.GetValueOrDefault(); }
+            get { return this._isSigned; }
             set { this._isSigned = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int Length
+        public int? Length
         {
-            get { return this._length.GetValueOrDefault(); }
+            get { return this._length; }
             set { this._length = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int MessageId
+        public int? MessageId
         {
-            get { return this._messageId.GetValueOrDefault(); }
+            get { return this._messageId; }
             set { this._messageId = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Offset
+        public double? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int StartBit
+        public int? StartBit
         {
-            get { return this._startBit.GetValueOrDefault(); }
+            get { return this._startBit; }
             set { this._startBit = value; }
         }
 

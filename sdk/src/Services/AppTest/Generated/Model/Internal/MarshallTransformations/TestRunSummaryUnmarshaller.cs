@@ -68,13 +68,13 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("runEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RunEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("runStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RunStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("testConfigurationVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TestConfigurationVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -122,7 +122,7 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("testSuiteVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TestSuiteVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

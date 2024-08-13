@@ -266,7 +266,11 @@ namespace Amazon.Runtime
         public virtual bool IsTransientError(IExecutionContext executionContext, Exception exception)
         {
             // An IOException was thrown by the underlying http client.
-            if (exception is IOException)
+            // FileNotFoundException is not considered a transient error because
+            // we don't consider local .NET assembly file changes to be happening.
+            // If a FileNotFoundException happens there is most likey a bad install
+            // of the SDK or .NET assembly binding issue.
+            if (exception is IOException && exception is not FileNotFoundException)
             {
 
 #if !NETSTANDARD  // ThreadAbortException is not NetStandard
@@ -392,7 +396,7 @@ namespace Amazon.Runtime
             var serviceException = exception as AmazonServiceException;
             return TimeoutErrorCodesToRetryOn.Contains(serviceException?.ErrorCode);
         }
-        
+
 
         #region Clock skew correction
 
@@ -400,11 +404,10 @@ namespace Amazon.Runtime
         {
             "RequestTimeTooSkewed",
             "RequestExpired",
+            "RequestInTheFuture",
             "InvalidSignatureException",
             "SignatureDoesNotMatch",
-            "AuthFailure",
-            "RequestExpired",
-            "RequestInTheFuture",
+            "AuthFailure"
         };
 
         private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, current clock skew correction = {2}, server time = {3}, service endpoint = {4}.";
@@ -430,7 +433,6 @@ namespace Amazon.Runtime
             {
                 var endpoint = executionContext.RequestContext.Request.Endpoint.ToString();
                 var realNow = AWSConfigs.utcNowSource();
-                var correctedNow = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint);
 
                 DateTime serverTime;
 
@@ -445,28 +447,30 @@ namespace Amazon.Runtime
                 {
                     // using accurate server time, calculate correction if local time is off
                     serverTime = serverTime.ToUniversalTime();
-                    var diff = correctedNow - serverTime;
+                    var correctedNow = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint);
+                    var diff =  correctedNow - serverTime;
+                    var newCorrection = serverTime - realNow;
                     var absDiff = diff.Ticks < 0 ? -diff : diff;
-                    if (absDiff > clockSkewMaxThreshold)
+
+                    Logger.InfoFormat(clockSkewMessageFormat,
+                        realNow, correctedNow, CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint), serverTime, endpoint);
+
+                    // Always set the correction, for informational purposes
+                    CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, newCorrection);
+                    var shouldRetry = AWSConfigs.CorrectForClockSkew && !AWSConfigs.ManualClockCorrection.HasValue;
+                    // Some services such as S3 will return a generic 403 error for clock skew errors on HEAD requests
+                    // with no error code. In this case we will always retry the request if the clock skew is greater than
+                    // the threshold.
+                    if (shouldRetry)
                     {
-                        var newCorrection = serverTime - realNow;
-                        Logger.InfoFormat(clockSkewMessageFormat,
-                            realNow, correctedNow, clientConfig.ClockOffset, serverTime, endpoint);
-
-                        // Always set the correction, for informational purposes
-                        CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, newCorrection);
-
-                        var shouldRetry = AWSConfigs.CorrectForClockSkew && !AWSConfigs.ManualClockCorrection.HasValue;
-
-                        // Only retry if clock skew correction is not disabled
-                        if (shouldRetry)
+                        if ((isHead && absDiff > clockSkewMaxThreshold) || isClockskewErrorCode)
                         {
-                            // Set clock skew correction
                             Logger.InfoFormat(clockSkewUpdatedFormat, newCorrection, endpoint);
                             executionContext.RequestContext.IsSigned = false;
                             return true;
                         }
                     }
+
                 }
             }
 

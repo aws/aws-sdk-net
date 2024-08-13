@@ -45,9 +45,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The estimated total savings resulting from modifications, on a monthly basis.
         /// </para>
         /// </summary>
-        public double EstimatedMonthlySavings
+        public double? EstimatedMonthlySavings
         {
-            get { return this._estimatedMonthlySavings.GetValueOrDefault(); }
+            get { return this._estimatedMonthlySavings; }
             set { this._estimatedMonthlySavings = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The total number of instance recommendations.
         /// </para>
         /// </summary>
-        public int RecommendationCount
+        public int? RecommendationCount
         {
-            get { return this._recommendationCount.GetValueOrDefault(); }
+            get { return this._recommendationCount; }
             set { this._recommendationCount = value; }
         }
 

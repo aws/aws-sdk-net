@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// Information about the Git clone depth for the build project.
         /// </para>
         /// </summary>
-        public int GitCloneDepth
+        public int? GitCloneDepth
         {
-            get { return this._gitCloneDepth.GetValueOrDefault(); }
+            get { return this._gitCloneDepth; }
             set { this._gitCloneDepth = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to ignore SSL warnings while connecting to the project source code.
         /// </para>
         /// </summary>
-        public bool InsecureSsl
+        public bool? InsecureSsl
         {
-            get { return this._insecureSsl.GetValueOrDefault(); }
+            get { return this._insecureSsl; }
             set { this._insecureSsl = value; }
         }
 

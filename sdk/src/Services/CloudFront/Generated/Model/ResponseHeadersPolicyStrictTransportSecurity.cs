@@ -55,9 +55,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int AccessControlMaxAgeSec
+        public int? AccessControlMaxAgeSec
         {
-            get { return this._accessControlMaxAgeSec.GetValueOrDefault(); }
+            get { return this._accessControlMaxAgeSec; }
             set { this._accessControlMaxAgeSec = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.CloudFront.Model
         /// directive in the <c>Strict-Transport-Security</c> HTTP response header.
         /// </para>
         /// </summary>
-        public bool IncludeSubdomains
+        public bool? IncludeSubdomains
         {
-            get { return this._includeSubdomains.GetValueOrDefault(); }
+            get { return this._includeSubdomains; }
             set { this._includeSubdomains = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Override
+        public bool? Override
         {
-            get { return this._override.GetValueOrDefault(); }
+            get { return this._override; }
             set { this._override = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.CloudFront.Model
         /// in the <c>Strict-Transport-Security</c> HTTP response header.
         /// </para>
         /// </summary>
-        public bool Preload
+        public bool? Preload
         {
-            get { return this._preload.GetValueOrDefault(); }
+            get { return this._preload; }
             set { this._preload = value; }
         }
 

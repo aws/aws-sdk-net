@@ -83,9 +83,9 @@ namespace Amazon.DataZone.Model
         /// Specifies the optional flag to delete all child entities within the project.
         /// </para>
         /// </summary>
-        public bool SkipDeletionCheck
+        public bool? SkipDeletionCheck
         {
-            get { return this._skipDeletionCheck.GetValueOrDefault(); }
+            get { return this._skipDeletionCheck; }
             set { this._skipDeletionCheck = value; }
         }
 

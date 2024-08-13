@@ -74,9 +74,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int FailedRecordCount
+        public int? FailedRecordCount
         {
-            get { return this._failedRecordCount.GetValueOrDefault(); }
+            get { return this._failedRecordCount; }
             set { this._failedRecordCount = value; }
         }
 

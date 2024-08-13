@@ -51,26 +51,26 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxValue);
+                    context.Writer.Write(requestObject.MaxValue.Value);
                 }
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MinValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MinValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinValue);
+                    context.Writer.Write(requestObject.MinValue.Value);
                 }
             }
 

@@ -46,9 +46,9 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=86400)]
-        public int ExpiresInSeconds
+        public int? ExpiresInSeconds
         {
-            get { return this._expiresInSeconds.GetValueOrDefault(); }
+            get { return this._expiresInSeconds; }
             set { this._expiresInSeconds = value; }
         }
 

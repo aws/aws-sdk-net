@@ -57,6 +57,7 @@ namespace Amazon.StepFunctions.Model
     public partial class DescribeExecutionRequest : AmazonStepFunctionsRequest
     {
         private string _executionArn;
+        private IncludedData _includedData;
 
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
@@ -75,6 +76,27 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetExecutionArn()
         {
             return this._executionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludedData. 
+        /// <para>
+        /// If your state machine definition is encrypted with a KMS key, callers must have <c>kms:Decrypt</c>
+        /// permission to decrypt the definition. Alternatively, you can call DescribeStateMachine
+        /// API with <c>includedData = METADATA_ONLY</c> to get a successful response without
+        /// the encrypted definition.
+        /// </para>
+        /// </summary>
+        public IncludedData IncludedData
+        {
+            get { return this._includedData; }
+            set { this._includedData = value; }
+        }
+
+        // Check to see if IncludedData property is set
+        internal bool IsSetIncludedData()
+        {
+            return this._includedData != null;
         }
 
     }

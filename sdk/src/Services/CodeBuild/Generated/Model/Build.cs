@@ -128,9 +128,9 @@ namespace Amazon.CodeBuild.Model
         /// Whether the build is complete. True if complete; otherwise, false.
         /// </para>
         /// </summary>
-        public bool BuildComplete
+        public bool? BuildComplete
         {
-            get { return this._buildComplete.GetValueOrDefault(); }
+            get { return this._buildComplete; }
             set { this._buildComplete = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.CodeBuild.Model
         /// If a build is deleted, the <c>buildNumber</c> of other builds does not change.
         /// </para>
         /// </summary>
-        public long BuildNumber
+        public long? BuildNumber
         {
-            get { return this._buildNumber.GetValueOrDefault(); }
+            get { return this._buildNumber; }
             set { this._buildNumber = value; }
         }
 
@@ -293,9 +293,9 @@ namespace Amazon.CodeBuild.Model
         /// When the build process ended, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -499,9 +499,9 @@ namespace Amazon.CodeBuild.Model
         ///  The number of minutes a build is allowed to be queued before it times out. 
         /// </para>
         /// </summary>
-        public int QueuedTimeoutInMinutes
+        public int? QueuedTimeoutInMinutes
         {
-            get { return this._queuedTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._queuedTimeoutInMinutes; }
             set { this._queuedTimeoutInMinutes = value; }
         }
 
@@ -712,9 +712,9 @@ namespace Amazon.CodeBuild.Model
         /// When the build process started, expressed in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -731,9 +731,9 @@ namespace Amazon.CodeBuild.Model
         /// out this build if it does not get marked as completed.
         /// </para>
         /// </summary>
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

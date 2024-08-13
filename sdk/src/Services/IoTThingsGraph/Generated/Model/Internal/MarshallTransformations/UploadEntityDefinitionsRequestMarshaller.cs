@@ -72,7 +72,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeprecateExistingEntities())
                 {
                     context.Writer.WritePropertyName("deprecateExistingEntities");
-                    context.Writer.Write(publicRequest.DeprecateExistingEntities);
+                    context.Writer.Write(publicRequest.DeprecateExistingEntities.Value);
                 }
 
                 if(publicRequest.IsSetDocument())
@@ -89,7 +89,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSyncWithPublicNamespace())
                 {
                     context.Writer.WritePropertyName("syncWithPublicNamespace");
-                    context.Writer.Write(publicRequest.SyncWithPublicNamespace);
+                    context.Writer.Write(publicRequest.SyncWithPublicNamespace.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRevision())
             {
                 context.Writer.WritePropertyName("revision");
-                context.Writer.Write(requestObject.Revision);
+                context.Writer.Write(requestObject.Revision.Value);
             }
 
         }

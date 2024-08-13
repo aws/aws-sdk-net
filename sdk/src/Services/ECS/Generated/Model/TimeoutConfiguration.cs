@@ -60,9 +60,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int IdleTimeoutSeconds
+        public int? IdleTimeoutSeconds
         {
-            get { return this._idleTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._idleTimeoutSeconds; }
             set { this._idleTimeoutSeconds = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int PerRequestTimeoutSeconds
+        public int? PerRequestTimeoutSeconds
         {
-            get { return this._perRequestTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._perRequestTimeoutSeconds; }
             set { this._perRequestTimeoutSeconds = value; }
         }
 

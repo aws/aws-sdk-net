@@ -51,7 +51,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMetadataWithRecommendations())
             {
                 context.Writer.WritePropertyName("enableMetadataWithRecommendations");
-                context.Writer.Write(requestObject.EnableMetadataWithRecommendations);
+                context.Writer.Write(requestObject.EnableMetadataWithRecommendations.Value);
             }
 
             if(requestObject.IsSetItemExplorationConfig())
@@ -71,7 +71,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSyncWithLatestSolutionVersion())
             {
                 context.Writer.WritePropertyName("syncWithLatestSolutionVersion");
-                context.Writer.Write(requestObject.SyncWithLatestSolutionVersion);
+                context.Writer.Write(requestObject.SyncWithLatestSolutionVersion.Value);
             }
 
         }

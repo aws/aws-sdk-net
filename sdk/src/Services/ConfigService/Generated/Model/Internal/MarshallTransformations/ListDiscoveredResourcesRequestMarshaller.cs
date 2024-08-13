@@ -72,13 +72,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeDeletedResources())
                 {
                     context.Writer.WritePropertyName("includeDeletedResources");
-                    context.Writer.Write(publicRequest.IncludeDeletedResources);
+                    context.Writer.Write(publicRequest.IncludeDeletedResources.Value);
                 }
 
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

@@ -88,9 +88,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// isn't supported for rate expressions.
         /// </para>
         /// </summary>
-        public bool ApplyOnlyAtCronInterval
+        public bool? ApplyOnlyAtCronInterval
         {
-            get { return this._applyOnlyAtCronInterval.GetValueOrDefault(); }
+            get { return this._applyOnlyAtCronInterval; }
             set { this._applyOnlyAtCronInterval = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date when the association was made.
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date on which the association was last run.
         /// </para>
         /// </summary>
-        public DateTime LastExecutionDate
+        public DateTime? LastExecutionDate
         {
-            get { return this._lastExecutionDate.GetValueOrDefault(); }
+            get { return this._lastExecutionDate; }
             set { this._lastExecutionDate = value; }
         }
 
@@ -313,9 +313,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The last date on which the association was successfully run.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulExecutionDate
+        public DateTime? LastSuccessfulExecutionDate
         {
-            get { return this._lastSuccessfulExecutionDate.GetValueOrDefault(); }
+            get { return this._lastSuccessfulExecutionDate; }
             set { this._lastSuccessfulExecutionDate = value; }
         }
 
@@ -331,9 +331,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date when the association was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateAssociationDate
+        public DateTime? LastUpdateAssociationDate
         {
-            get { return this._lastUpdateAssociationDate.GetValueOrDefault(); }
+            get { return this._lastUpdateAssociationDate; }
             set { this._lastUpdateAssociationDate = value; }
         }
 
@@ -503,9 +503,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
-        public int ScheduleOffset
+        public int? ScheduleOffset
         {
-            get { return this._scheduleOffset.GetValueOrDefault(); }
+            get { return this._scheduleOffset; }
             set { this._scheduleOffset = value; }
         }
 

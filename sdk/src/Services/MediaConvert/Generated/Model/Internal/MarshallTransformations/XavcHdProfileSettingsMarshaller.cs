@@ -69,13 +69,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGopClosedCadence())
             {
                 context.Writer.WritePropertyName("gopClosedCadence");
-                context.Writer.Write(requestObject.GopClosedCadence);
+                context.Writer.Write(requestObject.GopClosedCadence.Value);
             }
 
             if(requestObject.IsSetHrdBufferSize())
             {
                 context.Writer.WritePropertyName("hrdBufferSize");
-                context.Writer.Write(requestObject.HrdBufferSize);
+                context.Writer.Write(requestObject.HrdBufferSize.Value);
             }
 
             if(requestObject.IsSetInterlaceMode())
@@ -93,7 +93,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSlices())
             {
                 context.Writer.WritePropertyName("slices");
-                context.Writer.Write(requestObject.Slices);
+                context.Writer.Write(requestObject.Slices.Value);
             }
 
             if(requestObject.IsSetTelecine())

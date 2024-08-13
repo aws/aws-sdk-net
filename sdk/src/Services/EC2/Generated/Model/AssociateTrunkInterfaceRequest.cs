@@ -94,9 +94,9 @@ namespace Amazon.EC2.Model
         /// The application key. This applies to the GRE protocol.
         /// </para>
         /// </summary>
-        public int GreKey
+        public int? GreKey
         {
-            get { return this._greKey.GetValueOrDefault(); }
+            get { return this._greKey; }
             set { this._greKey = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.EC2.Model
         /// The ID of the VLAN. This applies to the VLAN protocol.
         /// </para>
         /// </summary>
-        public int VlanId
+        public int? VlanId
         {
-            get { return this._vlanId.GetValueOrDefault(); }
+            get { return this._vlanId; }
             set { this._vlanId = value; }
         }
 

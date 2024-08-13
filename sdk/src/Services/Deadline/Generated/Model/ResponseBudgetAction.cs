@@ -64,9 +64,9 @@ namespace Amazon.Deadline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public float ThresholdPercentage
+        public float? ThresholdPercentage
         {
-            get { return this._thresholdPercentage.GetValueOrDefault(); }
+            get { return this._thresholdPercentage; }
             set { this._thresholdPercentage = value; }
         }
 

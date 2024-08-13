@@ -282,9 +282,9 @@ namespace Amazon.EC2.Model
         /// make instances launched from the AMI unreachable.
         /// </para>
         /// </summary>
-        public bool EnaSupport
+        public bool? EnaSupport
         {
-            get { return this._enaSupport.GetValueOrDefault(); }
+            get { return this._enaSupport; }
             set { this._enaSupport = value; }
         }
 

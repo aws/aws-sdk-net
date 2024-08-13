@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoGenerateEndpointName())
             {
                 context.Writer.WritePropertyName("AutoGenerateEndpointName");
-                context.Writer.Write(requestObject.AutoGenerateEndpointName);
+                context.Writer.Write(requestObject.AutoGenerateEndpointName.Value);
             }
 
             if(requestObject.IsSetEndpointName())

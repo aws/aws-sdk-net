@@ -43,9 +43,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Match
+        public bool? Match
         {
-            get { return this._match.GetValueOrDefault(); }
+            get { return this._match; }
             set { this._match = value; }
         }
 

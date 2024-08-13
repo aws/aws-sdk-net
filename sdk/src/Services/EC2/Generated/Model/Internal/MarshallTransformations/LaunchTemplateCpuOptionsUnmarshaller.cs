@@ -63,13 +63,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("coreCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.CoreCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("threadsPerCore", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ThreadsPerCore = unmarshaller.Unmarshall(context);
                         continue;
                     }

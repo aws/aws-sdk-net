@@ -46,9 +46,9 @@ namespace Amazon.SecurityHub.Model
         /// The minimum number of tasks to run on the specified capacity provider.
         /// </para>
         /// </summary>
-        public int Base
+        public int? Base
         {
-            get { return this._base.GetValueOrDefault(); }
+            get { return this._base; }
             set { this._base = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SecurityHub.Model
         /// capacity provider.
         /// </para>
         /// </summary>
-        public int Weight
+        public int? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

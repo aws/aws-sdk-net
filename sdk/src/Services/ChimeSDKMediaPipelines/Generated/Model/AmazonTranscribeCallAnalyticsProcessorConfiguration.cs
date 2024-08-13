@@ -146,9 +146,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// stabilization</a> in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnablePartialResultsStabilization
+        public bool? EnablePartialResultsStabilization
         {
-            get { return this._enablePartialResultsStabilization.GetValueOrDefault(); }
+            get { return this._enablePartialResultsStabilization; }
             set { this._enablePartialResultsStabilization = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// insights target.
         /// </para>
         /// </summary>
-        public bool FilterPartialResults
+        public bool? FilterPartialResults
         {
-            get { return this._filterPartialResults.GetValueOrDefault(); }
+            get { return this._filterPartialResults; }
             set { this._filterPartialResults = value; }
         }
 

@@ -102,7 +102,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPeriod())
                 {
                     context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period);
+                    context.Writer.Write(publicRequest.Period.Value);
                 }
 
                 if(publicRequest.IsSetQueryString())

@@ -72,7 +72,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableCrossAccountsDiscovery())
                 {
                     context.Writer.WritePropertyName("EnableCrossAccountsDiscovery");
-                    context.Writer.Write(publicRequest.EnableCrossAccountsDiscovery);
+                    context.Writer.Write(publicRequest.EnableCrossAccountsDiscovery.Value);
                 }
 
                 if(publicRequest.IsSetOrganizationConfiguration())

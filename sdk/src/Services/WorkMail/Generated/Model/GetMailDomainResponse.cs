@@ -64,9 +64,9 @@ namespace Amazon.WorkMail.Model
         /// Specifies whether the domain is the default domain for your organization.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.WorkMail.Model
         /// Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.
         /// </para>
         /// </summary>
-        public bool IsTestDomain
+        public bool? IsTestDomain
         {
-            get { return this._isTestDomain.GetValueOrDefault(); }
+            get { return this._isTestDomain; }
             set { this._isTestDomain = value; }
         }
 

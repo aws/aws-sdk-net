@@ -75,9 +75,9 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property MaxJobs.
         /// </summary>
-        public int MaxJobs
+        public int? MaxJobs
         {
-            get { return this._maxJobs.GetValueOrDefault(); }
+            get { return this._maxJobs; }
             set { this._maxJobs = value; }
         }
 

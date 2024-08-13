@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpiresInSeconds())
                 {
                     context.Writer.WritePropertyName("ExpiresInSeconds");
-                    context.Writer.Write(publicRequest.ExpiresInSeconds);
+                    context.Writer.Write(publicRequest.ExpiresInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetLandingUri())
@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSessionExpirationDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");
-                    context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds);
+                    context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetSpaceName())

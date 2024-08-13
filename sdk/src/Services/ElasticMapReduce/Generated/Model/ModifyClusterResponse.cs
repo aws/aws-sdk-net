@@ -42,9 +42,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The number of steps that can be executed concurrently.
         /// </para>
         /// </summary>
-        public int StepConcurrencyLevel
+        public int? StepConcurrencyLevel
         {
-            get { return this._stepConcurrencyLevel.GetValueOrDefault(); }
+            get { return this._stepConcurrencyLevel; }
             set { this._stepConcurrencyLevel = value; }
         }
 

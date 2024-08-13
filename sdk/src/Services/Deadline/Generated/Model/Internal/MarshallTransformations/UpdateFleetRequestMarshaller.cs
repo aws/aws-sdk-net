@@ -99,13 +99,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxWorkerCount())
                 {
                     context.Writer.WritePropertyName("maxWorkerCount");
-                    context.Writer.Write(publicRequest.MaxWorkerCount);
+                    context.Writer.Write(publicRequest.MaxWorkerCount.Value);
                 }
 
                 if(publicRequest.IsSetMinWorkerCount())
                 {
                     context.Writer.WritePropertyName("minWorkerCount");
-                    context.Writer.Write(publicRequest.MinWorkerCount);
+                    context.Writer.Write(publicRequest.MinWorkerCount.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

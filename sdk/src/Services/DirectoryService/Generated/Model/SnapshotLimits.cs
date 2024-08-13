@@ -45,9 +45,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ManualSnapshotsCurrentCount
+        public int? ManualSnapshotsCurrentCount
         {
-            get { return this._manualSnapshotsCurrentCount.GetValueOrDefault(); }
+            get { return this._manualSnapshotsCurrentCount; }
             set { this._manualSnapshotsCurrentCount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ManualSnapshotsLimit
+        public int? ManualSnapshotsLimit
         {
-            get { return this._manualSnapshotsLimit.GetValueOrDefault(); }
+            get { return this._manualSnapshotsLimit; }
             set { this._manualSnapshotsLimit = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.DirectoryService.Model
         /// Indicates if the manual snapshot limit has been reached.
         /// </para>
         /// </summary>
-        public bool ManualSnapshotsLimitReached
+        public bool? ManualSnapshotsLimitReached
         {
-            get { return this._manualSnapshotsLimitReached.GetValueOrDefault(); }
+            get { return this._manualSnapshotsLimitReached; }
             set { this._manualSnapshotsLimitReached = value; }
         }
 

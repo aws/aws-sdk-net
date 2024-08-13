@@ -83,9 +83,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The flag that enables the rule-based matching process of duplicate profiles.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
-        public int MaxAllowedRuleLevelForMatching
+        public int? MaxAllowedRuleLevelForMatching
         {
-            get { return this._maxAllowedRuleLevelForMatching.GetValueOrDefault(); }
+            get { return this._maxAllowedRuleLevelForMatching; }
             set { this._maxAllowedRuleLevelForMatching = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
-        public int MaxAllowedRuleLevelForMerging
+        public int? MaxAllowedRuleLevelForMerging
         {
-            get { return this._maxAllowedRuleLevelForMerging.GetValueOrDefault(); }
+            get { return this._maxAllowedRuleLevelForMerging; }
             set { this._maxAllowedRuleLevelForMerging = value; }
         }
 

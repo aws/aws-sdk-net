@@ -85,9 +85,9 @@ namespace Amazon.Kafka.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DetectAndCopyNewConsumerGroups
+        public bool? DetectAndCopyNewConsumerGroups
         {
-            get { return this._detectAndCopyNewConsumerGroups.GetValueOrDefault(); }
+            get { return this._detectAndCopyNewConsumerGroups; }
             set { this._detectAndCopyNewConsumerGroups = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Kafka.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool SynchroniseConsumerGroupOffsets
+        public bool? SynchroniseConsumerGroupOffsets
         {
-            get { return this._synchroniseConsumerGroupOffsets.GetValueOrDefault(); }
+            get { return this._synchroniseConsumerGroupOffsets; }
             set { this._synchroniseConsumerGroupOffsets = value; }
         }
 

@@ -82,9 +82,9 @@ namespace Amazon.SecurityHub.Model
         /// The timestamp of when the invitation was sent.
         /// </para>
         /// </summary>
-        public DateTime InvitedAt
+        public DateTime? InvitedAt
         {
-            get { return this._invitedAt.GetValueOrDefault(); }
+            get { return this._invitedAt; }
             set { this._invitedAt = value; }
         }
 

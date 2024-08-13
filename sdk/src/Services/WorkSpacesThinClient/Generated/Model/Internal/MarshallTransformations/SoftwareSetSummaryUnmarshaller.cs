@@ -80,13 +80,13 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("releasedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReleasedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("supportedUntil", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SupportedUntil = unmarshaller.Unmarshall(context);
                     continue;
                 }

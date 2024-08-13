@@ -17,6 +17,9 @@ using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using System.Globalization;
 using System;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Metrics;
 
 namespace Amazon.Runtime.Internal
 {
@@ -34,20 +37,36 @@ namespace Amazon.Runtime.Internal
         public override void InvokeSync(IExecutionContext executionContext)
         {
             executionContext.RequestContext.Metrics.AddProperty(Metric.AsyncCall, false);
+
+            var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
+            var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
+            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName, null, SpanKind.CLIENT);
+            IDisposable callDurationMetricsMeasurer = null;
+            
             try
             {
+                callDurationMetricsMeasurer = MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallDurationMetricName);
                 executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
                 base.InvokeSync(executionContext);
+
+                span.SetAttribute(TelemetryConstants.RequestIdAttributeKey, executionContext.ResponseContext.Response.ResponseMetadata.RequestId);
+            }
+            catch(Exception ex)
+            {
+                span.CaptureException(ex);
+                MetricsUtilities.RecordError(executionContext.RequestContext, ex);
+                throw;
             }
             finally
             {
                 executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
                 this.LogMetrics(executionContext);
+                callDurationMetricsMeasurer?.Dispose();
+                span.Dispose();
             }
         }
 
 #if AWS_ASYNC_API 
-
         /// <summary>
         /// Captures the overall execution time and logs final metrics.
         /// </summary>
@@ -59,46 +78,35 @@ namespace Amazon.Runtime.Internal
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             executionContext.RequestContext.Metrics.AddProperty(Metric.AsyncCall, true);
+            
+            var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
+            var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
+            var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName, null, SpanKind.CLIENT);
+            IDisposable callDurationMetricsMeasurer = null;
+
             try
             {
+                callDurationMetricsMeasurer = MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallDurationMetricName);
                 executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
-                var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);    
-                return response;                  
+                var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+
+                span.SetAttribute(TelemetryConstants.RequestIdAttributeKey, executionContext.ResponseContext.Response.ResponseMetadata.RequestId);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                span.CaptureException(ex);
+                MetricsUtilities.RecordError(executionContext.RequestContext, ex);
+                throw;
             }
             finally
             {
                 executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
                 this.LogMetrics(executionContext);
+                callDurationMetricsMeasurer?.Dispose();
+                span.Dispose();
             }            
         }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Captures the overall execution time.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            executionContext.RequestContext.Metrics.AddProperty(Metric.AsyncCall, true);
-            executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
-            return base.InvokeAsync(executionContext);
-        }
-
-        /// <summary>
-        /// Captures the overall execution time and logs final metrics.
-        /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
-            this.LogMetrics(ExecutionContext.CreateFromAsyncContext(executionContext));
-            base.InvokeAsyncCallback(executionContext);
-        }
 #endif
-
     }
 }

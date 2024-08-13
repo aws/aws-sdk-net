@@ -95,13 +95,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDatapointsToAlarm())
                 {
                     context.Writer.WritePropertyName("datapointsToAlarm");
-                    context.Writer.Write(publicRequest.DatapointsToAlarm);
+                    context.Writer.Write(publicRequest.DatapointsToAlarm.Value);
                 }
 
                 if(publicRequest.IsSetEvaluationPeriods())
                 {
                     context.Writer.WritePropertyName("evaluationPeriods");
-                    context.Writer.Write(publicRequest.EvaluationPeriods);
+                    context.Writer.Write(publicRequest.EvaluationPeriods.Value);
                 }
 
                 if(publicRequest.IsSetMetricName())
@@ -119,7 +119,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNotificationEnabled())
                 {
                     context.Writer.WritePropertyName("notificationEnabled");
-                    context.Writer.Write(publicRequest.NotificationEnabled);
+                    context.Writer.Write(publicRequest.NotificationEnabled.Value);
                 }
 
                 if(publicRequest.IsSetNotificationTriggers())
@@ -136,13 +136,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("threshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.Threshold);
+                        context.Writer.Write(publicRequest.Threshold.Value);
                     }
                 }
 

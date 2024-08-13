@@ -175,9 +175,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether logging is enabled.
         /// </para>
         /// </summary>
-        public bool LoggingEnabled
+        public bool? LoggingEnabled
         {
-            get { return this._loggingEnabled.GetValueOrDefault(); }
+            get { return this._loggingEnabled; }
             set { this._loggingEnabled = value; }
         }
 

@@ -62,9 +62,9 @@ namespace Amazon.QuickSight.Model
         /// Determines the data value.
         /// </para>
         /// </summary>
-        public double DataValue
+        public double? DataValue
         {
-            get { return this._dataValue.GetValueOrDefault(); }
+            get { return this._dataValue; }
             set { this._dataValue = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double GradientOffset
+        public double? GradientOffset
         {
-            get { return this._gradientOffset.GetValueOrDefault(); }
+            get { return this._gradientOffset; }
             set { this._gradientOffset = value; }
         }
 

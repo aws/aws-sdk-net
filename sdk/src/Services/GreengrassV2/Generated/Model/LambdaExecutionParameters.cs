@@ -151,9 +151,9 @@ namespace Amazon.GreengrassV2.Model
         /// the IoT Greengrass Core software stops its process.
         /// </para>
         /// </summary>
-        public int MaxIdleTimeInSeconds
+        public int? MaxIdleTimeInSeconds
         {
-            get { return this._maxIdleTimeInSeconds.GetValueOrDefault(); }
+            get { return this._maxIdleTimeInSeconds; }
             set { this._maxIdleTimeInSeconds = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.GreengrassV2.Model
         /// time.
         /// </para>
         /// </summary>
-        public int MaxInstancesCount
+        public int? MaxInstancesCount
         {
-            get { return this._maxInstancesCount.GetValueOrDefault(); }
+            get { return this._maxInstancesCount; }
             set { this._maxInstancesCount = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.GreengrassV2.Model
         /// function to consume each message.
         /// </para>
         /// </summary>
-        public int MaxQueueSize
+        public int? MaxQueueSize
         {
-            get { return this._maxQueueSize.GetValueOrDefault(); }
+            get { return this._maxQueueSize; }
             set { this._maxQueueSize = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.GreengrassV2.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool Pinned
+        public bool? Pinned
         {
-            get { return this._pinned.GetValueOrDefault(); }
+            get { return this._pinned; }
             set { this._pinned = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.GreengrassV2.Model
         /// component sends status updates to the Lambda manager component.
         /// </para>
         /// </summary>
-        public int StatusTimeoutInSeconds
+        public int? StatusTimeoutInSeconds
         {
-            get { return this._statusTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._statusTimeoutInSeconds; }
             set { this._statusTimeoutInSeconds = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.GreengrassV2.Model
         /// item.
         /// </para>
         /// </summary>
-        public int TimeoutInSeconds
+        public int? TimeoutInSeconds
         {
-            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            get { return this._timeoutInSeconds; }
             set { this._timeoutInSeconds = value; }
         }
 

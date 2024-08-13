@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private string _dbShardGroupResourceId;
         private string _endpoint;
         private double? _maxACU;
+        private double? _minACU;
         private bool? _publiclyAccessible;
         private string _status;
 
@@ -66,9 +67,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int ComputeRedundancy
+        public int? ComputeRedundancy
         {
-            get { return this._computeRedundancy.GetValueOrDefault(); }
+            get { return this._computeRedundancy; }
             set { this._computeRedundancy = value; }
         }
 
@@ -157,9 +158,9 @@ namespace Amazon.RDS.Model
         /// The maximum capacity of the DB shard group in Aurora capacity units (ACUs).
         /// </para>
         /// </summary>
-        public double MaxACU
+        public double? MaxACU
         {
-            get { return this._maxACU.GetValueOrDefault(); }
+            get { return this._maxACU; }
             set { this._maxACU = value; }
         }
 
@@ -167,6 +168,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetMaxACU()
         {
             return this._maxACU.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinACU. 
+        /// <para>
+        /// The minimum capacity of the DB shard group in Aurora capacity units (ACUs).
+        /// </para>
+        /// </summary>
+        public double? MinACU
+        {
+            get { return this._minACU; }
+            set { this._minACU = value; }
+        }
+
+        // Check to see if MinACU property is set
+        internal bool IsSetMinACU()
+        {
+            return this._minACU.HasValue; 
         }
 
         /// <summary>
@@ -197,9 +216,9 @@ namespace Amazon.RDS.Model
         /// This setting is only for Aurora Limitless Database.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

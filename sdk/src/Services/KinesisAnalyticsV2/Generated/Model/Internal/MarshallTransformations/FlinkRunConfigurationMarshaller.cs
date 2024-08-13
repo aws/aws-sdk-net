@@ -51,7 +51,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowNonRestoredState())
             {
                 context.Writer.WritePropertyName("AllowNonRestoredState");
-                context.Writer.Write(requestObject.AllowNonRestoredState);
+                context.Writer.Write(requestObject.AllowNonRestoredState.Value);
             }
 
         }

@@ -54,9 +54,9 @@ namespace Amazon.Personalize.Model
         /// The creation date and time (in Unix time) of the data deletion job.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.Personalize.Model
         /// The date and time (in Unix time) the data deletion job was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.Personalize.Model
         /// The number of records deleted by a COMPLETED job.
         /// </para>
         /// </summary>
-        public int NumDeleted
+        public int? NumDeleted
         {
-            get { return this._numDeleted.GetValueOrDefault(); }
+            get { return this._numDeleted; }
             set { this._numDeleted = value; }
         }
 

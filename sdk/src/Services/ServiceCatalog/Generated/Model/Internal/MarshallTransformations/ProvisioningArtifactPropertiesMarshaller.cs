@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableTemplateValidation())
             {
                 context.Writer.WritePropertyName("DisableTemplateValidation");
-                context.Writer.Write(requestObject.DisableTemplateValidation);
+                context.Writer.Write(requestObject.DisableTemplateValidation.Value);
             }
 
             if(requestObject.IsSetInfo())

@@ -51,7 +51,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeerAsn())
             {
                 context.Writer.WritePropertyName("PeerAsn");
-                context.Writer.Write(requestObject.PeerAsn);
+                context.Writer.Write(requestObject.PeerAsn.Value);
             }
 
         }

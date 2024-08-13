@@ -50,9 +50,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// logs</a> in the <i>Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool FlowLogsEnabled
+        public bool? FlowLogsEnabled
         {
-            get { return this._flowLogsEnabled.GetValueOrDefault(); }
+            get { return this._flowLogsEnabled; }
             set { this._flowLogsEnabled = value; }
         }
 

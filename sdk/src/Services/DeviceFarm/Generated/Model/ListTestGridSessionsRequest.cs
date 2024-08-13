@@ -50,9 +50,9 @@ namespace Amazon.DeviceFarm.Model
         /// Return only sessions created after this time.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeAfter
+        public DateTime? CreationTimeAfter
         {
-            get { return this._creationTimeAfter.GetValueOrDefault(); }
+            get { return this._creationTimeAfter; }
             set { this._creationTimeAfter = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.DeviceFarm.Model
         /// Return only sessions created before this time.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeBefore
+        public DateTime? CreationTimeBefore
         {
-            get { return this._creationTimeBefore.GetValueOrDefault(); }
+            get { return this._creationTimeBefore; }
             set { this._creationTimeBefore = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.DeviceFarm.Model
         /// Return only sessions that ended after this time.
         /// </para>
         /// </summary>
-        public DateTime EndTimeAfter
+        public DateTime? EndTimeAfter
         {
-            get { return this._endTimeAfter.GetValueOrDefault(); }
+            get { return this._endTimeAfter; }
             set { this._endTimeAfter = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.DeviceFarm.Model
         /// Return only sessions that ended before this time.
         /// </para>
         /// </summary>
-        public DateTime EndTimeBefore
+        public DateTime? EndTimeBefore
         {
-            get { return this._endTimeBefore.GetValueOrDefault(); }
+            get { return this._endTimeBefore; }
             set { this._endTimeBefore = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResult
+        public int? MaxResult
         {
-            get { return this._maxResult.GetValueOrDefault(); }
+            get { return this._maxResult; }
             set { this._maxResult = value; }
         }
 

@@ -116,9 +116,9 @@ namespace Amazon.DeviceFarm.Model
         /// When the upload was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 

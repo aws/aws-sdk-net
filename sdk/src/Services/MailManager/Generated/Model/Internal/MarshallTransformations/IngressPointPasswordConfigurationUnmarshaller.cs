@@ -68,7 +68,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PreviousSmtpPasswordExpiryTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PreviousSmtpPasswordExpiryTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

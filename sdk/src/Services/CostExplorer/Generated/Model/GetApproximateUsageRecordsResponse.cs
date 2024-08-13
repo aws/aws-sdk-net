@@ -81,9 +81,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TotalRecords
+        public long? TotalRecords
         {
-            get { return this._totalRecords.GetValueOrDefault(); }
+            get { return this._totalRecords; }
             set { this._totalRecords = value; }
         }
 

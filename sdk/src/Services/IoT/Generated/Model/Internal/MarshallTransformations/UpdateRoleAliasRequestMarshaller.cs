@@ -73,7 +73,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCredentialDurationSeconds())
                 {
                     context.Writer.WritePropertyName("credentialDurationSeconds");
-                    context.Writer.Write(publicRequest.CredentialDurationSeconds);
+                    context.Writer.Write(publicRequest.CredentialDurationSeconds.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

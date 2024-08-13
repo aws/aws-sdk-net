@@ -209,7 +209,7 @@ namespace SDKDocGenerator
                 HasValue = true,
                 Parse = (arguments, argValue) => arguments.ParsedOptions.Platform = argValue,
                 HelpText = "The primary platform subfolder used for assembly discovery, controlling which assemblies get used in doc generation. "
-                            + "'net45', or the first available subfolder, is used if not specified."
+                            + "'net472', or the first available subfolder, is used if not specified."
             },    
             new ArgDeclaration
             {

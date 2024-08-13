@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRestoreInProgress())
             {
                 context.Writer.WritePropertyName("RestoreInProgress");
-                context.Writer.Write(requestObject.RestoreInProgress);
+                context.Writer.Write(requestObject.RestoreInProgress.Value);
             }
 
             if(requestObject.IsSetSourceBackupArn())

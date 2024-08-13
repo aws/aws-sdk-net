@@ -70,7 +70,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    context.Writer.Write(publicRequest.EndTime.Value);
                 }
 
                 if(publicRequest.IsSetFilterExpression())
@@ -88,7 +88,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSampling())
                 {
                     context.Writer.WritePropertyName("Sampling");
-                    context.Writer.Write(publicRequest.Sampling);
+                    context.Writer.Write(publicRequest.Sampling.Value);
                 }
 
                 if(publicRequest.IsSetSamplingStrategy())
@@ -105,7 +105,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 if(publicRequest.IsSetTimeRangeType())

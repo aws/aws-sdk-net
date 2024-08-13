@@ -51,13 +51,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreateTime())
             {
                 context.Writer.WritePropertyName("CreateTime");
-                context.Writer.Write(requestObject.CreateTime);
+                context.Writer.Write(requestObject.CreateTime.Value);
             }
 
             if(requestObject.IsSetLastUpdateTime())
             {
                 context.Writer.WritePropertyName("LastUpdateTime");
-                context.Writer.Write(requestObject.LastUpdateTime);
+                context.Writer.Write(requestObject.LastUpdateTime.Value);
             }
 
             if(requestObject.IsSetListId())

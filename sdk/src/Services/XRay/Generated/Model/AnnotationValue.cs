@@ -44,9 +44,9 @@ namespace Amazon.XRay.Model
         /// Value for a Boolean annotation.
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.XRay.Model
         /// Value for a Number annotation.
         /// </para>
         /// </summary>
-        public double NumberValue
+        public double? NumberValue
         {
-            get { return this._numberValue.GetValueOrDefault(); }
+            get { return this._numberValue; }
             set { this._numberValue = value; }
         }
 

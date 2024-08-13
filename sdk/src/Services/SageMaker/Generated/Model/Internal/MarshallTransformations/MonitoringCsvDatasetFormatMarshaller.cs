@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeader())
             {
                 context.Writer.WritePropertyName("Header");
-                context.Writer.Write(requestObject.Header);
+                context.Writer.Write(requestObject.Header.Value);
             }
 
         }

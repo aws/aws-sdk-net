@@ -51,7 +51,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedUsageQuantity())
             {
                 context.Writer.WritePropertyName("AllocatedUsageQuantity");
-                context.Writer.Write(requestObject.AllocatedUsageQuantity);
+                context.Writer.Write(requestObject.AllocatedUsageQuantity.Value);
             }
 
             if(requestObject.IsSetTags())

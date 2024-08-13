@@ -188,9 +188,9 @@ namespace Amazon.MediaConvert.Model
         /// Nielsen non-linear watermarking.
         /// </summary>
         [AWSProperty(Min=0, Max=65534)]
-        public int SourceId
+        public int? SourceId
         {
-            get { return this._sourceId.GetValueOrDefault(); }
+            get { return this._sourceId; }
             set { this._sourceId = value; }
         }
 

@@ -88,9 +88,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=87600)]
-        public int RetentionPeriodHours
+        public int? RetentionPeriodHours
         {
-            get { return this._retentionPeriodHours.GetValueOrDefault(); }
+            get { return this._retentionPeriodHours; }
             set { this._retentionPeriodHours = value; }
         }
 

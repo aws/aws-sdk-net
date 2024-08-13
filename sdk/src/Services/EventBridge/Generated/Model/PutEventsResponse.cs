@@ -68,9 +68,9 @@ namespace Amazon.EventBridge.Model
         /// The number of failed entries.
         /// </para>
         /// </summary>
-        public int FailedEntryCount
+        public int? FailedEntryCount
         {
-            get { return this._failedEntryCount.GetValueOrDefault(); }
+            get { return this._failedEntryCount; }
             set { this._failedEntryCount = value; }
         }
 

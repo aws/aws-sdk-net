@@ -68,7 +68,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("checkCompliant", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CheckCompliant = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,19 +92,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("nonCompliantResourcesCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantResourcesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("suppressedNonCompliantResourcesCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SuppressedNonCompliantResourcesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalResourcesCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalResourcesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

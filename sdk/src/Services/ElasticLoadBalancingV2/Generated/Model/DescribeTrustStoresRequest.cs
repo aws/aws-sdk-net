@@ -31,7 +31,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustStores operation.
-    /// Describes all trust stores for a given account by trust store arn’s or name.
+    /// Describes all trust stores for the specified account.
     /// </summary>
     public partial class DescribeTrustStoresRequest : AmazonElasticLoadBalancingV2Request
     {
@@ -84,9 +84,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

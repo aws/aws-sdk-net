@@ -84,6 +84,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecipeReference = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RecipeSteps", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RecipeStep, RecipeStepUnmarshaller>(RecipeStepUnmarshaller.Instance);
+                    unmarshalledObject.RecipeSteps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

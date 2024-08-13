@@ -88,9 +88,9 @@ namespace Amazon.Glue.Model
         /// The date and time the blueprint was registered.
         /// </para>
         /// </summary>
-        public DateTime CreatedOn
+        public DateTime? CreatedOn
         {
-            get { return this._createdOn.GetValueOrDefault(); }
+            get { return this._createdOn; }
             set { this._createdOn = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.Glue.Model
         /// The date and time the blueprint was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 

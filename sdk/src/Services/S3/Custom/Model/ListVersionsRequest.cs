@@ -154,7 +154,7 @@ namespace Amazon.S3.Model
         /// To return the additional keys, see <code>key-marker</code> and <code>version-id-marker</code>.
         /// </para>
         /// </summary>
-        public int MaxKeys
+        public int? MaxKeys
         {
             get { return this.maxKeys ?? default(int); }
             set { this.maxKeys = value; }

@@ -67,9 +67,9 @@ namespace Amazon.Glue.Model
         /// to understand the guarantees provided, if any.
         /// </para>
         /// </summary>
-        public bool IsProtected
+        public bool? IsProtected
         {
-            get { return this._isProtected.GetValueOrDefault(); }
+            get { return this._isProtected; }
             set { this._isProtected = value; }
         }
 

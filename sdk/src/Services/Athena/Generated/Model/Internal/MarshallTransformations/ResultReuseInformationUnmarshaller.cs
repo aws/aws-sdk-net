@@ -68,7 +68,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ReusedPreviousResult", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReusedPreviousResult = unmarshaller.Unmarshall(context);
                     continue;
                 }

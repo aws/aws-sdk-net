@@ -76,9 +76,9 @@ namespace Amazon.IoT.Model
         /// either the startTime and endTime or the taskId, but not both.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.IoT.Model
         /// both suppressed and unsuppressed findings. 
         /// </para>
         /// </summary>
-        public bool ListSuppressedFindings
+        public bool? ListSuppressedFindings
         {
-            get { return this._listSuppressedFindings.GetValueOrDefault(); }
+            get { return this._listSuppressedFindings; }
             set { this._listSuppressedFindings = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.IoT.Model
         /// either the startTime and endTime or the taskId, but not both.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.NimbleStudio.Model
         /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.NimbleStudio.Model
         /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

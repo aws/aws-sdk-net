@@ -98,7 +98,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfRules", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRules = unmarshaller.Unmarshall(context);
                     continue;
                 }

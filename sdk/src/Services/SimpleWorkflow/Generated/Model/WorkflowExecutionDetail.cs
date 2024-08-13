@@ -87,9 +87,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// unusually long period of time and might require a corrective action.
         /// </para>
         /// </summary>
-        public DateTime LatestActivityTaskTimestamp
+        public DateTime? LatestActivityTaskTimestamp
         {
-            get { return this._latestActivityTaskTimestamp.GetValueOrDefault(); }
+            get { return this._latestActivityTaskTimestamp; }
             set { this._latestActivityTaskTimestamp = value; }
         }
 

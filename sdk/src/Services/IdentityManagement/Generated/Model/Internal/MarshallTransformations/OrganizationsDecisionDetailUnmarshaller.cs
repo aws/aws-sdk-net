@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AllowedByOrganizations", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AllowedByOrganizations = unmarshaller.Unmarshall(context);
                         continue;
                     }

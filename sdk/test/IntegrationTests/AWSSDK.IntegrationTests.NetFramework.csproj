@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.IntegrationTests.NetFramework</AssemblyName>
+    <PackageId>AWSSDK.IntegrationTests.NetFramework</PackageId>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <NoWarn>CS1591,CS0612,CS0618</NoWarn>
+	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="**/obj/**" />
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Include="../Services/*/IntegrationTests/*.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
+    <ProjectReference Include="../../src/Services/*/*.NetFramework.csproj"/>
+    <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj"/>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+
+    <PackageReference Include="System.Data.SQLite" Version="1.0.97" />
+    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.97" />
+    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Tests/CloudTrailBucketPolicy.json" />
+    <EmbeddedResource Include="Tests/ListObjectsResponse.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="../Services/S3/IntegrationTests/EmbeddedResource/*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+</Project>

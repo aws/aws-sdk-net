@@ -43,9 +43,9 @@ namespace Amazon.Inspector2.Model
         /// The CIS number filter's lower inclusive.
         /// </para>
         /// </summary>
-        public int LowerInclusive
+        public int? LowerInclusive
         {
-            get { return this._lowerInclusive.GetValueOrDefault(); }
+            get { return this._lowerInclusive; }
             set { this._lowerInclusive = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Inspector2.Model
         /// The CIS number filter's upper inclusive.
         /// </para>
         /// </summary>
-        public int UpperInclusive
+        public int? UpperInclusive
         {
-            get { return this._upperInclusive.GetValueOrDefault(); }
+            get { return this._upperInclusive; }
             set { this._upperInclusive = value; }
         }
 

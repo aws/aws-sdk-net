@@ -94,9 +94,9 @@ namespace Amazon.CognitoIdentity.Model
         /// error.
         /// </para>
         /// </summary>
-        public bool ServerSideTokenCheck
+        public bool? ServerSideTokenCheck
         {
-            get { return this._serverSideTokenCheck.GetValueOrDefault(); }
+            get { return this._serverSideTokenCheck; }
             set { this._serverSideTokenCheck = value; }
         }
 

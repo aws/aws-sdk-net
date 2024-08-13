@@ -73,9 +73,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The amount of memory, in MB, that's allocated to the current function.
         /// </para>
         /// </summary>
-        public int CurrentMemorySize
+        public int? CurrentMemorySize
         {
-            get { return this._currentMemorySize.GetValueOrDefault(); }
+            get { return this._currentMemorySize; }
             set { this._currentMemorySize = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The timestamp of when the function recommendation was last generated.
         /// </para>
         /// </summary>
-        public DateTime LastRefreshTimestamp
+        public DateTime? LastRefreshTimestamp
         {
-            get { return this._lastRefreshTimestamp.GetValueOrDefault(); }
+            get { return this._lastRefreshTimestamp; }
             set { this._lastRefreshTimestamp = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The number of days for which utilization metrics were analyzed for the function.
         /// </para>
         /// </summary>
-        public double LookbackPeriodInDays
+        public double? LookbackPeriodInDays
         {
-            get { return this._lookbackPeriodInDays.GetValueOrDefault(); }
+            get { return this._lookbackPeriodInDays; }
             set { this._lookbackPeriodInDays = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The number of times your function code was applied during the look-back period.
         /// </para>
         /// </summary>
-        public long NumberOfInvocations
+        public long? NumberOfInvocations
         {
-            get { return this._numberOfInvocations.GetValueOrDefault(); }
+            get { return this._numberOfInvocations; }
             set { this._numberOfInvocations = value; }
         }
 

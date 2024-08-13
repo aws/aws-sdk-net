@@ -51,7 +51,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImmunityTime())
             {
                 context.Writer.WritePropertyName("ImmunityTime");
-                context.Writer.Write(requestObject.ImmunityTime);
+                context.Writer.Write(requestObject.ImmunityTime.Value);
             }
 
         }

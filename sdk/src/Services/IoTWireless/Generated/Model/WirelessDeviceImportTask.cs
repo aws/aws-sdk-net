@@ -71,9 +71,9 @@ namespace Amazon.IoTWireless.Model
         /// The time at which the import task was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.IoTWireless.Model
         /// to onboarded to the import task.
         /// </para>
         /// </summary>
-        public long FailedImportedDeviceCount
+        public long? FailedImportedDeviceCount
         {
-            get { return this._failedImportedDeviceCount.GetValueOrDefault(); }
+            get { return this._failedImportedDeviceCount; }
             set { this._failedImportedDeviceCount = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.IoTWireless.Model
         /// log to be added to an import task.
         /// </para>
         /// </summary>
-        public long InitializedImportedDeviceCount
+        public long? InitializedImportedDeviceCount
         {
-            get { return this._initializedImportedDeviceCount.GetValueOrDefault(); }
+            get { return this._initializedImportedDeviceCount; }
             set { this._initializedImportedDeviceCount = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.IoTWireless.Model
         /// onboarded to the import task.
         /// </para>
         /// </summary>
-        public long OnboardedImportedDeviceCount
+        public long? OnboardedImportedDeviceCount
         {
-            get { return this._onboardedImportedDeviceCount.GetValueOrDefault(); }
+            get { return this._onboardedImportedDeviceCount; }
             set { this._onboardedImportedDeviceCount = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.IoTWireless.Model
         /// in the queue to be onboarded.
         /// </para>
         /// </summary>
-        public long PendingImportedDeviceCount
+        public long? PendingImportedDeviceCount
         {
-            get { return this._pendingImportedDeviceCount.GetValueOrDefault(); }
+            get { return this._pendingImportedDeviceCount; }
             set { this._pendingImportedDeviceCount = value; }
         }
 

@@ -185,9 +185,9 @@ namespace Amazon.LexModelsV2.Model
         /// A Unix timestamp indicating the date and time that the bot alias was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 

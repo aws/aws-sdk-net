@@ -46,9 +46,9 @@ namespace Amazon.S3Outposts.Model
         /// The Amazon S3 capacity of the outpost in bytes.
         /// </para>
         /// </summary>
-        public long CapacityInBytes
+        public long? CapacityInBytes
         {
-            get { return this._capacityInBytes.GetValueOrDefault(); }
+            get { return this._capacityInBytes; }
             set { this._capacityInBytes = value; }
         }
 

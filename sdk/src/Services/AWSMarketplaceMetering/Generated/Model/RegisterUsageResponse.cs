@@ -43,9 +43,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// (Optional) Only included when public key version has expired
         /// </para>
         /// </summary>
-        public DateTime PublicKeyRotationTimestamp
+        public DateTime? PublicKeyRotationTimestamp
         {
-            get { return this._publicKeyRotationTimestamp.GetValueOrDefault(); }
+            get { return this._publicKeyRotationTimestamp; }
             set { this._publicKeyRotationTimestamp = value; }
         }
 

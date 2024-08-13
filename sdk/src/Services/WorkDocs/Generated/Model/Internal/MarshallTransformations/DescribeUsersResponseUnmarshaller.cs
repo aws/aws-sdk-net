@@ -60,7 +60,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalNumberOfUsers", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalNumberOfUsers = unmarshaller.Unmarshall(context);
                     continue;
                 }

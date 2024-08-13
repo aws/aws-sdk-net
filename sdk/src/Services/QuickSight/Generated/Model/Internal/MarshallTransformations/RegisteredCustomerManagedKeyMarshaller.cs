@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultKey())
             {
                 context.Writer.WritePropertyName("DefaultKey");
-                context.Writer.Write(requestObject.DefaultKey);
+                context.Writer.Write(requestObject.DefaultKey.Value);
             }
 
             if(requestObject.IsSetKeyArn())

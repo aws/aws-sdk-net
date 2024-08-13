@@ -100,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApprovedPatchesEnableNonSecurity())
                 {
                     context.Writer.WritePropertyName("ApprovedPatchesEnableNonSecurity");
-                    context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity);
+                    context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity.Value);
                 }
 
                 if(publicRequest.IsSetClientToken())

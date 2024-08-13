@@ -83,9 +83,9 @@ namespace Amazon.Backup.Model
         /// The number of frameworks a report covers.
         /// </para>
         /// </summary>
-        public int NumberOfFrameworks
+        public int? NumberOfFrameworks
         {
-            get { return this._numberOfFrameworks.GetValueOrDefault(); }
+            get { return this._numberOfFrameworks; }
             set { this._numberOfFrameworks = value; }
         }
 

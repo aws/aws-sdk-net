@@ -74,7 +74,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ConsumedLicenses", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ConsumedLicenses = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DisassociateWhenNotFound", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisassociateWhenNotFound = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,13 +110,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LicenseCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LicenseCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LicenseCountHardLimit", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LicenseCountHardLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

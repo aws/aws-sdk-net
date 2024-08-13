@@ -48,9 +48,9 @@ namespace Amazon.RedshiftServerless.Model
         /// between Regions in cross-account sharing. The value must be a positive number.
         /// </para>
         /// </summary>
-        public long Amount
+        public long? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

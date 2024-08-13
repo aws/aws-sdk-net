@@ -35,6 +35,7 @@ namespace Amazon.ControlTower.Model
     public partial class LandingZoneOperationDetail
     {
         private DateTime? _endTime;
+        private string _operationIdentifier;
         private LandingZoneOperationType _operationType;
         private DateTime? _startTime;
         private LandingZoneOperationStatus _status;
@@ -46,9 +47,9 @@ namespace Amazon.ControlTower.Model
         /// The landing zone operation end time.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -56,6 +57,25 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationIdentifier. 
+        /// <para>
+        /// The <c>operationIdentifier</c> of the landing zone operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string OperationIdentifier
+        {
+            get { return this._operationIdentifier; }
+            set { this._operationIdentifier = value; }
+        }
+
+        // Check to see if OperationIdentifier property is set
+        internal bool IsSetOperationIdentifier()
+        {
+            return this._operationIdentifier != null;
         }
 
         /// <summary>
@@ -103,9 +123,9 @@ namespace Amazon.ControlTower.Model
         /// The landing zone operation start time.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

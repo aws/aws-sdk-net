@@ -68,25 +68,25 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowCleartext", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowCleartext = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("allowDuplicates", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowDuplicates = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("allowJoinsOnColumnsWithDifferentNames", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowJoinsOnColumnsWithDifferentNames = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("preserveNulls", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PreserveNulls = unmarshaller.Unmarshall(context);
                     continue;
                 }

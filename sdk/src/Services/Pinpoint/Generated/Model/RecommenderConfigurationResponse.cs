@@ -281,9 +281,9 @@ namespace Amazon.Pinpoint.Model
         /// number determines how many recommended items are available for use in message variables.
         /// </para>
         /// </summary>
-        public int RecommendationsPerMessage
+        public int? RecommendationsPerMessage
         {
-            get { return this._recommendationsPerMessage.GetValueOrDefault(); }
+            get { return this._recommendationsPerMessage; }
             set { this._recommendationsPerMessage = value; }
         }
 

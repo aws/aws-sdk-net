@@ -48,9 +48,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Regions and Amazon Web Services accounts for the current Automation execution.
         /// </para>
         /// </summary>
-        public int CancelledSteps
+        public int? CancelledSteps
         {
-            get { return this._cancelledSteps.GetValueOrDefault(); }
+            get { return this._cancelledSteps; }
             set { this._cancelledSteps = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Regions and Amazon Web Services accounts for the current Automation execution.
         /// </para>
         /// </summary>
-        public int FailedSteps
+        public int? FailedSteps
         {
-            get { return this._failedSteps.GetValueOrDefault(); }
+            get { return this._failedSteps; }
             set { this._failedSteps = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Services Regions and Amazon Web Services accounts for the current Automation execution.
         /// </para>
         /// </summary>
-        public int SuccessSteps
+        public int? SuccessSteps
         {
-            get { return this._successSteps.GetValueOrDefault(); }
+            get { return this._successSteps; }
             set { this._successSteps = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// and Amazon Web Services accounts for the current Automation execution.
         /// </para>
         /// </summary>
-        public int TimedOutSteps
+        public int? TimedOutSteps
         {
-            get { return this._timedOutSteps.GetValueOrDefault(); }
+            get { return this._timedOutSteps; }
             set { this._timedOutSteps = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Web Services accounts for the current Automation execution.
         /// </para>
         /// </summary>
-        public int TotalSteps
+        public int? TotalSteps
         {
-            get { return this._totalSteps.GetValueOrDefault(); }
+            get { return this._totalSteps; }
             set { this._totalSteps = value; }
         }
 

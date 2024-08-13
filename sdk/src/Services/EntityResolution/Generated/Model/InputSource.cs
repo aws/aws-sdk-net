@@ -47,9 +47,9 @@ namespace Amazon.EntityResolution.Model
         /// in the output to (123)-456-7890.
         /// </para>
         /// </summary>
-        public bool ApplyNormalization
+        public bool? ApplyNormalization
         {
-            get { return this._applyNormalization.GetValueOrDefault(); }
+            get { return this._applyNormalization; }
             set { this._applyNormalization = value; }
         }
 
@@ -62,7 +62,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property InputSourceARN. 
         /// <para>
-        /// An Glue table ARN for the input source table.
+        /// An Glue table Amazon Resource Name (ARN) for the input source table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -88,7 +88,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInboundCallsEnabled())
                 {
                     context.Writer.WritePropertyName("InboundCallsEnabled");
-                    context.Writer.Write(publicRequest.InboundCallsEnabled);
+                    context.Writer.Write(publicRequest.InboundCallsEnabled.Value);
                 }
 
                 if(publicRequest.IsSetInstanceAlias())
@@ -100,7 +100,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOutboundCallsEnabled())
                 {
                     context.Writer.WritePropertyName("OutboundCallsEnabled");
-                    context.Writer.Write(publicRequest.OutboundCallsEnabled);
+                    context.Writer.Write(publicRequest.OutboundCallsEnabled.Value);
                 }
 
                 if(publicRequest.IsSetTags())

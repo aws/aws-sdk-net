@@ -86,7 +86,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 }
                 if (context.TestExpression("lastAnalyzedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAnalyzedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

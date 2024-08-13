@@ -58,9 +58,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        /// Specifies one of the following strategies to launch Spot Instance fleets: <c>price-capacity-optimized</c>,
-        /// <c>capacity-optimized</c>, <c>lowest-price</c>, or <c>diversified</c>. For more information
-        /// on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+        /// Specifies one of the following strategies to launch Spot Instance fleets: <c>capacity-optimized</c>,
+        /// <c>price-capacity-optimized</c>, <c>lowest-price</c>, or <c>diversified</c>, and <c>capacity-optimized-prioritized</c>.
+        /// For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
         /// strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  <note> 
@@ -104,9 +104,9 @@ namespace Amazon.ElasticMapReduce.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BlockDurationMinutes
+        public int? BlockDurationMinutes
         {
-            get { return this._blockDurationMinutes.GetValueOrDefault(); }
+            get { return this._blockDurationMinutes; }
             set { this._blockDurationMinutes = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int TimeoutDurationMinutes
+        public int? TimeoutDurationMinutes
         {
-            get { return this._timeoutDurationMinutes.GetValueOrDefault(); }
+            get { return this._timeoutDurationMinutes; }
             set { this._timeoutDurationMinutes = value; }
         }
 

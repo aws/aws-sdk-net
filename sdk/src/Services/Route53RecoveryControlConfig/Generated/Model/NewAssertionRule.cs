@@ -131,9 +131,9 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int WaitPeriodMs
+        public int? WaitPeriodMs
         {
-            get { return this._waitPeriodMs.GetValueOrDefault(); }
+            get { return this._waitPeriodMs; }
             set { this._waitPeriodMs = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("masteringMonitorNits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MasteringMonitorNits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("targetMonitorNits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetMonitorNits = unmarshaller.Unmarshall(context);
                     continue;
                 }

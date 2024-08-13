@@ -50,9 +50,9 @@ namespace Amazon.VoiceID.Model
         /// A timestamp of when audio aggregation ended for this authentication result.
         /// </para>
         /// </summary>
-        public DateTime AudioAggregationEndedAt
+        public DateTime? AudioAggregationEndedAt
         {
-            get { return this._audioAggregationEndedAt.GetValueOrDefault(); }
+            get { return this._audioAggregationEndedAt; }
             set { this._audioAggregationEndedAt = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.VoiceID.Model
         /// A timestamp of when audio aggregation started for this authentication result.
         /// </para>
         /// </summary>
-        public DateTime AudioAggregationStartedAt
+        public DateTime? AudioAggregationStartedAt
         {
-            get { return this._audioAggregationStartedAt.GetValueOrDefault(); }
+            get { return this._audioAggregationStartedAt; }
             set { this._audioAggregationStartedAt = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.VoiceID.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Score
+        public int? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

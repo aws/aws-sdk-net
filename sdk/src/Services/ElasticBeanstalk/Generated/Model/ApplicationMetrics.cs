@@ -47,9 +47,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// (<c>duration</c>).
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Average number of requests handled by the web server per second over the last 10 seconds.
         /// </para>
         /// </summary>
-        public int RequestCount
+        public int? RequestCount
         {
-            get { return this._requestCount.GetValueOrDefault(); }
+            get { return this._requestCount; }
             set { this._requestCount = value; }
         }
 

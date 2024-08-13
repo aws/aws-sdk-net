@@ -119,7 +119,7 @@ namespace Amazon.SecurityToken
             {
                 var response = AssumeRoleWithWebIdentity(request);
                 return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
-                    response.Credentials.SessionToken, response.Credentials.Expiration);
+                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault());
             }
             catch (Exception e)
             {
@@ -147,7 +147,7 @@ namespace Amazon.SecurityToken
             {
                 var response = await AssumeRoleWithWebIdentityAsync(request).ConfigureAwait(false);
                 return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
-                    response.Credentials.SessionToken, response.Credentials.Expiration);
+                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault());
             }
             catch (Exception e)
             {
@@ -202,7 +202,7 @@ namespace Amazon.SecurityToken
 
                 var response = AssumeRole(request);
                 return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
-                    response.Credentials.SessionToken, response.Credentials.Expiration);
+                    response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault());
             }
             catch (Exception e)
             {

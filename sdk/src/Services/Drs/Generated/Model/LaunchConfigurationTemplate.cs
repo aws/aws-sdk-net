@@ -71,9 +71,9 @@ namespace Amazon.Drs.Model
         /// Copy private IP.
         /// </para>
         /// </summary>
-        public bool CopyPrivateIp
+        public bool? CopyPrivateIp
         {
-            get { return this._copyPrivateIp.GetValueOrDefault(); }
+            get { return this._copyPrivateIp; }
             set { this._copyPrivateIp = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.Drs.Model
         /// Copy tags.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Drs.Model
         /// instance ID of the source instance.
         /// </para>
         /// </summary>
-        public bool LaunchIntoSourceInstance
+        public bool? LaunchIntoSourceInstance
         {
-            get { return this._launchIntoSourceInstance.GetValueOrDefault(); }
+            get { return this._launchIntoSourceInstance; }
             set { this._launchIntoSourceInstance = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.Drs.Model
         /// Post-launch actions activated.
         /// </para>
         /// </summary>
-        public bool PostLaunchEnabled
+        public bool? PostLaunchEnabled
         {
-            get { return this._postLaunchEnabled.GetValueOrDefault(); }
+            get { return this._postLaunchEnabled; }
             set { this._postLaunchEnabled = value; }
         }
 

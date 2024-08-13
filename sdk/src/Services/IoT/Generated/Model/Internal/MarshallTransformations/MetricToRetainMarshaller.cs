@@ -51,7 +51,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportMetric())
             {
                 context.Writer.WritePropertyName("exportMetric");
-                context.Writer.Write(requestObject.ExportMetric);
+                context.Writer.Write(requestObject.ExportMetric.Value);
             }
 
             if(requestObject.IsSetMetric())

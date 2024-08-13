@@ -52,9 +52,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MainNode
+        public int? MainNode
         {
-            get { return this._mainNode.GetValueOrDefault(); }
+            get { return this._mainNode; }
             set { this._mainNode = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NumNodes
+        public int? NumNodes
         {
-            get { return this._numNodes.GetValueOrDefault(); }
+            get { return this._numNodes; }
             set { this._numNodes = value; }
         }
 

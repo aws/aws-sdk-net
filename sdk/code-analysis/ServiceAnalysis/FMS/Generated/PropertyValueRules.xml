@@ -851,7 +851,7 @@
   <property-value-rule>
     <property>Amazon.FMS.Model.FMSPolicyUpdateFirewallCreationConfigAction.FirewallCreationConfig</property>
     <min>1</min>
-    <max>10000</max>
+    <max>30000</max>
     <pattern>^((?!\\[nr]).)+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1495,7 +1495,7 @@
   <property-value-rule>
     <property>Amazon.FMS.Model.SecurityServicePolicyData.ManagedServiceData</property>
     <min>1</min>
-    <max>10000</max>
+    <max>30000</max>
     <pattern>^((?!\\[nr]).)+</pattern>
   </property-value-rule>
   <property-value-rule>

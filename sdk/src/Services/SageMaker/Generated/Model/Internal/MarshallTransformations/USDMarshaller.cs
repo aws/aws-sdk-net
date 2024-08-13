@@ -51,19 +51,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCents())
             {
                 context.Writer.WritePropertyName("Cents");
-                context.Writer.Write(requestObject.Cents);
+                context.Writer.Write(requestObject.Cents.Value);
             }
 
             if(requestObject.IsSetDollars())
             {
                 context.Writer.WritePropertyName("Dollars");
-                context.Writer.Write(requestObject.Dollars);
+                context.Writer.Write(requestObject.Dollars.Value);
             }
 
             if(requestObject.IsSetTenthFractionsOfACent())
             {
                 context.Writer.WritePropertyName("TenthFractionsOfACent");
-                context.Writer.Write(requestObject.TenthFractionsOfACent);
+                context.Writer.Write(requestObject.TenthFractionsOfACent.Value);
             }
 
         }

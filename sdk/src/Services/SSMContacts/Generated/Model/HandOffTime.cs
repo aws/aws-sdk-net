@@ -44,9 +44,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=23)]
-        public int HourOfDay
+        public int? HourOfDay
         {
-            get { return this._hourOfDay.GetValueOrDefault(); }
+            get { return this._hourOfDay; }
             set { this._hourOfDay = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=59)]
-        public int MinuteOfHour
+        public int? MinuteOfHour
         {
-            get { return this._minuteOfHour.GetValueOrDefault(); }
+            get { return this._minuteOfHour; }
             set { this._minuteOfHour = value; }
         }
 

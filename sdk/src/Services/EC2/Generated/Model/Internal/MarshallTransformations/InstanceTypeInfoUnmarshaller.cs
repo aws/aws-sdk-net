@@ -57,31 +57,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("autoRecoverySupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AutoRecoverySupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("bareMetal", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.BareMetal = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("burstablePerformanceSupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.BurstablePerformanceSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("currentGeneration", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CurrentGeneration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("dedicatedHostsSupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DedicatedHostsSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("freeTierEligible", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.FreeTierEligible = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("hibernationSupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.HibernationSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("instanceStorageSupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.InstanceStorageSupported = unmarshaller.Unmarshall(context);
                         continue;
                     }

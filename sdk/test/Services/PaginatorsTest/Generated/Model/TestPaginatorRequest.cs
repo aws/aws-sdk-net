@@ -41,9 +41,9 @@ namespace Amazon.PaginatorsTest.Model
         /// <summary>
         /// Gets and sets the property Limit.
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

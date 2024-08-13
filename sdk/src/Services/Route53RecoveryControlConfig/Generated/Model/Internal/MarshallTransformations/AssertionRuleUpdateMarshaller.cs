@@ -63,7 +63,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             if(requestObject.IsSetWaitPeriodMs())
             {
                 context.Writer.WritePropertyName("WaitPeriodMs");
-                context.Writer.Write(requestObject.WaitPeriodMs);
+                context.Writer.Write(requestObject.WaitPeriodMs.Value);
             }
 
         }

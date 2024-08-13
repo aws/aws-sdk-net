@@ -51,13 +51,13 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBeginDate())
             {
                 context.Writer.WritePropertyName("beginDate");
-                context.Writer.Write(requestObject.BeginDate);
+                context.Writer.Write(requestObject.BeginDate.Value);
             }
 
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("endDate");
-                context.Writer.Write(requestObject.EndDate);
+                context.Writer.Write(requestObject.EndDate.Value);
             }
 
         }

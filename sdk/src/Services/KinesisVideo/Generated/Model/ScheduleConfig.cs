@@ -58,9 +58,9 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=3600)]
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 

@@ -54,6 +54,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AccountUrl);
             }
 
+            if(requestObject.IsSetBufferingHints())
+            {
+                context.Writer.WritePropertyName("BufferingHints");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SnowflakeBufferingHintsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BufferingHints, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCloudWatchLoggingOptions())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptions");

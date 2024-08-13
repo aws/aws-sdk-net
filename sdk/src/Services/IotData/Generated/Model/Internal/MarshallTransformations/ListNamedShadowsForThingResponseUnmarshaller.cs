@@ -66,7 +66,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timestamp", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

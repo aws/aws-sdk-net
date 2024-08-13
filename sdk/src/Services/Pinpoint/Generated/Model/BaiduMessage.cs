@@ -204,9 +204,9 @@ namespace Amazon.Pinpoint.Model
         /// home functionality.
         /// </para>
         /// </summary>
-        public bool SilentPush
+        public bool? SilentPush
         {
-            get { return this._silentPush.GetValueOrDefault(); }
+            get { return this._silentPush; }
             set { this._silentPush = value; }
         }
 
@@ -282,9 +282,9 @@ namespace Amazon.Pinpoint.Model
         /// time is 604,800 seconds (7 days).
         /// </para>
         /// </summary>
-        public int TimeToLive
+        public int? TimeToLive
         {
-            get { return this._timeToLive.GetValueOrDefault(); }
+            get { return this._timeToLive; }
             set { this._timeToLive = value; }
         }
 

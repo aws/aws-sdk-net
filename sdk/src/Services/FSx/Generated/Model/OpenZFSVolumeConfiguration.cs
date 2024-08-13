@@ -106,9 +106,9 @@ namespace Amazon.FSx.Model
         /// are copied from the volume, regardless of this value.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshots
+        public bool? CopyTagsToSnapshots
         {
-            get { return this._copyTagsToSnapshots.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshots; }
             set { this._copyTagsToSnapshots = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.FSx.Model
         /// snapshots should be deleted when a volume is restored from snapshot.
         /// </para>
         /// </summary>
-        public bool DeleteClonedVolumes
+        public bool? DeleteClonedVolumes
         {
-            get { return this._deleteClonedVolumes.GetValueOrDefault(); }
+            get { return this._deleteClonedVolumes; }
             set { this._deleteClonedVolumes = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.FSx.Model
         /// a snapshot.
         /// </para>
         /// </summary>
-        public bool DeleteIntermediateData
+        public bool? DeleteIntermediateData
         {
-            get { return this._deleteIntermediateData.GetValueOrDefault(); }
+            get { return this._deleteIntermediateData; }
             set { this._deleteIntermediateData = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.FSx.Model
         /// snapshot should be deleted when a volume is restored from snapshot.
         /// </para>
         /// </summary>
-        public bool DeleteIntermediateSnaphots
+        public bool? DeleteIntermediateSnaphots
         {
-            get { return this._deleteIntermediateSnaphots.GetValueOrDefault(); }
+            get { return this._deleteIntermediateSnaphots; }
             set { this._deleteIntermediateSnaphots = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.FSx.Model
         /// A Boolean value indicating whether the volume is read-only.
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 
@@ -317,9 +317,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024)]
-        public int RecordSizeKiB
+        public int? RecordSizeKiB
         {
-            get { return this._recordSizeKiB.GetValueOrDefault(); }
+            get { return this._recordSizeKiB; }
             set { this._recordSizeKiB = value; }
         }
 
@@ -372,9 +372,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int StorageCapacityQuotaGiB
+        public int? StorageCapacityQuotaGiB
         {
-            get { return this._storageCapacityQuotaGiB.GetValueOrDefault(); }
+            get { return this._storageCapacityQuotaGiB; }
             set { this._storageCapacityQuotaGiB = value; }
         }
 
@@ -392,9 +392,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int StorageCapacityReservationGiB
+        public int? StorageCapacityReservationGiB
         {
-            get { return this._storageCapacityReservationGiB.GetValueOrDefault(); }
+            get { return this._storageCapacityReservationGiB; }
             set { this._storageCapacityReservationGiB = value; }
         }
 

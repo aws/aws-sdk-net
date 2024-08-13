@@ -74,7 +74,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsAlexaForBusinessEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAlexaForBusinessEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

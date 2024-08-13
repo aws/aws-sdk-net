@@ -60,7 +60,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pendingSubscriptionStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.PendingSubscriptionStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

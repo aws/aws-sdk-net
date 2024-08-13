@@ -45,9 +45,9 @@ namespace Amazon.MigrationHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int ProgressPercent
+        public int? ProgressPercent
         {
-            get { return this._progressPercent.GetValueOrDefault(); }
+            get { return this._progressPercent; }
             set { this._progressPercent = value; }
         }
 

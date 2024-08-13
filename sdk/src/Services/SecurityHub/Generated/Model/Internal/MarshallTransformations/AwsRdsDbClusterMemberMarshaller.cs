@@ -63,13 +63,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsClusterWriter())
             {
                 context.Writer.WritePropertyName("IsClusterWriter");
-                context.Writer.Write(requestObject.IsClusterWriter);
+                context.Writer.Write(requestObject.IsClusterWriter.Value);
             }
 
             if(requestObject.IsSetPromotionTier())
             {
                 context.Writer.WritePropertyName("PromotionTier");
-                context.Writer.Write(requestObject.PromotionTier);
+                context.Writer.Write(requestObject.PromotionTier.Value);
             }
 
         }

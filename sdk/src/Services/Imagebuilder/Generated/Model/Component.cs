@@ -152,9 +152,9 @@ namespace Amazon.Imagebuilder.Model
         /// The encryption status of the component.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.Imagebuilder.Model
         /// detail results for API, CLI, or SDK operations.
         /// </para>
         /// </summary>
-        public bool Obfuscate
+        public bool? Obfuscate
         {
-            get { return this._obfuscate.GetValueOrDefault(); }
+            get { return this._obfuscate; }
             set { this._obfuscate = value; }
         }
 

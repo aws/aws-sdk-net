@@ -62,9 +62,9 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// Epoch Seconds.
         /// </para>
         /// </summary>
-        public DateTime InitiateDeletionTimestamp
+        public DateTime? InitiateDeletionTimestamp
         {
-            get { return this._initiateDeletionTimestamp.GetValueOrDefault(); }
+            get { return this._initiateDeletionTimestamp; }
             set { this._initiateDeletionTimestamp = value; }
         }
 

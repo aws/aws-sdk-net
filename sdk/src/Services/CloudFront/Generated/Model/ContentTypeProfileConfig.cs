@@ -65,9 +65,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ForwardWhenContentTypeIsUnknown
+        public bool? ForwardWhenContentTypeIsUnknown
         {
-            get { return this._forwardWhenContentTypeIsUnknown.GetValueOrDefault(); }
+            get { return this._forwardWhenContentTypeIsUnknown; }
             set { this._forwardWhenContentTypeIsUnknown = value; }
         }
 

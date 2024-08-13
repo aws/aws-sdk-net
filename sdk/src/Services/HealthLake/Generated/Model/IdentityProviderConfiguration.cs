@@ -64,9 +64,9 @@ namespace Amazon.HealthLake.Model
         /// If you enabled fine-grained authorization when you created the data store.
         /// </para>
         /// </summary>
-        public bool FineGrainedAuthorizationEnabled
+        public bool? FineGrainedAuthorizationEnabled
         {
-            get { return this._fineGrainedAuthorizationEnabled.GetValueOrDefault(); }
+            get { return this._fineGrainedAuthorizationEnabled; }
             set { this._fineGrainedAuthorizationEnabled = value; }
         }
 

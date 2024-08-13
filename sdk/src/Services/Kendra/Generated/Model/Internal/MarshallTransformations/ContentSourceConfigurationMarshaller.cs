@@ -62,7 +62,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDirectPutContent())
             {
                 context.Writer.WritePropertyName("DirectPutContent");
-                context.Writer.Write(requestObject.DirectPutContent);
+                context.Writer.Write(requestObject.DirectPutContent.Value);
             }
 
             if(requestObject.IsSetFaqIds())

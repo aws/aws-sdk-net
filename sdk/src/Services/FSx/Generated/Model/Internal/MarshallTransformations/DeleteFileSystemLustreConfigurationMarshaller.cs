@@ -67,7 +67,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSkipFinalBackup())
             {
                 context.Writer.WritePropertyName("SkipFinalBackup");
-                context.Writer.Write(requestObject.SkipFinalBackup);
+                context.Writer.Write(requestObject.SkipFinalBackup.Value);
             }
 
         }

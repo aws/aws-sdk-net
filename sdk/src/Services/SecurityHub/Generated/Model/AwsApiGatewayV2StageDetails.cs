@@ -72,9 +72,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the stage is managed by API Gateway.
         /// </para>
         /// </summary>
-        public bool ApiGatewayManaged
+        public bool? ApiGatewayManaged
         {
-            get { return this._apiGatewayManaged.GetValueOrDefault(); }
+            get { return this._apiGatewayManaged; }
             set { this._apiGatewayManaged = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether updates to an API automatically trigger a new deployment.
         /// </para>
         /// </summary>
-        public bool AutoDeploy
+        public bool? AutoDeploy
         {
-            get { return this._autoDeploy.GetValueOrDefault(); }
+            get { return this._autoDeploy; }
             set { this._autoDeploy = value; }
         }
 

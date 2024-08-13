@@ -64,9 +64,9 @@ namespace Amazon.Backup.Model
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

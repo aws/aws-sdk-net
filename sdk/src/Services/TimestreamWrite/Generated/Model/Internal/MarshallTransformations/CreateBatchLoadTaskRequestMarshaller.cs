@@ -105,7 +105,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRecordVersion())
                 {
                     context.Writer.WritePropertyName("RecordVersion");
-                    context.Writer.Write(publicRequest.RecordVersion);
+                    context.Writer.Write(publicRequest.RecordVersion.Value);
                 }
 
                 if(publicRequest.IsSetReportConfiguration())

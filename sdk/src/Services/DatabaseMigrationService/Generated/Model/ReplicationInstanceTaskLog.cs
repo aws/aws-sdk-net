@@ -44,9 +44,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The size, in bytes, of the replication task log.
         /// </para>
         /// </summary>
-        public long ReplicationInstanceTaskLogSize
+        public long? ReplicationInstanceTaskLogSize
         {
-            get { return this._replicationInstanceTaskLogSize.GetValueOrDefault(); }
+            get { return this._replicationInstanceTaskLogSize; }
             set { this._replicationInstanceTaskLogSize = value; }
         }
 

@@ -72,13 +72,13 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDayOfMonth())
                 {
                     context.Writer.WritePropertyName("DayOfMonth");
-                    context.Writer.Write(publicRequest.DayOfMonth);
+                    context.Writer.Write(publicRequest.DayOfMonth.Value);
                 }
 
                 if(publicRequest.IsSetDayOfWeek())
                 {
                     context.Writer.WritePropertyName("DayOfWeek");
-                    context.Writer.Write(publicRequest.DayOfWeek);
+                    context.Writer.Write(publicRequest.DayOfWeek.Value);
                 }
 
                 if(publicRequest.IsSetGatewayArn())
@@ -90,13 +90,13 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHourOfDay())
                 {
                     context.Writer.WritePropertyName("HourOfDay");
-                    context.Writer.Write(publicRequest.HourOfDay);
+                    context.Writer.Write(publicRequest.HourOfDay.Value);
                 }
 
                 if(publicRequest.IsSetMinuteOfHour())
                 {
                     context.Writer.WritePropertyName("MinuteOfHour");
-                    context.Writer.Write(publicRequest.MinuteOfHour);
+                    context.Writer.Write(publicRequest.MinuteOfHour.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -51,13 +51,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetMaxAgeInMinutes())
             {
                 context.Writer.WritePropertyName("MaxAgeInMinutes");
-                context.Writer.Write(requestObject.MaxAgeInMinutes);
+                context.Writer.Write(requestObject.MaxAgeInMinutes.Value);
             }
 
         }

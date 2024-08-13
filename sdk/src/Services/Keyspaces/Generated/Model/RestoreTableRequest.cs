@@ -277,9 +277,9 @@ namespace Amazon.Keyspaces.Model
         /// The restore timestamp in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime RestoreTimestamp
+        public DateTime? RestoreTimestamp
         {
-            get { return this._restoreTimestamp.GetValueOrDefault(); }
+            get { return this._restoreTimestamp; }
             set { this._restoreTimestamp = value; }
         }
 

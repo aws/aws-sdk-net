@@ -43,9 +43,9 @@ namespace Amazon.KinesisFirehose.Model
         /// Indicates whether server-side encryption (SSE) was enabled during this operation.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 

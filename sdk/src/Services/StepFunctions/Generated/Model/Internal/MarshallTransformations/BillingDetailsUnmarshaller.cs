@@ -68,13 +68,13 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("billedDurationInMilliseconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BilledDurationInMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("billedMemoryUsedInMB", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BilledMemoryUsedInMB = unmarshaller.Unmarshall(context);
                     continue;
                 }

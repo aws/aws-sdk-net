@@ -8,7 +8,7 @@ using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     /// <summary>
     /// Tests the behavior determined by <see cref="MetadataCachingMode"/>, 

@@ -42,9 +42,9 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property CreationDate.
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -57,9 +57,9 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property IsCanceled.
         /// </summary>
-        public bool IsCanceled
+        public bool? IsCanceled
         {
-            get { return this._isCanceled.GetValueOrDefault(); }
+            get { return this._isCanceled; }
             set { this._isCanceled = value; }
         }
 

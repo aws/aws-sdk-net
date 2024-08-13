@@ -46,9 +46,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// code or change instance configuration settings.
         /// </para>
         /// </summary>
-        public long DeploymentId
+        public long? DeploymentId
         {
-            get { return this._deploymentId.GetValueOrDefault(); }
+            get { return this._deploymentId; }
             set { this._deploymentId = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// For completed deployments, the time that the deployment ended.
         /// </para>
         /// </summary>
-        public DateTime DeploymentTime
+        public DateTime? DeploymentTime
         {
-            get { return this._deploymentTime.GetValueOrDefault(); }
+            get { return this._deploymentTime; }
             set { this._deploymentTime = value; }
         }
 

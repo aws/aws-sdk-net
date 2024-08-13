@@ -143,9 +143,9 @@ namespace Amazon.Amplify.Model
         ///  Enables the automated creation of subdomains for branches. 
         /// </para>
         /// </summary>
-        public bool EnableAutoSubDomain
+        public bool? EnableAutoSubDomain
         {
-            get { return this._enableAutoSubDomain.GetValueOrDefault(); }
+            get { return this._enableAutoSubDomain; }
             set { this._enableAutoSubDomain = value; }
         }
 

@@ -138,9 +138,9 @@ namespace Amazon.Organizations.Model
         /// The date the account became a part of the organization.
         /// </para>
         /// </summary>
-        public DateTime JoinedTimestamp
+        public DateTime? JoinedTimestamp
         {
-            get { return this._joinedTimestamp.GetValueOrDefault(); }
+            get { return this._joinedTimestamp; }
             set { this._joinedTimestamp = value; }
         }
 

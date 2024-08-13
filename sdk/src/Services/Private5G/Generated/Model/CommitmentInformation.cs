@@ -66,9 +66,9 @@ namespace Amazon.Private5G.Model
         /// rate.
         /// </para>
         /// </summary>
-        public DateTime ExpiresOn
+        public DateTime? ExpiresOn
         {
-            get { return this._expiresOn.GetValueOrDefault(); }
+            get { return this._expiresOn; }
             set { this._expiresOn = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Private5G.Model
         /// The date and time that the commitment period started.
         /// </para>
         /// </summary>
-        public DateTime StartAt
+        public DateTime? StartAt
         {
-            get { return this._startAt.GetValueOrDefault(); }
+            get { return this._startAt; }
             set { this._startAt = value; }
         }
 

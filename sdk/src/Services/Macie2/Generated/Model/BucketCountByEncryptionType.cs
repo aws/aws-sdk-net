@@ -52,9 +52,9 @@ namespace Amazon.Macie2.Model
         /// or SSE-KMS encryption.
         /// </para>
         /// </summary>
-        public long KmsManaged
+        public long? KmsManaged
         {
-            get { return this._kmsManaged.GetValueOrDefault(); }
+            get { return this._kmsManaged; }
             set { this._kmsManaged = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.Macie2.Model
         /// automatically using SSE-S3 encryption.
         /// </para>
         /// </summary>
-        public long S3Managed
+        public long? S3Managed
         {
-            get { return this._s3Managed.GetValueOrDefault(); }
+            get { return this._s3Managed; }
             set { this._s3Managed = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Macie2.Model
         /// for new objects. Default encryption settings aren't configured for these buckets.
         /// </para>
         /// </summary>
-        public long Unencrypted
+        public long? Unencrypted
         {
-            get { return this._unencrypted.GetValueOrDefault(); }
+            get { return this._unencrypted; }
             set { this._unencrypted = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.Macie2.Model
         /// buckets.
         /// </para>
         /// </summary>
-        public long Unknown
+        public long? Unknown
         {
-            get { return this._unknown.GetValueOrDefault(); }
+            get { return this._unknown; }
             set { this._unknown = value; }
         }
 

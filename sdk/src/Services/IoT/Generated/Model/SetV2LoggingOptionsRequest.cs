@@ -69,9 +69,9 @@ namespace Amazon.IoT.Model
         /// If true all logs are disabled. The default is false.
         /// </para>
         /// </summary>
-        public bool DisableAllLogs
+        public bool? DisableAllLogs
         {
-            get { return this._disableAllLogs.GetValueOrDefault(); }
+            get { return this._disableAllLogs; }
             set { this._disableAllLogs = value; }
         }
 

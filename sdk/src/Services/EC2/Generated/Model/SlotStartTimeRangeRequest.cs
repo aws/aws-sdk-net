@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// The earliest date and time, in UTC, for the Scheduled Instance to start.
         /// </para>
         /// </summary>
-        public DateTime EarliestTimeUtc
+        public DateTime? EarliestTimeUtc
         {
-            get { return this._earliestTimeUtc.GetValueOrDefault(); }
+            get { return this._earliestTimeUtc; }
             set { this._earliestTime = this._earliestTimeUtc = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The latest date and time, in UTC, for the Scheduled Instance to start.
         /// </para>
         /// </summary>
-        public DateTime LatestTimeUtc
+        public DateTime? LatestTimeUtc
         {
-            get { return this._latestTimeUtc.GetValueOrDefault(); }
+            get { return this._latestTimeUtc; }
             set { this._latestTime = this._latestTimeUtc = value; }
         }
 
@@ -97,13 +97,20 @@ namespace Amazon.EC2.Model
             "EarliestTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. EarliestTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime EarliestTime
+        public DateTime? EarliestTime
         {
             get { return this._earliestTime.GetValueOrDefault(); }
             set
             {
                 this._earliestTime = value;
-                this._earliestTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._earliestTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._earliestTimeUtc = null;
+                }
             }
         }
         /// <summary>
@@ -126,13 +133,20 @@ namespace Amazon.EC2.Model
             "LatestTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. LatestTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime LatestTime
+        public DateTime? LatestTime
         {
             get { return this._latestTime.GetValueOrDefault(); }
             set
             {
                 this._latestTime = value;
-                this._latestTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._latestTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._latestTimeUtc = null;
+                }
             }
         }
 #endregion

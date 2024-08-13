@@ -68,13 +68,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("destination608ChannelNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Destination608ChannelNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("destination708ServiceNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Destination708ServiceNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

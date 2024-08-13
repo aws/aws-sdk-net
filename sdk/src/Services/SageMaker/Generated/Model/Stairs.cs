@@ -51,9 +51,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int NumberOfSteps
+        public int? NumberOfSteps
         {
-            get { return this._numberOfSteps.GetValueOrDefault(); }
+            get { return this._numberOfSteps; }
             set { this._numberOfSteps = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
-        public int UsersPerStep
+        public int? UsersPerStep
         {
-            get { return this._usersPerStep.GetValueOrDefault(); }
+            get { return this._usersPerStep; }
             set { this._usersPerStep = value; }
         }
 

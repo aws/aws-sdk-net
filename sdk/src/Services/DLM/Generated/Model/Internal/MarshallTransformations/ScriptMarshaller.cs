@@ -51,7 +51,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecuteOperationOnScriptFailure())
             {
                 context.Writer.WritePropertyName("ExecuteOperationOnScriptFailure");
-                context.Writer.Write(requestObject.ExecuteOperationOnScriptFailure);
+                context.Writer.Write(requestObject.ExecuteOperationOnScriptFailure.Value);
             }
 
             if(requestObject.IsSetExecutionHandler())
@@ -69,13 +69,13 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionTimeout())
             {
                 context.Writer.WritePropertyName("ExecutionTimeout");
-                context.Writer.Write(requestObject.ExecutionTimeout);
+                context.Writer.Write(requestObject.ExecutionTimeout.Value);
             }
 
             if(requestObject.IsSetMaximumRetryCount())
             {
                 context.Writer.WritePropertyName("MaximumRetryCount");
-                context.Writer.Write(requestObject.MaximumRetryCount);
+                context.Writer.Write(requestObject.MaximumRetryCount.Value);
             }
 
             if(requestObject.IsSetStages())

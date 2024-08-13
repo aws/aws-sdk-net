@@ -129,9 +129,9 @@ namespace Amazon.MediaConvert.Model
         /// down to the nearest multiple of 1000.
         /// </summary>
         [AWSProperty(Min=1000, Max=1152000000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.MediaConvert.Model
         /// value as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -348,9 +348,9 @@ namespace Amazon.MediaConvert.Model
         /// as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -388,9 +388,9 @@ namespace Amazon.MediaConvert.Model
         /// a value, for segmented outputs, don't set this value to 0.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int GopClosedCadence
+        public int? GopClosedCadence
         {
-            get { return this._gopClosedCadence.GetValueOrDefault(); }
+            get { return this._gopClosedCadence; }
             set { this._gopClosedCadence = value; }
         }
 
@@ -409,9 +409,9 @@ namespace Amazon.MediaConvert.Model
         /// set GOP mode control to Auto. If your output group specifies HLS, DASH, or CMAF, leave
         /// GOP size blank and set GOP mode control to Auto in each output in your output group.
         /// </summary>
-        public double GopSize
+        public double? GopSize
         {
-            get { return this._gopSize.GetValueOrDefault(); }
+            get { return this._gopSize; }
             set { this._gopSize = value; }
         }
 
@@ -451,9 +451,9 @@ namespace Amazon.MediaConvert.Model
         /// Set to 0 or leave blank to automatically determine the final buffer fill percentage.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int HrdBufferFinalFillPercentage
+        public int? HrdBufferFinalFillPercentage
         {
-            get { return this._hrdBufferFinalFillPercentage.GetValueOrDefault(); }
+            get { return this._hrdBufferFinalFillPercentage; }
             set { this._hrdBufferFinalFillPercentage = value; }
         }
 
@@ -468,9 +468,9 @@ namespace Amazon.MediaConvert.Model
         /// that should initially be filled (HRD buffer model).
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int HrdBufferInitialFillPercentage
+        public int? HrdBufferInitialFillPercentage
         {
-            get { return this._hrdBufferInitialFillPercentage.GetValueOrDefault(); }
+            get { return this._hrdBufferInitialFillPercentage; }
             set { this._hrdBufferInitialFillPercentage = value; }
         }
 
@@ -485,9 +485,9 @@ namespace Amazon.MediaConvert.Model
         /// For example, enter five megabits as 5000000.
         /// </summary>
         [AWSProperty(Min=0, Max=1152000000)]
-        public int HrdBufferSize
+        public int? HrdBufferSize
         {
-            get { return this._hrdBufferSize.GetValueOrDefault(); }
+            get { return this._hrdBufferSize; }
             set { this._hrdBufferSize = value; }
         }
 
@@ -526,9 +526,9 @@ namespace Amazon.MediaConvert.Model
         /// enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
         /// </summary>
         [AWSProperty(Min=1000, Max=1152000000)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -554,9 +554,9 @@ namespace Amazon.MediaConvert.Model
         /// the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
-        public int MinIInterval
+        public int? MinIInterval
         {
-            get { return this._minIInterval.GetValueOrDefault(); }
+            get { return this._minIInterval; }
             set { this._minIInterval = value; }
         }
 
@@ -574,9 +574,9 @@ namespace Amazon.MediaConvert.Model
         /// between reference frames: Enter an integer from 0 to 7.
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
-        public int NumberBFramesBetweenReferenceFrames
+        public int? NumberBFramesBetweenReferenceFrames
         {
-            get { return this._numberBFramesBetweenReferenceFrames.GetValueOrDefault(); }
+            get { return this._numberBFramesBetweenReferenceFrames; }
             set { this._numberBFramesBetweenReferenceFrames = value; }
         }
 
@@ -591,9 +591,9 @@ namespace Amazon.MediaConvert.Model
         /// The encoder may use more than requested if using B-frames and/or interlaced encoding.
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
-        public int NumberReferenceFrames
+        public int? NumberReferenceFrames
         {
-            get { return this._numberReferenceFrames.GetValueOrDefault(); }
+            get { return this._numberReferenceFrames; }
             set { this._numberReferenceFrames = value; }
         }
 
@@ -632,9 +632,9 @@ namespace Amazon.MediaConvert.Model
         /// 33.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int ParDenominator
+        public int? ParDenominator
         {
-            get { return this._parDenominator.GetValueOrDefault(); }
+            get { return this._parDenominator; }
             set { this._parDenominator = value; }
         }
 
@@ -653,9 +653,9 @@ namespace Amazon.MediaConvert.Model
         /// 40.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int ParNumerator
+        public int? ParNumerator
         {
-            get { return this._parNumerator.GetValueOrDefault(); }
+            get { return this._parNumerator; }
             set { this._parNumerator = value; }
         }
 
@@ -786,9 +786,9 @@ namespace Amazon.MediaConvert.Model
         /// or equal to half the number of macroblock rows for interlaced pictures.
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
-        public int Slices
+        public int? Slices
         {
-            get { return this._slices.GetValueOrDefault(); }
+            get { return this._slices; }
             set { this._slices = value; }
         }
 
@@ -830,9 +830,9 @@ namespace Amazon.MediaConvert.Model
         /// reduction of high-frequency data. The value 128 results in the softest video.
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int Softness
+        public int? Softness
         {
-            get { return this._softness.GetValueOrDefault(); }
+            get { return this._softness; }
             set { this._softness = value; }
         }
 

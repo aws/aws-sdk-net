@@ -116,9 +116,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1)]
-        public long BytesPerSecond
+        public long? BytesPerSecond
         {
-            get { return this._bytesPerSecond.GetValueOrDefault(); }
+            get { return this._bytesPerSecond; }
             set { this._bytesPerSecond = value; }
         }
 

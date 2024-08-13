@@ -53,6 +53,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _customAmiId;
         private EbsConfiguration _ebsConfiguration;
         private string _instanceType;
+        private double? _priority;
         private int? _weightedCapacity;
 
         /// <summary>
@@ -86,9 +87,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double BidPriceAsPercentageOfOnDemandPrice
+        public double? BidPriceAsPercentageOfOnDemandPrice
         {
-            get { return this._bidPriceAsPercentageOfOnDemandPrice.GetValueOrDefault(); }
+            get { return this._bidPriceAsPercentageOfOnDemandPrice; }
             set { this._bidPriceAsPercentageOfOnDemandPrice = value; }
         }
 
@@ -175,6 +176,27 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// The priority at which Amazon EMR launches the Amazon EC2 instances with this instance
+        /// type. Priority starts at 0, which is the highest priority. Amazon EMR considers the
+        /// highest priority first.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public double? Priority
+        {
+            get { return this._priority; }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property WeightedCapacity. 
         /// <para>
         /// The number of units that a provisioned instance of this type provides toward fulfilling
@@ -184,9 +206,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int WeightedCapacity
+        public int? WeightedCapacity
         {
-            get { return this._weightedCapacity.GetValueOrDefault(); }
+            get { return this._weightedCapacity; }
             set { this._weightedCapacity = value; }
         }
 

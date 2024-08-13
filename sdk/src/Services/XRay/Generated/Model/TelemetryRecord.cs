@@ -59,9 +59,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property SegmentsReceivedCount.
         /// </summary>
-        public int SegmentsReceivedCount
+        public int? SegmentsReceivedCount
         {
-            get { return this._segmentsReceivedCount.GetValueOrDefault(); }
+            get { return this._segmentsReceivedCount; }
             set { this._segmentsReceivedCount = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property SegmentsRejectedCount.
         /// </summary>
-        public int SegmentsRejectedCount
+        public int? SegmentsRejectedCount
         {
-            get { return this._segmentsRejectedCount.GetValueOrDefault(); }
+            get { return this._segmentsRejectedCount; }
             set { this._segmentsRejectedCount = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property SegmentsSentCount.
         /// </summary>
-        public int SegmentsSentCount
+        public int? SegmentsSentCount
         {
-            get { return this._segmentsSentCount.GetValueOrDefault(); }
+            get { return this._segmentsSentCount; }
             set { this._segmentsSentCount = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property SegmentsSpilloverCount.
         /// </summary>
-        public int SegmentsSpilloverCount
+        public int? SegmentsSpilloverCount
         {
-            get { return this._segmentsSpilloverCount.GetValueOrDefault(); }
+            get { return this._segmentsSpilloverCount; }
             set { this._segmentsSpilloverCount = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property Timestamp.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

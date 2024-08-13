@@ -42,9 +42,9 @@ namespace Amazon.Greengrass.Model
         /// adds the specified Linux OS group owner of the resource to the Lambda process privileges.
         /// Thus the Lambda process will have the file access permissions of the added Linux group.
         /// </summary>
-        public bool AutoAddGroupOwner
+        public bool? AutoAddGroupOwner
         {
-            get { return this._autoAddGroupOwner.GetValueOrDefault(); }
+            get { return this._autoAddGroupOwner; }
             set { this._autoAddGroupOwner = value; }
         }
 

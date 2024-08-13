@@ -212,9 +212,9 @@ namespace Amazon.Transfer.Model
         /// <c>ServerId</c>.
         /// </para>
         /// </summary>
-        public int UserCount
+        public int? UserCount
         {
-            get { return this._userCount.GetValueOrDefault(); }
+            get { return this._userCount; }
             set { this._userCount = value; }
         }
 

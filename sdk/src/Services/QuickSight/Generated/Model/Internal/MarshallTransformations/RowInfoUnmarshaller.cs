@@ -68,19 +68,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RowsDropped", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RowsDropped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RowsIngested", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RowsIngested = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalRowsInDataset", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalRowsInDataset = unmarshaller.Unmarshall(context);
                     continue;
                 }

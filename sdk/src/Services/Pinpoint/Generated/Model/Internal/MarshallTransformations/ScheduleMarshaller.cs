@@ -74,7 +74,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsLocalTime())
             {
                 context.Writer.WritePropertyName("IsLocalTime");
-                context.Writer.Write(requestObject.IsLocalTime);
+                context.Writer.Write(requestObject.IsLocalTime.Value);
             }
 
             if(requestObject.IsSetQuietTime())

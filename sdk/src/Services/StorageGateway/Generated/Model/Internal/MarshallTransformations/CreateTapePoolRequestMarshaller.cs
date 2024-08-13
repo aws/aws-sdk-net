@@ -78,7 +78,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetentionLockTimeInDays())
                 {
                     context.Writer.WritePropertyName("RetentionLockTimeInDays");
-                    context.Writer.Write(publicRequest.RetentionLockTimeInDays);
+                    context.Writer.Write(publicRequest.RetentionLockTimeInDays.Value);
                 }
 
                 if(publicRequest.IsSetRetentionLockType())

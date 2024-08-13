@@ -82,9 +82,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to enable a custom endpoint for the domain.
         /// </para>
         /// </summary>
-        public bool CustomEndpointEnabled
+        public bool? CustomEndpointEnabled
         {
-            get { return this._customEndpointEnabled.GetValueOrDefault(); }
+            get { return this._customEndpointEnabled; }
             set { this._customEndpointEnabled = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to require that all traffic to the domain arrive over HTTPS.
         /// </para>
         /// </summary>
-        public bool EnforceHTTPS
+        public bool? EnforceHTTPS
         {
-            get { return this._enforceHTTPS.GetValueOrDefault(); }
+            get { return this._enforceHTTPS; }
             set { this._enforceHTTPS = value; }
         }
 

@@ -121,9 +121,9 @@ namespace Amazon.CodeDeploy.Model
         /// receives. 
         /// </para>
         /// </summary>
-        public double TargetVersionWeight
+        public double? TargetVersionWeight
         {
-            get { return this._targetVersionWeight.GetValueOrDefault(); }
+            get { return this._targetVersionWeight; }
             set { this._targetVersionWeight = value; }
         }
 

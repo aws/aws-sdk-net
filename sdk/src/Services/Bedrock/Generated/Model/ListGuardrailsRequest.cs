@@ -53,7 +53,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property GuardrailIdentifier. 
         /// <para>
-        /// The unique identifier of the guardrail.
+        /// The unique identifier of the guardrail. This can be an ID or the ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -76,9 +76,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

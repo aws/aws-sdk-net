@@ -54,9 +54,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 

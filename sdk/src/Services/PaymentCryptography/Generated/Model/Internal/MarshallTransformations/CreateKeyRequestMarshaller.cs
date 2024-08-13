@@ -72,13 +72,13 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 if(publicRequest.IsSetExportable())
                 {
                     context.Writer.WritePropertyName("Exportable");
-                    context.Writer.Write(publicRequest.Exportable);
+                    context.Writer.Write(publicRequest.Exportable.Value);
                 }
 
                 if(publicRequest.IsSetKeyAttributes())

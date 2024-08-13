@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
-#if BCL45
+#if BCL
 using Amazon.S3;
 #endif
 using Amazon;
@@ -15,7 +15,7 @@ using Amazon.Runtime.Internal.Util;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-#if BCL45
+#if BCL
     [TestClass]
     public class RuntimePipelineCustomizerTests
     {

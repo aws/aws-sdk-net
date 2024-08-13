@@ -55,9 +55,9 @@ namespace Amazon.APIGateway.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public bool InsecureSkipVerification
+        public bool? InsecureSkipVerification
         {
-            get { return this._insecureSkipVerification.GetValueOrDefault(); }
+            get { return this._insecureSkipVerification; }
             set { this._insecureSkipVerification = value; }
         }
 

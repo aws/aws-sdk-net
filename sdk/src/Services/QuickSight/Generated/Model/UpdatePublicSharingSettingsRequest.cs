@@ -78,9 +78,9 @@ namespace Amazon.QuickSight.Model
         /// account.
         /// </para>
         /// </summary>
-        public bool PublicSharingEnabled
+        public bool? PublicSharingEnabled
         {
-            get { return this._publicSharingEnabled.GetValueOrDefault(); }
+            get { return this._publicSharingEnabled; }
             set { this._publicSharingEnabled = value; }
         }
 

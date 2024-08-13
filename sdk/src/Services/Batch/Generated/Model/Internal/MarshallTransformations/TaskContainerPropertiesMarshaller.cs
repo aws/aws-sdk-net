@@ -94,7 +94,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEssential())
             {
                 context.Writer.WritePropertyName("essential");
-                context.Writer.Write(requestObject.Essential);
+                context.Writer.Write(requestObject.Essential.Value);
             }
 
             if(requestObject.IsSetImage())
@@ -150,13 +150,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("privileged");
-                context.Writer.Write(requestObject.Privileged);
+                context.Writer.Write(requestObject.Privileged.Value);
             }
 
             if(requestObject.IsSetReadonlyRootFilesystem())
             {
                 context.Writer.WritePropertyName("readonlyRootFilesystem");
-                context.Writer.Write(requestObject.ReadonlyRootFilesystem);
+                context.Writer.Write(requestObject.ReadonlyRootFilesystem.Value);
             }
 
             if(requestObject.IsSetRepositoryCredentials())

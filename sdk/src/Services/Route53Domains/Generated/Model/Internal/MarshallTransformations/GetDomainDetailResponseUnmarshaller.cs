@@ -72,13 +72,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AdminPrivacy", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AdminPrivacy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AutoRenew", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoRenew = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,13 +90,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BillingPrivacy", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.BillingPrivacy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -120,7 +120,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExpirationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpirationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -138,7 +138,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RegistrantPrivacy", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.RegistrantPrivacy = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -180,13 +180,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TechPrivacy", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.TechPrivacy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UpdatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

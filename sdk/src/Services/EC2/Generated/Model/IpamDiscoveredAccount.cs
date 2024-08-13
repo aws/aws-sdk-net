@@ -104,9 +104,9 @@ namespace Amazon.EC2.Model
         /// The last attempted resource discovery time.
         /// </para>
         /// </summary>
-        public DateTime LastAttemptedDiscoveryTime
+        public DateTime? LastAttemptedDiscoveryTime
         {
-            get { return this._lastAttemptedDiscoveryTime.GetValueOrDefault(); }
+            get { return this._lastAttemptedDiscoveryTime; }
             set { this._lastAttemptedDiscoveryTime = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.EC2.Model
         /// The last successful resource discovery time.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulDiscoveryTime
+        public DateTime? LastSuccessfulDiscoveryTime
         {
-            get { return this._lastSuccessfulDiscoveryTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulDiscoveryTime; }
             set { this._lastSuccessfulDiscoveryTime = value; }
         }
 

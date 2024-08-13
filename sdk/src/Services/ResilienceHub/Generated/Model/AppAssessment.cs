@@ -50,6 +50,7 @@ namespace Amazon.ResilienceHub.Model
         private ResiliencyScore _resiliencyScore;
         private ResourceErrorsDetails _resourceErrorsDetails;
         private DateTime? _startTime;
+        private AssessmentSummary _summary;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _versionName;
 
@@ -231,9 +232,9 @@ namespace Amazon.ResilienceHub.Model
         /// End time for the action.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -342,9 +343,9 @@ namespace Amazon.ResilienceHub.Model
         /// Starting time for the action.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -352,6 +353,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Summary. 
+        /// <para>
+        /// Indicates a concise summary that provides an overview of the Resilience Hub assessment.
+        /// </para>
+        /// </summary>
+        public AssessmentSummary Summary
+        {
+            get { return this._summary; }
+            set { this._summary = value; }
+        }
+
+        // Check to see if Summary property is set
+        internal bool IsSetSummary()
+        {
+            return this._summary != null;
         }
 
         /// <summary>

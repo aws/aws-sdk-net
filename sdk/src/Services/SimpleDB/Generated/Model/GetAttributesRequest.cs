@@ -86,9 +86,9 @@ namespace Amazon.SimpleDB.Model
         /// written to SimpleDB will be returned. Otherwise, results will be consistent eventually,
         /// and the client may not see data that was written immediately before your read.
         /// </summary>
-        public bool ConsistentRead
+        public bool? ConsistentRead
         {
-            get { return this._consistentRead.GetValueOrDefault(); }
+            get { return this._consistentRead; }
             set { this._consistentRead = value; }
         }
 

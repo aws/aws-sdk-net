@@ -62,13 +62,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("manifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds);
+                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
             }
 
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds);
+                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetStreamSelection())

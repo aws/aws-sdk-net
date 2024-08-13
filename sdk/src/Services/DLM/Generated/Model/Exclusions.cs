@@ -49,9 +49,9 @@ namespace Amazon.DLM.Model
         /// boot volumes, specify <c>true</c>.
         /// </para>
         /// </summary>
-        public bool ExcludeBootVolumes
+        public bool? ExcludeBootVolumes
         {
-            get { return this._excludeBootVolumes.GetValueOrDefault(); }
+            get { return this._excludeBootVolumes; }
             set { this._excludeBootVolumes = value; }
         }
 

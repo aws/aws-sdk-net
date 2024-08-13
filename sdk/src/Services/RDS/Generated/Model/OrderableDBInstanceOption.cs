@@ -209,9 +209,9 @@ namespace Amazon.RDS.Model
         /// Maximum total provisioned IOPS for a DB instance.
         /// </para>
         /// </summary>
-        public int MaxIopsPerDbInstance
+        public int? MaxIopsPerDbInstance
         {
-            get { return this._maxIopsPerDbInstance.GetValueOrDefault(); }
+            get { return this._maxIopsPerDbInstance; }
             set { this._maxIopsPerDbInstance = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.RDS.Model
         /// Maximum provisioned IOPS per GiB for a DB instance.
         /// </para>
         /// </summary>
-        public double MaxIopsPerGib
+        public double? MaxIopsPerGib
         {
-            get { return this._maxIopsPerGib.GetValueOrDefault(); }
+            get { return this._maxIopsPerGib; }
             set { this._maxIopsPerGib = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.RDS.Model
         /// Maximum storage size for a DB instance.
         /// </para>
         /// </summary>
-        public int MaxStorageSize
+        public int? MaxStorageSize
         {
-            get { return this._maxStorageSize.GetValueOrDefault(); }
+            get { return this._maxStorageSize; }
             set { this._maxStorageSize = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.RDS.Model
         /// Maximum storage throughput for a DB instance.
         /// </para>
         /// </summary>
-        public int MaxStorageThroughputPerDbInstance
+        public int? MaxStorageThroughputPerDbInstance
         {
-            get { return this._maxStorageThroughputPerDbInstance.GetValueOrDefault(); }
+            get { return this._maxStorageThroughputPerDbInstance; }
             set { this._maxStorageThroughputPerDbInstance = value; }
         }
 
@@ -281,9 +281,9 @@ namespace Amazon.RDS.Model
         /// Maximum storage throughput to provisioned IOPS ratio for a DB instance.
         /// </para>
         /// </summary>
-        public double MaxStorageThroughputPerIops
+        public double? MaxStorageThroughputPerIops
         {
-            get { return this._maxStorageThroughputPerIops.GetValueOrDefault(); }
+            get { return this._maxStorageThroughputPerIops; }
             set { this._maxStorageThroughputPerIops = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.RDS.Model
         /// Minimum total provisioned IOPS for a DB instance.
         /// </para>
         /// </summary>
-        public int MinIopsPerDbInstance
+        public int? MinIopsPerDbInstance
         {
-            get { return this._minIopsPerDbInstance.GetValueOrDefault(); }
+            get { return this._minIopsPerDbInstance; }
             set { this._minIopsPerDbInstance = value; }
         }
 
@@ -317,9 +317,9 @@ namespace Amazon.RDS.Model
         /// Minimum provisioned IOPS per GiB for a DB instance.
         /// </para>
         /// </summary>
-        public double MinIopsPerGib
+        public double? MinIopsPerGib
         {
-            get { return this._minIopsPerGib.GetValueOrDefault(); }
+            get { return this._minIopsPerGib; }
             set { this._minIopsPerGib = value; }
         }
 
@@ -335,9 +335,9 @@ namespace Amazon.RDS.Model
         /// Minimum storage size for a DB instance.
         /// </para>
         /// </summary>
-        public int MinStorageSize
+        public int? MinStorageSize
         {
-            get { return this._minStorageSize.GetValueOrDefault(); }
+            get { return this._minStorageSize; }
             set { this._minStorageSize = value; }
         }
 
@@ -353,9 +353,9 @@ namespace Amazon.RDS.Model
         /// Minimum storage throughput for a DB instance.
         /// </para>
         /// </summary>
-        public int MinStorageThroughputPerDbInstance
+        public int? MinStorageThroughputPerDbInstance
         {
-            get { return this._minStorageThroughputPerDbInstance.GetValueOrDefault(); }
+            get { return this._minStorageThroughputPerDbInstance; }
             set { this._minStorageThroughputPerDbInstance = value; }
         }
 
@@ -371,9 +371,9 @@ namespace Amazon.RDS.Model
         /// Minimum storage throughput to provisioned IOPS ratio for a DB instance.
         /// </para>
         /// </summary>
-        public double MinStorageThroughputPerIops
+        public double? MinStorageThroughputPerIops
         {
-            get { return this._minStorageThroughputPerIops.GetValueOrDefault(); }
+            get { return this._minStorageThroughputPerIops; }
             set { this._minStorageThroughputPerIops = value; }
         }
 
@@ -389,9 +389,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance is Multi-AZ capable.
         /// </para>
         /// </summary>
-        public bool MultiAZCapable
+        public bool? MultiAZCapable
         {
-            get { return this._multiAZCapable.GetValueOrDefault(); }
+            get { return this._multiAZCapable; }
             set { this._multiAZCapable = value; }
         }
 
@@ -412,9 +412,9 @@ namespace Amazon.RDS.Model
         /// RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
-        public bool OutpostCapable
+        public bool? OutpostCapable
         {
-            get { return this._outpostCapable.GetValueOrDefault(); }
+            get { return this._outpostCapable; }
             set { this._outpostCapable = value; }
         }
 
@@ -430,9 +430,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance can have a read replica.
         /// </para>
         /// </summary>
-        public bool ReadReplicaCapable
+        public bool? ReadReplicaCapable
         {
-            get { return this._readReplicaCapable.GetValueOrDefault(); }
+            get { return this._readReplicaCapable; }
             set { this._readReplicaCapable = value; }
         }
 
@@ -538,9 +538,9 @@ namespace Amazon.RDS.Model
         /// User Guide.</i> 
         /// </para>
         /// </summary>
-        public bool SupportsClusters
+        public bool? SupportsClusters
         {
-            get { return this._supportsClusters.GetValueOrDefault(); }
+            get { return this._supportsClusters; }
             set { this._supportsClusters = value; }
         }
 
@@ -556,9 +556,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance supports using a dedicated log volume (DLV).
         /// </para>
         /// </summary>
-        public bool SupportsDedicatedLogVolume
+        public bool? SupportsDedicatedLogVolume
         {
-            get { return this._supportsDedicatedLogVolume.GetValueOrDefault(); }
+            get { return this._supportsDedicatedLogVolume; }
             set { this._supportsDedicatedLogVolume = value; }
         }
 
@@ -575,9 +575,9 @@ namespace Amazon.RDS.Model
         /// 60 seconds.
         /// </para>
         /// </summary>
-        public bool SupportsEnhancedMonitoring
+        public bool? SupportsEnhancedMonitoring
         {
-            get { return this._supportsEnhancedMonitoring.GetValueOrDefault(); }
+            get { return this._supportsEnhancedMonitoring; }
             set { this._supportsEnhancedMonitoring = value; }
         }
 
@@ -594,9 +594,9 @@ namespace Amazon.RDS.Model
         /// of other DB engine attributes.
         /// </para>
         /// </summary>
-        public bool SupportsGlobalDatabases
+        public bool? SupportsGlobalDatabases
         {
-            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            get { return this._supportsGlobalDatabases; }
             set { this._supportsGlobalDatabases = value; }
         }
 
@@ -612,9 +612,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance supports IAM database authentication.
         /// </para>
         /// </summary>
-        public bool SupportsIAMDatabaseAuthentication
+        public bool? SupportsIAMDatabaseAuthentication
         {
-            get { return this._supportsIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._supportsIAMDatabaseAuthentication; }
             set { this._supportsIAMDatabaseAuthentication = value; }
         }
 
@@ -630,9 +630,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance supports provisioned IOPS.
         /// </para>
         /// </summary>
-        public bool SupportsIops
+        public bool? SupportsIops
         {
-            get { return this._supportsIops.GetValueOrDefault(); }
+            get { return this._supportsIops; }
             set { this._supportsIops = value; }
         }
 
@@ -648,9 +648,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance supports Kerberos Authentication.
         /// </para>
         /// </summary>
-        public bool SupportsKerberosAuthentication
+        public bool? SupportsKerberosAuthentication
         {
-            get { return this._supportsKerberosAuthentication.GetValueOrDefault(); }
+            get { return this._supportsKerberosAuthentication; }
             set { this._supportsKerberosAuthentication = value; }
         }
 
@@ -666,9 +666,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance supports Performance Insights.
         /// </para>
         /// </summary>
-        public bool SupportsPerformanceInsights
+        public bool? SupportsPerformanceInsights
         {
-            get { return this._supportsPerformanceInsights.GetValueOrDefault(); }
+            get { return this._supportsPerformanceInsights; }
             set { this._supportsPerformanceInsights = value; }
         }
 
@@ -685,9 +685,9 @@ namespace Amazon.RDS.Model
         /// use the specified DB instance class.
         /// </para>
         /// </summary>
-        public bool SupportsStorageAutoscaling
+        public bool? SupportsStorageAutoscaling
         {
-            get { return this._supportsStorageAutoscaling.GetValueOrDefault(); }
+            get { return this._supportsStorageAutoscaling; }
             set { this._supportsStorageAutoscaling = value; }
         }
 
@@ -703,9 +703,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance supports encrypted storage.
         /// </para>
         /// </summary>
-        public bool SupportsStorageEncryption
+        public bool? SupportsStorageEncryption
         {
-            get { return this._supportsStorageEncryption.GetValueOrDefault(); }
+            get { return this._supportsStorageEncryption; }
             set { this._supportsStorageEncryption = value; }
         }
 
@@ -721,9 +721,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance supports storage throughput.
         /// </para>
         /// </summary>
-        public bool SupportsStorageThroughput
+        public bool? SupportsStorageThroughput
         {
-            get { return this._supportsStorageThroughput.GetValueOrDefault(); }
+            get { return this._supportsStorageThroughput; }
             set { this._supportsStorageThroughput = value; }
         }
 
@@ -739,9 +739,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance is in a VPC.
         /// </para>
         /// </summary>
-        public bool Vpc
+        public bool? Vpc
         {
-            get { return this._vpc.GetValueOrDefault(); }
+            get { return this._vpc; }
             set { this._vpc = value; }
         }
 

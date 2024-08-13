@@ -63,13 +63,13 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Created", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Deleted", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Deleted = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,19 +99,19 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Processing", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Processing = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequiresIndexDocuments", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequiresIndexDocuments = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SearchInstanceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SearchInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -123,7 +123,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SearchPartitionCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SearchPartitionCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

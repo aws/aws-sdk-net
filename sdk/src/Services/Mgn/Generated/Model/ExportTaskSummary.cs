@@ -45,9 +45,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ApplicationsCount
+        public long? ApplicationsCount
         {
-            get { return this._applicationsCount.GetValueOrDefault(); }
+            get { return this._applicationsCount; }
             set { this._applicationsCount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ServersCount
+        public long? ServersCount
         {
-            get { return this._serversCount.GetValueOrDefault(); }
+            get { return this._serversCount; }
             set { this._serversCount = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long WavesCount
+        public long? WavesCount
         {
-            get { return this._wavesCount.GetValueOrDefault(); }
+            get { return this._wavesCount; }
             set { this._wavesCount = value; }
         }
 

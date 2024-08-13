@@ -85,9 +85,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ViewVersion
+        public int? ViewVersion
         {
-            get { return this._viewVersion.GetValueOrDefault(); }
+            get { return this._viewVersion; }
             set { this._viewVersion = value; }
         }
 

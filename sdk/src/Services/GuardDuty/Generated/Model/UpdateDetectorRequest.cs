@@ -108,9 +108,9 @@ namespace Amazon.GuardDuty.Model
         /// Specifies whether the detector is enabled or not enabled.
         /// </para>
         /// </summary>
-        public bool Enable
+        public bool? Enable
         {
-            get { return this._enable.GetValueOrDefault(); }
+            get { return this._enable; }
             set { this._enable = value; }
         }
 

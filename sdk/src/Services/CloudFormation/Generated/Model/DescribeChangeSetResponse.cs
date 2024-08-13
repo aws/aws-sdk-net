@@ -138,9 +138,9 @@ namespace Amazon.CloudFormation.Model
         /// The start time when the change set was created, in UTC.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ImportExistingResources
+        public bool? ImportExistingResources
         {
-            get { return this._importExistingResources.GetValueOrDefault(); }
+            get { return this._importExistingResources; }
             set { this._importExistingResources = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.CloudFormation.Model
         /// Verifies if <c>IncludeNestedStacks</c> is set to <c>True</c>.
         /// </para>
         /// </summary>
-        public bool IncludeNestedStacks
+        public bool? IncludeNestedStacks
         {
-            get { return this._includeNestedStacks.GetValueOrDefault(); }
+            get { return this._includeNestedStacks; }
             set { this._includeNestedStacks = value; }
         }
 

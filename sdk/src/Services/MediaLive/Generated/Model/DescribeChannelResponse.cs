@@ -259,9 +259,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property PipelinesRunningCount. The number of currently healthy
         /// pipelines.
         /// </summary>
-        public int PipelinesRunningCount
+        public int? PipelinesRunningCount
         {
-            get { return this._pipelinesRunningCount.GetValueOrDefault(); }
+            get { return this._pipelinesRunningCount; }
             set { this._pipelinesRunningCount = value; }
         }
 

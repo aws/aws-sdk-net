@@ -78,13 +78,13 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLatestOnly())
                 {
                     context.Writer.WritePropertyName("LatestOnly");
-                    context.Writer.Write(publicRequest.LatestOnly);
+                    context.Writer.Write(publicRequest.LatestOnly.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

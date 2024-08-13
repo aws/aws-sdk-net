@@ -51,7 +51,7 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCritical())
             {
                 context.Writer.WritePropertyName("Critical");
-                context.Writer.Write(requestObject.Critical);
+                context.Writer.Write(requestObject.Critical.Value);
             }
 
             if(requestObject.IsSetPolicies())

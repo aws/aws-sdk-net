@@ -120,9 +120,9 @@ namespace Amazon.WorkSpaces.Model
         /// a WorkSpace</a>.
         /// </para>
         /// </summary>
-        public int RootVolumeSizeGib
+        public int? RootVolumeSizeGib
         {
-            get { return this._rootVolumeSizeGib.GetValueOrDefault(); }
+            get { return this._rootVolumeSizeGib; }
             set { this._rootVolumeSizeGib = value; }
         }
 
@@ -144,7 +144,12 @@ namespace Amazon.WorkSpaces.Model
         /// account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
         /// WorkSpaces Core</a>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Review your running mode to ensure you are using one that is optimal for your needs
+        /// and budget. For more information on switching running modes, see <a href="http://aws.amazon.com/workspaces-family/workspaces/faqs/#:~:text=Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%20on%20WorkSpaces%20Personal%3F">
+        /// Can I switch between hourly and monthly billing?</a> 
+        /// </para>
         /// </summary>
         public RunningMode RunningMode
         {
@@ -165,9 +170,9 @@ namespace Amazon.WorkSpaces.Model
         /// in 60-minute intervals.
         /// </para>
         /// </summary>
-        public int RunningModeAutoStopTimeoutInMinutes
+        public int? RunningModeAutoStopTimeoutInMinutes
         {
-            get { return this._runningModeAutoStopTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._runningModeAutoStopTimeoutInMinutes; }
             set { this._runningModeAutoStopTimeoutInMinutes = value; }
         }
 
@@ -185,9 +190,9 @@ namespace Amazon.WorkSpaces.Model
         /// a WorkSpace</a>.
         /// </para>
         /// </summary>
-        public int UserVolumeSizeGib
+        public int? UserVolumeSizeGib
         {
-            get { return this._userVolumeSizeGib.GetValueOrDefault(); }
+            get { return this._userVolumeSizeGib; }
             set { this._userVolumeSizeGib = value; }
         }
 

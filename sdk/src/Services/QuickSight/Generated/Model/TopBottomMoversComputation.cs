@@ -87,9 +87,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int MoverSize
+        public int? MoverSize
         {
-            get { return this._moverSize.GetValueOrDefault(); }
+            get { return this._moverSize; }
             set { this._moverSize = value; }
         }
 

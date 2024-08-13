@@ -48,9 +48,9 @@ namespace Amazon.IoT.Model
         /// The UNIX timestamp of when the role alias was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=43200)]
-        public int CredentialDurationSeconds
+        public int? CredentialDurationSeconds
         {
-            get { return this._credentialDurationSeconds.GetValueOrDefault(); }
+            get { return this._credentialDurationSeconds; }
             set { this._credentialDurationSeconds = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IoT.Model
         /// The UNIX timestamp of when the role alias was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

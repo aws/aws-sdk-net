@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveServicesCount())
             {
                 context.Writer.WritePropertyName("ActiveServicesCount");
-                context.Writer.Write(requestObject.ActiveServicesCount);
+                context.Writer.Write(requestObject.ActiveServicesCount.Value);
             }
 
             if(requestObject.IsSetCapacityProviders())
@@ -123,13 +123,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegisteredContainerInstancesCount())
             {
                 context.Writer.WritePropertyName("RegisteredContainerInstancesCount");
-                context.Writer.Write(requestObject.RegisteredContainerInstancesCount);
+                context.Writer.Write(requestObject.RegisteredContainerInstancesCount.Value);
             }
 
             if(requestObject.IsSetRunningTasksCount())
             {
                 context.Writer.WritePropertyName("RunningTasksCount");
-                context.Writer.Write(requestObject.RunningTasksCount);
+                context.Writer.Write(requestObject.RunningTasksCount.Value);
             }
 
             if(requestObject.IsSetStatus())

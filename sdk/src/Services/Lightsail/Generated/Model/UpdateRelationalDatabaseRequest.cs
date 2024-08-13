@@ -71,9 +71,9 @@ namespace Amazon.Lightsail.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Lightsail.Model
         /// an outage.
         /// </para>
         /// </summary>
-        public bool DisableBackupRetention
+        public bool? DisableBackupRetention
         {
-            get { return this._disableBackupRetention.GetValueOrDefault(); }
+            get { return this._disableBackupRetention; }
             set { this._disableBackupRetention = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Lightsail.Model
         /// an outage.
         /// </para>
         /// </summary>
-        public bool EnableBackupRetention
+        public bool? EnableBackupRetention
         {
-            get { return this._enableBackupRetention.GetValueOrDefault(); }
+            get { return this._enableBackupRetention; }
             set { this._enableBackupRetention = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.Lightsail.Model
         /// in the same region as your database.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -357,9 +357,9 @@ namespace Amazon.Lightsail.Model
         /// password.
         /// </para>
         /// </summary>
-        public bool RotateMasterUserPassword
+        public bool? RotateMasterUserPassword
         {
-            get { return this._rotateMasterUserPassword.GetValueOrDefault(); }
+            get { return this._rotateMasterUserPassword; }
             set { this._rotateMasterUserPassword = value; }
         }
 

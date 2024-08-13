@@ -45,9 +45,9 @@ namespace Amazon.QuickSight.Model
         /// as a source.
         /// </para>
         /// </summary>
-        public bool DisableUseAsDirectQuerySource
+        public bool? DisableUseAsDirectQuerySource
         {
-            get { return this._disableUseAsDirectQuerySource.GetValueOrDefault(); }
+            get { return this._disableUseAsDirectQuerySource; }
             set { this._disableUseAsDirectQuerySource = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.QuickSight.Model
         /// this dataset as a source.
         /// </para>
         /// </summary>
-        public bool DisableUseAsImportedSource
+        public bool? DisableUseAsImportedSource
         {
-            get { return this._disableUseAsImportedSource.GetValueOrDefault(); }
+            get { return this._disableUseAsImportedSource; }
             set { this._disableUseAsImportedSource = value; }
         }
 

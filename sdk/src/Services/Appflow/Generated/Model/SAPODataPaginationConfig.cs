@@ -49,9 +49,9 @@ namespace Amazon.Appflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10000)]
-        public int MaxPageSize
+        public int? MaxPageSize
         {
-            get { return this._maxPageSize.GetValueOrDefault(); }
+            get { return this._maxPageSize; }
             set { this._maxPageSize = value; }
         }
 

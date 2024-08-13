@@ -67,9 +67,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// The source images provided to the Earth Observation job being exported.
         /// </para>
         /// </summary>
-        public bool ExportSourceImages
+        public bool? ExportSourceImages
         {
-            get { return this._exportSourceImages.GetValueOrDefault(); }
+            get { return this._exportSourceImages; }
             set { this._exportSourceImages = value; }
         }
 

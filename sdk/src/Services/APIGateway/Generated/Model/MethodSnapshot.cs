@@ -43,9 +43,9 @@ namespace Amazon.APIGateway.Model
         /// Specifies whether the method requires a valid ApiKey.
         /// </para>
         /// </summary>
-        public bool ApiKeyRequired
+        public bool? ApiKeyRequired
         {
-            get { return this._apiKeyRequired.GetValueOrDefault(); }
+            get { return this._apiKeyRequired; }
             set { this._apiKeyRequired = value; }
         }
 

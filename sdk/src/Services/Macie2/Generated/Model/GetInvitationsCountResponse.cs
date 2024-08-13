@@ -43,9 +43,9 @@ namespace Amazon.Macie2.Model
         /// currently accepted invitation.
         /// </para>
         /// </summary>
-        public long InvitationsCount
+        public long? InvitationsCount
         {
-            get { return this._invitationsCount.GetValueOrDefault(); }
+            get { return this._invitationsCount; }
             set { this._invitationsCount = value; }
         }
 

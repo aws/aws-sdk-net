@@ -52,9 +52,9 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property MaxNumberOfDomains. The maximum number of domain names
         /// you want returned. The range is 1 to 100. The default setting is 100.
         /// </summary>
-        public int MaxNumberOfDomains
+        public int? MaxNumberOfDomains
         {
-            get { return this._maxNumberOfDomains.GetValueOrDefault(); }
+            get { return this._maxNumberOfDomains; }
             set { this._maxNumberOfDomains = value; }
         }
 

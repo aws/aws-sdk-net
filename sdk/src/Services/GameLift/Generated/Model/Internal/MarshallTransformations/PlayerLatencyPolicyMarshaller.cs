@@ -51,13 +51,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumIndividualPlayerLatencyMilliseconds())
             {
                 context.Writer.WritePropertyName("MaximumIndividualPlayerLatencyMilliseconds");
-                context.Writer.Write(requestObject.MaximumIndividualPlayerLatencyMilliseconds);
+                context.Writer.Write(requestObject.MaximumIndividualPlayerLatencyMilliseconds.Value);
             }
 
             if(requestObject.IsSetPolicyDurationSeconds())
             {
                 context.Writer.WritePropertyName("PolicyDurationSeconds");
-                context.Writer.Write(requestObject.PolicyDurationSeconds);
+                context.Writer.Write(requestObject.PolicyDurationSeconds.Value);
             }
 
         }

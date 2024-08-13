@@ -81,9 +81,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
-        public int Thickness
+        public int? Thickness
         {
-            get { return this._thickness.GetValueOrDefault(); }
+            get { return this._thickness; }
             set { this._thickness = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

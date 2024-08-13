@@ -68,7 +68,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoScalingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,19 +80,19 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CurrentParallelism", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CurrentParallelism = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Parallelism", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Parallelism = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ParallelismPerKPU", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ParallelismPerKPU = unmarshaller.Unmarshall(context);
                     continue;
                 }

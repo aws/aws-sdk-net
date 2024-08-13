@@ -72,7 +72,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceDetach())
                 {
                     context.Writer.WritePropertyName("ForceDetach");
-                    context.Writer.Write(publicRequest.ForceDetach);
+                    context.Writer.Write(publicRequest.ForceDetach.Value);
                 }
 
                 if(publicRequest.IsSetVolumeARN())

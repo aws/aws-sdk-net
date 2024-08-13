@@ -371,9 +371,9 @@ namespace Amazon.SecurityHub.Model
         /// A high value, such as <c>999999</c>, turns off price protection.
         /// </para>
         /// </summary>
-        public int OnDemandMaxPricePercentageOverLowestPrice
+        public int? OnDemandMaxPricePercentageOverLowestPrice
         {
-            get { return this._onDemandMaxPricePercentageOverLowestPrice.GetValueOrDefault(); }
+            get { return this._onDemandMaxPricePercentageOverLowestPrice; }
             set { this._onDemandMaxPricePercentageOverLowestPrice = value; }
         }
 
@@ -390,9 +390,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public bool RequireHibernateSupport
+        public bool? RequireHibernateSupport
         {
-            get { return this._requireHibernateSupport.GetValueOrDefault(); }
+            get { return this._requireHibernateSupport; }
             set { this._requireHibernateSupport = value; }
         }
 
@@ -420,9 +420,9 @@ namespace Amazon.SecurityHub.Model
         /// A high value, such as <c>999999</c>, turns off price protection.
         /// </para>
         /// </summary>
-        public int SpotMaxPricePercentageOverLowestPrice
+        public int? SpotMaxPricePercentageOverLowestPrice
         {
-            get { return this._spotMaxPricePercentageOverLowestPrice.GetValueOrDefault(); }
+            get { return this._spotMaxPricePercentageOverLowestPrice; }
             set { this._spotMaxPricePercentageOverLowestPrice = value; }
         }
 

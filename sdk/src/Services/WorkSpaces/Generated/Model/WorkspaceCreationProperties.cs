@@ -41,6 +41,7 @@ namespace Amazon.WorkSpaces.Model
         private bool? _enableInternetAccess;
         private bool? _enableMaintenanceMode;
         private bool? _enableWorkDocs;
+        private string _instanceIamRoleArn;
         private bool? _userEnabledAsLocalAdministrator;
 
         /// <summary>
@@ -102,9 +103,9 @@ namespace Amazon.WorkSpaces.Model
         /// Indicates whether internet access is enabled for your WorkSpaces.
         /// </para>
         /// </summary>
-        public bool EnableInternetAccess
+        public bool? EnableInternetAccess
         {
-            get { return this._enableInternetAccess.GetValueOrDefault(); }
+            get { return this._enableInternetAccess; }
             set { this._enableInternetAccess = value; }
         }
 
@@ -122,9 +123,9 @@ namespace Amazon.WorkSpaces.Model
         /// Maintenance</a>. 
         /// </para>
         /// </summary>
-        public bool EnableMaintenanceMode
+        public bool? EnableMaintenanceMode
         {
-            get { return this._enableMaintenanceMode.GetValueOrDefault(); }
+            get { return this._enableMaintenanceMode; }
             set { this._enableMaintenanceMode = value; }
         }
 
@@ -158,9 +159,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool EnableWorkDocs
+        public bool? EnableWorkDocs
         {
-            get { return this._enableWorkDocs.GetValueOrDefault(); }
+            get { return this._enableWorkDocs; }
             set { this._enableWorkDocs = value; }
         }
 
@@ -171,14 +172,32 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceIamRoleArn. 
+        /// <para>
+        /// Indicates the IAM role ARN of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceIamRoleArn
+        {
+            get { return this._instanceIamRoleArn; }
+            set { this._instanceIamRoleArn = value; }
+        }
+
+        // Check to see if InstanceIamRoleArn property is set
+        internal bool IsSetInstanceIamRoleArn()
+        {
+            return this._instanceIamRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserEnabledAsLocalAdministrator. 
         /// <para>
         /// Indicates whether users are local administrators of their WorkSpaces.
         /// </para>
         /// </summary>
-        public bool UserEnabledAsLocalAdministrator
+        public bool? UserEnabledAsLocalAdministrator
         {
-            get { return this._userEnabledAsLocalAdministrator.GetValueOrDefault(); }
+            get { return this._userEnabledAsLocalAdministrator; }
             set { this._userEnabledAsLocalAdministrator = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// This is true if it was the end user who requested their phone number be removed. 
         /// </para>
         /// </summary>
-        public bool EndUserOptedOut
+        public bool? EndUserOptedOut
         {
-            get { return this._endUserOptedOut.GetValueOrDefault(); }
+            get { return this._endUserOptedOut; }
             set { this._endUserOptedOut = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime OptedOutTimestamp
+        public DateTime? OptedOutTimestamp
         {
-            get { return this._optedOutTimestamp.GetValueOrDefault(); }
+            get { return this._optedOutTimestamp; }
             set { this._optedOutTimestamp = value; }
         }
 

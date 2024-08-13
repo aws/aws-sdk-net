@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A structure that defineds the field name to sort by and a sort order.
+    /// A structure that defines the field name to sort by and a sort order.
     /// </summary>
     public partial class Sort
     {

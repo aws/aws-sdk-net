@@ -72,7 +72,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllocatedStorage())
                 {
                     context.Writer.WritePropertyName("allocatedStorage");
-                    context.Writer.Write(publicRequest.AllocatedStorage);
+                    context.Writer.Write(publicRequest.AllocatedStorage.Value);
                 }
 
                 if(publicRequest.IsSetBucket())
@@ -137,7 +137,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
                 }
 
                 if(publicRequest.IsSetTags())

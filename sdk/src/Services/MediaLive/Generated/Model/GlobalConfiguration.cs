@@ -47,9 +47,9 @@ namespace Amazon.MediaLive.Model
         /// the Live Event.
         /// </summary>
         [AWSProperty(Min=-60, Max=60)]
-        public int InitialAudioGain
+        public int? InitialAudioGain
         {
-            get { return this._initialAudioGain.GetValueOrDefault(); }
+            get { return this._initialAudioGain; }
             set { this._initialAudioGain = value; }
         }
 

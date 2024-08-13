@@ -57,13 +57,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DeploymentId", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DeploymentTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DeploymentTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

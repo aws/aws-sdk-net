@@ -45,9 +45,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The number of revoked certificates.
         /// </para>
         /// </summary>
-        public long NumberOfRevokedEntries
+        public long? NumberOfRevokedEntries
         {
-            get { return this._numberOfRevokedEntries.GetValueOrDefault(); }
+            get { return this._numberOfRevokedEntries; }
             set { this._numberOfRevokedEntries = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The revocation ID of a revocation file in use.
         /// </para>
         /// </summary>
-        public long RevocationId
+        public long? RevocationId
         {
-            get { return this._revocationId.GetValueOrDefault(); }
+            get { return this._revocationId; }
             set { this._revocationId = value; }
         }
 

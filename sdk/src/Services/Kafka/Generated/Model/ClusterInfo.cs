@@ -151,9 +151,9 @@ namespace Amazon.Kafka.Model
         /// The time when the cluster was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.Kafka.Model
         /// The number of broker nodes in the cluster.
         /// </para>
         /// </summary>
-        public int NumberOfBrokerNodes
+        public int? NumberOfBrokerNodes
         {
-            get { return this._numberOfBrokerNodes.GetValueOrDefault(); }
+            get { return this._numberOfBrokerNodes; }
             set { this._numberOfBrokerNodes = value; }
         }
 

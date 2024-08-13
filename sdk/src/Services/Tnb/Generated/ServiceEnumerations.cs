@@ -363,6 +363,10 @@ namespace Amazon.Tnb
         /// </summary>
         public static readonly NsState INSTANTIATED = new NsState("INSTANTIATED");
         /// <summary>
+        /// Constant INTENT_TO_UPDATE_IN_PROGRESS for NsState
+        /// </summary>
+        public static readonly NsState INTENT_TO_UPDATE_IN_PROGRESS = new NsState("INTENT_TO_UPDATE_IN_PROGRESS");
+        /// <summary>
         /// Constant NOT_INSTANTIATED for NsState
         /// </summary>
         public static readonly NsState NOT_INSTANTIATED = new NsState("NOT_INSTANTIATED");
@@ -375,9 +379,17 @@ namespace Amazon.Tnb
         /// </summary>
         public static readonly NsState TERMINATE_IN_PROGRESS = new NsState("TERMINATE_IN_PROGRESS");
         /// <summary>
+        /// Constant UPDATE_FAILED for NsState
+        /// </summary>
+        public static readonly NsState UPDATE_FAILED = new NsState("UPDATE_FAILED");
+        /// <summary>
         /// Constant UPDATE_IN_PROGRESS for NsState
         /// </summary>
         public static readonly NsState UPDATE_IN_PROGRESS = new NsState("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATED for NsState
+        /// </summary>
+        public static readonly NsState UPDATED = new NsState("UPDATED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -644,6 +656,10 @@ namespace Amazon.Tnb
         /// Constant MODIFY_VNF_INFORMATION for UpdateSolNetworkType
         /// </summary>
         public static readonly UpdateSolNetworkType MODIFY_VNF_INFORMATION = new UpdateSolNetworkType("MODIFY_VNF_INFORMATION");
+        /// <summary>
+        /// Constant UPDATE_NS for UpdateSolNetworkType
+        /// </summary>
+        public static readonly UpdateSolNetworkType UPDATE_NS = new UpdateSolNetworkType("UPDATE_NS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

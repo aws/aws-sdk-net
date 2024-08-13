@@ -45,9 +45,9 @@ namespace Amazon.NimbleStudio.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int MaxBackupsToRetain
+        public int? MaxBackupsToRetain
         {
-            get { return this._maxBackupsToRetain.GetValueOrDefault(); }
+            get { return this._maxBackupsToRetain; }
             set { this._maxBackupsToRetain = value; }
         }
 

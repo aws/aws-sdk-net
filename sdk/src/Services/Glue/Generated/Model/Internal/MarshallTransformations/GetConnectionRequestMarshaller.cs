@@ -78,7 +78,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHidePassword())
                 {
                     context.Writer.WritePropertyName("HidePassword");
-                    context.Writer.Write(publicRequest.HidePassword);
+                    context.Writer.Write(publicRequest.HidePassword.Value);
                 }
 
                 if(publicRequest.IsSetName())

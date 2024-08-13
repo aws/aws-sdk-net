@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// The baseline network performance of the network card, in Gbps.
         /// </para>
         /// </summary>
-        public double BaselineBandwidthInGbps
+        public double? BaselineBandwidthInGbps
         {
-            get { return this._baselineBandwidthInGbps.GetValueOrDefault(); }
+            get { return this._baselineBandwidthInGbps; }
             set { this._baselineBandwidthInGbps = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// The maximum number of network interfaces for the network card.
         /// </para>
         /// </summary>
-        public int MaximumNetworkInterfaces
+        public int? MaximumNetworkInterfaces
         {
-            get { return this._maximumNetworkInterfaces.GetValueOrDefault(); }
+            get { return this._maximumNetworkInterfaces; }
             set { this._maximumNetworkInterfaces = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// The index of the network card.
         /// </para>
         /// </summary>
-        public int NetworkCardIndex
+        public int? NetworkCardIndex
         {
-            get { return this._networkCardIndex.GetValueOrDefault(); }
+            get { return this._networkCardIndex; }
             set { this._networkCardIndex = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.EC2.Model
         /// The peak (burst) network performance of the network card, in Gbps.
         /// </para>
         /// </summary>
-        public double PeakBandwidthInGbps
+        public double? PeakBandwidthInGbps
         {
-            get { return this._peakBandwidthInGbps.GetValueOrDefault(); }
+            get { return this._peakBandwidthInGbps; }
             set { this._peakBandwidthInGbps = value; }
         }
 

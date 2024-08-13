@@ -49,9 +49,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Blue
+        public int? Blue
         {
-            get { return this._blue.GetValueOrDefault(); }
+            get { return this._blue; }
             set { this._blue = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Green
+        public int? Green
         {
-            get { return this._green.GetValueOrDefault(); }
+            get { return this._green; }
             set { this._green = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float PixelPercent
+        public float? PixelPercent
         {
-            get { return this._pixelPercent.GetValueOrDefault(); }
+            get { return this._pixelPercent; }
             set { this._pixelPercent = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Red
+        public int? Red
         {
-            get { return this._red.GetValueOrDefault(); }
+            get { return this._red; }
             set { this._red = value; }
         }
 

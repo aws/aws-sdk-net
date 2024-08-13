@@ -73,13 +73,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxEjectionPercent())
             {
                 context.Writer.WritePropertyName("maxEjectionPercent");
-                context.Writer.Write(requestObject.MaxEjectionPercent);
+                context.Writer.Write(requestObject.MaxEjectionPercent.Value);
             }
 
             if(requestObject.IsSetMaxServerErrors())
             {
                 context.Writer.WritePropertyName("maxServerErrors");
-                context.Writer.Write(requestObject.MaxServerErrors);
+                context.Writer.Write(requestObject.MaxServerErrors.Value);
             }
 
         }

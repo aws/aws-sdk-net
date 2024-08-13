@@ -111,7 +111,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRotateSecret())
                 {
                     context.Writer.WritePropertyName("rotateSecret");
-                    context.Writer.Write(publicRequest.RotateSecret);
+                    context.Writer.Write(publicRequest.RotateSecret.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -83,7 +83,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBadgeEnabled())
                 {
                     context.Writer.WritePropertyName("badgeEnabled");
-                    context.Writer.Write(publicRequest.BadgeEnabled);
+                    context.Writer.Write(publicRequest.BadgeEnabled.Value);
                 }
 
                 if(publicRequest.IsSetBuildBatchConfig())
@@ -111,7 +111,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConcurrentBuildLimit())
                 {
                     context.Writer.WritePropertyName("concurrentBuildLimit");
-                    context.Writer.Write(publicRequest.ConcurrentBuildLimit);
+                    context.Writer.Write(publicRequest.ConcurrentBuildLimit.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -173,7 +173,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueuedTimeoutInMinutes())
                 {
                     context.Writer.WritePropertyName("queuedTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.QueuedTimeoutInMinutes);
+                    context.Writer.Write(publicRequest.QueuedTimeoutInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetSecondaryArtifacts())
@@ -266,7 +266,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeoutInMinutes())
                 {
                     context.Writer.WritePropertyName("timeoutInMinutes");
-                    context.Writer.Write(publicRequest.TimeoutInMinutes);
+                    context.Writer.Write(publicRequest.TimeoutInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetVpcConfig())

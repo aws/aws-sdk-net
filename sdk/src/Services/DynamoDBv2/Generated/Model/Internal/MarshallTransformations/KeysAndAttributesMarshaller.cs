@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConsistentRead())
             {
                 context.Writer.WritePropertyName("ConsistentRead");
-                context.Writer.Write(requestObject.ConsistentRead);
+                context.Writer.Write(requestObject.ConsistentRead.Value);
             }
 
             if(requestObject.IsSetExpressionAttributeNames())

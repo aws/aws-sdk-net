@@ -116,9 +116,9 @@ namespace Amazon.Rekognition.Model
         /// that have errors. 
         /// </para>
         /// </summary>
-        public bool HasErrors
+        public bool? HasErrors
         {
-            get { return this._hasErrors.GetValueOrDefault(); }
+            get { return this._hasErrors; }
             set { this._hasErrors = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.Rekognition.Model
         /// unlabeled images. 
         /// </para>
         /// </summary>
-        public bool Labeled
+        public bool? Labeled
         {
-            get { return this._labeled.GetValueOrDefault(); }
+            get { return this._labeled; }
             set { this._labeled = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

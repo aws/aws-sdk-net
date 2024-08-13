@@ -97,9 +97,9 @@ namespace Amazon.ConnectParticipant.Model
         /// chats.
         /// </para>
         /// </summary>
-        public bool ConnectParticipant
+        public bool? ConnectParticipant
         {
-            get { return this._connectParticipant.GetValueOrDefault(); }
+            get { return this._connectParticipant; }
             set { this._connectParticipant = value; }
         }
 

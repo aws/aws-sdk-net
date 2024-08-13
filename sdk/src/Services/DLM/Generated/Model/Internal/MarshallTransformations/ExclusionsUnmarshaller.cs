@@ -68,7 +68,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ExcludeBootVolumes", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExcludeBootVolumes = unmarshaller.Unmarshall(context);
                     continue;
                 }

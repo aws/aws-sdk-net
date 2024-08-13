@@ -134,9 +134,9 @@ namespace Amazon.KeyManagementService.Model
         /// The date and time when the KMS key was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.KeyManagementService.Model
         /// waiting period is displayed in the <c>PendingDeletionWindowInDays</c> field.
         /// </para>
         /// </summary>
-        public DateTime DeletionDate
+        public DateTime? DeletionDate
         {
-            get { return this._deletionDate.GetValueOrDefault(); }
+            get { return this._deletionDate; }
             set { this._deletionDate = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.KeyManagementService.Model
         /// value is true, otherwise it is false.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -450,9 +450,9 @@ namespace Amazon.KeyManagementService.Model
         /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool MultiRegion
+        public bool? MultiRegion
         {
-            get { return this._multiRegion.GetValueOrDefault(); }
+            get { return this._multiRegion; }
             set { this._multiRegion = value; }
         }
 
@@ -544,9 +544,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=365)]
-        public int PendingDeletionWindowInDays
+        public int? PendingDeletionWindowInDays
         {
-            get { return this._pendingDeletionWindowInDays.GetValueOrDefault(); }
+            get { return this._pendingDeletionWindowInDays; }
             set { this._pendingDeletionWindowInDays = value; }
         }
 
@@ -588,9 +588,9 @@ namespace Amazon.KeyManagementService.Model
         /// is <c>KEY_MATERIAL_EXPIRES</c>, otherwise this value is omitted.
         /// </para>
         /// </summary>
-        public DateTime ValidTo
+        public DateTime? ValidTo
         {
-            get { return this._validTo.GetValueOrDefault(); }
+            get { return this._validTo; }
             set { this._validTo = value; }
         }
 

@@ -167,9 +167,9 @@ namespace Amazon.EKS.Model
         /// managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
-        public int DiskSize
+        public int? DiskSize
         {
-            get { return this._diskSize.GetValueOrDefault(); }
+            get { return this._diskSize; }
             set { this._diskSize = value; }
         }
 

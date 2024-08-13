@@ -171,9 +171,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int SpentVoutIndex
+        public int? SpentVoutIndex
         {
-            get { return this._spentVoutIndex.GetValueOrDefault(); }
+            get { return this._spentVoutIndex; }
             set { this._spentVoutIndex = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// The position of the transaction output in the transaction output list.
         /// </para>
         /// </summary>
-        public int VoutIndex
+        public int? VoutIndex
         {
-            get { return this._voutIndex.GetValueOrDefault(); }
+            get { return this._voutIndex; }
             set { this._voutIndex = value; }
         }
 
@@ -350,9 +350,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool VoutSpent
+        public bool? VoutSpent
         {
-            get { return this._voutSpent.GetValueOrDefault(); }
+            get { return this._voutSpent; }
             set { this._voutSpent = value; }
         }
 

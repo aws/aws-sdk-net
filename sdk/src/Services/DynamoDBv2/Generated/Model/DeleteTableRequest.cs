@@ -47,7 +47,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
     /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
-    /// is complete.
+    /// is complete. For the full list of table states, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TableDescription.html#DDB-Type-TableDescription-TableStatus">TableStatus</a>.
     /// </para>
     ///  </note> 
     /// <para>

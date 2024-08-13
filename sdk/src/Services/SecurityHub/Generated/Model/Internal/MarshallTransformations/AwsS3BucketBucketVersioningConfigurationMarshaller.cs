@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsMfaDeleteEnabled())
             {
                 context.Writer.WritePropertyName("IsMfaDeleteEnabled");
-                context.Writer.Write(requestObject.IsMfaDeleteEnabled);
+                context.Writer.Write(requestObject.IsMfaDeleteEnabled.Value);
             }
 
             if(requestObject.IsSetStatus())

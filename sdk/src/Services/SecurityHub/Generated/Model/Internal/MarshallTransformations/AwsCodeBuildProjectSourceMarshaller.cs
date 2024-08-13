@@ -51,13 +51,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGitCloneDepth())
             {
                 context.Writer.WritePropertyName("GitCloneDepth");
-                context.Writer.Write(requestObject.GitCloneDepth);
+                context.Writer.Write(requestObject.GitCloneDepth.Value);
             }
 
             if(requestObject.IsSetInsecureSsl())
             {
                 context.Writer.WritePropertyName("InsecureSsl");
-                context.Writer.Write(requestObject.InsecureSsl);
+                context.Writer.Write(requestObject.InsecureSsl.Value);
             }
 
             if(requestObject.IsSetLocation())

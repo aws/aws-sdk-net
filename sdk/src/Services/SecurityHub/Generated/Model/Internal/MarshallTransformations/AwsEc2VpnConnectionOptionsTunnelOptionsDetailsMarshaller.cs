@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDpdTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("DpdTimeoutSeconds");
-                context.Writer.Write(requestObject.DpdTimeoutSeconds);
+                context.Writer.Write(requestObject.DpdTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetIkeVersions())
@@ -107,7 +107,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPhase1LifetimeSeconds())
             {
                 context.Writer.WritePropertyName("Phase1LifetimeSeconds");
-                context.Writer.Write(requestObject.Phase1LifetimeSeconds);
+                context.Writer.Write(requestObject.Phase1LifetimeSeconds.Value);
             }
 
             if(requestObject.IsSetPhase2DhGroupNumbers())
@@ -146,7 +146,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPhase2LifetimeSeconds())
             {
                 context.Writer.WritePropertyName("Phase2LifetimeSeconds");
-                context.Writer.Write(requestObject.Phase2LifetimeSeconds);
+                context.Writer.Write(requestObject.Phase2LifetimeSeconds.Value);
             }
 
             if(requestObject.IsSetPreSharedKey())
@@ -158,19 +158,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRekeyFuzzPercentage())
             {
                 context.Writer.WritePropertyName("RekeyFuzzPercentage");
-                context.Writer.Write(requestObject.RekeyFuzzPercentage);
+                context.Writer.Write(requestObject.RekeyFuzzPercentage.Value);
             }
 
             if(requestObject.IsSetRekeyMarginTimeSeconds())
             {
                 context.Writer.WritePropertyName("RekeyMarginTimeSeconds");
-                context.Writer.Write(requestObject.RekeyMarginTimeSeconds);
+                context.Writer.Write(requestObject.RekeyMarginTimeSeconds.Value);
             }
 
             if(requestObject.IsSetReplayWindowSize())
             {
                 context.Writer.WritePropertyName("ReplayWindowSize");
-                context.Writer.Write(requestObject.ReplayWindowSize);
+                context.Writer.Write(requestObject.ReplayWindowSize.Value);
             }
 
             if(requestObject.IsSetTunnelInsideCidr())

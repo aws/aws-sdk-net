@@ -54,7 +54,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CurrentShardCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.CurrentShardCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -72,7 +72,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TargetShardCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TargetShardCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

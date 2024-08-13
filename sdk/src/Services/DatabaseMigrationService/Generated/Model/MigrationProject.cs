@@ -123,9 +123,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time when the migration project was created.
         /// </para>
         /// </summary>
-        public DateTime MigrationProjectCreationTime
+        public DateTime? MigrationProjectCreationTime
         {
-            get { return this._migrationProjectCreationTime.GetValueOrDefault(); }
+            get { return this._migrationProjectCreationTime; }
             set { this._migrationProjectCreationTime = value; }
         }
 

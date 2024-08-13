@@ -101,9 +101,9 @@ namespace Amazon.AppConfig.Model
         protected PayloadTooLargeException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.Limit = (float)info.GetValue("Limit", typeof(float));
+            this.Limit = (float?)info.GetValue("Limit", typeof(float?));
             this.Measure = (BytesMeasure)info.GetValue("Measure", typeof(BytesMeasure));
-            this.Size = (float)info.GetValue("Size", typeof(float));
+            this.Size = (float?)info.GetValue("Size", typeof(float?));
         }
 
         /// <summary>
@@ -112,11 +112,6 @@ namespace Amazon.AppConfig.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -133,9 +128,9 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Limit.
         /// </summary>
-        public float Limit
+        public float? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -163,9 +158,9 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Size.
         /// </summary>
-        public float Size
+        public float? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

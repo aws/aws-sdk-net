@@ -66,9 +66,9 @@ namespace Amazon.EC2.Model
         /// The time stamp when the attachment initiated.
         /// </para>
         /// </summary>
-        public DateTime AttachTime
+        public DateTime? AttachTime
         {
-            get { return this._attachTime.GetValueOrDefault(); }
+            get { return this._attachTime; }
             set { this._attachTime = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the network interface is deleted when the instance is terminated.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.EC2.Model
         /// The index of the device on the instance for the network interface attachment.
         /// </para>
         /// </summary>
-        public int DeviceIndex
+        public int? DeviceIndex
         {
-            get { return this._deviceIndex.GetValueOrDefault(); }
+            get { return this._deviceIndex; }
             set { this._deviceIndex = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.EC2.Model
         /// The index of the network card.
         /// </para>
         /// </summary>
-        public int NetworkCardIndex
+        public int? NetworkCardIndex
         {
-            get { return this._networkCardIndex.GetValueOrDefault(); }
+            get { return this._networkCardIndex; }
             set { this._networkCardIndex = value; }
         }
 

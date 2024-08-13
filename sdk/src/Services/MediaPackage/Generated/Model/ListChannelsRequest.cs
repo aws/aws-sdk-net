@@ -42,9 +42,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property MaxResults. Upper bound on number of records to return.
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

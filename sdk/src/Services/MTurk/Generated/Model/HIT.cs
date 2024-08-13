@@ -64,9 +64,9 @@ namespace Amazon.MTurk.Model
         /// it.
         /// </para>
         /// </summary>
-        public long AssignmentDurationInSeconds
+        public long? AssignmentDurationInSeconds
         {
-            get { return this._assignmentDurationInSeconds.GetValueOrDefault(); }
+            get { return this._assignmentDurationInSeconds; }
             set { this._assignmentDurationInSeconds = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MTurk.Model
         /// the assignment is auto-approved and the Worker is paid. 
         /// </para>
         /// </summary>
-        public long AutoApprovalDelayInSeconds
+        public long? AutoApprovalDelayInSeconds
         {
-            get { return this._autoApprovalDelayInSeconds.GetValueOrDefault(); }
+            get { return this._autoApprovalDelayInSeconds; }
             set { this._autoApprovalDelayInSeconds = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.MTurk.Model
         ///  The date and time the HIT was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.MTurk.Model
         /// The date and time the HIT expires.
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.MTurk.Model
         /// 
         /// </para>
         /// </summary>
-        public int MaxAssignments
+        public int? MaxAssignments
         {
-            get { return this._maxAssignments.GetValueOrDefault(); }
+            get { return this._maxAssignments; }
             set { this._maxAssignments = value; }
         }
 
@@ -309,9 +309,9 @@ namespace Amazon.MTurk.Model
         ///  The number of assignments for this HIT that are available for Workers to accept.
         /// </para>
         /// </summary>
-        public int NumberOfAssignmentsAvailable
+        public int? NumberOfAssignmentsAvailable
         {
-            get { return this._numberOfAssignmentsAvailable.GetValueOrDefault(); }
+            get { return this._numberOfAssignmentsAvailable; }
             set { this._numberOfAssignmentsAvailable = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.MTurk.Model
         ///  The number of assignments for this HIT that have been approved or rejected.
         /// </para>
         /// </summary>
-        public int NumberOfAssignmentsCompleted
+        public int? NumberOfAssignmentsCompleted
         {
-            get { return this._numberOfAssignmentsCompleted.GetValueOrDefault(); }
+            get { return this._numberOfAssignmentsCompleted; }
             set { this._numberOfAssignmentsCompleted = value; }
         }
 
@@ -346,9 +346,9 @@ namespace Amazon.MTurk.Model
         /// by Workers, but have not yet been submitted, returned, or abandoned.
         /// </para>
         /// </summary>
-        public int NumberOfAssignmentsPending
+        public int? NumberOfAssignmentsPending
         {
-            get { return this._numberOfAssignmentsPending.GetValueOrDefault(); }
+            get { return this._numberOfAssignmentsPending; }
             set { this._numberOfAssignmentsPending = value; }
         }
 

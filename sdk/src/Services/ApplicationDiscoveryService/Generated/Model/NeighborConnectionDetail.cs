@@ -47,9 +47,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ConnectionsCount
+        public long? ConnectionsCount
         {
-            get { return this._connectionsCount.GetValueOrDefault(); }
+            get { return this._connectionsCount; }
             set { this._connectionsCount = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The destination network port for the connection.
         /// </para>
         /// </summary>
-        public int DestinationPort
+        public int? DestinationPort
         {
-            get { return this._destinationPort.GetValueOrDefault(); }
+            get { return this._destinationPort; }
             set { this._destinationPort = value; }
         }
 

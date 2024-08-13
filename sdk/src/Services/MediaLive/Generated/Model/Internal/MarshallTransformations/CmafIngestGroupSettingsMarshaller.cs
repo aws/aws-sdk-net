@@ -74,7 +74,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentLength())
             {
                 context.Writer.WritePropertyName("segmentLength");
-                context.Writer.Write(requestObject.SegmentLength);
+                context.Writer.Write(requestObject.SegmentLength.Value);
             }
 
             if(requestObject.IsSetSegmentLengthUnits())
@@ -86,7 +86,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSendDelayMs())
             {
                 context.Writer.WritePropertyName("sendDelayMs");
-                context.Writer.Write(requestObject.SendDelayMs);
+                context.Writer.Write(requestObject.SendDelayMs.Value);
             }
 
         }

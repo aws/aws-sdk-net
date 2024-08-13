@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to disable encryption of the S3 build log output.
         /// </para>
         /// </summary>
-        public bool EncryptionDisabled
+        public bool? EncryptionDisabled
         {
-            get { return this._encryptionDisabled.GetValueOrDefault(); }
+            get { return this._encryptionDisabled; }
             set { this._encryptionDisabled = value; }
         }
 

@@ -181,9 +181,9 @@ namespace Amazon.Macie2.Model
         /// most recently made to the bucket.
         /// </para>
         /// </summary>
-        public DateTime BucketCreatedAt
+        public DateTime? BucketCreatedAt
         {
-            get { return this._bucketCreatedAt.GetValueOrDefault(); }
+            get { return this._bucketCreatedAt; }
             set { this._bucketCreatedAt = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.Macie2.Model
         /// or storage format.
         /// </para>
         /// </summary>
-        public long ClassifiableObjectCount
+        public long? ClassifiableObjectCount
         {
-            get { return this._classifiableObjectCount.GetValueOrDefault(); }
+            get { return this._classifiableObjectCount; }
             set { this._classifiableObjectCount = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.Macie2.Model
         /// reflect the storage size of all versions of each applicable object in the bucket.
         /// </para>
         /// </summary>
-        public long ClassifiableSizeInBytes
+        public long? ClassifiableSizeInBytes
         {
-            get { return this._classifiableSizeInBytes.GetValueOrDefault(); }
+            get { return this._classifiableSizeInBytes; }
             set { this._classifiableSizeInBytes = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.Macie2.Model
         /// This value is null if automated sensitive data discovery is disabled for your account.
         /// </para>
         /// </summary>
-        public DateTime LastAutomatedDiscoveryTime
+        public DateTime? LastAutomatedDiscoveryTime
         {
-            get { return this._lastAutomatedDiscoveryTime.GetValueOrDefault(); }
+            get { return this._lastAutomatedDiscoveryTime; }
             set { this._lastAutomatedDiscoveryTime = value; }
         }
 
@@ -345,9 +345,9 @@ namespace Amazon.Macie2.Model
         /// retrieved bucket or object metadata from Amazon S3 for the bucket.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -363,9 +363,9 @@ namespace Amazon.Macie2.Model
         /// The total number of objects in the bucket.
         /// </para>
         /// </summary>
-        public long ObjectCount
+        public long? ObjectCount
         {
-            get { return this._objectCount.GetValueOrDefault(); }
+            get { return this._objectCount; }
             set { this._objectCount = value; }
         }
 
@@ -465,9 +465,9 @@ namespace Amazon.Macie2.Model
         /// it’s been excluded from recent analyses.
         /// </para>
         /// </summary>
-        public int SensitivityScore
+        public int? SensitivityScore
         {
-            get { return this._sensitivityScore.GetValueOrDefault(); }
+            get { return this._sensitivityScore; }
             set { this._sensitivityScore = value; }
         }
 
@@ -554,9 +554,9 @@ namespace Amazon.Macie2.Model
         /// reflect the storage size of all versions of each object in the bucket.
         /// </para>
         /// </summary>
-        public long SizeInBytes
+        public long? SizeInBytes
         {
-            get { return this._sizeInBytes.GetValueOrDefault(); }
+            get { return this._sizeInBytes; }
             set { this._sizeInBytes = value; }
         }
 
@@ -580,9 +580,9 @@ namespace Amazon.Macie2.Model
         /// bucket.
         /// </para>
         /// </summary>
-        public long SizeInBytesCompressed
+        public long? SizeInBytesCompressed
         {
-            get { return this._sizeInBytesCompressed.GetValueOrDefault(); }
+            get { return this._sizeInBytesCompressed; }
             set { this._sizeInBytesCompressed = value; }
         }
 
@@ -656,9 +656,9 @@ namespace Amazon.Macie2.Model
         /// Specifies whether versioning is enabled for the bucket.
         /// </para>
         /// </summary>
-        public bool Versioning
+        public bool? Versioning
         {
-            get { return this._versioning.GetValueOrDefault(); }
+            get { return this._versioning; }
             set { this._versioning = value; }
         }
 

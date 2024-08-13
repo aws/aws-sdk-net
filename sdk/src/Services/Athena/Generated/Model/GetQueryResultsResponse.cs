@@ -83,9 +83,9 @@ namespace Amazon.Athena.Model
         /// The number of rows inserted with a <c>CREATE TABLE AS SELECT</c> statement. 
         /// </para>
         /// </summary>
-        public long UpdateCount
+        public long? UpdateCount
         {
-            get { return this._updateCount.GetValueOrDefault(); }
+            get { return this._updateCount; }
             set { this._updateCount = value; }
         }
 

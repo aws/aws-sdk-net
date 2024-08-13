@@ -51,7 +51,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableIdentityCenter())
             {
                 context.Writer.WritePropertyName("EnableIdentityCenter");
-                context.Writer.Write(requestObject.EnableIdentityCenter);
+                context.Writer.Write(requestObject.EnableIdentityCenter.Value);
             }
 
             if(requestObject.IsSetIdentityCenterInstanceArn())

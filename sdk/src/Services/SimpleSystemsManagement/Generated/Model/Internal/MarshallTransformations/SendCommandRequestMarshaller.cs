@@ -217,7 +217,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeoutSeconds())
                 {
                     context.Writer.WritePropertyName("TimeoutSeconds");
-                    context.Writer.Write(publicRequest.TimeoutSeconds);
+                    context.Writer.Write(publicRequest.TimeoutSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

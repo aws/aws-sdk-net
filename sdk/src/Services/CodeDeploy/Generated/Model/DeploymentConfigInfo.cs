@@ -67,9 +67,9 @@ namespace Amazon.CodeDeploy.Model
         /// The time at which the deployment configuration was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("apiKeyRequired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ApiKeyRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }

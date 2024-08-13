@@ -2,6 +2,7 @@
 using System;
 using Amazon;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Endpoints;
 
 namespace CrtIntegrationTests
 {
@@ -29,6 +30,13 @@ namespace CrtIntegrationTests
             {
                 return new DefaultConfiguration();
             }
+        }
+
+        public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            // If the current service doesn't have an endpoint rule set (which is the case for configs
+            // that are used for testing), we'll return a placeholder endpoint so that unit tests pass.
+            return new Endpoint(this.ServiceURL ?? "https://example.com");
         }
     }
 }

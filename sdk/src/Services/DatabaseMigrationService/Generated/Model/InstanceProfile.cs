@@ -108,9 +108,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time the instance profile was created.
         /// </para>
         /// </summary>
-        public DateTime InstanceProfileCreationTime
+        public DateTime? InstanceProfileCreationTime
         {
-            get { return this._instanceProfileCreationTime.GetValueOrDefault(); }
+            get { return this._instanceProfileCreationTime; }
             set { this._instanceProfileCreationTime = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// an instance profile with a private IP address. The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

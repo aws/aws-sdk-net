@@ -73,7 +73,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApplyNormalization())
                 {
                     context.Writer.WritePropertyName("applyNormalization");
-                    context.Writer.Write(publicRequest.ApplyNormalization);
+                    context.Writer.Write(publicRequest.ApplyNormalization.Value);
                 }
 
                 if(publicRequest.IsSetRecord())

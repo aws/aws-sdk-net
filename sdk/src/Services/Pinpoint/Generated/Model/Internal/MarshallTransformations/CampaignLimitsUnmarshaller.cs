@@ -68,31 +68,31 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Daily", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Daily = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MessagesPerSecond", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Session", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Session = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -82,9 +82,9 @@ namespace Amazon.CodeDeploy.Model
         /// When the revision was first used by CodeDeploy.
         /// </para>
         /// </summary>
-        public DateTime FirstUsedTime
+        public DateTime? FirstUsedTime
         {
-            get { return this._firstUsedTime.GetValueOrDefault(); }
+            get { return this._firstUsedTime; }
             set { this._firstUsedTime = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CodeDeploy.Model
         /// When the revision was last used by CodeDeploy.
         /// </para>
         /// </summary>
-        public DateTime LastUsedTime
+        public DateTime? LastUsedTime
         {
-            get { return this._lastUsedTime.GetValueOrDefault(); }
+            get { return this._lastUsedTime; }
             set { this._lastUsedTime = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.CodeDeploy.Model
         /// When the revision was registered with CodeDeploy.
         /// </para>
         /// </summary>
-        public DateTime RegisterTime
+        public DateTime? RegisterTime
         {
-            get { return this._registerTime.GetValueOrDefault(); }
+            get { return this._registerTime; }
             set { this._registerTime = value; }
         }
 

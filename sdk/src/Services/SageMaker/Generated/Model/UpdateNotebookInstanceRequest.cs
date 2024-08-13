@@ -131,9 +131,9 @@ namespace Amazon.SageMaker.Model
         /// with the notebook instance when you call this method, it does not throw an error.
         /// </para>
         /// </summary>
-        public bool DisassociateAcceleratorTypes
+        public bool? DisassociateAcceleratorTypes
         {
-            get { return this._disassociateAcceleratorTypes.GetValueOrDefault(); }
+            get { return this._disassociateAcceleratorTypes; }
             set { this._disassociateAcceleratorTypes = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.SageMaker.Model
         /// an error.
         /// </para>
         /// </summary>
-        public bool DisassociateAdditionalCodeRepositories
+        public bool? DisassociateAdditionalCodeRepositories
         {
-            get { return this._disassociateAdditionalCodeRepositories.GetValueOrDefault(); }
+            get { return this._disassociateAdditionalCodeRepositories; }
             set { this._disassociateAdditionalCodeRepositories = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.SageMaker.Model
         /// with the notebook instance when you call this method, it does not throw an error.
         /// </para>
         /// </summary>
-        public bool DisassociateDefaultCodeRepository
+        public bool? DisassociateDefaultCodeRepository
         {
-            get { return this._disassociateDefaultCodeRepository.GetValueOrDefault(); }
+            get { return this._disassociateDefaultCodeRepository; }
             set { this._disassociateDefaultCodeRepository = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.SageMaker.Model
         /// call this method, it does not throw an error.
         /// </para>
         /// </summary>
-        public bool DisassociateLifecycleConfig
+        public bool? DisassociateLifecycleConfig
         {
-            get { return this._disassociateLifecycleConfig.GetValueOrDefault(); }
+            get { return this._disassociateLifecycleConfig; }
             set { this._disassociateLifecycleConfig = value; }
         }
 
@@ -345,9 +345,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=16384)]
-        public int VolumeSizeInGB
+        public int? VolumeSizeInGB
         {
-            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            get { return this._volumeSizeInGB; }
             set { this._volumeSizeInGB = value; }
         }
 

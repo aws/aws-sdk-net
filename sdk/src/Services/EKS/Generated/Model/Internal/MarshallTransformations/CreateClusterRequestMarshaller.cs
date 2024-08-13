@@ -78,6 +78,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBootstrapSelfManagedAddons())
+                {
+                    context.Writer.WritePropertyName("bootstrapSelfManagedAddons");
+                    context.Writer.Write(publicRequest.BootstrapSelfManagedAddons.Value);
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("clientRequestToken");
@@ -172,6 +178,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
                             context.Writer.Write(publicRequestTagsValue);
                     }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetUpgradePolicy())
+                {
+                    context.Writer.WritePropertyName("upgradePolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpgradePolicyRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpgradePolicy, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 

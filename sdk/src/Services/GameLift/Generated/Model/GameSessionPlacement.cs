@@ -105,9 +105,9 @@ namespace Amazon.GameLift.Model
         /// Time stamp indicating when this request was completed, canceled, or timed out.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -310,9 +310,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaximumPlayerSessionCount
+        public int? MaximumPlayerSessionCount
         {
-            get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }
+            get { return this._maximumPlayerSessionCount; }
             set { this._maximumPlayerSessionCount = value; }
         }
 
@@ -391,9 +391,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=60000)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -410,9 +410,9 @@ namespace Amazon.GameLift.Model
         /// expressed in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

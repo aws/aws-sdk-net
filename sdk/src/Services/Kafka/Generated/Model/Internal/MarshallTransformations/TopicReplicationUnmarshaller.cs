@@ -68,19 +68,19 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("copyAccessControlListsForTopics", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyAccessControlListsForTopics = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("copyTopicConfigurations", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTopicConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("detectAndCopyNewTopics", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DetectAndCopyNewTopics = unmarshaller.Unmarshall(context);
                     continue;
                 }

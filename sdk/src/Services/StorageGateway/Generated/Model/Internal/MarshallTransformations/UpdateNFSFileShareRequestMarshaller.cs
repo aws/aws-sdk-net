@@ -118,13 +118,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetGuessMIMETypeEnabled())
                 {
                     context.Writer.WritePropertyName("GuessMIMETypeEnabled");
-                    context.Writer.Write(publicRequest.GuessMIMETypeEnabled);
+                    context.Writer.Write(publicRequest.GuessMIMETypeEnabled.Value);
                 }
 
                 if(publicRequest.IsSetKMSEncrypted())
                 {
                     context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted);
+                    context.Writer.Write(publicRequest.KMSEncrypted.Value);
                 }
 
                 if(publicRequest.IsSetKMSKey())
@@ -159,13 +159,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReadOnly())
                 {
                     context.Writer.WritePropertyName("ReadOnly");
-                    context.Writer.Write(publicRequest.ReadOnly);
+                    context.Writer.Write(publicRequest.ReadOnly.Value);
                 }
 
                 if(publicRequest.IsSetRequesterPays())
                 {
                     context.Writer.WritePropertyName("RequesterPays");
-                    context.Writer.Write(publicRequest.RequesterPays);
+                    context.Writer.Write(publicRequest.RequesterPays.Value);
                 }
 
                 if(publicRequest.IsSetSquash())

@@ -48,9 +48,9 @@ namespace Amazon.IoT.Model
         /// The number of checks that did not run because the audit was canceled.
         /// </para>
         /// </summary>
-        public int CanceledChecks
+        public int? CanceledChecks
         {
-            get { return this._canceledChecks.GetValueOrDefault(); }
+            get { return this._canceledChecks; }
             set { this._canceledChecks = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.IoT.Model
         /// The number of checks that found compliant resources.
         /// </para>
         /// </summary>
-        public int CompliantChecks
+        public int? CompliantChecks
         {
-            get { return this._compliantChecks.GetValueOrDefault(); }
+            get { return this._compliantChecks; }
             set { this._compliantChecks = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IoT.Model
         /// The number of checks.
         /// </para>
         /// </summary>
-        public int FailedChecks
+        public int? FailedChecks
         {
-            get { return this._failedChecks.GetValueOrDefault(); }
+            get { return this._failedChecks; }
             set { this._failedChecks = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.IoT.Model
         /// The number of checks in progress.
         /// </para>
         /// </summary>
-        public int InProgressChecks
+        public int? InProgressChecks
         {
-            get { return this._inProgressChecks.GetValueOrDefault(); }
+            get { return this._inProgressChecks; }
             set { this._inProgressChecks = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.IoT.Model
         /// The number of checks that found noncompliant resources.
         /// </para>
         /// </summary>
-        public int NonCompliantChecks
+        public int? NonCompliantChecks
         {
-            get { return this._nonCompliantChecks.GetValueOrDefault(); }
+            get { return this._nonCompliantChecks; }
             set { this._nonCompliantChecks = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.IoT.Model
         /// The number of checks in this audit.
         /// </para>
         /// </summary>
-        public int TotalChecks
+        public int? TotalChecks
         {
-            get { return this._totalChecks.GetValueOrDefault(); }
+            get { return this._totalChecks; }
             set { this._totalChecks = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.IoT.Model
         /// The number of checks waiting for data collection.
         /// </para>
         /// </summary>
-        public int WaitingForDataCollectionChecks
+        public int? WaitingForDataCollectionChecks
         {
-            get { return this._waitingForDataCollectionChecks.GetValueOrDefault(); }
+            get { return this._waitingForDataCollectionChecks; }
             set { this._waitingForDataCollectionChecks = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// The number of times to attempt to retry, if the job fails. Valid values are 1–10.
         /// </para>
         /// </summary>
-        public int Attempts
+        public int? Attempts
         {
-            get { return this._attempts.GetValueOrDefault(); }
+            get { return this._attempts; }
             set { this._attempts = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.NeptuneGraph.Model
         /// The number of instances of the edge in the graph.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

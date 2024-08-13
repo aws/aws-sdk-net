@@ -121,9 +121,9 @@ namespace Amazon.CodeBuild.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime LastModifiedSecret
+        public DateTime? LastModifiedSecret
         {
-            get { return this._lastModifiedSecret.GetValueOrDefault(); }
+            get { return this._lastModifiedSecret; }
             set { this._lastModifiedSecret = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ManualCreation
+        public bool? ManualCreation
         {
-            get { return this._manualCreation.GetValueOrDefault(); }
+            get { return this._manualCreation; }
             set { this._manualCreation = value; }
         }
 

@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPortNumber())
             {
                 context.Writer.WritePropertyName("PortNumber");
-                context.Writer.Write(requestObject.PortNumber);
+                context.Writer.Write(requestObject.PortNumber.Value);
             }
 
         }

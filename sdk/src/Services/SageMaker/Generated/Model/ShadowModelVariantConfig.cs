@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=100)]
-        public int SamplingPercentage
+        public int? SamplingPercentage
         {
-            get { return this._samplingPercentage.GetValueOrDefault(); }
+            get { return this._samplingPercentage; }
             set { this._samplingPercentage = value; }
         }
 

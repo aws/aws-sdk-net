@@ -68,9 +68,9 @@ namespace Amazon.Inspector2.Model
         /// The date and time the resource was last checked for vulnerabilities.
         /// </para>
         /// </summary>
-        public DateTime LastScannedAt
+        public DateTime? LastScannedAt
         {
-            get { return this._lastScannedAt.GetValueOrDefault(); }
+            get { return this._lastScannedAt; }
             set { this._lastScannedAt = value; }
         }
 

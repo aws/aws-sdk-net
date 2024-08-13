@@ -47,9 +47,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long OccurrencesThreshold
+        public long? OccurrencesThreshold
         {
-            get { return this._occurrencesThreshold.GetValueOrDefault(); }
+            get { return this._occurrencesThreshold; }
             set { this._occurrencesThreshold = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("compatibleContainerInstances", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CompatibleContainerInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("coveredContainerInstances", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CoveredContainerInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }

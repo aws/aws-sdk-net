@@ -49,9 +49,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime DateImported
+        public DateTime? DateImported
         {
-            get { return this._dateImported.GetValueOrDefault(); }
+            get { return this._dateImported; }
             set { this._dateImported = value; }
         }
 

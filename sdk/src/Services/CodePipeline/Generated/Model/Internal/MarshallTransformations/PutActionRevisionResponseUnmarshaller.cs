@@ -54,7 +54,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("newRevision", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.NewRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,6 +90,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ActionNotFoundException"))
                 {
                     return ActionNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentPipelineExecutionsLimitExceededException"))
+                {
+                    return ConcurrentPipelineExecutionsLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PipelineNotFoundException"))
                 {

@@ -187,9 +187,9 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=630720000)]
-        public int DefaultTimeToLive
+        public int? DefaultTimeToLive
         {
-            get { return this._defaultTimeToLive.GetValueOrDefault(); }
+            get { return this._defaultTimeToLive; }
             set { this._defaultTimeToLive = value; }
         }
 

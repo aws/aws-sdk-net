@@ -40,7 +40,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// The type of comparison. Only "less than" (LT) comparisons are supported.
+        /// The type of comparison. Only "less than" (LT) and "greater than" (GT) comparisons
+        /// are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
@@ -62,9 +63,9 @@ namespace Amazon.Connect.Model
         /// The threshold value to compare.
         /// </para>
         /// </summary>
-        public double ThresholdValue
+        public double? ThresholdValue
         {
-            get { return this._thresholdValue.GetValueOrDefault(); }
+            get { return this._thresholdValue; }
             set { this._thresholdValue = value; }
         }
 

@@ -100,7 +100,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSizeInGb())
                 {
                     context.Writer.WritePropertyName("sizeInGb");
-                    context.Writer.Write(publicRequest.SizeInGb);
+                    context.Writer.Write(publicRequest.SizeInGb.Value);
                 }
 
                 if(publicRequest.IsSetTags())

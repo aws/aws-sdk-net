@@ -69,9 +69,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100000)]
-        public long CurrentVersionNumber
+        public long? CurrentVersionNumber
         {
-            get { return this._currentVersionNumber.GetValueOrDefault(); }
+            get { return this._currentVersionNumber; }
             set { this._currentVersionNumber = value; }
         }
 

@@ -57,13 +57,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Value))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Value.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Value));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Value.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Value);
+                    context.Writer.Write(requestObject.Value.Value);
                 }
             }
 

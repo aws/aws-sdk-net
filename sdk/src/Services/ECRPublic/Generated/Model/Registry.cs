@@ -127,9 +127,9 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Verified
+        public bool? Verified
         {
-            get { return this._verified.GetValueOrDefault(); }
+            get { return this._verified; }
             set { this._verified = value; }
         }
 

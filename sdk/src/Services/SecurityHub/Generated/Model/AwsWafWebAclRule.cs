@@ -125,9 +125,9 @@ namespace Amazon.SecurityHub.Model
         /// need to be consecutive.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

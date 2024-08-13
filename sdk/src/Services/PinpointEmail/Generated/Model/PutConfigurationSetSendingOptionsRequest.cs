@@ -66,9 +66,9 @@ namespace Amazon.PinpointEmail.Model
         /// email sending is disabled for the configuration set.
         /// </para>
         /// </summary>
-        public bool SendingEnabled
+        public bool? SendingEnabled
         {
-            get { return this._sendingEnabled.GetValueOrDefault(); }
+            get { return this._sendingEnabled; }
             set { this._sendingEnabled = value; }
         }
 

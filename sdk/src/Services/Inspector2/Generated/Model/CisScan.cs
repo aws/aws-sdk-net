@@ -51,9 +51,9 @@ namespace Amazon.Inspector2.Model
         /// The CIS scan's failed checks.
         /// </para>
         /// </summary>
-        public int FailedChecks
+        public int? FailedChecks
         {
-            get { return this._failedChecks.GetValueOrDefault(); }
+            get { return this._failedChecks; }
             set { this._failedChecks = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.Inspector2.Model
         /// The CIS scan's date.
         /// </para>
         /// </summary>
-        public DateTime ScanDate
+        public DateTime? ScanDate
         {
-            get { return this._scanDate.GetValueOrDefault(); }
+            get { return this._scanDate; }
             set { this._scanDate = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.Inspector2.Model
         /// The CIS scan's total checks.
         /// </para>
         /// </summary>
-        public int TotalChecks
+        public int? TotalChecks
         {
-            get { return this._totalChecks.GetValueOrDefault(); }
+            get { return this._totalChecks; }
             set { this._totalChecks = value; }
         }
 

@@ -80,7 +80,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("noradSatelliteID", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoradSatelliteID = unmarshaller.Unmarshall(context);
                     continue;
                 }

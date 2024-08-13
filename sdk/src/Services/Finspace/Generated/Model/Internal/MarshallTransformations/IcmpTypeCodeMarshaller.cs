@@ -51,13 +51,13 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCode())
             {
                 context.Writer.WritePropertyName("code");
-                context.Writer.Write(requestObject.Code);
+                context.Writer.Write(requestObject.Code.Value);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.Write(requestObject.Type.Value);
             }
 
         }

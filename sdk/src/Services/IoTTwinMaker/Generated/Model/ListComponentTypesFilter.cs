@@ -69,9 +69,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A Boolean value that specifies whether the component types in the list are abstract.
         /// </para>
         /// </summary>
-        public bool IsAbstract
+        public bool? IsAbstract
         {
-            get { return this._isAbstract.GetValueOrDefault(); }
+            get { return this._isAbstract; }
             set { this._isAbstract = value; }
         }
 

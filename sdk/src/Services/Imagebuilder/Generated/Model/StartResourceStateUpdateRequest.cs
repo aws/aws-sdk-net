@@ -167,9 +167,9 @@ namespace Amazon.Imagebuilder.Model
         /// The timestamp that indicates when resources are updated by a lifecycle action.
         /// </para>
         /// </summary>
-        public DateTime UpdateAt
+        public DateTime? UpdateAt
         {
-            get { return this._updateAt.GetValueOrDefault(); }
+            get { return this._updateAt; }
             set { this._updateAt = value; }
         }
 

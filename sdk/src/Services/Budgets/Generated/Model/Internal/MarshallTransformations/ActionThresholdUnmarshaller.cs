@@ -74,7 +74,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ActionThresholdValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ActionThresholdValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

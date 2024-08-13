@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double Percent
+        public double? Percent
         {
-            get { return this._percent.GetValueOrDefault(); }
+            get { return this._percent; }
             set { this._percent = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.IoT.Model
         /// The value of the percentile.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.Mgn.Model
         /// Associate public Ip address.
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.Mgn.Model
         /// Copy private Ip.
         /// </para>
         /// </summary>
-        public bool CopyPrivateIp
+        public bool? CopyPrivateIp
         {
-            get { return this._copyPrivateIp.GetValueOrDefault(); }
+            get { return this._copyPrivateIp; }
             set { this._copyPrivateIp = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Mgn.Model
         /// Copy tags.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Mgn.Model
         /// Enable map auto tagging.
         /// </para>
         /// </summary>
-        public bool EnableMapAutoTagging
+        public bool? EnableMapAutoTagging
         {
-            get { return this._enableMapAutoTagging.GetValueOrDefault(); }
+            get { return this._enableMapAutoTagging; }
             set { this._enableMapAutoTagging = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long SmallVolumeMaxSize
+        public long? SmallVolumeMaxSize
         {
-            get { return this._smallVolumeMaxSize.GetValueOrDefault(); }
+            get { return this._smallVolumeMaxSize; }
             set { this._smallVolumeMaxSize = value; }
         }
 

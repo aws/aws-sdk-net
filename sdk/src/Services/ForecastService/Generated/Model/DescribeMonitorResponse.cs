@@ -71,9 +71,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp for when the monitor resource was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.ForecastService.Model
         /// current evaluation.
         /// </para>
         /// </summary>
-        public long EstimatedEvaluationTimeRemainingInMinutes
+        public long? EstimatedEvaluationTimeRemainingInMinutes
         {
-            get { return this._estimatedEvaluationTimeRemainingInMinutes.GetValueOrDefault(); }
+            get { return this._estimatedEvaluationTimeRemainingInMinutes; }
             set { this._estimatedEvaluationTimeRemainingInMinutes = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp of the latest evaluation completed by the monitor.
         /// </para>
         /// </summary>
-        public DateTime LastEvaluationTime
+        public DateTime? LastEvaluationTime
         {
-            get { return this._lastEvaluationTime.GetValueOrDefault(); }
+            get { return this._lastEvaluationTime; }
             set { this._lastEvaluationTime = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp of the latest modification to the monitor.
         /// </para>
         /// </summary>
-        public DateTime LastModificationTime
+        public DateTime? LastModificationTime
         {
-            get { return this._lastModificationTime.GetValueOrDefault(); }
+            get { return this._lastModificationTime; }
             set { this._lastModificationTime = value; }
         }
 

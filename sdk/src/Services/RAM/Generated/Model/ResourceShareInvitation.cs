@@ -50,9 +50,9 @@ namespace Amazon.RAM.Model
         /// The date and time when the invitation was sent.
         /// </para>
         /// </summary>
-        public DateTime InvitationTimestamp
+        public DateTime? InvitationTimestamp
         {
-            get { return this._invitationTimestamp.GetValueOrDefault(); }
+            get { return this._invitationTimestamp; }
             set { this._invitationTimestamp = value; }
         }
 

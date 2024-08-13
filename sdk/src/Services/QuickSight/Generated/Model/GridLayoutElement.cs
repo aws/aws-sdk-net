@@ -48,9 +48,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=35)]
-        public int ColumnIndex
+        public int? ColumnIndex
         {
-            get { return this._columnIndex.GetValueOrDefault(); }
+            get { return this._columnIndex; }
             set { this._columnIndex = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
-        public int ColumnSpan
+        public int? ColumnSpan
         {
-            get { return this._columnSpan.GetValueOrDefault(); }
+            get { return this._columnSpan; }
             set { this._columnSpan = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=9009)]
-        public int RowIndex
+        public int? RowIndex
         {
-            get { return this._rowIndex.GetValueOrDefault(); }
+            get { return this._rowIndex; }
             set { this._rowIndex = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=21)]
-        public int RowSpan
+        public int? RowSpan
         {
-            get { return this._rowSpan.GetValueOrDefault(); }
+            get { return this._rowSpan; }
             set { this._rowSpan = value; }
         }
 

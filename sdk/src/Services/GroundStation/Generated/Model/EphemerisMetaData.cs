@@ -72,9 +72,9 @@ namespace Amazon.GroundStation.Model
         /// This field is not populated for customer-provided ephemerides.
         /// </para>
         /// </summary>
-        public DateTime Epoch
+        public DateTime? Epoch
         {
-            get { return this._epoch.GetValueOrDefault(); }
+            get { return this._epoch; }
             set { this._epoch = value; }
         }
 

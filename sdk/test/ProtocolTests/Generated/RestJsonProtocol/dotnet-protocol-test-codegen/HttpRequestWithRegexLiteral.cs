@@ -18,7 +18,7 @@
  */
 using AWSSDK.ProtocolTests;
 using AWSSDK.ProtocolTests.Utils;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Amazon.RestJsonProtocol;
 using Amazon.RestJsonProtocol.Model;
 using Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations;
@@ -43,12 +43,6 @@ namespace AWSSDK.ProtocolTests.RestJson
         /// Path matching is not broken by regex expressions in literal
         /// segments
         /// </summary>
-        /*
-        * This test either requires a breaking change and will be addressed
-        * in V4, or has a backlog item to be fixed in the future. Please
-        * refer to the VNextTests list to see which it is.
-        * */
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]

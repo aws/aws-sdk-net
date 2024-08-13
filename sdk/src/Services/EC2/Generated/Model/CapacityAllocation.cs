@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// <c>4</c> indicates that instance capacity for 4 instances is currently in use.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.Route53Resolver.Model
         /// Whether the <c>PutResolverRulePolicy</c> request was successful.
         /// </para>
         /// </summary>
-        public bool ReturnValue
+        public bool? ReturnValue
         {
-            get { return this._returnValue.GetValueOrDefault(); }
+            get { return this._returnValue; }
             set { this._returnValue = value; }
         }
 

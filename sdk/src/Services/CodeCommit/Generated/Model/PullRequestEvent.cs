@@ -126,9 +126,9 @@ namespace Amazon.CodeCommit.Model
         /// The day and time of the pull request event, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime EventDate
+        public DateTime? EventDate
         {
-            get { return this._eventDate.GetValueOrDefault(); }
+            get { return this._eventDate; }
             set { this._eventDate = value; }
         }
 

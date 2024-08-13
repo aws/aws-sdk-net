@@ -87,9 +87,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The date and time the password in <c>DbPassword</c> expires.
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The date and time of when the <c>DbUser</c> and <c>DbPassword</c> authorization refreshes.
         /// </para>
         /// </summary>
-        public DateTime NextRefreshTime
+        public DateTime? NextRefreshTime
         {
-            get { return this._nextRefreshTime.GetValueOrDefault(); }
+            get { return this._nextRefreshTime; }
             set { this._nextRefreshTime = value; }
         }
 

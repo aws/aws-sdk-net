@@ -56,9 +56,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// in the launch group. 
         /// </para>
         /// </summary>
-        public int AmiLaunchIndex
+        public int? AmiLaunchIndex
         {
-            get { return this._amiLaunchIndex.GetValueOrDefault(); }
+            get { return this._amiLaunchIndex; }
             set { this._amiLaunchIndex = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// When the instance was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// When the instance was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

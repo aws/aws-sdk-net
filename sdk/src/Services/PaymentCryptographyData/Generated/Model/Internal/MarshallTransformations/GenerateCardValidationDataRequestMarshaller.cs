@@ -93,7 +93,7 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetValidationDataLength())
                 {
                     context.Writer.WritePropertyName("ValidationDataLength");
-                    context.Writer.Write(publicRequest.ValidationDataLength);
+                    context.Writer.Write(publicRequest.ValidationDataLength.Value);
                 }
 
                 writer.WriteObjectEnd();

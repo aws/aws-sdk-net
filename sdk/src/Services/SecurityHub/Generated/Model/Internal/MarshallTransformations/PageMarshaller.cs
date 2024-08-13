@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPageNumber())
             {
                 context.Writer.WritePropertyName("PageNumber");
-                context.Writer.Write(requestObject.PageNumber);
+                context.Writer.Write(requestObject.PageNumber.Value);
             }
 
         }

@@ -91,7 +91,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -100,10 +100,16 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetShared())
+                {
+                    context.Writer.WritePropertyName("Shared");
+                    context.Writer.Write(publicRequest.Shared.Value);
+                }
+
                 if(publicRequest.IsSetSortAscending())
                 {
                     context.Writer.WritePropertyName("SortAscending");
-                    context.Writer.Write(publicRequest.SortAscending);
+                    context.Writer.Write(publicRequest.SortAscending.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -52,9 +52,9 @@ namespace Amazon.DirectConnect.Model
         /// to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.
         /// </para>
         /// </summary>
-        public long AmazonSideAsn
+        public long? AmazonSideAsn
         {
-            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            get { return this._amazonSideAsn; }
             set { this._amazonSideAsn = value; }
         }
 

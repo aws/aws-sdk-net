@@ -64,7 +64,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="instanceRunningCount">Actual count of running instances.</param>
         /// <param name="state">State of instance group. The following values are no longer supported: STARTING, TERMINATED, and FAILED.</param>
         /// <param name="creationDateTime">The date/time the instance group was created.</param>
-        public InstanceGroupDetail(InstanceRoleType instanceRole, string instanceType, int instanceRequestCount, int instanceRunningCount, InstanceGroupState state, DateTime creationDateTime)
+        public InstanceGroupDetail(InstanceRoleType instanceRole, string instanceType, int? instanceRequestCount, int? instanceRunningCount, InstanceGroupState state, DateTime? creationDateTime)
         {
             _instanceRole = instanceRole;
             _instanceType = instanceType;
@@ -102,9 +102,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date/time the instance group was terminated.
         /// </para>
         /// </summary>
-        public DateTime EndDateTime
+        public DateTime? EndDateTime
         {
-            get { return this._endDateTime.GetValueOrDefault(); }
+            get { return this._endDateTime; }
             set { this._endDateTime = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InstanceRequestCount
+        public int? InstanceRequestCount
         {
-            get { return this._instanceRequestCount.GetValueOrDefault(); }
+            get { return this._instanceRequestCount; }
             set { this._instanceRequestCount = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InstanceRunningCount
+        public int? InstanceRunningCount
         {
-            get { return this._instanceRunningCount.GetValueOrDefault(); }
+            get { return this._instanceRunningCount; }
             set { this._instanceRunningCount = value; }
         }
 
@@ -309,9 +309,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date/time the instance group was available to the cluster.
         /// </para>
         /// </summary>
-        public DateTime ReadyDateTime
+        public DateTime? ReadyDateTime
         {
-            get { return this._readyDateTime.GetValueOrDefault(); }
+            get { return this._readyDateTime; }
             set { this._readyDateTime = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date/time the instance group was started.
         /// </para>
         /// </summary>
-        public DateTime StartDateTime
+        public DateTime? StartDateTime
         {
-            get { return this._startDateTime.GetValueOrDefault(); }
+            get { return this._startDateTime; }
             set { this._startDateTime = value; }
         }
 

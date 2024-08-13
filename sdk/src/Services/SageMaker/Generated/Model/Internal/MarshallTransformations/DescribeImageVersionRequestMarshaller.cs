@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("Version");
-                    context.Writer.Write(publicRequest.Version);
+                    context.Writer.Write(publicRequest.Version.Value);
                 }
 
                 writer.WriteObjectEnd();

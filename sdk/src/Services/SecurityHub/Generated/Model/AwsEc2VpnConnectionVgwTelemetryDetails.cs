@@ -47,9 +47,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of accepted routes.
         /// </para>
         /// </summary>
-        public int AcceptedRouteCount
+        public int? AcceptedRouteCount
         {
-            get { return this._acceptedRouteCount.GetValueOrDefault(); }
+            get { return this._acceptedRouteCount; }
             set { this._acceptedRouteCount = value; }
         }
 

@@ -89,7 +89,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinProvisionedTPS())
                 {
                     context.Writer.WritePropertyName("minProvisionedTPS");
-                    context.Writer.Write(publicRequest.MinProvisionedTPS);
+                    context.Writer.Write(publicRequest.MinProvisionedTPS.Value);
                 }
 
                 if(publicRequest.IsSetSolutionVersionArn())

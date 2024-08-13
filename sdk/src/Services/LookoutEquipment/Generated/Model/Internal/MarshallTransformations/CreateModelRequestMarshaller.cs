@@ -111,13 +111,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEvaluationDataEndTime())
                 {
                     context.Writer.WritePropertyName("EvaluationDataEndTime");
-                    context.Writer.Write(publicRequest.EvaluationDataEndTime);
+                    context.Writer.Write(publicRequest.EvaluationDataEndTime.Value);
                 }
 
                 if(publicRequest.IsSetEvaluationDataStartTime())
                 {
                     context.Writer.WritePropertyName("EvaluationDataStartTime");
-                    context.Writer.Write(publicRequest.EvaluationDataStartTime);
+                    context.Writer.Write(publicRequest.EvaluationDataStartTime.Value);
                 }
 
                 if(publicRequest.IsSetLabelsInputConfiguration())
@@ -185,13 +185,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrainingDataEndTime())
                 {
                     context.Writer.WritePropertyName("TrainingDataEndTime");
-                    context.Writer.Write(publicRequest.TrainingDataEndTime);
+                    context.Writer.Write(publicRequest.TrainingDataEndTime.Value);
                 }
 
                 if(publicRequest.IsSetTrainingDataStartTime())
                 {
                     context.Writer.WritePropertyName("TrainingDataStartTime");
-                    context.Writer.Write(publicRequest.TrainingDataStartTime);
+                    context.Writer.Write(publicRequest.TrainingDataStartTime.Value);
                 }
 
                 writer.WriteObjectEnd();

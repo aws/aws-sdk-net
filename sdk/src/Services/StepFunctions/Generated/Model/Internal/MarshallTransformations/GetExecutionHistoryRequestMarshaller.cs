@@ -78,13 +78,13 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeExecutionData())
                 {
                     context.Writer.WritePropertyName("includeExecutionData");
-                    context.Writer.Write(publicRequest.IncludeExecutionData);
+                    context.Writer.Write(publicRequest.IncludeExecutionData.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -96,7 +96,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReverseOrder())
                 {
                     context.Writer.WritePropertyName("reverseOrder");
-                    context.Writer.Write(publicRequest.ReverseOrder);
+                    context.Writer.Write(publicRequest.ReverseOrder.Value);
                 }
 
                 writer.WriteObjectEnd();

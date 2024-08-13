@@ -44,9 +44,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Allows key for encryption and decryption.
         /// </para>
         /// </summary>
-        public bool Decrypt
+        public bool? Decrypt
         {
-            get { return this._decrypt.GetValueOrDefault(); }
+            get { return this._decrypt; }
             set { this._decrypt = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Allows key exchange without encryption.
         /// </para>
         /// </summary>
-        public bool KeyAgreement
+        public bool? KeyAgreement
         {
-            get { return this._keyAgreement.GetValueOrDefault(); }
+            get { return this._keyAgreement; }
             set { this._keyAgreement = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Allow key use for digital signature.
         /// </para>
         /// </summary>
-        public bool Sign
+        public bool? Sign
         {
-            get { return this._sign.GetValueOrDefault(); }
+            get { return this._sign; }
             set { this._sign = value; }
         }
 

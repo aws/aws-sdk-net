@@ -63,7 +63,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsResellerAccount())
             {
                 context.Writer.WritePropertyName("isResellerAccount");
-                context.Writer.Write(requestObject.IsResellerAccount);
+                context.Writer.Write(requestObject.IsResellerAccount.Value);
             }
 
             if(requestObject.IsSetProvincialSalesTaxId())

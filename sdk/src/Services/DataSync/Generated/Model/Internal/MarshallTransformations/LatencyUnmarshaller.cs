@@ -68,19 +68,19 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Other", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Other = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Read", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Read = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Write", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Write = unmarshaller.Unmarshall(context);
                     continue;
                 }

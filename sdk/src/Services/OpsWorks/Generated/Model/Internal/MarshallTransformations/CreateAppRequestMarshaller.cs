@@ -130,7 +130,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableSsl())
                 {
                     context.Writer.WritePropertyName("EnableSsl");
-                    context.Writer.Write(publicRequest.EnableSsl);
+                    context.Writer.Write(publicRequest.EnableSsl.Value);
                 }
 
                 if(publicRequest.IsSetEnvironment())

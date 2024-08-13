@@ -51,25 +51,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
-                context.Writer.Write(requestObject.EndTime);
+                context.Writer.Write(requestObject.EndTime.Value);
             }
 
             if(requestObject.IsSetFirst())
             {
                 context.Writer.WritePropertyName("First");
-                context.Writer.Write(requestObject.First);
+                context.Writer.Write(requestObject.First.Value);
             }
 
             if(requestObject.IsSetLast())
             {
                 context.Writer.WritePropertyName("Last");
-                context.Writer.Write(requestObject.Last);
+                context.Writer.Write(requestObject.Last.Value);
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.Write(requestObject.StartTime.Value);
             }
 
         }

@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.ConnectContactLens
@@ -39,16 +40,28 @@ namespace Amazon.ConnectContactLens
     /// <summary>
     /// <para>Implementation for accessing ConnectContactLens</para>
     ///
-    /// Contact Lens for Amazon Connect enables you to analyze conversations between customer
+    /// <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Contact_Lens.html">Contact
+    /// Lens actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Contact_Lens.html">Contact
+    /// Lens data types</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Amazon Connect Contact Lens enables you to analyze conversations between customer
     /// and agents, by using speech transcription, natural language processing, and intelligent
     /// search capabilities. It performs sentiment analysis, detects issues, and enables you
     /// to automatically categorize contacts.
-    /// 
+    /// </para>
     ///  
     /// <para>
-    /// Contact Lens for Amazon Connect provides both real-time and post-call analytics of
-    /// customer-agent conversations. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html">Analyze
-    /// conversations using Contact Lens</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Amazon Connect Contact Lens provides both real-time and post-call analytics of customer-agent
+    /// conversations. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html">Analyze
+    /// conversations using speech analytics</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// 
     /// </para>
     /// </summary>
@@ -337,16 +350,8 @@ namespace Amazon.ConnectContactLens
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonConnectContactLensEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AccessControlAllowCredentials", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AccessControlAllowCredentials = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -88,13 +88,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("AccessControlMaxAgeSec", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AccessControlMaxAgeSec = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OriginOverride", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.OriginOverride = unmarshaller.Unmarshall(context);
                         continue;
                     }

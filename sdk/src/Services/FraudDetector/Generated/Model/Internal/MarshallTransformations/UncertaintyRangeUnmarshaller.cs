@@ -68,13 +68,13 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lowerBoundValue", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.LowerBoundValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("upperBoundValue", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.UpperBoundValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

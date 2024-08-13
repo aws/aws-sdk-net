@@ -68,9 +68,9 @@ namespace Amazon.DataSync.Model
         /// The time that the agent was <a href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.DataSync.Model
         /// The last time that the agent was communicating with the DataSync service.
         /// </para>
         /// </summary>
-        public DateTime LastConnectionTime
+        public DateTime? LastConnectionTime
         {
-            get { return this._lastConnectionTime.GetValueOrDefault(); }
+            get { return this._lastConnectionTime; }
             set { this._lastConnectionTime = value; }
         }
 

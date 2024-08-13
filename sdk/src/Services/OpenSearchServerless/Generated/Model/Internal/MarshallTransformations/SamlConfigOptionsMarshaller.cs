@@ -63,7 +63,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionTimeout())
             {
                 context.Writer.WritePropertyName("sessionTimeout");
-                context.Writer.Write(requestObject.SessionTimeout);
+                context.Writer.Write(requestObject.SessionTimeout.Value);
             }
 
             if(requestObject.IsSetUserAttribute())

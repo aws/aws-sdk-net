@@ -71,6 +71,7 @@ namespace AWSSDK.UnitTests.Runtime
             var imdsRegionEndpoint = imdsRegion != null ? RegionEndpoint.GetBySystemName(imdsRegion) : null;
 
             var mode = _resolver.Resolve(clientRegionEndpoint, () => imdsRegionEndpoint);
+
             Assert.AreEqual(expectedMode, mode);
         }
     }

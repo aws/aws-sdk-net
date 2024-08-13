@@ -66,9 +66,9 @@ namespace Amazon.Cloud9.Model
         /// the environment.
         /// </para>
         /// </summary>
-        public DateTime LastAccess
+        public DateTime? LastAccess
         {
-            get { return this._lastAccess.GetValueOrDefault(); }
+            get { return this._lastAccess; }
             set { this._lastAccess = value; }
         }
 

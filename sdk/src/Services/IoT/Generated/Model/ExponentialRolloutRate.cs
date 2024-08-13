@@ -47,9 +47,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
-        public int BaseRatePerMinute
+        public int? BaseRatePerMinute
         {
-            get { return this._baseRatePerMinute.GetValueOrDefault(); }
+            get { return this._baseRatePerMinute; }
             set { this._baseRatePerMinute = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=5)]
-        public double IncrementFactor
+        public double? IncrementFactor
         {
-            get { return this._incrementFactor.GetValueOrDefault(); }
+            get { return this._incrementFactor; }
             set { this._incrementFactor = value; }
         }
 

@@ -11,7 +11,7 @@ using Amazon.Runtime.Documents;
 using Amazon.Runtime.Documents.Internal.Transform;
 using Amazon.Util;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     public class JsonSampleGenerator
     {
@@ -111,15 +111,24 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             {
                 writer.WritePropertyName(member.MarshallName);
 
-                if (member.OverrideDataType != null && string.Equals(member.OverrideDataType.Unmarshaller, "DateTimeEpochLongMillisecondsUnmarshaller"))
+                if (member.OverrideDataType != null && (
+                    string.Equals(member.OverrideDataType.Unmarshaller, "DateTimeEpochLongMillisecondsUnmarshaller") ||
+                    string.Equals(member.OverrideDataType.Unmarshaller, "NullableDateTimeEpochLongMillisecondsUnmarshaller"))
+                )
                 {
                     writer.Write(ValidatorUtils.GetTestEpochTime().TotalMilliseconds);
                 }
-                else if (member.OverrideDataType != null && string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"))
+                else if (member.OverrideDataType != null && (
+                    string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller") || 
+                    string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"))
+                )
                 {
                     writer.Write(Constants.DEFAULT_DATE.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
                 }
-                else if (member.OverrideDataType != null && string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.DecimalUnmarshaller"))
+                else if (member.OverrideDataType != null && (
+                    string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.DecimalUnmarshaller") ||
+                    string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.NullableDecimalUnmarshaller"))
+                )
                 {
                     writer.Write(Constants.DEFAULT_DECIMAL.ToString(CultureInfo.InvariantCulture));
                 }

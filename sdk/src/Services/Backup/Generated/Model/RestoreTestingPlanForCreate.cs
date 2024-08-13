@@ -132,9 +132,9 @@ namespace Amazon.Backup.Model
         /// this parameter has a maximum value of 168 hours (one week).
         /// </para>
         /// </summary>
-        public int StartWindowHours
+        public int? StartWindowHours
         {
-            get { return this._startWindowHours.GetValueOrDefault(); }
+            get { return this._startWindowHours; }
             set { this._startWindowHours = value; }
         }
 

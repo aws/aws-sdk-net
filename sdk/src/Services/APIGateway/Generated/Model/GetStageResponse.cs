@@ -78,9 +78,9 @@ namespace Amazon.APIGateway.Model
         /// cache, set <c>CachingEnabled</c> to <c>true</c> for a method. 
         /// </para>
         /// </summary>
-        public bool CacheClusterEnabled
+        public bool? CacheClusterEnabled
         {
-            get { return this._cacheClusterEnabled.GetValueOrDefault(); }
+            get { return this._cacheClusterEnabled; }
             set { this._cacheClusterEnabled = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.APIGateway.Model
         /// The timestamp when the stage was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.APIGateway.Model
         /// The timestamp when the stage last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDate
+        public DateTime? LastUpdatedDate
         {
-            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            get { return this._lastUpdatedDate; }
             set { this._lastUpdatedDate = value; }
         }
 
@@ -318,9 +318,9 @@ namespace Amazon.APIGateway.Model
         /// Specifies whether active tracing with X-ray is enabled for the Stage.
         /// </para>
         /// </summary>
-        public bool TracingEnabled
+        public bool? TracingEnabled
         {
-            get { return this._tracingEnabled.GetValueOrDefault(); }
+            get { return this._tracingEnabled; }
             set { this._tracingEnabled = value; }
         }
 

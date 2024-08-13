@@ -63,9 +63,9 @@ namespace Amazon.IdentityManagement.Model
         /// 8601 date-time format</a>.
         /// </para>
         /// </summary>
-        public DateTime GeneratedTime
+        public DateTime? GeneratedTime
         {
-            get { return this._generatedTime.GetValueOrDefault(); }
+            get { return this._generatedTime; }
             set { this._generatedTime = value; }
         }
 

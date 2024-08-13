@@ -99,9 +99,9 @@ namespace Amazon.DocDBElastic.Model
         /// The number of days for which automatic snapshots are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.DocDBElastic.Model
         /// values are 2, 4, 8, 16, 32, 64.
         /// </para>
         /// </summary>
-        public int ShardCapacity
+        public int? ShardCapacity
         {
-            get { return this._shardCapacity.GetValueOrDefault(); }
+            get { return this._shardCapacity; }
             set { this._shardCapacity = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.DocDBElastic.Model
         /// The number of shards assigned to the elastic cluster. Maximum is 32.
         /// </para>
         /// </summary>
-        public int ShardCount
+        public int? ShardCount
         {
-            get { return this._shardCount.GetValueOrDefault(); }
+            get { return this._shardCount; }
             set { this._shardCount = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.DocDBElastic.Model
         /// that can be used for reads and to improve availability.
         /// </para>
         /// </summary>
-        public int ShardInstanceCount
+        public int? ShardInstanceCount
         {
-            get { return this._shardInstanceCount.GetValueOrDefault(); }
+            get { return this._shardInstanceCount; }
             set { this._shardInstanceCount = value; }
         }
 

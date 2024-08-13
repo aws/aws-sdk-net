@@ -139,13 +139,13 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRestartNeeded())
             {
                 context.Writer.WritePropertyName("restartNeeded");
-                context.Writer.Write(requestObject.RestartNeeded);
+                context.Writer.Write(requestObject.RestartNeeded.Value);
             }
 
             if(requestObject.IsSetRollbackPossible())
             {
                 context.Writer.WritePropertyName("rollbackPossible");
-                context.Writer.Write(requestObject.RollbackPossible);
+                context.Writer.Write(requestObject.RollbackPossible.Value);
             }
 
             if(requestObject.IsSetTags())

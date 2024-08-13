@@ -57,13 +57,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreationDate())
             {
                 context.Writer.WritePropertyName("CreationDate");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.CreationDate))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CreationDate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CreationDate));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CreationDate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CreationDate);
+                    context.Writer.Write(requestObject.CreationDate.Value);
                 }
             }
 
@@ -88,7 +88,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyRotationStatus())
             {
                 context.Writer.WritePropertyName("KeyRotationStatus");
-                context.Writer.Write(requestObject.KeyRotationStatus);
+                context.Writer.Write(requestObject.KeyRotationStatus.Value);
             }
 
             if(requestObject.IsSetKeyState())

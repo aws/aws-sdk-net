@@ -51,13 +51,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeReservation())
             {
                 context.Writer.WritePropertyName("computeReservation");
-                context.Writer.Write(requestObject.ComputeReservation);
+                context.Writer.Write(requestObject.ComputeReservation.Value);
             }
 
             if(requestObject.IsSetShareDecaySeconds())
             {
                 context.Writer.WritePropertyName("shareDecaySeconds");
-                context.Writer.Write(requestObject.ShareDecaySeconds);
+                context.Writer.Write(requestObject.ShareDecaySeconds.Value);
             }
 
             if(requestObject.IsSetShareDistribution())

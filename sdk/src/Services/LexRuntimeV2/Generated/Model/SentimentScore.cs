@@ -46,9 +46,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// of the <c>MIXED</c> sentiment.
         /// </para>
         /// </summary>
-        public double Mixed
+        public double? Mixed
         {
-            get { return this._mixed.GetValueOrDefault(); }
+            get { return this._mixed; }
             set { this._mixed = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// of the <c>NEGATIVE</c> sentiment.
         /// </para>
         /// </summary>
-        public double Negative
+        public double? Negative
         {
-            get { return this._negative.GetValueOrDefault(); }
+            get { return this._negative; }
             set { this._negative = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// of the <c>NEUTRAL</c> sentiment.
         /// </para>
         /// </summary>
-        public double Neutral
+        public double? Neutral
         {
-            get { return this._neutral.GetValueOrDefault(); }
+            get { return this._neutral; }
             set { this._neutral = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// of the <c>POSITIVE</c> sentiment.
         /// </para>
         /// </summary>
-        public double Positive
+        public double? Positive
         {
-            get { return this._positive.GetValueOrDefault(); }
+            get { return this._positive; }
             set { this._positive = value; }
         }
 

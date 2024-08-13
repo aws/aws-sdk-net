@@ -202,9 +202,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt.
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

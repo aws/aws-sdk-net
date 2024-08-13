@@ -47,9 +47,9 @@ namespace Amazon.DeviceFarm.Model
         /// a run.
         /// </para>
         /// </summary>
-        public int DefaultJobTimeoutMinutes
+        public int? DefaultJobTimeoutMinutes
         {
-            get { return this._defaultJobTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._defaultJobTimeoutMinutes; }
             set { this._defaultJobTimeoutMinutes = value; }
         }
 

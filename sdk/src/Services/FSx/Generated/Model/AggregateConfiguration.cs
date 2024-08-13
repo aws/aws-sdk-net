@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model
         ///  <ul> <li> 
         /// <para>
         /// The strings in the value of <c>Aggregates</c> are not are not formatted as <c>aggrX</c>,
-        /// where X is a number between 1 and 6.
+        /// where X is a number between 1 and 12.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -85,9 +85,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
-        public int TotalConstituents
+        public int? TotalConstituents
         {
-            get { return this._totalConstituents.GetValueOrDefault(); }
+            get { return this._totalConstituents; }
             set { this._totalConstituents = value; }
         }
 

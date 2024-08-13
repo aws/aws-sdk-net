@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.CertificateManager
@@ -657,9 +658,12 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an Amazon-issued certificate and its certificate chain. The chain consists
-        /// of the certificate of the issuing CA and the intermediate certificates of any other
-        /// subordinate CAs. All of the certificates are base64 encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a>
+        /// Retrieves a certificate and its certificate chain. The certificate may be either a
+        /// public or private certificate issued using the ACM <c>RequestCertificate</c> action,
+        /// or a certificate imported into ACM using the <c>ImportCertificate</c> action. The
+        /// chain consists of the certificate of the issuing CA and the intermediate certificates
+        /// of any other subordinate CAs. All of the certificates are base64 encoded. You can
+        /// use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a>
         /// to decode the certificates and inspect individual fields.
         /// </summary>
         /// <param name="certificateArn">String that contains a certificate ARN in the following format:  <c>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</c>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
@@ -690,9 +694,12 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves an Amazon-issued certificate and its certificate chain. The chain consists
-        /// of the certificate of the issuing CA and the intermediate certificates of any other
-        /// subordinate CAs. All of the certificates are base64 encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a>
+        /// Retrieves a certificate and its certificate chain. The certificate may be either a
+        /// public or private certificate issued using the ACM <c>RequestCertificate</c> action,
+        /// or a certificate imported into ACM using the <c>ImportCertificate</c> action. The
+        /// chain consists of the certificate of the issuing CA and the intermediate certificates
+        /// of any other subordinate CAs. All of the certificates are base64 encoded. You can
+        /// use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a>
         /// to decode the certificates and inspect individual fields.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCertificate service method.</param>
@@ -767,16 +774,6 @@ namespace Amazon.CertificateManager
         ///  </li> <li> 
         /// <para>
         /// The private key must be no larger than 5 KB (5,120 bytes).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the certificate you are importing is not self-signed, you must enter its certificate
-        /// chain.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If a certificate chain is included, the issuer must be the subject of one of the certificates
-        /// in the chain.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -884,10 +881,17 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
-        /// that match a specific status be listed. You can also filter by specific attributes
-        /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
-        /// more information, see <a>Filters</a>.
+        /// Retrieves a list of certificate ARNs and domain names. By default, the API returns
+        /// RSA_2048 certificates. To return all certificates in the account, include the <c>keyType</c>
+        /// filter with the values <c>[RSA_1024, RSA_2048, RSA_3072, RSA_4096, EC_prime256v1,
+        /// EC_secp384r1, EC_secp521r1]</c>.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to <c>keyType</c>, you can also filter by the <c>CertificateStatuses</c>,
+        /// <c>keyUsage</c>, and <c>extendedKeyUsage</c> attributes on the certificate. For more
+        /// information, see <a>Filters</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -909,10 +913,17 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
-        /// that match a specific status be listed. You can also filter by specific attributes
-        /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
-        /// more information, see <a>Filters</a>.
+        /// Retrieves a list of certificate ARNs and domain names. By default, the API returns
+        /// RSA_2048 certificates. To return all certificates in the account, include the <c>keyType</c>
+        /// filter with the values <c>[RSA_1024, RSA_2048, RSA_3072, RSA_4096, EC_prime256v1,
+        /// EC_secp384r1, EC_secp521r1]</c>.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to <c>keyType</c>, you can also filter by the <c>CertificateStatuses</c>,
+        /// <c>keyUsage</c>, and <c>extendedKeyUsage</c> attributes on the certificate. For more
+        /// information, see <a>Filters</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -1405,16 +1416,8 @@ namespace Amazon.CertificateManager
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonCertificateManagerEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

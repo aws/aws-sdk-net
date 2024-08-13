@@ -139,9 +139,9 @@ namespace Amazon.Lightsail.Model
         /// blueprint.
         /// </para>
         /// </summary>
-        public bool IsEngineDefault
+        public bool? IsEngineDefault
         {
-            get { return this._isEngineDefault.GetValueOrDefault(); }
+            get { return this._isEngineDefault; }
             set { this._isEngineDefault = value; }
         }
 

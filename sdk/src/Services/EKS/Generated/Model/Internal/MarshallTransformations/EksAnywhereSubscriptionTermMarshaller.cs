@@ -51,7 +51,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("duration");
-                context.Writer.Write(requestObject.Duration);
+                context.Writer.Write(requestObject.Duration.Value);
             }
 
             if(requestObject.IsSetUnit())

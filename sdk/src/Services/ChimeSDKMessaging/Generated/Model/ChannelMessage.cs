@@ -121,9 +121,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The time at which the message was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The time at which a message was edited.
         /// </para>
         /// </summary>
-        public DateTime LastEditedTimestamp
+        public DateTime? LastEditedTimestamp
         {
-            get { return this._lastEditedTimestamp.GetValueOrDefault(); }
+            get { return this._lastEditedTimestamp; }
             set { this._lastEditedTimestamp = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The time at which a message was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// Hides the content of a message.
         /// </para>
         /// </summary>
-        public bool Redacted
+        public bool? Redacted
         {
-            get { return this._redacted.GetValueOrDefault(); }
+            get { return this._redacted; }
             set { this._redacted = value; }
         }
 

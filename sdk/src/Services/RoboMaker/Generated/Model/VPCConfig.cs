@@ -46,9 +46,9 @@ namespace Amazon.RoboMaker.Model
         /// A boolean indicating whether to assign a public IP address.
         /// </para>
         /// </summary>
-        public bool AssignPublicIp
+        public bool? AssignPublicIp
         {
-            get { return this._assignPublicIp.GetValueOrDefault(); }
+            get { return this._assignPublicIp; }
             set { this._assignPublicIp = value; }
         }
 

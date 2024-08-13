@@ -68,37 +68,37 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BytesMetered", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesMetered = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CumulativeBytesScanned", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CumulativeBytesScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DataWrites", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DataWrites = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExecutionTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("QueryResultRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryResultRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordsIngested", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordsIngested = unmarshaller.Unmarshall(context);
                     continue;
                 }

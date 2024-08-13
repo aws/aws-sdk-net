@@ -62,9 +62,9 @@ namespace Amazon.KafkaConnect.Model
         /// Specifies whether connector logs get sent to the specified Amazon S3 destination.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

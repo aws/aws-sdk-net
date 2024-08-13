@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.ApplicationSignals
@@ -39,20 +40,13 @@ namespace Amazon.ApplicationSignals
     /// <summary>
     /// <para>Implementation for accessing ApplicationSignals</para>
     ///
-    /// <important> 
-    /// <para>
-    /// This is a Preview release of the Application Signals API Reference. Operations and
-    /// parameters are subject to change before the general availability release.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Use CloudWatch Application Signals for comprehensive observability of your cloud-based
     /// applications. It enables real-time service health dashboards and helps you track long-term
     /// performance trends against your business goals. The application-centric view provides
     /// you with unified visibility across your applications, services, and dependencies,
     /// so you can proactively monitor and efficiently triage any issues that may arise, ensuring
     /// optimal customer experience.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Application Signals provides the following benefits:
@@ -72,7 +66,12 @@ namespace Amazon.ApplicationSignals
     /// that gives you a visual representation of your applications, dependencies, and their
     /// connectivity.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// Application Signals works with CloudWatch RUM, CloudWatch Synthetics canaries, and
+    /// Amazon Web Services Service Catalog AppRegistry, to display your client pages, Synthetics
+    /// canaries, and application names within dashboards and maps.
+    /// </para>
     /// </summary>
     public partial class AmazonApplicationSignalsClient : AmazonServiceClient, IAmazonApplicationSignals
     {
@@ -1099,16 +1098,8 @@ namespace Amazon.ApplicationSignals
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonApplicationSignalsEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

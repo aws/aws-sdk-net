@@ -67,13 +67,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlComments())
             {
                 context.Writer.WritePropertyName("CrawlComments");
-                context.Writer.Write(requestObject.CrawlComments);
+                context.Writer.Write(requestObject.CrawlComments.Value);
             }
 
             if(requestObject.IsSetCrawlSystemFolders())
             {
                 context.Writer.WritePropertyName("CrawlSystemFolders");
-                context.Writer.Write(requestObject.CrawlSystemFolders);
+                context.Writer.Write(requestObject.CrawlSystemFolders.Value);
             }
 
             if(requestObject.IsSetDocumentLibraryFieldMappings())

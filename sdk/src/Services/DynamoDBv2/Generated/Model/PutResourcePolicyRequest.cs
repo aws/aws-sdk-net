@@ -68,9 +68,9 @@ namespace Amazon.DynamoDBv2.Model
         /// to change the policy of this resource in the future.
         /// </para>
         /// </summary>
-        public bool ConfirmRemoveSelfResourceAccess
+        public bool? ConfirmRemoveSelfResourceAccess
         {
-            get { return this._confirmRemoveSelfResourceAccess.GetValueOrDefault(); }
+            get { return this._confirmRemoveSelfResourceAccess; }
             set { this._confirmRemoveSelfResourceAccess = value; }
         }
 

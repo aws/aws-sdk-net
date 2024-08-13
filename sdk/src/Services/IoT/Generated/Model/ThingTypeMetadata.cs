@@ -46,9 +46,9 @@ namespace Amazon.IoT.Model
         /// The date and time when the thing type was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.IoT.Model
         /// with this type.
         /// </para>
         /// </summary>
-        public bool Deprecated
+        public bool? Deprecated
         {
-            get { return this._deprecated.GetValueOrDefault(); }
+            get { return this._deprecated; }
             set { this._deprecated = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.IoT.Model
         /// The date and time when the thing type was deprecated.
         /// </para>
         /// </summary>
-        public DateTime DeprecationDate
+        public DateTime? DeprecationDate
         {
-            get { return this._deprecationDate.GetValueOrDefault(); }
+            get { return this._deprecationDate; }
             set { this._deprecationDate = value; }
         }
 

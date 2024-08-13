@@ -99,9 +99,9 @@ namespace Amazon.QConnect.Model
         /// Whether to treat null value as a match for the attribute field.
         /// </para>
         /// </summary>
-        public bool IncludeNoExistence
+        public bool? IncludeNoExistence
         {
-            get { return this._includeNoExistence.GetValueOrDefault(); }
+            get { return this._includeNoExistence; }
             set { this._includeNoExistence = value; }
         }
 

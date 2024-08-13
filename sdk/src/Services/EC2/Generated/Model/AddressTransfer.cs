@@ -120,9 +120,9 @@ namespace Amazon.EC2.Model
         /// The timestamp when the Elastic IP address transfer was accepted.
         /// </para>
         /// </summary>
-        public DateTime TransferOfferAcceptedTimestamp
+        public DateTime? TransferOfferAcceptedTimestamp
         {
-            get { return this._transferOfferAcceptedTimestamp.GetValueOrDefault(); }
+            get { return this._transferOfferAcceptedTimestamp; }
             set { this._transferOfferAcceptedTimestamp = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.EC2.Model
         /// original owner.
         /// </para>
         /// </summary>
-        public DateTime TransferOfferExpirationTimestamp
+        public DateTime? TransferOfferExpirationTimestamp
         {
-            get { return this._transferOfferExpirationTimestamp.GetValueOrDefault(); }
+            get { return this._transferOfferExpirationTimestamp; }
             set { this._transferOfferExpirationTimestamp = value; }
         }
 

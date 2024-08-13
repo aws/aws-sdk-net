@@ -23,6 +23,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using System;
 using System.Net;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -67,6 +68,11 @@ namespace AWSSDK.UnitTests
                     RegionEndpoint = RegionEndpoint.USEast1
                 }
             };
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
+
             requestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
 
             var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
@@ -100,6 +106,11 @@ namespace AWSSDK.UnitTests
                     RegionEndpoint = RegionEndpoint.USEast1
                 }
             };
+
+            // Create and set the internal ServiceMetadata via reflection
+            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
+
             requestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
 
             var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
@@ -191,7 +202,7 @@ namespace AWSSDK.UnitTests
                 Validate(this.CallCount);
         }
 
-#if BCL45
+#if BCL
         public override async Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             await Task.Delay(100);
@@ -208,47 +219,6 @@ namespace AWSSDK.UnitTests
 
             return new T();
         }
-#elif !BCL45 && BCL
-
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            if (executionContext.ResponseContext.AsyncResult == null)
-            {
-                var asyncResult = new RuntimeAsyncResult(null, null);
-                executionContext.ResponseContext.AsyncResult = asyncResult;
-            }
-
-            ThreadPool.QueueUserWorkItem((state) =>
-            {
-                this.AsyncCallback(executionContext);
-            });
-
-            return executionContext.ResponseContext.AsyncResult;
-        }
-
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            this.CallCount++;
-
-            try
-            {
-                if (this.Action != null)
-                    Action(this.CallCount);
-
-                if (this.Action2 != null)
-                    Action2(this.CallCount, 
-                        Amazon.Runtime.Internal.ExecutionContext.CreateFromAsyncContext(executionContext));
-
-                if (this.Validate != null)
-                    Validate(this.CallCount);
-            }
-            catch (Exception exception)
-            {
-                executionContext.ResponseContext.AsyncResult.Exception = exception;
-            }
-            base.InvokeAsyncCallback(executionContext);
-        }
-
 #endif
 
     }
@@ -259,31 +229,10 @@ namespace AWSSDK.UnitTests
         {
         }
 
-#if BCL45
-        //public override Task<T> InvokeAsync<T>(IExecutionContext executionContext)
-        //{
-        //    return Task.FromResult(new AmazonWebServiceResponse());
-        //}
+#if BCL
         public override Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             return Task.FromResult<T>(new T());
-        }
-#elif !BCL45 && BCL
-
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            if (executionContext.ResponseContext.AsyncResult == null)
-            {
-                var asyncResult = new RuntimeAsyncResult(null, null);
-                executionContext.ResponseContext.AsyncResult = asyncResult;
-            }
-
-            ThreadPool.QueueUserWorkItem((state) =>
-            {
-                this.AsyncCallback(executionContext);
-            });
-
-            return executionContext.ResponseContext.AsyncResult;
         }
 #endif
     }

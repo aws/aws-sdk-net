@@ -309,9 +309,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxFaces
+        public int? MaxFaces
         {
-            get { return this._maxFaces.GetValueOrDefault(); }
+            get { return this._maxFaces; }
             set { this._maxFaces = value; }
         }
 

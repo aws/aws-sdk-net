@@ -63,13 +63,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsArray())
             {
                 context.Writer.WritePropertyName("isArray");
-                context.Writer.Write(requestObject.IsArray);
+                context.Writer.Write(requestObject.IsArray.Value);
             }
 
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("readOnly");
-                context.Writer.Write(requestObject.ReadOnly);
+                context.Writer.Write(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetRelationship())
@@ -86,7 +86,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("required");
-                context.Writer.Write(requestObject.Required);
+                context.Writer.Write(requestObject.Required.Value);
             }
 
         }

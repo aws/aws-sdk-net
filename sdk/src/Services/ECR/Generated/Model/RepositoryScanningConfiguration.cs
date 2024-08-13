@@ -120,9 +120,9 @@ namespace Amazon.ECR.Model
         /// Whether or not scan on push is configured for the repository.
         /// </para>
         /// </summary>
-        public bool ScanOnPush
+        public bool? ScanOnPush
         {
-            get { return this._scanOnPush.GetValueOrDefault(); }
+            get { return this._scanOnPush; }
             set { this._scanOnPush = value; }
         }
 

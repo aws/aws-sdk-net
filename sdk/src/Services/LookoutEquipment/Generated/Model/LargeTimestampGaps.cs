@@ -45,9 +45,9 @@ namespace Amazon.LookoutEquipment.Model
         ///  Indicates the size of the largest timestamp gap, in days. 
         /// </para>
         /// </summary>
-        public int MaxTimestampGapInDays
+        public int? MaxTimestampGapInDays
         {
-            get { return this._maxTimestampGapInDays.GetValueOrDefault(); }
+            get { return this._maxTimestampGapInDays; }
             set { this._maxTimestampGapInDays = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.LookoutEquipment.Model
         ///  Indicates the number of large timestamp gaps, if there are any. 
         /// </para>
         /// </summary>
-        public int NumberOfLargeTimestampGaps
+        public int? NumberOfLargeTimestampGaps
         {
-            get { return this._numberOfLargeTimestampGaps.GetValueOrDefault(); }
+            get { return this._numberOfLargeTimestampGaps; }
             set { this._numberOfLargeTimestampGaps = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.Backup.Model
         /// A timestamp that specifies when to delete a recovery point.
         /// </para>
         /// </summary>
-        public DateTime DeleteAt
+        public DateTime? DeleteAt
         {
-            get { return this._deleteAt.GetValueOrDefault(); }
+            get { return this._deleteAt; }
             set { this._deleteAt = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Backup.Model
         /// A timestamp that specifies when to transition a recovery point to cold storage.
         /// </para>
         /// </summary>
-        public DateTime MoveToColdStorageAt
+        public DateTime? MoveToColdStorageAt
         {
-            get { return this._moveToColdStorageAt.GetValueOrDefault(); }
+            get { return this._moveToColdStorageAt; }
             set { this._moveToColdStorageAt = value; }
         }
 

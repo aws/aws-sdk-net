@@ -46,9 +46,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The total number of bytes in the log events scanned during the query.
         /// </para>
         /// </summary>
-        public double BytesScanned
+        public double? BytesScanned
         {
-            get { return this._bytesScanned.GetValueOrDefault(); }
+            get { return this._bytesScanned; }
             set { this._bytesScanned = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The number of log events that matched the query string.
         /// </para>
         /// </summary>
-        public double RecordsMatched
+        public double? RecordsMatched
         {
-            get { return this._recordsMatched.GetValueOrDefault(); }
+            get { return this._recordsMatched; }
             set { this._recordsMatched = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The total number of log events scanned during the query.
         /// </para>
         /// </summary>
-        public double RecordsScanned
+        public double? RecordsScanned
         {
-            get { return this._recordsScanned.GetValueOrDefault(); }
+            get { return this._recordsScanned; }
             set { this._recordsScanned = value; }
         }
 

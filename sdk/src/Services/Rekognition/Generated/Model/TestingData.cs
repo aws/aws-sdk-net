@@ -64,9 +64,9 @@ namespace Amazon.Rekognition.Model
         /// training job.
         /// </para>
         /// </summary>
-        public bool AutoCreate
+        public bool? AutoCreate
         {
-            get { return this._autoCreate.GetValueOrDefault(); }
+            get { return this._autoCreate; }
             set { this._autoCreate = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The default is false.
         /// </para>
         /// </summary>
-        public bool ActivateCaseSensitiveIdentifier
+        public bool? ActivateCaseSensitiveIdentifier
         {
-            get { return this._activateCaseSensitiveIdentifier.GetValueOrDefault(); }
+            get { return this._activateCaseSensitiveIdentifier; }
             set { this._activateCaseSensitiveIdentifier = value; }
         }
 

@@ -60,9 +60,9 @@ namespace Amazon.Chime.Model
         /// The new value specified to indicate whether the rule is disabled.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

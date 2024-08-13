@@ -68,9 +68,9 @@ namespace Amazon.AppConfig.Model
         /// <c>Required</c>.
         /// </para>
         /// </summary>
-        public bool Dynamic
+        public bool? Dynamic
         {
-            get { return this._dynamic.GetValueOrDefault(); }
+            get { return this._dynamic; }
             set { this._dynamic = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.AppConfig.Model
         /// A parameter value must be specified in the extension association.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

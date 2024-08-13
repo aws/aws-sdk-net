@@ -78,13 +78,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExcludeDevicesDeployedInOtherStage())
                 {
                     context.Writer.WritePropertyName("ExcludeDevicesDeployedInOtherStage");
-                    context.Writer.Write(publicRequest.ExcludeDevicesDeployedInOtherStage);
+                    context.Writer.Write(publicRequest.ExcludeDevicesDeployedInOtherStage.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

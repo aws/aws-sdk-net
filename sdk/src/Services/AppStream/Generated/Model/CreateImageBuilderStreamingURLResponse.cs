@@ -43,9 +43,9 @@ namespace Amazon.AppStream.Model
         /// The elapsed time, in seconds after the Unix epoch, when this URL expires.
         /// </para>
         /// </summary>
-        public DateTime Expires
+        public DateTime? Expires
         {
-            get { return this._expires.GetValueOrDefault(); }
+            get { return this._expires; }
             set { this._expires = value; }
         }
 

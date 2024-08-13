@@ -84,7 +84,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCurrentApplicationVersionId())
                 {
                     context.Writer.WritePropertyName("CurrentApplicationVersionId");
-                    context.Writer.Write(publicRequest.CurrentApplicationVersionId);
+                    context.Writer.Write(publicRequest.CurrentApplicationVersionId.Value);
                 }
 
                 if(publicRequest.IsSetVpcConfigurationId())

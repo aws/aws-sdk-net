@@ -65,9 +65,9 @@ namespace Amazon.OpsWorksCM.Model
         /// Associate a public IP address with a server that you are launching. 
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.OpsWorksCM.Model
         /// The number of automated backups to keep. 
         /// </para>
         /// </summary>
-        public int BackupRetentionCount
+        public int? BackupRetentionCount
         {
-            get { return this._backupRetentionCount.GetValueOrDefault(); }
+            get { return this._backupRetentionCount; }
             set { this._backupRetentionCount = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.OpsWorksCM.Model
         /// Time stamp of server creation. Example <c>2016-07-29T13:38:47.520Z</c> 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.OpsWorksCM.Model
         /// of PreferredBackupCount. 
         /// </para>
         /// </summary>
-        public bool DisableAutomatedBackup
+        public bool? DisableAutomatedBackup
         {
-            get { return this._disableAutomatedBackup.GetValueOrDefault(); }
+            get { return this._disableAutomatedBackup; }
             set { this._disableAutomatedBackup = value; }
         }
 

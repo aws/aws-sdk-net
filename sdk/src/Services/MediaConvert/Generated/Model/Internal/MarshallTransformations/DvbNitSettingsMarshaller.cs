@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetworkId())
             {
                 context.Writer.WritePropertyName("networkId");
-                context.Writer.Write(requestObject.NetworkId);
+                context.Writer.Write(requestObject.NetworkId.Value);
             }
 
             if(requestObject.IsSetNetworkName())
@@ -63,7 +63,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNitInterval())
             {
                 context.Writer.WritePropertyName("nitInterval");
-                context.Writer.Write(requestObject.NitInterval);
+                context.Writer.Write(requestObject.NitInterval.Value);
             }
 
         }

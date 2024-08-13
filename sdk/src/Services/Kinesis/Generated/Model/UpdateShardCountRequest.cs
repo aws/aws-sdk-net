@@ -196,9 +196,9 @@ namespace Amazon.Kinesis.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int TargetShardCount
+        public int? TargetShardCount
         {
-            get { return this._targetShardCount.GetValueOrDefault(); }
+            get { return this._targetShardCount; }
             set { this._targetShardCount = value; }
         }
 

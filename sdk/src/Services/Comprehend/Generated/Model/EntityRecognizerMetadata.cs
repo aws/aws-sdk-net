@@ -82,9 +82,9 @@ namespace Amazon.Comprehend.Model
         /// Typically this is 10 to 20 percent of the input documents.
         /// </para>
         /// </summary>
-        public int NumberOfTestDocuments
+        public int? NumberOfTestDocuments
         {
-            get { return this._numberOfTestDocuments.GetValueOrDefault(); }
+            get { return this._numberOfTestDocuments; }
             set { this._numberOfTestDocuments = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Comprehend.Model
         /// Typically this is 80 to 90 percent of the input documents.
         /// </para>
         /// </summary>
-        public int NumberOfTrainedDocuments
+        public int? NumberOfTrainedDocuments
         {
-            get { return this._numberOfTrainedDocuments.GetValueOrDefault(); }
+            get { return this._numberOfTrainedDocuments; }
             set { this._numberOfTrainedDocuments = value; }
         }
 

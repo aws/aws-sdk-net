@@ -51,13 +51,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActive())
             {
                 context.Writer.WritePropertyName("active");
-                context.Writer.Write(requestObject.Active);
+                context.Writer.Write(requestObject.Active.Value);
             }
 
             if(requestObject.IsSetEnableCodeHookInvocation())
             {
                 context.Writer.WritePropertyName("enableCodeHookInvocation");
-                context.Writer.Write(requestObject.EnableCodeHookInvocation);
+                context.Writer.Write(requestObject.EnableCodeHookInvocation.Value);
             }
 
             if(requestObject.IsSetInvocationLabel())

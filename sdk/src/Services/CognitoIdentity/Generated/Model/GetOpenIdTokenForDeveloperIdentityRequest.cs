@@ -161,9 +161,9 @@ namespace Amazon.CognitoIdentity.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
-        public long TokenDuration
+        public long? TokenDuration
         {
-            get { return this._tokenDuration.GetValueOrDefault(); }
+            get { return this._tokenDuration; }
             set { this._tokenDuration = value; }
         }
 

@@ -48,6 +48,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelDataSources())
+            {
+                context.Writer.WritePropertyName("AdditionalModelDataSources");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdditionalModelDataSourcesListValue in requestObject.AdditionalModelDataSources)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdditionalModelDataSourceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdditionalModelDataSourcesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetContainerHostname())
             {
                 context.Writer.WritePropertyName("ContainerHostname");

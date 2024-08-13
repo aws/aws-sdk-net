@@ -64,9 +64,9 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// If true, the device is enabled. If false, the device is disabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

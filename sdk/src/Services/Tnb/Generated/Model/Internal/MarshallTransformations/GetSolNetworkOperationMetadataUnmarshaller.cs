@@ -68,14 +68,32 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("instantiateMetadata", targetDepth))
+                {
+                    var unmarshaller = InstantiateMetadataUnmarshaller.Instance;
+                    unmarshalledObject.InstantiateMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("modifyVnfInfoMetadata", targetDepth))
+                {
+                    var unmarshaller = ModifyVnfInfoMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ModifyVnfInfoMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updateNsMetadata", targetDepth))
+                {
+                    var unmarshaller = UpdateNsMetadataUnmarshaller.Instance;
+                    unmarshalledObject.UpdateNsMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

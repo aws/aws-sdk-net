@@ -99,9 +99,9 @@ namespace Amazon.SageMaker.Model
         /// The time the processing job was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.SageMaker.Model
         /// The time the processing job was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.SageMaker.Model
         /// The time that the processing job ended.
         /// </para>
         /// </summary>
-        public DateTime ProcessingEndTime
+        public DateTime? ProcessingEndTime
         {
-            get { return this._processingEndTime.GetValueOrDefault(); }
+            get { return this._processingEndTime; }
             set { this._processingEndTime = value; }
         }
 
@@ -366,9 +366,9 @@ namespace Amazon.SageMaker.Model
         /// The time that the processing job started.
         /// </para>
         /// </summary>
-        public DateTime ProcessingStartTime
+        public DateTime? ProcessingStartTime
         {
-            get { return this._processingStartTime.GetValueOrDefault(); }
+            get { return this._processingStartTime; }
             set { this._processingStartTime = value; }
         }
 

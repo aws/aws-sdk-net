@@ -52,9 +52,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.Backup.Model
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime LastAttemptedExecutionTime
+        public DateTime? LastAttemptedExecutionTime
         {
-            get { return this._lastAttemptedExecutionTime.GetValueOrDefault(); }
+            get { return this._lastAttemptedExecutionTime; }
             set { this._lastAttemptedExecutionTime = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.Backup.Model
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulExecutionTime
+        public DateTime? LastSuccessfulExecutionTime
         {
-            get { return this._lastSuccessfulExecutionTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulExecutionTime; }
             set { this._lastSuccessfulExecutionTime = value; }
         }
 

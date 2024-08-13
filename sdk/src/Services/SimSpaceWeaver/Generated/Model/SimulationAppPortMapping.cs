@@ -47,9 +47,9 @@ namespace Amazon.SimSpaceWeaver.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int Actual
+        public int? Actual
         {
-            get { return this._actual.GetValueOrDefault(); }
+            get { return this._actual; }
             set { this._actual = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.SimSpaceWeaver.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int Declared
+        public int? Declared
         {
-            get { return this._declared.GetValueOrDefault(); }
+            get { return this._declared; }
             set { this._declared = value; }
         }
 

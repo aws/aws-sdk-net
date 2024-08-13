@@ -43,9 +43,9 @@ namespace Amazon.MediaLive.Model
         /// Table (NIT).
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=65536)]
-        public int NetworkId
+        public int? NetworkId
         {
-            get { return this._networkId.GetValueOrDefault(); }
+            get { return this._networkId; }
             set { this._networkId = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.MediaLive.Model
         /// of this table in the output transport stream.
         /// </summary>
         [AWSProperty(Min=25, Max=10000)]
-        public int RepInterval
+        public int? RepInterval
         {
-            get { return this._repInterval.GetValueOrDefault(); }
+            get { return this._repInterval; }
             set { this._repInterval = value; }
         }
 

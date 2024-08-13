@@ -72,9 +72,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The created time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The ended time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime EndedTimestamp
+        public DateTime? EndedTimestamp
         {
-            get { return this._endedTimestamp.GetValueOrDefault(); }
+            get { return this._endedTimestamp; }
             set { this._endedTimestamp = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ExpiryMinutes
+        public int? ExpiryMinutes
         {
-            get { return this._expiryMinutes.GetValueOrDefault(); }
+            get { return this._expiryMinutes; }
             set { this._expiryMinutes = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The updated time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

@@ -71,9 +71,9 @@ namespace Amazon.EC2.Model
         /// The date and time the NAT gateway was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.EC2.Model
         /// The date and time the NAT gateway was deleted, if applicable.
         /// </para>
         /// </summary>
-        public DateTime DeleteTime
+        public DateTime? DeleteTime
         {
-            get { return this._deleteTime.GetValueOrDefault(); }
+            get { return this._deleteTime; }
             set { this._deleteTime = value; }
         }
 

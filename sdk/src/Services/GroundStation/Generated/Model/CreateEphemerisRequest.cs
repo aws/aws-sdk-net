@@ -54,9 +54,9 @@ namespace Amazon.GroundStation.Model
         /// Setting this to false will set the ephemeris status to <c>DISABLED</c> after validation.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.GroundStation.Model
         /// An overall expiration time for the ephemeris in UTC, after which it will become <c>EXPIRED</c>.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=99999)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

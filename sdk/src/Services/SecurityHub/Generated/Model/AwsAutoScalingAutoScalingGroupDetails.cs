@@ -68,9 +68,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether capacity rebalancing is enabled. 
         /// </para>
         /// </summary>
-        public bool CapacityRebalance
+        public bool? CapacityRebalance
         {
-            get { return this._capacityRebalance.GetValueOrDefault(); }
+            get { return this._capacityRebalance; }
             set { this._capacityRebalance = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.SecurityHub.Model
         /// the health status of an EC2 instance that has come into service.
         /// </para>
         /// </summary>
-        public int HealthCheckGracePeriod
+        public int? HealthCheckGracePeriod
         {
-            get { return this._healthCheckGracePeriod.GetValueOrDefault(); }
+            get { return this._healthCheckGracePeriod; }
             set { this._healthCheckGracePeriod = value; }
         }
 

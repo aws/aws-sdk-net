@@ -95,9 +95,9 @@ namespace Amazon.CloudTrail.Model
         /// Specifies if the trail has custom event selectors.
         /// </para>
         /// </summary>
-        public bool HasCustomEventSelectors
+        public bool? HasCustomEventSelectors
         {
-            get { return this._hasCustomEventSelectors.GetValueOrDefault(); }
+            get { return this._hasCustomEventSelectors; }
             set { this._hasCustomEventSelectors = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.CloudTrail.Model
         /// list.
         /// </para>
         /// </summary>
-        public bool HasInsightSelectors
+        public bool? HasInsightSelectors
         {
-            get { return this._hasInsightSelectors.GetValueOrDefault(); }
+            get { return this._hasInsightSelectors; }
             set { this._hasInsightSelectors = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.CloudTrail.Model
         /// global services such as IAM. Otherwise, <b>False</b>.
         /// </para>
         /// </summary>
-        public bool IncludeGlobalServiceEvents
+        public bool? IncludeGlobalServiceEvents
         {
-            get { return this._includeGlobalServiceEvents.GetValueOrDefault(); }
+            get { return this._includeGlobalServiceEvents; }
             set { this._includeGlobalServiceEvents = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.CloudTrail.Model
         /// Specifies whether the trail exists only in one Region or exists in all Regions.
         /// </para>
         /// </summary>
-        public bool IsMultiRegionTrail
+        public bool? IsMultiRegionTrail
         {
-            get { return this._isMultiRegionTrail.GetValueOrDefault(); }
+            get { return this._isMultiRegionTrail; }
             set { this._isMultiRegionTrail = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.CloudTrail.Model
         /// Specifies whether the trail is an organization trail.
         /// </para>
         /// </summary>
-        public bool IsOrganizationTrail
+        public bool? IsOrganizationTrail
         {
-            get { return this._isOrganizationTrail.GetValueOrDefault(); }
+            get { return this._isOrganizationTrail; }
             set { this._isOrganizationTrail = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.CloudTrail.Model
         /// Specifies whether log file validation is enabled.
         /// </para>
         /// </summary>
-        public bool LogFileValidationEnabled
+        public bool? LogFileValidationEnabled
         {
-            get { return this._logFileValidationEnabled.GetValueOrDefault(); }
+            get { return this._logFileValidationEnabled; }
             set { this._logFileValidationEnabled = value; }
         }
 

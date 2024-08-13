@@ -91,9 +91,9 @@ namespace Amazon.Redshift.Model
         /// are not case sensitive.
         /// </para>
         /// </summary>
-        public bool EnableCaseSensitiveIdentifier
+        public bool? EnableCaseSensitiveIdentifier
         {
-            get { return this._enableCaseSensitiveIdentifier.GetValueOrDefault(); }
+            get { return this._enableCaseSensitiveIdentifier; }
             set { this._enableCaseSensitiveIdentifier = value; }
         }
 

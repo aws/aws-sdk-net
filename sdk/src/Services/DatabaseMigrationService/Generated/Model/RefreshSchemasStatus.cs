@@ -83,9 +83,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the schema was last refreshed.
         /// </para>
         /// </summary>
-        public DateTime LastRefreshDate
+        public DateTime? LastRefreshDate
         {
-            get { return this._lastRefreshDate.GetValueOrDefault(); }
+            get { return this._lastRefreshDate; }
             set { this._lastRefreshDate = value; }
         }
 

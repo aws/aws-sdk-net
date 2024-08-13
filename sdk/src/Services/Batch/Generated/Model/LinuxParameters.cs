@@ -81,9 +81,9 @@ namespace Amazon.Batch.Model
         /// docker version | grep "Server API version"</c> 
         /// </para>
         /// </summary>
-        public bool InitProcessEnabled
+        public bool? InitProcessEnabled
         {
-            get { return this._initProcessEnabled.GetValueOrDefault(); }
+            get { return this._initProcessEnabled; }
             set { this._initProcessEnabled = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MaxSwap
+        public int? MaxSwap
         {
-            get { return this._maxSwap.GetValueOrDefault(); }
+            get { return this._maxSwap; }
             set { this._maxSwap = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int SharedMemorySize
+        public int? SharedMemorySize
         {
-            get { return this._sharedMemorySize.GetValueOrDefault(); }
+            get { return this._sharedMemorySize; }
             set { this._sharedMemorySize = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int Swappiness
+        public int? Swappiness
         {
-            get { return this._swappiness.GetValueOrDefault(); }
+            get { return this._swappiness; }
             set { this._swappiness = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.DevOpsGuru.Model
         /// The number of open proactive insights in the Amazon Web Services service
         /// </para>
         /// </summary>
-        public int OpenProactiveInsights
+        public int? OpenProactiveInsights
         {
-            get { return this._openProactiveInsights.GetValueOrDefault(); }
+            get { return this._openProactiveInsights; }
             set { this._openProactiveInsights = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.DevOpsGuru.Model
         /// The number of open reactive insights in the Amazon Web Services service
         /// </para>
         /// </summary>
-        public int OpenReactiveInsights
+        public int? OpenReactiveInsights
         {
-            get { return this._openReactiveInsights.GetValueOrDefault(); }
+            get { return this._openReactiveInsights; }
             set { this._openReactiveInsights = value; }
         }
 

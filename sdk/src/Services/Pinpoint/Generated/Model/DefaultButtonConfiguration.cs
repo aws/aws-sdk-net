@@ -65,9 +65,9 @@ namespace Amazon.Pinpoint.Model
         /// The border radius of the button.
         /// </para>
         /// </summary>
-        public int BorderRadius
+        public int? BorderRadius
         {
-            get { return this._borderRadius.GetValueOrDefault(); }
+            get { return this._borderRadius; }
             set { this._borderRadius = value; }
         }
 

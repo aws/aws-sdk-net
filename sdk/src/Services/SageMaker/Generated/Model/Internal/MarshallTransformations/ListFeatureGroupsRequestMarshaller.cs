@@ -72,13 +72,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreationTimeAfter())
                 {
                     context.Writer.WritePropertyName("CreationTimeAfter");
-                    context.Writer.Write(publicRequest.CreationTimeAfter);
+                    context.Writer.Write(publicRequest.CreationTimeAfter.Value);
                 }
 
                 if(publicRequest.IsSetCreationTimeBefore())
                 {
                     context.Writer.WritePropertyName("CreationTimeBefore");
-                    context.Writer.Write(publicRequest.CreationTimeBefore);
+                    context.Writer.Write(publicRequest.CreationTimeBefore.Value);
                 }
 
                 if(publicRequest.IsSetFeatureGroupStatusEquals())
@@ -90,7 +90,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNameContains())

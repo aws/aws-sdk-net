@@ -45,9 +45,9 @@ namespace Amazon.S3Control.Model
         /// greater than 0 and less than 5 TB. 
         /// </para>
         /// </summary>
-        public long BytesGreaterThan
+        public long? BytesGreaterThan
         {
-            get { return this._bytesGreaterThan.GetValueOrDefault(); }
+            get { return this._bytesGreaterThan; }
             set { this._bytesGreaterThan = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.S3Control.Model
         /// greater than the minimum object size and less than 5 TB. 
         /// </para>
         /// </summary>
-        public long BytesLessThan
+        public long? BytesLessThan
         {
-            get { return this._bytesLessThan.GetValueOrDefault(); }
+            get { return this._bytesLessThan; }
             set { this._bytesLessThan = value; }
         }
 

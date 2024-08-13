@@ -62,9 +62,9 @@ namespace Amazon.MQ.Model
         /// The revision number of the configuration.
         /// </para>
         /// </summary>
-        public int Revision
+        public int? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 

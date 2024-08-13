@@ -46,9 +46,9 @@ namespace Amazon.ConnectCases.Model
         /// Can be either null, or have a Boolean value type. Only one value can be provided.
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.ConnectCases.Model
         /// Can be either null, or have a Double value type. Only one value can be provided.
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 

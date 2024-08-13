@@ -77,9 +77,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=28)]
-        public int DayOfMonth
+        public int? DayOfMonth
         {
-            get { return this._dayOfMonth.GetValueOrDefault(); }
+            get { return this._dayOfMonth; }
             set { this._dayOfMonth = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=6)]
-        public int DayOfWeek
+        public int? DayOfWeek
         {
-            get { return this._dayOfWeek.GetValueOrDefault(); }
+            get { return this._dayOfWeek; }
             set { this._dayOfWeek = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
-        public int HourOfDay
+        public int? HourOfDay
         {
-            get { return this._hourOfDay.GetValueOrDefault(); }
+            get { return this._hourOfDay; }
             set { this._hourOfDay = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]
-        public int MinuteOfHour
+        public int? MinuteOfHour
         {
-            get { return this._minuteOfHour.GetValueOrDefault(); }
+            get { return this._minuteOfHour; }
             set { this._minuteOfHour = value; }
         }
 

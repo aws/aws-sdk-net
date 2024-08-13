@@ -73,7 +73,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRolloverInterval())
             {
                 context.Writer.WritePropertyName("rolloverInterval");
-                context.Writer.Write(requestObject.RolloverInterval);
+                context.Writer.Write(requestObject.RolloverInterval.Value);
             }
 
         }

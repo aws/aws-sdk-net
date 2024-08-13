@@ -74,7 +74,7 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("taskEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TaskEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("taskStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TaskStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

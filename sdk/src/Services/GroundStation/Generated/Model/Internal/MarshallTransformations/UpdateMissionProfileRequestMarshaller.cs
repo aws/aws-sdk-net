@@ -73,13 +73,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetContactPostPassDurationSeconds())
                 {
                     context.Writer.WritePropertyName("contactPostPassDurationSeconds");
-                    context.Writer.Write(publicRequest.ContactPostPassDurationSeconds);
+                    context.Writer.Write(publicRequest.ContactPostPassDurationSeconds.Value);
                 }
 
                 if(publicRequest.IsSetContactPrePassDurationSeconds())
                 {
                     context.Writer.WritePropertyName("contactPrePassDurationSeconds");
-                    context.Writer.Write(publicRequest.ContactPrePassDurationSeconds);
+                    context.Writer.Write(publicRequest.ContactPrePassDurationSeconds.Value);
                 }
 
                 if(publicRequest.IsSetDataflowEdges())
@@ -101,7 +101,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinimumViableContactDurationSeconds())
                 {
                     context.Writer.WritePropertyName("minimumViableContactDurationSeconds");
-                    context.Writer.Write(publicRequest.MinimumViableContactDurationSeconds);
+                    context.Writer.Write(publicRequest.MinimumViableContactDurationSeconds.Value);
                 }
 
                 if(publicRequest.IsSetName())

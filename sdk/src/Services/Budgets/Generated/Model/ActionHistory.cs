@@ -101,9 +101,9 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property Timestamp.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

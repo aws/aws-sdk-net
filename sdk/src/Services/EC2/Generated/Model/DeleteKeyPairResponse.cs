@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// Is <c>true</c> if the request succeeds, and an error otherwise.
         /// </para>
         /// </summary>
-        public bool Return
+        public bool? Return
         {
-            get { return this._return.GetValueOrDefault(); }
+            get { return this._return; }
             set { this._return = value; }
         }
 

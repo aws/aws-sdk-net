@@ -87,9 +87,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// A timestamp that indicates when the VPC is first added to the environment. 
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// A timestamp that indicates when the VPC was last updated by the environment. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

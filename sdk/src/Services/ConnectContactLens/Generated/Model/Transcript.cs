@@ -50,9 +50,9 @@ namespace Amazon.ConnectContactLens.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int BeginOffsetMillis
+        public int? BeginOffsetMillis
         {
-            get { return this._beginOffsetMillis.GetValueOrDefault(); }
+            get { return this._beginOffsetMillis; }
             set { this._beginOffsetMillis = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.ConnectContactLens.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int EndOffsetMillis
+        public int? EndOffsetMillis
         {
-            get { return this._endOffsetMillis.GetValueOrDefault(); }
+            get { return this._endOffsetMillis; }
             set { this._endOffsetMillis = value; }
         }
 
@@ -141,7 +141,7 @@ namespace Amazon.ConnectContactLens.Model
         /// <summary>
         /// Gets and sets the property ParticipantId. 
         /// <para>
-        /// The identifier of the participant.
+        /// The identifier of the participant. Valid values are CUSTOMER or AGENT.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -179,7 +179,7 @@ namespace Amazon.ConnectContactLens.Model
         /// <summary>
         /// Gets and sets the property Sentiment. 
         /// <para>
-        /// The sentiment of the detected for this piece of transcript.
+        /// The sentiment detected for this piece of transcript.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

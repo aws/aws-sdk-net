@@ -86,7 +86,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Space", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Space = unmarshaller.Unmarshall(context);
                     continue;
                 }

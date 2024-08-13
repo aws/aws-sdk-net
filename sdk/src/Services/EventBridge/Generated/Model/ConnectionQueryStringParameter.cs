@@ -46,9 +46,9 @@ namespace Amazon.EventBridge.Model
         /// Specifies whether the value is secret.
         /// </para>
         /// </summary>
-        public bool IsValueSecret
+        public bool? IsValueSecret
         {
-            get { return this._isValueSecret.GetValueOrDefault(); }
+            get { return this._isValueSecret; }
             set { this._isValueSecret = value; }
         }
 

@@ -63,7 +63,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAsn())
             {
                 context.Writer.WritePropertyName("asn");
-                context.Writer.Write(requestObject.Asn);
+                context.Writer.Write(requestObject.Asn.Value);
             }
 
             if(requestObject.IsSetAuthKey())
@@ -119,7 +119,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVlan())
             {
                 context.Writer.WritePropertyName("vlan");
-                context.Writer.Write(requestObject.Vlan);
+                context.Writer.Write(requestObject.Vlan.Value);
             }
 
         }

@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;net45</TargetFrameworks>
-    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>ServiceClientGenerator</RootNamespace>
@@ -323,13 +322,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Generators/SourceFiles/ServiceClients.cs">
-      <DependentUpon>ServiceClients.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Update="Generators/SourceFiles/ServiceClients45.cs">
-      <DependentUpon>ServiceClients45.tt</DependentUpon>
+    <Compile Update="Generators\SourceFiles\ServiceClientsNetFramework.cs">
+      <DependentUpon>ServiceClientsNetFramework.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -348,13 +342,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Generators/SourceFiles/ServiceInterface.cs">
-      <DependentUpon>ServiceInterface.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Update="Generators/SourceFiles/ServiceInterface45.cs">
-      <DependentUpon>ServiceInterface45.tt</DependentUpon>
+    <Compile Update="Generators\SourceFiles\ServiceInterfaceNetFramework.cs">
+      <DependentUpon>ServiceInterfaceNetFramework.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -595,13 +584,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>RestXmlStructureUnmarshaller.cs</LastGenOutput>
     </None>
-    <None Update="Generators/SourceFiles/ServiceClients.tt">
+    <None Update="Generators\SourceFiles\ServiceClientsNetFramework.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceClients.cs</LastGenOutput>
-    </None>
-    <None Update="Generators/SourceFiles/ServiceClients45.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceClients45.cs</LastGenOutput>
+      <LastGenOutput>ServiceClientsNetFramework.cs</LastGenOutput>
     </None>
     <None Update="Generators/SourceFiles/ServiceClientsNetStandard.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -615,13 +600,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ServiceEnumerations.cs</LastGenOutput>
     </None>
-    <None Update="Generators/SourceFiles/ServiceInterface.tt">
+    <None Update="Generators\SourceFiles\ServiceInterfaceNetFramework.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceInterface.cs</LastGenOutput>
-    </None>
-    <None Update="Generators/SourceFiles/ServiceInterface45.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ServiceInterface45.cs</LastGenOutput>
+      <LastGenOutput>ServiceInterfaceNetFramework.cs</LastGenOutput>
     </None>
     <None Update="Generators/SourceFiles/ServiceInterfaceNetStandard.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -709,8 +690,6 @@
   </ItemGroup>
   <ItemGroup>
 	<PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
 	<PackageReference Include="System.CodeDom" Version="6.0.0" />
   </ItemGroup>
 </Project>

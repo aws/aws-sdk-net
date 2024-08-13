@@ -70,9 +70,9 @@ namespace Amazon.EC2.Model
         /// The time when the modification request was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.EC2.Model
         /// The time for the modification to become effective.
         /// </para>
         /// </summary>
-        public DateTime EffectiveDate
+        public DateTime? EffectiveDate
         {
-            get { return this._effectiveDate.GetValueOrDefault(); }
+            get { return this._effectiveDate; }
             set { this._effectiveDate = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.EC2.Model
         /// The time when the modification request was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdateDate
+        public DateTime? UpdateDate
         {
-            get { return this._updateDate.GetValueOrDefault(); }
+            get { return this._updateDate; }
             set { this._updateDate = value; }
         }
 

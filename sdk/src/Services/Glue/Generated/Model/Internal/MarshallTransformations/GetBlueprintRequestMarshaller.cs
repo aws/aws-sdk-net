@@ -72,13 +72,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeBlueprint())
                 {
                     context.Writer.WritePropertyName("IncludeBlueprint");
-                    context.Writer.Write(publicRequest.IncludeBlueprint);
+                    context.Writer.Write(publicRequest.IncludeBlueprint.Value);
                 }
 
                 if(publicRequest.IsSetIncludeParameterSpec())
                 {
                     context.Writer.WritePropertyName("IncludeParameterSpec");
-                    context.Writer.Write(publicRequest.IncludeParameterSpec);
+                    context.Writer.Write(publicRequest.IncludeParameterSpec.Value);
                 }
 
                 if(publicRequest.IsSetName())

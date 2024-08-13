@@ -64,13 +64,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EnableAcceptEncodingBrotli", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnableAcceptEncodingBrotli = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EnableAcceptEncodingGzip", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnableAcceptEncodingGzip = unmarshaller.Unmarshall(context);
                         continue;
                     }

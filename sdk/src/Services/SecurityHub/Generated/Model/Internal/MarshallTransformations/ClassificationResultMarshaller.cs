@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalOccurrences())
             {
                 context.Writer.WritePropertyName("AdditionalOccurrences");
-                context.Writer.Write(requestObject.AdditionalOccurrences);
+                context.Writer.Write(requestObject.AdditionalOccurrences.Value);
             }
 
             if(requestObject.IsSetCustomDataIdentifiers())
@@ -90,7 +90,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSizeClassified())
             {
                 context.Writer.WritePropertyName("SizeClassified");
-                context.Writer.Write(requestObject.SizeClassified);
+                context.Writer.Write(requestObject.SizeClassified.Value);
             }
 
             if(requestObject.IsSetStatus())

@@ -108,9 +108,9 @@ namespace Amazon.FSx.Model
         /// values), the tags created with the <c>Tags</c> parameter take precedence.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 

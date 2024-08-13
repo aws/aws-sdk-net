@@ -57,9 +57,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether a field has a default value.
         /// </para>
         /// </summary>
-        public bool DefaultChecked
+        public bool? DefaultChecked
         {
-            get { return this._defaultChecked.GetValueOrDefault(); }
+            get { return this._defaultChecked; }
             set { this._defaultChecked = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <c>dataSourceType</c> for the form is a Data Store.
         /// </para>
         /// </summary>
-        public bool IsArray
+        public bool? IsArray
         {
-            get { return this._isArray.GetValueOrDefault(); }
+            get { return this._isArray; }
             set { this._isArray = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The maximum value to display for the field.
         /// </para>
         /// </summary>
-        public float MaxValue
+        public float? MaxValue
         {
-            get { return this._maxValue.GetValueOrDefault(); }
+            get { return this._maxValue; }
             set { this._maxValue = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The minimum value to display for the field.
         /// </para>
         /// </summary>
-        public float MinValue
+        public float? MinValue
         {
-            get { return this._minValue.GetValueOrDefault(); }
+            get { return this._minValue; }
             set { this._minValue = value; }
         }
 
@@ -238,9 +238,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies a read only field.
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies a field that requires input.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The stepping increment for a numeric value in a field.
         /// </para>
         /// </summary>
-        public float Step
+        public float? Step
         {
-            get { return this._step.GetValueOrDefault(); }
+            get { return this._step; }
             set { this._step = value; }
         }
 

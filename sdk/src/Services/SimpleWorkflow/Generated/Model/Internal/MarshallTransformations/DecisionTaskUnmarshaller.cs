@@ -80,13 +80,13 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("previousStartedEventId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PreviousStartedEventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startedEventId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -72,9 +72,9 @@ namespace Amazon.NetworkMonitor.Model
         /// The time and date that the probe was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.NetworkMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int DestinationPort
+        public int? DestinationPort
         {
-            get { return this._destinationPort.GetValueOrDefault(); }
+            get { return this._destinationPort; }
             set { this._destinationPort = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.NetworkMonitor.Model
         /// The time and date that the probe was last updated.
         /// </para>
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.NetworkMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=56, Max=8500)]
-        public int PacketSize
+        public int? PacketSize
         {
-            get { return this._packetSize.GetValueOrDefault(); }
+            get { return this._packetSize; }
             set { this._packetSize = value; }
         }
 

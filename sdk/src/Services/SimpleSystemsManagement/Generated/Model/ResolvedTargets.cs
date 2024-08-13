@@ -61,9 +61,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A boolean value indicating whether the resolved target list is truncated.
         /// </para>
         /// </summary>
-        public bool Truncated
+        public bool? Truncated
         {
-            get { return this._truncated.GetValueOrDefault(); }
+            get { return this._truncated; }
             set { this._truncated = value; }
         }
 

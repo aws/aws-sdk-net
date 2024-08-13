@@ -51,7 +51,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             if(requestObject.IsSetMonitoringTimeInMinutes())
             {
                 context.Writer.WritePropertyName("monitoringTimeInMinutes");
-                context.Writer.Write(requestObject.MonitoringTimeInMinutes);
+                context.Writer.Write(requestObject.MonitoringTimeInMinutes.Value);
             }
 
             if(requestObject.IsSetRollbackTriggers())

@@ -65,9 +65,9 @@ namespace Amazon.CloudDirectory.Model
         /// Whether the attribute is mutable or not.
         /// </para>
         /// </summary>
-        public bool IsImmutable
+        public bool? IsImmutable
         {
-            get { return this._isImmutable.GetValueOrDefault(); }
+            get { return this._isImmutable; }
             set { this._isImmutable = value; }
         }
 

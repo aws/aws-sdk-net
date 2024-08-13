@@ -64,9 +64,9 @@ namespace Amazon.MediaConvert.Model
         /// the beginning of the stream.
         /// </summary>
         [AWSProperty(Min=0, Max=30000)]
-        public int ResponseSignalPreroll
+        public int? ResponseSignalPreroll
         {
-            get { return this._responseSignalPreroll.GetValueOrDefault(); }
+            get { return this._responseSignalPreroll; }
             set { this._responseSignalPreroll = value; }
         }
 

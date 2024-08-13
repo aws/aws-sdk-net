@@ -69,13 +69,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEscapeQuotes())
             {
                 context.Writer.WritePropertyName("escapeQuotes");
-                context.Writer.Write(requestObject.EscapeQuotes);
+                context.Writer.Write(requestObject.EscapeQuotes.Value);
             }
 
             if(requestObject.IsSetHeader())
             {
                 context.Writer.WritePropertyName("header");
-                context.Writer.Write(requestObject.Header);
+                context.Writer.Write(requestObject.Header.Value);
             }
 
             if(requestObject.IsSetLineSep())
@@ -93,7 +93,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQuoteAll())
             {
                 context.Writer.WritePropertyName("quoteAll");
-                context.Writer.Write(requestObject.QuoteAll);
+                context.Writer.Write(requestObject.QuoteAll.Value);
             }
 
             if(requestObject.IsSetSep())

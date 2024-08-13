@@ -83,9 +83,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether permissions are retained when the subscription is revoked.
         /// </para>
         /// </summary>
-        public bool RetainPermissions
+        public bool? RetainPermissions
         {
-            get { return this._retainPermissions.GetValueOrDefault(); }
+            get { return this._retainPermissions; }
             set { this._retainPermissions = value; }
         }
 

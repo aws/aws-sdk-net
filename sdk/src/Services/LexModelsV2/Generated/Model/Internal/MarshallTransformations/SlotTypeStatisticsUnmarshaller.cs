@@ -68,7 +68,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("discoveredSlotTypeCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DiscoveredSlotTypeCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

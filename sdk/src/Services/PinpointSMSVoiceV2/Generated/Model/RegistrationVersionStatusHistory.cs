@@ -51,9 +51,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime ApprovedTimestamp
+        public DateTime? ApprovedTimestamp
         {
-            get { return this._approvedTimestamp.GetValueOrDefault(); }
+            get { return this._approvedTimestamp; }
             set { this._approvedTimestamp = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime ArchivedTimestamp
+        public DateTime? ArchivedTimestamp
         {
-            get { return this._archivedTimestamp.GetValueOrDefault(); }
+            get { return this._archivedTimestamp; }
             set { this._archivedTimestamp = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime DeniedTimestamp
+        public DateTime? DeniedTimestamp
         {
-            get { return this._deniedTimestamp.GetValueOrDefault(); }
+            get { return this._deniedTimestamp; }
             set { this._deniedTimestamp = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime DiscardedTimestamp
+        public DateTime? DiscardedTimestamp
         {
-            get { return this._discardedTimestamp.GetValueOrDefault(); }
+            get { return this._discardedTimestamp; }
             set { this._discardedTimestamp = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime DraftTimestamp
+        public DateTime? DraftTimestamp
         {
-            get { return this._draftTimestamp.GetValueOrDefault(); }
+            get { return this._draftTimestamp; }
             set { this._draftTimestamp = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime ReviewingTimestamp
+        public DateTime? ReviewingTimestamp
         {
-            get { return this._reviewingTimestamp.GetValueOrDefault(); }
+            get { return this._reviewingTimestamp; }
             set { this._reviewingTimestamp = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime RevokedTimestamp
+        public DateTime? RevokedTimestamp
         {
-            get { return this._revokedTimestamp.GetValueOrDefault(); }
+            get { return this._revokedTimestamp; }
             set { this._revokedTimestamp = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime SubmittedTimestamp
+        public DateTime? SubmittedTimestamp
         {
-            get { return this._submittedTimestamp.GetValueOrDefault(); }
+            get { return this._submittedTimestamp; }
             set { this._submittedTimestamp = value; }
         }
 

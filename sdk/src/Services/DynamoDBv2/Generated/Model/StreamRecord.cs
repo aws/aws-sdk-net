@@ -50,9 +50,9 @@ namespace Amazon.DynamoDBv2.Model
         /// epoch time</a> format and rounded down to the closest second.
         /// </para>
         /// </summary>
-        public DateTime ApproximateCreationDateTime
+        public DateTime? ApproximateCreationDateTime
         {
-            get { return this._approximateCreationDateTime.GetValueOrDefault(); }
+            get { return this._approximateCreationDateTime; }
             set { this._approximateCreationDateTime = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long SizeBytes
+        public long? SizeBytes
         {
-            get { return this._sizeBytes.GetValueOrDefault(); }
+            get { return this._sizeBytes; }
             set { this._sizeBytes = value; }
         }
 

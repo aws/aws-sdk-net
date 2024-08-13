@@ -67,9 +67,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// For more information see <a>Step$ActionOnFailure</a>.
         /// </para>
         /// </summary>
-        public int StepConcurrencyLevel
+        public int? StepConcurrencyLevel
         {
-            get { return this._stepConcurrencyLevel.GetValueOrDefault(); }
+            get { return this._stepConcurrencyLevel; }
             set { this._stepConcurrencyLevel = value; }
         }
 

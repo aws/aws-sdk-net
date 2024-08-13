@@ -115,9 +115,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
-        public int AccessTokenValidity
+        public int? AccessTokenValidity
         {
-            get { return this._accessTokenValidity.GetValueOrDefault(); }
+            get { return this._accessTokenValidity; }
             set { this._accessTokenValidity = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// in a request with the CLI or SDKs, it defaults to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AllowedOAuthFlowsUserPoolClient
+        public bool? AllowedOAuthFlowsUserPoolClient
         {
-            get { return this._allowedOAuthFlowsUserPoolClient.GetValueOrDefault(); }
+            get { return this._allowedOAuthFlowsUserPoolClient; }
             set { this._allowedOAuthFlowsUserPoolClient = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=15)]
-        public int AuthSessionValidity
+        public int? AuthSessionValidity
         {
-            get { return this._authSessionValidity.GetValueOrDefault(); }
+            get { return this._authSessionValidity; }
             set { this._authSessionValidity = value; }
         }
 
@@ -411,9 +411,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// in an app client that has a client secret.
         /// </para>
         /// </summary>
-        public bool EnablePropagateAdditionalUserContextData
+        public bool? EnablePropagateAdditionalUserContextData
         {
-            get { return this._enablePropagateAdditionalUserContextData.GetValueOrDefault(); }
+            get { return this._enablePropagateAdditionalUserContextData; }
             set { this._enablePropagateAdditionalUserContextData = value; }
         }
 
@@ -435,9 +435,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// the new user pool client.
         /// </para>
         /// </summary>
-        public bool EnableTokenRevocation
+        public bool? EnableTokenRevocation
         {
-            get { return this._enableTokenRevocation.GetValueOrDefault(); }
+            get { return this._enableTokenRevocation; }
             set { this._enableTokenRevocation = value; }
         }
 
@@ -518,9 +518,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// being created.
         /// </para>
         /// </summary>
-        public bool GenerateSecret
+        public bool? GenerateSecret
         {
-            get { return this._generateSecret.GetValueOrDefault(); }
+            get { return this._generateSecret; }
             set { this._generateSecret = value; }
         }
 
@@ -555,9 +555,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
-        public int IdTokenValidity
+        public int? IdTokenValidity
         {
-            get { return this._idTokenValidity.GetValueOrDefault(); }
+            get { return this._idTokenValidity; }
             set { this._idTokenValidity = value; }
         }
 
@@ -684,9 +684,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=315360000)]
-        public int RefreshTokenValidity
+        public int? RefreshTokenValidity
         {
-            get { return this._refreshTokenValidity.GetValueOrDefault(); }
+            get { return this._refreshTokenValidity; }
             set { this._refreshTokenValidity = value; }
         }
 

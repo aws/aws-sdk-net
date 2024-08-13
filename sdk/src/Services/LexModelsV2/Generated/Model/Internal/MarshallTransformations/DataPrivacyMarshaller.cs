@@ -51,7 +51,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChildDirected())
             {
                 context.Writer.WritePropertyName("childDirected");
-                context.Writer.Write(requestObject.ChildDirected);
+                context.Writer.Write(requestObject.ChildDirected.Value);
             }
 
         }

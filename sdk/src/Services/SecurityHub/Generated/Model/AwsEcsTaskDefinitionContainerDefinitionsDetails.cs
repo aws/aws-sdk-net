@@ -98,9 +98,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of CPU units reserved for the container.
         /// </para>
         /// </summary>
-        public int Cpu
+        public int? Cpu
         {
-            get { return this._cpu.GetValueOrDefault(); }
+            get { return this._cpu; }
             set { this._cpu = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to disable networking within the container.
         /// </para>
         /// </summary>
-        public bool DisableNetworking
+        public bool? DisableNetworking
         {
-            get { return this._disableNetworking.GetValueOrDefault(); }
+            get { return this._disableNetworking; }
             set { this._disableNetworking = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the container is essential. All tasks must have at least one essential container.
         /// </para>
         /// </summary>
-        public bool Essential
+        public bool? Essential
         {
-            get { return this._essential.GetValueOrDefault(); }
+            get { return this._essential; }
             set { this._essential = value; }
         }
 
@@ -391,9 +391,9 @@ namespace Amazon.SecurityHub.Model
         /// or a <c>tty</c> to be allocated.
         /// </para>
         /// </summary>
-        public bool Interactive
+        public bool? Interactive
         {
-            get { return this._interactive.GetValueOrDefault(); }
+            get { return this._interactive; }
             set { this._interactive = value; }
         }
 
@@ -468,9 +468,9 @@ namespace Amazon.SecurityHub.Model
         /// value, if one is specified.
         /// </para>
         /// </summary>
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -486,9 +486,9 @@ namespace Amazon.SecurityHub.Model
         /// The soft limit (in MiB) of memory to reserve for the container.
         /// </para>
         /// </summary>
-        public int MemoryReservation
+        public int? MemoryReservation
         {
-            get { return this._memoryReservation.GetValueOrDefault(); }
+            get { return this._memoryReservation; }
             set { this._memoryReservation = value; }
         }
 
@@ -559,9 +559,9 @@ namespace Amazon.SecurityHub.Model
         /// The elevated privileges are similar to the root user.
         /// </para>
         /// </summary>
-        public bool Privileged
+        public bool? Privileged
         {
-            get { return this._privileged.GetValueOrDefault(); }
+            get { return this._privileged; }
             set { this._privileged = value; }
         }
 
@@ -577,9 +577,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to allocate a TTY to the container.
         /// </para>
         /// </summary>
-        public bool PseudoTerminal
+        public bool? PseudoTerminal
         {
-            get { return this._pseudoTerminal.GetValueOrDefault(); }
+            get { return this._pseudoTerminal; }
             set { this._pseudoTerminal = value; }
         }
 
@@ -595,9 +595,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the container is given read-only access to its root file system.
         /// </para>
         /// </summary>
-        public bool ReadonlyRootFilesystem
+        public bool? ReadonlyRootFilesystem
         {
-            get { return this._readonlyRootFilesystem.GetValueOrDefault(); }
+            get { return this._readonlyRootFilesystem; }
             set { this._readonlyRootFilesystem = value; }
         }
 
@@ -669,9 +669,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public int StartTimeout
+        public int? StartTimeout
         {
-            get { return this._startTimeout.GetValueOrDefault(); }
+            get { return this._startTimeout; }
             set { this._startTimeout = value; }
         }
 
@@ -688,9 +688,9 @@ namespace Amazon.SecurityHub.Model
         /// normally on its own.
         /// </para>
         /// </summary>
-        public int StopTimeout
+        public int? StopTimeout
         {
-            get { return this._stopTimeout.GetValueOrDefault(); }
+            get { return this._stopTimeout; }
             set { this._stopTimeout = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.CloudTrail.Model
         /// is still running.
         /// </para>
         /// </summary>
-        public long BytesScanned
+        public long? BytesScanned
         {
-            get { return this._bytesScanned.GetValueOrDefault(); }
+            get { return this._bytesScanned; }
             set { this._bytesScanned = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.CloudTrail.Model
         /// The number of results returned.
         /// </para>
         /// </summary>
-        public int ResultsCount
+        public int? ResultsCount
         {
-            get { return this._resultsCount.GetValueOrDefault(); }
+            get { return this._resultsCount; }
             set { this._resultsCount = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CloudTrail.Model
         /// The total number of results returned by a query.
         /// </para>
         /// </summary>
-        public int TotalResultsCount
+        public int? TotalResultsCount
         {
-            get { return this._totalResultsCount.GetValueOrDefault(); }
+            get { return this._totalResultsCount; }
             set { this._totalResultsCount = value; }
         }
 

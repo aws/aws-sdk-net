@@ -57,7 +57,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFPort())
             {
                 context.Writer.WritePropertyName("FPort");
-                context.Writer.Write(requestObject.FPort);
+                context.Writer.Write(requestObject.FPort.Value);
             }
 
             if(requestObject.IsSetType())

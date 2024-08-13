@@ -53,9 +53,9 @@ namespace Amazon.Glue.Model
         /// matrix for your transform.
         /// </para>
         /// </summary>
-        public long NumFalseNegatives
+        public long? NumFalseNegatives
         {
-            get { return this._numFalseNegatives.GetValueOrDefault(); }
+            get { return this._numFalseNegatives; }
             set { this._numFalseNegatives = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.Glue.Model
         /// a match, in the confusion matrix for your transform.
         /// </para>
         /// </summary>
-        public long NumFalsePositives
+        public long? NumFalsePositives
         {
-            get { return this._numFalsePositives.GetValueOrDefault(); }
+            get { return this._numFalsePositives; }
             set { this._numFalsePositives = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Glue.Model
         /// confusion matrix for your transform.
         /// </para>
         /// </summary>
-        public long NumTrueNegatives
+        public long? NumTrueNegatives
         {
-            get { return this._numTrueNegatives.GetValueOrDefault(); }
+            get { return this._numTrueNegatives; }
             set { this._numTrueNegatives = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Glue.Model
         /// matrix for your transform.
         /// </para>
         /// </summary>
-        public long NumTruePositives
+        public long? NumTruePositives
         {
-            get { return this._numTruePositives.GetValueOrDefault(); }
+            get { return this._numTruePositives; }
             set { this._numTruePositives = value; }
         }
 

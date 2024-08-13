@@ -72,7 +72,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -84,7 +84,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRoleLevel())
                 {
                     context.Writer.WritePropertyName("RoleLevel");
-                    context.Writer.Write(publicRequest.RoleLevel);
+                    context.Writer.Write(publicRequest.RoleLevel.Value);
                 }
 
                 if(publicRequest.IsSetStatementName())

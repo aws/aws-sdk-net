@@ -12,24 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Amazon;
 using Amazon.Runtime;
 
-using Amazon.Extensions.NETCore.Setup;
+using Microsoft.Extensions.Logging;
 
 namespace Amazon.Extensions.NETCore.Setup
 {
     /// <summary>
     /// The options used to construct AWS service clients like the Amazon.S3.AmazonS3Client.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class AWSOptions
     {
         /// <summary>
@@ -74,13 +65,13 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         public DefaultConfigurationMode? DefaultConfigurationMode { get; set; }
 
-        private ClientConfig _defaultClientConfig;
+        private DefaultClientConfig _defaultClientConfig;
 
         /// <summary>
         /// A default ClientConfig object. When service client is created any values set on the default ClientConfig
         /// are copied to the service specific client config.
         /// </summary>
-        public ClientConfig DefaultClientConfig
+        public DefaultClientConfig DefaultClientConfig
         {
             get
             {
@@ -108,9 +99,9 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <typeparam name="T">The service interface that a service client will be created for.</typeparam>
         /// <returns>The service client that implements the service interface.</returns>
-        public T CreateServiceClient<T>() where T : IAmazonService
+        public T CreateServiceClient<T>() where T : class, IAmazonService
         {
-            return (T)ClientFactory.CreateServiceClient(null, typeof(T), this);
+            return new ClientFactory<T>(this).CreateServiceClient((ILogger)null, this) as T;
         }
 
         /// <summary>

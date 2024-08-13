@@ -57,9 +57,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int CurrentExpiryYear
+        public int? CurrentExpiryYear
         {
-            get { return this._currentExpiryYear.GetValueOrDefault(); }
+            get { return this._currentExpiryYear; }
             set { this._currentExpiryYear = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int DurationInYears
+        public int? DurationInYears
         {
-            get { return this._durationInYears.GetValueOrDefault(); }
+            get { return this._durationInYears; }
             set { this._durationInYears = value; }
         }
 

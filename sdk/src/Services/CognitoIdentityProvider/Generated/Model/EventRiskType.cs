@@ -44,9 +44,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Indicates whether compromised credentials were detected during an authentication event.
         /// </para>
         /// </summary>
-        public bool CompromisedCredentialsDetected
+        public bool? CompromisedCredentialsDetected
         {
-            get { return this._compromisedCredentialsDetected.GetValueOrDefault(); }
+            get { return this._compromisedCredentialsDetected; }
             set { this._compromisedCredentialsDetected = value; }
         }
 

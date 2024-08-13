@@ -143,9 +143,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date on which the association was last run.
         /// </para>
         /// </summary>
-        public DateTime LastExecutionDate
+        public DateTime? LastExecutionDate
         {
-            get { return this._lastExecutionDate.GetValueOrDefault(); }
+            get { return this._lastExecutionDate; }
             set { this._lastExecutionDate = value; }
         }
 
@@ -254,9 +254,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
-        public int ScheduleOffset
+        public int? ScheduleOffset
         {
-            get { return this._scheduleOffset.GetValueOrDefault(); }
+            get { return this._scheduleOffset; }
             set { this._scheduleOffset = value; }
         }
 

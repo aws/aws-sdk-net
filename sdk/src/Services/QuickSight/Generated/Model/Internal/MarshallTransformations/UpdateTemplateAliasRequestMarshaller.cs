@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTemplateVersionNumber())
                 {
                     context.Writer.WritePropertyName("TemplateVersionNumber");
-                    context.Writer.Write(publicRequest.TemplateVersionNumber);
+                    context.Writer.Write(publicRequest.TemplateVersionNumber.Value);
                 }
 
                 writer.WriteObjectEnd();

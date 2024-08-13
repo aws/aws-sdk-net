@@ -104,9 +104,9 @@ namespace Amazon.CloudFormation.Model
         /// a given parameter key. If you specify <c>true</c>, do not specify a parameter value.
         /// </para>
         /// </summary>
-        public bool UsePreviousValue
+        public bool? UsePreviousValue
         {
-            get { return this._usePreviousValue.GetValueOrDefault(); }
+            get { return this._usePreviousValue; }
             set { this._usePreviousValue = value; }
         }
 

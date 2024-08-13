@@ -48,9 +48,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the domain was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the domain was most recently edited.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxAvailableProfileObjectCount
+        public int? MaxAvailableProfileObjectCount
         {
-            get { return this._maxAvailableProfileObjectCount.GetValueOrDefault(); }
+            get { return this._maxAvailableProfileObjectCount; }
             set { this._maxAvailableProfileObjectCount = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxProfileObjectCount
+        public int? MaxProfileObjectCount
         {
-            get { return this._maxProfileObjectCount.GetValueOrDefault(); }
+            get { return this._maxProfileObjectCount; }
             set { this._maxProfileObjectCount = value; }
         }
 

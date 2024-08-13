@@ -66,9 +66,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The CPU size of the Amazon ECS service recommendation option. 
         /// </para>
         /// </summary>
-        public int Cpu
+        public int? Cpu
         {
-            get { return this._cpu.GetValueOrDefault(); }
+            get { return this._cpu; }
             set { this._cpu = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The memory size of the Amazon ECS service recommendation option. 
         /// </para>
         /// </summary>
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 

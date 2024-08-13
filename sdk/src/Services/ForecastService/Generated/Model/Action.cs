@@ -105,9 +105,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

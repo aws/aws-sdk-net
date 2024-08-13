@@ -56,9 +56,9 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property StartTime.
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

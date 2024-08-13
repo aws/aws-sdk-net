@@ -64,9 +64,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The expiration time for the certificate.
         /// </para>
         /// </summary>
-        public DateTime CustomDomainCertificateExpiryTime
+        public DateTime? CustomDomainCertificateExpiryTime
         {
-            get { return this._customDomainCertificateExpiryTime.GetValueOrDefault(); }
+            get { return this._customDomainCertificateExpiryTime; }
             set { this._customDomainCertificateExpiryTime = value; }
         }
 

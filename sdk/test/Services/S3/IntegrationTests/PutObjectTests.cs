@@ -52,118 +52,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
-#if AWS_APM_API
-
-        private int _callbackInvocationCount = 0;
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestAsyncExceptionHandling()
-        {
-
-            var s3Client = new AmazonS3Client(new AmazonS3Config
-            {
-            });
-
-            GetObjectRequest request = new GetObjectRequest
-            {
-                BucketName = "NonExistentBucket",
-                Key = "NonExistentKey",
-            };
-
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
-            IAsyncResult result = s3Client.BeginGetObject(request, new AsyncCallback(GetObjectExceptionCallback), null);
-            stopwatch.Stop();
-            Console.WriteLine("{0} BeginGetObject returned in {1} ms", DateTime.UtcNow, stopwatch.Elapsed.Milliseconds);
-            Assert.IsTrue(stopwatch.Elapsed < TimeSpan.FromSeconds(1));
-
-            result.AsyncWaitHandle.WaitOne();
-        }
-
-        void GetObjectExceptionCallback(IAsyncResult result)
-        {
-            _callbackInvocationCount++;
-            Assert.IsTrue(_callbackInvocationCount == 1);
-            Console.WriteLine("{0} GetObjectCallback was triggered", DateTime.UtcNow);
-
-            var exception = AssertExtensions.ExpectException<AmazonS3Exception>(
-                () => Client.EndGetObject(result));
-            throw exception;
-        }
-
-
-        private ManualResetEvent _testWaitHandle;
-
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestPutGetObjectAsync()
-        {
-            _testWaitHandle = new ManualResetEvent(false);
-
-            var key = "contentBodyPut" + random.Next();
-            PutObjectRequest putRequest = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = key,
-                ContentBody = testContent,
-                CannedACL = S3CannedACL.AuthenticatedRead
-            };
-            putRequest.Metadata.Add("Subject", "Content-As-Object");
-
-            Client.BeginPutObject(putRequest, new AsyncCallback(PutObjectCallback), key);
-            _testWaitHandle.WaitOne();
-        }
-
-        void PutObjectCallback(IAsyncResult result)
-        {
-            try
-            {
-                var putResponse = Client.EndPutObject(result);
-                var key = result.AsyncState as string;
-                Console.WriteLine("S3 generated ETag: {0}", putResponse.ETag);
-                Assert.IsTrue(putResponse.ETag.Length > 0);
-
-                var getRequest = new GetObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key
-                };
-                Client.BeginGetObject(getRequest, new AsyncCallback(GetObjectCallback), "GetState");
-            }
-            catch (Exception exception)
-            {
-                Assert.Fail(exception.Message);
-                _testWaitHandle.Set();
-            }
-        }
-
-        void GetObjectCallback(IAsyncResult result)
-        {
-            try
-            {
-                string responseData;
-                Assert.IsTrue(((string)result.AsyncState).Equals("GetState"));
-                using (var response = Client.EndGetObject(result))
-                using (var responseStream = response.ResponseStream)
-                using (StreamReader reader = new StreamReader(responseStream))
-                {
-                    responseData = reader.ReadToEnd();
-                    Assert.AreEqual(testContent, responseData);
-                }
-            }
-            catch (Exception exception)
-            {
-                Assert.Fail(exception.Message);
-            }
-            finally
-            {
-                _testWaitHandle.Set();
-            }
-        }
-
-#endif
-
         [TestMethod]
         [TestCategory("S3")]
         public void TestPutAndGetWithInvalidExpires()
@@ -210,6 +98,53 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             getObjectMetadataResponse.Expires = newExpires;
             Assert.AreEqual(newExpires, getObjectMetadataResponse.Expires);
 #pragma warning restore CS0618 // Type or member is obsolete
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestPutAndGetWithBidiCharacters()
+        {
+            var bidiChar = '\u200E';
+            var encodedBidiChar = "%E2%80%8E";
+            var content = "TestPutAndGetWithBidiCharacters";            
+            var bidiKey = UtilityMethods.GenerateName($"TestPutAndGetWithBidi{bidiChar}Characters");
+
+            // Verify character is in the string
+            Assert.IsTrue(bidiKey.IndexOf(bidiChar) > 0);
+            Assert.IsTrue(AWSSDKUtils.HasBidiControlCharacters(bidiKey));
+
+            // Verify character is encoded by the Uri class
+            Uri uri = new Uri(new Uri("http://www.amazon.com/"), bidiKey);
+            Assert.IsTrue(uri.AbsoluteUri.Contains(encodedBidiChar));
+            Assert.IsFalse(AWSSDKUtils.HasBidiControlCharacters(uri.AbsoluteUri));
+            Assert.IsTrue(uri.AbsoluteUri.Contains($"TestPutAndGetWithBidi{encodedBidiChar}Characters"));
+
+            // Verify the bidi key can be used to put an object
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = bidiKey,
+                ContentBody = content
+            };
+                        
+            Client.PutObject(putObjectRequest);
+
+            // Verify the bidi key object can be read
+            var response = Client.GetObject(new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = bidiKey,
+            });
+
+            // Read S3 bucket response content
+            var responseBody = string.Empty;
+            using (var reader = new StreamReader(response.ResponseStream))
+            {
+                responseBody = reader.ReadToEnd();                
+            }
+
+            // Verify the correct response was read
+            Assert.IsTrue(content == responseBody);
         }
 
         [TestMethod]
@@ -478,7 +413,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var getResponse = Client.GetObject(new GetObjectRequest { BucketName = bucketName, Key = key }))
             {
 #pragma warning disable CS0618 // Type or member is obsolete
-                Assert.IsTrue(expires.ApproximatelyEqual(getResponse.Expires));
+                Assert.IsTrue(expires.ApproximatelyEqual(getResponse.Expires.Value));
 #pragma warning restore CS0618 // Type or member is obsolete
             }
         }
@@ -616,7 +551,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void TemporaryRedirectForS3Operations()
         {            
             var testBucketName = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX);
-            using (var client = new AmazonS3Client())
+            var config = new AmazonS3Config
+            {
+                USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
+            };
+
+            using (var client = new AmazonS3Client(config))
             {
                 var bucket = client.PutBucket(new PutBucketRequest
                 {

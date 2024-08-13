@@ -72,13 +72,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDatapointsToAlert())
                 {
                     context.Writer.WritePropertyName("DatapointsToAlert");
-                    context.Writer.Write(publicRequest.DatapointsToAlert);
+                    context.Writer.Write(publicRequest.DatapointsToAlert.Value);
                 }
 
                 if(publicRequest.IsSetEvaluationPeriod())
                 {
                     context.Writer.WritePropertyName("EvaluationPeriod");
-                    context.Writer.Write(publicRequest.EvaluationPeriod);
+                    context.Writer.Write(publicRequest.EvaluationPeriod.Value);
                 }
 
                 if(publicRequest.IsSetMonitoringAlertName())

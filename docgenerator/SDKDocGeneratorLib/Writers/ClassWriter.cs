@@ -223,12 +223,10 @@ namespace SDKDocGenerator.Writers
                 return;
             AddMemberTableSectionHeader(writer, "Methods");
 
-            const string net35PatternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>" +
-                                            "<p>Asynchronous operations (methods ending with <i>Async</i>) in the table below are for .NET 4.5 or higher. "
-                                            + "For .NET 3.5 the SDK follows the standard naming convention of <b>Begin</b><i>MethodName</i> and <b>End</b><i>MethodName</i> to "
-                                            + "indicate asynchronous operations - these method pairs are not shown in the table below.</p></div>";
+            const string netFrameworkPatternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>" +
+                                            "<p>Asynchronous operations (methods ending with <i>Async</i>) in the table below are for .NET 4.7.2 or higher.</p></div>";
 
-            writer.WriteLine(net35PatternNote);
+            writer.WriteLine(netFrameworkPatternNote);
             foreach (var info in methods.OrderBy(x => x.Name))
             {
                 AddMethod(writer, info);

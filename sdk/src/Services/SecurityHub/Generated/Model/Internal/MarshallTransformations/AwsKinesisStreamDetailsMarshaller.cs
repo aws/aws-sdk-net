@@ -63,13 +63,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetentionPeriodHours())
             {
                 context.Writer.WritePropertyName("RetentionPeriodHours");
-                context.Writer.Write(requestObject.RetentionPeriodHours);
+                context.Writer.Write(requestObject.RetentionPeriodHours.Value);
             }
 
             if(requestObject.IsSetShardCount())
             {
                 context.Writer.WritePropertyName("ShardCount");
-                context.Writer.Write(requestObject.ShardCount);
+                context.Writer.Write(requestObject.ShardCount.Value);
             }
 
             if(requestObject.IsSetStreamEncryption())

@@ -51,26 +51,26 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLat())
             {
                 context.Writer.WritePropertyName("Lat");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Lat))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lat.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lat));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lat.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lat);
+                    context.Writer.Write(requestObject.Lat.Value);
                 }
             }
 
             if(requestObject.IsSetLon())
             {
                 context.Writer.WritePropertyName("Lon");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Lon))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lon.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lon));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lon.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lon);
+                    context.Writer.Write(requestObject.Lon.Value);
                 }
             }
 

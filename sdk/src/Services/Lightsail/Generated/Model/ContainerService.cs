@@ -97,9 +97,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the container service was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether the container service is disabled.
         /// </para>
         /// </summary>
-        public bool IsDisabled
+        public bool? IsDisabled
         {
-            get { return this._isDisabled.GetValueOrDefault(); }
+            get { return this._isDisabled; }
             set { this._isDisabled = value; }
         }
 
@@ -370,9 +370,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int Scale
+        public int? Scale
         {
-            get { return this._scale.GetValueOrDefault(); }
+            get { return this._scale; }
             set { this._scale = value; }
         }
 

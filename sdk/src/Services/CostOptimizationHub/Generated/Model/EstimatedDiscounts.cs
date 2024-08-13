@@ -46,9 +46,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// include <c>reservedInstanceDiscount</c> and <c>savingsPlansDiscount</c>.
         /// </para>
         /// </summary>
-        public double OtherDiscount
+        public double? OtherDiscount
         {
-            get { return this._otherDiscount.GetValueOrDefault(); }
+            get { return this._otherDiscount; }
             set { this._otherDiscount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Estimated reserved instance discounts.
         /// </para>
         /// </summary>
-        public double ReservedInstancesDiscount
+        public double? ReservedInstancesDiscount
         {
-            get { return this._reservedInstancesDiscount.GetValueOrDefault(); }
+            get { return this._reservedInstancesDiscount; }
             set { this._reservedInstancesDiscount = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Estimated Savings Plans discounts.
         /// </para>
         /// </summary>
-        public double SavingsPlansDiscount
+        public double? SavingsPlansDiscount
         {
-            get { return this._savingsPlansDiscount.GetValueOrDefault(); }
+            get { return this._savingsPlansDiscount; }
             set { this._savingsPlansDiscount = value; }
         }
 

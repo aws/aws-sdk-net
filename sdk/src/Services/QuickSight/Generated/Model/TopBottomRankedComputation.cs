@@ -103,9 +103,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int ResultSize
+        public int? ResultSize
         {
-            get { return this._resultSize.GetValueOrDefault(); }
+            get { return this._resultSize; }
             set { this._resultSize = value; }
         }
 

@@ -78,7 +78,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetentionInDays())
                 {
                     context.Writer.WritePropertyName("retentionInDays");
-                    context.Writer.Write(publicRequest.RetentionInDays);
+                    context.Writer.Write(publicRequest.RetentionInDays.Value);
                 }
 
                 writer.WriteObjectEnd();

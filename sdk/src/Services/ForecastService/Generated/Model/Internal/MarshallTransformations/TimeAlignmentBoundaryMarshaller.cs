@@ -51,7 +51,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDayOfMonth())
             {
                 context.Writer.WritePropertyName("DayOfMonth");
-                context.Writer.Write(requestObject.DayOfMonth);
+                context.Writer.Write(requestObject.DayOfMonth.Value);
             }
 
             if(requestObject.IsSetDayOfWeek())
@@ -63,7 +63,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHour())
             {
                 context.Writer.WritePropertyName("Hour");
-                context.Writer.Write(requestObject.Hour);
+                context.Writer.Write(requestObject.Hour.Value);
             }
 
             if(requestObject.IsSetMonth())

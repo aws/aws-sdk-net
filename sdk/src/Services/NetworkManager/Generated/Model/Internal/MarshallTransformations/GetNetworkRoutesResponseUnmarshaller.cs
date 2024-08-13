@@ -72,7 +72,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RouteTableTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.RouteTableTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

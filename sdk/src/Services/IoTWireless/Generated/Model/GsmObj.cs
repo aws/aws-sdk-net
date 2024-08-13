@@ -50,9 +50,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=65535)]
-        public int GeranCid
+        public int? GeranCid
         {
-            get { return this._geranCid.GetValueOrDefault(); }
+            get { return this._geranCid; }
             set { this._geranCid = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=63)]
-        public int GsmTimingAdvance
+        public int? GsmTimingAdvance
         {
-            get { return this._gsmTimingAdvance.GetValueOrDefault(); }
+            get { return this._gsmTimingAdvance; }
             set { this._gsmTimingAdvance = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
-        public int Lac
+        public int? Lac
         {
-            get { return this._lac.GetValueOrDefault(); }
+            get { return this._lac; }
             set { this._lac = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=200, Max=999)]
-        public int Mcc
+        public int? Mcc
         {
-            get { return this._mcc.GetValueOrDefault(); }
+            get { return this._mcc; }
             set { this._mcc = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=999)]
-        public int Mnc
+        public int? Mnc
         {
-            get { return this._mnc.GetValueOrDefault(); }
+            get { return this._mnc; }
             set { this._mnc = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-110, Max=-25)]
-        public int RxLevel
+        public int? RxLevel
         {
-            get { return this._rxLevel.GetValueOrDefault(); }
+            get { return this._rxLevel; }
             set { this._rxLevel = value; }
         }
 

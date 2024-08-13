@@ -65,9 +65,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// A value of the Boolean data type. 
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// A value of the double data type. 
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// A value that indicates whether the data is NULL. 
         /// </para>
         /// </summary>
-        public bool IsNull
+        public bool? IsNull
         {
-            get { return this._isNull.GetValueOrDefault(); }
+            get { return this._isNull; }
             set { this._isNull = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// A value of the long data type. 
         /// </para>
         /// </summary>
-        public long LongValue
+        public long? LongValue
         {
-            get { return this._longValue.GetValueOrDefault(); }
+            get { return this._longValue; }
             set { this._longValue = value; }
         }
 

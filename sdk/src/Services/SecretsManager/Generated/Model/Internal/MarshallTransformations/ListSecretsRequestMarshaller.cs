@@ -88,13 +88,13 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludePlannedDeletion())
                 {
                     context.Writer.WritePropertyName("IncludePlannedDeletion");
-                    context.Writer.Write(publicRequest.IncludePlannedDeletion);
+                    context.Writer.Write(publicRequest.IncludePlannedDeletion.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

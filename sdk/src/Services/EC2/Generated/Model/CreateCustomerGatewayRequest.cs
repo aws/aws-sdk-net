@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <param name="type">The type of VPN connection that this customer gateway supports (<c>ipsec.1</c>).</param>
         /// <param name="publicIp"> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</param>
         /// <param name="bgpAsn">For customer gateway devices that support BGP, specify the device's ASN. You must specify either <c>BgpAsn</c> or <c>BgpAsnExtended</c> when creating the customer gateway. If the ASN is larger than <c>2,147,483,647</c>, you must use <c>BgpAsnExtended</c>. Default: 65000 Valid values: <c>1</c> to <c>2,147,483,647</c> </param>
-        public CreateCustomerGatewayRequest(GatewayType type, string publicIp, int bgpAsn)
+        public CreateCustomerGatewayRequest(GatewayType type, string publicIp, int? bgpAsn)
         {
             _type = type;
             _publicIp = publicIp;
@@ -99,9 +99,9 @@ namespace Amazon.EC2.Model
         /// Valid values: <c>1</c> to <c>2,147,483,647</c> 
         /// </para>
         /// </summary>
-        public int BgpAsn
+        public int? BgpAsn
         {
-            get { return this._bgpAsn.GetValueOrDefault(); }
+            get { return this._bgpAsn; }
             set { this._bgpAsn = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.EC2.Model
         /// Valid values: <c>2,147,483,648</c> to <c>4,294,967,295</c> 
         /// </para>
         /// </summary>
-        public long BgpAsnExtended
+        public long? BgpAsnExtended
         {
-            get { return this._bgpAsnExtended.GetValueOrDefault(); }
+            get { return this._bgpAsnExtended; }
             set { this._bgpAsnExtended = value; }
         }
 

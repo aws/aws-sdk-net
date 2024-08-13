@@ -73,7 +73,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCount())
                 {
                     context.Writer.WritePropertyName("count");
-                    context.Writer.Write(publicRequest.Count);
+                    context.Writer.Write(publicRequest.Count.Value);
                 }
 
                 if(publicRequest.IsSetName())

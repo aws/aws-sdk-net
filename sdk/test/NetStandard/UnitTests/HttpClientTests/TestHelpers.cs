@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using Amazon;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Endpoints;
 
 namespace UnitTests
 {
@@ -30,6 +31,18 @@ namespace UnitTests
             {
                 return new DefaultConfiguration();
             }
+        }
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            // If the current service doesn't have an endpoint rule set (which is the case for configs
+            // that are used for testing), we'll return a placeholder endpoint so that unit tests pass.
+            return new Endpoint(this.ServiceURL ?? "https://example.com");
         }
     }
 

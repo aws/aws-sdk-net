@@ -40,9 +40,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Pid. Selects a specific PID from within a source.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=8191)]
-        public int Pid
+        public int? Pid
         {
-            get { return this._pid.GetValueOrDefault(); }
+            get { return this._pid; }
             set { this._pid = value; }
         }
 

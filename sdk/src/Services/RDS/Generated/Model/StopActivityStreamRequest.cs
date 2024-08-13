@@ -55,9 +55,9 @@ namespace Amazon.RDS.Model
         /// regardless of the maintenance window for the database.
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("TargetValue");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TargetValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TargetValue);
+                    context.Writer.Write(requestObject.TargetValue.Value);
                 }
             }
 

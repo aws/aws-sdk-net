@@ -63,9 +63,9 @@ namespace Amazon.EKS.Model
         /// The date and time the <c>AccessPolicy</c> was associated with an <c>AccessEntry</c>.
         /// </para>
         /// </summary>
-        public DateTime AssociatedAt
+        public DateTime? AssociatedAt
         {
-            get { return this._associatedAt.GetValueOrDefault(); }
+            get { return this._associatedAt; }
             set { this._associatedAt = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.EKS.Model
         /// The Unix epoch timestamp for the last modification to the object.
         /// </para>
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

@@ -80,7 +80,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("verified", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Verified = unmarshaller.Unmarshall(context);
                     continue;
                 }

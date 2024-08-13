@@ -46,9 +46,9 @@ namespace Amazon.EKS.Model
         /// logs. Each individual log type can be enabled or disabled independently.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

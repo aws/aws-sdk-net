@@ -49,9 +49,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value to indicate whether the container service is disabled.
         /// </para>
         /// </summary>
-        public bool IsDisabled
+        public bool? IsDisabled
         {
-            get { return this._isDisabled.GetValueOrDefault(); }
+            get { return this._isDisabled; }
             set { this._isDisabled = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int Scale
+        public int? Scale
         {
-            get { return this._scale.GetValueOrDefault(); }
+            get { return this._scale; }
             set { this._scale = value; }
         }
 

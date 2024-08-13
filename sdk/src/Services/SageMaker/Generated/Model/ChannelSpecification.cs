@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates whether the channel is required by the algorithm.
         /// </para>
         /// </summary>
-        public bool IsRequired
+        public bool? IsRequired
         {
-            get { return this._isRequired.GetValueOrDefault(); }
+            get { return this._isRequired; }
             set { this._isRequired = value; }
         }
 

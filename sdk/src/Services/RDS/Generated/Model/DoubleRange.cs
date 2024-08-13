@@ -43,9 +43,9 @@ namespace Amazon.RDS.Model
         /// The minimum value in the range.
         /// </para>
         /// </summary>
-        public double From
+        public double? From
         {
-            get { return this._from.GetValueOrDefault(); }
+            get { return this._from; }
             set { this._from = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.RDS.Model
         /// The maximum value in the range.
         /// </para>
         /// </summary>
-        public double To
+        public double? To
         {
-            get { return this._to.GetValueOrDefault(); }
+            get { return this._to; }
             set { this._to = value; }
         }
 

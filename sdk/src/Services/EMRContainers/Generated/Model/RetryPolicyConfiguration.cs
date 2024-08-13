@@ -43,9 +43,9 @@ namespace Amazon.EMRContainers.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxAttempts
+        public int? MaxAttempts
         {
-            get { return this._maxAttempts.GetValueOrDefault(); }
+            get { return this._maxAttempts; }
             set { this._maxAttempts = value; }
         }
 

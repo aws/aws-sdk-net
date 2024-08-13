@@ -65,9 +65,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=86400)]
-        public int TimeToLiveInSeconds
+        public int? TimeToLiveInSeconds
         {
-            get { return this._timeToLiveInSeconds.GetValueOrDefault(); }
+            get { return this._timeToLiveInSeconds; }
             set { this._timeToLiveInSeconds = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
-        public int TurnsToLive
+        public int? TurnsToLive
         {
-            get { return this._turnsToLive.GetValueOrDefault(); }
+            get { return this._turnsToLive; }
             set { this._turnsToLive = value; }
         }
 

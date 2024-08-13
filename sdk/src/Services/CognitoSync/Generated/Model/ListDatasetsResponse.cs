@@ -41,9 +41,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property Count. Number of datasets returned.
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

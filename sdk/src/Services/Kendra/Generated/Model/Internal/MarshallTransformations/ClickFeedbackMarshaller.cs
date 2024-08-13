@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClickTime())
             {
                 context.Writer.WritePropertyName("ClickTime");
-                context.Writer.Write(requestObject.ClickTime);
+                context.Writer.Write(requestObject.ClickTime.Value);
             }
 
             if(requestObject.IsSetResultId())

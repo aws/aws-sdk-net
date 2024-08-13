@@ -122,9 +122,9 @@ namespace Amazon.Glue.Model
         /// A timestamp provided by the query engine for when the query started.
         /// </para>
         /// </summary>
-        public DateTime QueryStartTime
+        public DateTime? QueryStartTime
         {
-            get { return this._queryStartTime.GetValueOrDefault(); }
+            get { return this._queryStartTime; }
             set { this._queryStartTime = value; }
         }
 

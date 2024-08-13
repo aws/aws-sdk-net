@@ -66,9 +66,9 @@ namespace Amazon.SecurityHub.Model
         /// On-Demand Instances.
         /// </para>
         /// </summary>
-        public int OnDemandBaseCapacity
+        public int? OnDemandBaseCapacity
         {
-            get { return this._onDemandBaseCapacity.GetValueOrDefault(); }
+            get { return this._onDemandBaseCapacity; }
             set { this._onDemandBaseCapacity = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SecurityHub.Model
         /// <c>OnDemandBaseCapacity</c>.
         /// </para>
         /// </summary>
-        public int OnDemandPercentageAboveBaseCapacity
+        public int? OnDemandPercentageAboveBaseCapacity
         {
-            get { return this._onDemandPercentageAboveBaseCapacity.GetValueOrDefault(); }
+            get { return this._onDemandPercentageAboveBaseCapacity; }
             set { this._onDemandPercentageAboveBaseCapacity = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of Spot Instance pools across which to allocate your Spot Instances.
         /// </para>
         /// </summary>
-        public int SpotInstancePools
+        public int? SpotInstancePools
         {
-            get { return this._spotInstancePools.GetValueOrDefault(); }
+            get { return this._spotInstancePools; }
             set { this._spotInstancePools = value; }
         }
 

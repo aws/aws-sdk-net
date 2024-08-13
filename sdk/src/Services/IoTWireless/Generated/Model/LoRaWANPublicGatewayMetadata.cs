@@ -47,9 +47,9 @@ namespace Amazon.IoTWireless.Model
         /// Boolean that indicates whether downlink is allowed using the network.
         /// </para>
         /// </summary>
-        public bool DlAllowed
+        public bool? DlAllowed
         {
-            get { return this._dlAllowed.GetValueOrDefault(); }
+            get { return this._dlAllowed; }
             set { this._dlAllowed = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.IoTWireless.Model
         /// The RSSI (received signal strength indicator) value.
         /// </para>
         /// </summary>
-        public double Rssi
+        public double? Rssi
         {
-            get { return this._rssi.GetValueOrDefault(); }
+            get { return this._rssi; }
             set { this._rssi = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.IoTWireless.Model
         /// The SNR (signal to noise ratio) value.
         /// </para>
         /// </summary>
-        public double Snr
+        public double? Snr
         {
-            get { return this._snr.GetValueOrDefault(); }
+            get { return this._snr; }
             set { this._snr = value; }
         }
 

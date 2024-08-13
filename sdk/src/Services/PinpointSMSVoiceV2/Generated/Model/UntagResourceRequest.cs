@@ -31,9 +31,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the association of the specified tags from an Amazon Pinpoint SMS Voice V2
-    /// resource. For more information on tags see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/tagging-resources.html">
-    /// Tagging Amazon Pinpoint resources</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+    /// Removes the association of the specified tags from a resource. For more information
+    /// on tags see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-tags.html">Tags
+    /// </a> in the <i>AWS End User Messaging SMS User Guide</i>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonPinpointSMSVoiceV2Request
     {

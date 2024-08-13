@@ -47,9 +47,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The time at which the voice profile was created and enrolled.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <c>UpdateVoiceProfile</c> API.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTimestamp
+        public DateTime? ExpirationTimestamp
         {
-            get { return this._expirationTimestamp.GetValueOrDefault(); }
+            get { return this._expirationTimestamp; }
             set { this._expirationTimestamp = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The time at which the voice profile was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

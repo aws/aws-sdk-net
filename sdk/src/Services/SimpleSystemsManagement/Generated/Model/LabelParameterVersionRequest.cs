@@ -138,9 +138,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// If no version is specified, the system attaches the label to the latest version.
         /// </para>
         /// </summary>
-        public long ParameterVersion
+        public long? ParameterVersion
         {
-            get { return this._parameterVersion.GetValueOrDefault(); }
+            get { return this._parameterVersion; }
             set { this._parameterVersion = value; }
         }
 

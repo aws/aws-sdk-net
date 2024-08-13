@@ -45,9 +45,9 @@ namespace Amazon.Lambda.Model
         /// Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
         /// </para>
         /// </summary>
-        public bool Ipv6AllowedForDualStack
+        public bool? Ipv6AllowedForDualStack
         {
-            get { return this._ipv6AllowedForDualStack.GetValueOrDefault(); }
+            get { return this._ipv6AllowedForDualStack; }
             set { this._ipv6AllowedForDualStack = value; }
         }
 

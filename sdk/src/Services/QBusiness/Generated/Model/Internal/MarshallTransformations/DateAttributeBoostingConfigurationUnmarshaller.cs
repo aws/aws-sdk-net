@@ -68,7 +68,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("boostingDurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BoostingDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

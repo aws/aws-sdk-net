@@ -57,7 +57,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("FailedStackInstancesCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.FailedStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

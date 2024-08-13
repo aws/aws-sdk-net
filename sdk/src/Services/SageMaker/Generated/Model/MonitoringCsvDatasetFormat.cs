@@ -42,9 +42,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates if the CSV data has a header.
         /// </para>
         /// </summary>
-        public bool Header
+        public bool? Header
         {
-            get { return this._header.GetValueOrDefault(); }
+            get { return this._header; }
             set { this._header = value; }
         }
 

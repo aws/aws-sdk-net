@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of days after which Amazon S3 cancels an incomplete multipart upload.
         /// </para>
         /// </summary>
-        public int DaysAfterInitiation
+        public int? DaysAfterInitiation
         {
-            get { return this._daysAfterInitiation.GetValueOrDefault(); }
+            get { return this._daysAfterInitiation; }
             set { this._daysAfterInitiation = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.Connect.Model
         /// Wait for the answering machine prompt.
         /// </para>
         /// </summary>
-        public bool AwaitAnswerMachinePrompt
+        public bool? AwaitAnswerMachinePrompt
         {
-            get { return this._awaitAnswerMachinePrompt.GetValueOrDefault(); }
+            get { return this._awaitAnswerMachinePrompt; }
             set { this._awaitAnswerMachinePrompt = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Connect.Model
         /// 
         /// </para>
         /// </summary>
-        public bool EnableAnswerMachineDetection
+        public bool? EnableAnswerMachineDetection
         {
-            get { return this._enableAnswerMachineDetection.GetValueOrDefault(); }
+            get { return this._enableAnswerMachineDetection; }
             set { this._enableAnswerMachineDetection = value; }
         }
 

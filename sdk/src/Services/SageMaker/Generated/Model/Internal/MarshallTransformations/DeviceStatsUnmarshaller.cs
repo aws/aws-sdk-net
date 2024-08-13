@@ -68,13 +68,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ConnectedDeviceCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ConnectedDeviceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RegisteredDeviceCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RegisteredDeviceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

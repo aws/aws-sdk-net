@@ -68,7 +68,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CurrentGeneration", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CurrentGeneration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SizeFlexEligible", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SizeFlexEligible = unmarshaller.Unmarshall(context);
                     continue;
                 }

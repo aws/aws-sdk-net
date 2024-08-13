@@ -78,7 +78,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRevert())
                 {
                     context.Writer.WritePropertyName("Revert");
-                    context.Writer.Write(publicRequest.Revert);
+                    context.Writer.Write(publicRequest.Revert.Value);
                 }
 
                 writer.WriteObjectEnd();

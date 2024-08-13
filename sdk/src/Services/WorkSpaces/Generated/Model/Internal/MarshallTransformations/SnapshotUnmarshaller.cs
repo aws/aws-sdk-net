@@ -68,7 +68,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("SnapshotTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SnapshotTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

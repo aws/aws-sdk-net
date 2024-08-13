@@ -51,13 +51,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataTraceEnabled())
             {
                 context.Writer.WritePropertyName("DataTraceEnabled");
-                context.Writer.Write(requestObject.DataTraceEnabled);
+                context.Writer.Write(requestObject.DataTraceEnabled.Value);
             }
 
             if(requestObject.IsSetDetailedMetricsEnabled())
             {
                 context.Writer.WritePropertyName("DetailedMetricsEnabled");
-                context.Writer.Write(requestObject.DetailedMetricsEnabled);
+                context.Writer.Write(requestObject.DetailedMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetLoggingLevel())
@@ -69,19 +69,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThrottlingBurstLimit())
             {
                 context.Writer.WritePropertyName("ThrottlingBurstLimit");
-                context.Writer.Write(requestObject.ThrottlingBurstLimit);
+                context.Writer.Write(requestObject.ThrottlingBurstLimit.Value);
             }
 
             if(requestObject.IsSetThrottlingRateLimit())
             {
                 context.Writer.WritePropertyName("ThrottlingRateLimit");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThrottlingRateLimit);
+                    context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
                 }
             }
 

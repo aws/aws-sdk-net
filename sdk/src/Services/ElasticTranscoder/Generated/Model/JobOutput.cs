@@ -216,9 +216,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Duration of the output file, in seconds.
         /// </para>
         /// </summary>
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -234,9 +234,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Duration of the output file, in milliseconds.
         /// </para>
         /// </summary>
-        public long DurationMillis
+        public long? DurationMillis
         {
-            get { return this._durationMillis.GetValueOrDefault(); }
+            get { return this._durationMillis; }
             set { this._durationMillis = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// File size of the output file, in bytes.
         /// </para>
         /// </summary>
-        public long FileSize
+        public long? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 
@@ -309,9 +309,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Height of the output file, in pixels.
         /// </para>
         /// </summary>
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -635,9 +635,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Specifies the width of the output file in pixels.
         /// </para>
         /// </summary>
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

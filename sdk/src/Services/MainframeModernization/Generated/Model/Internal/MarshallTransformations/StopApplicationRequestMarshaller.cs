@@ -73,7 +73,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceStop())
                 {
                     context.Writer.WritePropertyName("forceStop");
-                    context.Writer.Write(publicRequest.ForceStop);
+                    context.Writer.Write(publicRequest.ForceStop.Value);
                 }
 
                 writer.WriteObjectEnd();

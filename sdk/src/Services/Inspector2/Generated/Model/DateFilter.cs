@@ -43,9 +43,9 @@ namespace Amazon.Inspector2.Model
         /// A timestamp representing the end of the time period filtered on.
         /// </para>
         /// </summary>
-        public DateTime EndInclusive
+        public DateTime? EndInclusive
         {
-            get { return this._endInclusive.GetValueOrDefault(); }
+            get { return this._endInclusive; }
             set { this._endInclusive = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Inspector2.Model
         /// A timestamp representing the start of the time period filtered on.
         /// </para>
         /// </summary>
-        public DateTime StartInclusive
+        public DateTime? StartInclusive
         {
-            get { return this._startInclusive.GetValueOrDefault(); }
+            get { return this._startInclusive; }
             set { this._startInclusive = value; }
         }
 

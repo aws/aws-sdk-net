@@ -45,9 +45,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The time when an anomaly is closed. 
         /// </para>
         /// </summary>
-        public DateTime CloseTime
+        public DateTime? CloseTime
         {
-            get { return this._closeTime.GetValueOrDefault(); }
+            get { return this._closeTime; }
             set { this._closeTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime OpenTime
+        public DateTime? OpenTime
         {
-            get { return this._openTime.GetValueOrDefault(); }
+            get { return this._openTime; }
             set { this._openTime = value; }
         }
 

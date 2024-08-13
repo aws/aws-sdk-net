@@ -43,9 +43,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int FailedStackInstancesCount
+        public int? FailedStackInstancesCount
         {
-            get { return this._failedStackInstancesCount.GetValueOrDefault(); }
+            get { return this._failedStackInstancesCount; }
             set { this._failedStackInstancesCount = value; }
         }
 

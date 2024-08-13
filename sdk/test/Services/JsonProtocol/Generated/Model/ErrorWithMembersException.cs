@@ -106,7 +106,7 @@ namespace Amazon.JsonProtocol.Model
         {
             this.Code = (string)info.GetValue("Code", typeof(string));
             this.ComplexData = (KitchenSink)info.GetValue("ComplexData", typeof(KitchenSink));
-            this.IntegerField = (int)info.GetValue("IntegerField", typeof(int));
+            this.IntegerField = (int?)info.GetValue("IntegerField", typeof(int?));
             this.ListField = (List<string>)info.GetValue("ListField", typeof(List<string>));
             this.MapField = (Dictionary<string, string>)info.GetValue("MapField", typeof(Dictionary<string, string>));
             this.StringField = (string)info.GetValue("StringField", typeof(string));
@@ -118,11 +118,6 @@ namespace Amazon.JsonProtocol.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -172,9 +167,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property IntegerField.
         /// </summary>
-        public int IntegerField
+        public int? IntegerField
         {
-            get { return this._integerField.GetValueOrDefault(); }
+            get { return this._integerField; }
             set { this._integerField = value; }
         }
 

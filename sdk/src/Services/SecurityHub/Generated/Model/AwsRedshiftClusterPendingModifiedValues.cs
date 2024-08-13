@@ -52,9 +52,9 @@ namespace Amazon.SecurityHub.Model
         /// The pending or in-progress change to the automated snapshot retention period.
         /// </para>
         /// </summary>
-        public int AutomatedSnapshotRetentionPeriod
+        public int? AutomatedSnapshotRetentionPeriod
         {
-            get { return this._automatedSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._automatedSnapshotRetentionPeriod; }
             set { this._automatedSnapshotRetentionPeriod = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether to create the cluster with enhanced VPC routing enabled.
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.SecurityHub.Model
         /// The pending or in-progress change to the number of nodes in the cluster.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 
@@ -234,9 +234,9 @@ namespace Amazon.SecurityHub.Model
         /// the public network.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

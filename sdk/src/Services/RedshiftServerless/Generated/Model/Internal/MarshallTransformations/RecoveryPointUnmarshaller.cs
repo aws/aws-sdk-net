@@ -80,7 +80,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("recoveryPointCreateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RecoveryPointCreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalSizeInMegaBytes", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalSizeInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

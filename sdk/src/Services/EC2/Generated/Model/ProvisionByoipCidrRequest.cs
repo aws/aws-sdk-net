@@ -128,9 +128,9 @@ namespace Amazon.EC2.Model
         /// Reserved.
         /// </para>
         /// </summary>
-        public bool MultiRegion
+        public bool? MultiRegion
         {
-            get { return this._multiRegion.GetValueOrDefault(); }
+            get { return this._multiRegion; }
             set { this._multiRegion = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.EC2.Model
         /// Default: true
         /// </para>
         /// </summary>
-        public bool PubliclyAdvertisable
+        public bool? PubliclyAdvertisable
         {
-            get { return this._publiclyAdvertisable.GetValueOrDefault(); }
+            get { return this._publiclyAdvertisable; }
             set { this._publiclyAdvertisable = value; }
         }
 

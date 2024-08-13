@@ -167,9 +167,9 @@ namespace Amazon.Drs.Model
         /// Whether this Recovery Instance was created for a drill or for an actual Recovery event.
         /// </para>
         /// </summary>
-        public bool IsDrill
+        public bool? IsDrill
         {
-            get { return this._isDrill.GetValueOrDefault(); }
+            get { return this._isDrill; }
             set { this._isDrill = value; }
         }
 

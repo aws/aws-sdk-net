@@ -108,9 +108,9 @@ namespace Amazon.IVS.Model
         /// Whether channel playback is constrained by origin site. Default: <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnableStrictOriginEnforcement
+        public bool? EnableStrictOriginEnforcement
         {
-            get { return this._enableStrictOriginEnforcement.GetValueOrDefault(); }
+            get { return this._enableStrictOriginEnforcement; }
             set { this._enableStrictOriginEnforcement = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model
         /// than its parent process.
         /// </para>
         /// </summary>
-        public bool AllowPrivilegeEscalation
+        public bool? AllowPrivilegeEscalation
         {
-            get { return this._allowPrivilegeEscalation.GetValueOrDefault(); }
+            get { return this._allowPrivilegeEscalation; }
             set { this._allowPrivilegeEscalation = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.GuardDuty.Model
         /// Whether the container is privileged.
         /// </para>
         /// </summary>
-        public bool Privileged
+        public bool? Privileged
         {
-            get { return this._privileged.GetValueOrDefault(); }
+            get { return this._privileged; }
             set { this._privileged = value; }
         }
 

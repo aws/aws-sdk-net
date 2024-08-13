@@ -87,9 +87,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The time that the endpoint was created.
         /// </para>
         /// </summary>
-        public DateTime EndpointCreateTime
+        public DateTime? EndpointCreateTime
         {
-            get { return this._endpointCreateTime.GetValueOrDefault(); }
+            get { return this._endpointCreateTime; }
             set { this._endpointCreateTime = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The port number on which Amazon Redshift Serverless accepts incoming connections.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

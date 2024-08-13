@@ -64,9 +64,9 @@ namespace Amazon.MediaTailor.Model
         /// Maximum value: <c>3600</c> seconds.
         /// </para>
         /// </summary>
-        public int ManifestWindowSeconds
+        public int? ManifestWindowSeconds
         {
-            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            get { return this._manifestWindowSeconds; }
             set { this._manifestWindowSeconds = value; }
         }
 

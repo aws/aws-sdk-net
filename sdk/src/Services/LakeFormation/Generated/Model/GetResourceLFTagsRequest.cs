@@ -85,9 +85,9 @@ namespace Amazon.LakeFormation.Model
         /// Indicates whether to show the assigned LF-tags.
         /// </para>
         /// </summary>
-        public bool ShowAssignedLFTags
+        public bool? ShowAssignedLFTags
         {
-            get { return this._showAssignedLFTags.GetValueOrDefault(); }
+            get { return this._showAssignedLFTags; }
             set { this._showAssignedLFTags = value; }
         }
 

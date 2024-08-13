@@ -46,9 +46,9 @@ namespace Amazon.GlueDataBrew.Model
         /// If this value is false, column names are auto-generated.
         /// </para>
         /// </summary>
-        public bool HeaderRow
+        public bool? HeaderRow
         {
-            get { return this._headerRow.GetValueOrDefault(); }
+            get { return this._headerRow; }
             set { this._headerRow = value; }
         }
 

@@ -182,9 +182,9 @@ namespace Amazon.EKS.Model
         /// the cluster.
         /// </para>
         /// </summary>
-        public DateTime LastRefreshTime
+        public DateTime? LastRefreshTime
         {
-            get { return this._lastRefreshTime.GetValueOrDefault(); }
+            get { return this._lastRefreshTime; }
             set { this._lastRefreshTime = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.EKS.Model
         /// The time the status of the insight last changed.
         /// </para>
         /// </summary>
-        public DateTime LastTransitionTime
+        public DateTime? LastTransitionTime
         {
-            get { return this._lastTransitionTime.GetValueOrDefault(); }
+            get { return this._lastTransitionTime; }
             set { this._lastTransitionTime = value; }
         }
 

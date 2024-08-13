@@ -51,13 +51,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFloorplanCount())
             {
                 context.Writer.WritePropertyName("floorplanCount");
-                context.Writer.Write(requestObject.FloorplanCount);
+                context.Writer.Write(requestObject.FloorplanCount.Value);
             }
 
             if(requestObject.IsSetInteriorCountPerFloorplan())
             {
                 context.Writer.WritePropertyName("interiorCountPerFloorplan");
-                context.Writer.Write(requestObject.InteriorCountPerFloorplan);
+                context.Writer.Write(requestObject.InteriorCountPerFloorplan.Value);
             }
 
         }

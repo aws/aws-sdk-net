@@ -51,7 +51,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSizeInGiB())
             {
                 context.Writer.WritePropertyName("sizeInGiB");
-                context.Writer.Write(requestObject.SizeInGiB);
+                context.Writer.Write(requestObject.SizeInGiB.Value);
             }
 
         }

@@ -84,7 +84,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetKMSEncrypted())
                 {
                     context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted);
+                    context.Writer.Write(publicRequest.KMSEncrypted.Value);
                 }
 
                 if(publicRequest.IsSetKMSKey())
@@ -136,7 +136,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVolumeSizeInBytes())
                 {
                     context.Writer.WritePropertyName("VolumeSizeInBytes");
-                    context.Writer.Write(publicRequest.VolumeSizeInBytes);
+                    context.Writer.Write(publicRequest.VolumeSizeInBytes.Value);
                 }
 
                 writer.WriteObjectEnd();

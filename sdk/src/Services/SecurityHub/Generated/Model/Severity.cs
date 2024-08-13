@@ -153,9 +153,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int Normalized
+        public int? Normalized
         {
-            get { return this._normalized.GetValueOrDefault(); }
+            get { return this._normalized; }
             set { this._normalized = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.SecurityHub.Model
         /// product that generated the finding.
         /// </para>
         /// </summary>
-        public double Product
+        public double? Product
         {
-            get { return this._product.GetValueOrDefault(); }
+            get { return this._product; }
             set { this._product = value; }
         }
 

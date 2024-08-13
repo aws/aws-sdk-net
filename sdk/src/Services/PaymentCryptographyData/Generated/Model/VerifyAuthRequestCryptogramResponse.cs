@@ -45,7 +45,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Cryptography.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16)]
+        [AWSProperty(Sensitive=true, Min=1, Max=16)]
         public string AuthResponseValue
         {
             get { return this._authResponseValue; }

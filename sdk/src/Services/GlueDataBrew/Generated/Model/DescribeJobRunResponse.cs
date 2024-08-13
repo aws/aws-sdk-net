@@ -60,9 +60,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The number of times that DataBrew has attempted to run the job.
         /// </para>
         /// </summary>
-        public int Attempt
+        public int? Attempt
         {
-            get { return this._attempt.GetValueOrDefault(); }
+            get { return this._attempt; }
             set { this._attempt = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The date and time when the job completed processing.
         /// </para>
         /// </summary>
-        public DateTime CompletedOn
+        public DateTime? CompletedOn
         {
-            get { return this._completedOn.GetValueOrDefault(); }
+            get { return this._completedOn; }
             set { this._completedOn = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The amount of time, in seconds, during which the job run consumed resources.
         /// </para>
         /// </summary>
-        public int ExecutionTime
+        public int? ExecutionTime
         {
-            get { return this._executionTime.GetValueOrDefault(); }
+            get { return this._executionTime; }
             set { this._executionTime = value; }
         }
 
@@ -360,9 +360,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The date and time when the job run began.
         /// </para>
         /// </summary>
-        public DateTime StartedOn
+        public DateTime? StartedOn
         {
-            get { return this._startedOn.GetValueOrDefault(); }
+            get { return this._startedOn; }
             set { this._startedOn = value; }
         }
 

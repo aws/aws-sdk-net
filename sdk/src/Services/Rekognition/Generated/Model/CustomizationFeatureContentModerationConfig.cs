@@ -44,9 +44,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float ConfidenceThreshold
+        public float? ConfidenceThreshold
         {
-            get { return this._confidenceThreshold.GetValueOrDefault(); }
+            get { return this._confidenceThreshold; }
             set { this._confidenceThreshold = value; }
         }
 

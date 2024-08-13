@@ -68,13 +68,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoEnrollment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoEnrollment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MachineType", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MachineType = unmarshaller.Unmarshall(context);
                     continue;
                 }

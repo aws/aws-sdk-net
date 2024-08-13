@@ -78,9 +78,9 @@ namespace Amazon.Redshift.Model
         /// instead of automated snapshots.
         /// </para>
         /// </summary>
-        public bool Manual
+        public bool? Manual
         {
-            get { return this._manual.GetValueOrDefault(); }
+            get { return this._manual; }
             set { this._manual = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Redshift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int RetentionPeriod
+        public int? RetentionPeriod
         {
-            get { return this._retentionPeriod.GetValueOrDefault(); }
+            get { return this._retentionPeriod; }
             set { this._retentionPeriod = value; }
         }
 

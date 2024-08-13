@@ -45,9 +45,9 @@ namespace Amazon.DynamoDBv2.Model
         ///  The read consistency of the PartiQL batch request. 
         /// </para>
         /// </summary>
-        public bool ConsistentRead
+        public bool? ConsistentRead
         {
-            get { return this._consistentRead.GetValueOrDefault(); }
+            get { return this._consistentRead; }
             set { this._consistentRead = value; }
         }
 

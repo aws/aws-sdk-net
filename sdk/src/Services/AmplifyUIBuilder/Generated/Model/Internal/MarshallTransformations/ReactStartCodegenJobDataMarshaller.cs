@@ -76,7 +76,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInlineSourceMap())
             {
                 context.Writer.WritePropertyName("inlineSourceMap");
-                context.Writer.Write(requestObject.InlineSourceMap);
+                context.Writer.Write(requestObject.InlineSourceMap.Value);
             }
 
             if(requestObject.IsSetModule())
@@ -88,7 +88,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRenderTypeDeclarations())
             {
                 context.Writer.WritePropertyName("renderTypeDeclarations");
-                context.Writer.Write(requestObject.RenderTypeDeclarations);
+                context.Writer.Write(requestObject.RenderTypeDeclarations.Value);
             }
 
             if(requestObject.IsSetScript())

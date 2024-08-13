@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecordIndex())
             {
                 context.Writer.WritePropertyName("RecordIndex");
-                context.Writer.Write(requestObject.RecordIndex);
+                context.Writer.Write(requestObject.RecordIndex.Value);
             }
 
         }

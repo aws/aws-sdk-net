@@ -68,9 +68,9 @@ namespace Amazon.DLM.Model
         /// Default: true
         /// </para>
         /// </summary>
-        public bool ExecuteOperationOnScriptFailure
+        public bool? ExecuteOperationOnScriptFailure
         {
-            get { return this._executeOperationOnScriptFailure.GetValueOrDefault(); }
+            get { return this._executeOperationOnScriptFailure; }
             set { this._executeOperationOnScriptFailure = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=120)]
-        public int ExecutionTimeout
+        public int? ExecutionTimeout
         {
-            get { return this._executionTimeout.GetValueOrDefault(); }
+            get { return this._executionTimeout; }
             set { this._executionTimeout = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
-        public int MaximumRetryCount
+        public int? MaximumRetryCount
         {
-            get { return this._maximumRetryCount.GetValueOrDefault(); }
+            get { return this._maximumRetryCount; }
             set { this._maximumRetryCount = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("time");
-                context.Writer.Write(requestObject.Time);
+                context.Writer.Write(requestObject.Time.Value);
             }
 
         }

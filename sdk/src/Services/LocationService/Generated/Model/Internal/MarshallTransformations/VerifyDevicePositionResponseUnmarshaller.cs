@@ -72,13 +72,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReceivedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ReceivedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SampleTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SampleTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

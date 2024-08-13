@@ -71,9 +71,9 @@ namespace Amazon.ApplicationInsights.Model
         /// roles if they are missing.
         /// </para>
         /// </summary>
-        public bool AttachMissingPermission
+        public bool? AttachMissingPermission
         {
-            get { return this._attachMissingPermission.GetValueOrDefault(); }
+            get { return this._attachMissingPermission; }
             set { this._attachMissingPermission = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.ApplicationInsights.Model
         ///  Indicates whether auto-configuration is turned on for this application. 
         /// </para>
         /// </summary>
-        public bool AutoConfigEnabled
+        public bool? AutoConfigEnabled
         {
-            get { return this._autoConfigEnabled.GetValueOrDefault(); }
+            get { return this._autoConfigEnabled; }
             set { this._autoConfigEnabled = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.ApplicationInsights.Model
         /// 
         /// </para>
         /// </summary>
-        public bool CWEMonitorEnabled
+        public bool? CWEMonitorEnabled
         {
-            get { return this._cweMonitorEnabled.GetValueOrDefault(); }
+            get { return this._cweMonitorEnabled; }
             set { this._cweMonitorEnabled = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.ApplicationInsights.Model
         /// by Application Insights for an application. 
         /// </para>
         /// </summary>
-        public bool OpsCenterEnabled
+        public bool? OpsCenterEnabled
         {
-            get { return this._opsCenterEnabled.GetValueOrDefault(); }
+            get { return this._opsCenterEnabled; }
             set { this._opsCenterEnabled = value; }
         }
 

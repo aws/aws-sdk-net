@@ -74,7 +74,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DisableScaleIn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableScaleIn = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,19 +86,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ScaleInCooldown", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleInCooldown = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScaleOutCooldown", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleOutCooldown = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TargetValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

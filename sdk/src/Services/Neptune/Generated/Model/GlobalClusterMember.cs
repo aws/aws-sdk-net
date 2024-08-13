@@ -64,9 +64,9 @@ namespace Amazon.Neptune.Model
         /// capability) for the Neptune global database with which it is associated. 
         /// </para>
         /// </summary>
-        public bool IsWriter
+        public bool? IsWriter
         {
-            get { return this._isWriter.GetValueOrDefault(); }
+            get { return this._isWriter; }
             set { this._isWriter = value; }
         }
 

@@ -86,9 +86,9 @@ namespace Amazon.Appflow.Model
         /// Indicates whether the custom parameter for OAuth 2.0 authentication is required.
         /// </para>
         /// </summary>
-        public bool IsRequired
+        public bool? IsRequired
         {
-            get { return this._isRequired.GetValueOrDefault(); }
+            get { return this._isRequired; }
             set { this._isRequired = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Appflow.Model
         /// Indicates whether this authentication custom parameter is a sensitive field.
         /// </para>
         /// </summary>
-        public bool IsSensitiveField
+        public bool? IsSensitiveField
         {
-            get { return this._isSensitiveField.GetValueOrDefault(); }
+            get { return this._isSensitiveField; }
             set { this._isSensitiveField = value; }
         }
 

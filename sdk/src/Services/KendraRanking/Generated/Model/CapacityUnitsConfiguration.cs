@@ -50,9 +50,9 @@ namespace Amazon.KendraRanking.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int RescoreCapacityUnits
+        public int? RescoreCapacityUnits
         {
-            get { return this._rescoreCapacityUnits.GetValueOrDefault(); }
+            get { return this._rescoreCapacityUnits; }
             set { this._rescoreCapacityUnits = value; }
         }
 

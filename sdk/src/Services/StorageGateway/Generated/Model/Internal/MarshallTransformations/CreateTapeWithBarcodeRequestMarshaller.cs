@@ -78,7 +78,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetKMSEncrypted())
                 {
                     context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted);
+                    context.Writer.Write(publicRequest.KMSEncrypted.Value);
                 }
 
                 if(publicRequest.IsSetKMSKey())
@@ -118,13 +118,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTapeSizeInBytes())
                 {
                     context.Writer.WritePropertyName("TapeSizeInBytes");
-                    context.Writer.Write(publicRequest.TapeSizeInBytes);
+                    context.Writer.Write(publicRequest.TapeSizeInBytes.Value);
                 }
 
                 if(publicRequest.IsSetWorm())
                 {
                     context.Writer.WritePropertyName("Worm");
-                    context.Writer.Write(publicRequest.Worm);
+                    context.Writer.Write(publicRequest.Worm.Value);
                 }
 
                 writer.WriteObjectEnd();

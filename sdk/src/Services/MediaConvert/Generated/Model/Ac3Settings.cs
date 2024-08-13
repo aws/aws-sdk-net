@@ -56,9 +56,9 @@ namespace Amazon.MediaConvert.Model
         /// 384000. Minimum: 384000. Maximum: 640000.
         /// </summary>
         [AWSProperty(Min=64000, Max=640000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.MediaConvert.Model
         /// input audio is Dolby Digital, dialnorm will be passed through.
         /// </summary>
         [AWSProperty(Min=1, Max=31)]
-        public int Dialnorm
+        public int? Dialnorm
         {
-            get { return this._dialnorm.GetValueOrDefault(); }
+            get { return this._dialnorm; }
             set { this._dialnorm = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.MediaConvert.Model
         /// sample rate in Hz.
         /// </summary>
         [AWSProperty(Min=48000, Max=48000)]
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

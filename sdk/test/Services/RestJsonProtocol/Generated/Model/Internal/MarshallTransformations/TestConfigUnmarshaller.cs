@@ -68,7 +68,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("timeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
                     continue;
                 }

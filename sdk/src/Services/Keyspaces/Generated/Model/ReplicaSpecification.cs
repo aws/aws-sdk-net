@@ -85,9 +85,9 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ReadCapacityUnits
+        public long? ReadCapacityUnits
         {
-            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            get { return this._readCapacityUnits; }
             set { this._readCapacityUnits = value; }
         }
 

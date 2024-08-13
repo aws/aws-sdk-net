@@ -63,13 +63,13 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQuantity())
             {
                 context.Writer.WritePropertyName("Quantity");
-                context.Writer.Write(requestObject.Quantity);
+                context.Writer.Write(requestObject.Quantity.Value);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp);
+                context.Writer.Write(requestObject.Timestamp.Value);
             }
 
             if(requestObject.IsSetUsageAllocations())

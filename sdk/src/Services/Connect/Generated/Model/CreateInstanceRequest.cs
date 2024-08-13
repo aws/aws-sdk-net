@@ -123,9 +123,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool InboundCallsEnabled
+        public bool? InboundCallsEnabled
         {
-            get { return this._inboundCallsEnabled.GetValueOrDefault(); }
+            get { return this._inboundCallsEnabled; }
             set { this._inboundCallsEnabled = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool OutboundCallsEnabled
+        public bool? OutboundCallsEnabled
         {
-            get { return this._outboundCallsEnabled.GetValueOrDefault(); }
+            get { return this._outboundCallsEnabled; }
             set { this._outboundCallsEnabled = value; }
         }
 

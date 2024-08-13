@@ -72,7 +72,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetComputeStatistics())
                 {
                     context.Writer.WritePropertyName("ComputeStatistics");
-                    context.Writer.Write(publicRequest.ComputeStatistics);
+                    context.Writer.Write(publicRequest.ComputeStatistics.Value);
                 }
 
                 if(publicRequest.IsSetDataSourceId())

@@ -48,7 +48,6 @@ namespace <#= base.Config.Namespace#>
         {
             Name = DefaultConfigurationMode.<#= mode.Name#>,
             RetryMode = <#= nameof(RequestRetryMode) #>.<#= mode.RetryMode#>,
-            StsRegionalEndpoints = <#= nameof(StsRegionalEndpointsValue) #>.<#= mode.StsRegionalEndpoints#>,
             S3UsEast1RegionalEndpoint = <#= nameof(S3UsEast1RegionalEndpointValue) #>.<#= mode.S3UsEast1RegionalEndpoint#>,
 <#
             if (mode.ConnectTimeout.HasValue)

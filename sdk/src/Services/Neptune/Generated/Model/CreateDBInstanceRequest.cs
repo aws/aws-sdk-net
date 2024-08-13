@@ -85,9 +85,9 @@ namespace Amazon.Neptune.Model
         /// Not supported by Neptune.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.Neptune.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.Neptune.Model
         /// false. The default is false.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -427,9 +427,9 @@ namespace Amazon.Neptune.Model
         /// in their parent DB cluster.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -500,9 +500,9 @@ namespace Amazon.Neptune.Model
         /// Not supported by Neptune (ignored).
         /// </para>
         /// </summary>
-        public bool EnableIAMDatabaseAuthentication
+        public bool? EnableIAMDatabaseAuthentication
         {
-            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._enableIAMDatabaseAuthentication; }
             set { this._enableIAMDatabaseAuthentication = value; }
         }
 
@@ -518,9 +518,9 @@ namespace Amazon.Neptune.Model
         ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
-        public bool EnablePerformanceInsights
+        public bool? EnablePerformanceInsights
         {
-            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            get { return this._enablePerformanceInsights; }
             set { this._enablePerformanceInsights = value; }
         }
 
@@ -579,9 +579,9 @@ namespace Amazon.Neptune.Model
         /// allocated for the DB instance.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -704,9 +704,9 @@ namespace Amazon.Neptune.Model
         /// Valid Values: <c>0, 1, 5, 10, 15, 30, 60</c> 
         /// </para>
         /// </summary>
-        public int MonitoringInterval
+        public int? MonitoringInterval
         {
-            get { return this._monitoringInterval.GetValueOrDefault(); }
+            get { return this._monitoringInterval; }
             set { this._monitoringInterval = value; }
         }
 
@@ -747,9 +747,9 @@ namespace Amazon.Neptune.Model
         /// parameter if the MultiAZ parameter is set to true.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -813,9 +813,9 @@ namespace Amazon.Neptune.Model
         /// Type: Integer
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -899,9 +899,9 @@ namespace Amazon.Neptune.Model
         /// Valid Values: 0 - 15
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 
@@ -918,9 +918,9 @@ namespace Amazon.Neptune.Model
         /// </para>
         /// </summary>
         [Obsolete("This parameter is not supported")]
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -945,9 +945,9 @@ namespace Amazon.Neptune.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

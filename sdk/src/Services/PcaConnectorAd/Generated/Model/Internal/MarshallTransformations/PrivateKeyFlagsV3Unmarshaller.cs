@@ -74,19 +74,19 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExportableKey", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExportableKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequireAlternateSignatureAlgorithm", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireAlternateSignatureAlgorithm = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StrongKeyProtectionRequired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StrongKeyProtectionRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,25 +68,25 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsResumable())
             {
                 context.Writer.WritePropertyName("isResumable");
-                context.Writer.Write(requestObject.IsResumable);
+                context.Writer.Write(requestObject.IsResumable.Value);
             }
 
             if(requestObject.IsSetMaxFileCount())
             {
                 context.Writer.WritePropertyName("maxFileCount");
-                context.Writer.Write(requestObject.MaxFileCount);
+                context.Writer.Write(requestObject.MaxFileCount.Value);
             }
 
             if(requestObject.IsSetMaxSize())
             {
                 context.Writer.WritePropertyName("maxSize");
-                context.Writer.Write(requestObject.MaxSize);
+                context.Writer.Write(requestObject.MaxSize.Value);
             }
 
             if(requestObject.IsSetShowThumbnails())
             {
                 context.Writer.WritePropertyName("showThumbnails");
-                context.Writer.Write(requestObject.ShowThumbnails);
+                context.Writer.Write(requestObject.ShowThumbnails.Value);
             }
 
         }

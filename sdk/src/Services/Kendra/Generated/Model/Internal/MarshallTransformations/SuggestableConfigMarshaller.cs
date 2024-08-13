@@ -57,7 +57,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSuggestable())
             {
                 context.Writer.WritePropertyName("Suggestable");
-                context.Writer.Write(requestObject.Suggestable);
+                context.Writer.Write(requestObject.Suggestable.Value);
             }
 
         }

@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("Dimension");
-                context.Writer.Write(requestObject.Dimension);
+                context.Writer.Write(requestObject.Dimension.Value);
             }
 
         }

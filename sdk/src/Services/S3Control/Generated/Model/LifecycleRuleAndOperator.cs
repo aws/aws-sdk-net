@@ -46,9 +46,9 @@ namespace Amazon.S3Control.Model
         /// to 7 means the rule applies to objects with a size that is greater than 7. 
         /// </para>
         /// </summary>
-        public long ObjectSizeGreaterThan
+        public long? ObjectSizeGreaterThan
         {
-            get { return this._objectSizeGreaterThan.GetValueOrDefault(); }
+            get { return this._objectSizeGreaterThan; }
             set { this._objectSizeGreaterThan = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.S3Control.Model
         /// to 77 means the rule applies to objects with a size that is less than 77. 
         /// </para>
         /// </summary>
-        public long ObjectSizeLessThan
+        public long? ObjectSizeLessThan
         {
-            get { return this._objectSizeLessThan.GetValueOrDefault(); }
+            get { return this._objectSizeLessThan; }
             set { this._objectSizeLessThan = value; }
         }
 

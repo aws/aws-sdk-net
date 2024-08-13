@@ -82,9 +82,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         ///  The integer error code associated with the error message. 
         /// </para>
         /// </summary>
-        public int ErrorStatusCode
+        public int? ErrorStatusCode
         {
-            get { return this._errorStatusCode.GetValueOrDefault(); }
+            get { return this._errorStatusCode; }
             set { this._errorStatusCode = value; }
         }
 

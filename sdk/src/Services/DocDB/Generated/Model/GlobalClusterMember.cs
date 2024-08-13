@@ -65,9 +65,9 @@ namespace Amazon.DocDB.Model
         /// is associated. 
         /// </para>
         /// </summary>
-        public bool IsWriter
+        public bool? IsWriter
         {
-            get { return this._isWriter.GetValueOrDefault(); }
+            get { return this._isWriter; }
             set { this._isWriter = value; }
         }
 

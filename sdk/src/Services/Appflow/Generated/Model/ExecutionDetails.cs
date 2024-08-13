@@ -81,9 +81,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies the time of the most recent flow run. 
         /// </para>
         /// </summary>
-        public DateTime MostRecentExecutionTime
+        public DateTime? MostRecentExecutionTime
         {
-            get { return this._mostRecentExecutionTime.GetValueOrDefault(); }
+            get { return this._mostRecentExecutionTime; }
             set { this._mostRecentExecutionTime = value; }
         }
 

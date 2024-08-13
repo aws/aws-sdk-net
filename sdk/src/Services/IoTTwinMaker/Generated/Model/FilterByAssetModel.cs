@@ -83,9 +83,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// Bolean to include assets.
         /// </para>
         /// </summary>
-        public bool IncludeAssets
+        public bool? IncludeAssets
         {
-            get { return this._includeAssets.GetValueOrDefault(); }
+            get { return this._includeAssets; }
             set { this._includeAssets = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// Include asset offspring. [need desc.]
         /// </para>
         /// </summary>
-        public bool IncludeOffspring
+        public bool? IncludeOffspring
         {
-            get { return this._includeOffspring.GetValueOrDefault(); }
+            get { return this._includeOffspring; }
             set { this._includeOffspring = value; }
         }
 

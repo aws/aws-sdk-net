@@ -68,9 +68,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the relay was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when relay was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTimestamp
+        public DateTime? LastModifiedTimestamp
         {
-            get { return this._lastModifiedTimestamp.GetValueOrDefault(); }
+            get { return this._lastModifiedTimestamp; }
             set { this._lastModifiedTimestamp = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.MailManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int ServerPort
+        public int? ServerPort
         {
-            get { return this._serverPort.GetValueOrDefault(); }
+            get { return this._serverPort; }
             set { this._serverPort = value; }
         }
 

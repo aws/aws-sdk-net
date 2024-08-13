@@ -74,7 +74,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="selectExpression">The expression used to query the domain.</param>
         /// <param name="consistentRead">Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <c>true</c>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.</param>
-        public SelectRequest(string selectExpression, bool consistentRead)
+        public SelectRequest(string selectExpression, bool? consistentRead)
         {
             _selectExpression = selectExpression;
             _consistentRead = consistentRead;
@@ -86,9 +86,9 @@ namespace Amazon.SimpleDB.Model
         /// written to SimpleDB will be returned. Otherwise, results will be consistent eventually,
         /// and the client may not see data that was written immediately before your read.
         /// </summary>
-        public bool ConsistentRead
+        public bool? ConsistentRead
         {
-            get { return this._consistentRead.GetValueOrDefault(); }
+            get { return this._consistentRead; }
             set { this._consistentRead = value; }
         }
 

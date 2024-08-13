@@ -51,9 +51,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.CustomerProfiles.Model
         /// Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
         /// </para>
         /// </summary>
-        public bool IsUnstructured
+        public bool? IsUnstructured
         {
-            get { return this._isUnstructured.GetValueOrDefault(); }
+            get { return this._isUnstructured; }
             set { this._isUnstructured = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

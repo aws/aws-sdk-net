@@ -45,7 +45,9 @@ namespace Amazon.S3
                 InternalSDKUtils.ApplyValues(request, additionalProperties);
 
                 var listResponse = await this.ListObjectsAsync(request).ConfigureAwait(false);
-                keys.AddRange(listResponse.S3Objects?.Select(o => o.Key));
+                if (listResponse.S3Objects != null)
+                    keys.AddRange(listResponse.S3Objects.Select(o => o.Key));
+
                 marker = listResponse.NextMarker;
             } while (!string.IsNullOrEmpty(marker));
 
@@ -148,11 +150,6 @@ namespace Amazon.S3
             return this.PutBucketAsync(bucketName);
         }
 
-        [Obsolete("This method is deprecated: its behavior is inconsistent and always uses HTTP. Please use Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistV2Async instead.")]
-        Task<bool> ICoreAmazonS3.DoesS3BucketExistAsync(string bucketName)
-        {
-            return Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistAsync(this, bucketName);
-        }
         #endregion
     }
 }

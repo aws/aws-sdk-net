@@ -112,9 +112,9 @@ namespace Amazon.EC2.Model
         /// value than 500, you receive an error.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// it indicates that the dependency package uses Semantic versioning.
         /// </para>
         /// </summary>
-        public bool IsSemVer
+        public bool? IsSemVer
         {
-            get { return this._isSemVer.GetValueOrDefault(); }
+            get { return this._isSemVer; }
             set { this._isSemVer = value; }
         }
 

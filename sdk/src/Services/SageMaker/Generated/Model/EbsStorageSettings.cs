@@ -43,9 +43,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=16384)]
-        public int EbsVolumeSizeInGb
+        public int? EbsVolumeSizeInGb
         {
-            get { return this._ebsVolumeSizeInGb.GetValueOrDefault(); }
+            get { return this._ebsVolumeSizeInGb; }
             set { this._ebsVolumeSizeInGb = value; }
         }
 

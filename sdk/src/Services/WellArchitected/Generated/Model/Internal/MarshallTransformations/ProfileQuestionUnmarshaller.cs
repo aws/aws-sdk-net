@@ -68,13 +68,13 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxSelectedChoices", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSelectedChoices = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinSelectedChoices", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinSelectedChoices = unmarshaller.Unmarshall(context);
                     continue;
                 }

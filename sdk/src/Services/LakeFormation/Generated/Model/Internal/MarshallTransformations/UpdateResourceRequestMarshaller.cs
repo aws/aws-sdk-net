@@ -70,7 +70,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHybridAccessEnabled())
                 {
                     context.Writer.WritePropertyName("HybridAccessEnabled");
-                    context.Writer.Write(publicRequest.HybridAccessEnabled);
+                    context.Writer.Write(publicRequest.HybridAccessEnabled.Value);
                 }
 
                 if(publicRequest.IsSetResourceArn())
@@ -88,7 +88,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetWithFederation())
                 {
                     context.Writer.WritePropertyName("WithFederation");
-                    context.Writer.Write(publicRequest.WithFederation);
+                    context.Writer.Write(publicRequest.WithFederation.Value);
                 }
 
                 writer.WriteObjectEnd();

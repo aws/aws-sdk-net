@@ -62,9 +62,9 @@ namespace Amazon.Mgn.Model
         /// Network interface primary IP.
         /// </para>
         /// </summary>
-        public bool IsPrimary
+        public bool? IsPrimary
         {
-            get { return this._isPrimary.GetValueOrDefault(); }
+            get { return this._isPrimary; }
             set { this._isPrimary = value; }
         }
 

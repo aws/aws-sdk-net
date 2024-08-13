@@ -66,9 +66,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// Amazon EBS volume recommendations. 
         /// </para>
         /// </summary>
-        public double SavingsOpportunityPercentage
+        public double? SavingsOpportunityPercentage
         {
-            get { return this._savingsOpportunityPercentage.GetValueOrDefault(); }
+            get { return this._savingsOpportunityPercentage; }
             set { this._savingsOpportunityPercentage = value; }
         }
 

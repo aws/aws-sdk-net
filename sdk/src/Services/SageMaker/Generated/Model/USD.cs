@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=99)]
-        public int Cents
+        public int? Cents
         {
-            get { return this._cents.GetValueOrDefault(); }
+            get { return this._cents; }
             set { this._cents = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
-        public int Dollars
+        public int? Dollars
         {
-            get { return this._dollars.GetValueOrDefault(); }
+            get { return this._dollars; }
             set { this._dollars = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=9)]
-        public int TenthFractionsOfACent
+        public int? TenthFractionsOfACent
         {
-            get { return this._tenthFractionsOfACent.GetValueOrDefault(); }
+            get { return this._tenthFractionsOfACent; }
             set { this._tenthFractionsOfACent = value; }
         }
 

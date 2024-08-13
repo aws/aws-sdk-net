@@ -48,9 +48,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=262143)]
-        public int Earfcn
+        public int? Earfcn
         {
-            get { return this._earfcn.GetValueOrDefault(); }
+            get { return this._earfcn; }
             set { this._earfcn = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=268435455)]
-        public int EutranCid
+        public int? EutranCid
         {
-            get { return this._eutranCid.GetValueOrDefault(); }
+            get { return this._eutranCid; }
             set { this._eutranCid = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=503)]
-        public int Pci
+        public int? Pci
         {
-            get { return this._pci.GetValueOrDefault(); }
+            get { return this._pci; }
             set { this._pci = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-140, Max=-44)]
-        public int Rsrp
+        public int? Rsrp
         {
-            get { return this._rsrp.GetValueOrDefault(); }
+            get { return this._rsrp; }
             set { this._rsrp = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=-3)]
-        public float Rsrq
+        public float? Rsrq
         {
-            get { return this._rsrq.GetValueOrDefault(); }
+            get { return this._rsrq; }
             set { this._rsrq = value; }
         }
 

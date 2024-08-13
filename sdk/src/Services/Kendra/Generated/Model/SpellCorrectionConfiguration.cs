@@ -55,9 +55,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IncludeQuerySpellCheckSuggestions
+        public bool? IncludeQuerySpellCheckSuggestions
         {
-            get { return this._includeQuerySpellCheckSuggestions.GetValueOrDefault(); }
+            get { return this._includeQuerySpellCheckSuggestions; }
             set { this._includeQuerySpellCheckSuggestions = value; }
         }
 

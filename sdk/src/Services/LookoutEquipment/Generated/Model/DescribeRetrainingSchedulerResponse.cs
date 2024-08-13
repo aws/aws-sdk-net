@@ -50,9 +50,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the time and date at which the retraining scheduler was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.LookoutEquipment.Model
         /// you provide to the nearest UTC day.
         /// </para>
         /// </summary>
-        public DateTime RetrainingStartDate
+        public DateTime? RetrainingStartDate
         {
-            get { return this._retrainingStartDate.GetValueOrDefault(); }
+            get { return this._retrainingStartDate; }
             set { this._retrainingStartDate = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the time and date at which the retraining scheduler was updated. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

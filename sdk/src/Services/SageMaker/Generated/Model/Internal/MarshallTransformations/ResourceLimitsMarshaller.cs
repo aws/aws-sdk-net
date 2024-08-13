@@ -51,19 +51,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxNumberOfTrainingJobs())
             {
                 context.Writer.WritePropertyName("MaxNumberOfTrainingJobs");
-                context.Writer.Write(requestObject.MaxNumberOfTrainingJobs);
+                context.Writer.Write(requestObject.MaxNumberOfTrainingJobs.Value);
             }
 
             if(requestObject.IsSetMaxParallelTrainingJobs())
             {
                 context.Writer.WritePropertyName("MaxParallelTrainingJobs");
-                context.Writer.Write(requestObject.MaxParallelTrainingJobs);
+                context.Writer.Write(requestObject.MaxParallelTrainingJobs.Value);
             }
 
             if(requestObject.IsSetMaxRuntimeInSeconds())
             {
                 context.Writer.WritePropertyName("MaxRuntimeInSeconds");
-                context.Writer.Write(requestObject.MaxRuntimeInSeconds);
+                context.Writer.Write(requestObject.MaxRuntimeInSeconds.Value);
             }
 
         }

@@ -101,9 +101,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The size of the incremental backup in megabytes.
         /// </para>
         /// </summary>
-        public double ActualIncrementalBackupSizeInMegaBytes
+        public double? ActualIncrementalBackupSizeInMegaBytes
         {
-            get { return this._actualIncrementalBackupSizeInMegaBytes.GetValueOrDefault(); }
+            get { return this._actualIncrementalBackupSizeInMegaBytes; }
             set { this._actualIncrementalBackupSizeInMegaBytes = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The size in megabytes of the data that has been backed up to a snapshot.
         /// </para>
         /// </summary>
-        public double BackupProgressInMegaBytes
+        public double? BackupProgressInMegaBytes
         {
-            get { return this._backupProgressInMegaBytes.GetValueOrDefault(); }
+            get { return this._backupProgressInMegaBytes; }
             set { this._backupProgressInMegaBytes = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The rate at which data is backed up into a snapshot in megabytes per second.
         /// </para>
         /// </summary>
-        public double CurrentBackupRateInMegaBytesPerSecond
+        public double? CurrentBackupRateInMegaBytesPerSecond
         {
-            get { return this._currentBackupRateInMegaBytesPerSecond.GetValueOrDefault(); }
+            get { return this._currentBackupRateInMegaBytesPerSecond; }
             set { this._currentBackupRateInMegaBytesPerSecond = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The amount of time it took to back up data into a snapshot.
         /// </para>
         /// </summary>
-        public long ElapsedTimeInSeconds
+        public long? ElapsedTimeInSeconds
         {
-            get { return this._elapsedTimeInSeconds.GetValueOrDefault(); }
+            get { return this._elapsedTimeInSeconds; }
             set { this._elapsedTimeInSeconds = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The estimated amount of seconds until the snapshot completes backup.
         /// </para>
         /// </summary>
-        public long EstimatedSecondsToCompletion
+        public long? EstimatedSecondsToCompletion
         {
-            get { return this._estimatedSecondsToCompletion.GetValueOrDefault(); }
+            get { return this._estimatedSecondsToCompletion; }
             set { this._estimatedSecondsToCompletion = value; }
         }
 
@@ -336,9 +336,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The timestamp of when the snapshot was created.
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreateTime
+        public DateTime? SnapshotCreateTime
         {
-            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            get { return this._snapshotCreateTime; }
             set { this._snapshotCreateTime = value; }
         }
 
@@ -372,9 +372,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The amount of days until the snapshot is deleted.
         /// </para>
         /// </summary>
-        public int SnapshotRemainingDays
+        public int? SnapshotRemainingDays
         {
-            get { return this._snapshotRemainingDays.GetValueOrDefault(); }
+            get { return this._snapshotRemainingDays; }
             set { this._snapshotRemainingDays = value; }
         }
 
@@ -390,9 +390,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The period of time, in days, of how long the snapshot is retained.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionPeriod
+        public int? SnapshotRetentionPeriod
         {
-            get { return this._snapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._snapshotRetentionPeriod; }
             set { this._snapshotRetentionPeriod = value; }
         }
 
@@ -408,9 +408,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The timestamp of when data within the snapshot started getting retained.
         /// </para>
         /// </summary>
-        public DateTime SnapshotRetentionStartTime
+        public DateTime? SnapshotRetentionStartTime
         {
-            get { return this._snapshotRetentionStartTime.GetValueOrDefault(); }
+            get { return this._snapshotRetentionStartTime; }
             set { this._snapshotRetentionStartTime = value; }
         }
 
@@ -444,9 +444,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The total size, in megabytes, of how big the snapshot is.
         /// </para>
         /// </summary>
-        public double TotalBackupSizeInMegaBytes
+        public double? TotalBackupSizeInMegaBytes
         {
-            get { return this._totalBackupSizeInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalBackupSizeInMegaBytes; }
             set { this._totalBackupSizeInMegaBytes = value; }
         }
 

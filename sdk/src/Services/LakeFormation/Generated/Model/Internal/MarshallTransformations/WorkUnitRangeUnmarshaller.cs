@@ -68,13 +68,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("WorkUnitIdMax", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WorkUnitIdMax = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkUnitIdMin", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WorkUnitIdMin = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,19 +68,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Pitch", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Pitch = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Roll", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Roll = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Yaw", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Yaw = unmarshaller.Unmarshall(context);
                     continue;
                 }

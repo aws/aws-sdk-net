@@ -15,6 +15,8 @@
 
 using System;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 
 namespace Amazon.Runtime.Internal
@@ -54,8 +56,7 @@ namespace Amazon.Runtime.Internal
             }                      
         }
 
-#if BCL45
-
+#if BCL
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
         /// </summary>
@@ -70,9 +71,7 @@ namespace Amazon.Runtime.Internal
             Unmarshall(executionContext);
             return (T)executionContext.ResponseContext.Response;
         }
-
 #elif NETSTANDARD
-
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
         /// </summary>
@@ -86,23 +85,6 @@ namespace Amazon.Runtime.Internal
             // Unmarshall the response
             await UnmarshallAsync(executionContext).ConfigureAwait(false);
             return (T)executionContext.ResponseContext.Response;
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Unmarshalls the response returned by the HttpHandler.
-        /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            // Unmarshall the response if an exception hasn't occured
-            if (executionContext.ResponseContext.AsyncResult.Exception == null)
-            {
-                Unmarshall(ExecutionContext.CreateFromAsyncContext(executionContext));
-            }            
-            base.InvokeAsyncCallback(executionContext);
         }
 #endif
 
@@ -122,7 +104,9 @@ namespace Amazon.Runtime.Internal
                 var unmarshaller = requestContext.Unmarshaller;
                 try
                 {
-                    var readEntireResponse = _supportsResponseLogging;
+                    var readEntireResponse = _supportsResponseLogging &&
+                        (requestContext.ClientConfig.LogResponse
+                        || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never);
 
                     var context = unmarshaller.CreateContext(responseContext.HttpResponse,
                         readEntireResponse,
@@ -179,7 +163,7 @@ namespace Amazon.Runtime.Internal
                 try
                 {
                     var readEntireResponse = _supportsResponseLogging &&
-                        (requestContext.ClientConfig.LogResponse || requestContext.ClientConfig.ReadEntireResponse
+                        (requestContext.ClientConfig.LogResponse
                         || AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never);
 
                     var responseStream = await responseContext.HttpResponse.
@@ -211,6 +195,7 @@ namespace Amazon.Runtime.Internal
                 var unmarshaller = requestContext.Unmarshaller;
                 AmazonWebServiceResponse response = null;
                 using (requestContext.Metrics.StartEvent(Metric.ResponseUnmarshallTime))
+                using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.DeserializationDurationMetricName))
                 {
                     response = unmarshaller.UnmarshallResponse(context);
                 }

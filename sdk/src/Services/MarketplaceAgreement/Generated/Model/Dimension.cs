@@ -72,9 +72,9 @@ namespace Amazon.MarketplaceAgreement.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int DimensionValue
+        public int? DimensionValue
         {
-            get { return this._dimensionValue.GetValueOrDefault(); }
+            get { return this._dimensionValue; }
             set { this._dimensionValue = value; }
         }
 

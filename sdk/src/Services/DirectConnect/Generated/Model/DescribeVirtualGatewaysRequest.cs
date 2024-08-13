@@ -31,8 +31,15 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVirtualGateways operation.
+    /// <note> 
+    /// <para>
+    /// Deprecated. Use <c>DescribeVpnGateways</c> instead. See <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html">DescribeVPNGateways</a>
+    /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Lists the virtual private gateways owned by the Amazon Web Services account.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You can create one or more Direct Connect private virtual interfaces linked to a virtual

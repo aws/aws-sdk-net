@@ -68,7 +68,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("compressionFactor", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.CompressionFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -61,9 +61,9 @@ namespace Amazon.QuickSight.Model
         /// The rotation angle of the axis tick labels.
         /// </para>
         /// </summary>
-        public double RotationAngle
+        public double? RotationAngle
         {
-            get { return this._rotationAngle.GetValueOrDefault(); }
+            get { return this._rotationAngle; }
             set { this._rotationAngle = value; }
         }
 

@@ -120,9 +120,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of schemas in a Fleet Advisor collector inventory database. 
         /// </para>
         /// </summary>
-        public long NumberOfSchemas
+        public long? NumberOfSchemas
         {
-            get { return this._numberOfSchemas.GetValueOrDefault(); }
+            get { return this._numberOfSchemas; }
             set { this._numberOfSchemas = value; }
         }
 

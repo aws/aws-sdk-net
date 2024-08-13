@@ -92,9 +92,9 @@ namespace Amazon.EC2.Model
         /// or later of the Amazon EC2 API.
         /// </para>
         /// </summary>
-        public bool AssignIpv6AddressOnCreation
+        public bool? AssignIpv6AddressOnCreation
         {
-            get { return this._assignIpv6AddressOnCreation.GetValueOrDefault(); }
+            get { return this._assignIpv6AddressOnCreation; }
             set { this._assignIpv6AddressOnCreation = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.EC2.Model
         /// should be disabled. 
         /// </para>
         /// </summary>
-        public bool DisableLniAtDeviceIndex
+        public bool? DisableLniAtDeviceIndex
         {
-            get { return this._disableLniAtDeviceIndex.GetValueOrDefault(); }
+            get { return this._disableLniAtDeviceIndex; }
             set { this._disableLniAtDeviceIndex = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.EC2.Model
         /// should return synthetic IPv6 addresses for IPv4-only destinations.
         /// </para>
         /// </summary>
-        public bool EnableDns64
+        public bool? EnableDns64
         {
-            get { return this._enableDns64.GetValueOrDefault(); }
+            get { return this._enableDns64; }
             set { this._enableDns64 = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.EC2.Model
         /// (eth0). 
         /// </para>
         /// </summary>
-        public int EnableLniAtDeviceIndex
+        public int? EnableLniAtDeviceIndex
         {
-            get { return this._enableLniAtDeviceIndex.GetValueOrDefault(); }
+            get { return this._enableLniAtDeviceIndex; }
             set { this._enableLniAtDeviceIndex = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.
         /// </para>
         /// </summary>
-        public bool EnableResourceNameDnsAAAARecordOnLaunch
+        public bool? EnableResourceNameDnsAAAARecordOnLaunch
         {
-            get { return this._enableResourceNameDnsAAAARecordOnLaunch.GetValueOrDefault(); }
+            get { return this._enableResourceNameDnsAAAARecordOnLaunch; }
             set { this._enableResourceNameDnsAAAARecordOnLaunch = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to respond to DNS queries for instance hostnames with DNS A records.
         /// </para>
         /// </summary>
-        public bool EnableResourceNameDnsARecordOnLaunch
+        public bool? EnableResourceNameDnsARecordOnLaunch
         {
-            get { return this._enableResourceNameDnsARecordOnLaunch.GetValueOrDefault(); }
+            get { return this._enableResourceNameDnsARecordOnLaunch; }
             set { this._enableResourceNameDnsARecordOnLaunch = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.EC2.Model
         /// <c>CustomerOwnedIpv4Pool</c>.
         /// </para>
         /// </summary>
-        public bool MapCustomerOwnedIpOnLaunch
+        public bool? MapCustomerOwnedIpOnLaunch
         {
-            get { return this._mapCustomerOwnedIpOnLaunch.GetValueOrDefault(); }
+            get { return this._mapCustomerOwnedIpOnLaunch; }
             set { this._mapCustomerOwnedIpOnLaunch = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.EC2.Model
         /// VPC pricing page</a>.
         /// </para>
         /// </summary>
-        public bool MapPublicIpOnLaunch
+        public bool? MapPublicIpOnLaunch
         {
-            get { return this._mapPublicIpOnLaunch.GetValueOrDefault(); }
+            get { return this._mapPublicIpOnLaunch; }
             set { this._mapPublicIpOnLaunch = value; }
         }
 

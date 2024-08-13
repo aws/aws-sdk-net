@@ -250,9 +250,9 @@ namespace Amazon.Chatbot.Model
         /// Gets and sets the property UserAuthorizationRequired. Enables use of a user role requirement
         /// in your chat configuration.
         /// </summary>
-        public bool UserAuthorizationRequired
+        public bool? UserAuthorizationRequired
         {
-            get { return this._userAuthorizationRequired.GetValueOrDefault(); }
+            get { return this._userAuthorizationRequired; }
             set { this._userAuthorizationRequired = value; }
         }
 

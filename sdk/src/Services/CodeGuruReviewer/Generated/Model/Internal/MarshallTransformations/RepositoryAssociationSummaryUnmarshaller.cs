@@ -86,7 +86,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdatedTimeStamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTimeStamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

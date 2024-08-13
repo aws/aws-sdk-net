@@ -67,9 +67,9 @@ namespace Amazon.AppRegistry.Model
         /// The ISO-8601 formatted timestamp of the moment the attribute group was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.AppRegistry.Model
         /// This time is the same as the creationTime for a newly created attribute group.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

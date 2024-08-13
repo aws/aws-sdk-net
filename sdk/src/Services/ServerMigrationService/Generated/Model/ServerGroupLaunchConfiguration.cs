@@ -44,9 +44,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The launch order of servers in the server group.
         /// </para>
         /// </summary>
-        public int LaunchOrder
+        public int? LaunchOrder
         {
-            get { return this._launchOrder.GetValueOrDefault(); }
+            get { return this._launchOrder; }
             set { this._launchOrder = value; }
         }
 

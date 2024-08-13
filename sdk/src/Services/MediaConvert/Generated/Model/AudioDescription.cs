@@ -115,9 +115,9 @@ namespace Amazon.MediaConvert.Model
         /// 4-255 = Reserved.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int AudioType
+        public int? AudioType
         {
-            get { return this._audioType.GetValueOrDefault(); }
+            get { return this._audioType; }
             set { this._audioType = value; }
         }
 

@@ -31,22 +31,6 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Details about topics for the guardrail to identify and deny.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used in the following API operations:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateGuardrail.html#API_CreateGuardrail_RequestSyntax">CreateGuardrail
-    /// request body</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateGuardrail.html#API_UpdateGuardrail_RequestSyntax">UpdateGuardrail
-    /// request body</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class GuardrailTopicConfig
     {

@@ -50,9 +50,9 @@ namespace Amazon.MainframeModernization.Model
         /// The size of the block on disk. 
         /// </para>
         /// </summary>
-        public int Blocksize
+        public int? Blocksize
         {
-            get { return this._blocksize.GetValueOrDefault(); }
+            get { return this._blocksize; }
             set { this._blocksize = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.MainframeModernization.Model
         /// The timestamp when the data set was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.MainframeModernization.Model
         /// File size of the dataset.
         /// </para>
         /// </summary>
-        public long FileSize
+        public long? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.MainframeModernization.Model
         /// The last time the data set was referenced.
         /// </para>
         /// </summary>
-        public DateTime LastReferencedTime
+        public DateTime? LastReferencedTime
         {
-            get { return this._lastReferencedTime.GetValueOrDefault(); }
+            get { return this._lastReferencedTime; }
             set { this._lastReferencedTime = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.MainframeModernization.Model
         /// The last time the data set was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.MainframeModernization.Model
         /// The length of records in the data set.
         /// </para>
         /// </summary>
-        public int RecordLength
+        public int? RecordLength
         {
-            get { return this._recordLength.GetValueOrDefault(); }
+            get { return this._recordLength; }
             set { this._recordLength = value; }
         }
 

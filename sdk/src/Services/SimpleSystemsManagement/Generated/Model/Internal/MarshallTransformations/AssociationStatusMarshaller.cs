@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDate())
             {
                 context.Writer.WritePropertyName("Date");
-                context.Writer.Write(requestObject.Date);
+                context.Writer.Write(requestObject.Date.Value);
             }
 
             if(requestObject.IsSetMessage())

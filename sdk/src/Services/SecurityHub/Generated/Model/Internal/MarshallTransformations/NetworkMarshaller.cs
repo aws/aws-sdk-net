@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationPort())
             {
                 context.Writer.WritePropertyName("DestinationPort");
-                context.Writer.Write(requestObject.DestinationPort);
+                context.Writer.Write(requestObject.DestinationPort.Value);
             }
 
             if(requestObject.IsSetDirection())
@@ -122,7 +122,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourcePort())
             {
                 context.Writer.WritePropertyName("SourcePort");
-                context.Writer.Write(requestObject.SourcePort);
+                context.Writer.Write(requestObject.SourcePort.Value);
             }
 
         }

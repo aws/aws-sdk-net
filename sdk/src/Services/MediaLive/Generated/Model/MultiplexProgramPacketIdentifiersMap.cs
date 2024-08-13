@@ -81,9 +81,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property DvbTeletextPid.
         /// </summary>
-        public int DvbTeletextPid
+        public int? DvbTeletextPid
         {
-            get { return this._dvbTeletextPid.GetValueOrDefault(); }
+            get { return this._dvbTeletextPid; }
             set { this._dvbTeletextPid = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property EtvPlatformPid.
         /// </summary>
-        public int EtvPlatformPid
+        public int? EtvPlatformPid
         {
-            get { return this._etvPlatformPid.GetValueOrDefault(); }
+            get { return this._etvPlatformPid; }
             set { this._etvPlatformPid = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property EtvSignalPid.
         /// </summary>
-        public int EtvSignalPid
+        public int? EtvSignalPid
         {
-            get { return this._etvSignalPid.GetValueOrDefault(); }
+            get { return this._etvSignalPid; }
             set { this._etvSignalPid = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property PcrPid.
         /// </summary>
-        public int PcrPid
+        public int? PcrPid
         {
-            get { return this._pcrPid.GetValueOrDefault(); }
+            get { return this._pcrPid; }
             set { this._pcrPid = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property PmtPid.
         /// </summary>
-        public int PmtPid
+        public int? PmtPid
         {
-            get { return this._pmtPid.GetValueOrDefault(); }
+            get { return this._pmtPid; }
             set { this._pmtPid = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property PrivateMetadataPid.
         /// </summary>
-        public int PrivateMetadataPid
+        public int? PrivateMetadataPid
         {
-            get { return this._privateMetadataPid.GetValueOrDefault(); }
+            get { return this._privateMetadataPid; }
             set { this._privateMetadataPid = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Scte35Pid.
         /// </summary>
-        public int Scte35Pid
+        public int? Scte35Pid
         {
-            get { return this._scte35Pid.GetValueOrDefault(); }
+            get { return this._scte35Pid; }
             set { this._scte35Pid = value; }
         }
 
@@ -216,9 +216,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property TimedMetadataPid.
         /// </summary>
-        public int TimedMetadataPid
+        public int? TimedMetadataPid
         {
-            get { return this._timedMetadataPid.GetValueOrDefault(); }
+            get { return this._timedMetadataPid; }
             set { this._timedMetadataPid = value; }
         }
 
@@ -231,9 +231,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property VideoPid.
         /// </summary>
-        public int VideoPid
+        public int? VideoPid
         {
-            get { return this._videoPid.GetValueOrDefault(); }
+            get { return this._videoPid; }
             set { this._videoPid = value; }
         }
 

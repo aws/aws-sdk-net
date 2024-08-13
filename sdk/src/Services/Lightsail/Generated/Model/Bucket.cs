@@ -68,9 +68,9 @@ namespace Amazon.Lightsail.Model
         /// action to change a bucket's bundle.
         /// </para>
         /// </summary>
-        public bool AbleToUpdateBundle
+        public bool? AbleToUpdateBundle
         {
-            get { return this._ableToUpdateBundle.GetValueOrDefault(); }
+            get { return this._ableToUpdateBundle; }
             set { this._ableToUpdateBundle = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the distribution was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

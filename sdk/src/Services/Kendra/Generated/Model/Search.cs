@@ -45,9 +45,9 @@ namespace Amazon.Kendra.Model
         /// Determines whether the field is returned in the query response. The default is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool Displayable
+        public bool? Displayable
         {
-            get { return this._displayable.GetValueOrDefault(); }
+            get { return this._displayable; }
             set { this._displayable = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Kendra.Model
         /// each value in the field. The default is <c>false</c> .
         /// </para>
         /// </summary>
-        public bool Facetable
+        public bool? Facetable
         {
-            get { return this._facetable.GetValueOrDefault(); }
+            get { return this._facetable; }
             set { this._facetable = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Kendra.Model
         /// for number and date fields.
         /// </para>
         /// </summary>
-        public bool Searchable
+        public bool? Searchable
         {
-            get { return this._searchable.GetValueOrDefault(); }
+            get { return this._searchable; }
             set { this._searchable = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Kendra.Model
         /// returns an exception. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool Sortable
+        public bool? Sortable
         {
-            get { return this._sortable.GetValueOrDefault(); }
+            get { return this._sortable; }
             set { this._sortable = value; }
         }
 

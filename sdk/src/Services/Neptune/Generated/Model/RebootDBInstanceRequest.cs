@@ -84,9 +84,9 @@ namespace Amazon.Neptune.Model
         /// Constraint: You can't specify <c>true</c> if the instance is not configured for MultiAZ.
         /// </para>
         /// </summary>
-        public bool ForceFailover
+        public bool? ForceFailover
         {
-            get { return this._forceFailover.GetValueOrDefault(); }
+            get { return this._forceFailover; }
             set { this._forceFailover = value; }
         }
 

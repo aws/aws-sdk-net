@@ -80,9 +80,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int EntryRuleNumber
+        public int? EntryRuleNumber
         {
-            get { return this._entryRuleNumber.GetValueOrDefault(); }
+            get { return this._entryRuleNumber; }
             set { this._entryRuleNumber = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.SecurityHub.Model
         /// metrics and dimensions</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
-        public bool CloudWatchMetricsEnabled
+        public bool? CloudWatchMetricsEnabled
         {
-            get { return this._cloudWatchMetricsEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchMetricsEnabled; }
             set { this._cloudWatchMetricsEnabled = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SecurityHub.Model
         /// match the rules. You can view the sampled requests through the WAF console. 
         /// </para>
         /// </summary>
-        public bool SampledRequestsEnabled
+        public bool? SampledRequestsEnabled
         {
-            get { return this._sampledRequestsEnabled.GetValueOrDefault(); }
+            get { return this._sampledRequestsEnabled; }
             set { this._sampledRequestsEnabled = value; }
         }
 

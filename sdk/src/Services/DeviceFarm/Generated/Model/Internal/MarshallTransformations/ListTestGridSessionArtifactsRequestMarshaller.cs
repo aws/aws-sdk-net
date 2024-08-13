@@ -72,7 +72,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResult())
                 {
                     context.Writer.WritePropertyName("maxResult");
-                    context.Writer.Write(publicRequest.MaxResult);
+                    context.Writer.Write(publicRequest.MaxResult.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

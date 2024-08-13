@@ -116,7 +116,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValidateCredentials())
             {
                 context.Writer.WritePropertyName("ValidateCredentials");
-                context.Writer.Write(requestObject.ValidateCredentials);
+                context.Writer.Write(requestObject.ValidateCredentials.Value);
             }
 
         }

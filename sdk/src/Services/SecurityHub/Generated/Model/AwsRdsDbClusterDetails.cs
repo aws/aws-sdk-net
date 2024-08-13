@@ -115,9 +115,9 @@ namespace Amazon.SecurityHub.Model
         /// (GiB).
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.SecurityHub.Model
         ///  Indicates if minor version upgrades are automatically applied to the cluster.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of days for which automated backups are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether tags are copied from the DB cluster to snapshots of the DB cluster.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.SecurityHub.Model
         /// Services account.
         /// </para>
         /// </summary>
-        public bool CrossAccountClone
+        public bool? CrossAccountClone
         {
-            get { return this._crossAccountClone.GetValueOrDefault(); }
+            get { return this._crossAccountClone; }
             set { this._crossAccountClone = value; }
         }
 
@@ -435,9 +435,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the DB cluster has deletion protection enabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -613,9 +613,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
         /// </para>
         /// </summary>
-        public bool HttpEndpointEnabled
+        public bool? HttpEndpointEnabled
         {
-            get { return this._httpEndpointEnabled.GetValueOrDefault(); }
+            get { return this._httpEndpointEnabled; }
             set { this._httpEndpointEnabled = value; }
         }
 
@@ -631,9 +631,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the mapping of IAM accounts to database accounts is enabled.
         /// </para>
         /// </summary>
-        public bool IamDatabaseAuthenticationEnabled
+        public bool? IamDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -686,9 +686,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the DB cluster has instances in multiple Availability Zones.
         /// </para>
         /// </summary>
-        public bool MultiAz
+        public bool? MultiAz
         {
-            get { return this._multiAz.GetValueOrDefault(); }
+            get { return this._multiAz; }
             set { this._multiAz = value; }
         }
 
@@ -704,9 +704,9 @@ namespace Amazon.SecurityHub.Model
         /// The port number on which the DB instances in the DB cluster accept connections.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -830,9 +830,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the DB cluster is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

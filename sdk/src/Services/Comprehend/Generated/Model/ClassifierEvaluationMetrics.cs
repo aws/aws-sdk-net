@@ -51,9 +51,9 @@ namespace Amazon.Comprehend.Model
         /// number of labels in the test documents.
         /// </para>
         /// </summary>
-        public double Accuracy
+        public double? Accuracy
         {
-            get { return this._accuracy.GetValueOrDefault(); }
+            get { return this._accuracy; }
             set { this._accuracy = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.Comprehend.Model
         /// average of the two scores. The highest score is 1, and the worst score is 0. 
         /// </para>
         /// </summary>
-        public double F1Score
+        public double? F1Score
         {
-            get { return this._f1Score.GetValueOrDefault(); }
+            get { return this._f1Score; }
             set { this._f1Score = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Comprehend.Model
         /// zero are better.
         /// </para>
         /// </summary>
-        public double HammingLoss
+        public double? HammingLoss
         {
-            get { return this._hammingLoss.GetValueOrDefault(); }
+            get { return this._hammingLoss; }
             set { this._hammingLoss = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.Comprehend.Model
         /// is 0.
         /// </para>
         /// </summary>
-        public double MicroF1Score
+        public double? MicroF1Score
         {
-            get { return this._microF1Score.GetValueOrDefault(); }
+            get { return this._microF1Score; }
             set { this._microF1Score = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.Comprehend.Model
         /// together.
         /// </para>
         /// </summary>
-        public double MicroPrecision
+        public double? MicroPrecision
         {
-            get { return this._microPrecision.GetValueOrDefault(); }
+            get { return this._microPrecision; }
             set { this._microPrecision = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.Comprehend.Model
         /// score of all recall scores added together.
         /// </para>
         /// </summary>
-        public double MicroRecall
+        public double? MicroRecall
         {
-            get { return this._microRecall.GetValueOrDefault(); }
+            get { return this._microRecall; }
             set { this._microRecall = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.Comprehend.Model
         /// ones.
         /// </para>
         /// </summary>
-        public double Precision
+        public double? Precision
         {
-            get { return this._precision.GetValueOrDefault(); }
+            get { return this._precision; }
             set { this._precision = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.Comprehend.Model
         /// means that the classifier returned most of the relevant results. 
         /// </para>
         /// </summary>
-        public double Recall
+        public double? Recall
         {
-            get { return this._recall.GetValueOrDefault(); }
+            get { return this._recall; }
             set { this._recall = value; }
         }
 

@@ -59,9 +59,9 @@ namespace Amazon.Redshift.Model
         /// of the entire resize operation.
         /// </para>
         /// </summary>
-        public double AvgResizeRateInMegaBytesPerSecond
+        public double? AvgResizeRateInMegaBytesPerSecond
         {
-            get { return this._avgResizeRateInMegaBytesPerSecond.GetValueOrDefault(); }
+            get { return this._avgResizeRateInMegaBytesPerSecond; }
             set { this._avgResizeRateInMegaBytesPerSecond = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.Redshift.Model
         /// The percent of data transferred from source cluster to target cluster.
         /// </para>
         /// </summary>
-        public double DataTransferProgressPercent
+        public double? DataTransferProgressPercent
         {
-            get { return this._dataTransferProgressPercent.GetValueOrDefault(); }
+            get { return this._dataTransferProgressPercent; }
             set { this._dataTransferProgressPercent = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.Redshift.Model
         /// the resize operation.
         /// </para>
         /// </summary>
-        public long ElapsedTimeInSeconds
+        public long? ElapsedTimeInSeconds
         {
-            get { return this._elapsedTimeInSeconds.GetValueOrDefault(); }
+            get { return this._elapsedTimeInSeconds; }
             set { this._elapsedTimeInSeconds = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Redshift.Model
         /// will be 0.
         /// </para>
         /// </summary>
-        public long EstimatedTimeToCompletionInSeconds
+        public long? EstimatedTimeToCompletionInSeconds
         {
-            get { return this._estimatedTimeToCompletionInSeconds.GetValueOrDefault(); }
+            get { return this._estimatedTimeToCompletionInSeconds; }
             set { this._estimatedTimeToCompletionInSeconds = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.Redshift.Model
         /// before resize).
         /// </para>
         /// </summary>
-        public long ProgressInMegaBytes
+        public long? ProgressInMegaBytes
         {
-            get { return this._progressInMegaBytes.GetValueOrDefault(); }
+            get { return this._progressInMegaBytes; }
             set { this._progressInMegaBytes = value; }
         }
 
@@ -352,9 +352,9 @@ namespace Amazon.Redshift.Model
         /// The number of nodes that the cluster will have after the resize operation is complete.
         /// </para>
         /// </summary>
-        public int TargetNumberOfNodes
+        public int? TargetNumberOfNodes
         {
-            get { return this._targetNumberOfNodes.GetValueOrDefault(); }
+            get { return this._targetNumberOfNodes; }
             set { this._targetNumberOfNodes = value; }
         }
 
@@ -371,9 +371,9 @@ namespace Amazon.Redshift.Model
         /// operation began.
         /// </para>
         /// </summary>
-        public long TotalResizeDataInMegaBytes
+        public long? TotalResizeDataInMegaBytes
         {
-            get { return this._totalResizeDataInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalResizeDataInMegaBytes; }
             set { this._totalResizeDataInMegaBytes = value; }
         }
 

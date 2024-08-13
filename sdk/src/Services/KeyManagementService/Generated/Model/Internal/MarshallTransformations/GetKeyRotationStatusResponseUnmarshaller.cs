@@ -60,25 +60,25 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("KeyRotationEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.KeyRotationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NextRotationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.NextRotationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OnDemandRotationStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.OnDemandRotationStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RotationPeriodInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RotationPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

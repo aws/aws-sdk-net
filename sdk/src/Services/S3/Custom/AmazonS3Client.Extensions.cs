@@ -218,10 +218,11 @@ namespace Amazon.S3
 
             var queryParameters = request.Parameters;
 
-            var uriResourcePath = new StringBuilder("/");
+            var uriResourcePath = new StringBuilder("");
             if (!string.IsNullOrEmpty(getPreSignedUrlRequest.Key))
             {
-                uriResourcePath.Append(S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
+                uriResourcePath.Append("/{Key+}");
+                request.AddPathResource("{Key+}", S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
             }
 
             var expires = GetSecondsUntilExpiration(config, getPreSignedUrlRequest, signatureVersion);
@@ -253,7 +254,7 @@ namespace Amazon.S3
             if (getPreSignedUrlRequest.IsSetUploadId())
                 request.AddSubResource("uploadId", S3Transforms.ToStringValue(getPreSignedUrlRequest.UploadId));
             if (getPreSignedUrlRequest.IsSetPartNumber())
-                request.AddSubResource("partNumber", S3Transforms.ToStringValue(getPreSignedUrlRequest.PartNumber));
+                request.AddSubResource("partNumber", S3Transforms.ToStringValue(getPreSignedUrlRequest.PartNumber.Value));
 
             var responseHeaderOverrides = getPreSignedUrlRequest.ResponseHeaderOverrides;
             if (!string.IsNullOrEmpty(responseHeaderOverrides.CacheControl))
@@ -402,9 +403,11 @@ namespace Amazon.S3
                     signingResult.Result = ComposeUrl(iRequest).AbsoluteUri + signingResult.Authorization;
                     break;
             }
-#pragma warning disable CS0612,CS0618
-            string serviceUrl = config.DetermineServiceURL();
-#pragma warning restore CS0612,CS0618
+
+            var parameters = new ServiceOperationEndpointParameters(iRequest.OriginalRequest);
+            var endpoint = config.DetermineServiceOperationEndpoint(parameters);
+            string serviceUrl = endpoint.URL;
+
             Protocol protocol = serviceUrl.StartsWith("https", StringComparison.OrdinalIgnoreCase) ? Protocol.HTTPS : Protocol.HTTP;
             var request = iRequest.OriginalRequest as GetPreSignedUrlRequest;
             if (request.Protocol != protocol)
@@ -435,9 +438,11 @@ namespace Amazon.S3
             }
             else // SigV4 or SigV4a
             {
-                baselineTime = config.CorrectedUtcNow;
+                var parameters = new ServiceOperationEndpointParameters(request);
+                var endpoint = config.DetermineServiceOperationEndpoint(parameters);
+                baselineTime = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL);
             }
-            return Convert.ToInt64((request.Expires.ToUniversalTime() - baselineTime).TotalSeconds);
+            return Convert.ToInt64((request.Expires.GetValueOrDefault().ToUniversalTime() - baselineTime).TotalSeconds);
         }
         internal static void CleanupRequest(AmazonWebServiceRequest request)
         {
@@ -574,103 +579,6 @@ namespace Amazon.S3
             return this.GetPreSignedURL(request);
         }
 
-#if AWS_APM_API
-
-        IAsyncResult ICoreAmazonS3.BeginDelete(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, AsyncCallback callback, object state)
-        {
-            var request = new DeleteObjectRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return this.BeginDeleteObject(request, callback, state);
-        }
-
-        void ICoreAmazonS3.EndDelete(IAsyncResult result)
-        {
-            this.EndDeleteObject(result);
-        }
-
-        IAsyncResult ICoreAmazonS3.BeginUploadObjectFromStream(string bucketName, string objectKey, Stream stream, IDictionary<string, object> additionalProperties, AsyncCallback callback, object state)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                InputStream = stream
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return transfer.BeginUpload(request, callback, state);
-        }
-
-        void ICoreAmazonS3.EndUploadObjectFromStream(IAsyncResult result)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            transfer.EndUpload(result);
-        }
-
-        IAsyncResult ICoreAmazonS3.BeginUploadObjectFromFilePath(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, AsyncCallback callback, object state)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            var request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                FilePath = filepath
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return transfer.BeginUpload(request, callback, state);
-        }
-
-        void ICoreAmazonS3.EndUploadObjectFromFilePath(IAsyncResult result)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            transfer.EndUpload(result);
-        }
-
-        IAsyncResult ICoreAmazonS3.BeginDownloadToFilePath(string bucketName, string objectKey, string filepath, IDictionary<string, object> additionalProperties, AsyncCallback callback, object state)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-
-            var request = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
-            {
-                BucketName = bucketName,
-                Key = objectKey,
-                FilePath = filepath
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return transfer.BeginDownload(request, callback, state);
-        }
-
-        void ICoreAmazonS3.EndDownloadToFilePath(IAsyncResult result)
-        {
-            var transfer = new Amazon.S3.Transfer.TransferUtility(this);
-            transfer.EndDownload(result);
-        }
-
-        IAsyncResult ICoreAmazonS3.BeginGetObjectStream(string bucketName, string objectKey, IDictionary<string, object> additionalProperties, AsyncCallback callback, object state)
-        {
-            var request = new GetObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = objectKey
-            };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
-
-            return this.BeginGetObject(request, callback, state);
-        }
-
-        Stream ICoreAmazonS3.EndGetObjectStream(IAsyncResult result)
-        {
-            return this.EndGetObject(result).ResponseStream;
-        }
-#endif
-#endregion
+        #endregion
     }
 }

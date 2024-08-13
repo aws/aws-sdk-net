@@ -63,7 +63,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSyncShadow())
             {
                 context.Writer.WritePropertyName("SyncShadow");
-                context.Writer.Write(requestObject.SyncShadow);
+                context.Writer.Write(requestObject.SyncShadow.Value);
             }
 
             if(requestObject.IsSetThingArn())

@@ -74,7 +74,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("terminationWaitTimeInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TerminationWaitTimeInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

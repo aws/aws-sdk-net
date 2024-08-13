@@ -66,7 +66,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastTrxTimestamp", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LastTrxTimestampInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalRecords", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }

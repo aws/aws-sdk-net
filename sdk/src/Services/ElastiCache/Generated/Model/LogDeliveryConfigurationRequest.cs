@@ -84,9 +84,9 @@ namespace Amazon.ElastiCache.Model
         /// Specify if log delivery is enabled. Default <c>true</c>.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

@@ -78,13 +78,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLatestHeartbeatAfter())
                 {
                     context.Writer.WritePropertyName("LatestHeartbeatAfter");
-                    context.Writer.Write(publicRequest.LatestHeartbeatAfter);
+                    context.Writer.Write(publicRequest.LatestHeartbeatAfter.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetModelName())

@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ConnectedDeviceCount
+        public long? ConnectedDeviceCount
         {
-            get { return this._connectedDeviceCount.GetValueOrDefault(); }
+            get { return this._connectedDeviceCount; }
             set { this._connectedDeviceCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long RegisteredDeviceCount
+        public long? RegisteredDeviceCount
         {
-            get { return this._registeredDeviceCount.GetValueOrDefault(); }
+            get { return this._registeredDeviceCount; }
             set { this._registeredDeviceCount = value; }
         }
 

@@ -72,7 +72,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("AccessGrantsLocationConfiguration");
                     if(publicRequest.AccessGrantsLocationConfiguration.IsSetS3SubPrefix())
-                        xmlWriter.WriteElementString("S3SubPrefix", StringUtils.FromString(publicRequest.AccessGrantsLocationConfiguration.S3SubPrefix));                 
+                        xmlWriter.WriteElementString("S3SubPrefix", StringUtils.FromString(publicRequest.AccessGrantsLocationConfiguration.S3SubPrefix));
 
                     xmlWriter.WriteEndElement();
                 }
@@ -86,10 +86,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Grantee");
                     if(publicRequest.Grantee.IsSetGranteeIdentifier())
-                        xmlWriter.WriteElementString("GranteeIdentifier", StringUtils.FromString(publicRequest.Grantee.GranteeIdentifier));                 
+                        xmlWriter.WriteElementString("GranteeIdentifier", StringUtils.FromString(publicRequest.Grantee.GranteeIdentifier));
 
                     if(publicRequest.Grantee.IsSetGranteeType())
-                        xmlWriter.WriteElementString("GranteeType", StringUtils.FromString(publicRequest.Grantee.GranteeType));                 
+                        xmlWriter.WriteElementString("GranteeType", StringUtils.FromString(publicRequest.Grantee.GranteeType));
 
                     xmlWriter.WriteEndElement();
                 }
@@ -109,10 +109,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Tag");
                         if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
 
                         if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
 
                         xmlWriter.WriteEndElement();
                     }

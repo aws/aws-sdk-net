@@ -51,19 +51,19 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetSizeGiB())
             {
                 context.Writer.WritePropertyName("sizeGiB");
-                context.Writer.Write(requestObject.SizeGiB);
+                context.Writer.Write(requestObject.SizeGiB.Value);
             }
 
             if(requestObject.IsSetThroughputMiB())
             {
                 context.Writer.WritePropertyName("throughputMiB");
-                context.Writer.Write(requestObject.ThroughputMiB);
+                context.Writer.Write(requestObject.ThroughputMiB.Value);
             }
 
         }

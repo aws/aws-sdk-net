@@ -44,9 +44,9 @@ namespace Amazon.AppSync.Model
         /// The length value of the introspected field.
         /// </para>
         /// </summary>
-        public long Length
+        public long? Length
         {
-            get { return this._length.GetValueOrDefault(); }
+            get { return this._length; }
             set { this._length = value; }
         }
 

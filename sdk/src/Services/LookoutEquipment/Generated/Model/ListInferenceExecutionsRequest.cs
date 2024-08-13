@@ -50,9 +50,9 @@ namespace Amazon.LookoutEquipment.Model
         /// stopped the inference execution. 
         /// </para>
         /// </summary>
-        public DateTime DataEndTimeBefore
+        public DateTime? DataEndTimeBefore
         {
-            get { return this._dataEndTimeBefore.GetValueOrDefault(); }
+            get { return this._dataEndTimeBefore; }
             set { this._dataEndTimeBefore = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.LookoutEquipment.Model
         /// started the inference execution. 
         /// </para>
         /// </summary>
-        public DateTime DataStartTimeAfter
+        public DateTime? DataStartTimeAfter
         {
-            get { return this._dataStartTimeAfter.GetValueOrDefault(); }
+            get { return this._dataStartTimeAfter; }
             set { this._dataStartTimeAfter = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

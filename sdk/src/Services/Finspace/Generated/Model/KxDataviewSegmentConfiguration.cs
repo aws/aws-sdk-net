@@ -70,9 +70,9 @@ namespace Amazon.Finspace.Model
         /// everything is cached. The default value is <b>False</b>. 
         /// </para>
         /// </summary>
-        public bool OnDemand
+        public bool? OnDemand
         {
-            get { return this._onDemand.GetValueOrDefault(); }
+            get { return this._onDemand; }
             set { this._onDemand = value; }
         }
 

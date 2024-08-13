@@ -40,9 +40,9 @@ namespace Amazon.ImportExport.Model
         /// <summary>
         /// Gets and sets the property IsTruncated.
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this._isTruncated.GetValueOrDefault(); }
+            get { return this._isTruncated; }
             set { this._isTruncated = value; }
         }
 

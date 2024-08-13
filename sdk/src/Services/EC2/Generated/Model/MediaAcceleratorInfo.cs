@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// MiB.
         /// </para>
         /// </summary>
-        public int TotalMediaMemoryInMiB
+        public int? TotalMediaMemoryInMiB
         {
-            get { return this._totalMediaMemoryInMiB.GetValueOrDefault(); }
+            get { return this._totalMediaMemoryInMiB; }
             set { this._totalMediaMemoryInMiB = value; }
         }
 

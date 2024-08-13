@@ -90,9 +90,9 @@ namespace Amazon.S3.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min = 0, Max = 1000)]
-        public int MaxDirectoryBuckets
+        public int? MaxDirectoryBuckets
         {
-            get { return this._maxDirectoryBuckets.GetValueOrDefault(); }
+            get { return this._maxDirectoryBuckets; }
             set { this._maxDirectoryBuckets = value; }
         }
 

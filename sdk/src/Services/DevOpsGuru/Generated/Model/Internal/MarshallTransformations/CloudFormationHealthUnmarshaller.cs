@@ -68,7 +68,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AnalyzedResourceCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AnalyzedResourceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

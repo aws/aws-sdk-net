@@ -42,9 +42,9 @@ namespace Amazon.WorkSpaces.Model
         /// The time when the snapshot was created.
         /// </para>
         /// </summary>
-        public DateTime SnapshotTime
+        public DateTime? SnapshotTime
         {
-            get { return this._snapshotTime.GetValueOrDefault(); }
+            get { return this._snapshotTime; }
             set { this._snapshotTime = value; }
         }
 

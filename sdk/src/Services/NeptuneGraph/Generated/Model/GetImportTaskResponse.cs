@@ -51,9 +51,9 @@ namespace Amazon.NeptuneGraph.Model
         /// The number of the current attempt to execute the import task.
         /// </para>
         /// </summary>
-        public int AttemptNumber
+        public int? AttemptNumber
         {
-            get { return this._attemptNumber.GetValueOrDefault(); }
+            get { return this._attemptNumber; }
             set { this._attemptNumber = value; }
         }
 

@@ -51,9 +51,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the VPC is enabled for ClassicLink.
         /// </para>
         /// </summary>
-        public bool ClassicLinkEnabled
+        public bool? ClassicLinkEnabled
         {
-            get { return this._classicLinkEnabled.GetValueOrDefault(); }
+            get { return this._classicLinkEnabled; }
             set { this._classicLinkEnabled = value; }
         }
 

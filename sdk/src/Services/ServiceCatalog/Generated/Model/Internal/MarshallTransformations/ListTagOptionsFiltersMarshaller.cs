@@ -51,7 +51,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActive())
             {
                 context.Writer.WritePropertyName("Active");
-                context.Writer.Write(requestObject.Active);
+                context.Writer.Write(requestObject.Active.Value);
             }
 
             if(requestObject.IsSetKey())

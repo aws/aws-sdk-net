@@ -68,7 +68,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ClientIPPreservationEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ClientIPPreservationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Weight", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Weight = unmarshaller.Unmarshall(context);
                     continue;
                 }

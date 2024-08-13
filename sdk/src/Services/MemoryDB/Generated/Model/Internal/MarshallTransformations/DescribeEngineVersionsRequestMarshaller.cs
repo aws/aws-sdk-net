@@ -72,7 +72,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultOnly())
                 {
                     context.Writer.WritePropertyName("DefaultOnly");
-                    context.Writer.Write(publicRequest.DefaultOnly);
+                    context.Writer.Write(publicRequest.DefaultOnly.Value);
                 }
 
                 if(publicRequest.IsSetEngineVersion())
@@ -84,7 +84,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

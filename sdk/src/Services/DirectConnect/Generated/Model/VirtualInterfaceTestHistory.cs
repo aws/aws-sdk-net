@@ -68,9 +68,9 @@ namespace Amazon.DirectConnect.Model
         /// The time that the virtual interface moves out of the DOWN state.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.DirectConnect.Model
         /// The time that the virtual interface moves to the DOWN state.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.DirectConnect.Model
         /// The time that the virtual interface failover test ran in minutes.
         /// </para>
         /// </summary>
-        public int TestDurationInMinutes
+        public int? TestDurationInMinutes
         {
-            get { return this._testDurationInMinutes.GetValueOrDefault(); }
+            get { return this._testDurationInMinutes; }
             set { this._testDurationInMinutes = value; }
         }
 

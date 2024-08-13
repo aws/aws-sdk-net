@@ -88,9 +88,9 @@ namespace Amazon.Lightsail.Model
         /// means that the instance metadata requests can travel farther.
         /// </para>
         /// </summary>
-        public int HttpPutResponseHopLimit
+        public int? HttpPutResponseHopLimit
         {
-            get { return this._httpPutResponseHopLimit.GetValueOrDefault(); }
+            get { return this._httpPutResponseHopLimit; }
             set { this._httpPutResponseHopLimit = value; }
         }
 

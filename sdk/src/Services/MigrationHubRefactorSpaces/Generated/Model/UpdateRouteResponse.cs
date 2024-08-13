@@ -88,9 +88,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         ///  A timestamp that indicates when the route was last updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

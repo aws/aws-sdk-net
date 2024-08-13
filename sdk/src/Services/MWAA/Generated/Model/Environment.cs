@@ -161,9 +161,9 @@ namespace Amazon.MWAA.Model
         /// The day and time the environment was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -350,9 +350,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2)]
-        public int MaxWebservers
+        public int? MaxWebservers
         {
-            get { return this._maxWebservers.GetValueOrDefault(); }
+            get { return this._maxWebservers; }
             set { this._maxWebservers = value; }
         }
 
@@ -369,9 +369,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxWorkers
+        public int? MaxWorkers
         {
-            get { return this._maxWorkers.GetValueOrDefault(); }
+            get { return this._maxWorkers; }
             set { this._maxWorkers = value; }
         }
 
@@ -397,9 +397,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2)]
-        public int MinWebservers
+        public int? MinWebservers
         {
-            get { return this._minWebservers.GetValueOrDefault(); }
+            get { return this._minWebservers; }
             set { this._minWebservers = value; }
         }
 
@@ -416,9 +416,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinWorkers
+        public int? MinWorkers
         {
-            get { return this._minWorkers.GetValueOrDefault(); }
+            get { return this._minWorkers; }
             set { this._minWorkers = value; }
         }
 
@@ -588,9 +588,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
-        public int Schedulers
+        public int? Schedulers
         {
-            get { return this._schedulers.GetValueOrDefault(); }
+            get { return this._schedulers; }
             set { this._schedulers = value; }
         }
 

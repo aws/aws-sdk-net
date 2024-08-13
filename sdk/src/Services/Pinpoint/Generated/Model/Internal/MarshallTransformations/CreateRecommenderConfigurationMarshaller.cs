@@ -101,7 +101,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecommendationsPerMessage())
             {
                 context.Writer.WritePropertyName("RecommendationsPerMessage");
-                context.Writer.Write(requestObject.RecommendationsPerMessage);
+                context.Writer.Write(requestObject.RecommendationsPerMessage.Value);
             }
 
             if(requestObject.IsSetRecommendationTransformerUri())

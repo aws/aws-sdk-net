@@ -107,9 +107,9 @@ namespace Amazon.Mgn.Model
         /// Export task progress percentage.
         /// </para>
         /// </summary>
-        public float ProgressPercentage
+        public float? ProgressPercentage
         {
-            get { return this._progressPercentage.GetValueOrDefault(); }
+            get { return this._progressPercentage; }
             set { this._progressPercentage = value; }
         }
 

@@ -80,13 +80,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("detectAndCopyNewConsumerGroups", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DetectAndCopyNewConsumerGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("synchroniseConsumerGroupOffsets", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SynchroniseConsumerGroupOffsets = unmarshaller.Unmarshall(context);
                     continue;
                 }

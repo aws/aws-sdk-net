@@ -31,7 +31,7 @@ namespace Amazon.MemoryDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEngineVersions operation.
-    /// Returns a list of the available Redis engine versions.
+    /// Returns a list of the available Redis OSS engine versions.
     /// </summary>
     public partial class DescribeEngineVersionsRequest : AmazonMemoryDBRequest
     {
@@ -48,9 +48,9 @@ namespace Amazon.MemoryDB.Model
         /// and major version combination is to be returned.
         /// </para>
         /// </summary>
-        public bool DefaultOnly
+        public bool? DefaultOnly
         {
-            get { return this._defaultOnly.GetValueOrDefault(); }
+            get { return this._defaultOnly; }
             set { this._defaultOnly = value; }
         }
 
@@ -63,7 +63,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Redis engine version
+        /// The Redis OSS engine version
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -86,9 +86,9 @@ namespace Amazon.MemoryDB.Model
         /// results can be retrieved.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

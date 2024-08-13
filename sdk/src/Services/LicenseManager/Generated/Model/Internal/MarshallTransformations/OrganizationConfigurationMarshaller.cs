@@ -51,7 +51,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableIntegration())
             {
                 context.Writer.WritePropertyName("EnableIntegration");
-                context.Writer.Write(requestObject.EnableIntegration);
+                context.Writer.Write(requestObject.EnableIntegration.Value);
             }
 
         }

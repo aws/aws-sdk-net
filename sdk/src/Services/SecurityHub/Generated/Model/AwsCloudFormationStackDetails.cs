@@ -111,9 +111,9 @@ namespace Amazon.SecurityHub.Model
         /// Boolean to enable or disable rollback on stack creation failures. 
         /// </para>
         /// </summary>
-        public bool DisableRollback
+        public bool? DisableRollback
         {
-            get { return this._disableRollback.GetValueOrDefault(); }
+            get { return this._disableRollback; }
             set { this._disableRollback = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether termination protection is enabled for the stack. 
         /// </para>
         /// </summary>
-        public bool EnableTerminationProtection
+        public bool? EnableTerminationProtection
         {
-            get { return this._enableTerminationProtection.GetValueOrDefault(); }
+            get { return this._enableTerminationProtection; }
             set { this._enableTerminationProtection = value; }
         }
 
@@ -314,9 +314,9 @@ namespace Amazon.SecurityHub.Model
         /// reach the <c>CREATE_COMPLETE</c> state. 
         /// </para>
         /// </summary>
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

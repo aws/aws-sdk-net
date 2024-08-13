@@ -48,9 +48,9 @@ namespace Amazon.CleanRoomsML.Model
         /// 
         /// </para>
         /// </summary>
-        public double RecallMetric
+        public double? RecallMetric
         {
-            get { return this._recallMetric.GetValueOrDefault(); }
+            get { return this._recallMetric; }
             set { this._recallMetric = value; }
         }
 

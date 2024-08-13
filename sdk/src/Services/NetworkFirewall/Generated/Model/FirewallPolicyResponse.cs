@@ -53,9 +53,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The number of capacity units currently consumed by the policy's stateful rules.
         /// </para>
         /// </summary>
-        public int ConsumedStatefulRuleCapacity
+        public int? ConsumedStatefulRuleCapacity
         {
-            get { return this._consumedStatefulRuleCapacity.GetValueOrDefault(); }
+            get { return this._consumedStatefulRuleCapacity; }
             set { this._consumedStatefulRuleCapacity = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The number of capacity units currently consumed by the policy's stateless rules.
         /// </para>
         /// </summary>
-        public int ConsumedStatelessRuleCapacity
+        public int? ConsumedStatelessRuleCapacity
         {
-            get { return this._consumedStatelessRuleCapacity.GetValueOrDefault(); }
+            get { return this._consumedStatelessRuleCapacity; }
             set { this._consumedStatelessRuleCapacity = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The last time that the firewall policy was changed.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The number of firewalls that are associated with this firewall policy.
         /// </para>
         /// </summary>
-        public int NumberOfAssociations
+        public int? NumberOfAssociations
         {
-            get { return this._numberOfAssociations.GetValueOrDefault(); }
+            get { return this._numberOfAssociations; }
             set { this._numberOfAssociations = value; }
         }
 

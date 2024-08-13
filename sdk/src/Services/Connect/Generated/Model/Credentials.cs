@@ -65,9 +65,9 @@ namespace Amazon.Connect.Model
         /// Connect.
         /// </para>
         /// </summary>
-        public DateTime AccessTokenExpiration
+        public DateTime? AccessTokenExpiration
         {
-            get { return this._accessTokenExpiration.GetValueOrDefault(); }
+            get { return this._accessTokenExpiration; }
             set { this._accessTokenExpiration = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Connect.Model
         /// Renews the expiration timer for a generated token.
         /// </para>
         /// </summary>
-        public DateTime RefreshTokenExpiration
+        public DateTime? RefreshTokenExpiration
         {
-            get { return this._refreshTokenExpiration.GetValueOrDefault(); }
+            get { return this._refreshTokenExpiration; }
             set { this._refreshTokenExpiration = value; }
         }
 

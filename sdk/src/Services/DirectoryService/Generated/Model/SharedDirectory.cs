@@ -51,9 +51,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the shared directory was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDateTime
+        public DateTime? CreatedDateTime
         {
-            get { return this._createdDateTime.GetValueOrDefault(); }
+            get { return this._createdDateTime; }
             set { this._createdDateTime = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the shared directory was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 

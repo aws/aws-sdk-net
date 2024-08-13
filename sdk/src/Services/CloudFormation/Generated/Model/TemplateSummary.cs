@@ -48,9 +48,9 @@ namespace Amazon.CloudFormation.Model
         /// The time the generated template was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.CloudFormation.Model
         /// The time the generated template was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NumberOfResources
+        public int? NumberOfResources
         {
-            get { return this._numberOfResources.GetValueOrDefault(); }
+            get { return this._numberOfResources; }
             set { this._numberOfResources = value; }
         }
 

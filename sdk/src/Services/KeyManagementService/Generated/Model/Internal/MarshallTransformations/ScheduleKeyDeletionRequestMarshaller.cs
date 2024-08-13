@@ -78,7 +78,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPendingWindowInDays())
                 {
                     context.Writer.WritePropertyName("PendingWindowInDays");
-                    context.Writer.Write(publicRequest.PendingWindowInDays);
+                    context.Writer.Write(publicRequest.PendingWindowInDays.Value);
                 }
 
                 writer.WriteObjectEnd();

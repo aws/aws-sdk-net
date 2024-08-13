@@ -72,7 +72,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -90,7 +90,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStreamCreationTimestamp())
                 {
                     context.Writer.WritePropertyName("StreamCreationTimestamp");
-                    context.Writer.Write(publicRequest.StreamCreationTimestamp);
+                    context.Writer.Write(publicRequest.StreamCreationTimestamp.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -68,13 +68,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApplianceModeSupport", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ApplianceModeSupport = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Ipv6Support", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Ipv6Support = unmarshaller.Unmarshall(context);
                     continue;
                 }

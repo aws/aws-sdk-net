@@ -83,9 +83,9 @@ namespace Amazon.Pinpoint.Model
         /// Specifies whether to enable the ADM channel for the application.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

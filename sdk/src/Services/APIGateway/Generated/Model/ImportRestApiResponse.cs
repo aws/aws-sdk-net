@@ -95,9 +95,9 @@ namespace Amazon.APIGateway.Model
         /// The timestamp when the API was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.APIGateway.Model
         /// the default endpoint.
         /// </para>
         /// </summary>
-        public bool DisableExecuteApiEndpoint
+        public bool? DisableExecuteApiEndpoint
         {
-            get { return this._disableExecuteApiEndpoint.GetValueOrDefault(); }
+            get { return this._disableExecuteApiEndpoint; }
             set { this._disableExecuteApiEndpoint = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.APIGateway.Model
         /// compression for any payload size.
         /// </para>
         /// </summary>
-        public int MinimumCompressionSize
+        public int? MinimumCompressionSize
         {
-            get { return this._minimumCompressionSize.GetValueOrDefault(); }
+            get { return this._minimumCompressionSize; }
             set { this._minimumCompressionSize = value; }
         }
 

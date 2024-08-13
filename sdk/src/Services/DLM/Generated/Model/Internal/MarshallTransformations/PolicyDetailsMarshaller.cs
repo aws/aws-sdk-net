@@ -67,13 +67,13 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyTags())
             {
                 context.Writer.WritePropertyName("CopyTags");
-                context.Writer.Write(requestObject.CopyTags);
+                context.Writer.Write(requestObject.CopyTags.Value);
             }
 
             if(requestObject.IsSetCreateInterval())
             {
                 context.Writer.WritePropertyName("CreateInterval");
-                context.Writer.Write(requestObject.CreateInterval);
+                context.Writer.Write(requestObject.CreateInterval.Value);
             }
 
             if(requestObject.IsSetCrossRegionCopyTargets())
@@ -117,7 +117,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExtendDeletion())
             {
                 context.Writer.WritePropertyName("ExtendDeletion");
-                context.Writer.Write(requestObject.ExtendDeletion);
+                context.Writer.Write(requestObject.ExtendDeletion.Value);
             }
 
             if(requestObject.IsSetParameters())
@@ -174,7 +174,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetainInterval())
             {
                 context.Writer.WritePropertyName("RetainInterval");
-                context.Writer.Write(requestObject.RetainInterval);
+                context.Writer.Write(requestObject.RetainInterval.Value);
             }
 
             if(requestObject.IsSetSchedules())

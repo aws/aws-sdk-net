@@ -68,7 +68,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Max", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Max = unmarshaller.Unmarshall(context);
                     continue;
                 }

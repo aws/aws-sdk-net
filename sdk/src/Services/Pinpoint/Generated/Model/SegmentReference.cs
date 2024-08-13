@@ -62,9 +62,9 @@ namespace Amazon.Pinpoint.Model
         /// The version number of the segment.
         /// </para>
         /// </summary>
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

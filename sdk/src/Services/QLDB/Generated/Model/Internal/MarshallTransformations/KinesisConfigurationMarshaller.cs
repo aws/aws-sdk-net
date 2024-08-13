@@ -51,7 +51,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationEnabled())
             {
                 context.Writer.WritePropertyName("AggregationEnabled");
-                context.Writer.Write(requestObject.AggregationEnabled);
+                context.Writer.Write(requestObject.AggregationEnabled.Value);
             }
 
             if(requestObject.IsSetStreamArn())

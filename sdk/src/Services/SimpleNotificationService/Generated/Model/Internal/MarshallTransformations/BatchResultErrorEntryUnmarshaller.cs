@@ -75,7 +75,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     }
                     if (context.TestExpression("SenderFault", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SenderFault = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -68,7 +68,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isNative", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNative = unmarshaller.Unmarshall(context);
                     continue;
                 }

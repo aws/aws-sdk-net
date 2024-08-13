@@ -65,9 +65,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
-        public int Epsilon
+        public int? Epsilon
         {
-            get { return this._epsilon.GetValueOrDefault(); }
+            get { return this._epsilon; }
             set { this._epsilon = value; }
         }
 

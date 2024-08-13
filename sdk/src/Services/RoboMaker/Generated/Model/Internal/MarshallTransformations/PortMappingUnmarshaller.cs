@@ -68,19 +68,19 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("applicationPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ApplicationPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enableOnPublicIp", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableOnPublicIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.JobPort = unmarshaller.Unmarshall(context);
                     continue;
                 }

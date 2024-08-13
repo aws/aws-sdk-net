@@ -60,7 +60,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("customDomainCertificateExpiryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CustomDomainCertificateExpiryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

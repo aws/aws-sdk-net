@@ -513,11 +513,7 @@
         <Message Text="Copying License.txt and Notice.txt to the assembly zips" />
         <Copy
             SourceFiles="../Notice.txt;../License.txt"
-            DestinationFiles="../Deployment/assemblies/net35/Notice.txt;../Deployment/assemblies/net35/License.txt"
-        />
-        <Copy
-            SourceFiles="../Notice.txt;../License.txt"
-            DestinationFiles="../Deployment/assemblies/net45/Notice.txt;../Deployment/assemblies/net45/License.txt"
+            DestinationFiles="../Deployment/assemblies/net472/Notice.txt;../Deployment/assemblies/net472/License.txt"
         />
         <!-- netstandard2.0 needs modified Notice with additional 3rd party dependencies -->
         <Copy
@@ -527,6 +523,10 @@
         <Copy
             SourceFiles="../Notice.txt;../License.txt"
             DestinationFiles="../Deployment/assemblies/netcoreapp3.1/Notice.txt;../Deployment/assemblies/netcoreapp3.1/License.txt"
+        />
+        <Copy
+            SourceFiles="../Notice.txt;../License.txt"
+            DestinationFiles="../Deployment/assemblies/net8.0/Notice.txt;../Deployment/assemblies/net8.0/License.txt"
         />
     </Target>
 

@@ -47,9 +47,9 @@ namespace Amazon.FraudDetector.Model
         /// power will have the highest possible ASI score of 1.0 
         /// </para>
         /// </summary>
-        public float Asi
+        public float? Asi
         {
-            get { return this._asi.GetValueOrDefault(); }
+            get { return this._asi; }
             set { this._asi = value; }
         }
 

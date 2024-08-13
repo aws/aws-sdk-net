@@ -127,9 +127,9 @@ namespace Amazon.RDS.Model
         /// This setting is required to create a Multi-AZ DB cluster.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Multi-AZ DB clusters only
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public long BacktrackWindow
+        public long? BacktrackWindow
         {
-            get { return this._backtrackWindow.GetValueOrDefault(); }
+            get { return this._backtrackWindow; }
             set { this._backtrackWindow = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -330,9 +330,9 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -498,10 +498,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Must match the name of an existing DB subnet group.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must not be <c>default</c>.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Example: <c>mydbsubnetgroup</c> 
@@ -549,9 +545,9 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -689,9 +685,9 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         /// </summary>
-        public bool EnableGlobalWriteForwarding
+        public bool? EnableGlobalWriteForwarding
         {
-            get { return this._enableGlobalWriteForwarding.GetValueOrDefault(); }
+            get { return this._enableGlobalWriteForwarding; }
             set { this._enableGlobalWriteForwarding = value; }
         }
 
@@ -735,9 +731,9 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         /// </summary>
-        public bool EnableHttpEndpoint
+        public bool? EnableHttpEndpoint
         {
-            get { return this._enableHttpEndpoint.GetValueOrDefault(); }
+            get { return this._enableHttpEndpoint; }
             set { this._enableHttpEndpoint = value; }
         }
 
@@ -763,9 +759,9 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         /// </summary>
-        public bool EnableIAMDatabaseAuthentication
+        public bool? EnableIAMDatabaseAuthentication
         {
-            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._enableIAMDatabaseAuthentication; }
             set { this._enableIAMDatabaseAuthentication = value; }
         }
 
@@ -786,9 +782,9 @@ namespace Amazon.RDS.Model
         /// Valid for: Aurora DB clusters only
         /// </para>
         /// </summary>
-        public bool EnableLimitlessDatabase
+        public bool? EnableLimitlessDatabase
         {
-            get { return this._enableLimitlessDatabase.GetValueOrDefault(); }
+            get { return this._enableLimitlessDatabase; }
             set { this._enableLimitlessDatabase = value; }
         }
 
@@ -809,9 +805,9 @@ namespace Amazon.RDS.Model
         /// Valid for: Aurora DB clusters only
         /// </para>
         /// </summary>
-        public bool EnableLocalWriteForwarding
+        public bool? EnableLocalWriteForwarding
         {
-            get { return this._enableLocalWriteForwarding.GetValueOrDefault(); }
+            get { return this._enableLocalWriteForwarding; }
             set { this._enableLocalWriteForwarding = value; }
         }
 
@@ -836,9 +832,9 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Multi-AZ DB clusters only
         /// </para>
         /// </summary>
-        public bool EnablePerformanceInsights
+        public bool? EnablePerformanceInsights
         {
-            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            get { return this._enablePerformanceInsights; }
             set { this._enablePerformanceInsights = value; }
         }
 
@@ -1138,9 +1134,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -1234,9 +1230,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool ManageMasterUserPassword
+        public bool? ManageMasterUserPassword
         {
-            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            get { return this._manageMasterUserPassword; }
             set { this._manageMasterUserPassword = value; }
         }
 
@@ -1394,9 +1390,9 @@ namespace Amazon.RDS.Model
         /// Default: <c>0</c> 
         /// </para>
         /// </summary>
-        public int MonitoringInterval
+        public int? MonitoringInterval
         {
-            get { return this._monitoringInterval.GetValueOrDefault(); }
+            get { return this._monitoringInterval; }
             set { this._monitoringInterval = value; }
         }
 
@@ -1566,9 +1562,9 @@ namespace Amazon.RDS.Model
         /// issues an error.
         /// </para>
         /// </summary>
-        public int PerformanceInsightsRetentionPeriod
+        public int? PerformanceInsightsRetentionPeriod
         {
-            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            get { return this._performanceInsightsRetentionPeriod; }
             set { this._performanceInsightsRetentionPeriod = value; }
         }
 
@@ -1605,9 +1601,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -1796,12 +1792,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
-        /// resolves to the private IP address from within the DB cluster's virtual private cloud
-        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
-        /// Access to the DB cluster is ultimately controlled by the security group it uses. That
-        /// public access isn't permitted if the security group assigned to the DB cluster doesn't
-        /// permit it.
+        /// When the DB cluster is publicly accessible and you connect from outside of the DB
+        /// cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves
+        /// to the public IP address. When you connect from within the same VPC as the DB cluster,
+        /// the endpoint resolves to the private IP address. Access to the DB cluster is ultimately
+        /// controlled by the security group it uses. That public access isn't permitted if the
+        /// security group assigned to the DB cluster doesn't permit it.
         /// </para>
         ///  
         /// <para>
@@ -1849,9 +1845,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -1950,9 +1946,9 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

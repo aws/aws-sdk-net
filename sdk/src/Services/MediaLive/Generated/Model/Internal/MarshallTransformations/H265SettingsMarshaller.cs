@@ -69,13 +69,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                context.Writer.Write(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetBufSize())
             {
                 context.Writer.WritePropertyName("bufSize");
-                context.Writer.Write(requestObject.BufSize);
+                context.Writer.Write(requestObject.BufSize.Value);
             }
 
             if(requestObject.IsSetColorMetadata())
@@ -121,31 +121,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator);
+                context.Writer.Write(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator);
+                context.Writer.Write(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetGopClosedCadence())
             {
                 context.Writer.WritePropertyName("gopClosedCadence");
-                context.Writer.Write(requestObject.GopClosedCadence);
+                context.Writer.Write(requestObject.GopClosedCadence.Value);
             }
 
             if(requestObject.IsSetGopSize())
             {
                 context.Writer.WritePropertyName("gopSize");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.GopSize);
+                    context.Writer.Write(requestObject.GopSize.Value);
                 }
             }
 
@@ -170,13 +170,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate);
+                context.Writer.Write(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetMinIInterval())
             {
                 context.Writer.WritePropertyName("minIInterval");
-                context.Writer.Write(requestObject.MinIInterval);
+                context.Writer.Write(requestObject.MinIInterval.Value);
             }
 
             if(requestObject.IsSetMvOverPictureBoundaries())
@@ -194,13 +194,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParDenominator())
             {
                 context.Writer.WritePropertyName("parDenominator");
-                context.Writer.Write(requestObject.ParDenominator);
+                context.Writer.Write(requestObject.ParDenominator.Value);
             }
 
             if(requestObject.IsSetParNumerator())
             {
                 context.Writer.WritePropertyName("parNumerator");
-                context.Writer.Write(requestObject.ParNumerator);
+                context.Writer.Write(requestObject.ParNumerator.Value);
             }
 
             if(requestObject.IsSetProfile())
@@ -212,7 +212,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQvbrQualityLevel())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevel");
-                context.Writer.Write(requestObject.QvbrQualityLevel);
+                context.Writer.Write(requestObject.QvbrQualityLevel.Value);
             }
 
             if(requestObject.IsSetRateControlMode())
@@ -236,7 +236,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSlices())
             {
                 context.Writer.WritePropertyName("slices");
-                context.Writer.Write(requestObject.Slices);
+                context.Writer.Write(requestObject.Slices.Value);
             }
 
             if(requestObject.IsSetTier())
@@ -248,7 +248,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTileHeight())
             {
                 context.Writer.WritePropertyName("tileHeight");
-                context.Writer.Write(requestObject.TileHeight);
+                context.Writer.Write(requestObject.TileHeight.Value);
             }
 
             if(requestObject.IsSetTilePadding())
@@ -260,7 +260,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTileWidth())
             {
                 context.Writer.WritePropertyName("tileWidth");
-                context.Writer.Write(requestObject.TileWidth);
+                context.Writer.Write(requestObject.TileWidth.Value);
             }
 
             if(requestObject.IsSetTimecodeBurninSettings())

@@ -45,9 +45,9 @@ namespace Amazon.Inspector2.Model
         /// The date and time this vulnerability was first observed.
         /// </para>
         /// </summary>
-        public DateTime FirstSeen
+        public DateTime? FirstSeen
         {
-            get { return this._firstSeen.GetValueOrDefault(); }
+            get { return this._firstSeen; }
             set { this._firstSeen = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Inspector2.Model
         /// The date and time this vulnerability was last observed.
         /// </para>
         /// </summary>
-        public DateTime LastSeen
+        public DateTime? LastSeen
         {
-            get { return this._lastSeen.GetValueOrDefault(); }
+            get { return this._lastSeen; }
             set { this._lastSeen = value; }
         }
 

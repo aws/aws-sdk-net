@@ -62,9 +62,9 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If calling this operation multiple times on different shards in the same Redis (cluster
-    /// mode enabled) replication group, the first node replacement must complete before a
-    /// subsequent call can be made.
+    /// If calling this operation multiple times on different shards in the same Redis OSS
+    /// (cluster mode enabled) replication group, the first node replacement must complete
+    /// before a subsequent call can be made.
     /// </para>
     ///  </li> <li> 
     /// <para>

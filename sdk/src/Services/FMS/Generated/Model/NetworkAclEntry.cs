@@ -85,9 +85,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Egress
+        public bool? Egress
         {
-            get { return this._egress.GetValueOrDefault(); }
+            get { return this._egress; }
             set { this._egress = value; }
         }
 

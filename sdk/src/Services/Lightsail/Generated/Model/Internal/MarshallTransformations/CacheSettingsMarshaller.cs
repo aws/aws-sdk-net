@@ -63,7 +63,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultTTL())
             {
                 context.Writer.WritePropertyName("defaultTTL");
-                context.Writer.Write(requestObject.DefaultTTL);
+                context.Writer.Write(requestObject.DefaultTTL.Value);
             }
 
             if(requestObject.IsSetForwardedCookies())
@@ -102,13 +102,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumTTL())
             {
                 context.Writer.WritePropertyName("maximumTTL");
-                context.Writer.Write(requestObject.MaximumTTL);
+                context.Writer.Write(requestObject.MaximumTTL.Value);
             }
 
             if(requestObject.IsSetMinimumTTL())
             {
                 context.Writer.WritePropertyName("minimumTTL");
-                context.Writer.Write(requestObject.MinimumTTL);
+                context.Writer.Write(requestObject.MinimumTTL.Value);
             }
 
         }

@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTargetCpuUtilizationPerCore())
                 {
                     context.Writer.WritePropertyName("TargetCpuUtilizationPerCore");
-                    context.Writer.Write(publicRequest.TargetCpuUtilizationPerCore);
+                    context.Writer.Write(publicRequest.TargetCpuUtilizationPerCore.Value);
                 }
 
                 writer.WriteObjectEnd();

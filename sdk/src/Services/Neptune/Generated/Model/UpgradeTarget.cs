@@ -48,9 +48,9 @@ namespace Amazon.Neptune.Model
         /// that have AutoMinorVersionUpgrade set to true.
         /// </para>
         /// </summary>
-        public bool AutoUpgrade
+        public bool? AutoUpgrade
         {
-            get { return this._autoUpgrade.GetValueOrDefault(); }
+            get { return this._autoUpgrade; }
             set { this._autoUpgrade = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.Neptune.Model
         /// A value that indicates whether a database engine is upgraded to a major version.
         /// </para>
         /// </summary>
-        public bool IsMajorVersionUpgrade
+        public bool? IsMajorVersionUpgrade
         {
-            get { return this._isMajorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._isMajorVersionUpgrade; }
             set { this._isMajorVersionUpgrade = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.Neptune.Model
         /// engine version.
         /// </para>
         /// </summary>
-        public bool SupportsGlobalDatabases
+        public bool? SupportsGlobalDatabases
         {
-            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            get { return this._supportsGlobalDatabases; }
             set { this._supportsGlobalDatabases = value; }
         }
 

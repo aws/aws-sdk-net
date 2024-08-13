@@ -44,9 +44,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// to the same target group. The range is 1-604800 seconds (7 days).
         /// </para>
         /// </summary>
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Indicates whether target group stickiness is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

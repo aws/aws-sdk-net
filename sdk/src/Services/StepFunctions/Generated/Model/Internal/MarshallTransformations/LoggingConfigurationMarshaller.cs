@@ -67,7 +67,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeExecutionData())
             {
                 context.Writer.WritePropertyName("includeExecutionData");
-                context.Writer.Write(requestObject.IncludeExecutionData);
+                context.Writer.Write(requestObject.IncludeExecutionData.Value);
             }
 
             if(requestObject.IsSetLevel())

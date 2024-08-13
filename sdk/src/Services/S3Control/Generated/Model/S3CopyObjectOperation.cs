@@ -93,9 +93,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this._bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this._bucketKeyEnabled; }
             set { this._bucketKeyEnabled = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ModifiedSinceConstraint.
         /// </summary>
-        public DateTime ModifiedSinceConstraint
+        public DateTime? ModifiedSinceConstraint
         {
-            get { return this._modifiedSinceConstraint.GetValueOrDefault(); }
+            get { return this._modifiedSinceConstraint; }
             set { this._modifiedSinceConstraint = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime ObjectLockRetainUntilDate
+        public DateTime? ObjectLockRetainUntilDate
         {
-            get { return this._objectLockRetainUntilDate.GetValueOrDefault(); }
+            get { return this._objectLockRetainUntilDate; }
             set { this._objectLockRetainUntilDate = value; }
         }
 
@@ -325,9 +325,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool RequesterPays
+        public bool? RequesterPays
         {
-            get { return this._requesterPays.GetValueOrDefault(); }
+            get { return this._requesterPays; }
             set { this._requesterPays = value; }
         }
 
@@ -436,9 +436,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property UnModifiedSinceConstraint.
         /// </summary>
-        public DateTime UnModifiedSinceConstraint
+        public DateTime? UnModifiedSinceConstraint
         {
-            get { return this._unModifiedSinceConstraint.GetValueOrDefault(); }
+            get { return this._unModifiedSinceConstraint; }
             set { this._unModifiedSinceConstraint = value; }
         }
 

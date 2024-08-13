@@ -54,13 +54,13 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("adds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Adds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("deletes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Deletes = unmarshaller.Unmarshall(context);
                     continue;
                 }

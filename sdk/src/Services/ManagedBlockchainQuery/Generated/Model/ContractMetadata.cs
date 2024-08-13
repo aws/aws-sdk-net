@@ -44,9 +44,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// The decimals used by the token contract.
         /// </para>
         /// </summary>
-        public int Decimals
+        public int? Decimals
         {
-            get { return this._decimals.GetValueOrDefault(); }
+            get { return this._decimals; }
             set { this._decimals = value; }
         }
 

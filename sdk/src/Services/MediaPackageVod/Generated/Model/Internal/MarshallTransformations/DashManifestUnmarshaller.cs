@@ -80,7 +80,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minBufferTimeSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinBufferTimeSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

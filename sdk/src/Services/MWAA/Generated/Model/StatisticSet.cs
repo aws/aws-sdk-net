@@ -48,9 +48,9 @@ namespace Amazon.MWAA.Model
         ///  <b>Internal only</b>. The maximum value of the sample set.
         /// </para>
         /// </summary>
-        public double Maximum
+        public double? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.MWAA.Model
         ///  <b>Internal only</b>. The minimum value of the sample set.
         /// </para>
         /// </summary>
-        public double Minimum
+        public double? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.MWAA.Model
         ///  <b>Internal only</b>. The number of samples used for the statistic set.
         /// </para>
         /// </summary>
-        public int SampleCount
+        public int? SampleCount
         {
-            get { return this._sampleCount.GetValueOrDefault(); }
+            get { return this._sampleCount; }
             set { this._sampleCount = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.MWAA.Model
         ///  <b>Internal only</b>. The sum of values for the sample set.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 

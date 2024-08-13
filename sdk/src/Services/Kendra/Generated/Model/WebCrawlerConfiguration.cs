@@ -83,9 +83,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int CrawlDepth
+        public int? CrawlDepth
         {
-            get { return this._crawlDepth.GetValueOrDefault(); }
+            get { return this._crawlDepth; }
             set { this._crawlDepth = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
-        public float MaxContentSizePerPageInMegaBytes
+        public float? MaxContentSizePerPageInMegaBytes
         {
-            get { return this._maxContentSizePerPageInMegaBytes.GetValueOrDefault(); }
+            get { return this._maxContentSizePerPageInMegaBytes; }
             set { this._maxContentSizePerPageInMegaBytes = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxLinksPerPage
+        public int? MaxLinksPerPage
         {
-            get { return this._maxLinksPerPage.GetValueOrDefault(); }
+            get { return this._maxLinksPerPage; }
             set { this._maxLinksPerPage = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
-        public int MaxUrlsPerMinuteCrawlRate
+        public int? MaxUrlsPerMinuteCrawlRate
         {
-            get { return this._maxUrlsPerMinuteCrawlRate.GetValueOrDefault(); }
+            get { return this._maxUrlsPerMinuteCrawlRate; }
             set { this._maxUrlsPerMinuteCrawlRate = value; }
         }
 

@@ -86,9 +86,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The date and time that the migration started.
         /// </para>
         /// </summary>
-        public DateTime MigrationTimestamp
+        public DateTime? MigrationTimestamp
         {
-            get { return this._migrationTimestamp.GetValueOrDefault(); }
+            get { return this._migrationTimestamp; }
             set { this._migrationTimestamp = value; }
         }
 

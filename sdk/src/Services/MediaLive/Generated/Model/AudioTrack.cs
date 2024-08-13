@@ -41,9 +41,9 @@ namespace Amazon.MediaLive.Model
         /// track
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int Track
+        public int? Track
         {
-            get { return this._track.GetValueOrDefault(); }
+            get { return this._track; }
             set { this._track = value; }
         }
 

@@ -97,9 +97,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=90)]
-        public long AnomalyVisibilityTime
+        public long? AnomalyVisibilityTime
         {
-            get { return this._anomalyVisibilityTime.GetValueOrDefault(); }
+            get { return this._anomalyVisibilityTime; }
             set { this._anomalyVisibilityTime = value; }
         }
 

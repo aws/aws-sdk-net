@@ -121,7 +121,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property GuardrailConfiguration. 
         /// <para>
-        /// The details of the guardrails configuration in the agent summary.
+        /// Details about the guardrail associated with the agent.
         /// </para>
         /// </summary>
         public GuardrailConfiguration GuardrailConfiguration
@@ -162,9 +162,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

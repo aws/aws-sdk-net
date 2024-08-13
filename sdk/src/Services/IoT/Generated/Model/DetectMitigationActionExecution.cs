@@ -87,9 +87,9 @@ namespace Amazon.IoT.Model
         ///  The date a mitigation action ended. 
         /// </para>
         /// </summary>
-        public DateTime ExecutionEndDate
+        public DateTime? ExecutionEndDate
         {
-            get { return this._executionEndDate.GetValueOrDefault(); }
+            get { return this._executionEndDate; }
             set { this._executionEndDate = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.IoT.Model
         ///  The date a mitigation action was started. 
         /// </para>
         /// </summary>
-        public DateTime ExecutionStartDate
+        public DateTime? ExecutionStartDate
         {
-            get { return this._executionStartDate.GetValueOrDefault(); }
+            get { return this._executionStartDate; }
             set { this._executionStartDate = value; }
         }
 

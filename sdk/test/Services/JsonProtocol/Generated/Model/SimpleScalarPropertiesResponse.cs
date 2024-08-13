@@ -40,9 +40,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property DoubleValue.
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -55,9 +55,9 @@ namespace Amazon.JsonProtocol.Model
         /// <summary>
         /// Gets and sets the property FloatValue.
         /// </summary>
-        public float FloatValue
+        public float? FloatValue
         {
-            get { return this._floatValue.GetValueOrDefault(); }
+            get { return this._floatValue; }
             set { this._floatValue = value; }
         }
 

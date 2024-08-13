@@ -78,19 +78,19 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxConcurrency())
                 {
                     context.Writer.WritePropertyName("MaxConcurrency");
-                    context.Writer.Write(publicRequest.MaxConcurrency);
+                    context.Writer.Write(publicRequest.MaxConcurrency.Value);
                 }
 
                 if(publicRequest.IsSetMaxSize())
                 {
                     context.Writer.WritePropertyName("MaxSize");
-                    context.Writer.Write(publicRequest.MaxSize);
+                    context.Writer.Write(publicRequest.MaxSize.Value);
                 }
 
                 if(publicRequest.IsSetMinSize())
                 {
                     context.Writer.WritePropertyName("MinSize");
-                    context.Writer.Write(publicRequest.MinSize);
+                    context.Writer.Write(publicRequest.MinSize.Value);
                 }
 
                 if(publicRequest.IsSetTags())

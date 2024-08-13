@@ -58,9 +58,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HardLimit
+        public int? HardLimit
         {
-            get { return this._hardLimit.GetValueOrDefault(); }
+            get { return this._hardLimit; }
             set { this._hardLimit = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SoftLimit
+        public int? SoftLimit
         {
-            get { return this._softLimit.GetValueOrDefault(); }
+            get { return this._softLimit; }
             set { this._softLimit = value; }
         }
 

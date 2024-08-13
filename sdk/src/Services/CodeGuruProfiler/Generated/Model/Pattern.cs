@@ -161,9 +161,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double ThresholdPercent
+        public double? ThresholdPercent
         {
-            get { return this._thresholdPercent.GetValueOrDefault(); }
+            get { return this._thresholdPercent; }
             set { this._thresholdPercent = value; }
         }
 

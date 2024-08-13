@@ -44,5 +44,20 @@ namespace Amazon.EC2.Internal
         {
             return dateTime.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormatNoMS, DateTimeFormatInfo.InvariantInfo);
         }
+
+        /// <summary>
+        /// Custom DateTime serializer for EC2.
+        /// </summary>
+        /// <param name="dateTime">The DateTime to serialize</param>
+        /// <returns>ISO formatted string with no miliseconds</returns>
+        public static String ConvertDateTimeISOWithoutMillisecondsUtc(DateTime? dateTime)
+        {
+            if (!dateTime.HasValue)
+            {
+                return null;
+            }
+
+            return dateTime.Value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormatNoMS, DateTimeFormatInfo.InvariantInfo);
+        }
     }
 }

@@ -68,7 +68,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Size", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,13 +68,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maximum", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimum", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
                     continue;
                 }

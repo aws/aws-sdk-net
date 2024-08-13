@@ -74,13 +74,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Rssi", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Rssi = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Snr", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Snr = unmarshaller.Unmarshall(context);
                     continue;
                 }

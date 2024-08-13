@@ -77,9 +77,9 @@ namespace Amazon.IdentityManagement.Model
         /// period</a>.
         /// </para>
         /// </summary>
-        public DateTime LastAuthenticated
+        public DateTime? LastAuthenticated
         {
-            get { return this._lastAuthenticated.GetValueOrDefault(); }
+            get { return this._lastAuthenticated; }
             set { this._lastAuthenticated = value; }
         }
 

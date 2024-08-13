@@ -113,9 +113,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
         /// </para>
         /// </summary>
-        public DateTime CdcStartTime
+        public DateTime? CdcStartTime
         {
-            get { return this._cdcStartTime.GetValueOrDefault(); }
+            get { return this._cdcStartTime; }
             set { this._cdcStartTime = value; }
         }
 

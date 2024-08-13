@@ -57,7 +57,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPredictionChoice())
             {
                 context.Writer.WritePropertyName("predictionChoice");
-                context.Writer.Write(requestObject.PredictionChoice);
+                context.Writer.Write(requestObject.PredictionChoice.Value);
             }
 
             if(requestObject.IsSetPredictionTarget())

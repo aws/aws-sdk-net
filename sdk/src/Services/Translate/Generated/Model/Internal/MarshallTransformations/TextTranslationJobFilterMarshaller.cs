@@ -63,13 +63,13 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSubmittedAfterTime())
             {
                 context.Writer.WritePropertyName("SubmittedAfterTime");
-                context.Writer.Write(requestObject.SubmittedAfterTime);
+                context.Writer.Write(requestObject.SubmittedAfterTime.Value);
             }
 
             if(requestObject.IsSetSubmittedBeforeTime())
             {
                 context.Writer.WritePropertyName("SubmittedBeforeTime");
-                context.Writer.Write(requestObject.SubmittedBeforeTime);
+                context.Writer.Write(requestObject.SubmittedBeforeTime.Value);
             }
 
         }

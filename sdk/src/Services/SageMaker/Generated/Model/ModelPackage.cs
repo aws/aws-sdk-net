@@ -112,9 +112,9 @@ namespace Amazon.SageMaker.Model
         /// Your Algorithm or Model Package on Amazon Web Services Marketplace</a>.
         /// </para>
         /// </summary>
-        public bool CertifyForMarketplace
+        public bool? CertifyForMarketplace
         {
-            get { return this._certifyForMarketplace.GetValueOrDefault(); }
+            get { return this._certifyForMarketplace; }
             set { this._certifyForMarketplace = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.SageMaker.Model
         /// The time that the model package was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.SageMaker.Model
         /// The last time the model package was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -495,9 +495,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ModelPackageVersion
+        public int? ModelPackageVersion
         {
-            get { return this._modelPackageVersion.GetValueOrDefault(); }
+            get { return this._modelPackageVersion; }
             set { this._modelPackageVersion = value; }
         }
 

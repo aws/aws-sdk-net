@@ -45,9 +45,9 @@ namespace Amazon.CodeCommit.Model
         /// A non-zero, non-negative integer used to limit the number of returned results.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

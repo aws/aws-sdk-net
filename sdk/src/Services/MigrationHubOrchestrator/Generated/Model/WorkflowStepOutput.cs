@@ -82,9 +82,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// Determine if an output is required from a step.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

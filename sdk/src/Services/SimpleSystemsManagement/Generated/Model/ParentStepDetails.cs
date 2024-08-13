@@ -64,9 +64,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The current repetition of the loop represented by an integer.
         /// </para>
         /// </summary>
-        public int Iteration
+        public int? Iteration
         {
-            get { return this._iteration.GetValueOrDefault(); }
+            get { return this._iteration; }
             set { this._iteration = value; }
         }
 

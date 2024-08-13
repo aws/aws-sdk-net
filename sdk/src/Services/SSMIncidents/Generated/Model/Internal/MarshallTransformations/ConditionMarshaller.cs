@@ -51,13 +51,13 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfter())
             {
                 context.Writer.WritePropertyName("after");
-                context.Writer.Write(requestObject.After);
+                context.Writer.Write(requestObject.After.Value);
             }
 
             if(requestObject.IsSetBefore())
             {
                 context.Writer.WritePropertyName("before");
-                context.Writer.Write(requestObject.Before);
+                context.Writer.Write(requestObject.Before.Value);
             }
 
             if(requestObject.IsSetEquals())

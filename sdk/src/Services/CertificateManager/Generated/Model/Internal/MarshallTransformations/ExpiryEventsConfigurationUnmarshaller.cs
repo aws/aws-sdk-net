@@ -68,7 +68,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DaysBeforeExpiry", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DaysBeforeExpiry = unmarshaller.Unmarshall(context);
                     continue;
                 }

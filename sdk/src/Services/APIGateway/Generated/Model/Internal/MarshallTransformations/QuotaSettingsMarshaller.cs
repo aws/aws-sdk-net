@@ -51,13 +51,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("limit");
-                context.Writer.Write(requestObject.Limit);
+                context.Writer.Write(requestObject.Limit.Value);
             }
 
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                context.Writer.Write(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetPeriod())

@@ -85,9 +85,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// change this value using the <a>UpdatePool</a> action.
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 
@@ -122,6 +122,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <para>
         /// The type of message. Valid values are TRANSACTIONAL for messages that are critical
         /// or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.
+        /// After the pool is created the MessageType can't be changed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,6 +145,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// or SenderIdArn. You can use <a>DescribePhoneNumbers</a> to find the values for PhoneNumberId
         /// and PhoneNumberArn while <a>DescribeSenderIds</a> can be used to get the values for
         /// SenderId and SenderIdArn.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the pool is created you can add more origination identities to the pool by using
+        /// <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html">AssociateOriginationIdentity</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

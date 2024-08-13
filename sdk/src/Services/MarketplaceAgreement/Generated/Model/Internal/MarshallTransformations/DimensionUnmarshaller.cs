@@ -74,7 +74,7 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("dimensionValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DimensionValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

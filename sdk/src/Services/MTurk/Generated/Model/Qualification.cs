@@ -50,9 +50,9 @@ namespace Amazon.MTurk.Model
         /// the date and time of the last call to the AcceptQualificationRequest operation.
         /// </para>
         /// </summary>
-        public DateTime GrantTime
+        public DateTime? GrantTime
         {
-            get { return this._grantTime.GetValueOrDefault(); }
+            get { return this._grantTime; }
             set { this._grantTime = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.MTurk.Model
         ///  The value (score) of the Qualification, if the Qualification has an integer value.
         /// </para>
         /// </summary>
-        public int IntegerValue
+        public int? IntegerValue
         {
-            get { return this._integerValue.GetValueOrDefault(); }
+            get { return this._integerValue; }
             set { this._integerValue = value; }
         }
 

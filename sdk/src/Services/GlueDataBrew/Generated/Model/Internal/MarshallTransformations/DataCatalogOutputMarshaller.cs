@@ -74,7 +74,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOverwrite())
             {
                 context.Writer.WritePropertyName("Overwrite");
-                context.Writer.Write(requestObject.Overwrite);
+                context.Writer.Write(requestObject.Overwrite.Value);
             }
 
             if(requestObject.IsSetS3Options())

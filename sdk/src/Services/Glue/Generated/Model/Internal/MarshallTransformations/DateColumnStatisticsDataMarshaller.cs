@@ -51,25 +51,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-                context.Writer.Write(requestObject.MaximumValue);
+                context.Writer.Write(requestObject.MaximumValue.Value);
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-                context.Writer.Write(requestObject.MinimumValue);
+                context.Writer.Write(requestObject.MinimumValue.Value);
             }
 
             if(requestObject.IsSetNumberOfDistinctValues())
             {
                 context.Writer.WritePropertyName("NumberOfDistinctValues");
-                context.Writer.Write(requestObject.NumberOfDistinctValues);
+                context.Writer.Write(requestObject.NumberOfDistinctValues.Value);
             }
 
             if(requestObject.IsSetNumberOfNulls())
             {
                 context.Writer.WritePropertyName("NumberOfNulls");
-                context.Writer.Write(requestObject.NumberOfNulls);
+                context.Writer.Write(requestObject.NumberOfNulls.Value);
             }
 
         }

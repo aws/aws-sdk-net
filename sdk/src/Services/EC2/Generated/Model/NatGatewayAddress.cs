@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// Defines if the IP address is the primary address.
         /// </para>
         /// </summary>
-        public bool IsPrimary
+        public bool? IsPrimary
         {
-            get { return this._isPrimary.GetValueOrDefault(); }
+            get { return this._isPrimary; }
             set { this._isPrimary = value; }
         }
 

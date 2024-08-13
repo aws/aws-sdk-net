@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoCreateDatabaseUser())
             {
                 context.Writer.WritePropertyName("AutoCreateDatabaseUser");
-                context.Writer.Write(requestObject.AutoCreateDatabaseUser);
+                context.Writer.Write(requestObject.AutoCreateDatabaseUser.Value);
             }
 
             if(requestObject.IsSetDatabaseGroups())

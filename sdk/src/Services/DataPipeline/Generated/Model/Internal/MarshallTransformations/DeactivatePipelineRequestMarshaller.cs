@@ -72,7 +72,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCancelActive())
                 {
                     context.Writer.WritePropertyName("cancelActive");
-                    context.Writer.Write(publicRequest.CancelActive);
+                    context.Writer.Write(publicRequest.CancelActive.Value);
                 }
 
                 if(publicRequest.IsSetPipelineId())

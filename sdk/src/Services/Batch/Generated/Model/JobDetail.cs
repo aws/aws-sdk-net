@@ -129,9 +129,9 @@ namespace Amazon.Batch.Model
         /// and entered the <c>PENDING</c> state.
         /// </para>
         /// </summary>
-        public long CreatedAt
+        public long? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.Batch.Model
         /// Indicates whether the job is canceled.
         /// </para>
         /// </summary>
-        public bool IsCancelled
+        public bool? IsCancelled
         {
-            get { return this._isCancelled.GetValueOrDefault(); }
+            get { return this._isCancelled; }
             set { this._isCancelled = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.Batch.Model
         /// Indicates whether the job is terminated.
         /// </para>
         /// </summary>
-        public bool IsTerminated
+        public bool? IsTerminated
         {
-            get { return this._isTerminated.GetValueOrDefault(); }
+            get { return this._isTerminated; }
             set { this._isTerminated = value; }
         }
 
@@ -434,9 +434,9 @@ namespace Amazon.Batch.Model
         /// state.
         /// </para>
         /// </summary>
-        public bool PropagateTags
+        public bool? PropagateTags
         {
-            get { return this._propagateTags.GetValueOrDefault(); }
+            get { return this._propagateTags; }
             set { this._propagateTags = value; }
         }
 
@@ -472,9 +472,9 @@ namespace Amazon.Batch.Model
         /// jobs with a lower scheduling priority.
         /// </para>
         /// </summary>
-        public int SchedulingPriority
+        public int? SchedulingPriority
         {
-            get { return this._schedulingPriority.GetValueOrDefault(); }
+            get { return this._schedulingPriority; }
             set { this._schedulingPriority = value; }
         }
 
@@ -511,9 +511,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long StartedAt
+        public long? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -596,9 +596,9 @@ namespace Amazon.Batch.Model
         /// such as <c>SUCCEEDED</c> or <c>FAILED</c>.
         /// </para>
         /// </summary>
-        public long StoppedAt
+        public long? StoppedAt
         {
-            get { return this._stoppedAt.GetValueOrDefault(); }
+            get { return this._stoppedAt; }
             set { this._stoppedAt = value; }
         }
 

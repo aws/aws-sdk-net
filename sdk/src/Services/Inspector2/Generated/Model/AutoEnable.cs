@@ -48,9 +48,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Ec2
+        public bool? Ec2
         {
-            get { return this._ec2.GetValueOrDefault(); }
+            get { return this._ec2; }
             set { this._ec2 = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Ecr
+        public bool? Ecr
         {
-            get { return this._ecr.GetValueOrDefault(); }
+            get { return this._ecr; }
             set { this._ecr = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Inspector2.Model
         /// for new members of your Amazon Inspector organization. 
         /// </para>
         /// </summary>
-        public bool Lambda
+        public bool? Lambda
         {
-            get { return this._lambda.GetValueOrDefault(); }
+            get { return this._lambda; }
             set { this._lambda = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Inspector2.Model
         /// Represents whether Lambda code scans are automatically enabled for new members of
         /// your Amazon Inspector organization. <pre><c> &lt;/p&gt; </c></pre>
         /// </summary>
-        public bool LambdaCode
+        public bool? LambdaCode
         {
-            get { return this._lambdaCode.GetValueOrDefault(); }
+            get { return this._lambdaCode; }
             set { this._lambdaCode = value; }
         }
 

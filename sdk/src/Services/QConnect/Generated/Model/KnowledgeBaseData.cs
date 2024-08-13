@@ -129,9 +129,9 @@ namespace Amazon.QConnect.Model
         /// base. If no content exists in a knowledge base, this value is unset.
         /// </para>
         /// </summary>
-        public DateTime LastContentModificationTime
+        public DateTime? LastContentModificationTime
         {
-            get { return this._lastContentModificationTime.GetValueOrDefault(); }
+            get { return this._lastContentModificationTime; }
             set { this._lastContentModificationTime = value; }
         }
 

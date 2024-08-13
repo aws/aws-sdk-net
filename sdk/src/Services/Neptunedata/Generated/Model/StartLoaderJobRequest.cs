@@ -136,9 +136,9 @@ namespace Amazon.Neptunedata.Model
         /// an error. Data loaded up to that point persists.
         /// </para>
         /// </summary>
-        public bool FailOnError
+        public bool? FailOnError
         {
-            get { return this._failOnError.GetValueOrDefault(); }
+            get { return this._failOnError; }
             set { this._failOnError = value; }
         }
 
@@ -427,9 +427,9 @@ namespace Amazon.Neptunedata.Model
         ///  <i>Default value</i>: <c>"FALSE"</c>.
         /// </para>
         /// </summary>
-        public bool QueueRequest
+        public bool? QueueRequest
         {
-            get { return this._queueRequest.GetValueOrDefault(); }
+            get { return this._queueRequest; }
             set { this._queueRequest = value; }
         }
 
@@ -538,9 +538,9 @@ namespace Amazon.Neptunedata.Model
         /// of the new ones.
         /// </para>
         /// </summary>
-        public bool UpdateSingleCardinalityProperties
+        public bool? UpdateSingleCardinalityProperties
         {
-            get { return this._updateSingleCardinalityProperties.GetValueOrDefault(); }
+            get { return this._updateSingleCardinalityProperties; }
             set { this._updateSingleCardinalityProperties = value; }
         }
 
@@ -577,9 +577,9 @@ namespace Amazon.Neptunedata.Model
         /// and must instead reload all the relationships.
         /// </para>
         /// </summary>
-        public bool UserProvidedEdgeIds
+        public bool? UserProvidedEdgeIds
         {
-            get { return this._userProvidedEdgeIds.GetValueOrDefault(); }
+            get { return this._userProvidedEdgeIds; }
             set { this._userProvidedEdgeIds = value; }
         }
 

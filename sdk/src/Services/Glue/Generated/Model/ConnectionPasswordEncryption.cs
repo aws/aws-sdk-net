@@ -91,9 +91,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ReturnConnectionPasswordEncrypted
+        public bool? ReturnConnectionPasswordEncrypted
         {
-            get { return this._returnConnectionPasswordEncrypted.GetValueOrDefault(); }
+            get { return this._returnConnectionPasswordEncrypted; }
             set { this._returnConnectionPasswordEncrypted = value; }
         }
 

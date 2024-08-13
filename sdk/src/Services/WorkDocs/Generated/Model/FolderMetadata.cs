@@ -52,9 +52,9 @@ namespace Amazon.WorkDocs.Model
         /// The time when the folder was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.WorkDocs.Model
         /// The size of the latest version of the folder metadata.
         /// </para>
         /// </summary>
-        public long LatestVersionSize
+        public long? LatestVersionSize
         {
-            get { return this._latestVersionSize.GetValueOrDefault(); }
+            get { return this._latestVersionSize; }
             set { this._latestVersionSize = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.WorkDocs.Model
         /// The time when the folder was updated.
         /// </para>
         /// </summary>
-        public DateTime ModifiedTimestamp
+        public DateTime? ModifiedTimestamp
         {
-            get { return this._modifiedTimestamp.GetValueOrDefault(); }
+            get { return this._modifiedTimestamp; }
             set { this._modifiedTimestamp = value; }
         }
 
@@ -238,9 +238,9 @@ namespace Amazon.WorkDocs.Model
         /// The size of the folder metadata.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

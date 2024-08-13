@@ -58,19 +58,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ModeBlock", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ModeBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Override", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Override = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Protection", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Protection = unmarshaller.Unmarshall(context);
                         continue;
                     }

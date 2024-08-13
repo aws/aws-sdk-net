@@ -51,13 +51,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxExpandedResultsPerItem())
             {
                 context.Writer.WritePropertyName("MaxExpandedResultsPerItem");
-                context.Writer.Write(requestObject.MaxExpandedResultsPerItem);
+                context.Writer.Write(requestObject.MaxExpandedResultsPerItem.Value);
             }
 
             if(requestObject.IsSetMaxResultItemsToExpand())
             {
                 context.Writer.WritePropertyName("MaxResultItemsToExpand");
-                context.Writer.Write(requestObject.MaxResultItemsToExpand);
+                context.Writer.Write(requestObject.MaxResultItemsToExpand.Value);
             }
 
         }

@@ -65,9 +65,9 @@ namespace Amazon.EC2.Model
         /// The number of CPU cores for the instance.
         /// </para>
         /// </summary>
-        public int CoreCount
+        public int? CoreCount
         {
-            get { return this._coreCount.GetValueOrDefault(); }
+            get { return this._coreCount; }
             set { this._coreCount = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
         /// a value of <c>1</c>. Otherwise, specify the default value of <c>2</c>.
         /// </para>
         /// </summary>
-        public int ThreadsPerCore
+        public int? ThreadsPerCore
         {
-            get { return this._threadsPerCore.GetValueOrDefault(); }
+            get { return this._threadsPerCore; }
             set { this._threadsPerCore = value; }
         }
 

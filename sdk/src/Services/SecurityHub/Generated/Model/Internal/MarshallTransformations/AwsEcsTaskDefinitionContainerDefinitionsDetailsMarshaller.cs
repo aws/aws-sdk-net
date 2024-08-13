@@ -62,7 +62,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("Cpu");
-                context.Writer.Write(requestObject.Cpu);
+                context.Writer.Write(requestObject.Cpu.Value);
             }
 
             if(requestObject.IsSetDependsOn())
@@ -84,7 +84,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableNetworking())
             {
                 context.Writer.WritePropertyName("DisableNetworking");
-                context.Writer.Write(requestObject.DisableNetworking);
+                context.Writer.Write(requestObject.DisableNetworking.Value);
             }
 
             if(requestObject.IsSetDnsSearchDomains())
@@ -180,7 +180,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEssential())
             {
                 context.Writer.WritePropertyName("Essential");
-                context.Writer.Write(requestObject.Essential);
+                context.Writer.Write(requestObject.Essential.Value);
             }
 
             if(requestObject.IsSetExtraHosts())
@@ -236,7 +236,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInteractive())
             {
                 context.Writer.WritePropertyName("Interactive");
-                context.Writer.Write(requestObject.Interactive);
+                context.Writer.Write(requestObject.Interactive.Value);
             }
 
             if(requestObject.IsSetLinks())
@@ -275,13 +275,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("Memory");
-                context.Writer.Write(requestObject.Memory);
+                context.Writer.Write(requestObject.Memory.Value);
             }
 
             if(requestObject.IsSetMemoryReservation())
             {
                 context.Writer.WritePropertyName("MemoryReservation");
-                context.Writer.Write(requestObject.MemoryReservation);
+                context.Writer.Write(requestObject.MemoryReservation.Value);
             }
 
             if(requestObject.IsSetMountPoints())
@@ -325,19 +325,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("Privileged");
-                context.Writer.Write(requestObject.Privileged);
+                context.Writer.Write(requestObject.Privileged.Value);
             }
 
             if(requestObject.IsSetPseudoTerminal())
             {
                 context.Writer.WritePropertyName("PseudoTerminal");
-                context.Writer.Write(requestObject.PseudoTerminal);
+                context.Writer.Write(requestObject.PseudoTerminal.Value);
             }
 
             if(requestObject.IsSetReadonlyRootFilesystem())
             {
                 context.Writer.WritePropertyName("ReadonlyRootFilesystem");
-                context.Writer.Write(requestObject.ReadonlyRootFilesystem);
+                context.Writer.Write(requestObject.ReadonlyRootFilesystem.Value);
             }
 
             if(requestObject.IsSetRepositoryCredentials())
@@ -386,13 +386,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartTimeout())
             {
                 context.Writer.WritePropertyName("StartTimeout");
-                context.Writer.Write(requestObject.StartTimeout);
+                context.Writer.Write(requestObject.StartTimeout.Value);
             }
 
             if(requestObject.IsSetStopTimeout())
             {
                 context.Writer.WritePropertyName("StopTimeout");
-                context.Writer.Write(requestObject.StopTimeout);
+                context.Writer.Write(requestObject.StopTimeout.Value);
             }
 
             if(requestObject.IsSetSystemControls())

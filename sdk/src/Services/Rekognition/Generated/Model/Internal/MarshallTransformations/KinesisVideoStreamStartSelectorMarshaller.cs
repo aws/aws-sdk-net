@@ -57,7 +57,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProducerTimestamp())
             {
                 context.Writer.WritePropertyName("ProducerTimestamp");
-                context.Writer.Write(requestObject.ProducerTimestamp);
+                context.Writer.Write(requestObject.ProducerTimestamp.Value);
             }
 
         }

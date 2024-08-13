@@ -72,9 +72,9 @@ namespace Amazon.MediaConvert.Model
         /// output group, set Payload ID to 1 in every output.
         /// </summary>
         [AWSProperty(Min=0, Max=4194303)]
-        public int Payload
+        public int? Payload
         {
-            get { return this._payload.GetValueOrDefault(); }
+            get { return this._payload; }
             set { this._payload = value; }
         }
 

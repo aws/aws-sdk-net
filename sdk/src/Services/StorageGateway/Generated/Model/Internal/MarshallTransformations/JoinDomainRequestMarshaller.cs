@@ -107,7 +107,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeoutInSeconds())
                 {
                     context.Writer.WritePropertyName("TimeoutInSeconds");
-                    context.Writer.Write(publicRequest.TimeoutInSeconds);
+                    context.Writer.Write(publicRequest.TimeoutInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetUserName())

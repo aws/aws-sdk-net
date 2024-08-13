@@ -84,7 +84,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("AssociatedClusterCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.AssociatedClusterCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

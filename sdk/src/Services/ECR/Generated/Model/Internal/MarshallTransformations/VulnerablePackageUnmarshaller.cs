@@ -74,7 +74,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("epoch", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Epoch = unmarshaller.Unmarshall(context);
                     continue;
                 }

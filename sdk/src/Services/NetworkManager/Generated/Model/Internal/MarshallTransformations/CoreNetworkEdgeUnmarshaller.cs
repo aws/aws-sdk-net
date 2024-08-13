@@ -68,7 +68,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Asn", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Asn = unmarshaller.Unmarshall(context);
                     continue;
                 }

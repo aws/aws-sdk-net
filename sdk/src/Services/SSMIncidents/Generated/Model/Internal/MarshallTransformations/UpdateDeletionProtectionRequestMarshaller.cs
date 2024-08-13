@@ -87,7 +87,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeletionProtected())
                 {
                     context.Writer.WritePropertyName("deletionProtected");
-                    context.Writer.Write(publicRequest.DeletionProtected);
+                    context.Writer.Write(publicRequest.DeletionProtected.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -52,7 +52,7 @@ namespace Amazon.SimpleDB.Model
         /// <param name="name">The name of the attribute involved in the condition.</param>
         /// <param name="value">The value of an attribute. This value can only be specified when the <c>Exists</c> parameter is equal to <c>true</c>.</param>
         /// <param name="exists">A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <c>true</c> if the attribute must exist for the update condition to be satisfied. Specify <c>false</c> if the attribute should not exist in order for the update condition to be satisfied.</param>
-        public UpdateCondition(string name, string value, bool exists)
+        public UpdateCondition(string name, string value, bool? exists)
         {
             _name = name;
             _value = value;
@@ -68,9 +68,9 @@ namespace Amazon.SimpleDB.Model
         /// if the attribute should not exist in order for the update condition to be satisfied.
         /// </para>
         /// </summary>
-        public bool Exists
+        public bool? Exists
         {
-            get { return this._exists.GetValueOrDefault(); }
+            get { return this._exists; }
             set { this._exists = value; }
         }
 

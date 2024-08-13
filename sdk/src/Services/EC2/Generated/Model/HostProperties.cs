@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// The number of cores on the Dedicated Host.
         /// </para>
         /// </summary>
-        public int Cores
+        public int? Cores
         {
-            get { return this._cores.GetValueOrDefault(); }
+            get { return this._cores; }
             set { this._cores = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.EC2.Model
         /// The number of sockets on the Dedicated Host.
         /// </para>
         /// </summary>
-        public int Sockets
+        public int? Sockets
         {
-            get { return this._sockets.GetValueOrDefault(); }
+            get { return this._sockets; }
             set { this._sockets = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.EC2.Model
         /// The total number of vCPUs on the Dedicated Host.
         /// </para>
         /// </summary>
-        public int TotalVCpus
+        public int? TotalVCpus
         {
-            get { return this._totalVCpus.GetValueOrDefault(); }
+            get { return this._totalVCpus; }
             set { this._totalVCpus = value; }
         }
 

@@ -87,7 +87,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// numbers the issuing bank uses to validate the data received.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=160)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=160)]
         public string TrackData
         {
             get { return this._trackData; }

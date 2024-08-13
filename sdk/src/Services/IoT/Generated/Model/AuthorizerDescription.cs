@@ -108,9 +108,9 @@ namespace Amazon.IoT.Model
         /// The UNIX timestamp of when the authorizer was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.IoT.Model
         /// device reuses the same HTTP connection.
         /// </para>
         /// </summary>
-        public bool EnableCachingForHttp
+        public bool? EnableCachingForHttp
         {
-            get { return this._enableCachingForHttp.GetValueOrDefault(); }
+            get { return this._enableCachingForHttp; }
             set { this._enableCachingForHttp = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.IoT.Model
         /// The UNIX timestamp of when the authorizer was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.IoT.Model
         /// Specifies whether IoT validates the token signature in an authorization request.
         /// </para>
         /// </summary>
-        public bool SigningDisabled
+        public bool? SigningDisabled
         {
-            get { return this._signingDisabled.GetValueOrDefault(); }
+            get { return this._signingDisabled; }
             set { this._signingDisabled = value; }
         }
 

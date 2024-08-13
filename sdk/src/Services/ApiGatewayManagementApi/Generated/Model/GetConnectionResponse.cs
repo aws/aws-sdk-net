@@ -44,9 +44,9 @@ namespace Amazon.ApiGatewayManagementApi.Model
         /// The time in ISO 8601 format for when the connection was established.
         /// </para>
         /// </summary>
-        public DateTime ConnectedAt
+        public DateTime? ConnectedAt
         {
-            get { return this._connectedAt.GetValueOrDefault(); }
+            get { return this._connectedAt; }
             set { this._connectedAt = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.ApiGatewayManagementApi.Model
         /// The time in ISO 8601 format for when the connection was last active.
         /// </para>
         /// </summary>
-        public DateTime LastActiveAt
+        public DateTime? LastActiveAt
         {
-            get { return this._lastActiveAt.GetValueOrDefault(); }
+            get { return this._lastActiveAt; }
             set { this._lastActiveAt = value; }
         }
 

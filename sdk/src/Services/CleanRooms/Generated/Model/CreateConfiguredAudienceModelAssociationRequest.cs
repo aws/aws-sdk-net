@@ -117,9 +117,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ManageResourcePolicies
+        public bool? ManageResourcePolicies
         {
-            get { return this._manageResourcePolicies.GetValueOrDefault(); }
+            get { return this._manageResourcePolicies; }
             set { this._manageResourcePolicies = value; }
         }
 

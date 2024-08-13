@@ -46,9 +46,9 @@ namespace Amazon.LexModelsV2.Model
         /// The total number of sessions that follow the given path to the given intent.
         /// </para>
         /// </summary>
-        public int IntentCount
+        public int? IntentCount
         {
-            get { return this._intentCount.GetValueOrDefault(); }
+            get { return this._intentCount; }
             set { this._intentCount = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int IntentLevel
+        public int? IntentLevel
         {
-            get { return this._intentLevel.GetValueOrDefault(); }
+            get { return this._intentLevel; }
             set { this._intentLevel = value; }
         }
 

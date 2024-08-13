@@ -51,19 +51,19 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmis())
             {
                 context.Writer.WritePropertyName("amis");
-                context.Writer.Write(requestObject.Amis);
+                context.Writer.Write(requestObject.Amis.Value);
             }
 
             if(requestObject.IsSetContainers())
             {
                 context.Writer.WritePropertyName("containers");
-                context.Writer.Write(requestObject.Containers);
+                context.Writer.Write(requestObject.Containers.Value);
             }
 
             if(requestObject.IsSetSnapshots())
             {
                 context.Writer.WritePropertyName("snapshots");
-                context.Writer.Write(requestObject.Snapshots);
+                context.Writer.Write(requestObject.Snapshots.Value);
             }
 
         }

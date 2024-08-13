@@ -120,7 +120,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timeoutInMillis", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TimeoutInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

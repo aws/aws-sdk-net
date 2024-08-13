@@ -38,6 +38,7 @@ namespace Amazon.OpenSearchService.Model
         private string _accessPolicies;
         private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AdvancedSecurityOptionsInput _advancedSecurityOptions;
+        private AIMLOptionsInput _aimlOptions;
         private AutoTuneOptions _autoTuneOptions;
         private ClusterConfig _clusterConfig;
         private CognitoOptions _cognitoOptions;
@@ -135,6 +136,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAdvancedSecurityOptions()
         {
             return this._advancedSecurityOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AIMLOptions. 
+        /// <para>
+        /// Options for all machine learning features for the specified domain.
+        /// </para>
+        /// </summary>
+        public AIMLOptionsInput AIMLOptions
+        {
+            get { return this._aimlOptions; }
+            set { this._aimlOptions = value; }
+        }
+
+        // Check to see if AIMLOptions property is set
+        internal bool IsSetAIMLOptions()
+        {
+            return this._aimlOptions != null;
         }
 
         /// <summary>
@@ -238,9 +257,9 @@ namespace Amazon.OpenSearchService.Model
         /// run determines what type of deployment the update will cause.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

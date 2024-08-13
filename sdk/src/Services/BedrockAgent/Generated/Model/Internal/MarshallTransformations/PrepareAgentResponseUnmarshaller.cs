@@ -72,7 +72,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("preparedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.PreparedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

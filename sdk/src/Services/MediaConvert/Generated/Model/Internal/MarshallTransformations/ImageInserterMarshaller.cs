@@ -67,7 +67,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSdrReferenceWhiteLevel())
             {
                 context.Writer.WritePropertyName("sdrReferenceWhiteLevel");
-                context.Writer.Write(requestObject.SdrReferenceWhiteLevel);
+                context.Writer.Write(requestObject.SdrReferenceWhiteLevel.Value);
             }
 
         }

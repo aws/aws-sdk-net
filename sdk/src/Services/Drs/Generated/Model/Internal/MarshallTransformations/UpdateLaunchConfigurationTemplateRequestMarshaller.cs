@@ -70,13 +70,13 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCopyPrivateIp())
                 {
                     context.Writer.WritePropertyName("copyPrivateIp");
-                    context.Writer.Write(publicRequest.CopyPrivateIp);
+                    context.Writer.Write(publicRequest.CopyPrivateIp.Value);
                 }
 
                 if(publicRequest.IsSetCopyTags())
                 {
                     context.Writer.WritePropertyName("copyTags");
-                    context.Writer.Write(publicRequest.CopyTags);
+                    context.Writer.Write(publicRequest.CopyTags.Value);
                 }
 
                 if(publicRequest.IsSetExportBucketArn())
@@ -100,7 +100,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLaunchIntoSourceInstance())
                 {
                     context.Writer.WritePropertyName("launchIntoSourceInstance");
-                    context.Writer.Write(publicRequest.LaunchIntoSourceInstance);
+                    context.Writer.Write(publicRequest.LaunchIntoSourceInstance.Value);
                 }
 
                 if(publicRequest.IsSetLicensing())
@@ -117,7 +117,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPostLaunchEnabled())
                 {
                     context.Writer.WritePropertyName("postLaunchEnabled");
-                    context.Writer.Write(publicRequest.PostLaunchEnabled);
+                    context.Writer.Write(publicRequest.PostLaunchEnabled.Value);
                 }
 
                 if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())

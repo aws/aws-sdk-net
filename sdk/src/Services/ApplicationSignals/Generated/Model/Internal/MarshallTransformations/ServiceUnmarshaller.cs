@@ -78,6 +78,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogGroupReferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Dictionary<string, string>, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    unmarshalledObject.LogGroupReferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MetricReferences", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<MetricReference, MetricReferenceUnmarshaller>(MetricReferenceUnmarshaller.Instance);

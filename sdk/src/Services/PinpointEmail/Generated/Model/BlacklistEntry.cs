@@ -64,9 +64,9 @@ namespace Amazon.PinpointEmail.Model
         /// The time when the blacklisting event occurred, shown in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime ListingTime
+        public DateTime? ListingTime
         {
-            get { return this._listingTime.GetValueOrDefault(); }
+            get { return this._listingTime; }
             set { this._listingTime = value; }
         }
 

@@ -81,9 +81,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// Determine if an input is required from the template.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

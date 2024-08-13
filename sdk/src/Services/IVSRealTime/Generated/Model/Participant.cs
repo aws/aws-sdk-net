@@ -116,9 +116,9 @@ namespace Amazon.IVSRealTime.Model
         /// session.
         /// </para>
         /// </summary>
-        public DateTime FirstJoinTime
+        public DateTime? FirstJoinTime
         {
-            get { return this._firstJoinTime.GetValueOrDefault(); }
+            get { return this._firstJoinTime; }
             set { this._firstJoinTime = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.IVSRealTime.Model
         /// Whether the participant ever published to the stage session.
         /// </para>
         /// </summary>
-        public bool Published
+        public bool? Published
         {
-            get { return this._published.GetValueOrDefault(); }
+            get { return this._published; }
             set { this._published = value; }
         }
 
@@ -226,7 +226,7 @@ namespace Amazon.IVSRealTime.Model
         /// Gets and sets the property RecordingS3BucketName. 
         /// <para>
         /// Name of the S3 bucket to where the participant is being recorded, if individual participant
-        /// recording is enabled, or "" (empty string), if recording is not enabled.
+        /// recording is enabled, or <c>""</c> (empty string), if recording is not enabled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=63)]
@@ -245,8 +245,9 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property RecordingS3Prefix. 
         /// <para>
-        /// S3 prefix of the S3 bucket to where the participant is being recorded, if individual
-        /// participant recording is enabled, or "" (empty string), if recording is not enabled.
+        /// S3 prefix of the S3 bucket where the participant is being recorded, if individual
+        /// participant recording is enabled, or <c>""</c> (empty string), if recording is not
+        /// enabled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -265,7 +266,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property RecordingState. 
         /// <para>
-        /// Participant’s recording state.
+        /// The participant’s recording state.
         /// </para>
         /// </summary>
         public ParticipantRecordingState RecordingState

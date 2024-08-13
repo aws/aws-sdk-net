@@ -109,9 +109,9 @@ namespace Amazon.WAFV2.Model
         /// The timestamp of the release. 
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

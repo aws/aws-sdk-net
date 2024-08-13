@@ -30,24 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>InputRecords</c>, <c>TotalRecordsProcessed</c>, <c>MatchIDs</c>,
-    /// and <c>RecordsNotProcessed</c>.
+    /// An object containing <c>InputRecords</c>, <c>RecordsNotProcessed</c>, <c>TotalRecordsProcessed</c>,
+    /// <c>TotalMappedRecords</c>, <c>TotalMappedSourceRecords</c>, and <c>TotalMappedTargetRecords</c>.
     /// </summary>
     public partial class IdMappingJobMetrics
     {
         private int? _inputRecords;
         private int? _recordsNotProcessed;
+        private int? _totalMappedRecords;
+        private int? _totalMappedSourceRecords;
+        private int? _totalMappedTargetRecords;
         private int? _totalRecordsProcessed;
 
         /// <summary>
         /// Gets and sets the property InputRecords. 
         /// <para>
-        /// The total number of input records.
+        /// The total number of records that were input for processing.
         /// </para>
         /// </summary>
-        public int InputRecords
+        public int? InputRecords
         {
-            get { return this._inputRecords.GetValueOrDefault(); }
+            get { return this._inputRecords; }
             set { this._inputRecords = value; }
         }
 
@@ -63,9 +66,9 @@ namespace Amazon.EntityResolution.Model
         /// The total number of records that did not get processed.
         /// </para>
         /// </summary>
-        public int RecordsNotProcessed
+        public int? RecordsNotProcessed
         {
-            get { return this._recordsNotProcessed.GetValueOrDefault(); }
+            get { return this._recordsNotProcessed; }
             set { this._recordsNotProcessed = value; }
         }
 
@@ -76,14 +79,68 @@ namespace Amazon.EntityResolution.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalRecordsProcessed. 
+        /// Gets and sets the property TotalMappedRecords. 
         /// <para>
-        /// The total number of records processed.
+        ///  The total number of records that were mapped.
         /// </para>
         /// </summary>
-        public int TotalRecordsProcessed
+        public int? TotalMappedRecords
         {
-            get { return this._totalRecordsProcessed.GetValueOrDefault(); }
+            get { return this._totalMappedRecords; }
+            set { this._totalMappedRecords = value; }
+        }
+
+        // Check to see if TotalMappedRecords property is set
+        internal bool IsSetTotalMappedRecords()
+        {
+            return this._totalMappedRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalMappedSourceRecords. 
+        /// <para>
+        ///  The total number of mapped source records.
+        /// </para>
+        /// </summary>
+        public int? TotalMappedSourceRecords
+        {
+            get { return this._totalMappedSourceRecords; }
+            set { this._totalMappedSourceRecords = value; }
+        }
+
+        // Check to see if TotalMappedSourceRecords property is set
+        internal bool IsSetTotalMappedSourceRecords()
+        {
+            return this._totalMappedSourceRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalMappedTargetRecords. 
+        /// <para>
+        ///  The total number of distinct mapped target records.
+        /// </para>
+        /// </summary>
+        public int? TotalMappedTargetRecords
+        {
+            get { return this._totalMappedTargetRecords; }
+            set { this._totalMappedTargetRecords = value; }
+        }
+
+        // Check to see if TotalMappedTargetRecords property is set
+        internal bool IsSetTotalMappedTargetRecords()
+        {
+            return this._totalMappedTargetRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalRecordsProcessed. 
+        /// <para>
+        /// The total number of records that were processed.
+        /// </para>
+        /// </summary>
+        public int? TotalRecordsProcessed
+        {
+            get { return this._totalRecordsProcessed; }
             set { this._totalRecordsProcessed = value; }
         }
 

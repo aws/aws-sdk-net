@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to include trust data sent by trust providers in the logs.
         /// </para>
         /// </summary>
-        public bool IncludeTrustContext
+        public bool? IncludeTrustContext
         {
-            get { return this._includeTrustContext.GetValueOrDefault(); }
+            get { return this._includeTrustContext; }
             set { this._includeTrustContext = value; }
         }
 

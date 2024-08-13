@@ -76,25 +76,25 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExecutionNumber())
                 {
                     context.Writer.WritePropertyName("executionNumber");
-                    context.Writer.Write(publicRequest.ExecutionNumber);
+                    context.Writer.Write(publicRequest.ExecutionNumber.Value);
                 }
 
                 if(publicRequest.IsSetExpectedVersion())
                 {
                     context.Writer.WritePropertyName("expectedVersion");
-                    context.Writer.Write(publicRequest.ExpectedVersion);
+                    context.Writer.Write(publicRequest.ExpectedVersion.Value);
                 }
 
                 if(publicRequest.IsSetIncludeJobDocument())
                 {
                     context.Writer.WritePropertyName("includeJobDocument");
-                    context.Writer.Write(publicRequest.IncludeJobDocument);
+                    context.Writer.Write(publicRequest.IncludeJobDocument.Value);
                 }
 
                 if(publicRequest.IsSetIncludeJobExecutionState())
                 {
                     context.Writer.WritePropertyName("includeJobExecutionState");
-                    context.Writer.Write(publicRequest.IncludeJobExecutionState);
+                    context.Writer.Write(publicRequest.IncludeJobExecutionState.Value);
                 }
 
                 if(publicRequest.IsSetStatus())
@@ -120,7 +120,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStepTimeoutInMinutes())
                 {
                     context.Writer.WritePropertyName("stepTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.StepTimeoutInMinutes);
+                    context.Writer.Write(publicRequest.StepTimeoutInMinutes.Value);
                 }
 
                 writer.WriteObjectEnd();

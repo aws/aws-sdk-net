@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// IPv6 addresses.
         /// </para>
         /// </summary>
-        public int Ipv6AddressCount
+        public int? Ipv6AddressCount
         {
-            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            get { return this._ipv6AddressCount; }
             set { this._ipv6AddressCount = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.EC2.Model
         /// network interface. You cannot use this option if you use the <c>Ipv6Prefixes</c> option.
         /// </para>
         /// </summary>
-        public int Ipv6PrefixCount
+        public int? Ipv6PrefixCount
         {
-            get { return this._ipv6PrefixCount.GetValueOrDefault(); }
+            get { return this._ipv6PrefixCount; }
             set { this._ipv6PrefixCount = value; }
         }
 

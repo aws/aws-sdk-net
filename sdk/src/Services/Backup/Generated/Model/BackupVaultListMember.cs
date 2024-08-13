@@ -92,9 +92,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.Backup.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime LockDate
+        public DateTime? LockDate
         {
-            get { return this._lockDate.GetValueOrDefault(); }
+            get { return this._lockDate; }
             set { this._lockDate = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.Backup.Model
         /// points in the selected vault.
         /// </para>
         /// </summary>
-        public bool Locked
+        public bool? Locked
         {
-            get { return this._locked.GetValueOrDefault(); }
+            get { return this._locked; }
             set { this._locked = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.Backup.Model
         /// are not affected.
         /// </para>
         /// </summary>
-        public long MaxRetentionDays
+        public long? MaxRetentionDays
         {
-            get { return this._maxRetentionDays.GetValueOrDefault(); }
+            get { return this._maxRetentionDays; }
             set { this._maxRetentionDays = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.Backup.Model
         /// are not affected.
         /// </para>
         /// </summary>
-        public long MinRetentionDays
+        public long? MinRetentionDays
         {
-            get { return this._minRetentionDays.GetValueOrDefault(); }
+            get { return this._minRetentionDays; }
             set { this._minRetentionDays = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.Backup.Model
         /// The number of recovery points that are stored in a backup vault.
         /// </para>
         /// </summary>
-        public long NumberOfRecoveryPoints
+        public long? NumberOfRecoveryPoints
         {
-            get { return this._numberOfRecoveryPoints.GetValueOrDefault(); }
+            get { return this._numberOfRecoveryPoints; }
             set { this._numberOfRecoveryPoints = value; }
         }
 

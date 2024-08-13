@@ -48,9 +48,9 @@ namespace Amazon.EC2.Model
         /// The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
         /// </para>
         /// </summary>
-        public long AmazonSideAsn
+        public long? AmazonSideAsn
         {
-            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            get { return this._amazonSideAsn; }
             set { this._amazonSideAsn = value; }
         }
 

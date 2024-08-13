@@ -137,9 +137,9 @@ namespace Amazon.Snowball.Model
         /// This field is not supported in most regions.
         /// </para>
         /// </summary>
-        public bool IsRestricted
+        public bool? IsRestricted
         {
-            get { return this._isRestricted.GetValueOrDefault(); }
+            get { return this._isRestricted; }
             set { this._isRestricted = value; }
         }
 

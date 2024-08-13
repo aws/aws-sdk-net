@@ -84,13 +84,13 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScoreThreshold())
                 {
                     context.Writer.WritePropertyName("ScoreThreshold");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.ScoreThreshold))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ScoreThreshold.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ScoreThreshold));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ScoreThreshold.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.ScoreThreshold);
+                        context.Writer.Write(publicRequest.ScoreThreshold.Value);
                     }
                 }
 

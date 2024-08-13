@@ -76,7 +76,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetWorkUnitId())
                 {
                     context.Writer.WritePropertyName("WorkUnitId");
-                    context.Writer.Write(publicRequest.WorkUnitId);
+                    context.Writer.Write(publicRequest.WorkUnitId.Value);
                 }
 
                 if(publicRequest.IsSetWorkUnitToken())

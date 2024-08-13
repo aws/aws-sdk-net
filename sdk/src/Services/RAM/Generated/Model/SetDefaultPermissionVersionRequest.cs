@@ -104,9 +104,9 @@ namespace Amazon.RAM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int PermissionVersion
+        public int? PermissionVersion
         {
-            get { return this._permissionVersion.GetValueOrDefault(); }
+            get { return this._permissionVersion; }
             set { this._permissionVersion = value; }
         }
 

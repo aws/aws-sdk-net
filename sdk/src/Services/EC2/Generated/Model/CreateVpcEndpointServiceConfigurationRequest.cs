@@ -78,9 +78,9 @@ namespace Amazon.EC2.Model
         /// must be accepted manually.
         /// </para>
         /// </summary>
-        public bool AcceptanceRequired
+        public bool? AcceptanceRequired
         {
-            get { return this._acceptanceRequired.GetValueOrDefault(); }
+            get { return this._acceptanceRequired; }
             set { this._acceptanceRequired = value; }
         }
 

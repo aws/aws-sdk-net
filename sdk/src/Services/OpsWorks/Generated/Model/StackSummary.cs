@@ -47,9 +47,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of apps.
         /// </para>
         /// </summary>
-        public int AppsCount
+        public int? AppsCount
         {
-            get { return this._appsCount.GetValueOrDefault(); }
+            get { return this._appsCount; }
             set { this._appsCount = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of layers.
         /// </para>
         /// </summary>
-        public int LayersCount
+        public int? LayersCount
         {
-            get { return this._layersCount.GetValueOrDefault(); }
+            get { return this._layersCount; }
             set { this._layersCount = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.SecurityHub.Model
         /// context, and evaluated mapping templates, regardless of logging level. 
         /// </para>
         /// </summary>
-        public bool ExcludeVerboseContent
+        public bool? ExcludeVerboseContent
         {
-            get { return this._excludeVerboseContent.GetValueOrDefault(); }
+            get { return this._excludeVerboseContent; }
             set { this._excludeVerboseContent = value; }
         }
 

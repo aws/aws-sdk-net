@@ -76,13 +76,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("LatestVersion", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.LatestVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TrafficPolicyCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TrafficPolicyCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

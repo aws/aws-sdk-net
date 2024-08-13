@@ -51,13 +51,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDtcRequestIntervalSeconds())
             {
                 context.Writer.WritePropertyName("dtcRequestIntervalSeconds");
-                context.Writer.Write(requestObject.DtcRequestIntervalSeconds);
+                context.Writer.Write(requestObject.DtcRequestIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetHasTransmissionEcu())
             {
                 context.Writer.WritePropertyName("hasTransmissionEcu");
-                context.Writer.Write(requestObject.HasTransmissionEcu);
+                context.Writer.Write(requestObject.HasTransmissionEcu.Value);
             }
 
             if(requestObject.IsSetName())
@@ -75,19 +75,19 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPidRequestIntervalSeconds())
             {
                 context.Writer.WritePropertyName("pidRequestIntervalSeconds");
-                context.Writer.Write(requestObject.PidRequestIntervalSeconds);
+                context.Writer.Write(requestObject.PidRequestIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetRequestMessageId())
             {
                 context.Writer.WritePropertyName("requestMessageId");
-                context.Writer.Write(requestObject.RequestMessageId);
+                context.Writer.Write(requestObject.RequestMessageId.Value);
             }
 
             if(requestObject.IsSetUseExtendedIds())
             {
                 context.Writer.WritePropertyName("useExtendedIds");
-                context.Writer.Write(requestObject.UseExtendedIds);
+                context.Writer.Write(requestObject.UseExtendedIds.Value);
             }
 
         }

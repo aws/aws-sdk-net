@@ -69,9 +69,9 @@ namespace Amazon.Backup.Model
         /// Time in number when legal hold was cancelled.
         /// </para>
         /// </summary>
-        public DateTime CancellationDate
+        public DateTime? CancellationDate
         {
-            get { return this._cancellationDate.GetValueOrDefault(); }
+            get { return this._cancellationDate; }
             set { this._cancellationDate = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Backup.Model
         /// Time in number format when legal hold was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.Backup.Model
         /// This is the date and time until which the legal hold record will be retained.
         /// </para>
         /// </summary>
-        public DateTime RetainRecordUntil
+        public DateTime? RetainRecordUntil
         {
-            get { return this._retainRecordUntil.GetValueOrDefault(); }
+            get { return this._retainRecordUntil; }
             set { this._retainRecordUntil = value; }
         }
 

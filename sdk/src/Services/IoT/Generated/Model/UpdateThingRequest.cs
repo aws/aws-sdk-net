@@ -81,9 +81,9 @@ namespace Amazon.IoT.Model
         /// <c>UpdateThing</c> request is rejected with a <c>VersionConflictException</c>.
         /// </para>
         /// </summary>
-        public long ExpectedVersion
+        public long? ExpectedVersion
         {
-            get { return this._expectedVersion.GetValueOrDefault(); }
+            get { return this._expectedVersion; }
             set { this._expectedVersion = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.IoT.Model
         /// Remove a thing type association. If <b>true</b>, the association is removed.
         /// </para>
         /// </summary>
-        public bool RemoveThingType
+        public bool? RemoveThingType
         {
-            get { return this._removeThingType.GetValueOrDefault(); }
+            get { return this._removeThingType; }
             set { this._removeThingType = value; }
         }
 

@@ -50,8 +50,9 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// If you don't want to specify any cache behaviors, include only an empty <c>CacheBehaviors</c>
-    /// element. For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheBehaviors.html">CacheBehaviors</a>.
-    /// Don't include an empty <c>CacheBehavior</c> element because this is invalid.
+    /// element. Don't specify an empty individual <c>CacheBehavior</c> element, because this
+    /// is invalid. For more information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheBehaviors.html">CacheBehaviors</a>.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -141,9 +142,9 @@ namespace Amazon.CloudFront.Model
         /// Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool Compress
+        public bool? Compress
         {
-            get { return this._compress.GetValueOrDefault(); }
+            get { return this._compress; }
             set { this._compress = value; }
         }
 
@@ -173,9 +174,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use CachePolicy instead.")]
-        public long DefaultTTL
+        public long? DefaultTTL
         {
-            get { return this._defaultTTL.GetValueOrDefault(); }
+            get { return this._defaultTTL; }
             set { this._defaultTTL = value; }
         }
 
@@ -308,9 +309,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use CachePolicy instead.")]
-        public long MaxTTL
+        public long? MaxTTL
         {
-            get { return this._maxTTL.GetValueOrDefault(); }
+            get { return this._maxTTL; }
             set { this._maxTTL = value; }
         }
 
@@ -344,9 +345,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use CachePolicy instead.")]
-        public long MinTTL
+        public long? MinTTL
         {
-            get { return this._minTTL.GetValueOrDefault(); }
+            get { return this._minTTL; }
             set { this._minTTL = value; }
         }
 
@@ -464,9 +465,9 @@ namespace Amazon.CloudFront.Model
         /// the value of <c>PathPattern</c>.
         /// </para>
         /// </summary>
-        public bool SmoothStreaming
+        public bool? SmoothStreaming
         {
-            get { return this._smoothStreaming.GetValueOrDefault(); }
+            get { return this._smoothStreaming; }
             set { this._smoothStreaming = value; }
         }
 

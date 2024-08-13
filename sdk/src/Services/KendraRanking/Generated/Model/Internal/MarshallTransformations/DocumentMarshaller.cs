@@ -69,13 +69,13 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOriginalScore())
             {
                 context.Writer.WritePropertyName("OriginalScore");
-                if(StringUtils.IsSpecialFloatValue(requestObject.OriginalScore))
+                if(StringUtils.IsSpecialFloatValue(requestObject.OriginalScore.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.OriginalScore));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.OriginalScore.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.OriginalScore);
+                    context.Writer.Write(requestObject.OriginalScore.Value);
                 }
             }
 

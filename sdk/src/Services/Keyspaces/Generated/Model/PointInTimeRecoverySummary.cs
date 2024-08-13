@@ -43,9 +43,9 @@ namespace Amazon.Keyspaces.Model
         /// Specifies the earliest possible restore point of the table in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime EarliestRestorableTimestamp
+        public DateTime? EarliestRestorableTimestamp
         {
-            get { return this._earliestRestorableTimestamp.GetValueOrDefault(); }
+            get { return this._earliestRestorableTimestamp; }
             set { this._earliestRestorableTimestamp = value; }
         }
 

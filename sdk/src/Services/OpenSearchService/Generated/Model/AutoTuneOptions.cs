@@ -111,9 +111,9 @@ namespace Amazon.OpenSearchService.Model
         /// schedule.
         /// </para>
         /// </summary>
-        public bool UseOffPeakWindow
+        public bool? UseOffPeakWindow
         {
-            get { return this._useOffPeakWindow.GetValueOrDefault(); }
+            get { return this._useOffPeakWindow; }
             set { this._useOffPeakWindow = value; }
         }
 

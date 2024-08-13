@@ -87,9 +87,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// namespace.
         /// </para>
         /// </summary>
-        public long NamespaceVersion
+        public long? NamespaceVersion
         {
-            get { return this._namespaceVersion.GetValueOrDefault(); }
+            get { return this._namespaceVersion; }
             set { this._namespaceVersion = value; }
         }
 

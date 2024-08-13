@@ -66,9 +66,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The UTC timestamp when the delete operation started.
         /// </para>
         /// </summary>
-        public DateTime DeletionStartTime
+        public DateTime? DeletionStartTime
         {
-            get { return this._deletionStartTime.GetValueOrDefault(); }
+            get { return this._deletionStartTime; }
             set { this._deletionStartTime = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The UTC timestamp of when the last status report.
         /// </para>
         /// </summary>
-        public DateTime LastStatusUpdateTime
+        public DateTime? LastStatusUpdateTime
         {
-            get { return this._lastStatusUpdateTime.GetValueOrDefault(); }
+            get { return this._lastStatusUpdateTime; }
             set { this._lastStatusUpdateTime = value; }
         }
 

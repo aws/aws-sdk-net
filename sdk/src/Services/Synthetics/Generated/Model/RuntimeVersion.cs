@@ -47,9 +47,9 @@ namespace Amazon.Synthetics.Model
         /// If this runtime version is deprecated, this value is the date of deprecation.
         /// </para>
         /// </summary>
-        public DateTime DeprecationDate
+        public DateTime? DeprecationDate
         {
-            get { return this._deprecationDate.GetValueOrDefault(); }
+            get { return this._deprecationDate; }
             set { this._deprecationDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Synthetics.Model
         /// The date that the runtime version was released.
         /// </para>
         /// </summary>
-        public DateTime ReleaseDate
+        public DateTime? ReleaseDate
         {
-            get { return this._releaseDate.GetValueOrDefault(); }
+            get { return this._releaseDate; }
             set { this._releaseDate = value; }
         }
 

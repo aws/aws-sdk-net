@@ -71,9 +71,9 @@ namespace Amazon.SsmSap.Model
         /// shut down the associated Amazon EC2 instance in addition to the application.
         /// </para>
         /// </summary>
-        public bool IncludeEc2InstanceShutdown
+        public bool? IncludeEc2InstanceShutdown
         {
-            get { return this._includeEc2InstanceShutdown.GetValueOrDefault(); }
+            get { return this._includeEc2InstanceShutdown; }
             set { this._includeEc2InstanceShutdown = value; }
         }
 

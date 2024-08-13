@@ -482,9 +482,9 @@ namespace Amazon.S3.Model
         /// Part number of part being uploaded. This is a positive integer between 1 and 10,000.
         /// </para>
         /// </summary>
-        public int PartNumber
+        public int? PartNumber
         {
-            get { return this.partNumber.GetValueOrDefault(); }
+            get { return this.partNumber; }
             set { this.partNumber = value; }
         }
 
@@ -679,9 +679,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The size of the part to be uploaded.
         /// </summary>
-        public long PartSize
+        public long? PartSize
         {
-            get { return this.partSize.GetValueOrDefault(); }
+            get { return this.partSize; }
             set { this.partSize = value; }
         }
 
@@ -721,9 +721,9 @@ namespace Amazon.S3.Model
         /// Position in the file specified by FilePath from which to retrieve the content of the part. 
         /// This field is required when a file path is specified. It is ignored when using the InputStream property.
         /// </summary>
-        public long FilePosition
+        public long? FilePosition
         {
-            get { return this.filePosition.GetValueOrDefault(); }
+            get { return this.filePosition; }
             set { this.filePosition = value; }
         }
 

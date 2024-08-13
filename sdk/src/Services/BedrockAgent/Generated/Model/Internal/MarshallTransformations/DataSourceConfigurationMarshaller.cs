@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConfluenceConfiguration())
+            {
+                context.Writer.WritePropertyName("confluenceConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConfluenceDataSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfluenceConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("s3Configuration");
@@ -59,10 +70,43 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSalesforceConfiguration())
+            {
+                context.Writer.WritePropertyName("salesforceConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SalesforceDataSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SalesforceConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSharePointConfiguration())
+            {
+                context.Writer.WritePropertyName("sharePointConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SharePointDataSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SharePointConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
                 context.Writer.Write(requestObject.Type);
+            }
+
+            if(requestObject.IsSetWebConfiguration())
+            {
+                context.Writer.WritePropertyName("webConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WebDataSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.WebConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

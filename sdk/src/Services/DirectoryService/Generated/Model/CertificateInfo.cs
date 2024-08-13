@@ -82,9 +82,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time when the certificate will expire.
         /// </para>
         /// </summary>
-        public DateTime ExpiryDateTime
+        public DateTime? ExpiryDateTime
         {
-            get { return this._expiryDateTime.GetValueOrDefault(); }
+            get { return this._expiryDateTime; }
             set { this._expiryDateTime = value; }
         }
 

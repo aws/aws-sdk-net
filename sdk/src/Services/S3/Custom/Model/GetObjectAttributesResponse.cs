@@ -70,9 +70,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool DeleteMarker
+        public bool? DeleteMarker
         {
-            get { return this._deleteMarker.GetValueOrDefault(); }
+            get { return this._deleteMarker; }
             set { this._deleteMarker = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.S3.Model
         /// Creation date of the object.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.S3.Model
         /// The size of the object in bytes.
         /// </para>
         /// </summary>
-        public long ObjectSize
+        public long? ObjectSize
         {
-            get { return this._objectSize.GetValueOrDefault(); }
+            get { return this._objectSize; }
             set { this._objectSize = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Adjustable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Adjustable = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("GlobalQuota", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GlobalQuota = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -146,7 +146,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.Organizations.Model
         /// The date that the service principal was enabled for integration with Organizations.
         /// </para>
         /// </summary>
-        public DateTime DateEnabled
+        public DateTime? DateEnabled
         {
-            get { return this._dateEnabled.GetValueOrDefault(); }
+            get { return this._dateEnabled; }
             set { this._dateEnabled = value; }
         }
 

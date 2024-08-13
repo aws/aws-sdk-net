@@ -232,9 +232,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether jumbo frames are supported.
         /// </para>
         /// </summary>
-        public bool JumboFrameCapable
+        public bool? JumboFrameCapable
         {
-            get { return this._jumboFrameCapable.GetValueOrDefault(); }
+            get { return this._jumboFrameCapable; }
             set { this._jumboFrameCapable = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.DirectConnect.Model
         /// The time of the most recent call to <a>DescribeLoa</a> for this connection.
         /// </para>
         /// </summary>
-        public DateTime LoaIssueTime
+        public DateTime? LoaIssueTime
         {
-            get { return this._loaIssueTime.GetValueOrDefault(); }
+            get { return this._loaIssueTime; }
             set { this._loaIssueTime = value; }
         }
 

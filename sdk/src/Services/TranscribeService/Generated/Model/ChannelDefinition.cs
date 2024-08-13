@@ -47,9 +47,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public int ChannelId
+        public int? ChannelId
         {
-            get { return this._channelId.GetValueOrDefault(); }
+            get { return this._channelId; }
             set { this._channelId = value; }
         }
 

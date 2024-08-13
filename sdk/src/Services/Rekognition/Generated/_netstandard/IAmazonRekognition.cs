@@ -3243,6 +3243,11 @@ namespace Amazon.Rekognition
         /// To get the next page of results, call <c>GetlabelDetection</c> and populate the <c>NextToken</c>
         /// request parameter with the token value returned from the previous call to <c>GetLabelDetection</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are retrieving results while using the Amazon Simple Notification Service,
+        /// note that you will receive an "ERROR" notification if the job encounters an issue.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLabelDetection service method.</param>
         /// <param name="cancellationToken">
@@ -5794,5 +5799,33 @@ namespace Amazon.Rekognition
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonRekognitionConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonRekognitionConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonRekognitionConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonRekognitionConfig to create AmazonRekognitionClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonRekognitionClient(serviceClientConfig) :
+                    new AmazonRekognitionClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

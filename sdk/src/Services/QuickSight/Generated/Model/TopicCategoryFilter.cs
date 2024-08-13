@@ -102,9 +102,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean value that indicates if the filter is inverse.
         /// </para>
         /// </summary>
-        public bool Inverse
+        public bool? Inverse
         {
-            get { return this._inverse.GetValueOrDefault(); }
+            get { return this._inverse; }
             set { this._inverse = value; }
         }
 

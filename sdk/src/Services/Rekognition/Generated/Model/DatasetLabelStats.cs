@@ -44,9 +44,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BoundingBoxCount
+        public int? BoundingBoxCount
         {
-            get { return this._boundingBoxCount.GetValueOrDefault(); }
+            get { return this._boundingBoxCount; }
             set { this._boundingBoxCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int EntryCount
+        public int? EntryCount
         {
-            get { return this._entryCount.GetValueOrDefault(); }
+            get { return this._entryCount; }
             set { this._entryCount = value; }
         }
 

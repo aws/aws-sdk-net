@@ -44,9 +44,9 @@ namespace Amazon.APIGateway.Model
         /// The target maximum number of requests that can be made in a given time period.
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.APIGateway.Model
         /// The number of requests subtracted from the given limit in the initial time period.
         /// </para>
         /// </summary>
-        public int Offset
+        public int? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 

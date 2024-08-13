@@ -62,9 +62,9 @@ namespace Amazon.TranscribeService.Model
         /// processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.TranscribeService.Model
         /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.TranscribeService.Model
         /// that the identified language correctly matches the language spoken in your media.
         /// </para>
         /// </summary>
-        public float IdentifiedLanguageScore
+        public float? IdentifiedLanguageScore
         {
-            get { return this._identifiedLanguageScore.GetValueOrDefault(); }
+            get { return this._identifiedLanguageScore; }
             set { this._identifiedLanguageScore = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.TranscribeService.Model
         /// the specified transcription job.
         /// </para>
         /// </summary>
-        public bool IdentifyLanguage
+        public bool? IdentifyLanguage
         {
-            get { return this._identifyLanguage.GetValueOrDefault(); }
+            get { return this._identifyLanguage; }
             set { this._identifyLanguage = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.TranscribeService.Model
         /// for the specified transcription job.
         /// </para>
         /// </summary>
-        public bool IdentifyMultipleLanguages
+        public bool? IdentifyMultipleLanguages
         {
-            get { return this._identifyMultipleLanguages.GetValueOrDefault(); }
+            get { return this._identifyMultipleLanguages; }
             set { this._identifyMultipleLanguages = value; }
         }
 
@@ -293,9 +293,9 @@ namespace Amazon.TranscribeService.Model
         /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

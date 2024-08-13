@@ -51,13 +51,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEarliestScanStartTime())
             {
                 context.Writer.WritePropertyName("earliestScanStartTime");
-                context.Writer.Write(requestObject.EarliestScanStartTime);
+                context.Writer.Write(requestObject.EarliestScanStartTime.Value);
             }
 
             if(requestObject.IsSetLatestScanStartTime())
             {
                 context.Writer.WritePropertyName("latestScanStartTime");
-                context.Writer.Write(requestObject.LatestScanStartTime);
+                context.Writer.Write(requestObject.LatestScanStartTime.Value);
             }
 
         }

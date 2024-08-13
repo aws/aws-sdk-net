@@ -78,7 +78,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -101,13 +101,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetrieveActions())
                 {
                     context.Writer.WritePropertyName("RetrieveActions");
-                    context.Writer.Write(publicRequest.RetrieveActions);
+                    context.Writer.Write(publicRequest.RetrieveActions.Value);
                 }
 
                 if(publicRequest.IsSetRetrieveResults())
                 {
                     context.Writer.WritePropertyName("RetrieveResults");
-                    context.Writer.Write(publicRequest.RetrieveResults);
+                    context.Writer.Write(publicRequest.RetrieveResults.Value);
                 }
 
                 writer.WriteObjectEnd();

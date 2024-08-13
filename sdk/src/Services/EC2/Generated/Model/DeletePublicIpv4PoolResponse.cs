@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// Information about the result of deleting the public IPv4 pool.
         /// </para>
         /// </summary>
-        public bool ReturnValue
+        public bool? ReturnValue
         {
-            get { return this._returnValue.GetValueOrDefault(); }
+            get { return this._returnValue; }
             set { this._returnValue = value; }
         }
 

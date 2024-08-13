@@ -42,9 +42,9 @@ namespace Amazon.MediaLive.Model
         /// stream will be selected by default.
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int ProgramId
+        public int? ProgramId
         {
-            get { return this._programId.GetValueOrDefault(); }
+            get { return this._programId; }
             set { this._programId = value; }
         }
 

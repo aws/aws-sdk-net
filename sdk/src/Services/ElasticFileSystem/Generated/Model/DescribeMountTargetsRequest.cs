@@ -136,9 +136,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 

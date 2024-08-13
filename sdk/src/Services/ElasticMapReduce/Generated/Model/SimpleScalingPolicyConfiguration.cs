@@ -75,9 +75,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// trigger-related scaling activities can start. The default value is 0.
         /// </para>
         /// </summary>
-        public int CoolDown
+        public int? CoolDown
         {
-            get { return this._coolDown.GetValueOrDefault(); }
+            get { return this._coolDown; }
             set { this._coolDown = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ScalingAdjustment
+        public int? ScalingAdjustment
         {
-            get { return this._scalingAdjustment.GetValueOrDefault(); }
+            get { return this._scalingAdjustment; }
             set { this._scalingAdjustment = value; }
         }
 

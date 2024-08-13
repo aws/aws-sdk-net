@@ -60,13 +60,13 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("profileEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ProfileEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("profileStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ProfileStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

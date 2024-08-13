@@ -64,13 +64,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ObjectSizeGreaterThan", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.ObjectSizeGreaterThan = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ObjectSizeLessThan", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.ObjectSizeLessThan = unmarshaller.Unmarshall(context);
                         continue;
                     }

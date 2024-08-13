@@ -54,7 +54,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DedicatedIpAutoWarmupEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DedicatedIpAutoWarmupEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -72,13 +72,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProductionAccessEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ProductionAccessEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SendingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.SendingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

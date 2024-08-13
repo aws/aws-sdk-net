@@ -92,9 +92,9 @@ namespace Amazon.AppStream.Model
         /// The time at which the application was created within the app block.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.AppStream.Model
         /// If there is a problem, the application can be disabled after image creation.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

@@ -86,7 +86,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("predictedValue", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.PredictedValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

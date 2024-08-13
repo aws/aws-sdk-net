@@ -111,9 +111,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ForceRediscovery. If true, will force a rediscovery of
         /// a signal map if an unchanged discoveryEntryPointArn is provided.
         /// </summary>
-        public bool ForceRediscovery
+        public bool? ForceRediscovery
         {
-            get { return this._forceRediscovery.GetValueOrDefault(); }
+            get { return this._forceRediscovery; }
             set { this._forceRediscovery = value; }
         }
 

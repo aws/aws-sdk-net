@@ -113,9 +113,9 @@ namespace Amazon.MediaConvert.Model
         /// output segmenting.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int GopClosedCadence
+        public int? GopClosedCadence
         {
-            get { return this._gopClosedCadence.GetValueOrDefault(); }
+            get { return this._gopClosedCadence; }
             set { this._gopClosedCadence = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.MediaConvert.Model
         /// MediaConvert calculates the default by doubling the bitrate of this output point.
         /// </summary>
         [AWSProperty(Min=0, Max=1152000000)]
-        public int HrdBufferSize
+        public int? HrdBufferSize
         {
-            get { return this._hrdBufferSize.GetValueOrDefault(); }
+            get { return this._hrdBufferSize; }
             set { this._hrdBufferSize = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.MediaConvert.Model
         /// or equal to half the number of macroblock rows for interlaced pictures.
         /// </summary>
         [AWSProperty(Min=4, Max=12)]
-        public int Slices
+        public int? Slices
         {
-            get { return this._slices.GetValueOrDefault(); }
+            get { return this._slices; }
             set { this._slices = value; }
         }
 

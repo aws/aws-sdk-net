@@ -51,7 +51,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticallyAfterDays())
             {
                 context.Writer.WritePropertyName("AutomaticallyAfterDays");
-                context.Writer.Write(requestObject.AutomaticallyAfterDays);
+                context.Writer.Write(requestObject.AutomaticallyAfterDays.Value);
             }
 
             if(requestObject.IsSetDuration())

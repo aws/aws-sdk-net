@@ -82,9 +82,9 @@ namespace Amazon.SageMaker.Model
         /// The value of the objective metric.
         /// </para>
         /// </summary>
-        public float TargetObjectiveMetricValue
+        public float? TargetObjectiveMetricValue
         {
-            get { return this._targetObjectiveMetricValue.GetValueOrDefault(); }
+            get { return this._targetObjectiveMetricValue; }
             set { this._targetObjectiveMetricValue = value; }
         }
 

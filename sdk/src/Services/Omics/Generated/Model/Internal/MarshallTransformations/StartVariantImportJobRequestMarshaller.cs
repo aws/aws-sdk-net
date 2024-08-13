@@ -112,7 +112,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRunLeftNormalization())
                 {
                     context.Writer.WritePropertyName("runLeftNormalization");
-                    context.Writer.Write(publicRequest.RunLeftNormalization);
+                    context.Writer.Write(publicRequest.RunLeftNormalization.Value);
                 }
 
                 writer.WriteObjectEnd();

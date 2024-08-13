@@ -126,9 +126,9 @@ namespace Amazon.CodeBuild.Model
         /// of other batch builds does not change.
         /// </para>
         /// </summary>
-        public long BuildBatchNumber
+        public long? BuildBatchNumber
         {
-            get { return this._buildBatchNumber.GetValueOrDefault(); }
+            get { return this._buildBatchNumber; }
             set { this._buildBatchNumber = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.CodeBuild.Model
         /// completed in.
         /// </para>
         /// </summary>
-        public int BuildTimeoutInMinutes
+        public int? BuildTimeoutInMinutes
         {
-            get { return this._buildTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._buildTimeoutInMinutes; }
             set { this._buildTimeoutInMinutes = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.CodeBuild.Model
         /// Indicates if the batch build is complete.
         /// </para>
         /// </summary>
-        public bool Complete
+        public bool? Complete
         {
-            get { return this._complete.GetValueOrDefault(); }
+            get { return this._complete; }
             set { this._complete = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.CodeBuild.Model
         /// matrix batch builds.
         /// </para>
         /// </summary>
-        public bool DebugSessionEnabled
+        public bool? DebugSessionEnabled
         {
-            get { return this._debugSessionEnabled.GetValueOrDefault(); }
+            get { return this._debugSessionEnabled; }
             set { this._debugSessionEnabled = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.CodeBuild.Model
         /// The date and time that the batch build ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -458,9 +458,9 @@ namespace Amazon.CodeBuild.Model
         /// before it times out.
         /// </para>
         /// </summary>
-        public int QueuedTimeoutInMinutes
+        public int? QueuedTimeoutInMinutes
         {
-            get { return this._queuedTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._queuedTimeoutInMinutes; }
             set { this._queuedTimeoutInMinutes = value; }
         }
 
@@ -644,9 +644,9 @@ namespace Amazon.CodeBuild.Model
         /// The date and time that the batch build started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

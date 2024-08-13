@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// Select fleets where the job was updated after X
         /// </para>
         /// </summary>
-        public DateTime LatestHeartbeatAfter
+        public DateTime? LatestHeartbeatAfter
         {
-            get { return this._latestHeartbeatAfter.GetValueOrDefault(); }
+            get { return this._latestHeartbeatAfter; }
             set { this._latestHeartbeatAfter = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

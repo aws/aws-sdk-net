@@ -247,7 +247,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsTrue(item["EmptyMap"].IsMSet);
             Assert.IsFalse(item["EmptyMap"].IsLSet);
             Assert.IsTrue(item["BoolFalse"].IsBOOLSet);
-            Assert.IsFalse(item["BoolFalse"].BOOL);
+            Assert.IsFalse(item["BoolFalse"].BOOL.Value);
             Assert.IsTrue(item["NonEmptyList"].IsLSet);
             Assert.AreEqual(nonEmptyListAV.L.Count, item["NonEmptyList"].L.Count);
 

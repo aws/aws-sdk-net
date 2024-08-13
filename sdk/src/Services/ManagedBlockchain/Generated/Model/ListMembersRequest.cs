@@ -55,9 +55,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// Services accountsn own (<c>false</c>). If omitted, all members are listed.
         /// </para>
         /// </summary>
-        public bool IsOwned
+        public bool? IsOwned
         {
-            get { return this._isOwned.GetValueOrDefault(); }
+            get { return this._isOwned; }
             set { this._isOwned = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

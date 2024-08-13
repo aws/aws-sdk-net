@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchService.Model
         /// of the specified domain. Default is <c>0</c> hours.
         /// </para>
         /// </summary>
-        public int AutomatedSnapshotStartHour
+        public int? AutomatedSnapshotStartHour
         {
-            get { return this._automatedSnapshotStartHour.GetValueOrDefault(); }
+            get { return this._automatedSnapshotStartHour; }
             set { this._automatedSnapshotStartHour = value; }
         }
 

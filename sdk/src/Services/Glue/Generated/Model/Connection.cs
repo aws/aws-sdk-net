@@ -329,9 +329,9 @@ namespace Amazon.Glue.Model
         /// The timestamp of the time that this connection definition was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -366,9 +366,9 @@ namespace Amazon.Glue.Model
         /// A timestamp of the time this connection was last validated.
         /// </para>
         /// </summary>
-        public DateTime LastConnectionValidationTime
+        public DateTime? LastConnectionValidationTime
         {
-            get { return this._lastConnectionValidationTime.GetValueOrDefault(); }
+            get { return this._lastConnectionValidationTime; }
             set { this._lastConnectionValidationTime = value; }
         }
 
@@ -403,9 +403,9 @@ namespace Amazon.Glue.Model
         /// The timestamp of the last time the connection definition was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

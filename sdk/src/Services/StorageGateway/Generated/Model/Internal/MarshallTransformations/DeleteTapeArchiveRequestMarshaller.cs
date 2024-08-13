@@ -72,7 +72,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBypassGovernanceRetention())
                 {
                     context.Writer.WritePropertyName("BypassGovernanceRetention");
-                    context.Writer.Write(publicRequest.BypassGovernanceRetention);
+                    context.Writer.Write(publicRequest.BypassGovernanceRetention.Value);
                 }
 
                 if(publicRequest.IsSetTapeARN())

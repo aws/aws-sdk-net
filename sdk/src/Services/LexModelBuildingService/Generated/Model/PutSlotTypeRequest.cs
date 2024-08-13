@@ -102,9 +102,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <c>createVersion</c>, the default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool CreateVersion
+        public bool? CreateVersion
         {
-            get { return this._createVersion.GetValueOrDefault(); }
+            get { return this._createVersion; }
             set { this._createVersion = value; }
         }
 

@@ -51,65 +51,65 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEq())
             {
                 context.Writer.WritePropertyName("Eq");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Eq))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Eq.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Eq));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Eq.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Eq);
+                    context.Writer.Write(requestObject.Eq.Value);
                 }
             }
 
             if(requestObject.IsSetGt())
             {
                 context.Writer.WritePropertyName("Gt");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Gt))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Gt.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gt));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gt.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Gt);
+                    context.Writer.Write(requestObject.Gt.Value);
                 }
             }
 
             if(requestObject.IsSetGte())
             {
                 context.Writer.WritePropertyName("Gte");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Gte))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Gte.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gte));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Gte.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Gte);
+                    context.Writer.Write(requestObject.Gte.Value);
                 }
             }
 
             if(requestObject.IsSetLt())
             {
                 context.Writer.WritePropertyName("Lt");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Lt))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lt.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lt));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lt.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lt);
+                    context.Writer.Write(requestObject.Lt.Value);
                 }
             }
 
             if(requestObject.IsSetLte())
             {
                 context.Writer.WritePropertyName("Lte");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Lte))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Lte.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lte));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lte.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lte);
+                    context.Writer.Write(requestObject.Lte.Value);
                 }
             }
 

@@ -62,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumPerMinute())
             {
                 context.Writer.WritePropertyName("maximumPerMinute");
-                context.Writer.Write(requestObject.MaximumPerMinute);
+                context.Writer.Write(requestObject.MaximumPerMinute.Value);
             }
 
         }

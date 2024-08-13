@@ -83,9 +83,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// The version of the user's namespace to describe.
         /// </para>
         /// </summary>
-        public long NamespaceVersion
+        public long? NamespaceVersion
         {
-            get { return this._namespaceVersion.GetValueOrDefault(); }
+            get { return this._namespaceVersion; }
             set { this._namespaceVersion = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// The version of the public namespace that the latest version is tracking.
         /// </para>
         /// </summary>
-        public long TrackingNamespaceVersion
+        public long? TrackingNamespaceVersion
         {
-            get { return this._trackingNamespaceVersion.GetValueOrDefault(); }
+            get { return this._trackingNamespaceVersion; }
             set { this._trackingNamespaceVersion = value; }
         }
 

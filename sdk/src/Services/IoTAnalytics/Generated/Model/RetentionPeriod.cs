@@ -45,9 +45,9 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int NumberOfDays
+        public int? NumberOfDays
         {
-            get { return this._numberOfDays.GetValueOrDefault(); }
+            get { return this._numberOfDays; }
             set { this._numberOfDays = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.IoTAnalytics.Model
         /// If true, message data is kept indefinitely.
         /// </para>
         /// </summary>
-        public bool Unlimited
+        public bool? Unlimited
         {
-            get { return this._unlimited.GetValueOrDefault(); }
+            get { return this._unlimited; }
             set { this._unlimited = value; }
         }
 

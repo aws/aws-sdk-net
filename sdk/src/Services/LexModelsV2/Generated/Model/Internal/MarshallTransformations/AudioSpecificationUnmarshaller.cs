@@ -68,13 +68,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("endTimeoutMs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndTimeoutMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxLengthMs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLengthMs = unmarshaller.Unmarshall(context);
                     continue;
                 }

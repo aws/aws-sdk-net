@@ -74,13 +74,13 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("authorized", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Authorized = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("insecureIngest", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InsecureIngest = unmarshaller.Unmarshall(context);
                     continue;
                 }

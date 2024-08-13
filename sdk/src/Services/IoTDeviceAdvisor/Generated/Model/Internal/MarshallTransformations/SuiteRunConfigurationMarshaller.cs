@@ -51,7 +51,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParallelRun())
             {
                 context.Writer.WritePropertyName("parallelRun");
-                context.Writer.Write(requestObject.ParallelRun);
+                context.Writer.Write(requestObject.ParallelRun.Value);
             }
 
             if(requestObject.IsSetPrimaryDevice())

@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ConnectionBorrowTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ConnectionBorrowTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -69,13 +69,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxConnectionsPercent", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxConnectionsPercent = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxIdleConnectionsPercent", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxIdleConnectionsPercent = unmarshaller.Unmarshall(context);
                         continue;
                     }

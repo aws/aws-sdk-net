@@ -60,7 +60,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -78,7 +78,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Duration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,7 +90,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HasResultSet", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HasResultSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -114,25 +114,25 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RedshiftPid", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.RedshiftPid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RedshiftQueryId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.RedshiftQueryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResultRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ResultRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResultSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ResultSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -156,7 +156,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

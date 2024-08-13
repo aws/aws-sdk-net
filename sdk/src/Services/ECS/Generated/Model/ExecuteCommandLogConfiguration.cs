@@ -48,9 +48,9 @@ namespace Amazon.ECS.Model
         /// will be off.
         /// </para>
         /// </summary>
-        public bool CloudWatchEncryptionEnabled
+        public bool? CloudWatchEncryptionEnabled
         {
-            get { return this._cloudWatchEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchEncryptionEnabled; }
             set { this._cloudWatchEncryptionEnabled = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.ECS.Model
         /// is not used.
         /// </para>
         /// </summary>
-        public bool S3EncryptionEnabled
+        public bool? S3EncryptionEnabled
         {
-            get { return this._s3EncryptionEnabled.GetValueOrDefault(); }
+            get { return this._s3EncryptionEnabled; }
             set { this._s3EncryptionEnabled = value; }
         }
 

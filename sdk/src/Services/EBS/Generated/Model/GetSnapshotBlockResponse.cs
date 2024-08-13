@@ -102,9 +102,9 @@ namespace Amazon.EBS.Model
         /// The size of the data in the block.
         /// </para>
         /// </summary>
-        public int DataLength
+        public int? DataLength
         {
-            get { return this._dataLength.GetValueOrDefault(); }
+            get { return this._dataLength; }
             set { this._dataLength = value; }
         }
 

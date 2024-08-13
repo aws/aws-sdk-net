@@ -66,13 +66,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("validateRequestBody", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ValidateRequestBody = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("validateRequestParameters", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ValidateRequestParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }

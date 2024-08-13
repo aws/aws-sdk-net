@@ -18,10 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="../../src/AWSSDK.Extensions.NETCore.Setup/AWSSDK.Extensions.NETCore.Setup.csproj" />
+    <ProjectReference Include="..\..\..\sdk\src\Services\S3\AWSSDK.S3.NetStandard.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-	<PackageReference Include="AWSSDK.S3" Version="3.7.7.21" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="Moq" Version="4.8.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />

@@ -64,9 +64,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ASNumber
+        public long? ASNumber
         {
-            get { return this._asNumber.GetValueOrDefault(); }
+            get { return this._asNumber; }
             set { this._asNumber = value; }
         }
 

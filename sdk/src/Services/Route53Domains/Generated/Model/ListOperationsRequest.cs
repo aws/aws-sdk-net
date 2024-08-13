@@ -83,9 +83,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.Route53Domains.Model
         /// format and Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
-        public DateTime SubmittedSince
+        public DateTime? SubmittedSince
         {
-            get { return this._submittedSince.GetValueOrDefault(); }
+            get { return this._submittedSince; }
             set { this._submittedSince = value; }
         }
 

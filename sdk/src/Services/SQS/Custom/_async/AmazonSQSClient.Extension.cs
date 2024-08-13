@@ -21,7 +21,6 @@ using Amazon.Runtime.SharedInterfaces;
 
 using Amazon.SQS.Model;
 using Amazon.Auth.AccessControlPolicy;
-using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 
 namespace Amazon.SQS
 {

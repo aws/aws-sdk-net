@@ -51,32 +51,32 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                context.Writer.Write(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetFramerate())
             {
                 context.Writer.WritePropertyName("framerate");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Framerate))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Framerate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Framerate));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Framerate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Framerate);
+                    context.Writer.Write(requestObject.Framerate.Value);
                 }
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.Write(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.Write(requestObject.Width.Value);
             }
 
         }

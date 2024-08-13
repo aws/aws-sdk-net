@@ -51,13 +51,13 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatestDate())
             {
                 context.Writer.WritePropertyName("latestDate");
-                context.Writer.Write(requestObject.LatestDate);
+                context.Writer.Write(requestObject.LatestDate.Value);
             }
 
             if(requestObject.IsSetOldestDate())
             {
                 context.Writer.WritePropertyName("oldestDate");
-                context.Writer.Write(requestObject.OldestDate);
+                context.Writer.Write(requestObject.OldestDate.Value);
             }
 
         }

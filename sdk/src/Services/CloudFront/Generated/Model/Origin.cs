@@ -107,9 +107,9 @@ namespace Amazon.CloudFront.Model
         /// Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        public int ConnectionAttempts
+        public int? ConnectionAttempts
         {
-            get { return this._connectionAttempts.GetValueOrDefault(); }
+            get { return this._connectionAttempts; }
             set { this._connectionAttempts = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.CloudFront.Model
         /// Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        public int ConnectionTimeout
+        public int? ConnectionTimeout
         {
-            get { return this._connectionTimeout.GetValueOrDefault(); }
+            get { return this._connectionTimeout; }
             set { this._connectionTimeout = value; }
         }
 

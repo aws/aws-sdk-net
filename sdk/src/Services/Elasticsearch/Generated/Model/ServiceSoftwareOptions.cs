@@ -50,9 +50,9 @@ namespace Amazon.Elasticsearch.Model
         /// update. After this date, we automatically update your service software.
         /// </para>
         /// </summary>
-        public DateTime AutomatedUpdateDate
+        public DateTime? AutomatedUpdateDate
         {
-            get { return this._automatedUpdateDate.GetValueOrDefault(); }
+            get { return this._automatedUpdateDate; }
             set { this._automatedUpdateDate = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Elasticsearch.Model
         /// if you are not able to cancel your service software version. 
         /// </para>
         /// </summary>
-        public bool Cancellable
+        public bool? Cancellable
         {
-            get { return this._cancellable.GetValueOrDefault(); }
+            get { return this._cancellable; }
             set { this._cancellable = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Elasticsearch.Model
         /// a service software is automatically updated after <c>AutomatedUpdateDate</c>. 
         /// </para>
         /// </summary>
-        public bool OptionalDeployment
+        public bool? OptionalDeployment
         {
-            get { return this._optionalDeployment.GetValueOrDefault(); }
+            get { return this._optionalDeployment; }
             set { this._optionalDeployment = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.Elasticsearch.Model
         /// you are not able to update your service software version. 
         /// </para>
         /// </summary>
-        public bool UpdateAvailable
+        public bool? UpdateAvailable
         {
-            get { return this._updateAvailable.GetValueOrDefault(); }
+            get { return this._updateAvailable; }
             set { this._updateAvailable = value; }
         }
 

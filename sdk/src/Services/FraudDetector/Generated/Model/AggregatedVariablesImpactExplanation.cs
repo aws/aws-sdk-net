@@ -82,9 +82,9 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public float LogOddsImpact
+        public float? LogOddsImpact
         {
-            get { return this._logOddsImpact.GetValueOrDefault(); }
+            get { return this._logOddsImpact; }
             set { this._logOddsImpact = value; }
         }
 

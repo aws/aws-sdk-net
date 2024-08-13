@@ -47,9 +47,9 @@ namespace Amazon.SageMaker.Model
         /// The recommended maximum capacity to specify for your autoscaling policy.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SageMaker.Model
         /// The recommended minimum capacity to specify for your autoscaling policy.
         /// </para>
         /// </summary>
-        public int MinCapacity
+        public int? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SageMaker.Model
         /// The recommended scale in cooldown time for your autoscaling policy.
         /// </para>
         /// </summary>
-        public int ScaleInCooldown
+        public int? ScaleInCooldown
         {
-            get { return this._scaleInCooldown.GetValueOrDefault(); }
+            get { return this._scaleInCooldown; }
             set { this._scaleInCooldown = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.SageMaker.Model
         /// The recommended scale out cooldown time for your autoscaling policy.
         /// </para>
         /// </summary>
-        public int ScaleOutCooldown
+        public int? ScaleOutCooldown
         {
-            get { return this._scaleOutCooldown.GetValueOrDefault(); }
+            get { return this._scaleOutCooldown; }
             set { this._scaleOutCooldown = value; }
         }
 

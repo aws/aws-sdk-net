@@ -93,9 +93,9 @@ namespace Amazon.Snowball.Model
         /// Any change in job state will trigger a notification for this job.
         /// </para>
         /// </summary>
-        public bool NotifyAll
+        public bool? NotifyAll
         {
-            get { return this._notifyAll.GetValueOrDefault(); }
+            get { return this._notifyAll; }
             set { this._notifyAll = value; }
         }
 

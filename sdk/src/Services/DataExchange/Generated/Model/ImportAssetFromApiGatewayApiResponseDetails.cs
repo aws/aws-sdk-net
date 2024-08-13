@@ -166,9 +166,9 @@ namespace Amazon.DataExchange.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ApiSpecificationUploadUrlExpiresAt
+        public DateTime? ApiSpecificationUploadUrlExpiresAt
         {
-            get { return this._apiSpecificationUploadUrlExpiresAt.GetValueOrDefault(); }
+            get { return this._apiSpecificationUploadUrlExpiresAt; }
             set { this._apiSpecificationUploadUrlExpiresAt = value; }
         }
 

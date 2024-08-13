@@ -108,7 +108,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPageSize())
                 {
                     context.Writer.WritePropertyName("PageSize");
-                    context.Writer.Write(publicRequest.PageSize);
+                    context.Writer.Write(publicRequest.PageSize.Value);
                 }
 
                 if(publicRequest.IsSetPageToken())

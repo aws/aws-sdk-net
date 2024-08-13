@@ -1,4 +1,5 @@
 using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
@@ -20,11 +21,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private string westBucketName;
 
         private AmazonS3Client usEastClient;
+        private AmazonS3Client usWestClient;
 
         [TestInitialize]
         public void Initialize()
         {
-            usEastClient = new AmazonS3Client(RegionEndpoint.USEast1);
+            usEastClient = new AmazonS3Client(new AmazonS3Config
+            {
+                RegionEndpoint = RegionEndpoint.USEast1,
+                USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
+            });
+
             eastBucketName = S3TestUtils.CreateBucketWithWait(usEastClient);
 
             usEastClient.PutObject(new PutObjectRequest
@@ -41,15 +48,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ContentBody = testContent
             });
 
-            var usWestClient = new AmazonS3Client(RegionEndpoint.USWest1);
+            usWestClient = new AmazonS3Client(RegionEndpoint.USWest1);
             westBucketName = S3TestUtils.CreateBucketWithWait(usWestClient);
         }
 
         [TestCleanup]
         public void TestCleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, eastBucketName);
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, westBucketName);
+            if (usEastClient != null)
+            {
+                AmazonS3Util.DeleteS3BucketWithObjects(usEastClient, eastBucketName);
+                usEastClient.Dispose();
+            }
+
+            if (usWestClient != null)
+            {
+                AmazonS3Util.DeleteS3BucketWithObjects(usWestClient, westBucketName);
+                usWestClient.Dispose();
+            }
+            
             BaseClean();
         }
 
@@ -85,7 +102,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
             Assert.AreEqual(HttpStatusCode.OK, copyObjectResponse.HttpStatusCode);
 
-            var getObjectResponse = Client.GetObject(new GetObjectRequest
+            var getObjectResponse = usWestClient.GetObject(new GetObjectRequest
             {
                 BucketName = westBucketName,
                 Key = expectedKey

@@ -88,9 +88,9 @@ namespace Amazon.EC2.Model
         /// pre-provisioned snapshots for Windows fast launch.
         /// </para>
         /// </summary>
-        public int MaxParallelLaunches
+        public int? MaxParallelLaunches
         {
-            get { return this._maxParallelLaunches.GetValueOrDefault(); }
+            get { return this._maxParallelLaunches; }
             set { this._maxParallelLaunches = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.EC2.Model
         /// The time that the state changed for Windows fast launch for the AMI.
         /// </para>
         /// </summary>
-        public DateTime StateTransitionTime
+        public DateTime? StateTransitionTime
         {
-            get { return this._stateTransitionTime.GetValueOrDefault(); }
+            get { return this._stateTransitionTime; }
             set { this._stateTransitionTime = value; }
         }
 

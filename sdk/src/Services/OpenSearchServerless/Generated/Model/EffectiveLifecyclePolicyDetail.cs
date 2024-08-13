@@ -49,9 +49,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// resource.
         /// </para>
         /// </summary>
-        public bool NoMinRetentionPeriod
+        public bool? NoMinRetentionPeriod
         {
-            get { return this._noMinRetentionPeriod.GetValueOrDefault(); }
+            get { return this._noMinRetentionPeriod; }
             set { this._noMinRetentionPeriod = value; }
         }
 

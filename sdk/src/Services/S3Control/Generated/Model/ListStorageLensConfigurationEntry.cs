@@ -87,9 +87,9 @@ namespace Amazon.S3Control.Model
         /// is required.
         /// </para>
         /// </summary>
-        public bool IsEnabled
+        public bool? IsEnabled
         {
-            get { return this._isEnabled.GetValueOrDefault(); }
+            get { return this._isEnabled; }
             set { this._isEnabled = value; }
         }
 

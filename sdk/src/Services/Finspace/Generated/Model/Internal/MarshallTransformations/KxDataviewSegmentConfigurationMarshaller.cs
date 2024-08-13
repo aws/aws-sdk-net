@@ -62,7 +62,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOnDemand())
             {
                 context.Writer.WritePropertyName("onDemand");
-                context.Writer.Write(requestObject.OnDemand);
+                context.Writer.Write(requestObject.OnDemand.Value);
             }
 
             if(requestObject.IsSetVolumeName())

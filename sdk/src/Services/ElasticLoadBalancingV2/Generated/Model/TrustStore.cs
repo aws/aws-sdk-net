@@ -65,9 +65,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The number of ca certificates in the trust store.
         /// </para>
         /// </summary>
-        public int NumberOfCaCertificates
+        public int? NumberOfCaCertificates
         {
-            get { return this._numberOfCaCertificates.GetValueOrDefault(); }
+            get { return this._numberOfCaCertificates; }
             set { this._numberOfCaCertificates = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The number of revoked certificates in the trust store.
         /// </para>
         /// </summary>
-        public long TotalRevokedEntries
+        public long? TotalRevokedEntries
         {
-            get { return this._totalRevokedEntries.GetValueOrDefault(); }
+            get { return this._totalRevokedEntries; }
             set { this._totalRevokedEntries = value; }
         }
 

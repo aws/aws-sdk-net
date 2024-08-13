@@ -51,13 +51,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowAudioInput())
             {
                 context.Writer.WritePropertyName("allowAudioInput");
-                context.Writer.Write(requestObject.AllowAudioInput);
+                context.Writer.Write(requestObject.AllowAudioInput.Value);
             }
 
             if(requestObject.IsSetAllowDTMFInput())
             {
                 context.Writer.WritePropertyName("allowDTMFInput");
-                context.Writer.Write(requestObject.AllowDTMFInput);
+                context.Writer.Write(requestObject.AllowDTMFInput.Value);
             }
 
         }

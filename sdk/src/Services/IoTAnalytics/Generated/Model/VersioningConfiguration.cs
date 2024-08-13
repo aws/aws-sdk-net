@@ -45,9 +45,9 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxVersions
+        public int? MaxVersions
         {
-            get { return this._maxVersions.GetValueOrDefault(); }
+            get { return this._maxVersions; }
             set { this._maxVersions = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.IoTAnalytics.Model
         /// If true, unlimited versions of dataset contents are kept.
         /// </para>
         /// </summary>
-        public bool Unlimited
+        public bool? Unlimited
         {
-            get { return this._unlimited.GetValueOrDefault(); }
+            get { return this._unlimited; }
             set { this._unlimited = value; }
         }
 

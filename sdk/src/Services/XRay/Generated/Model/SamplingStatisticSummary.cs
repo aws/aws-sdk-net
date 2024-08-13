@@ -47,9 +47,9 @@ namespace Amazon.XRay.Model
         /// The number of requests recorded with borrowed reservoir quota.
         /// </para>
         /// </summary>
-        public int BorrowCount
+        public int? BorrowCount
         {
-            get { return this._borrowCount.GetValueOrDefault(); }
+            get { return this._borrowCount; }
             set { this._borrowCount = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.XRay.Model
         /// The number of requests that matched the rule.
         /// </para>
         /// </summary>
-        public int RequestCount
+        public int? RequestCount
         {
-            get { return this._requestCount.GetValueOrDefault(); }
+            get { return this._requestCount; }
             set { this._requestCount = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.XRay.Model
         /// The number of requests recorded.
         /// </para>
         /// </summary>
-        public int SampledCount
+        public int? SampledCount
         {
-            get { return this._sampledCount.GetValueOrDefault(); }
+            get { return this._sampledCount; }
             set { this._sampledCount = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.XRay.Model
         /// The start time of the reporting window.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

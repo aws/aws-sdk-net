@@ -32,12 +32,12 @@ namespace Amazon.MemoryDB
     /// <summary>
     /// <para>Interface for accessing MemoryDB</para>
     ///
-    /// MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database that delivers
+    /// MemoryDB is a fully managed, Redis OSS-compatible, in-memory database that delivers
     /// ultra-fast performance and Multi-AZ durability for modern applications built using
     /// microservices architectures. MemoryDB stores the entire database in-memory, enabling
-    /// low latency and high throughput data access. It is compatible with Redis, a popular
-    /// open source data store, enabling you to leverage Redis’ flexible and friendly data
-    /// structures, APIs, and commands.
+    /// low latency and high throughput data access. It is compatible with Redis OSS, a popular
+    /// open source data store, enabling you to leverage Redis OSS’ flexible and friendly
+    /// data structures, APIs, and commands.
     /// </summary>
     public partial interface IAmazonMemoryDB : IAmazonService, IDisposable
     {
@@ -423,6 +423,13 @@ namespace Amazon.MemoryDB
 
         /// <summary>
         /// Deletes a cluster. It also deletes all associated nodes and node endpoints
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>CreateSnapshot</c> permission is required to create a final snapshot. Without
+        /// this permission, the API call will fail with an <c>Access Denied</c> exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// <param name="cancellationToken">
@@ -639,7 +646,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Returns a list of the available Redis engine versions.
+        /// Returns a list of the available Redis OSS engine versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1448,5 +1455,33 @@ namespace Amazon.MemoryDB
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonMemoryDBConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonMemoryDBConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonMemoryDBConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonMemoryDBConfig to create AmazonMemoryDBClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonMemoryDBClient(serviceClientConfig) :
+                    new AmazonMemoryDBClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

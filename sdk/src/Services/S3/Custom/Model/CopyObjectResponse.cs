@@ -49,9 +49,9 @@ namespace Amazon.S3.Model
         /// with Amazon Web Services KMS (SSE-KMS).
         /// </para>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this.bucketKeyEnabled; }
             set { this.bucketKeyEnabled = value; }
         }
 

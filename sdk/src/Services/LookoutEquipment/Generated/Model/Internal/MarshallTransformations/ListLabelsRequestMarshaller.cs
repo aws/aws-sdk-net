@@ -84,13 +84,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIntervalEndTime())
                 {
                     context.Writer.WritePropertyName("IntervalEndTime");
-                    context.Writer.Write(publicRequest.IntervalEndTime);
+                    context.Writer.Write(publicRequest.IntervalEndTime.Value);
                 }
 
                 if(publicRequest.IsSetIntervalStartTime())
                 {
                     context.Writer.WritePropertyName("IntervalStartTime");
-                    context.Writer.Write(publicRequest.IntervalStartTime);
+                    context.Writer.Write(publicRequest.IntervalStartTime.Value);
                 }
 
                 if(publicRequest.IsSetLabelGroupName())
@@ -102,7 +102,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

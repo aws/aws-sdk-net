@@ -68,7 +68,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("firstZoneMonitorDurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FirstZoneMonitorDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("monitorDurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MonitorDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

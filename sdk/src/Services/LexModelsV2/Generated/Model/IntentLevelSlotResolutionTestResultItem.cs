@@ -64,9 +64,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool MultiTurnConversation
+        public bool? MultiTurnConversation
         {
-            get { return this._multiTurnConversation.GetValueOrDefault(); }
+            get { return this._multiTurnConversation; }
             set { this._multiTurnConversation = value; }
         }
 

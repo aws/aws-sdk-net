@@ -47,9 +47,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Estimate of cloud cover.
         /// </para>
         /// </summary>
-        public float EoCloudCover
+        public float? EoCloudCover
         {
-            get { return this._eoCloudCover.GetValueOrDefault(); }
+            get { return this._eoCloudCover; }
             set { this._eoCloudCover = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Land cloud cover for Landsat Data Collection.
         /// </para>
         /// </summary>
-        public float LandsatCloudCoverLand
+        public float? LandsatCloudCoverLand
         {
-            get { return this._landsatCloudCoverLand.GetValueOrDefault(); }
+            get { return this._landsatCloudCoverLand; }
             set { this._landsatCloudCoverLand = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// in degrees (0-90).
         /// </para>
         /// </summary>
-        public float ViewOffNadir
+        public float? ViewOffNadir
         {
-            get { return this._viewOffNadir.GetValueOrDefault(); }
+            get { return this._viewOffNadir; }
             set { this._viewOffNadir = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// between truth north and the sun. Measured clockwise in degrees (0-360).
         /// </para>
         /// </summary>
-        public float ViewSunAzimuth
+        public float? ViewSunAzimuth
         {
-            get { return this._viewSunAzimuth.GetValueOrDefault(); }
+            get { return this._viewSunAzimuth; }
             set { this._viewSunAzimuth = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// twilight</a>.
         /// </para>
         /// </summary>
-        public float ViewSunElevation
+        public float? ViewSunElevation
         {
-            get { return this._viewSunElevation.GetValueOrDefault(); }
+            get { return this._viewSunElevation; }
             set { this._viewSunElevation = value; }
         }
 

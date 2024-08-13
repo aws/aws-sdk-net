@@ -86,9 +86,9 @@ namespace Amazon.ResilienceHub.Model
         /// Identifier of the application version.
         /// </para>
         /// </summary>
-        public long Identifier
+        public long? Identifier
         {
-            get { return this._identifier.GetValueOrDefault(); }
+            get { return this._identifier; }
             set { this._identifier = value; }
         }
 

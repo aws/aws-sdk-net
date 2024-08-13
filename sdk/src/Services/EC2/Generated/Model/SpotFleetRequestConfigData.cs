@@ -195,9 +195,9 @@ namespace Amazon.EC2.Model
         /// You cannot set this value.
         /// </para>
         /// </summary>
-        public double FulfilledCapacity
+        public double? FulfilledCapacity
         {
-            get { return this._fulfilledCapacity.GetValueOrDefault(); }
+            get { return this._fulfilledCapacity; }
             set { this._fulfilledCapacity = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.EC2.Model
         /// from fewer than the number of pools that you specified.
         /// </para>
         /// </summary>
-        public int InstancePoolsToUseCount
+        public int? InstancePoolsToUseCount
         {
-            get { return this._instancePoolsToUseCount.GetValueOrDefault(); }
+            get { return this._instancePoolsToUseCount; }
             set { this._instancePoolsToUseCount = value; }
         }
 
@@ -382,9 +382,9 @@ namespace Amazon.EC2.Model
         /// On-Demand capacity.
         /// </para>
         /// </summary>
-        public double OnDemandFulfilledCapacity
+        public double? OnDemandFulfilledCapacity
         {
-            get { return this._onDemandFulfilledCapacity.GetValueOrDefault(); }
+            get { return this._onDemandFulfilledCapacity; }
             set { this._onDemandFulfilledCapacity = value; }
         }
 
@@ -437,9 +437,9 @@ namespace Amazon.EC2.Model
         /// can specify a target capacity of 0 and add capacity later.
         /// </para>
         /// </summary>
-        public int OnDemandTargetCapacity
+        public int? OnDemandTargetCapacity
         {
-            get { return this._onDemandTargetCapacity.GetValueOrDefault(); }
+            get { return this._onDemandTargetCapacity; }
             set { this._onDemandTargetCapacity = value; }
         }
 
@@ -455,9 +455,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether Spot Fleet should replace unhealthy instances.
         /// </para>
         /// </summary>
-        public bool ReplaceUnhealthyInstances
+        public bool? ReplaceUnhealthyInstances
         {
-            get { return this._replaceUnhealthyInstances.GetValueOrDefault(); }
+            get { return this._replaceUnhealthyInstances; }
             set { this._replaceUnhealthyInstances = value; }
         }
 
@@ -581,9 +581,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TargetCapacity
+        public int? TargetCapacity
         {
-            get { return this._targetCapacity.GetValueOrDefault(); }
+            get { return this._targetCapacity; }
             set { this._targetCapacity = value; }
         }
 
@@ -623,9 +623,9 @@ namespace Amazon.EC2.Model
         /// expires.
         /// </para>
         /// </summary>
-        public bool TerminateInstancesWithExpiration
+        public bool? TerminateInstancesWithExpiration
         {
-            get { return this._terminateInstancesWithExpiration.GetValueOrDefault(); }
+            get { return this._terminateInstancesWithExpiration; }
             set { this._terminateInstancesWithExpiration = value; }
         }
 
@@ -667,16 +667,16 @@ namespace Amazon.EC2.Model
         /// By default, Amazon EC2 starts fulfilling the request immediately.
         /// </para>
         /// </summary>
-        public DateTime ValidFromUtc
+        public DateTime? ValidFromUtc
         {
-            get { return this._validFromUtc.GetValueOrDefault(); }
+            get { return this._validFromUtc; }
             set { this._validFrom = this._validFromUtc = value; }
         }
 
         // Check to see if ValidFromUtc property is set
         internal bool IsSetValidFromUtc()
         {
-            return this._validFromUtc.HasValue; 
+            return this._validFromUtc != null;
         }
 
         /// <summary>
@@ -688,16 +688,16 @@ namespace Amazon.EC2.Model
         /// it.
         /// </para>
         /// </summary>
-        public DateTime ValidUntilUtc
+        public DateTime? ValidUntilUtc
         {
-            get { return this._validUntilUtc.GetValueOrDefault(); }
+            get { return this._validUntilUtc; }
             set { this._validUntil = this._validUntilUtc = value; }
         }
 
         // Check to see if ValidUntilUtc property is set
         internal bool IsSetValidUntilUtc()
         {
-            return this._validUntilUtc.HasValue; 
+            return this._validUntilUtc != null;
         }
 
 #region Backwards compatible properties
@@ -725,13 +725,20 @@ namespace Amazon.EC2.Model
             "ValidFromUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ValidFrom is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ValidFrom
+        public DateTime? ValidFrom
         {
             get { return this._validFrom.GetValueOrDefault(); }
             set
             {
                 this._validFrom = value;
-                this._validFromUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._validFromUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._validFromUtc = null;
+                }
             }
         }
         /// <summary>
@@ -757,13 +764,20 @@ namespace Amazon.EC2.Model
             "ValidUntilUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ValidUntil is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ValidUntil
+        public DateTime? ValidUntil
         {
             get { return this._validUntil.GetValueOrDefault(); }
             set
             {
                 this._validUntil = value;
-                this._validUntilUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._validUntilUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._validUntilUtc = null;
+                }
             }
         }
 #endregion

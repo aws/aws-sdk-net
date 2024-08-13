@@ -45,9 +45,9 @@ namespace Amazon.Route53Domains.Model
         /// Indicates whether the domain is automatically renewed upon expiration.
         /// </para>
         /// </summary>
-        public bool AutoRenew
+        public bool? AutoRenew
         {
-            get { return this._autoRenew.GetValueOrDefault(); }
+            get { return this._autoRenew; }
             set { this._autoRenew = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Route53Domains.Model
         /// Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime Expiry
+        public DateTime? Expiry
         {
-            get { return this._expiry.GetValueOrDefault(); }
+            get { return this._expiry; }
             set { this._expiry = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Route53Domains.Model
         /// Indicates whether a domain is locked from unauthorized transfer to another party.
         /// </para>
         /// </summary>
-        public bool TransferLock
+        public bool? TransferLock
         {
-            get { return this._transferLock.GetValueOrDefault(); }
+            get { return this._transferLock; }
             set { this._transferLock = value; }
         }
 

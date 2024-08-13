@@ -43,9 +43,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long HealthCheckCount
+        public long? HealthCheckCount
         {
-            get { return this._healthCheckCount.GetValueOrDefault(); }
+            get { return this._healthCheckCount; }
             set { this._healthCheckCount = value; }
         }
 

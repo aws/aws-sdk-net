@@ -74,9 +74,9 @@ namespace Amazon.ServiceCatalog.Model
         /// if it cannot delete the underlying resources.
         /// </para>
         /// </summary>
-        public bool IgnoreErrors
+        public bool? IgnoreErrors
         {
-            get { return this._ignoreErrors.GetValueOrDefault(); }
+            get { return this._ignoreErrors; }
             set { this._ignoreErrors = value; }
         }
 

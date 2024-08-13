@@ -88,9 +88,9 @@ namespace Amazon.ConnectParticipant.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int MostRecent
+        public int? MostRecent
         {
-            get { return this._mostRecent.GetValueOrDefault(); }
+            get { return this._mostRecent; }
             set { this._mostRecent = value; }
         }
 

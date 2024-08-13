@@ -22,7 +22,7 @@ using System;
 using System.Net;
 using System.Reflection;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class CapacityManagerClockSkewTests : RuntimePipelineTestBase<RetryHandler>

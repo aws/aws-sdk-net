@@ -89,7 +89,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxMessageSizeBytes())
                 {
                     context.Writer.WritePropertyName("MaxMessageSizeBytes");
-                    context.Writer.Write(publicRequest.MaxMessageSizeBytes);
+                    context.Writer.Write(publicRequest.MaxMessageSizeBytes.Value);
                 }
 
                 if(publicRequest.IsSetPolicyStatements())

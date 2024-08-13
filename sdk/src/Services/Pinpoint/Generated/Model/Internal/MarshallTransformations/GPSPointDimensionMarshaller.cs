@@ -62,13 +62,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRangeInKilometers())
             {
                 context.Writer.WritePropertyName("RangeInKilometers");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.RangeInKilometers))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.RangeInKilometers.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RangeInKilometers));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.RangeInKilometers.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.RangeInKilometers);
+                    context.Writer.Write(requestObject.RangeInKilometers.Value);
                 }
             }
 

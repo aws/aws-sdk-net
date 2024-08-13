@@ -64,7 +64,7 @@ namespace Amazon.StepFunctions.Model
         /// object</a> when a workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string TaskToken
         {
             get { return this._taskToken; }

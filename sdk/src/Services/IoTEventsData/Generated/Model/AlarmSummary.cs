@@ -85,9 +85,9 @@ namespace Amazon.IoTEventsData.Model
         /// The time the alarm was created, in the Unix epoch format.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.IoTEventsData.Model
         /// The time the alarm was last updated, in the Unix epoch format.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

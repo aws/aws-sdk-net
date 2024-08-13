@@ -50,9 +50,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// only applies if the <c>auto-minor-version</c> setting is enabled.
         /// </para>
         /// </summary>
-        public DateTime AutoUpgradeDate
+        public DateTime? AutoUpgradeDate
         {
-            get { return this._autoUpgradeDate.GetValueOrDefault(); }
+            get { return this._autoUpgradeDate; }
             set { this._autoUpgradeDate = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// be requested.
         /// </para>
         /// </summary>
-        public DateTime DeprecationDate
+        public DateTime? DeprecationDate
         {
-            get { return this._deprecationDate.GetValueOrDefault(); }
+            get { return this._deprecationDate; }
             set { this._deprecationDate = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date when the replication instance will have a version upgrade forced.
         /// </para>
         /// </summary>
-        public DateTime ForceUpgradeDate
+        public DateTime? ForceUpgradeDate
         {
-            get { return this._forceUpgradeDate.GetValueOrDefault(); }
+            get { return this._forceUpgradeDate; }
             set { this._forceUpgradeDate = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date when the replication instance version became publicly available.
         /// </para>
         /// </summary>
-        public DateTime LaunchDate
+        public DateTime? LaunchDate
         {
-            get { return this._launchDate.GetValueOrDefault(); }
+            get { return this._launchDate; }
             set { this._launchDate = value; }
         }
 

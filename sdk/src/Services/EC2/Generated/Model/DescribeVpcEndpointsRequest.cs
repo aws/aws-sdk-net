@@ -111,9 +111,9 @@ namespace Amazon.EC2.Model
         /// Constraint: If the value is greater than 1,000, we return only 1,000 items.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

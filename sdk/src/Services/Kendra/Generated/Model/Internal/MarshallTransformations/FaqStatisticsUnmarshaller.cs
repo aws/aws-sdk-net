@@ -68,7 +68,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IndexedQuestionAnswersCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IndexedQuestionAnswersCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

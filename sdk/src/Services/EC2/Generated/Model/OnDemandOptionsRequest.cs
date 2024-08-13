@@ -140,9 +140,9 @@ namespace Amazon.EC2.Model
         /// 
         /// </para>
         /// </summary>
-        public int MinTargetCapacity
+        public int? MinTargetCapacity
         {
-            get { return this._minTargetCapacity.GetValueOrDefault(); }
+            get { return this._minTargetCapacity; }
             set { this._minTargetCapacity = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.EC2.Model
         /// Supported only for fleets of type <c>instant</c>.
         /// </para>
         /// </summary>
-        public bool SingleAvailabilityZone
+        public bool? SingleAvailabilityZone
         {
-            get { return this._singleAvailabilityZone.GetValueOrDefault(); }
+            get { return this._singleAvailabilityZone; }
             set { this._singleAvailabilityZone = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.EC2.Model
         /// Supported only for fleets of type <c>instant</c>.
         /// </para>
         /// </summary>
-        public bool SingleInstanceType
+        public bool? SingleInstanceType
         {
-            get { return this._singleInstanceType.GetValueOrDefault(); }
+            get { return this._singleInstanceType; }
             set { this._singleInstanceType = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether automated backup retention is enabled.
         /// </para>
         /// </summary>
-        public bool BackupRetentionEnabled
+        public bool? BackupRetentionEnabled
         {
-            get { return this._backupRetentionEnabled.GetValueOrDefault(); }
+            get { return this._backupRetentionEnabled; }
             set { this._backupRetentionEnabled = value; }
         }
 

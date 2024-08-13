@@ -74,37 +74,37 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CriticalNonCompliantCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CriticalNonCompliantCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FailedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstalledCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstalledCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstalledOtherCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstalledOtherCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstalledPendingRebootCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstalledPendingRebootCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstalledRejectedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstalledRejectedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -122,19 +122,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastNoRebootInstallOperationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastNoRebootInstallOperationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MissingCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MissingCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotApplicableCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NotApplicableCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -146,19 +146,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OperationEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.OperationEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OperationStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.OperationStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OtherNonCompliantCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OtherNonCompliantCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -182,7 +182,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SecurityNonCompliantCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SecurityNonCompliantCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -194,7 +194,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UnreportedNotApplicableCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnreportedNotApplicableCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

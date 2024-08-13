@@ -62,7 +62,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnspecified())
             {
                 context.Writer.WritePropertyName("unspecified");
-                context.Writer.Write(requestObject.Unspecified);
+                context.Writer.Write(requestObject.Unspecified.Value);
             }
 
         }

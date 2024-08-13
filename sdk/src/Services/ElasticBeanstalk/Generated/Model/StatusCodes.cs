@@ -48,9 +48,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// etc.) status code.
         /// </para>
         /// </summary>
-        public int Status2xx
+        public int? Status2xx
         {
-            get { return this._status2xx.GetValueOrDefault(); }
+            get { return this._status2xx; }
             set { this._status2xx = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// etc.) status code.
         /// </para>
         /// </summary>
-        public int Status3xx
+        public int? Status3xx
         {
-            get { return this._status3xx.GetValueOrDefault(); }
+            get { return this._status3xx; }
             set { this._status3xx = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// etc.) status code.
         /// </para>
         /// </summary>
-        public int Status4xx
+        public int? Status4xx
         {
-            get { return this._status4xx.GetValueOrDefault(); }
+            get { return this._status4xx; }
             set { this._status4xx = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// etc.) status code.
         /// </para>
         /// </summary>
-        public int Status5xx
+        public int? Status5xx
         {
-            get { return this._status5xx.GetValueOrDefault(); }
+            get { return this._status5xx; }
             set { this._status5xx = value; }
         }
 

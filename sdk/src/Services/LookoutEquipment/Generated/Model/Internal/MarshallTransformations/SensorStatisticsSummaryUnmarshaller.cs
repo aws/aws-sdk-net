@@ -80,19 +80,19 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DataEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DataExists", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DataExists = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DataStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

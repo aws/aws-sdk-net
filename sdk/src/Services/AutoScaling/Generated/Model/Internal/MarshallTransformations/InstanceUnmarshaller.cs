@@ -99,7 +99,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ProtectedFromScaleIn", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ProtectedFromScaleIn = unmarshaller.Unmarshall(context);
                         continue;
                     }

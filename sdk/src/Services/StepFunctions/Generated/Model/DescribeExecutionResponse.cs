@@ -263,9 +263,9 @@ namespace Amazon.StepFunctions.Model
         /// redrive an execution.
         /// </para>
         /// </summary>
-        public int RedriveCount
+        public int? RedriveCount
         {
-            get { return this._redriveCount.GetValueOrDefault(); }
+            get { return this._redriveCount; }
             set { this._redriveCount = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.StepFunctions.Model
         /// executions of type <c>EXPRESS</c>.
         /// </para>
         /// </summary>
-        public DateTime RedriveDate
+        public DateTime? RedriveDate
         {
-            get { return this._redriveDate.GetValueOrDefault(); }
+            get { return this._redriveDate; }
             set { this._redriveDate = value; }
         }
 
@@ -408,9 +408,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 
@@ -516,9 +516,9 @@ namespace Amazon.StepFunctions.Model
         /// If the execution ended, the date the execution stopped.
         /// </para>
         /// </summary>
-        public DateTime StopDate
+        public DateTime? StopDate
         {
-            get { return this._stopDate.GetValueOrDefault(); }
+            get { return this._stopDate; }
             set { this._stopDate = value; }
         }
 

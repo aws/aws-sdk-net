@@ -78,25 +78,25 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxConcurrency())
                 {
                     context.Writer.WritePropertyName("maxConcurrency");
-                    context.Writer.Write(publicRequest.MaxConcurrency);
+                    context.Writer.Write(publicRequest.MaxConcurrency.Value);
                 }
 
                 if(publicRequest.IsSetToleratedFailureCount())
                 {
                     context.Writer.WritePropertyName("toleratedFailureCount");
-                    context.Writer.Write(publicRequest.ToleratedFailureCount);
+                    context.Writer.Write(publicRequest.ToleratedFailureCount.Value);
                 }
 
                 if(publicRequest.IsSetToleratedFailurePercentage())
                 {
                     context.Writer.WritePropertyName("toleratedFailurePercentage");
-                    if(StringUtils.IsSpecialFloatValue(publicRequest.ToleratedFailurePercentage))
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ToleratedFailurePercentage.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ToleratedFailurePercentage));
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ToleratedFailurePercentage.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.ToleratedFailurePercentage);
+                        context.Writer.Write(publicRequest.ToleratedFailurePercentage.Value);
                     }
                 }
 

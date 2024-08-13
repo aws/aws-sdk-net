@@ -48,9 +48,9 @@ namespace Amazon.GreengrassV2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AddGroupOwner
+        public bool? AddGroupOwner
         {
-            get { return this._addGroupOwner.GetValueOrDefault(); }
+            get { return this._addGroupOwner; }
             set { this._addGroupOwner = value; }
         }
 

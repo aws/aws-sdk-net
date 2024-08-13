@@ -46,9 +46,9 @@ namespace Amazon.TimestreamQuery.Model
         /// True, if the column name was aliased by the query. False otherwise.
         /// </para>
         /// </summary>
-        public bool Aliased
+        public bool? Aliased
         {
-            get { return this._aliased.GetValueOrDefault(); }
+            get { return this._aliased; }
             set { this._aliased = value; }
         }
 

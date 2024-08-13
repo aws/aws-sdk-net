@@ -68,7 +68,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Maximum", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Used", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Used = unmarshaller.Unmarshall(context);
                     continue;
                 }

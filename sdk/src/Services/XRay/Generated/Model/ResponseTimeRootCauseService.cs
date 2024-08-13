@@ -83,9 +83,9 @@ namespace Amazon.XRay.Model
         /// A Boolean value indicating if the service is inferred from the trace.
         /// </para>
         /// </summary>
-        public bool Inferred
+        public bool? Inferred
         {
-            get { return this._inferred.GetValueOrDefault(); }
+            get { return this._inferred; }
             set { this._inferred = value; }
         }
 

@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// preference
         /// </para>
         /// </summary>
-        public int HttpPutResponseHopLimit
+        public int? HttpPutResponseHopLimit
         {
-            get { return this._httpPutResponseHopLimit.GetValueOrDefault(); }
+            get { return this._httpPutResponseHopLimit; }
             set { this._httpPutResponseHopLimit = value; }
         }
 

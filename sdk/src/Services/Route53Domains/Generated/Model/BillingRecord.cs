@@ -46,9 +46,9 @@ namespace Amazon.Route53Domains.Model
         /// The date that the operation was billed, in Unix format.
         /// </para>
         /// </summary>
-        public DateTime BillDate
+        public DateTime? BillDate
         {
-            get { return this._billDate.GetValueOrDefault(); }
+            get { return this._billDate; }
             set { this._billDate = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.Route53Domains.Model
         /// Example value: 12.0
         /// </para>
         /// </summary>
-        public double Price
+        public double? Price
         {
-            get { return this._price.GetValueOrDefault(); }
+            get { return this._price; }
             set { this._price = value; }
         }
 

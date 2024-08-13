@@ -74,13 +74,13 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("agreementEndDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AgreementEndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("agreementStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AgreementStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

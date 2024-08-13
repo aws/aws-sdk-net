@@ -53,9 +53,9 @@ namespace Amazon.Lightsail.Model
         /// The number of vCPUs included in the power.
         /// </para>
         /// </summary>
-        public float CpuCount
+        public float? CpuCount
         {
-            get { return this._cpuCount.GetValueOrDefault(); }
+            get { return this._cpuCount; }
             set { this._cpuCount = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.Lightsail.Model
         /// services.
         /// </para>
         /// </summary>
-        public bool IsActive
+        public bool? IsActive
         {
-            get { return this._isActive.GetValueOrDefault(); }
+            get { return this._isActive; }
             set { this._isActive = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.Lightsail.Model
         /// The monthly price of the power in USD.
         /// </para>
         /// </summary>
-        public float Price
+        public float? Price
         {
-            get { return this._price.GetValueOrDefault(); }
+            get { return this._price; }
             set { this._price = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.Lightsail.Model
         /// The amount of RAM (in GB) of the power.
         /// </para>
         /// </summary>
-        public float RamSizeInGb
+        public float? RamSizeInGb
         {
-            get { return this._ramSizeInGb.GetValueOrDefault(); }
+            get { return this._ramSizeInGb; }
             set { this._ramSizeInGb = value; }
         }
 

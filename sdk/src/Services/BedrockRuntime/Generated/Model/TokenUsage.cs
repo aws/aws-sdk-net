@@ -45,9 +45,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int InputTokens
+        public int? InputTokens
         {
-            get { return this._inputTokens.GetValueOrDefault(); }
+            get { return this._inputTokens; }
             set { this._inputTokens = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int OutputTokens
+        public int? OutputTokens
         {
-            get { return this._outputTokens.GetValueOrDefault(); }
+            get { return this._outputTokens; }
             set { this._outputTokens = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int TotalTokens
+        public int? TotalTokens
         {
-            get { return this._totalTokens.GetValueOrDefault(); }
+            get { return this._totalTokens; }
             set { this._totalTokens = value; }
         }
 

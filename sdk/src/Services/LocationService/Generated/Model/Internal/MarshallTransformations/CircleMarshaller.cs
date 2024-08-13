@@ -62,13 +62,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRadius())
             {
                 context.Writer.WritePropertyName("Radius");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Radius))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Radius.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Radius));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Radius.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Radius);
+                    context.Writer.Write(requestObject.Radius.Value);
                 }
             }
 

@@ -54,7 +54,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("acceptedQueryCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.AcceptedQueryCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -66,7 +66,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("runningQueryCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RunningQueryCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

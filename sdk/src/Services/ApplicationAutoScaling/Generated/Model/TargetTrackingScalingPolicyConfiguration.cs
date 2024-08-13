@@ -76,9 +76,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool DisableScaleIn
+        public bool? DisableScaleIn
         {
-            get { return this._disableScaleIn.GetValueOrDefault(); }
+            get { return this._disableScaleIn; }
             set { this._disableScaleIn = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public int ScaleInCooldown
+        public int? ScaleInCooldown
         {
-            get { return this._scaleInCooldown.GetValueOrDefault(); }
+            get { return this._scaleInCooldown; }
             set { this._scaleInCooldown = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public int ScaleOutCooldown
+        public int? ScaleOutCooldown
         {
-            get { return this._scaleOutCooldown.GetValueOrDefault(); }
+            get { return this._scaleOutCooldown; }
             set { this._scaleOutCooldown = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double TargetValue
+        public double? TargetValue
         {
-            get { return this._targetValue.GetValueOrDefault(); }
+            get { return this._targetValue; }
             set { this._targetValue = value; }
         }
 

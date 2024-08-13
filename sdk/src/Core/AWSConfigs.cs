@@ -27,6 +27,7 @@ using Amazon.Util;
 using Amazon.Util.Internal;
 using System.Collections.Generic;
 using Amazon.Runtime;
+using Amazon.Runtime.Telemetry;
 
 namespace Amazon
 {
@@ -79,17 +80,14 @@ namespace Amazon
 
         // Deprecated configs
         internal static string _awsRegion = GetConfig(AWSRegionKey);
-        internal static LoggingOptions _logging = GetLoggingSetting();
-        internal static ResponseLoggingOption _responseLogging = GetConfigEnum<ResponseLoggingOption>(ResponseLoggingKey);
-        internal static bool _logMetrics = GetConfigBool(LogMetricsKey);
-        internal static string _endpointDefinition = GetConfig(EndpointDefinitionKey);
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
-        internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: true);
+        internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: false);
         // for reading from awsconfigs.xml
         private static object _lock = new object();
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
+        private static TelemetryProvider _telemetryProvider = new DefaultTelemetryProvider();
 
 #pragma warning disable 414
         private static bool configPresent = true;
@@ -122,32 +120,12 @@ namespace Amazon
         /// by determining the correct server time and reissuing the
         /// request with the correct time.
         /// Default value of this field is True.
-        /// <seealso cref="ClockOffset"/> will be updated with the calculated
-        /// offset even if this field is set to false, though requests
-        /// will not be corrected or retried.
         /// Ignored if <seealso cref="ManualClockCorrection"/> is set.
         /// </summary>
         public static bool CorrectForClockSkew
         {
             get { return _rootConfig.CorrectForClockSkew; }
             set { _rootConfig.CorrectForClockSkew = value; }
-        }
-
-        /// <summary>
-        /// The calculated clock skew correction, if there is one.
-        /// This field will be set if a service call resulted in an exception
-        /// and the SDK has determined that there is a difference between local
-        /// and server times.
-        /// 
-        /// If <seealso cref="CorrectForClockSkew"/> is set to true, this
-        /// value will be set to the correction, but it will not be used by the
-        /// SDK and clock skew errors will not be retried.
-        /// </summary>
-        [Obsolete("This value is deprecated in favor of IClientConfig.ClockOffset")]
-        public static TimeSpan ClockOffset
-        {
-            get;
-            internal set;
         }
         #endregion
 
@@ -214,7 +192,6 @@ namespace Amazon
 
         /// <summary>
         /// Key for the AWSProfilesLocation property.
-        /// <seealso cref="Amazon.AWSConfigs.LogMetrics"/>
         /// </summary>
         public const string AWSProfilesLocationKey = "AWSProfilesLocation";
 
@@ -243,135 +220,6 @@ namespace Amazon
 
         #endregion
 
-        #region Logging
-
-        /// <summary>
-        /// Key for the Logging property.
-        /// <seealso cref="Amazon.AWSConfigs.Logging"/>
-        /// </summary>
-        public const string LoggingKey = "AWSLogging";
-
-        /// <summary>
-        /// Configures how the SDK should log events, if at all.
-        /// Changes to this setting will only take effect in newly-constructed clients.
-        /// 
-        /// The setting can be configured through App.config, for example:
-        /// <code>
-        /// &lt;appSettings&gt;
-        ///   &lt;add key="AWSLogging" value="log4net"/&gt;
-        /// &lt;/appSettings&gt;
-        /// </code>
-        /// </summary>
-        [Obsolete("This property is obsolete. Use LoggingConfig.LogTo instead.")]
-        public static LoggingOptions Logging
-        {
-            get { return _rootConfig.Logging.LogTo; }
-            set { _rootConfig.Logging.LogTo = value; }
-        }
-
-        private static LoggingOptions GetLoggingSetting()
-        {
-            string value = GetConfig(LoggingKey);
-            if (string.IsNullOrEmpty(value))
-                return LoggingOptions.None;
-
-            string[] settings = value.Split(validSeparators, StringSplitOptions.RemoveEmptyEntries);
-            if (settings == null || settings.Length == 0)
-                return LoggingOptions.None;
-
-            LoggingOptions totalSetting = LoggingOptions.None;
-            foreach (string setting in settings)
-            {
-                LoggingOptions l = ParseEnum<LoggingOptions>(setting);
-                totalSetting |= l;
-            }
-            return totalSetting;
-        }
-
-        #endregion
-
-        #region Response Logging
-
-        /// <summary>
-        /// Key for the ResponseLogging property.
-        /// 
-        /// <seealso cref="Amazon.AWSConfigs.ResponseLogging"/>
-        /// </summary>
-        public const string ResponseLoggingKey = "AWSResponseLogging";
-
-        /// <summary>
-        /// Configures when the SDK should log service responses.
-        /// Changes to this setting will take effect immediately.
-        /// 
-        /// The setting can be configured through App.config, for example:
-        /// <code>
-        /// &lt;appSettings&gt;
-        ///   &lt;add key="AWSResponseLogging" value="OnError"/&gt;
-        /// &lt;/appSettings&gt;
-        /// </code>
-        /// </summary>
-        [Obsolete("This property is obsolete. Use LoggingConfig.LogResponses instead.")]
-        public static ResponseLoggingOption ResponseLogging
-        {
-            get { return _rootConfig.Logging.LogResponses; }
-            set { _rootConfig.Logging.LogResponses = value; }
-        }
-
-        #endregion
-
-        #region Log Metrics
-
-        /// <summary>
-        /// Key for the LogMetrics property.
-        /// <seealso cref="Amazon.AWSConfigs.LogMetrics"/>
-        /// </summary>
-        public const string LogMetricsKey = "AWSLogMetrics";
-
-        /// <summary>
-        /// Configures if the SDK should log performance metrics.
-        /// This setting configures the default LogMetrics property for all clients/configs.
-        /// Changes to this setting will only take effect in newly-constructed clients.
-        /// 
-        /// The setting can be configured through App.config, for example:
-        /// <code>
-        /// &lt;appSettings&gt;
-        ///   &lt;add key="AWSLogMetrics" value="true"/&gt;
-        /// &lt;/appSettings&gt;
-        /// </code>
-        /// </summary>
-        [Obsolete("This property is obsolete. Use LoggingConfig.LogMetrics instead.")]
-        public static bool LogMetrics
-        {
-            get { return _rootConfig.Logging.LogMetrics; }
-            set { _rootConfig.Logging.LogMetrics = value; }
-        }
-
-        #endregion
-
-        #region Endpoint Configuration
-
-        /// <summary>
-        /// Key for the EndpointDefinition property.
-        /// <seealso cref="Amazon.AWSConfigs.EndpointDefinition"/>
-        /// </summary>
-        public const string EndpointDefinitionKey = "AWSEndpointDefinition";
-
-        /// <summary>
-        /// Configures if the SDK should use a custom configuration file that defines the regions and endpoints.
-        /// <code>
-        /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
-        /// &lt;/configSections&gt;
-        /// &lt;aws endpointDefinition="c:\config\endpoints.json" /&gt;
-        /// </code>
-        /// </summary>
-        public static string EndpointDefinition
-        {
-            get { return _rootConfig.EndpointDefinition; }
-            set { _rootConfig.EndpointDefinition = value; }
-        }
-
-        #endregion
 
         #region SDK Cache
 
@@ -472,6 +320,19 @@ namespace Amazon
         {
             get { return _rootConfig.UseAlternateUserAgentHeader; }
             set { _rootConfig.UseAlternateUserAgentHeader = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the global <see cref="TelemetryProvider"/> instance.
+        /// <para>
+        /// This global telemetry provider is used to collect and report telemetry data 
+        /// (such as traces and metrics) for all AWS SDK operations.
+        /// </para>
+        /// </summary>
+        public static TelemetryProvider TelemetryProvider
+        {
+            get { return _telemetryProvider; }
+            set { _telemetryProvider = value; }
         }
 
         /// <summary>

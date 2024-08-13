@@ -163,9 +163,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// allow for String types.
         /// </para>
         /// </summary>
-        public int MaxLength
+        public int? MaxLength
         {
-            get { return this._maxLength.GetValueOrDefault(); }
+            get { return this._maxLength; }
             set { this._maxLength = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Number types.
         /// </para>
         /// </summary>
-        public int MaxValue
+        public int? MaxValue
         {
-            get { return this._maxValue.GetValueOrDefault(); }
+            get { return this._maxValue; }
             set { this._maxValue = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// allow for String types.
         /// </para>
         /// </summary>
-        public int MinLength
+        public int? MinLength
         {
-            get { return this._minLength.GetValueOrDefault(); }
+            get { return this._minLength; }
             set { this._minLength = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// for Number types.
         /// </para>
         /// </summary>
-        public int MinValue
+        public int? MinValue
         {
-            get { return this._minValue.GetValueOrDefault(); }
+            get { return this._minValue; }
             set { this._minValue = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// (*****).
         /// </para>
         /// </summary>
-        public bool NoEcho
+        public bool? NoEcho
         {
-            get { return this._noEcho.GetValueOrDefault(); }
+            get { return this._noEcho; }
             set { this._noEcho = value; }
         }
 

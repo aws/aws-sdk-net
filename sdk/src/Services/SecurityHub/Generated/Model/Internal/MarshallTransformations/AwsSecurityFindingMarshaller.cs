@@ -91,7 +91,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfidence())
             {
                 context.Writer.WritePropertyName("Confidence");
-                context.Writer.Write(requestObject.Confidence);
+                context.Writer.Write(requestObject.Confidence.Value);
             }
 
             if(requestObject.IsSetCreatedAt())
@@ -103,7 +103,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCriticality())
             {
                 context.Writer.WritePropertyName("Criticality");
-                context.Writer.Write(requestObject.Criticality);
+                context.Writer.Write(requestObject.Criticality.Value);
             }
 
             if(requestObject.IsSetDescription())
@@ -324,7 +324,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSample())
             {
                 context.Writer.WritePropertyName("Sample");
-                context.Writer.Write(requestObject.Sample);
+                context.Writer.Write(requestObject.Sample.Value);
             }
 
             if(requestObject.IsSetSchemaVersion())

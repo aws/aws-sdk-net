@@ -57,9 +57,9 @@ namespace Amazon.Macie2.Model
         /// the storage size of all versions of all applicable objects in the buckets.
         /// </para>
         /// </summary>
-        public long ClassifiableSizeInBytes
+        public long? ClassifiableSizeInBytes
         {
-            get { return this._classifiableSizeInBytes.GetValueOrDefault(); }
+            get { return this._classifiableSizeInBytes; }
             set { this._classifiableSizeInBytes = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.Macie2.Model
         /// settings for each bucket.
         /// </para>
         /// </summary>
-        public long PubliclyAccessibleCount
+        public long? PubliclyAccessibleCount
         {
-            get { return this._publiclyAccessibleCount.GetValueOrDefault(); }
+            get { return this._publiclyAccessibleCount; }
             set { this._publiclyAccessibleCount = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.Macie2.Model
         /// The total number of buckets.
         /// </para>
         /// </summary>
-        public long TotalCount
+        public long? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Macie2.Model
         /// size of all versions of the objects in the buckets.
         /// </para>
         /// </summary>
-        public long TotalSizeInBytes
+        public long? TotalSizeInBytes
         {
-            get { return this._totalSizeInBytes.GetValueOrDefault(); }
+            get { return this._totalSizeInBytes; }
             set { this._totalSizeInBytes = value; }
         }
 

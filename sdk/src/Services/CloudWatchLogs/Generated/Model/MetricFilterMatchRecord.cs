@@ -63,9 +63,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The event number.
         /// </para>
         /// </summary>
-        public long EventNumber
+        public long? EventNumber
         {
-            get { return this._eventNumber.GetValueOrDefault(); }
+            get { return this._eventNumber; }
             set { this._eventNumber = value; }
         }
 

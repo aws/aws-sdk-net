@@ -132,9 +132,9 @@ namespace Amazon.Comprehend.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int NumberOfTopics
+        public int? NumberOfTopics
         {
-            get { return this._numberOfTopics.GetValueOrDefault(); }
+            get { return this._numberOfTopics; }
             set { this._numberOfTopics = value; }
         }
 

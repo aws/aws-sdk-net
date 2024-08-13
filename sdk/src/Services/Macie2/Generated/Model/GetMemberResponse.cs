@@ -125,9 +125,9 @@ namespace Amazon.Macie2.Model
         /// invitation hasn't been sent to the account.
         /// </para>
         /// </summary>
-        public DateTime InvitedAt
+        public DateTime? InvitedAt
         {
-            get { return this._invitedAt.GetValueOrDefault(); }
+            get { return this._invitedAt; }
             set { this._invitedAt = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.Macie2.Model
         /// to the status of the relationship between the account and the administrator account.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

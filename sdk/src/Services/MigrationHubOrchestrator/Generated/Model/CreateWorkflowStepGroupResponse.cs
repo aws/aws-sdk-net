@@ -49,9 +49,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The time at which the step group is created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

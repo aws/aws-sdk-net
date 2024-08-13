@@ -65,7 +65,7 @@ namespace Amazon.StepFunctions.Model
         /// in order to report the progress or completion of the task.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string TaskToken
         {
             get { return this._taskToken; }

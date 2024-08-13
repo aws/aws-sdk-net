@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
-    /// Describes the current Amazon Pinpoint monthly spend limits for sending voice and text
-    /// messages. For more information on increasing your monthly spend limit, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-spend-threshold.html">
-    /// Requesting increases to your monthly SMS spending quota for Amazon Pinpoint </a> in
-    /// the <i>Amazon Pinpoint User Guide</i>.
+    /// Describes the current monthly spend limits for sending voice and text messages. For
+    /// more information on increasing your monthly spend limit, see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/awssupport-spend-threshold.html">
+    /// Requesting a spending quota increase </a> in the <i>AWS End User Messaging SMS User
+    /// Guide</i>.
     /// </summary>
     public partial class SpendLimit
     {
@@ -51,9 +51,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long EnforcedLimit
+        public long? EnforcedLimit
         {
-            get { return this._enforcedLimit.GetValueOrDefault(); }
+            get { return this._enforcedLimit; }
             set { this._enforcedLimit = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MaxLimit
+        public long? MaxLimit
         {
-            get { return this._maxLimit.GetValueOrDefault(); }
+            get { return this._maxLimit; }
             set { this._maxLimit = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Overridden
+        public bool? Overridden
         {
-            get { return this._overridden.GetValueOrDefault(); }
+            get { return this._overridden; }
             set { this._overridden = value; }
         }
 

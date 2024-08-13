@@ -80,9 +80,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The index number of the reason statement.
         /// </para>
         /// </summary>
-        public int StatementIndex
+        public int? StatementIndex
         {
-            get { return this._statementIndex.GetValueOrDefault(); }
+            get { return this._statementIndex; }
             set { this._statementIndex = value; }
         }
 

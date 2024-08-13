@@ -62,9 +62,9 @@ namespace Amazon.Chime.Model
         /// The timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

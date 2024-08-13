@@ -68,13 +68,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EncryptionPolicyCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EncryptionPolicyCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NetworkPolicyCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NetworkPolicyCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

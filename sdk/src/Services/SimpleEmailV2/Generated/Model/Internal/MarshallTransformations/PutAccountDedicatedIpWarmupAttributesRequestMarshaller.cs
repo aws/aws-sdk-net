@@ -70,7 +70,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoWarmupEnabled())
                 {
                     context.Writer.WritePropertyName("AutoWarmupEnabled");
-                    context.Writer.Write(publicRequest.AutoWarmupEnabled);
+                    context.Writer.Write(publicRequest.AutoWarmupEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

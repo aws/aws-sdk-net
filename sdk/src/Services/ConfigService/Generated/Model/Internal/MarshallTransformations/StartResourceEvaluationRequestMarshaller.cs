@@ -95,7 +95,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEvaluationTimeout())
                 {
                     context.Writer.WritePropertyName("EvaluationTimeout");
-                    context.Writer.Write(publicRequest.EvaluationTimeout);
+                    context.Writer.Write(publicRequest.EvaluationTimeout.Value);
                 }
 
                 if(publicRequest.IsSetResourceDetails())

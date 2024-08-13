@@ -68,7 +68,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("applicationVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ApplicationVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

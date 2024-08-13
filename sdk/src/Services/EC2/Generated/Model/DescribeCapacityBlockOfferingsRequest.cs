@@ -52,9 +52,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int CapacityDurationHours
+        public int? CapacityDurationHours
         {
-            get { return this._capacityDurationHours.GetValueOrDefault(); }
+            get { return this._capacityDurationHours; }
             set { this._capacityDurationHours = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.EC2.Model
         /// The latest end date for the Capacity Block offering.
         /// </para>
         /// </summary>
-        public DateTime EndDateRange
+        public DateTime? EndDateRange
         {
-            get { return this._endDateRange.GetValueOrDefault(); }
+            get { return this._endDateRange; }
             set { this._endDateRange = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.EC2.Model
         /// The earliest start date for the Capacity Block offering.
         /// </para>
         /// </summary>
-        public DateTime StartDateRange
+        public DateTime? StartDateRange
         {
-            get { return this._startDateRange.GetValueOrDefault(); }
+            get { return this._startDateRange; }
             set { this._startDateRange = value; }
         }
 

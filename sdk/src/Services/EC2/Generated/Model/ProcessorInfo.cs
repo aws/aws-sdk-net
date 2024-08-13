@@ -101,9 +101,9 @@ namespace Amazon.EC2.Model
         /// The speed of the processor, in GHz.
         /// </para>
         /// </summary>
-        public double SustainedClockSpeedInGhz
+        public double? SustainedClockSpeedInGhz
         {
-            get { return this._sustainedClockSpeedInGhz.GetValueOrDefault(); }
+            get { return this._sustainedClockSpeedInGhz; }
             set { this._sustainedClockSpeedInGhz = value; }
         }
 

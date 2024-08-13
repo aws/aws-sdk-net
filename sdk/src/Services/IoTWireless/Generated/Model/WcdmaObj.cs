@@ -50,9 +50,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int Lac
+        public int? Lac
         {
-            get { return this._lac.GetValueOrDefault(); }
+            get { return this._lac; }
             set { this._lac = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=200, Max=999)]
-        public int Mcc
+        public int? Mcc
         {
-            get { return this._mcc.GetValueOrDefault(); }
+            get { return this._mcc; }
             set { this._mcc = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=999)]
-        public int Mnc
+        public int? Mnc
         {
-            get { return this._mnc.GetValueOrDefault(); }
+            get { return this._mnc; }
             set { this._mnc = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=46, Max=158)]
-        public int PathLoss
+        public int? PathLoss
         {
-            get { return this._pathLoss.GetValueOrDefault(); }
+            get { return this._pathLoss; }
             set { this._pathLoss = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-120, Max=-25)]
-        public int Rscp
+        public int? Rscp
         {
-            get { return this._rscp.GetValueOrDefault(); }
+            get { return this._rscp; }
             set { this._rscp = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=268435455)]
-        public int UtranCid
+        public int? UtranCid
         {
-            get { return this._utranCid.GetValueOrDefault(); }
+            get { return this._utranCid; }
             set { this._utranCid = value; }
         }
 

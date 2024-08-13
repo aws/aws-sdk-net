@@ -32,8 +32,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Container for the parameters to the RequestPhoneNumber operation.
     /// Request an origination phone number for use in your account. For more information
-    /// on phone number request see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-request-number.html">
-    /// Requesting a number </a> in the <i>Amazon Pinpoint User Guide</i>.
+    /// on phone number request see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-request.html">Request
+    /// a phone number</a> in the <i>AWS End User Messaging SMS User Guide</i>.
     /// </summary>
     public partial class RequestPhoneNumberRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -75,9 +75,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// By default this is set to false. When set to true the phone number can't be deleted.
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 

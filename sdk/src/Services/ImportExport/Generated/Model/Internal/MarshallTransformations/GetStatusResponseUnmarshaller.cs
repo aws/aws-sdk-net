@@ -101,7 +101,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CreationDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.CreationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -113,7 +113,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ErrorCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.ErrorCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

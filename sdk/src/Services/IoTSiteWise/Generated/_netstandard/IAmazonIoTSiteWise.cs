@@ -1257,6 +1257,10 @@ namespace Amazon.IoTSiteWise
         /// </param>
         /// 
         /// <returns>The response from the DeleteGateway service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
@@ -3703,18 +3707,25 @@ namespace Amazon.IoTSiteWise
         /// 
         ///  <important> 
         /// <para>
-        /// This operation overwrites the existing model with the provided model. To avoid deleting
-        /// your asset model's properties or hierarchies, you must include their IDs and definitions
-        /// in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.
+        /// If you remove a property from an asset model, IoT SiteWise deletes all previous data
+        /// for that property. You can’t change the type or data type of an existing property.
         /// </para>
         ///  
         /// <para>
-        /// If you remove a property from an asset model, IoT SiteWise deletes all previous data
-        /// for that property. If you remove a hierarchy definition from an asset model, IoT SiteWise
-        /// disassociates every asset associated with that hierarchy. You can't change the type
-        /// or data type of an existing property.
+        /// To replace an existing asset model property with a new one with the same <c>name</c>,
+        /// do the following:
         /// </para>
-        ///  </important>
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit an <c>UpdateAssetModel</c> request with the entire existing property removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a second <c>UpdateAssetModel</c> request that includes the new property. The
+        /// new asset property will have the same <c>name</c> as the previous one and IoT SiteWise
+        /// will generate a new unique <c>id</c>.
+        /// </para>
+        ///  </li> </ol> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssetModel service method.</param>
         /// <param name="cancellationToken">
@@ -4134,5 +4145,33 @@ namespace Amazon.IoTSiteWise
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonIoTSiteWiseConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonIoTSiteWiseConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonIoTSiteWiseConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonIoTSiteWiseConfig to create AmazonIoTSiteWiseClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonIoTSiteWiseClient(serviceClientConfig) :
+                    new AmazonIoTSiteWiseClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

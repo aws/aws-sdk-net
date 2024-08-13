@@ -101,9 +101,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The time the configuration tag was created in Coordinated Universal Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime TimeOfCreation
+        public DateTime? TimeOfCreation
         {
-            get { return this._timeOfCreation.GetValueOrDefault(); }
+            get { return this._timeOfCreation; }
             set { this._timeOfCreation = value; }
         }
 

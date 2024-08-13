@@ -72,7 +72,7 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDelete())
                 {
                     context.Writer.WritePropertyName("delete");
-                    context.Writer.Write(publicRequest.Delete);
+                    context.Writer.Write(publicRequest.Delete.Value);
                 }
 
                 if(publicRequest.IsSetTunnelId())

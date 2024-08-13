@@ -69,9 +69,9 @@ namespace Amazon.EKS.Model
         /// The Unix epoch timestamp at object creation.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

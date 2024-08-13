@@ -88,7 +88,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNetworkInterfaceDeviceIndex())
                 {
                     context.Writer.WritePropertyName("NetworkInterfaceDeviceIndex");
-                    context.Writer.Write(publicRequest.NetworkInterfaceDeviceIndex);
+                    context.Writer.Write(publicRequest.NetworkInterfaceDeviceIndex.Value);
                 }
 
                 writer.WriteObjectEnd();

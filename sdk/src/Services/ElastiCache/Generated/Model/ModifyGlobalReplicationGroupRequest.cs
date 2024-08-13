@@ -52,9 +52,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.ElastiCache.Model
         /// if the existing primary encounters a failure. 
         /// </para>
         /// </summary>
-        public bool AutomaticFailoverEnabled
+        public bool? AutomaticFailoverEnabled
         {
-            get { return this._automaticFailoverEnabled.GetValueOrDefault(); }
+            get { return this._automaticFailoverEnabled; }
             set { this._automaticFailoverEnabled = value; }
         }
 

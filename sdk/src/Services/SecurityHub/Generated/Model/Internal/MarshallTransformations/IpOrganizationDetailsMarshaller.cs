@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAsn())
             {
                 context.Writer.WritePropertyName("Asn");
-                context.Writer.Write(requestObject.Asn);
+                context.Writer.Write(requestObject.Asn.Value);
             }
 
             if(requestObject.IsSetAsnOrg())

@@ -196,7 +196,7 @@ namespace Amazon.S3.IO
                     };
                     ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
                     var response = s3Client.GetObjectMetadata(request);
-                    ret = response.LastModified.ToLocalTime();
+                    ret = response.LastModified.GetValueOrDefault().ToLocalTime();
                 }
                 return ret;
             }
@@ -227,7 +227,7 @@ namespace Amazon.S3.IO
                     };
                     ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
                     var response = s3Client.GetObjectMetadata(request);
-                    ret = response.LastModified;
+                    ret = response.LastModified.GetValueOrDefault();
                 }
                 return ret;
             }

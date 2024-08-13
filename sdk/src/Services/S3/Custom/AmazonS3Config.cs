@@ -258,7 +258,7 @@ namespace Amazon.S3
         protected override void Initialize()
         {
             this.AllowAutoRedirect = false;
-#if BCL45 || NETSTANDARD
+#if BCL || NETSTANDARD
             // Set Timeout and ReadWriteTimeout for S3 to max timeout as per-request
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
@@ -266,28 +266,6 @@ namespace Amazon.S3
             this.ReadWriteTimeout = ClientConfig.MaxTimeout;
 #pragma warning restore CS0612, CS0618
 #endif
-        }
-
-        /// <summary>
-        /// Given this client configuration, returns the service url
-        /// </summary>
-        /// <returns>The service url in the form of a string</returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
-        public override string DetermineServiceURL()
-        {
-            if (this.ServiceURL != null)
-            {
-                return this.ServiceURL;
-            }
-
-            var actual = this.RegionEndpoint;
-            if (actual?.SystemName == legacyUSEast1GlobalRegionSystemName && !UseAccelerateEndpoint && !UseDualstackEndpoint
-                && USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Regional)
-            {
-                actual = RegionEndpoint.GetBySystemName("us-east-1-regional");
-            }
-
-            return GetUrl(this, actual);
         }
 
         /// <summary>
@@ -308,13 +286,6 @@ namespace Amazon.S3
             }
         }
 
-        internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
-        {
-            var endpoint = regionEndpoint.GetEndpointForService(config);
-
-            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
-            return url;
-        }
         
         /// <summary>
         /// Validate that the config object is properly configured.
@@ -364,22 +335,11 @@ namespace Amazon.S3
             string s3RegionalFlag = Environment.GetEnvironmentVariable(AwsS3UsEast1RegionalEndpointsEnvironmentVariable);
             if (!string.IsNullOrEmpty(s3RegionalFlag))
             {
-#if BCL35
-                 S3UsEast1RegionalEndpointValue? s3RegionalFlagValue = null;
-                 try
-                 {
-                     s3RegionalFlagValue = (S3UsEast1RegionalEndpointValue)Enum.Parse(typeof(S3UsEast1RegionalEndpointValue), s3RegionalFlag, true);
-                 }
-                 catch (Exception)
-                 {
-                     throw new InvalidOperationException("Invalid value for AWS_S3_US_EAST_1_REGIONAL_ENDPOINT environment variable. A string regional/legacy is expected.");
-                 }
-#else
                 if (!Enum.TryParse<S3UsEast1RegionalEndpointValue>(s3RegionalFlag, true, out var s3RegionalFlagValue))
                 {
                     throw new InvalidOperationException("Invalid value for AWS_S3_US_EAST_1_REGIONAL_ENDPOINT variable. A string regional/legacy is expected.");
                 }
-#endif
+
                 return s3RegionalFlagValue;
             }
             return null;

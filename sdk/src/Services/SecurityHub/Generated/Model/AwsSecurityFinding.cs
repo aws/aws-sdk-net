@@ -216,9 +216,9 @@ namespace Amazon.SecurityHub.Model
         /// confidence and 100 means 100 percent confidence.
         /// </para>
         /// </summary>
-        public int Confidence
+        public int? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.SecurityHub.Model
         /// of 100 is reserved for the most critical resources.
         /// </para>
         /// </summary>
-        public int Criticality
+        public int? Criticality
         {
-            get { return this._criticality.GetValueOrDefault(); }
+            get { return this._criticality; }
             set { this._criticality = value; }
         }
 
@@ -863,9 +863,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the finding is a sample finding.
         /// </para>
         /// </summary>
-        public bool Sample
+        public bool? Sample
         {
-            get { return this._sample.GetValueOrDefault(); }
+            get { return this._sample; }
             set { this._sample = value; }
         }
 

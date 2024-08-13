@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TargetObjectiveMetricValue", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.TargetObjectiveMetricValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

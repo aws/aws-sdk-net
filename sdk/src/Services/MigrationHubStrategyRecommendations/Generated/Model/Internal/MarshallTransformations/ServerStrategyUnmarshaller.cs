@@ -68,13 +68,13 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             {
                 if (context.TestExpression("isPreferred", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPreferred = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfApplicationComponents", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfApplicationComponents = unmarshaller.Unmarshall(context);
                     continue;
                 }

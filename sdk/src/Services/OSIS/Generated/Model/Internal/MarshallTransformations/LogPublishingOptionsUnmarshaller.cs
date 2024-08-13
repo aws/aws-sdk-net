@@ -74,7 +74,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsLoggingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsLoggingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,13 +51,13 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxVideoBitsPerSecond())
             {
                 context.Writer.WritePropertyName("maxVideoBitsPerSecond");
-                context.Writer.Write(requestObject.MaxVideoBitsPerSecond);
+                context.Writer.Write(requestObject.MaxVideoBitsPerSecond.Value);
             }
 
             if(requestObject.IsSetMinVideoBitsPerSecond())
             {
                 context.Writer.WritePropertyName("minVideoBitsPerSecond");
-                context.Writer.Write(requestObject.MinVideoBitsPerSecond);
+                context.Writer.Write(requestObject.MinVideoBitsPerSecond.Value);
             }
 
             if(requestObject.IsSetStreamOrder())

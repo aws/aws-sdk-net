@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// resources types in the Region.
         /// </para>
         /// </summary>
-        public bool UseLongIdsAggregated
+        public bool? UseLongIdsAggregated
         {
-            get { return this._useLongIdsAggregated.GetValueOrDefault(); }
+            get { return this._useLongIdsAggregated; }
             set { this._useLongIdsAggregated = value; }
         }
 

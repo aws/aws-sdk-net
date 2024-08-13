@@ -186,9 +186,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int MaxConcurrentSessions
+        public int? MaxConcurrentSessions
         {
-            get { return this._maxConcurrentSessions.GetValueOrDefault(); }
+            get { return this._maxConcurrentSessions; }
             set { this._maxConcurrentSessions = value; }
         }
 

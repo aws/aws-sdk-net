@@ -165,9 +165,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ConfirmRemoveSelfBucketAccess
+        public bool? ConfirmRemoveSelfBucketAccess
         {
-            get { return this._confirmRemoveSelfBucketAccess.GetValueOrDefault(); }
+            get { return this._confirmRemoveSelfBucketAccess; }
             set { this._confirmRemoveSelfBucketAccess = value; }
         }
 

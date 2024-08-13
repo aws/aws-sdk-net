@@ -46,9 +46,9 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastCheckedTimestamp
+        public DateTime? LastCheckedTimestamp
         {
-            get { return this._lastCheckedTimestamp.GetValueOrDefault(); }
+            get { return this._lastCheckedTimestamp; }
             set { this._lastCheckedTimestamp = value; }
         }
 

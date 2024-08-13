@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBOOL())
             {
                 context.Writer.WritePropertyName("BOOL");
-                context.Writer.Write(requestObject.BOOL);
+                context.Writer.Write(requestObject.BOOL.Value);
             }
 
             if(requestObject.IsSetBS())
@@ -126,7 +126,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNULL())
             {
                 context.Writer.WritePropertyName("NULL");
-                context.Writer.Write(requestObject.NULL);
+                context.Writer.Write(requestObject.NULL.Value);
             }
 
             if(requestObject.IsSetS())

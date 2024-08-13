@@ -100,9 +100,9 @@ namespace Amazon.EKS.Model
         /// Whether the add-on requires configuration.
         /// </para>
         /// </summary>
-        public bool RequiresConfiguration
+        public bool? RequiresConfiguration
         {
-            get { return this._requiresConfiguration.GetValueOrDefault(); }
+            get { return this._requiresConfiguration; }
             set { this._requiresConfiguration = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.EKS.Model
         /// Indicates if the Addon requires IAM Permissions to operate, such as networking permissions.
         /// </para>
         /// </summary>
-        public bool RequiresIamPermissions
+        public bool? RequiresIamPermissions
         {
-            get { return this._requiresIamPermissions.GetValueOrDefault(); }
+            get { return this._requiresIamPermissions; }
             set { this._requiresIamPermissions = value; }
         }
 

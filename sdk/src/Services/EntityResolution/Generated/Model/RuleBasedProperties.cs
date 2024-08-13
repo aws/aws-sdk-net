@@ -30,26 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object which defines the list of matching rules to run and has a field <c>Rules</c>,
-    /// which is a list of rule objects.
+    /// An object which defines the list of matching rules to run in a matching workflow.
+    /// RuleBasedProperties contain a <c>Rules</c> field, which is a list of rule objects.
     /// </summary>
     public partial class RuleBasedProperties
     {
         private AttributeMatchingModel _attributeMatchingModel;
+        private MatchPurpose _matchPurpose;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeMatchingModel. 
         /// <para>
         /// The comparison type. You can either choose <c>ONE_TO_ONE</c> or <c>MANY_TO_MANY</c>
-        /// as the AttributeMatchingModel. When choosing <c>MANY_TO_MANY</c>, the system can match
-        /// attributes across the sub-types of an attribute type. For example, if the value of
-        /// the <c>Email</c> field of Profile A and the value of <c>BusinessEmail</c> field of
-        /// Profile B matches, the two profiles are matched on the <c>Email</c> type. When choosing
-        /// <c>ONE_TO_ONE</c> ,the system can only match if the sub-types are exact matches. For
-        /// example, only when the value of the <c>Email</c> field of Profile A and the value
-        /// of the <c>Email</c> field of Profile B matches, the two profiles are matched on the
-        /// <c>Email</c> type.
+        /// as the <c>attributeMatchingModel</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <c>MANY_TO_MANY</c>, the system can match attributes across the sub-types
+        /// of an attribute type. For example, if the value of the <c>Email</c> field of Profile
+        /// A and the value of <c>BusinessEmail</c> field of Profile B matches, the two profiles
+        /// are matched on the <c>Email</c> attribute type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <c>ONE_TO_ONE</c>, the system can only match attributes if the sub-types
+        /// are an exact match. For example, for the <c>Email</c> attribute type, the system will
+        /// only consider it a match if the value of the <c>Email</c> field of Profile A matches
+        /// the value of the <c>Email</c> field of Profile B.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,6 +71,33 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetAttributeMatchingModel()
         {
             return this._attributeMatchingModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchPurpose. 
+        /// <para>
+        ///  An indicator of whether to generate IDs and index the data or not.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <c>IDENTIFIER_GENERATION</c>, the process generates IDs and indexes
+        /// the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <c>INDEXING</c>, the process indexes the data without generating IDs.
+        /// </para>
+        /// </summary>
+        public MatchPurpose MatchPurpose
+        {
+            get { return this._matchPurpose; }
+            set { this._matchPurpose = value; }
+        }
+
+        // Check to see if MatchPurpose property is set
+        internal bool IsSetMatchPurpose()
+        {
+            return this._matchPurpose != null;
         }
 
         /// <summary>

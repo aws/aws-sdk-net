@@ -80,7 +80,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OffsetMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OffsetMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

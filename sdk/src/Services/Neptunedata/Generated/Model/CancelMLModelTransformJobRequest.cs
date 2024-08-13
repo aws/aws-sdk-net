@@ -55,9 +55,9 @@ namespace Amazon.Neptunedata.Model
         /// when the job is stopped. The default is <c>FALSE</c>.
         /// </para>
         /// </summary>
-        public bool Clean
+        public bool? Clean
         {
-            get { return this._clean.GetValueOrDefault(); }
+            get { return this._clean; }
             set { this._clean = value; }
         }
 

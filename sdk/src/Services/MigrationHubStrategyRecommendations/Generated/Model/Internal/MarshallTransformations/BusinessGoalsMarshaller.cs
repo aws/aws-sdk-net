@@ -51,25 +51,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             if(requestObject.IsSetLicenseCostReduction())
             {
                 context.Writer.WritePropertyName("licenseCostReduction");
-                context.Writer.Write(requestObject.LicenseCostReduction);
+                context.Writer.Write(requestObject.LicenseCostReduction.Value);
             }
 
             if(requestObject.IsSetModernizeInfrastructureWithCloudNativeTechnologies())
             {
                 context.Writer.WritePropertyName("modernizeInfrastructureWithCloudNativeTechnologies");
-                context.Writer.Write(requestObject.ModernizeInfrastructureWithCloudNativeTechnologies);
+                context.Writer.Write(requestObject.ModernizeInfrastructureWithCloudNativeTechnologies.Value);
             }
 
             if(requestObject.IsSetReduceOperationalOverheadWithManagedServices())
             {
                 context.Writer.WritePropertyName("reduceOperationalOverheadWithManagedServices");
-                context.Writer.Write(requestObject.ReduceOperationalOverheadWithManagedServices);
+                context.Writer.Write(requestObject.ReduceOperationalOverheadWithManagedServices.Value);
             }
 
             if(requestObject.IsSetSpeedOfMigration())
             {
                 context.Writer.WritePropertyName("speedOfMigration");
-                context.Writer.Write(requestObject.SpeedOfMigration);
+                context.Writer.Write(requestObject.SpeedOfMigration.Value);
             }
 
         }

@@ -97,9 +97,9 @@ namespace Amazon.Lightsail.Model
         /// The date when your load balancer was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value that indicates whether HTTPS redirection is enabled for the load balancer.
         /// </para>
         /// </summary>
-        public bool HttpsRedirectionEnabled
+        public bool? HttpsRedirectionEnabled
         {
-            get { return this._httpsRedirectionEnabled.GetValueOrDefault(); }
+            get { return this._httpsRedirectionEnabled; }
             set { this._httpsRedirectionEnabled = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.Lightsail.Model
         /// For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.
         /// </para>
         /// </summary>
-        public int InstancePort
+        public int? InstancePort
         {
-            get { return this._instancePort.GetValueOrDefault(); }
+            get { return this._instancePort; }
             set { this._instancePort = value; }
         }
 

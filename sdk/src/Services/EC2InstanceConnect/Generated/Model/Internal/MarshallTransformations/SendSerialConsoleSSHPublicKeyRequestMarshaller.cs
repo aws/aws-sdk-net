@@ -78,7 +78,7 @@ namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSerialPort())
                 {
                     context.Writer.WritePropertyName("SerialPort");
-                    context.Writer.Write(publicRequest.SerialPort);
+                    context.Writer.Write(publicRequest.SerialPort.Value);
                 }
 
                 if(publicRequest.IsSetSSHPublicKey())

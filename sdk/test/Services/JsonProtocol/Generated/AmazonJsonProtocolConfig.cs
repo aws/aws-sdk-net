@@ -21,6 +21,8 @@ using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Endpoints;
 using Amazon.JsonProtocol.Internal;
 
 namespace Amazon.JsonProtocol
@@ -32,7 +34,8 @@ namespace Amazon.JsonProtocol
     public partial class AmazonJsonProtocolConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Json Protocol", "3.3");
+            InternalSDKUtils.BuildUserAgentString("Json Protocol", "4.0");
+
 
         private string _userAgent = UserAgentString;
         ///<summary>
@@ -86,6 +89,18 @@ namespace Amazon.JsonProtocol
             {
                 return _userAgent;
             }
+        }
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            // If the current service doesn't have an endpoint rule set (which is the case for configs
+            // that are used for testing), we'll return a placeholder endpoint so that unit tests pass.
+            return new Endpoint(this.ServiceURL ?? "https://example.com");
         }
 
     }

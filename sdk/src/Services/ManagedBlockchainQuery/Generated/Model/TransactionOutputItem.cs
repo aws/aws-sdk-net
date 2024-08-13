@@ -121,9 +121,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime TransactionTimestamp
+        public DateTime? TransactionTimestamp
         {
-            get { return this._transactionTimestamp.GetValueOrDefault(); }
+            get { return this._transactionTimestamp; }
             set { this._transactionTimestamp = value; }
         }
 

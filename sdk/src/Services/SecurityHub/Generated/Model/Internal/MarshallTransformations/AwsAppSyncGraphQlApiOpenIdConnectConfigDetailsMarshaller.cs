@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthTtL())
             {
                 context.Writer.WritePropertyName("AuthTtL");
-                context.Writer.Write(requestObject.AuthTtL);
+                context.Writer.Write(requestObject.AuthTtL.Value);
             }
 
             if(requestObject.IsSetClientId())
@@ -63,7 +63,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIatTtL())
             {
                 context.Writer.WritePropertyName("IatTtL");
-                context.Writer.Write(requestObject.IatTtL);
+                context.Writer.Write(requestObject.IatTtL.Value);
             }
 
             if(requestObject.IsSetIssuer())

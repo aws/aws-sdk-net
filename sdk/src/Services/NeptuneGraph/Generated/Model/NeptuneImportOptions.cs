@@ -51,9 +51,9 @@ namespace Amazon.NeptuneGraph.Model
         /// false.
         /// </para>
         /// </summary>
-        public bool PreserveDefaultVertexLabels
+        public bool? PreserveDefaultVertexLabels
         {
-            get { return this._preserveDefaultVertexLabels.GetValueOrDefault(); }
+            get { return this._preserveDefaultVertexLabels; }
             set { this._preserveDefaultVertexLabels = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.NeptuneGraph.Model
         /// and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.
         /// </para>
         /// </summary>
-        public bool PreserveEdgeIds
+        public bool? PreserveEdgeIds
         {
-            get { return this._preserveEdgeIds.GetValueOrDefault(); }
+            get { return this._preserveEdgeIds; }
             set { this._preserveEdgeIds = value; }
         }
 

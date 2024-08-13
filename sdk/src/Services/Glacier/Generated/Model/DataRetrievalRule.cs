@@ -49,9 +49,9 @@ namespace Amazon.Glacier.Model
         /// and you set this field.
         /// </para>
         /// </summary>
-        public long BytesPerHour
+        public long? BytesPerHour
         {
-            get { return this._bytesPerHour.GetValueOrDefault(); }
+            get { return this._bytesPerHour; }
             set { this._bytesPerHour = value; }
         }
 

@@ -80,9 +80,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public int OutputStartIndex
+        public int? OutputStartIndex
         {
-            get { return this._outputStartIndex.GetValueOrDefault(); }
+            get { return this._outputStartIndex; }
             set { this._outputStartIndex = value; }
         }
 

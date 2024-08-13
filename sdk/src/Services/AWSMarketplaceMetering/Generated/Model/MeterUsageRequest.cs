@@ -69,9 +69,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// specified.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int UsageQuantity
+        public int? UsageQuantity
         {
-            get { return this._usageQuantity.GetValueOrDefault(); }
+            get { return this._usageQuantity; }
             set { this._usageQuantity = value; }
         }
 

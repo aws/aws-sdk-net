@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]
-        public long DecimalPlaces
+        public long? DecimalPlaces
         {
-            get { return this._decimalPlaces.GetValueOrDefault(); }
+            get { return this._decimalPlaces; }
             set { this._decimalPlaces = value; }
         }
 

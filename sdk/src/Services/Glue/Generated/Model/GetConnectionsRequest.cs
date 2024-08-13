@@ -89,9 +89,9 @@ namespace Amazon.Glue.Model
         /// the rest of the connection properties.
         /// </para>
         /// </summary>
-        public bool HidePassword
+        public bool? HidePassword
         {
-            get { return this._hidePassword.GetValueOrDefault(); }
+            get { return this._hidePassword; }
             set { this._hidePassword = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

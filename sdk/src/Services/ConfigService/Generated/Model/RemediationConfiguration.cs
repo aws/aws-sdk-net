@@ -73,9 +73,9 @@ namespace Amazon.ConfigService.Model
         /// The remediation is triggered automatically.
         /// </para>
         /// </summary>
-        public bool Automatic
+        public bool? Automatic
         {
-            get { return this._automatic.GetValueOrDefault(); }
+            get { return this._automatic; }
             set { this._automatic = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MaximumAutomaticAttempts
+        public int? MaximumAutomaticAttempts
         {
-            get { return this._maximumAutomaticAttempts.GetValueOrDefault(); }
+            get { return this._maximumAutomaticAttempts; }
             set { this._maximumAutomaticAttempts = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2678000)]
-        public long RetryAttemptSeconds
+        public long? RetryAttemptSeconds
         {
-            get { return this._retryAttemptSeconds.GetValueOrDefault(); }
+            get { return this._retryAttemptSeconds; }
             set { this._retryAttemptSeconds = value; }
         }
 

@@ -98,7 +98,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FailureRetentionPeriodInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailureRetentionPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -140,7 +140,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SuccessRetentionPeriodInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SuccessRetentionPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,7 +68,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FlowLogsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FlowLogsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,25 +68,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             {
                 if (context.TestExpression("licenseCostReduction", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LicenseCostReduction = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("modernizeInfrastructureWithCloudNativeTechnologies", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ModernizeInfrastructureWithCloudNativeTechnologies = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("reduceOperationalOverheadWithManagedServices", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReduceOperationalOverheadWithManagedServices = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("speedOfMigration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SpeedOfMigration = unmarshaller.Unmarshall(context);
                     continue;
                 }

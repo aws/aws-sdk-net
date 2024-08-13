@@ -78,9 +78,9 @@ namespace Amazon.Backup.Model
         /// The size, in bytes, of the restored resource.
         /// </para>
         /// </summary>
-        public long BackupSizeInBytes
+        public long? BackupSizeInBytes
         {
-            get { return this._backupSizeInBytes.GetValueOrDefault(); }
+            get { return this._backupSizeInBytes; }
             set { this._backupSizeInBytes = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Backup.Model
         /// 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CompletionDate
+        public DateTime? CompletionDate
         {
-            get { return this._completionDate.GetValueOrDefault(); }
+            get { return this._completionDate; }
             set { this._completionDate = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.Backup.Model
         /// take.
         /// </para>
         /// </summary>
-        public long ExpectedCompletionTimeMinutes
+        public long? ExpectedCompletionTimeMinutes
         {
-            get { return this._expectedCompletionTimeMinutes.GetValueOrDefault(); }
+            get { return this._expectedCompletionTimeMinutes; }
             set { this._expectedCompletionTimeMinutes = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.Backup.Model
         /// This is the creation date of the recovery point made by the specifed restore job.
         /// </para>
         /// </summary>
-        public DateTime RecoveryPointCreationDate
+        public DateTime? RecoveryPointCreationDate
         {
-            get { return this._recoveryPointCreationDate.GetValueOrDefault(); }
+            get { return this._recoveryPointCreationDate; }
             set { this._recoveryPointCreationDate = value; }
         }
 

@@ -68,25 +68,25 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ec2", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Ec2 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ecr", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Ecr = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lambda", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lambdaCode", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LambdaCode = unmarshaller.Unmarshall(context);
                     continue;
                 }

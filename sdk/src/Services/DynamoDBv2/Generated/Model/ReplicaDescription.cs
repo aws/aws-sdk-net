@@ -143,9 +143,9 @@ namespace Amazon.DynamoDBv2.Model
         /// of inaccessibility check the <c>ReplicaStatus</c> property.
         /// </para>
         /// </summary>
-        public DateTime ReplicaInaccessibleDateTime
+        public DateTime? ReplicaInaccessibleDateTime
         {
-            get { return this._replicaInaccessibleDateTime.GetValueOrDefault(); }
+            get { return this._replicaInaccessibleDateTime; }
             set { this._replicaInaccessibleDateTime = value; }
         }
 

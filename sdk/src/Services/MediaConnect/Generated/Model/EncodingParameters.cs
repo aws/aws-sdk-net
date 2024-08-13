@@ -46,9 +46,9 @@ namespace Amazon.MediaConnect.Model
         /// Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
         /// </summary>
         [AWSProperty(Required=true)]
-        public double CompressionFactor
+        public double? CompressionFactor
         {
-            get { return this._compressionFactor.GetValueOrDefault(); }
+            get { return this._compressionFactor; }
             set { this._compressionFactor = value; }
         }
 

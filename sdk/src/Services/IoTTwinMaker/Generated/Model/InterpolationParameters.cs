@@ -61,9 +61,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The interpolation time interval in seconds.
         /// </para>
         /// </summary>
-        public long IntervalInSeconds
+        public long? IntervalInSeconds
         {
-            get { return this._intervalInSeconds.GetValueOrDefault(); }
+            get { return this._intervalInSeconds; }
             set { this._intervalInSeconds = value; }
         }
 

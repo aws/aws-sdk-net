@@ -193,9 +193,9 @@ namespace Amazon.MediaPackage.Model
         /// content to retain for startover playback.If not specified, startover playback will
         /// be disabled for the OriginEndpoint.
         /// </summary>
-        public int StartoverWindowSeconds
+        public int? StartoverWindowSeconds
         {
-            get { return this._startoverWindowSeconds.GetValueOrDefault(); }
+            get { return this._startoverWindowSeconds; }
             set { this._startoverWindowSeconds = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.MediaPackage.Model
         /// on the playback of live content.If not specified, there will be no time delay in effect
         /// for the OriginEndpoint.
         /// </summary>
-        public int TimeDelaySeconds
+        public int? TimeDelaySeconds
         {
-            get { return this._timeDelaySeconds.GetValueOrDefault(); }
+            get { return this._timeDelaySeconds; }
             set { this._timeDelaySeconds = value; }
         }
 

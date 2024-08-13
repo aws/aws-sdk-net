@@ -67,9 +67,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// cluster.
         /// </para>
         /// </summary>
-        public int ErrorRetryDuration
+        public int? ErrorRetryDuration
         {
-            get { return this._errorRetryDuration.GetValueOrDefault(); }
+            get { return this._errorRetryDuration; }
             set { this._errorRetryDuration = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// full load operation stops. 
         /// </para>
         /// </summary>
-        public int FullLoadErrorPercentage
+        public int? FullLoadErrorPercentage
         {
-            get { return this._fullLoadErrorPercentage.GetValueOrDefault(); }
+            get { return this._fullLoadErrorPercentage; }
             set { this._fullLoadErrorPercentage = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// type in versions 7. x and later. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool UseNewMappingType
+        public bool? UseNewMappingType
         {
-            get { return this._useNewMappingType.GetValueOrDefault(); }
+            get { return this._useNewMappingType; }
             set { this._useNewMappingType = value; }
         }
 

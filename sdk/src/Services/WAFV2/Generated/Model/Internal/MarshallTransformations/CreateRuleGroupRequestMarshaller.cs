@@ -72,7 +72,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCapacity())
                 {
                     context.Writer.WritePropertyName("Capacity");
-                    context.Writer.Write(publicRequest.Capacity);
+                    context.Writer.Write(publicRequest.Capacity.Value);
                 }
 
                 if(publicRequest.IsSetCustomResponseBodies())

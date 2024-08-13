@@ -83,9 +83,9 @@ namespace Amazon.EventBridge.Model
         /// A time stamp for the time that the connection was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.EventBridge.Model
         /// A time stamp for the time that the connection was last authorized before it wa deleted.
         /// </para>
         /// </summary>
-        public DateTime LastAuthorizedTime
+        public DateTime? LastAuthorizedTime
         {
-            get { return this._lastAuthorizedTime.GetValueOrDefault(); }
+            get { return this._lastAuthorizedTime; }
             set { this._lastAuthorizedTime = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.EventBridge.Model
         /// A time stamp for the time that the connection was last modified before it was deleted.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

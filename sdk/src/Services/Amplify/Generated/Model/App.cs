@@ -181,9 +181,9 @@ namespace Amazon.Amplify.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.Amplify.Model
         /// Enables automated branch creation for the Amplify app. 
         /// </para>
         /// </summary>
-        public bool EnableAutoBranchCreation
+        public bool? EnableAutoBranchCreation
         {
-            get { return this._enableAutoBranchCreation.GetValueOrDefault(); }
+            get { return this._enableAutoBranchCreation; }
             set { this._enableAutoBranchCreation = value; }
         }
 
@@ -293,9 +293,9 @@ namespace Amazon.Amplify.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableBasicAuth
+        public bool? EnableBasicAuth
         {
-            get { return this._enableBasicAuth.GetValueOrDefault(); }
+            get { return this._enableBasicAuth; }
             set { this._enableBasicAuth = value; }
         }
 
@@ -312,9 +312,9 @@ namespace Amazon.Amplify.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableBranchAutoBuild
+        public bool? EnableBranchAutoBuild
         {
-            get { return this._enableBranchAutoBuild.GetValueOrDefault(); }
+            get { return this._enableBranchAutoBuild; }
             set { this._enableBranchAutoBuild = value; }
         }
 
@@ -331,9 +331,9 @@ namespace Amazon.Amplify.Model
         /// from your Git repository.
         /// </para>
         /// </summary>
-        public bool EnableBranchAutoDeletion
+        public bool? EnableBranchAutoDeletion
         {
-            get { return this._enableBranchAutoDeletion.GetValueOrDefault(); }
+            get { return this._enableBranchAutoDeletion; }
             set { this._enableBranchAutoDeletion = value; }
         }
 
@@ -517,9 +517,9 @@ namespace Amazon.Amplify.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

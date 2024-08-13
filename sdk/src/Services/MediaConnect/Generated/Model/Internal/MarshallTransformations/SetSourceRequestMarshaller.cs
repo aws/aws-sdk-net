@@ -85,25 +85,25 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIngestPort())
             {
                 context.Writer.WritePropertyName("ingestPort");
-                context.Writer.Write(requestObject.IngestPort);
+                context.Writer.Write(requestObject.IngestPort.Value);
             }
 
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate);
+                context.Writer.Write(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetMaxLatency())
             {
                 context.Writer.WritePropertyName("maxLatency");
-                context.Writer.Write(requestObject.MaxLatency);
+                context.Writer.Write(requestObject.MaxLatency.Value);
             }
 
             if(requestObject.IsSetMaxSyncBuffer())
             {
                 context.Writer.WritePropertyName("maxSyncBuffer");
-                context.Writer.Write(requestObject.MaxSyncBuffer);
+                context.Writer.Write(requestObject.MaxSyncBuffer.Value);
             }
 
             if(requestObject.IsSetMediaStreamSourceConfigurations())
@@ -125,7 +125,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinLatency())
             {
                 context.Writer.WritePropertyName("minLatency");
-                context.Writer.Write(requestObject.MinLatency);
+                context.Writer.Write(requestObject.MinLatency.Value);
             }
 
             if(requestObject.IsSetName())
@@ -143,7 +143,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSenderControlPort())
             {
                 context.Writer.WritePropertyName("senderControlPort");
-                context.Writer.Write(requestObject.SenderControlPort);
+                context.Writer.Write(requestObject.SenderControlPort.Value);
             }
 
             if(requestObject.IsSetSenderIpAddress())
@@ -161,7 +161,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceListenerPort())
             {
                 context.Writer.WritePropertyName("sourceListenerPort");
-                context.Writer.Write(requestObject.SourceListenerPort);
+                context.Writer.Write(requestObject.SourceListenerPort.Value);
             }
 
             if(requestObject.IsSetStreamId())

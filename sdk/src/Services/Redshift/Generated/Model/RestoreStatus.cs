@@ -50,9 +50,9 @@ namespace Amazon.Redshift.Model
         /// to DC2 node types. 
         /// </para>
         /// </summary>
-        public double CurrentRestoreRateInMegaBytesPerSecond
+        public double? CurrentRestoreRateInMegaBytesPerSecond
         {
-            get { return this._currentRestoreRateInMegaBytesPerSecond.GetValueOrDefault(); }
+            get { return this._currentRestoreRateInMegaBytesPerSecond; }
             set { this._currentRestoreRateInMegaBytesPerSecond = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Redshift.Model
         /// to DC2 node types. 
         /// </para>
         /// </summary>
-        public long ElapsedTimeInSeconds
+        public long? ElapsedTimeInSeconds
         {
-            get { return this._elapsedTimeInSeconds.GetValueOrDefault(); }
+            get { return this._elapsedTimeInSeconds; }
             set { this._elapsedTimeInSeconds = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
-        public long EstimatedTimeToCompletionInSeconds
+        public long? EstimatedTimeToCompletionInSeconds
         {
-            get { return this._estimatedTimeToCompletionInSeconds.GetValueOrDefault(); }
+            get { return this._estimatedTimeToCompletionInSeconds; }
             set { this._estimatedTimeToCompletionInSeconds = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Redshift.Model
         /// is only updated when you restore to DC2 node types. 
         /// </para>
         /// </summary>
-        public long ProgressInMegaBytes
+        public long? ProgressInMegaBytes
         {
-            get { return this._progressInMegaBytes.GetValueOrDefault(); }
+            get { return this._progressInMegaBytes; }
             set { this._progressInMegaBytes = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Redshift.Model
         /// updated when you restore to DC2 node types. 
         /// </para>
         /// </summary>
-        public long SnapshotSizeInMegaBytes
+        public long? SnapshotSizeInMegaBytes
         {
-            get { return this._snapshotSizeInMegaBytes.GetValueOrDefault(); }
+            get { return this._snapshotSizeInMegaBytes; }
             set { this._snapshotSizeInMegaBytes = value; }
         }
 

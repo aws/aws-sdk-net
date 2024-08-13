@@ -95,9 +95,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public double CreationDate
+        public double? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the key has key rotation enabled.
         /// </para>
         /// </summary>
-        public bool KeyRotationStatus
+        public bool? KeyRotationStatus
         {
-            get { return this._keyRotationStatus.GetValueOrDefault(); }
+            get { return this._keyRotationStatus; }
             set { this._keyRotationStatus = value; }
         }
 

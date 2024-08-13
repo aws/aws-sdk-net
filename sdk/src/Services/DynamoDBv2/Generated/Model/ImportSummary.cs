@@ -70,9 +70,9 @@ namespace Amazon.DynamoDBv2.Model
         /// creation of the table it was imported to?) 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.DynamoDBv2.Model
         ///  The time at which this import task began. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

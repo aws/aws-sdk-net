@@ -86,9 +86,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Indicates whether this is the default rule.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

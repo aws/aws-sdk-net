@@ -235,9 +235,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The number of Amazon EC2 instances in the cluster.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Cluster Termination</a> in the <i>EMR Management Guide</i>.
         /// </para>
         /// </summary>
-        public bool KeepJobFlowAliveWhenNoSteps
+        public bool? KeepJobFlowAliveWhenNoSteps
         {
-            get { return this._keepJobFlowAliveWhenNoSteps.GetValueOrDefault(); }
+            get { return this._keepJobFlowAliveWhenNoSteps; }
             set { this._keepJobFlowAliveWhenNoSteps = value; }
         }
 
@@ -393,9 +393,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// terminated by API call, user intervention, or in the event of a job-flow error.
         /// </para>
         /// </summary>
-        public bool TerminationProtected
+        public bool? TerminationProtected
         {
-            get { return this._terminationProtected.GetValueOrDefault(); }
+            get { return this._terminationProtected; }
             set { this._terminationProtected = value; }
         }
 
@@ -412,9 +412,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// within the cluster.
         /// </para>
         /// </summary>
-        public bool UnhealthyNodeReplacement
+        public bool? UnhealthyNodeReplacement
         {
-            get { return this._unhealthyNodeReplacement.GetValueOrDefault(); }
+            get { return this._unhealthyNodeReplacement; }
             set { this._unhealthyNodeReplacement = value; }
         }
 

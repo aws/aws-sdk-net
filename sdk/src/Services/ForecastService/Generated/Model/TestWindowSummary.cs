@@ -96,9 +96,9 @@ namespace Amazon.ForecastService.Model
         /// The time at which the test ended.
         /// </para>
         /// </summary>
-        public DateTime TestWindowEnd
+        public DateTime? TestWindowEnd
         {
-            get { return this._testWindowEnd.GetValueOrDefault(); }
+            get { return this._testWindowEnd; }
             set { this._testWindowEnd = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.ForecastService.Model
         /// The time at which the test began.
         /// </para>
         /// </summary>
-        public DateTime TestWindowStart
+        public DateTime? TestWindowStart
         {
-            get { return this._testWindowStart.GetValueOrDefault(); }
+            get { return this._testWindowStart; }
             set { this._testWindowStart = value; }
         }
 

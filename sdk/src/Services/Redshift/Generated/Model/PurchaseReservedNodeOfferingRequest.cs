@@ -58,9 +58,9 @@ namespace Amazon.Redshift.Model
         /// Default: <c>1</c> 
         /// </para>
         /// </summary>
-        public int NodeCount
+        public int? NodeCount
         {
-            get { return this._nodeCount.GetValueOrDefault(); }
+            get { return this._nodeCount; }
             set { this._nodeCount = value; }
         }
 

@@ -101,9 +101,9 @@ namespace Amazon.AutoScaling.Model
         /// Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public bool ShouldRespectGracePeriod
+        public bool? ShouldRespectGracePeriod
         {
-            get { return this._shouldRespectGracePeriod.GetValueOrDefault(); }
+            get { return this._shouldRespectGracePeriod; }
             set { this._shouldRespectGracePeriod = value; }
         }
 

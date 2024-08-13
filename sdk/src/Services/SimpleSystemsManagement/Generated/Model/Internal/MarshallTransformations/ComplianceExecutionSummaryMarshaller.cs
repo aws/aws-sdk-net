@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionTime())
             {
                 context.Writer.WritePropertyName("ExecutionTime");
-                context.Writer.Write(requestObject.ExecutionTime);
+                context.Writer.Write(requestObject.ExecutionTime.Value);
             }
 
             if(requestObject.IsSetExecutionType())

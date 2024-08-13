@@ -61,9 +61,9 @@ namespace Amazon.MTurk.Model
         /// to the number of types this operation returns. 
         /// </para>
         /// </summary>
-        public int NumResults
+        public int? NumResults
         {
-            get { return this._numResults.GetValueOrDefault(); }
+            get { return this._numResults; }
             set { this._numResults = value; }
         }
 

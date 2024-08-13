@@ -64,9 +64,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int WarmupPercentage
+        public int? WarmupPercentage
         {
-            get { return this._warmupPercentage.GetValueOrDefault(); }
+            get { return this._warmupPercentage; }
             set { this._warmupPercentage = value; }
         }
 

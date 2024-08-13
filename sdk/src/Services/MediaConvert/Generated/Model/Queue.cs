@@ -68,9 +68,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CreatedAt. The timestamp in epoch seconds for when you
         /// created the queue.
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property LastUpdated. The timestamp in epoch seconds for when you
         /// most recently updated the queue.
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ProgressingJobsCount. The estimated number of jobs with
         /// a PROGRESSING status.
         /// </summary>
-        public int ProgressingJobsCount
+        public int? ProgressingJobsCount
         {
-            get { return this._progressingJobsCount.GetValueOrDefault(); }
+            get { return this._progressingJobsCount; }
             set { this._progressingJobsCount = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SubmittedJobsCount. The estimated number of jobs with a
         /// SUBMITTED status.
         /// </summary>
-        public int SubmittedJobsCount
+        public int? SubmittedJobsCount
         {
-            get { return this._submittedJobsCount.GetValueOrDefault(); }
+            get { return this._submittedJobsCount; }
             set { this._submittedJobsCount = value; }
         }
 

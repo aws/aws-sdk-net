@@ -57,13 +57,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoolDown())
             {
                 context.Writer.WritePropertyName("CoolDown");
-                context.Writer.Write(requestObject.CoolDown);
+                context.Writer.Write(requestObject.CoolDown.Value);
             }
 
             if(requestObject.IsSetScalingAdjustment())
             {
                 context.Writer.WritePropertyName("ScalingAdjustment");
-                context.Writer.Write(requestObject.ScalingAdjustment);
+                context.Writer.Write(requestObject.ScalingAdjustment.Value);
             }
 
         }

@@ -3827,6 +3827,14 @@ namespace Amazon.RDS
         /// <summary>
         /// Returns a list of resources (for example, DB instances) that have at least one pending
         /// maintenance action.
+        /// 
+        ///  
+        /// <para>
+        /// This API follows an eventual consistency model. This means that the result of the
+        /// <c>DescribePendingMaintenanceActions</c> command might not be immediately visible
+        /// to all subsequent RDS commands. Keep this in mind when you use <c>DescribePendingMaintenanceActions</c>
+        /// immediately after using a previous API command such as <c>ApplyPendingMaintenanceActions</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
         /// <param name="cancellationToken">
@@ -6774,10 +6782,6 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// You can't export cluster data from Multi-AZ DB clusters.
-        /// </para>
-        ///  
-        /// <para>
         /// For more information on exporting DB snapshot data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting
         /// DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting
         /// DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.
@@ -7126,5 +7130,33 @@ namespace Amazon.RDS
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonRDSConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonRDSConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonRDSConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonRDSConfig to create AmazonRDSClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonRDSClient(serviceClientConfig) :
+                    new AmazonRDSClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

@@ -97,9 +97,9 @@ namespace Amazon.LexModelsV2.Model
         /// A timestamp of the date and time that the intent was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 

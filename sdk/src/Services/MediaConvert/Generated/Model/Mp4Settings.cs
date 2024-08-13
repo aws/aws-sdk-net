@@ -95,9 +95,9 @@ namespace Amazon.MediaConvert.Model
         /// for some players and packagers.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public int CttsVersion
+        public int? CttsVersion
         {
-            get { return this._cttsVersion.GetValueOrDefault(); }
+            get { return this._cttsVersion; }
             set { this._cttsVersion = value; }
         }
 

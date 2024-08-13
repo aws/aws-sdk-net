@@ -63,13 +63,13 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventValue())
             {
                 context.Writer.WritePropertyName("eventValue");
-                if(StringUtils.IsSpecialFloatValue(requestObject.EventValue))
+                if(StringUtils.IsSpecialFloatValue(requestObject.EventValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.EventValue));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.EventValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.EventValue);
+                    context.Writer.Write(requestObject.EventValue.Value);
                 }
             }
 
@@ -116,7 +116,7 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSentAt())
             {
                 context.Writer.WritePropertyName("sentAt");
-                context.Writer.Write(requestObject.SentAt);
+                context.Writer.Write(requestObject.SentAt.Value);
             }
 
         }

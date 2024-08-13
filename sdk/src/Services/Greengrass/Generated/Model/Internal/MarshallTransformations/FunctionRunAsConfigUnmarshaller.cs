@@ -68,13 +68,13 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Gid", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Gid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Uid", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
                     continue;
                 }

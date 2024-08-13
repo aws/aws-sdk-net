@@ -55,13 +55,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listObjectsRequest.IsSetEncoding())
                 request.Parameters.Add("encoding-type", S3Transforms.ToStringValue(listObjectsRequest.Encoding));
             if (listObjectsRequest.IsSetMaxKeys())
-                request.Parameters.Add("max-keys", S3Transforms.ToStringValue(listObjectsRequest.MaxKeys));
+                request.Parameters.Add("max-keys", S3Transforms.ToStringValue(listObjectsRequest.MaxKeys.Value));
             if (listObjectsRequest.IsSetPrefix())
                 request.Parameters.Add("prefix", S3Transforms.ToStringValue(listObjectsRequest.Prefix));
             if (listObjectsRequest.IsSetContinuationToken())
                 request.Parameters.Add("continuation-token", S3Transforms.ToStringValue(listObjectsRequest.ContinuationToken));
             if (listObjectsRequest.IsSetFetchOwner())
-                request.Parameters.Add("fetch-owner", S3Transforms.ToStringValue(listObjectsRequest.FetchOwner));
+                request.Parameters.Add("fetch-owner", S3Transforms.ToStringValue(listObjectsRequest.FetchOwner.Value));
             if (listObjectsRequest.IsSetStartAfter())
                 request.Parameters.Add("start-after", S3Transforms.ToStringValue(listObjectsRequest.StartAfter));
 

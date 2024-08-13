@@ -67,9 +67,9 @@ namespace Amazon.CloudFront.Model
         /// The maximum number of conflicting aliases requested.
         /// </para>
         /// </summary>
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.CloudFront.Model
         /// The number of conflicting aliases returned in the response.
         /// </para>
         /// </summary>
-        public int Quantity
+        public int? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

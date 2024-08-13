@@ -148,9 +148,9 @@ namespace Amazon.PaymentCryptographyData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=5)]
-        public int ValidationDataLength
+        public int? ValidationDataLength
         {
-            get { return this._validationDataLength.GetValueOrDefault(); }
+            get { return this._validationDataLength; }
             set { this._validationDataLength = value; }
         }
 

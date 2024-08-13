@@ -66,9 +66,9 @@ namespace Amazon.Appflow.Model
         /// and size of the records that each file contains.
         /// </para>
         /// </summary>
-        public long TargetFileSize
+        public long? TargetFileSize
         {
-            get { return this._targetFileSize.GetValueOrDefault(); }
+            get { return this._targetFileSize; }
             set { this._targetFileSize = value; }
         }
 

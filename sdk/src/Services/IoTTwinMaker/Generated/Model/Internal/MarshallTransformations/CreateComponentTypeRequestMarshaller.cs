@@ -137,7 +137,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsSingleton())
                 {
                     context.Writer.WritePropertyName("isSingleton");
-                    context.Writer.Write(publicRequest.IsSingleton);
+                    context.Writer.Write(publicRequest.IsSingleton.Value);
                 }
 
                 if(publicRequest.IsSetPropertyDefinitions())

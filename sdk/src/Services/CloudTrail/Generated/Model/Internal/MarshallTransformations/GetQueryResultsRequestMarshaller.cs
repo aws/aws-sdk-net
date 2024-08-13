@@ -78,7 +78,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxQueryResults())
                 {
                     context.Writer.WritePropertyName("MaxQueryResults");
-                    context.Writer.Write(publicRequest.MaxQueryResults);
+                    context.Writer.Write(publicRequest.MaxQueryResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

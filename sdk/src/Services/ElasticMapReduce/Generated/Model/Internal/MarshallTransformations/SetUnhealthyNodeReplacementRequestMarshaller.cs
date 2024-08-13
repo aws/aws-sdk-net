@@ -83,7 +83,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUnhealthyNodeReplacement())
                 {
                     context.Writer.WritePropertyName("UnhealthyNodeReplacement");
-                    context.Writer.Write(publicRequest.UnhealthyNodeReplacement);
+                    context.Writer.Write(publicRequest.UnhealthyNodeReplacement.Value);
                 }
 
                 writer.WriteObjectEnd();

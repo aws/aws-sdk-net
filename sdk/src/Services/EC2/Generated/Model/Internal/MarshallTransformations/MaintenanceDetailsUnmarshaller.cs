@@ -57,13 +57,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("lastMaintenanceApplied", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastMaintenanceApplied = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("maintenanceAutoAppliedAfter", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.MaintenanceAutoAppliedAfter = unmarshaller.Unmarshall(context);
                         continue;
                     }

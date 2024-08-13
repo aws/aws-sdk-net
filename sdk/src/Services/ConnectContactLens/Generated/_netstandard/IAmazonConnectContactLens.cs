@@ -32,16 +32,28 @@ namespace Amazon.ConnectContactLens
     /// <summary>
     /// <para>Interface for accessing ConnectContactLens</para>
     ///
-    /// Contact Lens for Amazon Connect enables you to analyze conversations between customer
+    /// <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Contact_Lens.html">Contact
+    /// Lens actions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Contact_Lens.html">Contact
+    /// Lens data types</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Amazon Connect Contact Lens enables you to analyze conversations between customer
     /// and agents, by using speech transcription, natural language processing, and intelligent
     /// search capabilities. It performs sentiment analysis, detects issues, and enables you
     /// to automatically categorize contacts.
-    /// 
+    /// </para>
     ///  
     /// <para>
-    /// Contact Lens for Amazon Connect provides both real-time and post-call analytics of
-    /// customer-agent conversations. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html">Analyze
-    /// conversations using Contact Lens</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Amazon Connect Contact Lens provides both real-time and post-call analytics of customer-agent
+    /// conversations. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html">Analyze
+    /// conversations using speech analytics</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// 
     /// </para>
     /// </summary>
@@ -98,5 +110,33 @@ namespace Amazon.ConnectContactLens
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonConnectContactLensConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonConnectContactLensConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonConnectContactLensConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonConnectContactLensConfig to create AmazonConnectContactLensClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonConnectContactLensClient(serviceClientConfig) :
+                    new AmazonConnectContactLensClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

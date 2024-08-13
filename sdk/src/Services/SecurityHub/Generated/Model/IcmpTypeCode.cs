@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model
         /// value <c>-1</c>.
         /// </para>
         /// </summary>
-        public int Code
+        public int? Code
         {
-            get { return this._code.GetValueOrDefault(); }
+            get { return this._code; }
             set { this._code = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// value <c>-1</c>.
         /// </para>
         /// </summary>
-        public int Type
+        public int? Type
         {
-            get { return this._type.GetValueOrDefault(); }
+            get { return this._type; }
             set { this._type = value; }
         }
 

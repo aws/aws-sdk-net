@@ -51,9 +51,9 @@ namespace Amazon.Macie2.Model
         /// format.
         /// </para>
         /// </summary>
-        public long FileType
+        public long? FileType
         {
-            get { return this._fileType.GetValueOrDefault(); }
+            get { return this._fileType; }
             set { this._fileType = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Macie2.Model
         /// because the objects use an unsupported storage class.
         /// </para>
         /// </summary>
-        public long StorageClass
+        public long? StorageClass
         {
-            get { return this._storageClass.GetValueOrDefault(); }
+            get { return this._storageClass; }
             set { this._storageClass = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Macie2.Model
         /// for a supported file or storage format.
         /// </para>
         /// </summary>
-        public long Total
+        public long? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

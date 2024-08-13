@@ -80,7 +80,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("latestActivityTaskTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestActivityTaskTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

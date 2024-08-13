@@ -61,9 +61,9 @@ namespace Amazon.CodeCatalyst.Model
         /// Whether the email address has been verified.
         /// </para>
         /// </summary>
-        public bool Verified
+        public bool? Verified
         {
-            get { return this._verified.GetValueOrDefault(); }
+            get { return this._verified; }
             set { this._verified = value; }
         }
 

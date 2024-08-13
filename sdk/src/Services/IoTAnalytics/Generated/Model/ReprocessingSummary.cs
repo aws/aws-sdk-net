@@ -44,9 +44,9 @@ namespace Amazon.IoTAnalytics.Model
         /// The time the pipeline reprocessing was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

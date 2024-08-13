@@ -71,9 +71,9 @@ namespace Amazon.Pinpoint.Model
         /// July 26, 2019.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.Pinpoint.Model
         /// July 19, 2019. This value should also be fewer than 90 days from the current day.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

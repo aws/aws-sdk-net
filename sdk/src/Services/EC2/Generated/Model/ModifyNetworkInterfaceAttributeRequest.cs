@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
         /// interface (eth0).
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.EC2.Model
         /// with the ENI becomes the primary IPv6 address.
         /// </para>
         /// </summary>
-        public bool EnablePrimaryIpv6
+        public bool? EnablePrimaryIpv6
         {
-            get { return this._enablePrimaryIpv6.GetValueOrDefault(); }
+            get { return this._enablePrimaryIpv6; }
             set { this._enablePrimaryIpv6 = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.EC2.Model
         /// such as network address translation, routing, or firewalls.
         /// </para>
         /// </summary>
-        public bool SourceDestCheck
+        public bool? SourceDestCheck
         {
-            get { return this._sourceDestCheck.GetValueOrDefault(); }
+            get { return this._sourceDestCheck; }
             set { this._sourceDestCheck = value; }
         }
 

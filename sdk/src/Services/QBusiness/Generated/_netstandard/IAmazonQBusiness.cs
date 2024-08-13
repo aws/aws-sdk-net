@@ -54,39 +54,6 @@ namespace Amazon.QBusiness
     /// </para>
     ///  
     /// <para>
-    /// You can use the following AWS SDKs to access Amazon Q Business APIs:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-cpp">AWS SDK for C++</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-go">AWS SDK for Go</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-java">AWS SDK for Java</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-javascript">AWS SDK for JavaScript</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-net">AWS SDK for .NET</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/pythonsdk">AWS SDK for Python (Boto3)</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/sdk-for-ruby">AWS SDK for Ruby</a> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
     /// The following resources provide additional information about using the Amazon Q Business
     /// API:
     /// </para>
@@ -2486,5 +2453,33 @@ namespace Amazon.QBusiness
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonQBusinessConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonQBusinessConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonQBusinessConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonQBusinessConfig to create AmazonQBusinessClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonQBusinessClient(serviceClientConfig) :
+                    new AmazonQBusinessClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

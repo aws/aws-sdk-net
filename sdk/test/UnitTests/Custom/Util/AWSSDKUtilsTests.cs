@@ -12,13 +12,12 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-using Amazon.Util;
 using System.Reflection;
-using Moq;
-using Amazon.Util.Internal;
+using System.Text;
 
 namespace AWSSDK.UnitTests
 {
@@ -163,6 +162,38 @@ namespace AWSSDK.UnitTests
             var dateTime = AWSSDKUtils.ConvertFromUnixEpochMilliseconds(1599590914970).ToUniversalTime();
             
             Assert.AreEqual(expectedDateTime, dateTime);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataRow("Hello World", true, "48656c6c6f20576f726c64")]
+        [DataRow("Hello World", false, "48656C6C6F20576F726C64")]
+        [DataTestMethod]
+        public void ToHex(string input, bool lowercase, string expectedResult)
+        {
+            var bytes = Encoding.UTF8.GetBytes(input);
+            var hexString = AWSSDKUtils.ToHex(bytes, lowercase);
+
+            Assert.AreEqual(expectedResult, hexString);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [DataTestMethod]
+        [DataRow(null, null)]
+        [DataRow("no-delimiters-at-all", "")]
+        [DataRow("delimiter-end-of-string.", "")]
+        [DataRow("relative-path/no-file-extension", "")]
+        [DataRow("relative-path\\no-file-extension", "")]
+        [DataRow("relative-path:no-file-extension", "")]
+        [DataRow("simple-file.pdf", ".pdf")]
+        [DataRow("relative-path/with-file-extension.pdf", ".pdf")]
+        [DataRow("relative-path.with-dot/with-file-extension.pdf", ".pdf")]
+        public void GetExtension(string input, string expected)
+        {
+            var actual = AWSSDKUtils.GetExtension(input);
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

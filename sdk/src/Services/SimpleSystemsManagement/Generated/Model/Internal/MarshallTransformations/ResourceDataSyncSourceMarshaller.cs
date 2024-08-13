@@ -62,13 +62,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableAllOpsDataSources())
             {
                 context.Writer.WritePropertyName("EnableAllOpsDataSources");
-                context.Writer.Write(requestObject.EnableAllOpsDataSources);
+                context.Writer.Write(requestObject.EnableAllOpsDataSources.Value);
             }
 
             if(requestObject.IsSetIncludeFutureRegions())
             {
                 context.Writer.WritePropertyName("IncludeFutureRegions");
-                context.Writer.Write(requestObject.IncludeFutureRegions);
+                context.Writer.Write(requestObject.IncludeFutureRegions.Value);
             }
 
             if(requestObject.IsSetSourceRegions())

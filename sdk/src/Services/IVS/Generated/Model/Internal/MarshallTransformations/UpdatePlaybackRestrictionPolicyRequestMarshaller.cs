@@ -98,7 +98,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableStrictOriginEnforcement())
                 {
                     context.Writer.WritePropertyName("enableStrictOriginEnforcement");
-                    context.Writer.Write(publicRequest.EnableStrictOriginEnforcement);
+                    context.Writer.Write(publicRequest.EnableStrictOriginEnforcement.Value);
                 }
 
                 if(publicRequest.IsSetName())

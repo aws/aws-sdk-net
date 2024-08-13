@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the EBS volume is deleted when the EC2 instance is terminated.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 

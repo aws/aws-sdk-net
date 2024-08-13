@@ -46,9 +46,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ErrorEntries
+        public int? ErrorEntries
         {
-            get { return this._errorEntries.GetValueOrDefault(); }
+            get { return this._errorEntries; }
             set { this._errorEntries = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int LabeledEntries
+        public int? LabeledEntries
         {
-            get { return this._labeledEntries.GetValueOrDefault(); }
+            get { return this._labeledEntries; }
             set { this._labeledEntries = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TotalEntries
+        public int? TotalEntries
         {
-            get { return this._totalEntries.GetValueOrDefault(); }
+            get { return this._totalEntries; }
             set { this._totalEntries = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TotalLabels
+        public int? TotalLabels
         {
-            get { return this._totalLabels.GetValueOrDefault(); }
+            get { return this._totalLabels; }
             set { this._totalLabels = value; }
         }
 

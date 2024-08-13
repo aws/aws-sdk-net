@@ -55,9 +55,9 @@ namespace Amazon.Neptune.Model
         /// snapshot, and otherwise false. The default is false.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 

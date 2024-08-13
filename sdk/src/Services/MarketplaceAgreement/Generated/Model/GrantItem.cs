@@ -67,9 +67,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxQuantity
+        public int? MaxQuantity
         {
-            get { return this._maxQuantity.GetValueOrDefault(); }
+            get { return this._maxQuantity; }
             set { this._maxQuantity = value; }
         }
 

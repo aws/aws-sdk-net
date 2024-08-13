@@ -88,9 +88,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// but can't be updated using UpdateUserAttributes.
         /// </para>
         /// </summary>
-        public bool DeveloperOnlyAttribute
+        public bool? DeveloperOnlyAttribute
         {
-            get { return this._developerOnlyAttribute.GetValueOrDefault(); }
+            get { return this._developerOnlyAttribute; }
             set { this._developerOnlyAttribute = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Identity Provider Attribute Mappings for Your User Pool</a>.
         /// </para>
         /// </summary>
-        public bool Mutable
+        public bool? Mutable
         {
-            get { return this._mutable.GetValueOrDefault(); }
+            get { return this._mutable; }
             set { this._mutable = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// and the user doesn't provide a value, registration or sign-in will fail.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

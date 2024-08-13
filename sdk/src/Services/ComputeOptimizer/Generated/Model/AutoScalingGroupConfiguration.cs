@@ -45,9 +45,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The desired capacity, or number of instances, for the Auto Scaling group.
         /// </para>
         /// </summary>
-        public int DesiredCapacity
+        public int? DesiredCapacity
         {
-            get { return this._desiredCapacity.GetValueOrDefault(); }
+            get { return this._desiredCapacity; }
             set { this._desiredCapacity = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The maximum size, or maximum number of instances, for the Auto Scaling group.
         /// </para>
         /// </summary>
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The minimum size, or minimum number of instances, for the Auto Scaling group.
         /// </para>
         /// </summary>
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public int AvailableCIDRCount
+        public int? AvailableCIDRCount
         {
-            get { return this._availableCIDRCount.GetValueOrDefault(); }
+            get { return this._availableCIDRCount; }
             set { this._availableCIDRCount = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public int UtilizedCIDRCount
+        public int? UtilizedCIDRCount
         {
-            get { return this._utilizedCIDRCount.GetValueOrDefault(); }
+            get { return this._utilizedCIDRCount; }
             set { this._utilizedCIDRCount = value; }
         }
 

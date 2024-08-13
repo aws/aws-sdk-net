@@ -47,9 +47,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long IngestionTime
+        public long? IngestionTime
         {
-            get { return this._ingestionTime.GetValueOrDefault(); }
+            get { return this._ingestionTime; }
             set { this._ingestionTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Timestamp
+        public long? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

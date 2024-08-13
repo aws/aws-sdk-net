@@ -67,9 +67,9 @@ namespace Amazon.Elasticsearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

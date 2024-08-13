@@ -68,9 +68,9 @@ namespace Amazon.CodeDeploy.Model
         /// deployment. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.CodeDeploy.Model
         /// blue/green deployment receives.
         /// </para>
         /// </summary>
-        public double TargetVersionWeight
+        public double? TargetVersionWeight
         {
-            get { return this._targetVersionWeight.GetValueOrDefault(); }
+            get { return this._targetVersionWeight; }
             set { this._targetVersionWeight = value; }
         }
 

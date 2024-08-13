@@ -68,7 +68,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("amazonSideAsn", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AmazonSideAsn = unmarshaller.Unmarshall(context);
                     continue;
                 }

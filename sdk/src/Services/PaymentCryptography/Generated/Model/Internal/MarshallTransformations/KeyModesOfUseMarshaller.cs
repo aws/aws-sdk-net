@@ -51,55 +51,55 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecrypt())
             {
                 context.Writer.WritePropertyName("Decrypt");
-                context.Writer.Write(requestObject.Decrypt);
+                context.Writer.Write(requestObject.Decrypt.Value);
             }
 
             if(requestObject.IsSetDeriveKey())
             {
                 context.Writer.WritePropertyName("DeriveKey");
-                context.Writer.Write(requestObject.DeriveKey);
+                context.Writer.Write(requestObject.DeriveKey.Value);
             }
 
             if(requestObject.IsSetEncrypt())
             {
                 context.Writer.WritePropertyName("Encrypt");
-                context.Writer.Write(requestObject.Encrypt);
+                context.Writer.Write(requestObject.Encrypt.Value);
             }
 
             if(requestObject.IsSetGenerate())
             {
                 context.Writer.WritePropertyName("Generate");
-                context.Writer.Write(requestObject.Generate);
+                context.Writer.Write(requestObject.Generate.Value);
             }
 
             if(requestObject.IsSetNoRestrictions())
             {
                 context.Writer.WritePropertyName("NoRestrictions");
-                context.Writer.Write(requestObject.NoRestrictions);
+                context.Writer.Write(requestObject.NoRestrictions.Value);
             }
 
             if(requestObject.IsSetSign())
             {
                 context.Writer.WritePropertyName("Sign");
-                context.Writer.Write(requestObject.Sign);
+                context.Writer.Write(requestObject.Sign.Value);
             }
 
             if(requestObject.IsSetUnwrap())
             {
                 context.Writer.WritePropertyName("Unwrap");
-                context.Writer.Write(requestObject.Unwrap);
+                context.Writer.Write(requestObject.Unwrap.Value);
             }
 
             if(requestObject.IsSetVerify())
             {
                 context.Writer.WritePropertyName("Verify");
-                context.Writer.Write(requestObject.Verify);
+                context.Writer.Write(requestObject.Verify.Value);
             }
 
             if(requestObject.IsSetWrap())
             {
                 context.Writer.WritePropertyName("Wrap");
-                context.Writer.Write(requestObject.Wrap);
+                context.Writer.Write(requestObject.Wrap.Value);
             }
 
         }

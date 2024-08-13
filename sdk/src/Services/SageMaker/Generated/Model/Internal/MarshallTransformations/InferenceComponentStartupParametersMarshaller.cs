@@ -51,13 +51,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerStartupHealthCheckTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("ContainerStartupHealthCheckTimeoutInSeconds");
-                context.Writer.Write(requestObject.ContainerStartupHealthCheckTimeoutInSeconds);
+                context.Writer.Write(requestObject.ContainerStartupHealthCheckTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetModelDataDownloadTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("ModelDataDownloadTimeoutInSeconds");
-                context.Writer.Write(requestObject.ModelDataDownloadTimeoutInSeconds);
+                context.Writer.Write(requestObject.ModelDataDownloadTimeoutInSeconds.Value);
             }
 
         }

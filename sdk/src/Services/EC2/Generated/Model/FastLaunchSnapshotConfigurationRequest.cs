@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// enabled AMI.
         /// </para>
         /// </summary>
-        public int TargetResourceCount
+        public int? TargetResourceCount
         {
-            get { return this._targetResourceCount.GetValueOrDefault(); }
+            get { return this._targetResourceCount; }
             set { this._targetResourceCount = value; }
         }
 

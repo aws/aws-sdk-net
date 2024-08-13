@@ -63,19 +63,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnablePartialResultsStabilization())
             {
                 context.Writer.WritePropertyName("EnablePartialResultsStabilization");
-                context.Writer.Write(requestObject.EnablePartialResultsStabilization);
+                context.Writer.Write(requestObject.EnablePartialResultsStabilization.Value);
             }
 
             if(requestObject.IsSetFilterPartialResults())
             {
                 context.Writer.WritePropertyName("FilterPartialResults");
-                context.Writer.Write(requestObject.FilterPartialResults);
+                context.Writer.Write(requestObject.FilterPartialResults.Value);
             }
 
             if(requestObject.IsSetIdentifyLanguage())
             {
                 context.Writer.WritePropertyName("IdentifyLanguage");
-                context.Writer.Write(requestObject.IdentifyLanguage);
+                context.Writer.Write(requestObject.IdentifyLanguage.Value);
+            }
+
+            if(requestObject.IsSetIdentifyMultipleLanguages())
+            {
+                context.Writer.WritePropertyName("IdentifyMultipleLanguages");
+                context.Writer.Write(requestObject.IdentifyMultipleLanguages.Value);
             }
 
             if(requestObject.IsSetLanguageCode())
@@ -117,7 +123,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShowSpeakerLabel())
             {
                 context.Writer.WritePropertyName("ShowSpeakerLabel");
-                context.Writer.Write(requestObject.ShowSpeakerLabel);
+                context.Writer.Write(requestObject.ShowSpeakerLabel.Value);
             }
 
             if(requestObject.IsSetVocabularyFilterMethod())

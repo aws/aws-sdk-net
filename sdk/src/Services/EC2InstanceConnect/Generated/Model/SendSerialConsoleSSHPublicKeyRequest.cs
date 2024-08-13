@@ -72,9 +72,9 @@ namespace Amazon.EC2InstanceConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=0)]
-        public int SerialPort
+        public int? SerialPort
         {
-            get { return this._serialPort.GetValueOrDefault(); }
+            get { return this._serialPort; }
             set { this._serialPort = value; }
         }
 

@@ -87,7 +87,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreateNewVersion())
                 {
                     context.Writer.WritePropertyName("CreateNewVersion");
-                    context.Writer.Write(publicRequest.CreateNewVersion);
+                    context.Writer.Write(publicRequest.CreateNewVersion.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -99,7 +99,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEvaluationFormVersion())
                 {
                     context.Writer.WritePropertyName("EvaluationFormVersion");
-                    context.Writer.Write(publicRequest.EvaluationFormVersion);
+                    context.Writer.Write(publicRequest.EvaluationFormVersion.Value);
                 }
 
                 if(publicRequest.IsSetItems())

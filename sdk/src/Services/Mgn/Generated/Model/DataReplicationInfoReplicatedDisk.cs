@@ -47,9 +47,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long BackloggedStorageBytes
+        public long? BackloggedStorageBytes
         {
-            get { return this._backloggedStorageBytes.GetValueOrDefault(); }
+            get { return this._backloggedStorageBytes; }
             set { this._backloggedStorageBytes = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ReplicatedStorageBytes
+        public long? ReplicatedStorageBytes
         {
-            get { return this._replicatedStorageBytes.GetValueOrDefault(); }
+            get { return this._replicatedStorageBytes; }
             set { this._replicatedStorageBytes = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long RescannedStorageBytes
+        public long? RescannedStorageBytes
         {
-            get { return this._rescannedStorageBytes.GetValueOrDefault(); }
+            get { return this._rescannedStorageBytes; }
             set { this._rescannedStorageBytes = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TotalStorageBytes
+        public long? TotalStorageBytes
         {
-            get { return this._totalStorageBytes.GetValueOrDefault(); }
+            get { return this._totalStorageBytes; }
             set { this._totalStorageBytes = value; }
         }
 

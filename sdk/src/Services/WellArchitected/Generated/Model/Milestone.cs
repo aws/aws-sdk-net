@@ -59,9 +59,9 @@ namespace Amazon.WellArchitected.Model
         /// Gets and sets the property MilestoneNumber.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MilestoneNumber
+        public int? MilestoneNumber
         {
-            get { return this._milestoneNumber.GetValueOrDefault(); }
+            get { return this._milestoneNumber; }
             set { this._milestoneNumber = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property RecordedAt.
         /// </summary>
-        public DateTime RecordedAt
+        public DateTime? RecordedAt
         {
-            get { return this._recordedAt.GetValueOrDefault(); }
+            get { return this._recordedAt; }
             set { this._recordedAt = value; }
         }
 

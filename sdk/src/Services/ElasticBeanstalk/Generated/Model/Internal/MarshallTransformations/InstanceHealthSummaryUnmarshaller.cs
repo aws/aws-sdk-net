@@ -57,49 +57,49 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Degraded", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Degraded = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Info", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Info = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NoData", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NoData = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Ok", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Ok = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Pending", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Severe", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Severe = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Unknown", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Unknown = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Warning", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Warning = unmarshaller.Unmarshall(context);
                         continue;
                     }

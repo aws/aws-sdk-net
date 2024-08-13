@@ -61,9 +61,9 @@ namespace Amazon.SageMaker.Model
         /// For a failed job, this is when Amazon SageMaker detected that the job failed. 
         /// </para>
         /// </summary>
-        public DateTime CompilationEndTime
+        public DateTime? CompilationEndTime
         {
-            get { return this._compilationEndTime.GetValueOrDefault(); }
+            get { return this._compilationEndTime; }
             set { this._compilationEndTime = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.SageMaker.Model
         /// the compilation job container. 
         /// </para>
         /// </summary>
-        public DateTime CompilationStartTime
+        public DateTime? CompilationStartTime
         {
-            get { return this._compilationStartTime.GetValueOrDefault(); }
+            get { return this._compilationStartTime; }
             set { this._compilationStartTime = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

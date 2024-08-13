@@ -74,7 +74,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("ClientRequestToken", Guid.NewGuid().ToString());                
 
                 if(publicRequest.IsSetConfirmationRequired())
-                    xmlWriter.WriteElementString("ConfirmationRequired", StringUtils.FromBool(publicRequest.ConfirmationRequired));
+                    xmlWriter.WriteElementString("ConfirmationRequired", StringUtils.FromBool(publicRequest.ConfirmationRequired.Value));
 
                 if(publicRequest.IsSetDescription())
                     xmlWriter.WriteElementString("Description", StringUtils.FromString(publicRequest.Description));
@@ -86,13 +86,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("Location");
                         if(publicRequest.Manifest.Location.IsSetETag())
-                            xmlWriter.WriteElementString("ETag", StringUtils.FromString(publicRequest.Manifest.Location.ETag));                 
+                            xmlWriter.WriteElementString("ETag", StringUtils.FromString(publicRequest.Manifest.Location.ETag));
 
                         if(publicRequest.Manifest.Location.IsSetObjectArn())
-                            xmlWriter.WriteElementString("ObjectArn", StringUtils.FromString(publicRequest.Manifest.Location.ObjectArn));                 
+                            xmlWriter.WriteElementString("ObjectArn", StringUtils.FromString(publicRequest.Manifest.Location.ObjectArn));
 
                         if(publicRequest.Manifest.Location.IsSetObjectVersionId())
-                            xmlWriter.WriteElementString("ObjectVersionId", StringUtils.FromString(publicRequest.Manifest.Location.ObjectVersionId));                 
+                            xmlWriter.WriteElementString("ObjectVersionId", StringUtils.FromString(publicRequest.Manifest.Location.ObjectVersionId));
 
                         xmlWriter.WriteEndElement();
                     }
@@ -112,7 +112,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.Manifest.Spec.IsSetFormat())
-                            xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequest.Manifest.Spec.Format));                 
+                            xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequest.Manifest.Spec.Format));
 
                         xmlWriter.WriteEndElement();
                     }
@@ -125,22 +125,22 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("S3JobManifestGenerator");
                         if(publicRequest.ManifestGenerator.S3JobManifestGenerator.IsSetEnableManifestOutput())
-                            xmlWriter.WriteElementString("EnableManifestOutput", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.EnableManifestOutput));                 
+                            xmlWriter.WriteElementString("EnableManifestOutput", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.EnableManifestOutput.Value));
 
                         if(publicRequest.ManifestGenerator.S3JobManifestGenerator.IsSetExpectedBucketOwner())
-                            xmlWriter.WriteElementString("ExpectedBucketOwner", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ExpectedBucketOwner));                 
+                            xmlWriter.WriteElementString("ExpectedBucketOwner", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ExpectedBucketOwner));
 
                         if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter != null)
                         {
                             xmlWriter.WriteStartElement("Filter");
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetCreatedAfter())
-                                xmlWriter.WriteElementString("CreatedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedAfter));                 
+                                xmlWriter.WriteElementString("CreatedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedAfter.Value));
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetCreatedBefore())
-                                xmlWriter.WriteElementString("CreatedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedBefore));                 
+                                xmlWriter.WriteElementString("CreatedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedBefore.Value));
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetEligibleForReplication())
-                                xmlWriter.WriteElementString("EligibleForReplication", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.EligibleForReplication));                 
+                                xmlWriter.WriteElementString("EligibleForReplication", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.EligibleForReplication.Value));
 
                             if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint != null)
                             {
@@ -208,10 +208,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetObjectSizeGreaterThanBytes())
-                                xmlWriter.WriteElementString("ObjectSizeGreaterThanBytes", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeGreaterThanBytes));                 
+                                xmlWriter.WriteElementString("ObjectSizeGreaterThanBytes", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeGreaterThanBytes.Value));
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetObjectSizeLessThanBytes())
-                                xmlWriter.WriteElementString("ObjectSizeLessThanBytes", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeLessThanBytes));                 
+                                xmlWriter.WriteElementString("ObjectSizeLessThanBytes", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeLessThanBytes.Value));
 
                             xmlWriter.WriteEndElement();
                         }
@@ -219,10 +219,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("ManifestOutputLocation");
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.IsSetBucket())
-                                xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.Bucket));                 
+                                xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.Bucket));
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.IsSetExpectedManifestBucketOwner())
-                                xmlWriter.WriteElementString("ExpectedManifestBucketOwner", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ExpectedManifestBucketOwner));                 
+                                xmlWriter.WriteElementString("ExpectedManifestBucketOwner", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ExpectedManifestBucketOwner));
 
                             if (publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption != null)
                             {
@@ -231,7 +231,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("SSE-KMS");
                                     if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption.SSEKMS.IsSetKeyId())
-                                        xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption.SSEKMS.KeyId));                 
+                                        xmlWriter.WriteElementString("KeyId", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestEncryption.SSEKMS.KeyId));
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -243,15 +243,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();
                             }
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.IsSetManifestFormat())
-                                xmlWriter.WriteElementString("ManifestFormat", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestFormat));                 
+                                xmlWriter.WriteElementString("ManifestFormat", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestFormat));
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.IsSetManifestPrefix())
-                                xmlWriter.WriteElementString("ManifestPrefix", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestPrefix));                 
+                                xmlWriter.WriteElementString("ManifestPrefix", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ManifestOutputLocation.ManifestPrefix));
 
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.ManifestGenerator.S3JobManifestGenerator.IsSetSourceBucket())
-                            xmlWriter.WriteElementString("SourceBucket", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.SourceBucket));                 
+                            xmlWriter.WriteElementString("SourceBucket", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.SourceBucket));
 
                         xmlWriter.WriteEndElement();
                     }
@@ -264,10 +264,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("LambdaInvoke");
                         if(publicRequest.Operation.LambdaInvoke.IsSetFunctionArn())
-                            xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequest.Operation.LambdaInvoke.FunctionArn));                 
+                            xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequest.Operation.LambdaInvoke.FunctionArn));
 
                         if(publicRequest.Operation.LambdaInvoke.IsSetInvocationSchemaVersion())
-                            xmlWriter.WriteElementString("InvocationSchemaVersion", StringUtils.FromString(publicRequest.Operation.LambdaInvoke.InvocationSchemaVersion));                 
+                            xmlWriter.WriteElementString("InvocationSchemaVersion", StringUtils.FromString(publicRequest.Operation.LambdaInvoke.InvocationSchemaVersion));
 
                             xmlWriter.WriteStartElement("UserArguments");
                             foreach (var kvp in publicRequest.Operation.LambdaInvoke.UserArguments)
@@ -290,10 +290,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("S3InitiateRestoreObject");
                         if(publicRequest.Operation.S3InitiateRestoreObject.IsSetExpirationInDays())
-                            xmlWriter.WriteElementString("ExpirationInDays", StringUtils.FromInt(publicRequest.Operation.S3InitiateRestoreObject.ExpirationInDays));                 
+                            xmlWriter.WriteElementString("ExpirationInDays", StringUtils.FromInt(publicRequest.Operation.S3InitiateRestoreObject.ExpirationInDays.Value));
 
                         if(publicRequest.Operation.S3InitiateRestoreObject.IsSetGlacierJobTier())
-                            xmlWriter.WriteElementString("GlacierJobTier", StringUtils.FromString(publicRequest.Operation.S3InitiateRestoreObject.GlacierJobTier));                 
+                            xmlWriter.WriteElementString("GlacierJobTier", StringUtils.FromString(publicRequest.Operation.S3InitiateRestoreObject.GlacierJobTier));
 
                         xmlWriter.WriteEndElement();
                     }
@@ -319,18 +319,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                         {
                                             xmlWriter.WriteStartElement("Grantee");
                                             if(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.IsSetDisplayName())
-                                                xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.DisplayName));                 
+                                                xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.DisplayName));
 
                                             if(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.IsSetIdentifier())
-                                                xmlWriter.WriteElementString("Identifier", StringUtils.FromString(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.Identifier));                 
+                                                xmlWriter.WriteElementString("Identifier", StringUtils.FromString(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.Identifier));
 
                                             if(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.IsSetTypeIdentifier())
-                                                xmlWriter.WriteElementString("TypeIdentifier", StringUtils.FromString(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.TypeIdentifier));                 
+                                                xmlWriter.WriteElementString("TypeIdentifier", StringUtils.FromString(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Grantee.TypeIdentifier));
 
                                             xmlWriter.WriteEndElement();
                                         }
                                         if(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.IsSetPermission())
-                                            xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Permission));                 
+                                            xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequestOperationS3PutObjectAclAccessControlPolicyAccessControlListGrantsValue.Permission));
 
                                         xmlWriter.WriteEndElement();
                                     }
@@ -341,17 +341,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("Owner");
                                     if(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.AccessControlList.Owner.IsSetDisplayName())
-                                        xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.AccessControlList.Owner.DisplayName));                 
+                                        xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.AccessControlList.Owner.DisplayName));
 
                                     if(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.AccessControlList.Owner.IsSetID())
-                                        xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.AccessControlList.Owner.ID));                 
+                                        xmlWriter.WriteElementString("ID", StringUtils.FromString(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.AccessControlList.Owner.ID));
 
                                     xmlWriter.WriteEndElement();
                                 }
                                 xmlWriter.WriteEndElement();
                             }
                             if(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.IsSetCannedAccessControlList())
-                                xmlWriter.WriteElementString("CannedAccessControlList", StringUtils.FromString(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.CannedAccessControlList));                 
+                                xmlWriter.WriteElementString("CannedAccessControlList", StringUtils.FromString(publicRequest.Operation.S3PutObjectAcl.AccessControlPolicy.CannedAccessControlList));
 
                             xmlWriter.WriteEndElement();
                         }
@@ -373,18 +373,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("Grantee");
                                     if(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.IsSetDisplayName())
-                                        xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.DisplayName));                 
+                                        xmlWriter.WriteElementString("DisplayName", StringUtils.FromString(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.DisplayName));
 
                                     if(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.IsSetIdentifier())
-                                        xmlWriter.WriteElementString("Identifier", StringUtils.FromString(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.Identifier));                 
+                                        xmlWriter.WriteElementString("Identifier", StringUtils.FromString(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.Identifier));
 
                                     if(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.IsSetTypeIdentifier())
-                                        xmlWriter.WriteElementString("TypeIdentifier", StringUtils.FromString(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.TypeIdentifier));                 
+                                        xmlWriter.WriteElementString("TypeIdentifier", StringUtils.FromString(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Grantee.TypeIdentifier));
 
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.IsSetPermission())
-                                    xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Permission));                 
+                                    xmlWriter.WriteElementString("Permission", StringUtils.FromString(publicRequestOperationS3PutObjectCopyAccessControlGrantsValue.Permission));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -392,52 +392,52 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetBucketKeyEnabled())
-                            xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.BucketKeyEnabled));                 
+                            xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.BucketKeyEnabled.Value));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetCannedAccessControlList())
-                            xmlWriter.WriteElementString("CannedAccessControlList", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.CannedAccessControlList));                 
+                            xmlWriter.WriteElementString("CannedAccessControlList", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.CannedAccessControlList));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetChecksumAlgorithm())
-                            xmlWriter.WriteElementString("ChecksumAlgorithm", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ChecksumAlgorithm));                 
+                            xmlWriter.WriteElementString("ChecksumAlgorithm", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ChecksumAlgorithm));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetMetadataDirective())
-                            xmlWriter.WriteElementString("MetadataDirective", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.MetadataDirective));                 
+                            xmlWriter.WriteElementString("MetadataDirective", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.MetadataDirective));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetModifiedSinceConstraint())
-                            xmlWriter.WriteElementString("ModifiedSinceConstraint", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.ModifiedSinceConstraint));                 
+                            xmlWriter.WriteElementString("ModifiedSinceConstraint", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.ModifiedSinceConstraint.Value));
 
                         if (publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata != null)
                         {
                             xmlWriter.WriteStartElement("NewObjectMetadata");
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetCacheControl())
-                                xmlWriter.WriteElementString("CacheControl", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.CacheControl));                 
+                                xmlWriter.WriteElementString("CacheControl", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.CacheControl));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetContentDisposition())
-                                xmlWriter.WriteElementString("ContentDisposition", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentDisposition));                 
+                                xmlWriter.WriteElementString("ContentDisposition", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentDisposition));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetContentEncoding())
-                                xmlWriter.WriteElementString("ContentEncoding", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentEncoding));                 
+                                xmlWriter.WriteElementString("ContentEncoding", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentEncoding));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetContentLanguage())
-                                xmlWriter.WriteElementString("ContentLanguage", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentLanguage));                 
+                                xmlWriter.WriteElementString("ContentLanguage", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentLanguage));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetContentLength())
-                                xmlWriter.WriteElementString("ContentLength", StringUtils.FromLong(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentLength));                 
+                                xmlWriter.WriteElementString("ContentLength", StringUtils.FromLong(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentLength.Value));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetContentMD5())
-                                xmlWriter.WriteElementString("ContentMD5", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentMD5));                 
+                                xmlWriter.WriteElementString("ContentMD5", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentMD5));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetContentType())
-                                xmlWriter.WriteElementString("ContentType", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentType));                 
+                                xmlWriter.WriteElementString("ContentType", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentType));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetHttpExpiresDate())
-                                xmlWriter.WriteElementString("HttpExpiresDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.HttpExpiresDate));                 
+                                xmlWriter.WriteElementString("HttpExpiresDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.HttpExpiresDate.Value));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetRequesterCharged())
-                                xmlWriter.WriteElementString("RequesterCharged", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.RequesterCharged));                 
+                                xmlWriter.WriteElementString("RequesterCharged", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.RequesterCharged.Value));
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetSSEAlgorithm())
-                                xmlWriter.WriteElementString("SSEAlgorithm", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.SSEAlgorithm));                 
+                                xmlWriter.WriteElementString("SSEAlgorithm", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.SSEAlgorithm));
 
                                 xmlWriter.WriteStartElement("UserMetadata");
                                 foreach (var kvp in publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.UserMetadata)
@@ -461,10 +461,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("member");
                                 if(publicRequestOperationS3PutObjectCopyNewObjectTaggingValue.IsSetKey())
-                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestOperationS3PutObjectCopyNewObjectTaggingValue.Key));                 
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestOperationS3PutObjectCopyNewObjectTaggingValue.Key));
 
                                 if(publicRequestOperationS3PutObjectCopyNewObjectTaggingValue.IsSetValue())
-                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestOperationS3PutObjectCopyNewObjectTaggingValue.Value));                 
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestOperationS3PutObjectCopyNewObjectTaggingValue.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -472,34 +472,34 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockLegalHoldStatus())
-                            xmlWriter.WriteElementString("ObjectLockLegalHoldStatus", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ObjectLockLegalHoldStatus));                 
+                            xmlWriter.WriteElementString("ObjectLockLegalHoldStatus", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ObjectLockLegalHoldStatus));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockMode())
-                            xmlWriter.WriteElementString("ObjectLockMode", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ObjectLockMode));                 
+                            xmlWriter.WriteElementString("ObjectLockMode", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ObjectLockMode));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockRetainUntilDate())
-                            xmlWriter.WriteElementString("ObjectLockRetainUntilDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.ObjectLockRetainUntilDate));                 
+                            xmlWriter.WriteElementString("ObjectLockRetainUntilDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.ObjectLockRetainUntilDate.Value));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetRedirectLocation())
-                            xmlWriter.WriteElementString("RedirectLocation", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.RedirectLocation));                 
+                            xmlWriter.WriteElementString("RedirectLocation", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.RedirectLocation));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetRequesterPays())
-                            xmlWriter.WriteElementString("RequesterPays", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.RequesterPays));                 
+                            xmlWriter.WriteElementString("RequesterPays", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.RequesterPays.Value));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetSSEAwsKmsKeyId())
-                            xmlWriter.WriteElementString("SSEAwsKmsKeyId", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.SSEAwsKmsKeyId));                 
+                            xmlWriter.WriteElementString("SSEAwsKmsKeyId", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.SSEAwsKmsKeyId));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetStorageClass())
-                            xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.StorageClass));                 
+                            xmlWriter.WriteElementString("StorageClass", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.StorageClass));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetTargetKeyPrefix())
-                            xmlWriter.WriteElementString("TargetKeyPrefix", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.TargetKeyPrefix));                 
+                            xmlWriter.WriteElementString("TargetKeyPrefix", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.TargetKeyPrefix));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetTargetResource())
-                            xmlWriter.WriteElementString("TargetResource", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.TargetResource));                 
+                            xmlWriter.WriteElementString("TargetResource", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.TargetResource));
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetUnModifiedSinceConstraint())
-                            xmlWriter.WriteElementString("UnModifiedSinceConstraint", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.UnModifiedSinceConstraint));                 
+                            xmlWriter.WriteElementString("UnModifiedSinceConstraint", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectCopy.UnModifiedSinceConstraint.Value));
 
                         xmlWriter.WriteEndElement();
                     }
@@ -510,7 +510,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("LegalHold");
                             if(publicRequest.Operation.S3PutObjectLegalHold.LegalHold.IsSetStatus())
-                                xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.Operation.S3PutObjectLegalHold.LegalHold.Status));                 
+                                xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.Operation.S3PutObjectLegalHold.LegalHold.Status));
 
                             xmlWriter.WriteEndElement();
                         }
@@ -520,16 +520,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("S3PutObjectRetention");
                         if(publicRequest.Operation.S3PutObjectRetention.IsSetBypassGovernanceRetention())
-                            xmlWriter.WriteElementString("BypassGovernanceRetention", StringUtils.FromBool(publicRequest.Operation.S3PutObjectRetention.BypassGovernanceRetention));                 
+                            xmlWriter.WriteElementString("BypassGovernanceRetention", StringUtils.FromBool(publicRequest.Operation.S3PutObjectRetention.BypassGovernanceRetention.Value));
 
                         if (publicRequest.Operation.S3PutObjectRetention.Retention != null)
                         {
                             xmlWriter.WriteStartElement("Retention");
                             if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetMode())
-                                xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Operation.S3PutObjectRetention.Retention.Mode));                 
+                                xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Operation.S3PutObjectRetention.Retention.Mode));
 
                             if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetRetainUntilDate())
-                                xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectRetention.Retention.RetainUntilDate));                 
+                                xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Operation.S3PutObjectRetention.Retention.RetainUntilDate.Value));
 
                             xmlWriter.WriteEndElement();
                         }
@@ -548,10 +548,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("member");
                                 if(publicRequestOperationS3PutObjectTaggingTagSetValue.IsSetKey())
-                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestOperationS3PutObjectTaggingTagSetValue.Key));                 
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestOperationS3PutObjectTaggingTagSetValue.Key));
 
                                 if(publicRequestOperationS3PutObjectTaggingTagSetValue.IsSetValue())
-                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestOperationS3PutObjectTaggingTagSetValue.Value));                 
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestOperationS3PutObjectTaggingTagSetValue.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -568,25 +568,25 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetPriority())
-                    xmlWriter.WriteElementString("Priority", StringUtils.FromInt(publicRequest.Priority));
+                    xmlWriter.WriteElementString("Priority", StringUtils.FromInt(publicRequest.Priority.Value));
 
                 if (publicRequest.Report != null)
                 {
                     xmlWriter.WriteStartElement("Report");
                     if(publicRequest.Report.IsSetBucket())
-                        xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.Report.Bucket));                 
+                        xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.Report.Bucket));
 
                     if(publicRequest.Report.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.Report.Enabled));                 
+                        xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.Report.Enabled.Value));
 
                     if(publicRequest.Report.IsSetFormat())
-                        xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequest.Report.Format));                 
+                        xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequest.Report.Format));
 
                     if(publicRequest.Report.IsSetPrefix())
-                        xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.Report.Prefix));                 
+                        xmlWriter.WriteElementString("Prefix", StringUtils.FromString(publicRequest.Report.Prefix));
 
                     if(publicRequest.Report.IsSetReportScope())
-                        xmlWriter.WriteElementString("ReportScope", StringUtils.FromString(publicRequest.Report.ReportScope));                 
+                        xmlWriter.WriteElementString("ReportScope", StringUtils.FromString(publicRequest.Report.ReportScope));
 
                     xmlWriter.WriteEndElement();
                 }
@@ -603,10 +603,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("member");
                         if(publicRequestTagsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));                 
+                            xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
 
                         if(publicRequestTagsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));                 
+                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
 
                         xmlWriter.WriteEndElement();
                     }

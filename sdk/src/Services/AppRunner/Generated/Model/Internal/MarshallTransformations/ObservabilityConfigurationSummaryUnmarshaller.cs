@@ -80,7 +80,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ObservabilityConfigurationRevision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityConfigurationRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }

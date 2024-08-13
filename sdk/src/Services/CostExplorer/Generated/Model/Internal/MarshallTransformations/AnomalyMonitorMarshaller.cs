@@ -57,7 +57,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensionalValueCount())
             {
                 context.Writer.WritePropertyName("DimensionalValueCount");
-                context.Writer.Write(requestObject.DimensionalValueCount);
+                context.Writer.Write(requestObject.DimensionalValueCount.Value);
             }
 
             if(requestObject.IsSetLastEvaluatedDate())

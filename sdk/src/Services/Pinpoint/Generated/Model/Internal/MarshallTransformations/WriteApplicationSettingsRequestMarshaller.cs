@@ -62,13 +62,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.CloudWatchMetricsEnabled);
+                context.Writer.Write(requestObject.CloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetEventTaggingEnabled())
             {
                 context.Writer.WritePropertyName("EventTaggingEnabled");
-                context.Writer.Write(requestObject.EventTaggingEnabled);
+                context.Writer.Write(requestObject.EventTaggingEnabled.Value);
             }
 
             if(requestObject.IsSetJourneyLimits())

@@ -53,9 +53,9 @@ namespace Amazon.Backup.Model
         /// This is the time in number format when legal hold was cancelled.
         /// </para>
         /// </summary>
-        public DateTime CancellationDate
+        public DateTime? CancellationDate
         {
-            get { return this._cancellationDate.GetValueOrDefault(); }
+            get { return this._cancellationDate; }
             set { this._cancellationDate = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.Backup.Model
         /// This is the time in number format when legal hold was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 

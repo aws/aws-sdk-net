@@ -68,7 +68,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("boolean", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Boolean = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("long", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Long = unmarshaller.Unmarshall(context);
                     continue;
                 }

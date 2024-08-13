@@ -85,9 +85,9 @@ namespace Amazon.AppConfig.Model
         /// The version number for the extension defined in the association.
         /// </para>
         /// </summary>
-        public int ExtensionVersionNumber
+        public int? ExtensionVersionNumber
         {
-            get { return this._extensionVersionNumber.GetValueOrDefault(); }
+            get { return this._extensionVersionNumber; }
             set { this._extensionVersionNumber = value; }
         }
 

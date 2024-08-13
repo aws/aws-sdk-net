@@ -88,9 +88,9 @@ namespace Amazon.IoTWireless.Model
         /// The end timestamp for the summary metric query.
         /// </para>
         /// </summary>
-        public DateTime EndTimestamp
+        public DateTime? EndTimestamp
         {
-            get { return this._endTimestamp.GetValueOrDefault(); }
+            get { return this._endTimestamp; }
             set { this._endTimestamp = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.IoTWireless.Model
         /// The start timestamp for the summary metric query.
         /// </para>
         /// </summary>
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

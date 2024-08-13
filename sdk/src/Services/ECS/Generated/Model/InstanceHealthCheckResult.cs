@@ -45,9 +45,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for when the container instance health status last changed.
         /// </para>
         /// </summary>
-        public DateTime LastStatusChange
+        public DateTime? LastStatusChange
         {
-            get { return this._lastStatusChange.GetValueOrDefault(); }
+            get { return this._lastStatusChange; }
             set { this._lastStatusChange = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for when the container instance health status was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

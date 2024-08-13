@@ -70,7 +70,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsJoinTable())
             {
                 context.Writer.WritePropertyName("isJoinTable");
-                context.Writer.Write(requestObject.IsJoinTable);
+                context.Writer.Write(requestObject.IsJoinTable.Value);
             }
 
             if(requestObject.IsSetPrimaryKeys())

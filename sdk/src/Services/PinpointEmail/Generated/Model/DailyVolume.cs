@@ -64,9 +64,9 @@ namespace Amazon.PinpointEmail.Model
         /// The date that the DailyVolume metrics apply to, in Unix time.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

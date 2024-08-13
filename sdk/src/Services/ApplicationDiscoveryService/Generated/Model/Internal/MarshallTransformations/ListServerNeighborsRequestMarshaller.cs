@@ -78,7 +78,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNeighborConfigurationIds())
@@ -101,7 +101,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 if(publicRequest.IsSetPortInformationNeeded())
                 {
                     context.Writer.WritePropertyName("portInformationNeeded");
-                    context.Writer.Write(publicRequest.PortInformationNeeded);
+                    context.Writer.Write(publicRequest.PortInformationNeeded.Value);
                 }
 
                 writer.WriteObjectEnd();

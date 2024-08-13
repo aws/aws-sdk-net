@@ -45,6 +45,7 @@ namespace Amazon.CleanRooms.Model
         private string _name;
         private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private List<SchemaStatusDetail> _schemaStatusDetails = AWSConfigs.InitializeCollections ? new List<SchemaStatusDetail>() : null;
+        private SchemaTypeProperties _schemaTypeProperties;
         private SchemaType _type;
         private DateTime? _updateTime;
 
@@ -149,9 +150,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -258,6 +259,24 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SchemaTypeProperties. 
+        /// <para>
+        /// The schema type properties.
+        /// </para>
+        /// </summary>
+        public SchemaTypeProperties SchemaTypeProperties
+        {
+            get { return this._schemaTypeProperties; }
+            set { this._schemaTypeProperties = value; }
+        }
+
+        // Check to see if SchemaTypeProperties property is set
+        internal bool IsSetSchemaTypeProperties()
+        {
+            return this._schemaTypeProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of schema. The only valid value is currently `TABLE`.
@@ -283,9 +302,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

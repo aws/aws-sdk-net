@@ -117,9 +117,9 @@ namespace Amazon.PaymentCryptographyData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=16)]
-        public int MacLength
+        public int? MacLength
         {
-            get { return this._macLength.GetValueOrDefault(); }
+            get { return this._macLength; }
             set { this._macLength = value; }
         }
 

@@ -197,9 +197,9 @@ namespace Amazon.ECS.Model
         /// specify up to 10 tasks for each call.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.ECS.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableECSManagedTags
+        public bool? EnableECSManagedTags
         {
-            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            get { return this._enableecsManagedTags; }
             set { this._enableecsManagedTags = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.ECS.Model
         /// one as an override.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 

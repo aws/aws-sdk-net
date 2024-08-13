@@ -91,7 +91,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRuleNumber())
             {
                 context.Writer.WritePropertyName("ruleNumber");
-                context.Writer.Write(requestObject.RuleNumber);
+                context.Writer.Write(requestObject.RuleNumber.Value);
             }
 
         }

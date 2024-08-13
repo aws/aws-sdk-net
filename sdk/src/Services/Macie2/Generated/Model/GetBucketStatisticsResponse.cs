@@ -55,9 +55,9 @@ namespace Amazon.Macie2.Model
         /// The total number of buckets.
         /// </para>
         /// </summary>
-        public long BucketCount
+        public long? BucketCount
         {
-            get { return this._bucketCount.GetValueOrDefault(); }
+            get { return this._bucketCount; }
             set { this._bucketCount = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.Macie2.Model
         /// or storage format.
         /// </para>
         /// </summary>
-        public long ClassifiableObjectCount
+        public long? ClassifiableObjectCount
         {
-            get { return this._classifiableObjectCount.GetValueOrDefault(); }
+            get { return this._classifiableObjectCount; }
             set { this._classifiableObjectCount = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.Macie2.Model
         /// the storage size of all versions of all applicable objects in the buckets.
         /// </para>
         /// </summary>
-        public long ClassifiableSizeInBytes
+        public long? ClassifiableSizeInBytes
         {
-            get { return this._classifiableSizeInBytes.GetValueOrDefault(); }
+            get { return this._classifiableSizeInBytes; }
             set { this._classifiableSizeInBytes = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.Macie2.Model
         /// retrieved bucket or object metadata from Amazon S3 for the buckets.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.Macie2.Model
         /// The total number of objects in the buckets.
         /// </para>
         /// </summary>
-        public long ObjectCount
+        public long? ObjectCount
         {
-            get { return this._objectCount.GetValueOrDefault(); }
+            get { return this._objectCount; }
             set { this._objectCount = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.Macie2.Model
         /// size of all versions of the objects in the buckets.
         /// </para>
         /// </summary>
-        public long SizeInBytes
+        public long? SizeInBytes
         {
-            get { return this._sizeInBytes.GetValueOrDefault(); }
+            get { return this._sizeInBytes; }
             set { this._sizeInBytes = value; }
         }
 
@@ -284,9 +284,9 @@ namespace Amazon.Macie2.Model
         /// the storage size of all versions of the applicable objects in the buckets.
         /// </para>
         /// </summary>
-        public long SizeInBytesCompressed
+        public long? SizeInBytesCompressed
         {
-            get { return this._sizeInBytesCompressed.GetValueOrDefault(); }
+            get { return this._sizeInBytesCompressed; }
             set { this._sizeInBytesCompressed = value; }
         }
 

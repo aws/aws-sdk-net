@@ -75,9 +75,9 @@ namespace Amazon.ConnectCampaignService.Model
         /// Gets and sets the property ExpirationTime.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 

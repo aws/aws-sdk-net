@@ -68,13 +68,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EndOffsetMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartOffsetMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartOffsetMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

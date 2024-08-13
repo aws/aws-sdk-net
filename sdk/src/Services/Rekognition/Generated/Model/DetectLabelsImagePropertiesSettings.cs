@@ -44,9 +44,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
-        public int MaxDominantColors
+        public int? MaxDominantColors
         {
-            get { return this._maxDominantColors.GetValueOrDefault(); }
+            get { return this._maxDominantColors; }
             set { this._maxDominantColors = value; }
         }
 

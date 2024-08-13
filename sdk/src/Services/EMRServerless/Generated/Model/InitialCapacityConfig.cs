@@ -62,9 +62,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000000)]
-        public long WorkerCount
+        public long? WorkerCount
         {
-            get { return this._workerCount.GetValueOrDefault(); }
+            get { return this._workerCount; }
             set { this._workerCount = value; }
         }
 

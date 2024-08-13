@@ -66,10 +66,28 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("customPrompt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomPrompt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("guardrail", targetDepth))
+                {
+                    var unmarshaller = BedrockGuardrailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Guardrail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("traceStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TraceStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

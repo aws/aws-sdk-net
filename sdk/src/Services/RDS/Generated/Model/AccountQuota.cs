@@ -180,9 +180,9 @@ namespace Amazon.RDS.Model
         /// The maximum allowed value for the quota.
         /// </para>
         /// </summary>
-        public long Max
+        public long? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.RDS.Model
         /// The amount currently used toward the quota maximum.
         /// </para>
         /// </summary>
-        public long Used
+        public long? Used
         {
-            get { return this._used.GetValueOrDefault(); }
+            get { return this._used; }
             set { this._used = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.CustomerProfiles.Model
         /// run.
         /// </para>
         /// </summary>
-        public long NumberOfMatchesInSample
+        public long? NumberOfMatchesInSample
         {
-            get { return this._numberOfMatchesInSample.GetValueOrDefault(); }
+            get { return this._numberOfMatchesInSample; }
             set { this._numberOfMatchesInSample = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The number of profiles found in this preview dry run.
         /// </para>
         /// </summary>
-        public long NumberOfProfilesInSample
+        public long? NumberOfProfilesInSample
         {
-            get { return this._numberOfProfilesInSample.GetValueOrDefault(); }
+            get { return this._numberOfProfilesInSample; }
             set { this._numberOfProfilesInSample = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The number of profiles that would be merged if this wasn't a preview dry run.
         /// </para>
         /// </summary>
-        public long NumberOfProfilesWillBeMerged
+        public long? NumberOfProfilesWillBeMerged
         {
-            get { return this._numberOfProfilesWillBeMerged.GetValueOrDefault(); }
+            get { return this._numberOfProfilesWillBeMerged; }
             set { this._numberOfProfilesWillBeMerged = value; }
         }
 

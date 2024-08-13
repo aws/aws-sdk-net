@@ -45,9 +45,9 @@ namespace Amazon.Imagebuilder.Model
         /// enable tests to run following the image build, before image distribution.
         /// </para>
         /// </summary>
-        public bool ImageTestsEnabled
+        public bool? ImageTestsEnabled
         {
-            get { return this._imageTestsEnabled.GetValueOrDefault(); }
+            get { return this._imageTestsEnabled; }
             set { this._imageTestsEnabled = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Imagebuilder.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=60, Max=1440)]
-        public int TimeoutMinutes
+        public int? TimeoutMinutes
         {
-            get { return this._timeoutMinutes.GetValueOrDefault(); }
+            get { return this._timeoutMinutes; }
             set { this._timeoutMinutes = value; }
         }
 

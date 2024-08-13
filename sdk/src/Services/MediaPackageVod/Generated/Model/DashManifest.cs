@@ -79,9 +79,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property MinBufferTimeSeconds. Minimum duration (in seconds) that
         /// a player will buffer media before starting the presentation.
         /// </summary>
-        public int MinBufferTimeSeconds
+        public int? MinBufferTimeSeconds
         {
-            get { return this._minBufferTimeSeconds.GetValueOrDefault(); }
+            get { return this._minBufferTimeSeconds; }
             set { this._minBufferTimeSeconds = value; }
         }
 

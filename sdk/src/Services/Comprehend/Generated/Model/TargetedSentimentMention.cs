@@ -55,9 +55,9 @@ namespace Amazon.Comprehend.Model
         /// The offset into the document text where the mention begins.
         /// </para>
         /// </summary>
-        public int BeginOffset
+        public int? BeginOffset
         {
-            get { return this._beginOffset.GetValueOrDefault(); }
+            get { return this._beginOffset; }
             set { this._beginOffset = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.Comprehend.Model
         /// The offset into the document text where the mention ends.
         /// </para>
         /// </summary>
-        public int EndOffset
+        public int? EndOffset
         {
-            get { return this._endOffset.GetValueOrDefault(); }
+            get { return this._endOffset; }
             set { this._endOffset = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Comprehend.Model
         /// The confidence that all the entities mentioned in the group relate to the same entity.
         /// </para>
         /// </summary>
-        public float GroupScore
+        public float? GroupScore
         {
-            get { return this._groupScore.GetValueOrDefault(); }
+            get { return this._groupScore; }
             set { this._groupScore = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Comprehend.Model
         /// is highest confidence.
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

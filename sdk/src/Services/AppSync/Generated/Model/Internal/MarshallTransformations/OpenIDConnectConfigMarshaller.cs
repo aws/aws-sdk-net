@@ -51,7 +51,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthTTL())
             {
                 context.Writer.WritePropertyName("authTTL");
-                context.Writer.Write(requestObject.AuthTTL);
+                context.Writer.Write(requestObject.AuthTTL.Value);
             }
 
             if(requestObject.IsSetClientId())
@@ -63,7 +63,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIatTTL())
             {
                 context.Writer.WritePropertyName("iatTTL");
-                context.Writer.Write(requestObject.IatTTL);
+                context.Writer.Write(requestObject.IatTTL.Value);
             }
 
             if(requestObject.IsSetIssuer())

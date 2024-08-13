@@ -88,9 +88,9 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property PortNumber. The port of the Greengrass core. Usually 8883.
         /// </summary>
-        public int PortNumber
+        public int? PortNumber
         {
-            get { return this._portNumber.GetValueOrDefault(); }
+            get { return this._portNumber; }
             set { this._portNumber = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.Glue.Model
         /// Represents the epoch timestamp at which the compaction job ended.
         /// </para>
         /// </summary>
-        public DateTime EndTimestamp
+        public DateTime? EndTimestamp
         {
-            get { return this._endTimestamp.GetValueOrDefault(); }
+            get { return this._endTimestamp; }
             set { this._endTimestamp = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Glue.Model
         /// Formation.
         /// </para>
         /// </summary>
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

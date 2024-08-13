@@ -51,19 +51,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseRatePerMinute())
             {
                 context.Writer.WritePropertyName("baseRatePerMinute");
-                context.Writer.Write(requestObject.BaseRatePerMinute);
+                context.Writer.Write(requestObject.BaseRatePerMinute.Value);
             }
 
             if(requestObject.IsSetIncrementFactor())
             {
                 context.Writer.WritePropertyName("incrementFactor");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.IncrementFactor.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.IncrementFactor.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.IncrementFactor);
+                    context.Writer.Write(requestObject.IncrementFactor.Value);
                 }
             }
 

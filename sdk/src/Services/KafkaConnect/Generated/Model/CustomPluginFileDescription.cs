@@ -62,9 +62,9 @@ namespace Amazon.KafkaConnect.Model
         /// The size in bytes of the custom plugin file. You can use it to validate the file.
         /// </para>
         /// </summary>
-        public long FileSize
+        public long? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 

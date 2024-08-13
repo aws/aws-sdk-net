@@ -64,9 +64,9 @@ namespace Amazon.Inspector2.Model
         /// The IDs of Amazon EC2 instances using this AMI.
         /// </para>
         /// </summary>
-        public long AffectedInstances
+        public long? AffectedInstances
         {
-            get { return this._affectedInstances.GetValueOrDefault(); }
+            get { return this._affectedInstances; }
             set { this._affectedInstances = value; }
         }
 

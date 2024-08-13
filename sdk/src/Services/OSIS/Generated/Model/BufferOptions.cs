@@ -46,9 +46,9 @@ namespace Amazon.OSIS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool PersistentBufferEnabled
+        public bool? PersistentBufferEnabled
         {
-            get { return this._persistentBufferEnabled.GetValueOrDefault(); }
+            get { return this._persistentBufferEnabled; }
             set { this._persistentBufferEnabled = value; }
         }
 

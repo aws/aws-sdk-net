@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Route53Profiles.Endpoints;
 using Amazon.Route53Profiles.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class Route53ProfilesEndpointsTests

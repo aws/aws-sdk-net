@@ -63,7 +63,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReservedSlots())
             {
                 context.Writer.WritePropertyName("reservedSlots");
-                context.Writer.Write(requestObject.ReservedSlots);
+                context.Writer.Write(requestObject.ReservedSlots.Value);
             }
 
         }

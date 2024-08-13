@@ -42,6 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private ApplicationMode _applicationMode;
         private string _applicationName;
         private ApplicationStatus _applicationStatus;
+        private DateTime? _applicationVersionCreateTimestamp;
         private long? _applicationVersionId;
         private long? _applicationVersionRolledBackFrom;
         private long? _applicationVersionRolledBackTo;
@@ -187,6 +188,22 @@ namespace Amazon.KinesisAnalyticsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ApplicationVersionCreateTimestamp. The current timestamp
+        /// when the application version was created.
+        /// </summary>
+        public DateTime? ApplicationVersionCreateTimestamp
+        {
+            get { return this._applicationVersionCreateTimestamp; }
+            set { this._applicationVersionCreateTimestamp = value; }
+        }
+
+        // Check to see if ApplicationVersionCreateTimestamp property is set
+        internal bool IsSetApplicationVersionCreateTimestamp()
+        {
+            return this._applicationVersionCreateTimestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
         /// Provides the current application version. Managed Service for Apache Flink updates
@@ -194,9 +211,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
-        public long ApplicationVersionId
+        public long? ApplicationVersionId
         {
-            get { return this._applicationVersionId.GetValueOrDefault(); }
+            get { return this._applicationVersionId; }
             set { this._applicationVersionId = value; }
         }
 
@@ -214,9 +231,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]
-        public long ApplicationVersionRolledBackFrom
+        public long? ApplicationVersionRolledBackFrom
         {
-            get { return this._applicationVersionRolledBackFrom.GetValueOrDefault(); }
+            get { return this._applicationVersionRolledBackFrom; }
             set { this._applicationVersionRolledBackFrom = value; }
         }
 
@@ -233,9 +250,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]
-        public long ApplicationVersionRolledBackTo
+        public long? ApplicationVersionRolledBackTo
         {
-            get { return this._applicationVersionRolledBackTo.GetValueOrDefault(); }
+            get { return this._applicationVersionRolledBackTo; }
             set { this._applicationVersionRolledBackTo = value; }
         }
 
@@ -253,9 +270,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]
-        public long ApplicationVersionUpdatedFrom
+        public long? ApplicationVersionUpdatedFrom
         {
-            get { return this._applicationVersionUpdatedFrom.GetValueOrDefault(); }
+            get { return this._applicationVersionUpdatedFrom; }
             set { this._applicationVersionUpdatedFrom = value; }
         }
 
@@ -308,9 +325,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The current timestamp when the application was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTimestamp
+        public DateTime? CreateTimestamp
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
+            get { return this._createTimestamp; }
             set { this._createTimestamp = value; }
         }
 
@@ -326,9 +343,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The current timestamp when the application was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTimestamp
+        public DateTime? LastUpdateTimestamp
         {
-            get { return this._lastUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimestamp; }
             set { this._lastUpdateTimestamp = value; }
         }
 

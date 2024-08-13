@@ -82,9 +82,9 @@ namespace Amazon.APIGateway.Model
         /// Model schema.
         /// </para>
         /// </summary>
-        public bool ValidateRequestBody
+        public bool? ValidateRequestBody
         {
-            get { return this._validateRequestBody.GetValueOrDefault(); }
+            get { return this._validateRequestBody; }
             set { this._validateRequestBody = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.APIGateway.Model
         /// not (<c>false</c>).
         /// </para>
         /// </summary>
-        public bool ValidateRequestParameters
+        public bool? ValidateRequestParameters
         {
-            get { return this._validateRequestParameters.GetValueOrDefault(); }
+            get { return this._validateRequestParameters; }
             set { this._validateRequestParameters = value; }
         }
 

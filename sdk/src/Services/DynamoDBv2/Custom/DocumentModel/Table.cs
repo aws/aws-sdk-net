@@ -54,12 +54,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal bool IsEmptyStringValueEnabled { get { return Config.IsEmptyStringValueEnabled; } }
         internal IEnumerable<string> StoreAsEpoch { get { return Config.AttributesToStoreAsEpoch; } }
         internal IEnumerable<string> KeyNames { get { return Keys.Keys; } }
-
-#if NETSTANDARD
-        internal AmazonDynamoDBClient DDBClient { get; private set; }
-#else
         internal IAmazonDynamoDB DDBClient { get; private set; }
-#endif
 
         #endregion
 
@@ -366,7 +361,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
             this.AddRequestHandler(req, isAsync: false);
 
-            var info = this.DDBClient.DescribeTable(req);
+#if NETSTANDARD
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var client = DDBClient as AmazonDynamoDBClient;
+            if (client == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous LoadTable from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when creating a Table via TableBuilder instead.");
+            }
+#else
+            var client = DDBClient;
+#endif
+
+            var info = client.DescribeTable(req);
 
             if (info.Table == null)
             {
@@ -413,11 +420,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (ddbClient == null)
                 throw new ArgumentNullException("ddbClient");
 
-#if NETSTANDARD
-            DDBClient = ddbClient as AmazonDynamoDBClient;
-#else
             DDBClient = ddbClient;
-#endif
             Config = config;
         }
 
@@ -938,7 +941,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
-            var resp = DDBClient.PutItem(req);
+#if NETSTANDARD
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var client = DDBClient as AmazonDynamoDBClient;
+            if (client == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous PutItem from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when creating a Table via PutItemAsync instead.");
+            }
+#else
+            var client = DDBClient;
+#endif
+
+            var resp = client.PutItem(req);
             doc.CommitChanges();
 
             Document ret = null;
@@ -1013,10 +1028,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             this.AddRequestHandler(request, isAsync: false);
 
+#if NETSTANDARD
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var client = DDBClient as AmazonDynamoDBClient;
+            if (client == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous GetItem from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when creating a Table via GetItemAsync instead.");
+            }
+#else
+            var client = DDBClient;
+#endif
+
             if (currentConfig.AttributesToGet != null)
                 request.AttributesToGet = currentConfig.AttributesToGet;
 
-            var result = DDBClient.GetItem(request);
+            var result = client.GetItem(request);
             var attributeMap = result.Item;
             if (attributeMap == null || attributeMap.Count == 0)
                 return null;
@@ -1047,7 +1074,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 #endif
 
-        #endregion
+#endregion
 
 
         #region UpdateItem
@@ -1058,7 +1085,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return UpdateHelper(doc, key, config);
         }
 
-#if AWS_ASYNC_API 
+#if AWS_ASYNC_API
         internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
@@ -1132,8 +1159,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
                 }
             }
+#if NETSTANDARD
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var client = DDBClient as AmazonDynamoDBClient;
+            if (client == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous UpdateItem from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when creating a Table via UpdateItemAsync instead.");
+            }
+#else
+            var client = DDBClient;
+#endif
 
-            var resp = DDBClient.UpdateItem(req);
+            var resp = client.UpdateItem(req);
             var returnedAttributes = resp.Attributes;
             doc.CommitChanges();
 
@@ -1145,7 +1183,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-#if AWS_ASYNC_API 
+#if AWS_ASYNC_API
         internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
@@ -1275,7 +1313,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
-            var attributes = DDBClient.DeleteItem(req).Attributes;
+#if NETSTANDARD
+            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
+            var client = DDBClient as AmazonDynamoDBClient;
+            if (client == null)
+            {
+                throw new InvalidOperationException("Calling the synchronous DeleteItem from .NET or .NET Core requires initializing the Table " +
+                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling DeleteItemAsync instead.");
+            }
+#else
+            var client = DDBClient;
+#endif
+
+            var attributes = client.DeleteItem(req).Attributes;
 
             Document ret = null;
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)

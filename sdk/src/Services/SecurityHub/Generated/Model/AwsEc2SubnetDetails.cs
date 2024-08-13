@@ -54,9 +54,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to assign an IPV6 address to a network interface that is created in this subnet.
         /// </para>
         /// </summary>
-        public bool AssignIpv6AddressOnCreation
+        public bool? AssignIpv6AddressOnCreation
         {
-            get { return this._assignIpv6AddressOnCreation.GetValueOrDefault(); }
+            get { return this._assignIpv6AddressOnCreation; }
             set { this._assignIpv6AddressOnCreation = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.SecurityHub.Model
         /// stopped instances.
         /// </para>
         /// </summary>
-        public int AvailableIpAddressCount
+        public int? AvailableIpAddressCount
         {
-            get { return this._availableIpAddressCount.GetValueOrDefault(); }
+            get { return this._availableIpAddressCount; }
             set { this._availableIpAddressCount = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether this subnet is the default subnet for the Availability Zone.
         /// </para>
         /// </summary>
-        public bool DefaultForAz
+        public bool? DefaultForAz
         {
-            get { return this._defaultForAz.GetValueOrDefault(); }
+            get { return this._defaultForAz; }
             set { this._defaultForAz = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether instances in this subnet receive a public IP address.
         /// </para>
         /// </summary>
-        public bool MapPublicIpOnLaunch
+        public bool? MapPublicIpOnLaunch
         {
-            get { return this._mapPublicIpOnLaunch.GetValueOrDefault(); }
+            get { return this._mapPublicIpOnLaunch; }
             set { this._mapPublicIpOnLaunch = value; }
         }
 

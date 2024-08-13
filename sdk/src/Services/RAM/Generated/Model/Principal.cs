@@ -46,9 +46,9 @@ namespace Amazon.RAM.Model
         /// The date and time when the principal was associated with the resource share.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool External
+        public bool? External
         {
-            get { return this._external.GetValueOrDefault(); }
+            get { return this._external; }
             set { this._external = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.RAM.Model
         /// was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

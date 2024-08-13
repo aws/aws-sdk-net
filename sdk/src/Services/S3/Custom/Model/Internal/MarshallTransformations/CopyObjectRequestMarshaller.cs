@@ -66,13 +66,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfMatchHeader, S3Transforms.ToStringValue(copyObjectRequest.ETagToMatch));
 
             if (copyObjectRequest.IsSetModifiedSinceDateUtc())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfModifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.ModifiedSinceDateUtc));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfModifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.ModifiedSinceDateUtc.Value));
 
             if (copyObjectRequest.IsSetETagToNotMatch())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfNoneMatchHeader, S3Transforms.ToStringValue(copyObjectRequest.ETagToNotMatch));
 
             if (copyObjectRequest.IsSetUnmodifiedSinceDateUtc())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.UnmodifiedSinceDateUtc));
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.UnmodifiedSinceDateUtc.Value));
 
             if (copyObjectRequest.IsSetTagSet())
             {
@@ -137,7 +137,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderExpectedSourceBucketOwner, S3Transforms.ToStringValue(copyObjectRequest.ExpectedSourceBucketOwner));
 
             if (copyObjectRequest.IsSetBucketKeyEnabled())
-                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(copyObjectRequest.BucketKeyEnabled));
+                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(copyObjectRequest.BucketKeyEnabled.Value));
 
             if (copyObjectRequest.IsSetChecksumAlgorithm())
                 request.Headers.Add(S3Constants.AmzHeaderChecksumAlgorithm ,S3Transforms.ToStringValue(copyObjectRequest.ChecksumAlgorithm));
@@ -152,9 +152,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("SourceBucket is a required property and must be set before making this call.", "CopyObjectRequest.SourceBucket");
             if (string.IsNullOrEmpty(sourceKey))
                 throw new System.ArgumentException("SourceKey is a required property and must be set before making this call.", "CopyObjectRequest.SourceKey");
-
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
-                                                 S3Transforms.ToStringValue(destinationKey));
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(destinationKey));
+            request.ResourcePath = "/{Key+}";
 
 
             request.UseQueryString = true;

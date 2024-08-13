@@ -51,7 +51,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyTagsToSnapshots())
             {
                 context.Writer.WritePropertyName("CopyTagsToSnapshots");
-                context.Writer.Write(requestObject.CopyTagsToSnapshots);
+                context.Writer.Write(requestObject.CopyTagsToSnapshots.Value);
             }
 
             if(requestObject.IsSetDataCompressionType())
@@ -96,25 +96,25 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("ReadOnly");
-                context.Writer.Write(requestObject.ReadOnly);
+                context.Writer.Write(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetRecordSizeKiB())
             {
                 context.Writer.WritePropertyName("RecordSizeKiB");
-                context.Writer.Write(requestObject.RecordSizeKiB);
+                context.Writer.Write(requestObject.RecordSizeKiB.Value);
             }
 
             if(requestObject.IsSetStorageCapacityQuotaGiB())
             {
                 context.Writer.WritePropertyName("StorageCapacityQuotaGiB");
-                context.Writer.Write(requestObject.StorageCapacityQuotaGiB);
+                context.Writer.Write(requestObject.StorageCapacityQuotaGiB.Value);
             }
 
             if(requestObject.IsSetStorageCapacityReservationGiB())
             {
                 context.Writer.WritePropertyName("StorageCapacityReservationGiB");
-                context.Writer.Write(requestObject.StorageCapacityReservationGiB);
+                context.Writer.Write(requestObject.StorageCapacityReservationGiB.Value);
             }
 
             if(requestObject.IsSetUserAndGroupQuotas())

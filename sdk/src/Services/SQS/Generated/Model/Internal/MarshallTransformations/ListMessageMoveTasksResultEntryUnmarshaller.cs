@@ -68,13 +68,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApproximateNumberOfMessagesMoved", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApproximateNumberOfMessagesMoved = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ApproximateNumberOfMessagesToMove", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApproximateNumberOfMessagesToMove = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxNumberOfMessagesPerSecond", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxNumberOfMessagesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartedTimestamp", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

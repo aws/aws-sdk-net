@@ -72,13 +72,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    context.Writer.Write(publicRequest.EndTime.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetMembers())
@@ -128,13 +128,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRotationStartTime())
                 {
                     context.Writer.WritePropertyName("RotationStartTime");
-                    context.Writer.Write(publicRequest.RotationStartTime);
+                    context.Writer.Write(publicRequest.RotationStartTime.Value);
                 }
 
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 if(publicRequest.IsSetTimeZoneId())

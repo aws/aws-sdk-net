@@ -76,7 +76,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNotifyCollaborators())
                 {
                     context.Writer.WritePropertyName("NotifyCollaborators");
-                    context.Writer.Write(publicRequest.NotifyCollaborators);
+                    context.Writer.Write(publicRequest.NotifyCollaborators.Value);
                 }
 
                 if(publicRequest.IsSetParentId())

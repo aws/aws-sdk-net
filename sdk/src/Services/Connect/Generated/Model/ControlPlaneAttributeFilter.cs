@@ -1,0 +1,104 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the connect-2017-08-08.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.Connect.Model
+{
+    /// <summary>
+    /// An object that can be used to specify Tag conditions inside the <c>SearchFilter</c>.
+    /// This accepts an <c>OR</c> or <c>AND</c> (List of List) input where: 
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// The top level list specifies conditions that need to be applied with <c>OR</c> operator.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The inner list specifies conditions that need to be applied with <c>AND</c> operator.
+    /// </para>
+    ///  </li> </ul>
+    /// </summary>
+    public partial class ControlPlaneAttributeFilter
+    {
+        private CommonAttributeAndCondition _andCondition;
+        private List<CommonAttributeAndCondition> _orConditions = AWSConfigs.InitializeCollections ? new List<CommonAttributeAndCondition>() : null;
+        private TagCondition _tagCondition;
+
+        /// <summary>
+        /// Gets and sets the property AndCondition. 
+        /// <para>
+        /// A list of conditions which would be applied together with an <c>AND</c> condition.
+        /// </para>
+        /// </summary>
+        public CommonAttributeAndCondition AndCondition
+        {
+            get { return this._andCondition; }
+            set { this._andCondition = value; }
+        }
+
+        // Check to see if AndCondition property is set
+        internal bool IsSetAndCondition()
+        {
+            return this._andCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrConditions. 
+        /// <para>
+        /// A list of conditions which would be applied together with an <c>OR</c> condition.
+        /// </para>
+        /// </summary>
+        public List<CommonAttributeAndCondition> OrConditions
+        {
+            get { return this._orConditions; }
+            set { this._orConditions = value; }
+        }
+
+        // Check to see if OrConditions property is set
+        internal bool IsSetOrConditions()
+        {
+            return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagCondition.
+        /// </summary>
+        public TagCondition TagCondition
+        {
+            get { return this._tagCondition; }
+            set { this._tagCondition = value; }
+        }
+
+        // Check to see if TagCondition property is set
+        internal bool IsSetTagCondition()
+        {
+            return this._tagCondition != null;
+        }
+
+    }
+}

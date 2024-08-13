@@ -55,9 +55,9 @@ namespace Amazon.Personalize.Model
         /// pricing</a>. 
         /// </para>
         /// </summary>
-        public bool EnableMetadataWithRecommendations
+        public bool? EnableMetadataWithRecommendations
         {
-            get { return this._enableMetadataWithRecommendations.GetValueOrDefault(); }
+            get { return this._enableMetadataWithRecommendations; }
             set { this._enableMetadataWithRecommendations = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinRecommendationRequestsPerSecond
+        public int? MinRecommendationRequestsPerSecond
         {
-            get { return this._minRecommendationRequestsPerSecond.GetValueOrDefault(); }
+            get { return this._minRecommendationRequestsPerSecond; }
             set { this._minRecommendationRequestsPerSecond = value; }
         }
 

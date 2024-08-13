@@ -68,13 +68,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("SegmentationEventId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentationEventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SegmentationTypeId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentationTypeId = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,31 +86,31 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SegmentationUpidType", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentationUpidType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SegmentNum", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentNum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SegmentsExpected", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentsExpected = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubSegmentNum", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SubSegmentNum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubSegmentsExpected", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SubSegmentsExpected = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -133,9 +133,9 @@ namespace Amazon.CodePipeline.Model
         /// The last status change of the action.
         /// </para>
         /// </summary>
-        public DateTime LastStatusChange
+        public DateTime? LastStatusChange
         {
-            get { return this._lastStatusChange.GetValueOrDefault(); }
+            get { return this._lastStatusChange; }
             set { this._lastStatusChange = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int PercentComplete
+        public int? PercentComplete
         {
-            get { return this._percentComplete.GetValueOrDefault(); }
+            get { return this._percentComplete; }
             set { this._percentComplete = value; }
         }
 

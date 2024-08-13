@@ -63,31 +63,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("disabledTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DisabledTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("disablingTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DisablingTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enabledTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.EnabledTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enablingTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.EnablingTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("optimizingTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.OptimizingTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

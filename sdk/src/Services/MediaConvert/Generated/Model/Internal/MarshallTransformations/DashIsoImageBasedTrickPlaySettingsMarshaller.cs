@@ -57,38 +57,38 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThumbnailHeight())
             {
                 context.Writer.WritePropertyName("thumbnailHeight");
-                context.Writer.Write(requestObject.ThumbnailHeight);
+                context.Writer.Write(requestObject.ThumbnailHeight.Value);
             }
 
             if(requestObject.IsSetThumbnailInterval())
             {
                 context.Writer.WritePropertyName("thumbnailInterval");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ThumbnailInterval))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThumbnailInterval.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThumbnailInterval));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThumbnailInterval.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThumbnailInterval);
+                    context.Writer.Write(requestObject.ThumbnailInterval.Value);
                 }
             }
 
             if(requestObject.IsSetThumbnailWidth())
             {
                 context.Writer.WritePropertyName("thumbnailWidth");
-                context.Writer.Write(requestObject.ThumbnailWidth);
+                context.Writer.Write(requestObject.ThumbnailWidth.Value);
             }
 
             if(requestObject.IsSetTileHeight())
             {
                 context.Writer.WritePropertyName("tileHeight");
-                context.Writer.Write(requestObject.TileHeight);
+                context.Writer.Write(requestObject.TileHeight.Value);
             }
 
             if(requestObject.IsSetTileWidth())
             {
                 context.Writer.WritePropertyName("tileWidth");
-                context.Writer.Write(requestObject.TileWidth);
+                context.Writer.Write(requestObject.TileWidth.Value);
             }
 
         }

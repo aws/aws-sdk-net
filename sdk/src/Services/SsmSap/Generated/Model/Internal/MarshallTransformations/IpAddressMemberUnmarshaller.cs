@@ -80,7 +80,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Primary", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Primary = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -53,9 +53,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// The number of experiments currently in the project.
         /// </para>
         /// </summary>
-        public long ActiveExperimentCount
+        public long? ActiveExperimentCount
         {
-            get { return this._activeExperimentCount.GetValueOrDefault(); }
+            get { return this._activeExperimentCount; }
             set { this._activeExperimentCount = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// The number of ongoing launches currently in the project.
         /// </para>
         /// </summary>
-        public long ActiveLaunchCount
+        public long? ActiveLaunchCount
         {
-            get { return this._activeLaunchCount.GetValueOrDefault(); }
+            get { return this._activeLaunchCount; }
             set { this._activeLaunchCount = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// The number of experiments currently in the project.
         /// </para>
         /// </summary>
-        public long ExperimentCount
+        public long? ExperimentCount
         {
-            get { return this._experimentCount.GetValueOrDefault(); }
+            get { return this._experimentCount; }
             set { this._experimentCount = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// The number of features currently in the project.
         /// </para>
         /// </summary>
-        public long FeatureCount
+        public long? FeatureCount
         {
-            get { return this._featureCount.GetValueOrDefault(); }
+            get { return this._featureCount; }
             set { this._featureCount = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// completed, and not started yet.
         /// </para>
         /// </summary>
-        public long LaunchCount
+        public long? LaunchCount
         {
-            get { return this._launchCount.GetValueOrDefault(); }
+            get { return this._launchCount; }
             set { this._launchCount = value; }
         }
 

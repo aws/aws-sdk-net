@@ -62,7 +62,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsImmutable())
             {
                 context.Writer.WritePropertyName("IsImmutable");
-                context.Writer.Write(requestObject.IsImmutable);
+                context.Writer.Write(requestObject.IsImmutable.Value);
             }
 
             if(requestObject.IsSetName())

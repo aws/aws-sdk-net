@@ -47,53 +47,75 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Save/serialize
 
         /// <summary>
-        /// Serializes an object to a Document.
+        /// Serializes an object to a <see cref="Document"/>.
         /// </summary>
         /// <typeparam name="T">Type to serialize as.</typeparam>
         /// <param name="value">Object to serialize.</param>
-        /// <returns>Document with attributes populated from object.</returns>
+        /// <returns><see cref="Document"/> with attributes populated from object.</returns>
         Document ToDocument<T>(T value);
 
         /// <summary>
-        /// Serializes an object to a Document.
+        /// Serializes an object to a <see cref="Document"/>.
         /// </summary>
         /// <typeparam name="T">Type to serialize as.</typeparam>
         /// <param name="value">Object to serialize.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
-        /// <returns>Document with attributes populated from object.</returns>
+        /// <returns><see cref="Document"/> with attributes populated from object.</returns>
+        [Obsolete("Use the ToDocument overload that takes ToDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to ToDocument.")]
         Document ToDocument<T>(T value, DynamoDBOperationConfig operationConfig);
+
+        /// <summary>
+        /// Serializes an object to a <see cref="Document"/>.
+        /// </summary>
+        /// <typeparam name="T">Type to serialize as.</typeparam>
+        /// <param name="value">Object to serialize.</param>
+        /// <param name="toDocumentConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns><see cref="Document"/> with attributes populated from object.</returns>
+        Document ToDocument<T>(T value, ToDocumentConfig toDocumentConfig);
 
         #endregion
 
         #region Load/deserialize
 
         /// <summary>
-        /// Deserializes a document to an instance of type T.
+        /// Deserializes a <see cref="Document"/> to an instance of type T.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="document">Document with properties to use.</param>
+        /// <param name="document"><see cref="Document"/> with properties to use.</param>
         /// <returns>
         /// Object of type T, populated with properties from the document.
         /// </returns>
         T FromDocument<T>(Document document);
 
         /// <summary>
-        /// Deserializes a document to an instance of type T.
+        /// Deserializes a <see cref="Document"/> to an instance of type T.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="document">Document with properties to use.</param>
+        /// <param name="document"><see cref="Document"/> with properties to use.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>
         /// Object of type T, populated with properties from the document.
         /// </returns>
+        [Obsolete("Use the FromDocument overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocument.")]
+
         T FromDocument<T>(Document document, DynamoDBOperationConfig operationConfig);
 
+        /// <summary>
+        /// Deserializes a <see cref="Document"/> to an instance of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="document"><see cref="Document"/> with properties to use.</param>
+        /// <param name="fromDocumentConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>
+        /// Object of type T, populated with properties from the document.
+        /// </returns>
+        T FromDocument<T>(Document document, FromDocumentConfig fromDocumentConfig);
 
         /// <summary>
         /// Deserializes a collections of documents to a collection of instances of type T.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="documents">Documents to deserialize.</param>
+        /// <param name="documents">Collection of <see cref="Document"/> objects to deserialize.</param>
         /// <returns>
         /// Collection of items of type T, each populated with properties from a corresponding document.
         /// </returns>
@@ -103,17 +125,29 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Deserializes a collections of documents to a collection of instances of type T.
         /// </summary>
         /// <typeparam name="T">Type to populate.</typeparam>
-        /// <param name="documents">Documents to deserialize.</param>
+        /// <param name="documents">Collection of <see cref="Document"/> objects to deserialize.</param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>
         /// Collection of items of type T, each populated with properties from a corresponding document.
         /// </returns>
+        [Obsolete("Use the FromDocuments overload that takes FromDocumentConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to FromDocuments.")]
         IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, DynamoDBOperationConfig operationConfig);
+
+        /// <summary>
+        /// Deserializes a collections of documents to a collection of instances of type T.
+        /// </summary>
+        /// <typeparam name="T">Type to populate.</typeparam>
+        /// <param name="documents">Collection of <see cref="Document"/> objects to deserialize.</param>
+        /// <param name="fromDocumentConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>
+        /// Collection of items of type T, each populated with properties from a corresponding document.
+        /// </returns>
+        IEnumerable<T> FromDocuments<T>(IEnumerable<Document> documents, FromDocumentConfig fromDocumentConfig);
 
         #endregion
 
         #region BatchGet
-#if BCL35
+
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
         /// a batch-get operation against DynamoDB.
@@ -129,17 +163,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to get</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchGet object</returns>
-        BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig);
-#else
+        [Obsolete("Use the CreateBatchGet overload that takes BatchGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
+        BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
+
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
         /// a batch-get operation against DynamoDB.
         /// </summary>
         /// <typeparam name="T">Type of objects to get</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="batchGetConfig">Config object that can be used to override properties on the table's context for this request</param>
         /// <returns>Empty strongly-typed BatchGet object</returns>
-        BatchGet<T> CreateBatchGet<T>(DynamoDBOperationConfig operationConfig = null);
-#endif
+        public BatchGet<T> CreateBatchGet<T>(BatchGetConfig batchGetConfig);
 
         /// <summary>
         /// Creates a MultiTableBatchGet object, composed of multiple
@@ -153,7 +187,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Batch Write
 
-#if BCL35
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
         /// a batch-write operation against DynamoDB.
@@ -169,7 +202,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig);
+        [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
+
+        BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -179,7 +214,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
         /// 
         /// In scenarios when the valuesType is known at compile-time, the 
-        /// <see cref="CreateBatchWrite{T}()"/> method is generally preferred.
+        /// <see cref="CreateBatchWrite{T}(DynamoDBOperationConfig)"/> method is generally preferred.
         /// </summary>
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
@@ -198,16 +233,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig);
-#else
+        [Obsolete("Use the CreateBatchWrite overload that takes BatchWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchWrite.")]
+        BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig = null);
+
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
         /// a batch-write operation against DynamoDB.
         /// </summary>
         /// <typeparam name="T">Type of objects to write</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="batchWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig = null);
+        BatchWrite<T> CreateBatchWrite<T>(BatchWriteConfig batchWriteConfig);
 
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -220,10 +256,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <see cref="CreateBatchWrite{T}(DynamoDBOperationConfig)"/> method is generally preferred.
         /// </summary>
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="batchWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
-        BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig = null);
-#endif
+        BatchWrite<object> CreateBatchWrite(Type valuesType, BatchWriteConfig batchWriteConfig);
 
         /// <summary>
         /// Creates a MultiTableBatchWrite object, composed of multiple
@@ -237,7 +272,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Transact Get
 
-#if BCL35
         /// <summary>
         /// Creates a strongly-typed TransactGet object, allowing
         /// a transactional get operation against DynamoDB.
@@ -253,17 +287,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to get.</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
-        TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig);
-#else
+        [Obsolete("Use the CreateTransactGet overload that takes TransactGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
+        TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig = null);
+
         /// <summary>
         /// Creates a strongly-typed TransactGet object, allowing
         /// a transactional get operation against DynamoDB.
         /// </summary>
         /// <typeparam name="T">Type of objects to get.</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="transactGetConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
-        TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig = null);
-#endif
+        TransactGet<T> CreateTransactGet<T>(TransactGetConfig transactGetConfig);
 
         /// <summary>
         /// Creates a MultiTableTransactGet object, composed of multiple
@@ -277,7 +311,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Transact Write
 
-#if BCL35
         /// <summary>
         /// Creates a strongly-typed TransactWrite object, allowing
         /// a transactional write operation against DynamoDB.
@@ -293,17 +326,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write.</typeparam>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
-        TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig);
-#else
+        [Obsolete("Use the CreateTransactWrite overload that takes TransactWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to CreateTransactWrite.")]
+        TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig = null);
+
         /// <summary>
         /// Creates a strongly-typed TransactWrite object, allowing
         /// a transactional write operation against DynamoDB.
         /// </summary>
         /// <typeparam name="T">Type of objects to write.</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <param name="transactWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
-        TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig = null);
-#endif
+        TransactWrite<T> CreateTransactWrite<T>(TransactWriteConfig transactWriteConfig);
 
         /// <summary>
         /// Creates a MultiTableTransactWrite object, composed of multiple

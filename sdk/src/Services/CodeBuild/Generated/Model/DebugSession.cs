@@ -45,9 +45,9 @@ namespace Amazon.CodeBuild.Model
         /// Specifies if session debugging is enabled for this build.
         /// </para>
         /// </summary>
-        public bool SessionEnabled
+        public bool? SessionEnabled
         {
-            get { return this._sessionEnabled.GetValueOrDefault(); }
+            get { return this._sessionEnabled; }
             set { this._sessionEnabled = value; }
         }
 

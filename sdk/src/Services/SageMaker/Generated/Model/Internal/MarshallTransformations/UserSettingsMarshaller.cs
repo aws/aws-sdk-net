@@ -203,6 +203,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StudioWebPortal);
             }
 
+            if(requestObject.IsSetStudioWebPortalSettings())
+            {
+                context.Writer.WritePropertyName("StudioWebPortalSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StudioWebPortalSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.StudioWebPortalSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTensorBoardAppSettings())
             {
                 context.Writer.WritePropertyName("TensorBoardAppSettings");

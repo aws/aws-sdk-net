@@ -158,9 +158,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The current number of cores associated with the instance. 
         /// </para>
         /// </summary>
-        public int NumberOfCores
+        public int? NumberOfCores
         {
-            get { return this._numberOfCores.GetValueOrDefault(); }
+            get { return this._numberOfCores; }
             set { this._numberOfCores = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.Panorama.Model
         /// Indicates that the version is recommended for all users.
         /// </para>
         /// </summary>
-        public bool MarkLatest
+        public bool? MarkLatest
         {
-            get { return this._markLatest.GetValueOrDefault(); }
+            get { return this._markLatest; }
             set { this._markLatest = value; }
         }
 

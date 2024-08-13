@@ -42,9 +42,9 @@ namespace Amazon.IoT.Model
         /// The dynamic thing group version.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

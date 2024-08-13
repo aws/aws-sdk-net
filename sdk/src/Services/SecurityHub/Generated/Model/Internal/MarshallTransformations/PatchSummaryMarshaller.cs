@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailedCount())
             {
                 context.Writer.WritePropertyName("FailedCount");
-                context.Writer.Write(requestObject.FailedCount);
+                context.Writer.Write(requestObject.FailedCount.Value);
             }
 
             if(requestObject.IsSetId())
@@ -63,31 +63,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstalledCount())
             {
                 context.Writer.WritePropertyName("InstalledCount");
-                context.Writer.Write(requestObject.InstalledCount);
+                context.Writer.Write(requestObject.InstalledCount.Value);
             }
 
             if(requestObject.IsSetInstalledOtherCount())
             {
                 context.Writer.WritePropertyName("InstalledOtherCount");
-                context.Writer.Write(requestObject.InstalledOtherCount);
+                context.Writer.Write(requestObject.InstalledOtherCount.Value);
             }
 
             if(requestObject.IsSetInstalledPendingReboot())
             {
                 context.Writer.WritePropertyName("InstalledPendingReboot");
-                context.Writer.Write(requestObject.InstalledPendingReboot);
+                context.Writer.Write(requestObject.InstalledPendingReboot.Value);
             }
 
             if(requestObject.IsSetInstalledRejectedCount())
             {
                 context.Writer.WritePropertyName("InstalledRejectedCount");
-                context.Writer.Write(requestObject.InstalledRejectedCount);
+                context.Writer.Write(requestObject.InstalledRejectedCount.Value);
             }
 
             if(requestObject.IsSetMissingCount())
             {
                 context.Writer.WritePropertyName("MissingCount");
-                context.Writer.Write(requestObject.MissingCount);
+                context.Writer.Write(requestObject.MissingCount.Value);
             }
 
             if(requestObject.IsSetOperation())

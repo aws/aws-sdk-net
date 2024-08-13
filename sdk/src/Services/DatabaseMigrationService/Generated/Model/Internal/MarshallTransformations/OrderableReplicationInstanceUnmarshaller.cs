@@ -74,7 +74,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DefaultAllocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DefaultAllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,19 +86,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludedAllocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IncludedAllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxAllocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinAllocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinAllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }

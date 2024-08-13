@@ -48,9 +48,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
-        public int MaxAttempts
+        public int? MaxAttempts
         {
-            get { return this._maxAttempts.GetValueOrDefault(); }
+            get { return this._maxAttempts; }
             set { this._maxAttempts = value; }
         }
 

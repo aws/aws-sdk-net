@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool HiveCompatiblePartitions
+        public bool? HiveCompatiblePartitions
         {
-            get { return this._hiveCompatiblePartitions.GetValueOrDefault(); }
+            get { return this._hiveCompatiblePartitions; }
             set { this._hiveCompatiblePartitions = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// time for queries. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool PerHourPartition
+        public bool? PerHourPartition
         {
-            get { return this._perHourPartition.GetValueOrDefault(); }
+            get { return this._perHourPartition; }
             set { this._perHourPartition = value; }
         }
 

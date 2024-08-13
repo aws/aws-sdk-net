@@ -88,9 +88,9 @@ namespace Amazon.CloudDirectory.Model
         /// could be multiple links between a parent-child pair.
         /// </para>
         /// </summary>
-        public bool IncludeAllLinksToEachParent
+        public bool? IncludeAllLinksToEachParent
         {
-            get { return this._includeAllLinksToEachParent.GetValueOrDefault(); }
+            get { return this._includeAllLinksToEachParent; }
             set { this._includeAllLinksToEachParent = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.CloudDirectory.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

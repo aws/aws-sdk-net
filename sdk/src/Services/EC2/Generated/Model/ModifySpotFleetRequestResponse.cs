@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// response is returned, and instead an error message is returned.
         /// </para>
         /// </summary>
-        public bool Return
+        public bool? Return
         {
-            get { return this._return.GetValueOrDefault(); }
+            get { return this._return; }
             set { this._return = value; }
         }
 

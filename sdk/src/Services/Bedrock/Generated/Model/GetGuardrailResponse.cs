@@ -37,6 +37,7 @@ namespace Amazon.Bedrock.Model
         private string _blockedInputMessaging;
         private string _blockedOutputsMessaging;
         private GuardrailContentPolicy _contentPolicy;
+        private GuardrailContextualGroundingPolicy _contextualGroundingPolicy;
         private DateTime? _createdAt;
         private string _description;
         private List<string> _failureRecommendations = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -109,15 +110,33 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContextualGroundingPolicy. 
+        /// <para>
+        /// The contextual grounding policy used in the guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailContextualGroundingPolicy ContextualGroundingPolicy
+        {
+            get { return this._contextualGroundingPolicy; }
+            set { this._contextualGroundingPolicy = value; }
+        }
+
+        // Check to see if ContextualGroundingPolicy property is set
+        internal bool IsSetContextualGroundingPolicy()
+        {
+            return this._contextualGroundingPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The date and time at which the guardrail was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -169,7 +188,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property GuardrailArn. 
         /// <para>
-        /// The ARN of the guardrail that was created.
+        /// The ARN of the guardrail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -324,9 +343,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

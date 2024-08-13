@@ -87,9 +87,9 @@ namespace Amazon.APIGateway.Model
         /// Specifies whether the ApiKey can be used by callers.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.APIGateway.Model
         /// from the created API key value. This parameter is deprecated and should not be used.
         /// </para>
         /// </summary>
-        public bool GenerateDistinctId
+        public bool? GenerateDistinctId
         {
-            get { return this._generateDistinctId.GetValueOrDefault(); }
+            get { return this._generateDistinctId; }
             set { this._generateDistinctId = value; }
         }
 

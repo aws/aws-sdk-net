@@ -60,7 +60,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.CreationTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -96,7 +96,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("Version");
-                    context.Writer.Write(publicRequest.Version);
+                    context.Writer.Write(publicRequest.Version.Value);
                 }
 
                 writer.WriteObjectEnd();

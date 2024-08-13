@@ -103,9 +103,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Parameter <c>@scheduled_runtime</c> can be used in the query to get the value. 
         /// </para>
         /// </summary>
-        public DateTime InvocationTime
+        public DateTime? InvocationTime
         {
-            get { return this._invocationTime.GetValueOrDefault(); }
+            get { return this._invocationTime; }
             set { this._invocationTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.TimestreamQuery.Model
         /// The actual time when the query was run.
         /// </para>
         /// </summary>
-        public DateTime TriggerTime
+        public DateTime? TriggerTime
         {
-            get { return this._triggerTime.GetValueOrDefault(); }
+            get { return this._triggerTime; }
             set { this._triggerTime = value; }
         }
 

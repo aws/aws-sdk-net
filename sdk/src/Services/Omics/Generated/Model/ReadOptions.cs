@@ -107,9 +107,9 @@ namespace Amazon.Omics.Model
         /// Whether quotes need to be escaped in the file.
         /// </para>
         /// </summary>
-        public bool EscapeQuotes
+        public bool? EscapeQuotes
         {
-            get { return this._escapeQuotes.GetValueOrDefault(); }
+            get { return this._escapeQuotes; }
             set { this._escapeQuotes = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.Omics.Model
         /// Whether the file has a header row.
         /// </para>
         /// </summary>
-        public bool Header
+        public bool? Header
         {
-            get { return this._header.GetValueOrDefault(); }
+            get { return this._header; }
             set { this._header = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.Omics.Model
         /// Whether all values need to be quoted, or just those that contain quotes.
         /// </para>
         /// </summary>
-        public bool QuoteAll
+        public bool? QuoteAll
         {
-            get { return this._quoteAll.GetValueOrDefault(); }
+            get { return this._quoteAll; }
             set { this._quoteAll = value; }
         }
 

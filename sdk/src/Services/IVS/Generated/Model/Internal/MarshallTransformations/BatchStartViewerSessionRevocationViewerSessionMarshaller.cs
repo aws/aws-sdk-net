@@ -63,7 +63,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetViewerSessionVersionsLessThanOrEqualTo())
             {
                 context.Writer.WritePropertyName("viewerSessionVersionsLessThanOrEqualTo");
-                context.Writer.Write(requestObject.ViewerSessionVersionsLessThanOrEqualTo);
+                context.Writer.Write(requestObject.ViewerSessionVersionsLessThanOrEqualTo.Value);
             }
 
         }

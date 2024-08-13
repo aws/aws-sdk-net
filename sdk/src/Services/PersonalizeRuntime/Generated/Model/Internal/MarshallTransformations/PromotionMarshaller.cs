@@ -77,7 +77,7 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentPromotedItems())
             {
                 context.Writer.WritePropertyName("percentPromotedItems");
-                context.Writer.Write(requestObject.PercentPromotedItems);
+                context.Writer.Write(requestObject.PercentPromotedItems.Value);
             }
 
         }

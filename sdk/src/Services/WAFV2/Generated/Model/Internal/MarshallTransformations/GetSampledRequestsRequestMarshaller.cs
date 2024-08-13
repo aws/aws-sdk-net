@@ -72,7 +72,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxItems())
                 {
                     context.Writer.WritePropertyName("MaxItems");
-                    context.Writer.Write(publicRequest.MaxItems);
+                    context.Writer.Write(publicRequest.MaxItems.Value);
                 }
 
                 if(publicRequest.IsSetRuleMetricName())

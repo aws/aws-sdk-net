@@ -47,6 +47,7 @@ namespace Amazon.BedrockAgent.Model
         private GuardrailConfiguration _guardrailConfiguration;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
+        private MemoryConfiguration _memoryConfiguration;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
         private List<string> _recommendedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _updatedAt;
@@ -155,9 +156,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -246,7 +247,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property GuardrailConfiguration. 
         /// <para>
-        /// The guardrails configuration assigned to the agent version.
+        /// Details about the guardrail associated with the agent.
         /// </para>
         /// </summary>
         public GuardrailConfiguration GuardrailConfiguration
@@ -275,9 +276,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=3600)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 
@@ -304,6 +305,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetInstruction()
         {
             return this._instruction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryConfiguration. 
+        /// <para>
+        ///  Contains details of the memory configuration on the version of the agent. 
+        /// </para>
+        /// </summary>
+        public MemoryConfiguration MemoryConfiguration
+        {
+            get { return this._memoryConfiguration; }
+            set { this._memoryConfiguration = value; }
+        }
+
+        // Check to see if MemoryConfiguration property is set
+        internal bool IsSetMemoryConfiguration()
+        {
+            return this._memoryConfiguration != null;
         }
 
         /// <summary>
@@ -354,9 +373,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

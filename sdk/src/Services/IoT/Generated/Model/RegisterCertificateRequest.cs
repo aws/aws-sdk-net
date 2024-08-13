@@ -98,9 +98,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
-        public bool SetAsActive
+        public bool? SetAsActive
         {
-            get { return this._setAsActive.GetValueOrDefault(); }
+            get { return this._setAsActive; }
             set { this._setAsActive = value; }
         }
 

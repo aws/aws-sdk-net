@@ -46,9 +46,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int SegmentNumber
+        public int? SegmentNumber
         {
-            get { return this._segmentNumber.GetValueOrDefault(); }
+            get { return this._segmentNumber; }
             set { this._segmentNumber = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
-        public int TotalSegments
+        public int? TotalSegments
         {
-            get { return this._totalSegments.GetValueOrDefault(); }
+            get { return this._totalSegments; }
             set { this._totalSegments = value; }
         }
 

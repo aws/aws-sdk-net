@@ -64,9 +64,9 @@ namespace Amazon.LocationService.Model
         /// The distance between the inferred position and the device's self-reported position.
         /// </para>
         /// </summary>
-        public double DeviationDistance
+        public double? DeviationDistance
         {
-            get { return this._deviationDistance.GetValueOrDefault(); }
+            get { return this._deviationDistance; }
             set { this._deviationDistance = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ProxyDetected
+        public bool? ProxyDetected
         {
-            get { return this._proxyDetected.GetValueOrDefault(); }
+            get { return this._proxyDetected; }
             set { this._proxyDetected = value; }
         }
 

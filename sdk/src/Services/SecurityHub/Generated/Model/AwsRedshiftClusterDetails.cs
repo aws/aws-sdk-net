@@ -86,9 +86,9 @@ namespace Amazon.SecurityHub.Model
         /// during the maintenance window.
         /// </para>
         /// </summary>
-        public bool AllowVersionUpgrade
+        public bool? AllowVersionUpgrade
         {
-            get { return this._allowVersionUpgrade.GetValueOrDefault(); }
+            get { return this._allowVersionUpgrade; }
             set { this._allowVersionUpgrade = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of days that automatic cluster snapshots are retained.
         /// </para>
         /// </summary>
-        public int AutomatedSnapshotRetentionPeriod
+        public int? AutomatedSnapshotRetentionPeriod
         {
-            get { return this._automatedSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._automatedSnapshotRetentionPeriod; }
             set { this._automatedSnapshotRetentionPeriod = value; }
         }
 
@@ -500,9 +500,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the data in the cluster is encrypted at rest.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -536,9 +536,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether to create the cluster with enhanced VPC routing enabled.
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -727,9 +727,9 @@ namespace Amazon.SecurityHub.Model
         /// Valid values: Either <c>-1</c> or an integer between 1 and 3,653
         /// </para>
         /// </summary>
-        public int ManualSnapshotRetentionPeriod
+        public int? ManualSnapshotRetentionPeriod
         {
-            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._manualSnapshotRetentionPeriod; }
             set { this._manualSnapshotRetentionPeriod = value; }
         }
 
@@ -828,9 +828,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of compute nodes in the cluster.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 
@@ -914,9 +914,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the cluster can be accessed from a public network.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

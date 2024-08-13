@@ -153,6 +153,56 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailAction.
+    /// </summary>
+    public class GuardrailAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GUARDRAIL_INTERVENED for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction GUARDRAIL_INTERVENED = new GuardrailAction("GUARDRAIL_INTERVENED");
+        /// <summary>
+        /// Constant NONE for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction NONE = new GuardrailAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailAction FindValue(string value)
+        {
+            return FindValue<GuardrailAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailContentFilterConfidence.
     /// </summary>
     public class GuardrailContentFilterConfidence : ConstantClass
@@ -316,6 +366,264 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailContentPolicyAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContentQualifier.
+    /// </summary>
+    public class GuardrailContentQualifier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Grounding_source for GuardrailContentQualifier
+        /// </summary>
+        public static readonly GuardrailContentQualifier Grounding_source = new GuardrailContentQualifier("grounding_source");
+        /// <summary>
+        /// Constant Guard_content for GuardrailContentQualifier
+        /// </summary>
+        public static readonly GuardrailContentQualifier Guard_content = new GuardrailContentQualifier("guard_content");
+        /// <summary>
+        /// Constant Query for GuardrailContentQualifier
+        /// </summary>
+        public static readonly GuardrailContentQualifier Query = new GuardrailContentQualifier("query");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentQualifier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentQualifier FindValue(string value)
+        {
+            return FindValue<GuardrailContentQualifier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentQualifier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContentSource.
+    /// </summary>
+    public class GuardrailContentSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INPUT for GuardrailContentSource
+        /// </summary>
+        public static readonly GuardrailContentSource INPUT = new GuardrailContentSource("INPUT");
+        /// <summary>
+        /// Constant OUTPUT for GuardrailContentSource
+        /// </summary>
+        public static readonly GuardrailContentSource OUTPUT = new GuardrailContentSource("OUTPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContentSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContentSource FindValue(string value)
+        {
+            return FindValue<GuardrailContentSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContentSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContextualGroundingFilterType.
+    /// </summary>
+    public class GuardrailContextualGroundingFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUNDING for GuardrailContextualGroundingFilterType
+        /// </summary>
+        public static readonly GuardrailContextualGroundingFilterType GROUNDING = new GuardrailContextualGroundingFilterType("GROUNDING");
+        /// <summary>
+        /// Constant RELEVANCE for GuardrailContextualGroundingFilterType
+        /// </summary>
+        public static readonly GuardrailContextualGroundingFilterType RELEVANCE = new GuardrailContextualGroundingFilterType("RELEVANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContextualGroundingFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContextualGroundingFilterType FindValue(string value)
+        {
+            return FindValue<GuardrailContextualGroundingFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContextualGroundingFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailContextualGroundingPolicyAction.
+    /// </summary>
+    public class GuardrailContextualGroundingPolicyAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCKED for GuardrailContextualGroundingPolicyAction
+        /// </summary>
+        public static readonly GuardrailContextualGroundingPolicyAction BLOCKED = new GuardrailContextualGroundingPolicyAction("BLOCKED");
+        /// <summary>
+        /// Constant NONE for GuardrailContextualGroundingPolicyAction
+        /// </summary>
+        public static readonly GuardrailContextualGroundingPolicyAction NONE = new GuardrailContextualGroundingPolicyAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailContextualGroundingPolicyAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailContextualGroundingPolicyAction FindValue(string value)
+        {
+            return FindValue<GuardrailContextualGroundingPolicyAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailContextualGroundingPolicyAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailConverseContentQualifier.
+    /// </summary>
+    public class GuardrailConverseContentQualifier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Grounding_source for GuardrailConverseContentQualifier
+        /// </summary>
+        public static readonly GuardrailConverseContentQualifier Grounding_source = new GuardrailConverseContentQualifier("grounding_source");
+        /// <summary>
+        /// Constant Guard_content for GuardrailConverseContentQualifier
+        /// </summary>
+        public static readonly GuardrailConverseContentQualifier Guard_content = new GuardrailConverseContentQualifier("guard_content");
+        /// <summary>
+        /// Constant Query for GuardrailConverseContentQualifier
+        /// </summary>
+        public static readonly GuardrailConverseContentQualifier Query = new GuardrailConverseContentQualifier("query");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailConverseContentQualifier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailConverseContentQualifier FindValue(string value)
+        {
+            return FindValue<GuardrailConverseContentQualifier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailConverseContentQualifier(string value)
         {
             return FindValue(value);
         }

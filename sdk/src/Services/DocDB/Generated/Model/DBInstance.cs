@@ -72,9 +72,9 @@ namespace Amazon.DocDB.Model
         /// does not perform minor version upgrades regardless of the value set.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the number of days for which automatic snapshots are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.DocDB.Model
         /// DB instance. By default, tags are not copied.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -384,9 +384,9 @@ namespace Amazon.DocDB.Model
         /// Provides the date and time that the instance was created.
         /// </para>
         /// </summary>
-        public DateTime InstanceCreateTime
+        public DateTime? InstanceCreateTime
         {
-            get { return this._instanceCreateTime.GetValueOrDefault(); }
+            get { return this._instanceCreateTime; }
             set { this._instanceCreateTime = value; }
         }
 
@@ -421,9 +421,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the latest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
-        public DateTime LatestRestorableTime
+        public DateTime? LatestRestorableTime
         {
-            get { return this._latestRestorableTime.GetValueOrDefault(); }
+            get { return this._latestRestorableTime; }
             set { this._latestRestorableTime = value; }
         }
 
@@ -459,9 +459,9 @@ namespace Amazon.DocDB.Model
         /// and otherwise <c>false</c>.
         /// </para>
         /// </summary>
-        public bool PerformanceInsightsEnabled
+        public bool? PerformanceInsightsEnabled
         {
-            get { return this._performanceInsightsEnabled.GetValueOrDefault(); }
+            get { return this._performanceInsightsEnabled; }
             set { this._performanceInsightsEnabled = value; }
         }
 
@@ -536,9 +536,9 @@ namespace Amazon.DocDB.Model
         /// to the primary instance after a failure of the existing primary instance.
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 
@@ -555,9 +555,9 @@ namespace Amazon.DocDB.Model
         /// value of <c>PubliclyAccessible</c> is always <c>false</c>.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -591,9 +591,9 @@ namespace Amazon.DocDB.Model
         /// Specifies whether or not the instance is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

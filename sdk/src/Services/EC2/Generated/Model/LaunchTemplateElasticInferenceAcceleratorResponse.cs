@@ -47,9 +47,9 @@ namespace Amazon.EC2.Model
         /// Default: 1
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

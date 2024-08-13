@@ -94,9 +94,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Port. The network output port.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Ttl. The network output TTL.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Ttl
+        public int? Ttl
         {
-            get { return this._ttl.GetValueOrDefault(); }
+            get { return this._ttl; }
             set { this._ttl = value; }
         }
 

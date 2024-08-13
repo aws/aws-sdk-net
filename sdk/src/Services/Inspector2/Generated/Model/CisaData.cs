@@ -64,9 +64,9 @@ namespace Amazon.Inspector2.Model
         /// The date and time CISA added this vulnerability to their catalogue.
         /// </para>
         /// </summary>
-        public DateTime DateAdded
+        public DateTime? DateAdded
         {
-            get { return this._dateAdded.GetValueOrDefault(); }
+            get { return this._dateAdded; }
             set { this._dateAdded = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Inspector2.Model
         /// The date and time CISA expects a fix to have been provided vulnerability.
         /// </para>
         /// </summary>
-        public DateTime DateDue
+        public DateTime? DateDue
         {
-            get { return this._dateDue.GetValueOrDefault(); }
+            get { return this._dateDue; }
             set { this._dateDue = value; }
         }
 

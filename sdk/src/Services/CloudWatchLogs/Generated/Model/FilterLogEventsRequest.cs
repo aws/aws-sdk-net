@@ -87,9 +87,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long EndTime
+        public long? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [Obsolete("Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be true. The response from this operation will always interleave events from multiple log streams within a log group.")]
-        public bool Interleaved
+        public bool? Interleaved
         {
-            get { return this._interleaved.GetValueOrDefault(); }
+            get { return this._interleaved; }
             set { this._interleaved = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long StartTime
+        public long? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -324,9 +324,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// the <c>logs:Unmask</c> permission.
         /// </para>
         /// </summary>
-        public bool Unmask
+        public bool? Unmask
         {
-            get { return this._unmask.GetValueOrDefault(); }
+            get { return this._unmask; }
             set { this._unmask = value; }
         }
 

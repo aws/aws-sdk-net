@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLineNumber())
             {
                 context.Writer.WritePropertyName("LineNumber");
-                context.Writer.Write(requestObject.LineNumber);
+                context.Writer.Write(requestObject.LineNumber.Value);
             }
 
             if(requestObject.IsSetNodeType())

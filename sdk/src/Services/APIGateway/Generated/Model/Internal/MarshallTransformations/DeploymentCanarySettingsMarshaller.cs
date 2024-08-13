@@ -51,13 +51,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentTraffic())
             {
                 context.Writer.WritePropertyName("percentTraffic");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentTraffic))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PercentTraffic.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentTraffic.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PercentTraffic);
+                    context.Writer.Write(requestObject.PercentTraffic.Value);
                 }
             }
 
@@ -78,7 +78,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseStageCache())
             {
                 context.Writer.WritePropertyName("useStageCache");
-                context.Writer.Write(requestObject.UseStageCache);
+                context.Writer.Write(requestObject.UseStageCache.Value);
             }
 
         }

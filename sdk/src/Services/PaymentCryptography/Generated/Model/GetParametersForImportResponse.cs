@@ -68,9 +68,9 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ParametersValidUntilTimestamp
+        public DateTime? ParametersValidUntilTimestamp
         {
-            get { return this._parametersValidUntilTimestamp.GetValueOrDefault(); }
+            get { return this._parametersValidUntilTimestamp; }
             set { this._parametersValidUntilTimestamp = value; }
         }
 

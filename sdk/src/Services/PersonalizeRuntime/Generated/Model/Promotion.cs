@@ -122,9 +122,9 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int PercentPromotedItems
+        public int? PercentPromotedItems
         {
-            get { return this._percentPromotedItems.GetValueOrDefault(); }
+            get { return this._percentPromotedItems; }
             set { this._percentPromotedItems = value; }
         }
 

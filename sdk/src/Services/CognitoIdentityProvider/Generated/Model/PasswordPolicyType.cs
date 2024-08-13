@@ -49,9 +49,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=99)]
-        public int MinimumLength
+        public int? MinimumLength
         {
-            get { return this._minimumLength.GetValueOrDefault(); }
+            get { return this._minimumLength; }
             set { this._minimumLength = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// to use at least one lowercase letter in their password.
         /// </para>
         /// </summary>
-        public bool RequireLowercase
+        public bool? RequireLowercase
         {
-            get { return this._requireLowercase.GetValueOrDefault(); }
+            get { return this._requireLowercase; }
             set { this._requireLowercase = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// to use at least one number in their password.
         /// </para>
         /// </summary>
-        public bool RequireNumbers
+        public bool? RequireNumbers
         {
-            get { return this._requireNumbers.GetValueOrDefault(); }
+            get { return this._requireNumbers; }
             set { this._requireNumbers = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// to use at least one symbol in their password.
         /// </para>
         /// </summary>
-        public bool RequireSymbols
+        public bool? RequireSymbols
         {
-            get { return this._requireSymbols.GetValueOrDefault(); }
+            get { return this._requireSymbols; }
             set { this._requireSymbols = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// to use at least one uppercase letter in their password.
         /// </para>
         /// </summary>
-        public bool RequireUppercase
+        public bool? RequireUppercase
         {
-            get { return this._requireUppercase.GetValueOrDefault(); }
+            get { return this._requireUppercase; }
             set { this._requireUppercase = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=365)]
-        public int TemporaryPasswordValidityDays
+        public int? TemporaryPasswordValidityDays
         {
-            get { return this._temporaryPasswordValidityDays.GetValueOrDefault(); }
+            get { return this._temporaryPasswordValidityDays; }
             set { this._temporaryPasswordValidityDays = value; }
         }
 

@@ -138,25 +138,25 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableAutoBranchCreation())
                 {
                     context.Writer.WritePropertyName("enableAutoBranchCreation");
-                    context.Writer.Write(publicRequest.EnableAutoBranchCreation);
+                    context.Writer.Write(publicRequest.EnableAutoBranchCreation.Value);
                 }
 
                 if(publicRequest.IsSetEnableBasicAuth())
                 {
                     context.Writer.WritePropertyName("enableBasicAuth");
-                    context.Writer.Write(publicRequest.EnableBasicAuth);
+                    context.Writer.Write(publicRequest.EnableBasicAuth.Value);
                 }
 
                 if(publicRequest.IsSetEnableBranchAutoBuild())
                 {
                     context.Writer.WritePropertyName("enableBranchAutoBuild");
-                    context.Writer.Write(publicRequest.EnableBranchAutoBuild);
+                    context.Writer.Write(publicRequest.EnableBranchAutoBuild.Value);
                 }
 
                 if(publicRequest.IsSetEnableBranchAutoDeletion())
                 {
                     context.Writer.WritePropertyName("enableBranchAutoDeletion");
-                    context.Writer.Write(publicRequest.EnableBranchAutoDeletion);
+                    context.Writer.Write(publicRequest.EnableBranchAutoDeletion.Value);
                 }
 
                 if(publicRequest.IsSetEnvironmentVariables())

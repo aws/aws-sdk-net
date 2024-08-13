@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSortOrder())
             {
                 context.Writer.WritePropertyName("SortOrder");
-                context.Writer.Write(requestObject.SortOrder);
+                context.Writer.Write(requestObject.SortOrder.Value);
             }
 
         }

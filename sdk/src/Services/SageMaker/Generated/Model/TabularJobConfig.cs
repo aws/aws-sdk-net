@@ -144,9 +144,9 @@ namespace Amazon.SageMaker.Model
         /// combination of data preprocessors, algorithms, and algorithm parameter settings.
         /// </para>
         /// </summary>
-        public bool GenerateCandidateDefinitionsOnly
+        public bool? GenerateCandidateDefinitionsOnly
         {
-            get { return this._generateCandidateDefinitionsOnly.GetValueOrDefault(); }
+            get { return this._generateCandidateDefinitionsOnly; }
             set { this._generateCandidateDefinitionsOnly = value; }
         }
 

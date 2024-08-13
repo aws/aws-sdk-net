@@ -63,9 +63,9 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaximumPerMinute
+        public int? MaximumPerMinute
         {
-            get { return this._maximumPerMinute.GetValueOrDefault(); }
+            get { return this._maximumPerMinute; }
             set { this._maximumPerMinute = value; }
         }
 

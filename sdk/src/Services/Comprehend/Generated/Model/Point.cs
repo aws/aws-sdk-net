@@ -49,9 +49,9 @@ namespace Amazon.Comprehend.Model
         /// The value of the X coordinate for a point on a polygon
         /// </para>
         /// </summary>
-        public float X
+        public float? X
         {
-            get { return this._x.GetValueOrDefault(); }
+            get { return this._x; }
             set { this._x = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.Comprehend.Model
         /// The value of the Y coordinate for a point on a polygon
         /// </para>
         /// </summary>
-        public float Y
+        public float? Y
         {
-            get { return this._y.GetValueOrDefault(); }
+            get { return this._y; }
             set { this._y = value; }
         }
 

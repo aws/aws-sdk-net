@@ -65,9 +65,9 @@ namespace Amazon.SecretsManager.Model
         /// request plus the number of days in <c>RecoveryWindowInDays</c>.
         /// </para>
         /// </summary>
-        public DateTime DeletionDate
+        public DateTime? DeletionDate
         {
-            get { return this._deletionDate.GetValueOrDefault(); }
+            get { return this._deletionDate; }
             set { this._deletionDate = value; }
         }
 

@@ -57,7 +57,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSendEmail())
             {
                 context.Writer.WritePropertyName("SendEmail");
-                context.Writer.Write(requestObject.SendEmail);
+                context.Writer.Write(requestObject.SendEmail.Value);
             }
 
         }

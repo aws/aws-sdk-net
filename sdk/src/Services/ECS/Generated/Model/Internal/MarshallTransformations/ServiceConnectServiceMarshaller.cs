@@ -73,7 +73,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIngressPortOverride())
             {
                 context.Writer.WritePropertyName("ingressPortOverride");
-                context.Writer.Write(requestObject.IngressPortOverride);
+                context.Writer.Write(requestObject.IngressPortOverride.Value);
             }
 
             if(requestObject.IsSetPortName())

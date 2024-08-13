@@ -207,9 +207,9 @@ namespace Amazon.S3.Model
         /// Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations
         /// </para>
         /// </summary>
-        public bool SkipDestinationValidation
+        public bool? SkipDestinationValidation
         {
-            get { return this._skipDestinationValidation.GetValueOrDefault(); }
+            get { return this._skipDestinationValidation; }
             set { this._skipDestinationValidation = value; }
         }
 

@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The time that the Dedicated Host was allocated.
         /// </para>
         /// </summary>
-        public DateTime AllocationTime
+        public DateTime? AllocationTime
         {
-            get { return this._allocationTime.GetValueOrDefault(); }
+            get { return this._allocationTime; }
             set { this._allocationTime = value; }
         }
 
@@ -320,9 +320,9 @@ namespace Amazon.EC2.Model
         /// is <c>true</c>, the host is in a host resource group; otherwise, it is not.
         /// </para>
         /// </summary>
-        public bool MemberOfServiceLinkedResourceGroup
+        public bool? MemberOfServiceLinkedResourceGroup
         {
-            get { return this._memberOfServiceLinkedResourceGroup.GetValueOrDefault(); }
+            get { return this._memberOfServiceLinkedResourceGroup; }
             set { this._memberOfServiceLinkedResourceGroup = value; }
         }
 
@@ -375,9 +375,9 @@ namespace Amazon.EC2.Model
         /// The time that the Dedicated Host was released.
         /// </para>
         /// </summary>
-        public DateTime ReleaseTime
+        public DateTime? ReleaseTime
         {
-            get { return this._releaseTime.GetValueOrDefault(); }
+            get { return this._releaseTime; }
             set { this._releaseTime = value; }
         }
 

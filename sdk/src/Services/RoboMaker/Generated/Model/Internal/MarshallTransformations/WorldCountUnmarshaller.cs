@@ -68,13 +68,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("floorplanCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FloorplanCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("interiorCountPerFloorplan", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InteriorCountPerFloorplan = unmarshaller.Unmarshall(context);
                     continue;
                 }

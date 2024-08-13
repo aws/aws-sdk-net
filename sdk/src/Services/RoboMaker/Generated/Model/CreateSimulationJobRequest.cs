@@ -195,9 +195,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MaxJobDurationInSeconds
+        public long? MaxJobDurationInSeconds
         {
-            get { return this._maxJobDurationInSeconds.GetValueOrDefault(); }
+            get { return this._maxJobDurationInSeconds; }
             set { this._maxJobDurationInSeconds = value; }
         }
 

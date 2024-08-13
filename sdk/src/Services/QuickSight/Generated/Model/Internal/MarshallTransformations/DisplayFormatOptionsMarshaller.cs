@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFractionDigits())
             {
                 context.Writer.WritePropertyName("FractionDigits");
-                context.Writer.Write(requestObject.FractionDigits);
+                context.Writer.Write(requestObject.FractionDigits.Value);
             }
 
             if(requestObject.IsSetGroupingSeparator())
@@ -116,13 +116,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseBlankCellFormat())
             {
                 context.Writer.WritePropertyName("UseBlankCellFormat");
-                context.Writer.Write(requestObject.UseBlankCellFormat);
+                context.Writer.Write(requestObject.UseBlankCellFormat.Value);
             }
 
             if(requestObject.IsSetUseGrouping())
             {
                 context.Writer.WritePropertyName("UseGrouping");
-                context.Writer.Write(requestObject.UseGrouping);
+                context.Writer.Write(requestObject.UseGrouping.Value);
             }
 
         }

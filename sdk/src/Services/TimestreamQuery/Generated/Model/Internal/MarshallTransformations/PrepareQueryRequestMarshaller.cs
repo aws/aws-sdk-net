@@ -78,7 +78,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetValidateOnly())
                 {
                     context.Writer.WritePropertyName("ValidateOnly");
-                    context.Writer.Write(publicRequest.ValidateOnly);
+                    context.Writer.Write(publicRequest.ValidateOnly.Value);
                 }
 
                 writer.WriteObjectEnd();

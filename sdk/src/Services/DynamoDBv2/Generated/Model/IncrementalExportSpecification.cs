@@ -46,9 +46,9 @@ namespace Amazon.DynamoDBv2.Model
         /// the table's state including and after this point in time.
         /// </para>
         /// </summary>
-        public DateTime ExportFromTime
+        public DateTime? ExportFromTime
         {
-            get { return this._exportFromTime.GetValueOrDefault(); }
+            get { return this._exportFromTime; }
             set { this._exportFromTime = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.DynamoDBv2.Model
         /// time with data available will be used.
         /// </para>
         /// </summary>
-        public DateTime ExportToTime
+        public DateTime? ExportToTime
         {
-            get { return this._exportToTime.GetValueOrDefault(); }
+            get { return this._exportToTime; }
             set { this._exportToTime = value; }
         }
 

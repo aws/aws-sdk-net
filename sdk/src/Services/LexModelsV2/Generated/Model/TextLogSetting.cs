@@ -61,9 +61,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.LexModelsV2.Model
         /// The option to enable selective conversation log capture for text.
         /// </para>
         /// </summary>
-        public bool SelectiveLoggingEnabled
+        public bool? SelectiveLoggingEnabled
         {
-            get { return this._selectiveLoggingEnabled.GetValueOrDefault(); }
+            get { return this._selectiveLoggingEnabled; }
             set { this._selectiveLoggingEnabled = value; }
         }
 

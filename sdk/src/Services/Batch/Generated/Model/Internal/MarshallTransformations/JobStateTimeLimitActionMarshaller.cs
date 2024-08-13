@@ -57,7 +57,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxTimeSeconds())
             {
                 context.Writer.WritePropertyName("maxTimeSeconds");
-                context.Writer.Write(requestObject.MaxTimeSeconds);
+                context.Writer.Write(requestObject.MaxTimeSeconds.Value);
             }
 
             if(requestObject.IsSetReason())

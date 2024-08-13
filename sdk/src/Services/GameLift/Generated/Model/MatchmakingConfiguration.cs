@@ -62,9 +62,9 @@ namespace Amazon.GameLift.Model
         /// indicate when a completed potential match is waiting for player acceptance.
         /// </para>
         /// </summary>
-        public bool AcceptanceRequired
+        public bool? AcceptanceRequired
         {
-            get { return this._acceptanceRequired.GetValueOrDefault(); }
+            get { return this._acceptanceRequired; }
             set { this._acceptanceRequired = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=600)]
-        public int AcceptanceTimeoutSeconds
+        public int? AcceptanceTimeoutSeconds
         {
-            get { return this._acceptanceTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._acceptanceTimeoutSeconds; }
             set { this._acceptanceTimeoutSeconds = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AdditionalPlayerCount
+        public int? AdditionalPlayerCount
         {
-            get { return this._additionalPlayerCount.GetValueOrDefault(); }
+            get { return this._additionalPlayerCount; }
             set { this._additionalPlayerCount = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -368,9 +368,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=43200)]
-        public int RequestTimeoutSeconds
+        public int? RequestTimeoutSeconds
         {
-            get { return this._requestTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._requestTimeoutSeconds; }
             set { this._requestTimeoutSeconds = value; }
         }
 

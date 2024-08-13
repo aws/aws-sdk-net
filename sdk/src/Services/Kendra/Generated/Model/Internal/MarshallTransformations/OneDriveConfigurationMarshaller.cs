@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableLocalGroups())
             {
                 context.Writer.WritePropertyName("DisableLocalGroups");
-                context.Writer.Write(requestObject.DisableLocalGroups);
+                context.Writer.Write(requestObject.DisableLocalGroups.Value);
             }
 
             if(requestObject.IsSetExclusionPatterns())

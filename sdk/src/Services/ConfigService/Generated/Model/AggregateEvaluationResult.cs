@@ -130,9 +130,9 @@ namespace Amazon.ConfigService.Model
         /// The time when the Config rule evaluated the Amazon Web Services resource.
         /// </para>
         /// </summary>
-        public DateTime ConfigRuleInvokedTime
+        public DateTime? ConfigRuleInvokedTime
         {
-            get { return this._configRuleInvokedTime.GetValueOrDefault(); }
+            get { return this._configRuleInvokedTime; }
             set { this._configRuleInvokedTime = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.ConfigService.Model
         /// The time when Config recorded the aggregate evaluation result.
         /// </para>
         /// </summary>
-        public DateTime ResultRecordedTime
+        public DateTime? ResultRecordedTime
         {
-            get { return this._resultRecordedTime.GetValueOrDefault(); }
+            get { return this._resultRecordedTime; }
             set { this._resultRecordedTime = value; }
         }
 

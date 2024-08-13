@@ -237,9 +237,9 @@ namespace Amazon.Personalize.Model
         /// process as compared to selecting a specific recipe.
         /// </para>
         /// </summary>
-        public bool PerformAutoML
+        public bool? PerformAutoML
         {
-            get { return this._performAutoML.GetValueOrDefault(); }
+            get { return this._performAutoML; }
             set { this._performAutoML = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.Personalize.Model
         /// 
         /// </para>
         /// </summary>
-        public bool PerformAutoTraining
+        public bool? PerformAutoTraining
         {
-            get { return this._performAutoTraining.GetValueOrDefault(); }
+            get { return this._performAutoTraining; }
             set { this._performAutoTraining = value; }
         }
 
@@ -297,9 +297,9 @@ namespace Amazon.Personalize.Model
         /// it to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool PerformHPO
+        public bool? PerformHPO
         {
-            get { return this._performhpo.GetValueOrDefault(); }
+            get { return this._performhpo; }
             set { this._performhpo = value; }
         }
 

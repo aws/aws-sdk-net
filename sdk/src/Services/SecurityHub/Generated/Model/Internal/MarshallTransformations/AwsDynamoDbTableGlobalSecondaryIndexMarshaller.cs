@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackfilling())
             {
                 context.Writer.WritePropertyName("Backfilling");
-                context.Writer.Write(requestObject.Backfilling);
+                context.Writer.Write(requestObject.Backfilling.Value);
             }
 
             if(requestObject.IsSetIndexArn())
@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIndexSizeBytes())
             {
                 context.Writer.WritePropertyName("IndexSizeBytes");
-                context.Writer.Write(requestObject.IndexSizeBytes);
+                context.Writer.Write(requestObject.IndexSizeBytes.Value);
             }
 
             if(requestObject.IsSetIndexStatus())
@@ -81,7 +81,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetItemCount())
             {
                 context.Writer.WritePropertyName("ItemCount");
-                context.Writer.Write(requestObject.ItemCount);
+                context.Writer.Write(requestObject.ItemCount.Value);
             }
 
             if(requestObject.IsSetKeySchema())

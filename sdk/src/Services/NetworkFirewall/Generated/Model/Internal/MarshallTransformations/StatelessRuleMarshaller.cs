@@ -51,7 +51,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority);
+                context.Writer.Write(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetRuleDefinition())

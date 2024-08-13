@@ -20,13 +20,10 @@ using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-#if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
 using System.Buffers;
-#endif
+
 namespace Amazon.S3.Transfer.Internal
 {
     internal partial class MultipartUploadCommand : BaseCommand
@@ -215,13 +212,9 @@ namespace Amazon.S3.Transfer.Internal
                 // if partSize is not specified on the request, the default value is 0
                 long minPartSize = request?.PartSize != 0 ? request.PartSize : S3Constants.MinPartSize;
                 var uploadPartResponses = new List<UploadPartResponse>();
-#if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
                 var readBuffer = ArrayPool<byte>.Shared.Rent(READ_BUFFER_SIZE);
                 var partBuffer = ArrayPool<byte>.Shared.Rent((int)minPartSize + (READ_BUFFER_SIZE));
-#else
-                var readBuffer = new byte[READ_BUFFER_SIZE];
-                var partBuffer = new byte[(int)minPartSize + (READ_BUFFER_SIZE)];
-#endif
+
                 MemoryStream nextUploadBuffer = new MemoryStream(partBuffer);
                 using (var stream = request.InputStream)
                 {
@@ -273,11 +266,9 @@ namespace Amazon.S3.Transfer.Internal
                     }
                     finally
                     {
-
-#if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
                         ArrayPool<byte>.Shared.Return(partBuffer);
                         ArrayPool<byte>.Shared.Return(readBuffer);
-#endif
+
                         nextUploadBuffer.Dispose();
                     }
 

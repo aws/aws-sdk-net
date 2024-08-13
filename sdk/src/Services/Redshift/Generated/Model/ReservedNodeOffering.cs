@@ -69,9 +69,9 @@ namespace Amazon.Redshift.Model
         /// The duration, in seconds, for which the offering will reserve the node.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Redshift.Model
         /// The upfront fixed charge you will pay to purchase the specific reserved node offering.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.Redshift.Model
         /// The rate you are charged for each hour the cluster that is using the offering is running.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

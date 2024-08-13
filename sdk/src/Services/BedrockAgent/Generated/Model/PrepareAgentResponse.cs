@@ -103,9 +103,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime PreparedAt
+        public DateTime? PreparedAt
         {
-            get { return this._preparedAt.GetValueOrDefault(); }
+            get { return this._preparedAt; }
             set { this._preparedAt = value; }
         }
 

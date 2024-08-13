@@ -89,9 +89,9 @@ namespace Amazon.CloudTrail.Model
         /// The timestamp of an event data store's creation.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.CloudTrail.Model
         /// from the Region in which the event data store was created.
         /// </para>
         /// </summary>
-        public bool MultiRegionEnabled
+        public bool? MultiRegionEnabled
         {
-            get { return this._multiRegionEnabled.GetValueOrDefault(); }
+            get { return this._multiRegionEnabled; }
             set { this._multiRegionEnabled = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.CloudTrail.Model
         /// in Organizations.
         /// </para>
         /// </summary>
-        public bool OrganizationEnabled
+        public bool? OrganizationEnabled
         {
-            get { return this._organizationEnabled.GetValueOrDefault(); }
+            get { return this._organizationEnabled; }
             set { this._organizationEnabled = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=3653)]
-        public int RetentionPeriod
+        public int? RetentionPeriod
         {
-            get { return this._retentionPeriod.GetValueOrDefault(); }
+            get { return this._retentionPeriod; }
             set { this._retentionPeriod = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.CloudTrail.Model
         /// automatically deleted.
         /// </para>
         /// </summary>
-        public bool TerminationProtectionEnabled
+        public bool? TerminationProtectionEnabled
         {
-            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            get { return this._terminationProtectionEnabled; }
             set { this._terminationProtectionEnabled = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.CloudTrail.Model
         /// is always either the same or newer than the time shown in <c>CreatedTimestamp</c>.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

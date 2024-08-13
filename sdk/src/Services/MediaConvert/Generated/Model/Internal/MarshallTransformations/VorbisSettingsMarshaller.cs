@@ -51,19 +51,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("channels");
-                context.Writer.Write(requestObject.Channels);
+                context.Writer.Write(requestObject.Channels.Value);
             }
 
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate);
+                context.Writer.Write(requestObject.SampleRate.Value);
             }
 
             if(requestObject.IsSetVbrQuality())
             {
                 context.Writer.WritePropertyName("vbrQuality");
-                context.Writer.Write(requestObject.VbrQuality);
+                context.Writer.Write(requestObject.VbrQuality.Value);
             }
 
         }

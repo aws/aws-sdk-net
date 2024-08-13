@@ -44,6 +44,7 @@ namespace Amazon.Connect.Model
     {
         private List<UserSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<UserSearchCriteria>() : null;
         private HierarchyGroupCondition _hierarchyGroupCondition;
+        private ListCondition _listCondition;
         private List<UserSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<UserSearchCriteria>() : null;
         private StringCondition _stringCondition;
 
@@ -82,6 +83,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetHierarchyGroupCondition()
         {
             return this._hierarchyGroupCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListCondition. 
+        /// <para>
+        /// A leaf node condition which can be used to specify a List condition to search users
+        /// with attributes included in Lists like Proficiencies.
+        /// </para>
+        /// </summary>
+        public ListCondition ListCondition
+        {
+            get { return this._listCondition; }
+            set { this._listCondition = value; }
+        }
+
+        // Check to see if ListCondition property is set
+        internal bool IsSetListCondition()
+        {
+            return this._listCondition != null;
         }
 
         /// <summary>

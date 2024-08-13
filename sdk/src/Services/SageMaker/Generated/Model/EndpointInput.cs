@@ -184,9 +184,9 @@ namespace Amazon.SageMaker.Model
         /// The threshold for the class probability to be evaluated as a positive result.
         /// </para>
         /// </summary>
-        public double ProbabilityThresholdAttribute
+        public double? ProbabilityThresholdAttribute
         {
-            get { return this._probabilityThresholdAttribute.GetValueOrDefault(); }
+            get { return this._probabilityThresholdAttribute; }
             set { this._probabilityThresholdAttribute = value; }
         }
 

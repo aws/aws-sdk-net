@@ -44,9 +44,9 @@ namespace Amazon.Rekognition.Model
         /// 100 (inclusive). A higher value indicates a brighter face image.
         /// </para>
         /// </summary>
-        public float Brightness
+        public float? Brightness
         {
-            get { return this._brightness.GetValueOrDefault(); }
+            get { return this._brightness; }
             set { this._brightness = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Rekognition.Model
         /// 100 (inclusive). A higher value indicates a sharper face image.
         /// </para>
         /// </summary>
-        public float Sharpness
+        public float? Sharpness
         {
-            get { return this._sharpness.GetValueOrDefault(); }
+            get { return this._sharpness; }
             set { this._sharpness = value; }
         }
 

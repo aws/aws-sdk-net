@@ -103,9 +103,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StatusUpdateDateTime
+        public DateTime? StatusUpdateDateTime
         {
-            get { return this._statusUpdateDateTime.GetValueOrDefault(); }
+            get { return this._statusUpdateDateTime; }
             set { this._statusUpdateDateTime = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableCodeHookInvocation())
             {
                 context.Writer.WritePropertyName("enableCodeHookInvocation");
-                context.Writer.Write(requestObject.EnableCodeHookInvocation);
+                context.Writer.Write(requestObject.EnableCodeHookInvocation.Value);
             }
 
             if(requestObject.IsSetInvocationLabel())

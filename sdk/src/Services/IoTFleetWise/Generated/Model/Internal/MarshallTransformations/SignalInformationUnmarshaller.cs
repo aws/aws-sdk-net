@@ -68,13 +68,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxSampleCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxSampleCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimumSamplingIntervalMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinimumSamplingIntervalMs = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -68,7 +68,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("currentAttemptCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CurrentAttemptCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

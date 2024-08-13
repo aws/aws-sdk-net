@@ -51,31 +51,31 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableKeyReuseOnNtTokenKeysetStorageFull())
             {
                 context.Writer.WritePropertyName("EnableKeyReuseOnNtTokenKeysetStorageFull");
-                context.Writer.Write(requestObject.EnableKeyReuseOnNtTokenKeysetStorageFull);
+                context.Writer.Write(requestObject.EnableKeyReuseOnNtTokenKeysetStorageFull.Value);
             }
 
             if(requestObject.IsSetIncludeSymmetricAlgorithms())
             {
                 context.Writer.WritePropertyName("IncludeSymmetricAlgorithms");
-                context.Writer.Write(requestObject.IncludeSymmetricAlgorithms);
+                context.Writer.Write(requestObject.IncludeSymmetricAlgorithms.Value);
             }
 
             if(requestObject.IsSetNoSecurityExtension())
             {
                 context.Writer.WritePropertyName("NoSecurityExtension");
-                context.Writer.Write(requestObject.NoSecurityExtension);
+                context.Writer.Write(requestObject.NoSecurityExtension.Value);
             }
 
             if(requestObject.IsSetRemoveInvalidCertificateFromPersonalStore())
             {
                 context.Writer.WritePropertyName("RemoveInvalidCertificateFromPersonalStore");
-                context.Writer.Write(requestObject.RemoveInvalidCertificateFromPersonalStore);
+                context.Writer.Write(requestObject.RemoveInvalidCertificateFromPersonalStore.Value);
             }
 
             if(requestObject.IsSetUserInteractionRequired())
             {
                 context.Writer.WritePropertyName("UserInteractionRequired");
-                context.Writer.Write(requestObject.UserInteractionRequired);
+                context.Writer.Write(requestObject.UserInteractionRequired.Value);
             }
 
         }

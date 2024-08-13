@@ -90,7 +90,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCompleteWindowMinutes())
                 {
                     context.Writer.WritePropertyName("CompleteWindowMinutes");
-                    context.Writer.Write(publicRequest.CompleteWindowMinutes);
+                    context.Writer.Write(publicRequest.CompleteWindowMinutes.Value);
                 }
 
                 if(publicRequest.IsSetIamRoleArn())
@@ -139,7 +139,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartWindowMinutes())
                 {
                     context.Writer.WritePropertyName("StartWindowMinutes");
-                    context.Writer.Write(publicRequest.StartWindowMinutes);
+                    context.Writer.Write(publicRequest.StartWindowMinutes.Value);
                 }
 
                 writer.WriteObjectEnd();

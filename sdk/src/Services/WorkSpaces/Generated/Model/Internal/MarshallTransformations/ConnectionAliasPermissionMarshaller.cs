@@ -51,7 +51,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowAssociation())
             {
                 context.Writer.WritePropertyName("AllowAssociation");
-                context.Writer.Write(requestObject.AllowAssociation);
+                context.Writer.Write(requestObject.AllowAssociation.Value);
             }
 
             if(requestObject.IsSetSharedAccountId())

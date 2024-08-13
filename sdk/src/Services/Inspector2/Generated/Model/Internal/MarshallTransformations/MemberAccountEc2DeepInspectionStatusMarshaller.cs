@@ -57,7 +57,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActivateDeepInspection())
             {
                 context.Writer.WritePropertyName("activateDeepInspection");
-                context.Writer.Write(requestObject.ActivateDeepInspection);
+                context.Writer.Write(requestObject.ActivateDeepInspection.Value);
             }
 
         }

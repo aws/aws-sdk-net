@@ -59,9 +59,9 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property RecoveryWindow. Search window time to look for dash-7 packets
         /// </summary>
-        public int RecoveryWindow
+        public int? RecoveryWindow
         {
-            get { return this._recoveryWindow.GetValueOrDefault(); }
+            get { return this._recoveryWindow; }
             set { this._recoveryWindow = value; }
         }
 

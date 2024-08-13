@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBufferMsec())
             {
                 context.Writer.WritePropertyName("bufferMsec");
-                context.Writer.Write(requestObject.BufferMsec);
+                context.Writer.Write(requestObject.BufferMsec.Value);
             }
 
             if(requestObject.IsSetContainerSettings())

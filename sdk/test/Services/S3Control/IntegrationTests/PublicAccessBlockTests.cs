@@ -48,7 +48,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3Control
                 AccountId = accountId
             });
             Assert.IsTrue(response.ResponseMetadata.Metadata.ContainsKey(HeaderKeys.XAmzId2Header));
-            Assert.IsFalse(response.PublicAccessBlockConfiguration.BlockPublicPolicy);
+            Assert.IsFalse(response.PublicAccessBlockConfiguration.BlockPublicPolicy.Value);
             client.DeletePublicAccessBlock(new DeletePublicAccessBlockRequest()
             {
                 AccountId = accountId

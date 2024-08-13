@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsCaller", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCaller = unmarshaller.Unmarshall(context);
                     continue;
                 }

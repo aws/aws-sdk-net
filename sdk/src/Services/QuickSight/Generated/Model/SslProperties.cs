@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean option to control whether SSL should be disabled.
         /// </para>
         /// </summary>
-        public bool DisableSsl
+        public bool? DisableSsl
         {
-            get { return this._disableSsl.GetValueOrDefault(); }
+            get { return this._disableSsl; }
             set { this._disableSsl = value; }
         }
 

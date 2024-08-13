@@ -68,9 +68,9 @@ namespace Amazon.EMRServerless.Model
         /// The lower bound of the option to filter by creation date and time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAtAfter
+        public DateTime? CreatedAtAfter
         {
-            get { return this._createdAtAfter.GetValueOrDefault(); }
+            get { return this._createdAtAfter; }
             set { this._createdAtAfter = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.EMRServerless.Model
         /// The upper bound of the option to filter by creation date and time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAtBefore
+        public DateTime? CreatedAtBefore
         {
-            get { return this._createdAtBefore.GetValueOrDefault(); }
+            get { return this._createdAtBefore; }
             set { this._createdAtBefore = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

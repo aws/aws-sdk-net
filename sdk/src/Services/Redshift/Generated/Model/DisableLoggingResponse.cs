@@ -87,9 +87,9 @@ namespace Amazon.Redshift.Model
         /// The last time when logs failed to be delivered.
         /// </para>
         /// </summary>
-        public DateTime LastFailureTime
+        public DateTime? LastFailureTime
         {
-            get { return this._lastFailureTime.GetValueOrDefault(); }
+            get { return this._lastFailureTime; }
             set { this._lastFailureTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Redshift.Model
         /// The last time that logs were delivered.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulDeliveryTime
+        public DateTime? LastSuccessfulDeliveryTime
         {
-            get { return this._lastSuccessfulDeliveryTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulDeliveryTime; }
             set { this._lastSuccessfulDeliveryTime = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Redshift.Model
         ///  <c>true</c> if logging is on, <c>false</c> if logging is off.
         /// </para>
         /// </summary>
-        public bool LoggingEnabled
+        public bool? LoggingEnabled
         {
-            get { return this._loggingEnabled.GetValueOrDefault(); }
+            get { return this._loggingEnabled; }
             set { this._loggingEnabled = value; }
         }
 

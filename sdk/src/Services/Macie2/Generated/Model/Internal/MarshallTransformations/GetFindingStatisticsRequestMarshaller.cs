@@ -87,7 +87,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSize())
                 {
                     context.Writer.WritePropertyName("size");
-                    context.Writer.Write(publicRequest.Size);
+                    context.Writer.Write(publicRequest.Size.Value);
                 }
 
                 if(publicRequest.IsSetSortCriteria())

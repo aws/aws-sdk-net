@@ -103,9 +103,9 @@ namespace Amazon.DirectConnect.Model
         /// The autonomous system number (ASN) for the Amazon side of the connection.
         /// </para>
         /// </summary>
-        public long AmazonSideAsn
+        public long? AmazonSideAsn
         {
-            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            get { return this._amazonSideAsn; }
             set { this._amazonSideAsn = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.DirectConnect.Model
         /// The valid values are 1-2147483647.
         /// </para>
         /// </summary>
-        public int Asn
+        public int? Asn
         {
-            get { return this._asn.GetValueOrDefault(); }
+            get { return this._asn; }
             set { this._asn = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether jumbo frames are supported.
         /// </para>
         /// </summary>
-        public bool JumboFrameCapable
+        public bool? JumboFrameCapable
         {
-            get { return this._jumboFrameCapable.GetValueOrDefault(); }
+            get { return this._jumboFrameCapable; }
             set { this._jumboFrameCapable = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.DirectConnect.Model
         /// The default value is 1500
         /// </para>
         /// </summary>
-        public int Mtu
+        public int? Mtu
         {
-            get { return this._mtu.GetValueOrDefault(); }
+            get { return this._mtu; }
             set { this._mtu = value; }
         }
 
@@ -399,9 +399,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether SiteLink is enabled.
         /// </para>
         /// </summary>
-        public bool SiteLinkEnabled
+        public bool? SiteLinkEnabled
         {
-            get { return this._siteLinkEnabled.GetValueOrDefault(); }
+            get { return this._siteLinkEnabled; }
             set { this._siteLinkEnabled = value; }
         }
 
@@ -552,7 +552,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualInterfaceType. 
         /// <para>
-        /// The type of virtual interface. The possible values are <c>private</c> and <c>public</c>.
+        /// The type of virtual interface. The possible values are <c>private</c>, <c>public</c>
+        /// and <c>transit</c>.
         /// </para>
         /// </summary>
         public string VirtualInterfaceType
@@ -573,9 +574,9 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the VLAN.
         /// </para>
         /// </summary>
-        public int Vlan
+        public int? Vlan
         {
-            get { return this._vlan.GetValueOrDefault(); }
+            get { return this._vlan; }
             set { this._vlan = value; }
         }
 

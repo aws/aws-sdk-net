@@ -48,9 +48,9 @@ namespace Amazon.PI.Model
         /// or equal to the value of the user-specified <c>Endtime</c>. 
         /// </para>
         /// </summary>
-        public DateTime AlignedEndTime
+        public DateTime? AlignedEndTime
         {
-            get { return this._alignedEndTime.GetValueOrDefault(); }
+            get { return this._alignedEndTime; }
             set { this._alignedEndTime = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.PI.Model
         /// or equal to the value of the user-specified <c>StartTime</c>. 
         /// </para>
         /// </summary>
-        public DateTime AlignedStartTime
+        public DateTime? AlignedStartTime
         {
-            get { return this._alignedStartTime.GetValueOrDefault(); }
+            get { return this._alignedStartTime; }
             set { this._alignedStartTime = value; }
         }
 

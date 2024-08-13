@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("assignIpv6AddressOnCreation", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AssignIpv6AddressOnCreation = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("availableIpAddressCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AvailableIpAddressCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -93,19 +93,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("defaultForAz", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DefaultForAz = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enableDns64", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnableDns64 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enableLniAtDeviceIndex", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.EnableLniAtDeviceIndex = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -122,19 +122,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ipv6Native", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Ipv6Native = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("mapCustomerOwnedIpOnLaunch", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.MapCustomerOwnedIpOnLaunch = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("mapPublicIpOnLaunch", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.MapPublicIpOnLaunch = unmarshaller.Unmarshall(context);
                         continue;
                     }

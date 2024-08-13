@@ -51,10 +51,10 @@ namespace ServiceClientGenerator.Generators.TestFiles
             
             #line default
             #line hidden
-            this.Write(".Model;\r\n\r\nusing Moq;\r\nusing System;\r\nusing System.Linq;\r\nusing AWSSDK_DotNet35.U" +
-                    "nitTests.TestTools;\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\n\r\nname" +
-                    "space AWSSDK_DotNet35.UnitTests.PaginatorTests\r\n{\r\n    [TestClass]\r\n    public c" +
-                    "lass ");
+            this.Write(".Model;\r\n\r\nusing Moq;\r\nusing System;\r\nusing System.Linq;\r\nusing AWSSDK_DotNet.Uni" +
+                    "tTests.TestTools;\r\nusing Microsoft.VisualStudio.TestTools.UnitTesting;\r\n\r\nnamesp" +
+                    "ace AWSSDK_DotNet.UnitTests.PaginatorTests\r\n{\r\n    [TestClass]\r\n    public class" +
+                    " ");
             
             #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));

@@ -46,9 +46,9 @@ namespace Amazon.Drs.Model
         /// Whether this Source Server Recovery operation is a drill or not.
         /// </para>
         /// </summary>
-        public bool IsDrill
+        public bool? IsDrill
         {
-            get { return this._isDrill.GetValueOrDefault(); }
+            get { return this._isDrill; }
             set { this._isDrill = value; }
         }
 

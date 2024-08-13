@@ -70,7 +70,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoRenew())
                 {
                     context.Writer.WritePropertyName("autoRenew");
-                    context.Writer.Write(publicRequest.AutoRenew);
+                    context.Writer.Write(publicRequest.AutoRenew.Value);
                 }
 
                 if(publicRequest.IsSetClientRequestToken())
@@ -87,7 +87,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLicenseQuantity())
                 {
                     context.Writer.WritePropertyName("licenseQuantity");
-                    context.Writer.Write(publicRequest.LicenseQuantity);
+                    context.Writer.Write(publicRequest.LicenseQuantity.Value);
                 }
 
                 if(publicRequest.IsSetLicenseType())

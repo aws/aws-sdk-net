@@ -60,9 +60,9 @@ namespace Amazon.IoTWireless.Model
         /// The AddGWMetaData value.
         /// </para>
         /// </summary>
-        public bool AddGwMetadata
+        public bool? AddGwMetadata
         {
-            get { return this._addGwMetadata.GetValueOrDefault(); }
+            get { return this._addGwMetadata; }
             set { this._addGwMetadata = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int DevStatusReqFreq
+        public int? DevStatusReqFreq
         {
-            get { return this._devStatusReqFreq.GetValueOrDefault(); }
+            get { return this._devStatusReqFreq; }
             set { this._devStatusReqFreq = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int DlBucketSize
+        public int? DlBucketSize
         {
-            get { return this._dlBucketSize.GetValueOrDefault(); }
+            get { return this._dlBucketSize; }
             set { this._dlBucketSize = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int DlRate
+        public int? DlRate
         {
-            get { return this._dlRate.GetValueOrDefault(); }
+            get { return this._dlRate; }
             set { this._dlRate = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int DrMax
+        public int? DrMax
         {
-            get { return this._drMax.GetValueOrDefault(); }
+            get { return this._drMax; }
             set { this._drMax = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int DrMin
+        public int? DrMin
         {
-            get { return this._drMin.GetValueOrDefault(); }
+            get { return this._drMin; }
             set { this._drMin = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.IoTWireless.Model
         /// The HRAllowed value that describes whether handover roaming is allowed.
         /// </para>
         /// </summary>
-        public bool HrAllowed
+        public bool? HrAllowed
         {
-            get { return this._hrAllowed.GetValueOrDefault(); }
+            get { return this._hrAllowed; }
             set { this._hrAllowed = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MinGwDiversity
+        public int? MinGwDiversity
         {
-            get { return this._minGwDiversity.GetValueOrDefault(); }
+            get { return this._minGwDiversity; }
             set { this._minGwDiversity = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.IoTWireless.Model
         /// The NwkGeoLoc value.
         /// </para>
         /// </summary>
-        public bool NwkGeoLoc
+        public bool? NwkGeoLoc
         {
-            get { return this._nwkGeoLoc.GetValueOrDefault(); }
+            get { return this._nwkGeoLoc; }
             set { this._nwkGeoLoc = value; }
         }
 
@@ -266,9 +266,9 @@ namespace Amazon.IoTWireless.Model
         /// The PRAllowed value that describes whether passive roaming is allowed.
         /// </para>
         /// </summary>
-        public bool PrAllowed
+        public bool? PrAllowed
         {
-            get { return this._prAllowed.GetValueOrDefault(); }
+            get { return this._prAllowed; }
             set { this._prAllowed = value; }
         }
 
@@ -284,9 +284,9 @@ namespace Amazon.IoTWireless.Model
         /// The RAAllowed value that describes whether roaming activation is allowed.
         /// </para>
         /// </summary>
-        public bool RaAllowed
+        public bool? RaAllowed
         {
-            get { return this._raAllowed.GetValueOrDefault(); }
+            get { return this._raAllowed; }
             set { this._raAllowed = value; }
         }
 
@@ -302,9 +302,9 @@ namespace Amazon.IoTWireless.Model
         /// The ReportDevStatusBattery value.
         /// </para>
         /// </summary>
-        public bool ReportDevStatusBattery
+        public bool? ReportDevStatusBattery
         {
-            get { return this._reportDevStatusBattery.GetValueOrDefault(); }
+            get { return this._reportDevStatusBattery; }
             set { this._reportDevStatusBattery = value; }
         }
 
@@ -320,9 +320,9 @@ namespace Amazon.IoTWireless.Model
         /// The ReportDevStatusMargin value.
         /// </para>
         /// </summary>
-        public bool ReportDevStatusMargin
+        public bool? ReportDevStatusMargin
         {
-            get { return this._reportDevStatusMargin.GetValueOrDefault(); }
+            get { return this._reportDevStatusMargin; }
             set { this._reportDevStatusMargin = value; }
         }
 
@@ -339,9 +339,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int TargetPer
+        public int? TargetPer
         {
-            get { return this._targetPer.GetValueOrDefault(); }
+            get { return this._targetPer; }
             set { this._targetPer = value; }
         }
 
@@ -358,9 +358,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int UlBucketSize
+        public int? UlBucketSize
         {
-            get { return this._ulBucketSize.GetValueOrDefault(); }
+            get { return this._ulBucketSize; }
             set { this._ulBucketSize = value; }
         }
 
@@ -377,9 +377,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int UlRate
+        public int? UlRate
         {
-            get { return this._ulRate.GetValueOrDefault(); }
+            get { return this._ulRate; }
             set { this._ulRate = value; }
         }
 

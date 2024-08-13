@@ -81,7 +81,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFromTime())
                 {
                     context.Writer.WritePropertyName("FromTime");
-                    context.Writer.Write(publicRequest.FromTime);
+                    context.Writer.Write(publicRequest.FromTime.Value);
                 }
 
                 if(publicRequest.IsSetOrganizationalUnitIds())
@@ -98,7 +98,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetToTime())
                 {
                     context.Writer.WritePropertyName("ToTime");
-                    context.Writer.Write(publicRequest.ToTime);
+                    context.Writer.Write(publicRequest.ToTime.Value);
                 }
 
                 writer.WriteObjectEnd();

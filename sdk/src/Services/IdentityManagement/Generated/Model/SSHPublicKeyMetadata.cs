@@ -92,9 +92,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UploadDate
+        public DateTime? UploadDate
         {
-            get { return this._uploadDate.GetValueOrDefault(); }
+            get { return this._uploadDate; }
             set { this._uploadDate = value; }
         }
 

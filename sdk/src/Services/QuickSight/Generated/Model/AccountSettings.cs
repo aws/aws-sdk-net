@@ -124,9 +124,9 @@ namespace Amazon.QuickSight.Model
         /// account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.
         /// </para>
         /// </summary>
-        public bool PublicSharingEnabled
+        public bool? PublicSharingEnabled
         {
-            get { return this._publicSharingEnabled.GetValueOrDefault(); }
+            get { return this._publicSharingEnabled; }
             set { this._publicSharingEnabled = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.QuickSight.Model
         /// A <c>False</c> value will allow the ccount to be deleted. 
         /// </para>
         /// </summary>
-        public bool TerminationProtectionEnabled
+        public bool? TerminationProtectionEnabled
         {
-            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            get { return this._terminationProtectionEnabled; }
             set { this._terminationProtectionEnabled = value; }
         }
 

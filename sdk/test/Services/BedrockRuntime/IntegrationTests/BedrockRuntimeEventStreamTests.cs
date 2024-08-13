@@ -24,48 +24,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class BedrockRuntimeEventStreamTests : TestBase<AmazonBedrockRuntimeClient>
     {
-#if BCL35
-        [TestMethod]
-        public void PayloadIsSentBackCorrectly()
-        {
-            AutoResetEvent endEvent = new AutoResetEvent(false);
-            var query = CreateStream("Who was the first US president");
-            var response = Client.InvokeModelWithResponseStream(new InvokeModelWithResponseStreamRequest
-            {
-                Accept = "*/*",
-                ContentType = "application/json",
-                Body = query,
-                ModelId = "anthropic.claude-v2"
-            });
-            var eventStream = response.Body;
-            Assert.IsNotNull(eventStream);
-            Assert.AreEqual(response.HttpStatusCode, System.Net.HttpStatusCode.OK);
-            string payloadString = null;
-            using (eventStream)
-            {
-                eventStream.ChunkReceived += (sender, e) =>
-                {
-                    var sizeOfPayload = e.EventStreamEvent.Bytes.Length;
-                    using (StreamReader r = new StreamReader(e.EventStreamEvent.Bytes))
-                    {
-                        payloadString = r.ReadToEnd();
-                    }
-                    //Since we don't know the contents of the response from Bedrock, we just assert that we received a payload
-                    //and that the size of the payload is equal to what we read from the stream
-                    var payloadStringSize = Encoding.UTF8.GetByteCount(payloadString);
-                    Assert.IsNotNull(payloadString);
-                    Assert.AreEqual(payloadStringSize, sizeOfPayload);
-                    endEvent.Set();
-                };
-                eventStream.StartProcessing();
-                //the maximum we will wait for a response is 20 seconds, if a payload chunk is received
-                //we signal the end event and exit the test.We are purposely not waiting for the full response
-                //because it will take too much time. We just check the first streamed payload.
-                endEvent.WaitOne(TimeSpan.FromSeconds(20));
-            }
-        }
-#endif
-#if BCL45
+#if BCL
         [TestMethod]
         public async Task PayloadIsSentBackCorrectlyAsync()
         {

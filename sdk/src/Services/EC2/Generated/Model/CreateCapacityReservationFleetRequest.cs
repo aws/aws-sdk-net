@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalTargetCapacity
+        public int? TotalTargetCapacity
         {
-            get { return this._totalTargetCapacity.GetValueOrDefault(); }
+            get { return this._totalTargetCapacity; }
             set { this._totalTargetCapacity = value; }
         }
 

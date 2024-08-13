@@ -67,7 +67,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompressed())
             {
                 context.Writer.WritePropertyName("compressed");
-                context.Writer.Write(requestObject.Compressed);
+                context.Writer.Write(requestObject.Compressed.Value);
             }
 
             if(requestObject.IsSetEncoding())

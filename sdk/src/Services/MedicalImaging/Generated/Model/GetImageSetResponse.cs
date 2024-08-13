@@ -42,6 +42,7 @@ namespace Amazon.MedicalImaging.Model
         private ImageSetState _imageSetState;
         private ImageSetWorkflowStatus _imageSetWorkflowStatus;
         private string _message;
+        private Overrides _overrides;
         private DateTime? _updatedAt;
         private string _versionId;
 
@@ -51,9 +52,9 @@ namespace Amazon.MedicalImaging.Model
         /// The timestamp when image set properties were created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -88,9 +89,9 @@ namespace Amazon.MedicalImaging.Model
         /// The timestamp when the image set properties were deleted.
         /// </para>
         /// </summary>
-        public DateTime DeletedAt
+        public DateTime? DeletedAt
         {
-            get { return this._deletedAt.GetValueOrDefault(); }
+            get { return this._deletedAt; }
             set { this._deletedAt = value; }
         }
 
@@ -194,14 +195,34 @@ namespace Amazon.MedicalImaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Overrides. 
+        /// <para>
+        /// This object contains the details of any overrides used while creating a specific image
+        /// set version. If an image set was copied or updated using the <c>force</c> flag, this
+        /// object will contain the <c>forced</c> flag.
+        /// </para>
+        /// </summary>
+        public Overrides Overrides
+        {
+            get { return this._overrides; }
+            set { this._overrides = value; }
+        }
+
+        // Check to see if Overrides property is set
+        internal bool IsSetOverrides()
+        {
+            return this._overrides != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The timestamp when image set properties were updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

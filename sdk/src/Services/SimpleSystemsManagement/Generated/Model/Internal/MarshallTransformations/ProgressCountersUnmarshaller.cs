@@ -68,31 +68,31 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CancelledSteps", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CancelledSteps = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FailedSteps", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedSteps = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SuccessSteps", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SuccessSteps = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimedOutSteps", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimedOutSteps = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalSteps", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalSteps = unmarshaller.Unmarshall(context);
                     continue;
                 }

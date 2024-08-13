@@ -111,9 +111,9 @@ namespace Amazon.Shield.Model
         /// The total contributions made to this Shield event by all contributors.
         /// </para>
         /// </summary>
-        public long Total
+        public long? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

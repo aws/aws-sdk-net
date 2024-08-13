@@ -50,9 +50,9 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// Date and time when the key value pairs in the Key Value Store was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TotalSizeInBytes
+        public long? TotalSizeInBytes
         {
-            get { return this._totalSizeInBytes.GetValueOrDefault(); }
+            get { return this._totalSizeInBytes; }
             set { this._totalSizeInBytes = value; }
         }
 

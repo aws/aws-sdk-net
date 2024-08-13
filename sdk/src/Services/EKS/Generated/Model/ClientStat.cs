@@ -44,9 +44,9 @@ namespace Amazon.EKS.Model
         /// The timestamp of the last request seen from the Kubernetes client.
         /// </para>
         /// </summary>
-        public DateTime LastRequestTime
+        public DateTime? LastRequestTime
         {
-            get { return this._lastRequestTime.GetValueOrDefault(); }
+            get { return this._lastRequestTime; }
             set { this._lastRequestTime = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.EKS.Model
         /// The number of requests from the Kubernetes client seen over the last 30 days.
         /// </para>
         /// </summary>
-        public int NumberOfRequestsLast30Days
+        public int? NumberOfRequestsLast30Days
         {
-            get { return this._numberOfRequestsLast30Days.GetValueOrDefault(); }
+            get { return this._numberOfRequestsLast30Days; }
             set { this._numberOfRequestsLast30Days = value; }
         }
 

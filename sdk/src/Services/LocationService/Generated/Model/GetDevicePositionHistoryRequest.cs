@@ -85,9 +85,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime EndTimeExclusive
+        public DateTime? EndTimeExclusive
         {
-            get { return this._endTimeExclusive.GetValueOrDefault(); }
+            get { return this._endTimeExclusive; }
             set { this._endTimeExclusive = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime StartTimeInclusive
+        public DateTime? StartTimeInclusive
         {
-            get { return this._startTimeInclusive.GetValueOrDefault(); }
+            get { return this._startTimeInclusive; }
             set { this._startTimeInclusive = value; }
         }
 

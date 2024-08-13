@@ -48,9 +48,9 @@ namespace Amazon.Comprehend.Model
         /// and the worst score is 0. 
         /// </para>
         /// </summary>
-        public double F1Score
+        public double? F1Score
         {
-            get { return this._f1Score.GetValueOrDefault(); }
+            get { return this._f1Score; }
             set { this._f1Score = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Comprehend.Model
         /// relevant results than irrelevant ones. 
         /// </para>
         /// </summary>
-        public double Precision
+        public double? Precision
         {
-            get { return this._precision.GetValueOrDefault(); }
+            get { return this._precision; }
             set { this._precision = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.Comprehend.Model
         /// results.
         /// </para>
         /// </summary>
-        public double Recall
+        public double? Recall
         {
-            get { return this._recall.GetValueOrDefault(); }
+            get { return this._recall; }
             set { this._recall = value; }
         }
 

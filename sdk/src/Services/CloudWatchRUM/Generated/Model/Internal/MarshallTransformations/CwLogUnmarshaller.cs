@@ -68,7 +68,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CwLogEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CwLogEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

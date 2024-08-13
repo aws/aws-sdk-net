@@ -51,13 +51,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHealthyThreshold())
             {
                 context.Writer.WritePropertyName("healthyThreshold");
-                context.Writer.Write(requestObject.HealthyThreshold);
+                context.Writer.Write(requestObject.HealthyThreshold.Value);
             }
 
             if(requestObject.IsSetIntervalMillis())
             {
                 context.Writer.WritePropertyName("intervalMillis");
-                context.Writer.Write(requestObject.IntervalMillis);
+                context.Writer.Write(requestObject.IntervalMillis.Value);
             }
 
             if(requestObject.IsSetPath())
@@ -69,7 +69,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProtocol())
@@ -81,13 +81,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutMillis())
             {
                 context.Writer.WritePropertyName("timeoutMillis");
-                context.Writer.Write(requestObject.TimeoutMillis);
+                context.Writer.Write(requestObject.TimeoutMillis.Value);
             }
 
             if(requestObject.IsSetUnhealthyThreshold())
             {
                 context.Writer.WritePropertyName("unhealthyThreshold");
-                context.Writer.Write(requestObject.UnhealthyThreshold);
+                context.Writer.Write(requestObject.UnhealthyThreshold.Value);
             }
 
         }

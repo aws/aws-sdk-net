@@ -141,9 +141,9 @@ namespace Amazon.Batch.Model
         /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool Essential
+        public bool? Essential
         {
-            get { return this._essential.GetValueOrDefault(); }
+            get { return this._essential; }
             set { this._essential = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.Batch.Model
         /// The exit code returned upon completion.
         /// </para>
         /// </summary>
-        public int ExitCode
+        public int? ExitCode
         {
-            get { return this._exitCode.GetValueOrDefault(); }
+            get { return this._exitCode; }
             set { this._exitCode = value; }
         }
 
@@ -382,9 +382,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Privileged
+        public bool? Privileged
         {
-            get { return this._privileged.GetValueOrDefault(); }
+            get { return this._privileged; }
             set { this._privileged = value; }
         }
 
@@ -409,9 +409,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ReadonlyRootFilesystem
+        public bool? ReadonlyRootFilesystem
         {
-            get { return this._readonlyRootFilesystem.GetValueOrDefault(); }
+            get { return this._readonlyRootFilesystem; }
             set { this._readonlyRootFilesystem = value; }
         }
 

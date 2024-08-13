@@ -54,9 +54,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
         /// of the data transfer cost to be billed to the subscriber.
         /// </summary>
-        public int DataTransferSubscriberFeePercent
+        public int? DataTransferSubscriberFeePercent
         {
-            get { return this._dataTransferSubscriberFeePercent.GetValueOrDefault(); }
+            get { return this._dataTransferSubscriberFeePercent; }
             set { this._dataTransferSubscriberFeePercent = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property IngestPort. The port that the flow will be listening on
         /// for incoming content.
         /// </summary>
-        public int IngestPort
+        public int? IngestPort
         {
-            get { return this._ingestPort.GetValueOrDefault(); }
+            get { return this._ingestPort; }
             set { this._ingestPort = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property SenderControlPort. The port that the flow uses to send
         /// outbound requests to initiate connection with the sender.
         /// </summary>
-        public int SenderControlPort
+        public int? SenderControlPort
         {
-            get { return this._senderControlPort.GetValueOrDefault(); }
+            get { return this._senderControlPort; }
             set { this._senderControlPort = value; }
         }
 

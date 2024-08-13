@@ -73,9 +73,9 @@ namespace Amazon.FMS.Model
         /// You cannot specify both.
         /// </para>
         /// </summary>
-        public bool AllAccountsEnabled
+        public bool? AllAccountsEnabled
         {
-            get { return this._allAccountsEnabled.GetValueOrDefault(); }
+            get { return this._allAccountsEnabled; }
             set { this._allAccountsEnabled = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.FMS.Model
         /// You cannot specify both.
         /// </para>
         /// </summary>
-        public bool ExcludeSpecifiedAccounts
+        public bool? ExcludeSpecifiedAccounts
         {
-            get { return this._excludeSpecifiedAccounts.GetValueOrDefault(); }
+            get { return this._excludeSpecifiedAccounts; }
             set { this._excludeSpecifiedAccounts = value; }
         }
 

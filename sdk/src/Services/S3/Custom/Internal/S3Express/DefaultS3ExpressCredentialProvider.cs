@@ -41,7 +41,7 @@ namespace Amazon.S3.Internal.S3Express
             {
                 SessionCredentials = sessionCredentials;
                 CreatedAt = AWSSDKUtils.CorrectedUtcNow;
-                ExpirationDate = sessionCredentials.Expiration.ToUniversalTime();
+                ExpirationDate = sessionCredentials.Expiration.GetValueOrDefault().ToUniversalTime();
                 if (AWSConfigs.ManualClockCorrection.HasValue)
                     ExpirationDate = ExpirationDate + AWSConfigs.ManualClockCorrection.Value;
 
@@ -52,12 +52,8 @@ namespace Amazon.S3.Internal.S3Express
         private readonly AmazonS3Client _s3Client;
         private readonly LruCache<string, SessionCredentialsLruItem> _cache;
         private DateTime _lastRefreshedTime;
-#if BCL35
-        //we have to use a semaphore object here because ReaderWriterLockSlim does not support async/await
-        private readonly Semaphore _cacheLock = new Semaphore(1, 1);
-#else
+
         private readonly SemaphoreSlim _cacheLock = new SemaphoreSlim(1, 1);
-#endif
         private readonly Timer _refreshCredentialsTimer;
         private bool _timerStarted;
         private Logger _logger;
@@ -268,7 +264,7 @@ namespace Amazon.S3.Internal.S3Express
                     var credentialsLruItem = new SessionCredentialsLruItem(credentials.Credentials);
                     if (resetTime == DateTime.MinValue)
                     {
-                        resetTime = credentials.Credentials.Expiration.ToUniversalTime();
+                        resetTime = credentials.Credentials.Expiration.GetValueOrDefault().ToUniversalTime();
                     }
 
                     _cacheLock.Wait();

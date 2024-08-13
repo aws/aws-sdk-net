@@ -45,9 +45,9 @@ namespace Amazon.Batch.Model
         /// returned for array job children.
         /// </para>
         /// </summary>
-        public int Index
+        public int? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Batch.Model
         /// The size of the array job. This parameter is returned for parent array jobs.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

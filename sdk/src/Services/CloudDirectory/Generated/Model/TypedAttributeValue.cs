@@ -65,9 +65,9 @@ namespace Amazon.CloudDirectory.Model
         /// A Boolean data value.
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.CloudDirectory.Model
         /// A date and time value.
         /// </para>
         /// </summary>
-        public DateTime DatetimeValue
+        public DateTime? DatetimeValue
         {
-            get { return this._datetimeValue.GetValueOrDefault(); }
+            get { return this._datetimeValue; }
             set { this._datetimeValue = value; }
         }
 

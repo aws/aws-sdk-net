@@ -84,7 +84,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("durationInSeconds");
-                    context.Writer.Write(publicRequest.DurationInSeconds);
+                    context.Writer.Write(publicRequest.DurationInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetRulesPackageArns())

@@ -90,13 +90,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeMaximum())
             {
                 context.Writer.WritePropertyName("IncludeMaximum");
-                context.Writer.Write(requestObject.IncludeMaximum);
+                context.Writer.Write(requestObject.IncludeMaximum.Value);
             }
 
             if(requestObject.IsSetIncludeMinimum())
             {
                 context.Writer.WritePropertyName("IncludeMinimum");
-                context.Writer.Write(requestObject.IncludeMinimum);
+                context.Writer.Write(requestObject.IncludeMinimum.Value);
             }
 
             if(requestObject.IsSetNullOption())

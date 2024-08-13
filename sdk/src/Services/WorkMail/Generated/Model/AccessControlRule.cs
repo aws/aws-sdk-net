@@ -75,9 +75,9 @@ namespace Amazon.WorkMail.Model
         /// The date that the rule was created.
         /// </para>
         /// </summary>
-        public DateTime DateCreated
+        public DateTime? DateCreated
         {
-            get { return this._dateCreated.GetValueOrDefault(); }
+            get { return this._dateCreated; }
             set { this._dateCreated = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.WorkMail.Model
         /// The date that the rule was modified.
         /// </para>
         /// </summary>
-        public DateTime DateModified
+        public DateTime? DateModified
         {
-            get { return this._dateModified.GetValueOrDefault(); }
+            get { return this._dateModified; }
             set { this._dateModified = value; }
         }
 

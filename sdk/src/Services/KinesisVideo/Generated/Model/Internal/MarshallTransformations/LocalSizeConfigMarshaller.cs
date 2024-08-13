@@ -51,7 +51,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxLocalMediaSizeInMB())
             {
                 context.Writer.WritePropertyName("MaxLocalMediaSizeInMB");
-                context.Writer.Write(requestObject.MaxLocalMediaSizeInMB);
+                context.Writer.Write(requestObject.MaxLocalMediaSizeInMB.Value);
             }
 
             if(requestObject.IsSetStrategyOnFullSize())

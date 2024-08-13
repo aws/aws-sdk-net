@@ -43,9 +43,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000)]
-        public long MonthlyLimit
+        public long? MonthlyLimit
         {
-            get { return this._monthlyLimit.GetValueOrDefault(); }
+            get { return this._monthlyLimit; }
             set { this._monthlyLimit = value; }
         }
 

@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumStringLength())
             {
                 context.Writer.WritePropertyName("MaximumStringLength");
-                context.Writer.Write(requestObject.MaximumStringLength);
+                context.Writer.Write(requestObject.MaximumStringLength.Value);
             }
 
             if(requestObject.IsSetWordCasing())

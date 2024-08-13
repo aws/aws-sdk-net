@@ -156,9 +156,9 @@ namespace Amazon.LocationService.Model
         /// its location is calculated by interpolating between other known addresses. 
         /// </para>
         /// </summary>
-        public bool Interpolated
+        public bool? Interpolated
         {
-            get { return this._interpolated.GetValueOrDefault(); }
+            get { return this._interpolated; }
             set { this._interpolated = value; }
         }
 

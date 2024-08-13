@@ -163,9 +163,9 @@ namespace Amazon.Drs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long RamBytes
+        public long? RamBytes
         {
-            get { return this._ramBytes.GetValueOrDefault(); }
+            get { return this._ramBytes; }
             set { this._ramBytes = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.Drs.Model
         /// Are EC2 nitro instance types supported when recovering the Source Server.
         /// </para>
         /// </summary>
-        public bool SupportsNitroInstances
+        public bool? SupportsNitroInstances
         {
-            get { return this._supportsNitroInstances.GetValueOrDefault(); }
+            get { return this._supportsNitroInstances; }
             set { this._supportsNitroInstances = value; }
         }
 

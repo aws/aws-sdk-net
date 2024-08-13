@@ -40,8 +40,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "DELETE";
 
-			if (deleteObjectRequest.IsSetBypassGovernanceRetention())
-                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(deleteObjectRequest.BypassGovernanceRetention));
+            if (deleteObjectRequest.IsSetBypassGovernanceRetention())
+                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(deleteObjectRequest.BypassGovernanceRetention.Value));
             if (deleteObjectRequest.IsSetMfaCodes())
                 request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectRequest.MfaCodes.FormattedMfaCodes);
 
@@ -52,10 +52,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteObjectRequest.BucketName");
             if (string.IsNullOrEmpty(deleteObjectRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "DeleteObjectRequest.Key");
-
-            request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}", 
-                                                 S3Transforms.ToStringValue(deleteObjectRequest.Key));
-
+            request.AddPathResource("{Key+}", S3Transforms.ToStringValue(deleteObjectRequest.Key));
+            request.ResourcePath = "/{Key+}";
             if (deleteObjectRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(deleteObjectRequest.VersionId));
             if (deleteObjectRequest.IsSetRequestPayer())

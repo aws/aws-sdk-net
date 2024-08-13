@@ -42,9 +42,9 @@ namespace Amazon.MediaConvert.Model
         /// through, regardless of selectors.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int Pid
+        public int? Pid
         {
-            get { return this._pid.GetValueOrDefault(); }
+            get { return this._pid; }
             set { this._pid = value; }
         }
 

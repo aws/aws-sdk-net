@@ -119,9 +119,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ScalingPlanVersion
+        public long? ScalingPlanVersion
         {
-            get { return this._scalingPlanVersion.GetValueOrDefault(); }
+            get { return this._scalingPlanVersion; }
             set { this._scalingPlanVersion = value; }
         }
 

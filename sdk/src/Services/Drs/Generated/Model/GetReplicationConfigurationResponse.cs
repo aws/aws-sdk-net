@@ -59,9 +59,9 @@ namespace Amazon.Drs.Model
         /// Replication Configuration.
         /// </para>
         /// </summary>
-        public bool AssociateDefaultSecurityGroup
+        public bool? AssociateDefaultSecurityGroup
         {
-            get { return this._associateDefaultSecurityGroup.GetValueOrDefault(); }
+            get { return this._associateDefaultSecurityGroup; }
             set { this._associateDefaultSecurityGroup = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.Drs.Model
         /// disks.
         /// </para>
         /// </summary>
-        public bool AutoReplicateNewDisks
+        public bool? AutoReplicateNewDisks
         {
-            get { return this._autoReplicateNewDisks.GetValueOrDefault(); }
+            get { return this._autoReplicateNewDisks; }
             set { this._autoReplicateNewDisks = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.Drs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long BandwidthThrottling
+        public long? BandwidthThrottling
         {
-            get { return this._bandwidthThrottling.GetValueOrDefault(); }
+            get { return this._bandwidthThrottling; }
             set { this._bandwidthThrottling = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.Drs.Model
         /// Whether to create a Public IP for the Recovery Instance by default.
         /// </para>
         /// </summary>
-        public bool CreatePublicIP
+        public bool? CreatePublicIP
         {
-            get { return this._createPublicIP.GetValueOrDefault(); }
+            get { return this._createPublicIP; }
             set { this._createPublicIP = value; }
         }
 
@@ -360,9 +360,9 @@ namespace Amazon.Drs.Model
         /// Whether to use a dedicated Replication Server in the replication staging area.
         /// </para>
         /// </summary>
-        public bool UseDedicatedReplicationServer
+        public bool? UseDedicatedReplicationServer
         {
-            get { return this._useDedicatedReplicationServer.GetValueOrDefault(); }
+            get { return this._useDedicatedReplicationServer; }
             set { this._useDedicatedReplicationServer = value; }
         }
 

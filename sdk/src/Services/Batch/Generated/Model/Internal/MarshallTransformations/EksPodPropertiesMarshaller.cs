@@ -73,7 +73,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostNetwork())
             {
                 context.Writer.WritePropertyName("hostNetwork");
-                context.Writer.Write(requestObject.HostNetwork);
+                context.Writer.Write(requestObject.HostNetwork.Value);
             }
 
             if(requestObject.IsSetImagePullSecrets())
@@ -128,7 +128,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShareProcessNamespace())
             {
                 context.Writer.WritePropertyName("shareProcessNamespace");
-                context.Writer.Write(requestObject.ShareProcessNamespace);
+                context.Writer.Write(requestObject.ShareProcessNamespace.Value);
             }
 
             if(requestObject.IsSetVolumes())

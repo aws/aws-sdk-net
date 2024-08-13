@@ -344,9 +344,9 @@ namespace Amazon.S3.Model
         /// body. 1,000 is the maximum number of uploads that can be returned in a response.
         /// </para>
         /// </summary>
-        public int MaxUploads
+        public int? MaxUploads
         {
-            get { return this.maxUploads ?? default(int); }
+            get { return this.maxUploads; }
             set { this.maxUploads = value; }
         }
 

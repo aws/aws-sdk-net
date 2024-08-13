@@ -68,9 +68,9 @@ namespace Amazon.LocationService.Model
         /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
-        public DateTime ExpireTime
+        public DateTime? ExpireTime
         {
-            get { return this._expireTime.GetValueOrDefault(); }
+            get { return this._expireTime; }
             set { this._expireTime = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.LocationService.Model
         /// Default value: <c>False</c> 
         /// </para>
         /// </summary>
-        public bool ForceUpdate
+        public bool? ForceUpdate
         {
-            get { return this._forceUpdate.GetValueOrDefault(); }
+            get { return this._forceUpdate; }
             set { this._forceUpdate = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.LocationService.Model
         /// expiration time.
         /// </para>
         /// </summary>
-        public bool NoExpiry
+        public bool? NoExpiry
         {
-            get { return this._noExpiry.GetValueOrDefault(); }
+            get { return this._noExpiry; }
             set { this._noExpiry = value; }
         }
 

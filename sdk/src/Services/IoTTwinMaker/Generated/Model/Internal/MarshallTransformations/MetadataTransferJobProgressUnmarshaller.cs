@@ -68,25 +68,25 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("failedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("skippedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SkippedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("succeededCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SucceededCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -57,7 +57,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFCntStart())
             {
                 context.Writer.WritePropertyName("FCntStart");
-                context.Writer.Write(requestObject.FCntStart);
+                context.Writer.Write(requestObject.FCntStart.Value);
             }
 
             if(requestObject.IsSetSessionKeys())

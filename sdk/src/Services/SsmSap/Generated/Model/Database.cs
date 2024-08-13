@@ -179,9 +179,9 @@ namespace Amazon.SsmSap.Model
         /// The time at which the database was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.SsmSap.Model
         /// The SQL port of the database.
         /// </para>
         /// </summary>
-        public int SQLPort
+        public int? SQLPort
         {
-            get { return this._sqlPort.GetValueOrDefault(); }
+            get { return this._sqlPort; }
             set { this._sqlPort = value; }
         }
 

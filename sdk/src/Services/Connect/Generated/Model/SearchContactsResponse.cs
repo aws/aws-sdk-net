@@ -82,9 +82,9 @@ namespace Amazon.Connect.Model
         /// The total number of contacts which matched your search query.
         /// </para>
         /// </summary>
-        public long TotalCount
+        public long? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

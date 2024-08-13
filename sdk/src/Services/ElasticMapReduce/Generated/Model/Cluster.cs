@@ -114,9 +114,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Specifies whether the cluster should terminate after completing all steps.
         /// </para>
         /// </summary>
-        public bool AutoTerminate
+        public bool? AutoTerminate
         {
-            get { return this._autoTerminate.GetValueOrDefault(); }
+            get { return this._autoTerminate; }
             set { this._autoTerminate = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.
         /// </para>
         /// </summary>
-        public int EbsRootVolumeIops
+        public int? EbsRootVolumeIops
         {
-            get { return this._ebsRootVolumeIops.GetValueOrDefault(); }
+            get { return this._ebsRootVolumeIops; }
             set { this._ebsRootVolumeIops = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.
         /// </para>
         /// </summary>
-        public int EbsRootVolumeSize
+        public int? EbsRootVolumeSize
         {
-            get { return this._ebsRootVolumeSize.GetValueOrDefault(); }
+            get { return this._ebsRootVolumeSize; }
             set { this._ebsRootVolumeSize = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// later.
         /// </para>
         /// </summary>
-        public int EbsRootVolumeThroughput
+        public int? EbsRootVolumeThroughput
         {
-            get { return this._ebsRootVolumeThroughput.GetValueOrDefault(); }
+            get { return this._ebsRootVolumeThroughput; }
             set { this._ebsRootVolumeThroughput = value; }
         }
 
@@ -409,9 +409,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// is only an approximation and does not reflect the actual billing rate.
         /// </para>
         /// </summary>
-        public int NormalizedInstanceHours
+        public int? NormalizedInstanceHours
         {
-            get { return this._normalizedInstanceHours.GetValueOrDefault(); }
+            get { return this._normalizedInstanceHours; }
             set { this._normalizedInstanceHours = value; }
         }
 
@@ -646,9 +646,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Specifies the number of steps that can be executed concurrently.
         /// </para>
         /// </summary>
-        public int StepConcurrencyLevel
+        public int? StepConcurrencyLevel
         {
-            get { return this._stepConcurrencyLevel.GetValueOrDefault(); }
+            get { return this._stepConcurrencyLevel; }
             set { this._stepConcurrencyLevel = value; }
         }
 
@@ -684,9 +684,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// error.
         /// </para>
         /// </summary>
-        public bool TerminationProtected
+        public bool? TerminationProtected
         {
-            get { return this._terminationProtected.GetValueOrDefault(); }
+            get { return this._terminationProtected; }
             set { this._terminationProtected = value; }
         }
 
@@ -703,9 +703,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// have degraded within the cluster.
         /// </para>
         /// </summary>
-        public bool UnhealthyNodeReplacement
+        public bool? UnhealthyNodeReplacement
         {
-            get { return this._unhealthyNodeReplacement.GetValueOrDefault(); }
+            get { return this._unhealthyNodeReplacement; }
             set { this._unhealthyNodeReplacement = value; }
         }
 
@@ -732,9 +732,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// command, or the Amazon Web Services Management Console.
         /// </para>
         /// </summary>
-        public bool VisibleToAllUsers
+        public bool? VisibleToAllUsers
         {
-            get { return this._visibleToAllUsers.GetValueOrDefault(); }
+            get { return this._visibleToAllUsers; }
             set { this._visibleToAllUsers = value; }
         }
 

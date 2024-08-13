@@ -66,7 +66,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExtensionVersionNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ExtensionVersionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

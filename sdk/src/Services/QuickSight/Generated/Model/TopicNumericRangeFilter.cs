@@ -88,9 +88,9 @@ namespace Amazon.QuickSight.Model
         /// value is equal to the endpoint values will be excluded from the filter.
         /// </para>
         /// </summary>
-        public bool Inclusive
+        public bool? Inclusive
         {
-            get { return this._inclusive.GetValueOrDefault(); }
+            get { return this._inclusive; }
             set { this._inclusive = value; }
         }
 

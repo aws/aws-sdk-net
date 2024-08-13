@@ -68,7 +68,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("fluxLogEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FluxLogEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,25 +80,25 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("metricsDisabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MetricsDisabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("noTasks", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoTasks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queryConcurrency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QueryConcurrency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queryQueueSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QueryQueueSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

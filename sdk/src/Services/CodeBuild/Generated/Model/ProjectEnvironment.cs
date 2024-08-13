@@ -327,9 +327,9 @@ namespace Amazon.CodeBuild.Model
         ///  <c>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</c> 
         /// </para>
         /// </summary>
-        public bool PrivilegedMode
+        public bool? PrivilegedMode
         {
-            get { return this._privilegedMode.GetValueOrDefault(); }
+            get { return this._privilegedMode; }
             set { this._privilegedMode = value; }
         }
 

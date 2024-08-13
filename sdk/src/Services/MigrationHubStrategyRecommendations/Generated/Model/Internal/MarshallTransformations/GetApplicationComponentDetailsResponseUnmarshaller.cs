@@ -72,7 +72,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 }
                 if (context.TestExpression("moreApplicationResource", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MoreApplicationResource = unmarshaller.Unmarshall(context);
                     continue;
                 }

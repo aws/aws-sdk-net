@@ -51,26 +51,26 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("Max");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Max))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Max.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Max);
+                    context.Writer.Write(requestObject.Max.Value);
                 }
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("Min");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Min))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Min.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Min);
+                    context.Writer.Write(requestObject.Min.Value);
                 }
             }
 

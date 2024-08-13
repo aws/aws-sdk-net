@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetItemsLimit())
             {
                 context.Writer.WritePropertyName("ItemsLimit");
-                context.Writer.Write(requestObject.ItemsLimit);
+                context.Writer.Write(requestObject.ItemsLimit.Value);
             }
 
             if(requestObject.IsSetOtherCategories())

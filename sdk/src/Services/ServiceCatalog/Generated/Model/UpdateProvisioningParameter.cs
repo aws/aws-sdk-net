@@ -63,9 +63,9 @@ namespace Amazon.ServiceCatalog.Model
         /// If set to true, <c>Value</c> is ignored and the previous parameter value is kept.
         /// </para>
         /// </summary>
-        public bool UsePreviousValue
+        public bool? UsePreviousValue
         {
-            get { return this._usePreviousValue.GetValueOrDefault(); }
+            get { return this._usePreviousValue; }
             set { this._usePreviousValue = value; }
         }
 

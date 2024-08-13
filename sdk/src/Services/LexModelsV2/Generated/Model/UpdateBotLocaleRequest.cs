@@ -151,9 +151,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public double NluIntentConfidenceThreshold
+        public double? NluIntentConfidenceThreshold
         {
-            get { return this._nluIntentConfidenceThreshold.GetValueOrDefault(); }
+            get { return this._nluIntentConfidenceThreshold; }
             set { this._nluIntentConfidenceThreshold = value; }
         }
 

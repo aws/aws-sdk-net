@@ -50,9 +50,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Brightness. Brightness level.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Brightness
+        public int? Brightness
         {
-            get { return this._brightness.GetValueOrDefault(); }
+            get { return this._brightness; }
             set { this._brightness = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Contrast. Contrast level.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Contrast
+        public int? Contrast
         {
-            get { return this._contrast.GetValueOrDefault(); }
+            get { return this._contrast; }
             set { this._contrast = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Hue. Hue in degrees.
         /// </summary>
         [AWSProperty(Min=-180, Max=180)]
-        public int Hue
+        public int? Hue
         {
-            get { return this._hue.GetValueOrDefault(); }
+            get { return this._hue; }
             set { this._hue = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.MediaConvert.Model
         /// 10000000 for 1000 nits.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MaxLuminance
+        public int? MaxLuminance
         {
-            get { return this._maxLuminance.GetValueOrDefault(); }
+            get { return this._maxLuminance; }
             set { this._maxLuminance = value; }
         }
 
@@ -234,9 +234,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Saturation. Saturation level.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Saturation
+        public int? Saturation
         {
-            get { return this._saturation.GetValueOrDefault(); }
+            get { return this._saturation; }
             set { this._saturation = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.MediaConvert.Model
         /// blank to use the default value of 100, or specify an integer from 100 to 1000.
         /// </summary>
         [AWSProperty(Min=100, Max=1000)]
-        public int SdrReferenceWhiteLevel
+        public int? SdrReferenceWhiteLevel
         {
-            get { return this._sdrReferenceWhiteLevel.GetValueOrDefault(); }
+            get { return this._sdrReferenceWhiteLevel; }
             set { this._sdrReferenceWhiteLevel = value; }
         }
 

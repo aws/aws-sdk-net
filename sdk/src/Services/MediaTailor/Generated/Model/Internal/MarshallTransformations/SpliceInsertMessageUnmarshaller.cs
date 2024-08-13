@@ -68,25 +68,25 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AvailNum", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AvailNum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AvailsExpected", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AvailsExpected = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SpliceEventId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SpliceEventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UniqueProgramId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UniqueProgramId = unmarshaller.Unmarshall(context);
                     continue;
                 }

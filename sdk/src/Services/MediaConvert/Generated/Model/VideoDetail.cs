@@ -40,9 +40,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property HeightInPx. Height in pixels for the output
         /// </summary>
-        public int HeightInPx
+        public int? HeightInPx
         {
-            get { return this._heightInPx.GetValueOrDefault(); }
+            get { return this._heightInPx; }
             set { this._heightInPx = value; }
         }
 
@@ -55,9 +55,9 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property WidthInPx. Width in pixels for the output
         /// </summary>
-        public int WidthInPx
+        public int? WidthInPx
         {
-            get { return this._widthInPx.GetValueOrDefault(); }
+            get { return this._widthInPx; }
             set { this._widthInPx = value; }
         }
 

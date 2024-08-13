@@ -147,9 +147,9 @@ namespace Amazon.SageMaker.Model
         /// can't request more than one instance during training.
         /// </para>
         /// </summary>
-        public bool SupportsDistributedTraining
+        public bool? SupportsDistributedTraining
         {
-            get { return this._supportsDistributedTraining.GetValueOrDefault(); }
+            get { return this._supportsDistributedTraining; }
             set { this._supportsDistributedTraining = value; }
         }
 

@@ -78,6 +78,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.PageBreakConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RepeatConfiguration", targetDepth))
+                {
+                    var unmarshaller = BodySectionRepeatConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RepeatConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

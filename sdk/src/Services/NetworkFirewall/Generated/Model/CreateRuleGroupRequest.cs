@@ -63,9 +63,9 @@ namespace Amazon.NetworkFirewall.Model
         /// rule group analyzer without creating the rule group, set <c>DryRun</c> to <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool AnalyzeRuleGroup
+        public bool? AnalyzeRuleGroup
         {
-            get { return this._analyzeRuleGroup.GetValueOrDefault(); }
+            get { return this._analyzeRuleGroup; }
             set { this._analyzeRuleGroup = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Capacity
+        public int? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.NetworkFirewall.Model
         /// 
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

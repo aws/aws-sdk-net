@@ -43,9 +43,9 @@ namespace Amazon.GuardDuty.Model
         /// Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
         /// </para>
         /// </summary>
-        public bool Blocked
+        public bool? Blocked
         {
-            get { return this._blocked.GetValueOrDefault(); }
+            get { return this._blocked; }
             set { this._blocked = value; }
         }
 

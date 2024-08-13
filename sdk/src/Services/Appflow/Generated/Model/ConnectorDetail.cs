@@ -221,9 +221,9 @@ namespace Amazon.Appflow.Model
         /// The time at which the connector was registered.
         /// </para>
         /// </summary>
-        public DateTime RegisteredAt
+        public DateTime? RegisteredAt
         {
-            get { return this._registeredAt.GetValueOrDefault(); }
+            get { return this._registeredAt; }
             set { this._registeredAt = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool BlockPublicSecurityGroupRules
+        public bool? BlockPublicSecurityGroupRules
         {
-            get { return this._blockPublicSecurityGroupRules.GetValueOrDefault(); }
+            get { return this._blockPublicSecurityGroupRules; }
             set { this._blockPublicSecurityGroupRules = value; }
         }
 

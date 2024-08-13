@@ -166,9 +166,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ResolveAlias
+        public bool? ResolveAlias
         {
-            get { return this._resolveAlias.GetValueOrDefault(); }
+            get { return this._resolveAlias; }
             set { this._resolveAlias = value; }
         }
 

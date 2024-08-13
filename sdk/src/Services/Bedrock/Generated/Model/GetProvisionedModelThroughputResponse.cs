@@ -72,9 +72,9 @@ namespace Amazon.Bedrock.Model
         /// The timestamp for when the commitment term for the Provisioned Throughput expires.
         /// </para>
         /// </summary>
-        public DateTime CommitmentExpirationTime
+        public DateTime? CommitmentExpirationTime
         {
-            get { return this._commitmentExpirationTime.GetValueOrDefault(); }
+            get { return this._commitmentExpirationTime; }
             set { this._commitmentExpirationTime = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int DesiredModelUnits
+        public int? DesiredModelUnits
         {
-            get { return this._desiredModelUnits.GetValueOrDefault(); }
+            get { return this._desiredModelUnits; }
             set { this._desiredModelUnits = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int ModelUnits
+        public int? ModelUnits
         {
-            get { return this._modelUnits.GetValueOrDefault(); }
+            get { return this._modelUnits; }
             set { this._modelUnits = value; }
         }
 

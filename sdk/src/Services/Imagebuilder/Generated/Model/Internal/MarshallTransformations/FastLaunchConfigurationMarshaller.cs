@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetLaunchTemplate())
@@ -74,7 +74,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxParallelLaunches())
             {
                 context.Writer.WritePropertyName("maxParallelLaunches");
-                context.Writer.Write(requestObject.MaxParallelLaunches);
+                context.Writer.Write(requestObject.MaxParallelLaunches.Value);
             }
 
             if(requestObject.IsSetSnapshotConfiguration())

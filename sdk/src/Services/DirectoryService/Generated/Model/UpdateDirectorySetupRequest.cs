@@ -47,9 +47,9 @@ namespace Amazon.DirectoryService.Model
         /// updating the directory. 
         /// </para>
         /// </summary>
-        public bool CreateSnapshotBeforeUpdate
+        public bool? CreateSnapshotBeforeUpdate
         {
-            get { return this._createSnapshotBeforeUpdate.GetValueOrDefault(); }
+            get { return this._createSnapshotBeforeUpdate; }
             set { this._createSnapshotBeforeUpdate = value; }
         }
 

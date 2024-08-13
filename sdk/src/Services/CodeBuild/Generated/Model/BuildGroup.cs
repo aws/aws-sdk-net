@@ -103,9 +103,9 @@ namespace Amazon.CodeBuild.Model
         /// Specifies if failures in this build group can be ignored.
         /// </para>
         /// </summary>
-        public bool IgnoreFailure
+        public bool? IgnoreFailure
         {
-            get { return this._ignoreFailure.GetValueOrDefault(); }
+            get { return this._ignoreFailure; }
             set { this._ignoreFailure = value; }
         }
 

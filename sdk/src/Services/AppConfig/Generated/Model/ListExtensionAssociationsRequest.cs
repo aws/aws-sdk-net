@@ -68,9 +68,9 @@ namespace Amazon.AppConfig.Model
         /// The version number for the extension defined in the association.
         /// </para>
         /// </summary>
-        public int ExtensionVersionNumber
+        public int? ExtensionVersionNumber
         {
-            get { return this._extensionVersionNumber.GetValueOrDefault(); }
+            get { return this._extensionVersionNumber; }
             set { this._extensionVersionNumber = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

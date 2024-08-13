@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             }
             // Continue listing objects and deleting them until the bucket is empty.
-            while (listVersionsResponse.IsTruncated);
+            while (listVersionsResponse.IsTruncated.Value);
         }
     }
 }

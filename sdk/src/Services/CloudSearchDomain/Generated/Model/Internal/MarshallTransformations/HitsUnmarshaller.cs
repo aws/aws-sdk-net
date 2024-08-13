@@ -74,7 +74,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("found", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Found = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("start", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Start = unmarshaller.Unmarshall(context);
                     continue;
                 }

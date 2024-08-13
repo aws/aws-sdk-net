@@ -65,9 +65,9 @@ namespace Amazon.Macie2.Model
         /// detected.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

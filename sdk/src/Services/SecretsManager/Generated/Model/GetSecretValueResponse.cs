@@ -69,9 +69,9 @@ namespace Amazon.SecretsManager.Model
         /// the <c>AWSCURRENT</c> version.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 

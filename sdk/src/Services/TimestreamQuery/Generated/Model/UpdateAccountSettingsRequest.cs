@@ -62,9 +62,9 @@ namespace Amazon.TimestreamQuery.Model
         /// quotas</a>.
         /// </para>
         /// </summary>
-        public int MaxQueryTCU
+        public int? MaxQueryTCU
         {
-            get { return this._maxQueryTCU.GetValueOrDefault(); }
+            get { return this._maxQueryTCU; }
             set { this._maxQueryTCU = value; }
         }
 
@@ -79,6 +79,13 @@ namespace Amazon.TimestreamQuery.Model
         /// <para>
         /// The pricing model for queries in an account.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>QueryPricingModel</c> parameter is used by several Timestream operations; however,
+        /// the <c>UpdateAccountSettings</c> API operation doesn't recognize any values other
+        /// than <c>COMPUTE_UNITS</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public QueryPricingModel QueryPricingModel
         {

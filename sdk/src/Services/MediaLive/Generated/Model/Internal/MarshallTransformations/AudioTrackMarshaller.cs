@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrack())
             {
                 context.Writer.WritePropertyName("track");
-                context.Writer.Write(requestObject.Track);
+                context.Writer.Write(requestObject.Track.Value);
             }
 
         }

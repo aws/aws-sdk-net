@@ -100,6 +100,14 @@ namespace Amazon.SecretsManager.Model
     /// To encrypt the secret with a KMS key other than <c>aws/secretsmanager</c>, you need
     /// <c>kms:GenerateDataKey</c> and <c>kms:Decrypt</c> permission to the key. 
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// When you enter commands in a command shell, there is a risk of the command history
+    /// being accessed or utilities having access to your command parameters. This is a concern
+    /// if the command includes the value of a secret. Learn how to <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security_cli-exposure-risks.html">Mitigate
+    /// the risks of using command-line tools to store Secrets Manager secrets</a>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateSecretRequest : AmazonSecretsManagerRequest
     {
@@ -220,9 +228,9 @@ namespace Amazon.SecretsManager.Model
         /// By default, secrets aren't overwritten.
         /// </para>
         /// </summary>
-        public bool ForceOverwriteReplicaSecret
+        public bool? ForceOverwriteReplicaSecret
         {
-            get { return this._forceOverwriteReplicaSecret.GetValueOrDefault(); }
+            get { return this._forceOverwriteReplicaSecret; }
             set { this._forceOverwriteReplicaSecret = value; }
         }
 

@@ -62,13 +62,13 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityScoreThreshold())
             {
                 context.Writer.WritePropertyName("AvailabilityScoreThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.AvailabilityScoreThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AvailabilityScoreThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AvailabilityScoreThreshold);
+                    context.Writer.Write(requestObject.AvailabilityScoreThreshold.Value);
                 }
             }
 
@@ -86,13 +86,13 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerformanceScoreThreshold())
             {
                 context.Writer.WritePropertyName("PerformanceScoreThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PerformanceScoreThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PerformanceScoreThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PerformanceScoreThreshold);
+                    context.Writer.Write(requestObject.PerformanceScoreThreshold.Value);
                 }
             }
 

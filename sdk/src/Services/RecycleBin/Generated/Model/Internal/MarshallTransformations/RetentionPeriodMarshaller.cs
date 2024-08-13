@@ -57,7 +57,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetentionPeriodValue())
             {
                 context.Writer.WritePropertyName("RetentionPeriodValue");
-                context.Writer.Write(requestObject.RetentionPeriodValue);
+                context.Writer.Write(requestObject.RetentionPeriodValue.Value);
             }
 
         }

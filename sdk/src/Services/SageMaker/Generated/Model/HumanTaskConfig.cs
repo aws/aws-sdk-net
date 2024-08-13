@@ -76,9 +76,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int MaxConcurrentTaskCount
+        public int? MaxConcurrentTaskCount
         {
-            get { return this._maxConcurrentTaskCount.GetValueOrDefault(); }
+            get { return this._maxConcurrentTaskCount; }
             set { this._maxConcurrentTaskCount = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=9)]
-        public int NumberOfHumanWorkersPerDataObject
+        public int? NumberOfHumanWorkersPerDataObject
         {
-            get { return this._numberOfHumanWorkersPerDataObject.GetValueOrDefault(); }
+            get { return this._numberOfHumanWorkersPerDataObject; }
             set { this._numberOfHumanWorkersPerDataObject = value; }
         }
 
@@ -1571,9 +1571,9 @@ namespace Amazon.SageMaker.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=60)]
-        public int TaskAvailabilityLifetimeInSeconds
+        public int? TaskAvailabilityLifetimeInSeconds
         {
-            get { return this._taskAvailabilityLifetimeInSeconds.GetValueOrDefault(); }
+            get { return this._taskAvailabilityLifetimeInSeconds; }
             set { this._taskAvailabilityLifetimeInSeconds = value; }
         }
 
@@ -1653,9 +1653,9 @@ namespace Amazon.SageMaker.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=30)]
-        public int TaskTimeLimitInSeconds
+        public int? TaskTimeLimitInSeconds
         {
-            get { return this._taskTimeLimitInSeconds.GetValueOrDefault(); }
+            get { return this._taskTimeLimitInSeconds; }
             set { this._taskTimeLimitInSeconds = value; }
         }
 

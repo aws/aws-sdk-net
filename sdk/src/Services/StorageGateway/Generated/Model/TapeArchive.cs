@@ -58,9 +58,9 @@ namespace Amazon.StorageGateway.Model
         /// The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.StorageGateway.Model
         /// The default timestamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
         /// </para>
         /// </summary>
-        public DateTime PoolEntryDate
+        public DateTime? PoolEntryDate
         {
-            get { return this._poolEntryDate.GetValueOrDefault(); }
+            get { return this._poolEntryDate; }
             set { this._poolEntryDate = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.StorageGateway.Model
         /// tape started being retained.
         /// </para>
         /// </summary>
-        public DateTime RetentionStartDate
+        public DateTime? RetentionStartDate
         {
-            get { return this._retentionStartDate.GetValueOrDefault(); }
+            get { return this._retentionStartDate; }
             set { this._retentionStartDate = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.StorageGateway.Model
         /// The date the virtual tape was created.
         /// </para>
         /// </summary>
-        public DateTime TapeCreatedDate
+        public DateTime? TapeCreatedDate
         {
-            get { return this._tapeCreatedDate.GetValueOrDefault(); }
+            get { return this._tapeCreatedDate; }
             set { this._tapeCreatedDate = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.StorageGateway.Model
         /// The size, in bytes, of the archived virtual tape.
         /// </para>
         /// </summary>
-        public long TapeSizeInBytes
+        public long? TapeSizeInBytes
         {
-            get { return this._tapeSizeInBytes.GetValueOrDefault(); }
+            get { return this._tapeSizeInBytes; }
             set { this._tapeSizeInBytes = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long TapeUsedInBytes
+        public long? TapeUsedInBytes
         {
-            get { return this._tapeUsedInBytes.GetValueOrDefault(); }
+            get { return this._tapeUsedInBytes; }
             set { this._tapeUsedInBytes = value; }
         }
 
@@ -292,9 +292,9 @@ namespace Amazon.StorageGateway.Model
         /// Set to <c>true</c> if the archived tape is stored as write-once-read-many (WORM).
         /// </para>
         /// </summary>
-        public bool Worm
+        public bool? Worm
         {
-            get { return this._worm.GetValueOrDefault(); }
+            get { return this._worm; }
             set { this._worm = value; }
         }
 

@@ -140,7 +140,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UserAuthorizationRequired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UserAuthorizationRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }

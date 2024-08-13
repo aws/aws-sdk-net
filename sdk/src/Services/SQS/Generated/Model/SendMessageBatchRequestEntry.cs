@@ -73,9 +73,9 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int DelaySeconds
+        public int? DelaySeconds
         {
-            get { return this._delaySeconds.GetValueOrDefault(); }
+            get { return this._delaySeconds; }
             set { this._delaySeconds = value; }
         }
 

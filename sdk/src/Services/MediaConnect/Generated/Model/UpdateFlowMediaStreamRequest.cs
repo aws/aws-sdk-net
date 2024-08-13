@@ -64,9 +64,9 @@ namespace Amazon.MediaConnect.Model
         /// media stream type is video or ancillary data, set this value to 90000. If the media
         /// stream type is audio, set this value to either 48000 or 96000.
         /// </summary>
-        public int ClockRate
+        public int? ClockRate
         {
-            get { return this._clockRate.GetValueOrDefault(); }
+            get { return this._clockRate; }
             set { this._clockRate = value; }
         }
 

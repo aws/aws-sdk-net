@@ -110,9 +110,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The time stamp when this information was retrieved.
         /// </para>
         /// </summary>
-        public DateTime SampleTimestamp
+        public DateTime? SampleTimestamp
         {
-            get { return this._sampleTimestamp.GetValueOrDefault(); }
+            get { return this._sampleTimestamp; }
             set { this._sampleTimestamp = value; }
         }
 

@@ -66,9 +66,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaximumStringLength
+        public int? MaximumStringLength
         {
-            get { return this._maximumStringLength.GetValueOrDefault(); }
+            get { return this._maximumStringLength; }
             set { this._maximumStringLength = value; }
         }
 

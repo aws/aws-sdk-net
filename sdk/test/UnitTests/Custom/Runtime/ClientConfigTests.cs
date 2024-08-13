@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -92,6 +93,18 @@ namespace AWSSDK.UnitTests
             {
                 return new DefaultConfiguration();
             }
+        }
+        
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            // If the current service doesn't have an endpoint rule set (which is the case for configs
+            // that are used for testing), we'll return a placeholder endpoint so that unit tests pass.
+            return new Endpoint(this.ServiceURL ?? "https://example.com");
         }
     }
 }

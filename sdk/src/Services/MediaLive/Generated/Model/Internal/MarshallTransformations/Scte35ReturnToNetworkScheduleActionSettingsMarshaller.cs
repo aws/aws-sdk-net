@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpliceEventId())
             {
                 context.Writer.WritePropertyName("spliceEventId");
-                context.Writer.Write(requestObject.SpliceEventId);
+                context.Writer.Write(requestObject.SpliceEventId.Value);
             }
 
         }

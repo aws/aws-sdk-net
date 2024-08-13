@@ -208,7 +208,6 @@ namespace Amazon.Runtime.Internal
         }
 
 #if AWS_ASYNC_API
-
         /// <summary>
         /// Writes a stream to the request body.
         /// </summary>
@@ -363,65 +362,6 @@ namespace Amazon.Runtime.Internal
 
                     throw;
                 }
-            }
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Initiates the operation to gets a handle to the request content.
-        /// </summary>
-        /// <param name="callback">The async callback invoked when the operation completes.</param>
-        /// <param name="state">The state object to be passed to the async callback.</param>
-        /// <returns>IAsyncResult that represents an async operation.</returns>
-        public IAsyncResult BeginGetRequestContent(AsyncCallback callback, object state)
-        {
-            return _request.BeginGetRequestStream(callback, state);
-        }
-
-        /// <summary>
-        /// Ends the operation to gets a handle to the request content.
-        /// </summary>
-        /// <param name="asyncResult">IAsyncResult that represents an async operation.</param>
-        /// <returns>The request content.</returns>
-        public Stream EndGetRequestContent(IAsyncResult asyncResult)
-        {
-            return _request.EndGetRequestStream(asyncResult);
-        }
-
-        /// <summary>
-        /// Initiates the operation to Returns the HTTP response.
-        /// </summary>
-        /// <param name="callback">The async callback invoked when the operation completes.</param>
-        /// <param name="state">The state object to be passed to the async callback.</param>
-        /// <returns>IAsyncResult that represents an async operation.</returns>
-        public IAsyncResult BeginGetResponse(AsyncCallback callback, object state)
-        {
-            return _request.BeginGetResponse(callback, state);
-        }
-
-        /// <summary>
-        /// Ends the operation to Returns the HTTP response.
-        /// </summary>
-        /// <param name="asyncResult">IAsyncResult that represents an async operation.</param>
-        /// <returns>The HTTP response.</returns>
-        public virtual IWebResponseData EndGetResponse(IAsyncResult asyncResult)
-        {
-            try
-            {
-                var response = _request.EndGetResponse(asyncResult) as HttpWebResponse;
-                return new HttpWebRequestResponseData(response);
-            }
-            catch (WebException webException)
-            {
-                var errorResponse = webException.Response as HttpWebResponse;
-                if (errorResponse != null)
-                {
-                    throw new HttpErrorResponseException(webException.Message,
-                        webException,
-                        new HttpWebRequestResponseData(errorResponse));
-                }
-                throw;
             }
         }
 #endif

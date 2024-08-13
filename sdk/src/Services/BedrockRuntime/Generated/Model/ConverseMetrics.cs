@@ -43,9 +43,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long LatencyMs
+        public long? LatencyMs
         {
-            get { return this._latencyMs.GetValueOrDefault(); }
+            get { return this._latencyMs; }
             set { this._latencyMs = value; }
         }
 

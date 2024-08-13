@@ -65,7 +65,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");
-                context.Writer.Write(requestObject.EndDate);
+                context.Writer.Write(requestObject.EndDate.Value);
             }
 
             if(requestObject.IsSetId())
@@ -89,7 +89,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");
-                context.Writer.Write(requestObject.StartDate);
+                context.Writer.Write(requestObject.StartDate.Value);
             }
 
         }

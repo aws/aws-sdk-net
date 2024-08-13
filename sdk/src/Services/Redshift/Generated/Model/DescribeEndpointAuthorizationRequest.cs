@@ -88,9 +88,9 @@ namespace Amazon.Redshift.Model
         /// If false (default), checks authorization from a grantor point of view.
         /// </para>
         /// </summary>
-        public bool Grantee
+        public bool? Grantee
         {
-            get { return this._grantee.GetValueOrDefault(); }
+            get { return this._grantee; }
             set { this._grantee = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Redshift.Model
         /// included in the response so that the remaining results can be retrieved.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

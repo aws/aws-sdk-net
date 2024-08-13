@@ -68,7 +68,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNegate())
             {
                 context.Writer.WritePropertyName("Negate");
-                context.Writer.Write(requestObject.Negate);
+                context.Writer.Write(requestObject.Negate.Value);
             }
 
         }

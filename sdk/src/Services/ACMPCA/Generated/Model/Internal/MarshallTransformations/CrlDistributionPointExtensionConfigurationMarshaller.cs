@@ -51,7 +51,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOmitExtension())
             {
                 context.Writer.WritePropertyName("OmitExtension");
-                context.Writer.Write(requestObject.OmitExtension);
+                context.Writer.Write(requestObject.OmitExtension.Value);
             }
 
         }

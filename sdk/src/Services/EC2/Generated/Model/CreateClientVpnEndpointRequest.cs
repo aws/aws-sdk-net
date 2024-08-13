@@ -308,9 +308,9 @@ namespace Amazon.EC2.Model
         /// Default value: <c>24</c> 
         /// </para>
         /// </summary>
-        public int SessionTimeoutHours
+        public int? SessionTimeoutHours
         {
-            get { return this._sessionTimeoutHours.GetValueOrDefault(); }
+            get { return this._sessionTimeoutHours; }
             set { this._sessionTimeoutHours = value; }
         }
 
@@ -335,9 +335,9 @@ namespace Amazon.EC2.Model
         /// Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.
         /// </para>
         /// </summary>
-        public bool SplitTunnel
+        public bool? SplitTunnel
         {
-            get { return this._splitTunnel.GetValueOrDefault(); }
+            get { return this._splitTunnel; }
             set { this._splitTunnel = value; }
         }
 
@@ -420,9 +420,9 @@ namespace Amazon.EC2.Model
         /// Default Value: <c>443</c> 
         /// </para>
         /// </summary>
-        public int VpnPort
+        public int? VpnPort
         {
-            get { return this._vpnPort.GetValueOrDefault(); }
+            get { return this._vpnPort; }
             set { this._vpnPort = value; }
         }
 

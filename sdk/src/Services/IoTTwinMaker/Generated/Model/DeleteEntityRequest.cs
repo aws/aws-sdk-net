@@ -64,9 +64,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A Boolean value that specifies whether the operation deletes child entities.
         /// </para>
         /// </summary>
-        public bool IsRecursive
+        public bool? IsRecursive
         {
-            get { return this._isRecursive.GetValueOrDefault(); }
+            get { return this._isRecursive; }
             set { this._isRecursive = value; }
         }
 

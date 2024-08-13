@@ -72,13 +72,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowUnassociatedTargets())
                 {
                     context.Writer.WritePropertyName("AllowUnassociatedTargets");
-                    context.Writer.Write(publicRequest.AllowUnassociatedTargets);
+                    context.Writer.Write(publicRequest.AllowUnassociatedTargets.Value);
                 }
 
                 if(publicRequest.IsSetCutoff())
                 {
                     context.Writer.WritePropertyName("Cutoff");
-                    context.Writer.Write(publicRequest.Cutoff);
+                    context.Writer.Write(publicRequest.Cutoff.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -90,13 +90,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDuration())
                 {
                     context.Writer.WritePropertyName("Duration");
-                    context.Writer.Write(publicRequest.Duration);
+                    context.Writer.Write(publicRequest.Duration.Value);
                 }
 
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 if(publicRequest.IsSetEndDate())
@@ -114,7 +114,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReplace())
                 {
                     context.Writer.WritePropertyName("Replace");
-                    context.Writer.Write(publicRequest.Replace);
+                    context.Writer.Write(publicRequest.Replace.Value);
                 }
 
                 if(publicRequest.IsSetSchedule())
@@ -126,7 +126,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScheduleOffset())
                 {
                     context.Writer.WritePropertyName("ScheduleOffset");
-                    context.Writer.Write(publicRequest.ScheduleOffset);
+                    context.Writer.Write(publicRequest.ScheduleOffset.Value);
                 }
 
                 if(publicRequest.IsSetScheduleTimezone())

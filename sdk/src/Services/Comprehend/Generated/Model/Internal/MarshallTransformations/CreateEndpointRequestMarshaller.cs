@@ -89,7 +89,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDesiredInferenceUnits())
                 {
                     context.Writer.WritePropertyName("DesiredInferenceUnits");
-                    context.Writer.Write(publicRequest.DesiredInferenceUnits);
+                    context.Writer.Write(publicRequest.DesiredInferenceUnits.Value);
                 }
 
                 if(publicRequest.IsSetEndpointName())

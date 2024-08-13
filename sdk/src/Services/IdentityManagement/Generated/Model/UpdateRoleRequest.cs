@@ -85,9 +85,9 @@ namespace Amazon.IdentityManagement.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=3600, Max=43200)]
-        public int MaxSessionDuration
+        public int? MaxSessionDuration
         {
-            get { return this._maxSessionDuration.GetValueOrDefault(); }
+            get { return this._maxSessionDuration; }
             set { this._maxSessionDuration = value; }
         }
 

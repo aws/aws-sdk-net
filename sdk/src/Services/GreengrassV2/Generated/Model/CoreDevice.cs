@@ -64,9 +64,9 @@ namespace Amazon.GreengrassV2.Model
         /// The time at which the core device's status last updated, expressed in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime LastStatusUpdateTimestamp
+        public DateTime? LastStatusUpdateTimestamp
         {
-            get { return this._lastStatusUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastStatusUpdateTimestamp; }
             set { this._lastStatusUpdateTimestamp = value; }
         }
 

@@ -76,7 +76,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetProvisionedConcurrentExecutions())
                 {
                     context.Writer.WritePropertyName("ProvisionedConcurrentExecutions");
-                    context.Writer.Write(publicRequest.ProvisionedConcurrentExecutions);
+                    context.Writer.Write(publicRequest.ProvisionedConcurrentExecutions.Value);
                 }
 
                 writer.WriteObjectEnd();

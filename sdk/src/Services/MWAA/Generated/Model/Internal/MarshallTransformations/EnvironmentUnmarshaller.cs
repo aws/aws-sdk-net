@@ -92,7 +92,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -146,25 +146,25 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxWebservers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxWebservers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxWorkers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxWorkers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinWebservers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinWebservers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinWorkers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinWorkers = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -206,7 +206,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Schedulers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Schedulers = unmarshaller.Unmarshall(context);
                     continue;
                 }

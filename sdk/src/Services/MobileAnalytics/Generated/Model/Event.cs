@@ -134,16 +134,16 @@ namespace Amazon.MobileAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime TimestampUtc
+        public DateTime? TimestampUtc
         {
-            get { return this._timestampUtc.GetValueOrDefault(); }
+            get { return this._timestampUtc; }
             set { this._timestamp = this._timestampUtc = value; }
         }
 
         // Check to see if TimestampUtc property is set
         internal bool IsSetTimestampUtc()
         {
-            return this._timestampUtc.HasValue; 
+            return this._timestampUtc != null;
         }
 
         /// <summary>
@@ -188,13 +188,20 @@ namespace Amazon.MobileAnalytics.Model
             "TimestampUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. Timestamp is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
             get { return this._timestamp.GetValueOrDefault(); }
             set
             {
                 this._timestamp = value;
-                this._timestampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._timestampUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._timestampUtc = null;
+                }
             }
         }
 #endregion

@@ -68,9 +68,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// is determined by the validity of individual terms.
         /// </para>
         /// </summary>
-        public DateTime AgreementEndDate
+        public DateTime? AgreementEndDate
         {
-            get { return this._agreementEndDate.GetValueOrDefault(); }
+            get { return this._agreementEndDate; }
             set { this._agreementEndDate = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// date is determined based on agreement signature time.
         /// </para>
         /// </summary>
-        public DateTime AgreementStartDate
+        public DateTime? AgreementStartDate
         {
-            get { return this._agreementStartDate.GetValueOrDefault(); }
+            get { return this._agreementStartDate; }
             set { this._agreementStartDate = value; }
         }
 

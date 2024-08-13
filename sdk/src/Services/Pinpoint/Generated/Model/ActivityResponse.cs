@@ -224,9 +224,9 @@ namespace Amazon.Pinpoint.Model
         /// The total number of endpoints that the campaign successfully delivered messages to.
         /// </para>
         /// </summary>
-        public int SuccessfulEndpointCount
+        public int? SuccessfulEndpointCount
         {
-            get { return this._successfulEndpointCount.GetValueOrDefault(); }
+            get { return this._successfulEndpointCount; }
             set { this._successfulEndpointCount = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.Pinpoint.Model
         /// The total number of time zones that were completed.
         /// </para>
         /// </summary>
-        public int TimezonesCompletedCount
+        public int? TimezonesCompletedCount
         {
-            get { return this._timezonesCompletedCount.GetValueOrDefault(); }
+            get { return this._timezonesCompletedCount; }
             set { this._timezonesCompletedCount = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.Pinpoint.Model
         /// The total number of unique time zones that are in the segment for the campaign.
         /// </para>
         /// </summary>
-        public int TimezonesTotalCount
+        public int? TimezonesTotalCount
         {
-            get { return this._timezonesTotalCount.GetValueOrDefault(); }
+            get { return this._timezonesTotalCount; }
             set { this._timezonesTotalCount = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.Pinpoint.Model
         /// The total number of endpoints that the campaign attempted to deliver messages to.
         /// </para>
         /// </summary>
-        public int TotalEndpointCount
+        public int? TotalEndpointCount
         {
-            get { return this._totalEndpointCount.GetValueOrDefault(); }
+            get { return this._totalEndpointCount; }
             set { this._totalEndpointCount = value; }
         }
 

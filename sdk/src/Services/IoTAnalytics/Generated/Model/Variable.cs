@@ -66,9 +66,9 @@ namespace Amazon.IoTAnalytics.Model
         /// The value of the variable as a double (numeric).
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 

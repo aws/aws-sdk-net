@@ -70,13 +70,13 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     context.Writer.WritePropertyName("deletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection);
+                    context.Writer.Write(publicRequest.DeletionProtection.Value);
                 }
 
                 if(publicRequest.IsSetFailOnError())
                 {
                     context.Writer.WritePropertyName("failOnError");
-                    context.Writer.Write(publicRequest.FailOnError);
+                    context.Writer.Write(publicRequest.FailOnError.Value);
                 }
 
                 if(publicRequest.IsSetFormat())
@@ -111,25 +111,25 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxProvisionedMemory())
                 {
                     context.Writer.WritePropertyName("maxProvisionedMemory");
-                    context.Writer.Write(publicRequest.MaxProvisionedMemory);
+                    context.Writer.Write(publicRequest.MaxProvisionedMemory.Value);
                 }
 
                 if(publicRequest.IsSetMinProvisionedMemory())
                 {
                     context.Writer.WritePropertyName("minProvisionedMemory");
-                    context.Writer.Write(publicRequest.MinProvisionedMemory);
+                    context.Writer.Write(publicRequest.MinProvisionedMemory.Value);
                 }
 
                 if(publicRequest.IsSetPublicConnectivity())
                 {
                     context.Writer.WritePropertyName("publicConnectivity");
-                    context.Writer.Write(publicRequest.PublicConnectivity);
+                    context.Writer.Write(publicRequest.PublicConnectivity.Value);
                 }
 
                 if(publicRequest.IsSetReplicaCount())
                 {
                     context.Writer.WritePropertyName("replicaCount");
-                    context.Writer.Write(publicRequest.ReplicaCount);
+                    context.Writer.Write(publicRequest.ReplicaCount.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

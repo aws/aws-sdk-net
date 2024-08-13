@@ -365,6 +365,56 @@ namespace Amazon.PaymentCryptographyData
 
 
     /// <summary>
+    /// Constants used for properties of type KeyCheckValueAlgorithm.
+    /// </summary>
+    public class KeyCheckValueAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANSI_X9_24 for KeyCheckValueAlgorithm
+        /// </summary>
+        public static readonly KeyCheckValueAlgorithm ANSI_X9_24 = new KeyCheckValueAlgorithm("ANSI_X9_24");
+        /// <summary>
+        /// Constant CMAC for KeyCheckValueAlgorithm
+        /// </summary>
+        public static readonly KeyCheckValueAlgorithm CMAC = new KeyCheckValueAlgorithm("CMAC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyCheckValueAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyCheckValueAlgorithm FindValue(string value)
+        {
+            return FindValue<KeyCheckValueAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyCheckValueAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MacAlgorithm.
     /// </summary>
     public class MacAlgorithm : ConstantClass

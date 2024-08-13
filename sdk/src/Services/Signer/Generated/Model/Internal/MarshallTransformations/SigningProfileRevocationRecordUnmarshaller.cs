@@ -68,13 +68,13 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("revocationEffectiveFrom", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RevocationEffectiveFrom = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("revokedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RevokedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -84,9 +84,9 @@ namespace Amazon.BackupGateway.Model
         /// The most recent date a virtual machine was backed up, in Unix format and UTC time.
         /// </para>
         /// </summary>
-        public DateTime LastBackupDate
+        public DateTime? LastBackupDate
         {
-            get { return this._lastBackupDate.GetValueOrDefault(); }
+            get { return this._lastBackupDate; }
             set { this._lastBackupDate = value; }
         }
 

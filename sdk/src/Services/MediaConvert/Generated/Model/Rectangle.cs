@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model
         /// numbers.
         /// </summary>
         [AWSProperty(Min=2, Max=2147483647)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.MediaConvert.Model
         /// numbers.
         /// </summary>
         [AWSProperty(Min=2, Max=2147483647)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.MediaConvert.Model
         /// left edge of the video frame. Specify only even numbers.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int X
+        public int? X
         {
-            get { return this._x.GetValueOrDefault(); }
+            get { return this._x; }
             set { this._x = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.MediaConvert.Model
         /// top edge of the video frame. Specify only even numbers.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Y
+        public int? Y
         {
-            get { return this._y.GetValueOrDefault(); }
+            get { return this._y; }
             set { this._y = value; }
         }
 

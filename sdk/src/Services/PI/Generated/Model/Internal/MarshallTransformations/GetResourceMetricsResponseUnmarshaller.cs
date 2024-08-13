@@ -54,13 +54,13 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AlignedEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AlignedEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AlignedStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AlignedStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -84,7 +84,6 @@ namespace Amazon.Runtime.Internal
         }
 
 #if AWS_ASYNC_API
-
         /// <summary>
         /// Handles and processes any exception thrown from underlying handlers.
         /// </summary>
@@ -112,49 +111,12 @@ namespace Amazon.Runtime.Internal
             // E.g. S3 GetLifecycleConfiguration, GetBucket policy and few other operations
             // return a 404 which is not returned back as an exception but as a empty response with 
             // error code.
-            if(executionContext.ResponseContext != null && executionContext.ResponseContext.Response != null)
+            if (executionContext.ResponseContext != null && executionContext.ResponseContext.Response != null)
             {
                 return executionContext.ResponseContext.Response as T;
             }
 
             return null;
-        }        
-
-#elif AWS_APM_API
-
-        /// <summary>
-        ///  Handles and processes any exception thrown from underlying handlers.
-        /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            var requestContext = executionContext.RequestContext;
-            var responseContext = executionContext.ResponseContext;
-            var exception = responseContext.AsyncResult.Exception;
-            if (exception != null)
-            {
-                try
-                {
-                    DisposeReponse(executionContext.ResponseContext);
-
-                    bool rethrow = ProcessException(
-                        ExecutionContext.CreateFromAsyncContext(executionContext),
-                        exception);
-
-                    // Suppress exception
-                    if (!rethrow)
-                        responseContext.AsyncResult.Exception = null;
-                }
-                catch (Exception processedException)
-                {
-                    // Catch any new exception thrown by ProcessException()
-                    responseContext.AsyncResult.Exception = processedException;
-                }
-            }
-
-            // Call outer handler
-            base.InvokeAsyncCallback(executionContext);
         }
 #endif
 
@@ -202,9 +164,9 @@ namespace Amazon.Runtime.Internal
                 {
                     return exceptionHandler.Handle(executionContext, exception);
                 }
-                exceptionType = exceptionType.BaseType;
 
-            } while (exceptionType != typeof(Exception));
+                exceptionType = exceptionType.BaseType;
+            } while (exceptionType != typeof(Exception) && exceptionType != typeof(object));
 
             // No match found, rethrow the original exception.
             return true;
@@ -242,9 +204,9 @@ namespace Amazon.Runtime.Internal
                 {
                     return await exceptionHandler.HandleAsync(executionContext, exception).ConfigureAwait(false);
                 }
-                exceptionType = exceptionType.BaseType;
 
-            } while (exceptionType != typeof(Exception));
+                exceptionType = exceptionType.BaseType;
+            } while (exceptionType != typeof(Exception) && exceptionType != typeof(object));
 
             // No match found, rethrow the original exception.
             return true;

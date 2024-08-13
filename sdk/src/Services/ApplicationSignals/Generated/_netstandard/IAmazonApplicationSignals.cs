@@ -32,20 +32,13 @@ namespace Amazon.ApplicationSignals
     /// <summary>
     /// <para>Interface for accessing ApplicationSignals</para>
     ///
-    /// <important> 
-    /// <para>
-    /// This is a Preview release of the Application Signals API Reference. Operations and
-    /// parameters are subject to change before the general availability release.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Use CloudWatch Application Signals for comprehensive observability of your cloud-based
     /// applications. It enables real-time service health dashboards and helps you track long-term
     /// performance trends against your business goals. The application-centric view provides
     /// you with unified visibility across your applications, services, and dependencies,
     /// so you can proactively monitor and efficiently triage any issues that may arise, ensuring
     /// optimal customer experience.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Application Signals provides the following benefits:
@@ -65,7 +58,12 @@ namespace Amazon.ApplicationSignals
     /// that gives you a visual representation of your applications, dependencies, and their
     /// connectivity.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// Application Signals works with CloudWatch RUM, CloudWatch Synthetics canaries, and
+    /// Amazon Web Services Service Catalog AppRegistry, to display your client pages, Synthetics
+    /// canaries, and application names within dashboards and maps.
+    /// </para>
     /// </summary>
     public partial interface IAmazonApplicationSignals : IAmazonService, IDisposable
     {
@@ -636,5 +634,33 @@ namespace Amazon.ApplicationSignals
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonApplicationSignalsConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonApplicationSignalsConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonApplicationSignalsConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonApplicationSignalsConfig to create AmazonApplicationSignalsClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonApplicationSignalsClient(serviceClientConfig) :
+                    new AmazonApplicationSignalsClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

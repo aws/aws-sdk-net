@@ -54,7 +54,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastAuditTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastAuditTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

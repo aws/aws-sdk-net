@@ -228,9 +228,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean value that indicates if a calculated field is visible in the autocomplete.
         /// </para>
         /// </summary>
-        public bool DisableIndexing
+        public bool? DisableIndexing
         {
-            get { return this._disableIndexing.GetValueOrDefault(); }
+            get { return this._disableIndexing; }
             set { this._disableIndexing = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.QuickSight.Model
         /// A boolean value that indicates if a calculated field is included in the topic.
         /// </para>
         /// </summary>
-        public bool IsIncludedInTopic
+        public bool? IsIncludedInTopic
         {
-            get { return this._isIncludedInTopic.GetValueOrDefault(); }
+            get { return this._isIncludedInTopic; }
             set { this._isIncludedInTopic = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean value that indicates whether to never aggregate calculated field in filters.
         /// </para>
         /// </summary>
-        public bool NeverAggregateInFilter
+        public bool? NeverAggregateInFilter
         {
-            get { return this._neverAggregateInFilter.GetValueOrDefault(); }
+            get { return this._neverAggregateInFilter; }
             set { this._neverAggregateInFilter = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.QuickSight.Model
         /// The non additive for the table style target.
         /// </para>
         /// </summary>
-        public bool NonAdditive
+        public bool? NonAdditive
         {
-            get { return this._nonAdditive.GetValueOrDefault(); }
+            get { return this._nonAdditive; }
             set { this._nonAdditive = value; }
         }
 

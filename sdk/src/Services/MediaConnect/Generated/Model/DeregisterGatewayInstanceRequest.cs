@@ -44,9 +44,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Force. Force the deregistration of an instance. Force will
         /// deregister an instance, even if there are bridges running on it.
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

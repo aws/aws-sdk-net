@@ -167,9 +167,9 @@ namespace Amazon.Lightsail.Model
         /// Indicates whether to enable the distribution.
         /// </para>
         /// </summary>
-        public bool IsEnabled
+        public bool? IsEnabled
         {
-            get { return this._isEnabled.GetValueOrDefault(); }
+            get { return this._isEnabled; }
             set { this._isEnabled = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.Lightsail.Model
         ///  Set this value to <c>false</c> to attach a new certificate to the distribution.
         /// </para>
         /// </summary>
-        public bool UseDefaultCertificate
+        public bool? UseDefaultCertificate
         {
-            get { return this._useDefaultCertificate.GetValueOrDefault(); }
+            get { return this._useDefaultCertificate; }
             set { this._useDefaultCertificate = value; }
         }
 

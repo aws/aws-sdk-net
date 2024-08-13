@@ -82,7 +82,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetClearResiliencyPolicyArn())
                 {
                     context.Writer.WritePropertyName("clearResiliencyPolicyArn");
-                    context.Writer.Write(publicRequest.ClearResiliencyPolicyArn);
+                    context.Writer.Write(publicRequest.ClearResiliencyPolicyArn.Value);
                 }
 
                 if(publicRequest.IsSetDescription())

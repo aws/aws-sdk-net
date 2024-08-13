@@ -63,9 +63,9 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// in the claim request.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

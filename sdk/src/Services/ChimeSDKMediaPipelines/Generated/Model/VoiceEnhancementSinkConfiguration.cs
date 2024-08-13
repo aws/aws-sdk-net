@@ -43,9 +43,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Disables the <c>VoiceEnhancementSinkConfiguration</c> element.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

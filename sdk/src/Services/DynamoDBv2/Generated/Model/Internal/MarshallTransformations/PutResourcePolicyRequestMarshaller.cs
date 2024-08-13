@@ -72,7 +72,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConfirmRemoveSelfResourceAccess())
                 {
                     context.Writer.WritePropertyName("ConfirmRemoveSelfResourceAccess");
-                    context.Writer.Write(publicRequest.ConfirmRemoveSelfResourceAccess);
+                    context.Writer.Write(publicRequest.ConfirmRemoveSelfResourceAccess.Value);
                 }
 
                 if(publicRequest.IsSetExpectedRevisionId())

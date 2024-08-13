@@ -79,9 +79,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Override
+        public bool? Override
         {
-            get { return this._override.GetValueOrDefault(); }
+            get { return this._override; }
             set { this._override = value; }
         }
 

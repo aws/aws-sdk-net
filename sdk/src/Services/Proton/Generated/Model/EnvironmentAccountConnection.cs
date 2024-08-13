@@ -181,9 +181,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedAt
+        public DateTime? LastModifiedAt
         {
-            get { return this._lastModifiedAt.GetValueOrDefault(); }
+            get { return this._lastModifiedAt; }
             set { this._lastModifiedAt = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RequestedAt
+        public DateTime? RequestedAt
         {
-            get { return this._requestedAt.GetValueOrDefault(); }
+            get { return this._requestedAt; }
             set { this._requestedAt = value; }
         }
 

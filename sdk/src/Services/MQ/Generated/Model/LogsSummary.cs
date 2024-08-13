@@ -48,9 +48,9 @@ namespace Amazon.MQ.Model
         /// Web Console is logged.
         /// </para>
         /// </summary>
-        public bool Audit
+        public bool? Audit
         {
-            get { return this._audit.GetValueOrDefault(); }
+            get { return this._audit; }
             set { this._audit = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MQ.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool General
+        public bool? General
         {
-            get { return this._general.GetValueOrDefault(); }
+            get { return this._general; }
             set { this._general = value; }
         }
 

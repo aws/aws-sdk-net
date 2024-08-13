@@ -51,7 +51,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpuUtilizationPercentage())
             {
                 context.Writer.WritePropertyName("cpuUtilizationPercentage");
-                context.Writer.Write(requestObject.CpuUtilizationPercentage);
+                context.Writer.Write(requestObject.CpuUtilizationPercentage.Value);
             }
 
         }

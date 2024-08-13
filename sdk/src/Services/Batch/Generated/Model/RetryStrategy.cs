@@ -46,9 +46,9 @@ namespace Amazon.Batch.Model
         /// retried on failure the same number of attempts as the value.
         /// </para>
         /// </summary>
-        public int Attempts
+        public int? Attempts
         {
-            get { return this._attempts.GetValueOrDefault(); }
+            get { return this._attempts; }
             set { this._attempts = value; }
         }
 

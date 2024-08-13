@@ -38,19 +38,154 @@ namespace Amazon.ControlTower
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/controls.html">
-    /// <i>controls</i> </a> 
+    /// <i>Controls</i> </a> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_DisableControl.html">DisableControl</a>
+    /// 
     /// </para>
     ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableControl.html">EnableControl</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetEnabledControl.html">GetEnabledControl</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListControlOperations.html">ListControlOperations</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListEnabledControls.html">ListEnabledControls</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledControl.html">UpdateEnabledControl</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html">
-    /// <i>landing zones</i> </a> 
+    /// <i>Landing zones</i> </a> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_CreateLandingZone.html">CreateLandingZone</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/types-of-baselines.html">
-    /// <i>baselines</i> </a> 
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_DeleteLandingZone.html">DeleteLandingZone</a>
+    /// 
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetLandingZone.html">GetLandingZone</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetLandingZoneOperation.html">GetLandingZoneOperation</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZones.html">ListLandingZones</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListLandingZoneOperations.html">ListLandingZoneOperations</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetLandingZone.html">ResetLandingZone</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateLandingZone.html">UpdateLandingZone</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/types-of-baselines.html">
+    /// <i>Baselines</i> </a> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_DisableBaseline.html">DisableBaseline</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_EnableBaseline.html">EnableBaseline</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetBaseline.html">GetBaseline</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetBaselineOperation.html">GetBaselineOperation</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_GetEnabledBaseline.html">GetEnabledBaseline</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListBaselines.html">ListBaselines</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListEnabledBaselines.html">ListEnabledBaselines</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ResetEnabledBaseline.html">ResetEnabledBaseline</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UpdateEnabledBaseline.html">UpdateEnabledBaseline</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/tagging.html">
+    /// <i>Tagging</i> </a> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/API_UntagResource.html">UntagResource</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
     /// <para>
     /// For more information about these types of resources, see the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html">
     /// <i>Amazon Web Services Control Tower User Guide</i> </a>.
@@ -94,24 +229,33 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
-    /// The <c>controlIdentifier</c> is unique in each Amazon Web Services Region for each
-    /// control. You can find the <c>controlIdentifier</c> for each Region and control in
-    /// the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Tables
-    /// of control metadata</a> or the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-region-tables.html">Control
-    /// availability by Region tables</a> in the <i>Amazon Web Services Control Tower User
-    /// Guide.</i> 
+    ///  <b>About identifiers for Amazon Web Services Control Tower</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon Web Services Control Tower <c>controlIdentifier</c> is unique in each Amazon
+    /// Web Services Region for each control. You can find the <c>controlIdentifier</c> for
+    /// each Region and control in the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html">Tables
+    /// of control metadata</a> or the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html">Control
+    /// availability by Region tables</a> in the <i>Amazon Web Services Control Tower Controls
+    /// Reference Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// A quick-reference list of control identifers for the Amazon Web Services Control Tower
-    /// legacy <i>Strongly recommended</i> and <i>Elective</i> controls is given in <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource
-    /// identifiers for APIs and controls</a> in the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls
-    /// reference guide section</a> of the <i>Amazon Web Services Control Tower User Guide</i>.
-    /// Remember that <i>Mandatory</i> controls cannot be added or removed.
+    /// legacy <i>Strongly recommended</i> and <i>Elective</i> controls is given in <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html.html">Resource
+    /// identifiers for APIs and controls</a> in the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html">
+    /// <i>Amazon Web Services Control Tower Controls Reference Guide</i> </a>. Remember that
+    /// <i>Mandatory</i> controls cannot be added or removed.
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <b>ARN format:</b> <c>arn:aws:controltower:{REGION}::control/{CONTROL_NAME}</c> 
+    ///  <b>Some controls have two identifiers</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>ARN format for Amazon Web Services Control Tower:</b> <c>arn:aws:controltower:{REGION}::control/{CONTROL_TOWER_OPAQUE_ID}</c>
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -121,6 +265,23 @@ namespace Amazon.ControlTower
     /// <para>
     ///  <c>arn:aws:controltower:us-west-2::control/AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED</c>
     /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>ARN format for Amazon Web Services Control Catalog:</b> <c>arn:{PARTITION}:controlcatalog:::control/{CONTROL_CATALOG_OPAQUE_ID}</c>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can find the <c>{CONTROL_CATALOG_OPAQUE_ID}</c> in the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/all-global-identifiers.html">
+    /// <i>Amazon Web Services Control Tower Controls Reference Guide</i> </a>, or in the
+    /// Amazon Web Services Control Tower console, on the <b>Control details</b> page.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon Web Services Control Tower APIs for enabled controls, such as <c>GetEnabledControl</c>
+    /// and <c>ListEnabledControls</c> always return an ARN of the same type given when the
+    /// control was enabled.
     /// </para>
     ///  </note> 
     /// <para>
@@ -188,11 +349,35 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
+    ///  <b> About Amazon Web Services Control Catalog identifiers</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The <c>EnableControl</c> and <c>DisableControl</c> API operations can be called by
+    /// specifying either the Amazon Web Services Control Tower identifer or the Amazon Web
+    /// Services Control Catalog identifier. The API response returns the same type of identifier
+    /// that you specified when calling the API.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you use an Amazon Web Services Control Tower identifier to call the <c>EnableControl</c>
+    /// API, and then call <c>EnableControl</c> again with an Amazon Web Services Control
+    /// Catalog identifier, Amazon Web Services Control Tower returns an error message stating
+    /// that the control is already enabled. Similar behavior applies to the <c>DisableControl</c>
+    /// API operation. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Mandatory controls and the landing-zone-level Region deny control have Amazon Web
+    /// Services Control Tower identifiers only.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     ///  <b>Details and examples</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">Control
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">Control
     /// API input and output examples with CLI</a> 
     /// </para>
     ///  </li> <li> 
@@ -202,7 +387,7 @@ namespace Amazon.ControlTower
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/enable-controls.html">Enable
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/enable-controls.html">Enable
     /// controls with CloudFormation</a> 
     /// </para>
     ///  </li> <li> 
@@ -212,27 +397,27 @@ namespace Amazon.ControlTower
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Control
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html">Control
     /// metadata tables (large page)</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-region-tables.html">Control
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html">Control
     /// availability by Region tables (large page)</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">List
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html">List
     /// of identifiers for legacy controls</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/controls.html">Controls
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/controls.html">Controls
     /// reference guide</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/controltower/latest/userguide/controls-reference.html">Controls
+    ///  <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/controls-reference.html">Controls
     /// library groupings</a> 
     /// </para>
     ///  </li> <li> 
@@ -396,10 +581,10 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// This API call turns off a control. It starts an asynchronous operation that deletes
-        /// AWS resources on the specified organizational unit and the accounts it contains. The
-        /// resources will vary according to the control that you specify. For usage examples,
-        /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+        /// Amazon Web Services resources on the specified organizational unit and the accounts
+        /// it contains. The resources will vary according to the control that you specify. For
+        /// usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableControl service method.</param>
         /// <param name="cancellationToken">
@@ -485,8 +670,8 @@ namespace Amazon.ControlTower
         /// This API call activates a control. It starts an asynchronous operation that creates
         /// Amazon Web Services resources on the specified organizational unit and the accounts
         /// it contains. The resources created will vary according to the control that you specify.
-        /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+        /// For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableControl service method.</param>
         /// <param name="cancellationToken">
@@ -600,8 +785,8 @@ namespace Amazon.ControlTower
         /// <summary>
         /// Returns the status of a particular <c>EnableControl</c> or <c>DisableControl</c> operation.
         /// Displays a message in case of error. Details for an operation are available for 90
-        /// days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+        /// days. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControlOperation service method.</param>
         /// <param name="cancellationToken">
@@ -667,8 +852,8 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Retrieves details about an enabled control. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+        /// Retrieves details about an enabled control. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnabledControl service method.</param>
         /// <param name="cancellationToken">
@@ -799,7 +984,8 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Provides a list of operations in progress or queued.
+        /// Provides a list of operations in progress or queued. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html#list-control-operations-api-examples">ListControlOperation
+        /// examples</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListControlOperations service method.</param>
         /// <param name="cancellationToken">
@@ -863,8 +1049,8 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational
-        /// unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+        /// unit and the accounts it contains. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnabledControls service method.</param>
         /// <param name="cancellationToken">
@@ -889,6 +1075,37 @@ namespace Amazon.ControlTower
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">REST API Reference for ListEnabledControls Operation</seealso>
         Task<ListEnabledControlsResponse> ListEnabledControlsAsync(ListEnabledControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListLandingZoneOperations
+
+
+
+        /// <summary>
+        /// Lists all landing zone operations from the past 90 days. Results are sorted by time,
+        /// with the most recent operation first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLandingZoneOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLandingZoneOperations service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZoneOperations">REST API Reference for ListLandingZoneOperations Operation</seealso>
+        Task<ListLandingZoneOperationsResponse> ListLandingZoneOperationsAsync(ListLandingZoneOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -934,8 +1151,9 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Returns a list of tags associated with the resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+        /// Returns a list of tags associated with the resource. For usage examples, see the <a
+        /// href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1006,7 +1224,10 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// This API call resets a landing zone. It starts an asynchronous operation that resets
-        /// the landing zone to the parameters specified in its original configuration.
+        /// the landing zone to the parameters specified in the original configuration, which
+        /// you specified in the manifest file. Nothing in the manifest file's original landing
+        /// zone configuration is changed during the reset process, by default. This API is not
+        /// the same as a rollback of a landing zone version, which is not a supported operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetLandingZone service method.</param>
         /// <param name="cancellationToken">
@@ -1042,8 +1263,8 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Applies tags to a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+        /// Applies tags to a resource. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1070,8 +1291,8 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Removes tags from a resource. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
+        /// Removes tags from a resource. For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1151,15 +1372,15 @@ namespace Amazon.ControlTower
         ///  
         /// <para>
         /// If the enabled control shows an <c>EnablementStatus</c> of FAILED, Amazon Web Services
-        /// Control Tower will update the control to match any valid parameters that you supply.
+        /// Control Tower updates the control to match any valid parameters that you supply.
         /// </para>
         ///  
         /// <para>
         /// If the <c>DriftSummary</c> status for the control shows as DRIFTED, you cannot call
         /// this API. Instead, you can update the control by calling <c>DisableControl</c> and
         /// again calling <c>EnableControl</c>, or you can run an extending governance operation.
-        /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
-        /// <i>the Amazon Web Services Control Tower User Guide</i> </a> 
+        /// For usage examples, see the <a href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
+        /// <i>Controls Reference Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnabledControl service method.</param>
@@ -1244,5 +1465,33 @@ namespace Amazon.ControlTower
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonControlTowerConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonControlTowerConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonControlTowerConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonControlTowerConfig to create AmazonControlTowerClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonControlTowerClient(serviceClientConfig) :
+                    new AmazonControlTowerClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

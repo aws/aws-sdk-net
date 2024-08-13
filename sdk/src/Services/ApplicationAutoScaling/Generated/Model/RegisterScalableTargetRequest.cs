@@ -114,9 +114,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -164,7 +164,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SageMaker Serverless endpoint provisioned concurrency
+        /// SageMaker inference components
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SageMaker serverless endpoint provisioned concurrency
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -188,9 +192,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// value that the resource can accept.
         /// </para>
         /// </summary>
-        public int MinCapacity
+        public int? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 
@@ -209,7 +213,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <ul> <li> 
         /// <para>
         /// ECS service - The resource type is <c>service</c> and the unique identifier is the
-        /// cluster name and service name. Example: <c>service/default/sample-webapp</c>.
+        /// cluster name and service name. Example: <c>service/my-cluster/my-service</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -291,13 +295,18 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SageMaker Serverless endpoint - The resource type is <c>variant</c> and the unique
+        /// SageMaker serverless endpoint - The resource type is <c>variant</c> and the unique
         /// identifier is the resource ID. Example: <c>endpoint/my-end-point/variant/KMeansClustering</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// SageMaker inference component - The resource type is <c>inference-component</c> and
         /// the unique identifier is the resource ID. Example: <c>inference-component/my-inference-component</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pool of WorkSpaces - The resource type is <c>workspacespool</c> and the unique identifier
+        /// is the pool ID. Example: <c>workspacespool/wspool-123456</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -324,8 +333,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  
         /// <para>
         /// If the service supports service-linked roles, Application Auto Scaling uses a service-linked
-        /// role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-        /// Auto Scaling IAM roles</a>.
+        /// role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html">How
+        /// Application Auto Scaling works with IAM</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -349,7 +358,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ecs:service:DesiredCount</c> - The desired task count of an ECS service.
+        ///  <c>ecs:service:DesiredCount</c> - The task count of an ECS service.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -362,8 +371,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>appstream:fleet:DesiredCapacity</c> - The desired capacity of an AppStream 2.0
-        /// fleet.
+        ///  <c>appstream:fleet:DesiredCapacity</c> - The capacity of an AppStream 2.0 fleet.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -449,12 +457,17 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>sagemaker:variant:DesiredProvisionedConcurrency</c> - The provisioned concurrency
-        /// for a SageMaker Serverless endpoint.
+        /// for a SageMaker serverless endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>sagemaker:inference-component:DesiredCopyCount</c> - The number of copies across
         /// an endpoint for a SageMaker inference component.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>workspaces:workspacespool:DesiredUserSessions</c> - The number of user sessions
+        /// for the WorkSpaces in the pool.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -520,8 +533,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-        /// and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
+        /// and resume scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public SuspendedState SuspendedState

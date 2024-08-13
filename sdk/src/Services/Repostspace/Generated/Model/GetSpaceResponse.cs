@@ -118,9 +118,9 @@ namespace Amazon.Repostspace.Model
         /// The content size of the private re:Post.
         /// </para>
         /// </summary>
-        public long ContentSize
+        public long? ContentSize
         {
-            get { return this._contentSize.GetValueOrDefault(); }
+            get { return this._contentSize; }
             set { this._contentSize = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.Repostspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateDateTime
+        public DateTime? CreateDateTime
         {
-            get { return this._createDateTime.GetValueOrDefault(); }
+            get { return this._createDateTime; }
             set { this._createDateTime = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.Repostspace.Model
         /// The date when the private re:Post was deleted.
         /// </para>
         /// </summary>
-        public DateTime DeleteDateTime
+        public DateTime? DeleteDateTime
         {
-            get { return this._deleteDateTime.GetValueOrDefault(); }
+            get { return this._deleteDateTime; }
             set { this._deleteDateTime = value; }
         }
 
@@ -307,9 +307,9 @@ namespace Amazon.Repostspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long StorageLimit
+        public long? StorageLimit
         {
-            get { return this._storageLimit.GetValueOrDefault(); }
+            get { return this._storageLimit; }
             set { this._storageLimit = value; }
         }
 
@@ -362,9 +362,9 @@ namespace Amazon.Repostspace.Model
         /// The number of users that have onboarded to the private re:Post.
         /// </para>
         /// </summary>
-        public int UserCount
+        public int? UserCount
         {
-            get { return this._userCount.GetValueOrDefault(); }
+            get { return this._userCount; }
             set { this._userCount = value; }
         }
 

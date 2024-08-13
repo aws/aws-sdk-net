@@ -90,9 +90,9 @@ namespace Amazon.Amplify.Model
         /// Enables auto building for the autocreated branch. 
         /// </para>
         /// </summary>
-        public bool EnableAutoBuild
+        public bool? EnableAutoBuild
         {
-            get { return this._enableAutoBuild.GetValueOrDefault(); }
+            get { return this._enableAutoBuild; }
             set { this._enableAutoBuild = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.Amplify.Model
         /// Enables basic authorization for the autocreated branch. 
         /// </para>
         /// </summary>
-        public bool EnableBasicAuth
+        public bool? EnableBasicAuth
         {
-            get { return this._enableBasicAuth.GetValueOrDefault(); }
+            get { return this._enableBasicAuth; }
             set { this._enableBasicAuth = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.Amplify.Model
         /// or code changes can take up to 10 minutes to roll out. 
         /// </para>
         /// </summary>
-        public bool EnablePerformanceMode
+        public bool? EnablePerformanceMode
         {
-            get { return this._enablePerformanceMode.GetValueOrDefault(); }
+            get { return this._enablePerformanceMode; }
             set { this._enablePerformanceMode = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.Amplify.Model
         /// Enables pull request previews for the autocreated branch. 
         /// </para>
         /// </summary>
-        public bool EnablePullRequestPreview
+        public bool? EnablePullRequestPreview
         {
-            get { return this._enablePullRequestPreview.GetValueOrDefault(); }
+            get { return this._enablePullRequestPreview; }
             set { this._enablePullRequestPreview = value; }
         }
 

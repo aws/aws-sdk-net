@@ -47,9 +47,9 @@ namespace Amazon.Macie2.Model
         /// to the bucket.
         /// </para>
         /// </summary>
-        public long PubliclyAccessible
+        public long? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Macie2.Model
         /// bucket.
         /// </para>
         /// </summary>
-        public long PubliclyReadable
+        public long? PubliclyReadable
         {
-            get { return this._publiclyReadable.GetValueOrDefault(); }
+            get { return this._publiclyReadable; }
             set { this._publiclyReadable = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Macie2.Model
         /// the bucket.
         /// </para>
         /// </summary>
-        public long PubliclyWritable
+        public long? PubliclyWritable
         {
-            get { return this._publiclyWritable.GetValueOrDefault(); }
+            get { return this._publiclyWritable; }
             set { this._publiclyWritable = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Macie2.Model
         /// settings for. Macie can't determine whether these buckets are publicly accessible.
         /// </para>
         /// </summary>
-        public long Unknown
+        public long? Unknown
         {
-            get { return this._unknown.GetValueOrDefault(); }
+            get { return this._unknown; }
             set { this._unknown = value; }
         }
 

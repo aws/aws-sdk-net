@@ -66,9 +66,9 @@ namespace Amazon.EC2.Model
         /// The duration of the offering (in seconds).
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 

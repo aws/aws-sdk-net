@@ -79,7 +79,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreateVersion())
                 {
                     context.Writer.WritePropertyName("createVersion");
-                    context.Writer.Write(publicRequest.CreateVersion);
+                    context.Writer.Write(publicRequest.CreateVersion.Value);
                 }
 
                 if(publicRequest.IsSetDescription())

@@ -63,9 +63,9 @@ namespace Amazon.NeptuneGraph.Model
         /// statistics.
         /// </para>
         /// </summary>
-        public DateTime LastStatisticsComputationTime
+        public DateTime? LastStatisticsComputationTime
         {
-            get { return this._lastStatisticsComputationTime.GetValueOrDefault(); }
+            get { return this._lastStatisticsComputationTime; }
             set { this._lastStatisticsComputationTime = value; }
         }
 

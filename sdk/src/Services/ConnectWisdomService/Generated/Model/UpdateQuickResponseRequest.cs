@@ -159,9 +159,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// Whether the quick response is active. 
         /// </para>
         /// </summary>
-        public bool IsActive
+        public bool? IsActive
         {
-            get { return this._isActive.GetValueOrDefault(); }
+            get { return this._isActive; }
             set { this._isActive = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// Whether to remove the description from the quick response.
         /// </para>
         /// </summary>
-        public bool RemoveDescription
+        public bool? RemoveDescription
         {
-            get { return this._removeDescription.GetValueOrDefault(); }
+            get { return this._removeDescription; }
             set { this._removeDescription = value; }
         }
 
@@ -276,9 +276,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// Whether to remove the grouping configuration of the quick response.
         /// </para>
         /// </summary>
-        public bool RemoveGroupingConfiguration
+        public bool? RemoveGroupingConfiguration
         {
-            get { return this._removeGroupingConfiguration.GetValueOrDefault(); }
+            get { return this._removeGroupingConfiguration; }
             set { this._removeGroupingConfiguration = value; }
         }
 
@@ -294,9 +294,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// Whether to remove the shortcut key of the quick response.
         /// </para>
         /// </summary>
-        public bool RemoveShortcutKey
+        public bool? RemoveShortcutKey
         {
-            get { return this._removeShortcutKey.GetValueOrDefault(); }
+            get { return this._removeShortcutKey; }
             set { this._removeShortcutKey = value; }
         }
 

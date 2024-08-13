@@ -57,7 +57,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchOutputEnabled())
             {
                 context.Writer.WritePropertyName("cloudWatchOutputEnabled");
-                context.Writer.Write(requestObject.CloudWatchOutputEnabled);
+                context.Writer.Write(requestObject.CloudWatchOutputEnabled.Value);
             }
 
             if(requestObject.IsSetOutputS3BucketName())
@@ -69,7 +69,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3OutputEnabled())
             {
                 context.Writer.WritePropertyName("s3OutputEnabled");
-                context.Writer.Write(requestObject.S3OutputEnabled);
+                context.Writer.Write(requestObject.S3OutputEnabled.Value);
             }
 
         }

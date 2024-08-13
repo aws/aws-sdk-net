@@ -104,9 +104,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=9223372036854775807)]
-        public long QueuePriority
+        public long? QueuePriority
         {
-            get { return this._queuePriority.GetValueOrDefault(); }
+            get { return this._queuePriority; }
             set { this._queuePriority = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.Connect.Model
         /// their amount of time in queue compared to others also changes their position in queue.
         /// </para>
         /// </summary>
-        public int QueueTimeAdjustmentSeconds
+        public int? QueueTimeAdjustmentSeconds
         {
-            get { return this._queueTimeAdjustmentSeconds.GetValueOrDefault(); }
+            get { return this._queueTimeAdjustmentSeconds; }
             set { this._queueTimeAdjustmentSeconds = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Inspector.Model
         /// The data size of messages that the agent sends to the Amazon Inspector service.
         /// </para>
         /// </summary>
-        public long DataSize
+        public long? DataSize
         {
-            get { return this._dataSize.GetValueOrDefault(); }
+            get { return this._dataSize; }
             set { this._dataSize = value; }
         }
 

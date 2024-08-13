@@ -51,9 +51,9 @@ namespace Amazon.CodeCommit.Model
         /// A boolean value indicating whether there are conflicts in the content of a file.
         /// </para>
         /// </summary>
-        public bool ContentConflict
+        public bool? ContentConflict
         {
-            get { return this._contentConflict.GetValueOrDefault(); }
+            get { return this._contentConflict; }
             set { this._contentConflict = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.CodeCommit.Model
         /// A boolean value indicating whether there are conflicts in the file mode of a file.
         /// </para>
         /// </summary>
-        public bool FileModeConflict
+        public bool? FileModeConflict
         {
-            get { return this._fileModeConflict.GetValueOrDefault(); }
+            get { return this._fileModeConflict; }
             set { this._fileModeConflict = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.CodeCommit.Model
         /// The number of conflicts, including both hunk conflicts and metadata conflicts.
         /// </para>
         /// </summary>
-        public int NumberOfConflicts
+        public int? NumberOfConflicts
         {
-            get { return this._numberOfConflicts.GetValueOrDefault(); }
+            get { return this._numberOfConflicts; }
             set { this._numberOfConflicts = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.CodeCommit.Model
         /// branches in the object type of a file, folder, or submodule.
         /// </para>
         /// </summary>
-        public bool ObjectTypeConflict
+        public bool? ObjectTypeConflict
         {
-            get { return this._objectTypeConflict.GetValueOrDefault(); }
+            get { return this._objectTypeConflict; }
             set { this._objectTypeConflict = value; }
         }
 

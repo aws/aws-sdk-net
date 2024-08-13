@@ -98,9 +98,9 @@ namespace Amazon.EC2.Model
         /// The AMI launch index, which can be used to find this instance in the launch group.
         /// </para>
         /// </summary>
-        public int AmiLaunchIndex
+        public int? AmiLaunchIndex
         {
-            get { return this._amiLaunchIndex.GetValueOrDefault(); }
+            get { return this._amiLaunchIndex; }
             set { this._amiLaunchIndex = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.EC2.Model
         /// types. Additional usage charges apply when using an EBS Optimized instance.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -338,9 +338,9 @@ namespace Amazon.EC2.Model
         /// Specifies whether enhanced networking with ENA is enabled.
         /// </para>
         /// </summary>
-        public bool EnaSupport
+        public bool? EnaSupport
         {
-            get { return this._enaSupport.GetValueOrDefault(); }
+            get { return this._enaSupport; }
             set { this._enaSupport = value; }
         }
 
@@ -555,9 +555,9 @@ namespace Amazon.EC2.Model
         /// The time the instance was launched.
         /// </para>
         /// </summary>
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 
@@ -934,9 +934,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether source/destination checking is enabled.
         /// </para>
         /// </summary>
-        public bool SourceDestCheck
+        public bool? SourceDestCheck
         {
-            get { return this._sourceDestCheck.GetValueOrDefault(); }
+            get { return this._sourceDestCheck; }
             set { this._sourceDestCheck = value; }
         }
 
@@ -1118,9 +1118,9 @@ namespace Amazon.EC2.Model
         /// The time that the usage operation was last updated.
         /// </para>
         /// </summary>
-        public DateTime UsageOperationUpdateTime
+        public DateTime? UsageOperationUpdateTime
         {
-            get { return this._usageOperationUpdateTime.GetValueOrDefault(); }
+            get { return this._usageOperationUpdateTime; }
             set { this._usageOperationUpdateTime = value; }
         }
 

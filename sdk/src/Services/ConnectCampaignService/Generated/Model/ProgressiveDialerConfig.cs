@@ -41,9 +41,9 @@ namespace Amazon.ConnectCampaignService.Model
         /// Gets and sets the property BandwidthAllocation.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public double BandwidthAllocation
+        public double? BandwidthAllocation
         {
-            get { return this._bandwidthAllocation.GetValueOrDefault(); }
+            get { return this._bandwidthAllocation; }
             set { this._bandwidthAllocation = value; }
         }
 
@@ -57,9 +57,9 @@ namespace Amazon.ConnectCampaignService.Model
         /// Gets and sets the property DialingCapacity.
         /// </summary>
         [AWSProperty(Max=1)]
-        public double DialingCapacity
+        public double? DialingCapacity
         {
-            get { return this._dialingCapacity.GetValueOrDefault(); }
+            get { return this._dialingCapacity; }
             set { this._dialingCapacity = value; }
         }
 

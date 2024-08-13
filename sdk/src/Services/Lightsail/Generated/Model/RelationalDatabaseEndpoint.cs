@@ -61,9 +61,9 @@ namespace Amazon.Lightsail.Model
         /// Specifies the port that the database is listening on.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

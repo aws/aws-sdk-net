@@ -67,9 +67,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxParallelLaunches
+        public int? MaxParallelLaunches
         {
-            get { return this._maxParallelLaunches.GetValueOrDefault(); }
+            get { return this._maxParallelLaunches; }
             set { this._maxParallelLaunches = value; }
         }
 

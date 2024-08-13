@@ -48,9 +48,9 @@ namespace Amazon.Outposts.Model
         /// any changes to your plan.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

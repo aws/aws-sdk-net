@@ -231,9 +231,9 @@ namespace Amazon.Amplify.Model
         /// Enables automated branch creation for an Amplify app. 
         /// </para>
         /// </summary>
-        public bool EnableAutoBranchCreation
+        public bool? EnableAutoBranchCreation
         {
-            get { return this._enableAutoBranchCreation.GetValueOrDefault(); }
+            get { return this._enableAutoBranchCreation; }
             set { this._enableAutoBranchCreation = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.Amplify.Model
         /// are part of this app. 
         /// </para>
         /// </summary>
-        public bool EnableBasicAuth
+        public bool? EnableBasicAuth
         {
-            get { return this._enableBasicAuth.GetValueOrDefault(); }
+            get { return this._enableBasicAuth; }
             set { this._enableBasicAuth = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.Amplify.Model
         /// Enables the auto building of branches for an Amplify app. 
         /// </para>
         /// </summary>
-        public bool EnableBranchAutoBuild
+        public bool? EnableBranchAutoBuild
         {
-            get { return this._enableBranchAutoBuild.GetValueOrDefault(); }
+            get { return this._enableBranchAutoBuild; }
             set { this._enableBranchAutoBuild = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.Amplify.Model
         /// from your Git repository. 
         /// </para>
         /// </summary>
-        public bool EnableBranchAutoDeletion
+        public bool? EnableBranchAutoDeletion
         {
-            get { return this._enableBranchAutoDeletion.GetValueOrDefault(); }
+            get { return this._enableBranchAutoDeletion; }
             set { this._enableBranchAutoDeletion = value; }
         }
 

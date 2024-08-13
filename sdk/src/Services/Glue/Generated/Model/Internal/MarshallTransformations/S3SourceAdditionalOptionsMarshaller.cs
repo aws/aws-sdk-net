@@ -51,13 +51,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoundedFiles())
             {
                 context.Writer.WritePropertyName("BoundedFiles");
-                context.Writer.Write(requestObject.BoundedFiles);
+                context.Writer.Write(requestObject.BoundedFiles.Value);
             }
 
             if(requestObject.IsSetBoundedSize())
             {
                 context.Writer.WritePropertyName("BoundedSize");
-                context.Writer.Write(requestObject.BoundedSize);
+                context.Writer.Write(requestObject.BoundedSize.Value);
             }
 
         }

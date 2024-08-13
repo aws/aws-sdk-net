@@ -46,9 +46,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float Confidence
+        public float? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-180, Max=180)]
-        public float Pitch
+        public float? Pitch
         {
-            get { return this._pitch.GetValueOrDefault(); }
+            get { return this._pitch; }
             set { this._pitch = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-180, Max=180)]
-        public float Yaw
+        public float? Yaw
         {
-            get { return this._yaw.GetValueOrDefault(); }
+            get { return this._yaw; }
             set { this._yaw = value; }
         }
 

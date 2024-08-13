@@ -156,9 +156,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// the default endpoint.
         /// </para>
         /// </summary>
-        public bool DisableExecuteApiEndpoint
+        public bool? DisableExecuteApiEndpoint
         {
-            get { return this._disableExecuteApiEndpoint.GetValueOrDefault(); }
+            get { return this._disableExecuteApiEndpoint; }
             set { this._disableExecuteApiEndpoint = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
         /// </para>
         /// </summary>
-        public bool DisableSchemaValidation
+        public bool? DisableSchemaValidation
         {
-            get { return this._disableSchemaValidation.GetValueOrDefault(); }
+            get { return this._disableSchemaValidation; }
             set { this._disableSchemaValidation = value; }
         }
 

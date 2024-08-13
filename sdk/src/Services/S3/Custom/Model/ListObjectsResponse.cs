@@ -40,9 +40,9 @@ namespace Amazon.S3.Model
         /// A flag that indicates whether or not Amazon S3 returned all of the results that satisfied 
         /// the search criteria.
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the MaxKeys property. This is max number of object keys returned by the list operation.
         /// </summary>
-        public int MaxKeys
+        public int? MaxKeys
         {
-            get { return this.maxKeys ?? default(int); }
+            get { return this.maxKeys; }
             set { this.maxKeys = value; }
         }
 

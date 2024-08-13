@@ -68,25 +68,25 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("high", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.High = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("low", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Low = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("medium", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Medium = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("veryLow", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VeryLow = unmarshaller.Unmarshall(context);
                     continue;
                 }

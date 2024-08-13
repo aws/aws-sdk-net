@@ -50,9 +50,9 @@ namespace Amazon.RDSDataService.Model
         /// The number of records updated by a SQL statement.
         /// </para>
         /// </summary>
-        public long NumberOfRecordsUpdated
+        public long? NumberOfRecordsUpdated
         {
-            get { return this._numberOfRecordsUpdated.GetValueOrDefault(); }
+            get { return this._numberOfRecordsUpdated; }
             set { this._numberOfRecordsUpdated = value; }
         }
 

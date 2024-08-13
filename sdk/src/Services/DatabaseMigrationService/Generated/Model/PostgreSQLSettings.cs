@@ -112,9 +112,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// source database.
         /// </para>
         /// </summary>
-        public bool CaptureDdls
+        public bool? CaptureDdls
         {
-            get { return this._captureDdls.GetValueOrDefault(); }
+            get { return this._captureDdls; }
             set { this._captureDdls = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Example: <c>executeTimeout=100;</c> 
         /// </para>
         /// </summary>
-        public int ExecuteTimeout
+        public int? ExecuteTimeout
         {
-            get { return this._executeTimeout.GetValueOrDefault(); }
+            get { return this._executeTimeout; }
             set { this._executeTimeout = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// instead of truncating the LOB data.
         /// </para>
         /// </summary>
-        public bool FailTasksOnLobTruncation
+        public bool? FailTasksOnLobTruncation
         {
-            get { return this._failTasksOnLobTruncation.GetValueOrDefault(); }
+            get { return this._failTasksOnLobTruncation; }
             set { this._failTasksOnLobTruncation = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// moving and prevents storage full scenarios.
         /// </para>
         /// </summary>
-        public bool HeartbeatEnable
+        public bool? HeartbeatEnable
         {
-            get { return this._heartbeatEnable.GetValueOrDefault(); }
+            get { return this._heartbeatEnable; }
             set { this._heartbeatEnable = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Sets the WAL heartbeat frequency (in minutes).
         /// </para>
         /// </summary>
-        public int HeartbeatFrequency
+        public int? HeartbeatFrequency
         {
-            get { return this._heartbeatFrequency.GetValueOrDefault(); }
+            get { return this._heartbeatFrequency; }
             set { this._heartbeatFrequency = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// and target endpoints for it to take effect.
         /// </para>
         /// </summary>
-        public bool MapBooleanAsBoolean
+        public bool? MapBooleanAsBoolean
         {
-            get { return this._mapBooleanAsBoolean.GetValueOrDefault(); }
+            get { return this._mapBooleanAsBoolean; }
             set { this._mapBooleanAsBoolean = value; }
         }
 
@@ -313,9 +313,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// When true, DMS migrates JSONB values as CLOB.
         /// </para>
         /// </summary>
-        public bool MapJsonbAsClob
+        public bool? MapJsonbAsClob
         {
-            get { return this._mapJsonbAsClob.GetValueOrDefault(); }
+            get { return this._mapJsonbAsClob; }
             set { this._mapJsonbAsClob = value; }
         }
 
@@ -353,9 +353,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Example: <c>maxFileSize=512</c> 
         /// </para>
         /// </summary>
-        public int MaxFileSize
+        public int? MaxFileSize
         {
-            get { return this._maxFileSize.GetValueOrDefault(); }
+            get { return this._maxFileSize; }
             set { this._maxFileSize = value; }
         }
 
@@ -408,9 +408,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint TCP port. The default is 5432.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -546,9 +546,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// data types during migration. The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool TrimSpaceInChar
+        public bool? TrimSpaceInChar
         {
-            get { return this._trimSpaceInChar.GetValueOrDefault(); }
+            get { return this._trimSpaceInChar; }
             set { this._trimSpaceInChar = value; }
         }
 

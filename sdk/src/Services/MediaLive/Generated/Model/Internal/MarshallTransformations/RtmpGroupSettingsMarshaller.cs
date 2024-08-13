@@ -74,7 +74,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCacheLength())
             {
                 context.Writer.WritePropertyName("cacheLength");
-                context.Writer.Write(requestObject.CacheLength);
+                context.Writer.Write(requestObject.CacheLength.Value);
             }
 
             if(requestObject.IsSetCaptionData())
@@ -98,7 +98,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRestartDelay())
             {
                 context.Writer.WritePropertyName("restartDelay");
-                context.Writer.Write(requestObject.RestartDelay);
+                context.Writer.Write(requestObject.RestartDelay.Value);
             }
 
         }

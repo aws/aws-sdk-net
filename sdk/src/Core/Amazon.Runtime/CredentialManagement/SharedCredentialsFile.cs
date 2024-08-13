@@ -46,7 +46,6 @@ namespace Amazon.Runtime.CredentialManagement
         private const string DefaultFileName = "credentials";
         private const string DefaultConfigurationModeField = "defaults_mode";
         private const string CredentialProcess = "credential_process";
-        private const string StsRegionalEndpointsField = "sts_regional_endpoints";
         private const string S3UseArnRegionField = "s3_use_arn_region";
         private const string S3DisableExpressSessionAuthField = "s3_disable_express_session_auth";
         private const string S3RegionalEndpointField = "s3_us_east_1_regional_endpoint";
@@ -78,7 +77,6 @@ namespace Amazon.Runtime.CredentialManagement
             RegionField,
             EndpointDiscoveryEnabledField,
             CredentialProcess,
-            StsRegionalEndpointsField,
             S3UseArnRegionField,
             S3DisableExpressSessionAuthField,
             S3RegionalEndpointField,
@@ -169,9 +167,7 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.BasicWithGlobalEndpoint,
                 CredentialProfileType.BasicWithServices,
                 CredentialProfileType.BasicWithServicesAndGlobalEndpoint,
-#if !BCL35
                 CredentialProfileType.SSO,
-#endif
             };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -193,14 +189,12 @@ namespace Amazon.Runtime.CredentialManagement
                     { "WebIdentityTokenFile", "web_identity_token_file" },
                     { "Services", "services" },
                     { "EndpointUrl", "endpoint_url" },
-#if !BCL35
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     { nameof(CredentialProfileOptions.SsoRegistrationScopes), SsoRegistrationScopes },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoSession), SsoSession },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
-#endif
                 }
             );
         /// <summary>
@@ -391,9 +385,6 @@ namespace Amazon.Runtime.CredentialManagement
             if (profile.EndpointDiscoveryEnabled != null)
                 reservedProperties[EndpointDiscoveryEnabledField] = profile.EndpointDiscoveryEnabled.Value.ToString().ToLowerInvariant();
 
-            if (profile.StsRegionalEndpoints != null)
-                reservedProperties[StsRegionalEndpointsField] = profile.StsRegionalEndpoints.ToString().ToLowerInvariant();
-
             if (profile.S3UseArnRegion != null)
                 reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();
 
@@ -456,7 +447,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         private void UpdateConfigSectionsFromProfile(CredentialProfile profile, Dictionary<string, string> profileDictionary)
         {
-            if (_configFile == null || !_configFile.TryGetSection(profile.Name, out var configProperties))
+            if (_configFile == null || !_configFile.TryGetSection(profile.Name, false, false, out var configProperties, out _))
                 return;
 
             var configPropertiesNames = configProperties.Keys.ToArray();
@@ -670,31 +661,6 @@ namespace Amazon.Runtime.CredentialManagement
                     endpointDiscoveryEnabled = endpointDiscoveryEnabledOut;
                 }
 
-                StsRegionalEndpointsValue? stsRegionalEndpoints = null;
-                if (reservedProperties.TryGetValue(StsRegionalEndpointsField, out var stsRegionalEndpointsString))
-                {
-#if BCL35
-                    try
-                    {
-                        stsRegionalEndpoints = (StsRegionalEndpointsValue) Enum.Parse(typeof(StsRegionalEndpointsValue), stsRegionalEndpointsString, true);
-                    }
-                    catch (Exception)
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", stsRegionalEndpointsString, StsRegionalEndpointsField, profileName);
-                        profile = null;
-                        return false;
-                    }
-#else
-                    if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var stsRegionalEndpointsTemp))
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", stsRegionalEndpointsString, StsRegionalEndpointsField, profileName);
-                        profile = null;
-                        return false;
-                    }
-                    stsRegionalEndpoints = stsRegionalEndpointsTemp;
-#endif
-                }
-
                 string s3UseArnRegionString;
                 bool? s3UseArnRegion = null;
                 if (reservedProperties.TryGetValue(S3UseArnRegionField, out s3UseArnRegionString))
@@ -724,18 +690,6 @@ namespace Amazon.Runtime.CredentialManagement
                 S3UsEast1RegionalEndpointValue? s3RegionalEndpoint = null;
                 if (reservedProperties.TryGetValue(S3RegionalEndpointField, out var s3RegionalEndpointString))
                 {
-#if BCL35
-                    try
-                    {
-                        s3RegionalEndpoint = (S3UsEast1RegionalEndpointValue) Enum.Parse(typeof(S3UsEast1RegionalEndpointValue), s3RegionalEndpointString, true);
-                    }
-                    catch (Exception)
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", s3RegionalEndpointString, S3RegionalEndpointField, profileName);
-                        profile = null;
-                        return false;
-                    }
-#else
                     if (!Enum.TryParse<S3UsEast1RegionalEndpointValue>(s3RegionalEndpointString, true, out var s3RegionalEndpointTemp))
                     {
                         _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", s3RegionalEndpointString, S3RegionalEndpointField, profileName);
@@ -743,7 +697,6 @@ namespace Amazon.Runtime.CredentialManagement
                         return false;
                     }
                     s3RegionalEndpoint = s3RegionalEndpointTemp;
-#endif
                 }
 
                 string s3DisableMultiRegionAccessPointsString;
@@ -764,26 +717,13 @@ namespace Amazon.Runtime.CredentialManagement
                 RequestRetryMode? requestRetryMode = null;
                 if (reservedProperties.TryGetValue(RetryModeField, out var retryModeString))
                 {
-#if BCL35
-                    try
-                    {
-                        requestRetryMode = (RequestRetryMode) Enum.Parse(typeof(RequestRetryMode), retryModeString, true);
-                    }
-                    catch (Exception)
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string legacy/standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
-                        profile = null;
-                        return false;
-                    }
-#else
                     if (!Enum.TryParse<RequestRetryMode>(retryModeString, true, out var retryModeTemp))
                     {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string legacy/standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
                         profile = null;
                         return false;
                     }
                     requestRetryMode = retryModeTemp;
-#endif
                 }
 
                 int? maxAttempts = null;
@@ -814,18 +754,6 @@ namespace Amazon.Runtime.CredentialManagement
                 EC2MetadataServiceEndpointMode? ec2MetadataServiceEndpointMode = null;
                 if (reservedProperties.TryGetValue(EC2MetadataServiceEndpointModeField, out var ec2MetadataServiceEndpointModeString))
                 {
-#if BCL35
-                    try
-                    {
-                        ec2MetadataServiceEndpointMode = (EC2MetadataServiceEndpointMode)Enum.Parse(typeof(EC2MetadataServiceEndpointMode), ec2MetadataServiceEndpointModeString, true);
-                    }
-                    catch (Exception)
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string IPv4 or IPV6 is expected.", ec2MetadataServiceEndpointModeString, EC2MetadataServiceEndpointModeField, profileName);
-                        profile = null;
-                        return false;
-                    }
-#else
                     if (!Enum.TryParse<EC2MetadataServiceEndpointMode>(ec2MetadataServiceEndpointModeString, true, out var ec2MetadataServiceEndpointModeTemp))
                     {
                         _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string IPv4 or IPV6 is expected.", ec2MetadataServiceEndpointModeString, EC2MetadataServiceEndpointModeField, profileName);
@@ -833,10 +761,8 @@ namespace Amazon.Runtime.CredentialManagement
                         return false;
                     }
                     ec2MetadataServiceEndpointMode = ec2MetadataServiceEndpointModeTemp;
-#endif
                 }
 
-#if !BCL35
                 if (profileDictionary.TryGetValue(SsoSession, out var session))
                 {
                     profileOptions.SsoSession = session;
@@ -853,7 +779,6 @@ namespace Amazon.Runtime.CredentialManagement
                         throw new AmazonClientException($"Invalid Configuration.  Failed to find {SsoSession} [{session}]");
                     }
                 }
-#endif
 
                 string ec2MetadataV1DisabledString;
                 bool? ec2MetadataV1Disabled = null;
@@ -945,7 +870,6 @@ namespace Amazon.Runtime.CredentialManagement
                     CredentialProfileStore = this,
                     DefaultConfigurationModeName = defaultConfigurationModeName,
                     EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
-                    StsRegionalEndpoints = stsRegionalEndpoints,
                     S3UseArnRegion = s3UseArnRegion,
                     S3DisableExpressSessionAuth = s3DisableExpressSessionAuth,
                     S3RegionalEndpoint = s3RegionalEndpoint,

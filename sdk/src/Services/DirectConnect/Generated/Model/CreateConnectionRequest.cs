@@ -166,9 +166,9 @@ namespace Amazon.DirectConnect.Model
         /// prerequisties</a> in the <i>Direct Connect User Guide</i>.
         /// </para>
         /// </summary>
-        public bool RequestMACSec
+        public bool? RequestMACSec
         {
-            get { return this._requestmacSec.GetValueOrDefault(); }
+            get { return this._requestmacSec; }
             set { this._requestmacSec = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

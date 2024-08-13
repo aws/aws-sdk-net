@@ -51,13 +51,13 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("CreatedAfter");
-                context.Writer.Write(requestObject.CreatedAfter);
+                context.Writer.Write(requestObject.CreatedAfter.Value);
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("CreatedBefore");
-                context.Writer.Write(requestObject.CreatedBefore);
+                context.Writer.Write(requestObject.CreatedBefore.Value);
             }
 
             if(requestObject.IsSetDatastoreName())

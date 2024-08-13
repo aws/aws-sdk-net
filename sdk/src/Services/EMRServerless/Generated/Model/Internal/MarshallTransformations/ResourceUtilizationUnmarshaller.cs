@@ -68,19 +68,19 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("memoryGBHour", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MemoryGBHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("storageGBHour", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.StorageGBHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vCPUHour", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.VCPUHour = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -116,9 +116,9 @@ namespace Amazon.IoT.Model
         /// schema is optional or required.
         /// </para>
         /// </summary>
-        public bool Optional
+        public bool? Optional
         {
-            get { return this._optional.GetValueOrDefault(); }
+            get { return this._optional; }
             set { this._optional = value; }
         }
 

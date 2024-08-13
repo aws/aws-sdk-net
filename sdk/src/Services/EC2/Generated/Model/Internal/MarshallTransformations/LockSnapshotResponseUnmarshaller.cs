@@ -58,37 +58,37 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("coolOffPeriod", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.CoolOffPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("coolOffPeriodExpiresOn", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.CoolOffPeriodExpiresOn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("lockCreatedOn", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.LockCreatedOn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("lockDuration", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.LockDuration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("lockDurationStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.LockDurationStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("lockExpiresOn", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.LockExpiresOn = unmarshaller.Unmarshall(context);
                         continue;
                     }

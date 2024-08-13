@@ -92,9 +92,9 @@ namespace Amazon.PinpointEmail.Model
         /// Pinpoint User Guide</a>.
         /// </para>
         /// </summary>
-        public bool VerifiedForSendingStatus
+        public bool? VerifiedForSendingStatus
         {
-            get { return this._verifiedForSendingStatus.GetValueOrDefault(); }
+            get { return this._verifiedForSendingStatus; }
             set { this._verifiedForSendingStatus = value; }
         }
 

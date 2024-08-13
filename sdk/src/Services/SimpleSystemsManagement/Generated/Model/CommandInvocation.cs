@@ -229,9 +229,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time and date the request was sent to this managed node.
         /// </para>
         /// </summary>
-        public DateTime RequestedDateTime
+        public DateTime? RequestedDateTime
         {
-            get { return this._requestedDateTime.GetValueOrDefault(); }
+            get { return this._requestedDateTime; }
             set { this._requestedDateTime = value; }
         }
 

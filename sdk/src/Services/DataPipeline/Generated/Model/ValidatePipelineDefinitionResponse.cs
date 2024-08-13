@@ -45,9 +45,9 @@ namespace Amazon.DataPipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Errored
+        public bool? Errored
         {
-            get { return this._errored.GetValueOrDefault(); }
+            get { return this._errored; }
             set { this._errored = value; }
         }
 

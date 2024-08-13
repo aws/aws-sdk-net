@@ -67,9 +67,9 @@ namespace Amazon.SecurityHub.Model
         ///  The web ACL capacity units (WCUs) required for this rule group. 
         /// </para>
         /// </summary>
-        public long Capacity
+        public long? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 

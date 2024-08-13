@@ -83,7 +83,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInvocationTime())
                 {
                     context.Writer.WritePropertyName("InvocationTime");
-                    context.Writer.Write(publicRequest.InvocationTime);
+                    context.Writer.Write(publicRequest.InvocationTime.Value);
                 }
 
                 if(publicRequest.IsSetScheduledQueryArn())

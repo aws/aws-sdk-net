@@ -64,9 +64,9 @@ namespace Amazon.Batch.Model
         /// The minimum value is 0 and the maximum value is 99.
         /// </para>
         /// </summary>
-        public int ComputeReservation
+        public int? ComputeReservation
         {
-            get { return this._computeReservation.GetValueOrDefault(); }
+            get { return this._computeReservation; }
             set { this._computeReservation = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Batch.Model
         /// jobs that ran earlier. The maximum supported value is 604800 (1 week).
         /// </para>
         /// </summary>
-        public int ShareDecaySeconds
+        public int? ShareDecaySeconds
         {
-            get { return this._shareDecaySeconds.GetValueOrDefault(); }
+            get { return this._shareDecaySeconds; }
             set { this._shareDecaySeconds = value; }
         }
 

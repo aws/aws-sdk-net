@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
     {
         private ContainerOverrides _containerOverrides;
         private EcsPropertiesOverride _ecsPropertiesOverride;
+        private EksPropertiesOverride _eksPropertiesOverride;
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetNodes;
 
@@ -76,6 +77,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetEcsPropertiesOverride()
         {
             return this._ecsPropertiesOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksPropertiesOverride. 
+        /// <para>
+        /// An object that contains the properties that you want to replace for the existing Amazon
+        /// EKS resources of a job.
+        /// </para>
+        /// </summary>
+        public EksPropertiesOverride EksPropertiesOverride
+        {
+            get { return this._eksPropertiesOverride; }
+            set { this._eksPropertiesOverride = value; }
+        }
+
+        // Check to see if EksPropertiesOverride property is set
+        internal bool IsSetEksPropertiesOverride()
+        {
+            return this._eksPropertiesOverride != null;
         }
 
         /// <summary>

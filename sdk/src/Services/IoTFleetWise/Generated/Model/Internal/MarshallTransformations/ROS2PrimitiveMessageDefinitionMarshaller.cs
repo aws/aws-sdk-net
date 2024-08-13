@@ -51,13 +51,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Offset);
+                    context.Writer.Write(requestObject.Offset.Value);
                 }
             }
 
@@ -70,20 +70,20 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaling())
             {
                 context.Writer.WritePropertyName("scaling");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Scaling);
+                    context.Writer.Write(requestObject.Scaling.Value);
                 }
             }
 
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("upperBound");
-                context.Writer.Write(requestObject.UpperBound);
+                context.Writer.Write(requestObject.UpperBound.Value);
             }
 
         }

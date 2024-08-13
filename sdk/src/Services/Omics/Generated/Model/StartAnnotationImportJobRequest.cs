@@ -142,9 +142,9 @@ namespace Amazon.Omics.Model
         /// The job's left normalization setting.
         /// </para>
         /// </summary>
-        public bool RunLeftNormalization
+        public bool? RunLeftNormalization
         {
-            get { return this._runLeftNormalization.GetValueOrDefault(); }
+            get { return this._runLeftNormalization; }
             set { this._runLeftNormalization = value; }
         }
 

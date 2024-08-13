@@ -48,9 +48,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float MinBoundingBoxHeight
+        public float? MinBoundingBoxHeight
         {
-            get { return this._minBoundingBoxHeight.GetValueOrDefault(); }
+            get { return this._minBoundingBoxHeight; }
             set { this._minBoundingBoxHeight = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float MinBoundingBoxWidth
+        public float? MinBoundingBoxWidth
         {
-            get { return this._minBoundingBoxWidth.GetValueOrDefault(); }
+            get { return this._minBoundingBoxWidth; }
             set { this._minBoundingBoxWidth = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float MinConfidence
+        public float? MinConfidence
         {
-            get { return this._minConfidence.GetValueOrDefault(); }
+            get { return this._minConfidence; }
             set { this._minConfidence = value; }
         }
 

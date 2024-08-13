@@ -250,9 +250,9 @@ namespace Amazon.RDS.Model
         /// the storage file system for a DB instance</a>.
         /// </para>
         /// </summary>
-        public bool UpgradeTargetStorageConfig
+        public bool? UpgradeTargetStorageConfig
         {
-            get { return this._upgradeTargetStorageConfig.GetValueOrDefault(); }
+            get { return this._upgradeTargetStorageConfig; }
             set { this._upgradeTargetStorageConfig = value; }
         }
 

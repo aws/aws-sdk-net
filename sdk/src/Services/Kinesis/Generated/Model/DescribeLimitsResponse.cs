@@ -46,9 +46,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000000)]
-        public int OnDemandStreamCount
+        public int? OnDemandStreamCount
         {
-            get { return this._onDemandStreamCount.GetValueOrDefault(); }
+            get { return this._onDemandStreamCount; }
             set { this._onDemandStreamCount = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000000)]
-        public int OnDemandStreamCountLimit
+        public int? OnDemandStreamCountLimit
         {
-            get { return this._onDemandStreamCountLimit.GetValueOrDefault(); }
+            get { return this._onDemandStreamCountLimit; }
             set { this._onDemandStreamCountLimit = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000000)]
-        public int OpenShardCount
+        public int? OpenShardCount
         {
-            get { return this._openShardCount.GetValueOrDefault(); }
+            get { return this._openShardCount; }
             set { this._openShardCount = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000000)]
-        public int ShardLimit
+        public int? ShardLimit
         {
-            get { return this._shardLimit.GetValueOrDefault(); }
+            get { return this._shardLimit; }
             set { this._shardLimit = value; }
         }
 

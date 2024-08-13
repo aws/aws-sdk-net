@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.S3
@@ -246,10 +247,6 @@ namespace Amazon.S3
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3RedirectHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Signer>(new Amazon.S3.Internal.S3Express.S3ExpressPreSigner());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.EndpointResolver>(new Amazon.S3.Internal.AmazonS3PostMarshallHandler());
-            if(this.Config.RetryMode == RequestRetryMode.Legacy)
-            {
-                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)));
-            }
             if(this.Config.RetryMode == RequestRetryMode.Standard)
             {
                 pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3StandardRetryPolicy(this.Config)));
@@ -817,8 +814,7 @@ namespace Amazon.S3
         /// <para>
         /// When the request is an HTTP 1.1 request, the response is chunk encoded. When the request
         /// is not an HTTP 1.1 request, the response would not contain the <c>Content-Length</c>.
-        /// You always need to read the entire response body to check if the copy succeeds. to
-        /// keep the connection alive while we copy the data. 
+        /// You always need to read the entire response body to check if the copy succeeds. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1015,8 +1011,7 @@ namespace Amazon.S3
         /// <para>
         /// When the request is an HTTP 1.1 request, the response is chunk encoded. When the request
         /// is not an HTTP 1.1 request, the response would not contain the <c>Content-Length</c>.
-        /// You always need to read the entire response body to check if the copy succeeds. to
-        /// keep the connection alive while we copy the data. 
+        /// You always need to read the entire response body to check if the copy succeeds. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1216,8 +1211,7 @@ namespace Amazon.S3
         /// <para>
         /// When the request is an HTTP 1.1 request, the response is chunk encoded. When the request
         /// is not an HTTP 1.1 request, the response would not contain the <c>Content-Length</c>.
-        /// You always need to read the entire response body to check if the copy succeeds. to
-        /// keep the connection alive while we copy the data. 
+        /// You always need to read the entire response body to check if the copy succeeds. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1396,8 +1390,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1409,7 +1403,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object . By default, the session is in the <c>ReadWrite</c>
+        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
         /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
@@ -1510,13 +1504,14 @@ namespace Amazon.S3
         /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
+        /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
-        public virtual Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId, int? partNumber, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CopyPartRequest();
             request.SourceBucket = sourceBucket;
@@ -1524,6 +1519,7 @@ namespace Amazon.S3
             request.DestinationBucket = destinationBucket;
             request.DestinationKey = destinationKey;
             request.UploadId = uploadId;
+            request.PartNumber = partNumber;
             return CopyPartAsync(request, cancellationToken);
         }
 
@@ -1610,8 +1606,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1623,7 +1619,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object . By default, the session is in the <c>ReadWrite</c>
+        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
         /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
@@ -1725,13 +1721,14 @@ namespace Amazon.S3
         /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
+        /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
-        public virtual Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId, int? partNumber, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CopyPartRequest();
             request.SourceBucket = sourceBucket;
@@ -1740,6 +1737,7 @@ namespace Amazon.S3
             request.DestinationBucket = destinationBucket;
             request.DestinationKey = destinationKey;
             request.UploadId = uploadId;
+            request.PartNumber = partNumber;
             return CopyPartAsync(request, cancellationToken);
         }
 
@@ -1827,8 +1825,8 @@ namespace Amazon.S3
         ///  </li> </ul> 
         /// <para>
         /// For information about permissions required to use the multipart upload API, see <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-        /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+        /// upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1840,7 +1838,7 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object . By default, the session is in the <c>ReadWrite</c>
+        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
         /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
@@ -3917,7 +3915,7 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
-        /// from a versiong-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
+        /// from a versioning-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -14541,7 +14539,7 @@ namespace Amazon.S3
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
-        public virtual Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, int days, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, int? days, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RestoreObjectRequest();
             request.BucketName = bucketName;
@@ -15004,7 +15002,7 @@ namespace Amazon.S3
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
-        public virtual Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, string versionId, int days, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, string versionId, int? days, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RestoreObjectRequest();
             request.BucketName = bucketName;
@@ -15726,16 +15724,8 @@ namespace Amazon.S3
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonS3EndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

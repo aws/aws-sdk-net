@@ -63,9 +63,9 @@ namespace Amazon.DataExchange.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SchemaChangeAt
+        public DateTime? SchemaChangeAt
         {
-            get { return this._schemaChangeAt.GetValueOrDefault(); }
+            get { return this._schemaChangeAt; }
             set { this._schemaChangeAt = value; }
         }
 

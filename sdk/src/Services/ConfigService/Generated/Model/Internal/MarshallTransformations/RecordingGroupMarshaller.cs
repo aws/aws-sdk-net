@@ -51,7 +51,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllSupported())
             {
                 context.Writer.WritePropertyName("allSupported");
-                context.Writer.Write(requestObject.AllSupported);
+                context.Writer.Write(requestObject.AllSupported.Value);
             }
 
             if(requestObject.IsSetExclusionByResourceTypes())
@@ -68,7 +68,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeGlobalResourceTypes())
             {
                 context.Writer.WritePropertyName("includeGlobalResourceTypes");
-                context.Writer.Write(requestObject.IncludeGlobalResourceTypes);
+                context.Writer.Write(requestObject.IncludeGlobalResourceTypes.Value);
             }
 
             if(requestObject.IsSetRecordingStrategy())

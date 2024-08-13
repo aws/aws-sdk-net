@@ -64,9 +64,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// The time at which the replay started.
         /// </para>
         /// </summary>
-        public DateTime ReplayStartTime
+        public DateTime? ReplayStartTime
         {
-            get { return this._replayStartTime.GetValueOrDefault(); }
+            get { return this._replayStartTime; }
             set { this._replayStartTime = value; }
         }
 

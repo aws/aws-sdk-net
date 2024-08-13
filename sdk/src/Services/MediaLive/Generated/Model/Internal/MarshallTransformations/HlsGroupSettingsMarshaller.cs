@@ -184,7 +184,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIndexNSegments())
             {
                 context.Writer.WritePropertyName("indexNSegments");
-                context.Writer.Write(requestObject.IndexNSegments);
+                context.Writer.Write(requestObject.IndexNSegments.Value);
             }
 
             if(requestObject.IsSetInputLossAction())
@@ -208,7 +208,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeepSegments())
             {
                 context.Writer.WritePropertyName("keepSegments");
-                context.Writer.Write(requestObject.KeepSegments);
+                context.Writer.Write(requestObject.KeepSegments.Value);
             }
 
             if(requestObject.IsSetKeyFormat())
@@ -249,7 +249,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinSegmentLength())
             {
                 context.Writer.WritePropertyName("minSegmentLength");
-                context.Writer.Write(requestObject.MinSegmentLength);
+                context.Writer.Write(requestObject.MinSegmentLength.Value);
             }
 
             if(requestObject.IsSetMode())
@@ -279,7 +279,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgramDateTimePeriod())
             {
                 context.Writer.WritePropertyName("programDateTimePeriod");
-                context.Writer.Write(requestObject.ProgramDateTimePeriod);
+                context.Writer.Write(requestObject.ProgramDateTimePeriod.Value);
             }
 
             if(requestObject.IsSetRedundantManifest())
@@ -297,13 +297,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentLength())
             {
                 context.Writer.WritePropertyName("segmentLength");
-                context.Writer.Write(requestObject.SegmentLength);
+                context.Writer.Write(requestObject.SegmentLength.Value);
             }
 
             if(requestObject.IsSetSegmentsPerSubdirectory())
             {
                 context.Writer.WritePropertyName("segmentsPerSubdirectory");
-                context.Writer.Write(requestObject.SegmentsPerSubdirectory);
+                context.Writer.Write(requestObject.SegmentsPerSubdirectory.Value);
             }
 
             if(requestObject.IsSetStreamInfResolution())
@@ -321,13 +321,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimedMetadataId3Period())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Period");
-                context.Writer.Write(requestObject.TimedMetadataId3Period);
+                context.Writer.Write(requestObject.TimedMetadataId3Period.Value);
             }
 
             if(requestObject.IsSetTimestampDeltaMilliseconds())
             {
                 context.Writer.WritePropertyName("timestampDeltaMilliseconds");
-                context.Writer.Write(requestObject.TimestampDeltaMilliseconds);
+                context.Writer.Write(requestObject.TimestampDeltaMilliseconds.Value);
             }
 
             if(requestObject.IsSetTsFileMode())

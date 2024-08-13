@@ -44,9 +44,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
-        public int CountUpdate
+        public int? CountUpdate
         {
-            get { return this._countUpdate.GetValueOrDefault(); }
+            get { return this._countUpdate; }
             set { this._countUpdate = value; }
         }
 

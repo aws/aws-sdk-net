@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// The default number of cores for the instance type.
         /// </para>
         /// </summary>
-        public int DefaultCores
+        public int? DefaultCores
         {
-            get { return this._defaultCores.GetValueOrDefault(); }
+            get { return this._defaultCores; }
             set { this._defaultCores = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// The default number of threads per core for the instance type.
         /// </para>
         /// </summary>
-        public int DefaultThreadsPerCore
+        public int? DefaultThreadsPerCore
         {
-            get { return this._defaultThreadsPerCore.GetValueOrDefault(); }
+            get { return this._defaultThreadsPerCore; }
             set { this._defaultThreadsPerCore = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// The default number of vCPUs for the instance type.
         /// </para>
         /// </summary>
-        public int DefaultVCpus
+        public int? DefaultVCpus
         {
-            get { return this._defaultVCpus.GetValueOrDefault(); }
+            get { return this._defaultVCpus; }
             set { this._defaultVCpus = value; }
         }
 

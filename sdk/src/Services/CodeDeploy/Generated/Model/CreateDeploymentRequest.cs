@@ -221,9 +221,9 @@ namespace Amazon.CodeDeploy.Model
         /// failures should be ignored. 
         /// </para>
         /// </summary>
-        public bool IgnoreApplicationStopFailures
+        public bool? IgnoreApplicationStopFailures
         {
-            get { return this._ignoreApplicationStopFailures.GetValueOrDefault(); }
+            get { return this._ignoreApplicationStopFailures; }
             set { this._ignoreApplicationStopFailures = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.CodeDeploy.Model
         /// the latest application revision. 
         /// </para>
         /// </summary>
-        public bool UpdateOutdatedInstancesOnly
+        public bool? UpdateOutdatedInstancesOnly
         {
-            get { return this._updateOutdatedInstancesOnly.GetValueOrDefault(); }
+            get { return this._updateOutdatedInstancesOnly; }
             set { this._updateOutdatedInstancesOnly = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long DurationInNanoSeconds
+        public long? DurationInNanoSeconds
         {
-            get { return this._durationInNanoSeconds.GetValueOrDefault(); }
+            get { return this._durationInNanoSeconds; }
             set { this._durationInNanoSeconds = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

@@ -89,9 +89,9 @@ namespace Amazon.EC2.Model
         /// You cannot specify the range of IP addresses, or the size of the CIDR block.
         /// </para>
         /// </summary>
-        public bool AmazonProvidedIpv6CidrBlock
+        public bool? AmazonProvidedIpv6CidrBlock
         {
-            get { return this._amazonProvidedIpv6CidrBlock.GetValueOrDefault(); }
+            get { return this._amazonProvidedIpv6CidrBlock; }
             set { this._amazonProvidedIpv6CidrBlock = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.EC2.Model
         /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
-        public int Ipv4NetmaskLength
+        public int? Ipv4NetmaskLength
         {
-            get { return this._ipv4NetmaskLength.GetValueOrDefault(); }
+            get { return this._ipv4NetmaskLength; }
             set { this._ipv4NetmaskLength = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.EC2.Model
         /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
-        public int Ipv6NetmaskLength
+        public int? Ipv6NetmaskLength
         {
-            get { return this._ipv6NetmaskLength.GetValueOrDefault(); }
+            get { return this._ipv6NetmaskLength; }
             set { this._ipv6NetmaskLength = value; }
         }
 

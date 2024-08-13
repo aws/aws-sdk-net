@@ -66,9 +66,9 @@ namespace Amazon.SecurityHub.Model
         /// is 30 seconds.
         /// </para>
         /// </summary>
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SecurityHub.Model
         /// unhealthy. The default value is 3.
         /// </para>
         /// </summary>
-        public int Retries
+        public int? Retries
         {
-            get { return this._retries.GetValueOrDefault(); }
+            get { return this._retries; }
             set { this._retries = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SecurityHub.Model
         /// failed health checks count towards the maximum number of retries.
         /// </para>
         /// </summary>
-        public int StartPeriod
+        public int? StartPeriod
         {
-            get { return this._startPeriod.GetValueOrDefault(); }
+            get { return this._startPeriod; }
             set { this._startPeriod = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.SecurityHub.Model
         /// a failure. The default value is 5.
         /// </para>
         /// </summary>
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

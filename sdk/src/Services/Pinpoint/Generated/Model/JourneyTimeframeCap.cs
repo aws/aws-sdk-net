@@ -45,9 +45,9 @@ namespace Amazon.Pinpoint.Model
         /// specified timeframe. The maximum value is 100. If set to 0, this limit will not apply.
         /// </para>
         /// </summary>
-        public int Cap
+        public int? Cap
         {
-            get { return this._cap.GetValueOrDefault(); }
+            get { return this._cap; }
             set { this._cap = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Pinpoint.Model
         /// will not apply.
         /// </para>
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this._days.GetValueOrDefault(); }
+            get { return this._days; }
             set { this._days = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.BedrockAgent.Model
         /// The number of source documents that was deleted.
         /// </para>
         /// </summary>
-        public long NumberOfDocumentsDeleted
+        public long? NumberOfDocumentsDeleted
         {
-            get { return this._numberOfDocumentsDeleted.GetValueOrDefault(); }
+            get { return this._numberOfDocumentsDeleted; }
             set { this._numberOfDocumentsDeleted = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.BedrockAgent.Model
         /// The number of source documents that failed to be ingested.
         /// </para>
         /// </summary>
-        public long NumberOfDocumentsFailed
+        public long? NumberOfDocumentsFailed
         {
-            get { return this._numberOfDocumentsFailed.GetValueOrDefault(); }
+            get { return this._numberOfDocumentsFailed; }
             set { this._numberOfDocumentsFailed = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.BedrockAgent.Model
         /// unchanged documents.
         /// </para>
         /// </summary>
-        public long NumberOfDocumentsScanned
+        public long? NumberOfDocumentsScanned
         {
-            get { return this._numberOfDocumentsScanned.GetValueOrDefault(); }
+            get { return this._numberOfDocumentsScanned; }
             set { this._numberOfDocumentsScanned = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.BedrockAgent.Model
         /// The number of metadata files that were updated or deleted.
         /// </para>
         /// </summary>
-        public long NumberOfMetadataDocumentsModified
+        public long? NumberOfMetadataDocumentsModified
         {
-            get { return this._numberOfMetadataDocumentsModified.GetValueOrDefault(); }
+            get { return this._numberOfMetadataDocumentsModified; }
             set { this._numberOfMetadataDocumentsModified = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.BedrockAgent.Model
         /// files.
         /// </para>
         /// </summary>
-        public long NumberOfMetadataDocumentsScanned
+        public long? NumberOfMetadataDocumentsScanned
         {
-            get { return this._numberOfMetadataDocumentsScanned.GetValueOrDefault(); }
+            get { return this._numberOfMetadataDocumentsScanned; }
             set { this._numberOfMetadataDocumentsScanned = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.BedrockAgent.Model
         /// indexed.
         /// </para>
         /// </summary>
-        public long NumberOfModifiedDocumentsIndexed
+        public long? NumberOfModifiedDocumentsIndexed
         {
-            get { return this._numberOfModifiedDocumentsIndexed.GetValueOrDefault(); }
+            get { return this._numberOfModifiedDocumentsIndexed; }
             set { this._numberOfModifiedDocumentsIndexed = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.BedrockAgent.Model
         /// The number of new source documents in the data source that were successfully indexed.
         /// </para>
         /// </summary>
-        public long NumberOfNewDocumentsIndexed
+        public long? NumberOfNewDocumentsIndexed
         {
-            get { return this._numberOfNewDocumentsIndexed.GetValueOrDefault(); }
+            get { return this._numberOfNewDocumentsIndexed; }
             set { this._numberOfNewDocumentsIndexed = value; }
         }
 

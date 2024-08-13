@@ -47,9 +47,9 @@ namespace Amazon.CloudWatch.Model
         /// The sum of the values from all individual contributors that match the rule.
         /// </para>
         /// </summary>
-        public double AggregateValue
+        public double? AggregateValue
         {
-            get { return this._aggregateValue.GetValueOrDefault(); }
+            get { return this._aggregateValue; }
             set { this._aggregateValue = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.CloudWatch.Model
         /// An approximate count of the unique contributors found by this rule in this time period.
         /// </para>
         /// </summary>
-        public long ApproximateUniqueCount
+        public long? ApproximateUniqueCount
         {
-            get { return this._approximateUniqueCount.GetValueOrDefault(); }
+            get { return this._approximateUniqueCount; }
             set { this._approximateUniqueCount = value; }
         }
 

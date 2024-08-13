@@ -110,9 +110,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time when the request to update a directory setting was last submitted.
         /// </para>
         /// </summary>
-        public DateTime LastRequestedDateTime
+        public DateTime? LastRequestedDateTime
         {
-            get { return this._lastRequestedDateTime.GetValueOrDefault(); }
+            get { return this._lastRequestedDateTime; }
             set { this._lastRequestedDateTime = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time when the directory setting was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 

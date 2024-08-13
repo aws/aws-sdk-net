@@ -161,9 +161,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when customer endpoint connected to Amazon Connect.
         /// </para>
         /// </summary>
-        public DateTime ConnectedToSystemTimestamp
+        public DateTime? ConnectedToSystemTimestamp
         {
-            get { return this._connectedToSystemTimestamp.GetValueOrDefault(); }
+            get { return this._connectedToSystemTimestamp; }
             set { this._connectedToSystemTimestamp = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the customer endpoint disconnected from Amazon Connect.
         /// </para>
         /// </summary>
-        public DateTime DisconnectTimestamp
+        public DateTime? DisconnectTimestamp
         {
-            get { return this._disconnectTimestamp.GetValueOrDefault(); }
+            get { return this._disconnectTimestamp; }
             set { this._disconnectTimestamp = value; }
         }
 
@@ -332,9 +332,9 @@ namespace Amazon.Connect.Model
         /// started listening to a contact.
         /// </para>
         /// </summary>
-        public DateTime InitiationTimestamp
+        public DateTime? InitiationTimestamp
         {
-            get { return this._initiationTimestamp.GetValueOrDefault(); }
+            get { return this._initiationTimestamp; }
             set { this._initiationTimestamp = value; }
         }
 
@@ -350,9 +350,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the contact was last paused.
         /// </para>
         /// </summary>
-        public DateTime LastPausedTimestamp
+        public DateTime? LastPausedTimestamp
         {
-            get { return this._lastPausedTimestamp.GetValueOrDefault(); }
+            get { return this._lastPausedTimestamp; }
             set { this._lastPausedTimestamp = value; }
         }
 
@@ -368,9 +368,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the contact was last resumed.
         /// </para>
         /// </summary>
-        public DateTime LastResumedTimestamp
+        public DateTime? LastResumedTimestamp
         {
-            get { return this._lastResumedTimestamp.GetValueOrDefault(); }
+            get { return this._lastResumedTimestamp; }
             set { this._lastResumedTimestamp = value; }
         }
 
@@ -386,9 +386,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when contact was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTimestamp
+        public DateTime? LastUpdateTimestamp
         {
-            get { return this._lastUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimestamp; }
             set { this._lastUpdateTimestamp = value; }
         }
 
@@ -482,9 +482,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=9223372036854775807)]
-        public long QueuePriority
+        public long? QueuePriority
         {
-            get { return this._queuePriority.GetValueOrDefault(); }
+            get { return this._queuePriority; }
             set { this._queuePriority = value; }
         }
 
@@ -503,9 +503,9 @@ namespace Amazon.Connect.Model
         /// value.
         /// </para>
         /// </summary>
-        public int QueueTimeAdjustmentSeconds
+        public int? QueueTimeAdjustmentSeconds
         {
-            get { return this._queueTimeAdjustmentSeconds.GetValueOrDefault(); }
+            get { return this._queueTimeAdjustmentSeconds; }
             set { this._queueTimeAdjustmentSeconds = value; }
         }
 
@@ -560,9 +560,9 @@ namespace Amazon.Connect.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime ScheduledTimestamp
+        public DateTime? ScheduledTimestamp
         {
-            get { return this._scheduledTimestamp.GetValueOrDefault(); }
+            get { return this._scheduledTimestamp; }
             set { this._scheduledTimestamp = value; }
         }
 
@@ -621,9 +621,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int TotalPauseCount
+        public int? TotalPauseCount
         {
-            get { return this._totalPauseCount.GetValueOrDefault(); }
+            get { return this._totalPauseCount; }
             set { this._totalPauseCount = value; }
         }
 
@@ -640,9 +640,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TotalPauseDurationInSeconds
+        public int? TotalPauseDurationInSeconds
         {
-            get { return this._totalPauseDurationInSeconds.GetValueOrDefault(); }
+            get { return this._totalPauseDurationInSeconds; }
             set { this._totalPauseDurationInSeconds = value; }
         }
 

@@ -58,7 +58,7 @@ namespace Amazon.MedicalImaging.Model
         /// The accession number for the DICOM study.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=16)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DICOMAccessionNumber
         {
             get { return this._dicomAccessionNumber; }
@@ -78,9 +78,9 @@ namespace Amazon.MedicalImaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int DICOMNumberOfStudyRelatedInstances
+        public int? DICOMNumberOfStudyRelatedInstances
         {
-            get { return this._dicomNumberOfStudyRelatedInstances.GetValueOrDefault(); }
+            get { return this._dicomNumberOfStudyRelatedInstances; }
             set { this._dicomNumberOfStudyRelatedInstances = value; }
         }
 
@@ -96,10 +96,10 @@ namespace Amazon.MedicalImaging.Model
         /// The total number of series in the DICOM study.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
-        public int DICOMNumberOfStudyRelatedSeries
+        [AWSProperty(Min=0, Max=1000000)]
+        public int? DICOMNumberOfStudyRelatedSeries
         {
-            get { return this._dicomNumberOfStudyRelatedSeries.GetValueOrDefault(); }
+            get { return this._dicomNumberOfStudyRelatedSeries; }
             set { this._dicomNumberOfStudyRelatedSeries = value; }
         }
 
@@ -134,7 +134,7 @@ namespace Amazon.MedicalImaging.Model
         /// The unique identifier for a patient in a DICOM Study.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DICOMPatientId
         {
             get { return this._dicomPatientId; }
@@ -210,7 +210,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided identifier for the Series Instance UID.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DICOMSeriesInstanceUID
         {
             get { return this._dicomSeriesInstanceUID; }
@@ -249,9 +249,9 @@ namespace Amazon.MedicalImaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=-2147483648, Max=2147483647)]
-        public int DICOMSeriesNumber
+        public int? DICOMSeriesNumber
         {
-            get { return this._dicomSeriesNumber.GetValueOrDefault(); }
+            get { return this._dicomSeriesNumber; }
             set { this._dicomSeriesNumber = value; }
         }
 
@@ -324,7 +324,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided identifier for the Study Instance UID.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DICOMStudyInstanceUID
         {
             get { return this._dicomStudyInstanceUID; }

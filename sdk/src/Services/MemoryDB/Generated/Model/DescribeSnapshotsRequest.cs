@@ -71,9 +71,9 @@ namespace Amazon.MemoryDB.Model
         /// results can be retrieved.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.MemoryDB.Model
         /// description.
         /// </para>
         /// </summary>
-        public bool ShowDetail
+        public bool? ShowDetail
         {
-            get { return this._showDetail.GetValueOrDefault(); }
+            get { return this._showDetail; }
             set { this._showDetail = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MembershipCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MembershipCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

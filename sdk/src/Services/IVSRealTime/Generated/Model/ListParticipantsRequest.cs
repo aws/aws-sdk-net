@@ -52,9 +52,9 @@ namespace Amazon.IVSRealTime.Model
         /// or <c>filterByRecordingState</c> can be provided per request.
         /// </para>
         /// </summary>
-        public bool FilterByPublished
+        public bool? FilterByPublished
         {
-            get { return this._filterByPublished.GetValueOrDefault(); }
+            get { return this._filterByPublished; }
             set { this._filterByPublished = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

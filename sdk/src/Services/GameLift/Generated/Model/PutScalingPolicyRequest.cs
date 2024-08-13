@@ -166,9 +166,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int EvaluationPeriods
+        public int? EvaluationPeriods
         {
-            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            get { return this._evaluationPeriods; }
             set { this._evaluationPeriods = value; }
         }
 
@@ -323,9 +323,9 @@ namespace Amazon.GameLift.Model
         /// Amount of adjustment to make, based on the scaling adjustment type.
         /// </para>
         /// </summary>
-        public int ScalingAdjustment
+        public int? ScalingAdjustment
         {
-            get { return this._scalingAdjustment.GetValueOrDefault(); }
+            get { return this._scalingAdjustment; }
             set { this._scalingAdjustment = value; }
         }
 
@@ -393,9 +393,9 @@ namespace Amazon.GameLift.Model
         /// Metric value used to trigger a scaling event.
         /// </para>
         /// </summary>
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

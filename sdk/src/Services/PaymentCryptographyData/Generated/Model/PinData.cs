@@ -43,7 +43,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The PIN offset value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=12)]
+        [AWSProperty(Sensitive=true, Min=4, Max=12)]
         public string PinOffset
         {
             get { return this._pinOffset; }
@@ -63,7 +63,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Primary Account Number (PAN). If a value is not provided, it defaults to PAN.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=12)]
+        [AWSProperty(Sensitive=true, Min=4, Max=12)]
         public string VerificationValue
         {
             get { return this._verificationValue; }

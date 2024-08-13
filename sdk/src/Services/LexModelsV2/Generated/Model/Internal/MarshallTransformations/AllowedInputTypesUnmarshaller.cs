@@ -68,13 +68,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowAudioInput", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowAudioInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("allowDTMFInput", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowDTMFInput = unmarshaller.Unmarshall(context);
                     continue;
                 }

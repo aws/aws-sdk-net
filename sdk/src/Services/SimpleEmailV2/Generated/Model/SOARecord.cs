@@ -81,9 +81,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// Serial number from the SOA record.
         /// </para>
         /// </summary>
-        public long SerialNumber
+        public long? SerialNumber
         {
-            get { return this._serialNumber.GetValueOrDefault(); }
+            get { return this._serialNumber; }
             set { this._serialNumber = value; }
         }
 

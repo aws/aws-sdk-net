@@ -46,9 +46,9 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property AttributeNameCount. The number of unique attribute names
         /// in the domain.
         /// </summary>
-        public int AttributeNameCount
+        public int? AttributeNameCount
         {
-            get { return this._attributeNameCount.GetValueOrDefault(); }
+            get { return this._attributeNameCount; }
             set { this._attributeNameCount = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property AttributeNamesSizeBytes. The total size of all unique attribute
         /// names in the domain, in bytes.
         /// </summary>
-        public long AttributeNamesSizeBytes
+        public long? AttributeNamesSizeBytes
         {
-            get { return this._attributeNamesSizeBytes.GetValueOrDefault(); }
+            get { return this._attributeNamesSizeBytes; }
             set { this._attributeNamesSizeBytes = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property AttributeValueCount. The number of all attribute name/value
         /// pairs in the domain.
         /// </summary>
-        public int AttributeValueCount
+        public int? AttributeValueCount
         {
-            get { return this._attributeValueCount.GetValueOrDefault(); }
+            get { return this._attributeValueCount; }
             set { this._attributeValueCount = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property AttributeValuesSizeBytes. The total size of all attribute
         /// values in the domain, in bytes.
         /// </summary>
-        public long AttributeValuesSizeBytes
+        public long? AttributeValuesSizeBytes
         {
-            get { return this._attributeValuesSizeBytes.GetValueOrDefault(); }
+            get { return this._attributeValuesSizeBytes; }
             set { this._attributeValuesSizeBytes = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property ItemCount. The number of all items in the domain.
         /// </summary>
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property ItemNamesSizeBytes. The total size of all item names in
         /// the domain, in bytes.
         /// </summary>
-        public long ItemNamesSizeBytes
+        public long? ItemNamesSizeBytes
         {
-            get { return this._itemNamesSizeBytes.GetValueOrDefault(); }
+            get { return this._itemNamesSizeBytes; }
             set { this._itemNamesSizeBytes = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property Timestamp. The data and time when metadata was calculated,
         /// in Epoch (UNIX) seconds.
         /// </summary>
-        public int Timestamp
+        public int? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

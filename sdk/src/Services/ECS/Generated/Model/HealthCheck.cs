@@ -256,9 +256,9 @@ namespace Amazon.ECS.Model
         /// 5 and 300 seconds. The default value is 30 seconds.
         /// </para>
         /// </summary>
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -275,9 +275,9 @@ namespace Amazon.ECS.Model
         /// unhealthy. You may specify between 1 and 10 retries. The default value is 3.
         /// </para>
         /// </summary>
-        public int Retries
+        public int? Retries
         {
-            get { return this._retries.GetValueOrDefault(); }
+            get { return this._retries; }
             set { this._retries = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int StartPeriod
+        public int? StartPeriod
         {
-            get { return this._startPeriod.GetValueOrDefault(); }
+            get { return this._startPeriod; }
             set { this._startPeriod = value; }
         }
 
@@ -320,9 +320,9 @@ namespace Amazon.ECS.Model
         /// a failure. You may specify between 2 and 60 seconds. The default value is 5.
         /// </para>
         /// </summary>
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

@@ -124,13 +124,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("Priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.Write(publicRequest.Priority.Value);
                 }
 
                 if(publicRequest.IsSetReplace())
                 {
                     context.Writer.WritePropertyName("Replace");
-                    context.Writer.Write(publicRequest.Replace);
+                    context.Writer.Write(publicRequest.Replace.Value);
                 }
 
                 if(publicRequest.IsSetServiceRoleArn())

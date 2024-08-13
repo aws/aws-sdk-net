@@ -64,9 +64,9 @@ namespace Amazon.Kendra.Model
         /// A count of the number of rows in the original table within the document.
         /// </para>
         /// </summary>
-        public int TotalNumberOfRows
+        public int? TotalNumberOfRows
         {
-            get { return this._totalNumberOfRows.GetValueOrDefault(); }
+            get { return this._totalNumberOfRows; }
             set { this._totalNumberOfRows = value; }
         }
 

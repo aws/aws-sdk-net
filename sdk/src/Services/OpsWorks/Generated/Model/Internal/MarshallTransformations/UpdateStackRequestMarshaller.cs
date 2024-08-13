@@ -191,13 +191,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseCustomCookbooks())
                 {
                     context.Writer.WritePropertyName("UseCustomCookbooks");
-                    context.Writer.Write(publicRequest.UseCustomCookbooks);
+                    context.Writer.Write(publicRequest.UseCustomCookbooks.Value);
                 }
 
                 if(publicRequest.IsSetUseOpsworksSecurityGroups())
                 {
                     context.Writer.WritePropertyName("UseOpsworksSecurityGroups");
-                    context.Writer.Write(publicRequest.UseOpsworksSecurityGroups);
+                    context.Writer.Write(publicRequest.UseOpsworksSecurityGroups.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -56,9 +56,9 @@ namespace Amazon.SecurityHub.Model
         /// The new value of the allocated storage for the DB instance.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.SecurityHub.Model
         /// The new backup retention period for the DB instance.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.SecurityHub.Model
         /// The new provisioned IOPS value for the DB instance.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.SecurityHub.Model
         /// Zone deployment.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.SecurityHub.Model
         /// The new port for the DB instance.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

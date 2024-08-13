@@ -84,9 +84,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ReceiptTime
+        public DateTime? ReceiptTime
         {
-            get { return this._receiptTime.GetValueOrDefault(); }
+            get { return this._receiptTime; }
             set { this._receiptTime = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableDebugLogDelivery", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableDebugLogDelivery = unmarshaller.Unmarshall(context);
                     continue;
                 }

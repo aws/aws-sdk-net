@@ -58,7 +58,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("BypassGovernanceRetention", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.BypassGovernanceRetention = unmarshaller.Unmarshall(context);
                         continue;
                     }

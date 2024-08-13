@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPointInTimeRecoveryEnabled())
             {
                 context.Writer.WritePropertyName("PointInTimeRecoveryEnabled");
-                context.Writer.Write(requestObject.PointInTimeRecoveryEnabled);
+                context.Writer.Write(requestObject.PointInTimeRecoveryEnabled.Value);
             }
 
         }

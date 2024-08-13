@@ -70,7 +70,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 if(publicRequest.IsSetEndTimestamp())
                 {
                     context.Writer.WritePropertyName("EndTimestamp");
-                    context.Writer.Write(publicRequest.EndTimestamp);
+                    context.Writer.Write(publicRequest.EndTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetFormat())
@@ -96,7 +96,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 if(publicRequest.IsSetHeightPixels())
                 {
                     context.Writer.WritePropertyName("HeightPixels");
-                    context.Writer.Write(publicRequest.HeightPixels);
+                    context.Writer.Write(publicRequest.HeightPixels.Value);
                 }
 
                 if(publicRequest.IsSetImageSelectorType())
@@ -108,7 +108,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -120,13 +120,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 if(publicRequest.IsSetSamplingInterval())
                 {
                     context.Writer.WritePropertyName("SamplingInterval");
-                    context.Writer.Write(publicRequest.SamplingInterval);
+                    context.Writer.Write(publicRequest.SamplingInterval.Value);
                 }
 
                 if(publicRequest.IsSetStartTimestamp())
                 {
                     context.Writer.WritePropertyName("StartTimestamp");
-                    context.Writer.Write(publicRequest.StartTimestamp);
+                    context.Writer.Write(publicRequest.StartTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetStreamARN())
@@ -144,7 +144,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 if(publicRequest.IsSetWidthPixels())
                 {
                     context.Writer.WritePropertyName("WidthPixels");
-                    context.Writer.Write(publicRequest.WidthPixels);
+                    context.Writer.Write(publicRequest.WidthPixels.Value);
                 }
 
                 writer.WriteObjectEnd();

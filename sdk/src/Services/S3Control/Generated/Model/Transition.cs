@@ -47,9 +47,9 @@ namespace Amazon.S3Control.Model
         /// must be in ISO 8601 format. The time is always midnight UTC.
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.S3Control.Model
         /// storage class. The value must be a positive integer.
         /// </para>
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this._days.GetValueOrDefault(); }
+            get { return this._days; }
             set { this._days = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.GuardDuty.Model
         /// for scan entries.
         /// </para>
         /// </summary>
-        public long GreaterThan
+        public long? GreaterThan
         {
-            get { return this._greaterThan.GetValueOrDefault(); }
+            get { return this._greaterThan; }
             set { this._greaterThan = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.GuardDuty.Model
         /// for scan entries.
         /// </para>
         /// </summary>
-        public long LessThan
+        public long? LessThan
         {
-            get { return this._lessThan.GetValueOrDefault(); }
+            get { return this._lessThan; }
             set { this._lessThan = value; }
         }
 

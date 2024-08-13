@@ -54,9 +54,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int HealthyThreshold
+        public int? HealthyThreshold
         {
-            get { return this._healthyThreshold.GetValueOrDefault(); }
+            get { return this._healthyThreshold; }
             set { this._healthyThreshold = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int UnhealthyThreshold
+        public int? UnhealthyThreshold
         {
-            get { return this._unhealthyThreshold.GetValueOrDefault(); }
+            get { return this._unhealthyThreshold; }
             set { this._unhealthyThreshold = value; }
         }
 

@@ -74,7 +74,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MessageMalformed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MessageMalformed = unmarshaller.Unmarshall(context);
                     continue;
                 }

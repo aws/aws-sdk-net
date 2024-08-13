@@ -45,9 +45,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ForwardWhenQueryArgProfileIsUnknown
+        public bool? ForwardWhenQueryArgProfileIsUnknown
         {
-            get { return this._forwardWhenQueryArgProfileIsUnknown.GetValueOrDefault(); }
+            get { return this._forwardWhenQueryArgProfileIsUnknown; }
             set { this._forwardWhenQueryArgProfileIsUnknown = value; }
         }
 

@@ -64,7 +64,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ForwardWhenContentTypeIsUnknown", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ForwardWhenContentTypeIsUnknown = unmarshaller.Unmarshall(context);
                         continue;
                     }

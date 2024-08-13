@@ -52,9 +52,9 @@ namespace Amazon.FSx.Model
         /// no tags are copied from the volume, regardless of this value. 
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshots
+        public bool? CopyTagsToSnapshots
         {
-            get { return this._copyTagsToSnapshots.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshots; }
             set { this._copyTagsToSnapshots = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.FSx.Model
         /// want changes to occur. 
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024)]
-        public int RecordSizeKiB
+        public int? RecordSizeKiB
         {
-            get { return this._recordSizeKiB.GetValueOrDefault(); }
+            get { return this._recordSizeKiB; }
             set { this._recordSizeKiB = value; }
         }
 

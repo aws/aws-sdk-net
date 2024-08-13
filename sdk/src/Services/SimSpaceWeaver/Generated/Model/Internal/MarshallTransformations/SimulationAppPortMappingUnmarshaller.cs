@@ -68,13 +68,13 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Actual", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Actual = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Declared", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Declared = unmarshaller.Unmarshall(context);
                     continue;
                 }

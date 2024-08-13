@@ -68,7 +68,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("days", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Days = unmarshaller.Unmarshall(context);
                     continue;
                 }

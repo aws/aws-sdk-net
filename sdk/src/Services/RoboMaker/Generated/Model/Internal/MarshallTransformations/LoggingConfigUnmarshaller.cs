@@ -68,7 +68,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("recordAllRosTopics", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RecordAllRosTopics = unmarshaller.Unmarshall(context);
                     continue;
                 }

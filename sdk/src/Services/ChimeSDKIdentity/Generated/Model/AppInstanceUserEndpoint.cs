@@ -92,9 +92,9 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The time at which an <c>AppInstanceUserEndpoint</c> was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The time at which an <c>AppInstanceUserEndpoint</c> was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 

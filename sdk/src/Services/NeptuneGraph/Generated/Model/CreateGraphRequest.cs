@@ -51,9 +51,9 @@ namespace Amazon.NeptuneGraph.Model
         /// be deleted when deletion protection is enabled. (<c>true</c> or <c>false</c>).
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -114,10 +114,10 @@ namespace Amazon.NeptuneGraph.Model
         /// Min = 128
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=128, Max=24576)]
-        public int ProvisionedMemory
+        [AWSProperty(Required=true, Min=32, Max=24576)]
+        public int? ProvisionedMemory
         {
-            get { return this._provisionedMemory.GetValueOrDefault(); }
+            get { return this._provisionedMemory; }
             set { this._provisionedMemory = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.NeptuneGraph.Model
         /// to graphs is IAM authenticated. (<c>true</c> to enable, or <c>false</c> to disable.
         /// </para>
         /// </summary>
-        public bool PublicConnectivity
+        public bool? PublicConnectivity
         {
-            get { return this._publicConnectivity.GetValueOrDefault(); }
+            get { return this._publicConnectivity; }
             set { this._publicConnectivity = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.NeptuneGraph.Model
         ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
-        public int ReplicaCount
+        public int? ReplicaCount
         {
-            get { return this._replicaCount.GetValueOrDefault(); }
+            get { return this._replicaCount; }
             set { this._replicaCount = value; }
         }
 

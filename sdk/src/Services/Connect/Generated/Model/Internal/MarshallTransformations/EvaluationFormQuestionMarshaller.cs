@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNotApplicableEnabled())
             {
                 context.Writer.WritePropertyName("NotApplicableEnabled");
-                context.Writer.Write(requestObject.NotApplicableEnabled);
+                context.Writer.Write(requestObject.NotApplicableEnabled.Value);
             }
 
             if(requestObject.IsSetQuestionType())
@@ -92,13 +92,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("Weight");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Weight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Weight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Weight);
+                    context.Writer.Write(requestObject.Weight.Value);
                 }
             }
 

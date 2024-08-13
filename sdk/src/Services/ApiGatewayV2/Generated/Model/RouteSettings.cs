@@ -48,9 +48,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// only for WebSocket APIs.
         /// </para>
         /// </summary>
-        public bool DataTraceEnabled
+        public bool? DataTraceEnabled
         {
-            get { return this._dataTraceEnabled.GetValueOrDefault(); }
+            get { return this._dataTraceEnabled; }
             set { this._dataTraceEnabled = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// Specifies whether detailed metrics are enabled.
         /// </para>
         /// </summary>
-        public bool DetailedMetricsEnabled
+        public bool? DetailedMetricsEnabled
         {
-            get { return this._detailedMetricsEnabled.GetValueOrDefault(); }
+            get { return this._detailedMetricsEnabled; }
             set { this._detailedMetricsEnabled = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// Specifies the throttling burst limit.
         /// </para>
         /// </summary>
-        public int ThrottlingBurstLimit
+        public int? ThrottlingBurstLimit
         {
-            get { return this._throttlingBurstLimit.GetValueOrDefault(); }
+            get { return this._throttlingBurstLimit; }
             set { this._throttlingBurstLimit = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// Specifies the throttling rate limit.
         /// </para>
         /// </summary>
-        public double ThrottlingRateLimit
+        public double? ThrottlingRateLimit
         {
-            get { return this._throttlingRateLimit.GetValueOrDefault(); }
+            get { return this._throttlingRateLimit; }
             set { this._throttlingRateLimit = value; }
         }
 

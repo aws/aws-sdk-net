@@ -44,9 +44,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The expired log events.
         /// </para>
         /// </summary>
-        public int ExpiredLogEventEndIndex
+        public int? ExpiredLogEventEndIndex
         {
-            get { return this._expiredLogEventEndIndex.GetValueOrDefault(); }
+            get { return this._expiredLogEventEndIndex; }
             set { this._expiredLogEventEndIndex = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The index of the first log event that is too new. This field is inclusive.
         /// </para>
         /// </summary>
-        public int TooNewLogEventStartIndex
+        public int? TooNewLogEventStartIndex
         {
-            get { return this._tooNewLogEventStartIndex.GetValueOrDefault(); }
+            get { return this._tooNewLogEventStartIndex; }
             set { this._tooNewLogEventStartIndex = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The index of the last log event that is too old. This field is exclusive.
         /// </para>
         /// </summary>
-        public int TooOldLogEventEndIndex
+        public int? TooOldLogEventEndIndex
         {
-            get { return this._tooOldLogEventEndIndex.GetValueOrDefault(); }
+            get { return this._tooOldLogEventEndIndex; }
             set { this._tooOldLogEventEndIndex = value; }
         }
 

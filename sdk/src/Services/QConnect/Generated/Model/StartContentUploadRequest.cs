@@ -90,9 +90,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60)]
-        public int PresignedUrlTimeToLive
+        public int? PresignedUrlTimeToLive
         {
-            get { return this._presignedUrlTimeToLive.GetValueOrDefault(); }
+            get { return this._presignedUrlTimeToLive; }
             set { this._presignedUrlTimeToLive = value; }
         }
 

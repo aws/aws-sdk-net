@@ -63,9 +63,9 @@ namespace Amazon.FIS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int LogSchemaVersion
+        public int? LogSchemaVersion
         {
-            get { return this._logSchemaVersion.GetValueOrDefault(); }
+            get { return this._logSchemaVersion; }
             set { this._logSchemaVersion = value; }
         }
 

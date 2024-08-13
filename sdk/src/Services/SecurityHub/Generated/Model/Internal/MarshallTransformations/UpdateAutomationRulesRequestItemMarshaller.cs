@@ -84,7 +84,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsTerminal())
             {
                 context.Writer.WritePropertyName("IsTerminal");
-                context.Writer.Write(requestObject.IsTerminal);
+                context.Writer.Write(requestObject.IsTerminal.Value);
             }
 
             if(requestObject.IsSetRuleArn())
@@ -102,7 +102,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRuleOrder())
             {
                 context.Writer.WritePropertyName("RuleOrder");
-                context.Writer.Write(requestObject.RuleOrder);
+                context.Writer.Write(requestObject.RuleOrder.Value);
             }
 
             if(requestObject.IsSetRuleStatus())

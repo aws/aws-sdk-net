@@ -75,9 +75,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Timestamp. The timestamp of the most recent change in metadata
         /// for this flow’s source.
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

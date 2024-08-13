@@ -72,6 +72,10 @@ namespace AWSSDK.UnitTests
 
             pipeline.InvokeSync(executionContext);
 
+            // Since resource path substituation happens in the ComposeUrl method, which exists in the HttpHandler
+            // we need to call ComposeUrl here to ensure the resource path is set correctly.
+            // For an actual API call, it will always go through the HttpHandler so we need not worry about this.
+            requestContext.Request.ResourcePath = AmazonServiceClient.ComposeUrl(requestContext.Request).AbsolutePath;
             return requestContext.Request;
         }
         public class NoopPipelineHandler : IPipelineHandler

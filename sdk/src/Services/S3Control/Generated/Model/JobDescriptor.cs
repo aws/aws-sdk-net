@@ -62,9 +62,9 @@ namespace Amazon.S3Control.Model
         /// job. Confirmation is required only for jobs created through the Amazon S3 console.
         /// </para>
         /// </summary>
-        public bool ConfirmationRequired
+        public bool? ConfirmationRequired
         {
-            get { return this._confirmationRequired.GetValueOrDefault(); }
+            get { return this._confirmationRequired; }
             set { this._confirmationRequired = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.S3Control.Model
         /// A timestamp indicating when this job was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -383,9 +383,9 @@ namespace Amazon.S3Control.Model
         /// The timestamp when this job was suspended, if it has been suspended.
         /// </para>
         /// </summary>
-        public DateTime SuspendedDate
+        public DateTime? SuspendedDate
         {
-            get { return this._suspendedDate.GetValueOrDefault(); }
+            get { return this._suspendedDate; }
             set { this._suspendedDate = value; }
         }
 
@@ -402,9 +402,9 @@ namespace Amazon.S3Control.Model
         /// and time when it succeeded, failed, or was canceled.
         /// </para>
         /// </summary>
-        public DateTime TerminationDate
+        public DateTime? TerminationDate
         {
-            get { return this._terminationDate.GetValueOrDefault(); }
+            get { return this._terminationDate; }
             set { this._terminationDate = value; }
         }
 

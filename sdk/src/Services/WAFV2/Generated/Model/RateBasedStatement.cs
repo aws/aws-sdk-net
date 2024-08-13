@@ -293,9 +293,9 @@ namespace Amazon.WAFV2.Model
         /// Default: <c>300</c> (5 minutes)
         /// </para>
         /// </summary>
-        public long EvaluationWindowSec
+        public long? EvaluationWindowSec
         {
-            get { return this._evaluationWindowSec.GetValueOrDefault(); }
+            get { return this._evaluationWindowSec; }
             set { this._evaluationWindowSec = value; }
         }
 
@@ -359,9 +359,9 @@ namespace Amazon.WAFV2.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=100, Max=2000000000)]
-        public long Limit
+        public long? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

@@ -165,9 +165,9 @@ namespace Amazon.DevOpsGuru.Model
         /// is related to the anomalous behavior that generated this anomaly. 
         /// </para>
         /// </summary>
-        public double Limit
+        public double? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -288,9 +288,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The time of the anomaly's most recent update. 
         /// </para>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

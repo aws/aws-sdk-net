@@ -116,7 +116,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProbabilityThresholdAttribute", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ProbabilityThresholdAttribute = unmarshaller.Unmarshall(context);
                     continue;
                 }

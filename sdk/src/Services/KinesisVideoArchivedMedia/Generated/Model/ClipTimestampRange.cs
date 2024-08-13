@@ -56,9 +56,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTimestamp
+        public DateTime? EndTimestamp
         {
-            get { return this._endTimestamp.GetValueOrDefault(); }
+            get { return this._endTimestamp; }
             set { this._endTimestamp = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

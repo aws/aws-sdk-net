@@ -143,7 +143,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfBrokerNodes())
                 {
                     context.Writer.WritePropertyName("numberOfBrokerNodes");
-                    context.Writer.Write(publicRequest.NumberOfBrokerNodes);
+                    context.Writer.Write(publicRequest.NumberOfBrokerNodes.Value);
                 }
 
                 if(publicRequest.IsSetOpenMonitoring())

@@ -111,9 +111,9 @@ namespace Amazon.LexModelsV2.Model
         /// The value of the summary statistic for the metric that you requested.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

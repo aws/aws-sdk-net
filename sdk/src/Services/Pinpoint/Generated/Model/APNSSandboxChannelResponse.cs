@@ -109,9 +109,9 @@ namespace Amazon.Pinpoint.Model
         /// Specifies whether the APNs sandbox channel is enabled for the application.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.Pinpoint.Model
         /// (Not used) This property is retained only for backward compatibility.
         /// </para>
         /// </summary>
-        public bool HasCredential
+        public bool? HasCredential
         {
-            get { return this._hasCredential.GetValueOrDefault(); }
+            get { return this._hasCredential; }
             set { this._hasCredential = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.Pinpoint.Model
         /// property of the channel.
         /// </para>
         /// </summary>
-        public bool HasTokenKey
+        public bool? HasTokenKey
         {
-            get { return this._hasTokenKey.GetValueOrDefault(); }
+            get { return this._hasTokenKey; }
             set { this._hasTokenKey = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Pinpoint.Model
         /// Specifies whether the APNs sandbox channel is archived.
         /// </para>
         /// </summary>
-        public bool IsArchived
+        public bool? IsArchived
         {
-            get { return this._isArchived.GetValueOrDefault(); }
+            get { return this._isArchived; }
             set { this._isArchived = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.Pinpoint.Model
         /// The current version of the APNs sandbox channel.
         /// </para>
         /// </summary>
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

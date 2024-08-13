@@ -44,9 +44,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The relevant HTTP error code (400+).
         /// </para>
         /// </summary>
-        public int Code
+        public int? Code
         {
-            get { return this._code.GetValueOrDefault(); }
+            get { return this._code; }
             set { this._code = value; }
         }
 

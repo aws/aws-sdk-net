@@ -13,7 +13,7 @@ using System.Xml;
 using System.IO;
 using System.Collections;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     public class RestXmlValidator : RequestValidator<XElement>
     {

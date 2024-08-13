@@ -170,9 +170,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinProvisionedTPS
+        public int? MinProvisionedTPS
         {
-            get { return this._minProvisionedTPS.GetValueOrDefault(); }
+            get { return this._minProvisionedTPS; }
             set { this._minProvisionedTPS = value; }
         }
 

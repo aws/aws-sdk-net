@@ -68,7 +68,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("authTTL", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AuthTTL = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("iatTTL", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IatTTL = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCancellable())
             {
                 context.Writer.WritePropertyName("Cancellable");
-                context.Writer.Write(requestObject.Cancellable);
+                context.Writer.Write(requestObject.Cancellable.Value);
             }
 
             if(requestObject.IsSetCurrentVersion())
@@ -81,7 +81,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpdateAvailable())
             {
                 context.Writer.WritePropertyName("UpdateAvailable");
-                context.Writer.Write(requestObject.UpdateAvailable);
+                context.Writer.Write(requestObject.UpdateAvailable.Value);
             }
 
             if(requestObject.IsSetUpdateStatus())

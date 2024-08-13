@@ -42,9 +42,9 @@ namespace Amazon.AmplifyBackend.Model
         /// Indicates whether the request succeeded or failed.
         /// </para>
         /// </summary>
-        public bool IsSuccess
+        public bool? IsSuccess
         {
-            get { return this._isSuccess.GetValueOrDefault(); }
+            get { return this._isSuccess; }
             set { this._isSuccess = value; }
         }
 

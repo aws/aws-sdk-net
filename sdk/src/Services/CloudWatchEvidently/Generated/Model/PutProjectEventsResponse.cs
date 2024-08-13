@@ -62,9 +62,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// The number of events in the operation that could not be used by Evidently.
         /// </para>
         /// </summary>
-        public int FailedEventCount
+        public int? FailedEventCount
         {
-            get { return this._failedEventCount.GetValueOrDefault(); }
+            get { return this._failedEventCount; }
             set { this._failedEventCount = value; }
         }
 

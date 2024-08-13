@@ -51,37 +51,37 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowPrivilegeEscalation())
             {
                 context.Writer.WritePropertyName("allowPrivilegeEscalation");
-                context.Writer.Write(requestObject.AllowPrivilegeEscalation);
+                context.Writer.Write(requestObject.AllowPrivilegeEscalation.Value);
             }
 
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("privileged");
-                context.Writer.Write(requestObject.Privileged);
+                context.Writer.Write(requestObject.Privileged.Value);
             }
 
             if(requestObject.IsSetReadOnlyRootFilesystem())
             {
                 context.Writer.WritePropertyName("readOnlyRootFilesystem");
-                context.Writer.Write(requestObject.ReadOnlyRootFilesystem);
+                context.Writer.Write(requestObject.ReadOnlyRootFilesystem.Value);
             }
 
             if(requestObject.IsSetRunAsGroup())
             {
                 context.Writer.WritePropertyName("runAsGroup");
-                context.Writer.Write(requestObject.RunAsGroup);
+                context.Writer.Write(requestObject.RunAsGroup.Value);
             }
 
             if(requestObject.IsSetRunAsNonRoot())
             {
                 context.Writer.WritePropertyName("runAsNonRoot");
-                context.Writer.Write(requestObject.RunAsNonRoot);
+                context.Writer.Write(requestObject.RunAsNonRoot.Value);
             }
 
             if(requestObject.IsSetRunAsUser())
             {
                 context.Writer.WritePropertyName("runAsUser");
-                context.Writer.Write(requestObject.RunAsUser);
+                context.Writer.Write(requestObject.RunAsUser.Value);
             }
 
         }

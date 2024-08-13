@@ -76,9 +76,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index document attachments.
         /// </para>
         /// </summary>
-        public bool CrawlAttachments
+        public bool? CrawlAttachments
         {
-            get { return this._crawlAttachments.GetValueOrDefault(); }
+            get { return this._crawlAttachments; }
             set { this._crawlAttachments = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to disable local groups information.
         /// </para>
         /// </summary>
-        public bool DisableLocalGroups
+        public bool? DisableLocalGroups
         {
-            get { return this._disableLocalGroups.GetValueOrDefault(); }
+            get { return this._disableLocalGroups; }
             set { this._disableLocalGroups = value; }
         }
 
@@ -336,9 +336,9 @@ namespace Amazon.Kendra.Model
         /// Amazon Kendra to use the change log than to scan all of your documents in SharePoint.
         /// </para>
         /// </summary>
-        public bool UseChangeLog
+        public bool? UseChangeLog
         {
-            get { return this._useChangeLog.GetValueOrDefault(); }
+            get { return this._useChangeLog; }
             set { this._useChangeLog = value; }
         }
 

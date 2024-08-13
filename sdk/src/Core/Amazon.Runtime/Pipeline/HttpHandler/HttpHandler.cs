@@ -16,6 +16,9 @@
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
@@ -68,6 +71,8 @@ namespace Amazon.Runtime.Internal
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
 
                 using (executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
+                using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.HTTPRequestSpanName))
+                using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallAttemptDurationMetricName))
                 {
                     // Send request body if present.
                     if (wrappedRequest.HasRequestBody())
@@ -77,14 +82,16 @@ namespace Amazon.Runtime.Internal
                             var requestContent = httpRequest.GetRequestContent();
                             WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             CompleteFailedRequest(httpRequest);
+                            traceSpan.CaptureException(ex);
                             throw;
                         }
                     }
 
                     executionContext.ResponseContext.HttpResponse = httpRequest.GetResponse();
+                    RecordHttpTelemetryData(executionContext, traceSpan, wrappedRequest);
                 }
             }
             finally
@@ -110,11 +117,7 @@ namespace Amazon.Runtime.Internal
                 {
                     if (webException.Response != null)
                     {
-#if BCL35
-                        webException.Response.Close();
-#else
                         webException.Response.Dispose();
-#endif
                     }
                 }
                 catch (HttpErrorResponseException httpErrorResponse)
@@ -130,9 +133,42 @@ namespace Amazon.Runtime.Internal
             }
             catch { }
         }
+
+        private static void RecordHttpTelemetryData(IExecutionContext executionContext, TraceSpan traceSpan, IRequest request)
+        {
+            var response = executionContext.ResponseContext.HttpResponse;
+
+            var metricsAttributes = new Attributes();
+            metricsAttributes.Set(TelemetryConstants.ServerAddressAttributeKey, $"{request.Endpoint.Host}:{request.Endpoint.Port.ToString()}");
+
+            traceSpan.SetAttribute(TelemetryConstants.HTTPMethodAttributeKey, request.HttpMethod);
+            traceSpan.SetAttribute(TelemetryConstants.HTTPStatusCodeAttributeKey, ((int)response.StatusCode));
+
+            var contentLengthHeader = request.GetHeaderValue(HeaderKeys.ContentLengthHeader);
+            if (long.TryParse(contentLengthHeader, out var contentLength) && contentLength > 0)
+            {
+                traceSpan.SetAttribute(TelemetryConstants.HTTPRequestContentLengthAttributeKey, contentLength);
+
+                MetricsUtilities.AddMonotonicCounterValue(executionContext.RequestContext,
+                    TelemetryConstants.HTTPBytesSentMetricName,
+                    TelemetryConstants.BytesUnitName,
+                    contentLength,
+                    metricsAttributes);
+            }
+
+            if (response.ContentLength > 0)
+            {
+                MetricsUtilities.AddMonotonicCounterValue(executionContext.RequestContext,
+                    TelemetryConstants.HTTPBytesReceivedMetricName,
+                    TelemetryConstants.BytesUnitName,
+                    response.ContentLength,
+                    metricsAttributes);
+            }
+
+            traceSpan.SetAttribute(TelemetryConstants.HTTPResponseContentLengthAttributeKey, response.ContentLength);
+        }
 		
 #if AWS_ASYNC_API 
-
         /// <summary>
         /// Issues an HTTP request for the current request context.
         /// </summary>
@@ -150,7 +186,9 @@ namespace Amazon.Runtime.Internal
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
                 
-                using(executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
+                using (executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
+                using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.HTTPRequestSpanName))
+                using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallAttemptDurationMetricName))
                 {
                     // Send request body if present.
                     if (wrappedRequest.HasRequestBody())
@@ -161,7 +199,7 @@ namespace Amazon.Runtime.Internal
                             // In .NET Framework, there needs to be a cancellation token in this method since GetRequestStreamAsync
                             // does not accept a cancellation token. A workaround is used. This isn't necessary in .NET Standard
                             // where the stream is a property of the request.
-#if BCL45
+#if BCL
                             var requestContent = await httpRequest.GetRequestContentAsync(executionContext.RequestContext.CancellationToken).ConfigureAwait(false);
                             await WriteContentToRequestBodyAsync(requestContent, httpRequest, executionContext.RequestContext).ConfigureAwait(false);
 #else
@@ -169,8 +207,9 @@ namespace Amazon.Runtime.Internal
                             WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
 #endif
                         }
-                        catch(Exception e)
+                        catch (Exception e)
                         {
+                            traceSpan.CaptureException(e);
                             edi = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
                         }
 
@@ -185,6 +224,7 @@ namespace Amazon.Runtime.Internal
                     var response = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).
                         ConfigureAwait(false);
                     executionContext.ResponseContext.HttpResponse = response;
+                    RecordHttpTelemetryData(executionContext, traceSpan, wrappedRequest);
                 }
                 // The response is not unmarshalled yet.
                 return null;
@@ -213,151 +253,6 @@ namespace Amazon.Runtime.Internal
                     iwrd.ResponseBody.Dispose();
             }
         }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Issues an HTTP request for the current request context.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            IHttpRequest<TRequestContent> httpRequest = null;
-            try
-            {
-                SetMetrics(executionContext.RequestContext);
-                httpRequest = CreateWebRequest(executionContext.RequestContext);
-                executionContext.RuntimeState = httpRequest;
-
-                IRequest wrappedRequest = executionContext.RequestContext.Request;
-                if (executionContext.RequestContext.Retries == 0)
-                {
-                    // First call, initialize an async result.
-                    executionContext.ResponseContext.AsyncResult =
-                        new RuntimeAsyncResult(executionContext.RequestContext.Callback, 
-                            executionContext.RequestContext.State);
-                }
-
-                // Set request headers
-                httpRequest.SetRequestHeaders(executionContext.RequestContext.Request.Headers);
-
-                executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime);
-                if (wrappedRequest.HasRequestBody())
-                {
-                    // Send request body if present.
-                    httpRequest.BeginGetRequestContent(new AsyncCallback(GetRequestStreamCallback), executionContext);
-                }
-                else
-                {
-                    
-                    // Get response if there is no response body to send.
-                    httpRequest.BeginGetResponse(new AsyncCallback(GetResponseCallback), executionContext);
-                }
-                return executionContext.ResponseContext.AsyncResult;
-            }
-            catch (Exception exception)
-            {
-                if (executionContext.ResponseContext.AsyncResult != null)
-                {
-                    // An exception will be thrown back to the calling code.
-                    // Dispose AsyncResult as it will not be used further.
-                    executionContext.ResponseContext.AsyncResult.Dispose();
-                    executionContext.ResponseContext.AsyncResult = null;
-                }
-
-                if (httpRequest != null)
-                {
-                    httpRequest.Dispose();
-                }
-
-                // Log this exception as it will not be caught by ErrorHandler.
-                this.Logger.Error(exception, "An exception occured while initiating an asynchronous HTTP request.");
-                throw;
-            }
-        }
-
-        private void GetRequestStreamCallback(IAsyncResult result)
-        {
-            if (result.CompletedSynchronously)
-            {
-                System.Threading.ThreadPool.QueueUserWorkItem(GetRequestStreamCallbackHelper, result);
-            }
-            else
-            {
-                GetRequestStreamCallbackHelper(result);
-            }
-        }
-
-        private void GetRequestStreamCallbackHelper(object state)
-        {
-            IAsyncResult result = state as IAsyncResult;
-
-            IAsyncExecutionContext executionContext = null;
-            IHttpRequest<TRequestContent> httpRequest = null;
-            try
-            {
-                executionContext = result.AsyncState as IAsyncExecutionContext;
-                httpRequest = executionContext.RuntimeState as IHttpRequest<TRequestContent>;
-
-                var requestContent = httpRequest.EndGetRequestContent(result);
-                WriteContentToRequestBody(requestContent, httpRequest, executionContext.RequestContext);
-                //var requestStream = httpRequest.EndSetRequestBody(result);    
-                httpRequest.BeginGetResponse(new AsyncCallback(GetResponseCallback), executionContext);
-            }
-            catch (Exception exception)
-            {
-                httpRequest.Dispose();
-
-                // Capture the exception and invoke outer handlers to 
-                // process the exception.
-                executionContext.ResponseContext.AsyncResult.Exception = exception;
-                base.InvokeAsyncCallback(executionContext);
-            }
-        }
-
-        private void GetResponseCallback(IAsyncResult result)
-        {
-            if (result.CompletedSynchronously)
-            {
-                System.Threading.ThreadPool.QueueUserWorkItem(GetResponseCallbackHelper, result);
-            }
-            else
-            {
-                GetResponseCallbackHelper(result);
-            }
-        }
-
-        private void GetResponseCallbackHelper(object state)
-        {
-            IAsyncResult result = state as IAsyncResult;
-
-            IAsyncExecutionContext executionContext = null;
-            IHttpRequest<TRequestContent> httpRequest = null;
-            try
-            {
-                executionContext = result.AsyncState as IAsyncExecutionContext;
-                httpRequest = executionContext.RuntimeState as IHttpRequest<TRequestContent>;
-
-                var httpResponse = httpRequest.EndGetResponse(result);
-                executionContext.ResponseContext.HttpResponse = httpResponse;
-            }
-            catch (Exception exception)
-            {
-                // Capture the exception and invoke outer handlers to 
-                // process the exception.
-                executionContext.ResponseContext.AsyncResult.Exception = exception;
-            }
-            finally
-            {
-                executionContext.RequestContext.Metrics.StopEvent(Metric.HttpRequestTime);
-                httpRequest.Dispose();
-                base.InvokeAsyncCallback(executionContext);
-            }
-
-        }
-
 #endif
 
         private static void SetMetrics(IRequestContext requestContext)
@@ -413,7 +308,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if BCL45
+#if BCL
         /// <summary>
         /// Determines the content for request body and uses the HTTP request
         /// to write the content to the HTTP request body.

@@ -93,9 +93,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool VisibleToAllUsers
+        public bool? VisibleToAllUsers
         {
-            get { return this._visibleToAllUsers.GetValueOrDefault(); }
+            get { return this._visibleToAllUsers; }
             set { this._visibleToAllUsers = value; }
         }
 

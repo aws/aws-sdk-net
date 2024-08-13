@@ -76,19 +76,19 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAssociateDefaultSecurityGroup())
                 {
                     context.Writer.WritePropertyName("associateDefaultSecurityGroup");
-                    context.Writer.Write(publicRequest.AssociateDefaultSecurityGroup);
+                    context.Writer.Write(publicRequest.AssociateDefaultSecurityGroup.Value);
                 }
 
                 if(publicRequest.IsSetBandwidthThrottling())
                 {
                     context.Writer.WritePropertyName("bandwidthThrottling");
-                    context.Writer.Write(publicRequest.BandwidthThrottling);
+                    context.Writer.Write(publicRequest.BandwidthThrottling.Value);
                 }
 
                 if(publicRequest.IsSetCreatePublicIP())
                 {
                     context.Writer.WritePropertyName("createPublicIP");
-                    context.Writer.Write(publicRequest.CreatePublicIP);
+                    context.Writer.Write(publicRequest.CreatePublicIP.Value);
                 }
 
                 if(publicRequest.IsSetDataPlaneRouting())
@@ -161,13 +161,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseDedicatedReplicationServer())
                 {
                     context.Writer.WritePropertyName("useDedicatedReplicationServer");
-                    context.Writer.Write(publicRequest.UseDedicatedReplicationServer);
+                    context.Writer.Write(publicRequest.UseDedicatedReplicationServer.Value);
                 }
 
                 if(publicRequest.IsSetUseFipsEndpoint())
                 {
                     context.Writer.WritePropertyName("useFipsEndpoint");
-                    context.Writer.Write(publicRequest.UseFipsEndpoint);
+                    context.Writer.Write(publicRequest.UseFipsEndpoint.Value);
                 }
 
                 writer.WriteObjectEnd();

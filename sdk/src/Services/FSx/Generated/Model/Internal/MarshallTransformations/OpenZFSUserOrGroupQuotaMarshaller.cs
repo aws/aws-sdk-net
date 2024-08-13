@@ -51,13 +51,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.Write(requestObject.Id.Value);
             }
 
             if(requestObject.IsSetStorageCapacityQuotaGiB())
             {
                 context.Writer.WritePropertyName("StorageCapacityQuotaGiB");
-                context.Writer.Write(requestObject.StorageCapacityQuotaGiB);
+                context.Writer.Write(requestObject.StorageCapacityQuotaGiB.Value);
             }
 
             if(requestObject.IsSetType())

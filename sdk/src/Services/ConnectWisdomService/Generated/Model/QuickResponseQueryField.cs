@@ -69,9 +69,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// of the query will only include exact matches if this parameter is set to false.
         /// </para>
         /// </summary>
-        public bool AllowFuzziness
+        public bool? AllowFuzziness
         {
-            get { return this._allowFuzziness.GetValueOrDefault(); }
+            get { return this._allowFuzziness; }
             set { this._allowFuzziness = value; }
         }
 

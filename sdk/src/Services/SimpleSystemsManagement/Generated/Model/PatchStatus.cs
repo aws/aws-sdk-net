@@ -44,9 +44,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the patch was approved (or will be approved if the status is <c>PENDING_APPROVAL</c>).
         /// </para>
         /// </summary>
-        public DateTime ApprovalDate
+        public DateTime? ApprovalDate
         {
-            get { return this._approvalDate.GetValueOrDefault(); }
+            get { return this._approvalDate; }
             set { this._approvalDate = value; }
         }
 

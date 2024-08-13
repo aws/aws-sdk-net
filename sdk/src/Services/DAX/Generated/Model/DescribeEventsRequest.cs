@@ -57,9 +57,9 @@ namespace Amazon.DAX.Model
         /// The number of minutes' worth of events to retrieve.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.DAX.Model
         /// The end of the time interval for which to retrieve events, specified in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.DAX.Model
         /// The value for <c>MaxResults</c> must be between 20 and 100.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.DAX.Model
         /// The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

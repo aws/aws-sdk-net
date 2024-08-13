@@ -85,9 +85,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the schema extension was completed.
         /// </para>
         /// </summary>
-        public DateTime EndDateTime
+        public DateTime? EndDateTime
         {
-            get { return this._endDateTime.GetValueOrDefault(); }
+            get { return this._endDateTime; }
             set { this._endDateTime = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the schema extension started being applied to the directory.
         /// </para>
         /// </summary>
-        public DateTime StartDateTime
+        public DateTime? StartDateTime
         {
-            get { return this._startDateTime.GetValueOrDefault(); }
+            get { return this._startDateTime; }
             set { this._startDateTime = value; }
         }
 

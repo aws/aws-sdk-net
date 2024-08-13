@@ -40,6 +40,7 @@ namespace Amazon.Bedrock.Model
         private CustomizationType _customizationType;
         private string _modelArn;
         private string _modelName;
+        private string _ownerAccountId;
 
         /// <summary>
         /// Gets and sets the property BaseModelArn. 
@@ -86,9 +87,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -154,6 +155,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetModelName()
         {
             return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The unique identifier of the account that owns the model.
+        /// </para>
+        /// </summary>
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
         }
 
     }

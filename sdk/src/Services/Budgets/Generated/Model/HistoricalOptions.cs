@@ -64,9 +64,9 @@ namespace Amazon.Budgets.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]
-        public int BudgetAdjustmentPeriod
+        public int? BudgetAdjustmentPeriod
         {
-            get { return this._budgetAdjustmentPeriod.GetValueOrDefault(); }
+            get { return this._budgetAdjustmentPeriod; }
             set { this._budgetAdjustmentPeriod = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.Budgets.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60)]
-        public int LookBackAvailablePeriods
+        public int? LookBackAvailablePeriods
         {
-            get { return this._lookBackAvailablePeriods.GetValueOrDefault(); }
+            get { return this._lookBackAvailablePeriods; }
             set { this._lookBackAvailablePeriods = value; }
         }
 

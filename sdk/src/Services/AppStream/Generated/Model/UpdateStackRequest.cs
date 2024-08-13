@@ -114,9 +114,9 @@ namespace Amazon.AppStream.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
-        public bool DeleteStorageConnectors
+        public bool? DeleteStorageConnectors
         {
-            get { return this._deleteStorageConnectors.GetValueOrDefault(); }
+            get { return this._deleteStorageConnectors; }
             set { this._deleteStorageConnectors = value; }
         }
 

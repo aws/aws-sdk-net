@@ -82,13 +82,12 @@ namespace ServiceClientGenerator
         private readonly HashSet<string> _processedUnmarshallers = new HashSet<string>();
         private readonly HashSet<string> _processedMarshallers = new HashSet<string>();
 
-        private const string Bcl35SubFolder = "_bcl35";
-        private const string Bcl45SubFolder = "_bcl45";
+        private const string BclSubFolder = "_bcl";
         private const string NetStandardSubFolder = "_netstandard";
-        private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.AltDirectorySeparatorChar);
+        private string PaginatorsSubFolder = string.Format("Model{0}_bcl+netstandard", Path.AltDirectorySeparatorChar);
         private string GeneratedTestsSubFolder = string.Format("UnitTests{0}Generated", Path.AltDirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.AltDirectorySeparatorChar);
-        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl45+netstandard{0}Paginators", Path.AltDirectorySeparatorChar);
+        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl+netstandard{0}Paginators", Path.AltDirectorySeparatorChar);
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
@@ -154,13 +153,9 @@ namespace ServiceClientGenerator
                 Directory.CreateDirectory(GeneratedFilesRoot);
             }
 
-            // .NET Framework 3.5 version
-            ExecuteGenerator(new ServiceClients(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl35SubFolder);
-            ExecuteGenerator(new ServiceInterface(), "IAmazon" + Configuration.ClassName + ".cs", Bcl35SubFolder);
-
-            // .NET Framework 4.5 version
-            ExecuteGenerator(new ServiceClients45(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl45SubFolder);
-            ExecuteGenerator(new ServiceInterface45(), "IAmazon" + Configuration.ClassName + ".cs", Bcl45SubFolder);
+            // .NET Framework version
+            ExecuteGenerator(new ServiceClientsNetFramework(), "Amazon" + Configuration.ClassName + "Client.cs", BclSubFolder);
+            ExecuteGenerator(new ServiceInterfaceNetFramework(), "IAmazon" + Configuration.ClassName + ".cs", BclSubFolder);
 
             // .NET Standard version
             ExecuteGenerator(new ServiceClientsNetStandard(), "Amazon" + Configuration.ClassName + "Client.cs", NetStandardSubFolder);
@@ -214,7 +209,7 @@ namespace ServiceClientGenerator
 
             // Any enumerations for the service
             this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
-#if !BCL35
+          
             // Any paginators for the service
             if (Configuration.ServiceModel.HasPaginators)
             {
@@ -230,7 +225,7 @@ namespace ServiceClientGenerator
                 if (Configuration.IsTestService)
                     GeneratePaginatorTests();
             }
-#endif
+      
             // Do not generate base exception if this is a child model.
             // We use the base exceptions generated for the parent model.
             if (!this.Configuration.IsChildConfig)
@@ -1164,7 +1159,7 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Runs the generator and saves the content into _bcl35 directory under the generated files root.
+        /// Runs the generator and saves the content into the generated files root.
         /// </summary>
         /// <param name="generator">The generator to use for outputting the text of the cs file</param>
         /// <param name="fileName">The name of the cs file</param>
@@ -1423,17 +1418,17 @@ namespace ServiceClientGenerator
             command.Execute(CodeAnalysisRoot, this.Configuration);
         }
 
-        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, HashSet<string> generatedTestFolders, string sdkRootFolder)
+        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, HashSet<string> generatedTestFiles, string sdkRootFolder)
         {
             var codeGeneratedServiceList = codeGeneratedServiceNames.Distinct();
 
             // Cleanup services within the main sdk/services folder
             var srcFolder = Utils.PathCombineAlt(sdkRootFolder, SourceSubFoldername, ServicesSubFoldername);
-            RemoveOrphanedShapes(generatedFiles, null, srcFolder);
+            RemoveOrphanedShapes(generatedFiles, srcFolder);
 
-            // Cleanup services within the sdk/test folder where it is a generated test service
+            // Cleanup services within the sdk/test/services folder where it is a generated test service
             var testSrcFolder = Utils.PathCombineAlt(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername);
-            RemoveOrphanedShapes(generatedFiles, generatedTestFolders, testSrcFolder);
+            RemoveOrphanedShapes(generatedFiles, generatedTestFiles, testSrcFolder);
                         
             // Cleanup orphaned Service src artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(srcFolder, codeGeneratedServiceList);
@@ -1442,18 +1437,52 @@ namespace ServiceClientGenerator
             // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
         }
-        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, HashSet<string> generatedTestFolders, string srcFolder)
+
+        /// <summary>
+        /// Removes orphaned */generated/* files from specified srcFolder. This can be encountered when a model 
+        /// removes an operation or shape and the sub shapes are no longer needed. The file will be deleted if
+        /// the file contains */generated/* as part of the path and is not a file from a current run generated 
+        /// service (generatedFiles).
+        /// </summary>
+        /// <param name="generatedFiles">Lookup of all files that have been generated.</param>
+        /// <param name="srcFolder">The path to the sdk/services folder containing generated services and manual source code.</param>
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder)
         {
-            // Remove orphaned shapes. Most likely due to taking in a model that was still under development.
             foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
             {
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
                 if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
                     continue;
 
-                if (!generatedFiles.Contains(fullPath) && generatedTestFolders?.Contains(fullPath) == false)
+                if (!generatedFiles.Contains(fullPath))
                 {
                     Console.Error.WriteLine("**** Warning: Removing orphaned generated code " + Path.GetFileName(file));
+                    File.Delete(file);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Removes orphaned */generated/* files from specified srcFolder. This can be encountered when a test service model 
+        /// removes an operation or shape and the sub shapes are no longer needed. Special care must be taken within the 
+        /// sdk/test/services folder because there is a mix of generated tests and test services. The file will be deleted if
+        /// the file contains */generated/* as part of the path, is not a file from a current run generated test service (generatedFiles),
+        /// and is not a file from a current run generated test (generatedTestFiles).
+        /// </summary>
+        /// <param name="generatedFiles">Lookup of all files that have been generated.</param>
+        /// <param name="generatedTestFiles">Lookup of all the generated test files.</param>
+        /// <param name="srcFolder">The path to the sdk/test/services folder containing generated tests and test services.</param>
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, HashSet<string> generatedTestFiles, string srcFolder)
+        {
+            foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories).OrderBy(f => f))
+            {
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
+                if (fullPath.IndexOf($"/{GeneratedCodeFoldername}/", StringComparison.OrdinalIgnoreCase) < 0)
+                    continue;
+
+                if (!generatedFiles.Contains(fullPath) && !generatedTestFiles.Contains(fullPath))
+                {
+                    Console.Error.WriteLine("**** Warning: Removing orphaned generated test code " + Path.GetFileName(file));
                     File.Delete(file);
                 }
             }
@@ -1466,6 +1495,55 @@ namespace ServiceClientGenerator
                 if (!codeGeneratedServiceList.Contains(new DirectoryInfo(directoryName).Name))
                 {
                     Directory.Delete(directoryName, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Removes project files (*.csproj) and folders that are not needed in the next version of the SDK:
+        /// </summary>
+        public static void RemoveLegacyFiles(string sdkRootFolder)
+        {
+            // TODO: Remove this method once net35 and net45 are removed from the SDK.
+            var legacyProjectSuffixes = new HashSet<string>
+            {
+                "Net35.csproj",
+                "Net45.csproj"
+            };
+
+            var legacyFolderNames = new HashSet<string>
+            {
+                "_bcl35",
+                Utils.PathCombineAlt("Generated", "_bcl45"),
+                Utils.PathCombineAlt("Generated", "_bcl45+netstandard"),
+                Utils.PathCombineAlt("Generated", "Model", "_bcl45+netstandard"),
+                Utils.PathCombineAlt("Config", "35"),
+                Utils.PathCombineAlt("Config", "45")
+            };
+
+            var allProjectFiles = Directory.GetFiles(sdkRootFolder, "*.csproj", SearchOption.AllDirectories).OrderBy(f => f);
+            foreach (var file in allProjectFiles)
+            {
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
+                var shouldDelete = legacyProjectSuffixes.Any(x => fullPath.EndsWith(x));
+
+                if (shouldDelete && File.Exists(file))
+                {
+                    Console.Error.WriteLine("**** Warning: Removing obsolete csproj file " + Path.GetFileName(file));
+                    File.Delete(file);
+                }
+            }
+
+            var allFolders = Directory.EnumerateDirectories(sdkRootFolder, "*", SearchOption.AllDirectories).OrderBy(d => d);
+            foreach (var folder in allFolders)
+            {
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(folder));
+                var shouldDelete = legacyFolderNames.Any(x => fullPath.Contains(x));
+
+                if (shouldDelete && Directory.Exists(folder))
+                {
+                    Console.Error.WriteLine("**** Warning: Removing obsolete folder " + fullPath);
+                    Directory.Delete(folder, recursive: true);
                 }
             }
         }
@@ -1501,6 +1579,10 @@ namespace ServiceClientGenerator
 
             foreach (JsonData partition in endpointsJson["partitions"])
             {
+                var partitionName = partition["partition"].ToString();
+                var partitionDnsSuffix = partition["dnsSuffix"].ToString();
+                var hostnameTemplate = partition["defaults"]["hostname"].ToString();
+                var partitionRegionRegex = partition["regionRegex"].ToString();
                 JsonData regions = partition["regions"];
                 foreach (var regionCode in regions.PropertyNames)
                 {
@@ -1510,7 +1592,11 @@ namespace ServiceClientGenerator
                         Name = nameConverter(regionCode),
                         RegionCode = regionCode,
                         ConvertedRegionCode = codeConverter == null ? regionCode : codeConverter(regionCode),
-                        RegionName = regionName
+                        RegionName = regionName,
+                        PartitionName = partitionName,
+                        PartitionDnsSuffix = partitionDnsSuffix,
+                        PartitionRegionRegex = partitionRegionRegex,
+                        HostnameTemplate = hostnameTemplate,
                     });
                 }
             }

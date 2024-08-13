@@ -68,19 +68,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AccuracyCostTradeoff", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AccuracyCostTradeoff = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnforceProvidedLabels", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnforceProvidedLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PrecisionRecallTradeoff", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PrecisionRecallTradeoff = unmarshaller.Unmarshall(context);
                     continue;
                 }

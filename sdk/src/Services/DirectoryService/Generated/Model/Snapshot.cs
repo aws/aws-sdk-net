@@ -102,9 +102,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the snapshot was taken.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

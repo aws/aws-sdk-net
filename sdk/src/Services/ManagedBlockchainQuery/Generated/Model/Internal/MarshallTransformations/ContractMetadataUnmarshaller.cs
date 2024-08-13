@@ -68,7 +68,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("decimals", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Decimals = unmarshaller.Unmarshall(context);
                     continue;
                 }

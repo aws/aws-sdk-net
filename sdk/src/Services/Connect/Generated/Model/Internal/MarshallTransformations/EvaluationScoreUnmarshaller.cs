@@ -68,19 +68,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutomaticFail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutomaticFail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotApplicable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotApplicable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Percentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Percentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

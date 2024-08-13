@@ -42,9 +42,9 @@ namespace Amazon.Bedrock.Model
         /// Loss metric associated with the custom job.
         /// </para>
         /// </summary>
-        public float TrainingLoss
+        public float? TrainingLoss
         {
-            get { return this._trainingLoss.GetValueOrDefault(); }
+            get { return this._trainingLoss; }
             set { this._trainingLoss = value; }
         }
 

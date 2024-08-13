@@ -82,7 +82,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpires())
                 {
                     context.Writer.WritePropertyName("expires");
-                    context.Writer.Write(publicRequest.Expires);
+                    context.Writer.Write(publicRequest.Expires.Value);
                 }
 
                 writer.WriteObjectEnd();

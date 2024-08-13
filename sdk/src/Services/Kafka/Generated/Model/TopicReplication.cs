@@ -48,9 +48,9 @@ namespace Amazon.Kafka.Model
         /// topics.
         /// </para>
         /// </summary>
-        public bool CopyAccessControlListsForTopics
+        public bool? CopyAccessControlListsForTopics
         {
-            get { return this._copyAccessControlListsForTopics.GetValueOrDefault(); }
+            get { return this._copyAccessControlListsForTopics; }
             set { this._copyAccessControlListsForTopics = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.Kafka.Model
         /// topics.
         /// </para>
         /// </summary>
-        public bool CopyTopicConfigurations
+        public bool? CopyTopicConfigurations
         {
-            get { return this._copyTopicConfigurations.GetValueOrDefault(); }
+            get { return this._copyTopicConfigurations; }
             set { this._copyTopicConfigurations = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Kafka.Model
         /// Whether to periodically check for new topics and partitions.
         /// </para>
         /// </summary>
-        public bool DetectAndCopyNewTopics
+        public bool? DetectAndCopyNewTopics
         {
-            get { return this._detectAndCopyNewTopics.GetValueOrDefault(); }
+            get { return this._detectAndCopyNewTopics; }
             set { this._detectAndCopyNewTopics = value; }
         }
 

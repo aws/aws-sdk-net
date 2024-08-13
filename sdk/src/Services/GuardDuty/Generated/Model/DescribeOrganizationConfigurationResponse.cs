@@ -53,9 +53,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use AutoEnableOrganizationMembers instead")]
-        public bool AutoEnable
+        public bool? AutoEnable
         {
-            get { return this._autoEnable.GetValueOrDefault(); }
+            get { return this._autoEnable; }
             set { this._autoEnable = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool MemberAccountLimitReached
+        public bool? MemberAccountLimitReached
         {
-            get { return this._memberAccountLimitReached.GetValueOrDefault(); }
+            get { return this._memberAccountLimitReached; }
             set { this._memberAccountLimitReached = value; }
         }
 

@@ -66,7 +66,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isAlreadyVerified", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsAlreadyVerified = unmarshaller.Unmarshall(context);
                     continue;
                 }

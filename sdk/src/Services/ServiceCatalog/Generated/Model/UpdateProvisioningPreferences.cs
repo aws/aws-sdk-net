@@ -99,9 +99,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int StackSetFailureToleranceCount
+        public int? StackSetFailureToleranceCount
         {
-            get { return this._stackSetFailureToleranceCount.GetValueOrDefault(); }
+            get { return this._stackSetFailureToleranceCount; }
             set { this._stackSetFailureToleranceCount = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int StackSetFailureTolerancePercentage
+        public int? StackSetFailureTolerancePercentage
         {
-            get { return this._stackSetFailureTolerancePercentage.GetValueOrDefault(); }
+            get { return this._stackSetFailureTolerancePercentage; }
             set { this._stackSetFailureTolerancePercentage = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int StackSetMaxConcurrencyCount
+        public int? StackSetMaxConcurrencyCount
         {
-            get { return this._stackSetMaxConcurrencyCount.GetValueOrDefault(); }
+            get { return this._stackSetMaxConcurrencyCount; }
             set { this._stackSetMaxConcurrencyCount = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int StackSetMaxConcurrencyPercentage
+        public int? StackSetMaxConcurrencyPercentage
         {
-            get { return this._stackSetMaxConcurrencyPercentage.GetValueOrDefault(); }
+            get { return this._stackSetMaxConcurrencyPercentage; }
             set { this._stackSetMaxConcurrencyPercentage = value; }
         }
 

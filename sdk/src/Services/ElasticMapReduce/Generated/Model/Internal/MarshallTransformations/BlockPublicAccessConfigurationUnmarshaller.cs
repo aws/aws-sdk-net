@@ -68,7 +68,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BlockPublicSecurityGroupRules", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BlockPublicSecurityGroupRules = unmarshaller.Unmarshall(context);
                     continue;
                 }

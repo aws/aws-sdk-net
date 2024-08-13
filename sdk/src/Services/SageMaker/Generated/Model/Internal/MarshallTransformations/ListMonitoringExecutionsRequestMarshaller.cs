@@ -72,13 +72,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreationTimeAfter())
                 {
                     context.Writer.WritePropertyName("CreationTimeAfter");
-                    context.Writer.Write(publicRequest.CreationTimeAfter);
+                    context.Writer.Write(publicRequest.CreationTimeAfter.Value);
                 }
 
                 if(publicRequest.IsSetCreationTimeBefore())
                 {
                     context.Writer.WritePropertyName("CreationTimeBefore");
-                    context.Writer.Write(publicRequest.CreationTimeBefore);
+                    context.Writer.Write(publicRequest.CreationTimeBefore.Value);
                 }
 
                 if(publicRequest.IsSetEndpointName())
@@ -90,19 +90,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLastModifiedTimeAfter())
                 {
                     context.Writer.WritePropertyName("LastModifiedTimeAfter");
-                    context.Writer.Write(publicRequest.LastModifiedTimeAfter);
+                    context.Writer.Write(publicRequest.LastModifiedTimeAfter.Value);
                 }
 
                 if(publicRequest.IsSetLastModifiedTimeBefore())
                 {
                     context.Writer.WritePropertyName("LastModifiedTimeBefore");
-                    context.Writer.Write(publicRequest.LastModifiedTimeBefore);
+                    context.Writer.Write(publicRequest.LastModifiedTimeBefore.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetMonitoringJobDefinitionName())
@@ -132,13 +132,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScheduledTimeAfter())
                 {
                     context.Writer.WritePropertyName("ScheduledTimeAfter");
-                    context.Writer.Write(publicRequest.ScheduledTimeAfter);
+                    context.Writer.Write(publicRequest.ScheduledTimeAfter.Value);
                 }
 
                 if(publicRequest.IsSetScheduledTimeBefore())
                 {
                     context.Writer.WritePropertyName("ScheduledTimeBefore");
-                    context.Writer.Write(publicRequest.ScheduledTimeBefore);
+                    context.Writer.Write(publicRequest.ScheduledTimeBefore.Value);
                 }
 
                 if(publicRequest.IsSetSortBy())

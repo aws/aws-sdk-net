@@ -74,13 +74,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("ManifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds);
+                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
             }
 
             if(requestObject.IsSetProgramDateTimeIntervalSeconds())
             {
                 context.Writer.WritePropertyName("ProgramDateTimeIntervalSeconds");
-                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds);
+                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetScteHls())

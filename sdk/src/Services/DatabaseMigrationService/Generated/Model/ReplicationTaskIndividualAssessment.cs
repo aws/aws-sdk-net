@@ -102,9 +102,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// operation.
         /// </para>
         /// </summary>
-        public DateTime ReplicationTaskIndividualAssessmentStartDate
+        public DateTime? ReplicationTaskIndividualAssessmentStartDate
         {
-            get { return this._replicationTaskIndividualAssessmentStartDate.GetValueOrDefault(); }
+            get { return this._replicationTaskIndividualAssessmentStartDate; }
             set { this._replicationTaskIndividualAssessmentStartDate = value; }
         }
 

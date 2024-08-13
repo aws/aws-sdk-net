@@ -43,9 +43,9 @@ namespace Amazon.Batch.Model
         /// Specifies whether the current node is the main node for a multi-node parallel job.
         /// </para>
         /// </summary>
-        public bool IsMainNode
+        public bool? IsMainNode
         {
-            get { return this._isMainNode.GetValueOrDefault(); }
+            get { return this._isMainNode; }
             set { this._isMainNode = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Batch.Model
         /// available on the node with the <c>AWS_BATCH_JOB_NODE_INDEX</c> environment variable.
         /// </para>
         /// </summary>
-        public int NodeIndex
+        public int? NodeIndex
         {
-            get { return this._nodeIndex.GetValueOrDefault(); }
+            get { return this._nodeIndex; }
             set { this._nodeIndex = value; }
         }
 

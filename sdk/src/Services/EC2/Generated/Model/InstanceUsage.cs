@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// Reservation.
         /// </para>
         /// </summary>
-        public int UsedInstanceCount
+        public int? UsedInstanceCount
         {
-            get { return this._usedInstanceCount.GetValueOrDefault(); }
+            get { return this._usedInstanceCount; }
             set { this._usedInstanceCount = value; }
         }
 

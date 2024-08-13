@@ -52,9 +52,9 @@ namespace Amazon.IoTSecureTunneling.Model
         /// When set to true, IoT Secure Tunneling deletes the tunnel data immediately.
         /// </para>
         /// </summary>
-        public bool Delete
+        public bool? Delete
         {
-            get { return this._delete.GetValueOrDefault(); }
+            get { return this._delete; }
             set { this._delete = value; }
         }
 

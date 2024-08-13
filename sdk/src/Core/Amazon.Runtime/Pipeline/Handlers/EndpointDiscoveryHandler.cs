@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using Amazon.Util;
 
 namespace Amazon.Runtime.Internal
 {
@@ -54,8 +55,8 @@ namespace Amazon.Runtime.Internal
                 throw;
             }
         }
-#if AWS_ASYNC_API 
 
+#if AWS_ASYNC_API 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -86,45 +87,6 @@ namespace Amazon.Runtime.Internal
             }                        
 
             throw new AmazonClientException("Neither a response was returned nor an exception was thrown in the Runtime EndpointDiscoveryResolver.");
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Invokes the inner handler
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            try
-            {
-                var requestContext = executionContext.RequestContext;
-                var responseContext = executionContext.ResponseContext;
-                var regionalEndpoint = requestContext.Request.Endpoint;
-                var exception = responseContext.AsyncResult.Exception;
-
-                if (exception != null)
-                {
-                    if (IsInvalidEndpointException(exception))
-                    {
-                        EvictCacheKeyForRequest(requestContext, regionalEndpoint);
-                    }
-                }
-                else
-                {
-                    PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-                }
-            }
-            catch(Exception e)
-            {
-                executionContext.ResponseContext.AsyncResult.Exception = e;
-            }
-            finally
-            {
-                // Call outer handler
-                base.InvokeAsyncCallback(executionContext);    
-            }
         }
 #endif
 
@@ -178,23 +140,13 @@ namespace Amazon.Runtime.Internal
                 var operationName = string.Empty;
                 if (endpointDiscoveryData.Identifiers != null && endpointDiscoveryData.Identifiers.Count > 0)
                 {
-                    operationName = OperationNameFromRequestName(requestContext.RequestName);
+                    operationName = AWSSDKUtils.ExtractOperationName(requestContext.RequestName);
                 }
                 return options.EndpointOperation(new EndpointOperationContext(requestContext.ImmutableCredentials.AccessKey, operationName, endpointDiscoveryData, evictCacheKey, evictUri));
             }
 
             return null;
         }                
-        
-        private static string OperationNameFromRequestName(string requestName)
-        {    
-            if (requestName.EndsWith("Request", StringComparison.Ordinal))
-            {
-                return requestName.Substring(0, requestName.Length - 7);
-            }
-
-            return requestName;
-        }
 
         private static bool IsInvalidEndpointException(Exception exception)
         {

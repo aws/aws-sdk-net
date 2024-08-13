@@ -68,13 +68,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("gain", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Gain = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inputChannel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InputChannel = unmarshaller.Unmarshall(context);
                     continue;
                 }

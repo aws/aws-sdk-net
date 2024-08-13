@@ -51,33 +51,33 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricIntervalLowerBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalLowerBound");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalLowerBound))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricIntervalLowerBound);
+                    context.Writer.Write(requestObject.MetricIntervalLowerBound.Value);
                 }
             }
 
             if(requestObject.IsSetMetricIntervalUpperBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalUpperBound");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalUpperBound))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricIntervalUpperBound);
+                    context.Writer.Write(requestObject.MetricIntervalUpperBound.Value);
                 }
             }
 
             if(requestObject.IsSetScalingAdjustment())
             {
                 context.Writer.WritePropertyName("ScalingAdjustment");
-                context.Writer.Write(requestObject.ScalingAdjustment);
+                context.Writer.Write(requestObject.ScalingAdjustment.Value);
             }
 
         }

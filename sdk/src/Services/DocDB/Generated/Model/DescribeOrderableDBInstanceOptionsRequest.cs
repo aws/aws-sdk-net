@@ -174,9 +174,9 @@ namespace Amazon.DocDB.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.DocDB.Model
         /// the available VPC or non-VPC offerings.
         /// </para>
         /// </summary>
-        public bool Vpc
+        public bool? Vpc
         {
-            get { return this._vpc.GetValueOrDefault(); }
+            get { return this._vpc; }
             set { this._vpc = value; }
         }
 

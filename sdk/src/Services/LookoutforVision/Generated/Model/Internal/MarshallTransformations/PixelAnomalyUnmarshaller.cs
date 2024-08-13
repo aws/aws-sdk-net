@@ -74,7 +74,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalPercentageArea", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.TotalPercentageArea = unmarshaller.Unmarshall(context);
                     continue;
                 }

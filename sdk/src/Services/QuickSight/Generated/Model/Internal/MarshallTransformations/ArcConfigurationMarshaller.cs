@@ -51,13 +51,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArcAngle())
             {
                 context.Writer.WritePropertyName("ArcAngle");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ArcAngle))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ArcAngle.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ArcAngle));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ArcAngle.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ArcAngle);
+                    context.Writer.Write(requestObject.ArcAngle.Value);
                 }
             }
 

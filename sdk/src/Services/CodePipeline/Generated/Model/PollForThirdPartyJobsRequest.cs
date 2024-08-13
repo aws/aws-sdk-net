@@ -73,9 +73,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxBatchSize
+        public int? MaxBatchSize
         {
-            get { return this._maxBatchSize.GetValueOrDefault(); }
+            get { return this._maxBatchSize; }
             set { this._maxBatchSize = value; }
         }
 

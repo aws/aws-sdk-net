@@ -147,9 +147,9 @@ namespace Amazon.AuditManager.Model
         ///  Specifies when the delegation was created. 
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.AuditManager.Model
         ///  Specifies when the delegation was last updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

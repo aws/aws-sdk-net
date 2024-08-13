@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// The Autonomous System Number (ASN) of the internet provider
         /// </para>
         /// </summary>
-        public int Asn
+        public int? Asn
         {
-            get { return this._asn.GetValueOrDefault(); }
+            get { return this._asn; }
             set { this._asn = value; }
         }
 

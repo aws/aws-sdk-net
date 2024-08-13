@@ -95,9 +95,9 @@ namespace Amazon.LookoutEquipment.Model
         /// sensor that the statistics belong to. 
         /// </para>
         /// </summary>
-        public DateTime DataEndTime
+        public DateTime? DataEndTime
         {
-            get { return this._dataEndTime.GetValueOrDefault(); }
+            get { return this._dataEndTime; }
             set { this._dataEndTime = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.LookoutEquipment.Model
         /// to. 
         /// </para>
         /// </summary>
-        public bool DataExists
+        public bool? DataExists
         {
-            get { return this._dataExists.GetValueOrDefault(); }
+            get { return this._dataExists; }
             set { this._dataExists = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.LookoutEquipment.Model
         /// the sensor that the statistics belong to. 
         /// </para>
         /// </summary>
-        public DateTime DataStartTime
+        public DateTime? DataStartTime
         {
-            get { return this._dataStartTime.GetValueOrDefault(); }
+            get { return this._dataStartTime; }
             set { this._dataStartTime = value; }
         }
 

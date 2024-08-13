@@ -86,7 +86,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleSize())
             {
                 context.Writer.WritePropertyName("SampleSize");
-                context.Writer.Write(requestObject.SampleSize);
+                context.Writer.Write(requestObject.SampleSize.Value);
             }
 
         }

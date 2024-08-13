@@ -346,9 +346,9 @@ namespace Amazon.AuditManager.Model
         ///  The timestamp that represents when the evidence was collected. 
         /// </para>
         /// </summary>
-        public DateTime Time
+        public DateTime? Time
         {
-            get { return this._time.GetValueOrDefault(); }
+            get { return this._time; }
             set { this._time = value; }
         }
 

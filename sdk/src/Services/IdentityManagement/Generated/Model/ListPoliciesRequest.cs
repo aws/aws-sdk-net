@@ -107,9 +107,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.IdentityManagement.Model
         /// or when the parameter is not included, all policies are returned.
         /// </para>
         /// </summary>
-        public bool OnlyAttached
+        public bool? OnlyAttached
         {
-            get { return this._onlyAttached.GetValueOrDefault(); }
+            get { return this._onlyAttached; }
             set { this._onlyAttached = value; }
         }
 

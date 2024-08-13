@@ -87,9 +87,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RetainPrimaryReplicationGroup
+        public bool? RetainPrimaryReplicationGroup
         {
-            get { return this._retainPrimaryReplicationGroup.GetValueOrDefault(); }
+            get { return this._retainPrimaryReplicationGroup; }
             set { this._retainPrimaryReplicationGroup = value; }
         }
 

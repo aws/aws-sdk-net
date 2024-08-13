@@ -62,9 +62,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether the LAG can host other connections.
         /// </para>
         /// </summary>
-        public bool AllowsHostedConnections
+        public bool? AllowsHostedConnections
         {
-            get { return this._allowsHostedConnections.GetValueOrDefault(); }
+            get { return this._allowsHostedConnections; }
             set { this._allowsHostedConnections = value; }
         }
 
@@ -151,7 +151,7 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property ConnectionsBandwidth. 
         /// <para>
         /// The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. 
+        /// values are 1Gbps, 10Gbps, 100Gbps, or 400 Gbps.. 
         /// </para>
         /// </summary>
         public string ConnectionsBandwidth
@@ -213,9 +213,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether jumbo frames are supported.
         /// </para>
         /// </summary>
-        public bool JumboFrameCapable
+        public bool? JumboFrameCapable
         {
-            get { return this._jumboFrameCapable.GetValueOrDefault(); }
+            get { return this._jumboFrameCapable; }
             set { this._jumboFrameCapable = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether the LAG supports MAC Security (MACsec).
         /// </para>
         /// </summary>
-        public bool MacSecCapable
+        public bool? MacSecCapable
         {
-            get { return this._macSecCapable.GetValueOrDefault(); }
+            get { return this._macSecCapable; }
             set { this._macSecCapable = value; }
         }
 
@@ -370,9 +370,9 @@ namespace Amazon.DirectConnect.Model
         /// the LAG itself to be operational.
         /// </para>
         /// </summary>
-        public int MinimumLinks
+        public int? MinimumLinks
         {
-            get { return this._minimumLinks.GetValueOrDefault(); }
+            get { return this._minimumLinks; }
             set { this._minimumLinks = value; }
         }
 
@@ -385,13 +385,14 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property NumberOfConnections. 
         /// <para>
-        /// The number of physical dedicated connections bundled by the LAG, up to a maximum of
-        /// 10.
+        /// The number of physical dedicated connections initially provisioned and bundled by
+        /// the LAG. You can have a maximum of four connections when the port speed is 1 Gbps
+        /// or 10 Gbps, or two when the port speed is 100 Gbps or 400 Gbps.
         /// </para>
         /// </summary>
-        public int NumberOfConnections
+        public int? NumberOfConnections
         {
-            get { return this._numberOfConnections.GetValueOrDefault(); }
+            get { return this._numberOfConnections; }
             set { this._numberOfConnections = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=44640)]
-        public int CollectionDurationMinutes
+        public int? CollectionDurationMinutes
         {
-            get { return this._collectionDurationMinutes.GetValueOrDefault(); }
+            get { return this._collectionDurationMinutes; }
             set { this._collectionDurationMinutes = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.DataSync.Model
         /// The time when the discovery job ended.
         /// </para>
         /// </summary>
-        public DateTime JobEndTime
+        public DateTime? JobEndTime
         {
-            get { return this._jobEndTime.GetValueOrDefault(); }
+            get { return this._jobEndTime; }
             set { this._jobEndTime = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.DataSync.Model
         /// The time when the discovery job started.
         /// </para>
         /// </summary>
-        public DateTime JobStartTime
+        public DateTime? JobStartTime
         {
-            get { return this._jobStartTime.GetValueOrDefault(); }
+            get { return this._jobStartTime; }
             set { this._jobStartTime = value; }
         }
 

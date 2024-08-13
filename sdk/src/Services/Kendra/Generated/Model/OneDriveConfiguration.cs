@@ -48,9 +48,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to disable local groups information.
         /// </para>
         /// </summary>
-        public bool DisableLocalGroups
+        public bool? DisableLocalGroups
         {
-            get { return this._disableLocalGroups.GetValueOrDefault(); }
+            get { return this._disableLocalGroups; }
             set { this._disableLocalGroups = value; }
         }
 

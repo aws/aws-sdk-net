@@ -66,19 +66,19 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeGlobalServiceEvents", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludeGlobalServiceEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsMultiRegionTrail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsMultiRegionTrail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsOrganizationTrail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsOrganizationTrail = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -90,7 +90,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LogFileValidationEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.LogFileValidationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

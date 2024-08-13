@@ -285,9 +285,9 @@ namespace Amazon.RDS.Model
         /// Constraints: Minimum 20, maximum 1000.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -309,9 +309,9 @@ namespace Amazon.RDS.Model
         /// Custom, the output shows VPC offerings.
         /// </para>
         /// </summary>
-        public bool Vpc
+        public bool? Vpc
         {
-            get { return this._vpc.GetValueOrDefault(); }
+            get { return this._vpc; }
             set { this._vpc = value; }
         }
 

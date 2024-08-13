@@ -181,9 +181,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// events leading up to this event.
         /// </para>
         /// </summary>
-        public long ParentInitiatedEventId
+        public long? ParentInitiatedEventId
         {
-            get { return this._parentInitiatedEventId.GetValueOrDefault(); }
+            get { return this._parentInitiatedEventId; }
             set { this._parentInitiatedEventId = value; }
         }
 

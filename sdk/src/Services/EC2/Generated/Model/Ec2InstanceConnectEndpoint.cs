@@ -74,9 +74,9 @@ namespace Amazon.EC2.Model
         /// The date and time that the EC2 Instance Connect Endpoint was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool PreserveClientIp
+        public bool? PreserveClientIp
         {
-            get { return this._preserveClientIp.GetValueOrDefault(); }
+            get { return this._preserveClientIp; }
             set { this._preserveClientIp = value; }
         }
 

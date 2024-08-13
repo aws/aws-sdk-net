@@ -73,9 +73,9 @@ namespace Amazon.Comprehend.Model
         /// The time that the dominant language detection job completed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.Comprehend.Model
         /// The time that the dominant language detection job was submitted for processing.
         /// </para>
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

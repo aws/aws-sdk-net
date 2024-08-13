@@ -68,9 +68,9 @@ namespace Amazon.TimestreamQuery.Model
         /// string is a valid Timestream query, and not store the prepared query for later use.
         /// </para>
         /// </summary>
-        public bool ValidateOnly
+        public bool? ValidateOnly
         {
-            get { return this._validateOnly.GetValueOrDefault(); }
+            get { return this._validateOnly; }
             set { this._validateOnly = value; }
         }
 

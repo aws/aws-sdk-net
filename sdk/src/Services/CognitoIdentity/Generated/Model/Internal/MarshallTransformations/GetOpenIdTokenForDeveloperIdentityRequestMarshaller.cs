@@ -112,7 +112,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTokenDuration())
                 {
                     context.Writer.WritePropertyName("TokenDuration");
-                    context.Writer.Write(publicRequest.TokenDuration);
+                    context.Writer.Write(publicRequest.TokenDuration.Value);
                 }
 
                 writer.WriteObjectEnd();

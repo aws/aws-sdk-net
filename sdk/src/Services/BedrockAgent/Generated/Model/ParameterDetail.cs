@@ -96,9 +96,9 @@ namespace Amazon.BedrockAgent.Model
         /// group invocation.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

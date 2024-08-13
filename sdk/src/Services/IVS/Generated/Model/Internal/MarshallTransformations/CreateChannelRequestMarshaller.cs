@@ -70,13 +70,13 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAuthorized())
                 {
                     context.Writer.WritePropertyName("authorized");
-                    context.Writer.Write(publicRequest.Authorized);
+                    context.Writer.Write(publicRequest.Authorized.Value);
                 }
 
                 if(publicRequest.IsSetInsecureIngest())
                 {
                     context.Writer.WritePropertyName("insecureIngest");
-                    context.Writer.Write(publicRequest.InsecureIngest);
+                    context.Writer.Write(publicRequest.InsecureIngest.Value);
                 }
 
                 if(publicRequest.IsSetLatencyMode())

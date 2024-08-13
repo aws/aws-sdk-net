@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockDurationMinutes())
             {
                 context.Writer.WritePropertyName("BlockDurationMinutes");
-                context.Writer.Write(requestObject.BlockDurationMinutes);
+                context.Writer.Write(requestObject.BlockDurationMinutes.Value);
             }
 
             if(requestObject.IsSetTimeoutAction())
@@ -69,7 +69,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutDurationMinutes())
             {
                 context.Writer.WritePropertyName("TimeoutDurationMinutes");
-                context.Writer.Write(requestObject.TimeoutDurationMinutes);
+                context.Writer.Write(requestObject.TimeoutDurationMinutes.Value);
             }
 
         }

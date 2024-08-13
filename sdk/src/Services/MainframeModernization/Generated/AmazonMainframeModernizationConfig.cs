@@ -21,6 +21,8 @@ using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Endpoints;
 using Amazon.MainframeModernization.Internal;
 
 namespace Amazon.MainframeModernization
@@ -32,7 +34,10 @@ namespace Amazon.MainframeModernization
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("m2", "3.7.301.34");
+            InternalSDKUtils.BuildUserAgentString("m2", "4.0.0.0");
+
+        private static readonly AmazonMainframeModernizationEndpointResolver EndpointResolver =
+            new AmazonMainframeModernizationEndpointResolver();
 
         private string _userAgent = UserAgentString;
         ///<summary>
@@ -88,6 +93,25 @@ namespace Amazon.MainframeModernization
                 return _userAgent;
             }
         }
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        {
+            var requestContext = new RequestContext(false, new AWS4Signer())
+            {
+                ClientConfig = this,
+                OriginalRequest = parameters.Request,
+                Request = new DefaultRequest(parameters.Request, ServiceId)
+            };
+
+            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
+            return EndpointResolver.GetEndpoint(executionContext);
+        }
+
 
     }
 }

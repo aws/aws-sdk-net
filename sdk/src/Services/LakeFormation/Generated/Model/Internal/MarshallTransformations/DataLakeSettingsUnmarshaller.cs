@@ -68,13 +68,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowExternalDataFiltering", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowExternalDataFiltering = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AllowFullTableExternalDataAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowFullTableExternalDataAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }

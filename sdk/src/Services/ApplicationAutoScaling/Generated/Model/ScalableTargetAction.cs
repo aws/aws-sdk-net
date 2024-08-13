@@ -52,9 +52,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// level of a target tracking scaling policy.
         /// </para>
         /// </summary>
-        public int MinCapacity
+        public int? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 

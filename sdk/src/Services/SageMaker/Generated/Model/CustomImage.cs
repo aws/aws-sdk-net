@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ImageVersionNumber
+        public int? ImageVersionNumber
         {
-            get { return this._imageVersionNumber.GetValueOrDefault(); }
+            get { return this._imageVersionNumber; }
             set { this._imageVersionNumber = value; }
         }
 

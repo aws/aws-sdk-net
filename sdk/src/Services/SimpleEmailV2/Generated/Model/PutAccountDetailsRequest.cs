@@ -117,9 +117,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// sending rate for your account vary based on your specific use case.
         /// </para>
         /// </summary>
-        public bool ProductionAccessEnabled
+        public bool? ProductionAccessEnabled
         {
-            get { return this._productionAccessEnabled.GetValueOrDefault(); }
+            get { return this._productionAccessEnabled; }
             set { this._productionAccessEnabled = value; }
         }
 

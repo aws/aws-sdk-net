@@ -48,9 +48,9 @@ namespace Amazon.SageMaker.Model
         /// Defines the cost per hour for the instance. 
         /// </para>
         /// </summary>
-        public float CostPerHour
+        public float? CostPerHour
         {
-            get { return this._costPerHour.GetValueOrDefault(); }
+            get { return this._costPerHour; }
             set { this._costPerHour = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// Defines the cost per inference for the instance .
         /// </para>
         /// </summary>
-        public float CostPerInference
+        public float? CostPerInference
         {
-            get { return this._costPerInference.GetValueOrDefault(); }
+            get { return this._costPerInference; }
             set { this._costPerInference = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public float CpuUtilization
+        public float? CpuUtilization
         {
-            get { return this._cpuUtilization.GetValueOrDefault(); }
+            get { return this._cpuUtilization; }
             set { this._cpuUtilization = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SageMaker.Model
         /// The expected maximum number of requests per minute for the instance.
         /// </para>
         /// </summary>
-        public int MaxInvocations
+        public int? MaxInvocations
         {
-            get { return this._maxInvocations.GetValueOrDefault(); }
+            get { return this._maxInvocations; }
             set { this._maxInvocations = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public float MemoryUtilization
+        public float? MemoryUtilization
         {
-            get { return this._memoryUtilization.GetValueOrDefault(); }
+            get { return this._memoryUtilization; }
             set { this._memoryUtilization = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.SageMaker.Model
         /// The expected model latency at maximum invocation per minute for the instance.
         /// </para>
         /// </summary>
-        public int ModelLatency
+        public int? ModelLatency
         {
-            get { return this._modelLatency.GetValueOrDefault(); }
+            get { return this._modelLatency; }
             set { this._modelLatency = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ModelSetupTime
+        public int? ModelSetupTime
         {
-            get { return this._modelSetupTime.GetValueOrDefault(); }
+            get { return this._modelSetupTime; }
             set { this._modelSetupTime = value; }
         }
 

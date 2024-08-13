@@ -44,9 +44,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The number of matches found.
         /// </para>
         /// </summary>
-        public long NumberOfMatchesFound
+        public long? NumberOfMatchesFound
         {
-            get { return this._numberOfMatchesFound.GetValueOrDefault(); }
+            get { return this._numberOfMatchesFound; }
             set { this._numberOfMatchesFound = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The number of merges completed.
         /// </para>
         /// </summary>
-        public long NumberOfMergesDone
+        public long? NumberOfMergesDone
         {
-            get { return this._numberOfMergesDone.GetValueOrDefault(); }
+            get { return this._numberOfMergesDone; }
             set { this._numberOfMergesDone = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The number of profiles reviewed.
         /// </para>
         /// </summary>
-        public long NumberOfProfilesReviewed
+        public long? NumberOfProfilesReviewed
         {
-            get { return this._numberOfProfilesReviewed.GetValueOrDefault(); }
+            get { return this._numberOfProfilesReviewed; }
             set { this._numberOfProfilesReviewed = value; }
         }
 

@@ -68,31 +68,31 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("openActivityTasks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenActivityTasks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("openChildWorkflowExecutions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenChildWorkflowExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("openDecisionTasks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenDecisionTasks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("openLambdaFunctions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenLambdaFunctions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("openTimers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenTimers = unmarshaller.Unmarshall(context);
                     continue;
                 }

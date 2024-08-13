@@ -53,9 +53,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// After the last update of the Recommendation
         /// </para>
         /// </summary>
-        public DateTime AfterLastUpdatedAt
+        public DateTime? AfterLastUpdatedAt
         {
-            get { return this._afterLastUpdatedAt.GetValueOrDefault(); }
+            get { return this._afterLastUpdatedAt; }
             set { this._afterLastUpdatedAt = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// Before the last update of the Recommendation
         /// </para>
         /// </summary>
-        public DateTime BeforeLastUpdatedAt
+        public DateTime? BeforeLastUpdatedAt
         {
-            get { return this._beforeLastUpdatedAt.GetValueOrDefault(); }
+            get { return this._beforeLastUpdatedAt; }
             set { this._beforeLastUpdatedAt = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

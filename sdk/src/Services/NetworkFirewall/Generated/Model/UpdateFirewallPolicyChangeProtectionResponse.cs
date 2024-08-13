@@ -87,9 +87,9 @@ namespace Amazon.NetworkFirewall.Model
         /// initializes this setting to <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool FirewallPolicyChangeProtection
+        public bool? FirewallPolicyChangeProtection
         {
-            get { return this._firewallPolicyChangeProtection.GetValueOrDefault(); }
+            get { return this._firewallPolicyChangeProtection; }
             set { this._firewallPolicyChangeProtection = value; }
         }
 

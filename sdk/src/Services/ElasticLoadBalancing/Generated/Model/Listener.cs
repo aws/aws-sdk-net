@@ -58,7 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <param name="protocol">The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.</param>
         /// <param name="loadBalancerPort">The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</param>
         /// <param name="instancePort">The port on which the instance is listening.</param>
-        public Listener(string protocol, int loadBalancerPort, int instancePort)
+        public Listener(string protocol, int? loadBalancerPort, int? instancePort)
         {
             _protocol = protocol;
             _loadBalancerPort = loadBalancerPort;
@@ -72,9 +72,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
-        public int InstancePort
+        public int? InstancePort
         {
-            get { return this._instancePort.GetValueOrDefault(); }
+            get { return this._instancePort; }
             set { this._instancePort = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int LoadBalancerPort
+        public int? LoadBalancerPort
         {
-            get { return this._loadBalancerPort.GetValueOrDefault(); }
+            get { return this._loadBalancerPort; }
             set { this._loadBalancerPort = value; }
         }
 

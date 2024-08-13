@@ -44,9 +44,9 @@ namespace Amazon.AmplifyBackend.Model
         /// your Amplify app.
         /// </para>
         /// </summary>
-        public bool UnauthenticatedLogin
+        public bool? UnauthenticatedLogin
         {
-            get { return this._unauthenticatedLogin.GetValueOrDefault(); }
+            get { return this._unauthenticatedLogin; }
             set { this._unauthenticatedLogin = value; }
         }
 

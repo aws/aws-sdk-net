@@ -64,9 +64,9 @@ namespace Amazon.AppMesh.Model
         /// Whether the policy is enforced. The default is <c>True</c>, if a value isn't specified.
         /// </para>
         /// </summary>
-        public bool Enforce
+        public bool? Enforce
         {
-            get { return this._enforce.GetValueOrDefault(); }
+            get { return this._enforce; }
             set { this._enforce = value; }
         }
 

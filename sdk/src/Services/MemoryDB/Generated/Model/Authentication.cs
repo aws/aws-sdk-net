@@ -44,9 +44,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of passwords belonging to the user. The maximum is two.
         /// </para>
         /// </summary>
-        public int PasswordCount
+        public int? PasswordCount
         {
-            get { return this._passwordCount.GetValueOrDefault(); }
+            get { return this._passwordCount; }
             set { this._passwordCount = value; }
         }
 

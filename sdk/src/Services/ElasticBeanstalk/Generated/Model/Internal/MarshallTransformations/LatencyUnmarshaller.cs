@@ -57,49 +57,49 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("P10", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.P10 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("P50", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.P50 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("P75", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.P75 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("P85", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.P85 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("P90", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.P90 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("P95", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.P95 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("P99", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.P99 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("P999", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.P999 = unmarshaller.Unmarshall(context);
                         continue;
                     }

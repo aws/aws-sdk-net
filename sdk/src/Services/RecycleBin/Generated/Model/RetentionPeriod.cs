@@ -65,9 +65,9 @@ namespace Amazon.RecycleBin.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3650)]
-        public int RetentionPeriodValue
+        public int? RetentionPeriodValue
         {
-            get { return this._retentionPeriodValue.GetValueOrDefault(); }
+            get { return this._retentionPeriodValue; }
             set { this._retentionPeriodValue = value; }
         }
 

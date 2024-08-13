@@ -72,7 +72,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnd())
                 {
                     context.Writer.WritePropertyName("End");
-                    context.Writer.Write(publicRequest.End);
+                    context.Writer.Write(publicRequest.End.Value);
                 }
 
                 if(publicRequest.IsSetMarker())
@@ -84,13 +84,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxItems())
                 {
                     context.Writer.WritePropertyName("MaxItems");
-                    context.Writer.Write(publicRequest.MaxItems);
+                    context.Writer.Write(publicRequest.MaxItems.Value);
                 }
 
                 if(publicRequest.IsSetStart())
                 {
                     context.Writer.WritePropertyName("Start");
-                    context.Writer.Write(publicRequest.Start);
+                    context.Writer.Write(publicRequest.Start.Value);
                 }
 
                 writer.WriteObjectEnd();

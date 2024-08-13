@@ -78,9 +78,9 @@ namespace Amazon.KinesisFirehose.Model
         /// The default value is false.
         /// </para>
         /// </summary>
-        public bool AllowForceDelete
+        public bool? AllowForceDelete
         {
-            get { return this._allowForceDelete.GetValueOrDefault(); }
+            get { return this._allowForceDelete; }
             set { this._allowForceDelete = value; }
         }
 

@@ -269,9 +269,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// by the node.
         /// </para>
         /// </summary>
-        public int ResponseCode
+        public int? ResponseCode
         {
-            get { return this._responseCode.GetValueOrDefault(); }
+            get { return this._responseCode; }
             set { this._responseCode = value; }
         }
 

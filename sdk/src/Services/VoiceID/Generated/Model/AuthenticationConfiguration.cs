@@ -43,9 +43,9 @@ namespace Amazon.VoiceID.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int AcceptanceThreshold
+        public int? AcceptanceThreshold
         {
-            get { return this._acceptanceThreshold.GetValueOrDefault(); }
+            get { return this._acceptanceThreshold; }
             set { this._acceptanceThreshold = value; }
         }
 

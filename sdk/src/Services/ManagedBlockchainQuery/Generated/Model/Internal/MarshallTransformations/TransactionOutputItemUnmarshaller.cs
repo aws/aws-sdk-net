@@ -92,7 +92,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("transactionTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TransactionTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

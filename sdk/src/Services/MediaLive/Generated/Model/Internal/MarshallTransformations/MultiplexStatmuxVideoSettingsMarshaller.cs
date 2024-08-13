@@ -51,19 +51,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumBitrate())
             {
                 context.Writer.WritePropertyName("maximumBitrate");
-                context.Writer.Write(requestObject.MaximumBitrate);
+                context.Writer.Write(requestObject.MaximumBitrate.Value);
             }
 
             if(requestObject.IsSetMinimumBitrate())
             {
                 context.Writer.WritePropertyName("minimumBitrate");
-                context.Writer.Write(requestObject.MinimumBitrate);
+                context.Writer.Write(requestObject.MinimumBitrate.Value);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("priority");
-                context.Writer.Write(requestObject.Priority);
+                context.Writer.Write(requestObject.Priority.Value);
             }
 
         }

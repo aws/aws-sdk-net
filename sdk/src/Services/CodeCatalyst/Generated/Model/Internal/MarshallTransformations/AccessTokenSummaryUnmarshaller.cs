@@ -68,7 +68,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("expiresTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExpiresTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

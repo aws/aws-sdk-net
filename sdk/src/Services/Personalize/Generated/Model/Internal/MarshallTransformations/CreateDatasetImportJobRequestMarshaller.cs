@@ -101,7 +101,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublishAttributionMetricsToS3())
                 {
                     context.Writer.WritePropertyName("publishAttributionMetricsToS3");
-                    context.Writer.Write(publicRequest.PublishAttributionMetricsToS3);
+                    context.Writer.Write(publicRequest.PublishAttributionMetricsToS3.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

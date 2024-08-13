@@ -105,9 +105,9 @@ namespace Amazon.ApplicationInsights.Model
         /// Indicates whether the application component is monitored. 
         /// </para>
         /// </summary>
-        public bool Monitor
+        public bool? Monitor
         {
-            get { return this._monitor.GetValueOrDefault(); }
+            get { return this._monitor; }
             set { this._monitor = value; }
         }
 

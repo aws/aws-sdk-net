@@ -63,25 +63,25 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DesiredCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DesiredCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EndTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -105,13 +105,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("StartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Time", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.Time = unmarshaller.Unmarshall(context);
                         continue;
                     }

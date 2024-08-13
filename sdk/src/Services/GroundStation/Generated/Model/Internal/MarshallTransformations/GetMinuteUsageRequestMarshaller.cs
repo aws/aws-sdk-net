@@ -70,13 +70,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMonth())
                 {
                     context.Writer.WritePropertyName("month");
-                    context.Writer.Write(publicRequest.Month);
+                    context.Writer.Write(publicRequest.Month.Value);
                 }
 
                 if(publicRequest.IsSetYear())
                 {
                     context.Writer.WritePropertyName("year");
-                    context.Writer.Write(publicRequest.Year);
+                    context.Writer.Write(publicRequest.Year.Value);
                 }
 
                 writer.WriteObjectEnd();

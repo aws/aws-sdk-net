@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether traffic matching this route is to be dropped.
         /// </para>
         /// </summary>
-        public bool Blackhole
+        public bool? Blackhole
         {
-            get { return this._blackhole.GetValueOrDefault(); }
+            get { return this._blackhole; }
             set { this._blackhole = value; }
         }
 

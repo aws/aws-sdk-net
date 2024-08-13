@@ -76,9 +76,9 @@ namespace Amazon.MQ.Model
         /// Enables access to the ActiveMQ Web Console for the ActiveMQ user.
         /// </para>
         /// </summary>
-        public bool ConsoleAccess
+        public bool? ConsoleAccess
         {
-            get { return this._consoleAccess.GetValueOrDefault(); }
+            get { return this._consoleAccess; }
             set { this._consoleAccess = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.MQ.Model
         /// Defines if this user is intended for CRDR replication purposes.
         /// </para>
         /// </summary>
-        public bool ReplicationUser
+        public bool? ReplicationUser
         {
-            get { return this._replicationUser.GetValueOrDefault(); }
+            get { return this._replicationUser; }
             set { this._replicationUser = value; }
         }
 

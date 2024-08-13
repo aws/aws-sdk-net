@@ -51,13 +51,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("endTime");
-                context.Writer.Write(requestObject.EndTime);
+                context.Writer.Write(requestObject.EndTime.Value);
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.Write(requestObject.StartTime.Value);
             }
 
         }

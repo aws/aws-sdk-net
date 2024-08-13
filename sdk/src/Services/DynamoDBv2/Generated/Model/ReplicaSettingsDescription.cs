@@ -126,9 +126,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ReplicaProvisionedReadCapacityUnits
+        public long? ReplicaProvisionedReadCapacityUnits
         {
-            get { return this._replicaProvisionedReadCapacityUnits.GetValueOrDefault(); }
+            get { return this._replicaProvisionedReadCapacityUnits; }
             set { this._replicaProvisionedReadCapacityUnits = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ReplicaProvisionedWriteCapacityUnits
+        public long? ReplicaProvisionedWriteCapacityUnits
         {
-            get { return this._replicaProvisionedWriteCapacityUnits.GetValueOrDefault(); }
+            get { return this._replicaProvisionedWriteCapacityUnits; }
             set { this._replicaProvisionedWriteCapacityUnits = value; }
         }
 

@@ -1,4 +1,4 @@
-﻿using Amazon.Runtime;
+using Amazon.Runtime;
 /*******************************************************************************
  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
@@ -29,35 +29,5 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public abstract class BaseUploadRequest
     {
-#if (BCL && !BCL45)
-        private TimeSpan? timeout = null;
-
-        /// <summary>
-        /// Overrides the default request timeout value.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// The value of this property is assigned to the Timeout property of the HTTPWebRequest/HttpClient object used
-        /// to send requests. Each TransferUtility's Download method may perform multiple server requests to complete the operation. 
-        /// This timeout does not apply to the overall operation. 
-        /// </para>
-        /// <para>
-        /// Please specify a timeout value only if the operation will not complete within the default intervals
-        /// specified for an HttpWebRequest/HttpClient.
-        /// </para>
-        /// </remarks>
-        /// <exception cref="System.ArgumentOutOfRangeException">The timeout specified is less than or equal to zero and is not Infinite.</exception>
-        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
-        /// <seealso cref="P:System.Net.Http.HttpClient.Timeout"/>
-        public TimeSpan? Timeout
-        {
-            get { return timeout; }
-            set
-            {
-                ClientConfig.ValidateTimeout(value);
-                this.timeout = value;
-            }
-        }
-#endif
     }
 }

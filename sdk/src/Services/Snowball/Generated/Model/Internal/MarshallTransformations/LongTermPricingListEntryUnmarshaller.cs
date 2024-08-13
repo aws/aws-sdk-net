@@ -74,7 +74,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsLongTermPricingAutoRenew", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsLongTermPricingAutoRenew = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LongTermPricingEndDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LongTermPricingEndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -98,7 +98,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LongTermPricingStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LongTermPricingStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");
-                context.Writer.Write(requestObject.Column);
+                context.Writer.Write(requestObject.Column.Value);
             }
 
             if(requestObject.IsSetColumnName())
@@ -69,7 +69,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRow())
             {
                 context.Writer.WritePropertyName("Row");
-                context.Writer.Write(requestObject.Row);
+                context.Writer.Write(requestObject.Row.Value);
             }
 
         }

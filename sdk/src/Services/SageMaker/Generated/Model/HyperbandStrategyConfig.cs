@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxResource
+        public int? MaxResource
         {
-            get { return this._maxResource.GetValueOrDefault(); }
+            get { return this._maxResource; }
             set { this._maxResource = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinResource
+        public int? MinResource
         {
-            get { return this._minResource.GetValueOrDefault(); }
+            get { return this._minResource; }
             set { this._minResource = value; }
         }
 

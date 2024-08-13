@@ -128,9 +128,9 @@ namespace Amazon.Neptunedata.Model
         /// Cloud spot instances. The default is <c>False</c>.
         /// </para>
         /// </summary>
-        public bool EnableManagedSpotTraining
+        public bool? EnableManagedSpotTraining
         {
-            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            get { return this._enableManagedSpotTraining; }
             set { this._enableManagedSpotTraining = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.Neptunedata.Model
         /// the better the results.
         /// </para>
         /// </summary>
-        public int MaxHPONumberOfTrainingJobs
+        public int? MaxHPONumberOfTrainingJobs
         {
-            get { return this._maxhpoNumberOfTrainingJobs.GetValueOrDefault(); }
+            get { return this._maxhpoNumberOfTrainingJobs; }
             set { this._maxhpoNumberOfTrainingJobs = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.Neptunedata.Model
         /// resources on your training instance.
         /// </para>
         /// </summary>
-        public int MaxHPOParallelTrainingJobs
+        public int? MaxHPOParallelTrainingJobs
         {
-            get { return this._maxhpoParallelTrainingJobs.GetValueOrDefault(); }
+            get { return this._maxhpoParallelTrainingJobs; }
             set { this._maxhpoParallelTrainingJobs = value; }
         }
 
@@ -341,9 +341,9 @@ namespace Amazon.Neptunedata.Model
         /// on the recommendation generated in the data processing step.
         /// </para>
         /// </summary>
-        public int TrainingInstanceVolumeSizeInGB
+        public int? TrainingInstanceVolumeSizeInGB
         {
-            get { return this._trainingInstanceVolumeSizeInGB.GetValueOrDefault(); }
+            get { return this._trainingInstanceVolumeSizeInGB; }
             set { this._trainingInstanceVolumeSizeInGB = value; }
         }
 
@@ -359,9 +359,9 @@ namespace Amazon.Neptunedata.Model
         /// Timeout in seconds for the training job. The default is 86,400 (1 day).
         /// </para>
         /// </summary>
-        public int TrainingTimeOutInSeconds
+        public int? TrainingTimeOutInSeconds
         {
-            get { return this._trainingTimeOutInSeconds.GetValueOrDefault(); }
+            get { return this._trainingTimeOutInSeconds; }
             set { this._trainingTimeOutInSeconds = value; }
         }
 

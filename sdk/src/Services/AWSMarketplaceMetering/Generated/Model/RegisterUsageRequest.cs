@@ -121,9 +121,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int PublicKeyVersion
+        public int? PublicKeyVersion
         {
-            get { return this._publicKeyVersion.GetValueOrDefault(); }
+            get { return this._publicKeyVersion; }
             set { this._publicKeyVersion = value; }
         }
 

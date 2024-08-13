@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model
         /// strict or lenient mode.
         /// </para>
         /// </summary>
-        public bool StrictModeForAllResources
+        public bool? StrictModeForAllResources
         {
-            get { return this._strictModeForAllResources.GetValueOrDefault(); }
+            get { return this._strictModeForAllResources; }
             set { this._strictModeForAllResources = value; }
         }
 

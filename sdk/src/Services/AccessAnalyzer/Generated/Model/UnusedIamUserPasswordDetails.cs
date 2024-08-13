@@ -45,9 +45,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// The time at which the password was last accessed.
         /// </para>
         /// </summary>
-        public DateTime LastAccessed
+        public DateTime? LastAccessed
         {
-            get { return this._lastAccessed.GetValueOrDefault(); }
+            get { return this._lastAccessed; }
             set { this._lastAccessed = value; }
         }
 

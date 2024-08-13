@@ -197,9 +197,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool NoReboot
+        public bool? NoReboot
         {
-            get { return this._noReboot.GetValueOrDefault(); }
+            get { return this._noReboot; }
             set { this._noReboot = value; }
         }
 

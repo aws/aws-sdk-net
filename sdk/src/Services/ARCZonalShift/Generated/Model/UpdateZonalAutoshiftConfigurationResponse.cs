@@ -60,8 +60,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ZonalAutoshiftStatus. 
         /// <para>
-        /// The zonal autoshift status for the resource that you updated the zonal autoshift configuration
-        /// for.
+        /// The updated zonal autoshift status for the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

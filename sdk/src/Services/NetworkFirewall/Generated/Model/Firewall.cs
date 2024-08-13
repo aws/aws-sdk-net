@@ -66,9 +66,9 @@ namespace Amazon.NetworkFirewall.Model
         /// the operation initializes this flag to <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool DeleteProtection
+        public bool? DeleteProtection
         {
-            get { return this._deleteProtection.GetValueOrDefault(); }
+            get { return this._deleteProtection; }
             set { this._deleteProtection = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.NetworkFirewall.Model
         /// initializes this setting to <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool FirewallPolicyChangeProtection
+        public bool? FirewallPolicyChangeProtection
         {
-            get { return this._firewallPolicyChangeProtection.GetValueOrDefault(); }
+            get { return this._firewallPolicyChangeProtection; }
             set { this._firewallPolicyChangeProtection = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.NetworkFirewall.Model
         /// initializes this setting to <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool SubnetChangeProtection
+        public bool? SubnetChangeProtection
         {
-            get { return this._subnetChangeProtection.GetValueOrDefault(); }
+            get { return this._subnetChangeProtection; }
             set { this._subnetChangeProtection = value; }
         }
 

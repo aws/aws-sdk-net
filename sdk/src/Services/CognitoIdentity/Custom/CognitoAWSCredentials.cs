@@ -612,7 +612,7 @@ namespace Amazon.CognitoIdentity
             var credentials = (await sts.AssumeRoleWithWebIdentityAsync(assumeRequest).ConfigureAwait(false)).Credentials;
 
             // Return new refresh state (credentials and expiration)
-            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration.GetValueOrDefault());
             return credentialsState;
         }
 
@@ -653,7 +653,7 @@ namespace Amazon.CognitoIdentity
 
 
             var credentials = response.Credentials;
-            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration.GetValueOrDefault());
             return credentialsState;
         }
 
@@ -725,7 +725,7 @@ namespace Amazon.CognitoIdentity
             UpdateIdentity(response.IdentityId);
 
             var credentials = response.Credentials;
-            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration.GetValueOrDefault());
             return credentialsState;
         }
 
@@ -775,7 +775,7 @@ namespace Amazon.CognitoIdentity
             };
             var credentials = GetStsCredentials(assumeRequest);
 
-            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration);
+            credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration.GetValueOrDefault());
             return credentialsState;
         }
 

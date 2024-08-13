@@ -49,9 +49,9 @@ namespace Amazon.Macie2.Model
         /// or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.
         /// </para>
         /// </summary>
-        public long AllowsUnencryptedObjectUploads
+        public long? AllowsUnencryptedObjectUploads
         {
-            get { return this._allowsUnencryptedObjectUploads.GetValueOrDefault(); }
+            get { return this._allowsUnencryptedObjectUploads; }
             set { this._allowsUnencryptedObjectUploads = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.Macie2.Model
         /// of AES256.
         /// </para>
         /// </summary>
-        public long DeniesUnencryptedObjectUploads
+        public long? DeniesUnencryptedObjectUploads
         {
-            get { return this._deniesUnencryptedObjectUploads.GetValueOrDefault(); }
+            get { return this._deniesUnencryptedObjectUploads; }
             set { this._deniesUnencryptedObjectUploads = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Macie2.Model
         /// these buckets require server-side encryption of new objects.
         /// </para>
         /// </summary>
-        public long Unknown
+        public long? Unknown
         {
-            get { return this._unknown.GetValueOrDefault(); }
+            get { return this._unknown; }
             set { this._unknown = value; }
         }
 

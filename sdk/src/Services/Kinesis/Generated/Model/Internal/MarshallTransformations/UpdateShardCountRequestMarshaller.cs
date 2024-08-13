@@ -90,7 +90,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTargetShardCount())
                 {
                     context.Writer.WritePropertyName("TargetShardCount");
-                    context.Writer.Write(publicRequest.TargetShardCount);
+                    context.Writer.Write(publicRequest.TargetShardCount.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -68,7 +68,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DefaultPolicy", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }

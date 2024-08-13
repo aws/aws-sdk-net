@@ -201,9 +201,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The time at which the EC2 instance was launched.
         /// </para>
         /// </summary>
-        public DateTime LaunchedAt
+        public DateTime? LaunchedAt
         {
-            get { return this._launchedAt.GetValueOrDefault(); }
+            get { return this._launchedAt; }
             set { this._launchedAt = value; }
         }
 

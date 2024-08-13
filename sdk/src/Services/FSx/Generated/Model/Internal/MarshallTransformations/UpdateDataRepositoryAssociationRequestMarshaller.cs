@@ -89,7 +89,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetImportedFileChunkSize())
                 {
                     context.Writer.WritePropertyName("ImportedFileChunkSize");
-                    context.Writer.Write(publicRequest.ImportedFileChunkSize);
+                    context.Writer.Write(publicRequest.ImportedFileChunkSize.Value);
                 }
 
                 if(publicRequest.IsSetS3())

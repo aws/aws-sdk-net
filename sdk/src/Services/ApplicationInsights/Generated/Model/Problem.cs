@@ -93,9 +93,9 @@ namespace Amazon.ApplicationInsights.Model
         /// The time when the problem ended, in epoch seconds.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.ApplicationInsights.Model
         ///  The last time that the problem reoccurred after its last resolution. 
         /// </para>
         /// </summary>
-        public DateTime LastRecurrenceTime
+        public DateTime? LastRecurrenceTime
         {
-            get { return this._lastRecurrenceTime.GetValueOrDefault(); }
+            get { return this._lastRecurrenceTime; }
             set { this._lastRecurrenceTime = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.ApplicationInsights.Model
         /// resolved. 
         /// </para>
         /// </summary>
-        public long RecurringCount
+        public long? RecurringCount
         {
-            get { return this._recurringCount.GetValueOrDefault(); }
+            get { return this._recurringCount; }
             set { this._recurringCount = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.ApplicationInsights.Model
         /// The time when the problem started, in epoch seconds.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

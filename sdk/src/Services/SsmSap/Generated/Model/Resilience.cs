@@ -64,9 +64,9 @@ namespace Amazon.SsmSap.Model
         /// Indicates if or not enqueue replication is enabled for the ASCS component.
         /// </para>
         /// </summary>
-        public bool EnqueueReplication
+        public bool? EnqueueReplication
         {
-            get { return this._enqueueReplication.GetValueOrDefault(); }
+            get { return this._enqueueReplication; }
             set { this._enqueueReplication = value; }
         }
 

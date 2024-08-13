@@ -51,13 +51,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBcch())
             {
                 context.Writer.WritePropertyName("Bcch");
-                context.Writer.Write(requestObject.Bcch);
+                context.Writer.Write(requestObject.Bcch.Value);
             }
 
             if(requestObject.IsSetBsic())
             {
                 context.Writer.WritePropertyName("Bsic");
-                context.Writer.Write(requestObject.Bsic);
+                context.Writer.Write(requestObject.Bsic.Value);
             }
 
             if(requestObject.IsSetGlobalIdentity())
@@ -74,7 +74,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRxLevel())
             {
                 context.Writer.WritePropertyName("RxLevel");
-                context.Writer.Write(requestObject.RxLevel);
+                context.Writer.Write(requestObject.RxLevel.Value);
             }
 
         }

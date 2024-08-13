@@ -102,9 +102,9 @@ namespace Amazon.AppSync.Model
         /// Set to TRUE to use Amazon Cognito credentials with this data source.
         /// </para>
         /// </summary>
-        public bool UseCallerCredentials
+        public bool? UseCallerCredentials
         {
-            get { return this._useCallerCredentials.GetValueOrDefault(); }
+            get { return this._useCallerCredentials; }
             set { this._useCallerCredentials = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.AppSync.Model
         /// Set to TRUE to use Conflict Detection and Resolution with this data source.
         /// </para>
         /// </summary>
-        public bool Versioned
+        public bool? Versioned
         {
-            get { return this._versioned.GetValueOrDefault(); }
+            get { return this._versioned; }
             set { this._versioned = value; }
         }
 

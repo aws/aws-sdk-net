@@ -51,37 +51,37 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLac())
             {
                 context.Writer.WritePropertyName("Lac");
-                context.Writer.Write(requestObject.Lac);
+                context.Writer.Write(requestObject.Lac.Value);
             }
 
             if(requestObject.IsSetMcc())
             {
                 context.Writer.WritePropertyName("Mcc");
-                context.Writer.Write(requestObject.Mcc);
+                context.Writer.Write(requestObject.Mcc.Value);
             }
 
             if(requestObject.IsSetMnc())
             {
                 context.Writer.WritePropertyName("Mnc");
-                context.Writer.Write(requestObject.Mnc);
+                context.Writer.Write(requestObject.Mnc.Value);
             }
 
             if(requestObject.IsSetPathLoss())
             {
                 context.Writer.WritePropertyName("PathLoss");
-                context.Writer.Write(requestObject.PathLoss);
+                context.Writer.Write(requestObject.PathLoss.Value);
             }
 
             if(requestObject.IsSetRscp())
             {
                 context.Writer.WritePropertyName("Rscp");
-                context.Writer.Write(requestObject.Rscp);
+                context.Writer.Write(requestObject.Rscp.Value);
             }
 
             if(requestObject.IsSetUtranCid())
             {
                 context.Writer.WritePropertyName("UtranCid");
-                context.Writer.Write(requestObject.UtranCid);
+                context.Writer.Write(requestObject.UtranCid.Value);
             }
 
             if(requestObject.IsSetWcdmaLocalId())

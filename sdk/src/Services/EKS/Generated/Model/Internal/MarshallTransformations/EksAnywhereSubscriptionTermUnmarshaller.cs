@@ -68,7 +68,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("duration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }

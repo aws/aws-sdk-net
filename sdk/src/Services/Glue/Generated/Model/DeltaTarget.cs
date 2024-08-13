@@ -64,9 +64,9 @@ namespace Amazon.Glue.Model
         /// query engines that support querying of the Delta transaction log directly.
         /// </para>
         /// </summary>
-        public bool CreateNativeDeltaTable
+        public bool? CreateNativeDeltaTable
         {
-            get { return this._createNativeDeltaTable.GetValueOrDefault(); }
+            get { return this._createNativeDeltaTable; }
             set { this._createNativeDeltaTable = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Glue.Model
         /// Specifies whether to write the manifest files to the Delta table path.
         /// </para>
         /// </summary>
-        public bool WriteManifest
+        public bool? WriteManifest
         {
-            get { return this._writeManifest.GetValueOrDefault(); }
+            get { return this._writeManifest; }
             set { this._writeManifest = value; }
         }
 

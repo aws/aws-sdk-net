@@ -187,9 +187,9 @@ namespace Amazon.Route53Resolver.Model
         /// The number of IP addresses that the Resolver endpoint can use for DNS queries.
         /// </para>
         /// </summary>
-        public int IpAddressCount
+        public int? IpAddressCount
         {
-            get { return this._ipAddressCount.GetValueOrDefault(); }
+            get { return this._ipAddressCount; }
             set { this._ipAddressCount = value; }
         }
 

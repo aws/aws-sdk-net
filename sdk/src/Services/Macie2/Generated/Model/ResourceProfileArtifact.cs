@@ -100,9 +100,9 @@ namespace Amazon.Macie2.Model
         /// Specifies whether Amazon Macie found sensitive data in the object.
         /// </para>
         /// </summary>
-        public bool Sensitive
+        public bool? Sensitive
         {
-            get { return this._sensitive.GetValueOrDefault(); }
+            get { return this._sensitive; }
             set { this._sensitive = value; }
         }
 

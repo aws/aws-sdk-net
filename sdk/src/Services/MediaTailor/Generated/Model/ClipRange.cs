@@ -44,9 +44,9 @@ namespace Amazon.MediaTailor.Model
         /// the VOD source associated with the program.
         /// </para>
         /// </summary>
-        public long EndOffsetMillis
+        public long? EndOffsetMillis
         {
-            get { return this._endOffsetMillis.GetValueOrDefault(); }
+            get { return this._endOffsetMillis; }
             set { this._endOffsetMillis = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.MediaTailor.Model
         /// at the number of milliseconds into the duration of the VOD source.
         /// </para>
         /// </summary>
-        public long StartOffsetMillis
+        public long? StartOffsetMillis
         {
-            get { return this._startOffsetMillis.GetValueOrDefault(); }
+            get { return this._startOffsetMillis; }
             set { this._startOffsetMillis = value; }
         }
 

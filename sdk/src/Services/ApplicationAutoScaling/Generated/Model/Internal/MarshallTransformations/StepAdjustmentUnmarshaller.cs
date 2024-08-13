@@ -68,19 +68,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MetricIntervalLowerBound", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricIntervalLowerBound = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MetricIntervalUpperBound", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricIntervalUpperBound = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScalingAdjustment", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScalingAdjustment = unmarshaller.Unmarshall(context);
                     continue;
                 }

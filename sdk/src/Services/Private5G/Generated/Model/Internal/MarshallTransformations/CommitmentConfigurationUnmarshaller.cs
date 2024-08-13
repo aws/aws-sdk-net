@@ -68,7 +68,7 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("automaticRenewal", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutomaticRenewal = unmarshaller.Unmarshall(context);
                     continue;
                 }

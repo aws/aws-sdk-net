@@ -57,51 +57,51 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxNodeCount())
             {
                 context.Writer.WritePropertyName("maxNodeCount");
-                context.Writer.Write(requestObject.MaxNodeCount);
+                context.Writer.Write(requestObject.MaxNodeCount.Value);
             }
 
             if(requestObject.IsSetMetricTarget())
             {
                 context.Writer.WritePropertyName("metricTarget");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricTarget))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MetricTarget.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricTarget));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricTarget.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricTarget);
+                    context.Writer.Write(requestObject.MetricTarget.Value);
                 }
             }
 
             if(requestObject.IsSetMinNodeCount())
             {
                 context.Writer.WritePropertyName("minNodeCount");
-                context.Writer.Write(requestObject.MinNodeCount);
+                context.Writer.Write(requestObject.MinNodeCount.Value);
             }
 
             if(requestObject.IsSetScaleInCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleInCooldownSeconds");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleInCooldownSeconds))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleInCooldownSeconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleInCooldownSeconds));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleInCooldownSeconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ScaleInCooldownSeconds);
+                    context.Writer.Write(requestObject.ScaleInCooldownSeconds.Value);
                 }
             }
 
             if(requestObject.IsSetScaleOutCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleOutCooldownSeconds");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ScaleOutCooldownSeconds);
+                    context.Writer.Write(requestObject.ScaleOutCooldownSeconds.Value);
                 }
             }
 

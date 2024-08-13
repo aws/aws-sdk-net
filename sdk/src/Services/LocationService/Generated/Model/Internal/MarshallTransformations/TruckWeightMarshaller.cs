@@ -51,13 +51,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTotal())
             {
                 context.Writer.WritePropertyName("Total");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Total))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Total.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Total));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Total.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Total);
+                    context.Writer.Write(requestObject.Total.Value);
                 }
             }
 

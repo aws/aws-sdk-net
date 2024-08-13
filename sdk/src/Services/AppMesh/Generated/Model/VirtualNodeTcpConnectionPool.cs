@@ -44,9 +44,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxConnections
+        public int? MaxConnections
         {
-            get { return this._maxConnections.GetValueOrDefault(); }
+            get { return this._maxConnections; }
             set { this._maxConnections = value; }
         }
 

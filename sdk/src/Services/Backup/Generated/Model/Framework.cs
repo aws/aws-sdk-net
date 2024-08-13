@@ -51,9 +51,9 @@ namespace Amazon.Backup.Model
         /// represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.Backup.Model
         /// The number of controls contained by the framework.
         /// </para>
         /// </summary>
-        public int NumberOfControls
+        public int? NumberOfControls
         {
-            get { return this._numberOfControls.GetValueOrDefault(); }
+            get { return this._numberOfControls; }
             set { this._numberOfControls = value; }
         }
 

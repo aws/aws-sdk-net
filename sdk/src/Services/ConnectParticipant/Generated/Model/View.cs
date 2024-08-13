@@ -121,9 +121,9 @@ namespace Amazon.ConnectParticipant.Model
         /// The current version of the view.
         /// </para>
         /// </summary>
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

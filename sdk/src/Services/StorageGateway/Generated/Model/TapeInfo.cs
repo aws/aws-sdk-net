@@ -69,9 +69,9 @@ namespace Amazon.StorageGateway.Model
         /// The date that the tape entered the custom tape pool with tape retention lock enabled.
         /// </para>
         /// </summary>
-        public DateTime PoolEntryDate
+        public DateTime? PoolEntryDate
         {
-            get { return this._poolEntryDate.GetValueOrDefault(); }
+            get { return this._poolEntryDate; }
             set { this._poolEntryDate = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.StorageGateway.Model
         /// The date that the tape became subject to tape retention lock.
         /// </para>
         /// </summary>
-        public DateTime RetentionStartDate
+        public DateTime? RetentionStartDate
         {
-            get { return this._retentionStartDate.GetValueOrDefault(); }
+            get { return this._retentionStartDate; }
             set { this._retentionStartDate = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.StorageGateway.Model
         /// The size, in bytes, of a virtual tape.
         /// </para>
         /// </summary>
-        public long TapeSizeInBytes
+        public long? TapeSizeInBytes
         {
-            get { return this._tapeSizeInBytes.GetValueOrDefault(); }
+            get { return this._tapeSizeInBytes; }
             set { this._tapeSizeInBytes = value; }
         }
 

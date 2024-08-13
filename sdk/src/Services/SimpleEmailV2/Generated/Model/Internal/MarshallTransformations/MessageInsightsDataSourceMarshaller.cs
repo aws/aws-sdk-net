@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");
-                context.Writer.Write(requestObject.EndDate);
+                context.Writer.Write(requestObject.EndDate.Value);
             }
 
             if(requestObject.IsSetExclude())
@@ -79,13 +79,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
-                context.Writer.Write(requestObject.MaxResults);
+                context.Writer.Write(requestObject.MaxResults.Value);
             }
 
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");
-                context.Writer.Write(requestObject.StartDate);
+                context.Writer.Write(requestObject.StartDate.Value);
             }
 
         }

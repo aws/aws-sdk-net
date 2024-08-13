@@ -78,7 +78,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetValidForInMinutes())
                 {
                     context.Writer.WritePropertyName("ValidForInMinutes");
-                    context.Writer.Write(publicRequest.ValidForInMinutes);
+                    context.Writer.Write(publicRequest.ValidForInMinutes.Value);
                 }
 
                 writer.WriteObjectEnd();

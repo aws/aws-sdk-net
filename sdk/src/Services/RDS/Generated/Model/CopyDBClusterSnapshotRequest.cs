@@ -103,9 +103,9 @@ namespace Amazon.RDS.Model
         /// DB cluster snapshot. By default, tags are not copied.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 

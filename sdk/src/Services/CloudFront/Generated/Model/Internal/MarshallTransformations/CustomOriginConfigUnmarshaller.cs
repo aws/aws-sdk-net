@@ -58,19 +58,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HTTPPort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HTTPPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HTTPSPort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HTTPSPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OriginKeepaliveTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginKeepaliveTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -82,7 +82,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("OriginReadTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginReadTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }

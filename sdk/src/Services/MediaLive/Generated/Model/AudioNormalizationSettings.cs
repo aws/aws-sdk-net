@@ -77,9 +77,9 @@ namespace Amazon.MediaLive.Model
         ///  The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification
         /// (1770-2) recommends a target of -23 LKFS.
         /// </summary>
-        public double TargetLkfs
+        public double? TargetLkfs
         {
-            get { return this._targetLkfs.GetValueOrDefault(); }
+            get { return this._targetLkfs; }
             set { this._targetLkfs = value; }
         }
 

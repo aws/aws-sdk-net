@@ -53,9 +53,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public long MaxVisibleColumns
+        public long? MaxVisibleColumns
         {
-            get { return this._maxVisibleColumns.GetValueOrDefault(); }
+            get { return this._maxVisibleColumns; }
             set { this._maxVisibleColumns = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public long MaxVisibleRows
+        public long? MaxVisibleRows
         {
-            get { return this._maxVisibleRows.GetValueOrDefault(); }
+            get { return this._maxVisibleRows; }
             set { this._maxVisibleRows = value; }
         }
 

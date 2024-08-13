@@ -125,9 +125,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long RowNumber
+        public long? RowNumber
         {
-            get { return this._rowNumber.GetValueOrDefault(); }
+            get { return this._rowNumber; }
             set { this._rowNumber = value; }
         }
 

@@ -78,7 +78,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTargetDpus())
                 {
                     context.Writer.WritePropertyName("TargetDpus");
-                    context.Writer.Write(publicRequest.TargetDpus);
+                    context.Writer.Write(publicRequest.TargetDpus.Value);
                 }
 
                 writer.WriteObjectEnd();

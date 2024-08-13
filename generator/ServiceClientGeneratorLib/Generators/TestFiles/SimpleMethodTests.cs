@@ -52,8 +52,8 @@ namespace ServiceClientGenerator.Generators.TestFiles
             
             #line default
             #line hidden
-            this.Write(";\r\n\r\nnamespace AWSSDK_DotNet35.UnitTests.TestTools\r\n{\r\n    [TestClass]\r\n    publi" +
-                    "c class ");
+            this.Write(";\r\n\r\nnamespace AWSSDK_DotNet.UnitTests.TestTools\r\n{\r\n    [TestClass]\r\n    public " +
+                    "class ");
             
             #line 22 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));

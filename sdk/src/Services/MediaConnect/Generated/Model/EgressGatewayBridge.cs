@@ -57,9 +57,9 @@ namespace Amazon.MediaConnect.Model
         /// egress bridge.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 

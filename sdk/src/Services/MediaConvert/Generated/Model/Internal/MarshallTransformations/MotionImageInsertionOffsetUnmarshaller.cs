@@ -68,13 +68,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("imageX", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ImageX = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("imageY", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ImageY = unmarshaller.Unmarshall(context);
                     continue;
                 }

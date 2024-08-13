@@ -94,7 +94,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxRecords())
                 {
                     context.Writer.WritePropertyName("MaxRecords");
-                    context.Writer.Write(publicRequest.MaxRecords);
+                    context.Writer.Write(publicRequest.MaxRecords.Value);
                 }
 
                 if(publicRequest.IsSetMigrationProjectIdentifier())

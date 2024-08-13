@@ -119,9 +119,9 @@ namespace Amazon.CloudFormation.Model
         /// Whether this configuration data is the default configuration for the extension.
         /// </para>
         /// </summary>
-        public bool IsDefaultConfiguration
+        public bool? IsDefaultConfiguration
         {
-            get { return this._isDefaultConfiguration.GetValueOrDefault(); }
+            get { return this._isDefaultConfiguration; }
             set { this._isDefaultConfiguration = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.CloudFormation.Model
         /// <c>null</c>.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

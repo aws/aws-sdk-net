@@ -60,7 +60,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("remoteAccessAllowed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.RemoteAccessAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }

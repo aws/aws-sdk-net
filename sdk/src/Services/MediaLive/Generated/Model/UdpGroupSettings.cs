@@ -79,9 +79,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TimedMetadataId3Period. Timed Metadata interval in seconds.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TimedMetadataId3Period
+        public int? TimedMetadataId3Period
         {
-            get { return this._timedMetadataId3Period.GetValueOrDefault(); }
+            get { return this._timedMetadataId3Period; }
             set { this._timedMetadataId3Period = value; }
         }
 

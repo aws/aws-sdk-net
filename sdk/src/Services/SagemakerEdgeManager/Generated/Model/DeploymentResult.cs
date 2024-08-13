@@ -48,9 +48,9 @@ namespace Amazon.SagemakerEdgeManager.Model
         /// The timestamp of when the deployment was ended, and the agent got the deployment results.
         /// </para>
         /// </summary>
-        public DateTime DeploymentEndTime
+        public DateTime? DeploymentEndTime
         {
-            get { return this._deploymentEndTime.GetValueOrDefault(); }
+            get { return this._deploymentEndTime; }
             set { this._deploymentEndTime = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SagemakerEdgeManager.Model
         /// The timestamp of when the deployment was started on the agent.
         /// </para>
         /// </summary>
-        public DateTime DeploymentStartTime
+        public DateTime? DeploymentStartTime
         {
-            get { return this._deploymentStartTime.GetValueOrDefault(); }
+            get { return this._deploymentStartTime; }
             set { this._deploymentStartTime = value; }
         }
 

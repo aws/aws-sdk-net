@@ -69,7 +69,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DatabaseRevisionReleaseDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DatabaseRevisionReleaseDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

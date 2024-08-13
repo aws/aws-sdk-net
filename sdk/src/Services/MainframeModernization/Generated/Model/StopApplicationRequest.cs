@@ -65,9 +65,9 @@ namespace Amazon.MainframeModernization.Model
         /// to apply another action on the application. The default value is false.
         /// </para>
         /// </summary>
-        public bool ForceStop
+        public bool? ForceStop
         {
-            get { return this._forceStop.GetValueOrDefault(); }
+            get { return this._forceStop; }
             set { this._forceStop = value; }
         }
 

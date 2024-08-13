@@ -101,9 +101,9 @@ namespace Amazon.CloudFront.Model
         /// value of <c>MinTTL</c>.
         /// </para>
         /// </summary>
-        public long DefaultTTL
+        public long? DefaultTTL
         {
-            get { return this._defaultTTL.GetValueOrDefault(); }
+            get { return this._defaultTTL; }
             set { this._defaultTTL = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.CloudFront.Model
         /// field is the same as the value of <c>DefaultTTL</c>.
         /// </para>
         /// </summary>
-        public long MaxTTL
+        public long? MaxTTL
         {
-            get { return this._maxTTL.GetValueOrDefault(); }
+            get { return this._maxTTL; }
             set { this._maxTTL = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MinTTL
+        public long? MinTTL
         {
-            get { return this._minTTL.GetValueOrDefault(); }
+            get { return this._minTTL; }
             set { this._minTTL = value; }
         }
 

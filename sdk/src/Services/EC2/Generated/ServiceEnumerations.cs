@@ -6455,6 +6455,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly HostTenancy Dedicated = new HostTenancy("dedicated");
         /// <summary>
+        /// Constant Default for HostTenancy
+        /// </summary>
+        public static readonly HostTenancy Default = new HostTenancy("default");
+        /// <summary>
         /// Constant Host for HostTenancy
         /// </summary>
         public static readonly HostTenancy Host = new HostTenancy("host");
@@ -11701,6 +11705,72 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IpamExternalResourceVerificationTokenState.
+    /// </summary>
+    public class IpamExternalResourceVerificationTokenState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for IpamExternalResourceVerificationTokenState
+        /// </summary>
+        public static readonly IpamExternalResourceVerificationTokenState CreateComplete = new IpamExternalResourceVerificationTokenState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for IpamExternalResourceVerificationTokenState
+        /// </summary>
+        public static readonly IpamExternalResourceVerificationTokenState CreateFailed = new IpamExternalResourceVerificationTokenState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for IpamExternalResourceVerificationTokenState
+        /// </summary>
+        public static readonly IpamExternalResourceVerificationTokenState CreateInProgress = new IpamExternalResourceVerificationTokenState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for IpamExternalResourceVerificationTokenState
+        /// </summary>
+        public static readonly IpamExternalResourceVerificationTokenState DeleteComplete = new IpamExternalResourceVerificationTokenState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for IpamExternalResourceVerificationTokenState
+        /// </summary>
+        public static readonly IpamExternalResourceVerificationTokenState DeleteFailed = new IpamExternalResourceVerificationTokenState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for IpamExternalResourceVerificationTokenState
+        /// </summary>
+        public static readonly IpamExternalResourceVerificationTokenState DeleteInProgress = new IpamExternalResourceVerificationTokenState("delete-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamExternalResourceVerificationTokenState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamExternalResourceVerificationTokenState FindValue(string value)
+        {
+            return FindValue<IpamExternalResourceVerificationTokenState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamExternalResourceVerificationTokenState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpamManagementState.
     /// </summary>
     public class IpamManagementState : ConstantClass
@@ -11748,6 +11818,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IpamManagementState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamNetworkInterfaceAttachmentStatus.
+    /// </summary>
+    public class IpamNetworkInterfaceAttachmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for IpamNetworkInterfaceAttachmentStatus
+        /// </summary>
+        public static readonly IpamNetworkInterfaceAttachmentStatus Available = new IpamNetworkInterfaceAttachmentStatus("available");
+        /// <summary>
+        /// Constant InUse for IpamNetworkInterfaceAttachmentStatus
+        /// </summary>
+        public static readonly IpamNetworkInterfaceAttachmentStatus InUse = new IpamNetworkInterfaceAttachmentStatus("in-use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamNetworkInterfaceAttachmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamNetworkInterfaceAttachmentStatus FindValue(string value)
+        {
+            return FindValue<IpamNetworkInterfaceAttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamNetworkInterfaceAttachmentStatus(string value)
         {
             return FindValue(value);
         }
@@ -16689,6 +16809,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType Ipam = new ResourceType("ipam");
         /// <summary>
+        /// Constant IpamExternalResourceVerificationToken for ResourceType
+        /// </summary>
+        public static readonly ResourceType IpamExternalResourceVerificationToken = new ResourceType("ipam-external-resource-verification-token");
+        /// <summary>
         /// Constant IpamPool for ResourceType
         /// </summary>
         public static readonly ResourceType IpamPool = new ResourceType("ipam-pool");
@@ -16896,10 +17020,6 @@ namespace Amazon.EC2
         /// Constant VpcBlockPublicAccessExclusion for ResourceType
         /// </summary>
         public static readonly ResourceType VpcBlockPublicAccessExclusion = new ResourceType("vpc-block-public-access-exclusion");
-        /// <summary>
-        /// Constant VpcEncryptionControl for ResourceType
-        /// </summary>
-        public static readonly ResourceType VpcEncryptionControl = new ResourceType("vpc-encryption-control");
         /// <summary>
         /// Constant VpcEndpoint for ResourceType
         /// </summary>
@@ -19107,6 +19227,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TokenState.
+    /// </summary>
+    public class TokenState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Expired for TokenState
+        /// </summary>
+        public static readonly TokenState Expired = new TokenState("expired");
+        /// <summary>
+        /// Constant Valid for TokenState
+        /// </summary>
+        public static readonly TokenState Valid = new TokenState("valid");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TokenState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TokenState FindValue(string value)
+        {
+            return FindValue<TokenState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TokenState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TpmSupportValues.
     /// </summary>
     public class TpmSupportValues : ConstantClass
@@ -20808,6 +20978,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserTrustProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerificationMethod.
+    /// </summary>
+    public class VerificationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DnsToken for VerificationMethod
+        /// </summary>
+        public static readonly VerificationMethod DnsToken = new VerificationMethod("dns-token");
+        /// <summary>
+        /// Constant RemarksX509 for VerificationMethod
+        /// </summary>
+        public static readonly VerificationMethod RemarksX509 = new VerificationMethod("remarks-x509");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationMethod FindValue(string value)
+        {
+            return FindValue<VerificationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationMethod(string value)
         {
             return FindValue(value);
         }

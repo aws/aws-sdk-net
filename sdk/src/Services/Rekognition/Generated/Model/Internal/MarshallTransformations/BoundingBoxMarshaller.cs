@@ -51,52 +51,52 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Height))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Height.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Height));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Height.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Height);
+                    context.Writer.Write(requestObject.Height.Value);
                 }
             }
 
             if(requestObject.IsSetLeft())
             {
                 context.Writer.WritePropertyName("Left");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Left))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Left.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Left));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Left.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Left);
+                    context.Writer.Write(requestObject.Left.Value);
                 }
             }
 
             if(requestObject.IsSetTop())
             {
                 context.Writer.WritePropertyName("Top");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Top))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Top.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Top));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Top.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Top);
+                    context.Writer.Write(requestObject.Top.Value);
                 }
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                if(StringUtils.IsSpecialFloatValue(requestObject.Width))
+                if(StringUtils.IsSpecialFloatValue(requestObject.Width.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Width));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Width.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Width);
+                    context.Writer.Write(requestObject.Width.Value);
                 }
             }
 

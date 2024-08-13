@@ -84,7 +84,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetChatDurationInMinutes())
                 {
                     context.Writer.WritePropertyName("ChatDurationInMinutes");
-                    context.Writer.Write(publicRequest.ChatDurationInMinutes);
+                    context.Writer.Write(publicRequest.ChatDurationInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetClientToken())

@@ -92,7 +92,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("JoinedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.JoinedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

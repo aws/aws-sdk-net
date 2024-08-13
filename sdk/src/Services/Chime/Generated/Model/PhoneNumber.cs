@@ -145,9 +145,9 @@ namespace Amazon.Chime.Model
         /// The phone number creation timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.Chime.Model
         /// The deleted phone number timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime DeletionTimestamp
+        public DateTime? DeletionTimestamp
         {
-            get { return this._deletionTimestamp.GetValueOrDefault(); }
+            get { return this._deletionTimestamp; }
             set { this._deletionTimestamp = value; }
         }
 
@@ -272,9 +272,9 @@ namespace Amazon.Chime.Model
         /// The updated phone number timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

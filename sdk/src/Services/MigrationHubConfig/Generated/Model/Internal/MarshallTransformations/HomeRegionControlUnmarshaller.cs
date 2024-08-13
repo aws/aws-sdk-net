@@ -80,7 +80,7 @@ namespace Amazon.MigrationHubConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RequestedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RequestedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

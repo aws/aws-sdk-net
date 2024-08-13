@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private RealTimeContactAnalysisSegmentCategories _categories;
         private RealTimeContactAnalysisSegmentEvent _event;
         private RealTimeContactAnalysisSegmentIssues _issues;
+        private RealTimeContactAnalysisSegmentPostContactSummary _postContactSummary;
         private RealTimeContactAnalysisSegmentTranscript _transcript;
 
         /// <summary>
@@ -101,6 +102,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetIssues()
         {
             return this._issues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostContactSummary. 
+        /// <para>
+        /// Information about the post-contact summary.
+        /// </para>
+        /// </summary>
+        public RealTimeContactAnalysisSegmentPostContactSummary PostContactSummary
+        {
+            get { return this._postContactSummary; }
+            set { this._postContactSummary = value; }
+        }
+
+        // Check to see if PostContactSummary property is set
+        internal bool IsSetPostContactSummary()
+        {
+            return this._postContactSummary != null;
         }
 
         /// <summary>

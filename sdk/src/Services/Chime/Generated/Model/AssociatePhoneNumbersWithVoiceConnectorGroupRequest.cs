@@ -80,9 +80,9 @@ namespace Amazon.Chime.Model
         /// associate any phone numbers that have previously existing associations.
         /// </para>
         /// </summary>
-        public bool ForceAssociate
+        public bool? ForceAssociate
         {
-            get { return this._forceAssociate.GetValueOrDefault(); }
+            get { return this._forceAssociate; }
             set { this._forceAssociate = value; }
         }
 

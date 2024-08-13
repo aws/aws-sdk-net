@@ -326,6 +326,13 @@
     // Removes unneccesary tags from the documentation and formats paragraph tags correctly
     public string CleanupDocumentation(string documentation)
     {
+        // Service teams may include HTML elements in their documentation, but this can cause formatting issues.
+        // The problem is the "<code>" tag has a different meaning in XML docs (multiple lines); we'll replace them with 
+        // the "<c>" tag (already used in custom code - in Core, for example).
+        documentation = documentation
+            .Replace("<code>", "<c>")
+            .Replace("</code>", "</c>");
+
         documentation = documentation
             .Replace("\r", "")
             .Replace("\n", "")

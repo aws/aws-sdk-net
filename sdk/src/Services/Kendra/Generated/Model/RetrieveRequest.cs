@@ -178,9 +178,9 @@ namespace Amazon.Kendra.Model
         /// to get result pages after the first one.
         /// </para>
         /// </summary>
-        public int PageNumber
+        public int? PageNumber
         {
-            get { return this._pageNumber.GetValueOrDefault(); }
+            get { return this._pageNumber; }
             set { this._pageNumber = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.Kendra.Model
         /// ask for more than 100 results, only 100 are returned.
         /// </para>
         /// </summary>
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.Neptunedata.Model
         /// in the queue.
         /// </para>
         /// </summary>
-        public int AcceptedQueryCount
+        public int? AcceptedQueryCount
         {
-            get { return this._acceptedQueryCount.GetValueOrDefault(); }
+            get { return this._acceptedQueryCount; }
             set { this._acceptedQueryCount = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of Gremlin queries currently running.
         /// </para>
         /// </summary>
-        public int RunningQueryCount
+        public int? RunningQueryCount
         {
-            get { return this._runningQueryCount.GetValueOrDefault(); }
+            get { return this._runningQueryCount; }
             set { this._runningQueryCount = value; }
         }
 

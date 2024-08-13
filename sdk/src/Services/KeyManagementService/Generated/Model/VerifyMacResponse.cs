@@ -89,9 +89,9 @@ namespace Amazon.KeyManagementService.Model
         /// HMAC was computed.
         /// </para>
         /// </summary>
-        public bool MacValid
+        public bool? MacValid
         {
-            get { return this._macValid.GetValueOrDefault(); }
+            get { return this._macValid; }
             set { this._macValid = value; }
         }
 

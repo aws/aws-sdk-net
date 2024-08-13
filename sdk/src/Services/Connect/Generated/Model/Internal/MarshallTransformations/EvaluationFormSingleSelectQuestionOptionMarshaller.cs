@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticFail())
             {
                 context.Writer.WritePropertyName("AutomaticFail");
-                context.Writer.Write(requestObject.AutomaticFail);
+                context.Writer.Write(requestObject.AutomaticFail.Value);
             }
 
             if(requestObject.IsSetRefId())
@@ -63,7 +63,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScore())
             {
                 context.Writer.WritePropertyName("Score");
-                context.Writer.Write(requestObject.Score);
+                context.Writer.Write(requestObject.Score.Value);
             }
 
             if(requestObject.IsSetText())

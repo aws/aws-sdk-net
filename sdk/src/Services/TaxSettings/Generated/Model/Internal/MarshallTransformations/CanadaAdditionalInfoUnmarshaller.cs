@@ -80,7 +80,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isResellerAccount", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsResellerAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }

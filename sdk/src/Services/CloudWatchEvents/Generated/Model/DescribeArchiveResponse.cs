@@ -90,9 +90,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// The time at which the archive was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// The number of events in the archive.
         /// </para>
         /// </summary>
-        public long EventCount
+        public long? EventCount
         {
-            get { return this._eventCount.GetValueOrDefault(); }
+            get { return this._eventCount; }
             set { this._eventCount = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RetentionDays
+        public int? RetentionDays
         {
-            get { return this._retentionDays.GetValueOrDefault(); }
+            get { return this._retentionDays; }
             set { this._retentionDays = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// The size of the archive in bytes.
         /// </para>
         /// </summary>
-        public long SizeBytes
+        public long? SizeBytes
         {
-            get { return this._sizeBytes.GetValueOrDefault(); }
+            get { return this._sizeBytes; }
             set { this._sizeBytes = value; }
         }
 

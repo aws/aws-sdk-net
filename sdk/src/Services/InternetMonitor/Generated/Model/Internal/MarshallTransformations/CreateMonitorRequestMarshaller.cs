@@ -103,7 +103,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCityNetworksToMonitor())
                 {
                     context.Writer.WritePropertyName("MaxCityNetworksToMonitor");
-                    context.Writer.Write(publicRequest.MaxCityNetworksToMonitor);
+                    context.Writer.Write(publicRequest.MaxCityNetworksToMonitor.Value);
                 }
 
                 if(publicRequest.IsSetMonitorName())
@@ -140,7 +140,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrafficPercentageToMonitor())
                 {
                     context.Writer.WritePropertyName("TrafficPercentageToMonitor");
-                    context.Writer.Write(publicRequest.TrafficPercentageToMonitor);
+                    context.Writer.Write(publicRequest.TrafficPercentageToMonitor.Value);
                 }
 
                 writer.WriteObjectEnd();

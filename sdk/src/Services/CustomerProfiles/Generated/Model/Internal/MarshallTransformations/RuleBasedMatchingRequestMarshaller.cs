@@ -73,7 +73,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetExportingConfig())
@@ -106,13 +106,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAllowedRuleLevelForMatching())
             {
                 context.Writer.WritePropertyName("MaxAllowedRuleLevelForMatching");
-                context.Writer.Write(requestObject.MaxAllowedRuleLevelForMatching);
+                context.Writer.Write(requestObject.MaxAllowedRuleLevelForMatching.Value);
             }
 
             if(requestObject.IsSetMaxAllowedRuleLevelForMerging())
             {
                 context.Writer.WritePropertyName("MaxAllowedRuleLevelForMerging");
-                context.Writer.Write(requestObject.MaxAllowedRuleLevelForMerging);
+                context.Writer.Write(requestObject.MaxAllowedRuleLevelForMerging.Value);
             }
 
         }

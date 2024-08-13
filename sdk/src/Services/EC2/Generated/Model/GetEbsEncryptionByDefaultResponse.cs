@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether encryption by default is enabled.
         /// </para>
         /// </summary>
-        public bool EbsEncryptionByDefault
+        public bool? EbsEncryptionByDefault
         {
-            get { return this._ebsEncryptionByDefault.GetValueOrDefault(); }
+            get { return this._ebsEncryptionByDefault; }
             set { this._ebsEncryptionByDefault = value; }
         }
 

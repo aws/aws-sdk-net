@@ -86,9 +86,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property CreatedAt.
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property LastDiscoveredAt.
         /// </summary>
-        public DateTime LastDiscoveredAt
+        public DateTime? LastDiscoveredAt
         {
-            get { return this._lastDiscoveredAt.GetValueOrDefault(); }
+            get { return this._lastDiscoveredAt; }
             set { this._lastDiscoveredAt = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ModifiedAt.
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MonitorChangesPendingDeployment. If true, there are pending
         /// monitor changes for this signal map that can be deployed.
         /// </summary>
-        public bool MonitorChangesPendingDeployment
+        public bool? MonitorChangesPendingDeployment
         {
-            get { return this._monitorChangesPendingDeployment.GetValueOrDefault(); }
+            get { return this._monitorChangesPendingDeployment; }
             set { this._monitorChangesPendingDeployment = value; }
         }
 

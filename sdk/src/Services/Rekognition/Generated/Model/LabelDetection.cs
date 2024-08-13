@@ -49,9 +49,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long DurationMillis
+        public long? DurationMillis
         {
-            get { return this._durationMillis.GetValueOrDefault(); }
+            get { return this._durationMillis; }
             set { this._durationMillis = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long EndTimestampMillis
+        public long? EndTimestampMillis
         {
-            get { return this._endTimestampMillis.GetValueOrDefault(); }
+            get { return this._endTimestampMillis; }
             set { this._endTimestampMillis = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long StartTimestampMillis
+        public long? StartTimestampMillis
         {
-            get { return this._startTimestampMillis.GetValueOrDefault(); }
+            get { return this._startTimestampMillis; }
             set { this._startTimestampMillis = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.Rekognition.Model
         /// the label first appears.
         /// </para>
         /// </summary>
-        public long Timestamp
+        public long? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

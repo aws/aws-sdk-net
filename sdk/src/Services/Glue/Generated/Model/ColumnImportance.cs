@@ -69,9 +69,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Importance
+        public double? Importance
         {
-            get { return this._importance.GetValueOrDefault(); }
+            get { return this._importance; }
             set { this._importance = value; }
         }
 

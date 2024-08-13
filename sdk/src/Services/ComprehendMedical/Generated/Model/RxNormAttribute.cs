@@ -52,9 +52,9 @@ namespace Amazon.ComprehendMedical.Model
         /// The offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
-        public int BeginOffset
+        public int? BeginOffset
         {
-            get { return this._beginOffset.GetValueOrDefault(); }
+            get { return this._beginOffset; }
             set { this._beginOffset = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.ComprehendMedical.Model
         /// The offset returns the UTF-8 code point in the string.
         /// </para>
         /// </summary>
-        public int EndOffset
+        public int? EndOffset
         {
-            get { return this._endOffset.GetValueOrDefault(); }
+            get { return this._endOffset; }
             set { this._endOffset = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.ComprehendMedical.Model
         /// within this response rather than a global unique identifier.
         /// </para>
         /// </summary>
-        public int Id
+        public int? Id
         {
-            get { return this._id.GetValueOrDefault(); }
+            get { return this._id; }
             set { this._id = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.ComprehendMedical.Model
         /// linked to an entity.
         /// </para>
         /// </summary>
-        public float RelationshipScore
+        public float? RelationshipScore
         {
-            get { return this._relationshipScore.GetValueOrDefault(); }
+            get { return this._relationshipScore; }
             set { this._relationshipScore = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.ComprehendMedical.Model
         /// is correctly recognized as an attribute.
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

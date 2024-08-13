@@ -152,9 +152,9 @@ namespace Amazon.SecurityHub.Model
         /// The maximum session duration (in seconds) that you want to set for the specified role.
         /// </para>
         /// </summary>
-        public int MaxSessionDuration
+        public int? MaxSessionDuration
         {
-            get { return this._maxSessionDuration.GetValueOrDefault(); }
+            get { return this._maxSessionDuration; }
             set { this._maxSessionDuration = value; }
         }
 

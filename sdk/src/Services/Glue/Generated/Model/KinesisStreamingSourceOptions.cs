@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// is <c>"False"</c>. This option is only configurable for Glue version 2.0 and above.
         /// </para>
         /// </summary>
-        public bool AddIdleTimeBetweenReads
+        public bool? AddIdleTimeBetweenReads
         {
-            get { return this._addIdleTimeBetweenReads.GetValueOrDefault(); }
+            get { return this._addIdleTimeBetweenReads; }
             set { this._addIdleTimeBetweenReads = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Glue.Model
         /// data stream before the batch is started. The default value is <c>"False"</c>.
         /// </para>
         /// </summary>
-        public bool AvoidEmptyBatches
+        public bool? AvoidEmptyBatches
         {
-            get { return this._avoidEmptyBatches.GetValueOrDefault(); }
+            get { return this._avoidEmptyBatches; }
             set { this._avoidEmptyBatches = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long DescribeShardInterval
+        public long? DescribeShardInterval
         {
-            get { return this._describeShardInterval.GetValueOrDefault(); }
+            get { return this._describeShardInterval; }
             set { this._describeShardInterval = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long IdleTimeBetweenReadsInMs
+        public long? IdleTimeBetweenReadsInMs
         {
-            get { return this._idleTimeBetweenReadsInMs.GetValueOrDefault(); }
+            get { return this._idleTimeBetweenReadsInMs; }
             set { this._idleTimeBetweenReadsInMs = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long MaxFetchRecordsPerShard
+        public long? MaxFetchRecordsPerShard
         {
-            get { return this._maxFetchRecordsPerShard.GetValueOrDefault(); }
+            get { return this._maxFetchRecordsPerShard; }
             set { this._maxFetchRecordsPerShard = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long MaxFetchTimeInMs
+        public long? MaxFetchTimeInMs
         {
-            get { return this._maxFetchTimeInMs.GetValueOrDefault(); }
+            get { return this._maxFetchTimeInMs; }
             set { this._maxFetchTimeInMs = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long MaxRecordPerRead
+        public long? MaxRecordPerRead
         {
-            get { return this._maxRecordPerRead.GetValueOrDefault(); }
+            get { return this._maxRecordPerRead; }
             set { this._maxRecordPerRead = value; }
         }
 
@@ -303,9 +303,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long MaxRetryIntervalMs
+        public long? MaxRetryIntervalMs
         {
-            get { return this._maxRetryIntervalMs.GetValueOrDefault(); }
+            get { return this._maxRetryIntervalMs; }
             set { this._maxRetryIntervalMs = value; }
         }
 
@@ -323,9 +323,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NumRetries
+        public int? NumRetries
         {
-            get { return this._numRetries.GetValueOrDefault(); }
+            get { return this._numRetries; }
             set { this._numRetries = value; }
         }
 
@@ -343,9 +343,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long RetryIntervalMs
+        public long? RetryIntervalMs
         {
-            get { return this._retryIntervalMs.GetValueOrDefault(); }
+            get { return this._retryIntervalMs; }
             set { this._retryIntervalMs = value; }
         }
 
@@ -431,9 +431,9 @@ namespace Amazon.Glue.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime StartingTimestamp
+        public DateTime? StartingTimestamp
         {
-            get { return this._startingTimestamp.GetValueOrDefault(); }
+            get { return this._startingTimestamp; }
             set { this._startingTimestamp = value; }
         }
 

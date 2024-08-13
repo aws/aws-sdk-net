@@ -74,7 +74,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExpenseIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpenseIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

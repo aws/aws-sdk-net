@@ -68,13 +68,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllocatedProvisionedConcurrentExecutions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AllocatedProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AvailableProvisionedConcurrentExecutions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AvailableProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,7 +92,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RequestedProvisionedConcurrentExecutions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RequestedProvisionedConcurrentExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }

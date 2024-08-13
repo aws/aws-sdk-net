@@ -53,9 +53,9 @@ namespace Amazon.KinesisFirehose.Model
         /// The date and time that the delivery stream was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTimestamp
+        public DateTime? CreateTimestamp
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
+            get { return this._createTimestamp; }
             set { this._createTimestamp = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool HasMoreDestinations
+        public bool? HasMoreDestinations
         {
-            get { return this._hasMoreDestinations.GetValueOrDefault(); }
+            get { return this._hasMoreDestinations; }
             set { this._hasMoreDestinations = value; }
         }
 
@@ -238,9 +238,9 @@ namespace Amazon.KinesisFirehose.Model
         /// The date and time that the delivery stream was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTimestamp
+        public DateTime? LastUpdateTimestamp
         {
-            get { return this._lastUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimestamp; }
             set { this._lastUpdateTimestamp = value; }
         }
 

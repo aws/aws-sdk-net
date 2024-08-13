@@ -50,9 +50,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ModelPackageVersion
+        public int? ModelPackageVersion
         {
-            get { return this._modelPackageVersion.GetValueOrDefault(); }
+            get { return this._modelPackageVersion; }
             set { this._modelPackageVersion = value; }
         }
 

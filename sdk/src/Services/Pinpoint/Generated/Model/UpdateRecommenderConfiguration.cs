@@ -251,9 +251,9 @@ namespace Amazon.Pinpoint.Model
         /// processing of recommendation data.
         /// </para>
         /// </summary>
-        public int RecommendationsPerMessage
+        public int? RecommendationsPerMessage
         {
-            get { return this._recommendationsPerMessage.GetValueOrDefault(); }
+            get { return this._recommendationsPerMessage; }
             set { this._recommendationsPerMessage = value; }
         }
 

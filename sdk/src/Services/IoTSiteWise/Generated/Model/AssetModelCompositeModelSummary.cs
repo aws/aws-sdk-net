@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the the composite model that this summary describes..
+        /// The description of the composite model that this summary describes..
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -84,7 +84,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the the composite model that this summary describes..
+        /// The ID of the composite model that this summary describes..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -103,7 +103,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the the composite model that this summary describes..
+        /// The name of the composite model that this summary describes..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -140,20 +140,9 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of asset model.
+        /// The composite model type. Valid values are <c>AWS/ALARM</c>, <c>CUSTOM</c>, or <c>
+        /// AWS/L4E_ANOMALY</c>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets.
-        /// Can't be included as a component in another asset model.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite
-        /// models of other asset models. You can't create assets directly from this type of asset
-        /// model. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Type

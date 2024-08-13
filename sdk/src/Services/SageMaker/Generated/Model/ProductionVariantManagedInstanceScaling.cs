@@ -47,9 +47,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxInstanceCount
+        public int? MaxInstanceCount
         {
-            get { return this._maxInstanceCount.GetValueOrDefault(); }
+            get { return this._maxInstanceCount; }
             set { this._maxInstanceCount = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinInstanceCount
+        public int? MinInstanceCount
         {
-            get { return this._minInstanceCount.GetValueOrDefault(); }
+            get { return this._minInstanceCount; }
             set { this._minInstanceCount = value; }
         }
 

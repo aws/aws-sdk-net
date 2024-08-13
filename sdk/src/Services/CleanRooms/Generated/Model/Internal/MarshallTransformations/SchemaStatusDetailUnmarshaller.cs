@@ -72,6 +72,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.AnalysisRuleType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("analysisType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AnalysisType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("configurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

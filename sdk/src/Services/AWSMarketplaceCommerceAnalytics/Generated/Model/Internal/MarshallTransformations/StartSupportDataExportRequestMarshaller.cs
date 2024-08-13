@@ -104,7 +104,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
                 if(publicRequest.IsSetFromDate())
                 {
                     context.Writer.WritePropertyName("fromDate");
-                    context.Writer.Write(publicRequest.FromDate);
+                    context.Writer.Write(publicRequest.FromDate.Value);
                 }
 
                 if(publicRequest.IsSetRoleNameArn())

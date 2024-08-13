@@ -84,7 +84,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEditContent())
                 {
                     context.Writer.WritePropertyName("editContent");
-                    context.Writer.Write(publicRequest.EditContent);
+                    context.Writer.Write(publicRequest.EditContent.Value);
                 }
 
                 if(publicRequest.IsSetName())

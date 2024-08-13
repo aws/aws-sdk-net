@@ -45,9 +45,9 @@ namespace Amazon.Greengrass.Model
         /// information from /sys. This setting applies only when you run the Lambda function
         /// in a Greengrass container.
         /// </summary>
-        public bool AccessSysfs
+        public bool? AccessSysfs
         {
-            get { return this._accessSysfs.GetValueOrDefault(); }
+            get { return this._accessSysfs; }
             set { this._accessSysfs = value; }
         }
 

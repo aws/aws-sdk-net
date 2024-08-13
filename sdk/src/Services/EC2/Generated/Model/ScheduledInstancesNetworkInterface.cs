@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// VPC pricing page</a>.
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to delete the interface when the instance is terminated.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.EC2.Model
         /// The index of the device for the network interface attachment.
         /// </para>
         /// </summary>
-        public int DeviceIndex
+        public int? DeviceIndex
         {
-            get { return this._deviceIndex.GetValueOrDefault(); }
+            get { return this._deviceIndex; }
             set { this._deviceIndex = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.EC2.Model
         /// are automatically selected from the subnet range.
         /// </para>
         /// </summary>
-        public int Ipv6AddressCount
+        public int? Ipv6AddressCount
         {
-            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            get { return this._ipv6AddressCount; }
             set { this._ipv6AddressCount = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.EC2.Model
         /// The number of secondary private IPv4 addresses.
         /// </para>
         /// </summary>
-        public int SecondaryPrivateIpAddressCount
+        public int? SecondaryPrivateIpAddressCount
         {
-            get { return this._secondaryPrivateIpAddressCount.GetValueOrDefault(); }
+            get { return this._secondaryPrivateIpAddressCount; }
             set { this._secondaryPrivateIpAddressCount = value; }
         }
 

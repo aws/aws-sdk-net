@@ -74,7 +74,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CopyTagsToSnapshots", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTagsToSnapshots = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,19 +86,19 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeleteClonedVolumes", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteClonedVolumes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeleteIntermediateData", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteIntermediateData = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeleteIntermediateSnaphots", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteIntermediateSnaphots = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -128,13 +128,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReadOnly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordSizeKiB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordSizeKiB = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -152,13 +152,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StorageCapacityQuotaGiB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageCapacityQuotaGiB = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StorageCapacityReservationGiB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageCapacityReservationGiB = unmarshaller.Unmarshall(context);
                     continue;
                 }

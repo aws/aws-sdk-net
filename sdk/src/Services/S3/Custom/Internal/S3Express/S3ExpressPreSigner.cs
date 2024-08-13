@@ -130,21 +130,6 @@ namespace Amazon.S3.Internal.S3Express
             requestContext.Request.Headers[S3ExpressSessionHeader] = sessionCredentials.SessionToken;
             requestContext.ImmutableCredentials = new ImmutableCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey, null);
         }
-
-#elif AWS_APM_API
-        /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
-        }
-
 #endif
 
         private static string GetRequestBucketName(IRequest request)

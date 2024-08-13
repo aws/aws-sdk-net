@@ -146,9 +146,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int AlertSensitivityThreshold
+        public int? AlertSensitivityThreshold
         {
-            get { return this._alertSensitivityThreshold.GetValueOrDefault(); }
+            get { return this._alertSensitivityThreshold; }
             set { this._alertSensitivityThreshold = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.LookoutMetrics.Model
         /// The time at which the alert was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.LookoutMetrics.Model
         /// The time at which the alert was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModificationTime
+        public DateTime? LastModificationTime
         {
-            get { return this._lastModificationTime.GetValueOrDefault(); }
+            get { return this._lastModificationTime; }
             set { this._lastModificationTime = value; }
         }
 

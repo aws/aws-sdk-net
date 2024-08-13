@@ -106,9 +106,9 @@ namespace Amazon.DataZone.Model
         /// grant is created.
         /// </para>
         /// </summary>
-        public DateTime FailureTimestamp
+        public DateTime? FailureTimestamp
         {
-            get { return this._failureTimestamp.GetValueOrDefault(); }
+            get { return this._failureTimestamp; }
             set { this._failureTimestamp = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the subscription grant to the asset is created.
         /// </para>
         /// </summary>
-        public DateTime GrantedTimestamp
+        public DateTime? GrantedTimestamp
         {
-            get { return this._grantedTimestamp.GetValueOrDefault(); }
+            get { return this._grantedTimestamp; }
             set { this._grantedTimestamp = value; }
         }
 

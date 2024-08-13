@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// The time at which this security configuration was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimeStamp
+        public DateTime? CreatedTimeStamp
         {
-            get { return this._createdTimeStamp.GetValueOrDefault(); }
+            get { return this._createdTimeStamp; }
             set { this._createdTimeStamp = value; }
         }
 

@@ -30,7 +30,7 @@ namespace Amazon.Glacier
         protected override void Initialize()
         {
 
-#if BCL45 || NETSTANDARD
+#if BCL || NETSTANDARD
             // Set Timeout and ReadWriteTimeout for Glacier client to max timeout as per-request  
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;

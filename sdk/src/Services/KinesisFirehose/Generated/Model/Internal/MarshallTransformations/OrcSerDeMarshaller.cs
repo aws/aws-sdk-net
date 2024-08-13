@@ -51,7 +51,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockSizeBytes())
             {
                 context.Writer.WritePropertyName("BlockSizeBytes");
-                context.Writer.Write(requestObject.BlockSizeBytes);
+                context.Writer.Write(requestObject.BlockSizeBytes.Value);
             }
 
             if(requestObject.IsSetBloomFilterColumns())
@@ -68,13 +68,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBloomFilterFalsePositiveProbability())
             {
                 context.Writer.WritePropertyName("BloomFilterFalsePositiveProbability");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BloomFilterFalsePositiveProbability.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability);
+                    context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability.Value);
                 }
             }
 
@@ -87,20 +87,20 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDictionaryKeyThreshold())
             {
                 context.Writer.WritePropertyName("DictionaryKeyThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.DictionaryKeyThreshold))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DictionaryKeyThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DictionaryKeyThreshold));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DictionaryKeyThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DictionaryKeyThreshold);
+                    context.Writer.Write(requestObject.DictionaryKeyThreshold.Value);
                 }
             }
 
             if(requestObject.IsSetEnablePadding())
             {
                 context.Writer.WritePropertyName("EnablePadding");
-                context.Writer.Write(requestObject.EnablePadding);
+                context.Writer.Write(requestObject.EnablePadding.Value);
             }
 
             if(requestObject.IsSetFormatVersion())
@@ -112,26 +112,26 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPaddingTolerance())
             {
                 context.Writer.WritePropertyName("PaddingTolerance");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.PaddingTolerance))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PaddingTolerance.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PaddingTolerance));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PaddingTolerance.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PaddingTolerance);
+                    context.Writer.Write(requestObject.PaddingTolerance.Value);
                 }
             }
 
             if(requestObject.IsSetRowIndexStride())
             {
                 context.Writer.WritePropertyName("RowIndexStride");
-                context.Writer.Write(requestObject.RowIndexStride);
+                context.Writer.Write(requestObject.RowIndexStride.Value);
             }
 
             if(requestObject.IsSetStripeSizeBytes())
             {
                 context.Writer.WritePropertyName("StripeSizeBytes");
-                context.Writer.Write(requestObject.StripeSizeBytes);
+                context.Writer.Write(requestObject.StripeSizeBytes.Value);
             }
 
         }

@@ -45,9 +45,9 @@ namespace Amazon.Imagebuilder.Model
         /// in the new AMI. The default value is false.
         /// </para>
         /// </summary>
-        public bool UninstallAfterBuild
+        public bool? UninstallAfterBuild
         {
-            get { return this._uninstallAfterBuild.GetValueOrDefault(); }
+            get { return this._uninstallAfterBuild; }
             set { this._uninstallAfterBuild = value; }
         }
 

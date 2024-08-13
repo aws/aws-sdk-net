@@ -54,13 +54,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AverageDownloadRateLimitInBitsPerSec", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AverageDownloadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -86,13 +86,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FactorySupport", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FactorySupport = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxAllowedSignature", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAllowedSignature = unmarshaller.Unmarshall(context);
                     continue;
                 }

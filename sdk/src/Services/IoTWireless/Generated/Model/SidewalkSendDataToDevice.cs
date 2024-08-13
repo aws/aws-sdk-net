@@ -45,9 +45,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=604800)]
-        public int AckModeRetryDurationSecs
+        public int? AckModeRetryDurationSecs
         {
-            get { return this._ackModeRetryDurationSecs.GetValueOrDefault(); }
+            get { return this._ackModeRetryDurationSecs; }
             set { this._ackModeRetryDurationSecs = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16383)]
-        public int Seq
+        public int? Seq
         {
-            get { return this._seq.GetValueOrDefault(); }
+            get { return this._seq; }
             set { this._seq = value; }
         }
 

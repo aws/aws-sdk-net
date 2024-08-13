@@ -68,13 +68,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("excluded", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Excluded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("level", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Level = unmarshaller.Unmarshall(context);
                     continue;
                 }

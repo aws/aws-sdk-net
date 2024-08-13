@@ -45,9 +45,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=262143)]
-        public int Earfcn
+        public int? Earfcn
         {
-            get { return this._earfcn.GetValueOrDefault(); }
+            get { return this._earfcn; }
             set { this._earfcn = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=503)]
-        public int Pci
+        public int? Pci
         {
-            get { return this._pci.GetValueOrDefault(); }
+            get { return this._pci; }
             set { this._pci = value; }
         }
 

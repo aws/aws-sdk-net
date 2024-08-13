@@ -89,7 +89,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExportTime())
                 {
                     context.Writer.WritePropertyName("ExportTime");
-                    context.Writer.Write(publicRequest.ExportTime);
+                    context.Writer.Write(publicRequest.ExportTime.Value);
                 }
 
                 if(publicRequest.IsSetExportType())

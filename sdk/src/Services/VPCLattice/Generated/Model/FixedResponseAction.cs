@@ -43,9 +43,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=100, Max=599)]
-        public int StatusCode
+        public int? StatusCode
         {
-            get { return this._statusCode.GetValueOrDefault(); }
+            get { return this._statusCode; }
             set { this._statusCode = value; }
         }
 

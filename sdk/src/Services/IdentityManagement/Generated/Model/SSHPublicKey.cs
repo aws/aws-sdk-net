@@ -132,9 +132,9 @@ namespace Amazon.IdentityManagement.Model
         /// format</a>, when the SSH public key was uploaded.
         /// </para>
         /// </summary>
-        public DateTime UploadDate
+        public DateTime? UploadDate
         {
-            get { return this._uploadDate.GetValueOrDefault(); }
+            get { return this._uploadDate; }
             set { this._uploadDate = value; }
         }
 

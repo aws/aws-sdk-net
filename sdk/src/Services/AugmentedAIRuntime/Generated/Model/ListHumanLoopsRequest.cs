@@ -50,9 +50,9 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// 8601 format. For example, <c>2020-02-24</c>.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeAfter
+        public DateTime? CreationTimeAfter
         {
-            get { return this._creationTimeAfter.GetValueOrDefault(); }
+            get { return this._creationTimeAfter; }
             set { this._creationTimeAfter = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// in ISO 8601 format. For example, <c>2020-02-24</c>.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeBefore
+        public DateTime? CreationTimeBefore
         {
-            get { return this._creationTimeBefore.GetValueOrDefault(); }
+            get { return this._creationTimeBefore; }
             set { this._creationTimeBefore = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

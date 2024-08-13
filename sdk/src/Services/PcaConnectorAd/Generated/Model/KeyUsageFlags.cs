@@ -48,9 +48,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// raw user data without the use of an intermediate symmetric cipher.
         /// </para>
         /// </summary>
-        public bool DataEncipherment
+        public bool? DataEncipherment
         {
-            get { return this._dataEncipherment.GetValueOrDefault(); }
+            get { return this._dataEncipherment; }
             set { this._dataEncipherment = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// digital signatures.
         /// </para>
         /// </summary>
-        public bool DigitalSignature
+        public bool? DigitalSignature
         {
-            get { return this._digitalSignature.GetValueOrDefault(); }
+            get { return this._digitalSignature; }
             set { this._digitalSignature = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// KeyAgreement is asserted when the subject public key is used for key agreement.
         /// </para>
         /// </summary>
-        public bool KeyAgreement
+        public bool? KeyAgreement
         {
-            get { return this._keyAgreement.GetValueOrDefault(); }
+            get { return this._keyAgreement; }
             set { this._keyAgreement = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// or secret keys, i.e., for key transport.
         /// </para>
         /// </summary>
-        public bool KeyEncipherment
+        public bool? KeyEncipherment
         {
-            get { return this._keyEncipherment.GetValueOrDefault(); }
+            get { return this._keyEncipherment; }
             set { this._keyEncipherment = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// NonRepudiation is asserted when the subject public key is used to verify digital signatures.
         /// </para>
         /// </summary>
-        public bool NonRepudiation
+        public bool? NonRepudiation
         {
-            get { return this._nonRepudiation.GetValueOrDefault(); }
+            get { return this._nonRepudiation; }
             set { this._nonRepudiation = value; }
         }
 

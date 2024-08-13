@@ -74,7 +74,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("millisUntilNextRefreshable", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MillisUntilNextRefreshable = unmarshaller.Unmarshall(context);
                     continue;
                 }

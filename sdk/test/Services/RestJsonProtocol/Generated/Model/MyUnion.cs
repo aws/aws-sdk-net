@@ -63,9 +63,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property BooleanValue.
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property NumberValue.
         /// </summary>
-        public int NumberValue
+        public int? NumberValue
         {
-            get { return this._numberValue.GetValueOrDefault(); }
+            get { return this._numberValue; }
             set { this._numberValue = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property TimestampValue.
         /// </summary>
-        public DateTime TimestampValue
+        public DateTime? TimestampValue
         {
-            get { return this._timestampValue.GetValueOrDefault(); }
+            get { return this._timestampValue; }
             set { this._timestampValue = value; }
         }
 

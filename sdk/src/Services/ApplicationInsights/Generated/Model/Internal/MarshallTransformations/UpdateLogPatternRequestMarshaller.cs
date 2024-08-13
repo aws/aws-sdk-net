@@ -90,7 +90,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRank())
                 {
                     context.Writer.WritePropertyName("Rank");
-                    context.Writer.Write(publicRequest.Rank);
+                    context.Writer.Write(publicRequest.Rank.Value);
                 }
 
                 if(publicRequest.IsSetResourceGroupName())

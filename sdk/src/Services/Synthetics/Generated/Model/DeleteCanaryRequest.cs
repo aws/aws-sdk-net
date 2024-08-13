@@ -86,9 +86,9 @@ namespace Amazon.Synthetics.Model
         /// Type: Boolean
         /// </para>
         /// </summary>
-        public bool DeleteLambda
+        public bool? DeleteLambda
         {
-            get { return this._deleteLambda.GetValueOrDefault(); }
+            get { return this._deleteLambda; }
             set { this._deleteLambda = value; }
         }
 

@@ -67,9 +67,9 @@ namespace Amazon.OpenSearchService.Model
         /// The duration, in seconds, for which the offering will reserve the OpenSearch instance.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.OpenSearchService.Model
         /// The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.OpenSearchService.Model
         /// The hourly rate at which you're charged for the domain using this Reserved Instance.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

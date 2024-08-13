@@ -132,9 +132,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MaxRetentionDays
+        public long? MaxRetentionDays
         {
-            get { return this._maxRetentionDays.GetValueOrDefault(); }
+            get { return this._maxRetentionDays; }
             set { this._maxRetentionDays = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MinRetentionDays
+        public long? MinRetentionDays
         {
-            get { return this._minRetentionDays.GetValueOrDefault(); }
+            get { return this._minRetentionDays; }
             set { this._minRetentionDays = value; }
         }
 

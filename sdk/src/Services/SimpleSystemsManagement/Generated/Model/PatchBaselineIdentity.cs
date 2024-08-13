@@ -105,9 +105,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// baseline for each operating system.
         /// </para>
         /// </summary>
-        public bool DefaultBaseline
+        public bool? DefaultBaseline
         {
-            get { return this._defaultBaseline.GetValueOrDefault(); }
+            get { return this._defaultBaseline; }
             set { this._defaultBaseline = value; }
         }
 

@@ -147,7 +147,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemorySize())
             {
                 context.Writer.WritePropertyName("MemorySize");
-                context.Writer.Write(requestObject.MemorySize);
+                context.Writer.Write(requestObject.MemorySize.Value);
             }
 
             if(requestObject.IsSetPackageType())
@@ -177,7 +177,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout);
+                context.Writer.Write(requestObject.Timeout.Value);
             }
 
             if(requestObject.IsSetTracingConfig())

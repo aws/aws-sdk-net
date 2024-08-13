@@ -75,9 +75,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// the value <c>1516925490.087</c> represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// in the count. The count might not reflect pending registrations and deregistrations.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

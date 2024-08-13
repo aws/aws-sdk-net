@@ -178,9 +178,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long LifetimeInSeconds
+        public long? LifetimeInSeconds
         {
-            get { return this._lifetimeInSeconds.GetValueOrDefault(); }
+            get { return this._lifetimeInSeconds; }
             set { this._lifetimeInSeconds = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.MTurk.Model
         /// unavailable. 
         /// </para>
         /// </summary>
-        public int MaxAssignments
+        public int? MaxAssignments
         {
-            get { return this._maxAssignments.GetValueOrDefault(); }
+            get { return this._maxAssignments; }
             set { this._maxAssignments = value; }
         }
 

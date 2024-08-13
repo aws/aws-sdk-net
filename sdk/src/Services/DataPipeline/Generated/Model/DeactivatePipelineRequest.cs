@@ -54,9 +54,9 @@ namespace Amazon.DataPipeline.Model
         /// is deactivated after all running objects finish.
         /// </para>
         /// </summary>
-        public bool CancelActive
+        public bool? CancelActive
         {
-            get { return this._cancelActive.GetValueOrDefault(); }
+            get { return this._cancelActive; }
             set { this._cancelActive = value; }
         }
 

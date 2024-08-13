@@ -252,9 +252,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// after the SQL statement runs. 
         /// </para>
         /// </summary>
-        public bool WithEvent
+        public bool? WithEvent
         {
-            get { return this._withEvent.GetValueOrDefault(); }
+            get { return this._withEvent; }
             set { this._withEvent = value; }
         }
 

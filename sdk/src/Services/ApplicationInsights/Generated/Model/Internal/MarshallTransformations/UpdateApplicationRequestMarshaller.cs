@@ -72,25 +72,25 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAttachMissingPermission())
                 {
                     context.Writer.WritePropertyName("AttachMissingPermission");
-                    context.Writer.Write(publicRequest.AttachMissingPermission);
+                    context.Writer.Write(publicRequest.AttachMissingPermission.Value);
                 }
 
                 if(publicRequest.IsSetAutoConfigEnabled())
                 {
                     context.Writer.WritePropertyName("AutoConfigEnabled");
-                    context.Writer.Write(publicRequest.AutoConfigEnabled);
+                    context.Writer.Write(publicRequest.AutoConfigEnabled.Value);
                 }
 
                 if(publicRequest.IsSetCWEMonitorEnabled())
                 {
                     context.Writer.WritePropertyName("CWEMonitorEnabled");
-                    context.Writer.Write(publicRequest.CWEMonitorEnabled);
+                    context.Writer.Write(publicRequest.CWEMonitorEnabled.Value);
                 }
 
                 if(publicRequest.IsSetOpsCenterEnabled())
                 {
                     context.Writer.WritePropertyName("OpsCenterEnabled");
-                    context.Writer.Write(publicRequest.OpsCenterEnabled);
+                    context.Writer.Write(publicRequest.OpsCenterEnabled.Value);
                 }
 
                 if(publicRequest.IsSetOpsItemSNSTopicArn())
@@ -102,7 +102,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoveSNSTopic())
                 {
                     context.Writer.WritePropertyName("RemoveSNSTopic");
-                    context.Writer.Write(publicRequest.RemoveSNSTopic);
+                    context.Writer.Write(publicRequest.RemoveSNSTopic.Value);
                 }
 
                 if(publicRequest.IsSetResourceGroupName())

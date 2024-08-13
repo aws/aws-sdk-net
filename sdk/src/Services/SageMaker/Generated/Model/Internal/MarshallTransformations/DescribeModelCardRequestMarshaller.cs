@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetModelCardVersion())
                 {
                     context.Writer.WritePropertyName("ModelCardVersion");
-                    context.Writer.Write(publicRequest.ModelCardVersion);
+                    context.Writer.Write(publicRequest.ModelCardVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

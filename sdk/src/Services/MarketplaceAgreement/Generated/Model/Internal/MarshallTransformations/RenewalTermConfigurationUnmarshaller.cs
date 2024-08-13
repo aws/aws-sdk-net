@@ -68,7 +68,7 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enableAutoRenew", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAutoRenew = unmarshaller.Unmarshall(context);
                     continue;
                 }

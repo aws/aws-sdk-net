@@ -46,6 +46,7 @@ namespace Amazon.MediaConnect.Model
         private List<MediaStreamOutputConfiguration> _mediaStreamOutputConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamOutputConfiguration>() : null;
         private string _name;
         private string _outputArn;
+        private OutputStatus _outputStatus;
         private int? _port;
         private Transport _transport;
         private VpcInterfaceAttachment _vpcInterfaceAttachment;
@@ -84,9 +85,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
         /// of the data transfer cost to be billed to the subscriber.
         /// </summary>
-        public int DataTransferSubscriberFeePercent
+        public int? DataTransferSubscriberFeePercent
         {
-            get { return this._dataTransferSubscriberFeePercent.GetValueOrDefault(); }
+            get { return this._dataTransferSubscriberFeePercent; }
             set { this._dataTransferSubscriberFeePercent = value; }
         }
 
@@ -244,12 +245,28 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputStatus. An indication of whether the output is transmitting
+        /// data or not.
+        /// </summary>
+        public OutputStatus OutputStatus
+        {
+            get { return this._outputStatus; }
+            set { this._outputStatus = value; }
+        }
+
+        // Check to see if OutputStatus property is set
+        internal bool IsSetOutputStatus()
+        {
+            return this._outputStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. The port to use when content is distributed to this
         /// output.
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

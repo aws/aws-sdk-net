@@ -81,9 +81,6 @@ namespace AWSSDK.UnitTests
                 // Real region with credentialScope.region
                 new object[]{new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
                     "us-east-1", "ecr", "api.ecr.us-east-1.amazonaws.com" },
-                // Pseudoregion with credentialScope.region
-                new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-dkr-us-east-1") },
-                    "us-east-1", "ecr", "ecr-fips.us-east-1.amazonaws.com"},
                  // Pseudoregion with credentialScope.region, different partition
                 new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1") },
                     "us-gov-east-1", "ecr", "ecr-fips.us-gov-east-1.amazonaws.com" },
@@ -111,9 +108,11 @@ namespace AWSSDK.UnitTests
         {
             var signer = new AWS4Signer();
             var mock = new Moq.Mock<IRequest>().SetupAllProperties();
+            var requestMock = new Moq.Mock<AmazonWebServiceRequest>().SetupAllProperties();
             var request = mock.Object;
 
             mock.SetupGet(x => x.Headers).Returns(new Dictionary<string, string>());
+            mock.SetupGet(x => x.OriginalRequest).Returns(requestMock.Object);
             request.Endpoint = EndpointResolver.DetermineEndpoint(config, request);
 
             var result = signer.SignRequest(request, config, null, "accessKey", "secretKey");
@@ -155,17 +154,17 @@ namespace AWSSDK.UnitTests
 
             Assert.AreEqual(
                 "/vx_folder/1.0%5Cdatafiles%5Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/vx_folder/1.0\datafiles\file.json", false, null));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/{a}/{b}", false, new Dictionary<string, string> { {"{a}", "vx_folder" },{ "{b}", @"1.0\datafiles\file.json" } }));
 
             Assert.AreEqual(
                 "/custompath/vx_folder/1.0%5Cdatafiles%5Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json", false, null));
-            
-            Assert.AreEqual("/%40%23%24%3A%21.json",
-                    AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost"), @"/@#$:!.json", false, null));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), @"/{a}/{b}", false, new Dictionary<string, string> { { "{a}", "vx_folder" }, { "{b}", @"1.0\datafiles\file.json" } }));
 
-            Assert.AreEqual("/%24custompath/%40%23%24%3A%21.json",
-                    AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/@#$:!.json", false, null));
+            Assert.AreEqual("/%40%23%24%3A%21.json",
+                    AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost"), @"/{a}", false, new Dictionary<string, string> { { "{a}", "@#$:!.json" } }));
+
+            Assert.AreEqual("/$custompath/%40%23%24%3A%21.json",
+                    AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/{a}", false, new Dictionary<string, string> { { "{a}", "@#$:!.json" } }));
         }
 
         [TestMethod]
@@ -187,29 +186,29 @@ namespace AWSSDK.UnitTests
             // In the new signer path, if it's s3, we pass in false for double encoding
             Assert.AreEqual(
                 "/vx_folder/1.0%5Cdatafiles%5Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/vx_folder/1.0\datafiles\file.json", false, null));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/{a}/{b}", false, new Dictionary<string, string> { { "{a}", "vx_folder" }, { "{b}", @"1.0\datafiles\file.json" } }));
 
             // should be double URL encoded because it's not S3
             Assert.AreEqual(
                 "/custompath/vx_folder/1.0%255Cdatafiles%255Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json", true, null));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), @"/{a}/{b}", true, new Dictionary<string, string> { { "{a}", "vx_folder" }, { "{b}", @"1.0\datafiles\file.json" } }));
             // some services like apiagatewaymanagementapi allow special characters to be in the configured endpoint's resource path, in this case the endpoint's resource path is single encoded 
             // and the resource path from the request is double encoded. Since $ is the only special character allowed in the endpoint, we test for this case
             Assert.AreEqual(
-                "/%24custompath/vx_folder/1.0%255Cdatafiles%255Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/vx_folder/1.0\datafiles\file.json", true, null));
+                "/$custompath/vx_folder/1.0%255Cdatafiles%255Cfile.json",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/{a}/{b}", true, new Dictionary<string, string> { { "{a}", "vx_folder" }, { "{b}", @"1.0\datafiles\file.json" } }));
 
-            Assert.AreEqual("/%24custompath/%2540%2523%2524%253A%2521.json",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/@#$:!.json", true, null));
+            Assert.AreEqual("/$custompath/%2540%2523%2524%253A%2521.json",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/{a}", true, new Dictionary<string, string> { { "{a}", "@#$:!.json" } }));
             
             Assert.AreEqual("/%2540%2523%2524%253A%2521.json",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost"), @"/@#$:!.json", true, null));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost"), @"/{a}", true, new Dictionary<string, string> { { "{a}", "@#$:!.json" } }));
             
-            Assert.AreEqual("/%24custompath/nospecialcharacters",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/nospecialcharacters", true, null));
+            Assert.AreEqual("/$custompath/nospecialcharacters",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/{a}", true, new Dictionary<string, string> { { "{a}", "nospecialcharacters" } }));
         }
 
-#if BCL45
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\Async45")]
@@ -222,24 +221,6 @@ namespace AWSSDK.UnitTests
             var signer = new MockSigner();
             var context = CreateTestContext(signer);
             await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
-
-            Assert.IsTrue(context.RequestContext.IsSigned);
-            Assert.AreEqual(1, signer.SignCount);
-        }
-#elif !BCL45 && BCL
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestSignerWithBasicCredentialsAsync()
-        {
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
-
-            var signer = new MockSigner();
-            var context = CreateAsyncTestContext(signer);
-            var asyncResult = pipeline.InvokeAsync(context);
-            asyncResult.AsyncWaitHandle.WaitOne();
 
             Assert.IsTrue(context.RequestContext.IsSigned);
             Assert.AreEqual(1, signer.SignCount);

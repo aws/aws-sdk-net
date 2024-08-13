@@ -68,9 +68,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enables Systems Manager to send command output to CloudWatch Logs.
         /// </para>
         /// </summary>
-        public bool CloudWatchOutputEnabled
+        public bool? CloudWatchOutputEnabled
         {
-            get { return this._cloudWatchOutputEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchOutputEnabled; }
             set { this._cloudWatchOutputEnabled = value; }
         }
 

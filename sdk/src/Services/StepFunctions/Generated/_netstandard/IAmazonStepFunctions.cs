@@ -34,8 +34,8 @@ namespace Amazon.StepFunctions
     ///
     /// Step Functions 
     /// <para>
-    /// Step Functions is a service that lets you coordinate the components of distributed
-    /// applications and microservices using visual workflows.
+    /// Step Functions coordinates the components of distributed applications and microservices
+    /// using visual workflows.
     /// </para>
     ///  
     /// <para>
@@ -106,12 +106,28 @@ namespace Amazon.StepFunctions
         /// </param>
         /// 
         /// <returns>The response from the CreateActivity service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.ActivityAlreadyExistsException">
+        /// Activity already exists. <c>EncryptionConfiguration</c> may not be updated.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ActivityLimitExceededException">
         /// The maximum number of activities has been reached. Existing activities must be deleted
         /// before a new activity can be created.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidEncryptionConfigurationException">
+        /// Received when <c>encryptionConfiguration</c> is specified but various conditions exist
+        /// which make the configuration invalid. For example, if <c>type</c> is set to <c>CUSTOMER_MANAGED_KMS_KEY</c>,
+        /// but <c>kmsKeyId</c> is null, or <c>kmsDataKeyReusePeriodSeconds</c> is not between
+        /// 60 and 900, or the KMS key is not symmetric or inactive.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
         /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
@@ -139,6 +155,14 @@ namespace Amazon.StepFunctions
         /// If you set the <c>publish</c> parameter of this API action to <c>true</c>, it publishes
         /// version <c>1</c> as the first revision of the state machine.
         /// </para>
+        ///  
+        /// <para>
+        ///  For additional control over security, you can encrypt your data using a <b>customer-managed
+        /// key</b> for Step Functions state machines. You can configure a symmetric KMS key and
+        /// data key reuse period when creating or updating a <b>State Machine</b>. The execution
+        /// history and state machine definition will be encrypted with the key applied to the
+        /// State Machine. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation is eventually consistent. The results are best effort and may not reflect
@@ -149,11 +173,11 @@ namespace Amazon.StepFunctions
         ///  <c>CreateStateMachine</c> is an idempotent API. Subsequent requests won’t create
         /// a duplicate resource if it was already created. <c>CreateStateMachine</c>'s idempotency
         /// check is based on the state machine <c>name</c>, <c>definition</c>, <c>type</c>, <c>LoggingConfiguration</c>,
-        /// and <c>TracingConfiguration</c>. The check is also based on the <c>publish</c> and
-        /// <c>versionDescription</c> parameters. If a following request has a different <c>roleArn</c>
-        /// or <c>tags</c>, Step Functions will ignore these differences and treat it as an idempotent
-        /// request of the previous. In this case, <c>roleArn</c> and <c>tags</c> will not be
-        /// updated, even if they are different.
+        /// <c>TracingConfiguration</c>, and <c>EncryptionConfiguration</c> The check is also
+        /// based on the <c>publish</c> and <c>versionDescription</c> parameters. If a following
+        /// request has a different <c>roleArn</c> or <c>tags</c>, Step Functions will ignore
+        /// these differences and treat it as an idempotent request of the previous. In this case,
+        /// <c>roleArn</c> and <c>tags</c> will not be updated, even if they are different.
         /// </para>
         ///  </note>
         /// </summary>
@@ -179,8 +203,14 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidDefinitionException">
         /// The provided Amazon States Language definition is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidEncryptionConfigurationException">
+        /// Received when <c>encryptionConfiguration</c> is specified but various conditions exist
+        /// which make the configuration invalid. For example, if <c>type</c> is set to <c>CUSTOMER_MANAGED_KMS_KEY</c>,
+        /// but <c>kmsKeyId</c> is null, or <c>kmsDataKeyReusePeriodSeconds</c> is not between
+        /// 60 and 900, or the KMS key is not symmetric or inactive.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidLoggingConfigurationException">
-        /// 
+        /// Configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is not valid.
@@ -188,6 +218,13 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
         /// Your <c>tracingConfiguration</c> key does not match, or <c>enabled</c> has not been
         /// set to <c>true</c> or <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineAlreadyExistsException">
         /// A state machine with the same name but a different definition or role ARN already
@@ -201,7 +238,7 @@ namespace Amazon.StepFunctions
         /// be deleted before a new state machine can be created.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineTypeNotSupportedException">
-        /// 
+        /// State machine type is not supported.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TooManyTagsException">
         /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
@@ -607,6 +644,16 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -716,6 +763,16 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
@@ -805,6 +862,16 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">REST API Reference for DescribeStateMachineForExecution Operation</seealso>
         Task<DescribeStateMachineForExecutionResponse> DescribeStateMachineForExecutionAsync(DescribeStateMachineForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -854,6 +921,16 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         Task<GetActivityTaskResponse> GetActivityTaskAsync(GetActivityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -895,6 +972,16 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         Task<GetExecutionHistoryResponse> GetExecutionHistoryAsync(GetExecutionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -995,7 +1082,7 @@ namespace Amazon.StepFunctions
         /// The specified state machine does not exist.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineTypeNotSupportedException">
-        /// 
+        /// State machine type is not supported.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
         /// The input does not satisfy the constraints specified by an Amazon Web Services service.
@@ -1409,6 +1496,18 @@ namespace Amazon.StepFunctions
         /// Used by activity workers, Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
         /// pattern, and optionally Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
         /// run</a> pattern to report that the task identified by the <c>taskToken</c> failed.
+        /// 
+        ///  
+        /// <para>
+        /// For an execution with encryption enabled, Step Functions will encrypt the error and
+        /// cause fields using the KMS key for the execution role.
+        /// </para>
+        ///  
+        /// <para>
+        /// A caller can mark a task as fail without using any KMS permissions in the execution
+        /// role if the caller provides a null value for both <c>error</c> and <c>cause</c> fields
+        /// because no data needs to be encrypted.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTaskFailure service method.</param>
         /// <param name="cancellationToken">
@@ -1418,6 +1517,16 @@ namespace Amazon.StepFunctions
         /// <returns>The response from the SendTaskFailure service method, as returned by StepFunctions.</returns>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TaskDoesNotExistException">
         /// The activity does not exist.
@@ -1499,6 +1608,16 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.TaskDoesNotExistException">
         /// The activity does not exist.
@@ -1619,6 +1738,16 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
         /// The specified state machine is being deleted.
         /// </exception>
@@ -1670,6 +1799,16 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
         /// The specified state machine is being deleted.
         /// </exception>
@@ -1677,7 +1816,7 @@ namespace Amazon.StepFunctions
         /// The specified state machine does not exist.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineTypeNotSupportedException">
-        /// 
+        /// State machine type is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">REST API Reference for StartSyncExecution Operation</seealso>
         Task<StartSyncExecutionResponse> StartSyncExecutionAsync(StartSyncExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1695,6 +1834,17 @@ namespace Amazon.StepFunctions
         /// <para>
         /// This API action is not supported by <c>EXPRESS</c> state machines.
         /// </para>
+        ///  
+        /// <para>
+        /// For an execution with encryption enabled, Step Functions will encrypt the error and
+        /// cause fields using the KMS key for the execution role.
+        /// </para>
+        ///  
+        /// <para>
+        /// A caller can stop an execution without using any KMS permissions in the execution
+        /// role if the caller provides a null value for both <c>error</c> and <c>cause</c> fields
+        /// because no data needs to be encrypted.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopExecution service method.</param>
         /// <param name="cancellationToken">
@@ -1707,6 +1857,16 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsInvalidStateException">
+        /// The KMS key is not in valid state, for example: Disabled or Deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.ValidationException">
         /// The input does not satisfy the constraints specified by an Amazon Web Services service.
@@ -1919,9 +2079,10 @@ namespace Amazon.StepFunctions
 
         /// <summary>
         /// Updates an existing state machine by modifying its <c>definition</c>, <c>roleArn</c>,
-        /// or <c>loggingConfiguration</c>. Running executions will continue to use the previous
-        /// <c>definition</c> and <c>roleArn</c>. You must include at least one of <c>definition</c>
-        /// or <c>roleArn</c> or you will receive a <c>MissingRequiredParameter</c> error.
+        /// <c>loggingConfiguration</c>, or <c>EncryptionConfiguration</c>. Running executions
+        /// will continue to use the previous <c>definition</c> and <c>roleArn</c>. You must include
+        /// at least one of <c>definition</c> or <c>roleArn</c> or you will receive a <c>MissingRequiredParameter</c>
+        /// error.
         /// 
         ///  
         /// <para>
@@ -2018,12 +2179,25 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidDefinitionException">
         /// The provided Amazon States Language definition is not valid.
         /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidEncryptionConfigurationException">
+        /// Received when <c>encryptionConfiguration</c> is specified but various conditions exist
+        /// which make the configuration invalid. For example, if <c>type</c> is set to <c>CUSTOMER_MANAGED_KMS_KEY</c>,
+        /// but <c>kmsKeyId</c> is null, or <c>kmsDataKeyReusePeriodSeconds</c> is not between
+        /// 60 and 900, or the KMS key is not symmetric or inactive.
+        /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidLoggingConfigurationException">
-        /// 
+        /// Configuration is not valid.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
         /// Your <c>tracingConfiguration</c> key does not match, or <c>enabled</c> has not been
         /// set to <c>true</c> or <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsAccessDeniedException">
+        /// Either your KMS key policy or API caller does not have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.KmsThrottlingException">
+        /// Received when KMS returns <c>ThrottlingException</c> for a KMS call that Step Functions
+        /// makes on behalf of the caller.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.MissingRequiredParameterException">
         /// Request is missing a required parameter. This error occurs if both <c>definition</c>
@@ -2193,5 +2367,33 @@ namespace Amazon.StepFunctions
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonStepFunctionsConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonStepFunctionsConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonStepFunctionsConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonStepFunctionsConfig to create AmazonStepFunctionsClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonStepFunctionsClient(serviceClientConfig) :
+                    new AmazonStepFunctionsClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

@@ -47,9 +47,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool CreateSnapshotBeforeSchemaExtension
+        public bool? CreateSnapshotBeforeSchemaExtension
         {
-            get { return this._createSnapshotBeforeSchemaExtension.GetValueOrDefault(); }
+            get { return this._createSnapshotBeforeSchemaExtension; }
             set { this._createSnapshotBeforeSchemaExtension = value; }
         }
 

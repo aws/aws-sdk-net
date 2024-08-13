@@ -73,7 +73,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSigningEnabled())
                 {
                     context.Writer.WritePropertyName("SigningEnabled");
-                    context.Writer.Write(publicRequest.SigningEnabled);
+                    context.Writer.Write(publicRequest.SigningEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

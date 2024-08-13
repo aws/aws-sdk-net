@@ -161,9 +161,9 @@ namespace Amazon.ECS.Model
         /// <c>0</c>, which Windows interprets as 1% of one CPU.
         /// </para>
         /// </summary>
-        public int Cpu
+        public int? Cpu
         {
-            get { return this._cpu.GetValueOrDefault(); }
+            get { return this._cpu; }
             set { this._cpu = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool DisableNetworking
+        public bool? DisableNetworking
         {
-            get { return this._disableNetworking.GetValueOrDefault(); }
+            get { return this._disableNetworking; }
             set { this._disableNetworking = value; }
         }
 
@@ -560,9 +560,9 @@ namespace Amazon.ECS.Model
         /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool Essential
+        public bool? Essential
         {
-            get { return this._essential.GetValueOrDefault(); }
+            get { return this._essential; }
             set { this._essential = value; }
         }
 
@@ -736,9 +736,9 @@ namespace Amazon.ECS.Model
         /// run</a>.
         /// </para>
         /// </summary>
-        public bool Interactive
+        public bool? Interactive
         {
-            get { return this._interactive.GetValueOrDefault(); }
+            get { return this._interactive; }
             set { this._interactive = value; }
         }
 
@@ -901,9 +901,9 @@ namespace Amazon.ECS.Model
         /// a container. So, don't specify less than 4 MiB of memory for your containers.
         /// </para>
         /// </summary>
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -955,9 +955,9 @@ namespace Amazon.ECS.Model
         /// a container. So, don't specify less than 4 MiB of memory for your containers.
         /// </para>
         /// </summary>
-        public int MemoryReservation
+        public int? MemoryReservation
         {
-            get { return this._memoryReservation.GetValueOrDefault(); }
+            get { return this._memoryReservation; }
             set { this._memoryReservation = value; }
         }
 
@@ -1087,9 +1087,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Privileged
+        public bool? Privileged
         {
-            get { return this._privileged.GetValueOrDefault(); }
+            get { return this._privileged; }
             set { this._privileged = value; }
         }
 
@@ -1109,9 +1109,9 @@ namespace Amazon.ECS.Model
         /// run</a>.
         /// </para>
         /// </summary>
-        public bool PseudoTerminal
+        public bool? PseudoTerminal
         {
-            get { return this._pseudoTerminal.GetValueOrDefault(); }
+            get { return this._pseudoTerminal; }
             set { this._pseudoTerminal = value; }
         }
 
@@ -1136,9 +1136,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ReadonlyRootFilesystem
+        public bool? ReadonlyRootFilesystem
         {
-            get { return this._readonlyRootFilesystem.GetValueOrDefault(); }
+            get { return this._readonlyRootFilesystem; }
             set { this._readonlyRootFilesystem = value; }
         }
 
@@ -1251,9 +1251,9 @@ namespace Amazon.ECS.Model
         /// The valid values are 2-120 seconds.
         /// </para>
         /// </summary>
-        public int StartTimeout
+        public int? StartTimeout
         {
-            get { return this._startTimeout.GetValueOrDefault(); }
+            get { return this._startTimeout; }
             set { this._startTimeout = value; }
         }
 
@@ -1311,9 +1311,9 @@ namespace Amazon.ECS.Model
         /// The valid values are 2-120 seconds.
         /// </para>
         /// </summary>
-        public int StopTimeout
+        public int? StopTimeout
         {
-            get { return this._stopTimeout.GetValueOrDefault(); }
+            get { return this._stopTimeout; }
             set { this._stopTimeout = value; }
         }
 

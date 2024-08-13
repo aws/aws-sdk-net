@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.DataExchange.Endpoints;
 using Amazon.DataExchange.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class DataExchangeEndpointsTests

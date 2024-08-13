@@ -68,7 +68,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LineItemGroupIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LineItemGroupIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

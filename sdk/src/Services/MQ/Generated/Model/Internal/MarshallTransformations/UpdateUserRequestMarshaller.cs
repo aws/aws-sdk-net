@@ -76,7 +76,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConsoleAccess())
                 {
                     context.Writer.WritePropertyName("consoleAccess");
-                    context.Writer.Write(publicRequest.ConsoleAccess);
+                    context.Writer.Write(publicRequest.ConsoleAccess.Value);
                 }
 
                 if(publicRequest.IsSetGroups())
@@ -99,7 +99,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReplicationUser())
                 {
                     context.Writer.WritePropertyName("replicationUser");
-                    context.Writer.Write(publicRequest.ReplicationUser);
+                    context.Writer.Write(publicRequest.ReplicationUser.Value);
                 }
 
                 writer.WriteObjectEnd();

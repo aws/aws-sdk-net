@@ -118,13 +118,13 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetProcessingInstanceVolumeSizeInGB())
                 {
                     context.Writer.WritePropertyName("processingInstanceVolumeSizeInGB");
-                    context.Writer.Write(publicRequest.ProcessingInstanceVolumeSizeInGB);
+                    context.Writer.Write(publicRequest.ProcessingInstanceVolumeSizeInGB.Value);
                 }
 
                 if(publicRequest.IsSetProcessingTimeOutInSeconds())
                 {
                     context.Writer.WritePropertyName("processingTimeOutInSeconds");
-                    context.Writer.Write(publicRequest.ProcessingTimeOutInSeconds);
+                    context.Writer.Write(publicRequest.ProcessingTimeOutInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetS3OutputEncryptionKMSKey())

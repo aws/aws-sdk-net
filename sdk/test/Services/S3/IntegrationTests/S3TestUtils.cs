@@ -224,25 +224,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <returns>The MRAP's ARN if it exists, an empty string otherwise</returns>
         private static string CheckIfMRAPExists(IAmazonS3Control s3ControlClient, string accountId, string mrapName)
         {
-            var nextToken = "";
             var request = new ListMultiRegionAccessPointsRequest { AccountId = accountId };
-            ListMultiRegionAccessPointsResponse response;
-
-            // Use a loop instead of paginators since we need net35 support
-            do
+            var paginatorForAccessPoints = s3ControlClient.Paginators.ListMultiRegionAccessPoints(request);
+            
+            foreach (var response in paginatorForAccessPoints.Responses)
             {
-                request.NextToken = nextToken;
-                response = s3ControlClient.ListMultiRegionAccessPoints(request);
+                if (response.AccessPoints == null)
+                {
+                    continue;
+                }
 
                 foreach (var accessPoint in response.AccessPoints)
                 {
                     if (accessPoint.Name == mrapName)
+                    {
                         return $"arn:aws:s3::{accountId}:accesspoint/{accessPoint.Alias}";
+                    }
                 }
-
-                nextToken = response.NextToken;
             }
-            while (!string.IsNullOrEmpty(nextToken));
 
             return "";
         }
@@ -295,7 +294,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
             }
             // Continue listing objects and deleting them until the bucket is empty.
-            while (listVersionsResponse.IsTruncated);
+            while (listVersionsResponse.IsTruncated.GetValueOrDefault());
         }
 
         public static T WaitForConsistency<T>(Func<T> loadFunction)

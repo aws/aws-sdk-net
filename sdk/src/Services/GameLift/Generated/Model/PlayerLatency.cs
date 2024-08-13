@@ -49,9 +49,9 @@ namespace Amazon.GameLift.Model
         /// to the specified Region.
         /// </para>
         /// </summary>
-        public float LatencyInMilliseconds
+        public float? LatencyInMilliseconds
         {
-            get { return this._latencyInMilliseconds.GetValueOrDefault(); }
+            get { return this._latencyInMilliseconds; }
             set { this._latencyInMilliseconds = value; }
         }
 

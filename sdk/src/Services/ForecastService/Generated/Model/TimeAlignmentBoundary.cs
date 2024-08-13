@@ -57,9 +57,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=28)]
-        public int DayOfMonth
+        public int? DayOfMonth
         {
-            get { return this._dayOfMonth.GetValueOrDefault(); }
+            get { return this._dayOfMonth; }
             set { this._dayOfMonth = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
-        public int Hour
+        public int? Hour
         {
-            get { return this._hour.GetValueOrDefault(); }
+            get { return this._hour; }
             set { this._hour = value; }
         }
 

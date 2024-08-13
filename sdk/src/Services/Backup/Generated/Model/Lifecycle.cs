@@ -61,9 +61,9 @@ namespace Amazon.Backup.Model
         /// be greater than 90 days plus <c>MoveToColdStorageAfterDays</c>.
         /// </para>
         /// </summary>
-        public long DeleteAfterDays
+        public long? DeleteAfterDays
         {
-            get { return this._deleteAfterDays.GetValueOrDefault(); }
+            get { return this._deleteAfterDays; }
             set { this._deleteAfterDays = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Backup.Model
         /// storage.
         /// </para>
         /// </summary>
-        public long MoveToColdStorageAfterDays
+        public long? MoveToColdStorageAfterDays
         {
-            get { return this._moveToColdStorageAfterDays.GetValueOrDefault(); }
+            get { return this._moveToColdStorageAfterDays; }
             set { this._moveToColdStorageAfterDays = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Backup.Model
         /// lifecycle settings.
         /// </para>
         /// </summary>
-        public bool OptInToArchiveForSupportedResources
+        public bool? OptInToArchiveForSupportedResources
         {
-            get { return this._optInToArchiveForSupportedResources.GetValueOrDefault(); }
+            get { return this._optInToArchiveForSupportedResources; }
             set { this._optInToArchiveForSupportedResources = value; }
         }
 

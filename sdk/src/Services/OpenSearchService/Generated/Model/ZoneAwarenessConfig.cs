@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchService.Model
         /// is provisioned within a VPC, this value be equal to number of subnets.
         /// </para>
         /// </summary>
-        public int AvailabilityZoneCount
+        public int? AvailabilityZoneCount
         {
-            get { return this._availabilityZoneCount.GetValueOrDefault(); }
+            get { return this._availabilityZoneCount; }
             set { this._availabilityZoneCount = value; }
         }
 

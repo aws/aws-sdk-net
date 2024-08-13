@@ -47,9 +47,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The date and time of the last provisioned throughput decrease for this table.
         /// </para>
         /// </summary>
-        public DateTime LastDecreaseDateTime
+        public DateTime? LastDecreaseDateTime
         {
-            get { return this._lastDecreaseDateTime.GetValueOrDefault(); }
+            get { return this._lastDecreaseDateTime; }
             set { this._lastDecreaseDateTime = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The date and time of the last provisioned throughput increase for this table.
         /// </para>
         /// </summary>
-        public DateTime LastIncreaseDateTime
+        public DateTime? LastIncreaseDateTime
         {
-            get { return this._lastIncreaseDateTime.GetValueOrDefault(); }
+            get { return this._lastIncreaseDateTime; }
             set { this._lastIncreaseDateTime = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long NumberOfDecreasesToday
+        public long? NumberOfDecreasesToday
         {
-            get { return this._numberOfDecreasesToday.GetValueOrDefault(); }
+            get { return this._numberOfDecreasesToday; }
             set { this._numberOfDecreasesToday = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ReadCapacityUnits
+        public long? ReadCapacityUnits
         {
-            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            get { return this._readCapacityUnits; }
             set { this._readCapacityUnits = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long WriteCapacityUnits
+        public long? WriteCapacityUnits
         {
-            get { return this._writeCapacityUnits.GetValueOrDefault(); }
+            get { return this._writeCapacityUnits; }
             set { this._writeCapacityUnits = value; }
         }
 

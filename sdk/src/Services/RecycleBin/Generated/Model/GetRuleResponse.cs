@@ -106,9 +106,9 @@ namespace Amazon.RecycleBin.Model
         /// rules that have been unlocked and that are still within the unlock delay period.
         /// </para>
         /// </summary>
-        public DateTime LockEndTime
+        public DateTime? LockEndTime
         {
-            get { return this._lockEndTime.GetValueOrDefault(); }
+            get { return this._lockEndTime; }
             set { this._lockEndTime = value; }
         }
 

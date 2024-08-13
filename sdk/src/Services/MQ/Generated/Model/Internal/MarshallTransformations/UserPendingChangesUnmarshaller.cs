@@ -68,7 +68,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("consoleAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ConsoleAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }

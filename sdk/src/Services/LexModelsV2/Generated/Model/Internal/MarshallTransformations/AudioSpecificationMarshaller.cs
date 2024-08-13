@@ -51,13 +51,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTimeoutMs())
             {
                 context.Writer.WritePropertyName("endTimeoutMs");
-                context.Writer.Write(requestObject.EndTimeoutMs);
+                context.Writer.Write(requestObject.EndTimeoutMs.Value);
             }
 
             if(requestObject.IsSetMaxLengthMs())
             {
                 context.Writer.WritePropertyName("maxLengthMs");
-                context.Writer.Write(requestObject.MaxLengthMs);
+                context.Writer.Write(requestObject.MaxLengthMs.Value);
             }
 
         }

@@ -105,9 +105,9 @@ namespace Amazon.CloudFormation.Model
         /// first stacks.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.CloudFormation.Model
         /// or even attempted, in each account or Region.
         /// </para>
         /// </summary>
-        public DateTime EndTimestamp
+        public DateTime? EndTimestamp
         {
-            get { return this._endTimestamp.GetValueOrDefault(); }
+            get { return this._endTimestamp; }
             set { this._endTimestamp = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.CloudFormation.Model
         /// set.
         /// </para>
         /// </summary>
-        public bool RetainStacks
+        public bool? RetainStacks
         {
-            get { return this._retainStacks.GetValueOrDefault(); }
+            get { return this._retainStacks; }
             set { this._retainStacks = value; }
         }
 

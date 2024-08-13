@@ -41,9 +41,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property ReservedBitrate. The amount of outbound bandwidth that
         /// is discounted in the offering.
         /// </summary>
-        public int ReservedBitrate
+        public int? ReservedBitrate
         {
-            get { return this._reservedBitrate.GetValueOrDefault(); }
+            get { return this._reservedBitrate; }
             set { this._reservedBitrate = value; }
         }
 

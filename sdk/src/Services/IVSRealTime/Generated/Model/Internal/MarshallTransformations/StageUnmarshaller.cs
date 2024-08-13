@@ -84,6 +84,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoParticipantRecordingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("endpoints", targetDepth))
+                {
+                    var unmarshaller = StageEndpointsUnmarshaller.Instance;
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

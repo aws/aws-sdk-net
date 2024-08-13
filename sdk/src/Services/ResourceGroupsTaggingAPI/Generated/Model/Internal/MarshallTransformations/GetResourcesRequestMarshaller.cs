@@ -72,13 +72,13 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExcludeCompliantResources())
                 {
                     context.Writer.WritePropertyName("ExcludeCompliantResources");
-                    context.Writer.Write(publicRequest.ExcludeCompliantResources);
+                    context.Writer.Write(publicRequest.ExcludeCompliantResources.Value);
                 }
 
                 if(publicRequest.IsSetIncludeComplianceDetails())
                 {
                     context.Writer.WritePropertyName("IncludeComplianceDetails");
-                    context.Writer.Write(publicRequest.IncludeComplianceDetails);
+                    context.Writer.Write(publicRequest.IncludeComplianceDetails.Value);
                 }
 
                 if(publicRequest.IsSetPaginationToken())
@@ -101,7 +101,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetResourcesPerPage())
                 {
                     context.Writer.WritePropertyName("ResourcesPerPage");
-                    context.Writer.Write(publicRequest.ResourcesPerPage);
+                    context.Writer.Write(publicRequest.ResourcesPerPage.Value);
                 }
 
                 if(publicRequest.IsSetResourceTypeFilters())
@@ -134,7 +134,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTagsPerPage())
                 {
                     context.Writer.WritePropertyName("TagsPerPage");
-                    context.Writer.Write(publicRequest.TagsPerPage);
+                    context.Writer.Write(publicRequest.TagsPerPage.Value);
                 }
 
                 writer.WriteObjectEnd();

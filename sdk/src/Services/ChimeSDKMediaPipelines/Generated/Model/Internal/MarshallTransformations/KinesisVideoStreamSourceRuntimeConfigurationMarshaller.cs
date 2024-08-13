@@ -57,7 +57,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMediaSampleRate())
             {
                 context.Writer.WritePropertyName("MediaSampleRate");
-                context.Writer.Write(requestObject.MediaSampleRate);
+                context.Writer.Write(requestObject.MediaSampleRate.Value);
             }
 
             if(requestObject.IsSetStreams())

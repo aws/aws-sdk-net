@@ -72,13 +72,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeGraph())
                 {
                     context.Writer.WritePropertyName("IncludeGraph");
-                    context.Writer.Write(publicRequest.IncludeGraph);
+                    context.Writer.Write(publicRequest.IncludeGraph.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetName())

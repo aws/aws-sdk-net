@@ -213,9 +213,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]
-        public int ServerPort
+        public int? ServerPort
         {
-            get { return this._serverPort.GetValueOrDefault(); }
+            get { return this._serverPort; }
             set { this._serverPort = value; }
         }
 

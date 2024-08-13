@@ -37,7 +37,10 @@ namespace Amazon.DirectConnect.Model
         private VirtualInterface _virtualInterface;
 
         /// <summary>
-        /// Gets and sets the property VirtualInterface.
+        /// Gets and sets the property VirtualInterface. 
+        /// <para>
+        /// Information about a virtual interface.
+        /// </para>
         /// </summary>
         public VirtualInterface VirtualInterface
         {

@@ -690,9 +690,9 @@ namespace Amazon.CloudFormation.Model
         /// or <c>TemplateURL</c>—or set <c>UsePreviousTemplate</c> to true.
         /// </para>
         /// </summary>
-        public bool UsePreviousTemplate
+        public bool? UsePreviousTemplate
         {
-            get { return this._usePreviousTemplate.GetValueOrDefault(); }
+            get { return this._usePreviousTemplate; }
             set { this._usePreviousTemplate = value; }
         }
 

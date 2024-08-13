@@ -190,9 +190,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
-        public bool IncludePublic
+        public bool? IncludePublic
         {
-            get { return this._includePublic.GetValueOrDefault(); }
+            get { return this._includePublic; }
             set { this._includePublic = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
-        public bool IncludeShared
+        public bool? IncludeShared
         {
-            get { return this._includeShared.GetValueOrDefault(); }
+            get { return this._includeShared; }
             set { this._includeShared = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.RDS.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

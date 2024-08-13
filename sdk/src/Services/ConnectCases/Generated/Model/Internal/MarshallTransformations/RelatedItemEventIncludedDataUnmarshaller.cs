@@ -68,7 +68,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("includeContent", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeContent = unmarshaller.Unmarshall(context);
                     continue;
                 }

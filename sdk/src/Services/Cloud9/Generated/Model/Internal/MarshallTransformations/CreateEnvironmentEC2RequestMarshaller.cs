@@ -72,7 +72,7 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutomaticStopTimeMinutes())
                 {
                     context.Writer.WritePropertyName("automaticStopTimeMinutes");
-                    context.Writer.Write(publicRequest.AutomaticStopTimeMinutes);
+                    context.Writer.Write(publicRequest.AutomaticStopTimeMinutes.Value);
                 }
 
                 if(publicRequest.IsSetClientRequestToken())
@@ -96,7 +96,7 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("dryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetImageId())

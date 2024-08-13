@@ -74,25 +74,25 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numClasses", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumClasses = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numDistinctPredicates", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumDistinctPredicates = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numDistinctSubjects", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumDistinctSubjects = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numQuads", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumQuads = unmarshaller.Unmarshall(context);
                     continue;
                 }

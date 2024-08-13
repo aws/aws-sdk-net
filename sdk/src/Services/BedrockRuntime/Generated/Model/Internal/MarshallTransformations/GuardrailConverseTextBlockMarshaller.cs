@@ -48,6 +48,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetQualifiers())
+            {
+                context.Writer.WritePropertyName("qualifiers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectQualifiersListValue in requestObject.Qualifiers)
+                {
+                        context.Writer.Write(requestObjectQualifiersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");

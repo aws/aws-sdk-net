@@ -79,9 +79,9 @@ namespace Amazon.MTurk.Model
         /// the number of assignments returned by this call.
         /// </para>
         /// </summary>
-        public int NumResults
+        public int? NumResults
         {
-            get { return this._numResults.GetValueOrDefault(); }
+            get { return this._numResults; }
             set { this._numResults = value; }
         }
 

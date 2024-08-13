@@ -55,7 +55,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listMultipartUploadsRequest.IsSetKeyMarker())
                 request.Parameters.Add("key-marker", S3Transforms.ToStringValue(listMultipartUploadsRequest.KeyMarker));
             if (listMultipartUploadsRequest.IsSetMaxUploads())
-                request.Parameters.Add("max-uploads", S3Transforms.ToStringValue(listMultipartUploadsRequest.MaxUploads));
+                request.Parameters.Add("max-uploads", S3Transforms.ToStringValue(listMultipartUploadsRequest.MaxUploads.Value));
             if (listMultipartUploadsRequest.IsSetPrefix())
                 request.Parameters.Add("prefix", S3Transforms.ToStringValue(listMultipartUploadsRequest.Prefix));
             if (listMultipartUploadsRequest.IsSetUploadIdMarker())

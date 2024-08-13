@@ -57,13 +57,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("MaxHealthyPercentage", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxHealthyPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinHealthyPercentage", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinHealthyPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }

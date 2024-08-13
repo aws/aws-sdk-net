@@ -51,13 +51,13 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             if(requestObject.IsSetElevation())
             {
                 context.Writer.WritePropertyName("elevation");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Elevation))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Elevation.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Elevation));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Elevation.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Elevation);
+                    context.Writer.Write(requestObject.Elevation.Value);
                 }
             }
 
@@ -76,26 +76,26 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("latitude");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Latitude);
+                    context.Writer.Write(requestObject.Latitude.Value);
                 }
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("longitude");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Longitude);
+                    context.Writer.Write(requestObject.Longitude.Value);
                 }
             }
 

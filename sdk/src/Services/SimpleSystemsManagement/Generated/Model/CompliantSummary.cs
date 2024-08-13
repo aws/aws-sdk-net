@@ -44,9 +44,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The total number of resources that are compliant.
         /// </para>
         /// </summary>
-        public int CompliantCount
+        public int? CompliantCount
         {
-            get { return this._compliantCount.GetValueOrDefault(); }
+            get { return this._compliantCount; }
             set { this._compliantCount = value; }
         }
 

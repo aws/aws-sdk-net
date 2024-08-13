@@ -90,9 +90,9 @@ namespace Amazon.ResilienceHub.Model
         /// Specifies if the resiliency policy ARN should be cleared.
         /// </para>
         /// </summary>
-        public bool ClearResiliencyPolicyArn
+        public bool? ClearResiliencyPolicyArn
         {
-            get { return this._clearResiliencyPolicyArn.GetValueOrDefault(); }
+            get { return this._clearResiliencyPolicyArn; }
             set { this._clearResiliencyPolicyArn = value; }
         }
 

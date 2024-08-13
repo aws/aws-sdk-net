@@ -81,7 +81,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPartitionNumber())
             {
                 context.Writer.WritePropertyName("PartitionNumber");
-                context.Writer.Write(requestObject.PartitionNumber);
+                context.Writer.Write(requestObject.PartitionNumber.Value);
             }
 
             if(requestObject.IsSetSpreadDomain())

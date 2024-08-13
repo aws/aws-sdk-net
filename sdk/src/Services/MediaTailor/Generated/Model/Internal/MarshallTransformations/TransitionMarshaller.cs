@@ -51,7 +51,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationMillis())
             {
                 context.Writer.WritePropertyName("DurationMillis");
-                context.Writer.Write(requestObject.DurationMillis);
+                context.Writer.Write(requestObject.DurationMillis.Value);
             }
 
             if(requestObject.IsSetRelativePosition())
@@ -69,7 +69,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScheduledStartTimeMillis())
             {
                 context.Writer.WritePropertyName("ScheduledStartTimeMillis");
-                context.Writer.Write(requestObject.ScheduledStartTimeMillis);
+                context.Writer.Write(requestObject.ScheduledStartTimeMillis.Value);
             }
 
             if(requestObject.IsSetType())

@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.CloudWatchLogs;
 using Amazon.CloudWatchLogs.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class CloudWatchLogsConstructorCustomizationsTests
@@ -120,7 +120,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("CloudWatchLogs")]
         public void PutRetentionPolicyRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.CloudWatchLogs.Model.PutRetentionPolicyRequest), new System.Type[] { typeof(string), typeof(int), });
+            EnsureConstructorExists(typeof(Amazon.CloudWatchLogs.Model.PutRetentionPolicyRequest), new System.Type[] { typeof(string), typeof(int?), });
         }
 
         void EnsureConstructorExists(System.Type type, System.Type[] constructorParams)

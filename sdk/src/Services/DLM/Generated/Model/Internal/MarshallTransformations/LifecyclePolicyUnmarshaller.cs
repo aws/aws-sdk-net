@@ -68,19 +68,19 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DateCreated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DateModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DefaultPolicy", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }

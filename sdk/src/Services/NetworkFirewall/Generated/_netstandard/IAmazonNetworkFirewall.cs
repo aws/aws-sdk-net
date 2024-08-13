@@ -476,16 +476,15 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration
-        /// contains Certificate Manager certificate associations between and the scope configurations
-        /// that Network Firewall uses to decrypt and re-encrypt traffic traveling through your
-        /// firewall.
+        /// Creates an Network Firewall TLS inspection configuration. Network Firewall uses TLS
+        /// inspection configurations to decrypt your firewall's inbound and outbound SSL/TLS
+        /// traffic. After decryption, Network Firewall inspects the traffic according to your
+        /// firewall policy's stateful rules, and then re-encrypts it before sending it to its
+        /// destination. You can enable inspection of your firewall's inbound traffic, outbound
+        /// traffic, or both. To use TLS inspection with your firewall, you must first import
+        /// or provision certificates using ACM, create a TLS inspection configuration, add that
+        /// configuration to a new firewall policy, and then associate that policy with your firewall.
         /// 
-        ///  
-        /// <para>
-        /// After you create a TLS inspection configuration, you can associate it with a new firewall
-        /// policy.
-        /// </para>
         ///  
         /// <para>
         /// To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
@@ -2164,5 +2163,33 @@ namespace Amazon.NetworkFirewall
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonNetworkFirewallConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonNetworkFirewallConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonNetworkFirewallConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonNetworkFirewallConfig to create AmazonNetworkFirewallClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonNetworkFirewallClient(serviceClientConfig) :
+                    new AmazonNetworkFirewallClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

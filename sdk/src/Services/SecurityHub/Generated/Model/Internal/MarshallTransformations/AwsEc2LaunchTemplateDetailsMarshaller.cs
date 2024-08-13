@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultVersionNumber())
             {
                 context.Writer.WritePropertyName("DefaultVersionNumber");
-                context.Writer.Write(requestObject.DefaultVersionNumber);
+                context.Writer.Write(requestObject.DefaultVersionNumber.Value);
             }
 
             if(requestObject.IsSetId())
@@ -63,7 +63,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatestVersionNumber())
             {
                 context.Writer.WritePropertyName("LatestVersionNumber");
-                context.Writer.Write(requestObject.LatestVersionNumber);
+                context.Writer.Write(requestObject.LatestVersionNumber.Value);
             }
 
             if(requestObject.IsSetLaunchTemplateData())

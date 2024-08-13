@@ -101,9 +101,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// 
         /// </para>
         /// </summary>
-        public bool MoreApplicationResource
+        public bool? MoreApplicationResource
         {
-            get { return this._moreApplicationResource.GetValueOrDefault(); }
+            get { return this._moreApplicationResource; }
             set { this._moreApplicationResource = value; }
         }
 

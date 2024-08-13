@@ -65,9 +65,9 @@ namespace Amazon.Shield.Model
         /// <c>10,000</c>.
         /// </para>
         /// </summary>
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -104,9 +104,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int MaximumPageSize
+        public int? MaximumPageSize
         {
-            get { return this._maximumPageSize.GetValueOrDefault(); }
+            get { return this._maximumPageSize; }
             set { this._maximumPageSize = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// are returned in ascending alphabetical order by <c>name</c> of the activity types.
         /// </para>
         /// </summary>
-        public bool ReverseOrder
+        public bool? ReverseOrder
         {
-            get { return this._reverseOrder.GetValueOrDefault(); }
+            get { return this._reverseOrder; }
             set { this._reverseOrder = value; }
         }
 

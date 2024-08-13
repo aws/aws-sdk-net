@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("EngineNativeAuditFieldsIncluded", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.EngineNativeAuditFieldsIncluded = unmarshaller.Unmarshall(context);
                         continue;
                     }

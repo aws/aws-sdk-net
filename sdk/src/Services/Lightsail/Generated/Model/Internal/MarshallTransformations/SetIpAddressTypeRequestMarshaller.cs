@@ -72,7 +72,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAcceptBundleUpdate())
                 {
                     context.Writer.WritePropertyName("acceptBundleUpdate");
-                    context.Writer.Write(publicRequest.AcceptBundleUpdate);
+                    context.Writer.Write(publicRequest.AcceptBundleUpdate.Value);
                 }
 
                 if(publicRequest.IsSetIpAddressType())

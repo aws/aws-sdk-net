@@ -99,9 +99,9 @@ namespace Amazon.EC2.Model
         /// The version number of the launch template.
         /// </para>
         /// </summary>
-        public long VersionNumber
+        public long? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

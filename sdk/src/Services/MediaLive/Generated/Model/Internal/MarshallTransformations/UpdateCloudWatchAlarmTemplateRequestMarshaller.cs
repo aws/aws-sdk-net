@@ -79,7 +79,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDatapointsToAlarm())
                 {
                     context.Writer.WritePropertyName("datapointsToAlarm");
-                    context.Writer.Write(publicRequest.DatapointsToAlarm);
+                    context.Writer.Write(publicRequest.DatapointsToAlarm.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -91,7 +91,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEvaluationPeriods())
                 {
                     context.Writer.WritePropertyName("evaluationPeriods");
-                    context.Writer.Write(publicRequest.EvaluationPeriods);
+                    context.Writer.Write(publicRequest.EvaluationPeriods.Value);
                 }
 
                 if(publicRequest.IsSetGroupIdentifier())
@@ -115,7 +115,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPeriod())
                 {
                     context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period);
+                    context.Writer.Write(publicRequest.Period.Value);
                 }
 
                 if(publicRequest.IsSetStatistic())
@@ -133,13 +133,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("threshold");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold))
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.Threshold.Value))
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold));
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.Threshold.Value));
                     }
                     else
                     {
-                        context.Writer.Write(publicRequest.Threshold);
+                        context.Writer.Write(publicRequest.Threshold.Value);
                     }
                 }
 

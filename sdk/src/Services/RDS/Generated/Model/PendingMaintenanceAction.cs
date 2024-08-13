@@ -76,9 +76,9 @@ namespace Amazon.RDS.Model
         /// is applied to the resource during its first maintenance window after this date.
         /// </para>
         /// </summary>
-        public DateTime AutoAppliedAfterDate
+        public DateTime? AutoAppliedAfterDate
         {
-            get { return this._autoAppliedAfterDate.GetValueOrDefault(); }
+            get { return this._autoAppliedAfterDate; }
             set { this._autoAppliedAfterDate = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.RDS.Model
         /// <c>AutoAppliedAfterDate</c> or <c>ForcedApplyDate</c>.
         /// </para>
         /// </summary>
-        public DateTime CurrentApplyDate
+        public DateTime? CurrentApplyDate
         {
-            get { return this._currentApplyDate.GetValueOrDefault(); }
+            get { return this._currentApplyDate; }
             set { this._currentApplyDate = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.RDS.Model
         /// or more days from this date before the maintenance action is applied.
         /// </para>
         /// </summary>
-        public DateTime ForcedApplyDate
+        public DateTime? ForcedApplyDate
         {
-            get { return this._forcedApplyDate.GetValueOrDefault(); }
+            get { return this._forcedApplyDate; }
             set { this._forcedApplyDate = value; }
         }
 

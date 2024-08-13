@@ -51,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaseSensitive())
             {
                 context.Writer.WritePropertyName("CaseSensitive");
-                context.Writer.Write(requestObject.CaseSensitive);
+                context.Writer.Write(requestObject.CaseSensitive.Value);
             }
 
         }

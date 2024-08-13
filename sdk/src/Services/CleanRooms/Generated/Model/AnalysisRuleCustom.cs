@@ -35,9 +35,30 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AnalysisRuleCustom
     {
+        private AdditionalAnalyses _additionalAnalyses;
         private List<string> _allowedAnalyses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedAnalysisProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DifferentialPrivacyConfiguration _differentialPrivacy;
+        private List<string> _disallowedOutputColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalAnalyses. 
+        /// <para>
+        ///  An indicator as to whether additional analyses (such as Clean Rooms ML) can be applied
+        /// to the output of the direct query.
+        /// </para>
+        /// </summary>
+        public AdditionalAnalyses AdditionalAnalyses
+        {
+            get { return this._additionalAnalyses; }
+            set { this._additionalAnalyses = value; }
+        }
+
+        // Check to see if AdditionalAnalyses property is set
+        internal bool IsSetAdditionalAnalyses()
+        {
+            return this._additionalAnalyses != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AllowedAnalyses. 
@@ -94,6 +115,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetDifferentialPrivacy()
         {
             return this._differentialPrivacy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisallowedOutputColumns. 
+        /// <para>
+        ///  A list of columns that aren't allowed to be shown in the query output.
+        /// </para>
+        /// </summary>
+        public List<string> DisallowedOutputColumns
+        {
+            get { return this._disallowedOutputColumns; }
+            set { this._disallowedOutputColumns = value; }
+        }
+
+        // Check to see if DisallowedOutputColumns property is set
+        internal bool IsSetDisallowedOutputColumns()
+        {
+            return this._disallowedOutputColumns != null && (this._disallowedOutputColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

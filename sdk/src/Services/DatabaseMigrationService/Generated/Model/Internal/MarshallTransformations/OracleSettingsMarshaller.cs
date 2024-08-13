@@ -51,37 +51,37 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessAlternateDirectly())
             {
                 context.Writer.WritePropertyName("AccessAlternateDirectly");
-                context.Writer.Write(requestObject.AccessAlternateDirectly);
+                context.Writer.Write(requestObject.AccessAlternateDirectly.Value);
             }
 
             if(requestObject.IsSetAdditionalArchivedLogDestId())
             {
                 context.Writer.WritePropertyName("AdditionalArchivedLogDestId");
-                context.Writer.Write(requestObject.AdditionalArchivedLogDestId);
+                context.Writer.Write(requestObject.AdditionalArchivedLogDestId.Value);
             }
 
             if(requestObject.IsSetAddSupplementalLogging())
             {
                 context.Writer.WritePropertyName("AddSupplementalLogging");
-                context.Writer.Write(requestObject.AddSupplementalLogging);
+                context.Writer.Write(requestObject.AddSupplementalLogging.Value);
             }
 
             if(requestObject.IsSetAllowSelectNestedTables())
             {
                 context.Writer.WritePropertyName("AllowSelectNestedTables");
-                context.Writer.Write(requestObject.AllowSelectNestedTables);
+                context.Writer.Write(requestObject.AllowSelectNestedTables.Value);
             }
 
             if(requestObject.IsSetArchivedLogDestId())
             {
                 context.Writer.WritePropertyName("ArchivedLogDestId");
-                context.Writer.Write(requestObject.ArchivedLogDestId);
+                context.Writer.Write(requestObject.ArchivedLogDestId.Value);
             }
 
             if(requestObject.IsSetArchivedLogsOnly())
             {
                 context.Writer.WritePropertyName("ArchivedLogsOnly");
-                context.Writer.Write(requestObject.ArchivedLogsOnly);
+                context.Writer.Write(requestObject.ArchivedLogsOnly.Value);
             }
 
             if(requestObject.IsSetAsmPassword())
@@ -111,7 +111,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConvertTimestampWithZoneToUTC())
             {
                 context.Writer.WritePropertyName("ConvertTimestampWithZoneToUTC");
-                context.Writer.Write(requestObject.ConvertTimestampWithZoneToUTC);
+                context.Writer.Write(requestObject.ConvertTimestampWithZoneToUTC.Value);
             }
 
             if(requestObject.IsSetDatabaseName())
@@ -123,19 +123,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDirectPathNoLog())
             {
                 context.Writer.WritePropertyName("DirectPathNoLog");
-                context.Writer.Write(requestObject.DirectPathNoLog);
+                context.Writer.Write(requestObject.DirectPathNoLog.Value);
             }
 
             if(requestObject.IsSetDirectPathParallelLoad())
             {
                 context.Writer.WritePropertyName("DirectPathParallelLoad");
-                context.Writer.Write(requestObject.DirectPathParallelLoad);
+                context.Writer.Write(requestObject.DirectPathParallelLoad.Value);
             }
 
             if(requestObject.IsSetEnableHomogenousTablespace())
             {
                 context.Writer.WritePropertyName("EnableHomogenousTablespace");
-                context.Writer.Write(requestObject.EnableHomogenousTablespace);
+                context.Writer.Write(requestObject.EnableHomogenousTablespace.Value);
             }
 
             if(requestObject.IsSetExtraArchivedLogDestIds())
@@ -152,19 +152,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailTasksOnLobTruncation())
             {
                 context.Writer.WritePropertyName("FailTasksOnLobTruncation");
-                context.Writer.Write(requestObject.FailTasksOnLobTruncation);
+                context.Writer.Write(requestObject.FailTasksOnLobTruncation.Value);
             }
 
             if(requestObject.IsSetNumberDatatypeScale())
             {
                 context.Writer.WritePropertyName("NumberDatatypeScale");
-                context.Writer.Write(requestObject.NumberDatatypeScale);
+                context.Writer.Write(requestObject.NumberDatatypeScale.Value);
             }
 
             if(requestObject.IsSetOpenTransactionWindow())
             {
                 context.Writer.WritePropertyName("OpenTransactionWindow");
-                context.Writer.Write(requestObject.OpenTransactionWindow);
+                context.Writer.Write(requestObject.OpenTransactionWindow.Value);
             }
 
             if(requestObject.IsSetOraclePathPrefix())
@@ -176,7 +176,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParallelAsmReadThreads())
             {
                 context.Writer.WritePropertyName("ParallelAsmReadThreads");
-                context.Writer.Write(requestObject.ParallelAsmReadThreads);
+                context.Writer.Write(requestObject.ParallelAsmReadThreads.Value);
             }
 
             if(requestObject.IsSetPassword())
@@ -188,31 +188,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetReadAheadBlocks())
             {
                 context.Writer.WritePropertyName("ReadAheadBlocks");
-                context.Writer.Write(requestObject.ReadAheadBlocks);
+                context.Writer.Write(requestObject.ReadAheadBlocks.Value);
             }
 
             if(requestObject.IsSetReadTableSpaceName())
             {
                 context.Writer.WritePropertyName("ReadTableSpaceName");
-                context.Writer.Write(requestObject.ReadTableSpaceName);
+                context.Writer.Write(requestObject.ReadTableSpaceName.Value);
             }
 
             if(requestObject.IsSetReplacePathPrefix())
             {
                 context.Writer.WritePropertyName("ReplacePathPrefix");
-                context.Writer.Write(requestObject.ReplacePathPrefix);
+                context.Writer.Write(requestObject.ReplacePathPrefix.Value);
             }
 
             if(requestObject.IsSetRetryInterval())
             {
                 context.Writer.WritePropertyName("RetryInterval");
-                context.Writer.Write(requestObject.RetryInterval);
+                context.Writer.Write(requestObject.RetryInterval.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
@@ -266,37 +266,37 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStandbyDelayTime())
             {
                 context.Writer.WritePropertyName("StandbyDelayTime");
-                context.Writer.Write(requestObject.StandbyDelayTime);
+                context.Writer.Write(requestObject.StandbyDelayTime.Value);
             }
 
             if(requestObject.IsSetTrimSpaceInChar())
             {
                 context.Writer.WritePropertyName("TrimSpaceInChar");
-                context.Writer.Write(requestObject.TrimSpaceInChar);
+                context.Writer.Write(requestObject.TrimSpaceInChar.Value);
             }
 
             if(requestObject.IsSetUseAlternateFolderForOnline())
             {
                 context.Writer.WritePropertyName("UseAlternateFolderForOnline");
-                context.Writer.Write(requestObject.UseAlternateFolderForOnline);
+                context.Writer.Write(requestObject.UseAlternateFolderForOnline.Value);
             }
 
             if(requestObject.IsSetUseBFile())
             {
                 context.Writer.WritePropertyName("UseBFile");
-                context.Writer.Write(requestObject.UseBFile);
+                context.Writer.Write(requestObject.UseBFile.Value);
             }
 
             if(requestObject.IsSetUseDirectPathFullLoad())
             {
                 context.Writer.WritePropertyName("UseDirectPathFullLoad");
-                context.Writer.Write(requestObject.UseDirectPathFullLoad);
+                context.Writer.Write(requestObject.UseDirectPathFullLoad.Value);
             }
 
             if(requestObject.IsSetUseLogminerReader())
             {
                 context.Writer.WritePropertyName("UseLogminerReader");
-                context.Writer.Write(requestObject.UseLogminerReader);
+                context.Writer.Write(requestObject.UseLogminerReader.Value);
             }
 
             if(requestObject.IsSetUsePathPrefix())

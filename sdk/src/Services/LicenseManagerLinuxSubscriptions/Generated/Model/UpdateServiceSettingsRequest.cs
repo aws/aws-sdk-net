@@ -47,9 +47,9 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         /// Region.
         /// </para>
         /// </summary>
-        public bool AllowUpdate
+        public bool? AllowUpdate
         {
-            get { return this._allowUpdate.GetValueOrDefault(); }
+            get { return this._allowUpdate; }
             set { this._allowUpdate = value; }
         }
 

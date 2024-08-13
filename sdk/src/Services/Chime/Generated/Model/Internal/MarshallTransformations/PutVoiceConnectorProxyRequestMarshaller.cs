@@ -73,13 +73,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultSessionExpiryMinutes())
                 {
                     context.Writer.WritePropertyName("DefaultSessionExpiryMinutes");
-                    context.Writer.Write(publicRequest.DefaultSessionExpiryMinutes);
+                    context.Writer.Write(publicRequest.DefaultSessionExpiryMinutes.Value);
                 }
 
                 if(publicRequest.IsSetDisabled())
                 {
                     context.Writer.WritePropertyName("Disabled");
-                    context.Writer.Write(publicRequest.Disabled);
+                    context.Writer.Write(publicRequest.Disabled.Value);
                 }
 
                 if(publicRequest.IsSetFallBackPhoneNumber())

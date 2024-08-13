@@ -125,7 +125,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigured())
             {
                 context.Writer.WritePropertyName("configured");
-                context.Writer.Write(requestObject.Configured);
+                context.Writer.Write(requestObject.Configured.Value);
             }
 
             if(requestObject.IsSetDefaultValue())

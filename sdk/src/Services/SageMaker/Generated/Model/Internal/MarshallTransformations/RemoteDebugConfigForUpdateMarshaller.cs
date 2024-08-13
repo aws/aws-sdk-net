@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableRemoteDebug())
             {
                 context.Writer.WritePropertyName("EnableRemoteDebug");
-                context.Writer.Write(requestObject.EnableRemoteDebug);
+                context.Writer.Write(requestObject.EnableRemoteDebug.Value);
             }
 
         }

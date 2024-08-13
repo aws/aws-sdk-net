@@ -80,7 +80,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsIndirectActivity", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsIndirectActivity = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,7 +110,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TimeStamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TimeStamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

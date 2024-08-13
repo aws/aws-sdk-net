@@ -80,7 +80,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.CallerReference));
 
                 if(publicRequest.IsSetEnabled())
-                    xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.Enabled));
+                    xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.Enabled.Value));
 
 
                 xmlWriter.WriteEndElement();

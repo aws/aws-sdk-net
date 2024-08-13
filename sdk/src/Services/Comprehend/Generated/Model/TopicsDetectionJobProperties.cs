@@ -74,9 +74,9 @@ namespace Amazon.Comprehend.Model
         /// The time that the topic detection job was completed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.Comprehend.Model
         /// The default is 10. 
         /// </para>
         /// </summary>
-        public int NumberOfTopics
+        public int? NumberOfTopics
         {
-            get { return this._numberOfTopics.GetValueOrDefault(); }
+            get { return this._numberOfTopics; }
             set { this._numberOfTopics = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.Comprehend.Model
         /// The time that the topic detection job was submitted for processing.
         /// </para>
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

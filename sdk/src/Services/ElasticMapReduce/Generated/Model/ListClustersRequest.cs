@@ -69,9 +69,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The creation date and time beginning value filter for listing clusters.
         /// </para>
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The creation date and time end value filter for listing clusters.
         /// </para>
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 

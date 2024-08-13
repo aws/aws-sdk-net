@@ -47,9 +47,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// (DKIM) during the predictive inbox placement test.
         /// </para>
         /// </summary>
-        public double DkimPercentage
+        public double? DkimPercentage
         {
-            get { return this._dkimPercentage.GetValueOrDefault(); }
+            get { return this._dkimPercentage; }
             set { this._dkimPercentage = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// inbox placement test.
         /// </para>
         /// </summary>
-        public double InboxPercentage
+        public double? InboxPercentage
         {
-            get { return this._inboxPercentage.GetValueOrDefault(); }
+            get { return this._inboxPercentage; }
             set { this._inboxPercentage = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// predictive inbox placement test.
         /// </para>
         /// </summary>
-        public double MissingPercentage
+        public double? MissingPercentage
         {
-            get { return this._missingPercentage.GetValueOrDefault(); }
+            get { return this._missingPercentage; }
             set { this._missingPercentage = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// the predictive inbox placement test.
         /// </para>
         /// </summary>
-        public double SpamPercentage
+        public double? SpamPercentage
         {
-            get { return this._spamPercentage.GetValueOrDefault(); }
+            get { return this._spamPercentage; }
             set { this._spamPercentage = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// (SPF) during the predictive inbox placement test.
         /// </para>
         /// </summary>
-        public double SpfPercentage
+        public double? SpfPercentage
         {
-            get { return this._spfPercentage.GetValueOrDefault(); }
+            get { return this._spfPercentage; }
             set { this._spfPercentage = value; }
         }
 

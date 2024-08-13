@@ -31,10 +31,17 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCertificates operation.
-    /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
-    /// that match a specific status be listed. You can also filter by specific attributes
-    /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
-    /// more information, see <a>Filters</a>.
+    /// Retrieves a list of certificate ARNs and domain names. By default, the API returns
+    /// RSA_2048 certificates. To return all certificates in the account, include the <c>keyType</c>
+    /// filter with the values <c>[RSA_1024, RSA_2048, RSA_3072, RSA_4096, EC_prime256v1,
+    /// EC_secp384r1, EC_secp521r1]</c>.
+    /// 
+    ///  
+    /// <para>
+    /// In addition to <c>keyType</c>, you can also filter by the <c>CertificateStatuses</c>,
+    /// <c>keyUsage</c>, and <c>extendedKeyUsage</c> attributes on the certificate. For more
+    /// information, see <a>Filters</a>.
+    /// </para>
     /// </summary>
     public partial class ListCertificatesRequest : AmazonCertificateManagerRequest
     {
@@ -91,9 +98,9 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 

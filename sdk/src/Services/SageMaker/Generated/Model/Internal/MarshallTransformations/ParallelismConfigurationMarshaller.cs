@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxParallelExecutionSteps())
             {
                 context.Writer.WritePropertyName("MaxParallelExecutionSteps");
-                context.Writer.Write(requestObject.MaxParallelExecutionSteps);
+                context.Writer.Write(requestObject.MaxParallelExecutionSteps.Value);
             }
 
         }

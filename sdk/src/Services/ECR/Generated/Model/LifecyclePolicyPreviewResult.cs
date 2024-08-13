@@ -65,9 +65,9 @@ namespace Amazon.ECR.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int AppliedRulePriority
+        public int? AppliedRulePriority
         {
-            get { return this._appliedRulePriority.GetValueOrDefault(); }
+            get { return this._appliedRulePriority; }
             set { this._appliedRulePriority = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.ECR.Model
         /// image was pushed to the repository.
         /// </para>
         /// </summary>
-        public DateTime ImagePushedAt
+        public DateTime? ImagePushedAt
         {
-            get { return this._imagePushedAt.GetValueOrDefault(); }
+            get { return this._imagePushedAt; }
             set { this._imagePushedAt = value; }
         }
 

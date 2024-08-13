@@ -50,9 +50,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Default: 60 minutes
         /// </para>
         /// </summary>
-        public int EmitInterval
+        public int? EmitInterval
         {
-            get { return this._emitInterval.GetValueOrDefault(); }
+            get { return this._emitInterval; }
             set { this._emitInterval = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

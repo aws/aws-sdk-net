@@ -68,7 +68,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxBackupsToRetain", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxBackupsToRetain = unmarshaller.Unmarshall(context);
                     continue;
                 }

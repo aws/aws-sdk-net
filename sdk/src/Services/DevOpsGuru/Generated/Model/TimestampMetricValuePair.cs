@@ -43,9 +43,9 @@ namespace Amazon.DevOpsGuru.Model
         /// Value of the anomalous metric data point at respective Timestamp.
         /// </para>
         /// </summary>
-        public double MetricValue
+        public double? MetricValue
         {
-            get { return this._metricValue.GetValueOrDefault(); }
+            get { return this._metricValue; }
             set { this._metricValue = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.DevOpsGuru.Model
         /// A <c>Timestamp</c> that specifies the time the event occurred. 
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

@@ -2954,10 +2954,25 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.BedrockGuardrailConfiguration.Identifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.BedrockGuardrailConfiguration.Version</property>
+    <pattern>^(([1-9][0-9]{0,7})|(DRAFT))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BedrockKnowledgeStoreConfiguration.BedrockKnowledgeBaseArn</property>
     <min>1</min>
     <max>200</max>
     <pattern>^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,40}:[0-9]{12}:knowledge-base\/[A-Za-z0-9]{10}$|^[A-Za-z0-9]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.BedrockModelSpecification.CustomPrompt</property>
+    <min>1</min>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BedrockModelSpecification.ModelArn</property>

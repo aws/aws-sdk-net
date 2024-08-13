@@ -41,11 +41,16 @@ namespace Amazon.ElastiCache.Model
     /// When you receive a successful response from this operation, Amazon ElastiCache immediately
     /// begins deleting the selected resources; you cannot cancel or revert this operation.
     /// </para>
-    ///  <note> 
+    ///  <note> <ul> <li> 
     /// <para>
-    /// This operation is valid for Redis only.
+    ///  <c>CreateSnapshot</c> permission is required to create a final snapshot. Without
+    /// this permission, the API call will fail with an <c>Access Denied</c> exception.
     /// </para>
-    ///  </note>
+    ///  </li> <li> 
+    /// <para>
+    /// This operation is valid for Redis OSS only.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class DeleteReplicationGroupRequest : AmazonElastiCacheRequest
     {
@@ -100,9 +105,9 @@ namespace Amazon.ElastiCache.Model
         /// is retained.
         /// </para>
         /// </summary>
-        public bool RetainPrimaryCluster
+        public bool? RetainPrimaryCluster
         {
-            get { return this._retainPrimaryCluster.GetValueOrDefault(); }
+            get { return this._retainPrimaryCluster; }
             set { this._retainPrimaryCluster = value; }
         }
 

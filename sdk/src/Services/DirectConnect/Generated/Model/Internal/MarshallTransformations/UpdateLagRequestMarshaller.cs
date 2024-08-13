@@ -90,7 +90,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinimumLinks())
                 {
                     context.Writer.WritePropertyName("minimumLinks");
-                    context.Writer.Write(publicRequest.MinimumLinks);
+                    context.Writer.Write(publicRequest.MinimumLinks.Value);
                 }
 
                 writer.WriteObjectEnd();

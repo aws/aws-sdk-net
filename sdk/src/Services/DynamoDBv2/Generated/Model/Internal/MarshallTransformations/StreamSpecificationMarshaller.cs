@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStreamEnabled())
             {
                 context.Writer.WritePropertyName("StreamEnabled");
-                context.Writer.Write(requestObject.StreamEnabled);
+                context.Writer.Write(requestObject.StreamEnabled.Value);
             }
 
             if(requestObject.IsSetStreamViewType())

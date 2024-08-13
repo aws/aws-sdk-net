@@ -50,9 +50,9 @@ namespace Amazon.SageMaker.Model
         /// The average value of the metric.
         /// </para>
         /// </summary>
-        public double Avg
+        public double? Avg
         {
-            get { return this._avg.GetValueOrDefault(); }
+            get { return this._avg; }
             set { this._avg = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.SageMaker.Model
         /// The number of samples used to generate the metric.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.SageMaker.Model
         /// The most recent value of the metric.
         /// </para>
         /// </summary>
-        public double Last
+        public double? Last
         {
-            get { return this._last.GetValueOrDefault(); }
+            get { return this._last; }
             set { this._last = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SageMaker.Model
         /// The maximum value of the metric.
         /// </para>
         /// </summary>
-        public double Max
+        public double? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.SageMaker.Model
         /// The minimum value of the metric.
         /// </para>
         /// </summary>
-        public double Min
+        public double? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.SageMaker.Model
         /// The standard deviation of the metric.
         /// </para>
         /// </summary>
-        public double StdDev
+        public double? StdDev
         {
-            get { return this._stdDev.GetValueOrDefault(); }
+            get { return this._stdDev; }
             set { this._stdDev = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.SageMaker.Model
         /// When the metric was last updated.
         /// </para>
         /// </summary>
-        public DateTime TimeStamp
+        public DateTime? TimeStamp
         {
-            get { return this._timeStamp.GetValueOrDefault(); }
+            get { return this._timeStamp; }
             set { this._timeStamp = value; }
         }
 

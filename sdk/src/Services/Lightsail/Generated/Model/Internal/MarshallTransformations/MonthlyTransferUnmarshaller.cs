@@ -68,7 +68,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("gbPerMonthAllocated", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GbPerMonthAllocated = unmarshaller.Unmarshall(context);
                     continue;
                 }

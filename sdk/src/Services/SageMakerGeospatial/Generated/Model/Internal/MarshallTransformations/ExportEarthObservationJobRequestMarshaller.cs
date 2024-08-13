@@ -93,7 +93,7 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExportSourceImages())
                 {
                     context.Writer.WritePropertyName("ExportSourceImages");
-                    context.Writer.Write(publicRequest.ExportSourceImages);
+                    context.Writer.Write(publicRequest.ExportSourceImages.Value);
                 }
 
                 if(publicRequest.IsSetOutputConfig())

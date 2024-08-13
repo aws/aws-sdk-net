@@ -69,19 +69,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaxCapacityUnits");
-                context.Writer.Write(requestObject.MaxCapacityUnits);
+                context.Writer.Write(requestObject.MaxCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMinCapacityUnits())
             {
                 context.Writer.WritePropertyName("MinCapacityUnits");
-                context.Writer.Write(requestObject.MinCapacityUnits);
+                context.Writer.Write(requestObject.MinCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMultiAZ())
             {
                 context.Writer.WritePropertyName("MultiAZ");
-                context.Writer.Write(requestObject.MultiAZ);
+                context.Writer.Write(requestObject.MultiAZ.Value);
             }
 
             if(requestObject.IsSetPreferredMaintenanceWindow())

@@ -48,9 +48,9 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Exportable
+        public bool? Exportable
         {
-            get { return this._exportable.GetValueOrDefault(); }
+            get { return this._exportable; }
             set { this._exportable = value; }
         }
 

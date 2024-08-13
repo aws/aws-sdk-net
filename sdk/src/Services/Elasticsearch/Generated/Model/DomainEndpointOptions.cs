@@ -83,9 +83,9 @@ namespace Amazon.Elasticsearch.Model
         /// Specify if custom endpoint should be enabled for the Elasticsearch domain.
         /// </para>
         /// </summary>
-        public bool CustomEndpointEnabled
+        public bool? CustomEndpointEnabled
         {
-            get { return this._customEndpointEnabled.GetValueOrDefault(); }
+            get { return this._customEndpointEnabled; }
             set { this._customEndpointEnabled = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Elasticsearch.Model
         /// Specify if only HTTPS endpoint should be enabled for the Elasticsearch domain.
         /// </para>
         /// </summary>
-        public bool EnforceHTTPS
+        public bool? EnforceHTTPS
         {
-            get { return this._enforceHTTPS.GetValueOrDefault(); }
+            get { return this._enforceHTTPS; }
             set { this._enforceHTTPS = value; }
         }
 

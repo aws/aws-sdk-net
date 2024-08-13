@@ -67,7 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIgnorePollAlarmFailure())
             {
                 context.Writer.WritePropertyName("IgnorePollAlarmFailure");
-                context.Writer.Write(requestObject.IgnorePollAlarmFailure);
+                context.Writer.Write(requestObject.IgnorePollAlarmFailure.Value);
             }
 
         }

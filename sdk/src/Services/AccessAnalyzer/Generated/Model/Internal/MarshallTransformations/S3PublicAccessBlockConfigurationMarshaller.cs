@@ -51,13 +51,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIgnorePublicAcls())
             {
                 context.Writer.WritePropertyName("ignorePublicAcls");
-                context.Writer.Write(requestObject.IgnorePublicAcls);
+                context.Writer.Write(requestObject.IgnorePublicAcls.Value);
             }
 
             if(requestObject.IsSetRestrictPublicBuckets())
             {
                 context.Writer.WritePropertyName("restrictPublicBuckets");
-                context.Writer.Write(requestObject.RestrictPublicBuckets);
+                context.Writer.Write(requestObject.RestrictPublicBuckets.Value);
             }
 
         }

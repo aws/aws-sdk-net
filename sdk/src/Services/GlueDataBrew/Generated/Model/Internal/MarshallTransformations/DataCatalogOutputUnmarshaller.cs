@@ -86,7 +86,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Overwrite", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Overwrite = unmarshaller.Unmarshall(context);
                     continue;
                 }

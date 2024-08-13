@@ -92,43 +92,43 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isExternalId", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsExternalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isFinal", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsFinal = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isImported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsImported = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isInherited", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsInherited = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isRequiredInEntity", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsRequiredInEntity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isStoredExternally", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsStoredExternally = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isTimeSeries", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsTimeSeries = unmarshaller.Unmarshall(context);
                     continue;
                 }

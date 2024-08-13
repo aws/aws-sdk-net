@@ -104,49 +104,49 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numEdgeLabels", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumEdgeLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numEdgeProperties", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumEdgeProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numEdges", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumEdges = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numNodeLabels", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumNodeLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numNodeProperties", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumNodeProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numNodes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalEdgePropertyValues", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalEdgePropertyValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalNodePropertyValues", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNodePropertyValues = unmarshaller.Unmarshall(context);
                     continue;
                 }

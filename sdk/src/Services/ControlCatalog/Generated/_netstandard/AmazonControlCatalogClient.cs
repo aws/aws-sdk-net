@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.ControlCatalog
@@ -300,6 +301,67 @@ namespace Amazon.ControlCatalog
         #endregion
 
 
+        #region  GetControl
+
+        internal virtual GetControlResponse GetControl(GetControlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetControlResponseUnmarshaller.Instance;
+
+            return Invoke<GetControlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns details about a specific control, most notably a list of Amazon Web Services
+        /// Regions where this control is supported. Input a value for the <i>ControlArn</i> parameter,
+        /// in ARN form. <c>GetControl</c> accepts <i>controltower</i> or <i>controlcatalog</i>
+        /// control ARNs as input. Returns a <i>controlcatalog</i> ARN format.
+        /// 
+        ///  
+        /// <para>
+        /// In the API response, controls that have the value <c>GLOBAL</c> in the <c>Scope</c>
+        /// field do not show the <c>DeployableRegions</c> field, because it does not apply. Controls
+        /// that have the value <c>REGIONAL</c> in the <c>Scope</c> field return a value for the
+        /// <c>DeployableRegions</c> field, as shown in the example.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetControl service method, as returned by ControlCatalog.</returns>
+        /// <exception cref="Amazon.ControlCatalog.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ResourceNotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/GetControl">REST API Reference for GetControl Operation</seealso>
+        public virtual Task<GetControlResponse> GetControlAsync(GetControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetControlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetControlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetControlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCommonControls
 
         internal virtual ListCommonControlsResponse ListCommonControls(ListCommonControlsRequest request)
@@ -349,6 +411,56 @@ namespace Amazon.ControlCatalog
             options.ResponseUnmarshaller = ListCommonControlsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCommonControlsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListControls
+
+        internal virtual ListControlsResponse ListControls(ListControlsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListControlsResponseUnmarshaller.Instance;
+
+            return Invoke<ListControlsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a paginated list of all available controls in the Amazon Web Services Control
+        /// Catalog library. Allows you to discover available controls. The list of controls is
+        /// given as structures of type <i>controlSummary</i>. The ARN is returned in the global
+        /// <i>controlcatalog</i> format, as shown in the examples.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListControls service method, as returned by ControlCatalog.</returns>
+        /// <exception cref="Amazon.ControlCatalog.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlCatalog.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControls">REST API Reference for ListControls Operation</seealso>
+        public virtual Task<ListControlsResponse> ListControlsAsync(ListControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListControlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListControlsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListControlsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -462,16 +574,8 @@ namespace Amazon.ControlCatalog
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonControlCatalogEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

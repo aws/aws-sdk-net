@@ -54,9 +54,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double IopsOther
+        public double? IopsOther
         {
-            get { return this._iopsOther.GetValueOrDefault(); }
+            get { return this._iopsOther; }
             set { this._iopsOther = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double IopsRead
+        public double? IopsRead
         {
-            get { return this._iopsRead.GetValueOrDefault(); }
+            get { return this._iopsRead; }
             set { this._iopsRead = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double IopsTotal
+        public double? IopsTotal
         {
-            get { return this._iopsTotal.GetValueOrDefault(); }
+            get { return this._iopsTotal; }
             set { this._iopsTotal = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double IopsWrite
+        public double? IopsWrite
         {
-            get { return this._iopsWrite.GetValueOrDefault(); }
+            get { return this._iopsWrite; }
             set { this._iopsWrite = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double LatencyOther
+        public double? LatencyOther
         {
-            get { return this._latencyOther.GetValueOrDefault(); }
+            get { return this._latencyOther; }
             set { this._latencyOther = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double LatencyRead
+        public double? LatencyRead
         {
-            get { return this._latencyRead.GetValueOrDefault(); }
+            get { return this._latencyRead; }
             set { this._latencyRead = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double LatencyWrite
+        public double? LatencyWrite
         {
-            get { return this._latencyWrite.GetValueOrDefault(); }
+            get { return this._latencyWrite; }
             set { this._latencyWrite = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double ThroughputOther
+        public double? ThroughputOther
         {
-            get { return this._throughputOther.GetValueOrDefault(); }
+            get { return this._throughputOther; }
             set { this._throughputOther = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double ThroughputRead
+        public double? ThroughputRead
         {
-            get { return this._throughputRead.GetValueOrDefault(); }
+            get { return this._throughputRead; }
             set { this._throughputRead = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double ThroughputTotal
+        public double? ThroughputTotal
         {
-            get { return this._throughputTotal.GetValueOrDefault(); }
+            get { return this._throughputTotal; }
             set { this._throughputTotal = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double ThroughputWrite
+        public double? ThroughputWrite
         {
-            get { return this._throughputWrite.GetValueOrDefault(); }
+            get { return this._throughputWrite; }
             set { this._throughputWrite = value; }
         }
 

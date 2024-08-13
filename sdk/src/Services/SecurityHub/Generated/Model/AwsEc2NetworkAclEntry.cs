@@ -69,9 +69,9 @@ namespace Amazon.SecurityHub.Model
         /// that leaves the subnet.
         /// </para>
         /// </summary>
-        public bool Egress
+        public bool? Egress
         {
-            get { return this._egress.GetValueOrDefault(); }
+            get { return this._egress; }
             set { this._egress = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.SecurityHub.Model
         /// The rule number. The rules are processed in order by their number.
         /// </para>
         /// </summary>
-        public int RuleNumber
+        public int? RuleNumber
         {
-            get { return this._ruleNumber.GetValueOrDefault(); }
+            get { return this._ruleNumber; }
             set { this._ruleNumber = value; }
         }
 

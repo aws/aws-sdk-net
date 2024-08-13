@@ -91,13 +91,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxBand())
             {
                 context.Writer.WritePropertyName("MaxBand");
-                context.Writer.Write(requestObject.MaxBand);
+                context.Writer.Write(requestObject.MaxBand.Value);
             }
 
             if(requestObject.IsSetMaxFilesInBand())
             {
                 context.Writer.WritePropertyName("MaxFilesInBand");
-                context.Writer.Write(requestObject.MaxFilesInBand);
+                context.Writer.Write(requestObject.MaxFilesInBand.Value);
             }
 
             if(requestObject.IsSetName())
@@ -136,7 +136,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecurse())
             {
                 context.Writer.WritePropertyName("Recurse");
-                context.Writer.Write(requestObject.Recurse);
+                context.Writer.Write(requestObject.Recurse.Value);
             }
 
         }

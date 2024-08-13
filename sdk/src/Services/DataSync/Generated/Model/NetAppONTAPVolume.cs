@@ -58,9 +58,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long CapacityProvisioned
+        public long? CapacityProvisioned
         {
-            get { return this._capacityProvisioned.GetValueOrDefault(); }
+            get { return this._capacityProvisioned; }
             set { this._capacityProvisioned = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long CapacityUsed
+        public long? CapacityUsed
         {
-            get { return this._capacityUsed.GetValueOrDefault(); }
+            get { return this._capacityUsed; }
             set { this._capacityUsed = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long CifsShareCount
+        public long? CifsShareCount
         {
-            get { return this._cifsShareCount.GetValueOrDefault(); }
+            get { return this._cifsShareCount; }
             set { this._cifsShareCount = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LogicalCapacityUsed
+        public long? LogicalCapacityUsed
         {
-            get { return this._logicalCapacityUsed.GetValueOrDefault(); }
+            get { return this._logicalCapacityUsed; }
             set { this._logicalCapacityUsed = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LunCount
+        public long? LunCount
         {
-            get { return this._lunCount.GetValueOrDefault(); }
+            get { return this._lunCount; }
             set { this._lunCount = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.DataSync.Model
         /// The number of NFS volumes in the volume.
         /// </para>
         /// </summary>
-        public bool NfsExported
+        public bool? NfsExported
         {
-            get { return this._nfsExported.GetValueOrDefault(); }
+            get { return this._nfsExported; }
             set { this._nfsExported = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long SnapshotCapacityUsed
+        public long? SnapshotCapacityUsed
         {
-            get { return this._snapshotCapacityUsed.GetValueOrDefault(); }
+            get { return this._snapshotCapacityUsed; }
             set { this._snapshotCapacityUsed = value; }
         }
 

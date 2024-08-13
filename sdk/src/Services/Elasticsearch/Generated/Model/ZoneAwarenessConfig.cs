@@ -45,9 +45,9 @@ namespace Amazon.Elasticsearch.Model
         /// enabled
         /// </para>
         /// </summary>
-        public int AvailabilityZoneCount
+        public int? AvailabilityZoneCount
         {
-            get { return this._availabilityZoneCount.GetValueOrDefault(); }
+            get { return this._availabilityZoneCount; }
             set { this._availabilityZoneCount = value; }
         }
 

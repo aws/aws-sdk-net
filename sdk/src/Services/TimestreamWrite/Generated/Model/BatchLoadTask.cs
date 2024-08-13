@@ -48,9 +48,9 @@ namespace Amazon.TimestreamWrite.Model
         /// The time when the Timestream batch load task was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.TimestreamWrite.Model
         /// The time when the Timestream batch load task was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.TimestreamWrite.Model
         ///  
         /// </para>
         /// </summary>
-        public DateTime ResumableUntil
+        public DateTime? ResumableUntil
         {
-            get { return this._resumableUntil.GetValueOrDefault(); }
+            get { return this._resumableUntil; }
             set { this._resumableUntil = value; }
         }
 

@@ -51,13 +51,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("CreatedAfter");
-                context.Writer.Write(requestObject.CreatedAfter);
+                context.Writer.Write(requestObject.CreatedAfter.Value);
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("CreatedBefore");
-                context.Writer.Write(requestObject.CreatedBefore);
+                context.Writer.Write(requestObject.CreatedBefore.Value);
             }
 
             if(requestObject.IsSetLineageTypes())
@@ -74,13 +74,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetModifiedAfter())
             {
                 context.Writer.WritePropertyName("ModifiedAfter");
-                context.Writer.Write(requestObject.ModifiedAfter);
+                context.Writer.Write(requestObject.ModifiedAfter.Value);
             }
 
             if(requestObject.IsSetModifiedBefore())
             {
                 context.Writer.WritePropertyName("ModifiedBefore");
-                context.Writer.Write(requestObject.ModifiedBefore);
+                context.Writer.Write(requestObject.ModifiedBefore.Value);
             }
 
             if(requestObject.IsSetProperties())

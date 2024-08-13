@@ -51,19 +51,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredInstanceCount())
             {
                 context.Writer.WritePropertyName("DesiredInstanceCount");
-                context.Writer.Write(requestObject.DesiredInstanceCount);
+                context.Writer.Write(requestObject.DesiredInstanceCount.Value);
             }
 
             if(requestObject.IsSetDesiredWeight())
             {
                 context.Writer.WritePropertyName("DesiredWeight");
-                if(StringUtils.IsSpecialFloatValue(requestObject.DesiredWeight))
+                if(StringUtils.IsSpecialFloatValue(requestObject.DesiredWeight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.DesiredWeight));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.DesiredWeight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DesiredWeight);
+                    context.Writer.Write(requestObject.DesiredWeight.Value);
                 }
             }
 

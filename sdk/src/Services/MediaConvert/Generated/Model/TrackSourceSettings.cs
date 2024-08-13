@@ -47,9 +47,9 @@ namespace Amazon.MediaConvert.Model
         /// input captions selectors. Specify one track per selector.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int TrackNumber
+        public int? TrackNumber
         {
-            get { return this._trackNumber.GetValueOrDefault(); }
+            get { return this._trackNumber; }
             set { this._trackNumber = value; }
         }
 

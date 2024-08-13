@@ -46,9 +46,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SizeInGiB
+        public int? SizeInGiB
         {
-            get { return this._sizeInGiB.GetValueOrDefault(); }
+            get { return this._sizeInGiB; }
             set { this._sizeInGiB = value; }
         }
 

@@ -69,9 +69,9 @@ namespace Amazon.DeviceFarm.Model
         /// times out. The default value is 150 minutes.
         /// </para>
         /// </summary>
-        public int DefaultJobTimeoutMinutes
+        public int? DefaultJobTimeoutMinutes
         {
-            get { return this._defaultJobTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._defaultJobTimeoutMinutes; }
             set { this._defaultJobTimeoutMinutes = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.DeviceFarm.Model
         /// The maximum number of minutes a test run executes before it times out.
         /// </para>
         /// </summary>
-        public int MaxJobTimeoutMinutes
+        public int? MaxJobTimeoutMinutes
         {
-            get { return this._maxJobTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._maxJobTimeoutMinutes; }
             set { this._maxJobTimeoutMinutes = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.DeviceFarm.Model
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>
-        public bool SkipAppResign
+        public bool? SkipAppResign
         {
-            get { return this._skipAppResign.GetValueOrDefault(); }
+            get { return this._skipAppResign; }
             set { this._skipAppResign = value; }
         }
 

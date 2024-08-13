@@ -109,9 +109,9 @@ namespace Amazon.OpsWorksCM.Model
         /// are <c>true</c> or <c>false</c>. The default value is <c>true</c>. 
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int BackupRetentionCount
+        public int? BackupRetentionCount
         {
-            get { return this._backupRetentionCount.GetValueOrDefault(); }
+            get { return this._backupRetentionCount; }
             set { this._backupRetentionCount = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.OpsWorksCM.Model
         /// The default value is <c>true</c>. 
         /// </para>
         /// </summary>
-        public bool DisableAutomatedBackup
+        public bool? DisableAutomatedBackup
         {
-            get { return this._disableAutomatedBackup.GetValueOrDefault(); }
+            get { return this._disableAutomatedBackup; }
             set { this._disableAutomatedBackup = value; }
         }
 

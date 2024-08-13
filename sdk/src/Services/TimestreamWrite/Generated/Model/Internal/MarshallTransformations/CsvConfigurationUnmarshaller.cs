@@ -92,7 +92,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TrimWhiteSpace", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TrimWhiteSpace = unmarshaller.Unmarshall(context);
                     continue;
                 }

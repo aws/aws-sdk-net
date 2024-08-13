@@ -175,7 +175,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTerminateInstanceOnFailure())
                 {
                     context.Writer.WritePropertyName("terminateInstanceOnFailure");
-                    context.Writer.Write(publicRequest.TerminateInstanceOnFailure);
+                    context.Writer.Write(publicRequest.TerminateInstanceOnFailure.Value);
                 }
 
                 writer.WriteObjectEnd();

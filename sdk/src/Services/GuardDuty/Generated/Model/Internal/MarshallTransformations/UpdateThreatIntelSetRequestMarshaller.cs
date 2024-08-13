@@ -76,7 +76,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetActivate())
                 {
                     context.Writer.WritePropertyName("activate");
-                    context.Writer.Write(publicRequest.Activate);
+                    context.Writer.Write(publicRequest.Activate.Value);
                 }
 
                 if(publicRequest.IsSetLocation())

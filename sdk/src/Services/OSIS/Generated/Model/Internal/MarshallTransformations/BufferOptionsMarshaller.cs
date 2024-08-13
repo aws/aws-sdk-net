@@ -51,7 +51,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPersistentBufferEnabled())
             {
                 context.Writer.WritePropertyName("PersistentBufferEnabled");
-                context.Writer.Write(requestObject.PersistentBufferEnabled);
+                context.Writer.Write(requestObject.PersistentBufferEnabled.Value);
             }
 
         }

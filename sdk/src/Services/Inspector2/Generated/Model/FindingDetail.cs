@@ -85,9 +85,9 @@ namespace Amazon.Inspector2.Model
         /// The Exploit Prediction Scoring System (EPSS) score of the vulnerability.
         /// </para>
         /// </summary>
-        public double EpssScore
+        public double? EpssScore
         {
-            get { return this._epssScore.GetValueOrDefault(); }
+            get { return this._epssScore; }
             set { this._epssScore = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.Inspector2.Model
         /// The risk score of the vulnerability.
         /// </para>
         /// </summary>
-        public int RiskScore
+        public int? RiskScore
         {
-            get { return this._riskScore.GetValueOrDefault(); }
+            get { return this._riskScore; }
             set { this._riskScore = value; }
         }
 

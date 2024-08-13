@@ -48,9 +48,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000000)]
-        public int ProvisionedReadCapacityUnits
+        public int? ProvisionedReadCapacityUnits
         {
-            get { return this._provisionedReadCapacityUnits.GetValueOrDefault(); }
+            get { return this._provisionedReadCapacityUnits; }
             set { this._provisionedReadCapacityUnits = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000000)]
-        public int ProvisionedWriteCapacityUnits
+        public int? ProvisionedWriteCapacityUnits
         {
-            get { return this._provisionedWriteCapacityUnits.GetValueOrDefault(); }
+            get { return this._provisionedWriteCapacityUnits; }
             set { this._provisionedWriteCapacityUnits = value; }
         }
 

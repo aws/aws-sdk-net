@@ -46,9 +46,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int BatchSize
+        public int? BatchSize
         {
-            get { return this._batchSize.GetValueOrDefault(); }
+            get { return this._batchSize; }
             set { this._batchSize = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
-        public int MaximumBatchingWindowInSeconds
+        public int? MaximumBatchingWindowInSeconds
         {
-            get { return this._maximumBatchingWindowInSeconds.GetValueOrDefault(); }
+            get { return this._maximumBatchingWindowInSeconds; }
             set { this._maximumBatchingWindowInSeconds = value; }
         }
 

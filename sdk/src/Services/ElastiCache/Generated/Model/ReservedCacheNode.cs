@@ -54,9 +54,9 @@ namespace Amazon.ElastiCache.Model
         /// The number of cache nodes that have been reserved.
         /// </para>
         /// </summary>
-        public int CacheNodeCount
+        public int? CacheNodeCount
         {
-            get { return this._cacheNodeCount.GetValueOrDefault(); }
+            get { return this._cacheNodeCount; }
             set { this._cacheNodeCount = value; }
         }
 
@@ -98,8 +98,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>,
+        ///  <b>M6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// for Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>,
         /// <c>cache.m6g.2xlarge</c>, <c>cache.m6g.4xlarge</c>, <c>cache.m6g.8xlarge</c>, <c>cache.m6g.12xlarge</c>,
         /// <c>cache.m6g.16xlarge</c> 
         /// </para>
@@ -115,9 +115,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
-        /// engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>, <c>cache.t4g.medium</c>
-        /// 
+        ///  <b>T4g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// Memcached engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>,
+        /// <c>cache.t4g.medium</c> 
         /// </para>
         ///  
         /// <para>
@@ -182,8 +182,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>,
+        ///  <b>R6g node types</b> (available only for Redis OSS engine version 5.0.6 onward and
+        /// for Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>,
         /// <c>cache.r6g.2xlarge</c>, <c>cache.r6g.4xlarge</c>, <c>cache.r6g.8xlarge</c>, <c>cache.r6g.12xlarge</c>,
         /// <c>cache.r6g.16xlarge</c> 
         /// </para>
@@ -222,16 +222,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis append-only files (AOF) are not supported for T1 or T2 instances.
+        /// Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis Multi-AZ with automatic failover is not supported on T1 instances.
+        /// Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
-        /// on Redis version 2.8.22 and later.
+        /// Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not
+        /// supported on Redis OSS version 2.8.22 and later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -253,9 +253,9 @@ namespace Amazon.ElastiCache.Model
         /// The duration of the reservation in seconds.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.ElastiCache.Model
         /// The fixed price charged for this reserved cache node.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -402,9 +402,9 @@ namespace Amazon.ElastiCache.Model
         /// The time the reservation started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -438,9 +438,9 @@ namespace Amazon.ElastiCache.Model
         /// The hourly price charged for this reserved cache node.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

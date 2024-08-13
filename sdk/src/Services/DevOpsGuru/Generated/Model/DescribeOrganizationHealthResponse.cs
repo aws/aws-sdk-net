@@ -46,9 +46,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MetricsAnalyzed
+        public int? MetricsAnalyzed
         {
-            get { return this._metricsAnalyzed.GetValueOrDefault(); }
+            get { return this._metricsAnalyzed; }
             set { this._metricsAnalyzed = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int OpenProactiveInsights
+        public int? OpenProactiveInsights
         {
-            get { return this._openProactiveInsights.GetValueOrDefault(); }
+            get { return this._openProactiveInsights; }
             set { this._openProactiveInsights = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int OpenReactiveInsights
+        public int? OpenReactiveInsights
         {
-            get { return this._openReactiveInsights.GetValueOrDefault(); }
+            get { return this._openReactiveInsights; }
             set { this._openReactiveInsights = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ResourceHours
+        public long? ResourceHours
         {
-            get { return this._resourceHours.GetValueOrDefault(); }
+            get { return this._resourceHours; }
             set { this._resourceHours = value; }
         }
 

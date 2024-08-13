@@ -51,13 +51,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultGid())
             {
                 context.Writer.WritePropertyName("DefaultGid");
-                context.Writer.Write(requestObject.DefaultGid);
+                context.Writer.Write(requestObject.DefaultGid.Value);
             }
 
             if(requestObject.IsSetDefaultUid())
             {
                 context.Writer.WritePropertyName("DefaultUid");
-                context.Writer.Write(requestObject.DefaultUid);
+                context.Writer.Write(requestObject.DefaultUid.Value);
             }
 
             if(requestObject.IsSetMountPath())

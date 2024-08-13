@@ -57,9 +57,9 @@ namespace Amazon.EC2.Model
         /// The date and time the AFI was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether data retention support is enabled for the AFI.
         /// </para>
         /// </summary>
-        public bool DataRetentionSupport
+        public bool? DataRetentionSupport
         {
-            get { return this._dataRetentionSupport.GetValueOrDefault(); }
+            get { return this._dataRetentionSupport; }
             set { this._dataRetentionSupport = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the AFI is public.
         /// </para>
         /// </summary>
-        public bool Public
+        public bool? Public
         {
-            get { return this._public.GetValueOrDefault(); }
+            get { return this._public; }
             set { this._public = value; }
         }
 
@@ -328,9 +328,9 @@ namespace Amazon.EC2.Model
         /// The time of the most recent update to the AFI.
         /// </para>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

@@ -67,9 +67,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of classes in the graph.
         /// </para>
         /// </summary>
-        public long NumClasses
+        public long? NumClasses
         {
-            get { return this._numClasses.GetValueOrDefault(); }
+            get { return this._numClasses; }
             set { this._numClasses = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of distinct predicates in the graph.
         /// </para>
         /// </summary>
-        public long NumDistinctPredicates
+        public long? NumDistinctPredicates
         {
-            get { return this._numDistinctPredicates.GetValueOrDefault(); }
+            get { return this._numDistinctPredicates; }
             set { this._numDistinctPredicates = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of distinct subjects in the graph.
         /// </para>
         /// </summary>
-        public long NumDistinctSubjects
+        public long? NumDistinctSubjects
         {
-            get { return this._numDistinctSubjects.GetValueOrDefault(); }
+            get { return this._numDistinctSubjects; }
             set { this._numDistinctSubjects = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of quads in the graph.
         /// </para>
         /// </summary>
-        public long NumQuads
+        public long? NumQuads
         {
-            get { return this._numQuads.GetValueOrDefault(); }
+            get { return this._numQuads; }
             set { this._numQuads = value; }
         }
 

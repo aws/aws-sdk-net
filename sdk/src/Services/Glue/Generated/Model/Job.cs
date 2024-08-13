@@ -76,9 +76,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use MaxCapacity instead.")]
-        public int AllocatedCapacity
+        public int? AllocatedCapacity
         {
-            get { return this._allocatedCapacity.GetValueOrDefault(); }
+            get { return this._allocatedCapacity; }
             set { this._allocatedCapacity = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.Glue.Model
         /// The time and date that this job definition was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedOn
+        public DateTime? CreatedOn
         {
-            get { return this._createdOn.GetValueOrDefault(); }
+            get { return this._createdOn; }
             set { this._createdOn = value; }
         }
 
@@ -357,9 +357,9 @@ namespace Amazon.Glue.Model
         /// The last point in time when this job definition was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 
@@ -451,9 +451,9 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -469,9 +469,9 @@ namespace Amazon.Glue.Model
         /// The maximum number of times to retry this job after a JobRun fails.
         /// </para>
         /// </summary>
-        public int MaxRetries
+        public int? MaxRetries
         {
-            get { return this._maxRetries.GetValueOrDefault(); }
+            get { return this._maxRetries; }
             set { this._maxRetries = value; }
         }
 
@@ -544,9 +544,9 @@ namespace Amazon.Glue.Model
         /// runs.
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -647,9 +647,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

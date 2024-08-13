@@ -74,31 +74,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("thumbnailHeight", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThumbnailHeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("thumbnailInterval", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThumbnailInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("thumbnailWidth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThumbnailWidth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tileHeight", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TileHeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tileWidth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TileWidth = unmarshaller.Unmarshall(context);
                     continue;
                 }

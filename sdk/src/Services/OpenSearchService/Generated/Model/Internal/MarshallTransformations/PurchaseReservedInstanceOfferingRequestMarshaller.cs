@@ -70,7 +70,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInstanceCount())
                 {
                     context.Writer.WritePropertyName("InstanceCount");
-                    context.Writer.Write(publicRequest.InstanceCount);
+                    context.Writer.Write(publicRequest.InstanceCount.Value);
                 }
 
                 if(publicRequest.IsSetReservationName())

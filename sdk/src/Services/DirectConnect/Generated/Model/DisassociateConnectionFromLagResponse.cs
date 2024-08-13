@@ -272,9 +272,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether jumbo frames are supported.
         /// </para>
         /// </summary>
-        public bool JumboFrameCapable
+        public bool? JumboFrameCapable
         {
-            get { return this._jumboFrameCapable.GetValueOrDefault(); }
+            get { return this._jumboFrameCapable; }
             set { this._jumboFrameCapable = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.DirectConnect.Model
         /// The time of the most recent call to <a>DescribeLoa</a> for this connection.
         /// </para>
         /// </summary>
-        public DateTime LoaIssueTime
+        public DateTime? LoaIssueTime
         {
-            get { return this._loaIssueTime.GetValueOrDefault(); }
+            get { return this._loaIssueTime; }
             set { this._loaIssueTime = value; }
         }
 
@@ -344,9 +344,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether the connection supports MAC Security (MACsec).
         /// </para>
         /// </summary>
-        public bool MacSecCapable
+        public bool? MacSecCapable
         {
-            get { return this._macSecCapable.GetValueOrDefault(); }
+            get { return this._macSecCapable; }
             set { this._macSecCapable = value; }
         }
 
@@ -494,9 +494,9 @@ namespace Amazon.DirectConnect.Model
         /// The ID of the VLAN.
         /// </para>
         /// </summary>
-        public int Vlan
+        public int? Vlan
         {
-            get { return this._vlan.GetValueOrDefault(); }
+            get { return this._vlan; }
             set { this._vlan = value; }
         }
 

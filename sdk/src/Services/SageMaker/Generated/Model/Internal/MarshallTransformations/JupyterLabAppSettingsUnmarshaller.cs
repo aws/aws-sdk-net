@@ -84,6 +84,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EmrSettings", targetDepth))
+                {
+                    var unmarshaller = EmrSettingsUnmarshaller.Instance;
+                    unmarshalledObject.EmrSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LifecycleConfigArns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

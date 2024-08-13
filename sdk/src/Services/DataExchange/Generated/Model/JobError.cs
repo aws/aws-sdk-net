@@ -103,9 +103,9 @@ namespace Amazon.DataExchange.Model
         /// The value of the exceeded limit.
         /// </para>
         /// </summary>
-        public double LimitValue
+        public double? LimitValue
         {
-            get { return this._limitValue.GetValueOrDefault(); }
+            get { return this._limitValue; }
             set { this._limitValue = value; }
         }
 

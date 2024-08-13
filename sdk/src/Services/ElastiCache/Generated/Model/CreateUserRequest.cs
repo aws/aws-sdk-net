@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// For Redis engine version 6.0 onwards: Creates a Redis user. For more information,
+    /// For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user. For more information,
     /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>.
     /// </summary>
@@ -108,9 +108,9 @@ namespace Amazon.ElastiCache.Model
         /// Indicates a password is not required for this user.
         /// </para>
         /// </summary>
-        public bool NoPasswordRequired
+        public bool? NoPasswordRequired
         {
-            get { return this._noPasswordRequired.GetValueOrDefault(); }
+            get { return this._noPasswordRequired; }
             set { this._noPasswordRequired = value; }
         }
 

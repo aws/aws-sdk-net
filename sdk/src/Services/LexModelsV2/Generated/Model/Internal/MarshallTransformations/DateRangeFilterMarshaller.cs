@@ -51,13 +51,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDateTime())
             {
                 context.Writer.WritePropertyName("endDateTime");
-                context.Writer.Write(requestObject.EndDateTime);
+                context.Writer.Write(requestObject.EndDateTime.Value);
             }
 
             if(requestObject.IsSetStartDateTime())
             {
                 context.Writer.WritePropertyName("startDateTime");
-                context.Writer.Write(requestObject.StartDateTime);
+                context.Writer.Write(requestObject.StartDateTime.Value);
             }
 
         }

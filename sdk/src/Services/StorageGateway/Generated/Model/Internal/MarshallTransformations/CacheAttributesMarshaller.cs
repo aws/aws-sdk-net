@@ -51,7 +51,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCacheStaleTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("CacheStaleTimeoutInSeconds");
-                context.Writer.Write(requestObject.CacheStaleTimeoutInSeconds);
+                context.Writer.Write(requestObject.CacheStaleTimeoutInSeconds.Value);
             }
 
         }

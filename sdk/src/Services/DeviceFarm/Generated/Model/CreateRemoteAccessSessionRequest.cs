@@ -218,9 +218,9 @@ namespace Amazon.DeviceFarm.Model
         /// longer supported</a>.
         /// </para>
         /// </summary>
-        public bool RemoteDebugEnabled
+        public bool? RemoteDebugEnabled
         {
-            get { return this._remoteDebugEnabled.GetValueOrDefault(); }
+            get { return this._remoteDebugEnabled; }
             set { this._remoteDebugEnabled = value; }
         }
 
@@ -255,9 +255,9 @@ namespace Amazon.DeviceFarm.Model
         /// Set to <c>true</c> to enable remote recording for the remote access session.
         /// </para>
         /// </summary>
-        public bool RemoteRecordEnabled
+        public bool? RemoteRecordEnabled
         {
-            get { return this._remoteRecordEnabled.GetValueOrDefault(); }
+            get { return this._remoteRecordEnabled; }
             set { this._remoteRecordEnabled = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.DeviceFarm.Model
         /// href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> 
         /// </para>
         /// </summary>
-        public bool SkipAppResign
+        public bool? SkipAppResign
         {
-            get { return this._skipAppResign.GetValueOrDefault(); }
+            get { return this._skipAppResign; }
             set { this._skipAppResign = value; }
         }
 

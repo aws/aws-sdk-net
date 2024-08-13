@@ -49,9 +49,9 @@ namespace Amazon.IoT.Model
         /// or update job execution information.
         /// </para>
         /// </summary>
-        public long ExecutionNumber
+        public long? ExecutionNumber
         {
-            get { return this._executionNumber.GetValueOrDefault(); }
+            get { return this._executionNumber; }
             set { this._executionNumber = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job execution was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job execution was queued.
         /// </para>
         /// </summary>
-        public DateTime QueuedAt
+        public DateTime? QueuedAt
         {
-            get { return this._queuedAt.GetValueOrDefault(); }
+            get { return this._queuedAt; }
             set { this._queuedAt = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.IoT.Model
         /// on this device.
         /// </para>
         /// </summary>
-        public int RetryAttempt
+        public int? RetryAttempt
         {
-            get { return this._retryAttempt.GetValueOrDefault(); }
+            get { return this._retryAttempt; }
             set { this._retryAttempt = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job execution started.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

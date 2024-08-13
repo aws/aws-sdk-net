@@ -78,6 +78,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.FixedSizeChunkingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hierarchicalChunkingConfiguration", targetDepth))
+                {
+                    var unmarshaller = HierarchicalChunkingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HierarchicalChunkingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("semanticChunkingConfiguration", targetDepth))
+                {
+                    var unmarshaller = SemanticChunkingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SemanticChunkingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

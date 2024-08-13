@@ -53,9 +53,9 @@ namespace Amazon.Kendra.Model
         /// The Unix timestamp when a block list for query suggestions was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Kendra.Model
         /// The current size of the block list text file in S3.
         /// </para>
         /// </summary>
-        public long FileSizeBytes
+        public long? FileSizeBytes
         {
-            get { return this._fileSizeBytes.GetValueOrDefault(); }
+            get { return this._fileSizeBytes; }
             set { this._fileSizeBytes = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Kendra.Model
         /// The current number of valid, non-empty words or phrases in the block list text file.
         /// </para>
         /// </summary>
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.Kendra.Model
         /// The Unix timestamp when a block list for query suggestions was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

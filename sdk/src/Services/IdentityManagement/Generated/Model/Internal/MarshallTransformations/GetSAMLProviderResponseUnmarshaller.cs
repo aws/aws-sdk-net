@@ -84,7 +84,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -107,7 +107,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ValidUntil", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.ValidUntil = unmarshaller.Unmarshall(context);
                         continue;
                     }

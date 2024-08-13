@@ -45,9 +45,9 @@ namespace Amazon.Macie2.Model
         /// The number of lines from the beginning of the file to the end of the sensitive data.
         /// </para>
         /// </summary>
-        public long End
+        public long? End
         {
-            get { return this._end.GetValueOrDefault(); }
+            get { return this._end; }
             set { this._end = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Macie2.Model
         /// data.
         /// </para>
         /// </summary>
-        public long Start
+        public long? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Macie2.Model
         /// data.
         /// </para>
         /// </summary>
-        public long StartColumn
+        public long? StartColumn
         {
-            get { return this._startColumn.GetValueOrDefault(); }
+            get { return this._startColumn; }
             set { this._startColumn = value; }
         }
 

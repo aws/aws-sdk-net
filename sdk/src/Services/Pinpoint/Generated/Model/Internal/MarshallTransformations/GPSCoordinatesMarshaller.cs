@@ -51,26 +51,26 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("Latitude");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Latitude);
+                    context.Writer.Write(requestObject.Latitude.Value);
                 }
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("Longitude");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Longitude);
+                    context.Writer.Write(requestObject.Longitude.Value);
                 }
             }
 

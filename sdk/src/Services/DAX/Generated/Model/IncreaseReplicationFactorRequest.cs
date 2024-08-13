@@ -85,9 +85,9 @@ namespace Amazon.DAX.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NewReplicationFactor
+        public int? NewReplicationFactor
         {
-            get { return this._newReplicationFactor.GetValueOrDefault(); }
+            get { return this._newReplicationFactor; }
             set { this._newReplicationFactor = value; }
         }
 

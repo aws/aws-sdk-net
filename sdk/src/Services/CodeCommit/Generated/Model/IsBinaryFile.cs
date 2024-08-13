@@ -44,9 +44,9 @@ namespace Amazon.CodeCommit.Model
         /// The binary or non-binary status of a file in the base of a merge or pull request.
         /// </para>
         /// </summary>
-        public bool Base
+        public bool? Base
         {
-            get { return this._base.GetValueOrDefault(); }
+            get { return this._base; }
             set { this._base = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.CodeCommit.Model
         /// The binary or non-binary status of a file in the destination of a merge or pull request.
         /// </para>
         /// </summary>
-        public bool Destination
+        public bool? Destination
         {
-            get { return this._destination.GetValueOrDefault(); }
+            get { return this._destination; }
             set { this._destination = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.CodeCommit.Model
         /// The binary or non-binary status of file in the source of a merge or pull request.
         /// </para>
         /// </summary>
-        public bool Source
+        public bool? Source
         {
-            get { return this._source.GetValueOrDefault(); }
+            get { return this._source; }
             set { this._source = value; }
         }
 

@@ -166,9 +166,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// of this type.
         /// </para>
         /// </summary>
-        public bool IsSingleton
+        public bool? IsSingleton
         {
-            get { return this._isSingleton.GetValueOrDefault(); }
+            get { return this._isSingleton; }
             set { this._isSingleton = value; }
         }
 

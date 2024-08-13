@@ -7,8 +7,7 @@ namespace SDKDocGenerator
     /// </summary>
     public class FrameworkVersion : MarshalByRefObject
     {
-        public readonly static FrameworkVersion DotNet35 = new FrameworkVersion(".NET Framework 3.5", "NET3_5");
-        public readonly static FrameworkVersion DotNet45 = new FrameworkVersion(".NET Framework 4.5", "NET4_5");
+        public readonly static FrameworkVersion DotNet472 = new FrameworkVersion(".NET Framework 4.7.2", "NET4_7_2");
 
         public FrameworkVersion(string displayName, string shortName)
         {
@@ -35,10 +34,7 @@ namespace SDKDocGenerator
 
         public static FrameworkVersion FromPlatformFolder(string platformFolder)
         {
-            if (platformFolder.Equals("net35", StringComparison.OrdinalIgnoreCase))
-                return DotNet35;
-
-            return DotNet45;
+            return DotNet472;
         }
     }
 }

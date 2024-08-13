@@ -102,9 +102,9 @@ namespace Amazon.EC2.Model
         /// the Capacity Reservation.
         /// </para>
         /// </summary>
-        public int AvailableInstanceCount
+        public int? AvailableInstanceCount
         {
-            get { return this._availableInstanceCount.GetValueOrDefault(); }
+            get { return this._availableInstanceCount; }
             set { this._availableInstanceCount = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.EC2.Model
         /// The date and time at which the Capacity Reservation was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.EC2.Model
         /// instance types. Additional usage charges apply when using an EBS- optimized instance.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.EC2.Model
         /// its end date and time.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.EC2.Model
         ///  <i>Deprecated.</i> 
         /// </para>
         /// </summary>
-        public bool EphemeralStorage
+        public bool? EphemeralStorage
         {
-            get { return this._ephemeralStorage.GetValueOrDefault(); }
+            get { return this._ephemeralStorage; }
             set { this._ephemeralStorage = value; }
         }
 
@@ -446,9 +446,9 @@ namespace Amazon.EC2.Model
         /// The date and time at which the Capacity Reservation was started.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 
@@ -558,9 +558,9 @@ namespace Amazon.EC2.Model
         /// The total number of instances for which the Capacity Reservation reserves capacity.
         /// </para>
         /// </summary>
-        public int TotalInstanceCount
+        public int? TotalInstanceCount
         {
-            get { return this._totalInstanceCount.GetValueOrDefault(); }
+            get { return this._totalInstanceCount; }
             set { this._totalInstanceCount = value; }
         }
 

@@ -101,7 +101,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSessionIdleTimeoutInMinutes())
                 {
                     context.Writer.WritePropertyName("SessionIdleTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.SessionIdleTimeoutInMinutes);
+                    context.Writer.Write(publicRequest.SessionIdleTimeoutInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetWorkGroup())

@@ -43,9 +43,9 @@ namespace Amazon.MediaConvert.Model
         /// timecode. Valid values are 10, 16, 32, 48.
         /// </summary>
         [AWSProperty(Min=10, Max=48)]
-        public int FontSize
+        public int? FontSize
         {
-            get { return this._fontSize.GetValueOrDefault(); }
+            get { return this._fontSize; }
             set { this._fontSize = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.LicenseManager.Model
         /// Indicates whether check-ins are allowed.
         /// </para>
         /// </summary>
-        public bool AllowCheckIn
+        public bool? AllowCheckIn
         {
-            get { return this._allowCheckIn.GetValueOrDefault(); }
+            get { return this._allowCheckIn; }
             set { this._allowCheckIn = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.LicenseManager.Model
         /// Maximum entitlement count. Use if the unit is not None.
         /// </para>
         /// </summary>
-        public long MaxCount
+        public long? MaxCount
         {
-            get { return this._maxCount.GetValueOrDefault(); }
+            get { return this._maxCount; }
             set { this._maxCount = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.LicenseManager.Model
         /// Indicates whether overages are allowed.
         /// </para>
         /// </summary>
-        public bool Overage
+        public bool? Overage
         {
-            get { return this._overage.GetValueOrDefault(); }
+            get { return this._overage; }
             set { this._overage = value; }
         }
 

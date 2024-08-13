@@ -126,13 +126,13 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
+                    context.Writer.Write(publicRequest.MaxCapacity.Value);
                 }
 
                 if(publicRequest.IsSetMaxRetries())
                 {
                     context.Writer.WritePropertyName("MaxRetries");
-                    context.Writer.Write(publicRequest.MaxRetries);
+                    context.Writer.Write(publicRequest.MaxRetries.Value);
                 }
 
                 if(publicRequest.IsSetName())
@@ -197,7 +197,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
+                    context.Writer.Write(publicRequest.Timeout.Value);
                 }
 
                 writer.WriteObjectEnd();

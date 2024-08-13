@@ -43,9 +43,9 @@ namespace Amazon.Neptunedata.Model
         /// The current status of the statistics.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 

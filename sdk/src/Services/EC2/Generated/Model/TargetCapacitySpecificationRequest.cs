@@ -79,9 +79,9 @@ namespace Amazon.EC2.Model
         /// The number of On-Demand units to request.
         /// </para>
         /// </summary>
-        public int OnDemandTargetCapacity
+        public int? OnDemandTargetCapacity
         {
-            get { return this._onDemandTargetCapacity.GetValueOrDefault(); }
+            get { return this._onDemandTargetCapacity; }
             set { this._onDemandTargetCapacity = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.EC2.Model
         /// The number of Spot units to request.
         /// </para>
         /// </summary>
-        public int SpotTargetCapacity
+        public int? SpotTargetCapacity
         {
-            get { return this._spotTargetCapacity.GetValueOrDefault(); }
+            get { return this._spotTargetCapacity; }
             set { this._spotTargetCapacity = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalTargetCapacity
+        public int? TotalTargetCapacity
         {
-            get { return this._totalTargetCapacity.GetValueOrDefault(); }
+            get { return this._totalTargetCapacity; }
             set { this._totalTargetCapacity = value; }
         }
 

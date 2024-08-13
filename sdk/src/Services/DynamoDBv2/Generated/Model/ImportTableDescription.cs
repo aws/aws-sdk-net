@@ -100,9 +100,9 @@ namespace Amazon.DynamoDBv2.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ErrorCount
+        public long? ErrorCount
         {
-            get { return this._errorCount.GetValueOrDefault(); }
+            get { return this._errorCount; }
             set { this._errorCount = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ImportedItemCount
+        public long? ImportedItemCount
         {
-            get { return this._importedItemCount.GetValueOrDefault(); }
+            get { return this._importedItemCount; }
             set { this._importedItemCount = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ProcessedItemCount
+        public long? ProcessedItemCount
         {
-            get { return this._processedItemCount.GetValueOrDefault(); }
+            get { return this._processedItemCount; }
             set { this._processedItemCount = value; }
         }
 
@@ -307,9 +307,9 @@ namespace Amazon.DynamoDBv2.Model
         ///  The total size of data processed from the source file, in Bytes. 
         /// </para>
         /// </summary>
-        public long ProcessedSizeBytes
+        public long? ProcessedSizeBytes
         {
-            get { return this._processedSizeBytes.GetValueOrDefault(); }
+            get { return this._processedSizeBytes; }
             set { this._processedSizeBytes = value; }
         }
 
@@ -344,9 +344,9 @@ namespace Amazon.DynamoDBv2.Model
         ///  The time when this import task started. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

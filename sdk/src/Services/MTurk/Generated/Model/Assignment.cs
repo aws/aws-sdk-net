@@ -55,9 +55,9 @@ namespace Amazon.MTurk.Model
         ///  The date and time the Worker accepted the assignment.
         /// </para>
         /// </summary>
-        public DateTime AcceptTime
+        public DateTime? AcceptTime
         {
-            get { return this._acceptTime.GetValueOrDefault(); }
+            get { return this._acceptTime; }
             set { this._acceptTime = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.MTurk.Model
         /// the assignment if the Requester has not yet approved the results.
         /// </para>
         /// </summary>
-        public DateTime ApprovalTime
+        public DateTime? ApprovalTime
         {
-            get { return this._approvalTime.GetValueOrDefault(); }
+            get { return this._approvalTime; }
             set { this._approvalTime = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.MTurk.Model
         /// from the assignment if the Worker has not yet submitted results.
         /// </para>
         /// </summary>
-        public DateTime AutoApprovalTime
+        public DateTime? AutoApprovalTime
         {
-            get { return this._autoApprovalTime.GetValueOrDefault(); }
+            get { return this._autoApprovalTime; }
             set { this._autoApprovalTime = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.MTurk.Model
         /// HIT.
         /// </para>
         /// </summary>
-        public DateTime Deadline
+        public DateTime? Deadline
         {
-            get { return this._deadline.GetValueOrDefault(); }
+            get { return this._deadline; }
             set { this._deadline = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.MTurk.Model
         /// is the date and time the Requester rejected the results.
         /// </para>
         /// </summary>
-        public DateTime RejectionTime
+        public DateTime? RejectionTime
         {
-            get { return this._rejectionTime.GetValueOrDefault(); }
+            get { return this._rejectionTime; }
             set { this._rejectionTime = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.MTurk.Model
         /// submitted results.
         /// </para>
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

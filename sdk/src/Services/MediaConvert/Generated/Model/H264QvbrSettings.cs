@@ -48,9 +48,9 @@ namespace Amazon.MediaConvert.Model
         /// the number of seconds of encoded output.
         /// </summary>
         [AWSProperty(Min=1000, Max=1152000000)]
-        public int MaxAverageBitrate
+        public int? MaxAverageBitrate
         {
-            get { return this._maxAverageBitrate.GetValueOrDefault(); }
+            get { return this._maxAverageBitrate; }
             set { this._maxAverageBitrate = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.MediaConvert.Model
         /// to 7 and set qvbrQualityLevelFineTune to .33.
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int QvbrQualityLevel
+        public int? QvbrQualityLevel
         {
-            get { return this._qvbrQualityLevel.GetValueOrDefault(); }
+            get { return this._qvbrQualityLevel; }
             set { this._qvbrQualityLevel = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.MediaConvert.Model
         /// number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune
         /// to .25, your actual QVBR quality level is 7.33.
         /// </summary>
-        public double QvbrQualityLevelFineTune
+        public double? QvbrQualityLevelFineTune
         {
-            get { return this._qvbrQualityLevelFineTune.GetValueOrDefault(); }
+            get { return this._qvbrQualityLevelFineTune; }
             set { this._qvbrQualityLevelFineTune = value; }
         }
 

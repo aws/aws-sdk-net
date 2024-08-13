@@ -43,6 +43,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _customDomainName;
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
+        private string _ipAddressType;
         private int? _maxCapacity;
         private string _namespaceName;
         private string _patchVersion;
@@ -62,9 +63,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).
         /// </para>
         /// </summary>
-        public int BaseCapacity
+        public int? BaseCapacity
         {
-            get { return this._baseCapacity.GetValueOrDefault(); }
+            get { return this._baseCapacity; }
             set { this._baseCapacity = value; }
         }
 
@@ -103,9 +104,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The creation date of the workgroup.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -160,9 +161,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The expiration time for the certificate.
         /// </para>
         /// </summary>
-        public DateTime CustomDomainCertificateExpiryTime
+        public DateTime? CustomDomainCertificateExpiryTime
         {
-            get { return this._customDomainCertificateExpiryTime.GetValueOrDefault(); }
+            get { return this._customDomainCertificateExpiryTime; }
             set { this._customDomainCertificateExpiryTime = value; }
         }
 
@@ -216,9 +217,9 @@ namespace Amazon.RedshiftServerless.Model
         /// which forces Amazon Redshift Serverless to route traffic through your VPC.
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -229,15 +230,34 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type that the workgroup supports. Possible values are <c>ipv4</c> and
+        /// <c>dualstack</c>.
+        /// </para>
+        /// </summary>
+        public string IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
         /// The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries.
         /// The max capacity is specified in RPUs.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -292,9 +312,9 @@ namespace Amazon.RedshiftServerless.Model
         /// and 8191-8215. The default is 5439.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -310,9 +330,9 @@ namespace Amazon.RedshiftServerless.Model
         /// A value that specifies whether the workgroup can be accessible from a public network.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

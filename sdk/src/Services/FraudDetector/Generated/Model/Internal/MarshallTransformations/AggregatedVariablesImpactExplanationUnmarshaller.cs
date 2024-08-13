@@ -74,7 +74,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("logOddsImpact", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.LogOddsImpact = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -78,6 +78,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProviderProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ruleBasedProperties", targetDepth))
+                {
+                    var unmarshaller = IdMappingRuleBasedPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.RuleBasedProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

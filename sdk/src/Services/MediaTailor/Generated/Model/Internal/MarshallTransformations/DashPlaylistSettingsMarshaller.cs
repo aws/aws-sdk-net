@@ -51,25 +51,25 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("ManifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds);
+                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
             }
 
             if(requestObject.IsSetMinBufferTimeSeconds())
             {
                 context.Writer.WritePropertyName("MinBufferTimeSeconds");
-                context.Writer.Write(requestObject.MinBufferTimeSeconds);
+                context.Writer.Write(requestObject.MinBufferTimeSeconds.Value);
             }
 
             if(requestObject.IsSetMinUpdatePeriodSeconds())
             {
                 context.Writer.WritePropertyName("MinUpdatePeriodSeconds");
-                context.Writer.Write(requestObject.MinUpdatePeriodSeconds);
+                context.Writer.Write(requestObject.MinUpdatePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetSuggestedPresentationDelaySeconds())
             {
                 context.Writer.WritePropertyName("SuggestedPresentationDelaySeconds");
-                context.Writer.Write(requestObject.SuggestedPresentationDelaySeconds);
+                context.Writer.Write(requestObject.SuggestedPresentationDelaySeconds.Value);
             }
 
         }

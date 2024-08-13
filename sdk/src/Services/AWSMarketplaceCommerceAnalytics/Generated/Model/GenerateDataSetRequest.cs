@@ -80,9 +80,9 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// of 31 days until the first data set is found (the latest one).
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime DataSetPublicationDate
+        public DateTime? DataSetPublicationDate
         {
-            get { return this._dataSetPublicationDate.GetValueOrDefault(); }
+            get { return this._dataSetPublicationDate; }
             set { this._dataSetPublicationDate = value; }
         }
 

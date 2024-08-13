@@ -217,9 +217,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxConcurrentTransforms
+        public int? MaxConcurrentTransforms
         {
-            get { return this._maxConcurrentTransforms.GetValueOrDefault(); }
+            get { return this._maxConcurrentTransforms; }
             set { this._maxConcurrentTransforms = value; }
         }
 
@@ -254,9 +254,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxPayloadInMB
+        public int? MaxPayloadInMB
         {
-            get { return this._maxPayloadInMB.GetValueOrDefault(); }
+            get { return this._maxPayloadInMB; }
             set { this._maxPayloadInMB = value; }
         }
 

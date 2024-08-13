@@ -68,7 +68,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }

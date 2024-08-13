@@ -68,13 +68,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BeginOffsetChar", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffsetChar = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EndOffsetChar", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetChar = unmarshaller.Unmarshall(context);
                     continue;
                 }

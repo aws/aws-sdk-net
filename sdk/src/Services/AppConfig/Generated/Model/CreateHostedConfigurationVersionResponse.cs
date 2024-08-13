@@ -183,9 +183,9 @@ namespace Amazon.AppConfig.Model
         /// The configuration version.
         /// </para>
         /// </summary>
-        public int VersionNumber
+        public int? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

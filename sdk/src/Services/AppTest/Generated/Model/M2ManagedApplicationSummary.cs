@@ -63,9 +63,9 @@ namespace Amazon.AppTest.Model
         /// The listener port of the AWS Mainframe Modernization managed application summary.
         /// </para>
         /// </summary>
-        public int ListenerPort
+        public int? ListenerPort
         {
-            get { return this._listenerPort.GetValueOrDefault(); }
+            get { return this._listenerPort; }
             set { this._listenerPort = value; }
         }
 

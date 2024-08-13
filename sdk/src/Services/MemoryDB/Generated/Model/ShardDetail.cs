@@ -99,9 +99,9 @@ namespace Amazon.MemoryDB.Model
         /// The date and time that the shard's snapshot was created
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreationTime
+        public DateTime? SnapshotCreationTime
         {
-            get { return this._snapshotCreationTime.GetValueOrDefault(); }
+            get { return this._snapshotCreationTime; }
             set { this._snapshotCreationTime = value; }
         }
 

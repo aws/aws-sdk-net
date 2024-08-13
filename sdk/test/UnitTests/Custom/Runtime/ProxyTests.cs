@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Util;
@@ -24,6 +24,7 @@ namespace AWSSDK.UnitTests
     public class ProxyTests
     {
         readonly string EnvironmentVariableUrl = "http://user:pass@10.0.0.2:21/proxy";
+        readonly string EnvironmentVariableUrlWithoutHttp = "user:pass@10.0.0.2:21/proxy";
         readonly string Host = "10.0.0.1";
         readonly int Port = 20;
         readonly List<string> BypassList = new List<string>
@@ -109,6 +110,32 @@ namespace AWSSDK.UnitTests
                 IWebProxy proxy = dummyConfig.GetHttpProxy();
 
                 var address = proxy.GetProxy(new Uri("https://ec2.us-west-2.aws.amazon.com"));
+                Assert.AreEqual(address.Host, "10.0.0.2");
+                Assert.AreEqual(address.Port, 21);
+                Assert.IsNotNull(proxy.Credentials);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("http_proxy", cachedHttpProxy);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestParsingCredentialsOverEnvironmentVariableWithoutHttp()
+        {
+            var cachedHttpProxy = Environment.GetEnvironmentVariable("http_proxy");
+
+            try
+            {
+                Environment.SetEnvironmentVariable("http_proxy", EnvironmentVariableUrlWithoutHttp);
+
+                var dummyConfig = new AmazonEC2Config();
+                IWebProxy proxy = dummyConfig.GetHttpProxy();
+
+                var address = proxy.GetProxy(new Uri("https://ec2.us-west-2.aws.amazon.com"));
+                Assert.AreEqual(address.Scheme, "http");
                 Assert.AreEqual(address.Host, "10.0.0.2");
                 Assert.AreEqual(address.Port, 21);
                 Assert.IsNotNull(proxy.Credentials);

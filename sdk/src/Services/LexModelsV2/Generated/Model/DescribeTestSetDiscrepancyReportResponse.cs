@@ -50,9 +50,9 @@ namespace Amazon.LexModelsV2.Model
         /// The time and date of creation for the test set discrepancy report.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.LexModelsV2.Model
         /// The date and time of the last update for the test set discrepancy report.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDataTime
+        public DateTime? LastUpdatedDataTime
         {
-            get { return this._lastUpdatedDataTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDataTime; }
             set { this._lastUpdatedDataTime = value; }
         }
 

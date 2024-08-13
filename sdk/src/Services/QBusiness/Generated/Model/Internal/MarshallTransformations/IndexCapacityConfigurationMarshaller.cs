@@ -51,7 +51,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnits())
             {
                 context.Writer.WritePropertyName("units");
-                context.Writer.Write(requestObject.Units);
+                context.Writer.Write(requestObject.Units.Value);
             }
 
         }

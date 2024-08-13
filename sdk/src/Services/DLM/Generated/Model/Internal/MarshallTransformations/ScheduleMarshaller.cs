@@ -62,7 +62,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyTags())
             {
                 context.Writer.WritePropertyName("CopyTags");
-                context.Writer.Write(requestObject.CopyTags);
+                context.Writer.Write(requestObject.CopyTags.Value);
             }
 
             if(requestObject.IsSetCreateRule())

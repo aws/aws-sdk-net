@@ -55,9 +55,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -85,7 +85,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property FailedRecordReport. 
         /// <para>
-        /// The link to donwload the information of resource data that failed to be imported.
+        /// The link to download the information of resource data that failed to be imported.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
@@ -184,9 +184,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UrlExpiry
+        public DateTime? UrlExpiry
         {
-            get { return this._urlExpiry.GetValueOrDefault(); }
+            get { return this._urlExpiry; }
             set { this._urlExpiry = value; }
         }
 

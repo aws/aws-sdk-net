@@ -132,9 +132,9 @@ namespace Amazon.ECRPublic.Model
         /// Indicates whether the repository is certified by Amazon Web Services Marketplace.
         /// </para>
         /// </summary>
-        public bool MarketplaceCertified
+        public bool? MarketplaceCertified
         {
-            get { return this._marketplaceCertified.GetValueOrDefault(); }
+            get { return this._marketplaceCertified; }
             set { this._marketplaceCertified = value; }
         }
 

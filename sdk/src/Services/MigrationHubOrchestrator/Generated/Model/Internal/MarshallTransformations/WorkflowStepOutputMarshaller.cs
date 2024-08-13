@@ -63,7 +63,7 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("required");
-                context.Writer.Write(requestObject.Required);
+                context.Writer.Write(requestObject.Required.Value);
             }
 
             if(requestObject.IsSetValue())

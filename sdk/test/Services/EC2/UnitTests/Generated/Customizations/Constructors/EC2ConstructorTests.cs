@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.EC2;
 using Amazon.EC2.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class EC2ConstructorCustomizationsTests
@@ -104,7 +104,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("EC2")]
         public void CreateCustomerGatewayRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.EC2.Model.CreateCustomerGatewayRequest), new System.Type[] { typeof(GatewayType), typeof(string), typeof(int), });
+            EnsureConstructorExists(typeof(Amazon.EC2.Model.CreateCustomerGatewayRequest), new System.Type[] { typeof(GatewayType), typeof(string), typeof(int?), });
         }
 
         [TestMethod]
@@ -184,7 +184,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("EC2")]
         public void CreateVolumeRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.EC2.Model.CreateVolumeRequest), new System.Type[] { typeof(string), typeof(int), });
+            EnsureConstructorExists(typeof(Amazon.EC2.Model.CreateVolumeRequest), new System.Type[] { typeof(string), typeof(int?), });
             EnsureConstructorExists(typeof(Amazon.EC2.Model.CreateVolumeRequest), new System.Type[] { typeof(string), typeof(string), });
         }
 
@@ -441,7 +441,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("EC2")]
         public void PurchaseReservedInstancesOfferingRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.EC2.Model.PurchaseReservedInstancesOfferingRequest), new System.Type[] { typeof(string), typeof(int), });
+            EnsureConstructorExists(typeof(Amazon.EC2.Model.PurchaseReservedInstancesOfferingRequest), new System.Type[] { typeof(string), typeof(int?), });
         }
 
         [TestMethod]
@@ -513,7 +513,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("EC2")]
         public void RunInstancesRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.EC2.Model.RunInstancesRequest), new System.Type[] { typeof(string), typeof(int), typeof(int), });
+            EnsureConstructorExists(typeof(Amazon.EC2.Model.RunInstancesRequest), new System.Type[] { typeof(string), typeof(int?), typeof(int?), });
         }
 
         [TestMethod]

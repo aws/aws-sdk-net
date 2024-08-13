@@ -118,9 +118,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Interactive
+        public bool? Interactive
         {
-            get { return this._interactive.GetValueOrDefault(); }
+            get { return this._interactive; }
             set { this._interactive = value; }
         }
 

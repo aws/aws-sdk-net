@@ -43,9 +43,9 @@ namespace Amazon.Inspector2.Model
         /// The lowest number to be included in the filter.
         /// </para>
         /// </summary>
-        public double LowerInclusive
+        public double? LowerInclusive
         {
-            get { return this._lowerInclusive.GetValueOrDefault(); }
+            get { return this._lowerInclusive; }
             set { this._lowerInclusive = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Inspector2.Model
         /// The highest number to be included in the filter.
         /// </para>
         /// </summary>
-        public double UpperInclusive
+        public double? UpperInclusive
         {
-            get { return this._upperInclusive.GetValueOrDefault(); }
+            get { return this._upperInclusive; }
             set { this._upperInclusive = value; }
         }
 

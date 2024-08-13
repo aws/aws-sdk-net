@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
-    /// A filter object that lets you call <c>ListCOntrolOperations</c> with a specific filter.
+    /// A filter object that lets you call <c>ListControlOperations</c> with a specific filter.
     /// </summary>
     public partial class ControlOperationFilter
     {

@@ -48,9 +48,9 @@ namespace Amazon.StorageGateway.Model
         /// The amount of cache in bytes allocated to a gateway.
         /// </para>
         /// </summary>
-        public long CacheAllocatedInBytes
+        public long? CacheAllocatedInBytes
         {
-            get { return this._cacheAllocatedInBytes.GetValueOrDefault(); }
+            get { return this._cacheAllocatedInBytes; }
             set { this._cacheAllocatedInBytes = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.StorageGateway.Model
         /// reporting period.
         /// </para>
         /// </summary>
-        public double CacheDirtyPercentage
+        public double? CacheDirtyPercentage
         {
-            get { return this._cacheDirtyPercentage.GetValueOrDefault(); }
+            get { return this._cacheDirtyPercentage; }
             set { this._cacheDirtyPercentage = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.StorageGateway.Model
         /// The sample is taken at the end of the reporting period.
         /// </para>
         /// </summary>
-        public double CacheHitPercentage
+        public double? CacheHitPercentage
         {
-            get { return this._cacheHitPercentage.GetValueOrDefault(); }
+            get { return this._cacheHitPercentage; }
             set { this._cacheHitPercentage = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.StorageGateway.Model
         /// cache. The sample is taken at the end of the reporting period.
         /// </para>
         /// </summary>
-        public double CacheMissPercentage
+        public double? CacheMissPercentage
         {
-            get { return this._cacheMissPercentage.GetValueOrDefault(); }
+            get { return this._cacheMissPercentage; }
             set { this._cacheMissPercentage = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.StorageGateway.Model
         /// volume setup. The sample is taken at the end of the reporting period.
         /// </para>
         /// </summary>
-        public double CacheUsedPercentage
+        public double? CacheUsedPercentage
         {
-            get { return this._cacheUsedPercentage.GetValueOrDefault(); }
+            get { return this._cacheUsedPercentage; }
             set { this._cacheUsedPercentage = value; }
         }
 

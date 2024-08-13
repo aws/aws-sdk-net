@@ -49,9 +49,9 @@ namespace Amazon.ConfigService.Model
         /// The time of the last attempted delivery.
         /// </para>
         /// </summary>
-        public DateTime LastAttemptTime
+        public DateTime? LastAttemptTime
         {
-            get { return this._lastAttemptTime.GetValueOrDefault(); }
+            get { return this._lastAttemptTime; }
             set { this._lastAttemptTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.ConfigService.Model
         /// The time of the last successful delivery.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulTime
+        public DateTime? LastSuccessfulTime
         {
-            get { return this._lastSuccessfulTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulTime; }
             set { this._lastSuccessfulTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.ConfigService.Model
         /// The time that the next delivery occurs.
         /// </para>
         /// </summary>
-        public DateTime NextDeliveryTime
+        public DateTime? NextDeliveryTime
         {
-            get { return this._nextDeliveryTime.GetValueOrDefault(); }
+            get { return this._nextDeliveryTime; }
             set { this._nextDeliveryTime = value; }
         }
 

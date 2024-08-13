@@ -52,9 +52,9 @@ namespace Amazon.QuickSight.Model
         /// user.
         /// </para>
         /// </summary>
-        public bool AutoCreateDatabaseUser
+        public bool? AutoCreateDatabaseUser
         {
-            get { return this._autoCreateDatabaseUser.GetValueOrDefault(); }
+            get { return this._autoCreateDatabaseUser; }
             set { this._autoCreateDatabaseUser = value; }
         }
 

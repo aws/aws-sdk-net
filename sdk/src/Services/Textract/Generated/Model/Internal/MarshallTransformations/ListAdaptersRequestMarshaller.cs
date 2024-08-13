@@ -72,19 +72,19 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAfterCreationTime())
                 {
                     context.Writer.WritePropertyName("AfterCreationTime");
-                    context.Writer.Write(publicRequest.AfterCreationTime);
+                    context.Writer.Write(publicRequest.AfterCreationTime.Value);
                 }
 
                 if(publicRequest.IsSetBeforeCreationTime())
                 {
                     context.Writer.WritePropertyName("BeforeCreationTime");
-                    context.Writer.Write(publicRequest.BeforeCreationTime);
+                    context.Writer.Write(publicRequest.BeforeCreationTime.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

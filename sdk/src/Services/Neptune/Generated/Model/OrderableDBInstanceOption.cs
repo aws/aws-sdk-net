@@ -158,9 +158,9 @@ namespace Amazon.Neptune.Model
         /// Maximum total provisioned IOPS for a DB instance.
         /// </para>
         /// </summary>
-        public int MaxIopsPerDbInstance
+        public int? MaxIopsPerDbInstance
         {
-            get { return this._maxIopsPerDbInstance.GetValueOrDefault(); }
+            get { return this._maxIopsPerDbInstance; }
             set { this._maxIopsPerDbInstance = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.Neptune.Model
         /// Maximum provisioned IOPS per GiB for a DB instance.
         /// </para>
         /// </summary>
-        public double MaxIopsPerGib
+        public double? MaxIopsPerGib
         {
-            get { return this._maxIopsPerGib.GetValueOrDefault(); }
+            get { return this._maxIopsPerGib; }
             set { this._maxIopsPerGib = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.Neptune.Model
         /// Maximum storage size for a DB instance.
         /// </para>
         /// </summary>
-        public int MaxStorageSize
+        public int? MaxStorageSize
         {
-            get { return this._maxStorageSize.GetValueOrDefault(); }
+            get { return this._maxStorageSize; }
             set { this._maxStorageSize = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.Neptune.Model
         /// Minimum total provisioned IOPS for a DB instance.
         /// </para>
         /// </summary>
-        public int MinIopsPerDbInstance
+        public int? MinIopsPerDbInstance
         {
-            get { return this._minIopsPerDbInstance.GetValueOrDefault(); }
+            get { return this._minIopsPerDbInstance; }
             set { this._minIopsPerDbInstance = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.Neptune.Model
         /// Minimum provisioned IOPS per GiB for a DB instance.
         /// </para>
         /// </summary>
-        public double MinIopsPerGib
+        public double? MinIopsPerGib
         {
-            get { return this._minIopsPerGib.GetValueOrDefault(); }
+            get { return this._minIopsPerGib; }
             set { this._minIopsPerGib = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.Neptune.Model
         /// Minimum storage size for a DB instance.
         /// </para>
         /// </summary>
-        public int MinStorageSize
+        public int? MinStorageSize
         {
-            get { return this._minStorageSize.GetValueOrDefault(); }
+            get { return this._minStorageSize; }
             set { this._minStorageSize = value; }
         }
 
@@ -266,9 +266,9 @@ namespace Amazon.Neptune.Model
         /// Indicates whether a DB instance is Multi-AZ capable.
         /// </para>
         /// </summary>
-        public bool MultiAZCapable
+        public bool? MultiAZCapable
         {
-            get { return this._multiAZCapable.GetValueOrDefault(); }
+            get { return this._multiAZCapable; }
             set { this._multiAZCapable = value; }
         }
 
@@ -284,9 +284,9 @@ namespace Amazon.Neptune.Model
         /// Indicates whether a DB instance can have a Read Replica.
         /// </para>
         /// </summary>
-        public bool ReadReplicaCapable
+        public bool? ReadReplicaCapable
         {
-            get { return this._readReplicaCapable.GetValueOrDefault(); }
+            get { return this._readReplicaCapable; }
             set { this._readReplicaCapable = value; }
         }
 
@@ -321,9 +321,9 @@ namespace Amazon.Neptune.Model
         /// 60 seconds.
         /// </para>
         /// </summary>
-        public bool SupportsEnhancedMonitoring
+        public bool? SupportsEnhancedMonitoring
         {
-            get { return this._supportsEnhancedMonitoring.GetValueOrDefault(); }
+            get { return this._supportsEnhancedMonitoring; }
             set { this._supportsEnhancedMonitoring = value; }
         }
 
@@ -340,9 +340,9 @@ namespace Amazon.Neptune.Model
         /// combination of other DB engine attributes.
         /// </para>
         /// </summary>
-        public bool SupportsGlobalDatabases
+        public bool? SupportsGlobalDatabases
         {
-            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            get { return this._supportsGlobalDatabases; }
             set { this._supportsGlobalDatabases = value; }
         }
 
@@ -358,9 +358,9 @@ namespace Amazon.Neptune.Model
         /// Indicates whether a DB instance supports IAM database authentication.
         /// </para>
         /// </summary>
-        public bool SupportsIAMDatabaseAuthentication
+        public bool? SupportsIAMDatabaseAuthentication
         {
-            get { return this._supportsIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._supportsIAMDatabaseAuthentication; }
             set { this._supportsIAMDatabaseAuthentication = value; }
         }
 
@@ -376,9 +376,9 @@ namespace Amazon.Neptune.Model
         /// Indicates whether a DB instance supports provisioned IOPS.
         /// </para>
         /// </summary>
-        public bool SupportsIops
+        public bool? SupportsIops
         {
-            get { return this._supportsIops.GetValueOrDefault(); }
+            get { return this._supportsIops; }
             set { this._supportsIops = value; }
         }
 
@@ -394,9 +394,9 @@ namespace Amazon.Neptune.Model
         ///  <i>(Not supported by Neptune)</i> 
         /// </para>
         /// </summary>
-        public bool SupportsPerformanceInsights
+        public bool? SupportsPerformanceInsights
         {
-            get { return this._supportsPerformanceInsights.GetValueOrDefault(); }
+            get { return this._supportsPerformanceInsights; }
             set { this._supportsPerformanceInsights = value; }
         }
 
@@ -412,9 +412,9 @@ namespace Amazon.Neptune.Model
         /// Indicates whether a DB instance supports encrypted storage.
         /// </para>
         /// </summary>
-        public bool SupportsStorageEncryption
+        public bool? SupportsStorageEncryption
         {
-            get { return this._supportsStorageEncryption.GetValueOrDefault(); }
+            get { return this._supportsStorageEncryption; }
             set { this._supportsStorageEncryption = value; }
         }
 
@@ -430,9 +430,9 @@ namespace Amazon.Neptune.Model
         /// Indicates whether a DB instance is in a VPC.
         /// </para>
         /// </summary>
-        public bool Vpc
+        public bool? Vpc
         {
-            get { return this._vpc.GetValueOrDefault(); }
+            get { return this._vpc; }
             set { this._vpc = value; }
         }
 

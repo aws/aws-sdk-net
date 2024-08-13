@@ -45,9 +45,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property IntegerEnum1.
         /// </summary>
-        public int IntegerEnum1
+        public int? IntegerEnum1
         {
-            get { return this._integerEnum1.GetValueOrDefault(); }
+            get { return this._integerEnum1; }
             set { this._integerEnum1 = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property IntegerEnum2.
         /// </summary>
-        public int IntegerEnum2
+        public int? IntegerEnum2
         {
-            get { return this._integerEnum2.GetValueOrDefault(); }
+            get { return this._integerEnum2; }
             set { this._integerEnum2 = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property IntegerEnum3.
         /// </summary>
-        public int IntegerEnum3
+        public int? IntegerEnum3
         {
-            get { return this._integerEnum3.GetValueOrDefault(); }
+            get { return this._integerEnum3; }
             set { this._integerEnum3 = value; }
         }
 

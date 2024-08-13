@@ -71,9 +71,9 @@ namespace Amazon.Elasticsearch.Model
         /// Total number of dedicated master nodes, active and on standby, for the cluster.
         /// </para>
         /// </summary>
-        public int DedicatedMasterCount
+        public int? DedicatedMasterCount
         {
-            get { return this._dedicatedMasterCount.GetValueOrDefault(); }
+            get { return this._dedicatedMasterCount; }
             set { this._dedicatedMasterCount = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Elasticsearch.Model
         /// target="_blank">About Dedicated Master Nodes</a> for more information.
         /// </para>
         /// </summary>
-        public bool DedicatedMasterEnabled
+        public bool? DedicatedMasterEnabled
         {
-            get { return this._dedicatedMasterEnabled.GetValueOrDefault(); }
+            get { return this._dedicatedMasterEnabled; }
             set { this._dedicatedMasterEnabled = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.Elasticsearch.Model
         /// The number of instances in the specified domain cluster.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.Elasticsearch.Model
         /// The number of warm nodes in the cluster.
         /// </para>
         /// </summary>
-        public int WarmCount
+        public int? WarmCount
         {
-            get { return this._warmCount.GetValueOrDefault(); }
+            get { return this._warmCount; }
             set { this._warmCount = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.Elasticsearch.Model
         /// True to enable warm storage.
         /// </para>
         /// </summary>
-        public bool WarmEnabled
+        public bool? WarmEnabled
         {
-            get { return this._warmEnabled.GetValueOrDefault(); }
+            get { return this._warmEnabled; }
             set { this._warmEnabled = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.Elasticsearch.Model
         /// target="_blank">About Zone Awareness</a> for more information.
         /// </para>
         /// </summary>
-        public bool ZoneAwarenessEnabled
+        public bool? ZoneAwarenessEnabled
         {
-            get { return this._zoneAwarenessEnabled.GetValueOrDefault(); }
+            get { return this._zoneAwarenessEnabled; }
             set { this._zoneAwarenessEnabled = value; }
         }
 

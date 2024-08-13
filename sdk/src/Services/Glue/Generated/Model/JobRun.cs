@@ -76,9 +76,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use MaxCapacity instead.")]
-        public int AllocatedCapacity
+        public int? AllocatedCapacity
         {
-            get { return this._allocatedCapacity.GetValueOrDefault(); }
+            get { return this._allocatedCapacity; }
             set { this._allocatedCapacity = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Glue.Model
         /// The number of the attempt to run this job.
         /// </para>
         /// </summary>
-        public int Attempt
+        public int? Attempt
         {
-            get { return this._attempt.GetValueOrDefault(); }
+            get { return this._attempt; }
             set { this._attempt = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Glue.Model
         /// The date and time that this job run completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedOn
+        public DateTime? CompletedOn
         {
-            get { return this._completedOn.GetValueOrDefault(); }
+            get { return this._completedOn; }
             set { this._completedOn = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Glue.Model
         /// is less than <c>executionEngineRuntime</c> * <c>MaxCapacity</c>.
         /// </para>
         /// </summary>
-        public double DPUSeconds
+        public double? DPUSeconds
         {
-            get { return this._dpuSeconds.GetValueOrDefault(); }
+            get { return this._dpuSeconds; }
             set { this._dpuSeconds = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.Glue.Model
         /// The amount of time (in seconds) that the job run consumed resources.
         /// </para>
         /// </summary>
-        public int ExecutionTime
+        public int? ExecutionTime
         {
-            get { return this._executionTime.GetValueOrDefault(); }
+            get { return this._executionTime; }
             set { this._executionTime = value; }
         }
 
@@ -401,9 +401,9 @@ namespace Amazon.Glue.Model
         /// The last time that this job run was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 
@@ -499,9 +499,9 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -536,9 +536,9 @@ namespace Amazon.Glue.Model
         /// runs.
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -630,9 +630,9 @@ namespace Amazon.Glue.Model
         /// The date and time at which this job run was started.
         /// </para>
         /// </summary>
-        public DateTime StartedOn
+        public DateTime? StartedOn
         {
-            get { return this._startedOn.GetValueOrDefault(); }
+            get { return this._startedOn; }
             set { this._startedOn = value; }
         }
 
@@ -658,9 +658,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

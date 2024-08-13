@@ -7,7 +7,7 @@ using AWSSDK.UnitTests;
 using AWSSDK_DotNet.CommonTest.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK_DotNet35.UnitTests.EC2
+namespace AWSSDK_DotNet.UnitTests.EC2
 {
     [TestClass]
     public class EC2InstanceMetadataTests

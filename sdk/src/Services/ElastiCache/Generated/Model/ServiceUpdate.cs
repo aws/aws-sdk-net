@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// An update that you can apply to your Redis clusters.
+    /// An update that you can apply to your Redis OSS clusters.
     /// </summary>
     public partial class ServiceUpdate
     {
@@ -54,9 +54,9 @@ namespace Amazon.ElastiCache.Model
         /// apply-by date has expired. 
         /// </para>
         /// </summary>
-        public bool AutoUpdateAfterRecommendedApplyByDate
+        public bool? AutoUpdateAfterRecommendedApplyByDate
         {
-            get { return this._autoUpdateAfterRecommendedApplyByDate.GetValueOrDefault(); }
+            get { return this._autoUpdateAfterRecommendedApplyByDate; }
             set { this._autoUpdateAfterRecommendedApplyByDate = value; }
         }
 
@@ -69,7 +69,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Elasticache engine to which the update applies. Either Redis or Memcached
+        /// The Elasticache engine to which the update applies. Either Redis OSS or Memcached.
         /// </para>
         /// </summary>
         public string Engine
@@ -87,8 +87,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Elasticache engine version to which the update applies. Either Redis or Memcached
-        /// engine version
+        /// The Elasticache engine version to which the update applies. Either Redis OSS or Memcached
+        /// engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -145,9 +145,9 @@ namespace Amazon.ElastiCache.Model
         /// The date after which the service update is no longer available
         /// </para>
         /// </summary>
-        public DateTime ServiceUpdateEndDate
+        public DateTime? ServiceUpdateEndDate
         {
-            get { return this._serviceUpdateEndDate.GetValueOrDefault(); }
+            get { return this._serviceUpdateEndDate; }
             set { this._serviceUpdateEndDate = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.ElastiCache.Model
         /// Security Updates for Compliance</a>.
         /// </para>
         /// </summary>
-        public DateTime ServiceUpdateRecommendedApplyByDate
+        public DateTime? ServiceUpdateRecommendedApplyByDate
         {
-            get { return this._serviceUpdateRecommendedApplyByDate.GetValueOrDefault(); }
+            get { return this._serviceUpdateRecommendedApplyByDate; }
             set { this._serviceUpdateRecommendedApplyByDate = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.ElastiCache.Model
         /// The date when the service update is initially available
         /// </para>
         /// </summary>
-        public DateTime ServiceUpdateReleaseDate
+        public DateTime? ServiceUpdateReleaseDate
         {
-            get { return this._serviceUpdateReleaseDate.GetValueOrDefault(); }
+            get { return this._serviceUpdateReleaseDate; }
             set { this._serviceUpdateReleaseDate = value; }
         }
 

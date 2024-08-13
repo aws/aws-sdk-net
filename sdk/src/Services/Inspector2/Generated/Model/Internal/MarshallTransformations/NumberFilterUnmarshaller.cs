@@ -68,13 +68,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lowerInclusive", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LowerInclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("upperInclusive", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.UpperInclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }

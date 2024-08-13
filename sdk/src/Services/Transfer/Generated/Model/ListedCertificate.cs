@@ -49,9 +49,9 @@ namespace Amazon.Transfer.Model
         /// An optional date that specifies when the certificate becomes active.
         /// </para>
         /// </summary>
-        public DateTime ActiveDate
+        public DateTime? ActiveDate
         {
-            get { return this._activeDate.GetValueOrDefault(); }
+            get { return this._activeDate; }
             set { this._activeDate = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.Transfer.Model
         /// An optional date that specifies when the certificate becomes inactive.
         /// </para>
         /// </summary>
-        public DateTime InactiveDate
+        public DateTime? InactiveDate
         {
-            get { return this._inactiveDate.GetValueOrDefault(); }
+            get { return this._inactiveDate; }
             set { this._inactiveDate = value; }
         }
 

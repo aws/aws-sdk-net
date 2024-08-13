@@ -51,7 +51,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("priority");
-                context.Writer.Write(requestObject.Priority);
+                context.Writer.Write(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetQueue())
@@ -63,7 +63,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWaitMinutes())
             {
                 context.Writer.WritePropertyName("waitMinutes");
-                context.Writer.Write(requestObject.WaitMinutes);
+                context.Writer.Write(requestObject.WaitMinutes.Value);
             }
 
         }

@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model
         /// The number of rows that were not ingested.
         /// </para>
         /// </summary>
-        public long RowsDropped
+        public long? RowsDropped
         {
-            get { return this._rowsDropped.GetValueOrDefault(); }
+            get { return this._rowsDropped; }
             set { this._rowsDropped = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.QuickSight.Model
         /// The number of rows that were ingested.
         /// </para>
         /// </summary>
-        public long RowsIngested
+        public long? RowsIngested
         {
-            get { return this._rowsIngested.GetValueOrDefault(); }
+            get { return this._rowsIngested; }
             set { this._rowsIngested = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.QuickSight.Model
         /// The total number of rows in the dataset.
         /// </para>
         /// </summary>
-        public long TotalRowsInDataset
+        public long? TotalRowsInDataset
         {
-            get { return this._totalRowsInDataset.GetValueOrDefault(); }
+            get { return this._totalRowsInDataset; }
             set { this._totalRowsInDataset = value; }
         }
 

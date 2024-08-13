@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=777600)]
-        public int MaxRuntimeInSeconds
+        public int? MaxRuntimeInSeconds
         {
-            get { return this._maxRuntimeInSeconds.GetValueOrDefault(); }
+            get { return this._maxRuntimeInSeconds; }
             set { this._maxRuntimeInSeconds = value; }
         }
 

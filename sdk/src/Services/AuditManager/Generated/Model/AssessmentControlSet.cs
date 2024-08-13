@@ -125,9 +125,9 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
-        public int ManualEvidenceCount
+        public int? ManualEvidenceCount
         {
-            get { return this._manualEvidenceCount.GetValueOrDefault(); }
+            get { return this._manualEvidenceCount; }
             set { this._manualEvidenceCount = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.AuditManager.Model
         /// set. 
         /// </para>
         /// </summary>
-        public int SystemEvidenceCount
+        public int? SystemEvidenceCount
         {
-            get { return this._systemEvidenceCount.GetValueOrDefault(); }
+            get { return this._systemEvidenceCount; }
             set { this._systemEvidenceCount = value; }
         }
 

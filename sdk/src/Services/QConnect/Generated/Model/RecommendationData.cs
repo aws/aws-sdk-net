@@ -121,9 +121,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double RelevanceScore
+        public double? RelevanceScore
         {
-            get { return this._relevanceScore.GetValueOrDefault(); }
+            get { return this._relevanceScore; }
             set { this._relevanceScore = value; }
         }
 

@@ -80,7 +80,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expirationTime", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ExpirationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

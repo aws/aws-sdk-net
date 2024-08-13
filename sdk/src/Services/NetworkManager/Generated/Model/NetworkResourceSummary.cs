@@ -67,9 +67,9 @@ namespace Amazon.NetworkManager.Model
         /// Indicates whether this is a middlebox appliance.
         /// </para>
         /// </summary>
-        public bool IsMiddlebox
+        public bool? IsMiddlebox
         {
-            get { return this._isMiddlebox.GetValueOrDefault(); }
+            get { return this._isMiddlebox; }
             set { this._isMiddlebox = value; }
         }
 

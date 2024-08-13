@@ -54,31 +54,31 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CacheAllocatedInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.CacheAllocatedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CacheDirtyPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.CacheDirtyPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CacheHitPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.CacheHitPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CacheMissPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.CacheMissPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CacheUsedPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.CacheUsedPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

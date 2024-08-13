@@ -37,6 +37,7 @@ namespace Amazon.StepFunctions.Model
         private DateTime? _creationDate;
         private string _definition;
         private string _description;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _label;
         private LoggingConfiguration _loggingConfiguration;
         private string _name;
@@ -58,9 +59,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -75,6 +76,11 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
         /// States Language</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If called with <c>includedData = METADATA_ONLY</c>, the returned definition will be
+        /// <c>{}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1048576)]
@@ -107,6 +113,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Settings to configure server-side encryption. 
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

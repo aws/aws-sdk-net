@@ -45,9 +45,9 @@ namespace Amazon.Connect.Model
         /// The total count of the result, regardless of the current page size. 
         /// </para>
         /// </summary>
-        public long ApproximateTotalCount
+        public long? ApproximateTotalCount
         {
-            get { return this._approximateTotalCount.GetValueOrDefault(); }
+            get { return this._approximateTotalCount; }
             set { this._approximateTotalCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Connect.Model
         /// The time at which the metrics were retrieved and cached for pagination.
         /// </para>
         /// </summary>
-        public DateTime DataSnapshotTime
+        public DateTime? DataSnapshotTime
         {
-            get { return this._dataSnapshotTime.GetValueOrDefault(); }
+            get { return this._dataSnapshotTime; }
             set { this._dataSnapshotTime = value; }
         }
 

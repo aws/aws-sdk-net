@@ -53,9 +53,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// The value is the integer number of seconds since 1970-01-01T00:00:00Z.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ValueInArchive
+        public long? ValueInArchive
         {
-            get { return this._valueInArchive.GetValueOrDefault(); }
+            get { return this._valueInArchive; }
             set { this._valueInArchive = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ValueInIA
+        public long? ValueInIA
         {
-            get { return this._valueInIA.GetValueOrDefault(); }
+            get { return this._valueInIA; }
             set { this._valueInIA = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ValueInStandard
+        public long? ValueInStandard
         {
-            get { return this._valueInStandard.GetValueOrDefault(); }
+            get { return this._valueInStandard; }
             set { this._valueInStandard = value; }
         }
 

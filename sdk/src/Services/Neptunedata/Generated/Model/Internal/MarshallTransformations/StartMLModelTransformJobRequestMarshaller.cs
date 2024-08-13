@@ -76,7 +76,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBaseProcessingInstanceVolumeSizeInGB())
                 {
                     context.Writer.WritePropertyName("baseProcessingInstanceVolumeSizeInGB");
-                    context.Writer.Write(publicRequest.BaseProcessingInstanceVolumeSizeInGB);
+                    context.Writer.Write(publicRequest.BaseProcessingInstanceVolumeSizeInGB.Value);
                 }
 
                 if(publicRequest.IsSetCustomModelTransformParameters())

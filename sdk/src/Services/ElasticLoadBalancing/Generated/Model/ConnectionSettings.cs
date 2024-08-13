@@ -44,9 +44,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3600)]
-        public int IdleTimeout
+        public int? IdleTimeout
         {
-            get { return this._idleTimeout.GetValueOrDefault(); }
+            get { return this._idleTimeout; }
             set { this._idleTimeout = value; }
         }
 

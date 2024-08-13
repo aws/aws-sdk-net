@@ -45,9 +45,9 @@ namespace Amazon.Translate.Model
         /// The number of documents that could not be processed during a translation job.
         /// </para>
         /// </summary>
-        public int DocumentsWithErrorsCount
+        public int? DocumentsWithErrorsCount
         {
-            get { return this._documentsWithErrorsCount.GetValueOrDefault(); }
+            get { return this._documentsWithErrorsCount; }
             set { this._documentsWithErrorsCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Translate.Model
         /// The number of documents used as input in a translation job.
         /// </para>
         /// </summary>
-        public int InputDocumentsCount
+        public int? InputDocumentsCount
         {
-            get { return this._inputDocumentsCount.GetValueOrDefault(); }
+            get { return this._inputDocumentsCount; }
             set { this._inputDocumentsCount = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Translate.Model
         /// The number of documents successfully processed during a translation job.
         /// </para>
         /// </summary>
-        public int TranslatedDocumentsCount
+        public int? TranslatedDocumentsCount
         {
-            get { return this._translatedDocumentsCount.GetValueOrDefault(); }
+            get { return this._translatedDocumentsCount; }
             set { this._translatedDocumentsCount = value; }
         }
 

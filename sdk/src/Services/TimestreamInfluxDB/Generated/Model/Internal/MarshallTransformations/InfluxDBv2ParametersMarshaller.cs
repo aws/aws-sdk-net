@@ -51,7 +51,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFluxLogEnabled())
             {
                 context.Writer.WritePropertyName("fluxLogEnabled");
-                context.Writer.Write(requestObject.FluxLogEnabled);
+                context.Writer.Write(requestObject.FluxLogEnabled.Value);
             }
 
             if(requestObject.IsSetLogLevel())
@@ -63,25 +63,25 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricsDisabled())
             {
                 context.Writer.WritePropertyName("metricsDisabled");
-                context.Writer.Write(requestObject.MetricsDisabled);
+                context.Writer.Write(requestObject.MetricsDisabled.Value);
             }
 
             if(requestObject.IsSetNoTasks())
             {
                 context.Writer.WritePropertyName("noTasks");
-                context.Writer.Write(requestObject.NoTasks);
+                context.Writer.Write(requestObject.NoTasks.Value);
             }
 
             if(requestObject.IsSetQueryConcurrency())
             {
                 context.Writer.WritePropertyName("queryConcurrency");
-                context.Writer.Write(requestObject.QueryConcurrency);
+                context.Writer.Write(requestObject.QueryConcurrency.Value);
             }
 
             if(requestObject.IsSetQueryQueueSize())
             {
                 context.Writer.WritePropertyName("queryQueueSize");
-                context.Writer.Write(requestObject.QueryQueueSize);
+                context.Writer.Write(requestObject.QueryQueueSize.Value);
             }
 
             if(requestObject.IsSetTracingType())

@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int FileId
+        public int? FileId
         {
-            get { return this._fileId.GetValueOrDefault(); }
+            get { return this._fileId; }
             set { this._fileId = value; }
         }
 

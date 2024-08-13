@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// assigned host port.
         /// </para>
         /// </summary>
-        public int ContainerPort
+        public int? ContainerPort
         {
-            get { return this._containerPort.GetValueOrDefault(); }
+            get { return this._containerPort; }
             set { this._containerPort = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// The port number on the container instance to reserve for the container.
         /// </para>
         /// </summary>
-        public int HostPort
+        public int? HostPort
         {
-            get { return this._hostPort.GetValueOrDefault(); }
+            get { return this._hostPort; }
             set { this._hostPort = value; }
         }
 

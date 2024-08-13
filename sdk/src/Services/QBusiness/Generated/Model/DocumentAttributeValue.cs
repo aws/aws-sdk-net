@@ -51,9 +51,9 @@ namespace Amazon.QBusiness.Model
         /// 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time. 
         /// </para>
         /// </summary>
-        public DateTime DateValue
+        public DateTime? DateValue
         {
-            get { return this._dateValue.GetValueOrDefault(); }
+            get { return this._dateValue; }
             set { this._dateValue = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.QBusiness.Model
         /// A long integer value. 
         /// </para>
         /// </summary>
-        public long LongValue
+        public long? LongValue
         {
-            get { return this._longValue.GetValueOrDefault(); }
+            get { return this._longValue; }
             set { this._longValue = value; }
         }
 

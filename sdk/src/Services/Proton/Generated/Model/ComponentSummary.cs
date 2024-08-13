@@ -80,9 +80,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.Proton.Model
         /// The time when a deployment of the component was last attempted.
         /// </para>
         /// </summary>
-        public DateTime LastDeploymentAttemptedAt
+        public DateTime? LastDeploymentAttemptedAt
         {
-            get { return this._lastDeploymentAttemptedAt.GetValueOrDefault(); }
+            get { return this._lastDeploymentAttemptedAt; }
             set { this._lastDeploymentAttemptedAt = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.Proton.Model
         /// The time when the component was last deployed successfully.
         /// </para>
         /// </summary>
-        public DateTime LastDeploymentSucceededAt
+        public DateTime? LastDeploymentSucceededAt
         {
-            get { return this._lastDeploymentSucceededAt.GetValueOrDefault(); }
+            get { return this._lastDeploymentSucceededAt; }
             set { this._lastDeploymentSucceededAt = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedAt
+        public DateTime? LastModifiedAt
         {
-            get { return this._lastModifiedAt.GetValueOrDefault(); }
+            get { return this._lastModifiedAt; }
             set { this._lastModifiedAt = value; }
         }
 

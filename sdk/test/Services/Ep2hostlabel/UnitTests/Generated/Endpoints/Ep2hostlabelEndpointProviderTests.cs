@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Ep2hostlabel.Endpoints;
 using Amazon.Ep2hostlabel.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class Ep2hostlabelEndpointsTests

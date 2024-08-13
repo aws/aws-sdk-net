@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.
+    /// Contains information about a hardware security module (HSM) in an CloudHSM cluster.
     /// </summary>
     public partial class Hsm
     {

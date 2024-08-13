@@ -51,7 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptAnyDate())
             {
                 context.Writer.WritePropertyName("AcceptAnyDate");
-                context.Writer.Write(requestObject.AcceptAnyDate);
+                context.Writer.Write(requestObject.AcceptAnyDate.Value);
             }
 
             if(requestObject.IsSetAfterConnectScript())
@@ -75,19 +75,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaseSensitiveNames())
             {
                 context.Writer.WritePropertyName("CaseSensitiveNames");
-                context.Writer.Write(requestObject.CaseSensitiveNames);
+                context.Writer.Write(requestObject.CaseSensitiveNames.Value);
             }
 
             if(requestObject.IsSetCompUpdate())
             {
                 context.Writer.WritePropertyName("CompUpdate");
-                context.Writer.Write(requestObject.CompUpdate);
+                context.Writer.Write(requestObject.CompUpdate.Value);
             }
 
             if(requestObject.IsSetConnectionTimeout())
             {
                 context.Writer.WritePropertyName("ConnectionTimeout");
-                context.Writer.Write(requestObject.ConnectionTimeout);
+                context.Writer.Write(requestObject.ConnectionTimeout.Value);
             }
 
             if(requestObject.IsSetDatabaseName())
@@ -105,7 +105,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmptyAsNull())
             {
                 context.Writer.WritePropertyName("EmptyAsNull");
-                context.Writer.Write(requestObject.EmptyAsNull);
+                context.Writer.Write(requestObject.EmptyAsNull.Value);
             }
 
             if(requestObject.IsSetEncryptionMode())
@@ -117,31 +117,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExplicitIds())
             {
                 context.Writer.WritePropertyName("ExplicitIds");
-                context.Writer.Write(requestObject.ExplicitIds);
+                context.Writer.Write(requestObject.ExplicitIds.Value);
             }
 
             if(requestObject.IsSetFileTransferUploadStreams())
             {
                 context.Writer.WritePropertyName("FileTransferUploadStreams");
-                context.Writer.Write(requestObject.FileTransferUploadStreams);
+                context.Writer.Write(requestObject.FileTransferUploadStreams.Value);
             }
 
             if(requestObject.IsSetLoadTimeout())
             {
                 context.Writer.WritePropertyName("LoadTimeout");
-                context.Writer.Write(requestObject.LoadTimeout);
+                context.Writer.Write(requestObject.LoadTimeout.Value);
             }
 
             if(requestObject.IsSetMapBooleanAsBoolean())
             {
                 context.Writer.WritePropertyName("MapBooleanAsBoolean");
-                context.Writer.Write(requestObject.MapBooleanAsBoolean);
+                context.Writer.Write(requestObject.MapBooleanAsBoolean.Value);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize);
+                context.Writer.Write(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetPassword())
@@ -153,13 +153,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetRemoveQuotes())
             {
                 context.Writer.WritePropertyName("RemoveQuotes");
-                context.Writer.Write(requestObject.RemoveQuotes);
+                context.Writer.Write(requestObject.RemoveQuotes.Value);
             }
 
             if(requestObject.IsSetReplaceChars())
@@ -213,13 +213,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrimBlanks())
             {
                 context.Writer.WritePropertyName("TrimBlanks");
-                context.Writer.Write(requestObject.TrimBlanks);
+                context.Writer.Write(requestObject.TrimBlanks.Value);
             }
 
             if(requestObject.IsSetTruncateColumns())
             {
                 context.Writer.WritePropertyName("TruncateColumns");
-                context.Writer.Write(requestObject.TruncateColumns);
+                context.Writer.Write(requestObject.TruncateColumns.Value);
             }
 
             if(requestObject.IsSetUsername())
@@ -231,7 +231,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWriteBufferSize())
             {
                 context.Writer.WritePropertyName("WriteBufferSize");
-                context.Writer.Write(requestObject.WriteBufferSize);
+                context.Writer.Write(requestObject.WriteBufferSize.Value);
             }
 
         }

@@ -57,13 +57,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBidPercentage())
             {
                 context.Writer.WritePropertyName("bidPercentage");
-                context.Writer.Write(requestObject.BidPercentage);
+                context.Writer.Write(requestObject.BidPercentage.Value);
             }
 
             if(requestObject.IsSetDesiredvCpus())
             {
                 context.Writer.WritePropertyName("desiredvCpus");
-                context.Writer.Write(requestObject.DesiredvCpus);
+                context.Writer.Write(requestObject.DesiredvCpus.Value);
             }
 
             if(requestObject.IsSetEc2Configuration())
@@ -125,13 +125,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxvCpus())
             {
                 context.Writer.WritePropertyName("maxvCpus");
-                context.Writer.Write(requestObject.MaxvCpus);
+                context.Writer.Write(requestObject.MaxvCpus.Value);
             }
 
             if(requestObject.IsSetMinvCpus())
             {
                 context.Writer.WritePropertyName("minvCpus");
-                context.Writer.Write(requestObject.MinvCpus);
+                context.Writer.Write(requestObject.MinvCpus.Value);
             }
 
             if(requestObject.IsSetPlacementGroup())
@@ -185,7 +185,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpdateToLatestImageVersion())
             {
                 context.Writer.WritePropertyName("updateToLatestImageVersion");
-                context.Writer.Write(requestObject.UpdateToLatestImageVersion);
+                context.Writer.Write(requestObject.UpdateToLatestImageVersion.Value);
             }
 
         }

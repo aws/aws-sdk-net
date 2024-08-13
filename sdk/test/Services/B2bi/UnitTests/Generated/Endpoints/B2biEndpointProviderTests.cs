@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.B2bi.Endpoints;
 using Amazon.B2bi.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class B2biEndpointsTests

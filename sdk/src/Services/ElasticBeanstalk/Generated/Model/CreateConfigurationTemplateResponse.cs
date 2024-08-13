@@ -70,9 +70,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The date (in UTC time) when this configuration set was created.
         /// </para>
         /// </summary>
-        public DateTime DateCreated
+        public DateTime? DateCreated
         {
-            get { return this._dateCreated.GetValueOrDefault(); }
+            get { return this._dateCreated; }
             set { this._dateCreated = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The date (in UTC time) when this configuration set was last modified.
         /// </para>
         /// </summary>
-        public DateTime DateUpdated
+        public DateTime? DateUpdated
         {
-            get { return this._dateUpdated.GetValueOrDefault(); }
+            get { return this._dateUpdated; }
             set { this._dateUpdated = value; }
         }
 

@@ -55,9 +55,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTimeUtc
+        public DateTime? EndTimeUtc
         {
-            get { return this._endTimeUtc.GetValueOrDefault(); }
+            get { return this._endTimeUtc; }
             set { this._endTime = this._endTimeUtc = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTimeUtc
+        public DateTime? StartTimeUtc
         {
-            get { return this._startTimeUtc.GetValueOrDefault(); }
+            get { return this._startTimeUtc; }
             set { this._startTime = this._startTimeUtc = value; }
         }
 
@@ -186,13 +186,20 @@ namespace Amazon.IoT.Model
             "EndTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. EndTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
             get { return this._endTime.GetValueOrDefault(); }
             set
             {
                 this._endTime = value;
-                this._endTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._endTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._endTimeUtc = null;
+                }
             }
         }
         /// <summary>
@@ -216,13 +223,20 @@ namespace Amazon.IoT.Model
             "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
             set
             {
                 this._startTime = value;
-                this._startTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._startTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._startTimeUtc = null;
+                }
             }
         }
 #endregion

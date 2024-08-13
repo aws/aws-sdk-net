@@ -66,9 +66,9 @@ namespace Amazon.CodeDeploy.Model
         /// configuration</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
-        public long FirstZoneMonitorDurationInSeconds
+        public long? FirstZoneMonitorDurationInSeconds
         {
-            get { return this._firstZoneMonitorDurationInSeconds.GetValueOrDefault(); }
+            get { return this._firstZoneMonitorDurationInSeconds; }
             set { this._firstZoneMonitorDurationInSeconds = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.CodeDeploy.Model
         /// configuration</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
-        public long MonitorDurationInSeconds
+        public long? MonitorDurationInSeconds
         {
-            get { return this._monitorDurationInSeconds.GetValueOrDefault(); }
+            get { return this._monitorDurationInSeconds; }
             set { this._monitorDurationInSeconds = value; }
         }
 

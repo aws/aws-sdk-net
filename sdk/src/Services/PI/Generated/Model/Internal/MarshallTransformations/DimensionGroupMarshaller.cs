@@ -68,7 +68,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");
-                context.Writer.Write(requestObject.Limit);
+                context.Writer.Write(requestObject.Limit.Value);
             }
 
         }

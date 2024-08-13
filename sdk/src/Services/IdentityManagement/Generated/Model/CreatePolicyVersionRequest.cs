@@ -149,9 +149,9 @@ namespace Amazon.IdentityManagement.Model
         /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
-        public bool SetAsDefault
+        public bool? SetAsDefault
         {
-            get { return this._setAsDefault.GetValueOrDefault(); }
+            get { return this._setAsDefault; }
             set { this._setAsDefault = value; }
         }
 

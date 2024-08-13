@@ -223,9 +223,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool CloudFrontDefaultCertificate
+        public bool? CloudFrontDefaultCertificate
         {
-            get { return this._cloudFrontDefaultCertificate.GetValueOrDefault(); }
+            get { return this._cloudFrontDefaultCertificate; }
             set { this._cloudFrontDefaultCertificate = value; }
         }
 

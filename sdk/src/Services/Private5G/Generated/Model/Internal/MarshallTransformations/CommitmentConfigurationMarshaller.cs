@@ -51,7 +51,7 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticRenewal())
             {
                 context.Writer.WritePropertyName("automaticRenewal");
-                context.Writer.Write(requestObject.AutomaticRenewal);
+                context.Writer.Write(requestObject.AutomaticRenewal.Value);
             }
 
             if(requestObject.IsSetCommitmentLength())

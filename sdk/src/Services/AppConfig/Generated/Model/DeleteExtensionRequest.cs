@@ -64,9 +64,9 @@ namespace Amazon.AppConfig.Model
         /// A specific version of an extension to delete. If omitted, the highest version is deleted.
         /// </para>
         /// </summary>
-        public int VersionNumber
+        public int? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

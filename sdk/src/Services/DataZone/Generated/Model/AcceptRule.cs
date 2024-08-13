@@ -61,9 +61,9 @@ namespace Amazon.DataZone.Model
         /// The confidence score that specifies the condition at which a prediction can be accepted.
         /// </para>
         /// </summary>
-        public float Threshold
+        public float? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

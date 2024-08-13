@@ -53,9 +53,9 @@ namespace Amazon.DLM.Model
         /// The local date and time when the lifecycle policy was created.
         /// </para>
         /// </summary>
-        public DateTime DateCreated
+        public DateTime? DateCreated
         {
-            get { return this._dateCreated.GetValueOrDefault(); }
+            get { return this._dateCreated; }
             set { this._dateCreated = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.DLM.Model
         /// The local date and time when the lifecycle policy was last modified.
         /// </para>
         /// </summary>
-        public DateTime DateModified
+        public DateTime? DateModified
         {
-            get { return this._dateModified.GetValueOrDefault(); }
+            get { return this._dateModified; }
             set { this._dateModified = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool DefaultPolicy
+        public bool? DefaultPolicy
         {
-            get { return this._defaultPolicy.GetValueOrDefault(); }
+            get { return this._defaultPolicy; }
             set { this._defaultPolicy = value; }
         }
 

@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumCompressionSize())
             {
                 context.Writer.WritePropertyName("MinimumCompressionSize");
-                context.Writer.Write(requestObject.MinimumCompressionSize);
+                context.Writer.Write(requestObject.MinimumCompressionSize.Value);
             }
 
             if(requestObject.IsSetName())

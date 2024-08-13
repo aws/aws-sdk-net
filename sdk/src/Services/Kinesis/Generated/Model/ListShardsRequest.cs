@@ -109,9 +109,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.Kinesis.Model
         /// You cannot specify this parameter if you specify the <c>NextToken</c> parameter.
         /// </para>
         /// </summary>
-        public DateTime StreamCreationTimestamp
+        public DateTime? StreamCreationTimestamp
         {
-            get { return this._streamCreationTimestamp.GetValueOrDefault(); }
+            get { return this._streamCreationTimestamp; }
             set { this._streamCreationTimestamp = value; }
         }
 

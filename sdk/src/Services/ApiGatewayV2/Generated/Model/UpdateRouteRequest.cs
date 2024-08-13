@@ -75,9 +75,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// APIs.
         /// </para>
         /// </summary>
-        public bool ApiKeyRequired
+        public bool? ApiKeyRequired
         {
-            get { return this._apiKeyRequired.GetValueOrDefault(); }
+            get { return this._apiKeyRequired; }
             set { this._apiKeyRequired = value; }
         }
 

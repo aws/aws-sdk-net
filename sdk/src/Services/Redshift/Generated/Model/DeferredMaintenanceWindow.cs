@@ -44,9 +44,9 @@ namespace Amazon.Redshift.Model
         ///  A timestamp for the end of the time period when we defer maintenance.
         /// </para>
         /// </summary>
-        public DateTime DeferMaintenanceEndTime
+        public DateTime? DeferMaintenanceEndTime
         {
-            get { return this._deferMaintenanceEndTime.GetValueOrDefault(); }
+            get { return this._deferMaintenanceEndTime; }
             set { this._deferMaintenanceEndTime = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Redshift.Model
         ///  A timestamp for the beginning of the time period when we defer maintenance.
         /// </para>
         /// </summary>
-        public DateTime DeferMaintenanceStartTime
+        public DateTime? DeferMaintenanceStartTime
         {
-            get { return this._deferMaintenanceStartTime.GetValueOrDefault(); }
+            get { return this._deferMaintenanceStartTime; }
             set { this._deferMaintenanceStartTime = value; }
         }
 

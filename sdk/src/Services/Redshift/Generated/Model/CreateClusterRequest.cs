@@ -120,9 +120,9 @@ namespace Amazon.Redshift.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool AllowVersionUpgrade
+        public bool? AllowVersionUpgrade
         {
-            get { return this._allowVersionUpgrade.GetValueOrDefault(); }
+            get { return this._allowVersionUpgrade; }
             set { this._allowVersionUpgrade = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.Redshift.Model
         /// Constraints: Must be a value from 0 to 35.
         /// </para>
         /// </summary>
-        public int AutomatedSnapshotRetentionPeriod
+        public int? AutomatedSnapshotRetentionPeriod
         {
-            get { return this._automatedSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._automatedSnapshotRetentionPeriod; }
             set { this._automatedSnapshotRetentionPeriod = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.Redshift.Model
         /// Zones after the cluster is created.
         /// </para>
         /// </summary>
-        public bool AvailabilityZoneRelocation
+        public bool? AvailabilityZoneRelocation
         {
-            get { return this._availabilityZoneRelocation.GetValueOrDefault(); }
+            get { return this._availabilityZoneRelocation; }
             set { this._availabilityZoneRelocation = value; }
         }
 
@@ -549,9 +549,9 @@ namespace Amazon.Redshift.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -578,9 +578,9 @@ namespace Amazon.Redshift.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -745,9 +745,9 @@ namespace Amazon.Redshift.Model
         /// <c>MasterUserPassword</c> for the admin user account's password. 
         /// </para>
         /// </summary>
-        public bool ManageMasterPassword
+        public bool? ManageMasterPassword
         {
-            get { return this._manageMasterPassword.GetValueOrDefault(); }
+            get { return this._manageMasterPassword; }
             set { this._manageMasterPassword = value; }
         }
 
@@ -769,9 +769,9 @@ namespace Amazon.Redshift.Model
         /// The value must be either -1 or an integer between 1 and 3,653.
         /// </para>
         /// </summary>
-        public int ManualSnapshotRetentionPeriod
+        public int? ManualSnapshotRetentionPeriod
         {
-            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._manualSnapshotRetentionPeriod; }
             set { this._manualSnapshotRetentionPeriod = value; }
         }
 
@@ -905,9 +905,9 @@ namespace Amazon.Redshift.Model
         /// If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -970,9 +970,9 @@ namespace Amazon.Redshift.Model
         /// Constraints: Value must be at least 1 and no more than 100.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 
@@ -1013,9 +1013,9 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -1069,9 +1069,9 @@ namespace Amazon.Redshift.Model
         /// If <c>true</c>, the cluster can be accessed from a public network. 
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

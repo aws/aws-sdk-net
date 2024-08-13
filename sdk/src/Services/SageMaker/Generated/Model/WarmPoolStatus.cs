@@ -53,9 +53,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ResourceRetainedBillableTimeInSeconds
+        public int? ResourceRetainedBillableTimeInSeconds
         {
-            get { return this._resourceRetainedBillableTimeInSeconds.GetValueOrDefault(); }
+            get { return this._resourceRetainedBillableTimeInSeconds; }
             set { this._resourceRetainedBillableTimeInSeconds = value; }
         }
 

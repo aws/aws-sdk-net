@@ -80,7 +80,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,13 +104,13 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("freeTrialConsumed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FreeTrialConsumed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("freeTrialExpiration", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FreeTrialExpiration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -134,7 +134,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("licenseExpiration", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LicenseExpiration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -146,7 +146,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("modified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Modified = unmarshaller.Unmarshall(context);
                     continue;
                 }

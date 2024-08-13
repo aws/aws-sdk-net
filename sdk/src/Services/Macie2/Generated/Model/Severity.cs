@@ -63,9 +63,9 @@ namespace Amazon.Macie2.Model
         /// to 3 (most severe).
         /// </para>
         /// </summary>
-        public long Score
+        public long? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

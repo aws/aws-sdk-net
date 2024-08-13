@@ -48,9 +48,9 @@ namespace Amazon.DocDBElastic.Model
         /// elastic cluster snapshot. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 

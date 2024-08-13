@@ -159,9 +159,9 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=900)]
-        public int PeriodSeconds
+        public int? PeriodSeconds
         {
-            get { return this._periodSeconds.GetValueOrDefault(); }
+            get { return this._periodSeconds; }
             set { this._periodSeconds = value; }
         }
 

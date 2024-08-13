@@ -80,9 +80,9 @@ namespace Amazon.DynamoDBv2.Model
         /// are the same.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -147,7 +147,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The number of items evaluated, before any <c>QueryFilter</c> is applied. A high <c>ScannedCount</c>
         /// value with few, or no, <c>Count</c> results indicates an inefficient <c>Query</c>
-        /// operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
+        /// operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Count">Count
         /// and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
@@ -156,9 +156,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <c>Count</c>.
         /// </para>
         /// </summary>
-        public int ScannedCount
+        public int? ScannedCount
         {
-            get { return this._scannedCount.GetValueOrDefault(); }
+            get { return this._scannedCount; }
             set { this._scannedCount = value; }
         }
 

@@ -74,7 +74,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProgressPercent", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }

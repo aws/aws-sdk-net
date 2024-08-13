@@ -63,6 +63,13 @@ namespace Amazon.EntityResolution.Model
         /// <para>
         /// The resource-based policy.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you set the value of the <c>effect</c> parameter in the <c>policy</c> to <c>Deny</c>
+        /// for the <c>PutPolicy</c> operation, you must also set the value of the <c>effect</c>
+        /// parameter to <c>Deny</c> for the <c>AddPolicyStatement</c> operation.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=40960)]
         public string Policy

@@ -114,7 +114,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetClonePermissions())
                 {
                     context.Writer.WritePropertyName("ClonePermissions");
-                    context.Writer.Write(publicRequest.ClonePermissions);
+                    context.Writer.Write(publicRequest.ClonePermissions.Value);
                 }
 
                 if(publicRequest.IsSetConfigurationManager())
@@ -214,13 +214,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseCustomCookbooks())
                 {
                     context.Writer.WritePropertyName("UseCustomCookbooks");
-                    context.Writer.Write(publicRequest.UseCustomCookbooks);
+                    context.Writer.Write(publicRequest.UseCustomCookbooks.Value);
                 }
 
                 if(publicRequest.IsSetUseOpsworksSecurityGroups())
                 {
                     context.Writer.WritePropertyName("UseOpsworksSecurityGroups");
-                    context.Writer.Write(publicRequest.UseOpsworksSecurityGroups);
+                    context.Writer.Write(publicRequest.UseOpsworksSecurityGroups.Value);
                 }
 
                 if(publicRequest.IsSetVpcId())

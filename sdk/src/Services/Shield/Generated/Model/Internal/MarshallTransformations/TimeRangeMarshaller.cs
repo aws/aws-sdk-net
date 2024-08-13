@@ -51,13 +51,13 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromInclusive())
             {
                 context.Writer.WritePropertyName("FromInclusive");
-                context.Writer.Write(requestObject.FromInclusive);
+                context.Writer.Write(requestObject.FromInclusive.Value);
             }
 
             if(requestObject.IsSetToExclusive())
             {
                 context.Writer.WritePropertyName("ToExclusive");
-                context.Writer.Write(requestObject.ToExclusive);
+                context.Writer.Write(requestObject.ToExclusive.Value);
             }
 
         }

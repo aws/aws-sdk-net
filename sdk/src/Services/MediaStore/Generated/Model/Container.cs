@@ -52,9 +52,9 @@ namespace Amazon.MediaStore.Model
         /// in that container to CloudWatch Logs.
         /// </para>
         /// </summary>
-        public bool AccessLoggingEnabled
+        public bool? AccessLoggingEnabled
         {
-            get { return this._accessLoggingEnabled.GetValueOrDefault(); }
+            get { return this._accessLoggingEnabled; }
             set { this._accessLoggingEnabled = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.MediaStore.Model
         /// Unix timestamp.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

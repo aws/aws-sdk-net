@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model
         /// for new members joining the organization.
         /// </para>
         /// </summary>
-        public bool AutoEnable
+        public bool? AutoEnable
         {
-            get { return this._autoEnable.GetValueOrDefault(); }
+            get { return this._autoEnable; }
             set { this._autoEnable = value; }
         }
 

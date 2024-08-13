@@ -44,9 +44,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double CurrentScore
+        public double? CurrentScore
         {
-            get { return this._currentScore.GetValueOrDefault(); }
+            get { return this._currentScore; }
             set { this._currentScore = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MaxScore
+        public double? MaxScore
         {
-            get { return this._maxScore.GetValueOrDefault(); }
+            get { return this._maxScore; }
             set { this._maxScore = value; }
         }
 

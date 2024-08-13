@@ -72,7 +72,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAssignmentDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("AssignmentDurationInSeconds");
-                    context.Writer.Write(publicRequest.AssignmentDurationInSeconds);
+                    context.Writer.Write(publicRequest.AssignmentDurationInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetAssignmentReviewPolicy())
@@ -89,7 +89,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoApprovalDelayInSeconds())
                 {
                     context.Writer.WritePropertyName("AutoApprovalDelayInSeconds");
-                    context.Writer.Write(publicRequest.AutoApprovalDelayInSeconds);
+                    context.Writer.Write(publicRequest.AutoApprovalDelayInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -140,13 +140,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLifetimeInSeconds())
                 {
                     context.Writer.WritePropertyName("LifetimeInSeconds");
-                    context.Writer.Write(publicRequest.LifetimeInSeconds);
+                    context.Writer.Write(publicRequest.LifetimeInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetMaxAssignments())
                 {
                     context.Writer.WritePropertyName("MaxAssignments");
-                    context.Writer.Write(publicRequest.MaxAssignments);
+                    context.Writer.Write(publicRequest.MaxAssignments.Value);
                 }
 
                 if(publicRequest.IsSetQualificationRequirements())

@@ -88,9 +88,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// remains in Amazon S3.
         /// </para>
         /// </summary>
-        public bool DeleteSourceBundle
+        public bool? DeleteSourceBundle
         {
-            get { return this._deleteSourceBundle.GetValueOrDefault(); }
+            get { return this._deleteSourceBundle; }
             set { this._deleteSourceBundle = value; }
         }
 

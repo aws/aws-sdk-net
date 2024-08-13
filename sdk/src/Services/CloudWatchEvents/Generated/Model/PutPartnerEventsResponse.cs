@@ -63,9 +63,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// event bus.
         /// </para>
         /// </summary>
-        public int FailedEntryCount
+        public int? FailedEntryCount
         {
-            get { return this._failedEntryCount.GetValueOrDefault(); }
+            get { return this._failedEntryCount; }
             set { this._failedEntryCount = value; }
         }
 

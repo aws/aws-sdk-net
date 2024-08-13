@@ -51,9 +51,9 @@ namespace Amazon.MediaTailor.Model
         /// Enables ad marker passthrough for your configuration.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

@@ -79,9 +79,9 @@ namespace Amazon.IoT.Model
         /// device executing a job which is canceled is able to recover to a valid state.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

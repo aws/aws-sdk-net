@@ -67,9 +67,9 @@ namespace Amazon.CostExplorer.Model
         /// Determines whether this recommendation is the defaulted Amazon Web Services recommendation.
         /// </para>
         /// </summary>
-        public bool DefaultTargetInstance
+        public bool? DefaultTargetInstance
         {
-            get { return this._defaultTargetInstance.GetValueOrDefault(); }
+            get { return this._defaultTargetInstance; }
             set { this._defaultTargetInstance = value; }
         }
 

@@ -82,9 +82,9 @@ namespace Amazon.RDS.Model
         /// Specifies the allocated storage size in gibibytes (GiB).
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
         /// </para>
         /// </summary>
-        public bool DedicatedLogVolume
+        public bool? DedicatedLogVolume
         {
-            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            get { return this._dedicatedLogVolume; }
             set { this._dedicatedLogVolume = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB snapshot is encrypted.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.RDS.Model
         /// accounts to database accounts is enabled.
         /// </para>
         /// </summary>
-        public bool IAMDatabaseAuthenticationEnabled
+        public bool? IAMDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -304,9 +304,9 @@ namespace Amazon.RDS.Model
         /// which the snapshot was taken, was created.
         /// </para>
         /// </summary>
-        public DateTime InstanceCreateTime
+        public DateTime? InstanceCreateTime
         {
-            get { return this._instanceCreateTime.GetValueOrDefault(); }
+            get { return this._instanceCreateTime; }
             set { this._instanceCreateTime = value; }
         }
 
@@ -323,9 +323,9 @@ namespace Amazon.RDS.Model
         /// at the time of the snapshot.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -402,9 +402,9 @@ namespace Amazon.RDS.Model
         /// (TRUE) or the single-tenant configuration (FALSE).
         /// </para>
         /// </summary>
-        public bool MultiTenant
+        public bool? MultiTenant
         {
-            get { return this._multiTenant.GetValueOrDefault(); }
+            get { return this._multiTenant; }
             set { this._multiTenant = value; }
         }
 
@@ -439,9 +439,9 @@ namespace Amazon.RDS.Model
         /// (UTC). Doesn't change when the snapshot is copied.
         /// </para>
         /// </summary>
-        public DateTime OriginalSnapshotCreateTime
+        public DateTime? OriginalSnapshotCreateTime
         {
-            get { return this._originalSnapshotCreateTime.GetValueOrDefault(); }
+            get { return this._originalSnapshotCreateTime; }
             set { this._originalSnapshotCreateTime = value; }
         }
 
@@ -457,9 +457,9 @@ namespace Amazon.RDS.Model
         /// The percentage of the estimated data that has been transferred.
         /// </para>
         /// </summary>
-        public int PercentProgress
+        public int? PercentProgress
         {
-            get { return this._percentProgress.GetValueOrDefault(); }
+            get { return this._percentProgress; }
             set { this._percentProgress = value; }
         }
 
@@ -475,9 +475,9 @@ namespace Amazon.RDS.Model
         /// Specifies the port that the database engine was listening on at the time of the snapshot.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -513,9 +513,9 @@ namespace Amazon.RDS.Model
         /// for the copy when the snapshot is copied.
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreateTime
+        public DateTime? SnapshotCreateTime
         {
-            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            get { return this._snapshotCreateTime; }
             set { this._snapshotCreateTime = value; }
         }
 
@@ -540,9 +540,9 @@ namespace Amazon.RDS.Model
         /// hours later than SnapshotDatabaseTime, then the replica lag is two hours.
         /// </para>
         /// </summary>
-        public DateTime SnapshotDatabaseTime
+        public DateTime? SnapshotDatabaseTime
         {
-            get { return this._snapshotDatabaseTime.GetValueOrDefault(); }
+            get { return this._snapshotDatabaseTime; }
             set { this._snapshotDatabaseTime = value; }
         }
 
@@ -650,9 +650,9 @@ namespace Amazon.RDS.Model
         /// Specifies the storage throughput for the DB snapshot.
         /// </para>
         /// </summary>
-        public int StorageThroughput
+        public int? StorageThroughput
         {
-            get { return this._storageThroughput.GetValueOrDefault(); }
+            get { return this._storageThroughput; }
             set { this._storageThroughput = value; }
         }
 

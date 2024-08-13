@@ -123,9 +123,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// If you omit this parameter, the default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool CwLogEnabled
+        public bool? CwLogEnabled
         {
-            get { return this._cwLogEnabled.GetValueOrDefault(); }
+            get { return this._cwLogEnabled; }
             set { this._cwLogEnabled = value; }
         }
 

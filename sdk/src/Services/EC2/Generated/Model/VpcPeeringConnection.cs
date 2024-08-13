@@ -66,9 +66,9 @@ namespace Amazon.EC2.Model
         /// The time that an unaccepted VPC peering connection will expire.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 

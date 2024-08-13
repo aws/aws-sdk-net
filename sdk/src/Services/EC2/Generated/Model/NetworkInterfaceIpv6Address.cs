@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// network interface is detached. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html">ModifyNetworkInterfaceAttribute</a>.
         /// </para>
         /// </summary>
-        public bool IsPrimaryIpv6
+        public bool? IsPrimaryIpv6
         {
-            get { return this._isPrimaryIpv6.GetValueOrDefault(); }
+            get { return this._isPrimaryIpv6; }
             set { this._isPrimaryIpv6 = value; }
         }
 

@@ -166,9 +166,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool EnableSageMakerMetricsTimeSeries
+        public bool? EnableSageMakerMetricsTimeSeries
         {
-            get { return this._enableSageMakerMetricsTimeSeries.GetValueOrDefault(); }
+            get { return this._enableSageMakerMetricsTimeSeries; }
             set { this._enableSageMakerMetricsTimeSeries = value; }
         }
 

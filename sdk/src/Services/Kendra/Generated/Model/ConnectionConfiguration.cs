@@ -86,9 +86,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
-        public int DatabasePort
+        public int? DatabasePort
         {
-            get { return this._databasePort.GetValueOrDefault(); }
+            get { return this._databasePort; }
             set { this._databasePort = value; }
         }
 

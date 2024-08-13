@@ -46,9 +46,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool OptIn
+        public bool? OptIn
         {
-            get { return this._optIn.GetValueOrDefault(); }
+            get { return this._optIn; }
             set { this._optIn = value; }
         }
 

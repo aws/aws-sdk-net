@@ -312,9 +312,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this.bucketKeyEnabled; }
             set { this.bucketKeyEnabled = value; }
         }
 
@@ -508,9 +508,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime ObjectLockRetainUntilDate
+        public DateTime? ObjectLockRetainUntilDate
         {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            get { return this.objectLockRetainUntilDate; }
             set { this.objectLockRetainUntilDate = value; }
         }
 
@@ -824,26 +824,6 @@ namespace Amazon.S3.Model
         {
             return this._checksumAlgorithm != null;
         }
-
-        /// <summary>
-        /// Envelope Key to Encrypt data
-        /// </summary>
-        internal byte[] EnvelopeKey { get; set; }
-
-        /// <summary>
-        /// Encrypted Envelope Key to Encrypt data
-        /// </summary>
-        internal byte[] EncryptedEnvelopeKey { get; set; }
-
-        /// <summary>
-        /// Initialization Vector for encryption
-        /// </summary>
-        internal byte[] IV { get; set; }
-
-        /// <summary>
-        /// Storage mode for encryption information.
-        /// </summary>
-        internal Amazon.S3.Encryption.CryptoStorageMode StorageMode { get; set; }
     }
 }
     

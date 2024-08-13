@@ -144,9 +144,9 @@ namespace Amazon.Inspector2.Model
         /// The date and time the Amazon EC2 instance was launched at.
         /// </para>
         /// </summary>
-        public DateTime LaunchedAt
+        public DateTime? LaunchedAt
         {
-            get { return this._launchedAt.GetValueOrDefault(); }
+            get { return this._launchedAt; }
             set { this._launchedAt = value; }
         }
 

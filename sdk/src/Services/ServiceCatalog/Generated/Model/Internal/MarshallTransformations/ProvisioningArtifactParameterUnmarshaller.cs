@@ -80,7 +80,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsNoEcho", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNoEcho = unmarshaller.Unmarshall(context);
                     continue;
                 }

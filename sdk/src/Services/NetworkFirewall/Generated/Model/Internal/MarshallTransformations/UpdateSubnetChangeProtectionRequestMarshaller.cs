@@ -84,7 +84,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSubnetChangeProtection())
                 {
                     context.Writer.WritePropertyName("SubnetChangeProtection");
-                    context.Writer.Write(publicRequest.SubnetChangeProtection);
+                    context.Writer.Write(publicRequest.SubnetChangeProtection.Value);
                 }
 
                 if(publicRequest.IsSetUpdateToken())

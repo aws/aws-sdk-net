@@ -46,9 +46,9 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// When Amazon Augmented AI created the human loop.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

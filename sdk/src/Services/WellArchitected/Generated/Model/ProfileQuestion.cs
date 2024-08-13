@@ -49,9 +49,9 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxSelectedChoices
+        public int? MaxSelectedChoices
         {
-            get { return this._maxSelectedChoices.GetValueOrDefault(); }
+            get { return this._maxSelectedChoices; }
             set { this._maxSelectedChoices = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MinSelectedChoices
+        public int? MinSelectedChoices
         {
-            get { return this._minSelectedChoices.GetValueOrDefault(); }
+            get { return this._minSelectedChoices; }
             set { this._minSelectedChoices = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp of the reset cache request (<c>1479734909.17</c>) in Unix time format.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 

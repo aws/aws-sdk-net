@@ -68,25 +68,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DateNewProvisioningDataAvailable", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateNewProvisioningDataAvailable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DateProvisioned", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateProvisioned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsNewProvisioningAvailable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNewProvisioningAvailable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

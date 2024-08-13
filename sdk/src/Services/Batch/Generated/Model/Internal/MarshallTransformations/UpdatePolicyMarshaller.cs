@@ -51,13 +51,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetJobExecutionTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("jobExecutionTimeoutMinutes");
-                context.Writer.Write(requestObject.JobExecutionTimeoutMinutes);
+                context.Writer.Write(requestObject.JobExecutionTimeoutMinutes.Value);
             }
 
             if(requestObject.IsSetTerminateJobsOnUpdate())
             {
                 context.Writer.WritePropertyName("terminateJobsOnUpdate");
-                context.Writer.Write(requestObject.TerminateJobsOnUpdate);
+                context.Writer.Write(requestObject.TerminateJobsOnUpdate.Value);
             }
 
         }

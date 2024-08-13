@@ -47,9 +47,9 @@ namespace Amazon.Comprehend.Model
         /// Specifies a date after which the returned endpoint or endpoints were created.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeAfter
+        public DateTime? CreationTimeAfter
         {
-            get { return this._creationTimeAfter.GetValueOrDefault(); }
+            get { return this._creationTimeAfter; }
             set { this._creationTimeAfter = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Comprehend.Model
         /// Specifies a date before which the returned endpoint or endpoints were created.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeBefore
+        public DateTime? CreationTimeBefore
         {
-            get { return this._creationTimeBefore.GetValueOrDefault(); }
+            get { return this._creationTimeBefore; }
             set { this._creationTimeBefore = value; }
         }
 

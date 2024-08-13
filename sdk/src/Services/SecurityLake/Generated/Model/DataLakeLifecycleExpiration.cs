@@ -43,9 +43,9 @@ namespace Amazon.SecurityLake.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Days
+        public int? Days
         {
-            get { return this._days.GetValueOrDefault(); }
+            get { return this._days; }
             set { this._days = value; }
         }
 

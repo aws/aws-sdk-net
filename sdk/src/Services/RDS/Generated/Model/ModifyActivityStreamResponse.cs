@@ -48,9 +48,9 @@ namespace Amazon.RDS.Model
         /// stream.
         /// </para>
         /// </summary>
-        public bool EngineNativeAuditFieldsIncluded
+        public bool? EngineNativeAuditFieldsIncluded
         {
-            get { return this._engineNativeAuditFieldsIncluded.GetValueOrDefault(); }
+            get { return this._engineNativeAuditFieldsIncluded; }
             set { this._engineNativeAuditFieldsIncluded = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// 50. The default value is 50.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ScalingPlanVersion
+        public long? ScalingPlanVersion
         {
-            get { return this._scalingPlanVersion.GetValueOrDefault(); }
+            get { return this._scalingPlanVersion; }
             set { this._scalingPlanVersion = value; }
         }
 

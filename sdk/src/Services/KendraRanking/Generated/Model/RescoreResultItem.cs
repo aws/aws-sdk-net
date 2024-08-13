@@ -63,9 +63,9 @@ namespace Amazon.KendraRanking.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-100000, Max=100000)]
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

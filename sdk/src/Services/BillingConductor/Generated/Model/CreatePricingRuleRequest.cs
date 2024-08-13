@@ -113,9 +113,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double ModifierPercentage
+        public double? ModifierPercentage
         {
-            get { return this._modifierPercentage.GetValueOrDefault(); }
+            get { return this._modifierPercentage; }
             set { this._modifierPercentage = value; }
         }
 

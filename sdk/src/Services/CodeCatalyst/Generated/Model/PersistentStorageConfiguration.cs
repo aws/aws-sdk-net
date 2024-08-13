@@ -49,9 +49,9 @@ namespace Amazon.CodeCatalyst.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=64)]
-        public int SizeInGiB
+        public int? SizeInGiB
         {
-            get { return this._sizeInGiB.GetValueOrDefault(); }
+            get { return this._sizeInGiB; }
             set { this._sizeInGiB = value; }
         }
 

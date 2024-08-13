@@ -46,9 +46,9 @@ namespace Amazon.PinpointEmail.Model
         /// The total number of emails that arrived in recipients' inboxes.
         /// </para>
         /// </summary>
-        public long InboxRawCount
+        public long? InboxRawCount
         {
-            get { return this._inboxRawCount.GetValueOrDefault(); }
+            get { return this._inboxRawCount; }
             set { this._inboxRawCount = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.PinpointEmail.Model
         /// in recipients' inboxes.
         /// </para>
         /// </summary>
-        public long ProjectedInbox
+        public long? ProjectedInbox
         {
-            get { return this._projectedInbox.GetValueOrDefault(); }
+            get { return this._projectedInbox; }
             set { this._projectedInbox = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.PinpointEmail.Model
         /// in recipients' spam or junk mail folders.
         /// </para>
         /// </summary>
-        public long ProjectedSpam
+        public long? ProjectedSpam
         {
-            get { return this._projectedSpam.GetValueOrDefault(); }
+            get { return this._projectedSpam; }
             set { this._projectedSpam = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.PinpointEmail.Model
         /// The total number of emails that arrived in recipients' spam or junk mail folders.
         /// </para>
         /// </summary>
-        public long SpamRawCount
+        public long? SpamRawCount
         {
-            get { return this._spamRawCount.GetValueOrDefault(); }
+            get { return this._spamRawCount; }
             set { this._spamRawCount = value; }
         }
 

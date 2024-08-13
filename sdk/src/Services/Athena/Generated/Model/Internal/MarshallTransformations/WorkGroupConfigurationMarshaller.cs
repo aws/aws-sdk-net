@@ -57,7 +57,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytesScannedCutoffPerQuery())
             {
                 context.Writer.WritePropertyName("BytesScannedCutoffPerQuery");
-                context.Writer.Write(requestObject.BytesScannedCutoffPerQuery);
+                context.Writer.Write(requestObject.BytesScannedCutoffPerQuery.Value);
             }
 
             if(requestObject.IsSetCustomerContentEncryptionConfiguration())
@@ -74,13 +74,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMinimumEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EnableMinimumEncryptionConfiguration");
-                context.Writer.Write(requestObject.EnableMinimumEncryptionConfiguration);
+                context.Writer.Write(requestObject.EnableMinimumEncryptionConfiguration.Value);
             }
 
             if(requestObject.IsSetEnforceWorkGroupConfiguration())
             {
                 context.Writer.WritePropertyName("EnforceWorkGroupConfiguration");
-                context.Writer.Write(requestObject.EnforceWorkGroupConfiguration);
+                context.Writer.Write(requestObject.EnforceWorkGroupConfiguration.Value);
             }
 
             if(requestObject.IsSetEngineVersion())
@@ -114,7 +114,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPublishCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("PublishCloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.PublishCloudWatchMetricsEnabled);
+                context.Writer.Write(requestObject.PublishCloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetQueryResultsS3AccessGrantsConfiguration())
@@ -131,7 +131,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRequesterPaysEnabled())
             {
                 context.Writer.WritePropertyName("RequesterPaysEnabled");
-                context.Writer.Write(requestObject.RequesterPaysEnabled);
+                context.Writer.Write(requestObject.RequesterPaysEnabled.Value);
             }
 
             if(requestObject.IsSetResultConfiguration())

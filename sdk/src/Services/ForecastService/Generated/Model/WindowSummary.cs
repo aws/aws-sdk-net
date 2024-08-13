@@ -80,9 +80,9 @@ namespace Amazon.ForecastService.Model
         /// The number of data points within the window.
         /// </para>
         /// </summary>
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp that defines the end of the window.
         /// </para>
         /// </summary>
-        public DateTime TestWindowEnd
+        public DateTime? TestWindowEnd
         {
-            get { return this._testWindowEnd.GetValueOrDefault(); }
+            get { return this._testWindowEnd; }
             set { this._testWindowEnd = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp that defines the start of the window.
         /// </para>
         /// </summary>
-        public DateTime TestWindowStart
+        public DateTime? TestWindowStart
         {
-            get { return this._testWindowStart.GetValueOrDefault(); }
+            get { return this._testWindowStart; }
             set { this._testWindowStart = value; }
         }
 

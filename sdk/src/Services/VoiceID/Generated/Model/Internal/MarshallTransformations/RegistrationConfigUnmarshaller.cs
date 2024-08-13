@@ -74,7 +74,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FraudsterSimilarityThreshold", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FraudsterSimilarityThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

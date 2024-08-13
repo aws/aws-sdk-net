@@ -46,9 +46,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxNumberOfTrainingJobs
+        public int? MaxNumberOfTrainingJobs
         {
-            get { return this._maxNumberOfTrainingJobs.GetValueOrDefault(); }
+            get { return this._maxNumberOfTrainingJobs; }
             set { this._maxNumberOfTrainingJobs = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxParallelTrainingJobs
+        public int? MaxParallelTrainingJobs
         {
-            get { return this._maxParallelTrainingJobs.GetValueOrDefault(); }
+            get { return this._maxParallelTrainingJobs; }
             set { this._maxParallelTrainingJobs = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=120, Max=15768000)]
-        public int MaxRuntimeInSeconds
+        public int? MaxRuntimeInSeconds
         {
-            get { return this._maxRuntimeInSeconds.GetValueOrDefault(); }
+            get { return this._maxRuntimeInSeconds; }
             set { this._maxRuntimeInSeconds = value; }
         }
 

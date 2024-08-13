@@ -51,32 +51,32 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("cpu");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Cpu))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Cpu.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpu));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpu.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Cpu);
+                    context.Writer.Write(requestObject.Cpu.Value);
                 }
             }
 
             if(requestObject.IsSetMemoryLimit())
             {
                 context.Writer.WritePropertyName("memoryLimit");
-                context.Writer.Write(requestObject.MemoryLimit);
+                context.Writer.Write(requestObject.MemoryLimit.Value);
             }
 
             if(requestObject.IsSetMemoryReservation())
             {
                 context.Writer.WritePropertyName("memoryReservation");
-                context.Writer.Write(requestObject.MemoryReservation);
+                context.Writer.Write(requestObject.MemoryReservation.Value);
             }
 
             if(requestObject.IsSetNodeCount())
             {
                 context.Writer.WritePropertyName("nodeCount");
-                context.Writer.Write(requestObject.NodeCount);
+                context.Writer.Write(requestObject.NodeCount.Value);
             }
 
             if(requestObject.IsSetScalingGroupName())

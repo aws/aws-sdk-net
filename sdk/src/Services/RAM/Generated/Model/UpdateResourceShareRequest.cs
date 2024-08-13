@@ -47,9 +47,9 @@ namespace Amazon.RAM.Model
         /// with a resource share.
         /// </para>
         /// </summary>
-        public bool AllowExternalPrincipals
+        public bool? AllowExternalPrincipals
         {
-            get { return this._allowExternalPrincipals.GetValueOrDefault(); }
+            get { return this._allowExternalPrincipals; }
             set { this._allowExternalPrincipals = value; }
         }
 

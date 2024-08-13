@@ -46,9 +46,9 @@ namespace Amazon.SecurityHub.Model
         ///  Deprecated. 
         /// </para>
         /// </summary>
-        public int BlockDurationMinutes
+        public int? BlockDurationMinutes
         {
-            get { return this._blockDurationMinutes.GetValueOrDefault(); }
+            get { return this._blockDurationMinutes; }
             set { this._blockDurationMinutes = value; }
         }
 

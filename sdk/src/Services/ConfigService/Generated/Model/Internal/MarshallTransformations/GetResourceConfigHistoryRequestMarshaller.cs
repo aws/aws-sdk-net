@@ -78,19 +78,19 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEarlierTime())
                 {
                     context.Writer.WritePropertyName("earlierTime");
-                    context.Writer.Write(publicRequest.EarlierTime);
+                    context.Writer.Write(publicRequest.EarlierTime.Value);
                 }
 
                 if(publicRequest.IsSetLaterTime())
                 {
                     context.Writer.WritePropertyName("laterTime");
-                    context.Writer.Write(publicRequest.LaterTime);
+                    context.Writer.Write(publicRequest.LaterTime.Value);
                 }
 
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

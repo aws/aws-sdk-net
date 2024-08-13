@@ -94,9 +94,9 @@ namespace Amazon.CodeCommit.Model
         /// default is 100 comments, but you can configure up to 500.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -139,9 +139,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxContacts
+        public int? MaxContacts
         {
-            get { return this._maxContacts.GetValueOrDefault(); }
+            get { return this._maxContacts; }
             set { this._maxContacts = value; }
         }
 

@@ -80,13 +80,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("keyRotationIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.KeyRotationIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("repeatExtXKey", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RepeatExtXKey = unmarshaller.Unmarshall(context);
                     continue;
                 }

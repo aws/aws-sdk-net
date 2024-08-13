@@ -70,9 +70,9 @@ namespace Amazon.SecretsManager.Model
         /// aren't included.
         /// </para>
         /// </summary>
-        public bool IncludeDeprecated
+        public bool? IncludeDeprecated
         {
-            get { return this._includeDeprecated.GetValueOrDefault(); }
+            get { return this._includeDeprecated; }
             set { this._includeDeprecated = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

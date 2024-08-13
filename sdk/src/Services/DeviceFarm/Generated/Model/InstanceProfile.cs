@@ -128,9 +128,9 @@ namespace Amazon.DeviceFarm.Model
         /// value is <c>false</c> for private devices.
         /// </para>
         /// </summary>
-        public bool PackageCleanup
+        public bool? PackageCleanup
         {
-            get { return this._packageCleanup.GetValueOrDefault(); }
+            get { return this._packageCleanup; }
             set { this._packageCleanup = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.DeviceFarm.Model
         /// value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool RebootAfterUse
+        public bool? RebootAfterUse
         {
-            get { return this._rebootAfterUse.GetValueOrDefault(); }
+            get { return this._rebootAfterUse; }
             set { this._rebootAfterUse = value; }
         }
 

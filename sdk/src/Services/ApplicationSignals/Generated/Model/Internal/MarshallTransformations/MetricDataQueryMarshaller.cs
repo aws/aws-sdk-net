@@ -86,13 +86,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("Period");
-                context.Writer.Write(requestObject.Period);
+                context.Writer.Write(requestObject.Period.Value);
             }
 
             if(requestObject.IsSetReturnData())
             {
                 context.Writer.WritePropertyName("ReturnData");
-                context.Writer.Write(requestObject.ReturnData);
+                context.Writer.Write(requestObject.ReturnData.Value);
             }
 
         }

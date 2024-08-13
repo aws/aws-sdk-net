@@ -128,9 +128,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime OrderingTimestamp
+        public DateTime? OrderingTimestamp
         {
-            get { return this._orderingTimestamp.GetValueOrDefault(); }
+            get { return this._orderingTimestamp; }
             set { this._orderingTimestamp = value; }
         }
 

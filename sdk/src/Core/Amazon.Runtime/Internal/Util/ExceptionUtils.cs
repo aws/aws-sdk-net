@@ -28,13 +28,11 @@ namespace AWSSDK.Runtime.Internal.Util
                 return response.StatusCode;
             }
 
-#if !BCL35
             var requestException = e as System.Net.Http.HttpRequestException;
             if (requestException?.Data?.Contains("StatusCode") == true)
             {
                 return (HttpStatusCode)requestException.Data["StatusCode"];
             }
-#endif
 
             if (e?.InnerException != null)
             {
@@ -73,7 +71,6 @@ namespace AWSSDK.Runtime.Internal.Util
                     }
                 }                
 
-#if !BCL35
                 var aggregateException = currentException as AggregateException;
                 if (aggregateException != null)
                 {
@@ -84,7 +81,7 @@ namespace AWSSDK.Runtime.Internal.Util
 
                     continue;
                 }
-#endif
+      
                 if (currentException.InnerException != null)
                 {
                     queue.Enqueue(currentException.InnerException);

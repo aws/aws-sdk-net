@@ -76,7 +76,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPermissionVersion())
                 {
                     context.Writer.WritePropertyName("permissionVersion");
-                    context.Writer.Write(publicRequest.PermissionVersion);
+                    context.Writer.Write(publicRequest.PermissionVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

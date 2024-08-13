@@ -148,9 +148,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The creation date of the web portal.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int MaxConcurrentSessions
+        public int? MaxConcurrentSessions
         {
-            get { return this._maxConcurrentSessions.GetValueOrDefault(); }
+            get { return this._maxConcurrentSessions; }
             set { this._maxConcurrentSessions = value; }
         }
 

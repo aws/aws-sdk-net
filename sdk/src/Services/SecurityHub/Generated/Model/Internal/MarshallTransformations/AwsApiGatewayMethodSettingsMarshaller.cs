@@ -51,25 +51,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCacheDataEncrypted())
             {
                 context.Writer.WritePropertyName("CacheDataEncrypted");
-                context.Writer.Write(requestObject.CacheDataEncrypted);
+                context.Writer.Write(requestObject.CacheDataEncrypted.Value);
             }
 
             if(requestObject.IsSetCacheTtlInSeconds())
             {
                 context.Writer.WritePropertyName("CacheTtlInSeconds");
-                context.Writer.Write(requestObject.CacheTtlInSeconds);
+                context.Writer.Write(requestObject.CacheTtlInSeconds.Value);
             }
 
             if(requestObject.IsSetCachingEnabled())
             {
                 context.Writer.WritePropertyName("CachingEnabled");
-                context.Writer.Write(requestObject.CachingEnabled);
+                context.Writer.Write(requestObject.CachingEnabled.Value);
             }
 
             if(requestObject.IsSetDataTraceEnabled())
             {
                 context.Writer.WritePropertyName("DataTraceEnabled");
-                context.Writer.Write(requestObject.DataTraceEnabled);
+                context.Writer.Write(requestObject.DataTraceEnabled.Value);
             }
 
             if(requestObject.IsSetHttpMethod())
@@ -87,13 +87,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricsEnabled())
             {
                 context.Writer.WritePropertyName("MetricsEnabled");
-                context.Writer.Write(requestObject.MetricsEnabled);
+                context.Writer.Write(requestObject.MetricsEnabled.Value);
             }
 
             if(requestObject.IsSetRequireAuthorizationForCacheControl())
             {
                 context.Writer.WritePropertyName("RequireAuthorizationForCacheControl");
-                context.Writer.Write(requestObject.RequireAuthorizationForCacheControl);
+                context.Writer.Write(requestObject.RequireAuthorizationForCacheControl.Value);
             }
 
             if(requestObject.IsSetResourcePath())
@@ -105,19 +105,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThrottlingBurstLimit())
             {
                 context.Writer.WritePropertyName("ThrottlingBurstLimit");
-                context.Writer.Write(requestObject.ThrottlingBurstLimit);
+                context.Writer.Write(requestObject.ThrottlingBurstLimit.Value);
             }
 
             if(requestObject.IsSetThrottlingRateLimit())
             {
                 context.Writer.WritePropertyName("ThrottlingRateLimit");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThrottlingRateLimit.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThrottlingRateLimit);
+                    context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
                 }
             }
 

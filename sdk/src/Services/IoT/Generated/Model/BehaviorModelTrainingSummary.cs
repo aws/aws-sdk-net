@@ -67,9 +67,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double DatapointsCollectionPercentage
+        public double? DatapointsCollectionPercentage
         {
-            get { return this._datapointsCollectionPercentage.GetValueOrDefault(); }
+            get { return this._datapointsCollectionPercentage; }
             set { this._datapointsCollectionPercentage = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IoT.Model
         ///  The date the model was last refreshed. 
         /// </para>
         /// </summary>
-        public DateTime LastModelRefreshDate
+        public DateTime? LastModelRefreshDate
         {
-            get { return this._lastModelRefreshDate.GetValueOrDefault(); }
+            get { return this._lastModelRefreshDate; }
             set { this._lastModelRefreshDate = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.IoT.Model
         ///  The date a training model started collecting data. 
         /// </para>
         /// </summary>
-        public DateTime TrainingDataCollectionStartDate
+        public DateTime? TrainingDataCollectionStartDate
         {
-            get { return this._trainingDataCollectionStartDate.GetValueOrDefault(); }
+            get { return this._trainingDataCollectionStartDate; }
             set { this._trainingDataCollectionStartDate = value; }
         }
 

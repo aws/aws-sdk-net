@@ -43,9 +43,9 @@ namespace Amazon.ConnectCases.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IncludeContent
+        public bool? IncludeContent
         {
-            get { return this._includeContent.GetValueOrDefault(); }
+            get { return this._includeContent; }
             set { this._includeContent = value; }
         }
 

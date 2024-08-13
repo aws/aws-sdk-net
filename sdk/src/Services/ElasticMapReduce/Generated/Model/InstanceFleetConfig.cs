@@ -167,9 +167,9 @@ namespace Amazon.ElasticMapReduce.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TargetOnDemandCapacity
+        public int? TargetOnDemandCapacity
         {
-            get { return this._targetOnDemandCapacity.GetValueOrDefault(); }
+            get { return this._targetOnDemandCapacity; }
             set { this._targetOnDemandCapacity = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.ElasticMapReduce.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TargetSpotCapacity
+        public int? TargetSpotCapacity
         {
-            get { return this._targetSpotCapacity.GetValueOrDefault(); }
+            get { return this._targetSpotCapacity; }
             set { this._targetSpotCapacity = value; }
         }
 

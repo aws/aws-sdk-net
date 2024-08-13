@@ -45,9 +45,9 @@ namespace Amazon.S3Control.Model
         /// than the minimum object age and less than or equal to 2,147,483,647. 
         /// </para>
         /// </summary>
-        public int DaysGreaterThan
+        public int? DaysGreaterThan
         {
-            get { return this._daysGreaterThan.GetValueOrDefault(); }
+            get { return this._daysGreaterThan; }
             set { this._daysGreaterThan = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.S3Control.Model
         /// greater than 0 and less than or equal to 2,147,483,647. 
         /// </para>
         /// </summary>
-        public int DaysLessThan
+        public int? DaysLessThan
         {
-            get { return this._daysLessThan.GetValueOrDefault(); }
+            get { return this._daysLessThan; }
             set { this._daysLessThan = value; }
         }
 

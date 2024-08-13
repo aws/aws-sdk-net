@@ -153,9 +153,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long FileCount
+        public long? FileCount
         {
-            get { return this._fileCount.GetValueOrDefault(); }
+            get { return this._fileCount; }
             set { this._fileCount = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.GuardDuty.Model
         /// The timestamp of when the scan was finished.
         /// </para>
         /// </summary>
-        public DateTime ScanEndTime
+        public DateTime? ScanEndTime
         {
-            get { return this._scanEndTime.GetValueOrDefault(); }
+            get { return this._scanEndTime; }
             set { this._scanEndTime = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.GuardDuty.Model
         /// The timestamp of when the scan was triggered.
         /// </para>
         /// </summary>
-        public DateTime ScanStartTime
+        public DateTime? ScanStartTime
         {
-            get { return this._scanStartTime.GetValueOrDefault(); }
+            get { return this._scanStartTime; }
             set { this._scanStartTime = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TotalBytes
+        public long? TotalBytes
         {
-            get { return this._totalBytes.GetValueOrDefault(); }
+            get { return this._totalBytes; }
             set { this._totalBytes = value; }
         }
 

@@ -78,7 +78,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteAllRevisions())
                 {
                     context.Writer.WritePropertyName("DeleteAllRevisions");
-                    context.Writer.Write(publicRequest.DeleteAllRevisions);
+                    context.Writer.Write(publicRequest.DeleteAllRevisions.Value);
                 }
 
                 writer.WriteObjectEnd();

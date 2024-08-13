@@ -62,7 +62,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocumentContentDeletion())
             {
                 context.Writer.WritePropertyName("DocumentContentDeletion");
-                context.Writer.Write(requestObject.DocumentContentDeletion);
+                context.Writer.Write(requestObject.DocumentContentDeletion.Value);
             }
 
             if(requestObject.IsSetTarget())

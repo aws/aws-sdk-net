@@ -51,7 +51,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConnections())
             {
                 context.Writer.WritePropertyName("maxConnections");
-                context.Writer.Write(requestObject.MaxConnections);
+                context.Writer.Write(requestObject.MaxConnections.Value);
             }
 
         }

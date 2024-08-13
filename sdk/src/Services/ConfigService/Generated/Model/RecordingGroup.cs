@@ -116,9 +116,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool AllSupported
+        public bool? AllSupported
         {
-            get { return this._allSupported.GetValueOrDefault(); }
+            get { return this._allSupported; }
             set { this._allSupported = value; }
         }
 
@@ -282,9 +282,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool IncludeGlobalResourceTypes
+        public bool? IncludeGlobalResourceTypes
         {
-            get { return this._includeGlobalResourceTypes.GetValueOrDefault(); }
+            get { return this._includeGlobalResourceTypes; }
             set { this._includeGlobalResourceTypes = value; }
         }
 

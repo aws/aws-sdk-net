@@ -43,9 +43,9 @@ namespace Amazon.Appflow.Model
         /// Maximum value supported by the field.
         /// </para>
         /// </summary>
-        public double Maximum
+        public double? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Appflow.Model
         /// Minimum value supported by the field.
         /// </para>
         /// </summary>
-        public double Minimum
+        public double? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 

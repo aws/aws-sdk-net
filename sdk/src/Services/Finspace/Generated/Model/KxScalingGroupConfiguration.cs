@@ -47,9 +47,9 @@ namespace Amazon.Finspace.Model
         /// the scaling group host. 
         /// </para>
         /// </summary>
-        public double Cpu
+        public double? Cpu
         {
-            get { return this._cpu.GetValueOrDefault(); }
+            get { return this._cpu; }
             set { this._cpu = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=6)]
-        public int MemoryLimit
+        public int? MemoryLimit
         {
-            get { return this._memoryLimit.GetValueOrDefault(); }
+            get { return this._memoryLimit; }
             set { this._memoryLimit = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=6)]
-        public int MemoryReservation
+        public int? MemoryReservation
         {
-            get { return this._memoryReservation.GetValueOrDefault(); }
+            get { return this._memoryReservation; }
             set { this._memoryReservation = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int NodeCount
+        public int? NodeCount
         {
-            get { return this._nodeCount.GetValueOrDefault(); }
+            get { return this._nodeCount; }
             set { this._nodeCount = value; }
         }
 

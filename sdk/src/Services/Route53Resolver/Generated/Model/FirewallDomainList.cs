@@ -117,9 +117,9 @@ namespace Amazon.Route53Resolver.Model
         /// The number of domain names that are specified in the domain list.
         /// </para>
         /// </summary>
-        public int DomainCount
+        public int? DomainCount
         {
-            get { return this._domainCount.GetValueOrDefault(); }
+            get { return this._domainCount; }
             set { this._domainCount = value; }
         }
 

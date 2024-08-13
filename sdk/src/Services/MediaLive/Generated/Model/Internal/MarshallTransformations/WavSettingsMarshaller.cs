@@ -51,13 +51,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitDepth())
             {
                 context.Writer.WritePropertyName("bitDepth");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.BitDepth))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BitDepth.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BitDepth));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BitDepth.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BitDepth);
+                    context.Writer.Write(requestObject.BitDepth.Value);
                 }
             }
 
@@ -70,13 +70,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.SampleRate))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SampleRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SampleRate);
+                    context.Writer.Write(requestObject.SampleRate.Value);
                 }
             }
 

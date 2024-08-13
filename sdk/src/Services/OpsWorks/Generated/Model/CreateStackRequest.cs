@@ -541,9 +541,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether the stack uses custom cookbooks.
         /// </para>
         /// </summary>
-        public bool UseCustomCookbooks
+        public bool? UseCustomCookbooks
         {
-            get { return this._useCustomCookbooks.GetValueOrDefault(); }
+            get { return this._useCustomCookbooks; }
             set { this._useCustomCookbooks = value; }
         }
 
@@ -586,9 +586,9 @@ namespace Amazon.OpsWorks.Model
         /// a New Stack</a>.
         /// </para>
         /// </summary>
-        public bool UseOpsworksSecurityGroups
+        public bool? UseOpsworksSecurityGroups
         {
-            get { return this._useOpsworksSecurityGroups.GetValueOrDefault(); }
+            get { return this._useOpsworksSecurityGroups; }
             set { this._useOpsworksSecurityGroups = value; }
         }
 

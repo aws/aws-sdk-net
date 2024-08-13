@@ -261,9 +261,9 @@ namespace Amazon.Pinpoint.Model
         /// 2 (VoIP), 3 (invalid), 4 (other), and 5 (prepaid).
         /// </para>
         /// </summary>
-        public int PhoneTypeCode
+        public int? PhoneTypeCode
         {
-            get { return this._phoneTypeCode.GetValueOrDefault(); }
+            get { return this._phoneTypeCode; }
             set { this._phoneTypeCode = value; }
         }
 

@@ -96,9 +96,9 @@ namespace Amazon.CloudFront.Model
         /// Developer Guide.
         /// </para>
         /// </summary>
-        public bool IncludeBody
+        public bool? IncludeBody
         {
-            get { return this._includeBody.GetValueOrDefault(); }
+            get { return this._includeBody; }
             set { this._includeBody = value; }
         }
 

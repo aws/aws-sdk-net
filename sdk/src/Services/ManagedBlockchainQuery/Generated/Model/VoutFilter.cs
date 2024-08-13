@@ -44,9 +44,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool VoutSpent
+        public bool? VoutSpent
         {
-            get { return this._voutSpent.GetValueOrDefault(); }
+            get { return this._voutSpent; }
             set { this._voutSpent = value; }
         }
 

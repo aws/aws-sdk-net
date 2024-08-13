@@ -68,13 +68,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableResourceNameDnsAAAARecord", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableResourceNameDnsAAAARecord = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableResourceNameDnsARecord", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableResourceNameDnsARecord = unmarshaller.Unmarshall(context);
                     continue;
                 }

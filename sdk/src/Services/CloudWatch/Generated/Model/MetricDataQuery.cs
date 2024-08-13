@@ -225,9 +225,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.CloudWatch.Model
         /// operation, specify <c>ReturnData</c> as False.
         /// </para>
         /// </summary>
-        public bool ReturnData
+        public bool? ReturnData
         {
-            get { return this._returnData.GetValueOrDefault(); }
+            get { return this._returnData; }
             set { this._returnData = value; }
         }
 

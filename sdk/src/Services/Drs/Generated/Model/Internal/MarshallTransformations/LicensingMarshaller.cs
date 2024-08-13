@@ -51,7 +51,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOsByol())
             {
                 context.Writer.WritePropertyName("osByol");
-                context.Writer.Write(requestObject.OsByol);
+                context.Writer.Write(requestObject.OsByol.Value);
             }
 
         }

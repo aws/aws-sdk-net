@@ -36,6 +36,7 @@ namespace Amazon.EntityResolution.Model
     {
         private DateTime? _createdAt;
         private string _description;
+        private List<IdNamespaceIdMappingWorkflowMetadata> _idMappingWorkflowProperties = AWSConfigs.InitializeCollections ? new List<IdNamespaceIdMappingWorkflowMetadata>() : null;
         private string _idNamespaceArn;
         private string _idNamespaceName;
         private IdNamespaceType _type;
@@ -48,9 +49,9 @@ namespace Amazon.EntityResolution.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -77,6 +78,25 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdMappingWorkflowProperties. 
+        /// <para>
+        /// An object which defines any additional configurations required by the ID mapping workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<IdNamespaceIdMappingWorkflowMetadata> IdMappingWorkflowProperties
+        {
+            get { return this._idMappingWorkflowProperties; }
+            set { this._idMappingWorkflowProperties = value; }
+        }
+
+        // Check to see if IdMappingWorkflowProperties property is set
+        internal bool IsSetIdMappingWorkflowProperties()
+        {
+            return this._idMappingWorkflowProperties != null && (this._idMappingWorkflowProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +149,7 @@ namespace Amazon.EntityResolution.Model
         /// </para>
         ///  
         /// <para>
-        /// The <c>TARGET</c> contains a configuration of <c>targetId</c> to which all <c>sourceIds</c>
+        /// The <c>TARGET</c> contains a configuration of <c>targetId</c> which all <c>sourceIds</c>
         /// will resolve to.
         /// </para>
         /// </summary>
@@ -153,9 +173,9 @@ namespace Amazon.EntityResolution.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

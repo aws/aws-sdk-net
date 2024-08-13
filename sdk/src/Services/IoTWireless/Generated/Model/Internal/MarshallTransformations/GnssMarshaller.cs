@@ -51,13 +51,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssistAltitude())
             {
                 context.Writer.WritePropertyName("AssistAltitude");
-                if(StringUtils.IsSpecialFloatValue(requestObject.AssistAltitude))
+                if(StringUtils.IsSpecialFloatValue(requestObject.AssistAltitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.AssistAltitude));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.AssistAltitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AssistAltitude);
+                    context.Writer.Write(requestObject.AssistAltitude.Value);
                 }
             }
 
@@ -75,26 +75,26 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureTime())
             {
                 context.Writer.WritePropertyName("CaptureTime");
-                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTime))
+                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTime.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTime));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTime.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CaptureTime);
+                    context.Writer.Write(requestObject.CaptureTime.Value);
                 }
             }
 
             if(requestObject.IsSetCaptureTimeAccuracy())
             {
                 context.Writer.WritePropertyName("CaptureTimeAccuracy");
-                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTimeAccuracy))
+                if(StringUtils.IsSpecialFloatValue(requestObject.CaptureTimeAccuracy.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTimeAccuracy));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.CaptureTimeAccuracy.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CaptureTimeAccuracy);
+                    context.Writer.Write(requestObject.CaptureTimeAccuracy.Value);
                 }
             }
 
@@ -107,7 +107,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUse2DSolver())
             {
                 context.Writer.WritePropertyName("Use2DSolver");
-                context.Writer.Write(requestObject.Use2DSolver);
+                context.Writer.Write(requestObject.Use2DSolver.Value);
             }
 
         }

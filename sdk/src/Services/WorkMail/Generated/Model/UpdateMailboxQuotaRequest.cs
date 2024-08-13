@@ -46,9 +46,9 @@ namespace Amazon.WorkMail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MailboxQuota
+        public int? MailboxQuota
         {
-            get { return this._mailboxQuota.GetValueOrDefault(); }
+            get { return this._mailboxQuota; }
             set { this._mailboxQuota = value; }
         }
 

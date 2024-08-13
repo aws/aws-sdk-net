@@ -53,8 +53,6 @@ namespace Amazon.Runtime.CredentialManagement
         private const string S3UseArnRegionField = "S3UseArnRegion";
         private const string S3DisableExpressSessionAuthField = "S3DisableExpressSessionAuth";
 
-        private const string StsRegionalEndpointsField = "StsRegionalEndpoints";
-
         private const string S3RegionalEndpointField = "S3RegionalEndpoint";
 
         private const string S3DisableMultiRegionAccessPointsField = "S3DisableMultiRegionAccessPoints";
@@ -80,7 +78,6 @@ namespace Amazon.Runtime.CredentialManagement
             EndpointDiscoveryEnabledField,
             S3UseArnRegionField,
             S3DisableExpressSessionAuthField,
-            StsRegionalEndpointsField,
             S3RegionalEndpointField,
             S3DisableMultiRegionAccessPointsField,
             RetryModeField,
@@ -116,7 +113,6 @@ namespace Amazon.Runtime.CredentialManagement
                     // for SharedCredentials
                     { "CredentialProcess" , SettingsConstants.CredentialProcess },
                     { "WebIdentityTokenFile", SettingsConstants.WebIdentityTokenFile },
-#if !BCL35
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     // Not implemented for NetSDKCredentials. Applicable only
@@ -125,7 +121,6 @@ namespace Amazon.Runtime.CredentialManagement
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
                     { nameof(CredentialProfileOptions.SsoSession), SsoSession}
-#endif
                 }
             );
 
@@ -210,29 +205,6 @@ namespace Amazon.Runtime.CredentialManagement
                         endpointDiscoveryEnabled = endpointDiscoveryEnabledOut;
                     }
 
-                    StsRegionalEndpointsValue? stsRegionalEndpoints = null;
-                    if (reservedProperties.TryGetValue(StsRegionalEndpointsField, out var stsRegionalEndpointsString))
-                    {
-#if BCL35
-                        try
-                        {
-                            stsRegionalEndpoints = (StsRegionalEndpointsValue)Enum.Parse(typeof(StsRegionalEndpointsValue), stsRegionalEndpointsString, true);
-                        }
-                        catch (Exception)
-                        {
-                            profile = null;
-                            return false;
-                        }
-#else
-                        if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var tempStsRegionalEndpoints))
-                        {
-                            profile = null;
-                            return false;
-                        }
-                        stsRegionalEndpoints = tempStsRegionalEndpoints;
-#endif
-                    }
-
                     string s3UseArnRegionString;
                     bool? s3UseArnRegion = null;
                     if(reservedProperties.TryGetValue(S3UseArnRegionField, out s3UseArnRegionString))
@@ -277,47 +249,23 @@ namespace Amazon.Runtime.CredentialManagement
                     S3UsEast1RegionalEndpointValue? s3RegionalEndpoint = null;
                     if (reservedProperties.TryGetValue(S3RegionalEndpointField, out var s3RegionalEndpointString))
                     {
-#if BCL35
-                        try
-                        {
-                            s3RegionalEndpoint = (S3UsEast1RegionalEndpointValue)Enum.Parse(typeof(S3UsEast1RegionalEndpointValue), s3RegionalEndpointString, true);
-                        }
-                        catch (Exception)
-                        {
-                            profile = null;
-                            return false;
-                        }
-#else
                         if (!Enum.TryParse<S3UsEast1RegionalEndpointValue>(s3RegionalEndpointString, true, out var tempS3RegionalEndpoint))
                         {
                             profile = null;
                             return false;
                         }
                         s3RegionalEndpoint = tempS3RegionalEndpoint;
-#endif
                     }
 
                     RequestRetryMode? requestRetryMode = null;
                     if (reservedProperties.TryGetValue(RetryModeField, out var retryModeString))
                     {
-#if BCL35
-                        try
-                        {
-                            requestRetryMode = (RequestRetryMode)Enum.Parse(typeof(RequestRetryMode), retryModeString, true);
-                        }
-                        catch (Exception)
-                        {
-                            profile = null;
-                            return false;
-                        }
-#else
                         if (!Enum.TryParse<RequestRetryMode>(retryModeString, true, out var tempRetryMode))
                         {
                             profile = null;
                             return false;
                         }
                         requestRetryMode = tempRetryMode;
-#endif
                     }
 
                     int? maxAttempts = null;
@@ -341,7 +289,6 @@ namespace Amazon.Runtime.CredentialManagement
                         CredentialProfileStore = this,
                         DefaultConfigurationModeName = defaultConfigurationModeName,
                         EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
-                        StsRegionalEndpoints = stsRegionalEndpoints,
                         S3UseArnRegion = s3UseArnRegion,
                         S3DisableExpressSessionAuth = s3DisableExpressSessionAuth,
                         S3RegionalEndpoint = s3RegionalEndpoint,
@@ -385,9 +332,6 @@ namespace Amazon.Runtime.CredentialManagement
 
                 if (profile.EndpointDiscoveryEnabled != null)
                     reservedProperties[EndpointDiscoveryEnabledField] = profile.EndpointDiscoveryEnabled.Value.ToString().ToLowerInvariant();
-
-                if (profile.StsRegionalEndpoints != null)
-                    reservedProperties[StsRegionalEndpointsField] = profile.StsRegionalEndpoints.ToString().ToLowerInvariant();
 
                 if (profile.S3UseArnRegion != null)
                     reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();

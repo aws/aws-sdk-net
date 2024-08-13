@@ -147,9 +147,9 @@ namespace Amazon.OpenSearchService.Model
         /// A boolean that indicates if dedicated master nodes are activated for the domain.
         /// </para>
         /// </summary>
-        public bool DedicatedMaster
+        public bool? DedicatedMaster
         {
-            get { return this._dedicatedMaster.GetValueOrDefault(); }
+            get { return this._dedicatedMaster; }
             set { this._dedicatedMaster = value; }
         }
 

@@ -83,9 +83,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The time at which the migration workflow was last started.
         /// </para>
         /// </summary>
-        public DateTime LastStartTime
+        public DateTime? LastStartTime
         {
-            get { return this._lastStartTime.GetValueOrDefault(); }
+            get { return this._lastStartTime; }
             set { this._lastStartTime = value; }
         }
 

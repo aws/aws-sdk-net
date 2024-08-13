@@ -84,13 +84,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetItemOffset())
                 {
                     context.Writer.WritePropertyName("itemOffset");
-                    context.Writer.Write(publicRequest.ItemOffset);
+                    context.Writer.Write(publicRequest.ItemOffset.Value);
                 }
 
                 if(publicRequest.IsSetPageSize())
                 {
                     context.Writer.WritePropertyName("pageSize");
-                    context.Writer.Write(publicRequest.PageSize);
+                    context.Writer.Write(publicRequest.PageSize.Value);
                 }
 
                 if(publicRequest.IsSetQueueIds())

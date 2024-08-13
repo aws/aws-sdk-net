@@ -51,13 +51,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDescriptionAudioChannel())
             {
                 context.Writer.WritePropertyName("audioDescriptionAudioChannel");
-                context.Writer.Write(requestObject.AudioDescriptionAudioChannel);
+                context.Writer.Write(requestObject.AudioDescriptionAudioChannel.Value);
             }
 
             if(requestObject.IsSetAudioDescriptionDataChannel())
             {
                 context.Writer.WritePropertyName("audioDescriptionDataChannel");
-                context.Writer.Write(requestObject.AudioDescriptionDataChannel);
+                context.Writer.Write(requestObject.AudioDescriptionDataChannel.Value);
             }
 
             if(requestObject.IsSetChannelMapping())
@@ -74,13 +74,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelsIn())
             {
                 context.Writer.WritePropertyName("channelsIn");
-                context.Writer.Write(requestObject.ChannelsIn);
+                context.Writer.Write(requestObject.ChannelsIn.Value);
             }
 
             if(requestObject.IsSetChannelsOut())
             {
                 context.Writer.WritePropertyName("channelsOut");
-                context.Writer.Write(requestObject.ChannelsOut);
+                context.Writer.Write(requestObject.ChannelsOut.Value);
             }
 
         }

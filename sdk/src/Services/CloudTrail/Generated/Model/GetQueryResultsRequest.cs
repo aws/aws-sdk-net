@@ -69,9 +69,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxQueryResults
+        public int? MaxQueryResults
         {
-            get { return this._maxQueryResults.GetValueOrDefault(); }
+            get { return this._maxQueryResults; }
             set { this._maxQueryResults = value; }
         }
 

@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.SageMaker
@@ -2876,6 +2877,57 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateOptimizationJob
+
+        internal virtual CreateOptimizationJobResponse CreateOptimizationJob(CreateOptimizationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOptimizationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a job that optimizes a model for inference performance. To create the job,
+        /// you provide the location of a source model, and you provide the settings for the optimization
+        /// techniques that you want the job to apply. When the job completes successfully, SageMaker
+        /// uploads the new optimized model to the output destination that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about how to use this action, and about the supported optimization
+        /// techniques, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-optimize.html">Optimize
+        /// model inference with Amazon SageMaker</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateOptimizationJob">REST API Reference for CreateOptimizationJob Operation</seealso>
+        public virtual Task<CreateOptimizationJobResponse> CreateOptimizationJobAsync(CreateOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOptimizationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateOptimizationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePipeline
 
         internal virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
@@ -5353,6 +5405,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteOptimizationJob
+
+        internal virtual DeleteOptimizationJobResponse DeleteOptimizationJob(DeleteOptimizationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOptimizationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteOptimizationJob">REST API Reference for DeleteOptimizationJob Operation</seealso>
+        public virtual Task<DeleteOptimizationJobResponse> DeleteOptimizationJobAsync(DeleteOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOptimizationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOptimizationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePipeline
 
         internal virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
@@ -7560,6 +7649,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeOptimizationJob
+
+        internal virtual DescribeOptimizationJobResponse DescribeOptimizationJob(DescribeOptimizationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOptimizationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides the properties of the specified optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeOptimizationJob">REST API Reference for DescribeOptimizationJob Operation</seealso>
+        public virtual Task<DescribeOptimizationJobResponse> DescribeOptimizationJobAsync(DescribeOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOptimizationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeOptimizationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10486,6 +10612,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListOptimizationJobs
+
+        internal virtual ListOptimizationJobsResponse ListOptimizationJobs(ListOptimizationJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOptimizationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOptimizationJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOptimizationJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the optimization jobs in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOptimizationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOptimizationJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListOptimizationJobs">REST API Reference for ListOptimizationJobs Operation</seealso>
+        public virtual Task<ListOptimizationJobsResponse> ListOptimizationJobsAsync(ListOptimizationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOptimizationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOptimizationJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOptimizationJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPipelineExecutions
 
         internal virtual ListPipelineExecutionsResponse ListPipelineExecutions(ListPipelineExecutionsRequest request)
@@ -12272,6 +12432,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StopNotebookInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopNotebookInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopOptimizationJob
+
+        internal virtual StopOptimizationJobResponse StopOptimizationJob(StopOptimizationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopOptimizationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Ends a running inference optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopOptimizationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopOptimizationJob">REST API Reference for StopOptimizationJob Operation</seealso>
+        public virtual Task<StopOptimizationJobResponse> StopOptimizationJobAsync(StopOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOptimizationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopOptimizationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -14135,16 +14332,8 @@ namespace Amazon.SageMaker
         /// <returns>The resolved endpoint for the given request.</returns>
         public Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)
         {
-            var requestContext = new RequestContext(false, CreateSigner())
-            {
-                ClientConfig = Config,
-                OriginalRequest = request,
-                Request = new DefaultRequest(request, ServiceMetadata.ServiceId)
-            };
-
-            var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
-            var resolver = new AmazonSageMakerEndpointResolver();
-            return resolver.GetEndpoint(executionContext);
+            var parameters = new ServiceOperationEndpointParameters(request);
+            return Config.DetermineServiceOperationEndpoint(parameters);
         }
 
         #endregion

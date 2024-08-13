@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model
         /// strength.
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
-        public int PostFilterSharpenStrength
+        public int? PostFilterSharpenStrength
         {
-            get { return this._postFilterSharpenStrength.GetValueOrDefault(); }
+            get { return this._postFilterSharpenStrength; }
             set { this._postFilterSharpenStrength = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.MediaConvert.Model
         /// 3 (higher speed), with 0 being the nominal value.
         /// </summary>
         [AWSProperty(Min=-2, Max=3)]
-        public int Speed
+        public int? Speed
         {
-            get { return this._speed.GetValueOrDefault(); }
+            get { return this._speed; }
             set { this._speed = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.MediaConvert.Model
         /// values produce stronger filtering.
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
-        public int Strength
+        public int? Strength
         {
-            get { return this._strength.GetValueOrDefault(); }
+            get { return this._strength; }
             set { this._strength = value; }
         }
 

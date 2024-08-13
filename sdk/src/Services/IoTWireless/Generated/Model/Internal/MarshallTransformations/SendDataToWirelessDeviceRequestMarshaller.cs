@@ -79,7 +79,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTransmitMode())
                 {
                     context.Writer.WritePropertyName("TransmitMode");
-                    context.Writer.Write(publicRequest.TransmitMode);
+                    context.Writer.Write(publicRequest.TransmitMode.Value);
                 }
 
                 if(publicRequest.IsSetWirelessMetadata())

@@ -47,9 +47,9 @@ namespace Amazon.ConfigService.Model
         /// Start time when the remediation was executed.
         /// </para>
         /// </summary>
-        public DateTime InvocationTime
+        public DateTime? InvocationTime
         {
-            get { return this._invocationTime.GetValueOrDefault(); }
+            get { return this._invocationTime; }
             set { this._invocationTime = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ConfigService.Model
         /// The time when the remediation execution was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

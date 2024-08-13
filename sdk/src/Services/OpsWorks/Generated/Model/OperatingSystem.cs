@@ -139,9 +139,9 @@ namespace Amazon.OpsWorks.Model
         /// Indicates that an operating system is not supported for new instances.
         /// </para>
         /// </summary>
-        public bool Supported
+        public bool? Supported
         {
-            get { return this._supported.GetValueOrDefault(); }
+            get { return this._supported; }
             set { this._supported = value; }
         }
 

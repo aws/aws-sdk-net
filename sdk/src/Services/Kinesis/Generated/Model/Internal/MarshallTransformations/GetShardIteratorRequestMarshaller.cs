@@ -102,7 +102,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimestamp())
                 {
                     context.Writer.WritePropertyName("Timestamp");
-                    context.Writer.Write(publicRequest.Timestamp);
+                    context.Writer.Write(publicRequest.Timestamp.Value);
                 }
 
                 writer.WriteObjectEnd();

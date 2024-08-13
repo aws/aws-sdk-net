@@ -37,7 +37,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This operation is valid for Redis only.
+    /// This operation is valid for Redis OSS only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -106,9 +106,9 @@ namespace Amazon.ElastiCache.Model
         /// Constraints: minimum 20; maximum 50.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.ElastiCache.Model
         /// the snapshot description.
         /// </para>
         /// </summary>
-        public bool ShowNodeGroupConfig
+        public bool? ShowNodeGroupConfig
         {
-            get { return this._showNodeGroupConfig.GetValueOrDefault(); }
+            get { return this._showNodeGroupConfig; }
             set { this._showNodeGroupConfig = value; }
         }
 

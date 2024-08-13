@@ -84,12 +84,12 @@ namespace Amazon.S3.Model.Internal
 
         public void Visit(LifecycleObjectSizeGreaterThanPredicate lifecycleGreaterThanPredicate)
         {
-            xmlWriter.WriteElementString("ObjectSizeGreaterThan", S3Transforms.ToXmlStringValue(lifecycleGreaterThanPredicate.ObjectSizeGreaterThan));
+            xmlWriter.WriteElementString("ObjectSizeGreaterThan", S3Transforms.ToXmlStringValue(lifecycleGreaterThanPredicate.ObjectSizeGreaterThan.Value));
         }
 
         public void Visit(LifecycleObjectSizeLessThanPredicate lifecycleGreaterLessThanPredicate)
         {
-            xmlWriter.WriteElementString("ObjectSizeLessThan", S3Transforms.ToXmlStringValue(lifecycleGreaterLessThanPredicate.ObjectSizeLessThan));
+            xmlWriter.WriteElementString("ObjectSizeLessThan", S3Transforms.ToXmlStringValue(lifecycleGreaterLessThanPredicate.ObjectSizeLessThan.Value));
         }
 
         public void Visit(LifecycleAndOperator lifecycleAndOperator)

@@ -46,9 +46,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The value of the integer.
         /// </para>
         /// </summary>
-        public int IntegerValue
+        public int? IntegerValue
         {
-            get { return this._integerValue.GetValueOrDefault(); }
+            get { return this._integerValue; }
             set { this._integerValue = value; }
         }
 

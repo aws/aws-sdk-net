@@ -294,9 +294,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ForecastHorizon
+        public int? ForecastHorizon
         {
-            get { return this._forecastHorizon.GetValueOrDefault(); }
+            get { return this._forecastHorizon; }
             set { this._forecastHorizon = value; }
         }
 
@@ -411,9 +411,9 @@ namespace Amazon.ForecastService.Model
         /// data. In this case, <c>PerformHPO</c> must be false.
         /// </para>
         /// </summary>
-        public bool PerformAutoML
+        public bool? PerformAutoML
         {
-            get { return this._performAutoML.GetValueOrDefault(); }
+            get { return this._performAutoML; }
             set { this._performAutoML = value; }
         }
 
@@ -457,9 +457,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool PerformHPO
+        public bool? PerformHPO
         {
-            get { return this._performHPO.GetValueOrDefault(); }
+            get { return this._performHPO; }
             set { this._performHPO = value; }
         }
 

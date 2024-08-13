@@ -86,13 +86,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedSecret", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("manualCreation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ManualCreation = unmarshaller.Unmarshall(context);
                     continue;
                 }

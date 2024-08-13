@@ -171,9 +171,9 @@ namespace Amazon.CloudWatch.Model
         /// include metrics from source accounts in the metric stream.
         /// </para>
         /// </summary>
-        public bool IncludeLinkedAccountsMetrics
+        public bool? IncludeLinkedAccountsMetrics
         {
-            get { return this._includeLinkedAccountsMetrics.GetValueOrDefault(); }
+            get { return this._includeLinkedAccountsMetrics; }
             set { this._includeLinkedAccountsMetrics = value; }
         }
 

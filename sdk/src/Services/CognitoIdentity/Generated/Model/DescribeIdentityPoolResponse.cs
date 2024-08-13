@@ -54,9 +54,9 @@ namespace Amazon.CognitoIdentity.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        public bool AllowClassicFlow
+        public bool? AllowClassicFlow
         {
-            get { return this._allowClassicFlow.GetValueOrDefault(); }
+            get { return this._allowClassicFlow; }
             set { this._allowClassicFlow = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.CognitoIdentity.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowUnauthenticatedIdentities
+        public bool? AllowUnauthenticatedIdentities
         {
-            get { return this._allowUnauthenticatedIdentities.GetValueOrDefault(); }
+            get { return this._allowUnauthenticatedIdentities; }
             set { this._allowUnauthenticatedIdentities = value; }
         }
 

@@ -149,9 +149,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2)]
-        public int DesiredNumberOfDomainControllers
+        public int? DesiredNumberOfDomainControllers
         {
-            get { return this._desiredNumberOfDomainControllers.GetValueOrDefault(); }
+            get { return this._desiredNumberOfDomainControllers; }
             set { this._desiredNumberOfDomainControllers = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.DirectoryService.Model
         /// Specifies when the directory was created.
         /// </para>
         /// </summary>
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 
@@ -448,9 +448,9 @@ namespace Amazon.DirectoryService.Model
         /// <a>EnableSso</a> and <a>DisableSso</a>.
         /// </para>
         /// </summary>
-        public bool SsoEnabled
+        public bool? SsoEnabled
         {
-            get { return this._ssoEnabled.GetValueOrDefault(); }
+            get { return this._ssoEnabled; }
             set { this._ssoEnabled = value; }
         }
 
@@ -484,9 +484,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the stage was last updated.
         /// </para>
         /// </summary>
-        public DateTime StageLastUpdatedDateTime
+        public DateTime? StageLastUpdatedDateTime
         {
-            get { return this._stageLastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._stageLastUpdatedDateTime; }
             set { this._stageLastUpdatedDateTime = value; }
         }
 

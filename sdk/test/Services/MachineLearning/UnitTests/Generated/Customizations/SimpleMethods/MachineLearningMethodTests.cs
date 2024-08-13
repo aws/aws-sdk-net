@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.MachineLearning.Model;
 using Amazon.MachineLearning;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class MachineLearningMethodCustomizationsTests
@@ -44,15 +44,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "DeleteRealtimeEndpoint", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "GetBatchPrediction", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "GetDataSource", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "GetDataSource", new Type[] { typeof(string), typeof(bool), });
+            EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "GetDataSource", new Type[] { typeof(string), typeof(bool?), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "GetEvaluation", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "GetMLModel", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "GetMLModel", new Type[] { typeof(string), typeof(bool), });
+            EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "GetMLModel", new Type[] { typeof(string), typeof(bool?), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "Predict", new Type[] { typeof(string), typeof(string), typeof(Dictionary<string, string>), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "UpdateBatchPrediction", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "UpdateDataSource", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "UpdateEvaluation", new Type[] { typeof(string), typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "UpdateMLModel", new Type[] { typeof(string), typeof(string), typeof(float), });
+            EnsureSimpleMethodExists(typeof(Amazon.MachineLearning.AmazonMachineLearningClient), "UpdateMLModel", new Type[] { typeof(string), typeof(string), typeof(float?), });
         }
         
         void EnsureSimpleMethodExists(Type type, string methodName, Type[] simpleParams)

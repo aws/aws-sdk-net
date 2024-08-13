@@ -72,9 +72,9 @@ namespace Amazon.EKS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DesiredSize
+        public int? DesiredSize
         {
-            get { return this._desiredSize.GetValueOrDefault(); }
+            get { return this._desiredSize; }
             set { this._desiredSize = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.EKS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.EKS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 

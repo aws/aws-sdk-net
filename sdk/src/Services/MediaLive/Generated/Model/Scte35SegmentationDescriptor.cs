@@ -86,9 +86,9 @@ namespace Amazon.MediaLive.Model
         /// message.
         /// </summary>
         [AWSProperty(Min=0, Max=1099511627775)]
-        public long SegmentationDuration
+        public long? SegmentationDuration
         {
-            get { return this._segmentationDuration.GetValueOrDefault(); }
+            get { return this._segmentationDuration; }
             set { this._segmentationDuration = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SegmentationEventId. Corresponds to SCTE-35 segmentation_event_id.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long SegmentationEventId
+        public long? SegmentationEventId
         {
-            get { return this._segmentationEventId.GetValueOrDefault(); }
+            get { return this._segmentationEventId; }
             set { this._segmentationEventId = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.MediaLive.Model
         /// enter the ID in hex (for example, "0x34") or decimal (for example, "52").
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int SegmentationTypeId
+        public int? SegmentationTypeId
         {
-            get { return this._segmentationTypeId.GetValueOrDefault(); }
+            get { return this._segmentationTypeId; }
             set { this._segmentationTypeId = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.MediaLive.Model
         /// in either hex (for example, "0x0C" ) or in decimal (for example, "12").
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int SegmentationUpidType
+        public int? SegmentationUpidType
         {
-            get { return this._segmentationUpidType.GetValueOrDefault(); }
+            get { return this._segmentationUpidType; }
             set { this._segmentationUpidType = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.MediaLive.Model
         /// that is valid for the specified segmentation_type_id.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int SegmentNum
+        public int? SegmentNum
         {
-            get { return this._segmentNum.GetValueOrDefault(); }
+            get { return this._segmentNum; }
             set { this._segmentNum = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.MediaLive.Model
         /// A value that is valid for the specified segmentation_type_id.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int SegmentsExpected
+        public int? SegmentsExpected
         {
-            get { return this._segmentsExpected.GetValueOrDefault(); }
+            get { return this._segmentsExpected; }
             set { this._segmentsExpected = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.MediaLive.Model
         /// A value that is valid for the specified segmentation_type_id.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int SubSegmentNum
+        public int? SubSegmentNum
         {
-            get { return this._subSegmentNum.GetValueOrDefault(); }
+            get { return this._subSegmentNum; }
             set { this._subSegmentNum = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.MediaLive.Model
         /// A value that is valid for the specified segmentation_type_id.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int SubSegmentsExpected
+        public int? SubSegmentsExpected
         {
-            get { return this._subSegmentsExpected.GetValueOrDefault(); }
+            get { return this._subSegmentsExpected; }
             set { this._subSegmentsExpected = value; }
         }
 

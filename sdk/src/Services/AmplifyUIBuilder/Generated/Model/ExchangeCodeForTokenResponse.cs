@@ -64,9 +64,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ExpiresIn
+        public int? ExpiresIn
         {
-            get { return this._expiresIn.GetValueOrDefault(); }
+            get { return this._expiresIn; }
             set { this._expiresIn = value; }
         }
 

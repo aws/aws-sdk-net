@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model
         /// delay in milliseconds.
         /// </summary>
         [AWSProperty(Min=800, Max=3000)]
-        public int MaximumVideoBufferDelayMilliseconds
+        public int? MaximumVideoBufferDelayMilliseconds
         {
-            get { return this._maximumVideoBufferDelayMilliseconds.GetValueOrDefault(); }
+            get { return this._maximumVideoBufferDelayMilliseconds; }
             set { this._maximumVideoBufferDelayMilliseconds = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TransportStreamBitrate. Transport stream bit rate.
         /// </summary>
         [AWSProperty(Required=true, Min=1000000, Max=100000000)]
-        public int TransportStreamBitrate
+        public int? TransportStreamBitrate
         {
-            get { return this._transportStreamBitrate.GetValueOrDefault(); }
+            get { return this._transportStreamBitrate; }
             set { this._transportStreamBitrate = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TransportStreamId. Transport stream ID.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=65535)]
-        public int TransportStreamId
+        public int? TransportStreamId
         {
-            get { return this._transportStreamId.GetValueOrDefault(); }
+            get { return this._transportStreamId; }
             set { this._transportStreamId = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.MediaLive.Model
         /// bit rate.
         /// </summary>
         [AWSProperty(Min=0, Max=100000000)]
-        public int TransportStreamReservedBitrate
+        public int? TransportStreamReservedBitrate
         {
-            get { return this._transportStreamReservedBitrate.GetValueOrDefault(); }
+            get { return this._transportStreamReservedBitrate; }
             set { this._transportStreamReservedBitrate = value; }
         }
 

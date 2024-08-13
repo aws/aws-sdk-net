@@ -44,9 +44,9 @@ namespace Amazon.EMRContainers.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
-        public int MaxFilesToKeep
+        public int? MaxFilesToKeep
         {
-            get { return this._maxFilesToKeep.GetValueOrDefault(); }
+            get { return this._maxFilesToKeep; }
             set { this._maxFilesToKeep = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Abandon
+        public bool? Abandon
         {
-            get { return this._abandon.GetValueOrDefault(); }
+            get { return this._abandon; }
             set { this._abandon = value; }
         }
 

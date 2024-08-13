@@ -117,9 +117,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Confidence
+        public int? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Criticality
+        public int? Criticality
         {
-            get { return this._criticality.GetValueOrDefault(); }
+            get { return this._criticality; }
             set { this._criticality = value; }
         }
 

@@ -53,7 +53,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <param name="timeout">The amount of time, in seconds, during which no response means a failed health check. This value must be less than the <c>Interval</c> value.</param>
         /// <param name="unhealthyThreshold">The number of consecutive health check failures required before moving the instance to the <c>Unhealthy</c> state.</param>
         /// <param name="healthyThreshold">The number of consecutive health checks successes required before moving the instance to the <c>Healthy</c> state.</param>
-        public HealthCheck(string target, int interval, int timeout, int unhealthyThreshold, int healthyThreshold)
+        public HealthCheck(string target, int? interval, int? timeout, int? unhealthyThreshold, int? healthyThreshold)
         {
             _target = target;
             _interval = interval;
@@ -70,9 +70,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=10)]
-        public int HealthyThreshold
+        public int? HealthyThreshold
         {
-            get { return this._healthyThreshold.GetValueOrDefault(); }
+            get { return this._healthyThreshold; }
             set { this._healthyThreshold = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=300)]
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=60)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=10)]
-        public int UnhealthyThreshold
+        public int? UnhealthyThreshold
         {
-            get { return this._unhealthyThreshold.GetValueOrDefault(); }
+            get { return this._unhealthyThreshold; }
             set { this._unhealthyThreshold = value; }
         }
 

@@ -78,7 +78,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAssignmentRequired())
                 {
                     context.Writer.WritePropertyName("AssignmentRequired");
-                    context.Writer.Write(publicRequest.AssignmentRequired);
+                    context.Writer.Write(publicRequest.AssignmentRequired.Value);
                 }
 
                 writer.WriteObjectEnd();

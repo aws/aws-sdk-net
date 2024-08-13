@@ -57,9 +57,9 @@ namespace Amazon.NetworkFirewall.Model
         /// 
         /// </para>
         /// </summary>
-        public int Capacity
+        public int? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The last time that the rule group was changed.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

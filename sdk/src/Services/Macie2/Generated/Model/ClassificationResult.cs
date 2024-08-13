@@ -56,9 +56,9 @@ namespace Amazon.Macie2.Model
         /// data discovery result for the finding (classificationDetails.detailedResultsLocation).
         /// </para>
         /// </summary>
-        public bool AdditionalOccurrences
+        public bool? AdditionalOccurrences
         {
-            get { return this._additionalOccurrences.GetValueOrDefault(); }
+            get { return this._additionalOccurrences; }
             set { this._additionalOccurrences = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.Macie2.Model
         /// The total size, in bytes, of the data that the finding applies to.
         /// </para>
         /// </summary>
-        public long SizeClassified
+        public long? SizeClassified
         {
-            get { return this._sizeClassified.GetValueOrDefault(); }
+            get { return this._sizeClassified; }
             set { this._sizeClassified = value; }
         }
 

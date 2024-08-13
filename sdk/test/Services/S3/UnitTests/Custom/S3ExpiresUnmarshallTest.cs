@@ -5,7 +5,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 
 namespace AWSSDK.UnitTests
 {

@@ -70,9 +70,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The completion time of the last replication run.
         /// </para>
         /// </summary>
-        public DateTime CompletedTime
+        public DateTime? CompletedTime
         {
-            get { return this._completedTime.GetValueOrDefault(); }
+            get { return this._completedTime; }
             set { this._completedTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.ServerMigrationService.Model
         /// Indicates whether the replication run should produce an encrypted AMI.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The start time of the next replication run.
         /// </para>
         /// </summary>
-        public DateTime ScheduledStartTime
+        public DateTime? ScheduledStartTime
         {
-            get { return this._scheduledStartTime.GetValueOrDefault(); }
+            get { return this._scheduledStartTime; }
             set { this._scheduledStartTime = value; }
         }
 

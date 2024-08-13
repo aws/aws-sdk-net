@@ -74,7 +74,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RecoverySnapshotTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RecoverySnapshotTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

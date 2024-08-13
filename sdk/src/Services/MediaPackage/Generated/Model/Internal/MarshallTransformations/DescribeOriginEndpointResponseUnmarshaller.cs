@@ -126,7 +126,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startoverWindowSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.StartoverWindowSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -138,7 +138,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timeDelaySeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TimeDelaySeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

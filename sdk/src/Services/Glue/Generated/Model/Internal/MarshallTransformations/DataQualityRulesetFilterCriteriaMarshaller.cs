@@ -51,13 +51,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("CreatedAfter");
-                context.Writer.Write(requestObject.CreatedAfter);
+                context.Writer.Write(requestObject.CreatedAfter.Value);
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("CreatedBefore");
-                context.Writer.Write(requestObject.CreatedBefore);
+                context.Writer.Write(requestObject.CreatedBefore.Value);
             }
 
             if(requestObject.IsSetDescription())
@@ -69,13 +69,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastModifiedAfter())
             {
                 context.Writer.WritePropertyName("LastModifiedAfter");
-                context.Writer.Write(requestObject.LastModifiedAfter);
+                context.Writer.Write(requestObject.LastModifiedAfter.Value);
             }
 
             if(requestObject.IsSetLastModifiedBefore())
             {
                 context.Writer.WritePropertyName("LastModifiedBefore");
-                context.Writer.Write(requestObject.LastModifiedBefore);
+                context.Writer.Write(requestObject.LastModifiedBefore.Value);
             }
 
             if(requestObject.IsSetName())

@@ -99,7 +99,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRank())
                 {
                     context.Writer.WritePropertyName("rank");
-                    context.Writer.Write(publicRequest.Rank);
+                    context.Writer.Write(publicRequest.Rank.Value);
                 }
 
                 writer.WriteObjectEnd();

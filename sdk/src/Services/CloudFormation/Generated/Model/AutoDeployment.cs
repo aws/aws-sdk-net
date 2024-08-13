@@ -48,9 +48,9 @@ namespace Amazon.CloudFormation.Model
         /// or OU, StackSets deletes stack instances from the account in the specified Regions.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.CloudFormation.Model
         /// Specify only if <c>Enabled</c> is set to <c>True</c>.
         /// </para>
         /// </summary>
-        public bool RetainStacksOnAccountRemoval
+        public bool? RetainStacksOnAccountRemoval
         {
-            get { return this._retainStacksOnAccountRemoval.GetValueOrDefault(); }
+            get { return this._retainStacksOnAccountRemoval; }
             set { this._retainStacksOnAccountRemoval = value; }
         }
 

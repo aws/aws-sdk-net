@@ -86,9 +86,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index comments of blogs and other content.
         /// </para>
         /// </summary>
-        public bool CrawlComments
+        public bool? CrawlComments
         {
-            get { return this._crawlComments.GetValueOrDefault(); }
+            get { return this._crawlComments; }
             set { this._crawlComments = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index shared files.
         /// </para>
         /// </summary>
-        public bool CrawlSystemFolders
+        public bool? CrawlSystemFolders
         {
-            get { return this._crawlSystemFolders.GetValueOrDefault(); }
+            get { return this._crawlSystemFolders; }
             set { this._crawlSystemFolders = value; }
         }
 

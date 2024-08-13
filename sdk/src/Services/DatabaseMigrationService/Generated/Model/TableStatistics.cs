@@ -66,9 +66,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// structure of your tables applied on the target.
         /// </para>
         /// </summary>
-        public long AppliedDdls
+        public long? AppliedDdls
         {
-            get { return this._appliedDdls.GetValueOrDefault(); }
+            get { return this._appliedDdls; }
             set { this._appliedDdls = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of delete actions applied on a target table.
         /// </para>
         /// </summary>
-        public long AppliedDeletes
+        public long? AppliedDeletes
         {
-            get { return this._appliedDeletes.GetValueOrDefault(); }
+            get { return this._appliedDeletes; }
             set { this._appliedDeletes = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of insert actions applied on a target table.
         /// </para>
         /// </summary>
-        public long AppliedInserts
+        public long? AppliedInserts
         {
-            get { return this._appliedInserts.GetValueOrDefault(); }
+            get { return this._appliedInserts; }
             set { this._appliedInserts = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of update actions applied on a target table.
         /// </para>
         /// </summary>
-        public long AppliedUpdates
+        public long? AppliedUpdates
         {
-            get { return this._appliedUpdates.GetValueOrDefault(); }
+            get { return this._appliedUpdates; }
             set { this._appliedUpdates = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// tables.
         /// </para>
         /// </summary>
-        public long Ddls
+        public long? Ddls
         {
-            get { return this._ddls.GetValueOrDefault(); }
+            get { return this._ddls; }
             set { this._ddls = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of delete actions performed on a table.
         /// </para>
         /// </summary>
-        public long Deletes
+        public long? Deletes
         {
-            get { return this._deletes.GetValueOrDefault(); }
+            get { return this._deletes; }
             set { this._deletes = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// only for migrations where DynamoDB is the target).
         /// </para>
         /// </summary>
-        public long FullLoadCondtnlChkFailedRows
+        public long? FullLoadCondtnlChkFailedRows
         {
-            get { return this._fullLoadCondtnlChkFailedRows.GetValueOrDefault(); }
+            get { return this._fullLoadCondtnlChkFailedRows; }
             set { this._fullLoadCondtnlChkFailedRows = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time when the full load operation completed.
         /// </para>
         /// </summary>
-        public DateTime FullLoadEndTime
+        public DateTime? FullLoadEndTime
         {
-            get { return this._fullLoadEndTime.GetValueOrDefault(); }
+            get { return this._fullLoadEndTime; }
             set { this._fullLoadEndTime = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// for migrations where DynamoDB is the target).
         /// </para>
         /// </summary>
-        public long FullLoadErrorRows
+        public long? FullLoadErrorRows
         {
-            get { return this._fullLoadErrorRows.GetValueOrDefault(); }
+            get { return this._fullLoadErrorRows; }
             set { this._fullLoadErrorRows = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// a new full load operation (<c>false</c>).
         /// </para>
         /// </summary>
-        public bool FullLoadReloaded
+        public bool? FullLoadReloaded
         {
-            get { return this._fullLoadReloaded.GetValueOrDefault(); }
+            get { return this._fullLoadReloaded; }
             set { this._fullLoadReloaded = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of rows added during the full load operation.
         /// </para>
         /// </summary>
-        public long FullLoadRows
+        public long? FullLoadRows
         {
-            get { return this._fullLoadRows.GetValueOrDefault(); }
+            get { return this._fullLoadRows; }
             set { this._fullLoadRows = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time when the full load operation started.
         /// </para>
         /// </summary>
-        public DateTime FullLoadStartTime
+        public DateTime? FullLoadStartTime
         {
-            get { return this._fullLoadStartTime.GetValueOrDefault(); }
+            get { return this._fullLoadStartTime; }
             set { this._fullLoadStartTime = value; }
         }
 
@@ -286,9 +286,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of insert actions performed on a table.
         /// </para>
         /// </summary>
-        public long Inserts
+        public long? Inserts
         {
-            get { return this._inserts.GetValueOrDefault(); }
+            get { return this._inserts; }
             set { this._inserts = value; }
         }
 
@@ -304,9 +304,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The last time a table was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 
@@ -381,9 +381,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of update actions performed on a table.
         /// </para>
         /// </summary>
-        public long Updates
+        public long? Updates
         {
-            get { return this._updates.GetValueOrDefault(); }
+            get { return this._updates; }
             set { this._updates = value; }
         }
 
@@ -399,9 +399,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of records that failed validation.
         /// </para>
         /// </summary>
-        public long ValidationFailedRecords
+        public long? ValidationFailedRecords
         {
-            get { return this._validationFailedRecords.GetValueOrDefault(); }
+            get { return this._validationFailedRecords; }
             set { this._validationFailedRecords = value; }
         }
 
@@ -417,9 +417,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of records that have yet to be validated.
         /// </para>
         /// </summary>
-        public long ValidationPendingRecords
+        public long? ValidationPendingRecords
         {
-            get { return this._validationPendingRecords.GetValueOrDefault(); }
+            get { return this._validationPendingRecords; }
             set { this._validationPendingRecords = value; }
         }
 
@@ -524,9 +524,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of records that couldn't be validated.
         /// </para>
         /// </summary>
-        public long ValidationSuspendedRecords
+        public long? ValidationSuspendedRecords
         {
-            get { return this._validationSuspendedRecords.GetValueOrDefault(); }
+            get { return this._validationSuspendedRecords; }
             set { this._validationSuspendedRecords = value; }
         }
 

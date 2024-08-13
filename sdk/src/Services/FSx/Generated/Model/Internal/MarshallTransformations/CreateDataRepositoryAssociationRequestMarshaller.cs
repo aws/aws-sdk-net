@@ -72,7 +72,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBatchImportMetaDataOnCreate())
                 {
                     context.Writer.WritePropertyName("BatchImportMetaDataOnCreate");
-                    context.Writer.Write(publicRequest.BatchImportMetaDataOnCreate);
+                    context.Writer.Write(publicRequest.BatchImportMetaDataOnCreate.Value);
                 }
 
                 if(publicRequest.IsSetClientRequestToken())
@@ -107,7 +107,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetImportedFileChunkSize())
                 {
                     context.Writer.WritePropertyName("ImportedFileChunkSize");
-                    context.Writer.Write(publicRequest.ImportedFileChunkSize);
+                    context.Writer.Write(publicRequest.ImportedFileChunkSize.Value);
                 }
 
                 if(publicRequest.IsSetS3())

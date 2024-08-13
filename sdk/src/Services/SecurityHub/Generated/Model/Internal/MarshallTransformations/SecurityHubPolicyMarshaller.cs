@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetServiceEnabled())
             {
                 context.Writer.WritePropertyName("ServiceEnabled");
-                context.Writer.Write(requestObject.ServiceEnabled);
+                context.Writer.Write(requestObject.ServiceEnabled.Value);
             }
 
         }

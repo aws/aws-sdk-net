@@ -117,9 +117,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates Horovod compatibility.
         /// </para>
         /// </summary>
-        public bool Horovod
+        public bool? Horovod
         {
-            get { return this._horovod.GetValueOrDefault(); }
+            get { return this._horovod; }
             set { this._horovod = value; }
         }
 

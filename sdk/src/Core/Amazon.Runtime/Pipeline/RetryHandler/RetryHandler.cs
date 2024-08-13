@@ -14,6 +14,8 @@
  */
 
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Telemetry.Metrics;
 using Amazon.Util;
 using System;
 using System.Net;
@@ -90,6 +92,8 @@ namespace Amazon.Runtime.Internal
                     {
                         requestContext.Retries++;
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
+                        MetricsUtilities.AddMonotonicCounterValue(requestContext, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.AttemptUnitName);
+
                         LogForRetry(requestContext, exception);
                     }
 
@@ -149,6 +153,8 @@ namespace Amazon.Runtime.Internal
                     {
                         requestContext.Retries++;
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
+                        MetricsUtilities.AddMonotonicCounterValue(requestContext, TelemetryConstants.CallAttemptsMetricName, TelemetryConstants.AttemptUnitName);
+
                         LogForRetry(requestContext, capturedException.SourceException);
                     }
 
@@ -164,57 +170,6 @@ namespace Amazon.Runtime.Internal
             throw new AmazonClientException("Neither a response was returned nor an exception was thrown in the Runtime RetryHandler.");
         }
 
-#endif
-
-#if AWS_APM_API 
-
-        /// <summary>
-        /// Invokes the inner handler and performs a retry, if required as per the
-        /// retry policy.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            var requestContext = executionContext.RequestContext;
-            var responseContext = executionContext.ResponseContext;
-            var exception = responseContext.AsyncResult.Exception;
-            var syncExecutionContext = ExecutionContext.CreateFromAsyncContext(executionContext);
-
-            if (exception != null)
-            {   
-                var shouldRetry = this.RetryPolicy.Retry(syncExecutionContext, exception);
-                if (shouldRetry)
-                {
-                    requestContext.Retries++;
-                    requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
-                    LogForRetry(requestContext, exception);
-
-                    PrepareForRetry(requestContext);
-
-                    // Clear out current exception
-                    responseContext.AsyncResult.Exception = null;
-
-                    using (requestContext.Metrics.StartEvent(Metric.RetryPauseTime))
-                        this.RetryPolicy.WaitBeforeRetry(syncExecutionContext);
-
-                    // Retry by calling InvokeAsync
-                    this.InvokeAsync(executionContext);
-                    return;
-                }
-                else
-                {
-                    LogForError(requestContext, exception);
-                }
-            }
-            else
-            {
-                this.RetryPolicy.NotifySuccess(syncExecutionContext);
-            }
-
-            // Call outer handler
-            base.InvokeAsyncCallback(executionContext);
-        }
 #endif
 
         /// <summary>

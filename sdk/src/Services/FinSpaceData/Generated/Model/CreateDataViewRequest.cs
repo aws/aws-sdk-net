@@ -51,9 +51,9 @@ namespace Amazon.FinSpaceData.Model
         /// 1635768000000.
         /// </para>
         /// </summary>
-        public long AsOfTimestamp
+        public long? AsOfTimestamp
         {
-            get { return this._asOfTimestamp.GetValueOrDefault(); }
+            get { return this._asOfTimestamp; }
             set { this._asOfTimestamp = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.FinSpaceData.Model
         /// Flag to indicate Dataview should be updated automatically.
         /// </para>
         /// </summary>
-        public bool AutoUpdate
+        public bool? AutoUpdate
         {
-            get { return this._autoUpdate.GetValueOrDefault(); }
+            get { return this._autoUpdate; }
             set { this._autoUpdate = value; }
         }
 

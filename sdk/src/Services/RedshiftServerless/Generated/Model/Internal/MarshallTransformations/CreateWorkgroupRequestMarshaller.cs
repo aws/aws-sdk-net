@@ -72,7 +72,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBaseCapacity())
                 {
                     context.Writer.WritePropertyName("baseCapacity");
-                    context.Writer.Write(publicRequest.BaseCapacity);
+                    context.Writer.Write(publicRequest.BaseCapacity.Value);
                 }
 
                 if(publicRequest.IsSetConfigParameters())
@@ -94,13 +94,19 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnhancedVpcRouting())
                 {
                     context.Writer.WritePropertyName("enhancedVpcRouting");
-                    context.Writer.Write(publicRequest.EnhancedVpcRouting);
+                    context.Writer.Write(publicRequest.EnhancedVpcRouting.Value);
+                }
+
+                if(publicRequest.IsSetIpAddressType())
+                {
+                    context.Writer.WritePropertyName("ipAddressType");
+                    context.Writer.Write(publicRequest.IpAddressType);
                 }
 
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("maxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
+                    context.Writer.Write(publicRequest.MaxCapacity.Value);
                 }
 
                 if(publicRequest.IsSetNamespaceName())
@@ -112,13 +118,13 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPort())
                 {
                     context.Writer.WritePropertyName("port");
-                    context.Writer.Write(publicRequest.Port);
+                    context.Writer.Write(publicRequest.Port.Value);
                 }
 
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
                 }
 
                 if(publicRequest.IsSetSecurityGroupIds())

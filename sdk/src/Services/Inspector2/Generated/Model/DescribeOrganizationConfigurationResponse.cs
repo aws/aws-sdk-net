@@ -62,9 +62,9 @@ namespace Amazon.Inspector2.Model
         /// limit for Amazon Inspector.
         /// </para>
         /// </summary>
-        public bool MaxAccountLimitReached
+        public bool? MaxAccountLimitReached
         {
-            get { return this._maxAccountLimitReached.GetValueOrDefault(); }
+            get { return this._maxAccountLimitReached; }
             set { this._maxAccountLimitReached = value; }
         }
 

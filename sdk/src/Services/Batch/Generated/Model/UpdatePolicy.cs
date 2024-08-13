@@ -47,9 +47,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=360)]
-        public long JobExecutionTimeoutMinutes
+        public long? JobExecutionTimeoutMinutes
         {
-            get { return this._jobExecutionTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._jobExecutionTimeoutMinutes; }
             set { this._jobExecutionTimeoutMinutes = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Batch.Model
         /// infrastructure is updated. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool TerminateJobsOnUpdate
+        public bool? TerminateJobsOnUpdate
         {
-            get { return this._terminateJobsOnUpdate.GetValueOrDefault(); }
+            get { return this._terminateJobsOnUpdate; }
             set { this._terminateJobsOnUpdate = value; }
         }
 

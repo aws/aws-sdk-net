@@ -93,9 +93,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value that indicates whether the TLS security policy is the default.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

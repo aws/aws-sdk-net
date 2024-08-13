@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.ApplyGuardrailRequest.GuardrailIdentifier</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.ApplyGuardrailRequest.GuardrailVersion</property>
+    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ConverseRequest.ModelId</property>
     <min>1</min>
     <max>2048</max>
@@ -89,6 +99,16 @@
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GuardrailConfiguration.GuardrailVersion</property>
     <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailContextualGroundingFilter.Score</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailContextualGroundingFilter.Threshold</property>
+    <min>0</min>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GuardrailStreamConfiguration.GuardrailIdentifier</property>

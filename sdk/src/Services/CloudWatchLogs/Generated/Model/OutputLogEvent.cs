@@ -46,16 +46,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime IngestionTime
+        public DateTime? IngestionTime
         {
-            get { return this._ingestionTime.GetValueOrDefault(); }
+            get { return this._ingestionTime; }
             set { this._ingestionTime = value; }
         }
 
         // Check to see if IngestionTime property is set
         internal bool IsSetIngestionTime()
         {
-            return this._ingestionTime.HasValue; 
+            return this._ingestionTime != null;
         }
 
         /// <summary>
@@ -85,16 +85,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
         // Check to see if Timestamp property is set
         internal bool IsSetTimestamp()
         {
-            return this._timestamp.HasValue; 
+            return this._timestamp != null;
         }
 
     }

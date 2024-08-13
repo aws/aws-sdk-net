@@ -104,13 +104,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("InProgressInvalidationBatches", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InProgressInvalidationBatches = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LastModifiedTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -47,18 +47,6 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class IniFile
     {
-#if BCL35
-        private class Tuple<T1, T2>
-        {
-            internal T1 Item1 { get; private set; }
-            internal T2 Item2 { get; private set; }
-            internal Tuple(T1 item1, T2 item2)
-            {
-                Item1 = item1;
-                Item2 = item2;
-            }
-        }
-#endif
         private const string sectionNamePrefix = "[";
         private const string sectionNameSuffix = "]";
         private const string keyValueSeparator = "=";
@@ -497,12 +485,8 @@ namespace Amazon.Runtime.Internal.Util
                         // nestedProperty.ParentKey = "s3"
                         // nestedProperty.SubpropertyKeys = ["max_retries","max_concurrent_requests"]
                         // nestedProperty.SubpropertyValues = ["10","50"]
-#if BCL35
-                        List<Tuple<string,string>> keyValuePairs =  InternalSDKUtils.Zip(nestedProperty.SubpropertyKeys,nestedProperty.SubpropertyValues, (k, v) => new Tuple<string, string>(k, v)).ToList();
-#else
-
                         List<Tuple<string,string>> keyValuePairs = nestedProperty.SubpropertyKeys.Zip(nestedProperty.SubpropertyValues, (k, v) => new Tuple<string,string>(k, v)).ToList();
-#endif
+      
                         foreach (var keyValuePair in keyValuePairs)
                         {
                             if (nestedProperties.ContainsKey(nestedProperty.ParentKey))

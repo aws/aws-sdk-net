@@ -83,9 +83,9 @@ namespace Amazon.CloudWatch.Model
         /// 00:00:00 UTC.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.CloudWatch.Model
         /// The size of the dashboard, in bytes.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

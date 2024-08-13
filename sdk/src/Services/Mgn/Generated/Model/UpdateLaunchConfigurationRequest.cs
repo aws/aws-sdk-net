@@ -97,9 +97,9 @@ namespace Amazon.Mgn.Model
         /// Update Launch configuration copy Private IP request.
         /// </para>
         /// </summary>
-        public bool CopyPrivateIp
+        public bool? CopyPrivateIp
         {
-            get { return this._copyPrivateIp.GetValueOrDefault(); }
+            get { return this._copyPrivateIp; }
             set { this._copyPrivateIp = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.Mgn.Model
         /// Update Launch configuration copy Tags request.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.Mgn.Model
         /// Enable map auto tagging.
         /// </para>
         /// </summary>
-        public bool EnableMapAutoTagging
+        public bool? EnableMapAutoTagging
         {
-            get { return this._enableMapAutoTagging.GetValueOrDefault(); }
+            get { return this._enableMapAutoTagging; }
             set { this._enableMapAutoTagging = value; }
         }
 

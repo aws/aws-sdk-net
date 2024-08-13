@@ -84,9 +84,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp when the status last changed to <c>UNHEALHY</c>.
         /// </para>
         /// </summary>
-        public DateTime UnhealthySince
+        public DateTime? UnhealthySince
         {
-            get { return this._unhealthySince.GetValueOrDefault(); }
+            get { return this._unhealthySince; }
             set { this._unhealthySince = value; }
         }
 

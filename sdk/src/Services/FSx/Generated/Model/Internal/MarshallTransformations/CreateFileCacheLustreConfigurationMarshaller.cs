@@ -68,7 +68,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerUnitStorageThroughput())
             {
                 context.Writer.WritePropertyName("PerUnitStorageThroughput");
-                context.Writer.Write(requestObject.PerUnitStorageThroughput);
+                context.Writer.Write(requestObject.PerUnitStorageThroughput.Value);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())

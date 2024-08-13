@@ -107,7 +107,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceRediscovery())
                 {
                     context.Writer.WritePropertyName("forceRediscovery");
-                    context.Writer.Write(publicRequest.ForceRediscovery);
+                    context.Writer.Write(publicRequest.ForceRediscovery.Value);
                 }
 
                 if(publicRequest.IsSetName())

@@ -60,7 +60,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsAutoPredictor", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsAutoPredictor = unmarshaller.Unmarshall(context);
                     continue;
                 }

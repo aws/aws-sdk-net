@@ -81,9 +81,9 @@ namespace Amazon.Signer.Model
         /// Total size of the policy associated with the Signing Profile in bytes.
         /// </para>
         /// </summary>
-        public int PolicySizeBytes
+        public int? PolicySizeBytes
         {
-            get { return this._policySizeBytes.GetValueOrDefault(); }
+            get { return this._policySizeBytes; }
             set { this._policySizeBytes = value; }
         }
 

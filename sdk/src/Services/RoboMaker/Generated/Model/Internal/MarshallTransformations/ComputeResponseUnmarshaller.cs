@@ -74,13 +74,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("gpuUnitLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GpuUnitLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("simulationUnitLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SimulationUnitLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

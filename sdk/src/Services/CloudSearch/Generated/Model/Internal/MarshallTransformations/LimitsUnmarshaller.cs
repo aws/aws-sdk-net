@@ -57,13 +57,13 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("MaximumPartitionCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaximumPartitionCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaximumReplicationCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaximumReplicationCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

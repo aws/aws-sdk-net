@@ -57,7 +57,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Items. 
         /// <para>
         /// A complex type that contains the HTTP methods that you want CloudFront to cache responses
-        /// to.
+        /// to. Valid values for <c>CachedMethods</c> include <c>GET</c>, <c>HEAD</c>, and <c>OPTIONS</c>,
+        /// depending on which caching option you choose. For more information, see the preceding
+        /// section.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,9 +85,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Quantity
+        public int? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

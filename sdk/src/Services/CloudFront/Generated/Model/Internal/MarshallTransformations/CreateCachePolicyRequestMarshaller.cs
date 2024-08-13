@@ -69,13 +69,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.CachePolicyConfig.Comment));
 
                     if(publicRequest.CachePolicyConfig.IsSetDefaultTTL())
-                        xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL));
+                        xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetMaxTTL())
-                        xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL));
+                        xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetMinTTL())
-                        xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL));
+                        xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.CachePolicyConfig.Name));
@@ -87,7 +87,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("CookiesConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.IsSetCookieBehavior())
-                                xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.CookieBehavior));                 
+                                xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.CookieBehavior));
 
                             if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies != null)
                             {
@@ -105,23 +105,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Quantity));                 
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingBrotli())
-                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli));                 
+                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli.Value));
 
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingGzip())
-                            xmlWriter.WriteElementString("EnableAcceptEncodingGzip", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip));                 
+                            xmlWriter.WriteElementString("EnableAcceptEncodingGzip", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip.Value));
 
                         if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig != null)
                         {
                             xmlWriter.WriteStartElement("HeadersConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.IsSetHeaderBehavior())
-                                xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.HeaderBehavior));                 
+                                xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.HeaderBehavior));
 
                             if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers != null)
                             {
@@ -139,7 +139,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Quantity));                 
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -149,7 +149,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("QueryStringsConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.IsSetQueryStringBehavior())
-                                xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStringBehavior));                 
+                                xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStringBehavior));
 
                             if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings != null)
                             {
@@ -167,7 +167,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Quantity));                 
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }

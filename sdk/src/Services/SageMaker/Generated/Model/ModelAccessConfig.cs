@@ -62,9 +62,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AcceptEula
+        public bool? AcceptEula
         {
-            get { return this._acceptEula.GetValueOrDefault(); }
+            get { return this._acceptEula; }
             set { this._acceptEula = value; }
         }
 

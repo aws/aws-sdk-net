@@ -57,37 +57,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompliantCriticalCount())
             {
                 context.Writer.WritePropertyName("CompliantCriticalCount");
-                context.Writer.Write(requestObject.CompliantCriticalCount);
+                context.Writer.Write(requestObject.CompliantCriticalCount.Value);
             }
 
             if(requestObject.IsSetCompliantHighCount())
             {
                 context.Writer.WritePropertyName("CompliantHighCount");
-                context.Writer.Write(requestObject.CompliantHighCount);
+                context.Writer.Write(requestObject.CompliantHighCount.Value);
             }
 
             if(requestObject.IsSetCompliantInformationalCount())
             {
                 context.Writer.WritePropertyName("CompliantInformationalCount");
-                context.Writer.Write(requestObject.CompliantInformationalCount);
+                context.Writer.Write(requestObject.CompliantInformationalCount.Value);
             }
 
             if(requestObject.IsSetCompliantLowCount())
             {
                 context.Writer.WritePropertyName("CompliantLowCount");
-                context.Writer.Write(requestObject.CompliantLowCount);
+                context.Writer.Write(requestObject.CompliantLowCount.Value);
             }
 
             if(requestObject.IsSetCompliantMediumCount())
             {
                 context.Writer.WritePropertyName("CompliantMediumCount");
-                context.Writer.Write(requestObject.CompliantMediumCount);
+                context.Writer.Write(requestObject.CompliantMediumCount.Value);
             }
 
             if(requestObject.IsSetCompliantUnspecifiedCount())
             {
                 context.Writer.WritePropertyName("CompliantUnspecifiedCount");
-                context.Writer.Write(requestObject.CompliantUnspecifiedCount);
+                context.Writer.Write(requestObject.CompliantUnspecifiedCount.Value);
             }
 
             if(requestObject.IsSetExecutionType())
@@ -99,37 +99,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNonCompliantCriticalCount())
             {
                 context.Writer.WritePropertyName("NonCompliantCriticalCount");
-                context.Writer.Write(requestObject.NonCompliantCriticalCount);
+                context.Writer.Write(requestObject.NonCompliantCriticalCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantHighCount())
             {
                 context.Writer.WritePropertyName("NonCompliantHighCount");
-                context.Writer.Write(requestObject.NonCompliantHighCount);
+                context.Writer.Write(requestObject.NonCompliantHighCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantInformationalCount())
             {
                 context.Writer.WritePropertyName("NonCompliantInformationalCount");
-                context.Writer.Write(requestObject.NonCompliantInformationalCount);
+                context.Writer.Write(requestObject.NonCompliantInformationalCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantLowCount())
             {
                 context.Writer.WritePropertyName("NonCompliantLowCount");
-                context.Writer.Write(requestObject.NonCompliantLowCount);
+                context.Writer.Write(requestObject.NonCompliantLowCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantMediumCount())
             {
                 context.Writer.WritePropertyName("NonCompliantMediumCount");
-                context.Writer.Write(requestObject.NonCompliantMediumCount);
+                context.Writer.Write(requestObject.NonCompliantMediumCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantUnspecifiedCount())
             {
                 context.Writer.WritePropertyName("NonCompliantUnspecifiedCount");
-                context.Writer.Write(requestObject.NonCompliantUnspecifiedCount);
+                context.Writer.Write(requestObject.NonCompliantUnspecifiedCount.Value);
             }
 
             if(requestObject.IsSetOverallSeverity())

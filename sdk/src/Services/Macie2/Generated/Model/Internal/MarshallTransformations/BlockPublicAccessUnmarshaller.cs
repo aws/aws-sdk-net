@@ -68,25 +68,25 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("blockPublicAcls", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BlockPublicAcls = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("blockPublicPolicy", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BlockPublicPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ignorePublicAcls", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IgnorePublicAcls = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("restrictPublicBuckets", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RestrictPublicBuckets = unmarshaller.Unmarshall(context);
                     continue;
                 }

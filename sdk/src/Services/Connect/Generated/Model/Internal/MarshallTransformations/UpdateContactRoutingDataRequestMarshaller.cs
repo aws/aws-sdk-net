@@ -76,13 +76,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueuePriority())
                 {
                     context.Writer.WritePropertyName("QueuePriority");
-                    context.Writer.Write(publicRequest.QueuePriority);
+                    context.Writer.Write(publicRequest.QueuePriority.Value);
                 }
 
                 if(publicRequest.IsSetQueueTimeAdjustmentSeconds())
                 {
                     context.Writer.WritePropertyName("QueueTimeAdjustmentSeconds");
-                    context.Writer.Write(publicRequest.QueueTimeAdjustmentSeconds);
+                    context.Writer.Write(publicRequest.QueueTimeAdjustmentSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -67,9 +67,9 @@ namespace Amazon.APIGateway.Model
         /// key values.
         /// </para>
         /// </summary>
-        public bool IncludeValues
+        public bool? IncludeValues
         {
-            get { return this._includeValues.GetValueOrDefault(); }
+            get { return this._includeValues; }
             set { this._includeValues = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.APIGateway.Model
         /// value is 500.
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

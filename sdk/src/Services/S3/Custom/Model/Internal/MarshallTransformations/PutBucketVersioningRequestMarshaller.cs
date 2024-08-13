@@ -69,7 +69,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                     if (versioningConfigurationVersioningConfiguration.IsSetEnableMfaDelete())
                     {
-                        xmlWriter.WriteElementString("MfaDelete", versioningConfigurationVersioningConfiguration.EnableMfaDelete ? "Enabled" : "Disabled");
+                        xmlWriter.WriteElementString("MfaDelete", versioningConfigurationVersioningConfiguration.EnableMfaDelete.Value ? "Enabled" : "Disabled");
                     }
                     if (versioningConfigurationVersioningConfiguration.IsSetStatus())
                     {

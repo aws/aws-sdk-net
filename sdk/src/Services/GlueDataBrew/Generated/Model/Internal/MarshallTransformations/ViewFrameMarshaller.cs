@@ -57,7 +57,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnRange())
             {
                 context.Writer.WritePropertyName("ColumnRange");
-                context.Writer.Write(requestObject.ColumnRange);
+                context.Writer.Write(requestObject.ColumnRange.Value);
             }
 
             if(requestObject.IsSetHiddenColumns())
@@ -74,19 +74,19 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRowRange())
             {
                 context.Writer.WritePropertyName("RowRange");
-                context.Writer.Write(requestObject.RowRange);
+                context.Writer.Write(requestObject.RowRange.Value);
             }
 
             if(requestObject.IsSetStartColumnIndex())
             {
                 context.Writer.WritePropertyName("StartColumnIndex");
-                context.Writer.Write(requestObject.StartColumnIndex);
+                context.Writer.Write(requestObject.StartColumnIndex.Value);
             }
 
             if(requestObject.IsSetStartRowIndex())
             {
                 context.Writer.WritePropertyName("StartRowIndex");
-                context.Writer.Write(requestObject.StartRowIndex);
+                context.Writer.Write(requestObject.StartRowIndex.Value);
             }
 
         }

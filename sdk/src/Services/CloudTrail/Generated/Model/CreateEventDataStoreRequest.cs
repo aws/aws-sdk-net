@@ -195,9 +195,9 @@ namespace Amazon.CloudTrail.Model
         /// the Region in which the event data store is created.
         /// </para>
         /// </summary>
-        public bool MultiRegionEnabled
+        public bool? MultiRegionEnabled
         {
-            get { return this._multiRegionEnabled.GetValueOrDefault(); }
+            get { return this._multiRegionEnabled; }
             set { this._multiRegionEnabled = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.CloudTrail.Model
         /// Organizations.
         /// </para>
         /// </summary>
-        public bool OrganizationEnabled
+        public bool? OrganizationEnabled
         {
-            get { return this._organizationEnabled.GetValueOrDefault(); }
+            get { return this._organizationEnabled; }
             set { this._organizationEnabled = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.CloudTrail.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=7, Max=3653)]
-        public int RetentionPeriod
+        public int? RetentionPeriod
         {
-            get { return this._retentionPeriod.GetValueOrDefault(); }
+            get { return this._retentionPeriod; }
             set { this._retentionPeriod = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.CloudTrail.Model
         /// is true.
         /// </para>
         /// </summary>
-        public bool StartIngestion
+        public bool? StartIngestion
         {
-            get { return this._startIngestion.GetValueOrDefault(); }
+            get { return this._startIngestion; }
             set { this._startIngestion = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.CloudTrail.Model
         /// is disabled.
         /// </para>
         /// </summary>
-        public bool TerminationProtectionEnabled
+        public bool? TerminationProtectionEnabled
         {
-            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            get { return this._terminationProtectionEnabled; }
             set { this._terminationProtectionEnabled = value; }
         }
 

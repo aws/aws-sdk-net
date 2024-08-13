@@ -74,25 +74,25 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MAPE", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MAPE = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MASE", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MASE = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RMSE", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RMSE = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WAPE", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.WAPE = unmarshaller.Unmarshall(context);
                     continue;
                 }

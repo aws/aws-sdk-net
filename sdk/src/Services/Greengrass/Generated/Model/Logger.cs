@@ -94,9 +94,9 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property Space. The amount of file space, in KB, to use if the local
         /// file system is used for logging purposes.
         /// </summary>
-        public int Space
+        public int? Space
         {
-            get { return this._space.GetValueOrDefault(); }
+            get { return this._space; }
             set { this._space = value; }
         }
 

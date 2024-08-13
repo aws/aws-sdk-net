@@ -15,7 +15,6 @@ namespace Amazon.Util.Internal
         public CSMConfig CSMConfig { get; set; }
         public LoggingConfig Logging { get; private set; }
         public ProxyConfig Proxy { get; private set; }
-        public string EndpointDefinition { get; set; }
         public string Region { get; set; }
         public string ProfileName { get; set; }
         public string ProfilesLocation { get; set; }
@@ -56,7 +55,6 @@ namespace Amazon.Util.Internal
             Logging = new LoggingConfig();
             Proxy = new ProxyConfig();
 
-            EndpointDefinition = AWSConfigs._endpointDefinition;
             Region = AWSConfigs._awsRegion;
             ProfileName = AWSConfigs._awsProfileName;
             ProfilesLocation = AWSConfigs._awsAccountsLocation;
@@ -74,7 +72,6 @@ namespace Amazon.Util.Internal
             if (root.UseSdkCache.HasValue)
                 UseSdkCache = root.UseSdkCache.Value;
 
-            EndpointDefinition = Choose(EndpointDefinition, root.EndpointDefinition);
             Region = Choose(Region, root.Region);
             ProfileName = Choose(ProfileName, root.ProfileName);
             ProfilesLocation = Choose(ProfilesLocation, root.ProfilesLocation);

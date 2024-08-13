@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// <c>3</c>. The default is <c>2</c>.
         /// </para>
         /// </summary>
-        public int AvailabilityZoneCount
+        public int? AvailabilityZoneCount
         {
-            get { return this._availabilityZoneCount.GetValueOrDefault(); }
+            get { return this._availabilityZoneCount; }
             set { this._availabilityZoneCount = value; }
         }
 

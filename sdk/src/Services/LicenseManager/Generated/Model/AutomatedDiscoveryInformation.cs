@@ -42,9 +42,9 @@ namespace Amazon.LicenseManager.Model
         /// Time that automated discovery last ran.
         /// </para>
         /// </summary>
-        public DateTime LastRunTime
+        public DateTime? LastRunTime
         {
-            get { return this._lastRunTime.GetValueOrDefault(); }
+            get { return this._lastRunTime; }
             set { this._lastRunTime = value; }
         }
 

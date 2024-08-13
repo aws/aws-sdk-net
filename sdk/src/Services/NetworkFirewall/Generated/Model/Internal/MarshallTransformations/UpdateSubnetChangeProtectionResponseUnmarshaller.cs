@@ -66,7 +66,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SubnetChangeProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.SubnetChangeProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }

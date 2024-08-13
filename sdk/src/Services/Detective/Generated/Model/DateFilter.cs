@@ -45,9 +45,9 @@ namespace Amazon.Detective.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndInclusive
+        public DateTime? EndInclusive
         {
-            get { return this._endInclusive.GetValueOrDefault(); }
+            get { return this._endInclusive; }
             set { this._endInclusive = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Detective.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartInclusive
+        public DateTime? StartInclusive
         {
-            get { return this._startInclusive.GetValueOrDefault(); }
+            get { return this._startInclusive; }
             set { this._startInclusive = value; }
         }
 

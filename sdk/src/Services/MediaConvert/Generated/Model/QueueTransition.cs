@@ -74,9 +74,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Timestamp. The time, in Unix epoch format, that the job
         /// moved from the source queue to the destination queue.
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AfterContactWorkTimeLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AfterContactWorkTimeLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AutoAccept", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoAccept = unmarshaller.Unmarshall(context);
                     continue;
                 }

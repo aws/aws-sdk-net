@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether a form entry is required.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

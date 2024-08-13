@@ -48,9 +48,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of errored entities.
         /// </para>
         /// </summary>
-        public int Errored
+        public int? Errored
         {
-            get { return this._errored.GetValueOrDefault(); }
+            get { return this._errored; }
             set { this._errored = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of failed entities.
         /// </para>
         /// </summary>
-        public int Failed
+        public int? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of passed entities.
         /// </para>
         /// </summary>
-        public int Passed
+        public int? Passed
         {
-            get { return this._passed.GetValueOrDefault(); }
+            get { return this._passed; }
             set { this._passed = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of skipped entities.
         /// </para>
         /// </summary>
-        public int Skipped
+        public int? Skipped
         {
-            get { return this._skipped.GetValueOrDefault(); }
+            get { return this._skipped; }
             set { this._skipped = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of stopped entities.
         /// </para>
         /// </summary>
-        public int Stopped
+        public int? Stopped
         {
-            get { return this._stopped.GetValueOrDefault(); }
+            get { return this._stopped; }
             set { this._stopped = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.DeviceFarm.Model
         /// The total number of entities.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of warned entities.
         /// </para>
         /// </summary>
-        public int Warned
+        public int? Warned
         {
-            get { return this._warned.GetValueOrDefault(); }
+            get { return this._warned; }
             set { this._warned = value; }
         }
 

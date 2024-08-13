@@ -80,7 +80,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NodeCreateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NodeCreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

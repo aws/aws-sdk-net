@@ -108,9 +108,9 @@ namespace Amazon.TranscribeService.Model
         /// <c>2022-05-04T12:32:58.761000-07:00</c> represents 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.TranscribeService.Model
         /// <c>2022-05-04T12:32:58.761000-07:00</c> represents 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -275,9 +275,9 @@ namespace Amazon.TranscribeService.Model
         /// supported.
         /// </para>
         /// </summary>
-        public bool UpgradeAvailability
+        public bool? UpgradeAvailability
         {
-            get { return this._upgradeAvailability.GetValueOrDefault(); }
+            get { return this._upgradeAvailability; }
             set { this._upgradeAvailability = value; }
         }
 

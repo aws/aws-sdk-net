@@ -45,9 +45,9 @@ namespace Amazon.Connect.Model
         /// The flag to mark the question as not applicable.
         /// </para>
         /// </summary>
-        public bool NotApplicable
+        public bool? NotApplicable
         {
-            get { return this._notApplicable.GetValueOrDefault(); }
+            get { return this._notApplicable; }
             set { this._notApplicable = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Connect.Model
         /// The numeric value for an answer in a contact evaluation.
         /// </para>
         /// </summary>
-        public double NumericValue
+        public double? NumericValue
         {
-            get { return this._numericValue.GetValueOrDefault(); }
+            get { return this._numericValue; }
             set { this._numericValue = value; }
         }
 

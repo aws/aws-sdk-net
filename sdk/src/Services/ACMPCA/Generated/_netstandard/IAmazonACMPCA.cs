@@ -853,27 +853,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Authority key identifier
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Basic constraints (<i>must</i> be marked critical)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Certificate policies
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Extended key usage
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Inhibit anyPolicy
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Issuer alternative name
+        /// Subject alternative names
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -881,19 +865,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Name constraints
+        /// Extended key usage
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Policy mappings
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Subject alternative name
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Subject directory attributes
+        /// Authority key identifier
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -901,7 +877,27 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Issuer alternative name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subject directory attributes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Subject information access
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Certificate policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy mappings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inhibit anyPolicy
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -910,7 +906,11 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Authority information access
+        /// Name constraints
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy constraints
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -918,17 +918,17 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Authority information access
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Freshest CRL
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Policy constraints
+        /// Any other extension
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Amazon Web Services Private Certificate Authority will also reject any other extension
-        /// marked as critical not contained on the preceding list of allowed extensions.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCertificateAuthorityCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -1503,5 +1503,33 @@ namespace Amazon.ACMPCA
         
         #endregion
 
+        #region Static factory interface methods
+#if NET8_0_OR_GREATER
+// Warning CA1033 is issued when the child types can not call the method defined in parent types.
+// In this use case the intended caller is only meant to be the interface as a factory
+// method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonACMPCAConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonACMPCAConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonACMPCAConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonACMPCAConfig to create AmazonACMPCAClient");
+            }
+
+            return awsCredentials == null ? 
+                    new AmazonACMPCAClient(serviceClientConfig) :
+                    new AmazonACMPCAClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+        #endregion
     }
 }

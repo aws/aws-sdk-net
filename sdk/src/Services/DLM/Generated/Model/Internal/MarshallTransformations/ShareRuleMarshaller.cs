@@ -62,7 +62,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnshareInterval())
             {
                 context.Writer.WritePropertyName("UnshareInterval");
-                context.Writer.Write(requestObject.UnshareInterval);
+                context.Writer.Write(requestObject.UnshareInterval.Value);
             }
 
             if(requestObject.IsSetUnshareIntervalUnit())

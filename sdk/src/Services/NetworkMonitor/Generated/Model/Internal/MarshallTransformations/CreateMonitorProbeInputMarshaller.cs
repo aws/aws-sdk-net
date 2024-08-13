@@ -57,13 +57,13 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationPort())
             {
                 context.Writer.WritePropertyName("destinationPort");
-                context.Writer.Write(requestObject.DestinationPort);
+                context.Writer.Write(requestObject.DestinationPort.Value);
             }
 
             if(requestObject.IsSetPacketSize())
             {
                 context.Writer.WritePropertyName("packetSize");
-                context.Writer.Write(requestObject.PacketSize);
+                context.Writer.Write(requestObject.PacketSize.Value);
             }
 
             if(requestObject.IsSetProbeTags())

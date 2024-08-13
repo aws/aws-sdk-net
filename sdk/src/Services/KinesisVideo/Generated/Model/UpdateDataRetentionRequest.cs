@@ -100,9 +100,9 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int DataRetentionChangeInHours
+        public int? DataRetentionChangeInHours
         {
-            get { return this._dataRetentionChangeInHours.GetValueOrDefault(); }
+            get { return this._dataRetentionChangeInHours; }
             set { this._dataRetentionChangeInHours = value; }
         }
 

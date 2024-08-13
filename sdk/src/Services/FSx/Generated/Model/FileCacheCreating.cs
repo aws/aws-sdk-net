@@ -61,9 +61,9 @@ namespace Amazon.FSx.Model
         /// associations.
         /// </para>
         /// </summary>
-        public bool CopyTagsToDataRepositoryAssociations
+        public bool? CopyTagsToDataRepositoryAssociations
         {
-            get { return this._copyTagsToDataRepositoryAssociations.GetValueOrDefault(); }
+            get { return this._copyTagsToDataRepositoryAssociations; }
             set { this._copyTagsToDataRepositoryAssociations = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property CreationTime.
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -129,7 +129,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FailureDetails. 
         /// <para>
-        /// A structure providing details of any failures that occurred.
+        /// A structure providing details of any failures that occurred in creating a cache.
         /// </para>
         /// </summary>
         public FileCacheFailureDetails FailureDetails
@@ -337,9 +337,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int StorageCapacity
+        public int? StorageCapacity
         {
-            get { return this._storageCapacity.GetValueOrDefault(); }
+            get { return this._storageCapacity; }
             set { this._storageCapacity = value; }
         }
 

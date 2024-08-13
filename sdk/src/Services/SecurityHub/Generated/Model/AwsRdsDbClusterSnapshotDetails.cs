@@ -60,9 +60,9 @@ namespace Amazon.SecurityHub.Model
         /// Specifies the allocated storage size in gibibytes (GiB).
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether mapping of IAM accounts to database accounts is enabled.
         /// </para>
         /// </summary>
-        public bool IamDatabaseAuthenticationEnabled
+        public bool? IamDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -305,9 +305,9 @@ namespace Amazon.SecurityHub.Model
         /// Specifies the percentage of the estimated data that has been transferred.
         /// </para>
         /// </summary>
-        public int PercentProgress
+        public int? PercentProgress
         {
-            get { return this._percentProgress.GetValueOrDefault(); }
+            get { return this._percentProgress; }
             set { this._percentProgress = value; }
         }
 
@@ -323,9 +323,9 @@ namespace Amazon.SecurityHub.Model
         /// The port number on which the DB instances in the DB cluster accept connections.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -423,9 +423,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the DB cluster is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

@@ -181,9 +181,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=600)]
-        public int DisconnectTimeoutInMinutes
+        public int? DisconnectTimeoutInMinutes
         {
-            get { return this._disconnectTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._disconnectTimeoutInMinutes; }
             set { this._disconnectTimeoutInMinutes = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
-        public int IdleDisconnectTimeoutInMinutes
+        public int? IdleDisconnectTimeoutInMinutes
         {
-            get { return this._idleDisconnectTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._idleDisconnectTimeoutInMinutes; }
             set { this._idleDisconnectTimeoutInMinutes = value; }
         }
 

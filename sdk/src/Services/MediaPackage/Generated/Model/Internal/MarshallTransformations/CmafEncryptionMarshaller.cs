@@ -63,7 +63,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyRotationIntervalSeconds())
             {
                 context.Writer.WritePropertyName("keyRotationIntervalSeconds");
-                context.Writer.Write(requestObject.KeyRotationIntervalSeconds);
+                context.Writer.Write(requestObject.KeyRotationIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetSpekeKeyProvider())

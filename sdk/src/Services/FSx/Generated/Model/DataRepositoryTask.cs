@@ -80,9 +80,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public long CapacityToRelease
+        public long? CapacityToRelease
         {
-            get { return this._capacityToRelease.GetValueOrDefault(); }
+            get { return this._capacityToRelease; }
             set { this._capacityToRelease = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property CreationTime.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.FSx.Model
         /// The time the system completed processing the task, populated after the task is complete.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -318,9 +318,9 @@ namespace Amazon.FSx.Model
         /// The time the system began processing the task.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

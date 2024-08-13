@@ -51,7 +51,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxTimeDelaySeconds())
             {
                 context.Writer.WritePropertyName("MaxTimeDelaySeconds");
-                context.Writer.Write(requestObject.MaxTimeDelaySeconds);
+                context.Writer.Write(requestObject.MaxTimeDelaySeconds.Value);
             }
 
         }

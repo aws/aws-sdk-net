@@ -68,9 +68,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MaximumValue
+        public double? MaximumValue
         {
-            get { return this._maximumValue.GetValueOrDefault(); }
+            get { return this._maximumValue; }
             set { this._maximumValue = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MinimumValue
+        public double? MinimumValue
         {
-            get { return this._minimumValue.GetValueOrDefault(); }
+            get { return this._minimumValue; }
             set { this._minimumValue = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double StepSize
+        public double? StepSize
         {
-            get { return this._stepSize.GetValueOrDefault(); }
+            get { return this._stepSize; }
             set { this._stepSize = value; }
         }
 

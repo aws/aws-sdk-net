@@ -64,9 +64,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ChildDirected
+        public bool? ChildDirected
         {
-            get { return this._childDirected.GetValueOrDefault(); }
+            get { return this._childDirected; }
             set { this._childDirected = value; }
         }
 

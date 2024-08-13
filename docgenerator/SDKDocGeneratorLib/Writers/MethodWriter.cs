@@ -111,14 +111,12 @@ namespace SDKDocGenerator.Writers
 
             if (!this._isFakeAsync && this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal))
             {
-                const string net35PatternNote = " For .NET 3.5 the operation is implemented as a pair of methods using the standard naming convention of "
-                                                + "<b>Begin</b><i>{0}</i> and <b>End</b><i>{0}</i>.";
-                const string patternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
-                                           + "<p>This is an asynchronous operation using the standard naming convention for .NET 4.5 or higher."
-                                           + "{0}</p></div>";
+                const string netFrameworkPatternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
+                                           + "<p>This is an asynchronous operation using the standard naming convention for .NET 4.7.2 or higher."
+                                           + "</p></div>";
 
                 var name = this._methodInfo.Name.Substring(0, this._methodInfo.Name.Length - 5);
-                writer.WriteLine(patternNote, string.Format(net35PatternNote, name));
+                writer.WriteLine(netFrameworkPatternNote);
             }                 
             else if (this._hasAsyncVersion)
             {
@@ -137,9 +135,9 @@ namespace SDKDocGenerator.Writers
             get
             {
                 // This check is mostly to keep the generator from emitting multiple rewrite rules for the same shape.
-                // i.e. we don't want a rewrite rule for bcl35, bcl45, and netstandard. We only emit rules for bcl45
+                // i.e. we don't want a rewrite rule for bcl472, and netstandard. We only emit rules for bcl472
                 //      we don't want to emit rules for both Async and Sync. We only emit rules for Async.
-                return (this._version == FrameworkVersion.DotNet45 &&
+                return (this._version == FrameworkVersion.DotNet472 &&
                         !this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal) &&
                         this._methodInfo.DeclaringType.IsClass &&
                         !this._methodInfo.DeclaringType.IsAbstract);

@@ -46,9 +46,9 @@ namespace Amazon.PinpointEmail.Model
         /// period. This value is also called your <i>sending quota</i>.
         /// </para>
         /// </summary>
-        public double Max24HourSend
+        public double? Max24HourSend
         {
-            get { return this._max24HourSend.GetValueOrDefault(); }
+            get { return this._max24HourSend; }
             set { this._max24HourSend = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.PinpointEmail.Model
         /// (transactions per second) rate</i>.
         /// </para>
         /// </summary>
-        public double MaxSendRate
+        public double? MaxSendRate
         {
-            get { return this._maxSendRate.GetValueOrDefault(); }
+            get { return this._maxSendRate; }
             set { this._maxSendRate = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.PinpointEmail.Model
         /// over the past 24 hours.
         /// </para>
         /// </summary>
-        public double SentLast24Hours
+        public double? SentLast24Hours
         {
-            get { return this._sentLast24Hours.GetValueOrDefault(); }
+            get { return this._sentLast24Hours; }
             set { this._sentLast24Hours = value; }
         }
 

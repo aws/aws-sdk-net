@@ -137,9 +137,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use resourceRequirements instead.")]
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use resourceRequirements instead.")]
-        public int Vcpus
+        public int? Vcpus
         {
-            get { return this._vcpus.GetValueOrDefault(); }
+            get { return this._vcpus; }
             set { this._vcpus = value; }
         }
 

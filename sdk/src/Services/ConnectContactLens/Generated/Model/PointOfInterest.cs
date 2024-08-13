@@ -44,9 +44,9 @@ namespace Amazon.ConnectContactLens.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int BeginOffsetMillis
+        public int? BeginOffsetMillis
         {
-            get { return this._beginOffsetMillis.GetValueOrDefault(); }
+            get { return this._beginOffsetMillis; }
             set { this._beginOffsetMillis = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.ConnectContactLens.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int EndOffsetMillis
+        public int? EndOffsetMillis
         {
-            get { return this._endOffsetMillis.GetValueOrDefault(); }
+            get { return this._endOffsetMillis; }
             set { this._endOffsetMillis = value; }
         }
 

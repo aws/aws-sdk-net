@@ -42,9 +42,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// Indicates whether the event matches the event pattern.
         /// </para>
         /// </summary>
-        public bool Result
+        public bool? Result
         {
-            get { return this._result.GetValueOrDefault(); }
+            get { return this._result; }
             set { this._result = value; }
         }
 

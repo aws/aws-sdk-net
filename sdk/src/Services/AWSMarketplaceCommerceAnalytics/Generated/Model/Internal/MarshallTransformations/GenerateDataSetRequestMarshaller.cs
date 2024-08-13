@@ -86,7 +86,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
                 if(publicRequest.IsSetDataSetPublicationDate())
                 {
                     context.Writer.WritePropertyName("dataSetPublicationDate");
-                    context.Writer.Write(publicRequest.DataSetPublicationDate);
+                    context.Writer.Write(publicRequest.DataSetPublicationDate.Value);
                 }
 
                 if(publicRequest.IsSetDataSetType())

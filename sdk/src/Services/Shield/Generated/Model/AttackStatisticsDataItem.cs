@@ -47,9 +47,9 @@ namespace Amazon.Shield.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long AttackCount
+        public long? AttackCount
         {
-            get { return this._attackCount.GetValueOrDefault(); }
+            get { return this._attackCount; }
             set { this._attackCount = value; }
         }
 

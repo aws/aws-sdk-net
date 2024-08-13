@@ -87,9 +87,9 @@ namespace Amazon.PinpointEmail.Model
         /// domain.
         /// </para>
         /// </summary>
-        public DateTime SubscriptionStartDate
+        public DateTime? SubscriptionStartDate
         {
-            get { return this._subscriptionStartDate.GetValueOrDefault(); }
+            get { return this._subscriptionStartDate; }
             set { this._subscriptionStartDate = value; }
         }
 

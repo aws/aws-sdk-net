@@ -76,28 +76,8 @@ namespace Amazon.Runtime.Internal
                 _ = CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallEvent);
             }            
         }
-
-#elif AWS_APM_API
-        /// <summary>
-        /// Invokes the CSM handler and captures data for the CSM events.
-        /// </summary>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
-        }
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            if (executionContext.ResponseContext.AsyncResult.Exception != null)
-            {
-                CaptureCSMCallEventExceptionData(executionContext.RequestContext, executionContext.ResponseContext.AsyncResult.Exception);
-            }
-            CSMCallEventMetricsCapture(ExecutionContext.CreateFromAsyncContext(executionContext));
-            CSMUtilities.BeginSerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallEvent);
-            base.InvokeAsyncCallback(executionContext);
-        }
-
 #endif
+
         /// <summary>
         /// Invoked from the finally block of CSMCallEventHandler's Invoke method.
         /// This method is used to capture CSM Call event metrics.

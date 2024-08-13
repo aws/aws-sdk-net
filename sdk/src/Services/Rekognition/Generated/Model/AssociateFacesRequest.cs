@@ -168,9 +168,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float UserMatchThreshold
+        public float? UserMatchThreshold
         {
-            get { return this._userMatchThreshold.GetValueOrDefault(); }
+            get { return this._userMatchThreshold; }
             set { this._userMatchThreshold = value; }
         }
 

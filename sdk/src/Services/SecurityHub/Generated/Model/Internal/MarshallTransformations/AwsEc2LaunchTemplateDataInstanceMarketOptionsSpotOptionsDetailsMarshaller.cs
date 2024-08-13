@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockDurationMinutes())
             {
                 context.Writer.WritePropertyName("BlockDurationMinutes");
-                context.Writer.Write(requestObject.BlockDurationMinutes);
+                context.Writer.Write(requestObject.BlockDurationMinutes.Value);
             }
 
             if(requestObject.IsSetInstanceInterruptionBehavior())

@@ -85,9 +85,9 @@ namespace Amazon.CodeCommit.Model
         /// conflict. File mode conflicts in a merge do not set this to true.
         /// </para>
         /// </summary>
-        public bool IsConflict
+        public bool? IsConflict
         {
-            get { return this._isConflict.GetValueOrDefault(); }
+            get { return this._isConflict; }
             set { this._isConflict = value; }
         }
 

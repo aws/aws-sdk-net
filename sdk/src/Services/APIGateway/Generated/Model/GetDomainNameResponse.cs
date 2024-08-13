@@ -97,9 +97,9 @@ namespace Amazon.APIGateway.Model
         /// domain name was uploaded.
         /// </para>
         /// </summary>
-        public DateTime CertificateUploadDate
+        public DateTime? CertificateUploadDate
         {
-            get { return this._certificateUploadDate.GetValueOrDefault(); }
+            get { return this._certificateUploadDate; }
             set { this._certificateUploadDate = value; }
         }
 

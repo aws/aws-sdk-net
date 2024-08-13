@@ -185,9 +185,9 @@ namespace Amazon.DataZone.Model
         /// action.
         /// </para>
         /// </summary>
-        public bool PublishOnImport
+        public bool? PublishOnImport
         {
-            get { return this._publishOnImport.GetValueOrDefault(); }
+            get { return this._publishOnImport; }
             set { this._publishOnImport = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.DataZone.Model
         /// failure for a data source.
         /// </para>
         /// </summary>
-        public bool RetainPermissionsOnRevokeFailure
+        public bool? RetainPermissionsOnRevokeFailure
         {
-            get { return this._retainPermissionsOnRevokeFailure.GetValueOrDefault(); }
+            get { return this._retainPermissionsOnRevokeFailure; }
             set { this._retainPermissionsOnRevokeFailure = value; }
         }
 

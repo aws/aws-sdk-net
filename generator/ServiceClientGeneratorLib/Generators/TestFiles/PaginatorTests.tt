@@ -14,10 +14,10 @@ using <#=this.Config.Namespace#>.Model;
 using Moq;
 using System;
 using System.Linq;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
+namespace AWSSDK_DotNet.UnitTests.PaginatorTests
 {
     [TestClass]
     public class <#=this.Config.ClassName#>PaginatorTests

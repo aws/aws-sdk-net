@@ -117,9 +117,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// When the Recommendation was created, if created by AWS Trusted Advisor Priority
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// When the Recommendation was last updated
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// When the Recommendation was resolved
         /// </para>
         /// </summary>
-        public DateTime ResolvedAt
+        public DateTime? ResolvedAt
         {
-            get { return this._resolvedAt.GetValueOrDefault(); }
+            get { return this._resolvedAt; }
             set { this._resolvedAt = value; }
         }
 

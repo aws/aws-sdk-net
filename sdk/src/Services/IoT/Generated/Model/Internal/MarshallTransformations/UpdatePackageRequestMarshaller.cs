@@ -91,7 +91,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUnsetDefaultVersion())
                 {
                     context.Writer.WritePropertyName("unsetDefaultVersion");
-                    context.Writer.Write(publicRequest.UnsetDefaultVersion);
+                    context.Writer.Write(publicRequest.UnsetDefaultVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

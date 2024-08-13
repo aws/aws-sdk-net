@@ -52,9 +52,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AchievableRpoInSecs
+        public int? AchievableRpoInSecs
         {
-            get { return this._achievableRpoInSecs.GetValueOrDefault(); }
+            get { return this._achievableRpoInSecs; }
             set { this._achievableRpoInSecs = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AchievableRtoInSecs
+        public int? AchievableRtoInSecs
         {
-            get { return this._achievableRtoInSecs.GetValueOrDefault(); }
+            get { return this._achievableRtoInSecs; }
             set { this._achievableRtoInSecs = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CurrentRpoInSecs
+        public int? CurrentRpoInSecs
         {
-            get { return this._currentRpoInSecs.GetValueOrDefault(); }
+            get { return this._currentRpoInSecs; }
             set { this._currentRpoInSecs = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CurrentRtoInSecs
+        public int? CurrentRtoInSecs
         {
-            get { return this._currentRtoInSecs.GetValueOrDefault(); }
+            get { return this._currentRtoInSecs; }
             set { this._currentRtoInSecs = value; }
         }
 

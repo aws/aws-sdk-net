@@ -99,7 +99,7 @@ namespace Amazon.SimpleDB.Model
         protected NumberDomainBytesExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.BoxUsage = (float)info.GetValue("BoxUsage", typeof(float));
+            this.BoxUsage = (float?)info.GetValue("BoxUsage", typeof(float?));
         }
 
         /// <summary>
@@ -108,11 +108,6 @@ namespace Amazon.SimpleDB.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -127,9 +122,9 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property BoxUsage.
         /// </summary>
-        public float BoxUsage
+        public float? BoxUsage
         {
-            get { return this._boxUsage.GetValueOrDefault(); }
+            get { return this._boxUsage; }
             set { this._boxUsage = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Other
+        public double? Other
         {
-            get { return this._other.GetValueOrDefault(); }
+            get { return this._other; }
             set { this._other = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Read
+        public double? Read
         {
-            get { return this._read.GetValueOrDefault(); }
+            get { return this._read; }
             set { this._read = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Write
+        public double? Write
         {
-            get { return this._write.GetValueOrDefault(); }
+            get { return this._write; }
             set { this._write = value; }
         }
 

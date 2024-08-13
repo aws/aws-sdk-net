@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalyzedTime())
             {
                 context.Writer.WritePropertyName("AnalyzedTime");
-                context.Writer.Write(requestObject.AnalyzedTime);
+                context.Writer.Write(requestObject.AnalyzedTime.Value);
             }
 
             if(requestObject.IsSetColumnName())

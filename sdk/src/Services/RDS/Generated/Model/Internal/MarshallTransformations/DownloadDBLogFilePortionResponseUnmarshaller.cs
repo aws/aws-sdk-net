@@ -84,7 +84,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("AdditionalDataPending", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.AdditionalDataPending = unmarshaller.Unmarshall(context);
                         continue;
                     }

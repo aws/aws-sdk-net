@@ -54,7 +54,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("hasMoreResults", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HasMoreResults = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -93,7 +93,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDepartNow())
                 {
                     context.Writer.WritePropertyName("DepartNow");
-                    context.Writer.Write(publicRequest.DepartNow);
+                    context.Writer.Write(publicRequest.DepartNow.Value);
                 }
 
                 if(publicRequest.IsSetDeparturePosition())
@@ -133,7 +133,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeLegGeometry())
                 {
                     context.Writer.WritePropertyName("IncludeLegGeometry");
-                    context.Writer.Write(publicRequest.IncludeLegGeometry);
+                    context.Writer.Write(publicRequest.IncludeLegGeometry.Value);
                 }
 
                 if(publicRequest.IsSetOptimizeFor())

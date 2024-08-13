@@ -37,8 +37,8 @@ namespace Amazon.ECR.Model
     /// <para>
     /// By default, when no encryption configuration is set or the <c>AES256</c> encryption
     /// type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption
-    /// keys which encrypts your data at rest using an AES-256 encryption algorithm. This
-    /// does not require any action on your part.
+    /// keys which encrypts your data at rest using an AES256 encryption algorithm. This does
+    /// not require any action on your part.
     /// </para>
     ///  
     /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.ECR.Model
         /// <para>
         /// If you use the <c>AES256</c> encryption type, Amazon ECR uses server-side encryption
         /// with Amazon S3-managed encryption keys which encrypts the images in the repository
-        /// using an AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
+        /// using an AES256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
         /// data using server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a>
         /// in the <i>Amazon Simple Storage Service Console Developer Guide</i>.
         /// </para>

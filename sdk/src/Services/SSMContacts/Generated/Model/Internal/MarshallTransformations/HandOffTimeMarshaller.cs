@@ -51,13 +51,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHourOfDay())
             {
                 context.Writer.WritePropertyName("HourOfDay");
-                context.Writer.Write(requestObject.HourOfDay);
+                context.Writer.Write(requestObject.HourOfDay.Value);
             }
 
             if(requestObject.IsSetMinuteOfHour())
             {
                 context.Writer.WritePropertyName("MinuteOfHour");
-                context.Writer.Write(requestObject.MinuteOfHour);
+                context.Writer.Write(requestObject.MinuteOfHour.Value);
             }
 
         }

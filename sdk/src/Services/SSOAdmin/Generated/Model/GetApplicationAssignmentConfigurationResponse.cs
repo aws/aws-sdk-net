@@ -45,9 +45,9 @@ namespace Amazon.SSOAdmin.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AssignmentRequired
+        public bool? AssignmentRequired
         {
-            get { return this._assignmentRequired.GetValueOrDefault(); }
+            get { return this._assignmentRequired; }
             set { this._assignmentRequired = value; }
         }
 

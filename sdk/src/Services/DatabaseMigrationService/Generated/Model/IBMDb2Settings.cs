@@ -97,9 +97,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The default value is false. 
         /// </para>
         /// </summary>
-        public bool KeepCsvFiles
+        public bool? KeepCsvFiles
         {
-            get { return this._keepCsvFiles.GetValueOrDefault(); }
+            get { return this._keepCsvFiles; }
             set { this._keepCsvFiles = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// DMS on the Db2 target. The default value is 1200 (20 minutes).
         /// </para>
         /// </summary>
-        public int LoadTimeout
+        public int? LoadTimeout
         {
-            get { return this._loadTimeout.GetValueOrDefault(); }
+            get { return this._loadTimeout; }
             set { this._loadTimeout = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
         /// </para>
         /// </summary>
-        public int MaxFileSize
+        public int? MaxFileSize
         {
-            get { return this._maxFileSize.GetValueOrDefault(); }
+            get { return this._maxFileSize; }
             set { this._maxFileSize = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.
         /// </para>
         /// </summary>
-        public int MaxKBytesPerRead
+        public int? MaxKBytesPerRead
         {
-            get { return this._maxKBytesPerRead.GetValueOrDefault(); }
+            get { return this._maxKBytesPerRead; }
             set { this._maxKBytesPerRead = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint TCP port. The default value is 50000.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.
         /// </para>
         /// </summary>
-        public bool SetDataCaptureChanges
+        public bool? SetDataCaptureChanges
         {
-            get { return this._setDataCaptureChanges.GetValueOrDefault(); }
+            get { return this._setDataCaptureChanges; }
             set { this._setDataCaptureChanges = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// on the local disk on the DMS replication instance. The default value is 1024 (1 MB).
         /// </para>
         /// </summary>
-        public int WriteBufferSize
+        public int? WriteBufferSize
         {
-            get { return this._writeBufferSize.GetValueOrDefault(); }
+            get { return this._writeBufferSize; }
             set { this._writeBufferSize = value; }
         }
 

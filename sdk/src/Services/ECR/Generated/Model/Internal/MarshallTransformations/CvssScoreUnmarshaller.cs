@@ -68,7 +68,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("baseScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BaseScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

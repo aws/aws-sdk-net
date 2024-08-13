@@ -43,9 +43,9 @@ namespace Amazon.Lambda.Model
         /// The number of Lambda functions.
         /// </para>
         /// </summary>
-        public long FunctionCount
+        public long? FunctionCount
         {
-            get { return this._functionCount.GetValueOrDefault(); }
+            get { return this._functionCount; }
             set { this._functionCount = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Lambda.Model
         /// layer archives.
         /// </para>
         /// </summary>
-        public long TotalCodeSize
+        public long? TotalCodeSize
         {
-            get { return this._totalCodeSize.GetValueOrDefault(); }
+            get { return this._totalCodeSize; }
             set { this._totalCodeSize = value; }
         }
 

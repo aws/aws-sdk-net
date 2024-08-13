@@ -68,9 +68,9 @@ namespace Amazon.GreengrassV2.Model
         /// Default: <c>16384</c> (16 MB)
         /// </para>
         /// </summary>
-        public int MemorySizeInKB
+        public int? MemorySizeInKB
         {
-            get { return this._memorySizeInKB.GetValueOrDefault(); }
+            get { return this._memorySizeInKB; }
             set { this._memorySizeInKB = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.GreengrassV2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool MountROSysfs
+        public bool? MountROSysfs
         {
-            get { return this._mountroSysfs.GetValueOrDefault(); }
+            get { return this._mountroSysfs; }
             set { this._mountroSysfs = value; }
         }
 

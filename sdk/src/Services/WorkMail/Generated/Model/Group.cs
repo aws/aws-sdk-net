@@ -47,9 +47,9 @@ namespace Amazon.WorkMail.Model
         /// The date indicating when the group was disabled from WorkMail use.
         /// </para>
         /// </summary>
-        public DateTime DisabledDate
+        public DateTime? DisabledDate
         {
-            get { return this._disabledDate.GetValueOrDefault(); }
+            get { return this._disabledDate; }
             set { this._disabledDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.WorkMail.Model
         /// The date indicating when the group was enabled for WorkMail use.
         /// </para>
         /// </summary>
-        public DateTime EnabledDate
+        public DateTime? EnabledDate
         {
-            get { return this._enabledDate.GetValueOrDefault(); }
+            get { return this._enabledDate; }
             set { this._enabledDate = value; }
         }
 

@@ -62,9 +62,9 @@ namespace Amazon.SecurityHub.Model
         /// The size, in bytes, of a backup. 
         /// </para>
         /// </summary>
-        public long BackupSizeInBytes
+        public long? BackupSizeInBytes
         {
-            get { return this._backupSizeInBytes.GetValueOrDefault(); }
+            get { return this._backupSizeInBytes; }
             set { this._backupSizeInBytes = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.SecurityHub.Model
         /// encrypted, or <c>FALSE</c> if the recovery point is not encrypted. 
         /// </para>
         /// </summary>
-        public bool IsEncrypted
+        public bool? IsEncrypted
         {
-            get { return this._isEncrypted.GetValueOrDefault(); }
+            get { return this._isEncrypted; }
             set { this._isEncrypted = value; }
         }
 

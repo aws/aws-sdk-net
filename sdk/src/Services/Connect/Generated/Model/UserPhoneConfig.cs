@@ -56,9 +56,9 @@ namespace Amazon.Connect.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AfterContactWorkTimeLimit
+        public int? AfterContactWorkTimeLimit
         {
-            get { return this._afterContactWorkTimeLimit.GetValueOrDefault(); }
+            get { return this._afterContactWorkTimeLimit; }
             set { this._afterContactWorkTimeLimit = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.Connect.Model
         /// The Auto accept setting.
         /// </para>
         /// </summary>
-        public bool AutoAccept
+        public bool? AutoAccept
         {
-            get { return this._autoAccept.GetValueOrDefault(); }
+            get { return this._autoAccept; }
             set { this._autoAccept = value; }
         }
 

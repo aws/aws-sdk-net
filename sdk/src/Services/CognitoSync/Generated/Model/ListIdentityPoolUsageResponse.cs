@@ -42,9 +42,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property Count. Total number of identities for the identity pool.
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property MaxResults. The maximum number of results to be returned.
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Util;
@@ -197,6 +197,40 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-55));
         }
 
+        // Test that even if the diff is less than 5 minutes, we will still retry if the error code is a clock skew error code
+        // and that we will always update the clockskew on a retry.
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void AlwaysRetryOnClockSkewErrorCode()
+        {
+            Tester.Reset();
+            Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
+
+            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
+                new object[] { requestEndpoint.ToString(), TimeSpan.Zero });
+            
+            Tester.Action = (int callCount) =>
+            {
+                var timeString = DateTime.UtcNow.AddMinutes(-3).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
+                var exception = new AmazonS3Exception("(" + timeString + " - ");
+                exception.ErrorCode = "InvalidSignatureException";
+                throw exception;
+            };
+
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext();
+                request.RequestContext.Request.Endpoint = requestEndpoint;
+                RuntimePipeline.InvokeSync(request);
+            }, typeof(AmazonServiceException));
+            
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+
+            // RetryPolicy should see that the clock skew for bucketname.s3.amazonaws.com is zero and change it to ~ -3
+            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-3));
+        }
+
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -234,7 +268,7 @@ namespace AWSSDK.UnitTests
             exception = Utils.AssertExceptionExpected<AmazonS3Exception>(() =>
             {
                 var copyPartResponse = s3Client.CopyPart("source", "key",
-                    "destination", "key", "Upload123");
+                    "destination", "key", "Upload123", 1);
             });
             Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
 
@@ -287,11 +321,10 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
         }
 
-#if BCL45
-
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForIOExceptionAsync()
         {
             Tester.Reset();
@@ -311,7 +344,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForWebExceptionAsync()
         {
             Tester.Reset();
@@ -331,7 +364,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForHttpStatus500Async()
         {
             Tester.Reset();
@@ -353,7 +386,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForHttpStatus421Async()
         {
             Tester.Reset();
@@ -371,87 +404,7 @@ namespace AWSSDK.UnitTests
             typeof(AmazonServiceException));
             Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
         }
-#elif !BCL45 && BCL
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void RetryForIOExceptionAsync()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new IOException();
-            };
-
-            var request = CreateAsyncTestContext();
-            var asyncResult = RuntimePipeline.InvokeAsync(request);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is IOException);
-            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void RetryForWebExceptionAsync()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new AmazonServiceException(new WebException("WebException", WebExceptionStatus.ConnectFailure));
-            };
-
-            var request = CreateAsyncTestContext();
-            var asyncResult = RuntimePipeline.InvokeAsync(request);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
-            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void RetryForHttpStatus500Async()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new AmazonServiceException("Internal Server Error",
-                    new WebException(), HttpStatusCode.InternalServerError);
-            };
-
-            var request = CreateAsyncTestContext();
-            var asyncResult = RuntimePipeline.InvokeAsync(request);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
-            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void RetryForHttpStatus421Async()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new AmazonServiceException("Invalid Endpoint Exception",
-                    new WebException(), (HttpStatusCode)421);
-            };
-
-            var request = CreateAsyncTestContext();
-            var asyncResult = RuntimePipeline.InvokeAsync(request);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
-            Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
-        }
-
-#endif                
+#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -462,21 +415,11 @@ namespace AWSSDK.UnitTests
             RetryHandler handler;
             var credentials = new BasicAWSCredentials("access_key", "secret_key");
 
-            //Test that DefaultRetryPolicy is selected for no specified RetryMode which defaults to Legacy
+            //Test that StandardRetryPolicy is selected for no specified RetryMode which defaults to Standard
             client = new MockServicePipelineValueClient(credentials, new AmazonS3Config());
 
             handler = (RetryHandler)client.Pipeline.Handlers.Find(h => h is RetryHandler);
-            Assert.IsTrue(handler.RetryPolicy is DefaultRetryPolicy);
-
-            //Test that DefaultRetryPolicy is selected for Legacy
-            client = new MockServicePipelineValueClient(credentials,
-                new AmazonS3Config
-                {
-                    RetryMode = RequestRetryMode.Legacy
-                });
-
-            handler = (RetryHandler)client.Pipeline.Handlers.Find(h => h is RetryHandler);
-            Assert.IsTrue(handler.RetryPolicy is DefaultRetryPolicy);
+            Assert.IsTrue(handler.RetryPolicy is StandardRetryPolicy);
 
             //Test that StandardRetryPolicy is selected for Standard
             client = new MockServicePipelineValueClient(credentials,

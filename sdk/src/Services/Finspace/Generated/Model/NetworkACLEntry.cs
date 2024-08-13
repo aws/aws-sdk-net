@@ -148,9 +148,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32766)]
-        public int RuleNumber
+        public int? RuleNumber
         {
-            get { return this._ruleNumber.GetValueOrDefault(); }
+            get { return this._ruleNumber; }
             set { this._ruleNumber = value; }
         }
 

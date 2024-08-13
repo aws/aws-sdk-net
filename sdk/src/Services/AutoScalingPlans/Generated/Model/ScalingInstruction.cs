@@ -107,9 +107,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// The default is enabled (<c>false</c>). 
         /// </para>
         /// </summary>
-        public bool DisableDynamicScaling
+        public bool? DisableDynamicScaling
         {
-            get { return this._disableDynamicScaling.GetValueOrDefault(); }
+            get { return this._disableDynamicScaling; }
             set { this._disableDynamicScaling = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MinCapacity
+        public int? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// The range is 1-100.
         /// </para>
         /// </summary>
-        public int PredictiveScalingMaxCapacityBuffer
+        public int? PredictiveScalingMaxCapacityBuffer
         {
-            get { return this._predictiveScalingMaxCapacityBuffer.GetValueOrDefault(); }
+            get { return this._predictiveScalingMaxCapacityBuffer; }
             set { this._predictiveScalingMaxCapacityBuffer = value; }
         }
 
@@ -440,9 +440,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ScheduledActionBufferTime
+        public int? ScheduledActionBufferTime
         {
-            get { return this._scheduledActionBufferTime.GetValueOrDefault(); }
+            get { return this._scheduledActionBufferTime; }
             set { this._scheduledActionBufferTime = value; }
         }
 

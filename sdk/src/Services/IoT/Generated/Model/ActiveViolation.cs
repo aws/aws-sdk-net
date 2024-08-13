@@ -69,9 +69,9 @@ namespace Amazon.IoT.Model
         /// The time the most recent violation occurred.
         /// </para>
         /// </summary>
-        public DateTime LastViolationTime
+        public DateTime? LastViolationTime
         {
-            get { return this._lastViolationTime.GetValueOrDefault(); }
+            get { return this._lastViolationTime; }
             set { this._lastViolationTime = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.IoT.Model
         /// The time the violation started.
         /// </para>
         /// </summary>
-        public DateTime ViolationStartTime
+        public DateTime? ViolationStartTime
         {
-            get { return this._violationStartTime.GetValueOrDefault(); }
+            get { return this._violationStartTime; }
             set { this._violationStartTime = value; }
         }
 

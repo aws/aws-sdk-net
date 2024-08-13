@@ -43,9 +43,9 @@ namespace Amazon.OpenSearchService.Model
         /// True to enable node-to-node encryption.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllRegions())
             {
                 context.Writer.WritePropertyName("allRegions");
-                context.Writer.Write(requestObject.AllRegions);
+                context.Writer.Write(requestObject.AllRegions.Value);
             }
 
             if(requestObject.IsSetCloudTrailArn())

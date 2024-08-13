@@ -49,9 +49,9 @@ namespace Amazon.AutoScaling.Model
         /// pool on scale in. 
         /// </para>
         /// </summary>
-        public bool ReuseOnScaleIn
+        public bool? ReuseOnScaleIn
         {
-            get { return this._reuseOnScaleIn.GetValueOrDefault(); }
+            get { return this._reuseOnScaleIn; }
             set { this._reuseOnScaleIn = value; }
         }
 

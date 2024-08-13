@@ -43,9 +43,9 @@ namespace Amazon.Shield.Model
         /// The maximum number of protections that can be created for the specified <c>Type</c>.
         /// </para>
         /// </summary>
-        public long Max
+        public long? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 

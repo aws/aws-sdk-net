@@ -80,25 +80,25 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("gt", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Gt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("gte", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Gte = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lt", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Lt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lte", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Lte = unmarshaller.Unmarshall(context);
                     continue;
                 }

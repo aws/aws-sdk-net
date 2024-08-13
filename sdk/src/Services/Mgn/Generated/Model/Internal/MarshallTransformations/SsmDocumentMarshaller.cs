@@ -76,7 +76,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMustSucceedForCutover())
             {
                 context.Writer.WritePropertyName("mustSucceedForCutover");
-                context.Writer.Write(requestObject.MustSucceedForCutover);
+                context.Writer.Write(requestObject.MustSucceedForCutover.Value);
             }
 
             if(requestObject.IsSetParameters())
@@ -112,7 +112,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("timeoutSeconds");
-                context.Writer.Write(requestObject.TimeoutSeconds);
+                context.Writer.Write(requestObject.TimeoutSeconds.Value);
             }
 
         }

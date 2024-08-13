@@ -66,9 +66,9 @@ namespace Amazon.EC2.Model
         /// The number of bytes converted so far.
         /// </para>
         /// </summary>
-        public long BytesConverted
+        public long? BytesConverted
         {
-            get { return this._bytesConverted.GetValueOrDefault(); }
+            get { return this._bytesConverted; }
             set { this._bytesConverted = value; }
         }
 

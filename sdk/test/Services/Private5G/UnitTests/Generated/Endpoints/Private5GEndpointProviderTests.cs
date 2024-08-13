@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Private5G.Endpoints;
 using Amazon.Private5G.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class Private5GEndpointsTests

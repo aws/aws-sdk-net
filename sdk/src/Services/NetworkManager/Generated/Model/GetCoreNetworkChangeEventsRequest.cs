@@ -66,9 +66,9 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int PolicyVersionId
+        public int? PolicyVersionId
         {
-            get { return this._policyVersionId.GetValueOrDefault(); }
+            get { return this._policyVersionId; }
             set { this._policyVersionId = value; }
         }
 

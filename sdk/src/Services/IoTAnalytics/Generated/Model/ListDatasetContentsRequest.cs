@@ -67,9 +67,9 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.IoTAnalytics.Model
         /// request. (timestamp)
         /// </para>
         /// </summary>
-        public DateTime ScheduledBefore
+        public DateTime? ScheduledBefore
         {
-            get { return this._scheduledBefore.GetValueOrDefault(); }
+            get { return this._scheduledBefore; }
             set { this._scheduledBefore = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.IoTAnalytics.Model
         /// request. (timestamp)
         /// </para>
         /// </summary>
-        public DateTime ScheduledOnOrAfter
+        public DateTime? ScheduledOnOrAfter
         {
-            get { return this._scheduledOnOrAfter.GetValueOrDefault(); }
+            get { return this._scheduledOnOrAfter; }
             set { this._scheduledOnOrAfter = value; }
         }
 

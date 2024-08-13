@@ -52,9 +52,9 @@ namespace Amazon.Panorama.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsLatestPatch
+        public bool? IsLatestPatch
         {
-            get { return this._isLatestPatch.GetValueOrDefault(); }
+            get { return this._isLatestPatch; }
             set { this._isLatestPatch = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Panorama.Model
         /// The version's registered time.
         /// </para>
         /// </summary>
-        public DateTime RegisteredTime
+        public DateTime? RegisteredTime
         {
-            get { return this._registeredTime.GetValueOrDefault(); }
+            get { return this._registeredTime; }
             set { this._registeredTime = value; }
         }
 

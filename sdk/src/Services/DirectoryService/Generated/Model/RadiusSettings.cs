@@ -88,9 +88,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1025, Max=65535)]
-        public int RadiusPort
+        public int? RadiusPort
         {
-            get { return this._radiusPort.GetValueOrDefault(); }
+            get { return this._radiusPort; }
             set { this._radiusPort = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int RadiusRetries
+        public int? RadiusRetries
         {
-            get { return this._radiusRetries.GetValueOrDefault(); }
+            get { return this._radiusRetries; }
             set { this._radiusRetries = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int RadiusTimeout
+        public int? RadiusTimeout
         {
-            get { return this._radiusTimeout.GetValueOrDefault(); }
+            get { return this._radiusTimeout; }
             set { this._radiusTimeout = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.DirectoryService.Model
         /// Not currently used.
         /// </para>
         /// </summary>
-        public bool UseSameUsername
+        public bool? UseSameUsername
         {
-            get { return this._useSameUsername.GetValueOrDefault(); }
+            get { return this._useSameUsername; }
             set { this._useSameUsername = value; }
         }
 

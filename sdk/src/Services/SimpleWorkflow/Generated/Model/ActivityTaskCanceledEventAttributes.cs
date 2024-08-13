@@ -66,9 +66,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
-        public long LatestCancelRequestedEventId
+        public long? LatestCancelRequestedEventId
         {
-            get { return this._latestCancelRequestedEventId.GetValueOrDefault(); }
+            get { return this._latestCancelRequestedEventId; }
             set { this._latestCancelRequestedEventId = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ScheduledEventId
+        public long? ScheduledEventId
         {
-            get { return this._scheduledEventId.GetValueOrDefault(); }
+            get { return this._scheduledEventId; }
             set { this._scheduledEventId = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long StartedEventId
+        public long? StartedEventId
         {
-            get { return this._startedEventId.GetValueOrDefault(); }
+            get { return this._startedEventId; }
             set { this._startedEventId = value; }
         }
 

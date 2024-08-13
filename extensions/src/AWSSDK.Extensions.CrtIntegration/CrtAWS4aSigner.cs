@@ -103,7 +103,9 @@ namespace Amazon.Extensions.CrtIntegration
         {
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
             
-            var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : AWS4Signer.DetermineService(clientConfig);
+            var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) 
+                ? request.OverrideSigningServiceName 
+                : AWS4Signer.DetermineService(clientConfig, request);
             if (serviceSigningName == "s3")
             {
                 // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.

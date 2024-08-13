@@ -51,7 +51,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGid())
             {
                 context.Writer.WritePropertyName("Gid");
-                context.Writer.Write(requestObject.Gid);
+                context.Writer.Write(requestObject.Gid.Value);
             }
 
             if(requestObject.IsSetSecondaryGids())
@@ -68,7 +68,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUid())
             {
                 context.Writer.WritePropertyName("Uid");
-                context.Writer.Write(requestObject.Uid);
+                context.Writer.Write(requestObject.Uid.Value);
             }
 
         }

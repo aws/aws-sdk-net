@@ -64,9 +64,9 @@ namespace Amazon.KinesisVideo.Model
         /// disk.
         /// </para>
         /// </summary>
-        public DateTime LastCollectedTime
+        public DateTime? LastCollectedTime
         {
-            get { return this._lastCollectedTime.GetValueOrDefault(); }
+            get { return this._lastCollectedTime; }
             set { this._lastCollectedTime = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.KinesisVideo.Model
         /// The timestamp at which the recorder status was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

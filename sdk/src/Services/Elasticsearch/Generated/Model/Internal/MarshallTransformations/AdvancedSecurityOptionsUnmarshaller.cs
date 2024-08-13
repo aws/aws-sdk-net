@@ -68,25 +68,25 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AnonymousAuthDisableDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AnonymousAuthDisableDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AnonymousAuthEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AnonymousAuthEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InternalUserDatabaseEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InternalUserDatabaseEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

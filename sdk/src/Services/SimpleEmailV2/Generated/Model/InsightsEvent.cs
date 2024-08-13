@@ -62,9 +62,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The timestamp of the event.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

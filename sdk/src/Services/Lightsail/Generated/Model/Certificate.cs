@@ -88,9 +88,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the certificate was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Lightsail.Model
         /// The number of Lightsail resources that the certificate is attached to.
         /// </para>
         /// </summary>
-        public int InUseResourceCount
+        public int? InUseResourceCount
         {
-            get { return this._inUseResourceCount.GetValueOrDefault(); }
+            get { return this._inUseResourceCount; }
             set { this._inUseResourceCount = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the certificate was issued.
         /// </para>
         /// </summary>
-        public DateTime IssuedAt
+        public DateTime? IssuedAt
         {
-            get { return this._issuedAt.GetValueOrDefault(); }
+            get { return this._issuedAt; }
             set { this._issuedAt = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the certificate expires.
         /// </para>
         /// </summary>
-        public DateTime NotAfter
+        public DateTime? NotAfter
         {
-            get { return this._notAfter.GetValueOrDefault(); }
+            get { return this._notAfter; }
             set { this._notAfter = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the certificate is first valid.
         /// </para>
         /// </summary>
-        public DateTime NotBefore
+        public DateTime? NotBefore
         {
-            get { return this._notBefore.GetValueOrDefault(); }
+            get { return this._notBefore; }
             set { this._notBefore = value; }
         }
 
@@ -403,9 +403,9 @@ namespace Amazon.Lightsail.Model
         /// certificate status is <c>REVOKED</c>.
         /// </para>
         /// </summary>
-        public DateTime RevokedAt
+        public DateTime? RevokedAt
         {
-            get { return this._revokedAt.GetValueOrDefault(); }
+            get { return this._revokedAt; }
             set { this._revokedAt = value; }
         }
 

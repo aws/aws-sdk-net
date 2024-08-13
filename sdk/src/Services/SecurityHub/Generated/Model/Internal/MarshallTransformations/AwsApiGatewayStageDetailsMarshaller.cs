@@ -62,7 +62,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCacheClusterEnabled())
             {
                 context.Writer.WritePropertyName("CacheClusterEnabled");
-                context.Writer.Write(requestObject.CacheClusterEnabled);
+                context.Writer.Write(requestObject.CacheClusterEnabled.Value);
             }
 
             if(requestObject.IsSetCacheClusterSize())
@@ -149,7 +149,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTracingEnabled())
             {
                 context.Writer.WritePropertyName("TracingEnabled");
-                context.Writer.Write(requestObject.TracingEnabled);
+                context.Writer.Write(requestObject.TracingEnabled.Value);
             }
 
             if(requestObject.IsSetVariables())

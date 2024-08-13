@@ -85,7 +85,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultExpirationDays())
                 {
                     context.Writer.WritePropertyName("DefaultExpirationDays");
-                    context.Writer.Write(publicRequest.DefaultExpirationDays);
+                    context.Writer.Write(publicRequest.DefaultExpirationDays.Value);
                 }
 
                 if(publicRequest.IsSetMatching())

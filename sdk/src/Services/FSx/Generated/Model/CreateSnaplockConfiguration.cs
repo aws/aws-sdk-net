@@ -55,9 +55,9 @@ namespace Amazon.FSx.Model
         /// SnapLock audit log volumes</a>. 
         /// </para>
         /// </summary>
-        public bool AuditLogVolume
+        public bool? AuditLogVolume
         {
-            get { return this._auditLogVolume.GetValueOrDefault(); }
+            get { return this._auditLogVolume; }
             set { this._auditLogVolume = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.FSx.Model
         /// mode</a>. 
         /// </para>
         /// </summary>
-        public bool VolumeAppendModeEnabled
+        public bool? VolumeAppendModeEnabled
         {
-            get { return this._volumeAppendModeEnabled.GetValueOrDefault(); }
+            get { return this._volumeAppendModeEnabled; }
             set { this._volumeAppendModeEnabled = value; }
         }
 

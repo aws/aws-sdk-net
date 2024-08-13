@@ -87,9 +87,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int DatapointsToAlert
+        public int? DatapointsToAlert
         {
-            get { return this._datapointsToAlert.GetValueOrDefault(); }
+            get { return this._datapointsToAlert; }
             set { this._datapointsToAlert = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int EvaluationPeriod
+        public int? EvaluationPeriod
         {
-            get { return this._evaluationPeriod.GetValueOrDefault(); }
+            get { return this._evaluationPeriod; }
             set { this._evaluationPeriod = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

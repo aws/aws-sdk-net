@@ -46,9 +46,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime AnalyzedTime
+        public DateTime? AnalyzedTime
         {
-            get { return this._analyzedTime.GetValueOrDefault(); }
+            get { return this._analyzedTime; }
             set { this._analyzedTime = value; }
         }
 

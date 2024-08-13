@@ -57,13 +57,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstExecutionFrom())
             {
                 context.Writer.WritePropertyName("FirstExecutionFrom");
-                context.Writer.Write(requestObject.FirstExecutionFrom);
+                context.Writer.Write(requestObject.FirstExecutionFrom.Value);
             }
 
             if(requestObject.IsSetScheduleEndTime())
             {
                 context.Writer.WritePropertyName("ScheduleEndTime");
-                context.Writer.Write(requestObject.ScheduleEndTime);
+                context.Writer.Write(requestObject.ScheduleEndTime.Value);
             }
 
             if(requestObject.IsSetScheduleExpression())
@@ -75,13 +75,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScheduleOffset())
             {
                 context.Writer.WritePropertyName("ScheduleOffset");
-                context.Writer.Write(requestObject.ScheduleOffset);
+                context.Writer.Write(requestObject.ScheduleOffset.Value);
             }
 
             if(requestObject.IsSetScheduleStartTime())
             {
                 context.Writer.WritePropertyName("ScheduleStartTime");
-                context.Writer.Write(requestObject.ScheduleStartTime);
+                context.Writer.Write(requestObject.ScheduleStartTime.Value);
             }
 
             if(requestObject.IsSetTimezone())

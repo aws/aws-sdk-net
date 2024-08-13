@@ -112,9 +112,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to Linux managed nodes only.
         /// </para>
         /// </summary>
-        public bool ApprovedPatchesEnableNonSecurity
+        public bool? ApprovedPatchesEnableNonSecurity
         {
-            get { return this._approvedPatchesEnableNonSecurity.GetValueOrDefault(); }
+            get { return this._approvedPatchesEnableNonSecurity; }
             set { this._approvedPatchesEnableNonSecurity = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date when the patch baseline was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date when the patch baseline was last modified.
         /// </para>
         /// </summary>
-        public DateTime ModifiedDate
+        public DateTime? ModifiedDate
         {
-            get { return this._modifiedDate.GetValueOrDefault(); }
+            get { return this._modifiedDate; }
             set { this._modifiedDate = value; }
         }
 

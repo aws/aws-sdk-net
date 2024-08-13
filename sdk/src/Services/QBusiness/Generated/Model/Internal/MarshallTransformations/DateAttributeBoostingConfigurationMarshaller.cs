@@ -51,7 +51,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoostingDurationInSeconds())
             {
                 context.Writer.WritePropertyName("boostingDurationInSeconds");
-                context.Writer.Write(requestObject.BoostingDurationInSeconds);
+                context.Writer.Write(requestObject.BoostingDurationInSeconds.Value);
             }
 
             if(requestObject.IsSetBoostingLevel())

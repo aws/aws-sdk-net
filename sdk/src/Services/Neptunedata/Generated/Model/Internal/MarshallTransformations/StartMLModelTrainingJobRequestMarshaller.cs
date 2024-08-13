@@ -93,7 +93,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableManagedSpotTraining())
                 {
                     context.Writer.WritePropertyName("enableManagedSpotTraining");
-                    context.Writer.Write(publicRequest.EnableManagedSpotTraining);
+                    context.Writer.Write(publicRequest.EnableManagedSpotTraining.Value);
                 }
 
                 if(publicRequest.IsSetId())
@@ -105,13 +105,13 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxHPONumberOfTrainingJobs())
                 {
                     context.Writer.WritePropertyName("maxHPONumberOfTrainingJobs");
-                    context.Writer.Write(publicRequest.MaxHPONumberOfTrainingJobs);
+                    context.Writer.Write(publicRequest.MaxHPONumberOfTrainingJobs.Value);
                 }
 
                 if(publicRequest.IsSetMaxHPOParallelTrainingJobs())
                 {
                     context.Writer.WritePropertyName("maxHPOParallelTrainingJobs");
-                    context.Writer.Write(publicRequest.MaxHPOParallelTrainingJobs);
+                    context.Writer.Write(publicRequest.MaxHPOParallelTrainingJobs.Value);
                 }
 
                 if(publicRequest.IsSetNeptuneIamRoleArn())
@@ -169,13 +169,13 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrainingInstanceVolumeSizeInGB())
                 {
                     context.Writer.WritePropertyName("trainingInstanceVolumeSizeInGB");
-                    context.Writer.Write(publicRequest.TrainingInstanceVolumeSizeInGB);
+                    context.Writer.Write(publicRequest.TrainingInstanceVolumeSizeInGB.Value);
                 }
 
                 if(publicRequest.IsSetTrainingTimeOutInSeconds())
                 {
                     context.Writer.WritePropertyName("trainingTimeOutInSeconds");
-                    context.Writer.Write(publicRequest.TrainingTimeOutInSeconds);
+                    context.Writer.Write(publicRequest.TrainingTimeOutInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetTrainModelS3Location())

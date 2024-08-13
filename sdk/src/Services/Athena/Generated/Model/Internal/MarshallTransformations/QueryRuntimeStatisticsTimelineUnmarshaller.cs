@@ -68,37 +68,37 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EngineExecutionTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EngineExecutionTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("QueryPlanningTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryPlanningTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("QueryQueueTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryQueueTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServicePreProcessingTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ServicePreProcessingTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServiceProcessingTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ServiceProcessingTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalExecutionTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalExecutionTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

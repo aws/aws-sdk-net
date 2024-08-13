@@ -43,9 +43,9 @@ namespace Amazon.LookoutMetrics.Model
         /// Feedback on whether the metric is a legitimate anomaly.
         /// </para>
         /// </summary>
-        public bool IsAnomaly
+        public bool? IsAnomaly
         {
-            get { return this._isAnomaly.GetValueOrDefault(); }
+            get { return this._isAnomaly; }
             set { this._isAnomaly = value; }
         }
 

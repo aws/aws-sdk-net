@@ -35,22 +35,29 @@ namespace Amazon.S3.Model
         /// Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use DateUtc instead.", false)]
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this.date ?? default(DateTime); }
+            get { return this.date; }
             set
             {
                 this.date = value;
-                this.dateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this.dateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this.dateUtc = null;
+                }
             }
         }
 
         /// <summary>
         /// Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
         /// </summary>
-        public DateTime DateUtc
+        public DateTime? DateUtc
         {
-            get { return this.dateUtc ?? default(DateTime); }
+            get { return this.dateUtc; }
             set { this.dateUtc = this.date = value; }
         }
 
@@ -64,9 +71,9 @@ namespace Amazon.S3.Model
         /// Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
         ///  
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this.days ?? default(int); }
+            get { return this.days; }
             set { this.days = value; }
         }
 

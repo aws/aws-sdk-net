@@ -62,13 +62,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRangeMaximum())
             {
                 context.Writer.WritePropertyName("RangeMaximum");
-                context.Writer.Write(requestObject.RangeMaximum);
+                context.Writer.Write(requestObject.RangeMaximum.Value);
             }
 
             if(requestObject.IsSetRangeMinimum())
             {
                 context.Writer.WritePropertyName("RangeMinimum");
-                context.Writer.Write(requestObject.RangeMinimum);
+                context.Writer.Write(requestObject.RangeMinimum.Value);
             }
 
             if(requestObject.IsSetTimeGranularity())

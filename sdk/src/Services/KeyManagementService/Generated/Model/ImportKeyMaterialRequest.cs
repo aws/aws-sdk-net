@@ -342,9 +342,9 @@ namespace Amazon.KeyManagementService.Model
         /// and reimport the key material.
         /// </para>
         /// </summary>
-        public DateTime ValidTo
+        public DateTime? ValidTo
         {
-            get { return this._validTo.GetValueOrDefault(); }
+            get { return this._validTo; }
             set { this._validTo = value; }
         }
 

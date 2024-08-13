@@ -68,13 +68,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("linearInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LinearInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("linearPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LinearPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

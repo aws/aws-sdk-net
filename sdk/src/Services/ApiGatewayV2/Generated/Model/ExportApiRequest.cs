@@ -88,9 +88,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// included by default.
         /// </para>
         /// </summary>
-        public bool IncludeExtensions
+        public bool? IncludeExtensions
         {
-            get { return this._includeExtensions.GetValueOrDefault(); }
+            get { return this._includeExtensions; }
             set { this._includeExtensions = value; }
         }
 

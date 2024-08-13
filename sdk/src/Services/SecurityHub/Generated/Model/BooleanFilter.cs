@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// The value of the boolean.
         /// </para>
         /// </summary>
-        public bool Value
+        public bool? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

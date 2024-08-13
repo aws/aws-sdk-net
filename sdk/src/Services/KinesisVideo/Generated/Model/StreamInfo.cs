@@ -50,9 +50,9 @@ namespace Amazon.KinesisVideo.Model
         /// A time stamp that indicates when the stream was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DataRetentionInHours
+        public int? DataRetentionInHours
         {
-            get { return this._dataRetentionInHours.GetValueOrDefault(); }
+            get { return this._dataRetentionInHours; }
             set { this._dataRetentionInHours = value; }
         }
 

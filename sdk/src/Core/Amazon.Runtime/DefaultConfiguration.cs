@@ -24,12 +24,8 @@ namespace Amazon.Runtime
     /// <para />
     /// All options above can be configured by users, and the overridden value will take precedence.
     /// <para />
-    /// <b>Note:</b> for any mode other than <see cref="DefaultConfigurationMode.Legacy"/>, the vended default values
-    /// might change as best practices may evolve. As a result, it is encouraged to perform testing when upgrading the SDK
-    /// if you are using a mode other than <see cref="DefaultConfigurationMode.Legacy"/>.
-    /// <para />
-    /// While the <see cref="DefaultConfigurationMode.Legacy"/> defaults mode is specific to .NET,
-    /// other modes are standardized across all of the AWS SDKs.
+    /// <b>Note:</b> the vended default values might change as best practices may evolve. As a result, it is encouraged to perform 
+    /// testing when upgrading the SDK.
     /// <para />
     /// The defaults mode can be configured:
     /// <list type="number">
@@ -41,7 +37,7 @@ namespace Amazon.Runtime
     public interface IDefaultConfiguration
     {
         /// <summary>
-        /// Identifies a specific configuration mode. Example legacy, mobile, cross-region, etc
+        /// Identifies a specific configuration mode. Example mobile, cross-region, etc
         /// </summary>
         DefaultConfigurationMode Name { get; }
         /// <summary>
@@ -49,11 +45,6 @@ namespace Amazon.Runtime
         /// See https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-retry_mode.html
         /// </summary>
         RequestRetryMode RetryMode { get; }
-        /// <summary>
-        /// Specifies how the SDK determines the AWS service endpoint that it uses to talk to the AWS Security Token Service (AWS STS).
-        /// See https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-sts_regional_endpoints.html
-        /// </summary>
-        StsRegionalEndpointsValue StsRegionalEndpoints { get; }
         /// <summary>
         /// Specifies how the SDK determines the AWS service endpoint that it uses to talk to the Amazon S3 for the us-east-1 region
         /// </summary>
@@ -89,8 +80,6 @@ namespace Amazon.Runtime
         public DefaultConfigurationMode Name { get; set; }
         /// <inheritdoc />
         public RequestRetryMode RetryMode { get; set; }
-        /// <inheritdoc />
-        public StsRegionalEndpointsValue StsRegionalEndpoints { get; set; }
         /// <inheritdoc />
         public S3UsEast1RegionalEndpointValue S3UsEast1RegionalEndpoint { get; set; }
         /// <inheritdoc />

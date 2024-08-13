@@ -86,9 +86,9 @@ namespace Amazon.Signer.Model
         /// The maximum size (in MB) of the payload that can be signed by the target platform.
         /// </para>
         /// </summary>
-        public int MaxSizeInMB
+        public int? MaxSizeInMB
         {
-            get { return this._maxSizeInMB.GetValueOrDefault(); }
+            get { return this._maxSizeInMB; }
             set { this._maxSizeInMB = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.Signer.Model
         /// A flag indicating whether signatures generated for the signing platform can be revoked.
         /// </para>
         /// </summary>
-        public bool RevocationSupported
+        public bool? RevocationSupported
         {
-            get { return this._revocationSupported.GetValueOrDefault(); }
+            get { return this._revocationSupported; }
             set { this._revocationSupported = value; }
         }
 

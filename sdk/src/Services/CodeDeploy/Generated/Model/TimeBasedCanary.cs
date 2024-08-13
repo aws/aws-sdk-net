@@ -46,9 +46,9 @@ namespace Amazon.CodeDeploy.Model
         /// deployment.
         /// </para>
         /// </summary>
-        public int CanaryInterval
+        public int? CanaryInterval
         {
-            get { return this._canaryInterval.GetValueOrDefault(); }
+            get { return this._canaryInterval; }
             set { this._canaryInterval = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.CodeDeploy.Model
         /// deployment.
         /// </para>
         /// </summary>
-        public int CanaryPercentage
+        public int? CanaryPercentage
         {
-            get { return this._canaryPercentage.GetValueOrDefault(); }
+            get { return this._canaryPercentage; }
             set { this._canaryPercentage = value; }
         }
 

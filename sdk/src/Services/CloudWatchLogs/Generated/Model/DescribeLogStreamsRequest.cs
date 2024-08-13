@@ -84,9 +84,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// false, results are returned in ascending order. The default value is false.
         /// </para>
         /// </summary>
-        public bool Descending
+        public bool? Descending
         {
-            get { return this._descending.GetValueOrDefault(); }
+            get { return this._descending; }
             set { this._descending = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

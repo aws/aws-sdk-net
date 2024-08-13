@@ -82,7 +82,7 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOptimizeForEndUserLocation())
                 {
                     context.Writer.WritePropertyName("OptimizeForEndUserLocation");
-                    context.Writer.Write(publicRequest.OptimizeForEndUserLocation);
+                    context.Writer.Write(publicRequest.OptimizeForEndUserLocation.Value);
                 }
 
                 if(publicRequest.IsSetTags())

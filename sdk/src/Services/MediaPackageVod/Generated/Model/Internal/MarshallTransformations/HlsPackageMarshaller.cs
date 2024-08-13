@@ -78,19 +78,19 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeDvbSubtitles())
             {
                 context.Writer.WritePropertyName("includeDvbSubtitles");
-                context.Writer.Write(requestObject.IncludeDvbSubtitles);
+                context.Writer.Write(requestObject.IncludeDvbSubtitles.Value);
             }
 
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds);
+                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetUseAudioRenditionGroup())
             {
                 context.Writer.WritePropertyName("useAudioRenditionGroup");
-                context.Writer.Write(requestObject.UseAudioRenditionGroup);
+                context.Writer.Write(requestObject.UseAudioRenditionGroup.Value);
             }
 
         }

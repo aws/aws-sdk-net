@@ -68,7 +68,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllPolicyTypesEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllPolicyTypesEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

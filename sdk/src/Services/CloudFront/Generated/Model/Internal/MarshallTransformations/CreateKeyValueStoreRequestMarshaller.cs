@@ -70,10 +70,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("ImportSource");
                     if(publicRequest.ImportSource.IsSetSourceARN())
-                        xmlWriter.WriteElementString("SourceARN", StringUtils.FromString(publicRequest.ImportSource.SourceARN));                 
+                        xmlWriter.WriteElementString("SourceARN", StringUtils.FromString(publicRequest.ImportSource.SourceARN));
 
                     if(publicRequest.ImportSource.IsSetSourceType())
-                        xmlWriter.WriteElementString("SourceType", StringUtils.FromString(publicRequest.ImportSource.SourceType));                 
+                        xmlWriter.WriteElementString("SourceType", StringUtils.FromString(publicRequest.ImportSource.SourceType));
 
                     xmlWriter.WriteEndElement();
                 }

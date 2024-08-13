@@ -14,21 +14,19 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Net;
-using System.Text;
 using System.Threading;
 
-using Amazon.Runtime.Internal.Auth;
+
 using Amazon.Util;
 using System.Globalization;
 using Amazon.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
-using System.ComponentModel.Design;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
+using Amazon.Runtime.Telemetry;
 
 #if NETSTANDARD
 using System.Runtime.InteropServices;
@@ -67,7 +65,6 @@ namespace Amazon.Runtime
         private string signatureVersion = "4";
         private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
-        private bool readEntireResponse = false;
         private bool logResponse = false;
         private int bufferSize = AWSSDKUtils.DefaultBufferSize;
         private long progressUpdateInterval = AWSSDKUtils.DefaultProgressUpdateInterval;
@@ -89,10 +86,10 @@ namespace Amazon.Runtime
         private RequestRetryMode? retryMode = null;
         private int? maxRetries = null;
         private const int MaxRetriesDefault = 2;
-        private const int MaxRetriesLegacyDefault = 4;
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
+        private TelemetryProvider telemetryProvider = AWSConfigs.TelemetryProvider;
 
         private CredentialProfileStoreChain credentialProfileStoreChain;
 #if BCL
@@ -136,10 +133,16 @@ namespace Amazon.Runtime
         {
             if (!string.IsNullOrEmpty(value))
             {
-                var asUri = new Uri(value);
 #if BCL
+                if (!value.Contains("://"))
+                {
+                    value = "http://" + value;
+                }
+                var asUri = new Uri(value);
+
                 var parsedProxy = new WebProxy(asUri);
 #else
+                var asUri = new Uri(value);
                 var parsedProxy = new Amazon.Runtime.Internal.Util.WebProxy(asUri);
 #endif
                 if (!string.IsNullOrEmpty(asUri.UserInfo)) {
@@ -197,7 +200,7 @@ namespace Amazon.Runtime
         public abstract string UserAgent { get; }
 
         /// <summary>
-        /// When set to true, the service client will use the  x-amz-user-agent
+        /// When set to true, the service client will use the x-amz-user-agent
         /// header instead of the User-Agent header to report version and
         /// environment information to the AWS service.
         ///
@@ -254,9 +257,6 @@ namespace Amazon.Runtime
                     this.regionEndpoint =
                         RegionEndpoint.GetBySystemName(
                             value.SystemName.Replace("fips-", "").Replace("-fips", ""));
-#pragma warning disable CS0612,CS0618
-                    this.RegionEndpoint.OriginalSystemName = value.SystemName;
-#pragma warning restore CS0612,CS0618
                 }
             }
         }
@@ -386,34 +386,7 @@ namespace Amazon.Runtime
             set { this.useHttp = value; }
         }
 
-        /// <summary>
-        /// Given this client configuration, return a string form ofthe service endpoint url.
-        /// </summary>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public virtual string DetermineServiceURL()
-        {
-            string url;
-            if (this.ServiceURL != null)
-            {
-                url = this.ServiceURL;
-            }
-            else
-            {
-                url = GetUrl(this, RegionEndpoint);
-            }
 
-            return url;
-        }
-
-        /// <summary>
-        /// Given this client configuration, return a DNS suffix for service endpoint url.
-        /// </summary>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint, use the service-specific client.DetermineServiceOperationEndPoint method instead.")]
-        public virtual string DetermineDnsSuffix()
-        {
-            var endpoint = regionEndpoint.GetEndpointForService(this);
-            return endpoint.DnsSuffix;
-        }
 
         internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
@@ -465,8 +438,7 @@ namespace Amazon.Runtime
         }
         /// <summary>
         /// Returns the flag indicating how many retry HTTP requests an SDK should
-        /// make for a single SDK operation invocation before giving up. This flag will 
-        /// return 4 when the RetryMode is set to "Legacy" which is the default. For
+        /// make for a single SDK operation invocation before giving up. For
         /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
         /// addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
@@ -483,13 +455,6 @@ namespace Amazon.Runtime
             {
                 if (!this.maxRetries.HasValue)
                 {
-                    //For legacy mode there was no MaxAttempts shared config or 
-                    //environment variables so use the legacy default value.
-                    if (RetryMode == RequestRetryMode.Legacy)
-                    {
-                        return MaxRetriesLegacyDefault;
-                    }
-
                     //For standard and adaptive modes first check the environment variables
                     //and shared config for a value. Otherwise default to the new default value.
                     //In the shared config or environment variable MaxAttempts is the total number 
@@ -525,19 +490,7 @@ namespace Amazon.Runtime
             set { this.logResponse = value; }
         }
 
-        /// <summary>
-        /// Gets and sets the ReadEntireResponse property.
-        /// NOTE: This property does not effect response processing and is deprecated.
-        /// To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig
-        /// properties can be used.
-        /// </summary>
-        [Obsolete("This property does not effect response processing and is deprecated." +
-            "To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig.LogResponses properties can be used.")]
-        public bool ReadEntireResponse
-        {
-            get { return this.readEntireResponse; }
-            set { this.readEntireResponse = value; }
-        }
+
 
         /// <summary>
         /// Gets and Sets the BufferSize property.
@@ -723,33 +676,6 @@ namespace Amazon.Runtime
             Initialize();
         }
 
-        public ClientConfig() : this(new LegacyOnlyDefaultConfigurationProvider())
-        {
-            this.defaultConfigurationBackingField = _defaultConfigurationProvider.GetDefaultConfiguration(null, null);
-            this.defaultConfigurationMode = this.defaultConfigurationBackingField.Name;
-        }
-
-        /// <summary>
-        /// Specialized <see cref="IDefaultConfigurationProvider"/> that is only meant to provide backwards
-        /// compatibility for the obsolete <see cref="ClientConfig"/> constructor.
-        /// </summary>
-        private class LegacyOnlyDefaultConfigurationProvider : IDefaultConfigurationProvider
-        {
-            public IDefaultConfiguration GetDefaultConfiguration(RegionEndpoint clientRegion, DefaultConfigurationMode? requestedConfigurationMode = null)
-            {
-                if (requestedConfigurationMode.HasValue &&
-                    requestedConfigurationMode.Value != Runtime.DefaultConfigurationMode.Legacy)
-                    throw new AmazonClientException($"This ClientConfig only supports {Runtime.DefaultConfigurationMode.Legacy}");
-
-                return new DefaultConfiguration
-                {
-                    Name = Runtime.DefaultConfigurationMode.Legacy,
-                    RetryMode = RequestRetryMode.Legacy,
-                    S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Legacy,
-                    StsRegionalEndpoints = StsRegionalEndpointsValue.Legacy
-                };
-            }
-        }
         #endregion
 
         protected virtual void Initialize()
@@ -758,11 +684,6 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// .NET Framework 3.5
-        /// ------------------
-        /// Overrides the default request timeout value.
-        /// This field does not impact Begin*/End* calls. A manual timeout must be implemented.
-        /// 
-        /// .NET Framework 4.5
         /// ------------------
         /// Overrides the default request timeout value.
         /// This field does not impact *Async calls. A manual timeout (for instance, using CancellationToken) must be implemented.
@@ -807,10 +728,6 @@ namespace Amazon.Runtime
         /// </summary>
         internal CancellationToken BuildDefaultCancellationToken()
         {
-            // legacy mode never had a working cancellation token, so keep it to default()
-            if (DefaultConfiguration.Name == Runtime.DefaultConfigurationMode.Legacy)
-                return default(CancellationToken);
-
             // TimeToFirstByteTimeout is not a perfect match with HttpWebRequest/HttpClient.Timeout.  However, given
             // that both are configured to only use Timeout until the Response Headers are downloaded, this value
             // provides a reasonable default value.
@@ -821,7 +738,6 @@ namespace Amazon.Runtime
                 : default(CancellationToken);
         }
 #endif
-
 
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
@@ -1012,45 +928,9 @@ namespace Amazon.Runtime
 #endif
         }
 
-        /// <summary>
-        /// Returns the current UTC now after clock correction for this endpoint.
-        /// </summary>
-        [Obsolete("Please use CorrectClockSkew.GetCorrectedUtcNowForEndpoint(string endpoint) instead.", false)]
-        public DateTime CorrectedUtcNow
-        {
-            get
-            {
-                return CorrectClockSkew.GetCorrectedUtcNowForEndpoint(DetermineServiceURL());
-            }
-        }
 
-        /// <summary>
-        /// The calculated clock skew correction for a specific endpoint, if there is one.
-        /// This field will be set if a service call resulted in an exception
-        /// and the SDK has determined that there is a difference between local
-        /// and server times.
-        /// 
-        /// If <seealso cref="AWSConfigs.CorrectForClockSkew"/> is set to true, this
-        /// value will still be set to the correction, but it will not be used by the
-        /// SDK and clock skew errors will not be retried.
-        /// </summary>
-        public TimeSpan ClockOffset
-        {
-            get
-            {
-                if (AWSConfigs.ManualClockCorrection.HasValue)
-                {
-                    return AWSConfigs.ManualClockCorrection.Value;
-                }
-                else
-                {
-#pragma warning disable CS0612,CS0618
-                    string endpoint = DetermineServiceURL();
-#pragma warning restore CS0612,CS0618
-                    return CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint);
-                }
-            }
-        }
+
+
 
         /// <summary>
         /// Gets and sets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
@@ -1095,7 +975,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Returns the flag indicating the current mode in use for request 
         /// retries and influences the value returned from <see cref="MaxErrorRetry"/>.
-        /// The default value is RequestRetryMode.Legacy. This flag can be configured
+        /// The default value is <see cref="RequestRetryMode.Standard"/>. This flag can be configured
         /// by using the AWS_RETRY_MODE environment variable, retry_mode in the
         /// shared configuration file, or by setting this value directly.
         /// </summary>
@@ -1161,6 +1041,13 @@ namespace Amazon.Runtime
                 : (clientTimeout.HasValue ? clientTimeout : null);
         }
 
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        public abstract Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters);
+
 #if NETSTANDARD
         /// <summary>
         /// <para>
@@ -1206,7 +1093,7 @@ namespace Amazon.Runtime
             set => _httpClientCacheSize = value;
         }
 #endif
-        
+
         /// <summary>
         /// Overrides the default read-write timeout value.
         /// </summary>
@@ -1239,5 +1126,20 @@ namespace Amazon.Runtime
         /// but can be changed to use custom user supplied EndpointProvider.
         /// </summary>
         public IEndpointProvider EndpointProvider { get; set; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="TelemetryProvider"/> instance for this client configuration.
+        /// <para>
+        /// This telemetry provider is used to collect and report telemetry data 
+        /// (such as traces and metrics) for operations performed by this specific client.
+        /// If this property is not explicitly set, it will default to the global 
+        /// <see cref="AWSConfigs.TelemetryProvider"/>.
+        /// </para>
+        /// </summary>
+        public TelemetryProvider TelemetryProvider
+        {
+            get { return this.telemetryProvider; }
+            set { this.telemetryProvider = value; }
+        }
     }
 }

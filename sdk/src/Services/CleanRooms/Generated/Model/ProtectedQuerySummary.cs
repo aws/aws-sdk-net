@@ -38,6 +38,7 @@ namespace Amazon.CleanRooms.Model
         private string _id;
         private string _membershipArn;
         private string _membershipId;
+        private List<ReceiverConfiguration> _receiverConfigurations = AWSConfigs.InitializeCollections ? new List<ReceiverConfiguration>() : null;
         private ProtectedQueryStatus _status;
 
         /// <summary>
@@ -47,9 +48,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -114,6 +115,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetMembershipId()
         {
             return this._membershipId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReceiverConfigurations. 
+        /// <para>
+        ///  The receiver configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<ReceiverConfiguration> ReceiverConfigurations
+        {
+            get { return this._receiverConfigurations; }
+            set { this._receiverConfigurations = value; }
+        }
+
+        // Check to see if ReceiverConfigurations property is set
+        internal bool IsSetReceiverConfigurations()
+        {
+            return this._receiverConfigurations != null && (this._receiverConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

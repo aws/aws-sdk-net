@@ -47,9 +47,9 @@ namespace Amazon.LexModelsV2.Model
         /// being played.
         /// </para>
         /// </summary>
-        public bool AllowInterrupt
+        public bool? AllowInterrupt
         {
-            get { return this._allowInterrupt.GetValueOrDefault(); }
+            get { return this._allowInterrupt; }
             set { this._allowInterrupt = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
-        public int FrequencyInSeconds
+        public int? FrequencyInSeconds
         {
-            get { return this._frequencyInSeconds.GetValueOrDefault(); }
+            get { return this._frequencyInSeconds; }
             set { this._frequencyInSeconds = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=900)]
-        public int TimeoutInSeconds
+        public int? TimeoutInSeconds
         {
-            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            get { return this._timeoutInSeconds; }
             set { this._timeoutInSeconds = value; }
         }
 

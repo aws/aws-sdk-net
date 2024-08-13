@@ -72,9 +72,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Count. Number of reserved resources
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Duration. Lease duration, e.g. '12'
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FixedPrice. One-time charge for each reserved resource,
         /// e.g. '0.0' for a NO_UPFRONT offering
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property UsagePrice. Recurring usage charge for each reserved resource,
         /// e.g. '157.0'
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

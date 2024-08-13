@@ -51,13 +51,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGameSessionActivationTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("GameSessionActivationTimeoutSeconds");
-                context.Writer.Write(requestObject.GameSessionActivationTimeoutSeconds);
+                context.Writer.Write(requestObject.GameSessionActivationTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetMaxConcurrentGameSessionActivations())
             {
                 context.Writer.WritePropertyName("MaxConcurrentGameSessionActivations");
-                context.Writer.Write(requestObject.MaxConcurrentGameSessionActivations);
+                context.Writer.Write(requestObject.MaxConcurrentGameSessionActivations.Value);
             }
 
             if(requestObject.IsSetServerProcesses())

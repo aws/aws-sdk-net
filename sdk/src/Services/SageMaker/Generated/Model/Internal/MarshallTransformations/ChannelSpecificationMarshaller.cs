@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsRequired())
             {
                 context.Writer.WritePropertyName("IsRequired");
-                context.Writer.Write(requestObject.IsRequired);
+                context.Writer.Write(requestObject.IsRequired.Value);
             }
 
             if(requestObject.IsSetName())

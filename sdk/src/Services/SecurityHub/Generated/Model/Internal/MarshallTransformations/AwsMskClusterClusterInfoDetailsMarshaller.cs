@@ -91,7 +91,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfBrokerNodes())
             {
                 context.Writer.WritePropertyName("NumberOfBrokerNodes");
-                context.Writer.Write(requestObject.NumberOfBrokerNodes);
+                context.Writer.Write(requestObject.NumberOfBrokerNodes.Value);
             }
 
         }

@@ -155,9 +155,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// The version of the user's namespace against which the system instance was validated.
         /// </para>
         /// </summary>
-        public long ValidatedNamespaceVersion
+        public long? ValidatedNamespaceVersion
         {
-            get { return this._validatedNamespaceVersion.GetValueOrDefault(); }
+            get { return this._validatedNamespaceVersion; }
             set { this._validatedNamespaceVersion = value; }
         }
 

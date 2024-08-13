@@ -57,7 +57,7 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsExcluded())
             {
                 context.Writer.WritePropertyName("isExcluded");
-                context.Writer.Write(requestObject.IsExcluded);
+                context.Writer.Write(requestObject.IsExcluded.Value);
             }
 
         }

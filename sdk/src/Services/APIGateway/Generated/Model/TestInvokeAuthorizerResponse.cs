@@ -86,9 +86,9 @@ namespace Amazon.APIGateway.Model
         /// succeeded.
         /// </para>
         /// </summary>
-        public int ClientStatus
+        public int? ClientStatus
         {
-            get { return this._clientStatus.GetValueOrDefault(); }
+            get { return this._clientStatus; }
             set { this._clientStatus = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.APIGateway.Model
         /// The execution latency, in ms, of the test authorizer request.
         /// </para>
         /// </summary>
-        public long Latency
+        public long? Latency
         {
-            get { return this._latency.GetValueOrDefault(); }
+            get { return this._latency; }
             set { this._latency = value; }
         }
 

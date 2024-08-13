@@ -10,7 +10,7 @@ using AWSSDK_DotNet.CommonTest.Utils;
 using Amazon;
 using Amazon.Runtime.Internal.Auth;
 using System.Reflection;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 
 namespace AWSSDK.UnitTests
 {

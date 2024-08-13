@@ -46,9 +46,9 @@ namespace Amazon.TranscribeService.Model
         /// Provides the total time, in seconds, each identified language is spoken in your media.
         /// </para>
         /// </summary>
-        public float DurationInSeconds
+        public float? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 

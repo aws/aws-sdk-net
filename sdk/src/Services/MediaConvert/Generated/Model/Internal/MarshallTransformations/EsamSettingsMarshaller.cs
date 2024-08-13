@@ -62,7 +62,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResponseSignalPreroll())
             {
                 context.Writer.WritePropertyName("responseSignalPreroll");
-                context.Writer.Write(requestObject.ResponseSignalPreroll);
+                context.Writer.Write(requestObject.ResponseSignalPreroll.Value);
             }
 
             if(requestObject.IsSetSignalProcessingNotification())

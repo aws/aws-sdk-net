@@ -100,9 +100,9 @@ namespace Amazon.DocDBElastic.Model
         /// The capacity of each shard in the new restored elastic cluster.
         /// </para>
         /// </summary>
-        public int ShardCapacity
+        public int? ShardCapacity
         {
-            get { return this._shardCapacity.GetValueOrDefault(); }
+            get { return this._shardCapacity; }
             set { this._shardCapacity = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.DocDBElastic.Model
         /// that can be used for reads and to improve availability.
         /// </para>
         /// </summary>
-        public int ShardInstanceCount
+        public int? ShardInstanceCount
         {
-            get { return this._shardInstanceCount.GetValueOrDefault(); }
+            get { return this._shardInstanceCount; }
             set { this._shardInstanceCount = value; }
         }
 

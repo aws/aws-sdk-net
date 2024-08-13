@@ -44,9 +44,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time that the reviewer took action on the document review request.
         /// </para>
         /// </summary>
-        public DateTime ReviewedTime
+        public DateTime? ReviewedTime
         {
-            get { return this._reviewedTime.GetValueOrDefault(); }
+            get { return this._reviewedTime; }
             set { this._reviewedTime = value; }
         }
 

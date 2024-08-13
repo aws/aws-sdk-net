@@ -88,7 +88,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeSeedInOutput())
                 {
                     context.Writer.WritePropertyName("includeSeedInOutput");
-                    context.Writer.Write(publicRequest.IncludeSeedInOutput);
+                    context.Writer.Write(publicRequest.IncludeSeedInOutput.Value);
                 }
 
                 if(publicRequest.IsSetName())

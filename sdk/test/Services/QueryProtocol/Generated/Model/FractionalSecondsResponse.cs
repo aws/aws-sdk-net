@@ -39,9 +39,9 @@ namespace Amazon.QueryProtocol.Model
         /// <summary>
         /// Gets and sets the property Datetime.
         /// </summary>
-        public DateTime Datetime
+        public DateTime? Datetime
         {
-            get { return this._datetime.GetValueOrDefault(); }
+            get { return this._datetime; }
             set { this._datetime = value; }
         }
 

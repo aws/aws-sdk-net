@@ -68,19 +68,19 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxWorkerCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxWorkerCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("mcuCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.McuCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minWorkerCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinWorkerCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

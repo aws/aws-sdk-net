@@ -85,9 +85,9 @@ namespace Amazon.RDS.Model
         /// engine and major version combination.
         /// </para>
         /// </summary>
-        public bool DefaultOnly
+        public bool? DefaultOnly
         {
-            get { return this._defaultOnly.GetValueOrDefault(); }
+            get { return this._defaultOnly; }
             set { this._defaultOnly = value; }
         }
 
@@ -303,9 +303,9 @@ namespace Amazon.RDS.Model
         /// is to list only available engine versions.
         /// </para>
         /// </summary>
-        public bool IncludeAll
+        public bool? IncludeAll
         {
-            get { return this._includeAll.GetValueOrDefault(); }
+            get { return this._includeAll; }
             set { this._includeAll = value; }
         }
 
@@ -332,9 +332,9 @@ namespace Amazon.RDS.Model
         /// this parameter, RDS Custom returns no results.
         /// </para>
         /// </summary>
-        public bool ListSupportedCharacterSets
+        public bool? ListSupportedCharacterSets
         {
-            get { return this._listSupportedCharacterSets.GetValueOrDefault(); }
+            get { return this._listSupportedCharacterSets; }
             set { this._listSupportedCharacterSets = value; }
         }
 
@@ -361,9 +361,9 @@ namespace Amazon.RDS.Model
         /// parameter, RDS Custom returns no results.
         /// </para>
         /// </summary>
-        public bool ListSupportedTimezones
+        public bool? ListSupportedTimezones
         {
-            get { return this._listSupportedTimezones.GetValueOrDefault(); }
+            get { return this._listSupportedTimezones; }
             set { this._listSupportedTimezones = value; }
         }
 
@@ -409,9 +409,9 @@ namespace Amazon.RDS.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

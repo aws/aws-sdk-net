@@ -93,9 +93,9 @@ namespace Amazon.Imagebuilder.Model
         /// The date and time when the finding was first observed.
         /// </para>
         /// </summary>
-        public DateTime FirstObservedAt
+        public DateTime? FirstObservedAt
         {
-            get { return this._firstObservedAt.GetValueOrDefault(); }
+            get { return this._firstObservedAt; }
             set { this._firstObservedAt = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double InspectorScore
+        public double? InspectorScore
         {
-            get { return this._inspectorScore.GetValueOrDefault(); }
+            get { return this._inspectorScore; }
             set { this._inspectorScore = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.Imagebuilder.Model
         /// The timestamp when the finding was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -126,7 +126,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUpdateAt())
                 {
                     context.Writer.WritePropertyName("updateAt");
-                    context.Writer.Write(publicRequest.UpdateAt);
+                    context.Writer.Write(publicRequest.UpdateAt.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -85,9 +85,9 @@ namespace Amazon.Mgn.Model
         /// If true, Cutover will not be enabled if the document has failed.
         /// </para>
         /// </summary>
-        public bool MustSucceedForCutover
+        public bool? MustSucceedForCutover
         {
-            get { return this._mustSucceedForCutover.GetValueOrDefault(); }
+            get { return this._mustSucceedForCutover; }
             set { this._mustSucceedForCutover = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int TimeoutSeconds
+        public int? TimeoutSeconds
         {
-            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            get { return this._timeoutSeconds; }
             set { this._timeoutSeconds = value; }
         }
 

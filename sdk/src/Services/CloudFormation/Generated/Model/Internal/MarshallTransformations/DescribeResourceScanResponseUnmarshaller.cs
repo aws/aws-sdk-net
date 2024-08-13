@@ -84,13 +84,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("EndTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.EndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PercentageCompleted", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.PercentageCompleted = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -102,13 +102,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ResourcesRead", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.ResourcesRead = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourcesScanned", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.ResourcesScanned = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -125,7 +125,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("StartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.StartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

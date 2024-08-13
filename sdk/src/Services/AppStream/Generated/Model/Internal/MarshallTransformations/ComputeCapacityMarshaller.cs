@@ -51,13 +51,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredInstances())
             {
                 context.Writer.WritePropertyName("DesiredInstances");
-                context.Writer.Write(requestObject.DesiredInstances);
+                context.Writer.Write(requestObject.DesiredInstances.Value);
             }
 
             if(requestObject.IsSetDesiredSessions())
             {
                 context.Writer.WritePropertyName("DesiredSessions");
-                context.Writer.Write(requestObject.DesiredSessions);
+                context.Writer.Write(requestObject.DesiredSessions.Value);
             }
 
         }

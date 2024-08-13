@@ -45,9 +45,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int TargetResourceCount
+        public int? TargetResourceCount
         {
-            get { return this._targetResourceCount.GetValueOrDefault(); }
+            get { return this._targetResourceCount; }
             set { this._targetResourceCount = value; }
         }
 

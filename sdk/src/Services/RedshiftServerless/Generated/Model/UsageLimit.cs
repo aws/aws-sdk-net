@@ -49,9 +49,9 @@ namespace Amazon.RedshiftServerless.Model
         /// this amount is in terabytes (TB). The value must be a positive number.
         /// </para>
         /// </summary>
-        public long Amount
+        public long? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

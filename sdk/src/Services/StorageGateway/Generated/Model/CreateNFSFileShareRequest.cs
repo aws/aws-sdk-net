@@ -261,9 +261,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool GuessMIMETypeEnabled
+        public bool? GuessMIMETypeEnabled
         {
-            get { return this._guessMIMETypeEnabled.GetValueOrDefault(); }
+            get { return this._guessMIMETypeEnabled; }
             set { this._guessMIMETypeEnabled = value; }
         }
 
@@ -284,9 +284,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool KMSEncrypted
+        public bool? KMSEncrypted
         {
-            get { return this._kmsEncrypted.GetValueOrDefault(); }
+            get { return this._kmsEncrypted; }
             set { this._kmsEncrypted = value; }
         }
 
@@ -467,9 +467,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 
@@ -498,9 +498,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool RequesterPays
+        public bool? RequesterPays
         {
-            get { return this._requesterPays.GetValueOrDefault(); }
+            get { return this._requesterPays; }
             set { this._requesterPays = value; }
         }
 

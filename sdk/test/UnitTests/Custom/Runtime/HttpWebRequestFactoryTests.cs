@@ -13,6 +13,7 @@ using Amazon.Runtime.Internal.Util;
 using Moq;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
+using Amazon.Runtime.Telemetry;
 
 
 namespace AWSSDK.UnitTests
@@ -97,7 +98,7 @@ namespace AWSSDK.UnitTests
         }
 #endif
 
-#if BCL45
+#if BCL
         public async System.Threading.Tasks.Task TestHttpRequest(CancellationToken cancellationToken)
 #else
         public void TestHttpRequest(CancellationToken cancellationToken)
@@ -109,7 +110,7 @@ namespace AWSSDK.UnitTests
 
             var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(testContent));
             var destinationStream = new MemoryStream();
-#if BCL45
+#if BCL
             await request.WriteToRequestBodyAsync(destinationStream, sourceStream, null, requestContext);
 #else
             request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
@@ -117,7 +118,7 @@ namespace AWSSDK.UnitTests
 
             var sourceContent = Encoding.UTF8.GetBytes(testContent);
             destinationStream = new MemoryStream();
-#if BCL45
+#if BCL
             await request.WriteToRequestBodyAsync(destinationStream, sourceContent, null, cancellationToken);
 #else
             request.WriteToRequestBody(destinationStream, sourceContent, null);
@@ -158,6 +159,7 @@ namespace AWSSDK.UnitTests
                 .With(config => config.UseNagleAlgorithm, useNagleAlgorithm)
                 .With(config => config.ConnectionLimit, 10)
                 .With(config => config.ServiceURL, "")
+                .With(config => config.TelemetryProvider, new DefaultTelemetryProvider())
             );
 
             _fixture.Customize<RequestContext>(cc => cc

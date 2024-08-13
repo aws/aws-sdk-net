@@ -67,9 +67,9 @@ namespace Amazon.CloudFormation.Model
         /// If <c>true</c>, the returned changes include detailed changes in the property values.
         /// </para>
         /// </summary>
-        public bool IncludePropertyValues
+        public bool? IncludePropertyValues
         {
-            get { return this._includePropertyValues.GetValueOrDefault(); }
+            get { return this._includePropertyValues; }
             set { this._includePropertyValues = value; }
         }
 

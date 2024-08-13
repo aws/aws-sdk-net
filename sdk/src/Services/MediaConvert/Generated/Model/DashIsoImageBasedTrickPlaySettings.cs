@@ -66,9 +66,9 @@ namespace Amazon.MediaConvert.Model
         /// will be rejected. Must be divisible by 2.
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
-        public int ThumbnailHeight
+        public int? ThumbnailHeight
         {
-            get { return this._thumbnailHeight.GetValueOrDefault(); }
+            get { return this._thumbnailHeight; }
             set { this._thumbnailHeight = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MediaConvert.Model
         /// with the output frame rate. For example, if the output frame rate is 29.97 frames
         /// per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
         /// </summary>
-        public double ThumbnailInterval
+        public double? ThumbnailInterval
         {
-            get { return this._thumbnailInterval.GetValueOrDefault(); }
+            get { return this._thumbnailInterval; }
             set { this._thumbnailInterval = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.MediaConvert.Model
         /// image, in pixels. Default is 312. Must be divisible by 8.
         /// </summary>
         [AWSProperty(Min=8, Max=4096)]
-        public int ThumbnailWidth
+        public int? ThumbnailWidth
         {
-            get { return this._thumbnailWidth.GetValueOrDefault(); }
+            get { return this._thumbnailWidth; }
             set { this._thumbnailWidth = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.MediaConvert.Model
         /// image. Set a value between 2 and 2048. Must be divisible by 2.
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
-        public int TileHeight
+        public int? TileHeight
         {
-            get { return this._tileHeight.GetValueOrDefault(); }
+            get { return this._tileHeight; }
             set { this._tileHeight = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.MediaConvert.Model
         /// Set a value between 1 and 512.
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
-        public int TileWidth
+        public int? TileWidth
         {
-            get { return this._tileWidth.GetValueOrDefault(); }
+            get { return this._tileWidth; }
             set { this._tileWidth = value; }
         }
 

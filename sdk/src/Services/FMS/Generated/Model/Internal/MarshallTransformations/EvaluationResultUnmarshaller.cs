@@ -74,13 +74,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EvaluationLimitExceeded", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EvaluationLimitExceeded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ViolatorCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ViolatorCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

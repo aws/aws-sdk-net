@@ -107,7 +107,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisconnectTimeoutInMinutes())
                 {
                     context.Writer.WritePropertyName("disconnectTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.DisconnectTimeoutInMinutes);
+                    context.Writer.Write(publicRequest.DisconnectTimeoutInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetDownloadAllowed())
@@ -119,7 +119,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIdleDisconnectTimeoutInMinutes())
                 {
                     context.Writer.WritePropertyName("idleDisconnectTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInMinutes);
+                    context.Writer.Write(publicRequest.IdleDisconnectTimeoutInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetPasteAllowed())

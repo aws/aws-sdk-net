@@ -58,9 +58,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime DeprecateAt
+        public DateTime? DeprecateAt
         {
-            get { return this._deprecateAt.GetValueOrDefault(); }
+            get { return this._deprecateAt; }
             set { this._deprecateAt = value; }
         }
 

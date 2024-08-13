@@ -64,9 +64,9 @@ namespace Amazon.Artifact.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ReportVersion
+        public long? ReportVersion
         {
-            get { return this._reportVersion.GetValueOrDefault(); }
+            get { return this._reportVersion; }
             set { this._reportVersion = value; }
         }
 

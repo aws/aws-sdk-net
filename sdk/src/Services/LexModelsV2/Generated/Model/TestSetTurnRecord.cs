@@ -65,9 +65,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200000)]
-        public long RecordNumber
+        public long? RecordNumber
         {
-            get { return this._recordNumber.GetValueOrDefault(); }
+            get { return this._recordNumber; }
             set { this._recordNumber = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
-        public int TurnNumber
+        public int? TurnNumber
         {
-            get { return this._turnNumber.GetValueOrDefault(); }
+            get { return this._turnNumber; }
             set { this._turnNumber = value; }
         }
 

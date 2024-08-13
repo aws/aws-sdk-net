@@ -46,9 +46,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int Attempts
+        public int? Attempts
         {
-            get { return this._attempts.GetValueOrDefault(); }
+            get { return this._attempts; }
             set { this._attempts = value; }
         }
 

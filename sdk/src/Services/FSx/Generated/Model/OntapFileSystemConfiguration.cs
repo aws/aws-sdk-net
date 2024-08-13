@@ -52,9 +52,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property AutomaticBackupRetentionDays.
         /// </summary>
         [AWSProperty(Min=0, Max=90)]
-        public int AutomaticBackupRetentionDays
+        public int? AutomaticBackupRetentionDays
         {
-            get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
+            get { return this._automaticBackupRetentionDays; }
             set { this._automaticBackupRetentionDays = value; }
         }
 
@@ -88,17 +88,25 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>MULTI_AZ_1</c> - (Default) A high availability file system configured for Multi-AZ
-        /// redundancy to tolerate temporary Availability Zone (AZ) unavailability. 
+        ///  <c>MULTI_AZ_1</c> - A high availability file system configured for Multi-AZ redundancy
+        /// to tolerate temporary Availability Zone (AZ) unavailability. This is a first-generation
+        /// FSx for ONTAP file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SINGLE_AZ_1</c> - A file system configured for Single-AZ redundancy.
+        ///  <c>MULTI_AZ_2</c> - A high availability file system configured for Multi-AZ redundancy
+        /// to tolerate temporary AZ unavailability. This is a second-generation FSx for ONTAP
+        /// file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SINGLE_AZ_1</c> - A file system configured for Single-AZ redundancy. This is a
+        /// first-generation FSx for ONTAP file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>SINGLE_AZ_2</c> - A file system configured with multiple high-availability (HA)
-        /// pairs for Single-AZ redundancy.
+        /// pairs for Single-AZ redundancy. This is a second-generation FSx for ONTAP file system.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -220,14 +228,14 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The value of <c>HAPairs</c> is greater than 1 and the value of <c>DeploymentType</c>
-        /// is <c>SINGLE_AZ_1</c> or <c>MULTI_AZ_1</c>.
+        /// is <c>SINGLE_AZ_1</c>, <c>MULTI_AZ_1</c>, or <c>MULTI_AZ_2</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=12)]
-        public int HAPairs
+        public int? HAPairs
         {
-            get { return this._haPairs.GetValueOrDefault(); }
+            get { return this._haPairs; }
             set { this._haPairs = value; }
         }
 
@@ -276,9 +284,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ThroughputCapacity.
         /// </summary>
         [AWSProperty(Min=8, Max=100000)]
-        public int ThroughputCapacity
+        public int? ThroughputCapacity
         {
-            get { return this._throughputCapacity.GetValueOrDefault(); }
+            get { return this._throughputCapacity; }
             set { this._throughputCapacity = value; }
         }
 
@@ -307,12 +315,16 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <c>SINGLE_AZ_1</c> and <c>MULTI_AZ_1</c>, valid values are 128, 256, 512, 1024,
-        /// 2048, or 4096 MBps.
+        /// For <c>SINGLE_AZ_1</c> and <c>MULTI_AZ_1</c> file systems, valid values are 128, 256,
+        /// 512, 1024, 2048, or 4096 MBps.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <c>SINGLE_AZ_2</c>, valid values are 3072 or 6144 MBps.
+        /// For <c>SINGLE_AZ_2</c>, valid values are 1536, 3072, or 6144 MBps.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <c>MULTI_AZ_2</c>, valid values are 384, 768, 1536, 3072, or 6144 MBps.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -326,7 +338,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The value of deployment type is <c>SINGLE_AZ_2</c> and <c>ThroughputCapacity</c> /
-        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 12).
+        /// <c>ThroughputCapacityPerHAPair</c> is not a valid HA pair (a value between 1 and 12).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -335,9 +347,9 @@ namespace Amazon.FSx.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=128, Max=6144)]
-        public int ThroughputCapacityPerHAPair
+        public int? ThroughputCapacityPerHAPair
         {
-            get { return this._throughputCapacityPerHAPair.GetValueOrDefault(); }
+            get { return this._throughputCapacityPerHAPair; }
             set { this._throughputCapacityPerHAPair = value; }
         }
 

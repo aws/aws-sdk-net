@@ -63,7 +63,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackgroundOpacity())
             {
                 context.Writer.WritePropertyName("backgroundOpacity");
-                context.Writer.Write(requestObject.BackgroundOpacity);
+                context.Writer.Write(requestObject.BackgroundOpacity.Value);
             }
 
             if(requestObject.IsSetFont())
@@ -86,13 +86,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFontOpacity())
             {
                 context.Writer.WritePropertyName("fontOpacity");
-                context.Writer.Write(requestObject.FontOpacity);
+                context.Writer.Write(requestObject.FontOpacity.Value);
             }
 
             if(requestObject.IsSetFontResolution())
             {
                 context.Writer.WritePropertyName("fontResolution");
-                context.Writer.Write(requestObject.FontResolution);
+                context.Writer.Write(requestObject.FontResolution.Value);
             }
 
             if(requestObject.IsSetFontSize())
@@ -110,7 +110,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutlineSize())
             {
                 context.Writer.WritePropertyName("outlineSize");
-                context.Writer.Write(requestObject.OutlineSize);
+                context.Writer.Write(requestObject.OutlineSize.Value);
             }
 
             if(requestObject.IsSetShadowColor())
@@ -122,19 +122,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShadowOpacity())
             {
                 context.Writer.WritePropertyName("shadowOpacity");
-                context.Writer.Write(requestObject.ShadowOpacity);
+                context.Writer.Write(requestObject.ShadowOpacity.Value);
             }
 
             if(requestObject.IsSetShadowXOffset())
             {
                 context.Writer.WritePropertyName("shadowXOffset");
-                context.Writer.Write(requestObject.ShadowXOffset);
+                context.Writer.Write(requestObject.ShadowXOffset.Value);
             }
 
             if(requestObject.IsSetShadowYOffset())
             {
                 context.Writer.WritePropertyName("shadowYOffset");
-                context.Writer.Write(requestObject.ShadowYOffset);
+                context.Writer.Write(requestObject.ShadowYOffset.Value);
             }
 
             if(requestObject.IsSetTeletextGridControl())
@@ -146,13 +146,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetXPosition())
             {
                 context.Writer.WritePropertyName("xPosition");
-                context.Writer.Write(requestObject.XPosition);
+                context.Writer.Write(requestObject.XPosition.Value);
             }
 
             if(requestObject.IsSetYPosition())
             {
                 context.Writer.WritePropertyName("yPosition");
-                context.Writer.Write(requestObject.YPosition);
+                context.Writer.Write(requestObject.YPosition.Value);
             }
 
         }

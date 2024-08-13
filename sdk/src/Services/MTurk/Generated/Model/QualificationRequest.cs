@@ -109,9 +109,9 @@ namespace Amazon.MTurk.Model
         /// requested the Qualification if the Qualification type does not have a test. 
         /// </para>
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

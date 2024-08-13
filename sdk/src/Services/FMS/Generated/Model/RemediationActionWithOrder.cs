@@ -44,9 +44,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int Order
+        public int? Order
         {
-            get { return this._order.GetValueOrDefault(); }
+            get { return this._order; }
             set { this._order = value; }
         }
 

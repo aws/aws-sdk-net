@@ -152,9 +152,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// operation.
         /// </para>
         /// </summary>
-        public DateTime ReplicationTaskAssessmentRunCreationDate
+        public DateTime? ReplicationTaskAssessmentRunCreationDate
         {
-            get { return this._replicationTaskAssessmentRunCreationDate.GetValueOrDefault(); }
+            get { return this._replicationTaskAssessmentRunCreationDate; }
             set { this._replicationTaskAssessmentRunCreationDate = value; }
         }
 

@@ -68,19 +68,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ClockSync", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ClockSync = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Gnss", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Gnss = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Stream", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Stream = unmarshaller.Unmarshall(context);
                     continue;
                 }

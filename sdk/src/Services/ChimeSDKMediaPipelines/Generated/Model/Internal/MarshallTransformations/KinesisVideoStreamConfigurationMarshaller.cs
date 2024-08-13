@@ -51,7 +51,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataRetentionInHours())
             {
                 context.Writer.WritePropertyName("DataRetentionInHours");
-                context.Writer.Write(requestObject.DataRetentionInHours);
+                context.Writer.Write(requestObject.DataRetentionInHours.Value);
             }
 
             if(requestObject.IsSetRegion())

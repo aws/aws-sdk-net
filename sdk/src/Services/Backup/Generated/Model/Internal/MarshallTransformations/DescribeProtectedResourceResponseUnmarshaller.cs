@@ -54,7 +54,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LastBackupTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastBackupTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -72,19 +72,19 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestRestoreExecutionTimeMinutes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LatestRestoreExecutionTimeMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestRestoreJobCreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestRestoreJobCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestRestoreRecoveryPointCreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestRestoreRecoveryPointCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

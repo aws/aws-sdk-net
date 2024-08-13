@@ -110,7 +110,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableAutoSubDomain", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAutoSubDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }

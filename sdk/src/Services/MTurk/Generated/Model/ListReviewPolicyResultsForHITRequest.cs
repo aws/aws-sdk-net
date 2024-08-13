@@ -72,9 +72,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.MTurk.Model
         /// Review Policies and their outcomes. 
         /// </para>
         /// </summary>
-        public bool RetrieveActions
+        public bool? RetrieveActions
         {
-            get { return this._retrieveActions.GetValueOrDefault(); }
+            get { return this._retrieveActions; }
             set { this._retrieveActions = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.MTurk.Model
         /// Policies. 
         /// </para>
         /// </summary>
-        public bool RetrieveResults
+        public bool? RetrieveResults
         {
-            get { return this._retrieveResults.GetValueOrDefault(); }
+            get { return this._retrieveResults; }
             set { this._retrieveResults = value; }
         }
 

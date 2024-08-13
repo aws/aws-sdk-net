@@ -85,13 +85,13 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxOutputFiles())
             {
                 context.Writer.WritePropertyName("MaxOutputFiles");
-                context.Writer.Write(requestObject.MaxOutputFiles);
+                context.Writer.Write(requestObject.MaxOutputFiles.Value);
             }
 
             if(requestObject.IsSetOverwrite())
             {
                 context.Writer.WritePropertyName("Overwrite");
-                context.Writer.Write(requestObject.Overwrite);
+                context.Writer.Write(requestObject.Overwrite.Value);
             }
 
             if(requestObject.IsSetPartitionColumns())

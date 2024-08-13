@@ -90,9 +90,9 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.LakeFormation.Model
         /// transaction commit time is used. Cannot be specified along with <c>TransactionId</c>.
         /// </para>
         /// </summary>
-        public DateTime QueryAsOfTime
+        public DateTime? QueryAsOfTime
         {
-            get { return this._queryAsOfTime.GetValueOrDefault(); }
+            get { return this._queryAsOfTime; }
             set { this._queryAsOfTime = value; }
         }
 

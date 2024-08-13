@@ -70,9 +70,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// For a single line comment the start line and end line values are the same.
         /// </para>
         /// </summary>
-        public int EndLine
+        public int? EndLine
         {
-            get { return this._endLine.GetValueOrDefault(); }
+            get { return this._endLine; }
             set { this._endLine = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// branch.
         /// </para>
         /// </summary>
-        public int StartLine
+        public int? StartLine
         {
-            get { return this._startLine.GetValueOrDefault(); }
+            get { return this._startLine; }
             set { this._startLine = value; }
         }
 

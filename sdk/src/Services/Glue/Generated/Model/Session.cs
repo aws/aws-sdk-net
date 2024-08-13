@@ -79,9 +79,9 @@ namespace Amazon.Glue.Model
         /// The date and time that this session is completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedOn
+        public DateTime? CompletedOn
         {
-            get { return this._completedOn.GetValueOrDefault(); }
+            get { return this._completedOn; }
             set { this._completedOn = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.Glue.Model
         /// The time and date when the session was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedOn
+        public DateTime? CreatedOn
         {
-            get { return this._createdOn.GetValueOrDefault(); }
+            get { return this._createdOn; }
             set { this._createdOn = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.Glue.Model
         /// The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
         /// </para>
         /// </summary>
-        public double DPUSeconds
+        public double? DPUSeconds
         {
-            get { return this._dpuSeconds.GetValueOrDefault(); }
+            get { return this._dpuSeconds; }
             set { this._dpuSeconds = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.Glue.Model
         /// The total time the session ran for.
         /// </para>
         /// </summary>
-        public double ExecutionTime
+        public double? ExecutionTime
         {
-            get { return this._executionTime.GetValueOrDefault(); }
+            get { return this._executionTime; }
             set { this._executionTime = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.Glue.Model
         /// The number of minutes when idle before the session times out.
         /// </para>
         /// </summary>
-        public int IdleTimeout
+        public int? IdleTimeout
         {
-            get { return this._idleTimeout.GetValueOrDefault(); }
+            get { return this._idleTimeout; }
             set { this._idleTimeout = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.Glue.Model
         /// compute capacity and 16 GB memory. 
         /// </para>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -303,9 +303,9 @@ namespace Amazon.Glue.Model
         /// The number of workers of a defined <c>WorkerType</c> to use for the session.
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -340,9 +340,9 @@ namespace Amazon.Glue.Model
         /// The code execution progress of the session.
         /// </para>
         /// </summary>
-        public double Progress
+        public double? Progress
         {
-            get { return this._progress.GetValueOrDefault(); }
+            get { return this._progress; }
             set { this._progress = value; }
         }
 

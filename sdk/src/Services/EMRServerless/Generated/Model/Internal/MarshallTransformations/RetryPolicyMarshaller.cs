@@ -51,13 +51,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAttempts())
             {
                 context.Writer.WritePropertyName("maxAttempts");
-                context.Writer.Write(requestObject.MaxAttempts);
+                context.Writer.Write(requestObject.MaxAttempts.Value);
             }
 
             if(requestObject.IsSetMaxFailedAttemptsPerHour())
             {
                 context.Writer.WritePropertyName("maxFailedAttemptsPerHour");
-                context.Writer.Write(requestObject.MaxFailedAttemptsPerHour);
+                context.Writer.Write(requestObject.MaxFailedAttemptsPerHour.Value);
             }
 
         }

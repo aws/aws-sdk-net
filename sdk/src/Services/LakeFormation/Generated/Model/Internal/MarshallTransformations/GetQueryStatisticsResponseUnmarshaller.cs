@@ -66,7 +66,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("QuerySubmissionTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.QuerySubmissionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

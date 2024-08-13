@@ -256,9 +256,9 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  The port value for the MongoDB source endpoint. 
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -288,9 +288,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool ReplicateShardCollections
+        public bool? ReplicateShardCollections
         {
-            get { return this._replicateShardCollections.GetValueOrDefault(); }
+            get { return this._replicateShardCollections; }
             set { this._replicateShardCollections = value; }
         }
 
@@ -398,9 +398,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// To fetch only updates and deletes during migration, set this parameter to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool UseUpdateLookUp
+        public bool? UseUpdateLookUp
         {
-            get { return this._useUpdateLookUp.GetValueOrDefault(); }
+            get { return this._useUpdateLookUp; }
             set { this._useUpdateLookUp = value; }
         }
 

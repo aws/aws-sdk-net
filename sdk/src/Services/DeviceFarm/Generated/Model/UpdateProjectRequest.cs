@@ -65,9 +65,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of minutes a test run in the project executes before it times out.
         /// </para>
         /// </summary>
-        public int DefaultJobTimeoutMinutes
+        public int? DefaultJobTimeoutMinutes
         {
-            get { return this._defaultJobTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._defaultJobTimeoutMinutes; }
             set { this._defaultJobTimeoutMinutes = value; }
         }
 

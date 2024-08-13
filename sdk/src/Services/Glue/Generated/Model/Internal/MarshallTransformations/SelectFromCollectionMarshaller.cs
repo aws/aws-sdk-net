@@ -51,7 +51,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIndex())
             {
                 context.Writer.WritePropertyName("Index");
-                context.Writer.Write(requestObject.Index);
+                context.Writer.Write(requestObject.Index.Value);
             }
 
             if(requestObject.IsSetInputs())

@@ -64,9 +64,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Retryable
+        public bool? Retryable
         {
-            get { return this._retryable.GetValueOrDefault(); }
+            get { return this._retryable; }
             set { this._retryable = value; }
         }
 

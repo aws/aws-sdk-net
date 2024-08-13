@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         /// can be overridden.
         /// </para>
         /// </summary>
-        public bool AllowAuthorizerOverride
+        public bool? AllowAuthorizerOverride
         {
-            get { return this._allowAuthorizerOverride.GetValueOrDefault(); }
+            get { return this._allowAuthorizerOverride; }
             set { this._allowAuthorizerOverride = value; }
         }
 

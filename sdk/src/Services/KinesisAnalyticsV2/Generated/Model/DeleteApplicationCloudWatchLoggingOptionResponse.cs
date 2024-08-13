@@ -37,6 +37,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private string _applicationARN;
         private long? _applicationVersionId;
         private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOptionDescription>() : null;
+        private string _operationId;
 
         /// <summary>
         /// Gets and sets the property ApplicationARN. 
@@ -65,9 +66,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]
-        public long ApplicationVersionId
+        public long? ApplicationVersionId
         {
-            get { return this._applicationVersionId.GetValueOrDefault(); }
+            get { return this._applicationVersionId; }
             set { this._applicationVersionId = value; }
         }
 
@@ -93,6 +94,23 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetCloudWatchLoggingOptionDescriptions()
         {
             return this._cloudWatchLoggingOptionDescriptions != null && (this._cloudWatchLoggingOptionDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationId. Operation ID for tracking DeleteApplicationCloudWatchLoggingOption
+        /// request
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string OperationId
+        {
+            get { return this._operationId; }
+            set { this._operationId = value; }
+        }
+
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
+        {
+            return this._operationId != null;
         }
 
     }
