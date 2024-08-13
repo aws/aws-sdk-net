@@ -655,7 +655,13 @@ namespace Amazon.Runtime
             // the URI class will change the canonicalize path to bar.txt. This behavior of changing the Uri after the 
             // request has been signed will trigger a signature mismatch error. It is valid especially for S3 for the resource
             // path to contain ".." segments.
-            var uri = new Uri(strUri, new UriCreationOptions { DangerousDisablePathAndQueryCanonicalization = true });
+            var uriCreationOptions = new UriCreationOptions();
+            if (!AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization)
+            {
+                uriCreationOptions.DangerousDisablePathAndQueryCanonicalization = true;
+            }
+            var uri = new Uri(strUri, uriCreationOptions);
+
 #else
             var uri = new Uri(strUri);
 #endif
