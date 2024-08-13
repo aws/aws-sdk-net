@@ -43,6 +43,7 @@ namespace Amazon.NeptuneGraph.Model
     /// </summary>
     public partial class CreateGraphUsingImportTaskRequest : AmazonNeptuneGraphRequest
     {
+        private BlankNodeHandling _blankNodeHandling;
         private bool? _deletionProtection;
         private bool? _failOnError;
         private Format _format;
@@ -57,6 +58,27 @@ namespace Amazon.NeptuneGraph.Model
         private string _source;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VectorSearchConfiguration _vectorSearchConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property BlankNodeHandling. 
+        /// <para>
+        /// The method to handle blank nodes in the dataset. Currently, only <c>convertToIri</c>
+        /// is supported, meaning blank nodes are converted to unique IRIs at load time. Must
+        /// be provided when format is <c>ntriples</c>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling
+        /// RDF values</a>.
+        /// </para>
+        /// </summary>
+        public BlankNodeHandling BlankNodeHandling
+        {
+            get { return this._blankNodeHandling; }
+            set { this._blankNodeHandling = value; }
+        }
+
+        // Check to see if BlankNodeHandling property is set
+        internal bool IsSetBlankNodeHandling()
+        {
+            return this._blankNodeHandling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeletionProtection. 

@@ -67,6 +67,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBlankNodeHandling())
+                {
+                    context.Writer.WritePropertyName("blankNodeHandling");
+                    context.Writer.Write(publicRequest.BlankNodeHandling);
+                }
+
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     context.Writer.WritePropertyName("deletionProtection");

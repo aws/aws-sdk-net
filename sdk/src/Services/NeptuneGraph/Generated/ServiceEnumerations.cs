@@ -25,6 +25,52 @@ namespace Amazon.NeptuneGraph
 {
 
     /// <summary>
+    /// Constants used for properties of type BlankNodeHandling.
+    /// </summary>
+    public class BlankNodeHandling : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ConvertToIri for BlankNodeHandling
+        /// </summary>
+        public static readonly BlankNodeHandling ConvertToIri = new BlankNodeHandling("convertToIri");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlankNodeHandling(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlankNodeHandling FindValue(string value)
+        {
+            return FindValue<BlankNodeHandling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlankNodeHandling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictExceptionReason.
     /// </summary>
     public class ConflictExceptionReason : ConstantClass
@@ -130,6 +176,10 @@ namespace Amazon.NeptuneGraph
         /// Constant CSV for Format
         /// </summary>
         public static readonly Format CSV = new Format("CSV");
+        /// <summary>
+        /// Constant NTRIPLES for Format
+        /// </summary>
+        public static readonly Format NTRIPLES = new Format("NTRIPLES");
         /// <summary>
         /// Constant OPEN_CYPHER for Format
         /// </summary>
