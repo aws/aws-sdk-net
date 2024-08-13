@@ -455,7 +455,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="transactionParts">Configured TransactGet objects.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        Task ExecuteTransactGetAsync(TransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken));
+        Task ExecuteTransactGetAsync(ITransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
 

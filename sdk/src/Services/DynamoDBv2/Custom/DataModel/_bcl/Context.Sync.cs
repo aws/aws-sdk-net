@@ -180,12 +180,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Transact Get
 
-        /// <summary>
-        /// Issues a transactional get request with multiple TransactGet objects.
-        /// Results are stored in the individual TransactGet objects.
-        /// </summary>
-        /// <param name="transactionParts">Configured TransactGet objects.</param>
-        public void ExecuteTransactGet(params TransactGet[] transactionParts)
+        /// <inheritdoc/>
+        public void ExecuteTransactGet(params ITransactGet[] transactionParts)
         {
             MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
             transaction.Execute();
