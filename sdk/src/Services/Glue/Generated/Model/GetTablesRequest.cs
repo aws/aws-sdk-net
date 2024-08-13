@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetTablesRequest : AmazonGlueRequest
     {
+        private List<string> _attributesToGet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _catalogId;
         private string _databaseName;
         private string _expression;
@@ -43,6 +44,38 @@ namespace Amazon.Glue.Model
         private string _nextToken;
         private DateTime? _queryAsOfTime;
         private string _transactionId;
+
+        /// <summary>
+        /// Gets and sets the property AttributesToGet. 
+        /// <para>
+        ///  Specifies the table fields returned by the <c>GetTables</c> call. This parameter
+        /// doesn’t accept an empty list. The request must include <c>NAME</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the valid combinations of values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>NAME</c> - Names of all tables in the database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NAME</c>, <c>TABLE_TYPE</c> - Names of all tables and the table types.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> AttributesToGet
+        {
+            get { return this._attributesToGet; }
+            set { this._attributesToGet = value; }
+        }
+
+        // Check to see if AttributesToGet property is set
+        internal bool IsSetAttributesToGet()
+        {
+            return this._attributesToGet != null && (this._attributesToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
