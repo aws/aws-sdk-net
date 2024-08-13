@@ -295,51 +295,29 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region TransactGet
 
-        /// <summary>
-        /// Creates a strongly-typed TransactGet object, allowing
-        /// a transactional get operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to get.</typeparam>
-        /// <returns>Empty strongly-typed TransactGet object.</returns>
-        public TransactGet<T> CreateTransactGet<T>()
+        /// <inheritdoc/>
+        public ITransactGet<T> CreateTransactGet<T>()
         {
             return CreateTransactGet<T>((TransactGetConfig)null);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed TransactGet object, allowing
-        /// a transactional get operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to get.</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Empty strongly-typed TransactGet object.</returns>
+        /// <inheritdoc/>
         [Obsolete("Use the CreateTransactGet overload that takes TransactGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
-        public TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig)
+        public ITransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new TransactGet<T>(this, config);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed TransactGet object, allowing
-        /// a transactional get operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to get.</typeparam>
-        /// <param name="transactGetConfig">Config object that can be used to override properties on the table's context for this request.</param>
-        /// <returns>Empty strongly-typed TransactGet object.</returns>
-        public TransactGet<T> CreateTransactGet<T>(TransactGetConfig transactGetConfig)
+        /// <inheritdoc/>
+        public ITransactGet<T> CreateTransactGet<T>(TransactGetConfig transactGetConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(transactGetConfig?.ToDynamoDBOperationConfig(), this.Config);
             return new TransactGet<T>(this, config);
         }
 
-        /// <summary>
-        /// Creates a MultiTableTransactGet object, composed of multiple
-        /// individual TransactGet objects.
-        /// </summary>
-        /// <param name="transactionParts">Individual TransactGet objects.</param>
-        /// <returns>Composite MultiTableTransactGet object.</returns>
-        public MultiTableTransactGet CreateMultiTableTransactGet(params TransactGet[] transactionParts)
+        /// <inheritdoc/>
+        public IMultiTableTransactGet CreateMultiTableTransactGet(params ITransactGet[] transactionParts)
         {
             return new MultiTableTransactGet(transactionParts);
         }

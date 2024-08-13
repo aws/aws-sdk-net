@@ -277,7 +277,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to get.</typeparam>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
-        TransactGet<T> CreateTransactGet<T>();
+        ITransactGet<T> CreateTransactGet<T>();
 
         /// <summary>
         /// Creates a strongly-typed TransactGet object, allowing
@@ -287,7 +287,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
         [Obsolete("Use the CreateTransactGet overload that takes TransactGetConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to BatchGet.")]
-        TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig = null);
+        ITransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Creates a strongly-typed TransactGet object, allowing
@@ -296,7 +296,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to get.</typeparam>
         /// <param name="transactGetConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed TransactGet object.</returns>
-        TransactGet<T> CreateTransactGet<T>(TransactGetConfig transactGetConfig);
+        ITransactGet<T> CreateTransactGet<T>(TransactGetConfig transactGetConfig);
 
         /// <summary>
         /// Creates a MultiTableTransactGet object, composed of multiple
@@ -304,7 +304,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="transactionParts">Individual TransactGet objects.</param>
         /// <returns>Composite MultiTableTransactGet object.</returns>
-        MultiTableTransactGet CreateMultiTableTransactGet(params TransactGet[] transactionParts);
+        IMultiTableTransactGet CreateMultiTableTransactGet(params ITransactGet[] transactionParts);
 
         #endregion
 
