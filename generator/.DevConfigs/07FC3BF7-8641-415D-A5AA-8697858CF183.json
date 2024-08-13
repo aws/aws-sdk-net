@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Add AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization property for users using the WebApplicationFactory for mock testing."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

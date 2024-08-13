@@ -1,3 +1,18 @@
+### 3.7.864.0 (2024-08-13 18:17 UTC)
+* Amplify (3.7.401.0)
+	* Add a new field "cacheConfig" that enables users to configure the CDN cache settings for an App
+* AppStream (3.7.402.0)
+	* This release includes following new APIs: CreateThemeForStack, DescribeThemeForStack, UpdateThemeForStack, DeleteThemeForStack to support custom branding programmatically.
+* FIS (3.7.401.0)
+	* This release adds support for additional error information on experiment failure. It adds the error code, location, and account id on relevant failures to the GetExperiment and ListExperiment API responses.
+* Glue (3.7.404.0)
+	* Add AttributesToGet parameter support for Glue GetTables
+* NeptuneGraph (3.7.401.0)
+	* Amazon Neptune Analytics provides a new option for customers to load data into a graph using the RDF (Resource Description Framework) NTRIPLES format. When loading NTRIPLES files, use the value `convertToIri` for the `blankNodeHandling` parameter.
+* Core 3.7.400.5
+	* Add AWSConfigs.DisableDangerousDisablePathAndQueryCanonicalization property for users using the WebApplicationFactory for mock testing.
+	* All services packages updated to require new Core
+
 ### 3.7.863.0 (2024-08-12 18:20 UTC)
 * ComputeOptimizer (3.7.400.5)
 	* Doc only update for Compute Optimizer that fixes several customer-reported issues relating to ECS finding classifications
