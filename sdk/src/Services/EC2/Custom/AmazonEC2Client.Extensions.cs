@@ -95,7 +95,9 @@ namespace Amazon.EC2
                 WebServiceRequestEventArgs wsrea = args as WebServiceRequestEventArgs;
                 if (wsrea != null)
                 {
-                    wsrea.ParameterCollection["DryRun"] = new StringParameterValue("true");
+#pragma warning disable CS0612,CS0618
+                    wsrea.Parameters["DryRun"] = "true";
+#pragma warning restore CS0612,CS0618
                 }
             }
         }

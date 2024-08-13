@@ -2,7 +2,6 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Tests;
 using System;
 using System.Collections.Generic;
@@ -100,8 +99,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 offset = General.IncorrectPositiveClockSkewOffset;
             else
                 offset = General.IncorrectNegativeClockSkewOffset;
-            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] {AWSConfigs.RegionEndpoint.ToString(), offset });
+            General.SetClockSkewCorrection(offset);
         }
 
         #endregion

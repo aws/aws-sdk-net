@@ -23,5 +23,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, source);
         }
+        public static void SetClockSkewCorrection(TimeSpan value)
+        {
+            var property = typeof(AWSConfigs).GetProperty("ClockOffset", BindingFlags.Static | BindingFlags.Public);
+            property.SetValue(null, value);
+        }
     }
 }
