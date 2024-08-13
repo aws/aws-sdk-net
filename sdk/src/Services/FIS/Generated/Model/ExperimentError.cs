@@ -30,67 +30,67 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FIS.Model
 {
     /// <summary>
-    /// Describes the state of an experiment.
+    /// Describes the error when an experiment has <c>failed</c>.
     /// </summary>
-    public partial class ExperimentState
+    public partial class ExperimentError
     {
-        private ExperimentError _error;
-        private string _reason;
-        private ExperimentStatus _status;
+        private string _accountId;
+        private string _code;
+        private string _location;
 
         /// <summary>
-        /// Gets and sets the property Error. 
+        /// Gets and sets the property AccountId. 
         /// <para>
-        /// The error information of the experiment when the action has <c>failed</c>.
+        /// The Amazon Web Services Account ID where the experiment failure occurred.
         /// </para>
         /// </summary>
-        public ExperimentError Error
+        public string AccountId
         {
-            get { return this._error; }
-            set { this._error = value; }
+            get { return this._accountId; }
+            set { this._accountId = value; }
         }
 
-        // Check to see if Error property is set
-        internal bool IsSetError()
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
         {
-            return this._error != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Reason. 
-        /// <para>
-        /// The reason for the state.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=512)]
-        public string Reason
-        {
-            get { return this._reason; }
-            set { this._reason = value; }
-        }
-
-        // Check to see if Reason property is set
-        internal bool IsSetReason()
-        {
-            return this._reason != null;
+            return this._accountId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// The state of the experiment.
+        /// The error code for the failed experiment.
         /// </para>
         /// </summary>
-        public ExperimentStatus Status
+        [AWSProperty(Max=128)]
+        public string Code
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._status != null;
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// Context for the section of the experiment template that failed.
+        /// </para>
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
     }

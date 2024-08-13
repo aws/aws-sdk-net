@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExperimentState Object
+    /// Response Unmarshaller for ExperimentError Object
     /// </summary>  
-    public class ExperimentStateUnmarshaller : IUnmarshaller<ExperimentState, XmlUnmarshallerContext>, IUnmarshaller<ExperimentState, JsonUnmarshallerContext>
+    public class ExperimentErrorUnmarshaller : IUnmarshaller<ExperimentError, XmlUnmarshallerContext>, IUnmarshaller<ExperimentError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExperimentState IUnmarshaller<ExperimentState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExperimentError IUnmarshaller<ExperimentError, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExperimentState Unmarshall(JsonUnmarshallerContext context)
+        public ExperimentError Unmarshall(JsonUnmarshallerContext context)
         {
-            ExperimentState unmarshalledObject = new ExperimentState();
+            ExperimentError unmarshalledObject = new ExperimentError();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,22 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("error", targetDepth))
-                {
-                    var unmarshaller = ExperimentErrorUnmarshaller.Instance;
-                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("location", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +89,12 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExperimentStateUnmarshaller _instance = new ExperimentStateUnmarshaller();        
+        private static ExperimentErrorUnmarshaller _instance = new ExperimentErrorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExperimentStateUnmarshaller Instance
+        public static ExperimentErrorUnmarshaller Instance
         {
             get
             {

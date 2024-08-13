@@ -32,10 +32,10 @@ namespace Amazon.FIS
     /// <summary>
     /// <para>Interface for accessing FIS</para>
     ///
-    /// Fault Injection Service is a managed service that enables you to perform fault injection
-    /// experiments on your Amazon Web Services workloads. For more information, see the <a
-    /// href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service User
-    /// Guide</a>.
+    /// Amazon Web Services Fault Injection Service is a managed service that enables you
+    /// to perform fault injection experiments on your Amazon Web Services workloads. For
+    /// more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault
+    /// Injection Service User Guide</a>.
     /// </summary>
     public partial interface IAmazonFIS : IAmazonService, IDisposable
     {
