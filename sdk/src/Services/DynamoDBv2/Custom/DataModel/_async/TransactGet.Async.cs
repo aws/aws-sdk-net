@@ -18,35 +18,33 @@ using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Represents a non-generic object for retrieving multiple items
-    /// from a single DynamoDB table in a transaction.
-    /// </summary>
-    public abstract partial class TransactGet
+    public partial interface ITransactGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to get the items requested in a transaction.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public abstract partial class TransactGet : ITransactGet
+    {
+        /// <inheritdoc/>
+        public abstract Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class  TransactGet<T> : TransactGet, ITransactGet<T>
+    {
+        /// <inheritdoc/>
+        public override Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for retrieving multiple items from multiple DynamoDB tables,
-    /// using multiple strongly-typed TransactGet objects.
-    /// </summary>
-    public partial class MultiTableTransactGet
+    public partial interface IMultiTableTransactGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table transaction request against all configured TransactGet objects.
         /// Results are stored in the respective TransactGet objects.
@@ -54,11 +52,15 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         ///
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class MultiTableTransactGet : IMultiTableTransactGet
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 }

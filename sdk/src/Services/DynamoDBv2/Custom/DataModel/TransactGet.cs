@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using System.Collections.Generic;
 #if AWS_ASYNC_API
 using System.Threading;
@@ -23,131 +24,58 @@ using Amazon.DynamoDBv2.DocumentModel;
 namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
-    /// Represents a non-generic object for retrieving multiple items
+    /// Represents a non-generic interface for retrieving multiple items
     /// from a single DynamoDB table in a transaction.
     /// </summary>
-    public abstract partial class TransactGet
+    public partial interface ITransactGet
     {
-        #region Internal/protected properties
-
         /// <summary>
-        /// Gets and sets the UntypedResults property.
+        /// List of non-generic results retrieved from DynamoDB.
         /// </summary>
-        protected List<object> UntypedResults { get; set; }
-        internal DynamoDBContext Context { get; set; }
-        internal DynamoDBFlatConfig Config { get; set; }
-        internal DocumentTransactGet DocumentTransaction { get; set; }
-
-        #endregion
-
-
-        #region Public properties
-
-        /// <summary>
-        /// List of results retrieved from DynamoDB.
-        /// Populated after Execute is called.
-        /// </summary>
-        public List<object> Results => UntypedResults;
-
-        #endregion
-
-
-        #region Constructor
-
-        internal TransactGet(DynamoDBContext context, DynamoDBFlatConfig config)
-        {
-            Context = context;
-            Config = config;
-        }
-
-        #endregion
-
-
-        #region Protected methods
-
-        /// <summary>
-        /// Executes a server call to get the items requested in a transaction.
-        /// Populates Results with the retrieved items.
-        /// </summary>
-        protected internal abstract void ExecuteHelper();
-
-#if AWS_ASYNC_API
-        /// <summary>
-        /// Executes an asynchronous server call to get the items requested in a transaction.
-        /// Populates Results with the retrieved items.
-        /// </summary>
-        protected internal abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
-#endif
-        #endregion
-
-
-        #region Internal methods
-
-        internal abstract void PopulateResults();
-
-        #endregion
+        /// <remarks>
+        /// This is only populated after a call to Execute.
+        /// </remarks>
+        List<object> UntypedResults { get; }
     }
 
     /// <summary>
-    /// Represents a strongly-typed object for retrieving multiple items
+    /// Represents a generic interface for retrieving multiple items
     /// from a single DynamoDB table in a transaction.
     /// </summary>
-    public class TransactGet<T> : TransactGet
+    public interface ITransactGet<T> : ITransactGet
     {
-        #region Public properties
-
         /// <summary>
-        /// List of results retrieved from DynamoDB.
-        /// Populated after Execute is called.
+        /// List of generic results retrieved from DynamoDB.
         /// </summary>
-        public new List<T> Results { get { return TypedResults; } }
-
-        #endregion
-
-
-        #region Public methods
+        /// <remarks>
+        /// This is only populated after a call to Execute.
+        /// </remarks>
+        List<T> Results { get; }
 
         /// <summary>
         /// Add a single item to get, identified by its hash primary key.
         /// </summary>
         /// <param name="hashKey">Hash key of the item to get.</param>
-        public void AddKey(object hashKey)
-        {
-            AddKey(hashKey, rangeKey: null);
-        }
+        void AddKey(object hashKey);
 
         /// <summary>
         /// Add a single item to get, identified by its hash-and-range primary key.
         /// </summary>
         /// <param name="hashKey">Hash key of the item to get.</param>
         /// <param name="rangeKey">Range key of the item to get.</param>
-        public void AddKey(object hashKey, object rangeKey)
-        {
-            Key key = Context.MakeKey(hashKey, rangeKey, StorageConfig, Config);
-            DocumentTransaction.AddKeyHelper(key);
-        }
+        void AddKey(object hashKey, object rangeKey);
 
         /// <summary>
         /// Add a single item to get.
         /// </summary>
         /// <param name="keyObject">Object key of the item to get.</param>
-        public void AddKey(T keyObject)
-        {
-            Key key = Context.MakeKey(keyObject, StorageConfig, Config);
-            DocumentTransaction.AddKeyHelper(key);
-        }
+        void AddKey(T keyObject);
 
         /// <summary>
         /// Add multiple items to get.
         /// </summary>
         /// <param name="keyObjects">Object keys of the items to get.</param>
-        public void AddKeys(IEnumerable<T> keyObjects)
-        {
-            foreach (var keyObject in keyObjects)
-            {
-                AddKey(keyObject);
-            }
-        }
+        void AddKeys(IEnumerable<T> keyObjects);
 
         /// <summary>
         /// Creates a MultiTableTransactGet object that is a combination
@@ -158,52 +86,88 @@ namespace Amazon.DynamoDBv2.DataModel
         /// MultiTableTransactGet consisting of the multiple TransactGet objects:
         /// the current TransactGet object and the passed-in TransactGet objects.
         /// </returns>
-        public MultiTableTransactGet Combine(params TransactGet[] otherTransactionParts)
+        IMultiTableTransactGet Combine(params ITransactGet[] otherTransactionParts);
+    }
+
+    /// <summary>
+    /// Represents a non-generic object for retrieving multiple items
+    /// from a single DynamoDB table in a transaction.
+    /// </summary>
+    public abstract partial class TransactGet : ITransactGet
+    {
+        internal DocumentTransactGet DocumentTransaction { get; set; }
+
+        internal abstract void PopulateResults();
+
+        /// <inheritdoc/>
+        public List<object> UntypedResults { get; } = new();
+    }
+
+    /// <summary>
+    /// Represents a strongly-typed object for retrieving multiple items
+    /// from a single DynamoDB table in a transaction.
+    /// </summary>
+    public partial class TransactGet<T> : TransactGet, ITransactGet<T>
+    {
+        private readonly DynamoDBContext _context;
+        private readonly DynamoDBFlatConfig _config;
+        private readonly ItemStorageConfig _storageConfig;
+
+        /// <inheritdoc/>
+        public List<T> Results { get; } = new();
+
+        /// <inheritdoc/>
+        public void AddKey(object hashKey)
+        {
+            AddKey(hashKey, rangeKey: null);
+        }
+
+        /// <inheritdoc/>
+        public void AddKey(object hashKey, object rangeKey)
+        {
+            Key key = _context.MakeKey(hashKey, rangeKey, _storageConfig, _config);
+            DocumentTransaction.AddKeyHelper(key);
+        }
+
+        /// <inheritdoc/>
+        public void AddKey(T keyObject)
+        {
+            Key key = _context.MakeKey(keyObject, _storageConfig, _config);
+            DocumentTransaction.AddKeyHelper(key);
+        }
+
+        /// <inheritdoc/>
+        public void AddKeys(IEnumerable<T> keyObjects)
+        {
+            foreach (var keyObject in keyObjects)
+            {
+                AddKey(keyObject);
+            }
+        }
+
+        /// <inheritdoc/>
+        public IMultiTableTransactGet Combine(params ITransactGet[] otherTransactionParts)
         {
             return new MultiTableTransactGet(this, otherTransactionParts);
         }
 
-        #endregion
-
-
-        #region Constructor
-
         internal TransactGet(DynamoDBContext context, DynamoDBFlatConfig config)
-            : base(context, config)
         {
-            StorageConfig = context.StorageConfigCache.GetConfig<T>(config);
-            Table table = Context.GetTargetTable(StorageConfig, Config);
+            _context = context;
+            _config = config;
+            _storageConfig = context.StorageConfigCache.GetConfig<T>(config);
+            var table = context.GetTargetTable(_storageConfig, config);
             DocumentTransaction = table.CreateTransactGet();
         }
 
-        #endregion
-
-
-        #region Internal/protected/private members
-
-        /// <summary>
-        /// Gets and sets the TypedResults property.
-        /// </summary>
-        protected List<T> TypedResults { get; set; }
-
-        internal ItemStorageConfig StorageConfig { get; set; }
-
-        /// <summary>
-        /// Executes a server call to get the items requested in a transaction.
-        /// Populates Results with the retrieved items.
-        /// </summary>
-        protected internal override void ExecuteHelper()
+        private void ExecuteHelper()
         {
             DocumentTransaction.ExecuteHelper();
             PopulateResults();
         }
 
 #if AWS_ASYNC_API
-        /// <summary>
-        /// Executes an asynchronous server call to get the items requested in a transaction.
-        /// Populates Results with the retrieved items.
-        /// </summary>
-        protected internal override async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             await DocumentTransaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             PopulateResults();
@@ -212,96 +176,95 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal override void PopulateResults()
         {
-            UntypedResults = new List<object>();
-            TypedResults = new List<T>();
+            UntypedResults.Clear();
+            Results.Clear();
             foreach (var doc in DocumentTransaction.Results)
             {
-                var result = Context.FromDocumentHelper<T>(doc, Config);
-                TypedResults.Add(result);
+                var result = _context.FromDocumentHelper<T>(doc, _config);
                 UntypedResults.Add(result);
+                Results.Add(result);
             }
         }
+    }
 
-        #endregion
+    /// <summary>
+    /// Interface for retrieving multiple items from multiple DynamoDB tables,
+    /// using multiple strongly-typed TransactGet objects.
+    /// </summary>
+    public partial interface IMultiTableTransactGet
+    {
+        /// <summary>
+        /// Add a TransactGet object to the multi-table transaction request.
+        /// </summary>
+        /// <param name="transactionPart">TransactGet to add.</param>
+        public void AddTransactionPart(ITransactGet transactionPart);
     }
 
     /// <summary>
     /// Class for retrieving multiple items from multiple DynamoDB tables,
     /// using multiple strongly-typed TransactGet objects.
     /// </summary>
-    public partial class MultiTableTransactGet
+    public partial class MultiTableTransactGet : IMultiTableTransactGet
     {
-        #region Private members
-
-        private readonly List<TransactGet> allTransactionParts;
-
-        #endregion
-
-
-        #region Constructor
+        private readonly List<ITransactGet> allTransactionParts;
 
         /// <summary>
         /// Constructs a MultiTableTransactGet object from a number of
         /// TransactGet objects.
         /// </summary>
         /// <param name="transactionParts">Collection of TransactGet objects</param>
-        public MultiTableTransactGet(params TransactGet[] transactionParts)
+        public MultiTableTransactGet(params ITransactGet[] transactionParts)
         {
-            allTransactionParts = new List<TransactGet>(transactionParts);
+            allTransactionParts = new List<ITransactGet>(transactionParts);
         }
 
-        internal MultiTableTransactGet(TransactGet first, params TransactGet[] rest)
+        internal MultiTableTransactGet(ITransactGet first, params ITransactGet[] rest)
         {
-            allTransactionParts = new List<TransactGet>();
+            allTransactionParts = new List<ITransactGet>();
             allTransactionParts.Add(first);
             allTransactionParts.AddRange(rest);
         }
 
-        #endregion
-
-
-        #region Public methods
-
-        /// <summary>
-        /// Add a TransactGet object to the multi-table transaction request.
-        /// </summary>
-        /// <param name="transactionPart">TransactGet to add.</param>
-        public void AddTransactionPart(TransactGet transactionPart)
+        /// <inheritdoc/>
+        public void AddTransactionPart(ITransactGet transactionPart)
         {
             allTransactionParts.Add(transactionPart);
         }
 
-
-        internal void ExecuteHelper()
+        private void ExecuteHelper()
         {
             MultiTableDocumentTransactGet transaction = new MultiTableDocumentTransactGet();
+            var errorMsg = $"All transactionParts must be of type {nameof(TransactGet)}";
             foreach (var transactionPart in allTransactionParts)
             {
-                transaction.AddTransactionPart(transactionPart.DocumentTransaction);
+                var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
+                transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
             transaction.ExecuteHelper();
             foreach (var transactionPart in allTransactionParts)
             {
-                transactionPart.PopulateResults();
+                var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
+                abstractTransactGet.PopulateResults();
             }
         }
 
 #if AWS_ASYNC_API
-        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentTransactGet transaction = new MultiTableDocumentTransactGet();
+            var errorMsg = $"All transactionParts must be of type {nameof(TransactGet)}";
             foreach (var transactionPart in allTransactionParts)
             {
-                transaction.AddTransactionPart(transactionPart.DocumentTransaction);
+                var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
+                transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
             await transaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             foreach (var transactionPart in allTransactionParts)
             {
-                transactionPart.PopulateResults();
+                var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
+                abstractTransactGet.PopulateResults();
             }
         }
 #endif
-
-        #endregion
     }
 }
