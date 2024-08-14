@@ -200,6 +200,10 @@ namespace Amazon.CodeBuild
         /// Constant PERSONAL_ACCESS_TOKEN for AuthType
         /// </summary>
         public static readonly AuthType PERSONAL_ACCESS_TOKEN = new AuthType("PERSONAL_ACCESS_TOKEN");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for AuthType
+        /// </summary>
+        public static readonly AuthType SECRETS_MANAGER = new AuthType("SECRETS_MANAGER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2240,6 +2244,10 @@ namespace Amazon.CodeBuild
         /// Constant OAUTH for SourceAuthType
         /// </summary>
         public static readonly SourceAuthType OAUTH = new SourceAuthType("OAUTH");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for SourceAuthType
+        /// </summary>
+        public static readonly SourceAuthType SECRETS_MANAGER = new SourceAuthType("SECRETS_MANAGER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -1658,7 +1658,8 @@ namespace Amazon.CodeBuild
 
         /// <summary>
         /// Imports the source repository credentials for an CodeBuild project that has its source
-        /// code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+        /// code stored in a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket
+        /// repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials service method.</param>
         /// 

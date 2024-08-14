@@ -32,7 +32,8 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Container for the parameters to the ImportSourceCredentials operation.
     /// Imports the source repository credentials for an CodeBuild project that has its source
-    /// code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+    /// code stored in a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket
+    /// repository.
     /// </summary>
     public partial class ImportSourceCredentialsRequest : AmazonCodeBuildRequest
     {
@@ -47,8 +48,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab,
         /// GitLab Self Managed, or Bitbucket repository. An OAUTH connection is not supported
-        /// by the API and must be created using the CodeBuild console. Note that CODECONNECTIONS
-        /// is only valid for GitLab and GitLab Self Managed.
+        /// by the API and must be created using the CodeBuild console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,7 +108,8 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket,
         /// this is either the access token or the app password. For the <c>authType</c> CODECONNECTIONS,
-        /// this is the <c>connectionArn</c>.
+        /// this is the <c>connectionArn</c>. For the <c>authType</c> SECRETS_MANAGER, this is
+        /// the <c>secretArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]
