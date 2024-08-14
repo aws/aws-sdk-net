@@ -92,14 +92,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public static void CreateContext(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, bool disableFetchingTableMetadata = false)
         {
-            var config = new DynamoDBContextConfig
-            {
-                //IgnoreNullValues = true
-                IsEmptyStringValueEnabled = isEmptyStringValueEnabled,
-                Conversion = conversion,
-                DisableFetchingTableMetadata = disableFetchingTableMetadata
-            };
-            Context = new DynamoDBContext(Client, config);
+            Context = new DynamoDBContextBuilder()
+                .WithDynamoDBClient(() => Client)
+                .ConfigureContext(x =>
+                {
+                    //x.IgnoreNullValues = true;
+                    x.IsEmptyStringValueEnabled = isEmptyStringValueEnabled;
+                    x.Conversion = conversion;
+                    x.DisableFetchingTableMetadata = disableFetchingTableMetadata;
+                })
+                .Build();
         }
 
         public static string hashTableName;
@@ -126,7 +128,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public static void ClearTable(string tableName)
         {
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             var table = Table.LoadTable(Client, tableName, DynamoDBEntryConversion.V1, true);
+#pragma warning restore CS0618 // Re-enable the warning
             var keyNames = table.Keys.Keys.ToList();
             
             // Retrieve all keys

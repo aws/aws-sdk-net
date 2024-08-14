@@ -202,7 +202,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Conversion = DynamoDBEntryConversion.V2,
                 RetrieveDateTimeInUtc = retrieveDateTimeInUtc
             };
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             Context = new DynamoDBContext(Client, config);
+#pragma warning restore CS0618 // Re-enable the warning
 
             var currTime = DateTime.Now;
 
@@ -271,7 +273,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Conversion = DynamoDBEntryConversion.V2,
                 RetrieveDateTimeInUtc = retrieveDateTimeInUtc
             };
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             Context = new DynamoDBContext(Client, config);
+#pragma warning restore CS0618 // Re-enable the warning
 
             // Add a custom DateTime converter
             Context.ConverterCache.Add(typeof(DateTime), new DateTimeUtcConverter());
@@ -340,7 +344,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             CleanupTables();
             TableCache.Clear();
 
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
             Context = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = DynamoDBEntryConversion.V2 });
+#pragma warning restore CS0618 // Re-enable the warning
             var operationConfig = new DynamoDBOperationConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc };
 
             var currTime = DateTime.Now;
@@ -411,12 +417,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Clear existing SDK-wide cache
                 TableCache.Clear();
 
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 // Redeclare Context, which will start with empty caches
                 Context = new DynamoDBContext(Client, new DynamoDBContextConfig
                 {
                     IsEmptyStringValueEnabled = true,
                     Conversion = conversion
                 });
+#pragma warning restore CS0618 // Re-enable the warning
 
                 Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashRangeTable")
                                                     .AddHashKey("Name", DynamoDBEntryType.String)
@@ -452,6 +460,50 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestMultiTableTransactionOperations();
 
                 TestStoreAsEpoch();
+            }
+        }
+
+        /// <summary>
+        /// Runs the same object-mapper integration tests as <see cref="TestContextWithEmptyStringEnabled"/>,
+        /// but using a DynamoDBContext created by <see cref="DynamoDBContextBuilder"/>
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestWithBuilderContext()
+        {
+            foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })
+            {
+                // Cleanup existing data in the tables
+                CleanupTables();
+
+                // Clear existing SDK-wide cache
+                TableCache.Clear();
+
+                Context = new DynamoDBContextBuilder()
+                    .ConfigureContext(x =>
+                    {
+                        x.IsEmptyStringValueEnabled = true;
+                        x.Conversion = conversion;
+                    })
+                    .Build();
+
+                TestEmptyStringsWithFeatureEnabled();
+
+                TestEnumHashKeyObjects();
+
+                TestEmptyCollections(conversion);
+
+                TestAnnotatedUnsupportedTypes();
+                TestEnums(conversion);
+
+                TestHashObjects();
+                TestHashRangeObjects<AnnotatedEmployee>();
+                TestOtherContextOperations();
+                TestBatchOperations();
+                TestAnnotatedTransactionOperations();
+                TestAnnotatedMultiTableTransactionOperations();
+
+                TestStoreAsAnnotatedEpoch();
             }
         }
 
@@ -575,6 +627,37 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
         }
 
+        private static void TestAnnotatedUnsupportedTypes()
+        {
+            // Verify that saving objects with invalid properties result in exceptions
+            var employee4 = new Employee4
+            {
+                Name = "Alan",
+                Age = 31,
+                TimeWithCompany = TimeSpan.FromDays(300)
+            };
+            AssertExtensions.ExpectException(() => Context.Save(employee4),
+                typeof(InvalidOperationException),
+                "Type System.TimeSpan is unsupported, it cannot be instantiated");
+            var employee5 = new Employee5
+            {
+                Name = "Alan",
+                Age = 31,
+                EmptyProperty = new EmptyType()
+            };
+            AssertExtensions.ExpectException(() => Context.Save(employee5),
+                typeof(InvalidOperationException),
+                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
+
+            // Verify that objects that are invalid result in exceptions
+            AssertExtensions.ExpectException(() => Context.Scan<TimeSpan>(),
+                typeof(InvalidOperationException),
+                "Type System.TimeSpan is unsupported, it cannot be instantiated");
+            AssertExtensions.ExpectException(() => Context.Scan<EmptyType>(),
+                typeof(InvalidOperationException),
+                "Type AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests+EmptyType is unsupported, it has no supported members");
+        }
+
         private void TestContextConversions()
         {
             var conversionV1 = DynamoDBEntryConversion.V1;
@@ -612,6 +695,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
 
             {
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
                 using (var contextV2 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV2 }))
                 {
@@ -619,14 +703,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     var docV2 = contextV2.ToDocument(product);
                     VerifyConversions(docV1, docV2);
                 }
+#pragma warning restore CS0618 // Re-enable the warning
             }
 
             {
+#pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors
                 using (var contextV1 = new DynamoDBContext(Client, new DynamoDBContextConfig { Conversion = conversionV1 }))
                 {
                     contextV1.Save(product);
                     contextV1.Save(product, new SaveConfig { Conversion = conversionV2 });
                 }
+#pragma warning restore CS0618 // Re-enable the warning
             }
 
             // Introduce a circular reference and try to serialize
@@ -1534,6 +1621,209 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        private void TestAnnotatedTransactionOperations()
+        {
+            var employee1 = new VersionedAnnotatedEmployee
+            {
+                Name = "Mark",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Harmony"
+            };
+            var employee2 = new VersionedAnnotatedEmployee
+            {
+                Name = "Helena",
+                Age = 25,
+                Score = 140
+            };
+            var employee3 = new VersionedAnnotatedEmployee
+            {
+                Name = "Irving",
+                Age = 55,
+                Score = 100
+            };
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                transactWrite.AddSaveItems(new List<VersionedAnnotatedEmployee> { employee1, employee2 });
+                transactWrite.AddSaveItem(employee3);
+                transactWrite.Execute();
+
+                Assert.IsNotNull(employee1.Version);
+                Assert.IsNotNull(employee2.Version);
+                Assert.IsNotNull(employee3.Version);
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee1, employee2 });
+                transactGet.AddKey(employee3.Name, employee3.Age);
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+                Assert.AreEqual(employee3.Name, transactGet.Results[2].Name);
+                Assert.AreEqual(employee3.Version, transactGet.Results[2].Version);
+            }
+
+            {
+                var originalVersion = employee1.Version.Value;
+                employee1.Version = null;
+                employee1.Score++;
+
+                var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                transactWrite.AddSaveItem(employee1);
+                transactWrite.AddVersionCheckKey(employee2.Name, employee2.Age, employee2.Version);
+                transactWrite.AddDeleteItem(employee3);
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[1].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[2].Code);
+
+                employee1.Version = originalVersion;
+                employee1.Score--;
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                transactGet.AddKey(employee1);
+                transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee2, employee3 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+                Assert.AreEqual(employee3.Version, transactGet.Results[2].Version);
+            }
+
+            {
+                employee1.Score++;
+                employee2.Version++;
+
+                var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                transactWrite.AddSaveItem(employee1);
+                transactWrite.AddVersionCheckItem(employee2);
+                transactWrite.AddDeleteItem(employee3);
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[1].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[2].Code);
+
+                employee1.Score--;
+                employee2.Version--;
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee1, employee2 });
+                transactGet.AddKey(employee3.Name, employee3.Age);
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+                Assert.AreEqual(employee3.Version, transactGet.Results[2].Version);
+            }
+
+            {
+                employee1.Score++;
+                employee3.Version--;
+
+                var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                transactWrite.AddSaveItem(employee1);
+                transactWrite.AddVersionCheckKey(employee2.Name, employee2.Age, employee2.Version);
+                transactWrite.AddDeleteItem(employee3);
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => transactWrite.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[1].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[2].Code);
+
+                employee1.Score--;
+                employee3.Version++;
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                transactGet.AddKey(employee1);
+                transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee2, employee3 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(3, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+                Assert.AreEqual(employee3.Version, transactGet.Results[2].Version);
+            }
+
+            {
+                var originalVersion1 = employee1.Version.Value;
+                var originalVersion2 = employee2.Version.Value;
+                var originalVersion3 = employee3.Version.Value;
+                employee1.Score++;
+                employee1.ManagerName = null;
+
+                var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                transactWrite.AddSaveItem(employee1);
+                transactWrite.AddVersionCheckItem(employee2);
+                transactWrite.AddDeleteItem(employee3);
+                transactWrite.Execute();
+
+                Assert.AreEqual(originalVersion1 + 1, employee1.Version);
+                Assert.AreEqual(originalVersion2, employee2.Version);
+                Assert.AreEqual(originalVersion3, employee3.Version);
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee1, employee2 });
+                transactGet.AddKey(employee3.Name, employee3.Age);
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(2, transactGet.Results.Count);
+                Assert.AreEqual(employee1.Name, transactGet.Results[0].Name);
+                Assert.AreEqual(employee1.Score, transactGet.Results[0].Score);
+                Assert.IsNull(transactGet.Results[0].ManagerName);
+                Assert.AreEqual(employee1.Version, transactGet.Results[0].Version);
+                Assert.AreEqual(employee2.Name, transactGet.Results[1].Name);
+                Assert.AreEqual(employee2.Version, transactGet.Results[1].Version);
+            }
+
+            {
+                var transactWrite = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                transactWrite.AddDeleteItem(employee1);
+                transactWrite.AddDeleteKey(employee2.Name, employee2.Age);
+                transactWrite.Execute();
+            }
+
+            {
+                var transactGet = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                transactGet.AddKeys(new List<VersionedAnnotatedEmployee> { employee1, employee2, employee3 });
+                transactGet.Execute();
+
+                Assert.IsNotNull(transactGet.Results);
+                Assert.AreEqual(0, transactGet.Results.Count);
+            }
+        }
+
         private void TestMultiTableTransactionOperations()
         {
             var employee1 = new VersionedEmployee
@@ -1678,6 +1968,163 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var employeeTran = Context.CreateTransactGet<VersionedEmployee>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product);
+                var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employeeTran.Results);
+                Assert.AreEqual(0, employeeTran.Results.Count);
+                Assert.IsNotNull(productTran.Results);
+                Assert.AreEqual(0, productTran.Results.Count);
+            }
+        }
+
+        private void TestAnnotatedMultiTableTransactionOperations()
+        {
+            var employee1 = new VersionedAnnotatedEmployee
+            {
+                Name = "Alan",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Barbara"
+            };
+            var employee2 = new VersionedAnnotatedEmployee
+            {
+                Name = "Diane",
+                Age = 40,
+                Score = 140
+            };
+            var product = new VersionedProduct
+            {
+                Id = 1001,
+                Name = "CloudSpotter",
+                Price = 1200
+            };
+
+            {
+                var employeeTran = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                employeeTran.AddSaveItems(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddSaveItem(product);
+                var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employee1.Version);
+                Assert.IsNotNull(employee2.Version);
+                Assert.IsNotNull(product.Version);
+            }
+
+            {
+                var employeeTran = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product.Id);
+                var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employeeTran.Results);
+                Assert.AreEqual(2, employeeTran.Results.Count);
+                Assert.AreEqual(employee1.Name, employeeTran.Results[0].Name);
+                Assert.AreEqual(employee1.Version, employeeTran.Results[0].Version);
+                Assert.AreEqual(employee2.Name, employeeTran.Results[1].Name);
+                Assert.AreEqual(employee2.Version, employeeTran.Results[1].Version);
+                Assert.IsNotNull(productTran.Results);
+                Assert.AreEqual(1, productTran.Results.Count);
+                Assert.AreEqual(product.Id, productTran.Results[0].Id);
+                Assert.AreEqual(product.Version, productTran.Results[0].Version);
+            }
+
+            {
+                employee1.Score++;
+
+                var employeeTran = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                employeeTran.AddSaveItem(employee1);
+                employeeTran.AddDeleteItem(employee2);
+                var productTran = Context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddVersionCheckKey(product.Id, product.Version.Value + 1);
+                var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                var ex = AssertExtensions.ExpectException<TransactionCanceledException>(() => tran.Execute());
+
+                Assert.IsNotNull(ex.CancellationReasons);
+                Assert.AreEqual(3, ex.CancellationReasons.Count);
+                Assert.AreEqual("None", ex.CancellationReasons[0].Code);
+                Assert.AreEqual("None", ex.CancellationReasons[1].Code);
+                Assert.AreEqual("ConditionalCheckFailed", ex.CancellationReasons[2].Code);
+
+                employee1.Score--;
+            }
+
+            {
+                var employeeTran = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product);
+                var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employeeTran.Results);
+                Assert.AreEqual(2, employeeTran.Results.Count);
+                Assert.AreEqual(employee1.Score, employeeTran.Results[0].Score);
+                Assert.AreEqual(employee1.Version, employeeTran.Results[0].Version);
+                Assert.AreEqual(employee2.Version, employeeTran.Results[1].Version);
+                Assert.IsNotNull(productTran.Results);
+                Assert.AreEqual(1, productTran.Results.Count);
+                Assert.AreEqual(product.Version, productTran.Results[0].Version);
+            }
+
+            {
+                var originalEmployeeVersion1 = employee1.Version.Value;
+                var originalEmployeeVersion2 = employee2.Version.Value;
+                var originalProductVersion = product.Version.Value;
+                employee1.Score++;
+                employee1.ManagerName = null;
+
+                var employeeTran = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                employeeTran.AddSaveItem(employee1);
+                employeeTran.AddDeleteItem(employee2);
+                var productTran = Context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddVersionCheckItem(product);
+                var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.AreEqual(originalEmployeeVersion1 + 1, employee1.Version);
+                Assert.AreEqual(originalEmployeeVersion2, employee2.Version);
+                Assert.AreEqual(originalProductVersion, product.Version);
+            }
+
+            {
+                var employeeTran = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = Context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product.Id);
+                var tran = Context.CreateMultiTableTransactGet(employeeTran, productTran);
+                tran.Execute();
+
+                Assert.IsNotNull(employeeTran.Results);
+                Assert.AreEqual(1, employeeTran.Results.Count);
+                Assert.AreEqual(employee1.Name, employeeTran.Results[0].Name);
+                Assert.AreEqual(employee1.Score, employeeTran.Results[0].Score);
+                Assert.IsNull(employeeTran.Results[0].ManagerName);
+                Assert.AreEqual(employee1.Version, employeeTran.Results[0].Version);
+                Assert.IsNotNull(productTran.Results);
+                Assert.AreEqual(1, productTran.Results.Count);
+                Assert.AreEqual(product.Id, productTran.Results[0].Id);
+                Assert.AreEqual(product.Version, productTran.Results[0].Version);
+            }
+
+            {
+                var employeeTran = Context.CreateTransactWrite<VersionedAnnotatedEmployee>();
+                employeeTran.AddDeleteItem(employee1);
+                var productTran = Context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddDeleteKey(product.Id);
+                var tran = Context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                tran.Execute();
+            }
+
+            {
+                var employeeTran = Context.CreateTransactGet<VersionedAnnotatedEmployee>();
                 employeeTran.AddKeys(new[] { employee1, employee2 });
                 var productTran = Context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product);
@@ -1977,6 +2424,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         /// <summary>
+        /// Annotated class with a property of a type that has no valid constructor
+        /// </summary>
+        public class Employee4 : AnnotatedEmployee
+        {
+            public TimeSpan TimeWithCompany { get; set; }
+        }
+
+        /// <summary>
+        /// Annotated class with a property of an empty type
+        /// </summary>
+        public class Employee5 : AnnotatedEmployee
+        {
+            public EmptyType EmptyProperty { get; set; }
+        }
+
+        /// <summary>
         /// Empty type
         /// </summary>
         public class EmptyType
@@ -1988,6 +2451,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         public class VersionedEmployee : Employee
         {
+            public int? Version { get; set; }
+        }
+
+        /// <summary>
+        /// Class representing items in the table [TableNamePrefix]HashTable
+        /// This class uses optimistic locking via the Version field
+        /// </summary>
+        public class VersionedAnnotatedEmployee : AnnotatedEmployee
+        {
+            [DynamoDBVersion]
             public int? Version { get; set; }
         }
 
@@ -2009,10 +2482,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         /// <summary>
+        /// Annotated class representing items in the table [TableNamePrefix]HashTable
+        /// Two fields are being stored as epoch seconds, two are not.
+        /// </summary>
+        [DynamoDBTable("NumericHashRangeTable")]
+        public class AnnotatedEpochEmployee
+        {
+            [DynamoDBRangeKey]
+            public string Name { get; set; }
+
+            public int Age { get; set; }
+
+            // Hash key
+            [DynamoDBHashKey(StoreAsEpoch = true)]
+            public virtual DateTime CreationTime { get; set; }
+
+            [DynamoDBProperty(StoreAsEpoch = true)]
+            public DateTime EpochDate2 { get; set; }
+
+            [DynamoDBProperty(StoreAsEpoch = false)]
+            public DateTime NonEpochDate1 { get; set; }
+
+            public DateTime NonEpochDate2 { get; set; }
+        }
+
+        /// <summary>
         /// Class representing items in the table [TableNamePrefix]NumericHashRangeTable.
         /// </summary>
         [DynamoDBTable("NumericHashRangeTable")]
         public class NumericEpochEmployee : EpochEmployee
+        {
+
+        }
+
+        /// <summary>
+        /// Class representing items in the table [TableNamePrefix]NumericHashRangeTable.
+        /// </summary>
+        [DynamoDBTable("NumericHashRangeTable")]
+        public class AnnotatedNumEpochEmployee : AnnotatedEpochEmployee
         {
 
         }
