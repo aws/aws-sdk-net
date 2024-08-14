@@ -127,6 +127,9 @@ namespace Amazon.Runtime
             try
             {
                 clockCorrectionDictionary[endpoint] = correction;
+#pragma warning disable CS0618 // Type or member is obsolete
+                AWSConfigs.ClockOffset = correction;
+#pragma warning restore CS0618 // Type or member is obsolete
             }
             finally
             {

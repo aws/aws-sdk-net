@@ -11,7 +11,6 @@ using System.Net;
 using System.Diagnostics;
 using System.Reflection;
 using AWSSDK_DotNet.CommonTest.Utils;
-using Amazon.Runtime.CredentialManagement;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -78,13 +77,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var profileName = "testProfile";
             var profilesLocation = WriteCreds(profileName, ic);
-
-            var sharedCredentialsFile = new SharedCredentialsFile(profilesLocation);
-            CredentialProfile credentialProfile;
-            sharedCredentialsFile.TryGetProfile(profileName, out credentialProfile);
-            var awsCredentials = credentialProfile.GetAWSCredentials(sharedCredentialsFile);
-            var rc = awsCredentials.GetCredentials();
-            
+#pragma warning disable 618
+            var creds = new StoredProfileAWSCredentials(profileName, profilesLocation);
+#pragma warning restore 618
+            var rc = creds.GetCredentials();
             Assert.AreEqual(ic.SecretKey, rc.SecretKey);
             Assert.AreEqual(ic.AccessKey, rc.AccessKey);
             Assert.AreEqual(ic.UseToken, rc.UseToken);
@@ -93,11 +89,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             for (int i = 0; i < 4; i++)
             {
                 var shouldHaveToken = (i % 2 == 1);
-                sharedCredentialsFile.TryGetProfile(profileName + i, out credentialProfile);
-                Assert.IsNotNull(credentialProfile);
+#pragma warning disable 618
+                creds = new StoredProfileAWSCredentials(profileName + i, profilesLocation);
+#pragma warning restore 618
+                Assert.IsNotNull(creds);
 
-
-                rc = credentialProfile.GetAWSCredentials(sharedCredentialsFile).GetCredentials();
+                rc = creds.GetCredentials();
                 Assert.IsNotNull(rc.AccessKey);
                 Assert.IsNotNull(rc.SecretKey);
                 Assert.AreEqual(shouldHaveToken, rc.UseToken);
