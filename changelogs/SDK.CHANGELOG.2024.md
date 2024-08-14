@@ -1,3 +1,7 @@
+### 3.7.865.0 (2024-08-14 18:13 UTC)
+* CodeBuild (3.7.401.0)
+	* AWS CodeBuild now supports using Secrets Manager to store git credentials and using multiple source credentials in a single project.
+
 ### 3.7.864.0 (2024-08-13 18:17 UTC)
 * Amplify (3.7.401.0)
 	* Add a new field "cacheConfig" that enables users to configure the CDN cache settings for an App
