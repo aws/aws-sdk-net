@@ -1560,7 +1560,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// a batch-get operation against DynamoDB.
         /// </summary>
         /// <returns>Empty DocumentBatchGet object.</returns>
-        public DocumentBatchGet CreateBatchGet()
+        public IDocumentBatchGet CreateBatchGet()
         {
             return new DocumentBatchGet(this);
         }
