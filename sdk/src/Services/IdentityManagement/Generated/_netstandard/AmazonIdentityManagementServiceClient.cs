@@ -1157,12 +1157,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
-        /// through our library of trusted root certificate authorities (CAs) instead of using
-        /// a certificate thumbprint to verify your IdP server certificate. In these cases, your
-        /// legacy thumbprint remains in your configuration, but is no longer used for validation.
-        /// These OIDC IdPs include Auth0, GitHub, GitLab, Google, and those that use an Amazon
-        /// S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+        /// Amazon Web Services secures communication with OIDC identity providers (IdPs) using
+        /// our library of trusted root certificate authorities (CAs) to verify the JSON Web Key
+        /// Set (JWKS) endpoint's TLS certificate. If your OIDC IdP relies on a certificate that
+        /// is not signed by one of these trusted CAs, only then we secure communication using
+        /// the thumbprints set in the IdP's configuration.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -5691,9 +5690,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
-        /// Services Sign-In User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
+        /// Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5714,9 +5713,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
-        /// Services Sign-In User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// <param name="cancellationToken">
@@ -10338,12 +10337,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Web Services secures communication with some OIDC identity providers (IdPs)
-        /// through our library of trusted root certificate authorities (CAs) instead of using
-        /// a certificate thumbprint to verify your IdP server certificate. In these cases, your
-        /// legacy thumbprint remains in your configuration, but is no longer used for validation.
-        /// These OIDC IdPs include Auth0, GitHub, GitLab, Google, and those that use an Amazon
-        /// S3 bucket to host a JSON Web Key Set (JWKS) endpoint.
+        /// Amazon Web Services secures communication with OIDC identity providers (IdPs) using
+        /// our library of trusted root certificate authorities (CAs) to verify the JSON Web Key
+        /// Set (JWKS) endpoint's TLS certificate. If your OIDC IdP relies on a certificate that
+        /// is not signed by one of these trusted CAs, only then we secure communication using
+        /// the thumbprints set in the IdP's configuration.
         /// </para>
         ///  </note> <note> 
         /// <para>
