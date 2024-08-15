@@ -1,3 +1,16 @@
+### 3.7.866.0 (2024-08-15 18:20 UTC)
+* DocDB (3.7.401.0)
+	* This release adds Global Cluster Failover capability which enables you to change your global cluster's primary AWS region, the region that serves writes, during a regional outage. Performing a failover action preserves your Global Cluster setup.
+* ECS (3.7.402.0)
+	* This release introduces a new ContainerDefinition configuration to support the customer-managed keys for ECS container restart feature.
+* IdentityManagement (3.7.402.0)
+	* Make the LastUsedDate field in the GetAccessKeyLastUsed response optional. This may break customers who only call the API for access keys with a valid LastUsedDate. This fixes a deserialization issue for access keys without a LastUsedDate, because the field was marked as required but could be null.
+* S3 (3.7.401.0)
+	* Amazon Simple Storage Service / Features  : Adds support for pagination in the S3 ListBuckets API.
+* Core 3.7.400.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.865.0 (2024-08-14 18:13 UTC)
 * CodeBuild (3.7.401.0)
 	* AWS CodeBuild now supports using Secrets Manager to store git credentials and using multiple source credentials in a single project.
