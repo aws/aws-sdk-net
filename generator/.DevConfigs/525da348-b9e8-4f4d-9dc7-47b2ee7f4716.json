@@ -1,9 +1,0 @@
-{
-    "core": {
-        "updateMinimum": true,        
-        "changeLogMessages": [
-            "4.0.0.0 Preview Release"
-        ]
-    },
-    "overrideVersion": "4.0.0.0"
-}

@@ -1,3 +1,8 @@
+### 4.0.0.0-preview (2024-08-15 14:46 UTC)
+* Core 4.0.0.0
+	* 4.0.0.0 Preview Release
+	* All services packages updated to require new Core
+
 ### 3.7.857.0 (2024-08-02 18:27 UTC)
 * CloudWatch (3.7.401.0)
 	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
