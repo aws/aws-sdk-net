@@ -157,7 +157,10 @@ namespace Amazon.DynamoDBv2.DataModel
             _config = config;
             _storageConfig = context.StorageConfigCache.GetConfig<T>(config);
             var table = context.GetTargetTable(_storageConfig, config);
-            DocumentTransaction = table.CreateTransactGet();
+
+            // Table.CreateTransactGet() returns the IDocumentTransactGet interface.
+            // But since we rely on the internal behavior of DocumentTransactGet, we instantiate it via the constructor.
+            DocumentTransaction = new DocumentTransactGet(table);
         }
 
         private void ExecuteHelper()

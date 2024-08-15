@@ -54,7 +54,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
     }
 
-    public partial class MultiTableDocumentBatchWrite
+    public partial class MultiTableDocumentBatchWrite : IMultiTableDocumentBatchWrite
     {
         /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))

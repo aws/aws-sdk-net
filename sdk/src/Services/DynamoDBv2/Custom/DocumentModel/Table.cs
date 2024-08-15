@@ -1590,7 +1590,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// a transactional get operation against DynamoDB.
         /// </summary>
         /// <returns>Empty DocumentTransactGet object.</returns>
-        public DocumentTransactGet CreateTransactGet()
+        public IDocumentTransactGet CreateTransactGet()
         {
             return new DocumentTransactGet(this);
         }
