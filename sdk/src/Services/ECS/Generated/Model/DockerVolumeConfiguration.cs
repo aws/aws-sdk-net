@@ -72,11 +72,9 @@ namespace Amazon.ECS.Model
         /// by Docker because it is used for task placement. If the driver was installed using
         /// the Docker plugin CLI, use <c>docker plugin ls</c> to retrieve the driver name from
         /// your container instance. If the driver was installed using another method, use Docker
-        /// plugin discovery to retrieve the driver name. For more information, see <a href="https://docs.docker.com/engine/extend/plugin_api/#plugin-discovery">Docker
-        /// plugin discovery</a>. This parameter maps to <c>Driver</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create
-        /// a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <c>xxdriver</c> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
-        /// volume create</a>.
+        /// plugin discovery to retrieve the driver name. This parameter maps to <c>Driver</c>
+        /// in the docker create-container command and the <c>xxdriver</c> option to docker volume
+        /// create.
         /// </para>
         /// </summary>
         public string Driver
@@ -95,10 +93,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DriverOpts. 
         /// <para>
         /// A map of Docker driver-specific options passed through. This parameter maps to <c>DriverOpts</c>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create
-        /// a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <c>xxopt</c> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
-        /// volume create</a>.
+        /// in the docker create-volume command and the <c>xxopt</c> option to docker volume create.
         /// </para>
         /// </summary>
         public Dictionary<string, string> DriverOpts
@@ -117,10 +112,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Labels. 
         /// <para>
         /// Custom metadata to add to your Docker volume. This parameter maps to <c>Labels</c>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create
-        /// a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <c>xxlabel</c> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
-        /// volume create</a>.
+        /// in the docker create-container command and the <c>xxlabel</c> option to docker volume
+        /// create.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Labels

@@ -33,8 +33,8 @@ namespace Amazon.ECS.Model
     /// An object representing a container health check. Health check parameters that are
     /// specified in a container definition override any Docker health checks that exist in
     /// the container image (such as those specified in a parent image or from the image's
-    /// Dockerfile). This configuration maps to the <c>HEALTHCHECK</c> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-    /// run</a>.
+    /// Dockerfile). This configuration maps to the <c>HEALTHCHECK</c> parameter of docker
+    /// run.
     /// 
     ///  <note> 
     /// <para>
@@ -231,9 +231,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// An exit code of 0 indicates success, and non-zero exit code indicates failure. For
-        /// more information, see <c>HealthCheck</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a>.
+        /// more information, see <c>HealthCheck</c> in tthe docker create-container command
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

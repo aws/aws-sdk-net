@@ -88,7 +88,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// A container instance has completed draining when it has no more <c>RUNNING</c> tasks.
-    /// You can verify this using <a>ListTasks</a>.
+    /// You can verify this using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html">ListTasks</a>.
     /// </para>
     ///  
     /// <para>

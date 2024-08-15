@@ -31,10 +31,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The Linux capabilities to add or remove from the default Docker configuration for
-    /// a container defined in the task definition. For more information about the default
-    /// capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime
-    /// privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more
-    /// detailed information about these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a>
+    /// a container defined in the task definition. For more detailed information about these
+    /// Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a>
     /// Linux manual page.
     /// </summary>
     public partial class KernelCapabilities
@@ -46,10 +44,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Add. 
         /// <para>
         /// The Linux capabilities for the container that have been added to the default configuration
-        /// provided by Docker. This parameter maps to <c>CapAdd</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <c>--cap-add</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a>.
+        /// provided by Docker. This parameter maps to <c>CapAdd</c> in the docker create-container
+        /// command and the <c>--cap-add</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -82,10 +78,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Drop. 
         /// <para>
         /// The Linux capabilities for the container that have been removed from the default configuration
-        /// provided by Docker. This parameter maps to <c>CapDrop</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <c>--cap-drop</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a>.
+        /// provided by Docker. This parameter maps to <c>CapDrop</c> in the docker create-container
+        /// command and the <c>--cap-drop</c> option to docker run.
         /// </para>
         ///  
         /// <para>

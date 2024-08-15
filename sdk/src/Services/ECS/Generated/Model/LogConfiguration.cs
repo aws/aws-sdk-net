@@ -31,18 +31,13 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The log configuration for the container. This parameter maps to <c>LogConfig</c> in
-    /// the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-    /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-    /// Remote API</a> and the <c>--log-driver</c> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
-    /// <c>docker run</c> </a>.
+    /// the docker create-container command and the <c>--log-driver</c> option to docker run.
     /// 
     ///  
     /// <para>
     /// By default, containers use the same logging driver that the Docker daemon uses. However,
     /// the container might use a different logging driver than the Docker daemon by specifying
-    /// a log driver configuration in the container definition. For more information about
-    /// the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
-    /// logging drivers</a> in the Docker documentation.
+    /// a log driver configuration in the container definition.
     /// </para>
     ///  
     /// <para>
@@ -62,8 +57,8 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// For tasks hosted on Amazon EC2 instances, the supported log drivers are <c>awslogs</c>,
-    /// <c>fluentd</c>, <c>gelf</c>, <c>json-file</c>, <c>journald</c>, <c>logentries</c>,<c>syslog</c>,
-    /// <c>splunk</c>, and <c>awsfirelens</c>.
+    /// <c>fluentd</c>, <c>gelf</c>, <c>json-file</c>, <c>journald</c>,<c>syslog</c>, <c>splunk</c>,
+    /// and <c>awsfirelens</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -107,18 +102,19 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// For tasks hosted on Amazon EC2 instances, the supported log drivers are <c>awslogs</c>,
-        /// <c>fluentd</c>, <c>gelf</c>, <c>json-file</c>, <c>journald</c>, <c>logentries</c>,<c>syslog</c>,
-        /// <c>splunk</c>, and <c>awsfirelens</c>.
+        /// <c>fluentd</c>, <c>gelf</c>, <c>json-file</c>, <c>journald</c>, <c>syslog</c>, <c>splunk</c>,
+        /// and <c>awsfirelens</c>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about using the <c>awslogs</c> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-        /// the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// For more information about using the <c>awslogs</c> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Send
+        /// Amazon ECS logs to CloudWatch</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about using the <c>awsfirelens</c> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
-        /// log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// For more information about using the <c>awsfirelens</c> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send
+        /// Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a>.
         /// </para>
         ///  <note> 
         /// <para>
