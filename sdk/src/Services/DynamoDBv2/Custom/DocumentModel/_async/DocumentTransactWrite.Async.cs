@@ -18,45 +18,41 @@ using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Class for condition checking, putting, updating and/or deleting
-    /// multiple items in a single DynamoDB table in a transaction.
-    /// </summary>
-    public partial class DocumentTransactWrite
+    public partial interface IDocumentTransactWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to condition-check/put/update/delete the items specified in a transaction.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class DocumentTransactWrite : IDocumentTransactWrite
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for condition checking, putting, updating and/or deleting
-    /// multiple items in multiple DynamoDB tables in a transaction.
-    /// </summary>
-    public partial class MultiTableDocumentTransactWrite
+    public partial interface IMultiTableDocumentTransactWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table transactional condition-check/put/update/delete against all configured DocumentTransactWrite objects.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class MultiTableDocumentTransactWrite : IMultiTableDocumentTransactWrite
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 }

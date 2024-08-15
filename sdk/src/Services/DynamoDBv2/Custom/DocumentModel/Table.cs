@@ -1605,7 +1605,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// a transactional condition-check/put/update/delete operation against DynamoDB.
         /// </summary>
         /// <returns>Empty DocumentTransactWrite object.</returns>
-        public DocumentTransactWrite CreateTransactWrite()
+        public IDocumentTransactWrite CreateTransactWrite()
         {
             return new DocumentTransactWrite(this);
         }

@@ -25,13 +25,189 @@ using Amazon.DynamoDBv2.Model;
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
+    /// Interface for condition checking, putting, updating and/or deleting
+    /// multiple items in a single DynamoDB table in a transaction.
+    /// </summary>
+    public partial interface IDocumentTransactWrite
+    {
+        /// <summary>
+        /// List of items retrieved from DynamoDB for which a condition check failure happened.
+        /// Populated after Execute is called and a TransactionCanceledException happened due to a condition check failure.
+        /// A document is only added to this list if ReturnValuesOnConditionCheckFailure has been set to AllOldAttributes
+        /// for the corresponding item in the request.
+        /// </summary>
+        List<Document> ConditionCheckFailedItems { get; }
+
+        /// <summary>
+        /// Add a single item to delete, identified by its hash primary key, using the specified config.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the item to delete.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKeyToDelete(Primitive hashKey, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to delete, identified by its hash-and-range primary key, using the specified config.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the item to delete.</param>
+        /// <param name="rangeKey">Range key element of the item to delete.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKeyToDelete(Primitive hashKey, Primitive rangeKey, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to delete, identified by its key, using the specified config.
+        /// </summary>
+        /// <param name="key">Key of the item to delete.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKeyToDelete(IDictionary<string, DynamoDBEntry> key, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to delete, identified by a Document object, using the specified config.
+        /// </summary>
+        /// <param name="document">Document representing the item to be deleted.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddItemToDelete(Document document, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single Document to update, identified by its hash primary key, using the specified config.
+        /// </summary>
+        /// <param name="document">Attributes to update.</param>
+        /// <param name="hashKey">Hash key of the document.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddDocumentToUpdate(Document document, Primitive hashKey, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single Document to update, identified by its hash-and-range primary key, using the specified config.
+        /// </summary>
+        /// <param name="document">Attributes to update.</param>
+        /// <param name="hashKey">Hash key of the document.</param>
+        /// <param name="rangeKey">Range key of the document.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddDocumentToUpdate(Document document, Primitive hashKey, Primitive rangeKey, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single Document to update, identified by its key, using the specified config.
+        /// </summary>
+        /// <param name="document">Attributes to update.</param>
+        /// <param name="key">Key of the document.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddDocumentToUpdate(Document document, IDictionary<string, DynamoDBEntry> key, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single Document to update, using the specified config.
+        /// </summary>
+        /// <param name="document">Document to update.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddDocumentToUpdate(Document document, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to update, identified by its hash primary key, using the specified update expression and config.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the document.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddDocumentToUpdate(Primitive hashKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to update, identified by its hash-and-range primary key, using the specified update expression and config.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the document.</param>
+        /// <param name="rangeKey">Range key of the document.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddDocumentToUpdate(Primitive hashKey, Primitive rangeKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to update, identified by its key, using the specified update expression and config.
+        /// </summary>
+        /// <param name="key">Key of the document.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddDocumentToUpdate(IDictionary<string, DynamoDBEntry> key, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single Document to put, using the specified config.
+        /// </summary>
+        /// <param name="document">Document to put.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddDocumentToPut(Document document, TransactWriteItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to condition check, identified by its hash primary key, using the specified condition expression.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item.</param>
+        /// <param name="conditionalExpression">The expression to evaluate for the item.</param>
+        void AddKeyToConditionCheck(Primitive hashKey, Expression conditionalExpression);
+
+        /// <summary>
+        /// Add a single item to condition check, identified by its hash primary key, using the specified config.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKeyToConditionCheck(Primitive hashKey, TransactWriteItemOperationConfig operationConfig);
+
+        /// <summary>
+        /// Add a single item to condition check, identified by its hash-and-range primary key, using the specified condition expression.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item.</param>
+        /// <param name="rangeKey">Range key of the item.</param>
+        /// <param name="conditionalExpression">The expression to evaluate for the item.</param>
+        void AddKeyToConditionCheck(Primitive hashKey, Primitive rangeKey, Expression conditionalExpression);
+
+        /// <summary>
+        /// Add a single item to condition check, identified by its hash-and-range primary key, using the specified config.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item.</param>
+        /// <param name="rangeKey">Range key of the item.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKeyToConditionCheck(Primitive hashKey, Primitive rangeKey, TransactWriteItemOperationConfig operationConfig);
+
+        /// <summary>
+        /// Add a single item to condition check, identified by its key, using the specified condition expression.
+        /// </summary>
+        /// <param name="key">Key of the item.</param>
+        /// <param name="conditionalExpression">The expression to evaluate for the item.</param>
+        void AddKeyToConditionCheck(IDictionary<string, DynamoDBEntry> key, Expression conditionalExpression);
+
+        /// <summary>
+        /// Add a single item to condition check, identified by its key, using the specified config.
+        /// </summary>
+        /// <param name="key">Key of the item.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKeyToConditionCheck(IDictionary<string, DynamoDBEntry> key, TransactWriteItemOperationConfig operationConfig);
+
+        /// <summary>
+        /// Add a single item to condition check, identified by a Document object, using the specified condition expression.
+        /// </summary>
+        /// <param name="document">Document representing the item.</param>
+        /// <param name="conditionalExpression">The expression to evaluate for the item.</param>
+        void AddItemToConditionCheck(Document document, Expression conditionalExpression);
+
+        /// <summary>
+        ///  Add a single item to condition check, identified by a Document object, using the specified config.
+        /// </summary>
+        /// <param name="document">Document representing the item.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddItemToConditionCheck(Document document, TransactWriteItemOperationConfig operationConfig);
+
+        /// <summary>
+        /// Creates a MultiTableDocumentTransactWrite object that is a combination
+        /// of the current DocumentTransactWrite and the specified DocumentTransactWrite.
+        /// </summary>
+        /// <param name="otherTransactionPart">Other DocumentTransactWrite object.</param>
+        /// <returns>
+        /// MultiTableDocumentTransactWrite consisting of the two DocumentTransactWrite objects.
+        /// </returns>
+        MultiTableDocumentTransactWrite Combine(IDocumentTransactWrite otherTransactionPart);
+    }
+
+    /// <summary>
     /// Class for condition checking, putting, updating and/or deleting
     /// multiple items in a single DynamoDB table in a transaction.
     /// </summary>
 #if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
-    public partial class DocumentTransactWrite
+    public partial class DocumentTransactWrite : IDocumentTransactWrite
     {
         #region Internal properties
 
@@ -43,12 +219,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public properties
 
-        /// <summary>
-        /// List of items retrieved from DynamoDB for which a condition check failure happened.
-        /// Populated after Execute is called and a TransactionCanceledException happened due to a condition check failure.
-        /// A document is only added to this list if ReturnValuesOnConditionCheckFailure has been set to AllOldAttributes
-        /// for the corresponding item in the request.
-        /// </summary>
+        /// <inheritdoc/>
         public List<Document> ConditionCheckFailedItems { get; internal set; }
 
         #endregion
@@ -56,10 +227,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Constructor
 
-        /// <summary>
-        /// Constructs a DocumentTransactWrite instance for a specific table.
-        /// </summary>
-        /// <param name="targetTable">Table to get items from.</param>
+        /// <inheritdoc/>
         public DocumentTransactWrite(Table targetTable)
         {
             TargetTable = targetTable;
@@ -71,42 +239,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public Delete methods
 
-        /// <summary>
-        /// Add a single item to delete, identified by its hash primary key, using the specified config.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the item to delete.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKeyToDelete(Primitive hashKey, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddKeyToDelete(hashKey, rangeKey: null, operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to delete, identified by its hash-and-range primary key, using the specified config.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the item to delete.</param>
-        /// <param name="rangeKey">Range key element of the item to delete.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKeyToDelete(Primitive hashKey, Primitive rangeKey, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddKeyToDeleteHelper(TargetTable.MakeKey(hashKey, rangeKey), operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to delete, identified by its key, using the specified config.
-        /// </summary>
-        /// <param name="key">Key of the item to delete.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKeyToDelete(IDictionary<string, DynamoDBEntry> key, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddKeyToDeleteHelper(TargetTable.MakeKey(key), operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to delete, identified by a Document object, using the specified config.
-        /// </summary>
-        /// <param name="document">Document representing the item to be deleted.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddItemToDelete(Document document, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddKeyToDeleteHelper(TargetTable.MakeKey(document), operationConfig);
@@ -117,79 +268,43 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public Update methods
 
-        /// <summary>
-        /// Add a single Document to update, identified by its hash primary key, using the specified config.
-        /// </summary>
-        /// <param name="document">Attributes to update.</param>
-        /// <param name="hashKey">Hash key of the document.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, Primitive hashKey, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdate(document, hashKey, rangeKey: null, operationConfig);
         }
 
-        /// <summary>
-        /// Add a single Document to update, identified by its hash-and-range primary key, using the specified config.
-        /// </summary>
-        /// <param name="document">Attributes to update.</param>
-        /// <param name="hashKey">Hash key of the document.</param>
-        /// <param name="rangeKey">Range key of the document.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, Primitive hashKey, Primitive rangeKey, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdateHelper(document, TargetTable.MakeKey(hashKey, rangeKey), operationConfig);
         }
 
-        /// <summary>
-        /// Add a single Document to update, identified by its key, using the specified config.
-        /// </summary>
-        /// <param name="document">Attributes to update.</param>
-        /// <param name="key">Key of the document.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, IDictionary<string, DynamoDBEntry> key, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdateHelper(document, TargetTable.MakeKey(key), operationConfig);
         }
 
-        /// <summary>
-        /// Add a single Document to update, using the specified config.
-        /// </summary>
-        /// <param name="document">Document to update.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddDocumentToUpdate(Document document, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdateHelper(document, TargetTable.MakeKey(document), operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to update, identified by its hash primary key, using the specified update expression and config.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the document.</param>
-        /// <param name="updateExpression">Update expression to use.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddDocumentToUpdate(Primitive hashKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdate(hashKey, rangeKey: null, updateExpression, operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to update, identified by its hash-and-range primary key, using the specified update expression and config.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the document.</param>
-        /// <param name="rangeKey">Range key of the document.</param>
-        /// <param name="updateExpression">Update expression to use.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddDocumentToUpdate(Primitive hashKey, Primitive rangeKey, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdateHelper(TargetTable.MakeKey(hashKey, rangeKey), updateExpression, operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to update, identified by its key, using the specified update expression and config.
-        /// </summary>
-        /// <param name="key">Key of the document.</param>
-        /// <param name="updateExpression">Update expression to use.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddDocumentToUpdate(IDictionary<string, DynamoDBEntry> key, Expression updateExpression, TransactWriteItemOperationConfig operationConfig = null)
         {
             AddDocumentToUpdateHelper(TargetTable.MakeKey(key), updateExpression, operationConfig);
@@ -200,11 +315,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public Put methods
 
-        /// <summary>
-        /// Add a single Document to put, using the specified config.
-        /// </summary>
-        /// <param name="document">Document to put.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddDocumentToPut(Document document, TransactWriteItemOperationConfig operationConfig = null)
         {
             Items.Add(new ToPutTransactWriteRequestItem
@@ -220,83 +331,49 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public ConditionCheck methods
 
-        /// <summary>
-        /// Add a single item to condition check, identified by its hash primary key, using the specified condition expression.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item.</param>
-        /// <param name="conditionalExpression">The expression to evaluate for the item.</param>
+        /// <inheritdoc/>
         public void AddKeyToConditionCheck(Primitive hashKey, Expression conditionalExpression)
         {
             AddKeyToConditionCheck(hashKey, new TransactWriteItemOperationConfig { ConditionalExpression = conditionalExpression });
         }
 
-        /// <summary>
-        /// Add a single item to condition check, identified by its hash primary key, using the specified config.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKeyToConditionCheck(Primitive hashKey, TransactWriteItemOperationConfig operationConfig)
         {
             AddKeyToConditionCheck(hashKey, rangeKey: null, operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to condition check, identified by its hash-and-range primary key, using the specified condition expression.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item.</param>
-        /// <param name="rangeKey">Range key of the item.</param>
-        /// <param name="conditionalExpression">The expression to evaluate for the item.</param>
+        /// <inheritdoc/>
         public void AddKeyToConditionCheck(Primitive hashKey, Primitive rangeKey, Expression conditionalExpression)
         {
             AddKeyToConditionCheck(hashKey, rangeKey, new TransactWriteItemOperationConfig { ConditionalExpression = conditionalExpression });
         }
 
-        /// <summary>
-        /// Add a single item to condition check, identified by its hash-and-range primary key, using the specified config.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item.</param>
-        /// <param name="rangeKey">Range key of the item.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKeyToConditionCheck(Primitive hashKey, Primitive rangeKey, TransactWriteItemOperationConfig operationConfig)
         {
             AddKeyToConditionCheckHelper(TargetTable.MakeKey(hashKey, rangeKey), operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to condition check, identified by its key, using the specified condition expression.
-        /// </summary>
-        /// <param name="key">Key of the item.</param>
-        /// <param name="conditionalExpression">The expression to evaluate for the item.</param>
+        /// <inheritdoc/>
         public void AddKeyToConditionCheck(IDictionary<string, DynamoDBEntry> key, Expression conditionalExpression)
         {
             AddKeyToConditionCheck(key, new TransactWriteItemOperationConfig { ConditionalExpression = conditionalExpression });
         }
 
-        /// <summary>
-        /// Add a single item to condition check, identified by its key, using the specified config.
-        /// </summary>
-        /// <param name="key">Key of the item.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKeyToConditionCheck(IDictionary<string, DynamoDBEntry> key, TransactWriteItemOperationConfig operationConfig)
         {
             AddKeyToConditionCheckHelper(TargetTable.MakeKey(key), operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to condition check, identified by a Document object, using the specified condition expression.
-        /// </summary>
-        /// <param name="document">Document representing the item.</param>
-        /// <param name="conditionalExpression">The expression to evaluate for the item.</param>
+        /// <inheritdoc/>
         public void AddItemToConditionCheck(Document document, Expression conditionalExpression)
         {
             AddItemToConditionCheck(document, new TransactWriteItemOperationConfig { ConditionalExpression = conditionalExpression });
         }
 
-        /// <summary>
-        ///  Add a single item to condition check, identified by a Document object, using the specified config.
-        /// </summary>
-        /// <param name="document">Document representing the item.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddItemToConditionCheck(Document document, TransactWriteItemOperationConfig operationConfig)
         {
             AddKeyToConditionCheckHelper(TargetTable.MakeKey(document), operationConfig);
@@ -451,15 +528,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        /// <summary>
-        /// Creates a MultiTableDocumentTransactWrite object that is a combination
-        /// of the current DocumentTransactWrite and the specified DocumentTransactWrite.
-        /// </summary>
-        /// <param name="otherTransactionPart">Other DocumentTransactWrite object.</param>
-        /// <returns>
-        /// MultiTableDocumentTransactWrite consisting of the two DocumentTransactWrite objects.
-        /// </returns>
-        public MultiTableDocumentTransactWrite Combine(DocumentTransactWrite otherTransactionPart)
+        /// <inheritdoc/>
+        public MultiTableDocumentTransactWrite Combine(IDocumentTransactWrite otherTransactionPart)
         {
             return new MultiTableDocumentTransactWrite(this, otherTransactionPart);
         }
@@ -468,18 +538,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
-    /// Class for condition checking, putting, updating and/or deleting
+    /// Interface for condition checking, putting, updating and/or deleting
     /// multiple items in multiple DynamoDB tables in a transaction.
     /// </summary>
-    public partial class MultiTableDocumentTransactWrite
+    public partial interface IMultiTableDocumentTransactWrite
     {
-        #region Properties
-
         /// <summary>
         /// List of DocumentTransactWrite objects to include in the multi-table
         /// transaction request.
         /// </summary>
-        public List<DocumentTransactWrite> TransactionParts { get; private set; }
+        List<IDocumentTransactWrite> TransactionParts { get; }
+
+        /// <summary>
+        /// Add a DocumentTransactWrite object to the multi-table transaction request.
+        /// </summary>
+        /// <param name="transactionPart">DocumentTransactWrite to add.</param>
+        void AddTransactionPart(IDocumentTransactWrite transactionPart);
+    }
+
+    /// <summary>
+    /// Class for condition checking, putting, updating and/or deleting
+    /// multiple items in multiple DynamoDB tables in a transaction.
+    /// </summary>
+    public partial class MultiTableDocumentTransactWrite : IMultiTableDocumentTransactWrite
+    {
+        #region Properties
+
+        /// <inheritdoc/>
+        public List<IDocumentTransactWrite> TransactionParts { get; private set; }
 
         #endregion
 
@@ -491,12 +577,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// DocumentTransactWrite objects.
         /// </summary>
         /// <param name="transactionParts">Collection of DocumentTransactWrite objects.</param>
-        public MultiTableDocumentTransactWrite(params DocumentTransactWrite[] transactionParts)
+        public MultiTableDocumentTransactWrite(params IDocumentTransactWrite[] transactionParts)
         {
             if (transactionParts == null)
                 throw new ArgumentNullException(nameof(transactionParts));
 
-            TransactionParts = new List<DocumentTransactWrite>(transactionParts);
+            TransactionParts = new List<IDocumentTransactWrite>(transactionParts);
         }
 
         #endregion
@@ -504,11 +590,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        /// <summary>
-        /// Add a DocumentTransactWrite object to the multi-table transaction request.
-        /// </summary>
-        /// <param name="transactionPart">DocumentTransactWrite to add.</param>
-        public void AddTransactionPart(DocumentTransactWrite transactionPart)
+        /// <inheritdoc/>
+        public void AddTransactionPart(IDocumentTransactWrite transactionPart)
         {
             TransactionParts.Add(transactionPart);
         }
@@ -520,13 +603,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal void ExecuteHelper()
         {
+            List<DocumentTransactWrite> docTransactionParts = new();
             try
             {
                 GetMultiTransactWrite().WriteItems();
+                var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactWrite)}";
+                docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
             }
             finally
             {
-                foreach (var transactionPart in TransactionParts)
+                foreach (var transactionPart in docTransactionParts)
                 {
                     if (transactionPart.ConditionCheckFailedItems == null)
                         transactionPart.ConditionCheckFailedItems = new List<Document>();
@@ -537,13 +623,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
 #if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
+            List<DocumentTransactWrite> docTransactionParts = new();
             try
             {
                 await GetMultiTransactWrite().WriteItemsAsync(cancellationToken).ConfigureAwait(false);
+                var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactWrite)}";
+                docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
             }
             finally
             {
-                foreach (var transactionPart in TransactionParts)
+                foreach (var transactionPart in docTransactionParts)
                 {
                     if (transactionPart.ConditionCheckFailedItems == null)
                         transactionPart.ConditionCheckFailedItems = new List<Document>();
@@ -554,9 +643,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private MultiTransactWrite GetMultiTransactWrite()
         {
+            var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactWrite)}";
             return new MultiTransactWrite
             {
-                Items = TransactionParts.SelectMany(x => x.Items).ToList()
+                Items = TransactionParts.SelectMany(x =>
+                {
+                    var docTransactWrite = x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg);
+                    return docTransactWrite.Items;
+                }).ToList()
             };
         }
 
