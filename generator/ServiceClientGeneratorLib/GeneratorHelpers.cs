@@ -445,6 +445,7 @@ namespace ServiceClientGenerator
             {
                 case "string": return "string";
                 case "boolean": return "bool" + (useNullableTypes ? "?" : "");
+                case "stringarray": return "IEnumerable<string>";
                 default:
                     throw new Exception("Unsupported type");
             }
@@ -455,6 +456,12 @@ namespace ServiceClientGenerator
             if (value.IsBoolean) return value.ToString().ToLower();
             if (value.IsString) return $"\"{(string)value}\"";
             if (value.IsInt) return $"{(int)value}";
+            if (value.IsArray || (value.PropertyNames.Count() == 0 && value.IsObject)) //Empty arrays returns an object with no properties
+            {
+                var jsonList = value.ToJson();
+                return $"new List<string> {jsonList.Replace("[", "{ ").Replace("]", " }")}";
+            }
+
             throw new Exception("Unsupported type");
         }
 

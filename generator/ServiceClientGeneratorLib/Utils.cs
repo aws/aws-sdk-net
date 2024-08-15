@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 namespace ServiceClientGenerator
 {
@@ -190,6 +192,87 @@ namespace ServiceClientGenerator
         public static string ConvertPathAlt(string path)
         {
             return path.Replace(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+        }
+
+
+        private static readonly Regex JMESMapRegex = new Regex(@"keys\(([^)]*)\)", RegexOptions.Compiled);
+        private static readonly string[] JMESWildcards = { "*", "[*]" };
+        
+        /// <summary>
+        /// Converts a JMESPath expression into a corresponding C# code path
+        /// based on a provided top-level shape. This method handles nested members,
+        /// wildcard expressions, and map keys within the JMESPath.
+        /// </summary>
+        /// <param name="jmesPath">The JMESPath expression to be converted.</param>
+        /// <param name="topShape">The top-level shape that serves as the starting point for the conversion.</param>
+        /// <returns>
+        /// A string representing the equivalent C# code path based on the provided shape.
+        /// Returns null if any part of the JMESPath cannot be matched to the given shape.
+        /// </returns>
+        public static string JMESPathToNativeValue(string jmesPath, Shape topShape)
+        {
+            var nestedMembers = jmesPath.Split('.');
+            var mainPathBuilder = new StringBuilder();
+            var closingPathBuilder = new StringBuilder();
+            var currentShape = topShape;
+
+            foreach (var nestedMember in nestedMembers)
+            {
+                if (mainPathBuilder.Length > 0)
+                {
+                    mainPathBuilder.Append('.');
+                }
+
+                var memberName = nestedMember;
+
+                var mapMatch = JMESMapRegex.Match(nestedMember);
+                if (mapMatch.Success)
+                {
+                    memberName = mapMatch.Groups[1].Value;
+                }
+
+                var wildcardExpression = JMESWildcards.FirstOrDefault(w => nestedMember.EndsWith(w));
+                if (wildcardExpression != null)
+                {
+                    // Remove wildcard expression from the member name to be able to find it at the next step.
+                    memberName = nestedMember.Replace(wildcardExpression, "");
+                }
+
+                var currentMember = currentShape.Members.FirstOrDefault(x => string.Equals(x.ModeledName, memberName));
+                if (currentMember == null)
+                {
+                    return null;
+                }
+
+                mainPathBuilder.Append(currentMember.PropertyName);
+
+                if (mapMatch.Success)
+                {
+                    mainPathBuilder.Append(".Keys.ToList()");
+                }
+
+                currentShape = currentMember.Shape;
+
+                if (wildcardExpression != null)
+                {
+                    if (wildcardExpression == "[*]") // List wildcard expression
+                    {
+                        currentShape = currentShape.ModelListShape;
+                        mainPathBuilder.Append(".Select(element => element");
+                    }
+                    else if (wildcardExpression == "*") // Map wildcard expression
+                    {
+                        currentShape = currentShape.ValueShape;
+                        mainPathBuilder.Append(".Values.Select(element => element");
+                    }
+
+                    // Append closing parenthesis to close the Select call
+                    closingPathBuilder.Append(")");
+                }
+            }
+
+            // Combine the constructed code path and any closing code path and return the result
+            return mainPathBuilder.ToString() + closingPathBuilder.ToString();
         }
     }
 }
