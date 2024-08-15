@@ -254,11 +254,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         // Converts a user-supplied DateTime-convertible DynamoDBEntry to epoch seconds stored in a Numeric Primitive.
         internal static DynamoDBEntry DateTimeToEpochSeconds(DynamoDBEntry entry, string attributeName)
         {
-            long? epochSeconds = null;
+            string epochSecondsAsString = null;
             try
             {
                 var dateTime = entry.AsDateTime();
-                epochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(dateTime);
+				epochSecondsAsString = AWSSDKUtils.ConvertToUnixEpochSecondsString(dateTime);
             }
             catch (Exception e)
             {
@@ -268,9 +268,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     attributeName, entry, e);
             }
 
-            if (epochSeconds.HasValue)
+            if (epochSecondsAsString != null)
             {
-                entry = (Primitive)epochSeconds.Value;
+                entry = new Primitive(epochSecondsAsString, saveAsNumeric: true);
             }
 
             return entry;
