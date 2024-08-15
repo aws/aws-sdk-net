@@ -1575,7 +1575,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// a batch-put/delete operation against DynamoDB.
         /// </summary>
         /// <returns>Empty DocumentBatchWrite object.</returns>
-        public DocumentBatchWrite CreateBatchWrite()
+        public IDocumentBatchWrite CreateBatchWrite()
         {
             return new DocumentBatchWrite(this);
         }

@@ -128,7 +128,10 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             Table table = _context.GetTargetTable(_storageConfig, _config);
-            DocumentBatch = table.CreateBatchWrite();
+
+            // Table.CreateBatchWrite() returns the IDocumentBatchWrite interface.
+            // But since we rely on the internal behavior of DocumentBatchWrite, we instantiate it via the constructor.
+            DocumentBatch = new DocumentBatchWrite(table);
         }
 
         /// <inheritdoc/>
