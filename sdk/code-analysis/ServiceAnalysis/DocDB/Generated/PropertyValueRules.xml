@@ -25,6 +25,18 @@
     <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DocDB.Model.FailoverGlobalClusterRequest.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DocDB.Model.FailoverGlobalClusterRequest.TargetDbClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DocDB.Model.ModifyGlobalClusterRequest.GlobalClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
@@ -44,6 +56,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DocDB.Model.SwitchoverGlobalClusterRequest.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DocDB.Model.SwitchoverGlobalClusterRequest.TargetDbClusterIdentifier</property>
     <min>1</min>
     <max>255</max>
     <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
