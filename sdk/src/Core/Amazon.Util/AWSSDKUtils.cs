@@ -722,9 +722,9 @@ namespace Amazon.Util
             return new DateTime(milliseconds * 10000L + EPOCH_START.Ticks, DateTimeKind.Utc).ToLocalTime();
         }
 
-        public static int ConvertToUnixEpochSeconds(DateTime dateTime)
+        public static long ConvertToUnixEpochSeconds(DateTime dateTime)
         {
-            return Convert.ToInt32(GetTimeSpanInTicks(dateTime).TotalSeconds);
+            return Convert.ToInt64(GetTimeSpanInTicks(dateTime).TotalSeconds);
         }
 
         public static string ConvertToUnixEpochSecondsString(DateTime dateTime)
