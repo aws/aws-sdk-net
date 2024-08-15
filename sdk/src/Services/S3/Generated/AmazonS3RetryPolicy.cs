@@ -93,6 +93,7 @@ namespace Amazon.S3.Internal
             typeof(ListBucketIntelligentTieringConfigurationsRequest),
             typeof(ListBucketInventoryConfigurationsRequest),
             typeof(ListBucketMetricsConfigurationsRequest),
+            typeof(ListBucketsRequest),
             typeof(ListDirectoryBucketsRequest),
             typeof(ListMultipartUploadsRequest),
             typeof(ListObjectsRequest),

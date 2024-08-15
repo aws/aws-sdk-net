@@ -250,7 +250,15 @@ namespace Amazon.S3.IO
                         var listRequest = new ListBucketsRequest();
                         ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)listRequest).AddBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
 
-                        var buckets = s3Client.ListBuckets(listRequest).Buckets;
+                        var paginatedResourceInfo = new PaginatedResourceInfo()
+                            .WithClient(S3Client)
+                            .WithItemListPropertyPath("Buckets")
+                            .WithMethodName("ListBuckets")
+                            .WithRequest(listRequest)
+                            .WithTokenRequestPropertyPath("ContinuationToken")
+                            .WithTokenResponsePropertyPath("ContinuationToken");
+                        
+                        var buckets = (IEnumerable<S3Bucket>) PaginatedResourceFactory.Create<S3Bucket, ListBucketsRequest, ListBucketsResponse>(paginatedResourceInfo);
                         if (buckets != null)
                         {
                             foreach (S3Bucket s3Bucket in buckets)
@@ -574,16 +582,16 @@ namespace Amazon.S3.IO
                 var request = new ListBucketsRequest();
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(S3Helper.FileIORequestEventHandler);
 
-                var buckets = s3Client.ListBuckets(request).Buckets;
-                if (buckets != null)
-                {
-                    folders = buckets
-                        .ConvertAll(s3Bucket => new S3DirectoryInfo(s3Client, s3Bucket.BucketName, ""));
-                }
-                else
-                {
-                    folders = new List<S3DirectoryInfo>();
-                }
+                var paginatedResourceInfo = new PaginatedResourceInfo()
+                    .WithClient(S3Client)
+                    .WithItemListPropertyPath("Buckets")
+                    .WithMethodName("ListBuckets")
+                    .WithRequest(request)
+                    .WithTokenRequestPropertyPath("ContinuationToken")
+                    .WithTokenResponsePropertyPath("ContinuationToken");
+
+                var buckets = (IEnumerable<S3Bucket>)PaginatedResourceFactory.Create<S3Bucket, ListBucketsRequest, ListBucketsResponse>(paginatedResourceInfo);
+                folders = new EnumerableConverter<S3Bucket, S3DirectoryInfo>(buckets, s3Bucket => new S3DirectoryInfo(s3Client, s3Bucket.BucketName, ""));
             }
             else
             {
@@ -1222,8 +1230,20 @@ namespace Amazon.S3.IO
             var start = this.S3Client.Config.CorrectedUtcNow;
             do
             {
-                var buckets = this.S3Client.ListBuckets().Buckets;
-                currentState = buckets?.FirstOrDefault(x => string.Equals(x.BucketName, this.BucketName)) != null;
+                var allBuckets = new List<S3Bucket>();
+                var listRequest = new ListBucketsRequest();
+                do
+                {
+                    var listResponse = this.S3Client.ListBuckets(listRequest);
+                    if (listResponse.Buckets != null)
+                    {
+                        allBuckets.AddRange(listResponse.Buckets);
+                    }
+
+                    listRequest.ContinuationToken = listResponse.ContinuationToken;
+                } while (!string.IsNullOrEmpty(listRequest.ContinuationToken));
+
+                currentState = allBuckets?.FirstOrDefault(x => string.Equals(x.BucketName, this.BucketName)) != null;
 
                 if (currentState == exists)
                 {
