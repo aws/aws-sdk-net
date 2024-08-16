@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Improve user agent string construction in Marshaller.cs"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
