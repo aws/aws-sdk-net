@@ -1,3 +1,18 @@
+### 3.7.867.0 (2024-08-16 18:17 UTC)
+* Batch (3.7.401.0)
+	* Improvements of integration between AWS Batch and EC2.
+* Inspector2 (3.7.401.0)
+	* Update the correct format of key and values for resource tags
+* QuickSight (3.7.401.0)
+	* Amazon QuickSight launches Customer Managed Key (CMK) encryption for Data Source metadata
+* SageMaker (3.7.403.0)
+	* Introduce Endpoint and EndpointConfig Arns in sagemaker:ListPipelineExecutionSteps API response
+* SimpleEmailV2 (3.7.401.0)
+	* Marking use case description field of account details as deprecated.
+* Core 3.7.400.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.866.0 (2024-08-15 18:20 UTC)
 * DocDB (3.7.401.0)
 	* This release adds Global Cluster Failover capability which enables you to change your global cluster's primary AWS region, the region that serves writes, during a regional outage. Performing a failover action preserves your Global Cluster setup.
