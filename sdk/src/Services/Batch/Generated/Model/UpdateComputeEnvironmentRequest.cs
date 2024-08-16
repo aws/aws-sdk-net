@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
     {
         private string _computeEnvironment;
         private ComputeResourceUpdate _computeResources;
+        private string _context;
         private string _serviceRole;
         private CEState _state;
         private int? _unmanagedvCpus;
@@ -79,6 +80,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetComputeResources()
         {
             return this._computeResources != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
         }
 
         /// <summary>
