@@ -18,7 +18,8 @@ namespace ServiceClientGenerator.Endpoints
         public string name { get; set; }
 
         /// <summary>
-        /// Parameter path
+        /// The JMESPath expression used to extract and navigate through the operation input.
+        /// This expression is converted to a corresponding C# code path using the GetNativeValue method.
         /// </summary>
         public string path { get; set; }
 
