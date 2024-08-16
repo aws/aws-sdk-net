@@ -70,7 +70,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// MultiTableDocumentBatchWrite consisting of the two DocumentBatchWrite
         /// objects.
         /// </returns>
-        MultiTableDocumentBatchWrite Combine(IDocumentBatchWrite otherBatch);
+        IMultiTableDocumentBatchWrite Combine(IDocumentBatchWrite otherBatch);
     }
 
     /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <inheritdoc/>
-        public MultiTableDocumentBatchWrite Combine(IDocumentBatchWrite otherBatch)
+        public IMultiTableDocumentBatchWrite Combine(IDocumentBatchWrite otherBatch)
         {
             return new MultiTableDocumentBatchWrite(this, otherBatch);
         }

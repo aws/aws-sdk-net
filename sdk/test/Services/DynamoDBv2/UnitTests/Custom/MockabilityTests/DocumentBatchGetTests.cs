@@ -20,7 +20,11 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 }
             };
 
-            var docBatchGet = CreateDocumentBatchGetMock(dummyResults);
+            var mockTable = new Mock<ITable>();
+            mockTable.Setup(x => x.CreateBatchGet()).Returns(CreateDocumentBatchGetMock(dummyResults));
+            var table = mockTable.Object;
+
+            var docBatchGet = table.CreateBatchGet();
 
             Assert.AreEqual(0, docBatchGet.TotalKeys);
             Assert.AreEqual(0, docBatchGet.Results.Count);

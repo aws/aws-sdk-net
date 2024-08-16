@@ -189,7 +189,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 
                 var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
                     storeAsEpoch: null, isEmptyStringValueEnabled: false, metadataCachingMode: Config.MetadataCachingMode);
-                table = Table.LoadTable(Client, emptyConfig);
+                table = Table.LoadTable(Client, emptyConfig) as Table;
                 tablesMap[tableName] = table;
 
                 return table;

@@ -20,7 +20,11 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 }
             };
 
-            var addressTransactGet = CreateDocumentTransactGetMock(dummyResults);
+            var mockTable = new Mock<ITable>();
+            mockTable.Setup(x => x.CreateTransactGet()).Returns(CreateDocumentTransactGetMock(dummyResults));
+            var table = mockTable.Object;
+
+            var addressTransactGet = table.CreateTransactGet();
 
             Assert.AreEqual(0, addressTransactGet.Results.Count);
 

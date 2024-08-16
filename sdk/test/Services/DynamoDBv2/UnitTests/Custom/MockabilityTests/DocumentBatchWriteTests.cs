@@ -15,7 +15,11 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var itemsToPut = new List<Document>();
             var inMemoryTable = new List<Document>();
 
-            var batchWrite = CreateDocumentBatchWriteMock(itemsToPut, inMemoryTable);
+            var mockTable = new Mock<ITable>();
+            mockTable.Setup(x => x.CreateBatchWrite()).Returns(CreateDocumentBatchWriteMock(itemsToPut, inMemoryTable));
+            var table = mockTable.Object;
+
+            var batchWrite = table.CreateBatchWrite();
 
             Assert.AreEqual(0, inMemoryTable.Count);
             Assert.AreEqual(0, itemsToPut.Count);

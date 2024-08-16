@@ -78,7 +78,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// MultiTableDocumentBatchGet consisting of the two DocumentBatchGet
         /// objects.
         /// </returns>
-        MultiTableDocumentBatchGet Combine(IDocumentBatchGet otherBatch);
+        IMultiTableDocumentBatchGet Combine(IDocumentBatchGet otherBatch);
     }
 
     /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <inheritdoc/>
-        public MultiTableDocumentBatchGet Combine(IDocumentBatchGet otherBatch)
+        public IMultiTableDocumentBatchGet Combine(IDocumentBatchGet otherBatch)
         {
             return new MultiTableDocumentBatchGet(this, otherBatch);
         }

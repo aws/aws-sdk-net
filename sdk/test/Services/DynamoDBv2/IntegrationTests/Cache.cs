@@ -100,7 +100,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Table.ClearTableCache();
             var tableName = testTableName;
 
-            Table table;
+            ITable table;
             using (var nc = new AmazonDynamoDBClient())
             {
                 table = Table.LoadTable(nc, tableName);

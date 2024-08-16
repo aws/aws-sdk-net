@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ApproximatelyEqual(EpochDate, docV2["NonEpochDate1"].AsDateTime());
             ApproximatelyEqual(EpochDate, docV2["NonEpochDate1"].AsDateTime());
 
-            var epochTable = Context.GetTargetTable<EpochEmployee>();
+            var epochTable = Context.GetTargetTable<EpochEmployee>() as Table; // Do an explicit cast since we want to access internal methods.
             var epochAttributes = epochTable.GetStoreAsEpoch().ToList();
             Assert.AreNotEqual(0, epochAttributes.Count);
 
@@ -88,7 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(epochMap["NonEpochDate2"].S);
         }
 
-        public void TestStoreAsEpoch(Table hashRangeTable, Table numericHashRangeTable)
+        public void TestStoreAsEpoch(ITable hashRangeTable, ITable numericHashRangeTable)
         {
             // verify conversions
             var e1 = DateTimeToEpochSeconds((Primitive) EpochDate, "test") as Primitive;
@@ -106,7 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
             };
-            var epochTable = Table.LoadTable(Client, config);
+            var epochTable = Table.LoadTable(Client, config) as Table; // Do an explicit cast since we want to access internal methods.
             CollectionAssert.AreEqual(config.AttributesToStoreAsEpoch, epochTable.GetStoreAsEpoch().ToList());
 
             config = new TableConfig(numericHashRangeTable.TableName)
@@ -258,7 +258,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             doc["NonEpochDate"] = EpochDate;
             return doc;
         }
-        private static void TestWrittenData(Primitive hash, Primitive range, Table hashRangeTable, Table epochTable, bool checkForConditionalUpdate = false)
+        private static void TestWrittenData(Primitive hash, Primitive range, ITable hashRangeTable, ITable epochTable, bool checkForConditionalUpdate = false)
         {
             if (hashRangeTable != null)
             {

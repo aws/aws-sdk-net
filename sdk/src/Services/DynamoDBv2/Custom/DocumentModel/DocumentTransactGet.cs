@@ -96,7 +96,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>
         /// MultiTableDocumentTransactGet consisting of the two DocumentTransactGet objects.
         /// </returns>
-        MultiTableDocumentTransactGet Combine(IDocumentTransactGet otherTransactionPart);
+        IMultiTableDocumentTransactGet Combine(IDocumentTransactGet otherTransactionPart);
     }
 
     /// <summary>
@@ -174,7 +174,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <inheritdoc/>
-        public MultiTableDocumentTransactGet Combine(IDocumentTransactGet otherTransactionPart)
+        public IMultiTableDocumentTransactGet Combine(IDocumentTransactGet otherTransactionPart)
         {
             return new MultiTableDocumentTransactGet(this, otherTransactionPart);
         }

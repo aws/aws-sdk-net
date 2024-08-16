@@ -197,7 +197,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>
         /// MultiTableDocumentTransactWrite consisting of the two DocumentTransactWrite objects.
         /// </returns>
-        MultiTableDocumentTransactWrite Combine(IDocumentTransactWrite otherTransactionPart);
+        IMultiTableDocumentTransactWrite Combine(IDocumentTransactWrite otherTransactionPart);
     }
 
     /// <summary>
@@ -529,7 +529,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <inheritdoc/>
-        public MultiTableDocumentTransactWrite Combine(IDocumentTransactWrite otherTransactionPart)
+        public IMultiTableDocumentTransactWrite Combine(IDocumentTransactWrite otherTransactionPart)
         {
             return new MultiTableDocumentTransactWrite(this, otherTransactionPart);
         }
