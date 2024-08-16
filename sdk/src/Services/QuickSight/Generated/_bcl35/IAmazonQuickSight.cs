@@ -664,6 +664,9 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.CustomerManagedKeyUnavailableException">
+        /// The customer managed key that is registered to your Amazon QuickSight account is unavailable.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
@@ -10587,6 +10590,9 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.CustomerManagedKeyUnavailableException">
+        /// The customer managed key that is registered to your Amazon QuickSight account is unavailable.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
