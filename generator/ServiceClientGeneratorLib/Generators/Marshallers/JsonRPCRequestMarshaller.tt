@@ -97,7 +97,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new StreamWriter(memoryStream, null, -1, true))
                 {
-                    JsonWriter writer = new JsonWriter(sreamWriter);
+                    JsonWriter writer = new JsonWriter(streamWriter);
 				    writer.Validate = false;
 <#		
 		if (shouldMarshallPayload)
