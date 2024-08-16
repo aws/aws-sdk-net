@@ -1178,7 +1178,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 IndexName = flatConfig.IndexName,
                 ConsistentRead = flatConfig.ConsistentRead.GetValueOrDefault(false)
             };
-            Search scan = table.Scan(scanConfig);
+
+            // table.Scan() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search scan = table.Scan(scanConfig) as Search;
             return new ContextSearch(scan, flatConfig);
         }
 
@@ -1187,7 +1189,9 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Table table = GetTargetTable(storageConfig, flatConfig);
-            Search search = table.Scan(scanConfig);
+
+            // table.Scan() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search search = table.Scan(scanConfig) as Search;
             return new ContextSearch(search, flatConfig);
         }
 
@@ -1196,7 +1200,9 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Table table = GetTargetTable(storageConfig, flatConfig);
-            Search search = table.Query(queryConfig);
+
+            // table.Query() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search search = table.Query(queryConfig) as Search;
             return new ContextSearch(search, flatConfig);
         }
 
@@ -1241,7 +1247,9 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 queryConfig.Select = SelectValues.AllProjectedAttributes;
             }
-            Search query = table.Query(queryConfig);
+
+            // table.Query() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search query = table.Query(queryConfig) as Search;
 
             return new ContextSearch(query, currentConfig);
         }

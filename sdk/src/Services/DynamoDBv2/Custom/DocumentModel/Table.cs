@@ -1393,7 +1393,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="filter">Filter to apply to the scan.</param>
         /// <returns>Resultant Search container.</returns>
-        public Search Scan(ScanFilter filter)
+        public ISearch Scan(ScanFilter filter)
         {
             return Scan(new ScanOperationConfig { Filter = filter });
         }
@@ -1406,7 +1406,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="filterExpression">Expression to apply to the scan.</param>
         /// <returns>Resultant Search container.</returns>
-        public Search Scan(Expression filterExpression)
+        public ISearch Scan(Expression filterExpression)
         {
             ScanOperationConfig config = new ScanOperationConfig
             {
@@ -1425,7 +1425,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="config">Configuration to use.</param>
         /// <returns>Resultant Search container.</returns>
-        public Search Scan(ScanOperationConfig config)
+        public ISearch Scan(ScanOperationConfig config)
         {
             var currentConfig = config ?? new ScanOperationConfig();
 
@@ -1468,7 +1468,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="hashKey">Value of the hash key for the query operation.</param>
         /// <param name="filter">Filter to use.</param>
         /// <returns>Resultant Search container.</returns>
-        public Search Query(Primitive hashKey, QueryFilter filter)
+        public ISearch Query(Primitive hashKey, QueryFilter filter)
         {
             string hashKeyName = this.HashKeys[0];
             QueryFilter fullFilter = new QueryFilter(filter);
@@ -1487,7 +1487,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="hashKey">Value of the hash key for the query operation.</param>
         /// <param name="filterExpression">Expression to use.</param>
         /// <returns>Resultant Search container.</returns>
-        public Search Query(Primitive hashKey, Expression filterExpression)
+        public ISearch Query(Primitive hashKey, Expression filterExpression)
         {
             string hashKeyName = this.HashKeys[0];
 
@@ -1511,7 +1511,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="filter">Filter to use.</param>
         /// <returns>Resultant Search container.</returns>
-        public Search Query(QueryFilter filter)
+        public ISearch Query(QueryFilter filter)
         {
             return Query(new QueryOperationConfig { Filter = filter });
         }
@@ -1524,7 +1524,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="config">Configuration to use.</param>
         /// <returns>Resultant Search container.</returns>
-        public Search Query(QueryOperationConfig config)
+        public ISearch Query(QueryOperationConfig config)
         {
             if (config == null)
                 throw new ArgumentNullException("config");

@@ -294,7 +294,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private static int VerifyPagination(Search search, List<string> tokens)
+        private static int VerifyPagination(ISearch search, List<string> tokens)
         {
             int count = 0;
             do
