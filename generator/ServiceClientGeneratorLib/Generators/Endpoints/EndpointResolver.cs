@@ -222,14 +222,13 @@ if (Config.EndpointsRuleSet.parameters.ContainsKey("Region")) {
             
             #line 99 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
 
-    // GetACL and PutACL are deprecated in V4, but we must still include them in here because they haven't been removed. Remove this in V5, or 
-    // whenever these 2 operations are removed.
+            // GetACL and PutACL are deprecated in V4 and may be removed in the future
 
             
             #line default
             #line hidden
             
-            #line 103 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 102 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
 if (Config.ClassName == "S3") {
             
             #line default
@@ -255,14 +254,14 @@ if (Config.ClassName == "S3") {
             }
 ");
             
-            #line 123 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 122 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
 }
             
             #line default
             #line hidden
             this.Write("\r\n            // Assign staticContextParams and contextParam per operation\r\n");
             
-            #line 126 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
+            #line 125 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.AssignOperationContext()));
             
             #line default

@@ -4,7 +4,7 @@
             "serviceName": "S3",
             "type": "patch",
             "changeLogMessages": [
-                "Split GetACL into GetBucketACL and GetObjectACL. Split PutACL into PutObjectACL and PutBucketACL. Obsolete PutACL and GetACL"
+                "Split GetACL into GetBucketAcl and GetObjectAcl. Split PutACL into PutObjectACL and PutBucketACL. Obsolete PutACL and GetACL. These operations are being split into separate operations, because context parameters that could be used for endpoint resolution were not being copied over due to the two operations being merged into one. These context parameters were not being used currently so there is no effect as of now."
             ]
         }
     ]

@@ -271,7 +271,6 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    /// 
     public partial class PutACLRequest : AmazonWebServiceRequest
     {
         private S3AccessControlList accessControlPolicy;
