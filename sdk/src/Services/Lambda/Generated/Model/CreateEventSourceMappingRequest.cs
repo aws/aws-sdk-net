@@ -461,18 +461,18 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        /// For streams and Amazon SQS event sources, the default batching window is 0 seconds.
-        /// For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources,
-        /// the default batching window is 500 ms. Note that because you can only change <c>MaximumBatchingWindowInSeconds</c>
-        /// in increments of seconds, you cannot revert back to the 500 ms default batching window
-        /// after you have changed it. To restore the default batching window, you must create
-        /// a new event source mapping.
+        /// For Kinesis, DynamoDB, and Amazon SQS event sources, the default batching window is
+        /// 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event
+        /// sources, the default batching window is 500 ms. Note that because you can only change
+        /// <c>MaximumBatchingWindowInSeconds</c> in increments of seconds, you cannot revert
+        /// back to the 500 ms default batching window after you have changed it. To restore the
+        /// default batching window, you must create a new event source mapping.
         /// </para>
         ///  
         /// <para>
-        /// Related setting: For streams and Amazon SQS event sources, when you set <c>BatchSize</c>
-        /// to a value greater than 10, you must set <c>MaximumBatchingWindowInSeconds</c> to
-        /// at least 1.
+        /// Related setting: For Kinesis, DynamoDB, and Amazon SQS event sources, when you set
+        /// <c>BatchSize</c> to a value greater than 10, you must set <c>MaximumBatchingWindowInSeconds</c>
+        /// to at least 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
