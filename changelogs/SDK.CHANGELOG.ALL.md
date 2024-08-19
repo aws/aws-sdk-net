@@ -1,3 +1,18 @@
+### 3.7.868.0 (2024-08-19 18:18 UTC)
+* Bedrock (3.7.402.0)
+	* Amazon Bedrock Batch Inference/ Model Invocation is a feature which allows customers to asynchronously run inference on a large set of records/files stored in S3.
+* CodeBuild (3.7.402.0)
+	* AWS CodeBuild now supports creating fleets with macOS platform for running builds.
+* Deadline (3.7.401.0)
+	* This release adds additional search fields and provides sorting by multiple fields.
+* Lambda (3.7.401.0)
+	* Release Lambda FunctionRecursiveConfig, enabling customers to turn recursive loop detection on or off on individual functions. This release adds two new APIs, GetFunctionRecursionConfig and PutFunctionRecursionConfig.
+* SsmSap (3.7.401.0)
+	* Add new attributes to the outputs of GetApplication and GetDatabase APIs.
+* Core 3.7.400.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.867.0 (2024-08-16 18:17 UTC)
 * Batch (3.7.401.0)
 	* Improvements of integration between AWS Batch and EC2.
