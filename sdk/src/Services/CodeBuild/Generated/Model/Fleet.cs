@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         private EnvironmentType _environmentType;
         private string _fleetServiceRole;
         private string _id;
+        private string _imageId;
         private DateTime? _lastModified;
         private string _name;
         private FleetOverflowBehavior _overflowBehavior;
@@ -284,6 +285,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The Amazon Machine Image (AMI) of the compute fleet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
         /// <summary>

@@ -99,6 +99,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FleetServiceRole);
                 }
 
+                if(publicRequest.IsSetImageId())
+                {
+                    context.Writer.WritePropertyName("imageId");
+                    context.Writer.Write(publicRequest.ImageId);
+                }
+
                 if(publicRequest.IsSetOverflowBehavior())
                 {
                     context.Writer.WritePropertyName("overflowBehavior");

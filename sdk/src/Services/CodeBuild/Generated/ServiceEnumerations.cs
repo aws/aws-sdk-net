@@ -763,6 +763,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly EnvironmentType LINUX_LAMBDA_CONTAINER = new EnvironmentType("LINUX_LAMBDA_CONTAINER");
         /// <summary>
+        /// Constant MAC_ARM for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType MAC_ARM = new EnvironmentType("MAC_ARM");
+        /// <summary>
         /// Constant WINDOWS_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType WINDOWS_CONTAINER = new EnvironmentType("WINDOWS_CONTAINER");
@@ -920,6 +924,14 @@ namespace Amazon.CodeBuild
         /// Constant CREATE_FAILED for FleetContextCode
         /// </summary>
         public static readonly FleetContextCode CREATE_FAILED = new FleetContextCode("CREATE_FAILED");
+        /// <summary>
+        /// Constant INSUFFICIENT_CAPACITY for FleetContextCode
+        /// </summary>
+        public static readonly FleetContextCode INSUFFICIENT_CAPACITY = new FleetContextCode("INSUFFICIENT_CAPACITY");
+        /// <summary>
+        /// Constant PENDING_DELETION for FleetContextCode
+        /// </summary>
+        public static readonly FleetContextCode PENDING_DELETION = new FleetContextCode("PENDING_DELETION");
         /// <summary>
         /// Constant UPDATE_FAILED for FleetContextCode
         /// </summary>
