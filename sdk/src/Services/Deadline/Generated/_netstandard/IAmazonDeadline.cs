@@ -578,8 +578,9 @@ namespace Amazon.Deadline
 
 
         /// <summary>
-        /// Creates a job. A job is a render submission submitted by a user. It contains specific
-        /// job properties outlined as steps and tasks.
+        /// Creates a job. A job is a set of instructions that AWS Deadline Cloud uses to schedule
+        /// and run work on available workers. For more information, see <a href="https://docs.aws.amazon.com/deadline-cloud/latest/userguide/deadline-cloud-jobs.html">Deadline
+        /// Cloud jobs</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
@@ -1099,6 +1100,13 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Deletes a queue.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can't recover the jobs in a queue if you delete the queue. Deleting the queue
+        /// also deletes the jobs in that queue.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// <param name="cancellationToken">
@@ -3035,7 +3043,9 @@ namespace Amazon.Deadline
         /// <summary>
         /// Starts an asynchronous request for getting aggregated statistics about queues and
         /// farms. Get the statistics using the <c>GetSessionsStatisticsAggregation</c> operation.
-        /// Statistics are available for 1 hour after you call the <c>StartSessionsStatisticsAggregation</c>
+        /// You can only have one running aggregation for your Deadline Cloud farm. Call the <c>GetSessionsStatisticsAggregation</c>
+        /// operation and check the <c>status</c> field to see if an aggregation is running. Statistics
+        /// are available for 1 hour after you call the <c>StartSessionsStatisticsAggregation</c>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSessionsStatisticsAggregation service method.</param>
@@ -3252,7 +3262,19 @@ namespace Amazon.Deadline
 
 
         /// <summary>
-        /// Updates a job.
+        /// Updates a job. 
+        /// 
+        ///  
+        /// <para>
+        /// When you change the status of the job to <c>ARCHIVED</c>, the job can't be scheduled
+        /// or archived.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// An archived jobs and its steps and tasks are deleted after 120 days. The job can't
+        /// be recovered.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// <param name="cancellationToken">
