@@ -78,6 +78,12 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AssociatedApplicationArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AssociatedApplicationArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Components", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

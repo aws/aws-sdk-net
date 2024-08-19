@@ -37,6 +37,7 @@ namespace Amazon.SsmSap.Model
         private string _applicationId;
         private string _arn;
         private string _componentId;
+        private List<string> _connectedComponentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ApplicationCredential> _credentials = AWSConfigs.InitializeCollections ? new List<ApplicationCredential>() : null;
         private string _databaseId;
         private string _databaseName;
@@ -52,6 +53,7 @@ namespace Amazon.SsmSap.Model
         /// The ID of the application.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=60)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -88,6 +90,7 @@ namespace Amazon.SsmSap.Model
         /// The ID of the component.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string ComponentId
         {
             get { return this._componentId; }
@@ -98,6 +101,24 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetComponentId()
         {
             return this._componentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectedComponentArns. 
+        /// <para>
+        /// The Amazon Resource Names of the connected AWS Systems Manager for SAP components.
+        /// </para>
+        /// </summary>
+        public List<string> ConnectedComponentArns
+        {
+            get { return this._connectedComponentArns; }
+            set { this._connectedComponentArns = value; }
+        }
+
+        // Check to see if ConnectedComponentArns property is set
+        internal bool IsSetConnectedComponentArns()
+        {
+            return this._connectedComponentArns != null && (this._connectedComponentArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,6 +146,7 @@ namespace Amazon.SsmSap.Model
         /// The ID of the SAP HANA database.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=300)]
         public string DatabaseId
         {
             get { return this._databaseId; }
