@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "feature",
+            "changeLogMessages": [
+                "Switch Document.FromJson and ToJson to use System.Text.Json instead of LitJson. This supports additional precision for decimal values."
+            ]
+        }
+    ]
+}
