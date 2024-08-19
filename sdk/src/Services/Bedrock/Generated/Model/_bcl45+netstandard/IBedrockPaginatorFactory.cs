@@ -52,6 +52,11 @@ namespace Amazon.Bedrock.Model
         IListModelCustomizationJobsPaginator ListModelCustomizationJobs(ListModelCustomizationJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListModelInvocationJobs operation
+        ///</summary>
+        IListModelInvocationJobsPaginator ListModelInvocationJobs(ListModelInvocationJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListProvisionedModelThroughputs operation
         ///</summary>
         IListProvisionedModelThroughputsPaginator ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request);

@@ -77,6 +77,14 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListModelInvocationJobs operation
+        ///</summary>
+        public IListModelInvocationJobsPaginator ListModelInvocationJobs(ListModelInvocationJobsRequest request) 
+        {
+            return new ListModelInvocationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProvisionedModelThroughputs operation
         ///</summary>
         public IListProvisionedModelThroughputsPaginator ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request) 

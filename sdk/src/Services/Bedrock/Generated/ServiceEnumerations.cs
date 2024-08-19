@@ -1175,6 +1175,88 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type ModelInvocationJobStatus.
+    /// </summary>
+    public class ModelInvocationJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus Completed = new ModelInvocationJobStatus("Completed");
+        /// <summary>
+        /// Constant Expired for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus Expired = new ModelInvocationJobStatus("Expired");
+        /// <summary>
+        /// Constant Failed for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus Failed = new ModelInvocationJobStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus InProgress = new ModelInvocationJobStatus("InProgress");
+        /// <summary>
+        /// Constant PartiallyCompleted for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus PartiallyCompleted = new ModelInvocationJobStatus("PartiallyCompleted");
+        /// <summary>
+        /// Constant Scheduled for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus Scheduled = new ModelInvocationJobStatus("Scheduled");
+        /// <summary>
+        /// Constant Stopped for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus Stopped = new ModelInvocationJobStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus Stopping = new ModelInvocationJobStatus("Stopping");
+        /// <summary>
+        /// Constant Submitted for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus Submitted = new ModelInvocationJobStatus("Submitted");
+        /// <summary>
+        /// Constant Validating for ModelInvocationJobStatus
+        /// </summary>
+        public static readonly ModelInvocationJobStatus Validating = new ModelInvocationJobStatus("Validating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelInvocationJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelInvocationJobStatus FindValue(string value)
+        {
+            return FindValue<ModelInvocationJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelInvocationJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelModality.
     /// </summary>
     public class ModelModality : ConstantClass
@@ -1280,6 +1362,52 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProvisionedModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3InputFormat.
+    /// </summary>
+    public class S3InputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSONL for S3InputFormat
+        /// </summary>
+        public static readonly S3InputFormat JSONL = new S3InputFormat("JSONL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3InputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3InputFormat FindValue(string value)
+        {
+            return FindValue<S3InputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3InputFormat(string value)
         {
             return FindValue(value);
         }
