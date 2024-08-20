@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model
     /// Service tasks on the container instance that are in the <c>RUNNING</c> state are stopped
     /// and replaced according to the service's deployment configuration parameters, <c>minimumHealthyPercent</c>
     /// and <c>maximumPercent</c>. You can change the deployment configuration of your service
-    /// using <a>UpdateService</a>.
+    /// using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
     /// </para>
     ///  <ul> <li> 
     /// <para>

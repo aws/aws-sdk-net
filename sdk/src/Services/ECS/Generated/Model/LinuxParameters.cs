@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Devices. 
         /// <para>
         /// Any host devices to expose to the container. This parameter maps to <c>Devices</c>
-        /// in tthe docker create-container command and the <c>--device</c> option to docker run.
+        /// in tthe docker conainer create command and the <c>--device</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -97,11 +97,11 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property InitProcessEnabled. 
         /// <para>
         /// Run an <c>init</c> process inside the container that forwards signals and reaps processes.
-        /// This parameter maps to the <c>--init</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a>. This parameter requires version 1.25 of the Docker Remote API or greater
-        /// on your container instance. To check the Docker Remote API version on your container
-        /// instance, log in to your container instance and run the following command: <c>sudo
-        /// docker version --format '{{.Server.APIVersion}}'</c> 
+        /// This parameter maps to the <c>--init</c> option to docker run. This parameter requires
+        /// version 1.25 of the Docker Remote API or greater on your container instance. To check
+        /// the Docker Remote API version on your container instance, log in to your container
+        /// instance and run the following command: <c>sudo docker version --format '{{.Server.APIVersion}}'</c>
+        /// 
         /// </para>
         /// </summary>
         public bool InitProcessEnabled
@@ -120,9 +120,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property MaxSwap. 
         /// <para>
         /// The total amount of swap memory (in MiB) a container can use. This parameter will
-        /// be translated to the <c>--memory-swap</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-        /// run</a> where the value would be the sum of the container memory plus the <c>maxSwap</c>
-        /// value.
+        /// be translated to the <c>--memory-swap</c> option to docker run where the value would
+        /// be the sum of the container memory plus the <c>maxSwap</c> value.
         /// </para>
         ///  
         /// <para>

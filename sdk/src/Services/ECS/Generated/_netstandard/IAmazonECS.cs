@@ -134,15 +134,16 @@ namespace Amazon.ECS
         /// <summary>
         /// Creates a new Amazon ECS cluster. By default, your account receives a <c>default</c>
         /// cluster when you launch your first container instance. However, you can create your
-        /// own cluster with a unique name with the <c>CreateCluster</c> action.
+        /// own cluster with a unique name.
         /// 
         ///  <note> 
         /// <para>
-        /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
-        /// the Amazon ECS service-linked role for your account. This is so that it can manage
-        /// required resources in other Amazon Web Services services on your behalf. However,
-        /// if the user that makes the call doesn't have permissions to create the service-linked
-        /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// When you call the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
+        /// API operation, Amazon ECS attempts to create the Amazon ECS service-linked role for
+        /// your account. This is so that it can manage required resources in other Amazon Web
+        /// Services services on your behalf. However, if the user that makes the call doesn't
+        /// have permissions to create the service-linked role, it isn't created. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -194,7 +195,7 @@ namespace Amazon.ECS
         /// Runs and maintains your desired number of tasks from a specified task definition.
         /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
         /// ECS runs another copy of the task in the specified cluster. To update an existing
-        /// service, see the <a>UpdateService</a> action.
+        /// service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -251,10 +252,9 @@ namespace Amazon.ECS
         /// <para>
         /// You can optionally specify a deployment configuration for your service. The deployment
         /// is initiated by changing properties. For example, the deployment might be initiated
-        /// by the task definition or by your desired count of a service. This is done with an
-        /// <a>UpdateService</a> operation. The default value for a replica service for <c>minimumHealthyPercent</c>
-        /// is 100%. The default value for a daemon service for <c>minimumHealthyPercent</c> is
-        /// 0%.
+        /// by the task definition or by your desired count of a service. You can use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
+        /// The default value for a replica service for <c>minimumHealthyPercent</c> is 100%.
+        /// The default value for a daemon service for <c>minimumHealthyPercent</c> is 0%.
         /// </para>
         ///  
         /// <para>
@@ -300,8 +300,8 @@ namespace Amazon.ECS
         /// <para>
         /// When creating a service that uses the <c>EXTERNAL</c> deployment controller, you can
         /// specify only parameters that aren't controlled at the task set level. The only required
-        /// parameter is the service name. You control your services using the <a>CreateTaskSet</a>
-        /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// parameter is the service name. You control your services using the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -350,7 +350,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -427,7 +427,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -448,10 +448,10 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
         /// The specified service isn't active. You can't update a service that's inactive. If
-        /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
-        /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
@@ -518,7 +518,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>The response from the DeleteAttributes service method, as returned by ECS.</returns>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -544,20 +544,20 @@ namespace Amazon.ECS
         ///  <note> 
         /// <para>
         /// The <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers are reserved and can't
-        /// be deleted. You can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a>
-        /// API or by deleting the cluster.
+        /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+        /// or by deleting the cluster.
         /// </para>
         ///  </note> 
         /// <para>
         /// Prior to a capacity provider being deleted, the capacity provider must be removed
-        /// from the capacity provider strategy from all services. The <a>UpdateService</a> API
-        /// can be used to remove a capacity provider from a service's capacity provider strategy.
+        /// from the capacity provider strategy from all services. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>
+        /// API can be used to remove a capacity provider from a service's capacity provider strategy.
         /// When updating a service, the <c>forceNewDeployment</c> option can be used to ensure
         /// that any tasks using the Amazon EC2 instance capacity provided by the capacity provider
         /// are transitioned to use the capacity from the remaining capacity providers. Only capacity
         /// providers that aren't associated with a cluster can be deleted. To remove a capacity
-        /// provider from a cluster, you can either use <a>PutClusterCapacityProviders</a> or
-        /// delete the cluster.
+        /// provider from a cluster, you can either use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+        /// or delete the cluster.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
@@ -608,8 +608,8 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// You must deregister all container instances from this cluster before you may delete
-        /// it. You can list the container instances in a cluster with <a>ListContainerInstances</a>
-        /// and deregister them with <a>DeregisterContainerInstance</a>.
+        /// it. You can list the container instances in a cluster with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html">ListContainerInstances</a>
+        /// and deregister them with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html">DeregisterContainerInstance</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
@@ -639,18 +639,19 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
         /// You can't delete a cluster that has registered container instances. First, deregister
         /// the container instances before you can delete the cluster. For more information, see
-        /// <a>DeregisterContainerInstance</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html">DeregisterContainerInstance</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsServicesException">
         /// You can't delete a cluster that contains services. First, update the service to reduce
         /// its desired task count to 0, and then delete the service. For more information, see
-        /// <a>UpdateService</a> and <a>DeleteService</a>.
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html">DeleteService</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsTasksException">
         /// You can't delete a cluster that has active tasks.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -679,19 +680,19 @@ namespace Amazon.ECS
         /// Deletes a specified service within a cluster. You can delete a service if you have
         /// no running tasks in it and the desired task count is zero. If the service is actively
         /// maintaining tasks, you can't delete it, and you must update the service to a desired
-        /// task count of zero. For more information, see <a>UpdateService</a>.
+        /// task count of zero. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
         /// 
         ///  <note> 
         /// <para>
         /// When you delete a service, if there are still running tasks that require cleanup,
         /// the service status moves from <c>ACTIVE</c> to <c>DRAINING</c>, and the service is
-        /// no longer visible in the console or in the <a>ListServices</a> API operation. After
-        /// all tasks have transitioned to either <c>STOPPING</c> or <c>STOPPED</c> status, the
-        /// service status moves from <c>DRAINING</c> to <c>INACTIVE</c>. Services in the <c>DRAINING</c>
-        /// or <c>INACTIVE</c> status can still be viewed with the <a>DescribeServices</a> API
-        /// operation. However, in the future, <c>INACTIVE</c> services may be cleaned up and
-        /// purged from Amazon ECS record keeping, and <a>DescribeServices</a> calls on those
-        /// services return a <c>ServiceNotFoundException</c> error.
+        /// no longer visible in the console or in the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>
+        /// API operation. After all tasks have transitioned to either <c>STOPPING</c> or <c>STOPPED</c>
+        /// status, the service status moves from <c>DRAINING</c> to <c>INACTIVE</c>. Services
+        /// in the <c>DRAINING</c> or <c>INACTIVE</c> status can still be viewed with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServices.html">DescribeServices</a>
+        /// API operation. However, in the future, <c>INACTIVE</c> services may be cleaned up
+        /// and purged from Amazon ECS record keeping, and <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServices.html">DescribeServices</a>
+        /// calls on those services return a <c>ServiceNotFoundException</c> error.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -725,7 +726,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -735,7 +736,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
-        /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
@@ -859,7 +860,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -870,14 +871,15 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
         /// The specified service isn't active. You can't update a service that's inactive. If
-        /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
-        /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
-        /// The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>.
+        /// The specified task set wasn't found. You can view your available task sets with <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html">DescribeTaskSets</a>.
         /// Task sets are specific to each cluster, service and Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
@@ -941,7 +943,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1139,7 +1141,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1185,7 +1187,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1293,7 +1295,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1345,7 +1347,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1356,10 +1358,10 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
         /// The specified service isn't active. You can't update a service that's inactive. If
-        /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
-        /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
@@ -1418,7 +1420,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1490,7 +1492,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1571,7 +1573,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>The response from the ListAttributes service method, as returned by ECS.</returns>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1659,7 +1661,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1706,7 +1708,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1802,7 +1804,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1950,7 +1952,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -1960,7 +1962,7 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
-        /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
@@ -2068,8 +2070,8 @@ namespace Amazon.ECS
         /// <summary>
         /// Create or update an attribute on an Amazon ECS resource. If the attribute doesn't
         /// exist, it's created. If the attribute exists, its value is replaced with the specified
-        /// value. To delete an attribute, use <a>DeleteAttributes</a>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+        /// value. To delete an attribute, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html">DeleteAttributes</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method.</param>
@@ -2080,11 +2082,11 @@ namespace Amazon.ECS
         /// <returns>The response from the PutAttributes service method, as returned by ECS.</returns>
         /// <exception cref="Amazon.ECS.Model.AttributeLimitExceededException">
         /// You can apply up to 10 custom attributes for each resource. You can view the attributes
-        /// of a resource with <a>ListAttributes</a>. You can remove existing attributes on a
-        /// resource with <a>DeleteAttributes</a>.
+        /// of a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html">ListAttributes</a>.
+        /// You can remove existing attributes on a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html">DeleteAttributes</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2114,9 +2116,9 @@ namespace Amazon.ECS
         /// strategy for the cluster. If the specified cluster has existing capacity providers
         /// associated with it, you must specify all existing capacity providers in addition to
         /// any new ones you want to add. Any existing capacity providers that are associated
-        /// with a cluster that are omitted from a <a>PutClusterCapacityProviders</a> API call
-        /// will be disassociated with the cluster. You can only disassociate an existing capacity
-        /// provider from a cluster if it's not being used by any existing tasks.
+        /// with a cluster that are omitted from a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
+        /// API call will be disassociated with the cluster. You can only disassociate an existing
+        /// capacity provider from a cluster if it's not being used by any existing tasks.
         /// </para>
         ///  
         /// <para>
@@ -2152,7 +2154,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2198,7 +2200,7 @@ namespace Amazon.ECS
         /// <para>
         /// You can specify a Docker networking mode for the containers in your task definition
         /// with the <c>networkMode</c> parameter. If you specify the <c>awsvpc</c> network mode,
-        /// the task is allocated an elastic network interface, and you must specify a <a>NetworkConfiguration</a>
+        /// the task is allocated an elastic network interface, and you must specify a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html">NetworkConfiguration</a>
         /// when you create a service or run a task with the task definition. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -2261,7 +2263,7 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
+        /// Alternatively, you can use <c>StartTask</c> to use your own scheduler or place tasks
         /// manually on specific container instances.
         /// </para>
         ///  
@@ -2340,7 +2342,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ConflictException">
@@ -2410,7 +2412,7 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
+        /// Alternatively, you can use<c>RunTask</c> to place tasks for you. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
         /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -2446,7 +2448,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2472,10 +2474,10 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// When <a>StopTask</a> is called on a task, the equivalent of <c>docker stop</c> is
-        /// issued to the containers running in the task. This results in a <c>SIGTERM</c> value
-        /// and a default 30-second timeout, after which the <c>SIGKILL</c> value is sent and
-        /// the containers are forcibly stopped. If the container handles the <c>SIGTERM</c> value
+        /// When you call <c>StopTask</c> on a task, the equivalent of <c>docker stop</c> is issued
+        /// to the containers running in the task. This results in a <c>SIGTERM</c> value and
+        /// a default 30-second timeout, after which the <c>SIGKILL</c> value is sent and the
+        /// containers are forcibly stopped. If the container handles the <c>SIGTERM</c> value
         /// gracefully and exits within 30 seconds from receiving it, no <c>SIGKILL</c> value
         /// is sent.
         /// </para>
@@ -2520,7 +2522,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2622,7 +2624,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2671,7 +2673,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2762,7 +2764,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2811,7 +2813,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2885,7 +2887,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -2949,7 +2951,7 @@ namespace Amazon.ECS
         /// Service tasks on the container instance that are in the <c>RUNNING</c> state are stopped
         /// and replaced according to the service's deployment configuration parameters, <c>minimumHealthyPercent</c>
         /// and <c>maximumPercent</c>. You can change the deployment configuration of your service
-        /// using <a>UpdateService</a>.
+        /// using <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3013,7 +3015,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -3076,7 +3078,7 @@ namespace Amazon.ECS
         /// count, task placement constraints and strategies, health check grace period, enable
         /// ECS managed tags option, and propagate tags option, using this API. If the launch
         /// type, load balancer, network configuration, platform version, or task definition need
-        /// to be updated, create a new task set For more information, see <a>CreateTaskSet</a>.
+        /// to be updated, create a new task set For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html">CreateTaskSet</a>.
         /// </para>
         ///  
         /// <para>
@@ -3133,11 +3135,12 @@ namespace Amazon.ECS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <c>docker
-        /// stop</c> is issued to the containers running in the task. This results in a <c>SIGTERM</c>
-        /// and a 30-second timeout. After this, <c>SIGKILL</c> is sent and the containers are
-        /// forcibly stopped. If the container handles the <c>SIGTERM</c> gracefully and exits
-        /// within 30 seconds from receiving it, no <c>SIGKILL</c> is sent.
+        /// When <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>
+        /// stops a task during a deployment, the equivalent of <c>docker stop</c> is issued to
+        /// the containers running in the task. This results in a <c>SIGTERM</c> and a 30-second
+        /// timeout. After this, <c>SIGKILL</c> is sent and the containers are forcibly stopped.
+        /// If the container handles the <c>SIGTERM</c> gracefully and exits within 30 seconds
+        /// from receiving it, no <c>SIGKILL</c> is sent.
         /// </para>
         ///  
         /// <para>
@@ -3234,7 +3237,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -3255,10 +3258,10 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
         /// The specified service isn't active. You can't update a service that's inactive. If
-        /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
-        /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
@@ -3308,7 +3311,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -3319,14 +3322,15 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
         /// The specified service isn't active. You can't update a service that's inactive. If
-        /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
-        /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
-        /// The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>.
+        /// The specified task set wasn't found. You can view your available task sets with <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html">DescribeTaskSets</a>.
         /// Task sets are specific to each cluster, service and Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
@@ -3410,7 +3414,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -3467,7 +3471,7 @@ namespace Amazon.ECS
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
-        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
@@ -3478,14 +3482,15 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
         /// The specified service isn't active. You can't update a service that's inactive. If
-        /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
-        /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TaskSetNotFoundException">
-        /// The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>.
+        /// The specified task set wasn't found. You can view your available task sets with <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html">DescribeTaskSets</a>.
         /// Task sets are specific to each cluster, service and Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">

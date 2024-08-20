@@ -198,8 +198,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DesiredCount. 
         /// <para>
         /// The desired number of instantiations of the task definition to keep running on the
-        /// service. This value is specified when the service is created with <a>CreateService</a>,
-        /// and it can be modified with <a>UpdateService</a>.
+        /// service. This value is specified when the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+        /// , and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
         /// </para>
         /// </summary>
         public int DesiredCount
@@ -691,7 +691,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The task definition to use for tasks in the service. This value is specified when
-        /// the service is created with <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.
+        /// the service is created with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>,
+        /// and it can be modified with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
         /// </para>
         /// </summary>
         public string TaskDefinition

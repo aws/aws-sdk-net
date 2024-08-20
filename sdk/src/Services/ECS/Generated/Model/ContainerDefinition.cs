@@ -81,7 +81,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Command. 
         /// <para>
         /// The command that's passed to the container. This parameter maps to <c>Cmd</c> in the
-        /// docker create-container command and the <c>COMMAND</c> parameter to docker run. If
+        /// docker conainer create command and the <c>COMMAND</c> parameter to docker run. If
         /// there are multiple arguments, each argument is a separated string in the array.
         /// </para>
         /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cpu. 
         /// <para>
         /// The number of <c>cpu</c> units reserved for the container. This parameter maps to
-        /// <c>CpuShares</c> in the docker create-container commandand the <c>--cpu-shares</c>
+        /// <c>CpuShares</c> in the docker conainer create commandand the <c>--cpu-shares</c>
         /// option to docker run.
         /// </para>
         ///  
@@ -289,7 +289,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DisableNetworking. 
         /// <para>
         /// When this parameter is true, networking is off within the container. This parameter
-        /// maps to <c>NetworkDisabled</c> in the docker create-container command.
+        /// maps to <c>NetworkDisabled</c> in the docker conainer create command.
         /// </para>
         ///  <note> 
         /// <para>
@@ -313,7 +313,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DnsSearchDomains. 
         /// <para>
         /// A list of DNS search domains that are presented to the container. This parameter maps
-        /// to <c>DnsSearch</c> in the docker create-container command and the <c>--dns-search</c>
+        /// to <c>DnsSearch</c> in the docker conainer create command and the <c>--dns-search</c>
         /// option to docker run.
         /// </para>
         ///  <note> 
@@ -338,8 +338,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DnsServers. 
         /// <para>
         /// A list of DNS servers that are presented to the container. This parameter maps to
-        /// <c>Dns</c> in the the docker create-container command and the <c>--dns</c> option
-        /// to docker run.
+        /// <c>Dns</c> in the the docker conainer create command and the <c>--dns</c> option to
+        /// docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -363,7 +363,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DockerLabels. 
         /// <para>
         /// A key/value map of labels to add to the container. This parameter maps to <c>Labels</c>
-        /// in the docker create-container command and the <c>--label</c> option to docker run.
+        /// in the docker conainer create command and the <c>--label</c> option to docker run.
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
         /// instance. To check the Docker Remote API version on your container instance, log in
         /// to your container instance and run the following command: <c>sudo docker version --format
@@ -404,7 +404,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <c>SecurityOpt</c> in the docker create-container command and
+        /// This parameter maps to <c>SecurityOpt</c> in the docker conainer create command and
         /// the <c>--security-opt</c> option to docker run.
         /// </para>
         ///  <note> 
@@ -443,7 +443,7 @@ namespace Amazon.ECS.Model
         ///  </important> 
         /// <para>
         /// The entry point that's passed to the container. This parameter maps to <c>Entrypoint</c>
-        /// in tthe docker create-container command and the <c>--entrypoint</c> option to docker
+        /// in tthe docker conainer create command and the <c>--entrypoint</c> option to docker
         /// run.
         /// </para>
         /// </summary>
@@ -463,7 +463,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Environment. 
         /// <para>
         /// The environment variables to pass to a container. This parameter maps to <c>Env</c>
-        /// in the docker create-container command and the <c>--env</c> option to docker run.
+        /// in the docker conainer create command and the <c>--env</c> option to docker run.
         /// </para>
         ///  <important> 
         /// <para>
@@ -552,8 +552,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ExtraHosts. 
         /// <para>
         /// A list of hostnames and IP address mappings to append to the <c>/etc/hosts</c> file
-        /// on the container. This parameter maps to <c>ExtraHosts</c> in the docker create-container
-        /// command and the <c>--add-host</c> option to docker run.
+        /// on the container. This parameter maps to <c>ExtraHosts</c> in the docker conainer
+        /// create command and the <c>--add-host</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -598,7 +598,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property HealthCheck. 
         /// <para>
         /// The container health check command and associated configuration parameters for the
-        /// container. This parameter maps to <c>HealthCheck</c> in the docker create-container
+        /// container. This parameter maps to <c>HealthCheck</c> in the docker conainer create
         /// command and the <c>HEALTHCHECK</c> parameter of docker run.
         /// </para>
         /// </summary>
@@ -618,8 +618,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Hostname. 
         /// <para>
         /// The hostname to use for your container. This parameter maps to <c>Hostname</c> in
-        /// thethe docker create-container command and the <c>--hostname</c> option to docker
-        /// run.
+        /// thethe docker conainer create command and the <c>--hostname</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -648,8 +647,8 @@ namespace Amazon.ECS.Model
         /// are specified with either <c> <i>repository-url</i>/<i>image</i>:<i>tag</i> </c> or
         /// <c> <i>repository-url</i>/<i>image</i>@<i>digest</i> </c>. Up to 255 letters (uppercase
         /// and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and
-        /// number signs are allowed. This parameter maps to <c>Image</c> in the docker create-container
-        /// command and the <c>IMAGE</c> parameter of docker run.
+        /// number signs are allowed. This parameter maps to <c>Image</c> in the docker conainer
+        /// create command and the <c>IMAGE</c> parameter of docker run.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -698,7 +697,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// When this parameter is <c>true</c>, you can deploy containerized applications that
         /// require <c>stdin</c> or a <c>tty</c> to be allocated. This parameter maps to <c>OpenStdin</c>
-        /// in the docker create-container command and the <c>--interactive</c> option to docker
+        /// in the docker conainer create command and the <c>--interactive</c> option to docker
         /// run.
         /// </para>
         /// </summary>
@@ -722,7 +721,7 @@ namespace Amazon.ECS.Model
         /// a task definition is <c>bridge</c>. The <c>name:internalName</c> construct is analogous
         /// to <c>name:alias</c> in Docker links. Up to 255 letters (uppercase and lowercase),
         /// numbers, underscores, and hyphens are allowed.. This parameter maps to <c>Links</c>
-        /// in the docker create-container command and the <c>--link</c> option to docker run.
+        /// in the docker conainer create command and the <c>--link</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>
@@ -752,7 +751,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property LinuxParameters. 
         /// <para>
         /// Linux-specific modifications that are applied to the container, such as Linux kernel
-        /// capabilities. For more information see <a>KernelCapabilities</a>.
+        /// capabilities. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -779,7 +778,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <c>LogConfig</c> in the docker create-container command and
+        /// This parameter maps to <c>LogConfig</c> in the docker conainer create command and
         /// the <c>--log-driver</c> option to docker run. By default, containers use the same
         /// logging driver that the Docker daemon uses. However the container can use a different
         /// logging driver than the Docker daemon by specifying a log driver with this parameter
@@ -790,8 +789,9 @@ namespace Amazon.ECS.Model
         ///  <note> 
         /// <para>
         /// Amazon ECS currently supports a subset of the logging drivers available to the Docker
-        /// daemon (shown in the <a>LogConfiguration</a> data type). Additional log drivers may
-        /// be available in future releases of the Amazon ECS container agent.
+        /// daemon (shown in the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_LogConfiguration.html">LogConfiguration</a>
+        /// data type). Additional log drivers may be available in future releases of the Amazon
+        /// ECS container agent.
         /// </para>
         ///  </note> 
         /// <para>
@@ -830,7 +830,7 @@ namespace Amazon.ECS.Model
         /// to exceed the memory specified here, the container is killed. The total amount of
         /// memory reserved for all containers within a task must be lower than the task <c>memory</c>
         /// value, if one is specified. This parameter maps to <c>Memory</c> in thethe docker
-        /// create-container command and the <c>--memory</c> option to docker run.
+        /// conainer create command and the <c>--memory</c> option to docker run.
         /// </para>
         ///  
         /// <para>
@@ -876,7 +876,7 @@ namespace Amazon.ECS.Model
         /// limit. However, your container can consume more memory when it needs to, up to either
         /// the hard limit specified with the <c>memory</c> parameter (if applicable), or all
         /// of the available memory on the container instance, whichever comes first. This parameter
-        /// maps to <c>MemoryReservation</c> in the the docker create-container command and the
+        /// maps to <c>MemoryReservation</c> in the the docker conainer create command and the
         /// <c>--memory-reservation</c> option to docker run.
         /// </para>
         ///  
@@ -927,7 +927,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <c>Volumes</c> in the the docker create-container command and
+        /// This parameter maps to <c>Volumes</c> in the the docker conainer create command and
         /// the <c>--volume</c> option to docker run.
         /// </para>
         ///  
@@ -956,7 +956,7 @@ namespace Amazon.ECS.Model
         /// definition, the <c>name</c> of one container can be entered in the <c>links</c> of
         /// another container to connect the containers. Up to 255 letters (uppercase and lowercase),
         /// numbers, underscores, and hyphens are allowed. This parameter maps to <c>name</c>
-        /// in tthe docker create-container command and the <c>--name</c> option to docker run.
+        /// in tthe docker conainer create command and the <c>--name</c> option to docker run.
         /// 
         /// </para>
         /// </summary>
@@ -991,7 +991,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <c>PortBindings</c> in the the docker create-container command
+        /// This parameter maps to <c>PortBindings</c> in the the docker conainer create command
         /// and the <c>--publish</c> option to docker run. If the network mode of a task definition
         /// is set to <c>none</c>, then you can't specify port mappings. If the network mode of
         /// a task definition is set to <c>host</c>, then host ports must either be undefined
@@ -1002,7 +1002,8 @@ namespace Amazon.ECS.Model
         /// After a task reaches the <c>RUNNING</c> status, manual and automatic host and container
         /// port assignments are visible in the <b>Network Bindings</b> section of a container
         /// description for a selected task in the Amazon ECS console. The assignments are also
-        /// visible in the <c>networkBindings</c> section <a>DescribeTasks</a> responses.
+        /// visible in the <c>networkBindings</c> section <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>
+        /// responses.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1023,7 +1024,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// When this parameter is true, the container is given elevated privileges on the host
         /// container instance (similar to the <c>root</c> user). This parameter maps to <c>Privileged</c>
-        /// in the the docker create-container command and the <c>--privileged</c> option to docker
+        /// in the the docker conainer create command and the <c>--privileged</c> option to docker
         /// run
         /// </para>
         ///  <note> 
@@ -1048,7 +1049,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PseudoTerminal. 
         /// <para>
         /// When this parameter is <c>true</c>, a TTY is allocated. This parameter maps to <c>Tty</c>
-        /// in tthe docker create-container command and the <c>--tty</c> option to docker run.
+        /// in tthe docker conainer create command and the <c>--tty</c> option to docker run.
         /// </para>
         /// </summary>
         public bool PseudoTerminal
@@ -1067,7 +1068,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ReadonlyRootFilesystem. 
         /// <para>
         /// When this parameter is true, the container is given read-only access to its root file
-        /// system. This parameter maps to <c>ReadonlyRootfs</c> in the docker create-container
+        /// system. This parameter maps to <c>ReadonlyRootfs</c> in the docker conainer create
         /// command and the <c>--read-only</c> option to docker run.
         /// </para>
         ///  <note> 
@@ -1289,9 +1290,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property SystemControls. 
         /// <para>
         /// A list of namespaced kernel parameters to set in the container. This parameter maps
-        /// to <c>Sysctls</c> in tthe docker create-container command and the <c>--sysctl</c>
-        /// option to docker run. For example, you can configure <c>net.ipv4.tcp_keepalive_time</c>
-        /// setting to maintain longer lived connections.
+        /// to <c>Sysctls</c> in tthe docker conainer create command and the <c>--sysctl</c> option
+        /// to docker run. For example, you can configure <c>net.ipv4.tcp_keepalive_time</c> setting
+        /// to maintain longer lived connections.
         /// </para>
         /// </summary>
         public List<SystemControl> SystemControls
@@ -1311,9 +1312,9 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A list of <c>ulimits</c> to set in the container. If a <c>ulimit</c> value is specified
         /// in a task definition, it overrides the default values set by Docker. This parameter
-        /// maps to <c>Ulimits</c> in tthe docker create-container command and the <c>--ulimit</c>
-        /// option to docker run. Valid naming values are displayed in the <a>Ulimit</a> data
-        /// type.
+        /// maps to <c>Ulimits</c> in tthe docker conainer create command and the <c>--ulimit</c>
+        /// option to docker run. Valid naming values are displayed in the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Ulimit.html">Ulimit</a>
+        /// data type.
         /// </para>
         ///  
         /// <para>
@@ -1352,7 +1353,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property User. 
         /// <para>
         /// The user to use inside the container. This parameter maps to <c>User</c> in the docker
-        /// create-container command and the <c>--user</c> option to docker run.
+        /// conainer create command and the <c>--user</c> option to docker run.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1410,7 +1411,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property VolumesFrom. 
         /// <para>
         /// Data volumes to mount from another container. This parameter maps to <c>VolumesFrom</c>
-        /// in tthe docker create-container command and the <c>--volumes-from</c> option to docker
+        /// in tthe docker conainer create command and the <c>--volumes-from</c> option to docker
         /// run.
         /// </para>
         /// </summary>
@@ -1430,7 +1431,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property WorkingDirectory. 
         /// <para>
         /// The working directory to run commands inside the container in. This parameter maps
-        /// to <c>WorkingDir</c> in the docker create-container command and the <c>--workdir</c>
+        /// to <c>WorkingDir</c> in the docker conainer create command and the <c>--workdir</c>
         /// option to docker run.
         /// </para>
         /// </summary>

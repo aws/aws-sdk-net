@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Add. 
         /// <para>
         /// The Linux capabilities for the container that have been added to the default configuration
-        /// provided by Docker. This parameter maps to <c>CapAdd</c> in the docker create-container
+        /// provided by Docker. This parameter maps to <c>CapAdd</c> in the docker conainer create
         /// command and the <c>--cap-add</c> option to docker run.
         /// </para>
         ///  <note> 
@@ -78,7 +78,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Drop. 
         /// <para>
         /// The Linux capabilities for the container that have been removed from the default configuration
-        /// provided by Docker. This parameter maps to <c>CapDrop</c> in the docker create-container
+        /// provided by Docker. This parameter maps to <c>CapDrop</c> in the docker conainer create
         /// command and the <c>--cap-drop</c> option to docker run.
         /// </para>
         ///  

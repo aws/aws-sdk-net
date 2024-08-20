@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The log configuration for the container. This parameter maps to <c>LogConfig</c> in
-    /// the docker create-container command and the <c>--log-driver</c> option to docker run.
+    /// the docker conainer create command and the <c>--log-driver</c> option to docker run.
     /// 
     ///  
     /// <para>

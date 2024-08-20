@@ -42,7 +42,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Most fields of this parameter (<c>containerPort</c>, <c>hostPort</c>, <c>protocol</c>)
-    /// maps to <c>PortBindings</c> in the docker create-container command and the <c>--publish</c>
+    /// maps to <c>PortBindings</c> in the docker conainer create command and the <c>--publish</c>
     /// option to <c>docker run</c>. If the network mode of a task definition is set to <c>host</c>,
     /// host ports must either be undefined or match the container port in the port mapping.
     /// </para>
@@ -54,7 +54,7 @@ namespace Amazon.ECS.Model
     ///  </note> 
     /// <para>
     /// After a task reaches the <c>RUNNING</c> status, manual and automatic host and container
-    /// port assignments are visible in the <c>networkBindings</c> section of <a>DescribeTasks</a>
+    /// port assignments are visible in the <c>networkBindings</c> section of <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>
     /// API responses.
     /// </para>
     /// </summary>

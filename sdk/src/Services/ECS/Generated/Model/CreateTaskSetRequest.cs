@@ -73,7 +73,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A capacity provider strategy consists of one or more capacity providers along with
         /// the <c>base</c> and <c>weight</c> to assign to them. A capacity provider must be associated
-        /// with the cluster to be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a>
+        /// with the cluster to be used in a capacity provider strategy. The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
         /// API is used to associate a capacity provider with a cluster. Only capacity providers
         /// with an <c>ACTIVE</c> or <c>UPDATING</c> status can be used.
         /// </para>
@@ -86,8 +86,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a>
-        /// API operation.
+        /// must already be created. New capacity providers can be created with the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProviderProvider.html">CreateCapacityProviderProvider</a>API
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -97,8 +97,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a>PutClusterCapacityProviders</a> API operation is used to update the list of
-        /// available capacity providers for a cluster after the cluster is created.
+        /// The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
+        /// API operation is used to update the list of available capacity providers for a cluster
+        /// after the cluster is created.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy

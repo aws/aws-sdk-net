@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
+    /// Alternatively, you can use <c>StartTask</c> to use your own scheduler or place tasks
     /// manually on specific container instances.
     /// </para>
     ///  
@@ -437,7 +437,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Specifies whether to propagate the tags from the task definition to the task. If no
         /// value is specified, the tags aren't propagated. Tags can only be propagated to the
-        /// task during task creation. To add tags to a task after task creation, use the <a>TagResource</a>
+        /// task during task creation. To add tags to a task after task creation, use the<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
         /// API action.
         /// </para>
         ///  <note> 

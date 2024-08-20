@@ -73,7 +73,7 @@ namespace Amazon.ECS.Model
         /// the Docker plugin CLI, use <c>docker plugin ls</c> to retrieve the driver name from
         /// your container instance. If the driver was installed using another method, use Docker
         /// plugin discovery to retrieve the driver name. This parameter maps to <c>Driver</c>
-        /// in the docker create-container command and the <c>xxdriver</c> option to docker volume
+        /// in the docker conainer create command and the <c>xxdriver</c> option to docker volume
         /// create.
         /// </para>
         /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Labels. 
         /// <para>
         /// Custom metadata to add to your Docker volume. This parameter maps to <c>Labels</c>
-        /// in the docker create-container command and the <c>xxlabel</c> option to docker volume
+        /// in the docker conainer create command and the <c>xxlabel</c> option to docker volume
         /// create.
         /// </para>
         /// </summary>
