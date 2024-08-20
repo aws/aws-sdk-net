@@ -543,7 +543,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyResourceIdentifier.Resource</property>
-    <pattern>^index/[a-z][a-z0-9-]{3,32}/([a-z;0-9&amp;$%][+.~=\-_a-z;0-9&amp;$%]*|\*)$</pattern>
+    <pattern>^index/[a-z][a-z0-9-]{3,32}/([a-z;0-9&amp;$%][+.~=\-_a-z;0-9&amp;$%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicySummary.Description</property>
