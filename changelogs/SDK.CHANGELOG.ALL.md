@@ -1,7 +1,37 @@
 ### 4.0.0.0-preview (2024-08-15 14:46 UTC)
+
+* AWSSDK.Extensions.NETCore.Setup (4.0.0.0)
+    * `DefaultClientConfig` in `AWSSDK.Extensions.NETCore.Setup` no longer extends from service client config base class `ClientConfig`. The service client config properties have been replicated on `DefaultClientConfig` using nullable value types to allow detecting when a value has been set on `DefaultClientConfig` when copying the values to the service client config being created for the service client.
+	* Package has been marked as trim safe for Native AOT compilation.
+	* Intellisense supported added for editing appsettings.json file.
+* DynamoDBv2 (4.0.0.0)
+    * In DynamoDB's high-level programming model, initializing the `Table` with a mocked `IAmazonDynamoDB` now returns an `InvalidOperationException` instead of a `NullReferenceException` . Async `Table` methods should now work with a mocked client but you may still see exceptions when calling sync methods from .NET/Core/Standard. See [PR #3388](https://github.com/aws/aws-sdk-net/pull/3388), this mostly addresses #1589.
+	* In DynamoDB's object persistence programming model, we've separated the shared `DynamoDBOperationConfig` into new operation-specific objects (`SaveConfig`, `LoadConfig`, `QueryConfig`, etc.). The shared config has grown overtime, and contains properties that don't apply to every operation which can lead to confusion. we've marked the methods that take `DynamoDBOperationConfig` as obsolete. We won't remove them from V4 yet, though may do so in a future version. See [PR #3421](https://github.com/aws/aws-sdk-net/pull/3421)
+	* In DynamoDB's object persistence programming model, we've removed `MetadataCachingMode` and `DisableFetchingTableMetadata` from `DynamoDBOperationConfig`, and did not include these on the new operation-specific configs that were introduced above. These are table-level settings that should be specified on the global `AWSConfigsDynamoDB.Context` or on `DynamoDBContextConfig`. See [PR #3422](https://github.com/aws/aws-sdk-net/pull/3422)
+	* In DynamoDB's object persistence programming model, `DynamoDBOperationConfig` no longer inherits from `DynamoDBContextConfig`. This prevents you from passing a `DynamoDBOperationConfig` in to the constructor for `DynamoDBContext`, where some properties on the operation-specific config (such as `OverrideTableName`) do not apply. See [PR #3422](https://github.com/aws/aws-sdk-net/pull/3422)
+* S3 (4.0.0.0)
+    * S3 service clients configured for `us-east-1` will no longer be able to access buckets in other regions. Buckets musts be accessed with S3 service clients configured for the region the bucket is in. This change avoids surprises in applications using the S3 service client when under the covers it makes multiple AWS requests to access buckets that are not in service clients configured `us-east-1` region.
+	* The S3 encryption client has been removed from the `AWSSDK.S3` package. This client had been marked as obsolete with the encryption client moved to its separate package `Amazon.Extensions.S3.Encryption` package. The following migration guide to transition to the separate package. https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/s3-encryption-migration.html 
 * Core 4.0.0.0
-	* 4.0.0.0 Preview Release
-	* All services packages updated to require new Core
+	* Remove .NET Framework target 3.5
+	* Update .NET Framework 4.5 target to 4.7.2
+	* Properties using value types on classes used for making requests and responses have been changed to use nullable value types. Essentially properties of type `bool` are changed to `bool?`.
+	* Properties using collections on classes used for making requests and responses will now default to `null`. The V3 behavior of initializing collections can be restored by setting the `Amazon.AWSConfigs.InitializeCollections` to `true`. This property also exists in V3 for users that want to try this behavior change before upgrading to V4.
+	* The IAM action identifiers have been removed from the `Amazon.Auth.AccessControlPolicy.ActionIdentifiers` namespace. These identifiers were previously marked as obsolete due to be being out of date with no mechanism to keep them up to date. Code using these `ActionIdentifiers` should be upgrade to use the string value of the IAM action name.
+	* The `DetermineServiceURL` method on the `ClientConfig`, the base class of service client configs like `AmazonS3Config`, was removed. This had been marked obsolete and was tied to an internal endpoint resolution system that was removed in V4. Application code calling this method should switch to using the `DetermineServiceOperationEndpoint` method on the service client.
+	* When using credential providers that rely on Amazon Security Token Service (STS) the calls will always use the regional endpoint. V3 by default used `us-east-1` regardless of the configured region when running in the public partition. As part of this change the `StsRegionalEndpointsValue` enum was removed. Any code using that enum should be removed.
+	* On service client configs the `RetryMode` defaults to `Standard` instead of `Legacy`. The `Legacy` enum value was removed.
+	* On service client configs the `DefaultConfigurationMode` defaults to `Standard` instead of `Legacy`. The `Legacy` enum value was removed.
+	* The System.Buffers, System.Memory and System.Text.Json packages have been added as dependencies for the .NET Framework and .NET Standard targets.
+	* The embedded `endpoints.json` file in AWSSDK.Core was removed. This was a 1 MB json file that was parsed at startup for the SDK to determine the service endpoint for a region. Endpoint resolution has been replaced with a new system that generates rules into each individual service assembly for determining the service endpoints.
+	* Community [PR #3359](https://github.com/aws/aws-sdk-net/pull/3359) Optimize GetExtension execution time on .NET 8. Thanks [Steven Weerdenburg](https://github.com/stevenaw)
+    * Community [PR #3293](https://github.com/aws/aws-sdk-net/pull/3293) improving `AWSSDK.ToHex` performance. Thanks [Steven Weerdenburg](https://github.com/stevenaw)
+    * Community [PR #3292](https://github.com/aws/aws-sdk-net/pull/3292) improving `AWSSDK.CopyTo` performance. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3324](https://github.com/aws/aws-sdk-net/pull/3324) optimizing the AWS SigV4 signer. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3363](https://github.com/aws/aws-sdk-net/pull/3363) improving `AWSSDKUtils.ParameterAsString` performance. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3365](https://github.com/aws/aws-sdk-net/pull/3365) improving `AWSSDKUtils.DetermineService` performance. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3307](https://github.com/aws/aws-sdk-net/pull/3307) Optimizing `AWSSDKUtils.UrlEncode` performance. Thanks [Daniel Marbach](https://github.com/danielmarbach)
+    * Community [PR #3425](https://github.com/aws/aws-sdk-net/pull/3425) Avoid allocating byte[] when converting MemoryStream to String. Thanks [Paulo Morgado](https://github.com/paulomorgado)
 
 ### 3.7.857.0 (2024-08-02 18:27 UTC)
 * CloudWatch (3.7.401.0)
