@@ -650,7 +650,7 @@ namespace Amazon.S3.Util
         {
             try
             {
-                await s3Client.GetACLAsync(bucketName).ConfigureAwait(false);
+                await s3Client.GetBucketAclAsync(new GetBucketAclRequest() { BucketName = bucketName}).ConfigureAwait(false);
             }
             catch (AmazonS3Exception e)
             {

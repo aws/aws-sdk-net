@@ -96,11 +96,26 @@ namespace <#=Config.Namespace#>.Internal
             }
 
 <#}#>
+<#
+            // GetACL and PutACL are deprecated in V4 and may be removed in the future
+#>
 <#if (Config.ClassName == "S3") {#>
             // Special handling of GetPreSignedUrlRequest
             if (requestContext.Request.RequestName == "GetPreSignedUrlRequest")
             {
                 var request = (GetPreSignedUrlRequest)requestContext.Request.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "GetACLRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (GetACLRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "PutACLRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (PutACLRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }

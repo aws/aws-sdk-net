@@ -46,19 +46,17 @@ namespace Amazon.S3.Internal
         {
             get
             {
-                return new System.Collections.Generic.Dictionary<string, string>(15)
+                return new System.Collections.Generic.Dictionary<string, string>(13)
                 {
                     {"PutBucket", "CreateBucket"},
                     {"InitiateMultipartUpload", "CreateMultipartUpload"},
                     {"DeleteCORSConfiguration", "DeleteBucketCors"},
                     {"DeleteLifecycleConfiguration", "DeleteBucketLifecycle"},
-                    {"GetACL", "GetBucketAcl"},
                     {"GetCORSConfiguration", "GetBucketCors"},
                     {"GetLifecycleConfiguration", "GetBucketLifecycleConfiguration"},
                     {"GetBucketNotification", "GetBucketNotificationConfiguration"},
                     {"GetObjectMetadata", "HeadObject"},
                     {"ListVersions", "ListObjectVersions"},
-                    {"PutACL", "PutBucketAcl"},
                     {"PutCORSConfiguration", "PutBucketCors"},
                     {"PutLifecycleConfiguration", "PutBucketLifecycleConfiguration"},
                     {"PutBucketNotification", "PutBucketNotificationConfiguration"},

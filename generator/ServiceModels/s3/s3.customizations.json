@@ -237,14 +237,8 @@
         "DeleteBucketLifecycle": {
             "name": "DeleteLifecycleConfiguration"
         },
-        "GetBucketAcl": {
-            "name": "GetACL"
-        },
         "GetBucketCors": {
             "name": "GetCORSConfiguration"
-        },
-        "GetObjectAcl": {
-            "exclude": true
         },
         "HeadBucket": {
             "internal": true
@@ -255,14 +249,8 @@
         "ListObjectVersions": {
             "name": "ListVersions"
         },
-        "PutBucketAcl": {
-            "name": "PutACL"
-        },
         "PutBucketCors": {
             "name": "PutCORSConfiguration"
-        },
-        "PutObjectAcl": {
-            "exclude": true
         },
         "UploadPartCopy": {
             "name": "CopyPart"
