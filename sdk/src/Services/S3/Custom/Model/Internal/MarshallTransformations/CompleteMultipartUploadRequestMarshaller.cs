@@ -71,6 +71,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (completeMultipartUploadRequest.IsSetSSECustomerKeyMD5())
                 request.Headers["x-amz-server-side-encryption-customer-key-MD5"] = completeMultipartUploadRequest.SSECustomerKeyMD5;
 
+            if (completeMultipartUploadRequest.IsSetIfNoneMatch())
+                request.Headers["If-None-Match"] = completeMultipartUploadRequest.IfNoneMatch;
+
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "CompleteMultipartUploadRequest.BucketName");
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.Key))

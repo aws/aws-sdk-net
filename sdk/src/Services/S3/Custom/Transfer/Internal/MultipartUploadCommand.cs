@@ -172,7 +172,8 @@ namespace Amazon.S3.Transfer.Internal
             {
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
-                UploadId = initResponse.UploadId
+                UploadId = initResponse.UploadId,
+                IfNoneMatch = this._fileTransporterRequest.IfNoneMatch                
             };
 
             if(this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != null 
