@@ -18,6 +18,7 @@
  */
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.ManagedBlockchain.Endpoints;
 using Amazon.ManagedBlockchain.Internal;

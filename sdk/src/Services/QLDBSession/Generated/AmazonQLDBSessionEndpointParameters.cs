@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the qldb-session-2019-07-11.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

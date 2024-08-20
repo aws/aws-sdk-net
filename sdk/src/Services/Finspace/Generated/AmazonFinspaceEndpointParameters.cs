@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the finspace-2021-03-12.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

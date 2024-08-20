@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the dax-2017-04-19.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

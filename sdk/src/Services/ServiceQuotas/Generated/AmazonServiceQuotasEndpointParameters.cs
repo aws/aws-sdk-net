@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the service-quotas-2019-06-24.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the chime-sdk-identity-2021-04-20.normal.json service model.
  */
 
+using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 
