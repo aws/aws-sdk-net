@@ -1,3 +1,14 @@
+### 3.7.869.0 (2024-08-20 18:29 UTC)
+* ECS (3.7.402.3)
+	* Documentation only release to address various tickets
+* OpenSearchServerless (3.7.401.0)
+	* Added FailureCode and FailureMessage to BatchGetCollectionResponse for BatchGetVPCEResponse for non-Active Collection and VPCE.
+* S3 (3.7.402.0)
+	* Amazon Simple Storage Service / Features : Add support for conditional writes for PutObject and CompleteMultipartUpload APIs.
+* Core 3.7.400.9
+	* Support stringArray and OperationContextParams in Endpoint rules
+	* All services packages updated to require new Core
+
 ### 3.7.868.0 (2024-08-19 18:18 UTC)
 * Bedrock (3.7.402.0)
 	* Amazon Bedrock Batch Inference/ Model Invocation is a feature which allows customers to asynchronously run inference on a large set of records/files stored in S3.

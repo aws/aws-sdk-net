@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Support stringArray and OperationContextParams in Endpoint rules"
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}
