@@ -66,7 +66,7 @@ namespace Amazon.EntityResolution.Model
         /// that Entity Resolution uses for matching.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=25)]
+        [AWSProperty(Required=true, Min=2, Max=35)]
         public List<SchemaInputAttribute> MappedInputFields
         {
             get { return this._mappedInputFields; }
