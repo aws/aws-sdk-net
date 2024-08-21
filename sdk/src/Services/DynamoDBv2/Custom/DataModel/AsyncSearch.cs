@@ -13,18 +13,38 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
+    /// Interface retrieving search results (Query or Scan)
+    /// from DynamoDB.
+    /// </summary>
+    public partial interface IAsyncSearch<T>
+    {
+        /// <summary>
+        /// Flag that, if true, indicates that the search is done
+        /// </summary>
+        bool IsDone { get; }
+
+        /// <summary>
+        /// Pagination token corresponding to the item where the search operation stopped,
+        /// inclusive of the previous result set. Use this value to start a new
+        /// operation to resume search from the next item.
+        /// </summary>
+        string PaginationToken { get; }
+    }
+
+    /// <summary>
     /// A strongly-typed object for retrieving search results (Query or Scan)
     /// from DynamoDB.
     /// </summary>
-    public partial class AsyncSearch<T>
+    public partial class AsyncSearch<T> : IAsyncSearch<T>
     {
-        #region Constructor
+        private Search _documentSearch { get; set; }
+        private DynamoDBContext _sourceContext { get; set; }
+        private DynamoDBFlatConfig _config { get; set; }
 
         /// <summary>
         /// This constructor is used for mocking. Users that want to mock AsyncSearch can create a subclass of AsyncSearch and make a public parameterless constructor.
@@ -36,47 +56,27 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal AsyncSearch(DynamoDBContext source, DynamoDBContext.ContextSearch contextSearch)
         {
-            SourceContext = source;
-            DocumentSearch = contextSearch.Search;
-            Config = contextSearch.FlatConfig;
+            _sourceContext = source;
+            _documentSearch = contextSearch.Search;
+            _config = contextSearch.FlatConfig;
         }
 
-        #endregion
-
-        #region Private members
-
-        private Search DocumentSearch { get; set; }
-        private DynamoDBContext SourceContext { get; set; }
-        private DynamoDBFlatConfig Config { get; set; }
-
-        #endregion
-
-        #region Public properties
-
-        /// <summary>
-        /// Flag that, if true, indicates that the search is done
-        /// </summary>
+        /// <inheritdoc/>
         public virtual bool IsDone
         {
             get
             {
-                return DocumentSearch.IsDone;
+                return _documentSearch.IsDone;
             }
         }
 
-        /// <summary>
-        /// Pagination token corresponding to the item where the search operation stopped,
-        /// inclusive of the previous result set. Use this value to start a new
-        /// operation to resume search from the next item.
-        /// </summary>
+        /// <inheritdoc/>
         public virtual string PaginationToken
         {
             get
             {
-                return DocumentSearch.PaginationToken;
+                return _documentSearch.PaginationToken;
             }
         }
-
-        #endregion
     }
 }

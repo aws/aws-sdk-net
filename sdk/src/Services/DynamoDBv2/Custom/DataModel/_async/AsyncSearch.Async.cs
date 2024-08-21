@@ -18,21 +18,10 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-using Amazon.Runtime.Internal;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.DataModel;
-
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// A strongly-typed object for retrieving search results (Query or Scan)
-    /// from DynamoDB.
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public partial class AsyncSearch<T>
+    public partial interface IAsyncSearch<T>
     {
-        #region Async public
-
         /// <summary>
         /// Initiates the asynchronous execution to get the next set of results from DynamoDB.
         /// 
@@ -45,12 +34,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// A Task that can be used to poll or wait for results, or both.
         /// Results will include the next set of result items from DynamoDB.
         /// </returns>
-        public virtual async Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var documents = await DocumentSearch.GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
-            List<T> items = SourceContext.FromDocumentsHelper<T>(documents, this.Config).ToList();
-            return items;
-        }
+        Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution to get all the remaining results from DynamoDB.
@@ -60,13 +44,25 @@ namespace Amazon.DynamoDBv2.DataModel
         /// A Task that can be used to poll or wait for results, or both.
         /// Results will include the remaining result items from DynamoDB.
         /// </returns>
-        public virtual async Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
+        Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class AsyncSearch<T> : IAsyncSearch<T>
+    {
+        /// <inheritdoc/>
+        public virtual async Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var documents = await DocumentSearch.GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
-            List<T> items = SourceContext.FromDocumentsHelper<T>(documents, this.Config).ToList();
+            var documents = await _documentSearch.GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
+            List<T> items = _sourceContext.FromDocumentsHelper<T>(documents, this._config).ToList();
             return items;
         }
 
-        #endregion
+        /// <inheritdoc/>
+        public virtual async Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var documents = await _documentSearch.GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
+            List<T> items = _sourceContext.FromDocumentsHelper<T>(documents, this._config).ToList();
+            return items;
+        }
     }
 }
