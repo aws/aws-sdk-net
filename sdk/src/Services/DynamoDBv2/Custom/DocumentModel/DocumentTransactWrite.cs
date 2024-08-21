@@ -607,7 +607,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             try
             {
                 GetMultiTransactWrite().WriteItems();
-                var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactWrite)}";
+                var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
                 docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
             }
             finally
@@ -627,7 +627,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             try
             {
                 await GetMultiTransactWrite().WriteItemsAsync(cancellationToken).ConfigureAwait(false);
-                var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactWrite)}";
+                var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
                 docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
             }
             finally
@@ -643,7 +643,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private MultiTransactWrite GetMultiTransactWrite()
         {
-            var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactWrite)}";
+            var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
             return new MultiTransactWrite
             {
                 Items = TransactionParts.SelectMany(x =>
