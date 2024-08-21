@@ -73,9 +73,29 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The modify ASN operation is not allowed on a transit gateway with active BGP sessions.
-        /// You must first delete all transit gateway attachments that have BGP configured prior
-        /// to modifying the ASN on the transit gateway.
+        /// The modify ASN operation is not allowed on a transit gateway if it has the following
+        /// attachments:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Dynamic VPN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Static VPN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Direct Connect Gateway
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Connect
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You must first delete all transit gateway attachments configured prior to modifying
+        /// the ASN on the transit gateway.
         /// </para>
         /// </summary>
         public long AmazonSideAsn

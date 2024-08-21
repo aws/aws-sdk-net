@@ -144,6 +144,12 @@ namespace Amazon.EC2.Model
         ///  <c>system-status.status</c> - The system status of the instance (<c>ok</c> | <c>impaired</c>
         /// | <c>initializing</c> | <c>insufficient-data</c> | <c>not-applicable</c>).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>attached-ebs-status.status</c> - The status of the attached EBS volume for the
+        /// instance (<c>ok</c> | <c>impaired</c> | <c>initializing</c> | <c>insufficient-data</c>
+        /// | <c>not-applicable</c>).
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
