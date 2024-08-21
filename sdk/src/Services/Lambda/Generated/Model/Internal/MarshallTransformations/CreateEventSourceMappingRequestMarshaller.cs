@@ -152,6 +152,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetKMSKeyArn())
+                {
+                    context.Writer.WritePropertyName("KMSKeyArn");
+                    context.Writer.Write(publicRequest.KMSKeyArn);
+                }
+
                 if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
                 {
                     context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");

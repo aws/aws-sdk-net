@@ -157,6 +157,7 @@ namespace Amazon.Lambda.Model
         private FilterCriteria _filterCriteria;
         private string _functionName;
         private List<string> _functionResponseTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _kmsKeyArn;
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
@@ -379,6 +380,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionResponseTypes()
         {
             return this._functionResponseTypes != null && (this._functionResponseTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        ///  The ARN of the Key Management Service (KMS) customer managed key that Lambda uses
+        /// to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics">filter
+        /// criteria</a>. By default, Lambda does not encrypt your filter criteria object. Specify
+        /// this property to encrypt data using your own customer managed key. 
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

@@ -35,8 +35,8 @@ namespace Amazon.Lambda.Model
     /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
     /// role</a>. The deployment package is a .zip file archive or container image that contains
     /// your function code. The execution role grants the function permission to use Amazon
-    /// Web Services, such as Amazon CloudWatch Logs for log streaming and X-Ray for request
-    /// tracing.
+    /// Web Servicesservices, such as Amazon CloudWatch Logs for log streaming and X-Ray for
+    /// request tracing.
     /// 
     ///  
     /// <para>
@@ -91,15 +91,15 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// If another Amazon Web Services account or an Amazon Web Service invokes your function,
-    /// use <a>AddPermission</a> to grant permission by creating a resource-based Identity
-    /// and Access Management (IAM) policy. You can grant permissions at the function level,
-    /// on a version, or on an alias.
+    /// If another Amazon Web Services account or an Amazon Web Servicesservice invokes your
+    /// function, use <a>AddPermission</a> to grant permission by creating a resource-based
+    /// Identity and Access Management (IAM) policy. You can grant permissions at the function
+    /// level, on a version, or on an alias.
     /// </para>
     ///  
     /// <para>
     /// To invoke your function directly, use <a>Invoke</a>. To invoke your function in response
-    /// to events in other Amazon Web Services, create an event source mapping (<a>CreateEventSourceMapping</a>),
+    /// to events in other Amazon Web Servicesservices, create an event source mapping (<a>CreateEventSourceMapping</a>),
     /// or configure a function trigger in the other service. For more information, see <a
     /// href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
     /// Lambda functions</a>.
