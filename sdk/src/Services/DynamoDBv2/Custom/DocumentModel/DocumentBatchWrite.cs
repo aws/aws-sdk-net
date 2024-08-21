@@ -15,21 +15,68 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
+    /// Interface for putting and/or deleting a batch of items in a single DynamoDB table.
+    /// </summary>
+    public partial interface IDocumentBatchWrite
+    {
+        /// <summary>
+        /// Add a single item to delete, identified by its hash primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the item to delete.</param>
+        void AddKeyToDelete(Primitive hashKey);
+
+        /// <summary>
+        /// Add a single item to delete, identified by its hash-and-range primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the item to delete.</param>
+        /// <param name="rangeKey">Range key element of the item to delete.</param>
+        void AddKeyToDelete(Primitive hashKey, Primitive rangeKey);
+
+        /// <summary>
+        /// Add a single item to delete, identified by its key.
+        /// </summary>
+        /// <param name="key">Key of the item to delete.</param>
+        void AddKeyToDelete(IDictionary<string, DynamoDBEntry> key);
+
+        /// <summary>
+        /// Add a single item to delete, identified by a Document object.
+        /// </summary>
+        /// <param name="document">Document representing the item to be deleted.</param>
+        public void AddItemToDelete(Document document);
+
+        /// <summary>
+        /// Add a single Document to put.
+        /// </summary>
+        /// <param name="document">Document to put.</param>
+        void AddDocumentToPut(Document document);
+
+        /// <summary>
+        /// Creates a MultiTableDocumentBatchWrite object that is a combination
+        /// of the current DocumentBatchWrite and the specified DocumentBatchWrite.
+        /// </summary>
+        /// <param name="otherBatch">Other DocumentBatchWrite object.</param>
+        /// <returns>
+        /// MultiTableDocumentBatchWrite consisting of the two DocumentBatchWrite
+        /// objects.
+        /// </returns>
+        IMultiTableDocumentBatchWrite Combine(IDocumentBatchWrite otherBatch);
+    }
+
+    /// <summary>
     /// Class for putting and/or deleting a batch of items in a single DynamoDB table.
     /// </summary>
-    public partial class DocumentBatchWrite
+    public partial class DocumentBatchWrite : IDocumentBatchWrite
     {
         #region Internal properties
 
@@ -58,38 +105,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public Delete methods
 
-        /// <summary>
-        /// Add a single item to delete, identified by its hash primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the item to delete.</param>
+        /// <inheritdoc/>
         public void AddKeyToDelete(Primitive hashKey)
         {
             AddKeyToDelete(hashKey, null);
         }
 
-        /// <summary>
-        /// Add a single item to delete, identified by its hash-and-range primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the item to delete.</param>
-        /// <param name="rangeKey">Range key element of the item to delete.</param>
+        /// <inheritdoc/>
         public void AddKeyToDelete(Primitive hashKey, Primitive rangeKey)
         {
             AddKeyToDelete(TargetTable.MakeKey(hashKey, rangeKey));
         }
 
-        /// <summary>
-        /// Add a single item to delete, identified by its key.
-        /// </summary>
-        /// <param name="key">Key of the item to delete.</param>
+        /// <inheritdoc/>
         public void AddKeyToDelete(IDictionary<string, DynamoDBEntry> key)
         {
             AddKeyToDelete(TargetTable.MakeKey(key));
         }
 
-        /// <summary>
-        /// Add a single item to delete, identified by a Document object.
-        /// </summary>
-        /// <param name="document">Document representing the item to be deleted.</param>
+        /// <inheritdoc/>
         public void AddItemToDelete(Document document)
         {
             AddKeyToDelete(TargetTable.MakeKey(document));
@@ -100,10 +134,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public Put methods
 
-        /// <summary>
-        /// Add a single Document to put.
-        /// </summary>
-        /// <param name="document">Document to put.</param>
+        /// <inheritdoc/>
         public void AddDocumentToPut(Document document)
         {
             ToPut.Add(document);
@@ -114,16 +145,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        /// <summary>
-        /// Creates a MultiTableDocumentBatchWrite object that is a combination
-        /// of the current DocumentBatchWrite and the specified DocumentBatchWrite.
-        /// </summary>
-        /// <param name="otherBatch">Other DocumentBatchWrite object.</param>
-        /// <returns>
-        /// MultiTableDocumentBatchWrite consisting of the two DocumentBatchWrite
-        /// objects.
-        /// </returns>
-        public MultiTableDocumentBatchWrite Combine(DocumentBatchWrite otherBatch)
+        /// <inheritdoc/>
+        public IMultiTableDocumentBatchWrite Combine(IDocumentBatchWrite otherBatch)
         {
             return new MultiTableDocumentBatchWrite(this, otherBatch);
         }
@@ -162,17 +185,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
-    /// Class for putting and/or deleting a batch of items in multiple DynamoDB tables.
+    /// Interface for putting and/or deleting a batch of items in multiple DynamoDB tables.
     /// </summary>
-    public partial class MultiTableDocumentBatchWrite
+    public partial interface IMultiTableDocumentBatchWrite
     {
-        #region Properties
-
         /// <summary>
         /// List of DocumentBatchWrite objects to include in the multi-table
         /// batch request.
         /// </summary>
-        public List<DocumentBatchWrite> Batches { get; private set; }
+        List<IDocumentBatchWrite> Batches { get; }
+
+        /// <summary>
+        /// Add a DocumentBatchWrite object to the multi-table batch request.
+        /// </summary>
+        /// <param name="batch">DocumentBatchWrite to add.</param>
+        void AddBatch(IDocumentBatchWrite batch);
+    }
+
+    /// <summary>
+    /// Class for putting and/or deleting a batch of items in multiple DynamoDB tables.
+    /// </summary>
+    public partial class MultiTableDocumentBatchWrite : IMultiTableDocumentBatchWrite
+    {
+        #region Properties
+
+        /// <inheritdoc/>
+        public List<IDocumentBatchWrite> Batches { get; private set; }
 
         #endregion
 
@@ -184,12 +222,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// DocumentBatchWrite objects.
         /// </summary>
         /// <param name="batches">Collection of DocumentBatchWrite objects.</param>
-        public MultiTableDocumentBatchWrite(params DocumentBatchWrite[] batches)
+        public MultiTableDocumentBatchWrite(params IDocumentBatchWrite[] batches)
         {
             if (batches == null)
                 throw new ArgumentNullException("batches");
 
-            Batches = new List<DocumentBatchWrite>(batches);
+            Batches = new List<IDocumentBatchWrite>(batches);
         }
 
         #endregion
@@ -197,11 +235,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        /// <summary>
-        /// Add a DocumentBatchWrite object to the multi-table batch request.
-        /// </summary>
-        /// <param name="batch">DocumentBatchWrite to add.</param>
-        public void AddBatch(DocumentBatchWrite batch)
+        /// <inheritdoc/>
+        public void AddBatch(IDocumentBatchWrite batch)
         {
             Batches.Add(batch);
         }
@@ -213,9 +248,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal void ExecuteHelper()
         {
+            var errMsg = $"All {nameof(IDocumentBatchWrite)} objects must be of type {nameof(DocumentBatchWrite)}";
             MultiBatchWrite multiBatchWrite = new MultiBatchWrite
             {
-                Batches = Batches
+                Batches = Batches.Select(x => x as DocumentBatchWrite ?? throw new InvalidOperationException(errMsg)).ToList()
             };
             multiBatchWrite.WriteItems();
         }
@@ -223,9 +259,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 #if AWS_ASYNC_API
         internal Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
+            var errMsg = $"All {nameof(IDocumentBatchWrite)} objects must be of type {nameof(DocumentBatchWrite)}";
             MultiBatchWrite multiBatchWrite = new MultiBatchWrite
             {
-                Batches = Batches
+                Batches = Batches.Select(x => x as DocumentBatchWrite ?? throw new InvalidOperationException(errMsg)).ToList()
             };
             return multiBatchWrite.WriteItemsAsync(cancellationToken);
         }

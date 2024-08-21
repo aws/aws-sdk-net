@@ -348,20 +348,20 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Table methods
 
         /// <inheritdoc/>
-        public Table GetTargetTable<T>()
+        public ITable GetTargetTable<T>()
         {
             return GetTargetTable<T>((GetTargetTableConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
-        public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
+        public ITable GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(operationConfig, Config));
         }
 
         /// <inheritdoc/>
-        public Table GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
+        public ITable GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(getTargetTableConfig?.ToDynamoDBOperationConfig(), Config));
         }

@@ -86,9 +86,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Clear tables
             CleanupTables();
 
-            Table hashTable;
-            Table hashRangeTable;
-            Table numericHashRangeTable;
+            ITable hashTable;
+            ITable hashRangeTable;
+            ITable numericHashRangeTable;
 
             // Load tables using provided conversion schema
             LoadTables(DynamoDBEntryConversion.V2, out hashTable, out hashRangeTable, out numericHashRangeTable);
