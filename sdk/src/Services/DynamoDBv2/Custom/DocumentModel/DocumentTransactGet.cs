@@ -27,7 +27,82 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Class for retrieving multiple Documents from a single DynamoDB table in a transaction.
     /// </summary>
-    public partial class DocumentTransactGet
+    public partial interface IDocumentTransactGet
+    {
+        /// <summary>
+        /// List of results retrieved from DynamoDB.
+        /// Populated after Execute is called.
+        /// </summary>
+        List<Document> Results { get; }
+
+        /// <summary>
+        /// Add a single item to get, identified by its hash primary key,
+        /// using the specified expression to identify the attributes to retrieve.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the item to get.</param>
+        /// <param name="projectionExpression">
+        /// An expression that identifies one or more attributes of the specified item to retrieve from the table.
+        /// </param>
+        void AddKey(Primitive hashKey, Expression projectionExpression);
+
+        /// <summary>
+        /// Add a single item to get, identified by its hash primary key, using the specified config.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the item to get.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKey(Primitive hashKey, TransactGetItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to get, identified by its hash-and-range primary key,
+        /// using the specified expression to identify the attributes to retrieve.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the item to get.</param>
+        /// <param name="rangeKey">Range key element of the item to get.</param>
+        /// <param name="projectionExpression">
+        /// An expression that identifies one or more attributes of the specified item to retrieve from the table.
+        /// </param>
+        void AddKey(Primitive hashKey, Primitive rangeKey, Expression projectionExpression);
+
+        /// <summary>
+        /// Add a single item to get, identified by its hash-and-range primary key, using the specified config.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the item to get.</param>
+        /// <param name="rangeKey">Range key element of the item to get.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKey(Primitive hashKey, Primitive rangeKey, TransactGetItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Add a single item to get, identified by its key,
+        /// using the specified expression to identify the attributes to retrieve.
+        /// </summary>
+        /// <param name="key">Key of the item to get.</param>
+        /// <param name="projectionExpression">
+        /// An expression that identifies one or more attributes of the specified item to retrieve from the table.
+        /// </param>
+        void AddKey(IDictionary<string, DynamoDBEntry> key, Expression projectionExpression);
+
+        /// <summary>
+        /// Add a single item to get, identified by its key, using the specified config.
+        /// </summary>
+        /// <param name="key">Key of the item to get.</param>
+        /// <param name="operationConfig">Configuration to use.</param>
+        void AddKey(IDictionary<string, DynamoDBEntry> key, TransactGetItemOperationConfig operationConfig = null);
+
+        /// <summary>
+        /// Creates a MultiTableDocumentTransactGet object that is a combination
+        /// of the current DocumentTransactGet and the specified DocumentTransactGet.
+        /// </summary>
+        /// <param name="otherTransactionPart">Other DocumentTransactGet object.</param>
+        /// <returns>
+        /// MultiTableDocumentTransactGet consisting of the two DocumentTransactGet objects.
+        /// </returns>
+        IMultiTableDocumentTransactGet Combine(IDocumentTransactGet otherTransactionPart);
+    }
+
+    /// <summary>
+    /// Class for retrieving multiple Documents from a single DynamoDB table in a transaction.
+    /// </summary>
+    public partial class DocumentTransactGet : IDocumentTransactGet
     {
         #region Internal properties
 
@@ -39,10 +114,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public properties
 
-        /// <summary>
-        /// List of results retrieved from DynamoDB.
-        /// Populated after Execute is called.
-        /// </summary>
+        /// <inheritdoc/>
         public List<Document> Results { get; internal set; }
 
         #endregion
@@ -65,86 +137,44 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        /// <summary>
-        /// Add a single item to get, identified by its hash primary key,
-        /// using the specified expression to identify the attributes to retrieve.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the item to get.</param>
-        /// <param name="projectionExpression">
-        /// An expression that identifies one or more attributes of the specified item to retrieve from the table.
-        /// </param>
+        /// <inheritdoc/>
         public void AddKey(Primitive hashKey, Expression projectionExpression)
         {
             AddKey(hashKey, new TransactGetItemOperationConfig { ProjectionExpression = projectionExpression });
         }
 
-        /// <summary>
-        /// Add a single item to get, identified by its hash primary key, using the specified config.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the item to get.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKey(Primitive hashKey, TransactGetItemOperationConfig operationConfig = null)
         {
             AddKey(hashKey, rangeKey: null, operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to get, identified by its hash-and-range primary key,
-        /// using the specified expression to identify the attributes to retrieve.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the item to get.</param>
-        /// <param name="rangeKey">Range key element of the item to get.</param>
-        /// <param name="projectionExpression">
-        /// An expression that identifies one or more attributes of the specified item to retrieve from the table.
-        /// </param>
+        /// <inheritdoc/>
         public void AddKey(Primitive hashKey, Primitive rangeKey, Expression projectionExpression)
         {
             AddKey(hashKey, rangeKey, new TransactGetItemOperationConfig { ProjectionExpression = projectionExpression });
         }
 
-        /// <summary>
-        /// Add a single item to get, identified by its hash-and-range primary key, using the specified config.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the item to get.</param>
-        /// <param name="rangeKey">Range key element of the item to get.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKey(Primitive hashKey, Primitive rangeKey, TransactGetItemOperationConfig operationConfig = null)
         {
             AddKeyHelper(TargetTable.MakeKey(hashKey, rangeKey), operationConfig);
         }
 
-        /// <summary>
-        /// Add a single item to get, identified by its key,
-        /// using the specified expression to identify the attributes to retrieve.
-        /// </summary>
-        /// <param name="key">Key of the item to get.</param>
-        /// <param name="projectionExpression">
-        /// An expression that identifies one or more attributes of the specified item to retrieve from the table.
-        /// </param>
+        /// <inheritdoc/>
         public void AddKey(IDictionary<string, DynamoDBEntry> key, Expression projectionExpression)
         {
             AddKey(key, new TransactGetItemOperationConfig { ProjectionExpression = projectionExpression });
         }
 
-        /// <summary>
-        /// Add a single item to get, identified by its key, using the specified config.
-        /// </summary>
-        /// <param name="key">Key of the item to get.</param>
-        /// <param name="operationConfig">Configuration to use.</param>
+        /// <inheritdoc/>
         public void AddKey(IDictionary<string, DynamoDBEntry> key, TransactGetItemOperationConfig operationConfig = null)
         {
             AddKeyHelper(TargetTable.MakeKey(key), operationConfig);
         }
 
-        /// <summary>
-        /// Creates a MultiTableDocumentTransactGet object that is a combination
-        /// of the current DocumentTransactGet and the specified DocumentTransactGet.
-        /// </summary>
-        /// <param name="otherTransactionPart">Other DocumentTransactGet object.</param>
-        /// <returns>
-        /// MultiTableDocumentTransactGet consisting of the two DocumentTransactGet objects.
-        /// </returns>
-        public MultiTableDocumentTransactGet Combine(DocumentTransactGet otherTransactionPart)
+        /// <inheritdoc/>
+        public IMultiTableDocumentTransactGet Combine(IDocumentTransactGet otherTransactionPart)
         {
             return new MultiTableDocumentTransactGet(this, otherTransactionPart);
         }
@@ -190,17 +220,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
-    /// Class for retrieving multiple Documents from multiple DynamoDB tables in a transaction.
+    /// Interface for retrieving multiple Documents from multiple DynamoDB tables in a transaction.
     /// </summary>
-    public partial class MultiTableDocumentTransactGet
+    public partial interface IMultiTableDocumentTransactGet
     {
-        #region Properties
-
         /// <summary>
         /// List of DocumentTransactGet objects to include in the multi-table
         /// transaction request.
         /// </summary>
-        public List<DocumentTransactGet> TransactionParts { get; private set; }
+        List<IDocumentTransactGet> TransactionParts { get; }
+
+        /// <summary>
+        /// Add a DocumentTransactGet object to the multi-table transaction request.
+        /// </summary>
+        /// <param name="transactionPart">DocumentTransactGet to add.</param>
+        void AddTransactionPart(IDocumentTransactGet transactionPart);
+    }
+
+    /// <summary>
+    /// Class for retrieving multiple Documents from multiple DynamoDB tables in a transaction.
+    /// </summary>
+    public partial class MultiTableDocumentTransactGet : IMultiTableDocumentTransactGet
+    {
+        #region Properties
+
+        /// <inheritdoc/>
+        public List<IDocumentTransactGet> TransactionParts { get; private set; }
 
         #endregion
 
@@ -212,12 +257,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// DocumentTransactGet objects.
         /// </summary>
         /// <param name="transactionParts">Collection of DocumentTransactGet objects.</param>
-        public MultiTableDocumentTransactGet(params DocumentTransactGet[] transactionParts)
+        public MultiTableDocumentTransactGet(params IDocumentTransactGet[] transactionParts)
         {
             if (transactionParts == null)
                 throw new ArgumentNullException(nameof(transactionParts));
 
-            TransactionParts = new List<DocumentTransactGet>(transactionParts);
+            TransactionParts = new List<IDocumentTransactGet>(transactionParts);
         }
 
         #endregion
@@ -225,11 +270,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        /// <summary>
-        /// Add a DocumentTransactGet object to the multi-table transaction request.
-        /// </summary>
-        /// <param name="transactionPart">DocumentTransactGet to add.</param>
-        public void AddTransactionPart(DocumentTransactGet transactionPart)
+        /// <inheritdoc/>
+        public void AddTransactionPart(IDocumentTransactGet transactionPart)
         {
             TransactionParts.Add(transactionPart);
         }
@@ -242,11 +284,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal void ExecuteHelper()
         {
             var items = GetMultiTransactGet().GetItems();
+            var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
 
             foreach (var transactionPart in TransactionParts)
             {
-                items.TryGetValue(transactionPart, out var results);
-                transactionPart.Results = results ?? new List<Document>();
+                var docTransactGet = transactionPart as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
+                items.TryGetValue(docTransactGet, out var results);
+                docTransactGet.Results = results ?? new List<Document>();
             }
         }
 
@@ -254,20 +298,27 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
+            var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
 
             foreach (var transactionPart in TransactionParts)
             {
-                items.TryGetValue(transactionPart, out var results);
-                transactionPart.Results = results ?? new List<Document>();
+                var docTransactGet = transactionPart as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
+                items.TryGetValue(docTransactGet, out var results);
+                docTransactGet.Results = results ?? new List<Document>();
             }
         }
 #endif
 
         private MultiTransactGet GetMultiTransactGet()
         {
+            var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
             return new MultiTransactGet
             {
-                Items = TransactionParts.SelectMany(x => x.Items).ToList()
+                Items = TransactionParts.SelectMany(x =>
+                {
+                    var docTransactGet = x as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
+                    return docTransactGet.Items;
+                }).ToList()
             };
         }
 

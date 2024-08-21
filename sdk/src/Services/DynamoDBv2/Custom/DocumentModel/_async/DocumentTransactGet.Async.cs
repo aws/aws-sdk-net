@@ -18,10 +18,7 @@ using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Class for retrieving multiple Documents from a single DynamoDB table in a transaction.
-    /// </summary>
-    public partial class DocumentTransactGet
+    public partial interface IDocumentTransactGet
     {
         #region Public methods
 
@@ -31,32 +28,37 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteHelperAsync(cancellationToken);
-        }
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
     }
 
-    /// <summary>
-    /// Class for retrieving multiple Documents from multiple DynamoDB tables in a transaction.
-    /// </summary>
-    public partial class MultiTableDocumentTransactGet
+    public partial class DocumentTransactGet : IDocumentTransactGet
     {
-        #region Public methods
+        /// <inheritdoc/>
+        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return ExecuteHelperAsync(cancellationToken);
+        }
+    }
 
+    public partial interface IMultiTableDocumentTransactGet
+    {
         /// <summary>
         /// Executes a multi-table transaction request against all configured DocumentTransactGet objects.
         /// Results are stored in the respective DocumentTransactGet objects.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class MultiTableDocumentTransactGet : IMultiTableDocumentTransactGet
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 }

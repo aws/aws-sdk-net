@@ -28,7 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public static Dictionary<string, AttributeValue> MakeKey<T>(this DynamoDBContext context, T item)
         {
             var doc = context.ToDocument(item);
-            var table = context.GetTargetTable<T>();
+            var table = context.GetTargetTable<T>() as Table;
             var key = table.MakeKey(doc);
             return key;
         }

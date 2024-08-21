@@ -31,13 +31,228 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
+    /// This represents the table interface when using the Document API. It is used to Get documents from the DynamoDB table
+    /// and write documents back to the DynamoDB table.
+    /// </summary>
+    public partial interface ITable
+    {
+        #region Public properties
+
+        /// <summary>
+        /// Name of the table.
+        /// </summary>
+        string TableName { get; }
+
+        /// <summary>
+        /// Keys of the table.
+        /// </summary>
+        Dictionary<string, KeyDescription> Keys { get; }
+
+        /// <summary>
+        /// Global secondary indexes of the table.
+        /// </summary>
+        Dictionary<string, GlobalSecondaryIndexDescription> GlobalSecondaryIndexes { get; }
+
+        /// <summary>
+        /// Local secondary indexes of the table.
+        /// </summary>
+        Dictionary<string, LocalSecondaryIndexDescription> LocalSecondaryIndexes { get; }
+
+        /// <summary>
+        /// Names of the local secondary indexes of the table.
+        /// </summary>
+        List<string> LocalSecondaryIndexNames { get; }
+
+        /// <summary>
+        /// Names of the global secondary indexes of the table.
+        /// </summary>
+        List<string> GlobalSecondaryIndexNames { get; }
+
+        /// <summary>
+        /// List of keys on the table marked HASH
+        /// </summary>
+        List<string> HashKeys { get; }
+
+        /// <summary>
+        /// List of keys on the table marked RANGE
+        /// </summary>
+        List<string> RangeKeys { get; }
+
+        /// <summary>
+        /// List of key attributes on the table.
+        /// </summary>
+        public List<AttributeDefinition> Attributes { get; set; }
+
+        #endregion
+
+        #region Conversion methods
+
+        /// <summary>
+        /// Creates a Document from an attribute map.
+        /// </summary>
+        /// <param name="data">Map of attribute names to attribute values.</param>
+        /// <returns>Document representing the data.</returns>
+        Document FromAttributeMap(Dictionary<string, AttributeValue> data);
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to AttributeValue objects.
+        /// Converts .NET types using the conversion specified in this Table.
+        /// </summary>
+        /// <returns></returns>
+        Dictionary<string, AttributeValue> ToAttributeMap(Document doc);
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to ExpectedAttributeValue objects.
+        /// </summary>
+        /// <returns></returns>
+        Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(Document doc);
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to AttributeValueUpdate objects.
+        /// </summary>
+        /// <param name="doc"></param>
+        /// <param name="changedAttributesOnly">If true, only attributes that have been changed will be in the map.</param>
+        /// <returns></returns>
+        Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly);
+
+
+        #endregion
+
+        #region Scan
+
+        /// <summary>
+        /// Initiates a Search object to Scan a DynamoDB table, with the
+        /// specified filter.
+        /// 
+        /// No calls are made until the Search object is used.
+        /// </summary>
+        /// <param name="filter">Filter to apply to the scan.</param>
+        /// <returns>Resultant Search container.</returns>
+        ISearch Scan(ScanFilter filter);
+
+        /// <summary>
+        /// Initiates a Search object to Scan a DynamoDB table, with the
+        /// specified expression.
+        /// 
+        /// No calls are made until the Search object is used.
+        /// </summary>
+        /// <param name="filterExpression">Expression to apply to the scan.</param>
+        /// <returns>Resultant Search container.</returns>
+        ISearch Scan(Expression filterExpression);
+
+
+        /// <summary>
+        /// Initiates a Search object to Scan a DynamoDB table, with the
+        /// specified config.
+        /// 
+        /// No calls are made until the Search object is used.
+        /// </summary>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>Resultant Search container.</returns>
+        ISearch Scan(ScanOperationConfig config);
+
+        #endregion
+
+        #region Query
+
+        /// <summary>
+        /// Initiates a Search object to Query a DynamoDB table, with the
+        /// specified hash primary key and filter.
+        /// 
+        /// No calls are made until the Search object is used.
+        /// </summary>
+        /// <param name="hashKey">Value of the hash key for the query operation.</param>
+        /// <param name="filter">Filter to use.</param>
+        /// <returns>Resultant Search container.</returns>
+        ISearch Query(Primitive hashKey, QueryFilter filter);
+
+
+        /// <summary>
+        /// Initiates a Search object to Query a DynamoDB table, with the
+        /// specified hash primary key and expression.
+        /// 
+        /// No calls are made until the Search object is used.
+        /// </summary>
+        /// <param name="hashKey">Value of the hash key for the query operation.</param>
+        /// <param name="filterExpression">Expression to use.</param>
+        /// <returns>Resultant Search container.</returns>
+        ISearch Query(Primitive hashKey, Expression filterExpression);
+
+        /// <summary>
+        /// Initiates a Search object to Query a DynamoDB table, with the
+        /// specified filter.
+        /// 
+        /// No calls are made until the Search object is used.
+        /// </summary>
+        /// <param name="filter">Filter to use.</param>
+        /// <returns>Resultant Search container.</returns>
+        ISearch Query(QueryFilter filter);
+
+        /// <summary>
+        /// Initiates a Search object to Query a DynamoDB table, with the
+        /// specified config.
+        /// 
+        /// No calls are made until the Search object is used.
+        /// </summary>
+        /// <param name="config">Configuration to use.</param>
+        /// <returns>Resultant Search container.</returns>
+        ISearch Query(QueryOperationConfig config);
+
+        #endregion
+
+        #region BatchGet
+
+        /// <summary>
+        /// Creates a DocumentBatchGet object for the current table, allowing
+        /// a batch-get operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentBatchGet object.</returns>
+        IDocumentBatchGet CreateBatchGet();
+
+        #endregion
+
+        #region BatchWrite
+
+        /// <summary>
+        /// Creates a DocumentBatchWrite object for the current table, allowing
+        /// a batch-put/delete operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentBatchWrite object.</returns>
+        IDocumentBatchWrite CreateBatchWrite();
+
+        #endregion
+
+        #region TransactGet
+
+        /// <summary>
+        /// Creates a DocumentTransactGet object for the current table, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentTransactGet object.</returns>
+        IDocumentTransactGet CreateTransactGet();
+
+        #endregion
+
+        #region TransactWrite
+
+        /// <summary>
+        /// Creates a DocumentTransactWrite object for the current table, allowing
+        /// a transactional condition-check/put/update/delete operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentTransactWrite object.</returns>
+        IDocumentTransactWrite CreateTransactWrite();
+
+        #endregion
+    }
+
+    /// <summary>
     /// The Table class is the starting object when using the Document API. It is used to Get documents from the DynamoDB table
     /// and write documents back to the DynamoDB table.
     /// </summary>
 #if NET8_0_OR_GREATER
     [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
 #endif
-    public partial class Table
+    public partial class Table : ITable
     {
         #region Private/internal members
 
@@ -60,49 +275,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public properties
 
-        /// <summary>
-        /// Name of the table.
-        /// </summary>
+        /// <inheritdoc/>
         public string TableName { get { return Config.TableName; } }
 
-        /// <summary>
-        /// Keys of the table.
-        /// </summary>
+        /// <inheritdoc/>
         public Dictionary<string, KeyDescription> Keys { get; private set; }
 
-        /// <summary>
-        /// Global secondary indexes of the table.
-        /// </summary>
+        /// <inheritdoc/>
         public Dictionary<string, GlobalSecondaryIndexDescription> GlobalSecondaryIndexes { get; private set; }
 
-        /// <summary>
-        /// Local secondary indexes of the table.
-        /// </summary>
+        /// <inheritdoc/>
         public Dictionary<string, LocalSecondaryIndexDescription> LocalSecondaryIndexes { get; private set; }
 
-        /// <summary>
-        /// Names of the local secondary indexes of the table.
-        /// </summary>
+        /// <inheritdoc/>
         public List<string> LocalSecondaryIndexNames { get; private set; }
 
-        /// <summary>
-        /// Names of the global secondary indexes of the table.
-        /// </summary>
+        /// <inheritdoc/>
         public List<string> GlobalSecondaryIndexNames { get; private set; }
 
-        /// <summary>
-        /// List of keys on the table marked HASH
-        /// </summary>
+        /// <inheritdoc/>
         public List<string> HashKeys { get; private set; }
 
-        /// <summary>
-        /// List of keys on the table marked RANGE
-        /// </summary>
+        /// <inheritdoc/>
         public List<string> RangeKeys { get; private set; }
 
-        /// <summary>
-        /// List of key attributes on the table.
-        /// </summary>
+        /// <inheritdoc/>
         public List<AttributeDefinition> Attributes { get; set; }
 
         #endregion
@@ -444,7 +641,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use for the table.</param>
         /// <returns>Table object representing the specified table.</returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, TableConfig config)
+        public static ITable LoadTable(IAmazonDynamoDB ddbClient, TableConfig config)
         {
             Table table = new Table(ddbClient, config);
             var tableDescriptionCache = table.GetTableDescriptionCache();
@@ -650,7 +847,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="tableName">Name of the table.</param>
         /// <returns>Table object representing the specified table.</returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName)
+        public static ITable LoadTable(IAmazonDynamoDB ddbClient, string tableName)
         {
             return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false);
         }
@@ -666,7 +863,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="conversion">Conversion to use for converting .NET values to DynamoDB values.</param>
         /// <returns>Table object representing the specified table.</returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion)
+        public static ITable LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion)
         {
             return LoadTable(ddbClient, tableName, conversion, false);
         }
@@ -682,7 +879,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <returns>Table object representing the specified table.</returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled)
+        public static ITable LoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled)
         {
             return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled);
         }
@@ -699,7 +896,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <returns>Table object representing the specified table.</returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
+        public static ITable LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
             var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: MetadataCachingMode.Default);
 
@@ -721,7 +918,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         /// <returns>Table object representing the specified table.</returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode metadataCachingMode)
+        public static ITable LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode metadataCachingMode)
         {
             var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: metadataCachingMode);
 
@@ -743,7 +940,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, out Table table)
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, out ITable table)
         {
             return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false, out table);
         }
@@ -762,7 +959,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, out Table table)
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, out ITable table)
         {
             return TryLoadTable(ddbClient, tableName, conversion, false, out table);
         }
@@ -781,7 +978,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled, out Table table)
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled, out ITable table)
         {
             return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled, out table);
         }
@@ -801,7 +998,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, out Table table)
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, out ITable table)
         {
             return TryLoadTable(ddbClient, tableName, conversion, isEmptyStringValueEnabled, MetadataCachingMode.Default, out table);
         }
@@ -829,7 +1026,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                         DynamoDBEntryConversion conversion,
                                         bool isEmptyStringValueEnabled,
                                         MetadataCachingMode? metadataCachingMode,
-                                        out Table table)
+                                        out ITable table)
         {
             var config = new TableConfig(tableName,
                                          conversion,
@@ -854,11 +1051,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// True if table was successfully loaded; otherwise false.
         /// </returns>
         [Obsolete("Use the TableBuilder to construct a Table with the recommended configuration.")]
-        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, TableConfig config, out Table table)
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, TableConfig config, out ITable table)
         {
             if (config == null)
                 throw new ArgumentNullException("config");
 
+#pragma warning disable CA1031 // Do not catch general exception types
             try
             {
                 table = LoadTable(ddbClient, config);
@@ -869,46 +1067,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 table = null;
                 return false;
             }
+#pragma warning restore CA1031 // Do not catch general exception types
         }
         #endregion
 
         #region Conversion methods
 
-        /// <summary>
-        /// Creates a Document from an attribute map.
-        /// </summary>
-        /// <param name="data">Map of attribute names to attribute values.</param>
-        /// <returns>Document representing the data.</returns>
+        /// <inheritdoc/>
         public Document FromAttributeMap(Dictionary<string, AttributeValue> data)
         {
             return Document.FromAttributeMap(data, this.StoreAsEpoch);
         }
 
-        /// <summary>
-        /// Creates a map of attribute names mapped to AttributeValue objects.
-        /// Converts .NET types using the conversion specified in this Table.
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc/>
         public Dictionary<string, AttributeValue> ToAttributeMap(Document doc)
         {
             return doc.ToAttributeMap(this.Conversion, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
         }
 
-        /// <summary>
-        /// Creates a map of attribute names mapped to ExpectedAttributeValue objects.
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc/>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(Document doc)
         {
             return doc.ToExpectedAttributeMap(this.Conversion, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
         }
 
-        /// <summary>
-        /// Creates a map of attribute names mapped to AttributeValueUpdate objects.
-        /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="changedAttributesOnly">If true, only attributes that have been changed will be in the map.</param>
-        /// <returns></returns>
+        /// <inheritdoc/>
         public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly)
         {
             return doc.ToAttributeUpdateMap(this.Conversion, changedAttributesOnly, this.StoreAsEpoch, this.IsEmptyStringValueEnabled);
@@ -1397,28 +1580,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Scan
 
-        /// <summary>
-        /// Initiates a Search object to Scan a DynamoDB table, with the
-        /// specified filter.
-        /// 
-        /// No calls are made until the Search object is used.
-        /// </summary>
-        /// <param name="filter">Filter to apply to the scan.</param>
-        /// <returns>Resultant Search container.</returns>
-        public Search Scan(ScanFilter filter)
+        /// <inheritdoc/>
+        public ISearch Scan(ScanFilter filter)
         {
             return Scan(new ScanOperationConfig { Filter = filter });
         }
 
-        /// <summary>
-        /// Initiates a Search object to Scan a DynamoDB table, with the
-        /// specified expression.
-        /// 
-        /// No calls are made until the Search object is used.
-        /// </summary>
-        /// <param name="filterExpression">Expression to apply to the scan.</param>
-        /// <returns>Resultant Search container.</returns>
-        public Search Scan(Expression filterExpression)
+        /// <inheritdoc/>
+        public ISearch Scan(Expression filterExpression)
         {
             ScanOperationConfig config = new ScanOperationConfig
             {
@@ -1429,15 +1598,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 
-        /// <summary>
-        /// Initiates a Search object to Scan a DynamoDB table, with the
-        /// specified config.
-        /// 
-        /// No calls are made until the Search object is used.
-        /// </summary>
-        /// <param name="config">Configuration to use.</param>
-        /// <returns>Resultant Search container.</returns>
-        public Search Scan(ScanOperationConfig config)
+        /// <inheritdoc/>
+        public ISearch Scan(ScanOperationConfig config)
         {
             var currentConfig = config ?? new ScanOperationConfig();
 
@@ -1471,16 +1633,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Query
 
-        /// <summary>
-        /// Initiates a Search object to Query a DynamoDB table, with the
-        /// specified hash primary key and filter.
-        /// 
-        /// No calls are made until the Search object is used.
-        /// </summary>
-        /// <param name="hashKey">Value of the hash key for the query operation.</param>
-        /// <param name="filter">Filter to use.</param>
-        /// <returns>Resultant Search container.</returns>
-        public Search Query(Primitive hashKey, QueryFilter filter)
+        /// <inheritdoc/>
+        public ISearch Query(Primitive hashKey, QueryFilter filter)
         {
             string hashKeyName = this.HashKeys[0];
             QueryFilter fullFilter = new QueryFilter(filter);
@@ -1490,16 +1644,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 
-        /// <summary>
-        /// Initiates a Search object to Query a DynamoDB table, with the
-        /// specified hash primary key and expression.
-        /// 
-        /// No calls are made until the Search object is used.
-        /// </summary>
-        /// <param name="hashKey">Value of the hash key for the query operation.</param>
-        /// <param name="filterExpression">Expression to use.</param>
-        /// <returns>Resultant Search container.</returns>
-        public Search Query(Primitive hashKey, Expression filterExpression)
+        /// <inheritdoc/>
+        public ISearch Query(Primitive hashKey, Expression filterExpression)
         {
             string hashKeyName = this.HashKeys[0];
 
@@ -1515,28 +1661,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return Query(config);
         }
 
-        /// <summary>
-        /// Initiates a Search object to Query a DynamoDB table, with the
-        /// specified filter.
-        /// 
-        /// No calls are made until the Search object is used.
-        /// </summary>
-        /// <param name="filter">Filter to use.</param>
-        /// <returns>Resultant Search container.</returns>
-        public Search Query(QueryFilter filter)
+        /// <inheritdoc/>
+        public ISearch Query(QueryFilter filter)
         {
             return Query(new QueryOperationConfig { Filter = filter });
         }
 
-        /// <summary>
-        /// Initiates a Search object to Query a DynamoDB table, with the
-        /// specified config.
-        /// 
-        /// No calls are made until the Search object is used.
-        /// </summary>
-        /// <param name="config">Configuration to use.</param>
-        /// <returns>Resultant Search container.</returns>
-        public Search Query(QueryOperationConfig config)
+        /// <inheritdoc/>
+        public ISearch Query(QueryOperationConfig config)
         {
             if (config == null)
                 throw new ArgumentNullException("config");
@@ -1567,12 +1699,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region BatchGet
 
-        /// <summary>
-        /// Creates a DocumentBatchGet object for the current table, allowing
-        /// a batch-get operation against DynamoDB.
-        /// </summary>
-        /// <returns>Empty DocumentBatchGet object.</returns>
-        public DocumentBatchGet CreateBatchGet()
+        /// <inheritdoc/>
+        public IDocumentBatchGet CreateBatchGet()
         {
             return new DocumentBatchGet(this);
         }
@@ -1582,12 +1710,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region BatchWrite
 
-        /// <summary>
-        /// Creates a DocumentBatchWrite object for the current table, allowing
-        /// a batch-put/delete operation against DynamoDB.
-        /// </summary>
-        /// <returns>Empty DocumentBatchWrite object.</returns>
-        public DocumentBatchWrite CreateBatchWrite()
+        /// <inheritdoc/>
+        public IDocumentBatchWrite CreateBatchWrite()
         {
             return new DocumentBatchWrite(this);
         }
@@ -1597,12 +1721,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region TransactGet
 
-        /// <summary>
-        /// Creates a DocumentTransactGet object for the current table, allowing
-        /// a transactional get operation against DynamoDB.
-        /// </summary>
-        /// <returns>Empty DocumentTransactGet object.</returns>
-        public DocumentTransactGet CreateTransactGet()
+        /// <inheritdoc/>
+        public IDocumentTransactGet CreateTransactGet()
         {
             return new DocumentTransactGet(this);
         }
@@ -1612,12 +1732,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region TransactWrite
 
-        /// <summary>
-        /// Creates a DocumentTransactWrite object for the current table, allowing
-        /// a transactional condition-check/put/update/delete operation against DynamoDB.
-        /// </summary>
-        /// <returns>Empty DocumentTransactWrite object.</returns>
-        public DocumentTransactWrite CreateTransactWrite()
+        /// <inheritdoc/>
+        public IDocumentTransactWrite CreateTransactWrite()
         {
             return new DocumentTransactWrite(this);
         }

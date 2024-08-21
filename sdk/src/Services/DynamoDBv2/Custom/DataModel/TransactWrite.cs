@@ -188,7 +188,10 @@ namespace Amazon.DynamoDBv2.DataModel
             _config = config;
             _storageConfig = context.StorageConfigCache.GetConfig<T>(config);
             Table table = _context.GetTargetTable(_storageConfig, _config);
-            DocumentTransaction = table.CreateTransactWrite();
+
+            // table.CreateTransactWrite() return the IDocumentTransactWrite interface.
+            // But since we rely on the internal behavior of DocumentTransactWrite, we instatiate it via the constructor.
+            DocumentTransaction = new DocumentTransactWrite(table);
         }
 
         /// <inheritdoc/>

@@ -15,41 +15,39 @@
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Class for retrieving multiple Documents from a single DynamoDB table in a transaction.
-    /// </summary>
-    public partial class DocumentTransactGet
+    public partial interface IDocumentTransactGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to get the documents requested in a transaction.
         /// Populates Results with the retrieved items.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class DocumentTransactGet : IDocumentTransactGet
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for retrieving multiple Documents from multiple DynamoDB tables in a transaction.
-    /// </summary>
-    public partial class MultiTableDocumentTransactGet
+    public partial interface IMultiTableDocumentTransactGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table transaction request against all configured DocumentTransactGet objects.
         /// Results are stored in the respective DocumentTransactGet objects.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class MultiTableDocumentTransactGet : IMultiTableDocumentTransactGet
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 }
