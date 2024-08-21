@@ -326,52 +326,30 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region TransactWrite
 
-        /// <summary>
-        /// Creates a strongly-typed TransactWrite object, allowing
-        /// a transactional write operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to write.</typeparam>
-        /// <returns>Empty strongly-typed TransactWrite object.</returns>
-        public TransactWrite<T> CreateTransactWrite<T>()
+        /// <inheritdoc/>
+        public ITransactWrite<T> CreateTransactWrite<T>()
         {
             return CreateTransactWrite<T>((TransactWriteConfig)null);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed TransactWrite object, allowing
-        /// a transactional write operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to write.</typeparam>
-        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
-        /// <returns>Empty strongly-typed TransactWrite object.</returns>
+        /// <inheritdoc/>
 
         [Obsolete("Use the CreateTransactWrite overload that takes TransactWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to CreateTransactWrite.")]
-        public TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig)
+        public ITransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             return new TransactWrite<T>(this, config);
         }
 
-        /// <summary>
-        /// Creates a strongly-typed TransactWrite object, allowing
-        /// a transactional write operation against DynamoDB.
-        /// </summary>
-        /// <typeparam name="T">Type of objects to write.</typeparam>
-        /// <param name="transactWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
-        /// <returns>Empty strongly-typed TransactWrite object.</returns>
-        public TransactWrite<T> CreateTransactWrite<T>(TransactWriteConfig transactWriteConfig)
+        /// <inheritdoc/>
+        public ITransactWrite<T> CreateTransactWrite<T>(TransactWriteConfig transactWriteConfig)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(transactWriteConfig?.ToDynamoDBOperationConfig(), this.Config);
             return new TransactWrite<T>(this, config);
         }
 
-        /// <summary>
-        /// Creates a MultiTableTransactWrite object, composed of multiple
-        /// individual TransactWrite objects.
-        /// </summary>
-        /// <param name="transactionParts">Individual TransactWrite objects.</param>
-        /// <returns>Composite MultiTableTransactWrite object.</returns>
-        public MultiTableTransactWrite CreateMultiTableTransactWrite(params TransactWrite[] transactionParts)
+        /// <inheritdoc/>
+        public IMultiTableTransactWrite CreateMultiTableTransactWrite(params ITransactWrite[] transactionParts)
         {
             return new MultiTableTransactWrite(transactionParts);
         }

@@ -316,7 +316,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type of objects to write.</typeparam>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
-        TransactWrite<T> CreateTransactWrite<T>();
+        ITransactWrite<T> CreateTransactWrite<T>();
 
         /// <summary>
         /// Creates a strongly-typed TransactWrite object, allowing
@@ -326,7 +326,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
         [Obsolete("Use the CreateTransactWrite overload that takes TransactWriteConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to CreateTransactWrite.")]
-        TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig = null);
+        ITransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Creates a strongly-typed TransactWrite object, allowing
@@ -335,7 +335,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type of objects to write.</typeparam>
         /// <param name="transactWriteConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Empty strongly-typed TransactWrite object.</returns>
-        TransactWrite<T> CreateTransactWrite<T>(TransactWriteConfig transactWriteConfig);
+        ITransactWrite<T> CreateTransactWrite<T>(TransactWriteConfig transactWriteConfig);
 
         /// <summary>
         /// Creates a MultiTableTransactWrite object, composed of multiple
@@ -343,7 +343,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="transactionParts">Individual TransactWrite objects.</param>
         /// <returns>Composite MultiTableTransactWrite object.</returns>
-        MultiTableTransactWrite CreateMultiTableTransactWrite(params TransactWrite[] transactionParts);
+        IMultiTableTransactWrite CreateMultiTableTransactWrite(params ITransactWrite[] transactionParts);
 
         #endregion
     }

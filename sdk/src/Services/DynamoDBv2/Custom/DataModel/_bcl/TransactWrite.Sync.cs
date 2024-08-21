@@ -15,41 +15,43 @@
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Represents a non-generic object for writing/deleting/version-checking multiple items
-    /// in a single DynamoDB table in a transaction.
-    /// </summary>
-    public abstract partial class TransactWrite
+    public partial interface ITransactWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to write/delete/version-check the items requested in a transaction.
         /// </summary>
-        public void Execute()
+        void Execute();
+    }
+
+    public abstract partial class TransactWrite : ITransactWrite
+    {
+        /// <inheritdoc/>
+        public abstract void Execute();
+    }
+
+    public partial class TransactWrite<T> : TransactWrite, ITransactWrite<T>
+    {
+        /// <inheritdoc/>
+        public override void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for writing/deleting/version-checking multiple items in multiple DynamoDB tables,
-    /// using multiple strongly-typed TransactWrite objects.
-    /// </summary>
-    public partial class MultiTableTransactWrite
+    public partial interface IMultiTableTransactWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table transaction request against all configured TransactWrite objects.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class MultiTableTransactWrite : IMultiTableTransactWrite
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 }

@@ -396,7 +396,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Issues a transactional write request with multiple TransactWrite objects.
         /// </summary>
         /// <param name="transactionParts">Configured TransactWrite objects.</param>
-        void ExecuteTransactWrite(params TransactWrite[] transactionParts);
+        void ExecuteTransactWrite(params ITransactWrite[] transactionParts);
 
         #endregion
 
