@@ -122,7 +122,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property UpdateSource. 
         /// <para>
         ///  Identifies the source of the event that changed the finding. For example, an integrated
-        /// Amazon Web Service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
+        /// Amazon Web Servicesservice or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
         /// <c>BatchImportFindings</c> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
         /// <c>BatchUpdateFindings</c> </a>. 
         /// </para>
