@@ -144,7 +144,7 @@ namespace Amazon.SimpleEmail.Model
         /// the keys correspond to replacement tags in the email template.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=262144)]
+        [AWSProperty(Required=true, Max=262144)]
         public string DefaultTemplateData
         {
             get { return this._defaultTemplateData; }
