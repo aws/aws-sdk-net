@@ -1,3 +1,22 @@
+### 3.7.870.0 (2024-08-21 18:27 UTC)
+* CodeStar (Removed)
+	* AWS CodeStar has been removed from the SDK because it has been discontinued.
+* EC2 (3.7.404.0)
+	* DescribeInstanceStatus now returns health information on EBS volumes attached to Nitro instances
+* EntityResolution (3.7.401.0)
+	* Increase the mapping attributes in Schema to 35.
+* Glue (3.7.405.0)
+	* Add optional field JobRunQueuingEnabled to CreateJob and UpdateJob APIs.
+* Lambda (3.7.402.0)
+	* Release FilterCriteria encryption for Lambda EventSourceMapping,  enabling customers to encrypt their filter criteria using a customer-owned KMS key.
+* SecurityHub (3.7.401.0)
+	* Security Hub documentation and definition updates
+* SimpleEmail (3.7.401.0)
+	* Enable email receiving customers to provide SES with access to their S3 buckets via an IAM role for "Deliver to S3 Action"
+* Core 3.7.400.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.869.0 (2024-08-20 18:29 UTC)
 * ECS (3.7.402.3)
 	* Documentation only release to address various tickets
