@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         private ExecutionProperty _executionProperty;
         private string _glueVersion;
         private JobMode _jobMode;
+        private bool? _jobRunQueuingEnabled;
         private string _logUri;
         private string _maintenanceWindow;
         private double? _maxCapacity;
@@ -327,6 +328,34 @@ namespace Amazon.Glue.Model
         internal bool IsSetJobMode()
         {
             return this._jobMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobRunQueuingEnabled. 
+        /// <para>
+        /// Specifies whether job run queuing is enabled for the job runs for this job.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value of true means job run queuing is enabled for the job runs. If false or not
+        /// populated, the job runs will not be considered for queueing.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this field does not match the value set in the job run, then the value from the
+        /// job run field will be used.
+        /// </para>
+        /// </summary>
+        public bool JobRunQueuingEnabled
+        {
+            get { return this._jobRunQueuingEnabled.GetValueOrDefault(); }
+            set { this._jobRunQueuingEnabled = value; }
+        }
+
+        // Check to see if JobRunQueuingEnabled property is set
+        internal bool IsSetJobRunQueuingEnabled()
+        {
+            return this._jobRunQueuingEnabled.HasValue; 
         }
 
         /// <summary>

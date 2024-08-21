@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private ExecutionClass _executionClass;
         private string _jobName;
         private string _jobRunId;
+        private bool? _jobRunQueuingEnabled;
         private double? _maxCapacity;
         private NotificationProperty _notificationProperty;
         private int? _numberOfWorkers;
@@ -189,6 +190,29 @@ namespace Amazon.Glue.Model
         internal bool IsSetJobRunId()
         {
             return this._jobRunId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobRunQueuingEnabled. 
+        /// <para>
+        /// Specifies whether job run queuing is enabled for the job run.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value of true means job run queuing is enabled for the job run. If false or not
+        /// populated, the job run will not be considered for queueing.
+        /// </para>
+        /// </summary>
+        public bool JobRunQueuingEnabled
+        {
+            get { return this._jobRunQueuingEnabled.GetValueOrDefault(); }
+            set { this._jobRunQueuingEnabled = value; }
+        }
+
+        // Check to see if JobRunQueuingEnabled property is set
+        internal bool IsSetJobRunQueuingEnabled()
+        {
+            return this._jobRunQueuingEnabled.HasValue; 
         }
 
         /// <summary>
