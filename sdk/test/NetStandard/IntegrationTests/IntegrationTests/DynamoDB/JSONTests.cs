@@ -49,8 +49,8 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             // Clear tables
             await SharedTestFixture.CleanupTables();
 
-            Table hashTable;
-            Table hashRangeTable;
+            ITable hashTable;
+            ITable hashRangeTable;
 
             // Load tables using provided conversion schema
             LoadTables(DynamoDBEntryConversion.V2, out hashTable, out hashRangeTable);
