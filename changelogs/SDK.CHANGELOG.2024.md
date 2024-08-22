@@ -1,3 +1,21 @@
+### 3.7.871.0 (2024-08-22 18:42 UTC)
+* AutoScaling (3.7.401.9)
+	* Amazon EC2 Auto Scaling now provides EBS health check to manage EC2 instance replacement
+* Bedrock (3.7.403.0)
+	* Amazon Bedrock Evaluation BatchDeleteEvaluationJob API allows customers to delete evaluation jobs under terminated evaluation job statuses - Stopped, Failed, or Completed. Customers can submit a batch of 25 evaluation jobs to be deleted at once.
+* EMRContainers (3.7.401.0)
+	* Correct endpoint for FIPS is configured for US Gov Regions.
+* Inspector2 (3.7.402.0)
+	* Add enums for Agentless scan statuses and EC2 enablement error states
+* QuickSight (3.7.402.0)
+	* Explicit query for authors and dashboard viewing sharing for embedded users
+* Route53 (3.7.402.0)
+	* Amazon Route 53 now supports the Asia Pacific (Malaysia) Region (ap-southeast-5) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Core 3.7.400.11
+	* Updating endpoints.json file.
+	* Updating partitions.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.870.0 (2024-08-21 18:27 UTC)
 * CodeStar (Removed)
 	* AWS CodeStar has been removed from the SDK because it has been discontinued.
