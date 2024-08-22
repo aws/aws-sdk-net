@@ -265,6 +265,81 @@ namespace Amazon.Bedrock
         #endregion
 
 
+        #region  BatchDeleteEvaluationJob
+
+        /// <summary>
+        /// Creates a batch deletion job. A model evaluation job can only be deleted if it has
+        /// following status <c>FAILED</c>, <c>COMPLETED</c>, and <c>STOPPED</c>. You can request
+        /// up to 25 model evaluation jobs be deleted in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteEvaluationJob service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteEvaluationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteEvaluationJob">REST API Reference for BatchDeleteEvaluationJob Operation</seealso>
+        public virtual BatchDeleteEvaluationJobResponse BatchDeleteEvaluationJob(BatchDeleteEvaluationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteEvaluationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteEvaluationJobResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteEvaluationJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteEvaluationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteEvaluationJob operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteEvaluationJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteEvaluationJob">REST API Reference for BatchDeleteEvaluationJob Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteEvaluationJob(BatchDeleteEvaluationJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteEvaluationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteEvaluationJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteEvaluationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteEvaluationJob.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteEvaluationJobResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteEvaluationJob">REST API Reference for BatchDeleteEvaluationJob Operation</seealso>
+        public virtual BatchDeleteEvaluationJobResponse EndBatchDeleteEvaluationJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteEvaluationJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEvaluationJob
 
         /// <summary>
@@ -722,6 +797,89 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateModelImportJob
+
+        /// <summary>
+        /// Creates a model import job to import model that you have customized in other environments,
+        /// such as Amazon SageMaker. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelImportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateModelImportJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelImportJob">REST API Reference for CreateModelImportJob Operation</seealso>
+        public virtual CreateModelImportJobResponse CreateModelImportJob(CreateModelImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateModelImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelImportJob operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateModelImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelImportJob">REST API Reference for CreateModelImportJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateModelImportJob(CreateModelImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateModelImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateModelImportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateModelImportJobResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelImportJob">REST API Reference for CreateModelImportJob Operation</seealso>
+        public virtual CreateModelImportJobResponse EndCreateModelImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateModelImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateModelInvocationJob
 
         /// <summary>
@@ -1047,6 +1205,81 @@ namespace Amazon.Bedrock
         public virtual DeleteGuardrailResponse EndDeleteGuardrail(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteGuardrailResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteImportedModel
+
+        /// <summary>
+        /// Deletes a custom model that you imported earlier. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportedModel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImportedModel service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteImportedModel">REST API Reference for DeleteImportedModel Operation</seealso>
+        public virtual DeleteImportedModelResponse DeleteImportedModel(DeleteImportedModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportedModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportedModelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImportedModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImportedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportedModel operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImportedModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteImportedModel">REST API Reference for DeleteImportedModel Operation</seealso>
+        public virtual IAsyncResult BeginDeleteImportedModel(DeleteImportedModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportedModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportedModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteImportedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteImportedModel.</param>
+        /// 
+        /// <returns>Returns a  DeleteImportedModelResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteImportedModel">REST API Reference for DeleteImportedModel Operation</seealso>
+        public virtual DeleteImportedModelResponse EndDeleteImportedModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteImportedModelResponse>(asyncResult);
         }
 
         #endregion
@@ -1476,6 +1709,76 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetImportedModel
+
+        /// <summary>
+        /// Gets properties associated with a customized model you imported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImportedModel service method.</param>
+        /// 
+        /// <returns>The response from the GetImportedModel service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetImportedModel">REST API Reference for GetImportedModel Operation</seealso>
+        public virtual GetImportedModelResponse GetImportedModel(GetImportedModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportedModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportedModelResponseUnmarshaller.Instance;
+
+            return Invoke<GetImportedModelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImportedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImportedModel operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImportedModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetImportedModel">REST API Reference for GetImportedModel Operation</seealso>
+        public virtual IAsyncResult BeginGetImportedModel(GetImportedModelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportedModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportedModelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImportedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImportedModel.</param>
+        /// 
+        /// <returns>Returns a  GetImportedModelResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetImportedModel">REST API Reference for GetImportedModel Operation</seealso>
+        public virtual GetImportedModelResponse EndGetImportedModel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetImportedModelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetModelCopyJob
 
         /// <summary>
@@ -1617,6 +1920,79 @@ namespace Amazon.Bedrock
         public virtual GetModelCustomizationJobResponse EndGetModelCustomizationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<GetModelCustomizationJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetModelImportJob
+
+        /// <summary>
+        /// Retrieves the properties associated with import model job, including the status of
+        /// the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetModelImportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetModelImportJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelImportJob">REST API Reference for GetModelImportJob Operation</seealso>
+        public virtual GetModelImportJobResponse GetModelImportJob(GetModelImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetModelImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetModelImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetModelImportJob operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetModelImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelImportJob">REST API Reference for GetModelImportJob Operation</seealso>
+        public virtual IAsyncResult BeginGetModelImportJob(GetModelImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetModelImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetModelImportJob.</param>
+        /// 
+        /// <returns>Returns a  GetModelImportJobResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelImportJob">REST API Reference for GetModelImportJob Operation</seealso>
+        public virtual GetModelImportJobResponse EndGetModelImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetModelImportJobResponse>(asyncResult);
         }
 
         #endregion
@@ -2117,6 +2493,75 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  ListImportedModels
+
+        /// <summary>
+        /// Returns a list of models you've imported. You can filter the results to return based
+        /// on one or more criteria. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportedModels service method.</param>
+        /// 
+        /// <returns>The response from the ListImportedModels service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListImportedModels">REST API Reference for ListImportedModels Operation</seealso>
+        public virtual ListImportedModelsResponse ListImportedModels(ListImportedModelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportedModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportedModelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportedModelsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImportedModels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImportedModels operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImportedModels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListImportedModels">REST API Reference for ListImportedModels Operation</seealso>
+        public virtual IAsyncResult BeginListImportedModels(ListImportedModelsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportedModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportedModelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImportedModels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImportedModels.</param>
+        /// 
+        /// <returns>Returns a  ListImportedModelsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListImportedModels">REST API Reference for ListImportedModels Operation</seealso>
+        public virtual ListImportedModelsResponse EndListImportedModels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportedModelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListModelCopyJobs
 
         /// <summary>
@@ -2260,6 +2705,75 @@ namespace Amazon.Bedrock
         public virtual ListModelCustomizationJobsResponse EndListModelCustomizationJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListModelCustomizationJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListModelImportJobs
+
+        /// <summary>
+        /// Returns a list of import jobs you've submitted. You can filter the results to return
+        /// based on one or more criteria. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListModelImportJobs service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelImportJobs">REST API Reference for ListModelImportJobs Operation</seealso>
+        public virtual ListModelImportJobsResponse ListModelImportJobs(ListModelImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelImportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListModelImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListModelImportJobs operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListModelImportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelImportJobs">REST API Reference for ListModelImportJobs Operation</seealso>
+        public virtual IAsyncResult BeginListModelImportJobs(ListModelImportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelImportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListModelImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListModelImportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListModelImportJobsResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelImportJobs">REST API Reference for ListModelImportJobs Operation</seealso>
+        public virtual ListModelImportJobsResponse EndListModelImportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListModelImportJobsResponse>(asyncResult);
         }
 
         #endregion

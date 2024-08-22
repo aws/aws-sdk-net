@@ -269,6 +269,61 @@ namespace Amazon.Bedrock
         #endregion
 
 
+        #region  BatchDeleteEvaluationJob
+
+        internal virtual BatchDeleteEvaluationJobResponse BatchDeleteEvaluationJob(BatchDeleteEvaluationJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteEvaluationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteEvaluationJobResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteEvaluationJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a batch deletion job. A model evaluation job can only be deleted if it has
+        /// following status <c>FAILED</c>, <c>COMPLETED</c>, and <c>STOPPED</c>. You can request
+        /// up to 25 model evaluation jobs be deleted in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteEvaluationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteEvaluationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteEvaluationJob">REST API Reference for BatchDeleteEvaluationJob Operation</seealso>
+        public virtual Task<BatchDeleteEvaluationJobResponse> BatchDeleteEvaluationJobAsync(BatchDeleteEvaluationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteEvaluationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteEvaluationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteEvaluationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEvaluationJob
 
         internal virtual CreateEvaluationJobResponse CreateEvaluationJob(CreateEvaluationJobRequest request)
@@ -626,6 +681,69 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateModelImportJob
+
+        internal virtual CreateModelImportJobResponse CreateModelImportJob(CreateModelImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelImportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a model import job to import model that you have customized in other environments,
+        /// such as Amazon SageMaker. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelImportJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelImportJob">REST API Reference for CreateModelImportJob Operation</seealso>
+        public virtual Task<CreateModelImportJobResponse> CreateModelImportJobAsync(CreateModelImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateModelImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateModelInvocationJob
 
         internal virtual CreateModelInvocationJobResponse CreateModelInvocationJob(CreateModelInvocationJobRequest request)
@@ -871,6 +989,61 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = DeleteGuardrailResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGuardrailResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteImportedModel
+
+        internal virtual DeleteImportedModelResponse DeleteImportedModel(DeleteImportedModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportedModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportedModelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImportedModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a custom model that you imported earlier. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportedModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteImportedModel service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteImportedModel">REST API Reference for DeleteImportedModel Operation</seealso>
+        public virtual Task<DeleteImportedModelResponse> DeleteImportedModelAsync(DeleteImportedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteImportedModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteImportedModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteImportedModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1180,6 +1353,56 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetImportedModel
+
+        internal virtual GetImportedModelResponse GetImportedModel(GetImportedModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportedModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportedModelResponseUnmarshaller.Instance;
+
+            return Invoke<GetImportedModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets properties associated with a customized model you imported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImportedModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImportedModel service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetImportedModel">REST API Reference for GetImportedModel Operation</seealso>
+        public virtual Task<GetImportedModelResponse> GetImportedModelAsync(GetImportedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportedModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportedModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetImportedModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetModelCopyJob
 
         internal virtual GetModelCopyJobResponse GetModelCopyJob(GetModelCopyJobRequest request)
@@ -1281,6 +1504,59 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = GetModelCustomizationJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetModelCustomizationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetModelImportJob
+
+        internal virtual GetModelImportJobResponse GetModelImportJob(GetModelImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetModelImportJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the properties associated with import model job, including the status of
+        /// the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetModelImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetModelImportJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelImportJob">REST API Reference for GetModelImportJob Operation</seealso>
+        public virtual Task<GetModelImportJobResponse> GetModelImportJobAsync(GetModelImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetModelImportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1641,6 +1917,55 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  ListImportedModels
+
+        internal virtual ListImportedModelsResponse ListImportedModels(ListImportedModelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportedModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportedModelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportedModelsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of models you've imported. You can filter the results to return based
+        /// on one or more criteria. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportedModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImportedModels service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListImportedModels">REST API Reference for ListImportedModels Operation</seealso>
+        public virtual Task<ListImportedModelsResponse> ListImportedModelsAsync(ListImportedModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportedModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportedModelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListImportedModelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListModelCopyJobs
 
         internal virtual ListModelCopyJobsResponse ListModelCopyJobs(ListModelCopyJobsRequest request)
@@ -1744,6 +2069,55 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = ListModelCustomizationJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListModelCustomizationJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListModelImportJobs
+
+        internal virtual ListModelImportJobsResponse ListModelImportJobs(ListModelImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelImportJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of import jobs you've submitted. You can filter the results to return
+        /// based on one or more criteria. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">Import
+        /// a customized model</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelImportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelImportJobs service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelImportJobs">REST API Reference for ListModelImportJobs Operation</seealso>
+        public virtual Task<ListModelImportJobsResponse> ListModelImportJobsAsync(ListModelImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelImportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListModelImportJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
