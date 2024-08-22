@@ -369,7 +369,7 @@ THtAmDAtOhds6TGBpAWw";
             await dynamoDBClient.DeleteTableAsync(tableName);
         }
 
-        private static async Task InsertData(Table table, string id, string body)
+        private static async Task InsertData(ITable table, string id, string body)
         {
             await table.PutItemAsync(new Document(new Dictionary<string, DynamoDBEntry>
             {
@@ -378,7 +378,7 @@ THtAmDAtOhds6TGBpAWw";
             }));
         }
 
-        private async Task<string> ReadData(Table table, string id)
+        private async Task<string> ReadData(ITable table, string id)
         {
             Document doc = await table.GetItemAsync(new Primitive(id));
 
