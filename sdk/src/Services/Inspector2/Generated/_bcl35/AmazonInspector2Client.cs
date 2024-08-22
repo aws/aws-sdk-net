@@ -281,6 +281,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the AssociateMember service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -349,6 +355,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the BatchGetAccountStatus service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -421,6 +433,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the BatchGetCodeSnippet service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -488,6 +506,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the BatchGetFindingDetails service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -555,6 +579,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the BatchGetFreeTrialInfo service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -624,6 +654,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the BatchGetMemberEc2DeepInspectionStatus service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -693,6 +729,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the BatchUpdateMemberEc2DeepInspectionStatus service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -760,6 +802,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the CancelFindingsReport service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -831,6 +879,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the CancelSbomExport service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -902,6 +956,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the CreateCisScanConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -970,6 +1030,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the CreateFilter service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.BadRequestException">
         /// One or more tags submitted as part of the request is not valid.
@@ -1046,6 +1112,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the CreateFindingsReport service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1117,6 +1189,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the CreateSbomExport service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1188,6 +1266,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the DeleteCisScanConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1259,6 +1343,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the DeleteFilter service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1330,6 +1420,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the DescribeOrganizationConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1398,6 +1494,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the Disable service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1469,6 +1571,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the DisableDelegatedAdminAccount service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ConflictException">
         /// A conflict occurred.
@@ -1543,6 +1651,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the DisassociateMember service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1610,6 +1724,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the Enable service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1681,6 +1801,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the EnableDelegatedAdminAccount service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ConflictException">
         /// A conflict occurred.
@@ -1755,6 +1881,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the GetCisScanReport service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1826,6 +1958,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the GetCisScanResultDetails service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -1958,6 +2096,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the GetDelegatedAdminAccount service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2030,6 +2174,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the GetEc2DeepInspectionConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2097,6 +2247,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the GetEncryptionKey service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2168,6 +2324,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the GetFindingsReportStatus service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2239,6 +2401,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the GetMember service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2310,6 +2478,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the GetSbomExport service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2381,6 +2555,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListAccountPermissions service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2448,6 +2628,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListCisScanConfigurations service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2515,6 +2701,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListCisScanResultsAggregatedByChecks service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2582,6 +2774,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListCisScanResultsAggregatedByTargetResource service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2649,6 +2847,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListCisScans service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2844,6 +3048,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListDelegatedAdminAccounts service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -2911,6 +3121,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListFilters service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -3107,6 +3323,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListMembers service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -3242,6 +3464,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ListUsageTotals service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -3310,6 +3538,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the ResetEncryptionKey service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -3381,6 +3615,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the SearchVulnerabilities service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -3450,6 +3690,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the SendCisSessionHealth service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ConflictException">
         /// A conflict occurred.
@@ -3522,6 +3768,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the SendCisSessionTelemetry service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ConflictException">
         /// A conflict occurred.
@@ -3594,6 +3846,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the StartCisSession service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ConflictException">
         /// A conflict occurred.
@@ -3666,6 +3924,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the StopCisSession service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ConflictException">
         /// A conflict occurred.
@@ -3875,6 +4139,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the UpdateCisScanConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -3948,6 +4218,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the UpdateConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -4016,6 +4292,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the UpdateEc2DeepInspectionConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -4084,6 +4366,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the UpdateEncryptionKey service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -4155,6 +4443,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the UpdateFilter service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -4226,6 +4520,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the UpdateOrganizationConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
@@ -4294,6 +4594,12 @@ namespace Amazon.Inspector2
         /// <returns>The response from the UpdateOrgEc2DeepInspectionConfiguration service method, as returned by Inspector2.</returns>
         /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
