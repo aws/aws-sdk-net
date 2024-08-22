@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisteredUserConsoleFeatureConfigurations Marshaller
+    /// QueryExecutionOptions Marshaller
     /// </summary>
-    public class RegisteredUserConsoleFeatureConfigurationsMarshaller : IRequestMarshaller<RegisteredUserConsoleFeatureConfigurations, JsonMarshallerContext> 
+    public class QueryExecutionOptionsMarshaller : IRequestMarshaller<QueryExecutionOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RegisteredUserConsoleFeatureConfigurations requestObject, JsonMarshallerContext context)
+        public void Marshall(QueryExecutionOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSharedView())
+            if(requestObject.IsSetQueryExecutionMode())
             {
-                context.Writer.WritePropertyName("SharedView");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SharedViewConfigurationsMarshaller.Instance;
-                marshaller.Marshall(requestObject.SharedView, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetStatePersistence())
-            {
-                context.Writer.WritePropertyName("StatePersistence");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = StatePersistenceConfigurationsMarshaller.Instance;
-                marshaller.Marshall(requestObject.StatePersistence, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("QueryExecutionMode");
+                context.Writer.Write(requestObject.QueryExecutionMode);
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RegisteredUserConsoleFeatureConfigurationsMarshaller Instance = new RegisteredUserConsoleFeatureConfigurationsMarshaller();
+        public readonly static QueryExecutionOptionsMarshaller Instance = new QueryExecutionOptionsMarshaller();
 
     }
 }

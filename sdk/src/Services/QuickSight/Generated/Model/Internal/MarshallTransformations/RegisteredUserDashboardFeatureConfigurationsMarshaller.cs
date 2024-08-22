@@ -59,6 +59,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSharedView())
+            {
+                context.Writer.WritePropertyName("SharedView");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SharedViewConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SharedView, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStatePersistence())
             {
                 context.Writer.WritePropertyName("StatePersistence");

@@ -32,29 +32,9 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// The feature configuration for an embedded dashboard.
     /// </summary>
-    public partial class RegisteredUserDashboardFeatureConfigurations
+    public partial class AnonymousUserDashboardFeatureConfigurations
     {
-        private BookmarksConfigurations _bookmarks;
         private SharedViewConfigurations _sharedView;
-        private StatePersistenceConfigurations _statePersistence;
-
-        /// <summary>
-        /// Gets and sets the property Bookmarks. 
-        /// <para>
-        /// The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
-        /// </para>
-        /// </summary>
-        public BookmarksConfigurations Bookmarks
-        {
-            get { return this._bookmarks; }
-            set { this._bookmarks = value; }
-        }
-
-        // Check to see if Bookmarks property is set
-        internal bool IsSetBookmarks()
-        {
-            return this._bookmarks != null;
-        }
 
         /// <summary>
         /// Gets and sets the property SharedView. 
@@ -72,24 +52,6 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSharedView()
         {
             return this._sharedView != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StatePersistence. 
-        /// <para>
-        /// The state persistence settings of an embedded dashboard.
-        /// </para>
-        /// </summary>
-        public StatePersistenceConfigurations StatePersistence
-        {
-            get { return this._statePersistence; }
-            set { this._statePersistence = value; }
-        }
-
-        // Check to see if StatePersistence property is set
-        internal bool IsSetStatePersistence()
-        {
-            return this._statePersistence != null;
         }
 
     }

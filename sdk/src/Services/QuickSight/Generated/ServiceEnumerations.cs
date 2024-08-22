@@ -391,6 +391,98 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AnonymousUserDashboardEmbeddingConfigurationDisabledFeature.
+    /// </summary>
+    public class AnonymousUserDashboardEmbeddingConfigurationDisabledFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHARED_VIEW for AnonymousUserDashboardEmbeddingConfigurationDisabledFeature
+        /// </summary>
+        public static readonly AnonymousUserDashboardEmbeddingConfigurationDisabledFeature SHARED_VIEW = new AnonymousUserDashboardEmbeddingConfigurationDisabledFeature("SHARED_VIEW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnonymousUserDashboardEmbeddingConfigurationDisabledFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnonymousUserDashboardEmbeddingConfigurationDisabledFeature FindValue(string value)
+        {
+            return FindValue<AnonymousUserDashboardEmbeddingConfigurationDisabledFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnonymousUserDashboardEmbeddingConfigurationDisabledFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnonymousUserDashboardEmbeddingConfigurationEnabledFeature.
+    /// </summary>
+    public class AnonymousUserDashboardEmbeddingConfigurationEnabledFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHARED_VIEW for AnonymousUserDashboardEmbeddingConfigurationEnabledFeature
+        /// </summary>
+        public static readonly AnonymousUserDashboardEmbeddingConfigurationEnabledFeature SHARED_VIEW = new AnonymousUserDashboardEmbeddingConfigurationEnabledFeature("SHARED_VIEW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnonymousUserDashboardEmbeddingConfigurationEnabledFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnonymousUserDashboardEmbeddingConfigurationEnabledFeature FindValue(string value)
+        {
+            return FindValue<AnonymousUserDashboardEmbeddingConfigurationEnabledFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnonymousUserDashboardEmbeddingConfigurationEnabledFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArcThickness.
     /// </summary>
     public class ArcThickness : ConstantClass
@@ -8350,6 +8442,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PurchaseMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryExecutionMode.
+    /// </summary>
+    public class QueryExecutionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for QueryExecutionMode
+        /// </summary>
+        public static readonly QueryExecutionMode AUTO = new QueryExecutionMode("AUTO");
+        /// <summary>
+        /// Constant MANUAL for QueryExecutionMode
+        /// </summary>
+        public static readonly QueryExecutionMode MANUAL = new QueryExecutionMode("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryExecutionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryExecutionMode FindValue(string value)
+        {
+            return FindValue<QueryExecutionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryExecutionMode(string value)
         {
             return FindValue(value);
         }

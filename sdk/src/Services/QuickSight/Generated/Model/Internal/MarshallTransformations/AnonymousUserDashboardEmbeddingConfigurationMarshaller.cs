@@ -48,6 +48,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDisabledFeatures())
+            {
+                context.Writer.WritePropertyName("DisabledFeatures");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDisabledFeaturesListValue in requestObject.DisabledFeatures)
+                {
+                        context.Writer.Write(requestObjectDisabledFeaturesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetEnabledFeatures())
+            {
+                context.Writer.WritePropertyName("EnabledFeatures");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEnabledFeaturesListValue in requestObject.EnabledFeatures)
+                {
+                        context.Writer.Write(requestObjectEnabledFeaturesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetFeatureConfigurations())
+            {
+                context.Writer.WritePropertyName("FeatureConfigurations");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnonymousUserDashboardFeatureConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FeatureConfigurations, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInitialDashboardId())
             {
                 context.Writer.WritePropertyName("InitialDashboardId");

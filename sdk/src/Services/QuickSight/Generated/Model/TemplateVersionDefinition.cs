@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private List<FilterGroup> _filterGroups = AWSConfigs.InitializeCollections ? new List<FilterGroup>() : null;
         private AssetOptions _options;
         private List<ParameterDeclaration> _parameterDeclarations = AWSConfigs.InitializeCollections ? new List<ParameterDeclaration>() : null;
+        private QueryExecutionOptions _queryExecutionOptions;
         private List<SheetDefinition> _sheets = AWSConfigs.InitializeCollections ? new List<SheetDefinition>() : null;
 
         /// <summary>
@@ -186,6 +187,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetParameterDeclarations()
         {
             return this._parameterDeclarations != null && (this._parameterDeclarations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryExecutionOptions.
+        /// </summary>
+        public QueryExecutionOptions QueryExecutionOptions
+        {
+            get { return this._queryExecutionOptions; }
+            set { this._queryExecutionOptions = value; }
+        }
+
+        // Check to see if QueryExecutionOptions property is set
+        internal bool IsSetQueryExecutionOptions()
+        {
+            return this._queryExecutionOptions != null;
         }
 
         /// <summary>

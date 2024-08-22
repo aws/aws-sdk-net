@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisteredUserConsoleFeatureConfigurations Marshaller
+    /// AnonymousUserDashboardFeatureConfigurations Marshaller
     /// </summary>
-    public class RegisteredUserConsoleFeatureConfigurationsMarshaller : IRequestMarshaller<RegisteredUserConsoleFeatureConfigurations, JsonMarshallerContext> 
+    public class AnonymousUserDashboardFeatureConfigurationsMarshaller : IRequestMarshaller<AnonymousUserDashboardFeatureConfigurations, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RegisteredUserConsoleFeatureConfigurations requestObject, JsonMarshallerContext context)
+        public void Marshall(AnonymousUserDashboardFeatureConfigurations requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -59,23 +59,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetStatePersistence())
-            {
-                context.Writer.WritePropertyName("StatePersistence");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = StatePersistenceConfigurationsMarshaller.Instance;
-                marshaller.Marshall(requestObject.StatePersistence, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RegisteredUserConsoleFeatureConfigurationsMarshaller Instance = new RegisteredUserConsoleFeatureConfigurationsMarshaller();
+        public readonly static AnonymousUserDashboardFeatureConfigurationsMarshaller Instance = new AnonymousUserDashboardFeatureConfigurationsMarshaller();
 
     }
 }
