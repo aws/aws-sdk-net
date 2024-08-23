@@ -31,7 +31,11 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the SendDataIntegrationEvent operation.
-    /// Send transactional data events with real-time data for analysis or monitoring.
+    /// Send the transactional data payload for the event with real-time data for analysis
+    /// or monitoring. The real-time data events are stored in an Amazon Web Services service
+    /// before being processed and stored in data lake. New data events are synced with data
+    /// lake at 5 PM GMT everyday. The updated transactional data is available in data lake
+    /// after ingestion.
     /// </summary>
     public partial class SendDataIntegrationEventRequest : AmazonSupplyChainRequest
     {
@@ -64,7 +68,9 @@ namespace Amazon.SupplyChain.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The data payload of the event.
+        /// The data payload of the event. For more information on the data schema to use, see
+        /// <a href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">Data
+        /// entities supported in AWS Supply Chain </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1048576)]
