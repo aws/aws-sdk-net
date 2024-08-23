@@ -395,6 +395,56 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type AutoSubscriptionStatus.
+    /// </summary>
+    public class AutoSubscriptionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutoSubscriptionStatus
+        /// </summary>
+        public static readonly AutoSubscriptionStatus DISABLED = new AutoSubscriptionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutoSubscriptionStatus
+        /// </summary>
+        public static readonly AutoSubscriptionStatus ENABLED = new AutoSubscriptionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoSubscriptionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoSubscriptionStatus FindValue(string value)
+        {
+            return FindValue<AutoSubscriptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoSubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChatMode.
     /// </summary>
     public class ChatMode : ConstantClass
@@ -1106,6 +1156,60 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdentityType.
+    /// </summary>
+    public class IdentityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_IAM_IDC for IdentityType
+        /// </summary>
+        public static readonly IdentityType AWS_IAM_IDC = new IdentityType("AWS_IAM_IDC");
+        /// <summary>
+        /// Constant AWS_IAM_IDP_OIDC for IdentityType
+        /// </summary>
+        public static readonly IdentityType AWS_IAM_IDP_OIDC = new IdentityType("AWS_IAM_IDP_OIDC");
+        /// <summary>
+        /// Constant AWS_IAM_IDP_SAML for IdentityType
+        /// </summary>
+        public static readonly IdentityType AWS_IAM_IDP_SAML = new IdentityType("AWS_IAM_IDP_SAML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdentityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentityType FindValue(string value)
+        {
+            return FindValue<IdentityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentityType(string value)
         {
             return FindValue(value);
         }
@@ -2202,6 +2306,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StringAttributeValueBoostingLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionType.
+    /// </summary>
+    public class SubscriptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Q_BUSINESS for SubscriptionType
+        /// </summary>
+        public static readonly SubscriptionType Q_BUSINESS = new SubscriptionType("Q_BUSINESS");
+        /// <summary>
+        /// Constant Q_LITE for SubscriptionType
+        /// </summary>
+        public static readonly SubscriptionType Q_LITE = new SubscriptionType("Q_LITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubscriptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionType FindValue(string value)
+        {
+            return FindValue<SubscriptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionType(string value)
         {
             return FindValue(value);
         }

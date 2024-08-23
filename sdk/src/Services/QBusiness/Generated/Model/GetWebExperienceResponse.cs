@@ -39,6 +39,7 @@ namespace Amazon.QBusiness.Model
         private DateTime? _createdAt;
         private string _defaultEndpoint;
         private ErrorDetail _error;
+        private IdentityProviderConfiguration _identityProviderConfiguration;
         private string _roleArn;
         private WebExperienceSamplePromptsControlMode _samplePromptsControlMode;
         private WebExperienceStatus _status;
@@ -141,6 +142,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetError()
         {
             return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderConfiguration. 
+        /// <para>
+        /// Information about the identity provider (IdP) used to authenticate end users of an
+        /// Amazon Q Business web experience.
+        /// </para>
+        /// </summary>
+        public IdentityProviderConfiguration IdentityProviderConfiguration
+        {
+            get { return this._identityProviderConfiguration; }
+            set { this._identityProviderConfiguration = value; }
+        }
+
+        // Check to see if IdentityProviderConfiguration property is set
+        internal bool IsSetIdentityProviderConfiguration()
+        {
+            return this._identityProviderConfiguration != null;
         }
 
         /// <summary>

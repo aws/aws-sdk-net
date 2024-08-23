@@ -37,6 +37,7 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private string _clientToken;
+        private IdentityProviderConfiguration _identityProviderConfiguration;
         private string _roleArn;
         private WebExperienceSamplePromptsControlMode _samplePromptsControlMode;
         private string _subtitle;
@@ -84,10 +85,36 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentityProviderConfiguration. 
+        /// <para>
+        /// Information about the identity provider (IdP) used to authenticate end users of an
+        /// Amazon Q Business web experience.
+        /// </para>
+        /// </summary>
+        public IdentityProviderConfiguration IdentityProviderConfiguration
+        {
+            get { return this._identityProviderConfiguration; }
+            set { this._identityProviderConfiguration = value; }
+        }
+
+        // Check to see if IdentityProviderConfiguration property is set
+        internal bool IsSetIdentityProviderConfiguration()
+        {
+            return this._identityProviderConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service role attached to your web experience.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must provide this value if you're using IAM Identity Center to manage end user
+        /// access to your application. If you're using legacy identity management to manage user
+        /// access, you don't need to provide this value.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
         public string RoleArn

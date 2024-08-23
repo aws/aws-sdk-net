@@ -37,12 +37,16 @@ namespace Amazon.QBusiness.Model
         private string _applicationArn;
         private string _applicationId;
         private AppliedAttachmentsConfiguration _attachmentsConfiguration;
+        private AutoSubscriptionConfiguration _autoSubscriptionConfiguration;
+        private List<string> _clientIdsForOIDC = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdAt;
         private string _description;
         private string _displayName;
         private EncryptionConfiguration _encryptionConfiguration;
         private ErrorDetail _error;
+        private string _iamIdentityProviderArn;
         private string _identityCenterApplicationArn;
+        private IdentityType _identityType;
         private PersonalizationConfiguration _personalizationConfiguration;
         private QAppsConfiguration _qAppsConfiguration;
         private string _roleArn;
@@ -103,6 +107,43 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAttachmentsConfiguration()
         {
             return this._attachmentsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoSubscriptionConfiguration. 
+        /// <para>
+        /// Settings for auto-subscription behavior for this application. This is only applicable
+        /// to SAML and OIDC applications.
+        /// </para>
+        /// </summary>
+        public AutoSubscriptionConfiguration AutoSubscriptionConfiguration
+        {
+            get { return this._autoSubscriptionConfiguration; }
+            set { this._autoSubscriptionConfiguration = value; }
+        }
+
+        // Check to see if AutoSubscriptionConfiguration property is set
+        internal bool IsSetAutoSubscriptionConfiguration()
+        {
+            return this._autoSubscriptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientIdsForOIDC. 
+        /// <para>
+        /// The OIDC client ID for a Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public List<string> ClientIdsForOIDC
+        {
+            get { return this._clientIdsForOIDC; }
+            set { this._clientIdsForOIDC = value; }
+        }
+
+        // Check to see if ClientIdsForOIDC property is set
+        internal bool IsSetClientIdsForOIDC()
+        {
+            return this._clientIdsForOIDC != null && (this._clientIdsForOIDC.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,6 +241,26 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IamIdentityProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an identity provider being used by an Amazon Q Business
+        /// application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IamIdentityProviderArn
+        {
+            get { return this._iamIdentityProviderArn; }
+            set { this._iamIdentityProviderArn = value; }
+        }
+
+        // Check to see if IamIdentityProviderArn property is set
+        internal bool IsSetIamIdentityProviderArn()
+        {
+            return this._iamIdentityProviderArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IdentityCenterApplicationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to
@@ -217,6 +278,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityCenterApplicationArn()
         {
             return this._identityCenterApplicationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityType. 
+        /// <para>
+        /// The authentication type being used by a Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public IdentityType IdentityType
+        {
+            get { return this._identityType; }
+            set { this._identityType = value; }
+        }
+
+        // Check to see if IdentityType property is set
+        internal bool IsSetIdentityType()
+        {
+            return this._identityType != null;
         }
 
         /// <summary>
