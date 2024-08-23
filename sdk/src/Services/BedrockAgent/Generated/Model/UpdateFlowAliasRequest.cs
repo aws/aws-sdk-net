@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the flow alias.
+        /// A description for the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -103,7 +103,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the flow alias.
+        /// The name of the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

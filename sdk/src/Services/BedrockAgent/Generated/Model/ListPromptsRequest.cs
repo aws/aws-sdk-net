@@ -31,8 +31,10 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPrompts operation.
-    /// Returns a list of prompts from the Prompt management tool and information about each
-    /// prompt. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
+    /// Returns either information about the working draft (<c>DRAFT</c> version) of each
+    /// prompt in an account, or information about of all versions of a prompt, depending
+    /// on whether you include the <c>promptIdentifier</c> field or not. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-manage.html#prompt-management-view.html">View
     /// information about prompts using Prompt management</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class ListPromptsRequest : AmazonBedrockAgentRequest
@@ -86,7 +88,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property PromptIdentifier. 
         /// <para>
-        /// The unique identifier of the prompt.
+        /// The unique identifier of the prompt for whose versions you want to return information.
+        /// Omit this field to list information about all prompts in an account.
         /// </para>
         /// </summary>
         public string PromptIdentifier

@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property FlowAliasSummaries. 
         /// <para>
-        /// A list, each member of which contains information about a flow alias.
+        /// A list, each member of which contains information about an alias.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

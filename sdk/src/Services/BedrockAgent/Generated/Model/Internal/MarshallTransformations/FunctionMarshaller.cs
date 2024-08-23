@@ -79,6 +79,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRequireConfirmation())
+            {
+                context.Writer.WritePropertyName("requireConfirmation");
+                context.Writer.Write(requestObject.RequireConfirmation);
+            }
+
         }
 
         /// <summary>
