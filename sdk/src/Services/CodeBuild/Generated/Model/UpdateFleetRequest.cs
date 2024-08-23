@@ -196,6 +196,17 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// The environment type <c>MAC_ARM</c> is available for Medium fleets only in regions
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Sydney), and
+        /// EU (Frankfurt)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The environment type <c>MAC_ARM</c> is available for Large fleets only in regions
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), and Asia Pacific (Sydney).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The environment type <c>WINDOWS_SERVER_2019_CONTAINER</c> is available only in regions
         /// US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Sydney), Asia
         /// Pacific (Tokyo), Asia Pacific (Mumbai) and EU (Ireland).
