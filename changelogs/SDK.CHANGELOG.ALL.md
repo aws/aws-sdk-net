@@ -1,3 +1,19 @@
+### 3.7.872.0 (2024-08-23 18:27 UTC)
+* BedrockAgent (3.7.401.0)
+	* Releasing the support for Action User Confirmation.
+* BedrockAgentRuntime (3.7.402.0)
+	* Releasing the support for Action User Confirmation.
+* CodeBuild (3.7.402.4)
+	* Added support for the MAC_ARM environment type for CodeBuild fleets.
+* Organizations (3.7.401.0)
+	* Releasing minor partitional endpoint updates.
+* QBusiness (3.7.401.0)
+	* Amazon QBusiness: Enable support for SAML and OIDC federation through AWS IAM Identity Provider integration.
+* S3Control (3.7.400.12)
+	* Update the `CreateJob` API to only include the `UserArguments` property when populated.
+* SupplyChain (3.7.400.12)
+	* Update API documentation to clarify the event SLA as well as the data model expectations
+
 ### 3.7.871.0 (2024-08-22 18:42 UTC)
 * AutoScaling (3.7.401.9)
 	* Amazon EC2 Auto Scaling now provides EBS health check to manage EC2 instance replacement
