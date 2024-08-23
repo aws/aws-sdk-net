@@ -1,9 +1,9 @@
 {
   "core": {
     "changeLogMessages": [
-      "Improve user agent string construction in Marshaller.cs"
+      "Add new extension packages for CloudFront Signers and EC2 Decrypt Password to take a dependency on BouncyCastle.Cryptography"
     ],
-    "type": "patch",
     "updateMinimum": true
-  }
+  },
+  "overrideVersion": "4.0.1.0"
 }

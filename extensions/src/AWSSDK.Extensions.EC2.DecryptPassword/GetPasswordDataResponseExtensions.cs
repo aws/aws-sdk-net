@@ -21,11 +21,15 @@ using Amazon.EC2;
 using Amazon.Runtime;
 using System.IO;
 using System.Security.Cryptography;
-using ThirdParty.BouncyCastle.OpenSsl;
-
+using Org.BouncyCastle.OpenSsl;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Parameters;
+using System.Runtime.CompilerServices;
+using System.Diagnostics;
+using Org.BouncyCastle.Security;
 namespace Amazon.EC2.Model
 {
-    public partial class GetPasswordDataResponse : AmazonWebServiceResponse
+    public static class GetPasswordDataResponseExtensions
     {
         /// <summary>
         /// Gets the decrypted password using the RSA private key which can be found in the
@@ -33,12 +37,29 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="rsaPrivateKey">The RSA private key from the PEM file</param>
         /// <returns>The decrypted password</returns>
-        public string GetDecryptedPassword(string rsaPrivateKey)
+        public static string GetDecryptedPassword(this GetPasswordDataResponse getPasswordDataResponse, string rsaPrivateKey)
         {
             RSAParameters rsaParams;
             try
             {
-                rsaParams = new PemReader(new StringReader(rsaPrivateKey.Trim())).ReadPrivatekey();
+                using (var pemReader = new PemReader(new StringReader(rsaPrivateKey.Trim())))
+                {
+                    var keyPair = pemReader.ReadObject();
+                    if (keyPair is RsaPrivateCrtKeyParameters)
+                    {
+                        rsaParams = DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters)keyPair);
+                    }
+                    else if (keyPair is AsymmetricCipherKeyPair)
+                    {
+                        var asymmetricKeyPair = keyPair as AsymmetricCipherKeyPair;
+                        var privateKey = asymmetricKeyPair.Private as RsaPrivateCrtKeyParameters;
+                        rsaParams = DotNetUtilities.ToRSAParameters(privateKey);
+                    }
+                    else
+                    {
+                        throw new AmazonClientException("Unknown key type");
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -48,7 +69,7 @@ namespace Amazon.EC2.Model
             RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
             rsa.ImportParameters(rsaParams);
 
-            byte[] encryptedBytes = Convert.FromBase64String(this.PasswordData);
+            byte[] encryptedBytes = Convert.FromBase64String(getPasswordDataResponse.PasswordData);
             var decryptedBytes = rsa.Decrypt(encryptedBytes, false);
 
             string decrypted = Encoding.UTF8.GetString(decryptedBytes);

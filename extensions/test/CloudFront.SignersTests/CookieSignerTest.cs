@@ -2,24 +2,28 @@
 using System.IO;
 using System.Text;
 using Amazon.CloudFront;
-using Json.LitJson;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ThirdParty.Json.LitJson;
+using Xunit;
 
 namespace AWSSDK_DotNet.UnitTests
 {
-    [TestClass]
     public class CookieSignerTest
     {
         private static StreamReader privateRSAKeyStreamReader = null;
 
-        [TestInitialize]
-        public void Initialize()
+        public CookieSignerTest()
         {
-            privateRSAKeyStreamReader = new StreamReader(Utils.GetResourceStream("sample.rsa.private.key.txt"));
+            Initialize();
+        }
+        private void Initialize()
+        {
+            var resourceDirectory = Path.Combine(Environment.CurrentDirectory,"EmbeddedResource");
+            var privateKeyTxtPath = Path.Combine(resourceDirectory, "sample.rsa.private.key.txt");
+            privateRSAKeyStreamReader = new StreamReader(privateKeyTxtPath);
         }
 
-        [TestMethod]
-        [TestCategory("CloudFront")]
+        [Fact]
+        [Trait("Category", "CloudFront")]
         public void CannedPolicyValidation()
         {
             string expectedSignature = 
@@ -32,20 +36,21 @@ namespace AWSSDK_DotNet.UnitTests
                 privateRSAKeyStreamReader,
                 new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc)
             );
-            Assert.IsNotNull(cookies);
+            Assert.NotNull(cookies);
 
-            Assert.AreEqual("CloudFront-Expires", cookies.Expires.Key);
-            Assert.AreEqual("1704110400", cookies.Expires.Value);
+            Assert.Equal("CloudFront-Expires", cookies.Expires.Key);
+            Assert.Equal("1704110400", cookies.Expires.Value);
 
-            Assert.AreEqual("CloudFront-Signature", cookies.Signature.Key);
-            Assert.AreEqual(expectedSignature, cookies.Signature.Value);
+            Assert.Equal("CloudFront-Signature", cookies.Signature.Key);
+            Assert.Equal(expectedSignature, cookies.Signature.Value);
 
-            Assert.AreEqual("CloudFront-Key-Pair-Id", cookies.KeyPairId.Key);
-            Assert.AreEqual(expectedKeyPair, cookies.KeyPairId.Value);
+            Assert.Equal("CloudFront-Key-Pair-Id", cookies.KeyPairId.Key);
+            Assert.Equal(expectedKeyPair, cookies.KeyPairId.Value);
         }
 
-        [TestMethod]
-        [TestCategory("CloudFront")]
+
+        [Fact]
+        [Trait("Category", "CloudFront")]
         public void CustomPolicyValidation()
         {
             // This is the base64 representation of the IAM policy:
@@ -65,20 +70,20 @@ namespace AWSSDK_DotNet.UnitTests
                 new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc),
                 "192.0.2.0/24"
             );
-            Assert.IsNotNull(cookies);
+            Assert.NotNull(cookies);
 
-            Assert.AreEqual("CloudFront-Policy", cookies.Policy.Key);
-            Assert.AreEqual(expectedPolicy, cookies.Policy.Value);
+            Assert.Equal("CloudFront-Policy", cookies.Policy.Key);
+            Assert.Equal(expectedPolicy, cookies.Policy.Value);
 
-            Assert.AreEqual("CloudFront-Signature", cookies.Signature.Key);
-            Assert.AreEqual(expectedSignature, cookies.Signature.Value);
+            Assert.Equal("CloudFront-Signature", cookies.Signature.Key);
+            Assert.Equal(expectedSignature, cookies.Signature.Value);
 
-            Assert.AreEqual("CloudFront-Key-Pair-Id", cookies.KeyPairId.Key);
-            Assert.AreEqual(expectedKeyPair, cookies.KeyPairId.Value);
+            Assert.Equal("CloudFront-Key-Pair-Id", cookies.KeyPairId.Key);
+            Assert.Equal(expectedKeyPair, cookies.KeyPairId.Value);
         }
-        
-        [TestMethod]
-        [TestCategory("CloudFront")]
+
+        [Fact]
+        [Trait("Category", "CloudFront")]
         public void CustomPolicyResourceValidation_WhenPassingResourceWithLeadingSlash()
         {
             // This is the base64 representation of the IAM policy:
@@ -99,10 +104,10 @@ namespace AWSSDK_DotNet.UnitTests
                 new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc),
                 "192.0.2.0/24"
             );
-            Assert.IsNotNull(cookies);
+            Assert.NotNull(cookies);
 
-            Assert.AreEqual("CloudFront-Policy", cookies.Policy.Key);
-            Assert.AreEqual(expectedPolicy, cookies.Policy.Value);
+            Assert.Equal("CloudFront-Policy", cookies.Policy.Key);
+            Assert.Equal(expectedPolicy, cookies.Policy.Value);
             
             string policyJson = Encoding.UTF8.GetString(
                 Convert.FromBase64String(cookies.Policy.Value.Replace('-', '+').Replace('_', '=').Replace('~', '/')));
@@ -110,7 +115,7 @@ namespace AWSSDK_DotNet.UnitTests
             var policyData = JsonMapper.ToObject(policyJson);
             var actualResourceUrl = policyData["Statement"][0]["Resource"].ToString();
 
-            Assert.AreEqual(expectedResourceUrl, actualResourceUrl);
+            Assert.Equal(expectedResourceUrl, actualResourceUrl);
         }
     }
 }
