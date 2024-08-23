@@ -95,7 +95,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
             using (MemoryStream memoryStream = new MemoryStream())
             {
-                using (StreamWriter streamWriter = new StreamWriter(memoryStream))
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
 				    writer.Validate = false;
