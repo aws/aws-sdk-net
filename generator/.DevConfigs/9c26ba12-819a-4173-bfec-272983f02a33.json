@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3Control",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update the `CreateJob` API to only include the `UserArguments` property when populated."
+            ]
+        }
+    ]
+}
