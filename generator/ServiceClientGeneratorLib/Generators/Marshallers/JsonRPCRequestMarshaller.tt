@@ -93,32 +93,35 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
 #>
-			using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-			{
-				JsonWriter writer = new JsonWriter(stringWriter);
-				writer.Validate = false;
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+				    writer.Validate = false;
 <#		
 		if (shouldMarshallPayload)
 		{
 #>
-				var context = new JsonMarshallerContext(request, writer);
+				    var context = new JsonMarshallerContext(request, writer);
 <#		
-			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape);
+			ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape);
 		}
 		else
 		{
 #>
-				writer.WriteObjectStart();
-				var context = new JsonMarshallerContext(request, writer);
+				    writer.WriteObjectStart();
+				    var context = new JsonMarshallerContext(request, writer);
 <#		
-				ProcessMembers(1, "publicRequest", this.Operation.RequestBodyMembers);
+				ProcessMembers(2, "publicRequest", this.Operation.RequestBodyMembers);
 #>
-				writer.WriteObjectEnd();
+				    writer.WriteObjectEnd();
 <#
 		}
 #>
-				string snippet = stringWriter.ToString();
-				request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                }
+
+                request.Content = memoryStream.ToArray();
 <#
 					GenerateRequestChecksumHandling(this.Operation, "snippet");
 #>
