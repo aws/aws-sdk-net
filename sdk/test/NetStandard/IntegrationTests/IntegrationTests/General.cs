@@ -132,7 +132,10 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
-        [Fact]
+        // [Fact]
+        // This is commented out because there is a duplicate version of this
+        // test for netframework and when these two tests are run in parallele
+        // it causes other test to fail due to a clock skew error. 
         public void TestManualClockCorrection()
         {
             TestClients(TestServiceCallForManualClockCorrection);
@@ -141,7 +144,10 @@ namespace Amazon.DNXCore.IntegrationTests
         // This test verifies that all service clients are able to
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
-        [Fact]
+        // This is commented out because there is a duplicate version of this
+        // test for netframework and when these two tests are run in parallele
+        // it causes other test to fail due to a clock skew error. 
+        // [Fact]
         public void TestClockSkewCorrection()
         {
             TestClients(TestServiceCallForClockSkew);
