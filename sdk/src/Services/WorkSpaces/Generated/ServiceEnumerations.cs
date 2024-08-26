@@ -1283,6 +1283,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type DescribeWorkspaceDirectoriesFilterName.
+    /// </summary>
+    public class DescribeWorkspaceDirectoriesFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USER_IDENTITY_TYPE for DescribeWorkspaceDirectoriesFilterName
+        /// </summary>
+        public static readonly DescribeWorkspaceDirectoriesFilterName USER_IDENTITY_TYPE = new DescribeWorkspaceDirectoriesFilterName("USER_IDENTITY_TYPE");
+        /// <summary>
+        /// Constant WORKSPACE_TYPE for DescribeWorkspaceDirectoriesFilterName
+        /// </summary>
+        public static readonly DescribeWorkspaceDirectoriesFilterName WORKSPACE_TYPE = new DescribeWorkspaceDirectoriesFilterName("WORKSPACE_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DescribeWorkspaceDirectoriesFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DescribeWorkspaceDirectoriesFilterName FindValue(string value)
+        {
+            return FindValue<DescribeWorkspaceDirectoriesFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DescribeWorkspaceDirectoriesFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DescribeWorkspacesPoolsFilterName.
     /// </summary>
     public class DescribeWorkspacesPoolsFilterName : ConstantClass
@@ -2341,6 +2391,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly UserIdentityType AWS_DIRECTORY_SERVICE = new UserIdentityType("AWS_DIRECTORY_SERVICE");
         /// <summary>
+        /// Constant AWS_IAM_IDENTITY_CENTER for UserIdentityType
+        /// </summary>
+        public static readonly UserIdentityType AWS_IAM_IDENTITY_CENTER = new UserIdentityType("AWS_IAM_IDENTITY_CENTER");
+        /// <summary>
         /// Constant CUSTOMER_MANAGED for UserIdentityType
         /// </summary>
         public static readonly UserIdentityType CUSTOMER_MANAGED = new UserIdentityType("CUSTOMER_MANAGED");
@@ -2768,6 +2822,10 @@ namespace Amazon.WorkSpaces
         /// Constant AD_CONNECTOR for WorkspaceDirectoryType
         /// </summary>
         public static readonly WorkspaceDirectoryType AD_CONNECTOR = new WorkspaceDirectoryType("AD_CONNECTOR");
+        /// <summary>
+        /// Constant AWS_IAM_IDENTITY_CENTER for WorkspaceDirectoryType
+        /// </summary>
+        public static readonly WorkspaceDirectoryType AWS_IAM_IDENTITY_CENTER = new WorkspaceDirectoryType("AWS_IAM_IDENTITY_CENTER");
         /// <summary>
         /// Constant CUSTOMER_MANAGED for WorkspaceDirectoryType
         /// </summary>

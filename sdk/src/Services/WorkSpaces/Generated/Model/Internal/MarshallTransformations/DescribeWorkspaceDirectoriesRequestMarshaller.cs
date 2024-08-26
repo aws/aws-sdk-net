@@ -80,6 +80,22 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DescribeWorkspaceDirectoriesFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");

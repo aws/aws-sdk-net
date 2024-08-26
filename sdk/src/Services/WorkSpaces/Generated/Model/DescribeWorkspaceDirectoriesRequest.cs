@@ -36,6 +36,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class DescribeWorkspaceDirectoriesRequest : AmazonWorkSpacesRequest
     {
         private List<string> _directoryIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DescribeWorkspaceDirectoriesFilter> _filters = AWSConfigs.InitializeCollections ? new List<DescribeWorkspaceDirectoriesFilter>() : null;
         private int? _limit;
         private string _nextToken;
         private List<string> _workspaceDirectoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -57,6 +58,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDirectoryIds()
         {
             return this._directoryIds != null && (this._directoryIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// The filter condition for the WorkSpaces.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public List<DescribeWorkspaceDirectoriesFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

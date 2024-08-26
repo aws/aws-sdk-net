@@ -98,6 +98,23 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EnableWorkDocs);
                 }
 
+                if(publicRequest.IsSetIdcInstanceArn())
+                {
+                    context.Writer.WritePropertyName("IdcInstanceArn");
+                    context.Writer.Write(publicRequest.IdcInstanceArn);
+                }
+
+                if(publicRequest.IsSetMicrosoftEntraConfig())
+                {
+                    context.Writer.WritePropertyName("MicrosoftEntraConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MicrosoftEntraConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MicrosoftEntraConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSubnetIds())
                 {
                     context.Writer.WritePropertyName("SubnetIds");
