@@ -100,7 +100,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Table.ClearTableCache();
             var tableName = testTableName;
 
-            Table table;
+            ITable table;
             using (var nc = new AmazonDynamoDBClient())
             {
 #pragma warning disable CS0618 // Disable the warning for the deprecated DynamoDBContext constructors

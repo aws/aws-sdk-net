@@ -13,44 +13,41 @@
  * permissions and limitations under the License.
  */
 
-using System;
 using System.Collections.Generic;
-
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Search response object
-    /// </summary>
-    public partial class Search
+    public partial interface ISearch
     {
-        #region Public methods
-
         /// <summary>
         /// Retrieves the next set (page) of results
-        /// 
+        ///
         /// If there are more items in the Scan/Query, PaginationToken will be
         /// set and can be consumed in a new Scan/Query operation to resume
         /// retrieving items from this point.
         /// </summary>
         /// <returns>Next set of Documents matching the search parameters</returns>
-        public List<Document> GetNextSet()
-        {
-            return GetNextSetHelper();
-        }
+        List<Document> GetNextSet();
 
         /// <summary>
         /// Retrieves all the remaining results
         /// </summary>
         /// <returns>List of Documents matching the search parameters</returns>
+        List<Document> GetRemaining();
+    }
+
+    public partial class Search : ISearch
+    {
+        /// <inheritdoc/>
+        public List<Document> GetNextSet()
+        {
+            return GetNextSetHelper();
+        }
+
+        /// <inheritdoc/>
         public List<Document> GetRemaining()
         {
             return GetRemainingHelper();
         }
-
-        #endregion
-
     }
 }

@@ -24,66 +24,21 @@ using Amazon.DynamoDBv2.DocumentModel;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
+
     /// <summary>
-    /// Represents a non-generic object for writing/deleting/version-checking multiple items
+    /// Represents a non-generic interface for writing/deleting/version-checking multiple items
     /// in a single DynamoDB table in a transaction.
     /// </summary>
-    public abstract partial class TransactWrite
+    public partial interface ITransactWrite
     {
-        #region Internal/protected properties
-
-        internal DynamoDBContext Context { get; set; }
-        internal DynamoDBFlatConfig Config { get; set; }
-        internal DocumentTransactWrite DocumentTransaction { get; set; }
-
-        #endregion
-
-
-        #region Constructor
-
-        internal TransactWrite(DynamoDBContext context, DynamoDBFlatConfig config)
-        {
-            Context = context;
-            Config = config;
-        }
-
-        #endregion
-
-
-        #region Protected methods
-
-        /// <summary>
-        /// Executes a server call to write/delete/version-check the items requested in a transaction.
-        /// </summary>
-        protected internal abstract void ExecuteHelper();
-
-#if AWS_ASYNC_API
-        /// <summary>
-        /// Executes an asynchronous server call to write/delete/version-check the items requested in a transaction.
-        /// </summary>
-        protected internal abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
-#endif
-        #endregion
-
-
-        #region Internal methods
-
-        internal abstract void PopulateObjects();
-
-        #endregion
     }
 
     /// <summary>
-    /// Represents a strongly-typed object for writing/deleting/version-checking multiple items
+    /// Represents a generic interface for writing/deleting/version-checking multiple items
     /// in a single DynamoDB table in a transaction.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
-    public class TransactWrite<T> : TransactWrite
+    public interface ITransactWrite<T> : ITransactWrite
     {
-        #region Public Combine methods
-
         /// <summary>
         /// Creates a MultiTableTransactWrite object that is a combination
         /// of the current TransactWrite and the specified TransactWrites.
@@ -93,20 +48,159 @@ namespace Amazon.DynamoDBv2.DataModel
         /// MultiTableTransactWrite consisting of the multiple TransactWrite objects:
         /// the current TransactWrite object and the passed-in TransactWrite objects.
         /// </returns>
-        public MultiTableTransactWrite Combine(params TransactWrite[] otherTransactionParts)
-        {
-            return new MultiTableTransactWrite(this, otherTransactionParts);
-        }
-
-        #endregion
-
-
-        #region Public Save methods
+        MultiTableTransactWrite Combine(params TransactWrite[] otherTransactionParts);
 
         /// <summary>
         /// Add a number of items to be saved in the current transaction operation.
         /// </summary>
         /// <param name="values">Items to save.</param>
+        void AddSaveItems(IEnumerable<T> values);
+
+        /// <summary>
+        /// Add a single item to be saved in the current transaction operation.
+        /// </summary>
+        /// <param name="item">Item to save.</param>
+        void AddSaveItem(T item);
+
+        /// <summary>
+        /// Add a single item to be saved in the current transaction operation.
+        /// Item is identified by its hash primary key and will be updated using the update expression provided.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        void AddSaveItem(object hashKey, Expression updateExpression, Expression conditionExpression = null);
+
+        /// <summary>
+        /// Add a single item to be saved in the current transaction operation.
+        /// Item is identified by its hash-and-range primary key and will be updated using the update expression provided.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="rangeKey">Range key of the item to delete.</param>
+        /// <param name="updateExpression">Update expression to use.</param>
+        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        void AddSaveItem(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null);
+
+        /// <summary>
+        /// Add a number of items to be deleted in the current transaction operation.
+        /// </summary>
+        /// <param name="values">Items to be deleted.</param>
+        void AddDeleteItems(IEnumerable<T> values);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// </summary>
+        /// <param name="item">Item to be deleted.</param>
+        void AddDeleteItem(T item);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// Item is identified by its hash primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        void AddDeleteKey(object hashKey);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// Item is identified by its hash primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        void AddDeleteKey(object hashKey, Expression conditionExpression);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// Item is identified by its hash-and-range primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="rangeKey">Range key of the item to delete.</param>
+        void AddDeleteKey(object hashKey, object rangeKey);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current transaction operation.
+        /// Item is identified by its hash-and-range primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <param name="rangeKey">Range key of the item to delete.</param>
+        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression);
+
+        /// <summary>
+        /// Add a single item to be version checked in the current transaction operation.
+        /// The item must have a single property marked with the DynamoDBVersionAttribute.
+        /// </summary>
+        /// <param name="item">Item to be version checked.</param>
+        void AddVersionCheckItem(T item);
+
+        /// <summary>
+        /// Add a number of items to be version checked in the current transaction operation.
+        /// All items must have a single property marked with the DynamoDBVersionAttribute.
+        /// </summary>
+        /// <param name="items">Items to be version checked.</param>
+        void AddVersionCheckItems(IEnumerable<T> items);
+
+        /// <summary>
+        /// Add a single item to be version checked in the current transaction operation.
+        /// Item is identified by its hash primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to be version checked.</param>
+        /// <param name="version">Version of the item.</param>
+        void AddVersionCheckKey(object hashKey, object version);
+
+        /// <summary>
+        /// Add a single item to be version checked in the current transaction operation.
+        /// Item is identified by its hash-and-range primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to be version checked.</param>
+        /// <param name="rangeKey">Range key of the item to be version checked.</param>
+        /// <param name="version">Version of the item.</param>
+        void AddVersionCheckKey(object hashKey, object rangeKey, object version);
+    }
+
+    /// <summary>
+    /// Represents a non-generic object for writing/deleting/version-checking multiple items
+    /// in a single DynamoDB table in a transaction.
+    /// </summary>
+    public abstract partial class TransactWrite : ITransactWrite
+    {
+        internal DocumentTransactWrite DocumentTransaction { get; set; }
+
+        internal abstract void PopulateObjects();
+    }
+
+    /// <summary>
+    /// Represents a strongly-typed object for writing/deleting/version-checking multiple items
+    /// in a single DynamoDB table in a transaction.
+    /// </summary>
+#if NET8_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
+    public partial class TransactWrite<T> : TransactWrite, ITransactWrite<T>
+    {
+        private readonly DynamoDBContext _context;
+        private readonly DynamoDBFlatConfig _config;
+        private readonly ItemStorageConfig _storageConfig;
+        private readonly List<DynamoDBContext.ObjectWithItemStorage> _objectItems = new();
+
+        internal TransactWrite(DynamoDBContext context, DynamoDBFlatConfig config)
+        {
+            _context = context;
+            _config = config;
+            _storageConfig = context.StorageConfigCache.GetConfig<T>(config);
+            Table table = _context.GetTargetTable(_storageConfig, _config);
+
+            // table.CreateTransactWrite() return the IDocumentTransactWrite interface.
+            // But since we rely on the internal behavior of DocumentTransactWrite, we instatiate it via the constructor.
+            DocumentTransaction = new DocumentTransactWrite(table);
+        }
+
+        /// <inheritdoc/>
+        public MultiTableTransactWrite Combine(params TransactWrite[] otherTransactionParts)
+        {
+            return new MultiTableTransactWrite(this, otherTransactionParts);
+        }
+
+        /// <inheritdoc/>
         public void AddSaveItems(IEnumerable<T> values)
         {
             if (values == null) return;
@@ -117,15 +211,12 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        /// <summary>
-        /// Add a single item to be saved in the current transaction operation.
-        /// </summary>
-        /// <param name="item">Item to save.</param>
+        /// <inheritdoc/>
         public void AddSaveItem(T item)
         {
             if (item == null) return;
 
-            ItemStorage storage = Context.ObjectToItemStorageHelper(item, StorageConfig, Config, keysOnly: false, Config.IgnoreNullValues ?? false);
+            ItemStorage storage = _context.ObjectToItemStorageHelper(item, _storageConfig, _config, keysOnly: false, _config.IgnoreNullValues ?? false);
             if (storage == null) return;
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
@@ -140,29 +231,16 @@ namespace Amazon.DynamoDBv2.DataModel
                 OriginalObject = item,
                 ItemStorage = storage
             };
-            objectItems.Add(objectItem);
+            _objectItems.Add(objectItem);
         }
 
-        /// <summary>
-        /// Add a single item to be saved in the current transaction operation.
-        /// Item is identified by its hash primary key and will be updated using the update expression provided.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to delete.</param>
-        /// <param name="updateExpression">Update expression to use.</param>
-        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        /// <inheritdoc/>
         public void AddSaveItem(object hashKey, Expression updateExpression, Expression conditionExpression = null)
         {
             AddSaveItem(hashKey, rangeKey: null, updateExpression, conditionExpression);
         }
 
-        /// <summary>
-        /// Add a single item to be saved in the current transaction operation.
-        /// Item is identified by its hash-and-range primary key and will be updated using the update expression provided.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to delete.</param>
-        /// <param name="rangeKey">Range key of the item to delete.</param>
-        /// <param name="updateExpression">Update expression to use.</param>
-        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        /// <inheritdoc/>
         public void AddSaveItem(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null)
         {
             var operationConfig = conditionExpression != null
@@ -173,18 +251,10 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
                 : null;
 
-            DocumentTransaction.AddDocumentToUpdateHelper(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config), updateExpression, operationConfig);
+            DocumentTransaction.AddDocumentToUpdateHelper(_context.MakeKey(hashKey, rangeKey, _storageConfig, _config), updateExpression, operationConfig);
         }
 
-        #endregion
-
-
-        #region Public Delete methods
-
-        /// <summary>
-        /// Add a number of items to be deleted in the current transaction operation.
-        /// </summary>
-        /// <param name="values">Items to be deleted.</param>
+        /// <inheritdoc/>
         public void AddDeleteItems(IEnumerable<T> values)
         {
             if (values == null) return;
@@ -195,15 +265,12 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        /// <summary>
-        /// Add a single item to be deleted in the current transaction operation.
-        /// </summary>
-        /// <param name="item">Item to be deleted.</param>
+        /// <inheritdoc/>
         public void AddDeleteItem(T item)
         {
             if (item == null) return;
 
-            ItemStorage storage = Context.ObjectToItemStorageHelper(item, StorageConfig, Config, keysOnly: true, Config.IgnoreNullValues ?? false);
+            ItemStorage storage = _context.ObjectToItemStorageHelper(item, _storageConfig, _config, keysOnly: true, _config.IgnoreNullValues ?? false);
             if (storage == null) return;
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
 
@@ -214,45 +281,25 @@ namespace Amazon.DynamoDBv2.DataModel
             });
         }
 
-        /// <summary>
-        /// Add a single item to be deleted in the current transaction operation.
-        /// Item is identified by its hash primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to delete.</param>
+        /// <inheritdoc/>
         public void AddDeleteKey(object hashKey)
         {
             AddDeleteKey(hashKey, conditionExpression: null);
         }
 
-        /// <summary>
-        /// Add a single item to be deleted in the current transaction operation.
-        /// Item is identified by its hash primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to delete.</param>
-        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        /// <inheritdoc/>
         public void AddDeleteKey(object hashKey, Expression conditionExpression)
         {
             AddDeleteKey(hashKey, rangeKey: null, conditionExpression);
         }
 
-        /// <summary>
-        /// Add a single item to be deleted in the current transaction operation.
-        /// Item is identified by its hash-and-range primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to delete.</param>
-        /// <param name="rangeKey">Range key of the item to delete.</param>
+        /// <inheritdoc/>
         public void AddDeleteKey(object hashKey, object rangeKey)
         {
             AddDeleteKey(hashKey, rangeKey, conditionExpression: null);
         }
 
-        /// <summary>
-        /// Add a single item to be deleted in the current transaction operation.
-        /// Item is identified by its hash-and-range primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to delete.</param>
-        /// <param name="rangeKey">Range key of the item to delete.</param>
-        /// <param name="conditionExpression">Condition to check before the operation.</param>
+        /// <inheritdoc/>
         public void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression)
         {
             var operationConfig = conditionExpression != null
@@ -263,26 +310,17 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
                 : null;
 
-            DocumentTransaction.AddKeyToDeleteHelper(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config), operationConfig);
+            DocumentTransaction.AddKeyToDeleteHelper(_context.MakeKey(hashKey, rangeKey, _storageConfig, _config), operationConfig);
         }
 
-        #endregion
-
-
-        #region Public VersionCheck methods
-
-        /// <summary>
-        /// Add a single item to be version checked in the current transaction operation.
-        /// The item must have a single property marked with the DynamoDBVersionAttribute.
-        /// </summary>
-        /// <param name="item">Item to be version checked.</param>
+        /// <inheritdoc/>
         public void AddVersionCheckItem(T item)
         {
             CheckUseVersioning();
 
             if (item == null) return;
 
-            ItemStorage storage = Context.ObjectToItemStorageHelper(item, StorageConfig, Config, keysOnly: true, Config.IgnoreNullValues ?? false);
+            ItemStorage storage = _context.ObjectToItemStorageHelper(item, _storageConfig, _config, keysOnly: true, _config.IgnoreNullValues ?? false);
             if (storage == null) return;
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
 
@@ -293,11 +331,7 @@ namespace Amazon.DynamoDBv2.DataModel
             });
         }
 
-        /// <summary>
-        /// Add a number of items to be version checked in the current transaction operation.
-        /// All items must have a single property marked with the DynamoDBVersionAttribute.
-        /// </summary>
-        /// <param name="items">Items to be version checked.</param>
+        /// <inheritdoc/>
         public void AddVersionCheckItems(IEnumerable<T> items)
         {
             foreach (var item in items)
@@ -306,40 +340,29 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        /// <summary>
-        /// Add a single item to be version checked in the current transaction operation.
-        /// Item is identified by its hash primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to be version checked.</param>
-        /// <param name="version">Version of the item.</param>
+        /// <inheritdoc/>
         public void AddVersionCheckKey(object hashKey, object version)
         {
             AddVersionCheckKey(hashKey, rangeKey: null, version);
         }
 
-        /// <summary>
-        /// Add a single item to be version checked in the current transaction operation.
-        /// Item is identified by its hash-and-range primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to be version checked.</param>
-        /// <param name="rangeKey">Range key of the item to be version checked.</param>
-        /// <param name="version">Version of the item.</param>
+        /// <inheritdoc/>
         public void AddVersionCheckKey(object hashKey, object rangeKey, object version)
         {
             CheckUseVersioning();
 
-            Key key = Context.MakeKey(hashKey, rangeKey, StorageConfig, Config);
-            DynamoDBEntry versionEntry = Context.ToDynamoDBEntry(StorageConfig.VersionPropertyStorage, version, Config);
+            Key key = _context.MakeKey(hashKey, rangeKey, _storageConfig, _config);
+            DynamoDBEntry versionEntry = _context.ToDynamoDBEntry(_storageConfig.VersionPropertyStorage, version, _config);
             Primitive versionPrimitive = versionEntry?.AsPrimitive();
 
             if (versionEntry != null && versionPrimitive == null)
             {
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Version property {0} must be Primitive.",
-                    StorageConfig.VersionPropertyName));
+                    _storageConfig.VersionPropertyName));
             }
 
-            ItemStorage storage = new ItemStorage(StorageConfig)
+            ItemStorage storage = new ItemStorage(_storageConfig)
             {
                 CurrentVersion = versionPrimitive
             };
@@ -353,42 +376,14 @@ namespace Amazon.DynamoDBv2.DataModel
                 });
         }
 
-        #endregion
-
-
-        #region Constructor
-
-        internal TransactWrite(DynamoDBContext context, DynamoDBFlatConfig config)
-            : base(context, config)
-        {
-            StorageConfig = context.StorageConfigCache.GetConfig<T>(config);
-            Table table = Context.GetTargetTable(StorageConfig, Config);
-            DocumentTransaction = table.CreateTransactWrite();
-        }
-
-        #endregion
-
-
-        #region Internal/protected/private members
-
-        private readonly List<DynamoDBContext.ObjectWithItemStorage> objectItems = new List<DynamoDBContext.ObjectWithItemStorage>();
-
-        internal ItemStorageConfig StorageConfig { get; set; }
-
-        /// <summary>
-        /// Executes a server call to write/delete/version-check the items requested in a transaction.
-        /// </summary>
-        protected internal override void ExecuteHelper()
+        private void ExecuteHelper()
         {
             DocumentTransaction.ExecuteHelper();
             PopulateObjects();
         }
 
 #if AWS_ASYNC_API
-        /// <summary>
-        /// Executes an asynchronous server call to write/delete/version-check the items requested in a transaction.
-        /// </summary>
-        protected internal override async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             await DocumentTransaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             PopulateObjects();
@@ -397,27 +392,27 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal override void PopulateObjects()
         {
-            foreach (var objectItem in objectItems)
+            foreach (var objectItem in _objectItems)
             {
-                objectItem.PopulateObject(Context, Config);
+                objectItem.PopulateObject(_context, _config);
             }
         }
 
         private bool ShouldUseVersioning()
         {
-            var skipVersionCheck = Config.SkipVersionCheck ?? false;
-            return !skipVersionCheck && StorageConfig.HasVersion;
+            var skipVersionCheck = _config.SkipVersionCheck ?? false;
+            return !skipVersionCheck && _storageConfig.HasVersion;
         }
 
         private void CheckUseVersioning()
         {
-            if (Config.SkipVersionCheck == true)
+            if (_config.SkipVersionCheck == true)
             {
                 throw new InvalidOperationException(
                     "Using DynamoDBContextConfig.SkipVersionCheck property with true value is not supported for this operation.");
             }
 
-            if (!StorageConfig.HasVersion)
+            if (!_storageConfig.HasVersion)
             {
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Object {0} does not have a versioning field, which is not supported for this operation.",
@@ -439,86 +434,86 @@ namespace Amazon.DynamoDBv2.DataModel
             if (!ShouldUseVersioning()) return;
             DynamoDBContext.SetNewVersion(storage);
         }
+    }
 
-        #endregion
+    /// <summary>
+    /// Interface for writing/deleting/version-checking multiple items in multiple DynamoDB tables,
+    /// using multiple strongly-typed TransactWrite objects.
+    /// </summary>
+    public partial interface IMultiTableTransactWrite
+    {
+        /// <summary>
+        /// Add a TransactWrite object to the multi-table transaction request.
+        /// </summary>
+        /// <param name="transactionPart">TransactWrite to add.</param>
+        void AddTransactionPart(ITransactWrite transactionPart);
     }
 
     /// <summary>
     /// Class for writing/deleting/version-checking multiple items in multiple DynamoDB tables,
     /// using multiple strongly-typed TransactWrite objects.
     /// </summary>
-    public partial class MultiTableTransactWrite
+    public partial class MultiTableTransactWrite : IMultiTableTransactWrite
     {
-        #region Private members
-
-        private readonly List<TransactWrite> allTransactionParts;
-
-        #endregion
-
-
-        #region Constructor
+        private readonly List<ITransactWrite> allTransactionParts;
 
         /// <summary>
         /// Constructs a MultiTableTransactWrite object from a number of
         /// TransactWrite objects
         /// </summary>
         /// <param name="transactionParts">Collection of TransactWrite objects</param>
-        public MultiTableTransactWrite(params TransactWrite[] transactionParts)
+        public MultiTableTransactWrite(params ITransactWrite[] transactionParts)
         {
-            allTransactionParts = new List<TransactWrite>(transactionParts);
+            allTransactionParts = new List<ITransactWrite>(transactionParts);
         }
 
-        internal MultiTableTransactWrite(TransactWrite first, params TransactWrite[] rest)
+        internal MultiTableTransactWrite(ITransactWrite first, params ITransactWrite[] rest)
         {
-            allTransactionParts = new List<TransactWrite>();
+            allTransactionParts = new List<ITransactWrite>();
             allTransactionParts.Add(first);
             allTransactionParts.AddRange(rest);
         }
 
-        #endregion
-
-
-        #region Public methods
-
-        /// <summary>
-        /// Add a TransactWrite object to the multi-table transaction request.
-        /// </summary>
-        /// <param name="transactionPart">TransactWrite to add.</param>
-        public void AddTransactionPart(TransactWrite transactionPart)
+        /// <inheritdoc/>
+        public void AddTransactionPart(ITransactWrite transactionPart)
         {
             allTransactionParts.Add(transactionPart);
         }
 
-        internal void ExecuteHelper()
+        private void ExecuteHelper()
         {
             MultiTableDocumentTransactWrite transaction = new MultiTableDocumentTransactWrite();
+            var errMsg = $"All transactionParts must be of type {nameof(TransactWrite)}";
             foreach (var transactionPart in allTransactionParts)
             {
-                transaction.AddTransactionPart(transactionPart.DocumentTransaction);
+                var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);
+                transaction.AddTransactionPart(abstractTransactWrite.DocumentTransaction);
             }
             transaction.ExecuteHelper();
             foreach (var transactionPart in allTransactionParts)
             {
-                transactionPart.PopulateObjects();
+                var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);
+                abstractTransactWrite.PopulateObjects();
             }
         }
 
 #if AWS_ASYNC_API
-        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentTransactWrite transaction = new MultiTableDocumentTransactWrite();
+            var errMsg = $"All transactionParts must be of type {nameof(TransactWrite)}";
             foreach (var transactionPart in allTransactionParts)
             {
-                transaction.AddTransactionPart(transactionPart.DocumentTransaction);
+                var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);
+                transaction.AddTransactionPart(abstractTransactWrite.DocumentTransaction);
             }
             await transaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             foreach (var transactionPart in allTransactionParts)
             {
-                transactionPart.PopulateObjects();
+                var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);
+                abstractTransactWrite.PopulateObjects();
             }
         }
 #endif
-
-        #endregion
     }
 }

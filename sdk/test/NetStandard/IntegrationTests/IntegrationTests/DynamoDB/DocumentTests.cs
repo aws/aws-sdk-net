@@ -26,8 +26,8 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 // Clear tables
                 await SharedTestFixture.CleanupTables();
 
-                Table hashTable;
-                Table hashRangeTable;
+                ITable hashTable;
+                ITable hashRangeTable;
 
                 // Load tables using provided conversion schema
                 LoadTables(conversion, out hashTable, out hashRangeTable);
@@ -64,7 +64,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             }
         }
 
-        private async Task TestPagination(Table hashRangeTable)
+        private async Task TestPagination(ITable hashRangeTable)
         {
             var itemCount = 10;
             var batchWrite = hashRangeTable.CreateBatchWrite();
@@ -136,7 +136,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             }
         }
 
-        private static async Task<int> VerifyPagination(Search search, List<string> tokens)
+        private static async Task<int> VerifyPagination(ISearch search, List<string> tokens)
         {
             int count = 0;
             do
@@ -156,7 +156,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             return count;
         }
 
-        private async Task TestEmptyCollections(Table hashTable)
+        private async Task TestEmptyCollections(ITable hashTable)
         {
             Document doc = new Document();
             doc["Id"] = 1;
@@ -179,7 +179,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             Assert.Empty(listEntry.AsDynamoDBList().Entries);
         }
 
-        private async Task TestHashTable(Table hashTable, DynamoDBEntryConversion conversion)
+        private async Task TestHashTable(ITable hashTable, DynamoDBEntryConversion conversion)
         {
             // Put an item
             Document doc = new Document();
@@ -343,7 +343,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             items = await hashTable.Scan(new ScanFilter()).GetRemainingAsync();
             Assert.Empty(items);
         }
-        private async Task TestHashRangeTable(Table hashRangeTable, DynamoDBEntryConversion conversion)
+        private async Task TestHashRangeTable(ITable hashRangeTable, DynamoDBEntryConversion conversion)
         {
             // Put an item
             Document doc1 = new Document();
@@ -556,7 +556,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             }).GetRemainingAsync();
             Assert.Single(items);
         }
-        private async Task TestLargeBatchOperations(Table hashTable)
+        private async Task TestLargeBatchOperations(ITable hashTable)
         {
             int itemCount = 30;
             int itemSize = 40 * 1024;
@@ -604,7 +604,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             Assert.Empty(items);
         }
 
-        private async Task TestExpressionsOnDelete(Table hashTable)
+        private async Task TestExpressionsOnDelete(ITable hashTable)
         {
             Document doc1 = new Document();
             doc1["Id"] = 13;
@@ -624,7 +624,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             await hashTable.DeleteItemAsync(doc1, config);
         }
 
-        private async Task TestExpressionsOnQuery(Table hashRangeTable)
+        private async Task TestExpressionsOnQuery(ITable hashRangeTable)
         {
             Document doc1 = new Document();
             doc1["Name"] = "Gunnar";
@@ -663,7 +663,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             await hashRangeTable.DeleteItemAsync(doc2);
         }
 
-        private async Task TestExpressionsOnScan(Table hashRangeTable)
+        private async Task TestExpressionsOnScan(ITable hashRangeTable)
         {
             await SharedTestFixture.ClearTable(SharedTestFixture.hashRangeTableName);
 
@@ -703,7 +703,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             await hashRangeTable.DeleteItemAsync(doc2);
         }
 
-        private async Task TestExpressionPut(Table hashTable)
+        private async Task TestExpressionPut(ITable hashTable)
         {
             Document doc = new Document();
 
@@ -746,7 +746,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             await hashTable.DeleteItemAsync(doc);
         }
 
-        private async Task TestExpressionUpdate(Table hashTable)
+        private async Task TestExpressionUpdate(ITable hashTable)
         {
             Document doc = new Document();
 
@@ -805,7 +805,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 return true;
             return docA.Equals(docB);
         }
-        private void LoadTables(DynamoDBEntryConversion conversion, out Table hashTable, out Table hashRangeTable)
+        private void LoadTables(DynamoDBEntryConversion conversion, out ITable hashTable, out ITable hashRangeTable)
         {
             SharedTestFixture.TableCache.Clear();
 

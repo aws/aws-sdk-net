@@ -13,52 +13,41 @@
  * permissions and limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Class for retrieving a batch of Documents from a single DynamoDB table.
-    /// </summary>
-    public partial class DocumentBatchGet
+    public partial interface IDocumentBatchGet
     {
-
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to batch-get the documents requested.
         /// Populates Results with the retrieved items.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class DocumentBatchGet : IDocumentBatchGet
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
-
     }
 
-    /// <summary>
-    /// Class for retrieving a batch of Documents from multiple DynamoDB tables.
-    /// </summary>
-    public partial class MultiTableDocumentBatchGet
+    public partial interface IMultiTableDocumentBatchGet
     {
-        #region Public methods
-        
         /// <summary>
         /// Executes a multi-table batch request against all configured batches.
         /// Results are stored in the respective DocumentBatchGet objects.
         /// </summary>
+        void Execute();
+    }
+
+    public partial class MultiTableDocumentBatchGet : IMultiTableDocumentBatchGet
+    {
+        /// <inheritdoc/>
         public void Execute()
         {
             ExecuteHelper();
         }
-
-        #endregion
     }
 }

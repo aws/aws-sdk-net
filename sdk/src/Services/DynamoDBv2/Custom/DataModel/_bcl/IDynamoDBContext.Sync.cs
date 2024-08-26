@@ -17,7 +17,6 @@ using System;
 using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -364,7 +363,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="batches">
         /// Configured BatchGet objects
         /// </param>
-        void ExecuteBatchGet(params BatchGet[] batches);
+        void ExecuteBatchGet(params IBatchGet[] batches);
 
         #endregion
 
@@ -376,7 +375,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="batches">
         /// Configured BatchWrite objects
         /// </param>
-        void ExecuteBatchWrite(params BatchWrite[] batches);
+        void ExecuteBatchWrite(params IBatchWrite[] batches);
 
         #endregion
 
@@ -387,7 +386,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Results are stored in the individual TransactGet objects.
         /// </summary>
         /// <param name="transactionParts">Configured TransactGet objects.</param>
-        void ExecuteTransactGet(params TransactGet[] transactionParts);
+        void ExecuteTransactGet(params ITransactGet[] transactionParts);
 
         #endregion
 
@@ -397,7 +396,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Issues a transactional write request with multiple TransactWrite objects.
         /// </summary>
         /// <param name="transactionParts">Configured TransactWrite objects.</param>
-        void ExecuteTransactWrite(params TransactWrite[] transactionParts);
+        void ExecuteTransactWrite(params ITransactWrite[] transactionParts);
 
         #endregion
 
@@ -594,7 +593,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <returns>Table object</returns>
-        Table GetTargetTable<T>();
+        ITable GetTargetTable<T>();
 
         /// <summary>
         /// Retrieves the target table for the specified type
@@ -603,7 +602,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Table object</returns>
         [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
-        Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null);
+        ITable GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null);
 
         /// <summary>
         /// Retrieves the target table for the specified type
@@ -611,7 +610,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <typeparam name="T">Type to retrieve table for</typeparam>
         /// <param name="getTargetTableConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>Table object</returns>
-        Table GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig);
+        ITable GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig);
 
         #endregion
     }

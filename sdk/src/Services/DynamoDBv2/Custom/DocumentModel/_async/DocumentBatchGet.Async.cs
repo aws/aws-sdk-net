@@ -14,57 +14,48 @@
  */
 #pragma warning disable 1574
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    /// <summary>
-    /// Class for retrieving a batch of Documents from a single DynamoDB table.
-    /// </summary>
-    public partial class DocumentBatchGet
+    public partial interface IDocumentBatchGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to batch-get the documents requested.
         /// Populates Results with the retrieved items.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class DocumentBatchGet : IDocumentBatchGet
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for retrieving a batch of Documents from multiple DynamoDB tables.
-    /// </summary>
-    public partial class MultiTableDocumentBatchGet
+    public partial interface IMultiTableDocumentBatchGet
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table batch request against all configured batches.
         /// Results are stored in the respective DocumentBatchGet objects.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+    
+    public partial class MultiTableDocumentBatchGet : IMultiTableDocumentBatchGet
+    {
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
-
 }

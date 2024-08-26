@@ -14,10 +14,7 @@
  */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
 #if AWS_ASYNC_API
@@ -28,56 +25,19 @@ using System.Threading;
 namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
-    /// Represents a non-generic object for writing/deleting a batch of items
+    /// Represents a non-generic interface for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-    public abstract partial class BatchWrite
+    public partial interface IBatchWrite
     {
-        #region Internal/protected properties
-
-        internal DynamoDBContext Context { get; set; }
-        internal DynamoDBFlatConfig Config { get; set; }
-        internal DocumentBatchWrite DocumentBatch { get; set; }
-
-        #endregion
-
-
-        #region Constructor
-
-        internal BatchWrite(DynamoDBContext context, DynamoDBFlatConfig config)
-        {
-            Context = context;
-            Config = config;
-        }
-
-        #endregion
-
-
-        #region Protected methods
-
-        /// <summary>
-        /// Executes a server call to batch-write/delete the items requested.
-        /// </summary>
-        internal protected abstract void ExecuteHelper();
-
-#if AWS_ASYNC_API
-        /// <summary>
-        /// Executes an asynchronous server call to batch-write/delete the items requested.
-        /// </summary>
-        internal protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
-#endif
-
-        #endregion
     }
 
     /// <summary>
-    /// Represents a strongly-typed object for writing/deleting a batch of items
+    /// Represents a generic interface for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-    public class BatchWrite<T> : BatchWrite
+    public interface IBatchWrite<T> : IBatchWrite
     {
-        #region Public combine methods
-
         /// <summary>
         /// Creates a MultiTableBatchWrite object that is a combination
         /// of the current BatchWrite and the specified BatchWrites
@@ -87,20 +47,100 @@ namespace Amazon.DynamoDBv2.DataModel
         /// MultiTableBatchWrite consisting of the multiple BatchWrite objects:
         /// the current batch and the passed-in batches.
         /// </returns>
-        public MultiTableBatchWrite Combine(params BatchWrite[] otherBatches)
-        {
-            return new MultiTableBatchWrite(this, otherBatches);
-        }
-
-        #endregion
-
-
-        #region Public Put methods
+        IMultiTableBatchWrite Combine(params IBatchWrite[] otherBatches);
 
         /// <summary>
         /// Add a number of items to be put in the current batch operation
         /// </summary>
         /// <param name="values">Items to put</param>
+        void AddPutItems(IEnumerable<T> values);
+
+        /// <summary>
+        /// Add a single item to be put in the current batch operation
+        /// </summary>
+        /// <param name="item"></param>
+        void AddPutItem(T item);
+
+        /// <summary>
+        /// Add a number of items to be deleted in the current batch operation
+        /// </summary>
+        /// <param name="values">Items to be deleted</param>
+        void AddDeleteItems(IEnumerable<T> values);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current batch operation.
+        /// </summary>
+        /// <param name="item">Item to be deleted</param>
+        void AddDeleteItem(T item);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current batch operation.
+        /// Item is identified by its hash primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete</param>
+        void AddDeleteKey(object hashKey);
+
+        /// <summary>
+        /// Add a single item to be deleted in the current batch operation.
+        /// Item is identified by its hash-and-range primary key.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to delete</param>
+        /// <param name="rangeKey">Range key of the item to delete</param>
+        void AddDeleteKey(object hashKey, object rangeKey);
+    }
+
+    /// <summary>
+    /// Represents a non-generic object for writing/deleting a batch of items
+    /// in a single DynamoDB table
+    /// </summary>
+    public abstract partial class BatchWrite : IBatchWrite
+    {
+        internal DocumentBatchWrite DocumentBatch { get; set; }
+    }
+
+    /// <summary>
+    /// Represents a strongly-typed object for writing/deleting a batch of items
+    /// in a single DynamoDB table
+    /// </summary>
+    public partial class BatchWrite<T> : BatchWrite, IBatchWrite<T>
+    {
+        private readonly DynamoDBContext _context;
+        private readonly DynamoDBFlatConfig _config;
+        private readonly ItemStorageConfig _storageConfig;
+
+        internal BatchWrite(DynamoDBContext context, DynamoDBFlatConfig config)
+            : this(context, typeof(T), config)
+        {
+        }
+
+        internal BatchWrite(DynamoDBContext context, Type valuesType, DynamoDBFlatConfig config)
+        {
+            _context = context;
+            _config = config;
+            _storageConfig = context.StorageConfigCache.GetConfig(valuesType, config);
+
+            if (_storageConfig.HasVersion)
+            {
+                if (!_config.SkipVersionCheck.GetValueOrDefault(false))
+                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                        "Object {0} has a versioning field, which is not supported for this operation. To ignore versioning, use the DynamoDBContextConfig.SkipVersionCheck property.",
+                        valuesType.Name));
+            }
+
+            Table table = _context.GetTargetTable(_storageConfig, _config);
+
+            // Table.CreateBatchWrite() returns the IDocumentBatchWrite interface.
+            // But since we rely on the internal behavior of DocumentBatchWrite, we instantiate it via the constructor.
+            DocumentBatch = new DocumentBatchWrite(table);
+        }
+
+        /// <inheritdoc/>
+        public IMultiTableBatchWrite Combine(params IBatchWrite[] otherBatches)
+        {
+            return new MultiTableBatchWrite(this, otherBatches);
+        }
+
+        /// <inheritdoc/>
         public void AddPutItems(IEnumerable<T> values)
         {
             if (values == null) return;
@@ -111,28 +151,17 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        /// <summary>
-        /// Add a single item to be put in the current batch operation
-        /// </summary>
-        /// <param name="item"></param>
+        /// <inheritdoc/>
         public void AddPutItem(T item)
         {
             if (item == null) return;
 
-            ItemStorage storage = Context.ObjectToItemStorageHelper(item, StorageConfig, Config, keysOnly: false, ignoreNullValues: true);
+            ItemStorage storage = _context.ObjectToItemStorageHelper(item, _storageConfig, _config, keysOnly: false, ignoreNullValues: true);
             if (storage == null) return;
             DocumentBatch.AddDocumentToPut(storage.Document);
         }
 
-        #endregion
-
-
-        #region Public Delete methods
-
-        /// <summary>
-        /// Add a number of items to be deleted in the current batch operation
-        /// </summary>
-        /// <param name="values">Items to be deleted</param>
+        /// <inheritdoc/>
         public void AddDeleteItems(IEnumerable<T> values)
         {
             if (values == null) return;
@@ -143,163 +172,109 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        /// <summary>
-        /// Add a single item to be deleted in the current batch operation.
-        /// </summary>
-        /// <param name="item">Item to be deleted</param>
+        /// <inheritdoc/>
         public void AddDeleteItem(T item)
         {
             if (item == null) return;
 
-            ItemStorage storage = Context.ObjectToItemStorageHelper(item, StorageConfig, Config, keysOnly: true, ignoreNullValues: true);
+            ItemStorage storage = _context.ObjectToItemStorageHelper(item, _storageConfig, _config, keysOnly: true, ignoreNullValues: true);
             if (storage == null) return;
             DocumentBatch.AddItemToDelete(storage.Document);
         }
 
-        /// <summary>
-        /// Add a single item to be deleted in the current batch operation.
-        /// Item is identified by its hash primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to delete</param>
+        /// <inheritdoc/>
         public void AddDeleteKey(object hashKey)
         {
             AddDeleteKey(hashKey, null);
         }
 
-        /// <summary>
-        /// Add a single item to be deleted in the current batch operation.
-        /// Item is identified by its hash-and-range primary key.
-        /// </summary>
-        /// <param name="hashKey">Hash key of the item to delete</param>
-        /// <param name="rangeKey">Range key of the item to delete</param>
+        /// <inheritdoc/>
         public void AddDeleteKey(object hashKey, object rangeKey)
         {
-            DocumentBatch.AddKeyToDelete(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config));
+            DocumentBatch.AddKeyToDelete(_context.MakeKey(hashKey, rangeKey, _storageConfig, _config));
         }
 
-        #endregion
-
-
-        #region Constructor
-
-        internal BatchWrite(DynamoDBContext context, DynamoDBFlatConfig config)
-            : this(context, typeof(T), config)
-        {
-        }
-
-        internal BatchWrite(DynamoDBContext context, Type valuesType, DynamoDBFlatConfig config)
-            : base(context, config)
-        {
-            StorageConfig = context.StorageConfigCache.GetConfig(valuesType, config);
-
-            if (StorageConfig.HasVersion)
-            {
-                if (!Config.SkipVersionCheck.GetValueOrDefault(false))
-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                        "Object {0} has a versioning field, which is not supported for this operation. To ignore versioning, use the DynamoDBContextConfig.SkipVersionCheck property.",
-                        valuesType.Name));
-            }
-
-            Table table = Context.GetTargetTable(StorageConfig, Config);
-            DocumentBatch = table.CreateBatchWrite();
-        }
-
-        #endregion
-
-
-        #region Internal/protected/private members
-
-        internal ItemStorageConfig StorageConfig { get; set; }
-
-        /// <summary>
-        /// Execute the batch write.
-        /// </summary>
-        internal protected override void ExecuteHelper()
+        private void ExecuteHelper()
         {
             DocumentBatch.ExecuteHelper();
         }
 
 #if AWS_ASYNC_API
-        /// <summary>
-        /// Execute the batch write asynchronously.
-        /// </summary>
-        internal protected override Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        private Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             return DocumentBatch.ExecuteHelperAsync(cancellationToken);
         }
 #endif
+    }
 
-        #endregion
+    /// <summary>
+    /// Interface for writing/deleting a batch of items in multiple DynamoDB tables,
+    /// using multiple strongly-typed BatchWrite objects
+    /// </summary>
+    public partial interface IMultiTableBatchWrite
+    {
+        /// <summary>
+        /// Add a BatchWrite object to the multi-table batch request
+        /// </summary>
+        /// <param name="batch">BatchWrite to add</param>
+        void AddBatch(IBatchWrite batch);
     }
 
     /// <summary>
     /// Class for writing/deleting a batch of items in multiple DynamoDB tables,
     /// using multiple strongly-typed BatchWrite objects
     /// </summary>
-    public partial class MultiTableBatchWrite
+    public partial class MultiTableBatchWrite : IMultiTableBatchWrite
     {
-        #region Private members
-
-        private List<BatchWrite> allBatches = new List<BatchWrite>();
-
-        #endregion
-
-
-        #region Constructor
+        private List<IBatchWrite> allBatches = new();
 
         /// <summary>
         /// Constructs a MultiTableBatchWrite object from a number of
         /// BatchWrite objects
         /// </summary>
         /// <param name="batches">Collection of BatchWrite objects</param>
-        public MultiTableBatchWrite(params BatchWrite[] batches)
+        public MultiTableBatchWrite(params IBatchWrite[] batches)
         {
-            allBatches = new List<BatchWrite>(batches);
+            allBatches = new List<IBatchWrite>(batches);
         }
 
-        internal MultiTableBatchWrite(BatchWrite first, params BatchWrite[] rest)
+        internal MultiTableBatchWrite(IBatchWrite first, params IBatchWrite[] rest)
         {
-            allBatches = new List<BatchWrite>();
+            allBatches = new List<IBatchWrite>();
             allBatches.Add(first);
             allBatches.AddRange(rest);
         }
 
-        #endregion
-
-
-        #region Public methods
-
-        /// <summary>
-        /// Add a BatchWrite object to the multi-table batch request
-        /// </summary>
-        /// <param name="batch">BatchGet to add</param>
-        public void AddBatch(BatchWrite batch)
+        /// <inheritdoc/>
+        public void AddBatch(IBatchWrite batch)
         {
             allBatches.Add(batch);
         }
 
-        internal void ExecuteHelper()
+        private void ExecuteHelper()
         {
             MultiTableDocumentBatchWrite superBatch = new MultiTableDocumentBatchWrite();
+            var errorMsg = $"All batches must be of type {nameof(BatchWrite)}";
             foreach (var batch in allBatches)
             {
-                superBatch.AddBatch(batch.DocumentBatch);
+                var abstractBatch = batch as BatchWrite ?? throw new InvalidOperationException(errorMsg);
+                superBatch.AddBatch(abstractBatch.DocumentBatch);
             }
             superBatch.ExecuteHelper();
         }
 
 #if AWS_ASYNC_API
-        internal Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        private Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentBatchWrite superBatch = new MultiTableDocumentBatchWrite();
+            var errorMsg = $"All batches must be of type {nameof(BatchWrite)}";
             foreach (var batch in allBatches)
             {
-                superBatch.AddBatch(batch.DocumentBatch);
+                var abstractBatch = batch as BatchWrite ?? throw new InvalidOperationException(errorMsg);
+                superBatch.AddBatch(abstractBatch.DocumentBatch);
             }
             return superBatch.ExecuteHelperAsync(cancellationToken);
         }
 #endif
-
-        #endregion
     }
 }

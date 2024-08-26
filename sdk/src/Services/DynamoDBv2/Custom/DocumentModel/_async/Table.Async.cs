@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-    public partial class Table
+    public partial interface ITable
     {
         #region PutItemAsync
 
@@ -39,11 +39,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="doc">Document to save.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> PutItemAsync(Document doc, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return PutItemHelperAsync(doc, null, cancellationToken);
-        }
-
+        Task<Document> PutItemAsync(Document doc, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the PutItem operation.
@@ -53,10 +49,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> PutItemAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return PutItemHelperAsync(doc, config, cancellationToken);
-        }
+        Task<Document> PutItemAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
 
@@ -68,10 +61,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> GetItemAsync(Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return GetItemHelperAsync(MakeKey(hashKey, null), null, cancellationToken);
-        }
+        Task<Document> GetItemAsync(Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
@@ -80,11 +70,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> GetItemAsync(Primitive hashKey, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return GetItemHelperAsync(MakeKey(hashKey, null), config, cancellationToken);
-        }
-
+        Task<Document> GetItemAsync(Primitive hashKey, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
@@ -93,10 +79,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="rangeKey">Range key element of the document.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> GetItemAsync(Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return GetItemHelperAsync(MakeKey(hashKey, rangeKey), null, cancellationToken);
-        }
+        Task<Document> GetItemAsync(Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
@@ -106,10 +89,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> GetItemAsync(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return GetItemHelperAsync(MakeKey(hashKey, rangeKey), config, cancellationToken);
-        }
+        Task<Document> GetItemAsync(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
@@ -117,10 +97,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="key">Ley of the document.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return GetItemHelperAsync(MakeKey(key), null, cancellationToken);
-        }
+        Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the GetItem operation.
@@ -129,10 +106,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return GetItemHelperAsync(MakeKey(key), config, cancellationToken);
-        }
+        Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
 
@@ -144,10 +118,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="doc">Attributes to update.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> UpdateItemAsync(Document doc, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return UpdateHelperAsync(doc, null, null, null, cancellationToken);
-        }
+        Task<Document> UpdateItemAsync(Document doc, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
@@ -156,10 +127,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> UpdateItemAsync(Document doc, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return UpdateHelperAsync(doc, null, null, config, cancellationToken);
-        }
+        Task<Document> UpdateItemAsync(Document doc, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
@@ -168,10 +136,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="key">Key of the document.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> UpdateItemAsync(Document doc, IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return UpdateHelperAsync(doc, MakeKey(key), null, cancellationToken);
-        }
+        Task<Document> UpdateItemAsync(Document doc, IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
@@ -181,10 +146,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> UpdateItemAsync(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return UpdateHelperAsync(doc, MakeKey(key), config, cancellationToken);
-        }
+        Task<Document> UpdateItemAsync(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
@@ -193,10 +155,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="hashKey">Hash key element of the document.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return UpdateHelperAsync(doc, hashKey, null, null, cancellationToken);
-        }
+        Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
@@ -206,10 +165,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return UpdateHelperAsync(doc, hashKey, null, config, cancellationToken);
-        }
+        Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
@@ -219,10 +175,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="rangeKey">Range key element of the document.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return UpdateHelperAsync(doc, hashKey, rangeKey, null, cancellationToken);
-        }
+        Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the UpdateItem operation.
@@ -233,10 +186,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return UpdateHelperAsync(doc, hashKey, rangeKey, config, cancellationToken);
-        }
+        Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
 
         #endregion
@@ -249,10 +199,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="document">Document to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<Document> DeleteItemAsync(Document document, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return DeleteHelperAsync(MakeKey(document), null, cancellationToken);
-        }
+        Task<Document> DeleteItemAsync(Document document, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Initiates the asynchronous execution of the DeleteItem operation.
@@ -261,77 +208,222 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="config">Configuration to use.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> DeleteItemAsync(Document document, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> DeleteItemAsync(Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> DeleteItemAsync(Primitive hashKey, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> DeleteItemAsync(Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// </summary>
+        /// <param name="hashKey">Hash key element of the document.</param>
+        /// <param name="rangeKey">Range key element of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> DeleteItemAsync(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// </summary>
+        /// <param name="key">Key of the document.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteItem operation.
+        /// </summary>
+        /// <param name="key">Key of the document.</param>
+        /// <param name="config">Configuration to use.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+    }
+
+    public partial class Table : ITable
+    {
+        #region PutItemAsync
+
+        /// <inheritdoc/>
+        public Task<Document> PutItemAsync(Document doc, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return PutItemHelperAsync(doc, null, cancellationToken);
+        }
+
+
+        /// <inheritdoc/>
+        public Task<Document> PutItemAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return PutItemHelperAsync(doc, config, cancellationToken);
+        }
+
+        #endregion
+
+        #region GetItemAsync
+
+        /// <inheritdoc/>
+        public Task<Document> GetItemAsync(Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetItemHelperAsync(MakeKey(hashKey, null), null, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> GetItemAsync(Primitive hashKey, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetItemHelperAsync(MakeKey(hashKey, null), config, cancellationToken);
+        }
+
+
+        /// <inheritdoc/>
+        public Task<Document> GetItemAsync(Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetItemHelperAsync(MakeKey(hashKey, rangeKey), null, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> GetItemAsync(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetItemHelperAsync(MakeKey(hashKey, rangeKey), config, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetItemHelperAsync(MakeKey(key), null, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return GetItemHelperAsync(MakeKey(key), config, cancellationToken);
+        }
+
+        #endregion
+
+        #region UpdateItemAsync
+
+        /// <inheritdoc/>
+        public Task<Document> UpdateItemAsync(Document doc, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateHelperAsync(doc, null, null, null, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> UpdateItemAsync(Document doc, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateHelperAsync(doc, null, null, config, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> UpdateItemAsync(Document doc, IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateHelperAsync(doc, MakeKey(key), null, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> UpdateItemAsync(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateHelperAsync(doc, MakeKey(key), config, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateHelperAsync(doc, hashKey, null, null, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateHelperAsync(doc, hashKey, null, config, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateHelperAsync(doc, hashKey, rangeKey, null, cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return UpdateHelperAsync(doc, hashKey, rangeKey, config, cancellationToken);
+        }
+
+
+        #endregion
+
+        #region DeleteItemAsync
+
+        /// <inheritdoc/>
+        public Task<Document> DeleteItemAsync(Document document, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return DeleteHelperAsync(MakeKey(document), null, cancellationToken);
+        }
+
+        /// <inheritdoc/>
         public Task<Document> DeleteItemAsync(Document document, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteHelperAsync(MakeKey(document), config, cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the document.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <inheritdoc/>
         public Task<Document> DeleteItemAsync(Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteHelperAsync(MakeKey(hashKey, null), null, cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the document.</param>
-        /// <param name="config">Configuration to use.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <inheritdoc/>
         public Task<Document> DeleteItemAsync(Primitive hashKey, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteHelperAsync(MakeKey(hashKey, null), config, cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the document.</param>
-        /// <param name="rangeKey">Range key element of the document.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <inheritdoc/>
         public Task<Document> DeleteItemAsync(Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteHelperAsync(MakeKey(hashKey, rangeKey), null, cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// </summary>
-        /// <param name="hashKey">Hash key element of the document.</param>
-        /// <param name="rangeKey">Range key element of the document.</param>
-        /// <param name="config">Configuration to use.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <inheritdoc/>
         public Task<Document> DeleteItemAsync(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteHelperAsync(MakeKey(hashKey, rangeKey), config, cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// </summary>
-        /// <param name="key">Key of the document.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <inheritdoc/>
         public Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteHelperAsync(MakeKey(key), null, cancellationToken);
         }
 
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteItem operation.
-        /// </summary>
-        /// <param name="key">Key of the document.</param>
-        /// <param name="config">Configuration to use.</param>
-        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
-        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        /// <inheritdoc/>
         public Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteHelperAsync(MakeKey(key), config, cancellationToken);

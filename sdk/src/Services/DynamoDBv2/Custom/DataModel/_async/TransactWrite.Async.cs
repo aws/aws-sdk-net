@@ -18,46 +18,48 @@ using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-    /// <summary>
-    /// Represents a non-generic object for writing/deleting/version-checking multiple items
-    /// in a single DynamoDB table in a transaction.
-    /// </summary>
-    public abstract partial class TransactWrite
+    public partial interface ITransactWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a server call to write/delete/version-check the items requested in a transaction.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public abstract partial class TransactWrite : ITransactWrite
+    {
+        /// <inheritdoc/>
+        public abstract Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class TransactWrite<T> : TransactWrite, ITransactWrite<T>
+    {
+        /// <inheritdoc/>
+        public override Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 
-    /// <summary>
-    /// Class for writing/deleting/version-checking multiple items in multiple DynamoDB tables,
-    /// using multiple strongly-typed TransactWrite objects.
-    /// </summary>
-    public partial class MultiTableTransactWrite
+    public partial interface IMultiTableTransactWrite
     {
-        #region Public methods
-
         /// <summary>
         /// Executes a multi-table transaction request against all configured TransactWrite objects.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         ///
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken));
+    }
+
+    public partial class MultiTableTransactWrite : IMultiTableTransactWrite
+    { 
+        /// <inheritdoc/>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             return ExecuteHelperAsync(cancellationToken);
         }
-
-        #endregion
     }
 }

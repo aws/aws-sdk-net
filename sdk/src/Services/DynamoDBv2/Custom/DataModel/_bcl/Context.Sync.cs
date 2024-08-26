@@ -15,10 +15,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -171,15 +169,8 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region BatchGet
-        /// <summary>
-        /// Issues a batch-get request with multiple batches.
-        /// 
-        /// Results are stored in the individual batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchGet objects
-        /// </param>
-        public void ExecuteBatchGet(params BatchGet[] batches)
+        /// <inheritdoc/>
+        public void ExecuteBatchGet(params IBatchGet[] batches)
         {
             MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
             superBatch.Execute();
@@ -189,12 +180,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Transact Get
 
-        /// <summary>
-        /// Issues a transactional get request with multiple TransactGet objects.
-        /// Results are stored in the individual TransactGet objects.
-        /// </summary>
-        /// <param name="transactionParts">Configured TransactGet objects.</param>
-        public void ExecuteTransactGet(params TransactGet[] transactionParts)
+        /// <inheritdoc/>
+        public void ExecuteTransactGet(params ITransactGet[] transactionParts)
         {
             MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
             transaction.Execute();
@@ -204,13 +191,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Batch Write
 
-        /// <summary>
-        /// Issues a batch-write request with multiple batches.
-        /// </summary>
-        /// <param name="batches">
-        /// Configured BatchWrite objects
-        /// </param>
-        public void ExecuteBatchWrite(params BatchWrite[] batches)
+        /// <inheritdoc/>
+        public void ExecuteBatchWrite(params IBatchWrite[] batches)
         {
             MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
             superBatch.Execute();
@@ -220,11 +202,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Transact Write
 
-        /// <summary>
-        /// Issues a transactional write request with multiple TransactWrite objects.
-        /// </summary>
-        /// <param name="transactionParts">Configured TransactWrite objects.</param>
-        public void ExecuteTransactWrite(params TransactWrite[] transactionParts)
+        /// <inheritdoc/>
+        public void ExecuteTransactWrite(params ITransactWrite[] transactionParts)
         {
             MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
             transaction.Execute();
@@ -369,20 +348,20 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Table methods
 
         /// <inheritdoc/>
-        public Table GetTargetTable<T>()
+        public ITable GetTargetTable<T>()
         {
             return GetTargetTable<T>((GetTargetTableConfig)null);
         }
 
         /// <inheritdoc/>
         [Obsolete("Use the GetTargetTable overload that takes GetTargetTableConfig instead, since DynamoDBOperationConfig contains properties that are not applicable to GetTargetTable.")]
-        public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
+        public ITable GetTargetTable<T>(DynamoDBOperationConfig operationConfig = null)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(operationConfig, Config));
         }
 
         /// <inheritdoc/>
-        public Table GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
+        public ITable GetTargetTable<T>(GetTargetTableConfig getTargetTableConfig)
         {
             return GetTargetTableInternal<T>(new DynamoDBFlatConfig(getTargetTableConfig?.ToDynamoDBOperationConfig(), Config));
         }
