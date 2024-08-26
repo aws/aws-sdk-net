@@ -5,10 +5,7 @@
     <title>AWSSDK - Extensions for AWS CloudFront</title>
     <version>4.0.1.0-preview</version>
     <authors>Amazon Web Services</authors>
-		<description>
-			This package contains extension methods for creating signed URLs for Amazon CloudFront distributions and
-			for creating signed cookies for Amazon CloudFront distributions using canned or custom policies.
-		</description>
+	<description>This package contains extension methods for creating signed URLs for Amazon CloudFront distributions and for creating signed cookies for Amazon CloudFront distributions using canned or custom policies.</description>
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
@@ -36,7 +33,6 @@
         <dependency id="BouncyCastle.Cryptography" version="2.4.0" />
       </group>
     </dependencies>
-
   </metadata> 
   <files>
     <file src="..\..\..\sdk\nuget-content\AWSLogo.png" target="images\" />
