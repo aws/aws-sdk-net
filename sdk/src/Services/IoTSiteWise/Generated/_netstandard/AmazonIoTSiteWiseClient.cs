@@ -1116,6 +1116,9 @@ namespace Amazon.IoTSiteWise
         /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request-header fields evaluated to <c>FALSE</c>.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
         /// </exception>
@@ -1675,6 +1678,9 @@ namespace Amazon.IoTSiteWise
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
         /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request-header fields evaluated to <c>FALSE</c>.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
         /// </exception>
@@ -1738,6 +1744,9 @@ namespace Amazon.IoTSiteWise
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request-header fields evaluated to <c>FALSE</c>.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -4116,11 +4125,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// List child assets associated to a parent asset by a hierarchy that you specify.
+        ///  <c>CHILD</c> - List all child assets associated to the asset.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// List an asset's parent asset.
+        ///  <c>PARENT</c> - List the asset's parent asset.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5205,6 +5214,9 @@ namespace Amazon.IoTSiteWise
         /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request-header fields evaluated to <c>FALSE</c>.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
         /// </exception>
@@ -5303,6 +5315,9 @@ namespace Amazon.IoTSiteWise
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
         /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request-header fields evaluated to <c>FALSE</c>.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
