@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Remove obsolete classes from core and refactor existing tests to not use obsolete code."
+      ],
+      "type": "minor",
+      "updateMinimum": true
+    }
+  }
