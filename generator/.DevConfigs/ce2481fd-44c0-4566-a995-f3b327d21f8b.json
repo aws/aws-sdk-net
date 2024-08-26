@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add the ability to mock DynamoDB operations which now implement interfaces."
+            ]
+        }
+    ]
+}
