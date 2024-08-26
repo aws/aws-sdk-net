@@ -1,3 +1,9 @@
+### 3.7.873.0 (2024-08-26 18:17 UTC)
+* IoTSiteWise (3.7.401.0)
+	* AWS IoT SiteWise now supports versioning for asset models. It enables users to retrieve active version of their asset model and perform asset model writes with optimistic lock.
+* WorkSpaces (3.7.402.0)
+	* This release adds support for creating and managing directories that use AWS IAM Identity Center as user identity source. Such directories can be used to create non-Active Directory domain joined WorkSpaces Personal.Updated RegisterWorkspaceDirectory and DescribeWorkspaceDirectories APIs.
+
 ### 3.7.872.0 (2024-08-23 18:27 UTC)
 * BedrockAgent (3.7.401.0)
 	* Releasing the support for Action User Confirmation.
