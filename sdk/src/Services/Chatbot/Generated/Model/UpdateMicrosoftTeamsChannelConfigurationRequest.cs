@@ -31,7 +31,7 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMicrosoftTeamsChannelConfiguration operation.
-    /// Updates MS Teams Channel Configuration
+    /// Updates an Microsoft Teams channel configuration.
     /// </summary>
     public partial class UpdateMicrosoftTeamsChannelConfigurationRequest : AmazonChatbotRequest
     {
@@ -45,7 +45,10 @@ namespace Amazon.Chatbot.Model
         private bool? _userAuthorizationRequired;
 
         /// <summary>
-        /// Gets and sets the property ChannelId. The ID of the Microsoft Teams channel.
+        /// Gets and sets the property ChannelId. 
+        /// <para>
+        /// The ID of the Microsoft Teams channel.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string ChannelId
@@ -61,9 +64,12 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChannelName. The name of the Microsoft Teams channel.
+        /// Gets and sets the property ChannelName. 
+        /// <para>
+        /// The name of the Microsoft Teams channel.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
         public string ChannelName
         {
             get { return this._channelName; }
@@ -77,8 +83,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the MicrosoftTeamsChannelConfiguration
-        /// to update.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the TeamsChannelConfiguration to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn
@@ -94,9 +102,11 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GuardrailPolicyArns. The list of IAM policy ARNs that are
-        /// applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied
-        /// by default if this is not set.
+        /// Gets and sets the property GuardrailPolicyArns. 
+        /// <para>
+        /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed
+        /// <c>AdministratorAccess</c> policy is applied by default if this is not set. 
+        /// </para>
         /// </summary>
         public List<string> GuardrailPolicyArns
         {
@@ -111,9 +121,15 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IamRoleArn. The ARN of the IAM role that defines the permissions
-        /// for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is
-        /// not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// A user-defined role that AWS Chatbot assumes. This is not the service-linked role.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM
+        /// policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=1224)]
         public string IamRoleArn
@@ -129,7 +145,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoggingLevel. Logging levels include ERROR, INFO, or NONE.
+        /// Gets and sets the property LoggingLevel. 
+        /// <para>
+        /// Logging levels include <c>ERROR</c>, <c>INFO</c>, or <c>NONE</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=5)]
         public string LoggingLevel
@@ -145,8 +164,11 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnsTopicArns. The ARNs of the SNS topics that deliver notifications
-        /// to AWS Chatbot.
+        /// Gets and sets the property SnsTopicArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the SNS topics that deliver notifications to AWS
+        /// Chatbot.
+        /// </para>
         /// </summary>
         public List<string> SnsTopicArns
         {
@@ -161,8 +183,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserAuthorizationRequired. Enables use of a user role requirement
-        /// in your chat configuration.
+        /// Gets and sets the property UserAuthorizationRequired. 
+        /// <para>
+        /// Enables use of a user role requirement in your chat configuration.
+        /// </para>
         /// </summary>
         public bool UserAuthorizationRequired
         {

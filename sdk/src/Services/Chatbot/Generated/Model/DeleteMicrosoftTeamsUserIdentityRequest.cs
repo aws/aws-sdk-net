@@ -31,7 +31,7 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMicrosoftTeamsUserIdentity operation.
-    /// Deletes a Teams user identity
+    /// Identifes a user level permission for a channel configuration.
     /// </summary>
     public partial class DeleteMicrosoftTeamsUserIdentityRequest : AmazonChatbotRequest
     {
@@ -39,8 +39,11 @@ namespace Amazon.Chatbot.Model
         private string _userId;
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the MicrosoftTeamsChannelConfiguration
-        /// associated with the user identity to delete.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity
+        /// to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn
@@ -56,7 +59,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserId. Id from Microsoft Teams for user.
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The Microsoft Teams user ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
         public string UserId

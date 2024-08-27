@@ -31,7 +31,7 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMicrosoftTeamsChannelConfigurations operation.
-    /// Lists MS Teams Channel Configurations optionally filtered by TeamId
+    /// Lists all AWS Chatbot Microsoft Teams channel configurations in an AWS account.
     /// </summary>
     public partial class ListMicrosoftTeamsChannelConfigurationsRequest : AmazonChatbotRequest
     {
@@ -40,9 +40,12 @@ namespace Amazon.Chatbot.Model
         private string _teamId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of results to include in
-        /// the response. If more results exist than the specified MaxResults value, a token is
-        /// included in the response so that the remaining results can be retrieved.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to include in the response. If more results exist than
+        /// the specified MaxResults value, a token is included in the response so that the remaining
+        /// results can be retrieved.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -58,10 +61,12 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. An optional token returned from a prior request.
-        /// Use this token for pagination of results from this action. If this parameter is specified,
-        /// the response includes only results beyond the token, up to the value specified by
-        /// MaxResults.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// An optional token returned from a prior request. Use this token for pagination of
+        /// results from this action. If this parameter is specified, the response includes only
+        /// results beyond the token, up to the value specified by MaxResults.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1276)]
         public string NextToken
@@ -77,11 +82,18 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeamId. The ID of the Microsoft Team authorized with AWS
-        /// Chatbot. To get the team ID, you must perform the initial authorization flow with
-        /// Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID
-        /// from the console. For more details, see steps 1-4 in Get started with Microsoft Teams
-        /// in the AWS Chatbot Administrator Guide.
+        /// Gets and sets the property TeamId. 
+        /// <para>
+        ///  The ID of the Microsoft Teams authorized with AWS Chatbot.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the team ID, you must perform the initial authorization flow with Microsoft
+        /// Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the
+        /// console. For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step
+        /// 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator Guide</i>.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string TeamId

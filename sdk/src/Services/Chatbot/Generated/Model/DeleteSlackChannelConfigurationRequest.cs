@@ -31,15 +31,17 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSlackChannelConfiguration operation.
-    /// Deletes Slack Channel Configuration
+    /// Deletes a Slack channel configuration for AWS Chatbot
     /// </summary>
     public partial class DeleteSlackChannelConfigurationRequest : AmazonChatbotRequest
     {
         private string _chatConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the SlackChannelConfiguration
-        /// to delete.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the SlackChannelConfiguration to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn

@@ -4,19 +4,19 @@
     <property>Amazon.Chatbot.Model.CreateChimeWebhookConfigurationRequest.ConfigurationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-_]+$</pattern>
+    <pattern>[A-Za-z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateChimeWebhookConfigurationRequest.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateChimeWebhookConfigurationRequest.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateChimeWebhookConfigurationRequest.WebhookDescription</property>
@@ -27,79 +27,79 @@
     <property>Amazon.Chatbot.Model.CreateChimeWebhookConfigurationRequest.WebhookUrl</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^https://hooks\.chime\.aws/incomingwebhooks/[A-Za-z0-9\-]+?\?token=[A-Za-z0-9\-]+$</pattern>
+    <pattern>https://hooks\.chime\.aws/incomingwebhooks/[A-Za-z0-9\-]+?\?token=[A-Za-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateMicrosoftTeamsChannelConfigurationRequest.ChannelId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^([a-zA-Z0-9-_=+\/.,])*%3[aA]([a-zA-Z0-9-_=+\/.,])*%40([a-zA-Z0-9-_=+\/.,])*$</pattern>
+    <pattern>([a-zA-Z0-9-_=+\/.,])*%3[aA]([a-zA-Z0-9-_=+\/.,])*%40([a-zA-Z0-9-_=+\/.,])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateMicrosoftTeamsChannelConfigurationRequest.ChannelName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(.*)$</pattern>
+    <pattern>(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateMicrosoftTeamsChannelConfigurationRequest.ConfigurationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-_]+$</pattern>
+    <pattern>[A-Za-z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateMicrosoftTeamsChannelConfigurationRequest.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateMicrosoftTeamsChannelConfigurationRequest.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateMicrosoftTeamsChannelConfigurationRequest.TeamId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateMicrosoftTeamsChannelConfigurationRequest.TeamName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(.*)$</pattern>
+    <pattern>(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateMicrosoftTeamsChannelConfigurationRequest.TenantId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateSlackChannelConfigurationRequest.ConfigurationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-_]+$</pattern>
+    <pattern>[A-Za-z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateSlackChannelConfigurationRequest.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateSlackChannelConfigurationRequest.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateSlackChannelConfigurationRequest.SlackChannelId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z0-9]+$</pattern>
+    <pattern>[A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.CreateSlackChannelConfigurationRequest.SlackChannelName</property>
@@ -110,73 +110,73 @@
     <property>Amazon.Chatbot.Model.CreateSlackChannelConfigurationRequest.SlackTeamId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[0-9A-Z]{1,255}$</pattern>
+    <pattern>[0-9A-Z]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteChimeWebhookConfigurationRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteMicrosoftTeamsChannelConfigurationRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteMicrosoftTeamsConfiguredTeamRequest.TeamId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteMicrosoftTeamsUserIdentityRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteMicrosoftTeamsUserIdentityRequest.UserId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteSlackChannelConfigurationRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteSlackUserIdentityRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteSlackUserIdentityRequest.SlackTeamId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[0-9A-Z]{1,255}$</pattern>
+    <pattern>[0-9A-Z]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteSlackUserIdentityRequest.SlackUserId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(.*)$</pattern>
+    <pattern>(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DeleteSlackWorkspaceAuthorizationRequest.SlackTeamId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[0-9A-Z]{1,255}$</pattern>
+    <pattern>[0-9A-Z]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeChimeWebhookConfigurationsRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeChimeWebhookConfigurationsRequest.MaxResults</property>
@@ -187,19 +187,19 @@
     <property>Amazon.Chatbot.Model.DescribeChimeWebhookConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeChimeWebhookConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeSlackChannelConfigurationsRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeSlackChannelConfigurationsRequest.MaxResults</property>
@@ -210,19 +210,19 @@
     <property>Amazon.Chatbot.Model.DescribeSlackChannelConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeSlackChannelConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeSlackUserIdentitiesRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeSlackUserIdentitiesRequest.MaxResults</property>
@@ -233,13 +233,13 @@
     <property>Amazon.Chatbot.Model.DescribeSlackUserIdentitiesRequest.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeSlackUserIdentitiesResponse.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeSlackWorkspacesRequest.MaxResults</property>
@@ -250,19 +250,19 @@
     <property>Amazon.Chatbot.Model.DescribeSlackWorkspacesRequest.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.DescribeSlackWorkspacesResponse.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.GetMicrosoftTeamsChannelConfigurationRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsChannelConfigurationsRequest.MaxResults</property>
@@ -273,19 +273,19 @@
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsChannelConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsChannelConfigurationsRequest.TeamId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsChannelConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsConfiguredTeamsRequest.MaxResults</property>
@@ -296,19 +296,19 @@
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsConfiguredTeamsRequest.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsConfiguredTeamsResponse.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsUserIdentitiesRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsUserIdentitiesRequest.MaxResults</property>
@@ -319,49 +319,49 @@
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsUserIdentitiesRequest.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListMicrosoftTeamsUserIdentitiesResponse.NextToken</property>
     <min>1</min>
     <max>1276</max>
-    <pattern>^[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}$</pattern>
+    <pattern>[a-zA-Z0-9=\/+_.\-,#:\\"{}]{4,1276}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateChimeWebhookConfigurationRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateChimeWebhookConfigurationRequest.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateChimeWebhookConfigurationRequest.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateChimeWebhookConfigurationRequest.WebhookDescription</property>
@@ -372,61 +372,61 @@
     <property>Amazon.Chatbot.Model.UpdateChimeWebhookConfigurationRequest.WebhookUrl</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^https://hooks\.chime\.aws/incomingwebhooks/[A-Za-z0-9\-]+?\?token=[A-Za-z0-9\-]+$</pattern>
+    <pattern>https://hooks\.chime\.aws/incomingwebhooks/[A-Za-z0-9\-]+?\?token=[A-Za-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateMicrosoftTeamsChannelConfigurationRequest.ChannelId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^([a-zA-Z0-9-_=+\/.,])*%3[aA]([a-zA-Z0-9-_=+\/.,])*%40([a-zA-Z0-9-_=+\/.,])*$</pattern>
+    <pattern>([a-zA-Z0-9-_=+\/.,])*%3[aA]([a-zA-Z0-9-_=+\/.,])*%40([a-zA-Z0-9-_=+\/.,])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateMicrosoftTeamsChannelConfigurationRequest.ChannelName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(.*)$</pattern>
+    <pattern>(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateMicrosoftTeamsChannelConfigurationRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateMicrosoftTeamsChannelConfigurationRequest.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateMicrosoftTeamsChannelConfigurationRequest.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateSlackChannelConfigurationRequest.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateSlackChannelConfigurationRequest.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateSlackChannelConfigurationRequest.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateSlackChannelConfigurationRequest.SlackChannelId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z0-9]+$</pattern>
+    <pattern>[A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.UpdateSlackChannelConfigurationRequest.SlackChannelName</property>
@@ -437,25 +437,25 @@
     <property>Amazon.Chatbot.Model.ChimeWebhookConfiguration.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ChimeWebhookConfiguration.ConfigurationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-_]+$</pattern>
+    <pattern>[A-Za-z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ChimeWebhookConfiguration.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ChimeWebhookConfiguration.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ChimeWebhookConfiguration.WebhookDescription</property>
@@ -466,49 +466,49 @@
     <property>Amazon.Chatbot.Model.ConfiguredTeam.TeamId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ConfiguredTeam.TeamName</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.ConfiguredTeam.TenantId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackChannelConfiguration.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackChannelConfiguration.ConfigurationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-_]+$</pattern>
+    <pattern>[A-Za-z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackChannelConfiguration.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackChannelConfiguration.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackChannelConfiguration.SlackChannelId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[A-Za-z0-9]+$</pattern>
+    <pattern>[A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackChannelConfiguration.SlackChannelName</property>
@@ -519,7 +519,7 @@
     <property>Amazon.Chatbot.Model.SlackChannelConfiguration.SlackTeamId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[0-9A-Z]{1,255}$</pattern>
+    <pattern>[0-9A-Z]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackChannelConfiguration.SlackTeamName</property>
@@ -530,37 +530,37 @@
     <property>Amazon.Chatbot.Model.SlackUserIdentity.AwsUserIdentity</property>
     <min>15</min>
     <max>1101</max>
-    <pattern>^arn:aws:(iam|sts)::[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(iam|sts)::[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackUserIdentity.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackUserIdentity.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackUserIdentity.SlackTeamId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[0-9A-Z]{1,255}$</pattern>
+    <pattern>[0-9A-Z]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackUserIdentity.SlackUserId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^(.*)$</pattern>
+    <pattern>(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackWorkspace.SlackTeamId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[0-9A-Z]{1,255}$</pattern>
+    <pattern>[0-9A-Z]{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.SlackWorkspace.SlackTeamName</property>
@@ -574,97 +574,103 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.Tag.TagValue</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.ChannelId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^([a-zA-Z0-9-_=+\/.,])*%3[aA]([a-zA-Z0-9-_=+\/.,])*%40([a-zA-Z0-9-_=+\/.,])*$</pattern>
+    <pattern>([a-zA-Z0-9-_=+\/.,])*%3[aA]([a-zA-Z0-9-_=+\/.,])*%40([a-zA-Z0-9-_=+\/.,])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.ChannelName</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(.*)$</pattern>
+    <pattern>(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.ConfigurationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[A-Za-z0-9-_]+$</pattern>
+    <pattern>[A-Za-z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.LoggingLevel</property>
     <min>4</min>
     <max>5</max>
-    <pattern>^(ERROR|INFO|NONE)$</pattern>
+    <pattern>(ERROR|INFO|NONE)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.TeamId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.TeamName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsChannelConfiguration.TenantId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsUserIdentity.AwsUserIdentity</property>
     <min>15</min>
     <max>1101</max>
-    <pattern>^arn:aws:(iam|sts)::[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(iam|sts)::[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsUserIdentity.ChatConfigurationArn</property>
     <min>19</min>
     <max>1169</max>
-    <pattern>^arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:(wheatley|chatbot):[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsUserIdentity.IamRoleArn</property>
     <min>12</min>
     <max>1224</max>
-    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <pattern>arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsUserIdentity.TeamId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsUserIdentity.TeamsChannelId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^([a-zA-Z0-9-_=+\/.,])*%3[aA]([a-zA-Z0-9-_=+\/.,])*%40([a-zA-Z0-9-_=+\/.,])*$</pattern>
+    <pattern>([a-zA-Z0-9-_=+\/.,])*%3[aA]([a-zA-Z0-9-_=+\/.,])*%40([a-zA-Z0-9-_=+\/.,])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsUserIdentity.TeamsTenantId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chatbot.Model.TeamsUserIdentity.UserId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$</pattern>
+    <pattern>[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}</pattern>
   </property-value-rule>
 </property-value-rules>

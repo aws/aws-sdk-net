@@ -38,10 +38,12 @@ namespace Amazon.Chatbot.Model
         private List<SlackWorkspace> _slackWorkspaces = AWSConfigs.InitializeCollections ? new List<SlackWorkspace>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextToken. An optional token returned from a prior request.
-        /// Use this token for pagination of results from this action. If this parameter is specified,
-        /// the response includes only results beyond the token, up to the value specified by
-        /// MaxResults.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  An optional token returned from a prior request. Use this token for pagination of
+        /// results from this action. If this parameter is specified, the response includes only
+        /// results beyond the token, up to the value specified by MaxResults. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1276)]
         public string NextToken
@@ -57,8 +59,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SlackWorkspaces. A list of Slack Workspaces registered
-        /// with AWS Chatbot.
+        /// Gets and sets the property SlackWorkspaces. 
+        /// <para>
+        /// A list of Slack workspaces registered with AWS Chatbot.
+        /// </para>
         /// </summary>
         public List<SlackWorkspace> SlackWorkspaces
         {

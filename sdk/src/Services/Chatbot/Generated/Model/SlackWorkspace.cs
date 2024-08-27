@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
-    /// A Slack Workspace.
+    /// A Slack workspace.
     /// </summary>
     public partial class SlackWorkspace
     {
@@ -38,8 +38,10 @@ namespace Amazon.Chatbot.Model
         private string _slackTeamName;
 
         /// <summary>
-        /// Gets and sets the property SlackTeamId. The ID of the Slack workspace authorized with
-        /// AWS Chatbot.
+        /// Gets and sets the property SlackTeamId. 
+        /// <para>
+        /// The ID of the Slack workspace authorized with AWS Chatbot.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SlackTeamId
@@ -55,7 +57,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SlackTeamName. Name of the Slack Workspace.
+        /// Gets and sets the property SlackTeamName. 
+        /// <para>
+        /// The name of the Slack workspace.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SlackTeamName

@@ -31,7 +31,7 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateChimeWebhookConfiguration operation.
-    /// Creates Chime Webhook Configuration
+    /// Creates an AWS Chatbot configuration for Amazon Chime.
     /// </summary>
     public partial class CreateChimeWebhookConfigurationRequest : AmazonChatbotRequest
     {
@@ -44,7 +44,10 @@ namespace Amazon.Chatbot.Model
         private string _webhookUrl;
 
         /// <summary>
-        /// Gets and sets the property ConfigurationName. The name of the configuration.
+        /// Gets and sets the property ConfigurationName. 
+        /// <para>
+        /// The name of the configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string ConfigurationName
@@ -60,9 +63,15 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IamRoleArn. This is a user-defined role that AWS Chatbot
-        /// will assume. This is not the service-linked role. For more information, see IAM Policies
-        /// for AWS Chatbot.
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// A user-defined role that AWS Chatbot assumes. This is not the service-linked role.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM
+        /// policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1224)]
         public string IamRoleArn
@@ -78,7 +87,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoggingLevel. Logging levels include ERROR, INFO, or NONE.
+        /// Gets and sets the property LoggingLevel. 
+        /// <para>
+        /// Logging levels include <c>ERROR</c>, <c>INFO</c>, or <c>NONE</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=5)]
         public string LoggingLevel
@@ -94,8 +106,11 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnsTopicArns. The ARNs of the SNS topics that deliver notifications
-        /// to AWS Chatbot.
+        /// Gets and sets the property SnsTopicArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the SNS topics that deliver notifications to AWS
+        /// Chatbot.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SnsTopicArns
@@ -111,7 +126,11 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. A list of tags to apply to the configuration.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of tags assigned to a resource. A tag is a string-to-string map of key-value
+        /// pairs.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
@@ -126,11 +145,18 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebhookDescription. Description of the webhook. Recommend
-        /// using the convention `RoomName/WebhookName`. See Chime setup tutorial for more details:
-        /// https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html.
+        /// Gets and sets the property WebhookDescription. 
+        /// <para>
+        /// A description of the webhook. We recommend using the convention <c>RoomName/WebhookName</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html">Tutorial:
+        /// Get started with Amazon Chime</a> in the <i> AWS Chatbot Administrator Guide</i>.
+        /// 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string WebhookDescription
         {
             get { return this._webhookDescription; }
@@ -144,9 +170,12 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebhookUrl. URL for the Chime webhook.
+        /// Gets and sets the property WebhookUrl. 
+        /// <para>
+        /// The URL for the Amazon Chime webhook.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string WebhookUrl
         {
             get { return this._webhookUrl; }

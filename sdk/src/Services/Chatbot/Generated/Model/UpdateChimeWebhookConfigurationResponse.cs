@@ -37,7 +37,10 @@ namespace Amazon.Chatbot.Model
         private ChimeWebhookConfiguration _webhookConfiguration;
 
         /// <summary>
-        /// Gets and sets the property WebhookConfiguration. Chime webhook configuration.
+        /// Gets and sets the property WebhookConfiguration. 
+        /// <para>
+        /// A Amazon Chime webhook configuration.
+        /// </para>
         /// </summary>
         public ChimeWebhookConfiguration WebhookConfiguration
         {

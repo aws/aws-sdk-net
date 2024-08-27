@@ -43,8 +43,11 @@ namespace Amazon.Chatbot.Model
         private string _userId;
 
         /// <summary>
-        /// Gets and sets the property AwsUserIdentity. The AWS user identity ARN used to associate
-        /// a Microsoft Teams User Identity with an IAM Role.
+        /// Gets and sets the property AwsUserIdentity. 
+        /// <para>
+        /// The AWS user identity ARN used to associate a Microsoft Teams user Identity with an
+        /// IAM Role.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=1101)]
         public string AwsUserIdentity
@@ -60,8 +63,11 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the MicrosoftTeamsChannelConfiguration
-        /// associated with the user identity.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration associated
+        /// with the user identity to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn
@@ -77,9 +83,15 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IamRoleArn. The ARN of the IAM role that defines the permissions
-        /// for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is
-        /// not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// A user-defined role that AWS Chatbot assumes. This is not the service-linked role.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html">IAM
+        /// policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1224)]
         public string IamRoleArn
@@ -95,11 +107,18 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeamId. The ID of the Microsoft Team authorized with AWS
-        /// Chatbot. To get the team ID, you must perform the initial authorization flow with
-        /// Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID
-        /// from the console. For more details, see steps 1-4 in Get started with Microsoft Teams
-        /// in the AWS Chatbot Administrator Guide.
+        /// Gets and sets the property TeamId. 
+        /// <para>
+        ///  The ID of the Microsoft Teams authorized with AWS Chatbot.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the team ID, you must perform the initial authorization flow with Microsoft
+        /// Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the
+        /// console. For more information, see <a href="https://docs.aws.amazon.com/chatbot/latest/adminguide/teams-setup.html#teams-client-setup">Step
+        /// 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator Guide</i>.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
         public string TeamId
@@ -115,7 +134,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeamsChannelId. The ID of the Microsoft Teams channel.
+        /// Gets and sets the property TeamsChannelId. 
+        /// <para>
+        /// The ID of the Microsoft Teams channel.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string TeamsChannelId
@@ -131,7 +153,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeamsTenantId. The ID of the Microsoft Teams tenant.
+        /// Gets and sets the property TeamsTenantId. 
+        /// <para>
+        /// The ID of the Microsoft Teams tenant.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string TeamsTenantId
@@ -147,7 +172,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserId. Id from Microsoft Teams for user.
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The Microsoft Teams user ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string UserId

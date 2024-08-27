@@ -42,6 +42,12 @@ namespace Amazon.Chatbot.Model
         /// </summary>
         public IPaginatedEnumerable<ListMicrosoftTeamsUserIdentitiesResponse> Responses => new PaginatedResponse<ListMicrosoftTeamsUserIdentitiesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the TeamsUserIdentities
+        /// </summary>
+        public IPaginatedEnumerable<TeamsUserIdentity> TeamsUserIdentities => 
+            new PaginatedResultKeyResponse<ListMicrosoftTeamsUserIdentitiesResponse, TeamsUserIdentity>(this, (i) => i.TeamsUserIdentities ?? new List<TeamsUserIdentity>());
+
         internal ListMicrosoftTeamsUserIdentitiesPaginator(IAmazonChatbot client, ListMicrosoftTeamsUserIdentitiesRequest request)
         {
             this._client = client;

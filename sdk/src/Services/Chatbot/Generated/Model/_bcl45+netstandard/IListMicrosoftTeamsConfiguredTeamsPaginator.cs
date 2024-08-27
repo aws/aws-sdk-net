@@ -30,5 +30,10 @@ namespace Amazon.Chatbot.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListMicrosoftTeamsConfiguredTeamsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the ConfiguredTeams
+        /// </summary>
+        IPaginatedEnumerable<ConfiguredTeam> ConfiguredTeams { get; }
     }
 }

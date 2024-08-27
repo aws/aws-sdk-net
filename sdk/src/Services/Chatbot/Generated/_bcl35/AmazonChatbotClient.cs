@@ -36,7 +36,40 @@ namespace Amazon.Chatbot
     /// <summary>
     /// <para>Implementation for accessing Chatbot</para>
     ///
-    /// AWS Chatbot API
+    /// The <i>AWS Chatbot API Reference</i> provides descriptions, API request parameters,
+    /// and the XML response for each of the AWS Chatbot API actions.
+    /// 
+    ///  
+    /// <para>
+    /// AWS Chatbot APIs are currently available in the following Regions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// US East (Ohio) - <c>us-east-2</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// US West (Oregon) - <c>us-west-2</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Asia Pacific (Singapore) - <c>ap-southeast-1</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Europe (Ireland) - <c>eu-west-1</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The AWS Chatbot console can only be used in US East (Ohio). Your configuration data
+    /// however, is stored in each of the relevant available Regions.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Your AWS CloudTrail events are logged in whatever Region you call from, not US East
+    /// (N. Virginia) by default.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AmazonChatbotClient : AmazonServiceClient, IAmazonChatbot
     {
@@ -267,7 +300,7 @@ namespace Amazon.Chatbot
         #region  CreateChimeWebhookConfiguration
 
         /// <summary>
-        /// Creates Chime Webhook Configuration
+        /// Creates an AWS Chatbot configuration for Amazon Chime.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChimeWebhookConfiguration service method.</param>
         /// 
@@ -279,10 +312,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.LimitExceededException">
         /// You have exceeded a service limit for AWS Chatbot.
@@ -336,7 +369,7 @@ namespace Amazon.Chatbot
         #region  CreateMicrosoftTeamsChannelConfiguration
 
         /// <summary>
-        /// Creates MS Teams Channel Configuration
+        /// Creates an AWS Chatbot configuration for Microsoft Teams.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftTeamsChannelConfiguration service method.</param>
         /// 
@@ -348,10 +381,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.LimitExceededException">
         /// You have exceeded a service limit for AWS Chatbot.
@@ -405,7 +438,7 @@ namespace Amazon.Chatbot
         #region  CreateSlackChannelConfiguration
 
         /// <summary>
-        /// Creates Slack Channel Configuration
+        /// Creates an AWS Chatbot confugration for Slack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSlackChannelConfiguration service method.</param>
         /// 
@@ -417,10 +450,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.LimitExceededException">
         /// You have exceeded a service limit for AWS Chatbot.
@@ -474,7 +507,7 @@ namespace Amazon.Chatbot
         #region  DeleteChimeWebhookConfiguration
 
         /// <summary>
-        /// Deletes a Chime Webhook Configuration
+        /// Deletes a Amazon Chime webhook configuration for AWS Chatbot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChimeWebhookConfiguration service method.</param>
         /// 
@@ -483,13 +516,13 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteChimeWebhookConfiguration">REST API Reference for DeleteChimeWebhookConfiguration Operation</seealso>
         public virtual DeleteChimeWebhookConfigurationResponse DeleteChimeWebhookConfiguration(DeleteChimeWebhookConfigurationRequest request)
@@ -540,7 +573,7 @@ namespace Amazon.Chatbot
         #region  DeleteMicrosoftTeamsChannelConfiguration
 
         /// <summary>
-        /// Deletes MS Teams Channel Configuration
+        /// Deletes a Microsoft Teams channel configuration for AWS Chatbot
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMicrosoftTeamsChannelConfiguration service method.</param>
         /// 
@@ -549,13 +582,13 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsChannelConfiguration">REST API Reference for DeleteMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual DeleteMicrosoftTeamsChannelConfigurationResponse DeleteMicrosoftTeamsChannelConfiguration(DeleteMicrosoftTeamsChannelConfigurationRequest request)
@@ -617,7 +650,7 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsConfiguredTeam">REST API Reference for DeleteMicrosoftTeamsConfiguredTeam Operation</seealso>
         public virtual DeleteMicrosoftTeamsConfiguredTeamResponse DeleteMicrosoftTeamsConfiguredTeam(DeleteMicrosoftTeamsConfiguredTeamRequest request)
@@ -668,7 +701,7 @@ namespace Amazon.Chatbot
         #region  DeleteMicrosoftTeamsUserIdentity
 
         /// <summary>
-        /// Deletes a Teams user identity
+        /// Identifes a user level permission for a channel configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMicrosoftTeamsUserIdentity service method.</param>
         /// 
@@ -677,10 +710,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteMicrosoftTeamsUserIdentity">REST API Reference for DeleteMicrosoftTeamsUserIdentity Operation</seealso>
         public virtual DeleteMicrosoftTeamsUserIdentityResponse DeleteMicrosoftTeamsUserIdentity(DeleteMicrosoftTeamsUserIdentityRequest request)
@@ -731,7 +764,7 @@ namespace Amazon.Chatbot
         #region  DeleteSlackChannelConfiguration
 
         /// <summary>
-        /// Deletes Slack Channel Configuration
+        /// Deletes a Slack channel configuration for AWS Chatbot
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSlackChannelConfiguration service method.</param>
         /// 
@@ -740,13 +773,13 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
         public virtual DeleteSlackChannelConfigurationResponse DeleteSlackChannelConfiguration(DeleteSlackChannelConfigurationRequest request)
@@ -797,7 +830,7 @@ namespace Amazon.Chatbot
         #region  DeleteSlackUserIdentity
 
         /// <summary>
-        /// Deletes a Slack user identity
+        /// Deletes a user level permission for a Slack channel configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSlackUserIdentity service method.</param>
         /// 
@@ -806,10 +839,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackUserIdentity">REST API Reference for DeleteSlackUserIdentity Operation</seealso>
         public virtual DeleteSlackUserIdentityResponse DeleteSlackUserIdentity(DeleteSlackUserIdentityRequest request)
@@ -870,7 +903,7 @@ namespace Amazon.Chatbot
         /// There was an issue deleting your Slack workspace.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteSlackWorkspaceAuthorization">REST API Reference for DeleteSlackWorkspaceAuthorization Operation</seealso>
         public virtual DeleteSlackWorkspaceAuthorizationResponse DeleteSlackWorkspaceAuthorization(DeleteSlackWorkspaceAuthorizationRequest request)
@@ -921,7 +954,7 @@ namespace Amazon.Chatbot
         #region  DescribeChimeWebhookConfigurations
 
         /// <summary>
-        /// Lists Chime Webhook Configurations optionally filtered by ChatConfigurationArn
+        /// Lists Amazon Chime webhook configurations optionally filtered by ChatConfigurationArn
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChimeWebhookConfigurations service method.</param>
         /// 
@@ -930,10 +963,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeChimeWebhookConfigurations">REST API Reference for DescribeChimeWebhookConfigurations Operation</seealso>
         public virtual DescribeChimeWebhookConfigurationsResponse DescribeChimeWebhookConfigurations(DescribeChimeWebhookConfigurationsRequest request)
@@ -984,7 +1017,7 @@ namespace Amazon.Chatbot
         #region  DescribeSlackChannelConfigurations
 
         /// <summary>
-        /// Lists Slack Channel Configurations optionally filtered by ChatConfigurationArn
+        /// Lists Slack channel configurations optionally filtered by ChatConfigurationArn
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSlackChannelConfigurations service method.</param>
         /// 
@@ -993,10 +1026,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackChannelConfigurations">REST API Reference for DescribeSlackChannelConfigurations Operation</seealso>
         public virtual DescribeSlackChannelConfigurationsResponse DescribeSlackChannelConfigurations(DescribeSlackChannelConfigurationsRequest request)
@@ -1056,10 +1089,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackUserIdentities">REST API Reference for DescribeSlackUserIdentities Operation</seealso>
         public virtual DescribeSlackUserIdentitiesResponse DescribeSlackUserIdentities(DescribeSlackUserIdentitiesRequest request)
@@ -1110,7 +1143,8 @@ namespace Amazon.Chatbot
         #region  DescribeSlackWorkspaces
 
         /// <summary>
-        /// Lists all authorized Slack Workspaces for AWS Account
+        /// List all authorized Slack workspaces connected to the AWS Account onboarded with AWS
+        /// Chatbot.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSlackWorkspaces service method.</param>
         /// 
@@ -1119,10 +1153,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DescribeSlackWorkspaces">REST API Reference for DescribeSlackWorkspaces Operation</seealso>
         public virtual DescribeSlackWorkspacesResponse DescribeSlackWorkspaces(DescribeSlackWorkspacesRequest request)
@@ -1173,7 +1207,7 @@ namespace Amazon.Chatbot
         #region  GetAccountPreferences
 
         /// <summary>
-        /// Get Chatbot account level preferences
+        /// Returns AWS Chatbot account preferences.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountPreferences service method.</param>
         /// 
@@ -1182,7 +1216,7 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetAccountPreferences">REST API Reference for GetAccountPreferences Operation</seealso>
         public virtual GetAccountPreferencesResponse GetAccountPreferences(GetAccountPreferencesRequest request)
@@ -1233,7 +1267,7 @@ namespace Amazon.Chatbot
         #region  GetMicrosoftTeamsChannelConfiguration
 
         /// <summary>
-        /// Get a single MS Teams Channel Configurations
+        /// Returns a Microsoft Teams channel configuration in an AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMicrosoftTeamsChannelConfiguration service method.</param>
         /// 
@@ -1242,10 +1276,10 @@ namespace Amazon.Chatbot
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetMicrosoftTeamsChannelConfiguration">REST API Reference for GetMicrosoftTeamsChannelConfiguration Operation</seealso>
         public virtual GetMicrosoftTeamsChannelConfigurationResponse GetMicrosoftTeamsChannelConfiguration(GetMicrosoftTeamsChannelConfigurationRequest request)
@@ -1296,16 +1330,16 @@ namespace Amazon.Chatbot
         #region  ListMicrosoftTeamsChannelConfigurations
 
         /// <summary>
-        /// Lists MS Teams Channel Configurations optionally filtered by TeamId
+        /// Lists all AWS Chatbot Microsoft Teams channel configurations in an AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMicrosoftTeamsChannelConfigurations service method.</param>
         /// 
         /// <returns>The response from the ListMicrosoftTeamsChannelConfigurations service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ListTeamsChannelConfigurationsException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1359,16 +1393,16 @@ namespace Amazon.Chatbot
         #region  ListMicrosoftTeamsConfiguredTeams
 
         /// <summary>
-        /// Lists all authorized MS teams for AWS Account
+        /// Lists all authorized Microsoft Teams for an AWS Account
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMicrosoftTeamsConfiguredTeams service method.</param>
         /// 
         /// <returns>The response from the ListMicrosoftTeamsConfiguredTeams service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ListMicrosoftTeamsConfiguredTeamsException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1422,16 +1456,16 @@ namespace Amazon.Chatbot
         #region  ListMicrosoftTeamsUserIdentities
 
         /// <summary>
-        /// Lists all Microsoft Teams user identities with a mapped role.
+        /// A list all Microsoft Teams user identities with a mapped role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMicrosoftTeamsUserIdentities service method.</param>
         /// 
         /// <returns>The response from the ListMicrosoftTeamsUserIdentities service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ListMicrosoftTeamsUserIdentitiesException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1485,16 +1519,17 @@ namespace Amazon.Chatbot
         #region  ListTagsForResource
 
         /// <summary>
-        /// Retrieves the list of tags applied to a configuration.
+        /// Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify.
+        /// The resource can be a user, server, or role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
-        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1548,16 +1583,17 @@ namespace Amazon.Chatbot
         #region  TagResource
 
         /// <summary>
-        /// Applies the supplied tags to a configuration.
+        /// Attaches a key-value pair to a resource, as identified by its Amazon Resource Name
+        /// (ARN). Resources are users, servers, roles, and other entities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
-        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1614,16 +1650,17 @@ namespace Amazon.Chatbot
         #region  UntagResource
 
         /// <summary>
-        /// Removes the supplied tags from a configuration
+        /// Detaches a key-value pair from a resource, as identified by its Amazon Resource Name
+        /// (ARN). Resources are users, servers, roles, and other entities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
-        /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ServiceUnavailableException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1677,16 +1714,16 @@ namespace Amazon.Chatbot
         #region  UpdateAccountPreferences
 
         /// <summary>
-        /// Update Chatbot account level preferences
+        /// Updates AWS Chatbot account preferences.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountPreferences service method.</param>
         /// 
         /// <returns>The response from the UpdateAccountPreferences service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.UpdateAccountPreferencesException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1740,19 +1777,19 @@ namespace Amazon.Chatbot
         #region  UpdateChimeWebhookConfiguration
 
         /// <summary>
-        /// Updates a Chime Webhook Configuration
+        /// Updates a Amazon Chime webhook configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChimeWebhookConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateChimeWebhookConfiguration service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.UpdateChimeWebhookConfigurationException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1806,19 +1843,19 @@ namespace Amazon.Chatbot
         #region  UpdateMicrosoftTeamsChannelConfiguration
 
         /// <summary>
-        /// Updates MS Teams Channel Configuration
+        /// Updates an Microsoft Teams channel configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMicrosoftTeamsChannelConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateMicrosoftTeamsChannelConfiguration service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.UpdateTeamsChannelConfigurationException">
         /// We can’t process your request right now because of a server issue. Try again later.
@@ -1872,19 +1909,19 @@ namespace Amazon.Chatbot
         #region  UpdateSlackChannelConfiguration
 
         /// <summary>
-        /// Updates Slack Channel Configuration
+        /// Updates a Slack channel configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSlackChannelConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateSlackChannelConfiguration service method, as returned by Chatbot.</returns>
         /// <exception cref="Amazon.Chatbot.Model.InvalidParameterException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
-        /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
-        /// We were not able to find the resource for your request.
+        /// We were unable to find the resource for your request
         /// </exception>
         /// <exception cref="Amazon.Chatbot.Model.UpdateSlackChannelConfigurationException">
         /// We can’t process your request right now because of a server issue. Try again later.
